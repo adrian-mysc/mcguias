@@ -1,0 +1,20 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+*.log
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Node (caso futuramente adicione build)
+node_modules/
+dist/
+
+# PWA / cache gerado
+sw.js.map

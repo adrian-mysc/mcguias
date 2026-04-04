@@ -1,0 +1,25 @@
+{
+  "name": "MC Guias — Estudo Operacional",
+  "short_name": "MC Guias",
+  "description": "Plataforma de estudos operacionais desenvolvida por Adrian E. Silva",
+  "start_url": "/mcguias/",
+  "scope": "/mcguias/",
+  "display": "standalone",
+  "background_color": "#DA291C",
+  "theme_color": "#DA291C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/mcguias/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/mcguias/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

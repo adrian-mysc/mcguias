@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página não encontrada — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+</head>
+<body data-page="404">
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="/mcguias/">M</a>
+      <div class="navbar-brand">
+        <h1>MC Guias</h1>
+        <p>Estudo Operacional</p>
+      </div>
+    </div>
+  </nav>
+
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;padding:32px 20px;text-align:center;max-width:400px;margin:0 auto;">
+    <div style="font-size:72px;margin-bottom:16px;line-height:1;">🍔</div>
+    <h2 style="font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--text);margin:0 0 8px;">Página não encontrada</h2>
+    <p style="font-size:14px;color:var(--muted);margin:0 0 28px;line-height:1.6;">Parece que essa página saiu do cardápio.<br>Volte para a home e continue estudando!</p>
+    <a href="/mcguias/" style="display:inline-block;padding:14px 32px;background:var(--red);color:#fff;border-radius:12px;font-family:var(--font-display);font-size:15px;font-weight:800;text-decoration:none;">🏠 Voltar para a home</a>
+    <div style="margin-top:40px;font-size:12px;color:var(--muted);">Código do erro: 404</div>
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Estudo Operacional · Adrian E. Silva
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
