@@ -64,6 +64,21 @@
     </div>
   </nav>
 
+  <!-- Senha de Acesso -->
+  <div id="pw-wall" style="max-width:400px;margin:40px auto;padding:0 16px;">
+    <div style="background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow-md);">
+      <div style="font-size:40px;margin-bottom:12px;">🔐</div>
+      <h2 style="font-family:var(--font-display);font-size:20px;margin-bottom:6px;">Área Restrita</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:20px;">Conteúdo exclusivo para Treinadores</p>
+      <input type="password" id="pw-input" placeholder="Digite a senha..." autocomplete="current-password"
+        style="width:100%;box-sizing:border-box;padding:12px 14px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--bg);outline:none;margin-bottom:10px;">
+      <div id="pw-error" style="display:none;color:#c62828;font-size:12px;margin-bottom:10px;">❌ Senha incorreta. Tente novamente.</div>
+      <button onclick="checkPassword()" style="width:100%;padding:12px;background:var(--red);color:#fff;border:none;border-radius:var(--radius-md);font-family:var(--font-display);font-size:15px;font-weight:800;cursor:pointer;">Entrar</button>
+      <p style="font-size:11px;color:var(--muted);margin-top:14px;">Senha fornecida pelo seu gerente ou supervisor</p>
+    </div>
+  </div>
+
+  <div id="pw-content" style="display:none;">
     <div class="page-tabs">
       <div class="page-tabs-inner">
         <button class="tab-btn active" data-tab="orientacoes">📋 Orientações</button>
@@ -2000,12 +2015,61 @@
     </div>
   </div>
 
+  </div><!-- #pw-content -->
+
   <footer class="site-footer">
     <strong>MC Guias</strong> · Conteúdo para Treinadores · Área Restrita
   </footer>
 
   <script src="../js/main.js"></script>
   <script>
+    /* ===== SENHA DE ACESSO ===== */
+    var STORAGE_KEY = 'mc_treinador_auth';
+    var PW_HASH = '8b5b6732ba1d4bdf8ca6b4cce1ed284ee09177cfdfea5ad8d9983a369d8b688d'; // sha256('treinador')
+
+    function hashStr(str) {
+      // Simple hash check via SubtleCrypto
+      return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
+        .then(function(buf) {
+          return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+        });
+    }
+
+    function unlock() {
+      var wall = document.getElementById('pw-wall');
+      var cont = document.getElementById('pw-content');
+      if (wall) wall.style.display = 'none';
+      if (cont) cont.style.display = 'block';
+      // Re-init após unlock
+      setTimeout(function() {
+        if (typeof renderAcompanhamento === 'function') renderAcompanhamento();
+        if (typeof renderFeedbacks === 'function') renderFeedbacks();
+      }, 50);
+    }
+
+    window.checkPassword = function() {
+      var val = document.getElementById('pw-input').value;
+      var err = document.getElementById('pw-error');
+      hashStr(val).then(function(hash) {
+        if (hash === PW_HASH) {
+          sessionStorage.setItem(STORAGE_KEY, '1');
+          if (err) err.style.display = 'none';
+          unlock();
+        } else {
+          if (err) err.style.display = 'block';
+          var inp = document.getElementById('pw-input');
+          if (inp) { inp.value = ''; inp.focus(); }
+        }
+      });
+    };
+
+    // Enter key no input
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && document.getElementById('pw-input') === document.activeElement) {
+        window.checkPassword();
+      }
+    });
+
     /* PPI Functions */
     window.toggleGab = function(id, btn) {
       var el = document.getElementById(id);
@@ -2146,10 +2210,18 @@
       // Quiz PPI init
       var quizPpiPanel = document.getElementById('panel-quiz-ppi');
       if (quizPpiPanel) {
+        var _ppiInited = false;
         var observerPpi = new MutationObserver(function() {
-          if (quizPpiPanel.classList.contains('active')) {
+          if (quizPpiPanel.classList.contains('active') && !_ppiInited) {
+            _ppiInited = true;
+            // Temporariamente dar o id correto para o initQuiz encontrar
             var appEl = document.getElementById('quiz-ppi-app');
-            if (appEl) appEl.id = 'quiz-app';
+            var quizEl = document.getElementById('quiz-app');
+            if (appEl) {
+              // Salvar e trocar ids para o initQuiz funcionar
+              appEl.id = 'quiz-app';
+              if (quizEl) quizEl.id = 'quiz-app-area';
+            }
             initQuiz(QUIZ_PPI, 'Quiz PPI — Treinador');
             observerPpi.disconnect();
           }
@@ -2159,14 +2231,18 @@
 
       var quizPanel = document.getElementById('panel-quiz-area');
       if (quizPanel) {
+        var _areaInited = false;
         var observer = new MutationObserver(function() {
-          if (quizPanel.classList.contains('active')) {
+          if (quizPanel.classList.contains('active') && !_areaInited) {
+            _areaInited = true;
+            // Garantir que quiz-app-area volta ao id correto
+            var el = document.getElementById('quiz-app-area');
+            if (el) el.id = 'quiz-app';
             initQuiz(QUIZ_TREINADORES, 'Conteúdo para Treinadores');
             observer.disconnect();
           }
         });
         observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
-        if (quizPanel.classList.contains('active')) initQuiz(QUIZ_TREINADORES, 'Conteúdo para Treinadores');
       }
     });
 
