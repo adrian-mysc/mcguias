@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montagem e Entrega — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .bandeja-layout {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+    }
+    .bandeja-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .bandeja-row:last-child { border-bottom: none; }
+    .bandeja-row.centro { background: #fff8e1; }
+    .bandeja-row.direita { background: #fdecea; }
+    .bandeja-row.esquerda { background: #e8f4fd; }
+    .bandeja-tag {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 3px 9px;
+      border-radius: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .tag-centro   { background: var(--yellow); color: #5c3800; }
+    .tag-direita  { background: var(--red); color: white; }
+    .tag-esquerda { background: var(--blue); color: white; }
+
+    .r2p-box {
+      background: linear-gradient(135deg, #1c1a17 0%, #2e2b26 100%);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      color: white;
+      border: 2px solid var(--yellow);
+    }
+    .r2p-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--yellow);
+      letter-spacing: 1px;
+    }
+    .r2p-time {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+    }
+    .r2p-label { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+  </style>
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="montagem-entrega">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Montagem e Entrega</h1>
+        <p>Guia Rápido Operacional · Experiência do Cliente</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="montagem">🥤 Montagem</button>
+      <button class="tab-btn" data-tab="entrega">🛎️ Entrega</button>
+      <button class="tab-btn" data-tab="r2p">⏱️ R2P</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧼</div>
+          <h2>Padrões de Higiene</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Apresentação Pessoal</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+                <li>Penteados e Make — nada que possa cair</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Higiene das Mãos</h3>
+              <ul>
+                <li class="blue">Lavar mãos e antebraços com sabonete bactericida por 20"</li>
+                <li class="blue">Usar gel sanitizante antes de assumir a função</li>
+                <li class="blue">Higienizar após atividade de limpeza</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="r2p-box">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+          <div class="r2p-title">R2P ⚠️</div>
+        </div>
+        <div class="r2p-time">90 seg</div>
+        <div class="r2p-label">Receipt to Present — do PREPARANDO ao PRONTO</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:10px;line-height:1.5;">
+          O tempo R2P inicia quando o pedido entra em modo <strong style="color:var(--yellow)">PREPARANDO</strong> e finaliza ao sair para <strong style="color:var(--yellow)">PRONTO</strong>. Garanta que todos os produtos sejam servidos nas telas após a conclusão e entrega.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Preparação — Checklist Inicial</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> 1 pano descartável limpo na OAT e na área de entrega — sanitizado e dobrado, longe da visão do cliente</label>
+            <label class="check-item"><input type="checkbox"> Sacos, caixinhas de McLanche Feliz e suprimentos no carrinho da OAT (Mesa de Ordem de Pedido)</label>
+            <label class="check-item"><input type="checkbox"> Bandejas e lâminas estocadas próximas da OAT (no carrinho de bandejas Dual Point)</label>
+            <label class="check-item"><input type="checkbox"> Scanner, Monitor ORB, Mini Monitor ORB e Bump Bar em bom estado e funcionando</label>
+            <label class="check-item"><input type="checkbox"> Suprimentos no balcão: guardanapo, canudo, molhos de nuggets, ketchup sachê e mostarda sachê</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍽️</div>
+          <h2>Layout da Bandeja</h2>
+        </div>
+        <div class="card-body">
+          <div class="bandeja-layout">
+            <div class="bandeja-row centro">
+              <span class="bandeja-tag tag-centro">Centro</span>
+              <span>Entradas — são os heróis da refeição, posicionar no foco da bandeja</span>
+            </div>
+            <div class="bandeja-row direita">
+              <span class="bandeja-tag tag-direita">Direita</span>
+              <span>Acompanhamentos — McFritas inclinadas em relação às entradas para melhor acomodação</span>
+            </div>
+            <div class="bandeja-row esquerda">
+              <span class="bandeja-tag tag-esquerda">Esquerda</span>
+              <span>Bebidas e sobremesas — Café, refrigerante, Shakes e sobremesas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-montagem">
+
+      <div class="section-label">Procedimento de Montagem</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🥤</div>
+          <h2>Montagem do Pedido</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Quando o pedido estiver com status <strong>PAGO</strong> e todos os itens prontos, reúna os produtos, imprima a <strong>Pick List</strong> e posicione-a na bandeja. Em seguida aperte a tecla <strong>Servido</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Pedidos para viagem: pegue o saco correspondente ao número de itens e siga a <strong>sequência de montagem correta</strong> do pedido, separando os <strong>itens frios dos quentes</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Sirva os pedidos diferenciados assim que o Expedidor os separar na mesa OAT, em <strong>embalagens com identificação apropriada</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Sirva somente bebidas com <strong>nível correto de refrigerante, suco, bebidas do Café da Manhã e McShake</strong> (até a tarja de volume).</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Prepare as sobremesas. Caso esteja trabalhando com a pessoa de bebidas, faça somente <strong>Casquinha e McColosso</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">6</div>
+              <div class="step-text">No caso de saladas, já coloque <strong>talher e molhos na bandeja</strong>. Para McLanche Feliz com Danoninho, coloque a colher sweet pazinha dentro da caixinha HMB do lado oposto da McFritas.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍽️</div>
+          <h2>Sequência de Montagem da Bandeja</h2>
+        </div>
+        <div class="card-body">
+          <div class="bandeja-layout">
+            <div class="bandeja-row centro">
+              <span class="bandeja-tag tag-centro">Centro</span>
+              <span>Entradas — heróis da refeição, no foco da bandeja</span>
+            </div>
+            <div class="bandeja-row direita">
+              <span class="bandeja-tag tag-direita">Direita</span>
+              <span>McFritas inclinadas em relação às entradas</span>
+            </div>
+            <div class="bandeja-row esquerda">
+              <span class="bandeja-tag tag-esquerda">Esquerda</span>
+              <span>Bebidas e sobremesas — Café, refrigerante, Shakes</span>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Verifique a <strong>qualidade, quantidade e aparência</strong> dos produtos antes de servi-los.</div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Com sacos, use o <strong>porta-copos para 2 ou mais bebidas</strong>, garantindo que estejam tampadas. Atenção ao layout correto de colocação nos sacos para viagem — dobrar uma vez para garantir a temperatura.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">✅</div>
+          <h2>Finalização da Montagem</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num y">1</div>
+              <div class="step-text">Leve o pedido até a <strong>Área de Entrega</strong>. Verifique o Pick List e certifique-se que o pedido está completo.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">2</div>
+              <div class="step-text">Entregue o pedido ao entregador e <strong>retorne imediatamente</strong> para sua posição na mesa OAT.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">3</div>
+              <div class="step-text">Utilize o <strong>monitor de apresentação</strong> para verificar condimentos ou itens adicionais. No caso do Café da Manhã, pergunte se o cliente aceita açúcar ou adoçante — sirva junto com o mexedor, guardanapos e a tampa da bebida.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-entrega">
+
+      <div class="section-label">Procedimento de Entrega ao Cliente</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛎️</div>
+          <h2>Entrega ao Cliente</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Ao receber o pedido do Apoio (bandeja ou saco), <strong>localize o número do pedido no monitor de Apresentação</strong> e coloque na sequência correta.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Faça a <strong>conferência do pedido</strong> comparando os itens listados no monitor de Apresentação com os itens que estão na bandeja.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Coloque os <strong>itens adicionais</strong> no pedido caso haja (molhos de nuggets, canudo de Shake, açúcares, adoçantes etc).</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Utilizando o <strong>Bump Bar</strong>, apague o pedido do monitor de Apresentação — isso enviará o número do pedido ao Monitor (ORB). Suba a bandeja e posicione-a no <strong>canto oposto aos monitores</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Levante o <strong>Pick List com o número do pedido na altura dos olhos</strong> para localizar o cliente.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Monitore a <strong>"Área de Entrega"</strong> para visualizar se os clientes estão identificando seus pedidos prontos.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">7</div>
+              <div class="step-text">Atenda o cliente de maneira <strong>amável e natural</strong>, sem gritar o número do pedido.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">8</div>
+              <div class="step-text">Enquanto apresenta a bandeja ou saco para viagem, <strong>preste atenção total ao cliente</strong>, agradeça e despeça-se de forma rápida e cortês, solicitando seu retorno.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">9</div>
+              <div class="step-text">Direcione o cliente para a <strong>estação de suprimentos</strong>. Resolva qualquer solicitação posterior do cliente relacionada ao pedido.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">10</div>
+              <div class="step-text">Espere o cliente se virar e <strong>sair da área de entrega</strong> antes de continuar com o próximo pedido — sinalizando que está totalmente disponível para o cliente.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">11</div>
+              <div class="step-text">Escaneie o código de barras do pedido e certifique-se que o pedido foi <strong>apagado dos monitores ORB e Mini-ORB</strong>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-r2p">
+
+      <div class="section-label">Pontos de Chegagem Rápida</div>
+
+      <div class="r2p-box">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div class="r2p-title">R2P ⚠️</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.55);">Receipt to Present</div>
+        </div>
+        <div class="r2p-time">90 seg</div>
+        <div class="r2p-label">Tempo máximo do PREPARANDO ao PRONTO</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:14px;line-height:1.6;">
+          O tempo R2P inicia no momento que o pedido entra em modo <strong style="color:var(--yellow)">PREPARANDO</strong>, e finaliza após sair da tela de <strong style="color:var(--yellow)">PREPARANDO</strong> para <strong style="color:var(--yellow)">PRONTO</strong>.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📌</div>
+          <h2>O que garante o R2P</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill yellow">⏱️ Máx. 90 segundos</div>
+            <div class="pill green">Pedidos servidos nas telas</div>
+            <div class="pill blue">Conclusão e entrega ao cliente</div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Garanta que <strong>todos os produtos e pedidos sejam servidos nas telas</strong> após a conclusão e entrega para os clientes.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔄</div>
+          <h2>Fluxo do Pedido</h2>
+        </div>
+        <div class="card-body">
+          <div class="rota-block">
+            <div class="rota-head c1">
+              📥 PAGO
+              <span class="rota-timer">Status inicial</span>
+            </div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Todos os itens prontos → reunir produtos e imprimir Pick List</div></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c2">
+              ⏳ PREPARANDO
+              <span class="rota-timer">⏱️ R2P inicia aqui</span>
+            </div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Montagem, conferência e adição de itens extras</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Bump Bar → número enviado ao ORB</div></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c4">
+              ✅ PRONTO
+              <span class="rota-timer">⏱️ R2P finaliza aqui</span>
+            </div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Entrega ao cliente com Pick List na altura dos olhos</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Escanear código de barras → apagar dos monitores ORB e Mini-ORB</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — Montagem e Entrega</h2>
+          <div class="badge badge-red">10 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Montagem e Entrega · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_MONTAGEM = [
+      {
+        category: "⏱️ R2P",
+        question: "Qual é o tempo máximo do R2P (Receipt to Present)?",
+        options: ["60 segundos", "75 segundos", "90 segundos", "120 segundos"],
+        answer: "90 segundos",
+        explanation: "O tempo R2P máximo é de 90 segundos, do PREPARANDO ao PRONTO."
+      },
+      {
+        category: "⏱️ R2P",
+        question: "Quando o tempo R2P começa a ser contado?",
+        options: [
+          "Quando o cliente faz o pedido",
+          "Quando o pedido entra em modo PREPARANDO",
+          "Quando o Pick List é impresso",
+          "Quando o pedido é entregue ao cliente"
+        ],
+        answer: "Quando o pedido entra em modo PREPARANDO",
+        explanation: "O tempo R2P inicia quando o pedido entra em modo PREPARANDO e finaliza ao passar para PRONTO."
+      },
+      {
+        category: "🥤 Montagem",
+        question: "Quando deve ser iniciada a montagem do pedido?",
+        options: [
+          "Assim que o pedido aparecer na OAT",
+          "Quando o pedido estiver com status PAGO e todos os itens prontos",
+          "Quando o cliente se aproximar do balcão",
+          "Após imprimir o Pick List"
+        ],
+        answer: "Quando o pedido estiver com status PAGO e todos os itens prontos",
+        explanation: "A montagem começa somente quando o status é PAGO e todos os itens estiverem prontos. Então reúne-se os produtos, imprime o Pick List e aperta-se Servido."
+      },
+      {
+        category: "🍽️ Layout da Bandeja",
+        question: "Onde ficam as bebidas e sobremesas na bandeja?",
+        options: ["Centro", "Lado direito", "Lado esquerdo", "Atrás das entradas"],
+        answer: "Lado esquerdo",
+        explanation: "Lado esquerdo = bebidas e sobremesas (Café, refrigerante, Shakes). Centro = entradas. Lado direito = McFritas."
+      },
+      {
+        category: "🍽️ Layout da Bandeja",
+        question: "Onde ficam as entradas (sanduíches) na bandeja?",
+        options: ["Lado direito", "Lado esquerdo", "Centro", "Qualquer posição"],
+        answer: "Centro",
+        explanation: "As entradas são os heróis da refeição e ficam no centro da bandeja."
+      },
+      {
+        category: "🛎️ Entrega",
+        question: "Como o entregador deve localizar o cliente na área de entrega?",
+        options: [
+          "Gritando o número do pedido",
+          "Levantando o Pick List com o número do pedido na altura dos olhos",
+          "Usando o monitor ORB",
+          "Pedindo ao cliente que se identifique"
+        ],
+        answer: "Levantando o Pick List com o número do pedido na altura dos olhos",
+        explanation: "O entregador deve levantar o Pick List com o número do pedido na altura dos olhos para localizar o cliente — sem gritar."
+      },
+      {
+        category: "🛎️ Entrega",
+        question: "O que fazer com o Bump Bar ao finalizar a conferência do pedido?",
+        options: [
+          "Usá-lo para imprimir o Pick List",
+          "Apagar o pedido do monitor de Apresentação, enviando o número ao ORB",
+          "Confirmar o pagamento do pedido",
+          "Chamar o gerente"
+        ],
+        answer: "Apagar o pedido do monitor de Apresentação, enviando o número ao ORB",
+        explanation: "O Bump Bar apaga o pedido do monitor de Apresentação e envia o número do pedido ao Monitor ORB."
+      },
+      {
+        category: "🛎️ Entrega",
+        question: "Após entregar o pedido, o que deve ser feito antes de ir para o próximo?",
+        options: [
+          "Imprimir o próximo Pick List imediatamente",
+          "Esperar o cliente se virar e sair da área de entrega",
+          "Retornar à mesa OAT imediatamente",
+          "Chamar o próximo cliente pelo número"
+        ],
+        answer: "Esperar o cliente se virar e sair da área de entrega",
+        explanation: "Espere o cliente se virar e sair da área de entrega antes de continuar com o próximo pedido — indicando que está totalmente disponível para o cliente."
+      },
+      {
+        category: "🧹 Organização",
+        question: "Onde deve ficar o pano descartável da OAT e da área de entrega?",
+        options: [
+          "Em cima da OAT para fácil acesso",
+          "Sanitizado e dobrado, longe da visão do cliente",
+          "Na gaveta abaixo da OAT",
+          "Junto com os suprimentos no balcão"
+        ],
+        answer: "Sanitizado e dobrado, longe da visão do cliente",
+        explanation: "O pano descartável deve ser mantido sanitizado e dobrado, longe da visão do cliente."
+      },
+      {
+        category: "🥤 Montagem",
+        question: "Como devem ser organizados os itens no saco para viagem?",
+        options: [
+          "Todos juntos sem ordem específica",
+          "Itens frios dos quentes separados, seguindo a sequência correta",
+          "Bebidas sempre no fundo do saco",
+          "Só os itens quentes no saco"
+        ],
+        answer: "Itens frios dos quentes separados, seguindo a sequência correta",
+        explanation: "Nos pedidos para viagem, siga a sequência de montagem correta e separe os itens frios dos quentes."
+      },
+      { category: "🥤 Montagem · Procedimento", question: "Onde devem ficar os sacos e caixinhas de McLanche Feliz?", options: ["No balcão principal", "No carrinho da OAT (Mesa de Ordem de Pedido)", "Na mesa de condimentação", "No depósito"], answer: "No carrinho da OAT (Mesa de Ordem de Pedido)", explanation: "Sacos, caixinhas de McLanche Feliz e suprimentos devem ficar no carrinho da OAT." },
+      { category: "🥤 Montagem · Procedimento", question: "Onde ficam as bandejas e lâminas estocadas?", options: ["No balcão principal", "Na área de entrega", "No carrinho de bandejas Dual Point próximo à OAT", "Na geladeira"], answer: "No carrinho de bandejas Dual Point próximo à OAT", explanation: "Bandejas e lâminas estocadas ficam no carrinho de bandejas Dual Point próximo à OAT." },
+      { category: "🥤 Montagem · Procedimento", question: "Onde devem ser posicionadas as bebidas no saco para viagem?", options: ["No fundo do saco", "Separadas em saco menor", "Usando porta-copos, sempre tampadas", "Abertas para o cliente ver"], answer: "Usando porta-copos, sempre tampadas", explanation: "Com 2 ou mais bebidas, usar o porta-copos e garantir que estejam tampadas." },
+      { category: "🍽️ Montagem · Bandeja", question: "O que vai no lado direito da bandeja?", options: ["Entradas", "Bebidas e sobremesas", "McFritas e acompanhamentos", "Condimentos"], answer: "McFritas e acompanhamentos", explanation: "Lado direito = McFritas inclinadas em relação às entradas. Centro = entradas. Esquerda = bebidas e sobremesas." },
+      { category: "🍽️ Montagem · Bandeja", question: "Como devem ser posicionadas as McFritas na bandeja?", options: ["Em pé, ao centro", "Inclinadas em relação às entradas, no lado direito", "Deitadas ao lado da bebida", "Em qualquer posição"], answer: "Inclinadas em relação às entradas, no lado direito", explanation: "McFritas ficam inclinadas em relação às entradas para melhor acomodação, no lado direito da bandeja." },
+      { category: "🛎️ Montagem · Entrega", question: "Como conferir o pedido antes de servir?", options: ["Não é necessário conferir", "Comparar itens da bandeja com o monitor de Apresentação", "Apenas verificar o número do pedido", "Perguntar ao cliente o que pediu"], answer: "Comparar itens da bandeja com o monitor de Apresentação", explanation: "Fazer a conferência comparando os itens da bandeja com os listados no monitor de Apresentação." },
+      { category: "🛎️ Montagem · Entrega", question: "Onde deve ser posicionada a bandeja após usar o Bump Bar?", options: ["Na mesa de condimentação", "No canto oposto aos monitores", "Em cima do ORB", "Na área de espera do cliente"], answer: "No canto oposto aos monitores", explanation: "Após usar o Bump Bar, suba a bandeja e posicione-a no canto oposto aos monitores." },
+      { category: "🛎️ Montagem · Entrega", question: "Como chamar o cliente na área de entrega?", options: ["Gritando o número do pedido em voz alta", "Levantando o Pick List na altura dos olhos sem gritar", "Usando o sistema de som do restaurante", "Esperando o cliente vir até o balcão"], answer: "Levantando o Pick List na altura dos olhos sem gritar", explanation: "Levantar o Pick List com o número do pedido na altura dos olhos para localizar o cliente — sem gritar." },
+      { category: "⏱️ Montagem · R2P", question: "O que o R2P mede exatamente?", options: ["Tempo do pedido ao cliente", "Tempo do PREPARANDO ao PRONTO", "Tempo de montagem da bandeja", "Tempo de espera na fila"], answer: "Tempo do PREPARANDO ao PRONTO", explanation: "R2P = Receipt to Present. Mede o tempo do momento que o pedido entra em PREPARANDO até sair para PRONTO." },
+      { category: "🛎️ Montagem · Entrega", question: "O que fazer com itens adicionais como molhos de nuggets e canudos?", options: ["Só incluir se o cliente pedir", "Colocar no pedido ao conferir com o monitor de Apresentação", "Deixar na estação de suprimentos", "Perguntar ao expedidor"], answer: "Colocar no pedido ao conferir com o monitor de Apresentação", explanation: "Colocar itens adicionais (molhos, canudos, açúcares, adoçantes) no pedido ao conferir com o monitor de Apresentação." },
+      { category: "☕ Montagem · Café da Manhã", question: "O que perguntar ao cliente no Café da Manhã sobre a bebida quente?", options: ["Se quer leite", "Se aceita açúcar ou adoçante, servindo com mexedor, guardanapo e tampa", "Se quer cappuccino", "Se quer a bebida quentinha"], answer: "Se aceita açúcar ou adoçante, servindo com mexedor, guardanapo e tampa", explanation: "No Café da Manhã, verificar condimentos no monitor de Apresentação e perguntar se o cliente aceita açúcar ou adoçante. Servir com mexedor, guardanapos e tampa da bebida." },
+      { category: "🥤 Montagem · Procedimento", question: "Qual é o nível correto de preenchimento das bebidas?", options: ["Até a borda do copo", "Até a tarja de volume indicada", "3/4 do copo", "Até onde o gelo permitir"], answer: "Até a tarja de volume indicada", explanation: "Servir somente bebidas com nível correto de refrigerante, suco, bebidas do Café da Manhã e McShake — até a tarja de volume." },
+      { category: "🥤 Montagem · Sobremesas", question: "Quem deve preparar as sobremesas durante a montagem?", options: ["Sempre o expedidor", "Quem não estiver com bebidas, ou somente Casquinha e McColosso se houver pessoa de bebidas", "A pessoa de bebidas sempre", "O gerente"], answer: "Quem não estiver com bebidas, ou somente Casquinha e McColosso se houver pessoa de bebidas", explanation: "Prepare as sobremesas. Se estiver trabalhando com a pessoa de bebidas, faça somente Casquinha e McColosso." },
+      { category: "🛎️ Montagem · Entrega", question: "Para onde direcionar o cliente após receber o pedido?", options: ["Para a fila novamente", "Para a estação de suprimentos para resolver qualquer solicitação posterior", "Para o gerente", "Para a saída"], answer: "Para a estação de suprimentos para resolver qualquer solicitação posterior", explanation: "Direcionar o cliente para a estação de suprimentos e resolver qualquer solicitação posterior relacionada ao pedido." },
+      { category: "🥤 Montagem · Saladas", question: "O que deve acompanhar uma salada na bandeja?", options: ["Apenas o molho", "Talher, molhos e porção específica", "Só guardanapos", "Molho e copo de água"], answer: "Talher, molhos e porção específica", explanation: "No caso de saladas, já colocar talher e molhos na bandeja." },
+      { category: "📋 Montagem · Conferência", question: "O que deve ser verificado na dupla conferência do pedido?", options: ["Apenas os lanches", "Itens, tamanhos, personalizações, bebidas e acompanhamentos", "Apenas bebidas e sobremesas", "Apenas itens fora do padrão"], answer: "Itens, tamanhos, personalizações, bebidas e acompanhamentos", explanation: "A dupla conferência verifica: itens corretos, tamanhos, personalizações, bebidas e acompanhamentos." },
+      { category: "📋 Montagem · Bandeja", question: "Como deve ser montada a bandeja de um combo padrão?", options: ["Lanche na frente, bebida atrás, fritas no lado", "Qualquer organização", "Bebida no centro, lanche e fritas em lados opostos", "Fritas primeiro, depois o restante"], answer: "Lanche na frente, bebida atrás, fritas no lado", explanation: "Bandeja padrão: lanche na frente do cliente, bebida atrás, fritas ao lado." },
+      { category: "📋 Montagem · Lâmina", question: "Como organizar as lâminas na área de montagem?", options: ["Empilhadas sem ordem", "Por segmento e em ordem de chegada (PEPS)", "Por tamanho de sanduíche", "Qualquer organização"], answer: "Por segmento e em ordem de chegada (PEPS)", explanation: "Lâminas organizadas por segmento e em PEPS (primeiro a entrar, primeiro a sair)." },
+      { category: "📋 Montagem · Salada", question: "O que deve acompanhar obrigatoriamente uma salada na bandeja?", options: ["Apenas o garfo", "Garfo, faca, guardanapo e molho para salada", "Apenas guardanapo", "Garfo e guardanapo"], answer: "Garfo, faca, guardanapo e molho para salada", explanation: "Salada: acompanhar com garfo, faca, guardanapo e molho para salada (à parte)." },
+      { category: "⏱️ Montagem · Tempos", question: "Qual o tempo meta de entrega ao cliente após o pedido ser totalizado?", options: ["60 segundos", "90 segundos", "2 minutos", "3 minutos"], answer: "90 segundos", explanation: "O tempo meta de entrega ao cliente após totalização do pedido é de 90 segundos." },
+      { category: "📋 Montagem · Embrulho", question: "Qual a função do Bump Bar no processo de entrega?", options: ["Registrar o pedido", "Confirmar que o pedido foi entregue e liberar a tela do KVS", "Controlar o tempo de fritura", "Comunicar com a cozinha"], answer: "Confirmar que o pedido foi entregue e liberar a tela do KVS", explanation: "O Bump Bar confirma a entrega do pedido e limpa o item do monitor KVS." },
+      { category: "📋 Montagem · Postura", question: "O que fazer se o cliente reclamar de um pedido errado?", options: ["Ignorar e chamar o próximo", "Pedir desculpas, corrigir imediatamente e informar o gerente", "Dizer que o cliente errou", "Cobrar a diferença"], answer: "Pedir desculpas, corrigir imediatamente e informar o gerente", explanation: "Pedido errado: pedir desculpas imediatamente, corrigir o pedido e comunicar o gerente." },
+      { category: "📋 Montagem · Saco", question: "Em que situação o pedido deve ser entregue em saco em vez de bandeja?", options: ["Sempre no saco", "Apenas para pedidos de 1 item", "Para viagem, delivery ou a pedido do cliente", "Apenas para combos"], answer: "Para viagem, delivery ou a pedido do cliente", explanation: "Usar saco para pedidos para viagem, delivery ou quando o cliente solicitar." },
+      { category: "📋 Montagem · Bebidas", question: "Onde devem ser posicionadas as bebidas na bandeja em relação ao cliente?", options: ["Na frente do cliente", "No lado esquerdo", "Atrás do lanche, no canto", "Em qualquer posição"], answer: "Atrás do lanche, no canto", explanation: "Bebidas ficam atrás do lanche, facilitando o acesso sem derrubar." },
+      { category: "⏱️ Montagem · KVS", question: "O que fazer quando o KVS mostra um item em atraso (vermelho)?", options: ["Ignorar e continuar na ordem", "Priorizar o item e comunicar a linha", "Cancelar o pedido", "Chamar o cliente para aguardar"], answer: "Priorizar o item e comunicar a linha", explanation: "Item em vermelho no KVS = prioridade máxima. Comunicar a linha e preparar imediatamente." },
+      { category: "📋 Montagem · Condimentos", question: "Quando oferecer molhos extras ao cliente?", options: ["Nunca, apenas se pedir", "Sempre na entrega de qualquer pedido", "Em pedidos com fritas ou nuggets", "Apenas em combos grandes"], answer: "Em pedidos com fritas ou nuggets", explanation: "Oferecer molhos extras ao entregar pedidos com McFritas ou McNuggets." },
+      { category: "📋 Montagem · McLanche", question: "O brinquedo do McLanche Feliz vai na bandeja ou no saco?", options: ["Na bandeja ao lado da fritas", "No saco junto com o lanche", "Em sacola separada", "Entregue separado das mãos"], answer: "No saco junto com o lanche", explanation: "O brinquedo do McLanche Feliz é embalado no saco junto com o pedido." },
+      { category: "📋 Montagem · Higiene", question: "Quando deve ser trocada a lâmina de montagem?", options: ["Apenas no final do turno", "Após cada uso ou quando sujar", "Após 1 hora de uso", "Apenas quando o gerente solicitar"], answer: "Após cada uso ou quando sujar", explanation: "A lâmina deve ser substituída após cada uso para garantir higiene." },
+      { category: "📋 Montagem · Canudo", question: "Qual o tamanho de canudo correto para cada bebida?", options: ["Um tamanho único para todos", "Canudo pequeno para bebidas P e M, largo para shakes", "Apenas canudos largos", "O cliente escolhe"], answer: "Canudo pequeno para bebidas P e M, largo para shakes", explanation: "Canudo regular para refrigerantes P e M; canudo largo para McShakes e bebidas espessas." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_MONTAGEM);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_MONTAGEM);
+    });
+  </script>
+</body>
+</html>

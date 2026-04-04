@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOPE 2 — Apoio e Preparação — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .panos-table { width:100%; border-collapse:collapse; font-size:12px; }
+    .panos-table th { background:var(--red); color:white; padding:8px 10px; font-family:var(--font-display); font-size:11px; letter-spacing:.5px; text-align:left; }
+    .panos-table td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+    .panos-table tr:nth-child(even) td { background:var(--bg); }
+    .panos-table td strong { color:var(--red); }
+
+    .troca-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .troca-item { background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:10px 12px; }
+    .troca-area { font-family:var(--font-display); font-size:11px; font-weight:800; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+    .troca-tempo { font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--red); margin-top:2px; }
+
+    .validade-box {
+      background: linear-gradient(135deg,#1c1a17 0%,#2e2b26 100%);
+      border-radius:var(--radius-lg); padding:16px 18px; color:white;
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .validade-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.1); }
+    .validade-row:last-child { border-bottom:none; }
+    .validade-produto { font-size:13px; color:rgba(255,255,255,.8); }
+    .validade-tempo { font-family:var(--font-display); font-weight:800; color:var(--yellow); font-size:14px; }
+
+    .esfregao-grid { display:flex; flex-direction:column; gap:8px; }
+    .esfregao-item { display:flex; align-items:center; gap:12px; padding:10px 14px; border-radius:var(--radius-md); border:1.5px solid var(--border); }
+    .esfregao-cor { width:14px; height:14px; border-radius:50%; flex-shrink:0; }
+    .esfregao-cor.verde    { background:#2e7d32; }
+    .esfregao-cor.azul     { background:#1565c0; }
+    .esfregao-cor.vermelho { background:#c62828; }
+    .esfregao-area { font-size:12.5px; flex:1; }
+    .esfregao-la { font-size:11px; font-weight:700; color:var(--muted); }
+
+    .lixeira-box { border-radius:var(--radius-md); overflow:hidden; border:1.5px solid var(--border); margin-bottom:4px; }
+    .lixeira-head { padding:10px 14px; font-family:var(--font-display); font-size:13px; font-weight:800; }
+    .lixeira-head.verde { background:#e8f5e9; color:#1a5c2a; }
+    .lixeira-head.preto { background:#1c1a17; color:white; }
+    .lixeira-head.laranja { background:#fff3e0; color:#6b3500; }
+    .lixeira-items { background:white; padding:10px 14px; display:flex; flex-direction:column; gap:5px; font-size:12px; }
+  </style>
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="lope2">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>LOPE 2 — Apoio</h1>
+        <p>Guia Rápido Operacional · Preparação</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="panos">🧺 Panos</button>
+      <button class="tab-btn" data-tab="bacon">🥓 Bacon</button>
+      <button class="tab-btn" data-tab="cebola">🧅 Cebola Cheddar</button>
+      <button class="tab-btn" data-tab="insumos">🧃 Suco / Gelo / Cobertura</button>
+      <button class="tab-btn" data-tab="lixeiras">🗑️ Lixeiras</button>
+      <button class="tab-btn" data-tab="outros">🧹 Outros</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-panos">
+
+      <div class="section-label">Sanitização e Distribuição de Panos</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧼</div>
+          <h2>Sanitização dos Panos Descartáveis</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Encha um <strong>balde branco com 5 litros de água</strong> com a solução sanitizante.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Separe e <strong>mergulhe 5 panos por vez</strong> na solução sanitizante. Não há necessidade de deixar os panos na solução — apenas mergulhe e retire diretamente para o uso.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Retire os panos <strong>"apertando-os"</strong> para retirar o excesso de solução. Coloque-os sobre uma bandeja de inox (limpa e sanitizada) para posterior distribuição.</div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div><strong>Não mantenha os panos acondicionados no balde branco.</strong> Para trocas na cozinha, utilize o timer de troca posicionado próximo à chapa.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⏱️</div>
+          <h2>Frequência de Troca de Panos</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Produção</div>
+          <div class="troca-grid">
+            <div class="troca-item">
+              <div class="troca-area">Chapas — utensílios e áreas gordurosas</div>
+              <div class="troca-tempo">1 hora</div>
+            </div>
+            <div class="troca-item">
+              <div class="troca-area">Chapas — área de inox e não gordurosas</div>
+              <div class="troca-tempo">2 horas</div>
+            </div>
+            <div class="troca-item" style="grid-column:1/-1;">
+              <div class="troca-area">Demais estações da cozinha</div>
+              <div class="troca-tempo">2 horas</div>
+            </div>
+          </div>
+          <div class="section-label" style="margin-bottom:8px;margin-top:12px;">Experiência do Cliente</div>
+          <div class="troca-grid">
+            <div class="troca-item"><div class="troca-area">Balcão</div><div class="troca-tempo">2 horas</div></div>
+            <div class="troca-item"><div class="troca-area">Salão</div><div class="troca-tempo">2 horas</div></div>
+            <div class="troca-item"><div class="troca-area">Dessert Center</div><div class="troca-tempo">2 horas</div></div>
+            <div class="troca-item"><div class="troca-area">Drive-Thru</div><div class="troca-tempo">2 horas</div></div>
+            <div class="troca-item" style="grid-column:1/-1;"><div class="troca-area">McDelivery</div><div class="troca-tempo">2 horas</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📋</div>
+          <h2>Distribuição de Panos por Estação</h2>
+        </div>
+        <div class="card-body">
+          <table class="panos-table">
+            <tr>
+              <th>Estação</th>
+              <th>Qtd.</th>
+              <th>Distribuição</th>
+            </tr>
+            <tr><td>Chapas 10:1, 4:1 e 3:1</td><td><strong>4</strong> por chapa</td><td>2 utensílios · 1 área gordurosa · 1 área não gordurosa</td></tr>
+            <tr><td>Menu Regular — Linha</td><td><strong>6</strong> por lado</td><td>2 Iniciador · 2 Condimentação · 2 Finalizador</td></tr>
+            <tr><td>Produtos Fritos</td><td><strong>3</strong></td><td>1 frituras de carnes brancas · 1 mesa de ambientação de tortas · 1 garagem de gavetas</td></tr>
+            <tr><td>Área de Preparação / Encestamento de Batata</td><td><strong>2</strong></td><td>1 área de preparação · 1 encestamento de batatas</td></tr>
+            <tr><td>McFritas</td><td><strong>2</strong></td><td>1 área gordurosa · 1 área de inox</td></tr>
+            <tr><td>OAT</td><td><strong>1</strong></td><td>1 próximo ao expedidor</td></tr>
+            <tr><td>Balcão Influencers Vendedores</td><td><strong>1</strong> por caixa</td><td>1 no caixa registrador, longe da visão do cliente</td></tr>
+            <tr><td>Bebidas e Máq. de Sorvete</td><td><strong>2</strong></td><td>1 máquina de bebidas/sucos · 1 máquina de sorvete</td></tr>
+            <tr><td>Salão e Banheiros</td><td><strong>4 + 3</strong></td><td>2 mesas · 2 bancos | 2 banheiros · 1 lixeira</td></tr>
+            <tr><td>Drive-Thru Influencers Vendedores</td><td><strong>4</strong></td><td>1 cabine 1 · 1 cabine 2 · 1 bebidas drive · 1 entrega drive</td></tr>
+            <tr><td>McCafé</td><td><strong>8</strong></td><td>2 salão/entrega · 2 bebidas quentes e frias · 1 Influencer · 1 fornos · 2 extração</td></tr>
+            <tr><td>Dessert Center</td><td><strong>3</strong></td><td>1 Influencer · 1 extração · 1 entrega</td></tr>
+            <tr><td>Delivery</td><td><strong>3</strong></td><td>1 caixa · 2 máquina seladora</td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-bacon">
+
+      <div class="section-label">Preparação e Operacional do Bacon</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🥓</div>
+          <h2>Preparação do Bacon</h2>
+          <div class="badge badge-yellow">Validade: 5 dias refrigerado · 6h pronto</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Ao retirar o pacote da câmara de resfriados, <strong>anote o tempo de vida secundário de 5 dias</strong> (etiqueta de datas). Abra o pacote com uma <strong>tesoura sem pontas</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Verifique a quantidade de bacon pela <strong>tabela de chart para 6 horas</strong>. Separe as fatias: <strong>8 unidades para chapa de 2 platens</strong> e <strong>6 unidades para chapa de 3 platens</strong>. Coloque em lâmina de produção sobre bandeja de inox.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Certifique que a chapa está com cocção de <strong>40 segundos e GAP 090</strong>. Posicione a bandeja de inox com os bacons preparados e uma bandeja com lâmina para remoção dos bacons prontos.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Ative as fatias colocando a lâmina de uma única vez. Faça leves batidas com a espátula e o apoiador para soltar os bacons crus. <strong>Abaixe o platen</strong> ativando o timer para 40 segundos e <strong>sanitize as mãos imediatamente</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">5</div>
+              <div class="step-text">Ao soar o sinal sonoro, com espátula e apoiador, retire as fatias de bacons fritos e coloque-as sobre a <strong>bandeja com grade do rack</strong> para escorrer o excedente de gordura.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">6</div>
+              <div class="step-text">Quando finalizar todas as ativadas (ou ao completar a bandeja com grade), leve ao rack e coloque o <strong>tempo de vencimento de 6 horas</strong> na placa de validade secundária.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">7</div>
+              <div class="step-text">Deixe todos os bacons <strong>partidos ao meio no próprio rack</strong> — facilitando a colocação partida na mesa de condimentação durante o pico.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">8</div>
+              <div class="step-text">Ao final, lave espátulas, raspador, rodinho e chapas. <strong>Só utilize o platen novamente para carne bovina após lavar todos os utensílios.</strong> Descarte o pano usado.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📌</div>
+          <h2>Pontos de Atenção — Mesa de Condimentação</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Todos os bacons já devem estar <strong>partidos ao meio</strong> quando entram na cuba da mesa de condimentação.</div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">⏱️</div>
+            <div>O bacon tem prazo de <strong>6 horas</strong> após a preparação — por isso <strong>não segue o tempo de 2 horas</strong> da mesa de condimentação. Atenção ao manuseio: as fatias devem estar do <strong>mesmo tamanho</strong> para garantir a satisfação do cliente.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-cebola">
+
+      <div class="section-label">Cebola Cheddar e Molho Cheddar</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧅</div>
+          <h2>Cebola Cheddar</h2>
+          <div class="badge badge-yellow">48h refrigerada · 2h mesa</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Posicione o pacote de cebola marinada sobre a cuba central da área de limpeza e com tesoura limpa e sanitizada, <strong>corte a extremidade lateral do pacote</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Drene o líquido na cuba da área de preparação. <strong>Deixe uma quantidade de líquido</strong> para evitar que a cebola fique desidratada.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Com o auxílio do <strong>pegador de cebola cheddar (pegador marrom)</strong>, estoque a quantidade necessária na mesa de condimentação para uso nas próximas 2 horas.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Feche a embalagem com o <strong>clipe de vedação</strong>, anote na etiqueta padrão o tempo de validade de <strong>48 horas</strong> após abertura e coloque sob refrigeração.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">5</div>
+              <div class="step-text">Na última estocagem de cebola cheddar, faça <strong>sangria com a espátula tipo "pão duro"</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">6</div>
+              <div class="step-text">Na reposição, utilize <strong>outra cuba plástica limpa e sanitizada</strong>. <strong>Nunca misture a nova cebola com a que já está sendo utilizada.</strong></div>
+            </div>
+          </div>
+          <div class="validade-box">
+            <div class="validade-row"><div class="validade-produto">Cebola Cheddar — após aberta</div><div class="validade-tempo">48h (refrigerada)</div></div>
+            <div class="validade-row"><div class="validade-produto">Cebola Cheddar — mesa de condimentação</div><div class="validade-tempo">2h (controle da placa)</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧀</div>
+          <h2>Molho Cheddar — Ambientação</h2>
+          <div class="badge badge-red">8h validade (incluindo 2h ambientação)</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Retire da Câmara de Resfriados a quantidade necessária de molho cheddar, de acordo com a <strong>tabela de níveis</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Cole a <strong>etiqueta padrão de tempo de validade de 8 horas</strong>, incluindo as 2 horas de ambientação.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Mantenha os tubos dos molhos cheddar em <strong>ambientação embaixo da mesa de condimentação</strong>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-insumos">
+
+      <div class="section-label">Suco, Gelo e Cobertura</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧃</div>
+          <h2>Estocagem do Suco</h2>
+          <div class="badge badge-blue">Validade: 7 dias</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Sanitize a mesa da estação de preparação com pano limpo e sanitizado e borrifador. Coloque um pano limpo e sanitizado sobre a mesa para apoiar os reservatórios.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Leve o reservatório até a estação de preparação e coloque-o sobre o pano. Sanitize <strong>cada lado da bag</strong> com pano limpo e sanitizado, <strong>deixando-a deitada sobre a mesa</strong> para sanitização correta.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Agite a bag</strong>. Retire a tampa do bico dosador e despeje o produto no reservatório até completar o volume.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Na bag: anote o tempo de vida secundário de <strong>7 dias</strong> (etiqueta de data) e retorne para a câmara de resfriados dentro de sua <strong>caixa de origem</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">5</div>
+              <div class="step-text">Coloque o reservatório na máquina empurrando até o final. Anote o tempo de vida de <strong>7 dias no relógio de tempo secundário</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">6</div>
+              <div class="step-text">Limpe a borda e a gaxeta da máquina com pano limpo e sanitizado. <strong>Aperte a tecla FLOW para testar o produto.</strong></div>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Os restaurantes podem utilizar <strong>4 válvulas para cada sabor de suco</strong> (uva e laranja). Atenção: se os 4 reservatórios estiverem estocados, as válvulas serão auditadas pela Coca-Cola mesmo sem utilização — pode perder ponto na calibragem e qualidade.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧊</div>
+          <h2>Estocagem do Gelo</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Coloque todo o <strong>EPI</strong> e retire o balde de gelo da Câmara de Resfriados.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Retire o EPI, <strong>lave e sanitize o balde</strong> antes do uso.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Sanitize o <strong>suporte do balde e porta da máquina</strong> com pano limpo e sanitizado.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Coloque o balde no suporte, estoque o gelo. <strong>Posicione a pá de gelo no suporte e feche com o pano.</strong></div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div><strong>Gelo é alimento</strong> — cumprir rigorosamente os processos de limpeza e sanitização.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍫</div>
+          <h2>Estocagem da Cobertura</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Posicione o pouch de cobertura sobre a mesa de preparação. Com tesoura limpa e sanitizada, <strong>corte a extremidade lateral do pouch</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Estoque a cobertura de <strong>uma única vez</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Com auxílio de uma espátula (pão duro), faça a <strong>sangria do pouch</strong> sobre a mesa.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-lixeiras">
+
+      <div class="section-label">Troca e Classificação de Lixeiras</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🗑️</div>
+          <h2>Classificação dos Resíduos</h2>
+        </div>
+        <div class="card-body">
+          <div class="lixeira-box">
+            <div class="lixeira-head verde">♻️ RECICLÁVEL — Saco VERDE</div>
+            <div class="lixeira-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Embalagens plásticas (copos, tampas, talheres, misturador de café)</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Embalagens de papel (sanduíches, fritas, copo McCafé)</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Encarte – porta copos · lâmina das bandejas · material de marketing vencido</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Embalagens plásticas (sacos de batata, pães, bag de refrigerantes)</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Tubos de molhos · embalagens de produtos de limpeza</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Embalagens de papel e caixas de papelão</div></div>
+            </div>
+          </div>
+
+          <div class="lixeira-box">
+            <div class="lixeira-head preto">🗑️ REJEITO — Saco PRETO</div>
+            <div class="lixeira-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Sachês de condimentos</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Embalagens contendo sobras de alimentos</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Mop (esfregão) usado</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Todos os resíduos de sanitários (incluindo luvas)</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Lâminas das bandejas das carnes</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Rejeitos da mesa de condimentação · panos de limpeza</div></div>
+            </div>
+          </div>
+
+          <div class="lixeira-box">
+            <div class="lixeira-head laranja">⚡ PERIGOSOS / ELETRÔNICOS</div>
+            <div class="lixeira-items">
+              <div class="rota-item"><div class="rota-dot"></div><div><strong>Lâmpadas fluorescentes</strong> — armazenar na Sala de Resíduos em recipiente adequado até a coleta. Lâmpadas LED = resíduo eletrônico</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div><strong>Pilhas e baterias</strong> — segregar dos demais resíduos</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div><strong>Materiais de manutenção</strong> — embalagens de óleo, graxa, tintas, produtos químicos, panos contaminados</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div><strong>Equipamentos eletrônicos</strong> quebrados ou danificados</div></div>
+            </div>
+          </div>
+
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Utilize sempre o <strong>EPI completo</strong> (jaleco e luvas de látex) para limpeza das lixeiras.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-outros">
+
+      <div class="section-label">Esfregão, Bandejas e MyBreak</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧹</div>
+          <h2>Esfregão — Cores por Área</h2>
+        </div>
+        <div class="card-body">
+          <div class="esfregao-grid">
+            <div class="esfregao-item">
+              <div class="esfregao-cor verde"></div>
+              <div>
+                <div class="esfregao-area"><strong>Banheiros e sala de lixo</strong></div>
+                <div class="esfregao-la">Ponteira e garra VERDE · Lã VERDE</div>
+              </div>
+            </div>
+            <div class="esfregao-item">
+              <div class="esfregao-cor azul"></div>
+              <div>
+                <div class="esfregao-area"><strong>Balcão e salão</strong></div>
+                <div class="esfregao-la">Ponteira e garra AZUL · Lã BRANCA</div>
+              </div>
+            </div>
+            <div class="esfregao-item">
+              <div class="esfregao-cor vermelho"></div>
+              <div>
+                <div class="esfregao-area"><strong>Área de cozinha</strong></div>
+                <div class="esfregao-la">Ponteira e garra VERMELHA · Lã BRANCA</div>
+              </div>
+            </div>
+          </div>
+          <div class="section-label" style="margin-top:12px;margin-bottom:8px;">Nanos (lã cortada)</div>
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Nano 1 — 8cm</h3>
+              <ul><li>Para varrer Cozinha e Balcão</li><li>8cm de cada lado da costura central</li></ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Nano 2 — 16cm</h3>
+              <ul><li class="blue">McCafé e Dessert Centers remotos</li><li class="blue">Substitui o esfregão nas áreas remotas</li></ul>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Para corte da lã dos Nanos, utilize sempre uma <strong>lã usada</strong>. As lãs novas são utilizadas apenas para os esfregões.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍽️</div>
+          <h2>Limpeza das Bandejas</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Recolha as bandejas e leve <strong>imediatamente para o Backroom</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Lave em <strong>água corrente</strong> tirando os resíduos. Em seguida coloque na <strong>cuba com sabão</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Enxague na <strong>cuba central com água corrente</strong> e mergulhe na <strong>cuba com sanitizante</strong>. Deixe secar ao ar livre.</div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Todas as bandejas que retornam ao balcão devem ter passado pelo processo de <strong>lavagem e sanitização</strong>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍚</div>
+          <h2>MyBreak — Preparação</h2>
+          <div class="badge badge-green">Temp. a cada 2h</div>
+        </div>
+        <div class="card-body">
+          <div class="rota-block">
+            <div class="rota-head c1">🍚 Arroz</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>150g de cebola na panela + 5 sachês de azeite → mexa até borbulhar</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1,8 litros de água filtrada + 12 sachês (12g) → mexa até misturar</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 quilo de arroz → tampe a panela</div></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c2">🫘 Feijão</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Verificar se há água no reservatório até a marca <strong>1,5L</strong></div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Abrir embalagem no local indicado → colocar na cuba do marinador → tampar → ligar</div></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c2">🥘 Feijoada</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Verificar água no reservatório até <strong>1,5L</strong></div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Abrir embalagem → colocar na cuba do marinador</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Colocar <strong>400ml de água dentro do pacote</strong> da feijoada, mexa para tirar todo conteúdo e adicione na cuba</div></div>
+            </div>
+          </div>
+          <div class="validade-box" style="margin-top:4px;">
+            <div class="validade-row"><div class="validade-produto">Arroz e feijão — temperatura mínima</div><div class="validade-tempo">60°C (140°F)</div></div>
+            <div class="validade-row"><div class="validade-produto">Feijoada — temperatura mínima</div><div class="validade-tempo">70°C</div></div>
+            <div class="validade-row"><div class="validade-produto">Checagem de temperatura</div><div class="validade-tempo">A cada 2h</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — LOPE 2: Apoio e Preparação</h2>
+          <div class="badge badge-red">12 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · LOPE 2 — Apoio e Preparação · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_LOPE2 = [
+      {
+        category: "🧺 Panos · Sanitização",
+        question: "Quantos litros de água devem ser usados no balde de sanitização dos panos?",
+        options: ["2 litros", "3 litros", "5 litros", "10 litros"],
+        answer: "5 litros",
+        explanation: "Encha um balde branco com 5 litros de água com a solução sanitizante."
+      },
+      {
+        category: "🧺 Panos · Sanitização",
+        question: "Quantos panos devem ser mergulhados por vez na solução sanitizante?",
+        options: ["2 panos", "3 panos", "5 panos", "10 panos"],
+        answer: "5 panos",
+        explanation: "Separe e mergulhe 5 panos por vez na solução sanitizante."
+      },
+      {
+        category: "🧺 Panos · Frequência",
+        question: "Qual é a frequência de troca dos panos nas chapas (utensílios e áreas gordurosas)?",
+        options: ["30 minutos", "1 hora", "2 horas", "4 horas"],
+        answer: "1 hora",
+        explanation: "Chapas (utensílios e áreas gordurosas): 1 hora. Chapas (inox e não gordurosas) e demais estações: 2 horas."
+      },
+      {
+        category: "🥓 Bacon · Preparação",
+        question: "Quantas fatias de bacon são usadas na chapa de 2 platens?",
+        options: ["4 fatias", "6 fatias", "8 fatias", "10 fatias"],
+        answer: "8 fatias",
+        explanation: "8 unidades para chapa de 2 platens e 6 unidades para chapa de 3 platens."
+      },
+      {
+        category: "🥓 Bacon · Validade",
+        question: "Qual é o tempo de validade secundário do bacon ao ser retirado da câmara de resfriados?",
+        options: ["2 dias", "3 dias", "5 dias", "7 dias"],
+        answer: "5 dias",
+        explanation: "Ao retirar o pacote da câmara de resfriados, anote o tempo de vida secundário de 5 dias (etiqueta de datas)."
+      },
+      {
+        category: "🥓 Bacon · Mesa",
+        question: "O bacon segue o tempo de 2 horas da mesa de condimentação?",
+        options: [
+          "Sim, segue as mesmas regras",
+          "Não, o bacon tem 6 horas após a preparação",
+          "Sim, mas com marcação diferente",
+          "Não, o bacon tem 4 horas"
+        ],
+        answer: "Não, o bacon tem 6 horas após a preparação",
+        explanation: "O bacon tem prazo de 6 horas a contar após sua preparação — por isso NÃO segue o tempo de 2 horas da mesa de condimentação."
+      },
+      {
+        category: "🧅 Cebola Cheddar",
+        question: "Qual é a validade da cebola cheddar após abrir a embalagem?",
+        options: ["24 horas refrigerada", "48 horas refrigerada", "72 horas refrigerada", "5 dias refrigerada"],
+        answer: "48 horas refrigerada",
+        explanation: "Tempo de validade da cebola cheddar após aberta: 48 horas em temperatura resfriada."
+      },
+      {
+        category: "🧅 Cebola Cheddar",
+        question: "O que NÃO deve ser feito ao repor a cebola cheddar?",
+        options: [
+          "Usar outra cuba limpa e sanitizada",
+          "Misturar a nova cebola com a que já está sendo utilizada",
+          "Fazer sangria na última estocagem",
+          "Usar o pegador marrom"
+        ],
+        answer: "Misturar a nova cebola com a que já está sendo utilizada",
+        explanation: "Utilize outra cuba plástica limpa e sanitizada para a reposição — NUNCA misture a nova cebola com a que já está sendo utilizada."
+      },
+      {
+        category: "🧃 Suco",
+        question: "Qual é o tempo de vida secundário do reservatório de suco após estocado na máquina?",
+        options: ["3 dias", "5 dias", "7 dias", "10 dias"],
+        answer: "7 dias",
+        explanation: "Coloque o reservatório na máquina e anote o tempo de vida de 7 dias no relógio de tempo secundário."
+      },
+      {
+        category: "🗑️ Lixeiras",
+        question: "Onde devem ser descartadas as embalagens contendo sobras de alimentos?",
+        options: ["Saco verde (reciclável)", "Saco preto (rejeito)", "Descarte perigoso", "Caixa eletrônica"],
+        answer: "Saco preto (rejeito)",
+        explanation: "Embalagens contendo sobras de alimentos são classificadas como Rejeito — saco PRETO."
+      },
+      {
+        category: "🧹 Esfregão",
+        question: "Qual é a combinação correta para a área de balcão e salão?",
+        options: [
+          "Ponteira verde + lã verde",
+          "Ponteira vermelha + lã branca",
+          "Ponteira azul + lã branca",
+          "Ponteira verde + lã branca"
+        ],
+        answer: "Ponteira azul + lã branca",
+        explanation: "Para área de balcão e salão: Ponteira e garra AZUL + lã BRANCA. Cozinha = vermelha. Banheiros = verde + lã verde."
+      },
+      {
+        category: "🍚 MyBreak",
+        question: "Qual é a temperatura mínima do arroz e feijão para Segurança do Alimento?",
+        options: ["45°C", "55°C", "60°C", "70°C"],
+        answer: "60°C",
+        explanation: "A temperatura do arroz e feijão é 60°C (140°F). Para a feijoada é 70°C. Checar a cada 2 horas."
+      }
+,
+      { category: "🧺 LOPE2 · Panos", question: "Onde devem ficar os panos após a sanitização?", options: ["No balde branco", "Sobre uma bandeja de inox limpa e sanitizada", "No bolso do uniforme", "Pendurados na área de produção"], answer: "Sobre uma bandeja de inox limpa e sanitizada", explanation: "Após apertar os panos para retirar o excesso de solução, colocá-los sobre uma bandeja de inox limpa e sanitizada." },
+      { category: "🧺 LOPE2 · Panos", question: "Quantos panos são usados para o Dessert Center?", options: ["1 pano", "2 panos", "3 panos", "4 panos"], answer: "3 panos", explanation: "Dessert Center: 3 panos — 1 para Influencer Vendedor, 1 para extração e 1 para entrega." },
+      { category: "🧺 LOPE2 · Panos", question: "Quantos panos são usados para a Linha de produção de cada lado?", options: ["2 panos", "4 panos", "6 panos", "8 panos"], answer: "6 panos", explanation: "Menu Regular Linha: 6 panos para cada lado — 2 Iniciador, 2 Condimentação, 2 Finalizador." },
+      { category: "🥓 LOPE2 · Bacon", question: "Por que o bacon não segue as 2 horas da mesa de condimentação?", options: ["Porque é mais resistente", "Porque tem 6 horas de validade contadas a partir da preparação", "Porque vai para o freezer", "Porque é controlado pelo gerente"], answer: "Porque tem 6 horas de validade contadas a partir da preparação", explanation: "O bacon tem prazo de 6 horas a contar após a preparação — por isso NÃO segue o tempo de 2 horas da mesa." },
+      { category: "🥓 LOPE2 · Bacon", question: "Qual o tempo de vida secundário do bacon ao ser retirado da câmara de resfriados?", options: ["2 dias", "3 dias", "5 dias", "7 dias"], answer: "5 dias", explanation: "Ao retirar o pacote da câmara de resfriados, anotar o tempo de vida secundário de 5 dias (etiqueta de datas)." },
+      { category: "🧅 LOPE2 · Cebola Cheddar", question: "Qual pegador é usado para estocar a cebola cheddar?", options: ["Pegador vermelho", "Pegador verde", "Pegador marrom", "Pegador azul"], answer: "Pegador marrom", explanation: "Usar o pegador de cebola cheddar — pegador marrom — para estocar na mesa de condimentação." },
+      { category: "🧅 LOPE2 · Cebola Cheddar", question: "O que fazer na última estocagem de cebola cheddar?", options: ["Descartar o restante", "Fazer sangria com a espátula tipo pão duro", "Guardar na câmara sem fechar", "Misturar com a nova embalagem"], answer: "Fazer sangria com a espátula tipo pão duro", explanation: "Na última estocagem de cebola cheddar, fazer sangria com a espátula (tipo 'pão duro') para aproveitar todo o produto." },
+      { category: "🧅 LOPE2 · Cebola Cheddar", question: "O que usar para fechar a embalagem de cebola cheddar após abrir?", options: ["Fita adesiva", "Clipe de vedação", "Elástico", "Amarrar a embalagem"], answer: "Clipe de vedação", explanation: "Fechar a embalagem aberta com o clipe de vedação, anotar 48 horas de validade e refrigerar." },
+      { category: "🧀 LOPE2 · Molho Cheddar", question: "Qual a validade total do molho cheddar incluindo a ambientação?", options: ["4 horas", "6 horas", "8 horas", "12 horas"], answer: "8 horas", explanation: "Molho cheddar: 8 horas de validade incluindo as 2 horas de ambientação." },
+      { category: "🧀 LOPE2 · Molho Cheddar", question: "Onde devem ficar os tubos de molho cheddar durante a ambientação?", options: ["Em cima da mesa de condimentação", "Embaixo da mesa de condimentação", "No freezer", "Na área de preparo"], answer: "Embaixo da mesa de condimentação", explanation: "Manter os tubos de molho cheddar em ambientação embaixo da mesa de condimentação." },
+      { category: "🧃 LOPE2 · Suco", question: "Qual o tempo de vida da bag de suco após aberta?", options: ["3 dias", "5 dias", "7 dias", "10 dias"], answer: "7 dias", explanation: "Após abrir a bag de suco, anotar o tempo de vida secundário de 7 dias (etiqueta de data) e retornar para câmara na caixa de origem." },
+      { category: "🧊 LOPE2 · Gelo", question: "Por que o gelo deve ter processo rigoroso de limpeza e sanitização?", options: ["Por exigência da vigilância sanitária apenas", "Porque gelo é alimento e deve ser tratado como tal", "Por ser caro", "Por deixar a bebida com gosto diferente"], answer: "Porque gelo é alimento e deve ser tratado como tal", explanation: "Gelo é alimento, portanto devemos cumprir rigorosamente os processos de limpeza e sanitização." },
+      { category: "🧹 LOPE2 · Esfregão", question: "Qual lã é usada para cortar os Nanos?", options: ["Lã nova", "Lã usada", "Qualquer lã disponível", "Lã verde"], answer: "Lã usada", explanation: "Para o corte da lã dos Nanos, utilizar sempre uma lã usada. As lãs novas são utilizadas apenas para os esfregões." },
+      { category: "🧹 LOPE2 · Esfregão", question: "Qual o tamanho do Nano 2 e onde é utilizado?", options: ["8cm — Cozinha e balcão", "16cm — McCafé e Dessert Centers remotos", "20cm — Banheiros", "12cm — Salão"], answer: "16cm — McCafé e Dessert Centers remotos", explanation: "Nano 2 tem 16cm e substitui o esfregão nas áreas remotas (McCafé e Dessert Centers)." },
+      { category: "🍽️ LOPE2 · Bandejas", question: "Qual o processo correto de lavagem das bandejas?", options: ["Apenas água corrente", "Água corrente → cuba com sabão → enxague → cuba com sanitizante → secar ao ar livre", "Apenas sanitizante", "Água quente apenas"], answer: "Água corrente → cuba com sabão → enxague → cuba com sanitizante → secar ao ar livre", explanation: "Lavar em água corrente, colocar na cuba com sabão, enxaguar na cuba central e mergulhar na cuba com sanitizante. Secar ao ar livre." }
+,
+      { category: "🧅 LOPE 2 · Cebola Cheddar", question: "Qual a temperatura ideal de serviço da cebola cheddar?", options: ["Temperatura ambiente", "55°C a 65°C", "70°C a 75°C", "Fria, saída da geladeira"], answer: "55°C a 65°C", explanation: "A cebola cheddar deve ser servida entre 55°C e 65°C." },
+      { category: "🧅 LOPE 2 · Cebola Cheddar", question: "Qual o tempo de validade da cebola cheddar no chafing dish?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "1 hora", explanation: "A cebola cheddar tem validade de 1 hora no chafing dish após o preparo." },
+      { category: "🧅 LOPE 2 · Cebola Cheddar", question: "Como deve ser estocada a cebola cheddar que não foi utilizada?", options: ["Descartar imediatamente", "Refrigerar por até 24h e reaquecer apenas uma vez", "Manter no chafing indefinidamente", "Congelar para uso posterior"], answer: "Refrigerar por até 24h e reaquecer apenas uma vez", explanation: "Cebola cheddar não utilizada: refrigerar por até 24h. Pode ser reaquecida apenas uma vez." },
+      { category: "🧀 LOPE 2 · Molho Cheddar", question: "Como deve ser aquecido o molho cheddar em sachê?", options: ["No micro-ondas por 2 minutos", "Banho Maria por 5-8 minutos ou sachê aquecedor", "Diretamente na chapa", "Não precisa aquecer"], answer: "Banho Maria por 5-8 minutos ou sachê aquecedor", explanation: "O molho cheddar deve ser aquecido em banho Maria por 5-8 minutos ou em sachê aquecedor." },
+      { category: "🧀 LOPE 2 · Molho Cheddar", question: "Qual a temperatura correta do molho cheddar para uso?", options: ["30-40°C", "45-55°C", "55-65°C", "70-80°C"], answer: "55-65°C", explanation: "O molho cheddar deve estar entre 55°C e 65°C para uso." },
+      { category: "🥗 LOPE 2 · Molhos Especiais", question: "Por quanto tempo pode ser armazenado o molho Ranch após aberto?", options: ["1 dia", "3 dias", "7 dias", "14 dias"], answer: "7 dias", explanation: "O molho Ranch após aberto deve ser armazenado refrigerado por até 7 dias." },
+      { category: "🥗 LOPE 2 · Molhos Especiais", question: "Qual a temperatura de armazenamento dos molhos especiais refrigerados?", options: ["0-2°C", "1-4°C", "5-8°C", "10-12°C"], answer: "1-4°C", explanation: "Molhos especiais refrigerados devem ser mantidos entre 1°C e 4°C." },
+      { category: "🧅 LOPE 2 · Bacon Bits", question: "Qual o tempo de validade do Bacon Bits após preparado?", options: ["1 hora", "4 horas", "8 horas", "12 horas"], answer: "4 horas", explanation: "O Bacon Bits tem validade de 4 horas após o preparo." },
+      { category: "🧅 LOPE 2 · Cebola Cheddar", question: "Qual produto é usado para sanitizar as áreas de preparo da cebola cheddar?", options: ["QSR Multiuso", "Sanitizante concentrado 200ppm", "Água quente apenas", "Detergente comum"], answer: "Sanitizante concentrado 200ppm", explanation: "Usar sanitizante a 200ppm para sanitizar as áreas de preparo da cebola cheddar." },
+      { category: "🧅 LOPE 2 · Cebola Cheddar", question: "Quantos litros de água são necessários para o balde de sanitização dos panos?", options: ["3 litros", "5 litros", "8 litros", "10 litros"], answer: "5 litros", explanation: "O balde de sanitização dos panos deve ter 5 litros de solução sanitizante." },
+      { category: "🧀 LOPE 2 · Molho Cheddar", question: "Qual o tempo de validade do tubo de cheddar após aberto e refrigerado?", options: ["24 horas", "48 horas", "72 horas", "7 dias"], answer: "48 horas", explanation: "O tubo de cheddar após aberto deve ser refrigerado com validade de 48 horas." },
+      { category: "🥗 LOPE 2 · Abacate", question: "Qual o tempo de validade do abacate na mesa após preparado?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "2 horas", explanation: "O abacate preparado tem 2 horas de validade na mesa de condimentação." },
+      { category: "🧅 LOPE 2 · Cebola Cheddar", question: "Qual a quantidade de cubas estocadas na área de balcão e salão?", options: ["1 cuba", "2 cubas", "3 cubas", "4 cubas"], answer: "2 cubas", explanation: "Combinação correta para balcão e salão: 2 cubas de cebola cheddar." },
+      { category: "🥗 LOPE 2 · Tomate Seco", question: "Como deve ser armazenado o tomate seco após aberto?", options: ["Temperatura ambiente por 5 dias", "Refrigerado coberto com azeite por até 7 dias", "Congelado", "Descartar após abertura"], answer: "Refrigerado coberto com azeite por até 7 dias", explanation: "Tomate seco após aberto: cobrir com azeite e refrigerar por até 7 dias." },
+      { category: "🧅 LOPE 2 · Cebola Cheddar", question: "Onde devem ser mantidos os tubos de cheddar durante o turno de uso?", options: ["Na câmara fria", "Em temperatura ambiente na área de LOPE", "No banho Maria de 55-65°C", "Na mesa de condimentação"], answer: "No banho Maria de 55-65°C", explanation: "Durante o turno, os tubos de cheddar em uso devem ficar no banho Maria a 55-65°C." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_LOPE2);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_LOPE2);
+    });
+  </script>
+</body>
+</html>

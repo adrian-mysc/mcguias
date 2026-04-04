@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McCafé — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="mccafe">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>McCafé</h1>
+        <p>Manual Operacional</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs"><div class="page-tabs-inner">
+    <button class="tab-btn active" data-tab="cafe">☕ Café</button>
+    <button class="tab-btn" data-tab="bebidas">🥤 Bebidas</button>
+    <button class="tab-btn" data-tab="salgados">🥐 Salgados & Doces</button>
+    <button class="tab-btn" data-tab="cafe-manha">🌅 Café da Manhã</button>
+    <button class="tab-btn" data-tab="equipamentos">⚙️ Equipamentos</button>
+    <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+  </div></div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-cafe">
+
+      <div class="section-label">Tempos e Temperaturas</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Temperaturas Chave</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Produto / Parâmetro</th><th>Temperatura</th></tr></thead>
+              <tbody>
+                <tr><td>Café pronto (vida útil)</td><td><strong>77°C a 82°C</strong></td></tr>
+                <tr><td>Leite aquecido (Foamino)</td><td><strong>70°C a 74°C</strong></td></tr>
+                <tr><td>Leite na máquina de grupo (máx.)</td><td><strong>65°C</strong></td></tr>
+                <tr><td>Água da máquina de café</td><td><strong>75°C a 85°C</strong></td></tr>
+                <tr><td>Forno Titã — assar</td><td><strong>180°C</strong></td></tr>
+                <tr><td>Forno Titã — aquecer</td><td><strong>200°C</strong></td></tr>
+                <tr><td>Medialuna — câmara de congelados</td><td><strong>-23°C a -18°C</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Tempos de Vida</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Validades</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Produto</th><th>Tempo de Vida</th></tr></thead>
+              <tbody>
+                <tr><td>Café pronto</td><td><strong>1 hora</strong></td></tr>
+                <tr><td>Leite na Foamino</td><td><strong>8 horas</strong></td></tr>
+                <tr><td>Leite aberto (refrigerado)</td><td><strong>48 horas</strong></td></tr>
+                <tr><td>Calda Medialuna</td><td><strong>30 dias</strong></td></tr>
+                <tr><td>Bolos (temp. ambiente)</td><td><strong>5 dias</strong></td></tr>
+                <tr><td>Pão Brioche (descongelado)</td><td><strong>48h (12h descong. + 36h uso)</strong></td></tr>
+                <tr><td>Smoothie (jarra/garrafa)</td><td><strong>7 dias refrigerado</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Café Coado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Procedimento — Cafeteira Manual (BUNN)</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Retire o porta-filtro, descarte o filtro e pó usados e lave em água corrente</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe o Chuveirinho com o pano sanitizado exclusivo</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque 1 filtro de papel alinhado abaixo da borda de inox</label></div>
+          <div class="check-item"><input type="checkbox"><label>Abra o pacote de 50g de café e coloque no porta-filtro</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verifique o LED verde piscando antes de extrair</label></div>
+          <div class="info-block">
+            <strong>Volumes por copo:</strong>
+            <ul style="margin:6px 0 0 16px;font-size:13px;">
+              <li>Copo 110ml → 100ml de café</li>
+              <li>Copo 240ml → 200ml de café</li>
+              <li>Copo 360ml → 300ml de café</li>
+            </ul>
+            <p style="margin-top:6px;font-size:12px;color:var(--muted);">Servir <strong>sem tampa</strong>. Moagem já vem padrão do fornecedor (torra média/escura).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Café Espresso</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Moagem e Quantidade</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Quantidade de pó:</strong>
+            <ul style="margin:6px 0 0 16px;font-size:13px;">
+              <li>1 café → 8 a 10g de pó</li>
+              <li>2 cafés ou Café Duplo → 16 a 20g de pó</li>
+            </ul>
+          </div>
+          <div class="alert warn" style="margin-top:10px;">
+            ⚠️ <strong>Moagem fina</strong> → água passa devagar → café amargo.<br>
+            ⚠️ <strong>Moagem grossa</strong> → água passa rápido → café ácido e fraco.
+          </div>
+          <div class="info-block" style="margin-top:10px;">
+            <strong>Compactação:</strong> pressão uniforme, braço a 90°. A compactação NÃO pode ser uma variável — manter sempre o mesmo padrão.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Procedimento — Máquina Manual</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Remova o porta-filtro, bata na caixa de borra e limpe com pincel de nylon</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque o porta-filtro sob a saída do Moedor e dispense o café (8-10g por dispensada)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Ajuste o pó com a espátula branca (lado curvo = espresso, lado retilíneo = duplo)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Compacte uniformemente (pressão do corpo, braço a 90°)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Antes de encaixar: acione o botão para liberar água por 3 a 5 segundos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Remova resíduos da borda do porta-filtro com pincel de nylon</label></div>
+          <div class="check-item"><input type="checkbox"><label>Encaixe e gire o porta-filtro até travar. Pressione o botão e posicione a xícara</label></div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Preparação do Leite</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥛</div><h2>Espuma de Leite — Máquina de Grupo</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Leite gelado na leiteira até a marca da entrada do bico (ou 2 dedos abaixo)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe a haste, ligue o vaporizador por 3s até o ar começar a sair</label></div>
+          <div class="check-item"><input type="checkbox"><label>Aere incorporando ar — estrutura firme, sem bolhas aparentes</label></div>
+          <div class="check-item"><input type="checkbox"><label>Quando morno, cubra o bico totalmente com leite e aqueça até 65°C</label></div>
+          <div class="alert danger" style="margin-top:8px;">🚫 NÃO DEIXE O LEITE FERVER (máx. 65°C)</div>
+          <div class="check-item" style="margin-top:8px;"><input type="checkbox"><label>Desligue o vaporizador, remova a leiteira e limpe a haste com pano úmido</label></div>
+          <div class="info-block" style="margin-top:8px;">
+            <strong>Foamino:</strong> Leite deve estar em temperatura ambiente ao estocar. Tempo de vida: 8h. Validade após aberto: 48h refrigerado.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-bebidas">
+
+      <div class="section-label">Bebidas Quentes — Espresso</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Receitas Base Espresso</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Macchiato — 50ml (copo 100ml)</div>
+            <div class="rota-item">Aere 30ml de leite · Extraia 1 Espresso Curto (30ml) · Complete com leite aerado até 50ml</div>
+            <div class="rota-head c2">Café Latte — 200ml</div>
+            <div class="rota-item">Aere 130ml de leite · Extraia 1 espresso no copo 200ml · Complete com leite aerado até a marcação</div>
+            <div class="rota-head c3">Cappuccino Tradicional — 200ml</div>
+            <div class="rota-item">Aere 120ml de leite · Extraia 1 espresso · Adicione o leite aerado até 200ml · Polvilhe chocolate em pó</div>
+            <div class="rota-head c4">Cappuccino com Chocolate — 200ml</div>
+            <div class="rota-item">1 tiro (½oz) calda chocolate no copo · Aere 120ml leite com 2 medidas (30g) chocolate pó · Extrai espresso · Leite aerado até 200ml · Polvilha chocolate pó</div>
+          </div>
+          <div class="rota-items" style="margin-top:10px;">
+            <div class="rota-head c1">Chocolate Quente — 200ml</div>
+            <div class="rota-item">1 tiro (½oz) calda chocolate · Aere 120ml leite com 3 medidas (45g) chocolate pó · Polvilha chocolate pó</div>
+            <div class="rota-head c2">Café Chantilly — 200ml</div>
+            <div class="rota-item">4 tiros (2oz) calda chocolate no copo · 1 espresso · 1½ volta chantilly · Polvilha chocolate pó</div>
+            <div class="rota-head c3">Cappuccino Moca Mix — 200ml</div>
+            <div class="rota-item">1 tiro (½oz) calda chocolate · Espresso curto (30ml) · 1 tiro (1oz) xarope macadâmia · Aere 100ml leite com 2 tiros (1oz) calda chocolate · 1½ volta chantilly · 1 tiro (½oz) calda chocolate no chantilly</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Bebidas Quentes — Café Coado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Receitas Base Coado</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Cappuccino Coado — 200ml</div>
+            <div class="rota-item">2 medidas (30g) chocolate pó · 120ml café coado da jarra Curtis · Extrai leite com redução de espuma Foamino · Polvilha chocolate pó</div>
+            <div class="rota-head c2">Cappuccino Coado — 300ml</div>
+            <div class="rota-item">3 medidas (45g) chocolate pó · 160ml café coado · Extrai leite com redução de espuma Foamino · Polvilha chocolate pó</div>
+            <div class="rota-head c3">Chocolate Quente Coado — 200ml</div>
+            <div class="rota-item">1 tiro (½oz) calda chocolate · 3 medidas (45g) chocolate pó · Extrair leite Foamino · Completar até marcação · Polvilha</div>
+            <div class="rota-head c4">Chocolate Quente Coado — 300ml</div>
+            <div class="rota-item">1 tiro (½oz) calda chocolate · 4 medidas (60g) chocolate pó · Extrair leite Foamino · Completar · Polvilha</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Bebidas Frias</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥤</div><h2>Receitas Frias</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c2">Iced Latte</div>
+            <div class="rota-item">1 pá cheia de gelo (23 pedras) no copo McShake · 100ml leite integral · 3 tiros (3oz) xarope macadâmia · 100ml café coado sobre o gelo · Servir até 1cm abaixo da borda</div>
+            <div class="rota-head c1">Chocolate Frio</div>
+            <div class="rota-item">1 tiro (½oz) calda chocolate no copo McShake · 270ml leite gelado no liquidificador · 3 medidas (45g) chocolate pó · Bater 40s velocidade máx. · Polvilha chocolate pó</div>
+            <div class="rota-head c3">Smoothie de Uva / Laranja</div>
+            <div class="rota-item">1 pá cheia de gelo · 100ml leite gelado · 130ml concentrado Del Valle · Bater com botão 5 por 1 minuto · Servir até 1cm da borda</div>
+          </div>
+          <div class="info-block" style="margin-top:10px;">
+            <strong>Jarra de Smoothie:</strong> Concentrado Del Valle na jarra → refrigeração por 7 dias. Anotar data primária + secundária de 7 dias na placa.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Sobremesa Fria com Café</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🍨</div><h2>Affogato</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Affogato — copo 200ml</div>
+            <div class="rota-item">Extraia 1 espresso no copo medidor · Coloque 3,5oz de bebida láctea baunilha finalizando com bico · Despeje o espresso sobre a massa de sorvete · Servir com colher</div>
+            <div class="rota-head c2">Affogato Crunch — copo 200ml</div>
+            <div class="rota-item">Mesmo procedimento do Affogato + adicionar cobertura crocante ao finalizar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Montagem da Bandeja</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🍽️</div><h2>Layout de Bandeja McCafé</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Bebidas quentes:</strong> Logo da bandeja voltado para o cliente · Guardanapo em balão no centro · Copo com água com gás ao lado direito · Copo de café no canto oposto · Cortesia em cima do guardanapo.<br>
+            <span style="font-size:12px;color:var(--muted);">Água com gás e cortesia acompanham apenas: espresso, curto, duplo e macchiato.</span>
+          </div>
+          <div class="info-block" style="margin-top:8px;">
+            <strong>Salgados e doces:</strong> Guardanapo em balão no centro · Prato com o produto sobre o guardanapo · Talheres ao lado do prato se necessário.
+          </div>
+          <div class="info-block" style="margin-top:8px;">
+            <strong>Ordem de montagem da bandeja (gerente RDM):</strong>
+            <ol style="margin:6px 0 0 16px;font-size:13px;">
+              <li>Produtos da vitrine</li>
+              <li>Bebidas geladas</li>
+              <li>Bebidas quentes (sempre por último)</li>
+            </ol>
+          </div>
+          <div class="alert info" style="margin-top:8px;">
+            📦 <strong>Para viagem:</strong> Espresso/Macchiato/Latte/Cappuccino/Chocolate Quente → copo 200ml com tampa. Bolos e Medialunas → bandeja com caixinha McCafé + guardanapo + talher descartável.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-salgados">
+
+      <div class="section-label">Tempos de Forno</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Tempos de Assamento — Forno Titã 180°C</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Produto</th><th>Tempo</th><th>Qtd. Máx.</th><th>Obs.</th></tr></thead>
+              <tbody>
+                <tr><td>Pão de Queijo</td><td><strong>28 min</strong></td><td>10 unid.</td><td>Descansar 10min em cima do forno</td></tr>
+                <tr><td>Mini Pão de Queijo</td><td><strong>23 min</strong></td><td>24 unid.</td><td>—</td></tr>
+                <tr><td>Waffle de Pão de Queijo</td><td><strong>9 min</strong></td><td>6 unid.</td><td>—</td></tr>
+                <tr><td>Medialuna</td><td><strong>10 min</strong></td><td>8 unid.</td><td>3ml calda por unid. após assar</td></tr>
+                <tr><td>Croissant de Chocolate</td><td><strong>30 min</strong></td><td>6 unid.</td><td>Aquecer: 200°C 7min</td></tr>
+                <tr><td>Folhado de Tomate e Queijo</td><td><strong>30 min</strong></td><td>5 unid.</td><td>Aquecer: 200°C 7min</td></tr>
+                <tr><td>Cookie Baunilha/Chocolate</td><td><strong>9 min</strong></td><td>6 unid.</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert info" style="margin-top:10px;">
+            💡 <strong>DICA DE OURO:</strong> Assar SEMPRE congelado. Nunca abrir a porta do forno durante o assamento. Forno assar = 180°C · Forno aquecer = 200°C.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Bolos</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎂</div><h2>Preparação dos Bolos</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Retirar da câmara de congelados e colocar na mesa de preparação</label></div>
+          <div class="check-item"><input type="checkbox"><label>Com luvas azuis descartáveis, separar os bolos nas cubas organizadoras com tampas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Ambientar por 2 horas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Após ambientação: cortar 1cm das duas pontas com faca de serra</label></div>
+          <div class="check-item"><input type="checkbox"><label>Usar marcador de bolos para marcar as 10 fatias</label></div>
+          <div class="check-item"><input type="checkbox"><label>Cortar com faca de serra e armazenar na boleira</label></div>
+          <div class="info-block" style="margin-top:8px;"><strong>Rendimento:</strong> 1 bolo = 10 fatias · Validade: 5 dias em temperatura ambiente</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Medialuna</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥐</div><h2>Procedimento Completo</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Retirar da câmara (-23°C a -18°C) e separar a quantidade nas cubas com tampa</label></div>
+          <div class="check-item"><input type="checkbox"><label>Manter a cuba no congelador até hora de assar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Com luvas azuis: posicionar máx. 8 unidades na assadeira antiaderente</label></div>
+          <div class="check-item"><input type="checkbox"><label>Forno Titã a 180°C por 10 minutos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Enquanto assa: preparar a calda (3ml por Medialuna no copo medidor)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Após 10min: pincelar calda em toda a Medialuna com pincel de silicone vermelho</label></div>
+          <div class="info-block" style="margin-top:8px;"><strong>Calda:</strong> Validade secundária de 30 dias · Manter refrigerado · 3ml por Medialuna</div>
+          <div class="alert info" style="margin-top:8px;">
+            💡 <strong>Entrega ao cliente:</strong> Guardanapo em balão na bandeja → Medialuna com pegador de inox. Para viagem: prato + caixa McCafé.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Panini</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥖</div><h2>Panini — Queijo e Bacon</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Retirar pão queijo da vitrine e posicionar na bancada de preparação</label></div>
+          <div class="check-item"><input type="checkbox"><label>Luvas azuis para manusear (retirar antes de mexer no toaster)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Cortar o pão de queijo ao meio, dobrar fatia de queijo emmental nas pontas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Posicionar no toaster por 1 minuto</label></div>
+          <div class="check-item"><input type="checkbox"><label>Retirar com pegador de cabo longo e colocar no saco genérico</label></div>
+          <div class="alert warn" style="margin-top:8px;">⚠️ O toaster fica muito quente. Nunca tocar sem resfriamento. Nunca mergulhar em água.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-cafe-manha">
+
+      <div class="section-label">Ovos</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🍳</div><h2>Preparo e Manipulação dos Ovos</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Parâmetro</th><th>Valor</th></tr></thead>
+              <tbody>
+                <tr><td>Temperatura do platen</td><td><strong>135°C</strong></td></tr>
+                <tr><td>Tempo de cozimento</td><td><strong>150 segundos</strong></td></tr>
+                <tr><td>Máximo por rodada</td><td><strong>8 ovos</strong></td></tr>
+                <tr><td>Máximo por gaveta UHC</td><td><strong>5 ovos</strong></td></tr>
+                <tr><td>Temperatura interna ideal</td><td><strong>acima de 74°C</strong></td></tr>
+                <tr><td>Platen dedicado?</td><td><strong>Sim</strong> — evitar contaminação cruzada</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-block" style="margin-top:10px;">
+            <strong>Procedimento:</strong>
+            <ol style="margin:6px 0 0 16px;font-size:13px;">
+              <li>Separar utensílios: 2 cubas acrílicas, FIFO de manteiga, espátula Hutzler, espátula de apoio preta, copo medidor com água filtrada</li>
+              <li>Quebrar o ovo no centro do anel (frente para fundo, direita para esquerda)</li>
+              <li>Giro de 85° com espátula Hutzler para distribuir a gema por todo o anel</li>
+              <li>Colocar tampa e completar reservatório com água filtrada</li>
+              <li>Ativar timer da chapa: 150 segundos</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Sanduíches de Café da Manhã</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥪</div><h2>Egg Cheese Bacon</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Ao soar no KVS, ativar o pão regular entre 3" a 5"</label></div>
+          <div class="check-item"><input type="checkbox"><label>Posicionar lâmina genérica — coroa voltada para tostadeira, base para UHC</label></div>
+          <div class="check-item"><input type="checkbox"><label>1 fatia de queijo cheddar na base</label></div>
+          <div class="check-item"><input type="checkbox"><label>2 fatias de bacon na coroa (uma ao lado da outra)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Retirar ovo da gaveta UHC com pegador e posicionar</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🥪</div><h2>Queijo Quente — Variações</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Queijo Quente (básico)</div>
+            <div class="rota-item">2 fatias cheddar na coroa (estrela) · Base sobre os queijos · Pressão leve com a palma</div>
+            <div class="rota-head c2">Duplo Queijo</div>
+            <div class="rota-item">2 selos amarelos · 1 fatia cheddar na base + 1 fatia cheddar na coroa · Mesmo procedimento</div>
+            <div class="rota-head c3">Queijo Quente c/ Cebola Crispy</div>
+            <div class="rota-item">2 selos amarelos em X · 1 fatia cheddar na coroa + 7g cebola crispy · Tostar dos dois lados</div>
+            <div class="rota-head c4">Queijo Quente c/ Bacon</div>
+            <div class="rota-item">1 selo amarelo no centro · 1 fatia cheddar na base + 1 fatia cheddar (estrela) na coroa · 2 fatias bacon</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Pão Brioche</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🍞</div><h2>Pão Brioche — Ambientação e Preparo</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Ambientação:</strong> Retirar pães congelados no fechamento do dia anterior.
+            <ul style="margin:6px 0 0 16px;font-size:13px;">
+              <li>Tempo de vida: 48 horas total</li>
+              <li>12 horas descongelamento + 36 horas de uso</li>
+            </ul>
+          </div>
+          <div class="info-block" style="margin-top:8px;">
+            <strong>Pão na Chapa:</strong> Colocar bandeja na borda da chapa · Tostar na tostadeira conforme procedimento
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-equipamentos">
+
+      <div class="section-label">Forno Titã</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔥</div><h2>Operação e Cuidados</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Temperaturas:</strong> Assar = 180°C · Aquecer = 200°C<br>
+            Manter 3 timers próximos ao forno para controle de cada produto.
+          </div>
+          <div class="check-item" style="margin-top:8px;"><input type="checkbox"><label>Verificar funcionamento da luz, motor giratório e exaustor</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar se a porta fecha corretamente e não perde temperatura</label></div>
+          <div class="check-item"><input type="checkbox"><label>Realizar limpeza diária das bandejas: água corrente → sabão + 3M branca → secar em pé</label></div>
+          <div class="alert warn" style="margin-top:8px;">⚠️ Qualquer mau funcionamento: chamar técnico de manutenção imediatamente.</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Máquina de Café — Abertura</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Verificação de Abertura</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Ligar a máquina e após 30 minutos verificar temperatura da água (75°C a 85°C)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Se fora do intervalo: chamar técnico / abrir chamado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar volume de extração no copo dosador (160ml)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Calibrar moagem se necessário (sentido anti-horário = mais grossa)</label></div>
+          <div class="info-block" style="margin-top:8px;">
+            <strong>Tempo ideal de extração do espresso:</strong> entre 25 e 30 segundos.<br>
+            Acima de 30s = pó muito fino → ajustar moagem.<br>
+            Abaixo de 25s = pó muito grosso → ajustar moagem.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Panos</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧺</div><h2>Distribuição de Panos</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            Manter <strong>3 panos limpos e dobrados</strong>, sendo:
+            <ul style="margin:6px 0 0 16px;font-size:13px;">
+              <li>1 pano sanitizado — limpeza da área da Leiteira</li>
+              <li>1 pano sanitizado — limpeza da área da Cafeteira</li>
+              <li>1 pano — limpeza exclusiva do Chuveirinho da cafeteira</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Tipos de McCafé</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🏪</div><h2>Modelos de McCafé</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Modelo</th><th>Características principais</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Remoto</strong></td><td>Espaço exclusivo separado · 2 fornos Titã (1 assar + 1 aquecer) · POS exclusivo · Vitrine grande</td></tr>
+                <tr><td><strong>Stand Alone</strong></td><td>Mesmo salão do balcão, totalmente separado · Sempre 1 colaborador dedicado mínimo</td></tr>
+                <tr><td><strong>InLine</strong></td><td>Em linha com o balcão · Facilita vendas no Drive · Ideal ter MerryChef</td></tr>
+                <tr><td><strong>Corner</strong></td><td>Sem POS exclusivo · KVS exclusivo · 1 DMB exclusivo · Vitrine pequena</td></tr>
+                <tr><td><strong>Base c/ Vitrine</strong></td><td>Vitrine apenas para exposição (não entregar produto ao cliente)</td></tr>
+                <tr><td><strong>Base s/ Vitrine</strong></td><td>Máquina na ilha de bebidas (não visível ao cliente) · Sem POS exclusivo</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — McCafé</h2>
+          <div class="badge badge-red">30 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · McCafé · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_MCCAFE = [
+      // Temperaturas e Tempos
+      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura correta do café pronto?", options: ["65°C a 70°C", "77°C a 82°C", "85°C a 90°C", "70°C a 75°C"], answer: "77°C a 82°C", explanation: "O café pronto deve estar entre 77°C e 82°C." },
+      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura de extração do leite na Foamino?", options: ["60°C a 65°C", "65°C a 70°C", "70°C a 74°C", "75°C a 80°C"], answer: "70°C a 74°C", explanation: "O leite aquecido na Foamino deve estar entre 70°C e 74°C." },
+      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura máxima do leite na máquina de grupo?", options: ["55°C", "60°C", "65°C", "70°C"], answer: "65°C", explanation: "O leite na máquina de grupo deve atingir no máximo 65°C. NÃO DEIXAR FERVER." },
+      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura da água da máquina de café espresso?", options: ["60°C a 70°C", "70°C a 80°C", "75°C a 85°C", "80°C a 90°C"], answer: "75°C a 85°C", explanation: "A temperatura da água da máquina deve estar entre 75°C e 85°C." },
+      { category: "🌡️ McCafé · Forno Titã", question: "Qual a temperatura do Forno Titã para ASSAR produtos?", options: ["160°C", "170°C", "180°C", "200°C"], answer: "180°C", explanation: "Forno Titã para assar = 180°C. Para aquecer = 200°C." },
+      { category: "🌡️ McCafé · Forno Titã", question: "Qual a temperatura do Forno Titã para AQUECER produtos?", options: ["160°C", "180°C", "200°C", "220°C"], answer: "200°C", explanation: "Forno Titã para aquecer = 200°C. Para assar = 180°C." },
+      { category: "🌡️ McCafé · Ovos", question: "Qual a temperatura do platen para preparo dos ovos?", options: ["100°C", "115°C", "135°C", "150°C"], answer: "135°C", explanation: "O platen dedicado para ovos deve estar a 135°C." },
+      { category: "🌡️ McCafé · Ovos", question: "Qual a temperatura interna ideal do ovo após preparado?", options: ["Acima de 60°C", "Acima de 70°C", "Acima de 74°C", "Acima de 80°C"], answer: "Acima de 74°C", explanation: "A temperatura interna ideal do ovo deve ser acima de 74°C." },
+
+      // Tempos
+      { category: "⏱️ McCafé · Tempos", question: "Qual o tempo de vida do café pronto?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "1 hora", explanation: "O café pronto tem tempo de vida de 1 hora." },
+      { category: "⏱️ McCafé · Tempos", question: "Qual o tempo de vida do leite na Foamino?", options: ["2 horas", "4 horas", "8 horas", "12 horas"], answer: "8 horas", explanation: "O leite estocado na Foamino tem tempo de vida de 8 horas." },
+      { category: "⏱️ McCafé · Tempos", question: "Qual o tempo de cocção dos ovos no platen?", options: ["90 segundos", "120 segundos", "150 segundos", "180 segundos"], answer: "150 segundos", explanation: "O tempo de cocção dos ovos é de 150 segundos (2min30s)." },
+      { category: "⏱️ McCafé · Forno", question: "Quanto tempo o Pão de Queijo fica no forno Titã?", options: ["18 minutos", "23 minutos", "28 minutos", "33 minutos"], answer: "28 minutos", explanation: "Pão de Queijo: 28 minutos a 180°C. Nunca abrir o forno durante o assamento." },
+      { category: "⏱️ McCafé · Forno", question: "Quanto tempo o Mini Pão de Queijo fica no forno Titã?", options: ["18 minutos", "23 minutos", "28 minutos", "33 minutos"], answer: "23 minutos", explanation: "Mini Pão de Queijo: 23 minutos a 180°C." },
+      { category: "⏱️ McCafé · Forno", question: "Quanto tempo a Medialuna fica no forno para assar?", options: ["5 minutos", "8 minutos", "10 minutos", "15 minutos"], answer: "10 minutos", explanation: "Medialuna: 10 minutos a 180°C. Pincelar 3ml de calda após assar." },
+      { category: "⏱️ McCafé · Forno", question: "Quanto tempo o Cookie fica no forno Titã?", options: ["5 minutos", "7 minutos", "9 minutos", "12 minutos"], answer: "9 minutos", explanation: "Cookie Baunilha e Chocolate: 9 minutos a 180°C." },
+      { category: "⏱️ McCafé · Forno", question: "Quanto tempo o Panini fica no Toaster?", options: ["30 segundos", "1 minuto", "2 minutos", "3 minutos"], answer: "1 minuto", explanation: "O Panini fica no Toaster por 1 minuto." },
+
+      // Receitas
+      { category: "☕ McCafé · Receitas", question: "Qual a quantidade de calda por Medialuna?", options: ["1ml", "2ml", "3ml", "5ml"], answer: "3ml", explanation: "Para cada Medialuna são utilizados 3ml de calda." },
+      { category: "☕ McCafé · Receitas", question: "Quantas medidas de chocolate pó (15g) leva o Cappuccino Coado 200ml?", options: ["1 medida (15g)", "2 medidas (30g)", "3 medidas (45g)", "4 medidas (60g)"], answer: "2 medidas (30g)", explanation: "Cappuccino Coado 200ml: 2 medidas de 15g = 30g de chocolate em pó." },
+      { category: "☕ McCafé · Receitas", question: "Quantos tiros de calda de chocolate leva o Café Chantilly?", options: ["1 tiro (½oz)", "2 tiros (1oz)", "3 tiros (1,5oz)", "4 tiros (2oz)"], answer: "4 tiros (2oz)", explanation: "Café Chantilly: 4 tiros (2oz) de calda de chocolate no fundo do copo + 1 espresso + 1½ volta chantilly." },
+      { category: "☕ McCafé · Receitas", question: "Qual a quantidade de leite aerado no Macchiato?", options: ["10ml", "20ml", "30ml", "50ml"], answer: "30ml", explanation: "Macchiato: Aere 30ml de leite + 1 Espresso Curto (30ml) = 50ml total." },
+      { category: "☕ McCafé · Receitas", question: "Quantas pedras de gelo leva o Iced Latte?", options: ["15 pedras", "20 pedras", "23 pedras", "30 pedras"], answer: "23 pedras", explanation: "Iced Latte: 1 pá cheia de gelo = 23 pedras." },
+      { category: "☕ McCafé · Receitas", question: "Quanto leite gelado leva o Chocolate Frio no liquidificador?", options: ["200ml", "240ml", "270ml", "300ml"], answer: "270ml", explanation: "Chocolate Frio: 270ml de leite integral gelado no liquidificador." },
+      { category: "☕ McCafé · Receitas", question: "Quanto tempo bate o Chocolate Frio no liquidificador?", options: ["20 segundos", "30 segundos", "40 segundos", "60 segundos"], answer: "40 segundos", explanation: "Chocolate Frio: bater 40 segundos na velocidade máxima." },
+      { category: "☕ McCafé · Receitas", question: "Qual o volume do café coado adicionado ao Iced Latte?", options: ["50ml", "80ml", "100ml", "150ml"], answer: "100ml", explanation: "Iced Latte: 100ml de café coado sobre o gelo (além de 100ml de leite integral)." },
+
+      // Procedimentos
+      { category: "⚙️ McCafé · Procedimentos", question: "Quantos gramas de pó para 1 café espresso?", options: ["4 a 6g", "8 a 10g", "12 a 14g", "16 a 18g"], answer: "8 a 10g", explanation: "1 café espresso = 8 a 10g de pó. 2 cafés ou duplo = 16 a 20g." },
+      { category: "⚙️ McCafé · Procedimentos", question: "O que ocorre com a moagem muito fina?", options: ["Café ácido e fraco", "Café amargo por excesso de extração", "Café sem corpo", "Café com gosto de água"], answer: "Café amargo por excesso de extração", explanation: "Moagem fina → água passa devagar → café amargo. Moagem grossa → água passa rápido → café ácido." },
+      { category: "⚙️ McCafé · Procedimentos", question: "Qual a quantidade máxima de ovos por rodada na chapa?", options: ["4 ovos", "6 ovos", "8 ovos", "10 ovos"], answer: "8 ovos", explanation: "Máximo 8 ovos por rodada. Máximo 5 ovos por gaveta UHC." },
+      { category: "⚙️ McCafé · Procedimentos", question: "Qual a ordem de montagem da bandeja pelo gerente RDM?", options: ["Bebidas quentes → vitrine → geladas", "Geladas → vitrine → quentes", "Vitrine → geladas → quentes (por último)", "Quentes → vitrine → geladas"], answer: "Vitrine → geladas → quentes (por último)", explanation: "Ordem: Produtos da vitrine → Bebidas geladas → Bebidas quentes (sempre por último)." },
+      { category: "⚙️ McCafé · Procedimentos", question: "Qual a validade do leite aberto mantido sob refrigeração?", options: ["12 horas", "24 horas", "48 horas", "72 horas"], answer: "48 horas", explanation: "Leite aberto deve ser mantido sob refrigeração com etiqueta de 48 horas." },
+      { category: "⚙️ McCafé · Procedimentos", question: "Quantas unidades máximas de Pão de Queijo na assadeira?", options: ["6 unidades", "8 unidades", "10 unidades", "12 unidades"], answer: "10 unidades", explanation: "Pão de Queijo: máximo 10 unidades por assadeira. Mini Pão de Queijo: máximo 24." },
+      { category: "⚙️ McCafé · Procedimentos", question: "Qual o tempo de ambientação dos bolos antes de fatiar?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "2 horas", explanation: "Os bolos devem ser ambientados por 2 horas antes de serem fatiados." }
+,
+      { category: "☕ McCafé · Procedimentos", question: "Qual o primeiro passo ao detectar 'READY TO CLEAN' na máquina de café?", options: ["Iniciar imediatamente a limpeza", "Verificar se há pedidos pendentes primeiro", "Desligar a máquina", "Chamar o gerente"], answer: "Iniciar imediatamente a limpeza", explanation: "Quando a máquina exibir READY TO CLEAN, iniciar o processo de limpeza imediatamente." },
+      { category: "☕ McCafé · Café Coado", question: "Quantos gramas de café são usados por preparo na cafeteira manual?", options: ["25g", "40g", "50g", "75g"], answer: "50g", explanation: "Cada preparo na cafeteira manual usa 1 pacote de 50g de café." },
+      { category: "🥤 McCafé · Bebidas Frias", question: "Qual botão usar no liquidificador para bater o Smoothie?", options: ["Botão 1", "Botão 3", "Botão 5", "Botão 7"], answer: "Botão 5", explanation: "Para bater o Smoothie usar o botão 5 da programação por 1 minuto." },
+      { category: "☕ McCafé · Espresso", question: "Quantos segundos deve escorrer a água antes de encaixar o porta-filtro?", options: ["1-2 segundos", "3-5 segundos", "8-10 segundos", "15 segundos"], answer: "3-5 segundos", explanation: "Antes de encaixar o porta-filtro, acionar o botão para liberar água por 3 a 5 segundos." },
+      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura da água da máquina espresso para calibração?", options: ["65-70°C", "70-75°C", "75-85°C", "85-90°C"], answer: "75-85°C", explanation: "A temperatura da água da máquina de café deve estar entre 75°C e 85°C." },
+      { category: "🥐 McCafé · Salgados", question: "Qual a quantidade máxima de Medialunas por assadeira?", options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"], answer: "8 unidades", explanation: "Máximo 8 Medialunas por assadeira antiaderente." },
+      { category: "🥐 McCafé · Salgados", question: "Qual a quantidade máxima de Waffle de Pão de Queijo por assadeira?", options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"], answer: "6 unidades", explanation: "Máximo 6 Waffles de Pão de Queijo por assadeira." },
+      { category: "🥛 McCafé · Leite", question: "Quanto leite usar para o Macchiato?", options: ["10ml", "20ml", "30ml", "50ml"], answer: "30ml", explanation: "Macchiato: Aere 30ml de leite + 1 Espresso Curto (30ml) = 50ml total." },
+      { category: "⚙️ McCafé · Equipamentos", question: "Qual o modelo de liquidificador usado no McCafé?", options: ["BlendTec ou Marchesoni", "Philips Walita", "Oster", "Qualquer liquidificador"], answer: "BlendTec ou Marchesoni", explanation: "O McCafé usa liquidificadores BlendTec (885 ou Furtividade) ou Marchesoni." },
+      { category: "⏱️ McCafé · Tempos", question: "Por quanto tempo deve ser ambientado o bolo antes de fatiar?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "2 horas", explanation: "Os bolos devem ser ambientados por 2 horas antes de fatiar." },
+      { category: "☕ McCafé · Modelos", question: "Qual modelo de McCafé não tem POS exclusivo?", options: ["Remoto", "Stand Alone", "InLine", "Corner"], answer: "Corner", explanation: "O McCafé Corner não tem POS exclusivo. Os produtos são vendidos no NGK, balcão, drive ou MOP." },
+      { category: "🥛 McCafé · Foamino", question: "O leite para estocagem na Foamino deve estar em que temperatura?", options: ["Gelado da geladeira", "Temperatura ambiente", "Morno (35-40°C)", "Quente (50-55°C)"], answer: "Temperatura ambiente", explanation: "O leite a ser estocado na máquina Foamino deve estar em temperatura ambiente." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_MCCAFE, "McCafé");
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_MCCAFE, "McCafé");
+    });
+  </script>
+</body>
+</html>

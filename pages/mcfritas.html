@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McFritas — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="mcfritas">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>McFritas</h1>
+        <p>Guia Rápido Operacional · Produção</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="preparacao">⚙️ Preparação</button>
+      <button class="tab-btn" data-tab="oleo">🛢️ Óleo</button>
+        <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧼</div><h2>Higiene & Segurança</h2></div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Padrões de Higiene</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+                <li>Utilizar avental</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Segurança</h3>
+              <ul>
+                <li class="blue">EPI completo (avental e mangote) para operar a fritadeira</li>
+                <li class="blue">Lavar mãos com sabonete bactericida por 20"</li>
+                <li class="blue">Gel sanitizante antes de assumir</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Tempos & Temperaturas</h2></div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box">
+              <div class="stat-label">Temperatura da Fritadeira</div>
+              <div class="stat-value">168°C</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Tempo de Fritura</div>
+              <div class="stat-value">3'10"</div>
+            </div>
+            <div class="stat-box blue">
+              <div class="stat-label">Compostos Polares</div>
+              <div class="stat-value">≤ 24%</div>
+              <div class="stat-sub">Nível correto do óleo</div>
+            </div>
+            <div class="stat-box green">
+              <div class="stat-label">Validade sacos (congelador)</div>
+              <div class="stat-value">24h</div>
+            </div>
+          </div>
+
+          <div class="section-label" style="margin-top:4px; margin-bottom:8px;">📦 Tamanhos</div>
+          <div class="grid-3">
+            <div class="stat-box yellow"><div class="stat-label">Pequena (P)</div><div class="stat-value">73g</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Média (M)</div><div class="stat-value">102g</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Grande (G)</div><div class="stat-value">146g</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-preparacao">
+      <div class="section-label">Preparação</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">✅</div><h2>Checklist — Antes de Operar</h2></div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Estocar embalagens suficientes para o horário, organizadas conforme layout padrão</label>
+            <label class="check-item"><input type="checkbox"> Estocar no congelador portátil ou encestadora a quantidade necessária de sacos de McFritas conforme tabela de níveis (validade: 24h)</label>
+            <label class="check-item"><input type="checkbox"> Manter o nível adequado de óleo respeitando a <strong>segunda linha na cuba</strong>. Se necessário, repor comunicando o Gerente</label>
+            <label class="check-item"><input type="checkbox"> Não utilizar óleo com sinais de decomposição. Manter a fritadeira <strong>tampada</strong> sempre que não estiver usando</label>
+            <label class="check-item"><input type="checkbox"> Verificar o tempo e temperatura do equipamento: <strong>168°C · 3'10"</strong></label>
+            <label class="check-item"><input type="checkbox"> Manter <strong>2 panos limpos</strong>, sanitizados e dobrados e o saleiro limpo, estocado e em perfeito funcionamento</label>
+            <label class="check-item"><input type="checkbox"> Usar a <strong>peneira</strong> para remover os resíduos do óleo</label>
+            <label class="check-item"><input type="checkbox"> Verificar tempos e temperaturas das fritadeiras</label>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Os Compostos Polares devem ser iguais ou abaixo de <strong>24%</strong>. Verificar sempre antes de iniciar a operação.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-oleo">
+      <div class="section-label">Gestão do Óleo</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🛢️</div><h2>Qualidade e Controle</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            O óleo é um ingrediente — sua qualidade afeta diretamente o sabor, a textura e a segurança das McFritas. Monitore sempre.
+          </div>
+          <div style="overflow-x:auto;margin-top:10px;">
+            <table class="data-table">
+              <thead><tr><th>Parâmetro</th><th>Valor</th><th>Ação se fora do padrão</th></tr></thead>
+              <tbody>
+                <tr><td>Temperatura de fritura</td><td><strong>168°C (335°F)</strong></td><td>Aguardar atingir a temperatura antes de fritar</td></tr>
+                <tr><td>Compostos Polares (máx.)</td><td><strong>24%</strong></td><td>Descartar o óleo imediatamente</td></tr>
+                <tr><td>Frequência de filtragem</td><td><strong>A cada 4h de uso</strong></td><td>Registrar na ficha SMPD</td></tr>
+                <tr><td>Vida útil do óleo</td><td><strong>14 dias</strong></td><td>Descartar mesmo se CP abaixo de 24%</td></tr>
+                <tr><td>Nível mínimo de óleo</td><td>Acima da linha mínima</td><td>Completar com óleo novo antes de fritar</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⚠️</div><h2>Sinais de Óleo Degradado</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c4">Sinais Visuais</div>
+            <div class="rota-item">Cor escura (marrom ou preta) · Espuma excessiva na superfície · Fumaça visível antes de atingir 168°C</div>
+            <div class="rota-head c4">Sinais Sensoriais</div>
+            <div class="rota-item">Odor rançoso ou acre · Sabor amargo transferido para as batatas · Batatas com cor mais escura que o normal</div>
+            <div class="rota-head c2">Inimigos do Óleo</div>
+            <div class="rota-item"><strong>Sal</strong> — nunca salgar sobre a fritadeira · <strong>Água</strong> — secar o cesto antes de mergulhar · <strong>Resíduos</strong> — filtrar regularmente · <strong>Temperatura errada</strong> — nunca fritar abaixo de 168°C</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">✅</div><h2>Checklist de Gestão do Óleo</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Verificar temperatura do óleo antes de cada fritura (<strong>168°C</strong>)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Filtrar o óleo a cada <strong>4 horas de uso</strong> e registrar na ficha</label></div>
+          <div class="check-item"><input type="checkbox"><label>Medir Compostos Polares no início do turno e registrar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar nível do óleo — completar se necessário</label></div>
+          <div class="check-item"><input type="checkbox"><label>Nunca salgar batatas sobre a fritadeira</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar validade do óleo (máx. <strong>14 dias</strong>)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Descartar óleo imediatamente se CP ≥ 24%</label></div>
+        </div>
+      </div>
+    </div>
+
+        <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Quiz — McFritas</h2><div class="badge badge-yellow">8 perguntas</div></div>
+        <div class="card-body"><div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+          <div id="quiz-app"></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · McFritas · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_MCFRITAS = [
+      { category: "🌡️ Temperatura", question: "Qual a temperatura da fritadeira de McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "A fritadeira de McFritas opera a 168°C." },
+      { category: "⏱️ Tempo", question: "Qual o tempo de fritura das McFritas?", options: ["2min30s", "3min00s", "3min10s", "4min00s"], answer: "3min10s", explanation: "O tempo de fritura das McFritas é 3 minutos e 10 segundos." },
+      { category: "📦 Tamanhos", question: "Qual o peso da McFritas tamanho Médio?", options: ["73g", "95g", "102g", "146g"], answer: "102g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
+      { category: "📦 Tamanhos", question: "Qual o peso da McFritas tamanho Grande?", options: ["73g", "102g", "120g", "146g"], answer: "146g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
+      { category: "📦 Tamanhos", question: "Qual o peso da McFritas tamanho Pequeno?", options: ["50g", "65g", "73g", "85g"], answer: "73g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
+      { category: "🛢️ Óleo", question: "Qual o limite máximo de Compostos Polares no óleo?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "Os Compostos Polares devem ser iguais ou abaixo de 24%." },
+      { category: "🛢️ Óleo", question: "Em qual linha da cuba deve ser mantido o nível de óleo?", options: ["Primeira linha", "Segunda linha", "Terceira linha", "Linha máxima"], answer: "Segunda linha", explanation: "O nível de óleo deve respeitar a segunda linha na cuba." },
+      { category: "⏱️ Validade", question: "Qual a validade dos sacos de McFritas no congelador portátil?", options: ["6 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "Os sacos de McFritas no congelador portátil têm validade de 24 horas." },
+      { category: "🍟 McFritas · Temperatura", question: "Qual a temperatura das fritadeiras de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "Frango e tortas fritam a 180°C. McFritas = 168°C." },
+      { category: "🍟 McFritas · Procedimento", question: "Como deve ser feito o movimento das fritas durante o chacoalhar?", options: ["Chacoalhar para frente e para trás", "Chacoalhar lateralmente", "Virar completamente o cesto", "Não chacoalhar"], answer: "Chacoalhar para frente e para trás", explanation: "Ao retirar, chacoalhar o cesto para frente e para trás para escorrer o excesso de óleo." },
+      { category: "🍟 McFritas · Procedimento", question: "Qual o tempo máximo de salga das McFritas após sair do óleo?", options: ["5 segundos", "10 segundos", "15 segundos", "30 segundos"], answer: "10 segundos", explanation: "A salga deve ser feita em até 10 segundos após a fritura para aderir corretamente." },
+      { category: "⏱️ McFritas · Validade", question: "Qual a validade das McFritas prontas na área de manutenção de calor?", options: ["2 minutos", "5 minutos", "7 minutos", "10 minutos"], answer: "7 minutos", explanation: "As McFritas têm validade de 7 minutos na área de manutenção de calor." },
+      { category: "🛢️ McFritas · Óleo", question: "Quantas vezes por dia o óleo deve ser filtrado?", options: ["1 vez", "2 vezes", "3 vezes", "4 vezes"], answer: "2 vezes", explanation: "O óleo das fritadeiras deve ser filtrado 2 vezes ao dia." },
+      { category: "📦 McFritas · Estocagem", question: "Os sacos de batata devem ser encestados de qual forma?", options: ["Soltos na batata", "Sem encestamento prévio", "Com o cesto já posicionado", "Encestados com a lâmina"], answer: "Encestados com a lâmina", explanation: "As batatas devem ser encestadas usando a lâmina de produção para organizar as porções no cesto." },
+      { category: "🌡️ McFritas · Temperatura", question: "Qual a temperatura interna mínima para as McFritas prontas?", options: ["60°C", "70°C", "74°C", "80°C"], answer: "74°C", explanation: "A temperatura interna mínima das McFritas prontas é de 74°C (165°F)." },
+      { category: "🛢️ McFritas · Óleo", question: "Quando o óleo deve ser descartado mesmo abaixo do limite de 24%?", options: ["Nunca, apenas quando atingir 24%", "A cada 3 dias independente do percentual", "Quando apresentar cor escura, fumaça excessiva ou odor", "Apenas quando o cliente reclamar"], answer: "Quando apresentar cor escura, fumaça excessiva ou odor", explanation: "O óleo deve ser descartado quando apresentar sinais visuais como cor escura, fumaça excessiva ou odor estranho, mesmo abaixo do limite." },
+      { category: "⚙️ McFritas · Procedimento", question: "O que deve ser feito com os sacos de batata no congelador portátil?", options: ["Empilhar sem organização", "Manter na posição vertical para encestamento fácil", "Descongelar antes de usar", "Armazenar abertos"], answer: "Manter na posição vertical para encestamento fácil", explanation: "Os sacos no congelador portátil devem estar na posição que facilite o encestamento." },
+      { category: "📦 McFritas · Tamanhos", question: "Quantas McFritas P cabem em um cesto de fritura?", options: ["2 porções", "3 porções", "4 porções", "6 porções"], answer: "6 porções", explanation: "Em um cesto de McFritas P cabem 6 porções por rodada." },
+      { category: "🛢️ McFritas · Óleo", question: "Com qual instrumento é medido o percentual de compostos polares do óleo?", options: ["Termômetro", "Balança digital", "Testo ou medidor de compostos polares", "Refratômetro"], answer: "Testo ou medidor de compostos polares", explanation: "O percentual de compostos polares é medido com o Testo ou medidor específico de compostos polares." },
+      { category: "🍟 McFritas · Qualidade", question: "Quais são as características visuais de McFritas de qualidade?", options: ["Escuras e com sal abundante", "Douradas, crocantes por fora e macias por dentro", "Brancas e sem sal", "Douradas e bem salgadas"], answer: "Douradas, crocantes por fora e macias por dentro", explanation: "McFritas de qualidade: douradas, crocantes por fora, macias por dentro, bem salgadas." },
+      { category: "🍟 McFritas · Sal", question: "Quando deve ser aplicado o sal nas McFritas?", options: ["Antes de fritar", "Imediatamente após sair da fritadeira, ainda quentes", "Antes de entregar ao cliente", "A qualquer momento"], answer: "Imediatamente após sair da fritadeira, ainda quentes", explanation: "O sal deve ser aplicado imediatamente após sair da fritadeira enquanto as batatas ainda estão quentes." },
+      { category: "🍟 McFritas · Sal", question: "Como aplicar o sal corretamente nas McFritas?", options: ["Jogar todo o sal de uma vez no centro", "Distribuir uniformemente com movimentos de vai e vem", "Aplicar apenas nas pontas", "Deixar o cliente salgar"], answer: "Distribuir uniformemente com movimentos de vai e vem", explanation: "Aplicar o sal com movimentos de vai e vem para distribuir uniformemente." },
+      { category: "🍟 McFritas · Estocagem", question: "Como devem ser posicionados os sacos de batata no congelador portátil?", options: ["Deitados horizontalmente", "Em pé verticalmente", "De qualquer forma", "Empilhados no máximo 3"], answer: "Em pé verticalmente", explanation: "Os sacos de batata devem ficar em pé verticalmente no congelador portátil." },
+      { category: "🌡️ McFritas · Temperatura", question: "Qual a temperatura das fritadeiras de McFritas?", options: ["160°C", "165°C", "168°C", "175°C"], answer: "168°C", explanation: "A temperatura das fritadeiras de McFritas é 168°C (335°F)." },
+      { category: "🍟 McFritas · Porções", question: "Qual o equipamento usado para porcionar as McFritas corretamente?", options: ["Colher", "Concha", "Copo Medidor de Fritas específico", "Qualquer recipiente"], answer: "Copo Medidor de Fritas específico", explanation: "Usar o Copo Medidor de Fritas específico para cada tamanho (P, M, G, GG)." },
+      { category: "🍟 McFritas · Porções", question: "Como garantir a porção correta ao encher o copo de McFritas?", options: ["Encher pela lateral de cima direto", "Encher pelo fundo do copo com o cesto", "Usar colher para colocar", "Estimar visualmente"], answer: "Encher pelo fundo do copo com o cesto", explanation: "Usar a técnica de encher o copo pelo fundo (método cesto) para garantir a porção correta." },
+      { category: "🛢️ McFritas · Óleo", question: "Quais são os sinais de que o óleo precisa ser filtrado?", options: ["Cor levemente amarelada", "Espuma excessiva, cor escura ou cheiro forte", "Temperatura acima do normal", "Batatas grudando no cesto"], answer: "Espuma excessiva, cor escura ou cheiro forte", explanation: "Sinais para filtrar: espuma excessiva, cor escura, cheiro forte ou fumaça." },
+      { category: "⏱️ McFritas · Validade", question: "Qual a validade das McFritas saladas na área de manutenção de calor?", options: ["2 minutos", "5 minutos", "7 minutos", "10 minutos"], answer: "7 minutos", explanation: "McFritas saladas têm 7 minutos de validade na área de manutenção de calor." },
+      { category: "🍟 McFritas · Descarte", question: "O que fazer com McFritas que passaram do tempo de validade?", options: ["Reutilizar se ainda estiverem quentes", "Descartar imediatamente e preparar novo lote", "Salgar mais para melhorar", "Devolver ao congelador"], answer: "Descartar imediatamente e preparar novo lote", explanation: "McFritas fora do tempo de validade devem ser descartadas imediatamente." },
+      { category: "🌡️ McFritas · Temperatura", question: "Qual a temperatura mínima de serviço das McFritas?", options: ["52°C", "57°C", "63°C", "70°C"], answer: "63°C", explanation: "A temperatura mínima de serviço das McFritas é 63°C." },
+      { category: "🍟 McFritas · Pré-pico", question: "O que fazer no pré-pico para garantir McFritas sempre prontas?", options: ["Fritar o máximo possível", "Calcular a demanda e fritar lotes menores e frequentes", "Estocar batatas já fritas sem sal", "Não há procedimento especial"], answer: "Calcular a demanda e fritar lotes menores e frequentes", explanation: "No pré-pico, calcular demanda e fritar lotes menores e frequentes para manter qualidade." },
+      { category: "🍟 McFritas · Batata", question: "Por quanto tempo os sacos de batata podem ficar no congelador portátil após abertura?", options: ["1 hora", "4 horas", "8 horas", "Até o final do turno"], answer: "8 horas", explanation: "Após abertura, os sacos de batata têm validade de 8 horas no congelador portátil." },
+      { category: "⚙️ McFritas · Equipamento", question: "O que verificar na fritadeira antes de iniciar a operação?", options: ["Apenas o nível de óleo", "Nível de óleo, temperatura, filtro limpo e funcionamento do cesto", "Apenas a temperatura", "Nada, o gerente verifica"], answer: "Nível de óleo, temperatura, filtro limpo e funcionamento do cesto", explanation: "Verificar: nível de óleo, temperatura atingida, filtro limpo e funcionamento correto do cesto." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_MCFRITAS); observer.disconnect(); }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_MCFRITAS);
+    });
+  </script>
+</body>
+</html>

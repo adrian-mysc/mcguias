@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McDelivery — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .carrinho-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+    }
+    .carrinho-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 13px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+    .carrinho-row:last-child { border-bottom: none; }
+    .carrinho-row:nth-child(even) { background: var(--bg); }
+    .carrinho-num {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--red);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .alerta-box {
+      background: linear-gradient(135deg, #1c1a17 0%, #2e2b26 100%);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      border: 2px solid var(--red);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .alerta-icon { font-size: 30px; flex-shrink: 0; }
+    .alerta-text {
+      font-size: 13.5px;
+      color: white;
+      line-height: 1.6;
+    }
+    .alerta-text strong { color: var(--yellow); }
+
+    .alturas-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+    .altura-item {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 8px;
+      text-align: center;
+    }
+    .altura-num {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--red);
+      line-height: 1;
+    }
+    .altura-label { font-size: 10px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+  </style>
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="mcdelivery">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>McDelivery</h1>
+        <p>Guia Rápido Operacional · Experiência do Cliente</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="carrinho">🛒 Carrinho</button>
+      <button class="tab-btn" data-tab="procedimento">📦 Procedimento</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧼</div>
+          <h2>Padrões de Higiene</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Apresentação Pessoal</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Higiene das Mãos</h3>
+              <ul>
+                <li class="blue">Lavar mãos e antebraços com sabonete bactericida por 20"</li>
+                <li class="blue">Usar gel sanitizante antes de assumir a função</li>
+                <li class="blue">Higienizar após atividade de limpeza</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alerta-box">
+        <div class="alerta-icon">⚠️</div>
+        <div class="alerta-text">
+          <strong>ATENÇÃO:</strong> A liberação do pedido deve ser realizada somente após <strong>validação do código informado pelo entregador</strong> — e não pelo nome do cliente!
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Preparação — Checklist Inicial</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Área preparada com todos os suprimentos, sacos, lacres, suporte e brinquedos estocados</label>
+            <label class="check-item"><input type="checkbox"> POS atualizado e tablet carregado e 100% do tempo funcionando</label>
+            <label class="check-item"><input type="checkbox"> Garantir a dupla checagem dos pedidos</label>
+            <label class="check-item"><input type="checkbox"> Após finalizar o pedido, acionar o botão <strong>PRONTO</strong> no tablet</label>
+            <label class="check-item"><input type="checkbox"> Produtos dentro da validade</label>
+            <label class="check-item"><input type="checkbox"> Seladora funcionando</label>
+            <label class="check-item"><input type="checkbox"> Selos suficientes para o plantão</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-carrinho">
+
+      <div class="section-label">Layout do Carrinho</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📏</div>
+          <h2>Alturas de Referência</h2>
+          <div class="badge badge-yellow">Tech Tower</div>
+        </div>
+        <div class="card-body">
+          <div class="alturas-grid">
+            <div class="altura-item">
+              <div class="altura-num">①</div>
+              <div class="altura-label">12,5 cm do chão</div>
+            </div>
+            <div class="altura-item">
+              <div class="altura-num">②</div>
+              <div class="altura-label">61,5 cm do chão</div>
+            </div>
+            <div class="altura-item">
+              <div class="altura-num">③</div>
+              <div class="altura-label">90,0 cm do chão</div>
+            </div>
+            <div class="altura-item">
+              <div class="altura-num">④</div>
+              <div class="altura-label">50,0 cm da mesa</div>
+            </div>
+            <div class="altura-item">
+              <div class="altura-num">⑤</div>
+              <div class="altura-label">75,0 cm da mesa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛒</div>
+          <h2>Carrinho Tech Tower — Itens</h2>
+        </div>
+        <div class="card-body">
+          <div class="carrinho-grid">
+            <div class="carrinho-row"><div class="carrinho-num">1</div>Bobinas e Lacres (reserva)</div>
+            <div class="carrinho-row"><div class="carrinho-num">2</div>Lacre</div>
+            <div class="carrinho-row"><div class="carrinho-num">3</div>Colheres para sorvete</div>
+            <div class="carrinho-row"><div class="carrinho-num">4</div>Molhos para McNuggets</div>
+            <div class="carrinho-row"><div class="carrinho-num">5</div>Ketchup</div>
+            <div class="carrinho-row"><div class="carrinho-num">6</div>Mostarda</div>
+            <div class="carrinho-row"><div class="carrinho-num">7</div>Canudo para McShake</div>
+            <div class="carrinho-row"><div class="carrinho-num">8</div>Guardanapos</div>
+            <div class="carrinho-row"><div class="carrinho-num">9</div>Sacos D+</div>
+            <div class="carrinho-row"><div class="carrinho-num">10</div>Sacos C</div>
+            <div class="carrinho-row"><div class="carrinho-num">11</div>Suportes de Bebida</div>
+            <div class="carrinho-row"><div class="carrinho-num">12</div>Suporte de Brinquedos</div>
+            <div class="carrinho-row"><div class="carrinho-num">13</div>Guia de Estação</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🖥️</div>
+          <h2>Carrinho Armado Completo com POS</h2>
+          <div class="badge badge-red">+ POS</div>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Itens adicionais</div>
+          <div class="carrinho-grid">
+            <div class="carrinho-row"><div class="carrinho-num">1</div>Sacos preparados com lacre</div>
+            <div class="carrinho-row"><div class="carrinho-num">2</div>Bobinas e Lacres (reserva)</div>
+            <div class="carrinho-row"><div class="carrinho-num">3</div>Lacre</div>
+            <div class="carrinho-row"><div class="carrinho-num">10</div>Porta comanda</div>
+            <div class="carrinho-row"><div class="carrinho-num">11</div>POS</div>
+            <div class="carrinho-row"><div class="carrinho-num">12</div>Tablet</div>
+            <div class="carrinho-row"><div class="carrinho-num">19</div>Impressora</div>
+            <div class="carrinho-row"><div class="carrinho-num">20</div>Adesivo de Mesa</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📐</div>
+          <h2>Dual Point — POS + Mesa Extensora</h2>
+          <div class="badge badge-blue">Dual Point</div>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill blue">Mini ORB (Conferente) — próximo à janela de entrega</div>
+            <div class="pill yellow">Suporte de Brinquedos</div>
+            <div class="pill green">Guia de Estação</div>
+            <div class="pill red">Adesivo de Mesa</div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>No layout Dual Point com mesa extensora, o <strong>Mini ORB (Conferente)</strong> deve ficar próximo à janela de entrega.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-procedimento">
+
+      <div class="section-label">Procedimento Operacional</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📦</div>
+          <h2>Montagem do Pedido McDelivery</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Puxe o <strong>recall do POS</strong> imediatamente ao receber o pedido.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Inicie a montagem após o pedido aparecer na tela da OAT e <strong>imprima o Pick List</strong> do pedido.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Coloque os itens no saco, <strong>organizando-os para que fiquem bem acomodados</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Coloque o saco dobrado na horizontal com o pedido dentro da <strong>sacola D</strong>. Coloque o suporte na horizontal e posicione a bebida.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text"><strong>Realize a dupla checagem</strong> do pedido verificando tamanho, sabores e quantidade de cada item. Coloque os condimentos, canudos e guardanapos.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">6</div>
+              <div class="step-text">Após finalizar a montagem, realize o <strong>fechamento do saco com os adesivos</strong> e suas devidas informações (Pick List e número de pedido). Sinalize o pedido como <strong>PRONTO no Flex</strong> para que o entregador realize a entrega.</div>
+            </div>
+          </div>
+
+          <div class="alerta-box" style="margin-top: 4px;">
+            <div class="alerta-icon">⚠️</div>
+            <div class="alerta-text">
+              <strong>CRÍTICO:</strong> A liberação do pedido deve ser realizada somente após <strong>validação do código informado pelo entregador</strong> — e não pelo nome do cliente!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">✅</div>
+          <h2>Dupla Checagem — O que verificar</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Tamanho correto de cada item</label>
+            <label class="check-item"><input type="checkbox"> Sabores corretos (sanduíches, bebidas, sobremesas)</label>
+            <label class="check-item"><input type="checkbox"> Quantidade de cada item conforme Pick List</label>
+            <label class="check-item"><input type="checkbox"> Condimentos incluídos (molhos de nuggets, ketchup, mostarda)</label>
+            <label class="check-item"><input type="checkbox"> Canudos e guardanapos incluídos</label>
+            <label class="check-item"><input type="checkbox"> Adesivos com Pick List e número do pedido</label>
+            <label class="check-item"><input type="checkbox"> Pedido sinalizado como PRONTO no Flex</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — McDelivery</h2>
+          <div class="badge badge-red">10 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · McDelivery · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_DELIVERY = [
+      {
+        category: "⚠️ McDelivery · Regra Crítica",
+        question: "Como deve ser validada a liberação do pedido para o entregador?",
+        options: [
+          "Pelo nome do cliente informado no pedido",
+          "Pelo código informado pelo entregador",
+          "Pelo número do pedido no saco",
+          "Pelo aplicativo do entregador"
+        ],
+        answer: "Pelo código informado pelo entregador",
+        explanation: "A liberação deve ser realizada somente após validação do CÓDIGO informado pelo entregador — nunca pelo nome do cliente!"
+      },
+      {
+        category: "📦 McDelivery · Procedimento",
+        question: "Qual é o primeiro passo ao receber um pedido McDelivery?",
+        options: [
+          "Imprimir o Pick List",
+          "Puxar o recall do POS imediatamente",
+          "Separar os sacos",
+          "Verificar os produtos na OAT"
+        ],
+        answer: "Puxar o recall do POS imediatamente",
+        explanation: "O primeiro passo é puxar o recall do POS imediatamente ao receber o pedido."
+      },
+      {
+        category: "📦 McDelivery · Procedimento",
+        question: "Quando deve ser iniciada a montagem do pedido?",
+        options: [
+          "Assim que o pedido chegar no POS",
+          "Após o pedido aparecer na tela da OAT e imprimir o Pick List",
+          "Quando o entregador chegar",
+          "Após a dupla checagem"
+        ],
+        answer: "Após o pedido aparecer na tela da OAT e imprimir o Pick List",
+        explanation: "A montagem começa após o pedido aparecer na OAT e após imprimir o Pick List."
+      },
+      {
+        category: "📦 McDelivery · Procedimento",
+        question: "Como deve ser posicionada a bebida no saco de delivery?",
+        options: [
+          "Dentro da sacola D, em pé",
+          "Saco dobrado na horizontal com pedido na sacola D, suporte na horizontal e bebida posicionada",
+          "Separada em saco menor",
+          "Com o canudo já inserido"
+        ],
+        answer: "Saco dobrado na horizontal com pedido na sacola D, suporte na horizontal e bebida posicionada",
+        explanation: "O saco é dobrado na horizontal, colocado dentro da sacola D. O suporte fica na horizontal e a bebida é posicionada sobre ele."
+      },
+      {
+        category: "✅ McDelivery · Checagem",
+        question: "O que deve ser verificado na dupla checagem do pedido?",
+        options: [
+          "Apenas o número do pedido",
+          "Tamanho, sabores e quantidade de cada item",
+          "Apenas os condimentos",
+          "Somente o valor total do pedido"
+        ],
+        answer: "Tamanho, sabores e quantidade de cada item",
+        explanation: "A dupla checagem verifica tamanho, sabores e quantidade de cada item. Também incluem-se condimentos, canudos e guardanapos."
+      },
+      {
+        category: "📦 McDelivery · Finalização",
+        question: "O que deve ser feito após finalizar a montagem do saco?",
+        options: [
+          "Entregar diretamente ao entregador",
+          "Fechar o saco com adesivos com Pick List e número do pedido, e sinalizar como PRONTO no Flex",
+          "Aguardar o entregador pedir",
+          "Colocar em refrigeração"
+        ],
+        answer: "Fechar o saco com adesivos com Pick List e número do pedido, e sinalizar como PRONTO no Flex",
+        explanation: "Feche o saco com adesivos contendo Pick List e número do pedido, e sinalize como PRONTO no Flex para que o entregador realize a entrega."
+      },
+      {
+        category: "🛒 McDelivery · Carrinho",
+        question: "Qual item NÃO faz parte da lista do Carrinho Tech Tower?",
+        options: [
+          "Bobinas e Lacres",
+          "Guardanapos",
+          "Tablet",
+          "Sacos D+"
+        ],
+        answer: "Tablet",
+        explanation: "O Tablet é exclusivo do Carrinho Armado Completo com POS. O Tech Tower básico não inclui tablet."
+      },
+      {
+        category: "🛒 McDelivery · Carrinho",
+        question: "No layout Dual Point com mesa extensora, onde deve ficar o Mini ORB (Conferente)?",
+        options: [
+          "Próximo ao POS",
+          "No centro da mesa extensora",
+          "Próximo à janela de entrega",
+          "Ao lado do tablet"
+        ],
+        answer: "Próximo à janela de entrega",
+        explanation: "No layout Dual Point, o Mini ORB (Conferente) deve ficar próximo à janela de entrega."
+      },
+      {
+        category: "⚙️ McDelivery · Preparação",
+        question: "Qual ação deve ser feita após finalizar o pedido no tablet?",
+        options: [
+          "Acionar o botão PRONTO no tablet",
+          "Imprimir o Pick List novamente",
+          "Ligar para o entregador",
+          "Registrar no POS"
+        ],
+        answer: "Acionar o botão PRONTO no tablet",
+        explanation: "Após finalizar o pedido, deve-se acionar o botão PRONTO no tablet."
+      },
+      {
+        category: "⚙️ McDelivery · Preparação",
+        question: "Qual é a importância da dupla checagem no McDelivery?",
+        options: [
+          "Apenas para cumprir protocolo",
+          "Para garantir tamanho, sabores, quantidade e condimentos corretos antes do fechamento",
+          "Para verificar se o entregador chegou",
+          "Para registrar o horário de entrega"
+        ],
+        answer: "Para garantir tamanho, sabores, quantidade e condimentos corretos antes do fechamento",
+        explanation: "A dupla checagem garante que o pedido está correto — tamanho, sabores, quantidade, condimentos, canudos e guardanapos — antes do fechamento definitivo."
+      },
+      { category: "📦 McDelivery · Procedimento", question: "Como deve ser posicionado o saco dentro da sacola D?", options: ["Em pé", "Dobrado na horizontal", "Aberto para facilitar acesso", "Amarrado no topo"], answer: "Dobrado na horizontal", explanation: "O saco deve ser dobrado na horizontal antes de colocar dentro da sacola D." },
+      { category: "📦 McDelivery · Procedimento", question: "O que deve ser feito logo após sinalizar o pedido como PRONTO no Flex?", options: ["Aguardar o entregador chegar", "O pedido fica disponível para o entregador realizar a entrega", "Ligar para o entregador", "Entregar pessoalmente"], answer: "O pedido fica disponível para o entregador realizar a entrega", explanation: "Ao sinalizar PRONTO no Flex, o entregador recebe a notificação e pode realizar a entrega." },
+      { category: "🛒 McDelivery · Carrinho", question: "Qual a altura da prateleira 3 do carrinho Tech Tower?", options: ["12,5cm do chão", "61,5cm do chão", "90,0cm do chão", "50cm da mesa"], answer: "90,0cm do chão", explanation: "Prateleira ①=12,5cm · ②=61,5cm · ③=90,0cm do chão · ④=50cm da mesa · ⑤=75cm da mesa." },
+      { category: "🛒 McDelivery · Carrinho", question: "Onde ficam os guardanapos no carrinho Tech Tower?", options: ["Posição 3", "Posição 6", "Posição 8", "Posição 10"], answer: "Posição 8", explanation: "No carrinho Tech Tower: posição 8 = Guardanapos." },
+      { category: "🛒 McDelivery · Carrinho", question: "O que fica na posição 4 do carrinho Tech Tower?", options: ["Ketchup", "Lacre", "Molhos para McNuggets", "Canudo para McShake"], answer: "Molhos para McNuggets", explanation: "Posição 4 do Tech Tower = Molhos para McNuggets." },
+      { category: "✅ McDelivery · Checagem", question: "Além de tamanho, sabores e quantidade, o que mais verifica a dupla checagem?", options: ["Apenas o número do pedido", "Condimentos, canudos e guardanapos", "A temperatura do produto", "A embalagem do saco"], answer: "Condimentos, canudos e guardanapos", explanation: "A dupla checagem verifica tamanho, sabores, quantidade de cada item + condimentos, canudos e guardanapos." },
+      { category: "🛒 McDelivery · Carrinho", question: "Quantos sacos D+ ficam no carrinho Tech Tower?", options: ["Posição 7", "Posição 9", "Posição 10", "Posição 11"], answer: "Posição 9", explanation: "No carrinho Tech Tower: posição 9 = Sacos D+." },
+      { category: "⚙️ McDelivery · Preparação", question: "O que deve estar 100% funcionando durante todo o tempo no McDelivery?", options: ["Apenas o POS", "Apenas o tablet", "POS atualizado e tablet carregado funcionando 100% do tempo", "Apenas a seladora"], answer: "POS atualizado e tablet carregado funcionando 100% do tempo", explanation: "POS deve estar atualizado e tablet carregado e 100% do tempo funcionando." },
+      { category: "📦 McDelivery · Procedimento", question: "Quais itens devem estar estocados antes de iniciar o turno de McDelivery?", options: ["Apenas sacos", "Área preparada com suprimentos, sacos, lacres, suporte e brinquedos estocados", "Apenas lacres e sacos", "Apenas o tablet carregado"], answer: "Área preparada com suprimentos, sacos, lacres, suporte e brinquedos estocados", explanation: "Área preparada com todos os suprimentos, sacos, lacres, suporte e brinquedos estocados." },
+      { category: "⚠️ McDelivery · Segurança", question: "Por que não se deve liberar o pedido pelo nome do cliente?", options: ["É muito demorado", "O código é mais seguro e garante que o entregador correto receba o pedido", "O nome pode ser difícil de pronunciar", "O sistema não permite"], answer: "O código é mais seguro e garante que o entregador correto receba o pedido", explanation: "A liberação pelo código garante segurança — somente o entregador com o código correto pode receber o pedido." },
+      { category: "🛒 McDelivery · Dual Point", question: "O que diferencia o layout Dual Point com mesa extensora do carrinho padrão?", options: ["Apenas a cor", "Tem Mini ORB (Conferente) próximo à janela de entrega e mesa extensora", "É menor", "Não tem POS"], answer: "Tem Mini ORB (Conferente) próximo à janela de entrega e mesa extensora", explanation: "No Dual Point: mesa extensora adicional e Mini ORB (Conferente) posicionado próximo à janela de entrega." },
+      { category: "📦 McDelivery · Finalização", question: "Quais informações devem estar nos adesivos de fechamento do saco?", options: ["Apenas o número do pedido", "Pick List e número de pedido", "Nome do cliente e número do pedido", "Apenas o código de barras"], answer: "Pick List e número de pedido", explanation: "O fechamento do saco deve ser feito com adesivos contendo Pick List e número do pedido." },
+      { category: "📦 McDelivery · Embalagem", question: "Como identificar pedidos com temperatura quente e fria no mesmo pedido?", options: ["Colocar tudo numa sacola", "Separar em sacolas distintas por temperatura", "Só existe uma temperatura por pedido", "Misturar mas avisar o entregador"], answer: "Separar em sacolas distintas por temperatura", explanation: "Pedidos com itens quentes e frios devem ser embalados em sacolas distintas por temperatura." },
+      { category: "📦 McDelivery · Embalagem", question: "Em que ordem os itens devem ser colocados na sacola?", options: ["Qualquer ordem", "Pesados no fundo, leves e bebidas em cima", "Bebidas primeiro, depois sólidos", "Sobremesas primeiro"], answer: "Pesados no fundo, leves e bebidas em cima", explanation: "Empacotar com itens pesados no fundo e leves/bebidas em cima para evitar danos." },
+      { category: "⏱️ McDelivery · Tempos", question: "Qual o tempo meta de preparação para pedidos McDelivery?", options: ["2 minutos", "3 minutos", "4 minutos", "5 minutos"], answer: "4 minutos", explanation: "O tempo meta de preparação de pedidos McDelivery é de 4 minutos." },
+      { category: "📱 McDelivery · Plataformas", question: "Quais plataformas de delivery são aceitas no restaurante?", options: ["Apenas McDelivery próprio", "iFood, Rappi e McDelivery", "Qualquer plataforma cadastrada", "Apenas parceiros oficiais Arcos Dourados"], answer: "Apenas parceiros oficiais Arcos Dourados", explanation: "Apenas as plataformas parceiras oficiais da Arcos Dourados são aceitas." },
+      { category: "📦 McDelivery · Conferência", question: "Quando deve ser feita a dupla conferência do pedido?", options: ["Apenas para pedidos grandes", "Em todos os pedidos antes de lacrar a sacola", "Apenas nos horários de pico", "Apenas em pedidos com observações"], answer: "Em todos os pedidos antes de lacrar a sacola", explanation: "A dupla conferência deve ser feita em TODOS os pedidos antes de lacrar a sacola." },
+      { category: "📦 McDelivery · Lacre", question: "Por que é importante lacrar corretamente a sacola do McDelivery?", options: ["Apenas para enfeite", "Garantir segurança alimentar e evitar adulteração", "Exigência da plataforma digital", "Facilitar o transporte"], answer: "Garantir segurança alimentar e evitar adulteração", explanation: "O lacre garante segurança alimentar, evita adulteração e transmite confiança ao cliente." },
+      { category: "📱 McDelivery · MOP", question: "O que é o MOP no contexto McDelivery?", options: ["Método de Operação Padrão", "Mobile Order and Pay — pedido pelo app com retirada no restaurante", "Monitor de Operações Paralelas", "Manual de Orientação de Produção"], answer: "Mobile Order and Pay — pedido pelo app com retirada no restaurante", explanation: "MOP = Mobile Order and Pay: cliente faz o pedido pelo app e retira no restaurante." },
+      { category: "📦 McDelivery · Molhos", question: "Como devem ser embalados os molhos e sachês no pedido delivery?", options: ["Misturados com os alimentos", "Em envelope ou saquinho separado dentro da sacola", "Não incluir molhos", "Dentro das embalagens dos lanches"], answer: "Em envelope ou saquinho separado dentro da sacola", explanation: "Molhos e sachês devem ser colocados em envelope ou saquinho separado dentro da sacola." },
+      { category: "⏱️ McDelivery · Validade", question: "Qual o tempo máximo que um pedido McDelivery pode aguardar o entregador?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "10 minutos", explanation: "Um pedido McDelivery pode aguardar o entregador por no máximo 10 minutos." },
+      { category: "📱 McDelivery · Sistema", question: "O que fazer se o sistema de delivery cair durante o pico?", options: ["Continuar normalmente", "Notificar o gerente e seguir protocolo de contingência", "Cancelar todos os pedidos", "Não há protocolo para isso"], answer: "Notificar o gerente e seguir protocolo de contingência", explanation: "Em caso de queda do sistema, notificar o gerente imediatamente e seguir o protocolo de contingência." },
+      { category: "📦 McDelivery · Bebidas", question: "Como embalar bebidas quentes para delivery?", options: ["Sem tampa, colocar na sacola", "Com tampa lacrada e na posição vertical na sacola", "Deitadas para não vazar", "Em saco plástico separado"], answer: "Com tampa lacrada e na posição vertical na sacola", explanation: "Bebidas quentes devem ter tampa lacrada e ficarem na posição vertical na sacola." },
+      { category: "📦 McDelivery · Sobremesas", question: "Como proteger sorvetes e produtos frios no delivery?", options: ["Em sacola comum com os demais itens", "Em embalagem isolante separada dos itens quentes", "Não é possível entregar sorvetes", "Com gelo na sacola"], answer: "Em embalagem isolante separada dos itens quentes", explanation: "Sorvetes e itens frios devem ser embalados em embalagem isolante, separados dos itens quentes." },
+      { category: "📦 McDelivery · Guardanapos", question: "Qual a quantidade mínima de guardanapos por pedido?", options: ["1 guardanapo", "2 guardanapos", "3 guardanapos", "Depende do pedido"], answer: "3 guardanapos", explanation: "Incluir no mínimo 3 guardanapos por pedido, mais dependendo da quantidade de itens." },
+      { category: "⏱️ McDelivery · Prioridade", question: "Como priorizar pedidos quando há acúmulo simultâneo de delivery e balcão?", options: ["Delivery sempre primeiro", "Balcão sempre primeiro", "Por ordem de entrada no sistema, respeitando os tempos meta", "Gerente decide caso a caso"], answer: "Por ordem de entrada no sistema, respeitando os tempos meta", explanation: "Priorizar por ordem de entrada, respeitando os tempos meta de cada canal." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_DELIVERY);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_DELIVERY);
+    });
+  </script>
+</body>
+</html>

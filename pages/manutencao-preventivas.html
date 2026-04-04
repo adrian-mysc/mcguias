@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manutenção e Preventivas Diárias — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <style>
+    /* Ficha badge */
+    .ficha-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--red);
+      color: white;
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    /* Ferramentas list */
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tool-chip {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    /* Periodicidade */
+    .period-tag {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #1b5e20;
+      border: 1.5px solid #a5d6a7;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    [data-theme="dark"] .period-tag { background: #0a1f0a; color: #a5d6a7; border-color: #2e5e2e; }
+    [data-theme="dark"] .tool-chip   { background: #111110; border-color: #2e2c28; }
+
+    /* Summary table */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .summary-table th {
+      background: var(--red);
+      color: white;
+      padding: 8px 10px;
+      text-align: left;
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+    .summary-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .summary-table tr:last-child td { border-bottom: none; }
+    .summary-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+    [data-theme="dark"] .summary-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .summary-table .ficha-num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: var(--red);
+      white-space: nowrap;
+    }
+  </style>
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="manutencao">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Manutenção e Preventivas</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Manutenção e Preventivas</h1>
+        <p>Fichas SMPD Diárias</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="resumo">📋 Resumo</button>
+      <button class="tab-btn" data-tab="cozinha">🔥 Cozinha</button>
+      <button class="tab-btn" data-tab="molhos">🥫 Molhos</button>
+      <button class="tab-btn" data-tab="camaras">❄️ Câmaras</button>
+      <button class="tab-btn" data-tab="hidraulica">💧 Hidráulica</button>
+      <button class="tab-btn" data-tab="consumo">📊 Consumo</button>
+      <button class="tab-btn" data-tab="mccafe">☕ McCafé</button>
+      <button class="tab-btn" data-tab="maquinas">⚙️ Máquinas</button>
+      <button class="tab-btn" data-tab="leite">🥛 Leite</button>
+      <button class="tab-btn" data-tab="sorvete">🍦 Sorvete</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-resumo">
+      <div class="section-label">Todas as Preventivas Diárias — Fichas SMPD</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>O que são as Preventivas SMPD?</h2></div>
+        <div class="card-body">
+          <div class="info-block">As <strong>Preventivas SMPD</strong> (Sistema de Manutenção Preventiva Diária) são procedimentos obrigatórios realizados diariamente nos equipamentos do restaurante. O objetivo é garantir o <strong>bom funcionamento, higiene, segurança e vida útil</strong> de cada equipamento. Cada ficha tem um código único (ex: 1R, 33A, 46A) e deve ser executada pelo crew ou gerente responsável.</div>
+          <div class="alert warn" style="margin-top:10px;">⚠️ Sempre usar EPI adequado para cada procedimento. Em caso de dúvida ou anormalidade, acionar o Técnico de Manutenção.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📊</div><h2>Tabela Geral — Preventivas Diárias</h2></div>
+        <div class="card-body" style="padding:0;overflow-x:auto;">
+          <table class="summary-table">
+            <thead>
+              <tr><th>Ficha</th><th>Procedimento</th><th>Equipamento</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="ficha-num">1R</td><td>Limpeza das superfícies de aquecimento da chapa</td><td>Chapa (todos os modelos)</td></tr>
+              <tr><td class="ficha-num">2R</td><td>Drenagem da cuba da fritadeira</td><td>Fritadeira (todos os modelos)</td></tr>
+              <tr><td class="ficha-num">5I</td><td>Limpar as prateleiras da estufa UHC</td><td>Estufa UHC</td></tr>
+              <tr><td class="ficha-num">15B</td><td>Limpeza interna dos congeladores e refrigeradores</td><td>Congeladores e Refrigeradores portáteis</td></tr>
+              <tr><td class="ficha-num">19B</td><td>Lubrificar as hastes do fatiador de tomate</td><td>Fatiador de tomate</td></tr>
+              <tr><td class="ficha-num">20A</td><td>Calibrar o dispensador de molho</td><td>Dispensador de molho (Pistola de inox)</td></tr>
+              <tr><td class="ficha-num">20B</td><td>Lubrificar a haste do dispensador de molho</td><td>Dispensador de molho (Pistola de inox)</td></tr>
+              <tr><td class="ficha-num">22D</td><td>Limpar a caixa de gordura da área de preparação</td><td>Hidráulica — Caixa de gordura</td></tr>
+              <tr><td class="ficha-num">25A</td><td>Leitura diária de água</td><td>Hidrômetro</td></tr>
+              <tr><td class="ficha-num">25B</td><td>Leitura diária de energia</td><td>Relógio KWH (QGBT)</td></tr>
+              <tr><td class="ficha-num">33A</td><td>Análise de cloro da água do restaurante</td><td>Kit GENKIT</td></tr>
+              <tr><td class="ficha-num">46A</td><td>Limpeza dos componentes removíveis do encestador de batata</td><td>Encestador de batata (Frank ou RAM)</td></tr>
+              <tr><td class="ficha-num">46B</td><td>Limpeza interna do encestador de batata</td><td>Encestador de batata (Frank ou RAM)</td></tr>
+              <tr><td class="ficha-num">51A</td><td>Verificação dos clips da esteira transporte horizontal</td><td>Esteira de transporte</td></tr>
+              <tr><td class="ficha-num">1A McCafé</td><td>Limpeza e sanitização da máquina de café expresso</td><td>Máquina de café expresso</td></tr>
+              <tr><td class="ficha-num">1C McCafé</td><td>Limpeza externa da guarnição do grupo</td><td>Máquina de café expresso</td></tr>
+              <tr><td class="ficha-num">1D McCafé</td><td>Retrolavagem da máquina de café expresso</td><td>Máquina de café expresso</td></tr>
+              <tr><td class="ficha-num">1J McCafé</td><td>Limpeza do reservatório de leite — Franke A400</td><td>Máquina Franke A400</td></tr>
+              <tr><td class="ficha-num">1K McCafé</td><td>Limpeza e sanitização da máquina Franke A400</td><td>Máquina Franke A400</td></tr>
+              <tr><td class="ficha-num">1L McCafé</td><td>Limpeza do reservatório de borra — Franke A400</td><td>Máquina Franke A400</td></tr>
+              <tr><td class="ficha-num">1N McCafé</td><td>Limpeza do sistema de água — Melitta CT8</td><td>Máquina Melitta CT8</td></tr>
+              <tr><td class="ficha-num">1Q McCafé</td><td>Limpeza e sanitização da máquina Melitta XT4</td><td>Máquina Melitta XT4</td></tr>
+              <tr><td class="ficha-num">2A McCafé</td><td>Limpeza interna e externa do forno giratório</td><td>Forno giratório</td></tr>
+              <tr><td class="ficha-num">2B McCafé</td><td>Sanitização do forno giratório</td><td>Forno giratório</td></tr>
+              <tr><td class="ficha-num">3A McCafé</td><td>Limpeza e sanitização do moinho de café</td><td>Moinho de café</td></tr>
+              <tr><td class="ficha-num">4A McCafé</td><td>Limpeza interna e externa da vitrine</td><td>Vitrine aquecida ou refrigerada</td></tr>
+              <tr><td class="ficha-num">4B McCafé</td><td>Sanitização da vitrine</td><td>Vitrine aquecida ou refrigerada</td></tr>
+              <tr><td class="ficha-num">5A McCafé</td><td>Limpar o refrigerador e congelador</td><td>Refrigerador e Congelador</td></tr>
+              <tr><td class="ficha-num">9C McCafé</td><td>Retrolavagem do filtro de água do McCafé</td><td>Hidráulica — Filtro T-9</td></tr>
+              <tr><td class="ficha-num">10 McCafé</td><td>Limpeza da tela touch screen da máquina Melitta CT8</td><td>Máquina Melitta CT8</td></tr>
+              <tr><td class="ficha-num">10A McCafé</td><td>Limpeza interna e externa da máquina de lavar xícara</td><td>Máquina de lavar xícara</td></tr>
+              <tr><td class="ficha-num">11A McCafé</td><td>Limpeza e sanitização do liquidificador</td><td>Liquidificador</td></tr>
+              <tr><td class="ficha-num">11M McCafé</td><td>Limpeza do reservatório de borra — Melitta CT8</td><td>Máquina Melitta CT8</td></tr>
+              <tr><td class="ficha-num">44A</td><td>Limpeza do tubo e bico de extração — Foamino</td><td>Máquina de leite Foamino</td></tr>
+              <tr><td class="ficha-num">44D</td><td>Limpeza e sanitização do sistema — Aquagel</td><td>Máquina de leite Aquagel</td></tr>
+              <tr><td class="ficha-num">12E</td><td>Limpeza das tampas, agitadores e válvulas de extração</td><td>Máquina de sorvete (HT-C602/HT-C716)</td></tr>
+              <tr><td class="ficha-num">12I</td><td>Verificação da temperatura do banho-maria das coberturas</td><td>Máquina de sorvete (HT-C602/HT-C716)</td></tr>
+              <tr><td class="ficha-num">12N</td><td>Limpeza e sanitização do dispensador de amendoim</td><td>Máquina de sorvete (HT-C602/HT-C716)</td></tr>
+              <tr><td class="ficha-num">120</td><td>Calibragem da velocidade de extração do sorvete</td><td>Máquina de sorvete (HT-C602/HT-C716) — 2× ao dia</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-cozinha">
+
+      <div class="section-label">Ficha 1R — Chapa</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔥</div><h2>Limpeza das Superfícies de Aquecimento da Chapa</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1R</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="alert danger" style="margin-bottom:10px;">🔴 <strong>EPI obrigatório:</strong> luva de alta temperatura, mangote, avental de alta temperatura, calçado de segurança sem componentes metálicos</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧤 Luva alta temperatura</div>
+            <div class="tool-chip">🔵 Suporte azul 3M não abrasiva</div>
+            <div class="tool-chip">💦 Borrifador</div>
+            <div class="tool-chip">🧴 Kay QSR Hi-Temp Grill Cleaner</div>
+            <div class="tool-chip">🧻 Panos</div>
+            <div class="tool-chip">🪣 Cuba plástica</div>
+            <div class="tool-chip">🪣 Rodo</div>
+            <div class="tool-chip">🔪 Raspador</div>
+            <div class="tool-chip">🧴 HD-Desengordurante</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Inicie o <strong>MODO LIMPEZA</strong> — pressione o botão menu → pressione <strong>Clean</strong> → aguarde as placas reduzirem a temperatura até o nível de limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire as calhas de gordura laterais, despeje a gordura no recipiente adequado e retorne com as calhas</label></div>
+            <div class="alert warn" style="margin:8px 0;">📌 Verifique se o sistema de exaustão está ligado</div>
+            <div class="check-item"><input type="checkbox"><label>Remova o teflon com auxílio da luva, guarde os clips e haste, leve o teflon até a área de preparação, limpe e deixe secar</label></div>
+            <div class="check-item"><input type="checkbox"><label>Em uma cuba plástica, prepare a solução de limpeza com <strong>100 ml do produto concentrado</strong> (não diluir em água)</label></div>
+            <div class="check-item"><input type="checkbox"><label>Espalhe o produto por toda a superfície de aquecimento com o suporte azul 3M não abrasiva</label></div>
+            <div class="check-item"><input type="checkbox"><label>Aguarde <strong>3 minutos</strong> de ação do produto</label></div>
+            <div class="check-item"><input type="checkbox"><label>Prepare uma cuba com água morna e com o suporte azul 3M retire o produto da superfície de aquecimento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Mergulhe o suporte 3M na cuba com água e passe sobre as superfícies superior e inferior, primeiramente no platen e em seguida na parte inferior</label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita o passo anterior até remoção completa do produto de limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com luva de alta temperatura e pano limpo úmido no sanitizante, retire o excesso de produto das superfícies</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire as calhas, descarte os resíduos e realize a limpeza das calhas na área de preparação → recoloque no equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Realize a limpeza frontal do equipamento → desligue no interruptor → desligue o disjuntor traseiro</label></div>
+            <div class="check-item"><input type="checkbox"><label>Destrave os rodízios</label></div>
+            <div class="check-item"><input type="checkbox"><label>Afaste o chapa do captor</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desconecte o plug da tomada</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire os filtros do captor e leve para área de preparação para limpeza e sanitização</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com borrifador com HD-Desengordurante e panos, borrife o HD onde possui gordura e esfregue com pano seco até retirada dos resíduos → passe o pano com sanitizante para concluir</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque os filtros no captor</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque a chapa no lugar e trave os rodízios</label></div>
+            <div class="alert warn" style="margin-top:8px;">📌 Os teflons <strong>não devem ser colocados no platen</strong> ao término da limpeza. O operador do dia seguinte verificará se estão limpos e apropriados para uso.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🍟</div><h2>Drenagem da Cuba da Fritadeira</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 2R</div>
+          <div class="period-tag">⏱ Diária — Pela manhã</div>
+          <div class="tools-list">
+            <div class="tool-chip">🪣 Cuba de inox</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="alert warn" style="margin-bottom:10px;">⚠️ Este procedimento deve ser executado pela manhã, com o equipamento desligado e a gordura fria.</div>
+            <div class="check-item"><input type="checkbox"><label>Certifique que o equipamento esteja desligado e com a gordura fria</label></div>
+            <div class="check-item"><input type="checkbox"><label>Pegue uma cuba de inox</label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra a porta de acesso ao registro de drenagem da fritadeira</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque a cuba na saída do tubo de drenagem</label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra lentamente o registro</label></div>
+            <div class="check-item"><input type="checkbox"><label>Quando toda a água acumulada no fundo for drenada, feche o registro</label></div>
+            <div class="alert info" style="margin:8px 0;">📌 Para fritadeiras com filtrador embutido: o procedimento é o mesmo, mas é necessário retirar o filtrador para colocar a cuba na saída do tubo de drenagem.</div>
+            <div class="check-item"><input type="checkbox"><label>Repita o procedimento para todas as cubas da fritadeira</label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita para todas as fritadeiras do restaurante</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Limpar as Prateleiras da Estufa UHC</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 5I</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="alert danger" style="margin-bottom:10px;">🔴 <strong>EPI obrigatório:</strong> luva de alta temperatura</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧽 Escova de limpeza da UHC</div>
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Selecione o <strong>modo de limpeza</strong> através da tecla menu de cada slot → pressione ok. Os timeres não deverão estar acionados (caso contrário o modo limpeza não será ativado)</label></div>
+            <div class="check-item"><input type="checkbox"><label>Aguarde aparecer a mensagem <strong>"liberado ou Limpe"</strong> no slot para iniciar a limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label>Remova todas as bandejas e leve à área de preparação para lavar</label></div>
+            <div class="check-item"><input type="checkbox"><label>Lave as bandejas em solução de limpeza e enxágue completamente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Sanitize as bandejas com solução sanitizante e deixe secar</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com a escova de limpeza da estufa, retire todas as partículas soltas empurrando para fora pela extremidade dos slots</label></div>
+            <div class="check-item"><input type="checkbox"><label>Use um pano para limpeza de cada slot — certifique-se que todas as superfícies dos slots ficaram limpas</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe a parte exterior com o pano</label></div>
+            <div class="alert warn" style="margin:8px 0;">⚠️ Use <strong>apenas a escova de limpeza da estufa</strong>. Nunca usar escova de arame, esfregoens com material abrasivo ou raspadeiras de metal — podem causar danos permanentes às prateleiras.</div>
+            <div class="check-item"><input type="checkbox"><label>Desligue a estufa</label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita os passos de 1 a 9 para as demais estufas do restaurante</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧊</div><h2>Limpeza do Encestador de Batata — Componentes Removíveis</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 46A</div>
+          <div class="period-tag">⏱ Diária — após o jantar</div>
+          <div class="alert info" style="margin-bottom:10px;">💡 <strong>Dica:</strong> em encestador duplo, você pode adiantar a limpeza desligando um dos lados para desmontar e limpar as peças de um lado enquanto o outro distribui as batatas.</div>
+          <div class="tools-list">
+            <div class="tool-chip">🪣 Recipiente acrílico</div>
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o(s) depósito(s) de alimentos do freezer</label></div>
+            <div class="check-item"><input type="checkbox"><label>Esvazie os restos de batatas dentro de um recipiente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Armazene o recipiente dentro do freezer com as batatas</label></div>
+            <div class="check-item"><input type="checkbox"><label>No depósito de alimento, retire o(s) defletor(es) de borracha</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire a base do freezer do gabinete</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o guia da pista da cesta metálica dos suportes da barra</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe e sanitize todos os componentes removíveis</label></div>
+            <div class="check-item"><input type="checkbox"><label>Realize a preventiva da Ficha 46B antes de seguir para o passo 10</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque os componentes novamente no encestador</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧊</div><h2>Limpeza Interna do Encestador de Batata</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 46B</div>
+          <div class="period-tag">⏱ Diária — executar após a 46A</div>
+          <div class="alert warn" style="margin-bottom:10px;">⚠️ Em lojas 24 horas, o encestador deve ser desligado pelo menos 2 a 3 horas por dia.</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue a refrigeração e aguarde que todo o gelo das paredes do freezer derreta</label></div>
+            <div class="alert warn" style="margin:6px 0 10px;">⚠️ Nunca usar espátula para retirada do gelo — pode danificar o equipamento. Use água morna para ajudar o descongelamento.</div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio da 3M e solução de limpeza, esfregue todos os interiores incluindo as calhas de carga e das portas</label></div>
+            <div class="alert info" style="margin:6px 0 10px;">💡 As calhas das portas possuem molas e dobradiças — empurre-as suavemente para limpar completamente.</div>
+            <div class="check-item"><input type="checkbox"><label>Retire a bandeja plástica da base, lave-a e sanitize-a na área de preparação</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe a área de armazenagem dos cestos, o suporte para pendurar os cestos e de carga abaixo do compartimento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Sanitize todo o interior do encestador, incluindo as calhas de carga, das portas e da área de armazenamento dos cestos</label></div>
+            <div class="check-item"><input type="checkbox"><label>Feche a porta do freezer</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Verificação dos Clips da Esteira Transporte Horizontal</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 51A</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento e coloque o <strong>cadeado de segurança</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Remova possíveis restos de papel nos clips</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio de um pano úmido com solução sanitizante, limpe a bandeja de descarregamento dos sanduíches</label></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-molhos">
+
+      <div class="section-label">Ficha 20A — Dispensador de Molho</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥫</div><h2>Calibrar o Dispensador de Molho</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 20A</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🥤 Copo medidor</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Aponte o bico difusor em direção a uma lâmina de produção e aperte o gatilho algumas vezes para assegurar que o molho está sendo dispensado de forma uniforme</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verifique se o dispensador de molho está dando um tiro apenas de cada vez</label></div>
+            <div class="alert warn" style="margin:8px 0;">⚠️ Se o dispensador estiver disparando tiros múltiplos com apenas uma pressão no gatilho, avise o Técnico de Manutenção para reparo ou substituição das peças.</div>
+          </div>
+
+          <div style="background:var(--bg);border-radius:var(--radius-md);padding:14px;margin-top:12px;display:flex;flex-direction:column;gap:10px;">
+            <div style="font-family:var(--font-display);font-weight:800;font-size:13px;margin-bottom:4px;">Referência de Calibragem por Tipo</div>
+            <div style="border:2px solid #fdecea;border-radius:10px;padding:12px;background:white;">
+              <div style="font-weight:800;font-size:12px;color:var(--red);margin-bottom:6px;">DISPENSADOR 1/3 oz</div>
+              <div class="check-item"><input type="checkbox"><label>Aperte o gatilho <strong>6 vezes</strong> → 6 tiros</label></div>
+              <div class="check-item"><input type="checkbox"><label>Verifique o copo de calibragem — deve haver <strong>2 onças fluidas</strong> no copo</label></div>
+            </div>
+            <div style="border:2px solid #e8f5e9;border-radius:10px;padding:12px;background:white;">
+              <div style="font-weight:800;font-size:12px;color:#1b5e20;margin-bottom:6px;">DISPENSADOR 1 oz</div>
+              <div class="check-item"><input type="checkbox"><label>Aperte o gatilho <strong>4 vezes</strong> → 4 tiros</label></div>
+              <div class="check-item"><input type="checkbox"><label>Verifique o copo de calibragem — deve haver <strong>4 onças fluidas</strong> no copo</label></div>
+            </div>
+            <div style="border:2px solid #e3f2fd;border-radius:10px;padding:12px;background:white;">
+              <div style="font-weight:800;font-size:12px;color:#0d47a1;margin-bottom:6px;">DISPENSADOR 2/3 oz</div>
+              <div class="check-item"><input type="checkbox"><label>Aperte o gatilho <strong>3 vezes</strong> → 3 tiros</label></div>
+              <div class="check-item"><input type="checkbox"><label>Verifique o copo de calibragem — deve haver <strong>2 onças fluidas</strong> no copo</label></div>
+            </div>
+          </div>
+
+          <div class="check-item" style="margin-top:10px;"><input type="checkbox"><label>Repita os passos para todos os dispensadores de molho</label></div>
+          <div class="alert warn" style="margin-top:8px;">⚠️ Se a calibragem não estiver correta, o dispensador deverá ser reparado ou substituído.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔧</div><h2>Lubrificar a Haste do Dispensador de Molho</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 20B</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Petrogel</div>
+            <div class="tool-chip">🔧 Chave Fenda</div>
+            <div class="tool-chip">🧻 Pano</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Retire o tubo de molho do dispensador</label></div>
+            <div class="check-item"><input type="checkbox"><label>Vire a haste do dispensador de forma que os dentes da haste estejam para cima</label></div>
+            <div class="check-item"><input type="checkbox"><label>Puxe a haste dentada toda para trás de forma que o propulsor do cilíndrico encroste no gatilho da pistola</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio de um pano, limpe a haste</label></div>
+            <div class="check-item"><input type="checkbox"><label>Passe um pouco de <strong>Petrogel</strong> nos dentes da haste</label></div>
+            <div class="check-item"><input type="checkbox"><label>Enxugue qualquer excesso</label></div>
+            <div class="check-item"><input type="checkbox"><label>Empurre e libere o gatilho até que a haste dentada esteja totalmente introduzida dentro do suporte do tubo de molho</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio de uma chave de fenda, verifique se todos os parafusos estão bem apertados</label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita os passos de 1 a 8 para todos os dispensadores de molho do restaurante</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🍅</div><h2>Lubrificar as Hastes do Fatiador de Tomate</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 19B</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Petrogel</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🧻 Pano</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Vire o fatiador de cabeça para baixo. Verifique se o fatiador tem a <strong>trava de lâminas</strong> — caso não possua, informe ao Técnico de Manutenção para instalação</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe as hastes dos eixos do carro do fatiador</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque <strong>Petrogel</strong> nos eixos do carro do fatiador</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verifique se o carro do fatiador não está com jogo e está alinhado com o bloco de lâminas — caso não esteja, aperte os parafusos. Se não resolver, informe ao Técnico de Manutenção</label></div>
+            <div class="check-item"><input type="checkbox"><label>Sanitize o corpo do fatiador</label></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-camaras">
+
+      <div class="section-label">Ficha 15B — Congeladores e Refrigeradores</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">❄️</div><h2>Limpeza Interna dos Congeladores e Refrigeradores</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 15B</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desconecte o plug da tomada</label></div>
+            <div class="check-item"><input type="checkbox"><label>Aguarde que o congelador ou refrigerador descongele naturalmente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verifique a parte interna e recolha o gelo que já deve estar se desprendendo. Caso contrário, use <strong>água morna</strong> para fazer o descongelamento</label></div>
+            <div class="alert danger" style="margin:8px 0;">🔴 <strong>NUNCA</strong> use ferramentas para desprender o gelo da parede ou evaporador — pode danificar o equipamento.</div>
+            <div class="check-item"><input type="checkbox"><label>Limpe as paredes internas do congelador ou refrigerador com solução de limpeza neutra para evitar mau cheiro → seque bem</label></div>
+            <div class="check-item"><input type="checkbox"><label>Sanitize todas as partes internas e externas</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verifique o estado da <strong>gaxeta da porta ou tampa</strong> — a formação de muito gelo é decorrente da má vedação da gaxeta. Caso esteja rasgada ou danificada, realize a substituição</label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita os passos de 1 a 7 para cada refrigerador ou congelador do restaurante</label></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-hidraulica">
+
+      <div class="section-label">Ficha 22D — Caixa de Gordura</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔧</div><h2>Limpar a Caixa de Gordura da Área de Preparação</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 22D</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="alert danger" style="margin-bottom:10px;">🔴 <strong>EPI obrigatório:</strong> luva látex</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🗑️ Saco lixo</div>
+            <div class="tool-chip">🪣 Baldinho plástico</div>
+            <div class="tool-chip">🪣 Coador plástico</div>
+            <div class="tool-chip">🔪 Espátula</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Feche os drenos das cubas da Área de Preparação</label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra a tampa da caixa de inspeção</label></div>
+            <div class="check-item"><input type="checkbox"><label>Esgote a caixa de inspeção utilizando um baldinho plástico para transferir todo o líquido para o balde, coloque o coador sobre o balde para reter as partículas maiores</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque as partículas retidas no coador no saco de lixo</label></div>
+            <div class="check-item"><input type="checkbox"><label>Jogue o líquido retido no balde em um ralo e em seguida jogue mais 2 baldes com água quente entre os dois baldes de água quente jogue 1 com solução de limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label>Raspe todas as paredes da caixa de inspeção</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o filtro da caixa de inspeção → raspe o filtro para eliminar as partículas sólidas de gordura, jogando-as em um saco de lixo → use água quente com solução de limpeza para concluir a limpeza do filtro</label></div>
+            <div class="check-item"><input type="checkbox"><label>Junte toda a gordura acumulada no fundo e nas paredes da caixa e coloque no saco de lixo</label></div>
+            <div class="check-item"><input type="checkbox"><label>Use água quente com solução de limpeza para complementar a limpeza da caixa</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verifique o estado das tubulações de entrada e saída da caixa de inspeção e desobstrua se necessário</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque o filtro da caixa de inspeção</label></div>
+            <div class="check-item"><input type="checkbox"><label>Feche a tampa da caixa de inspeção</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe todo o resto de gordura da parte externa da caixa</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe toda a área de trabalho</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">💧</div><h2>Análise de Cloro da Água do Restaurante</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 33A</div>
+          <div class="period-tag">⏱ Diária — 2 vezes ao dia</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧪 Teste de cloro GENKIT</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="alert info" style="margin-bottom:10px;">📌 A água deve ser coletada na saída das torneiras existentes no restaurante. É importante que a coleta seja feita em <strong>pontos diferentes durante a semana</strong>.</div>
+            <div class="check-item"><input type="checkbox"><label>Escolha uma torneira, deixe sair um pouco de água, destampe o tubo comparador de cloro e enxágue-o na própria água a ser analisada</label></div>
+            <div class="check-item"><input type="checkbox"><label>Faça a coleta da água no tubo comparador de cloro, desprezando a água que exceder ao nível indicado no tubo</label></div>
+            <div class="check-item"><input type="checkbox"><label>Adicione <strong>4 gotas da solução "Orto-tolidina"</strong> no tubo com a água</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque a tampa, agite para igualar a cor e compare com o padrão ao lado do tubo coletor</label></div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-md);padding:12px;margin:10px 0;display:flex;gap:12px;align-items:center;">
+              <div style="text-align:center;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">MÍNIMO</div>
+                <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:#1b5e20;">0,5 ppm</div>
+              </div>
+              <div style="font-size:20px;color:var(--muted);">↔</div>
+              <div style="text-align:center;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">MÁXIMO</div>
+                <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--red);">1,5 ppm</div>
+              </div>
+            </div>
+
+            <div class="check-item"><input type="checkbox"><label>Caso o valor obtido não estiver na faixa desejada:</label></div>
+            <div class="rota-items" style="margin-left:16px;margin-bottom:10px;">
+              <div class="rota-head c1">Restaurante com caixa d'água própria</div>
+              <div class="rota-item">Informe o Técnico de Manutenção para realizar o ajuste da cloração</div>
+              <div class="rota-head c2">Restaurante abastecido pelo shopping</div>
+              <div class="rota-item">Enviar carta à administração pedindo solução urgente do problema</div>
+            </div>
+            <div class="check-item"><input type="checkbox"><label>Após cada análise, enxágue o tubo coletor e guarde</label></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-consumo">
+
+      <div class="section-label">Ficha 25A — Leitura de Água</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">💧</div><h2>Leitura Diária de Água</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 25A</div>
+          <div class="period-tag">⏱ Diária — horário padrão (tolerância ±30 min)</div>
+          <div class="tools-list">
+            <div class="tool-chip">✏️ Caneta</div>
+            <div class="tool-chip">📓 Caderno de leitura</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Dirija-se ao <strong>hidrômetro</strong> localizado no cavalete de entrada de água do restaurante</label></div>
+            <div class="check-item"><input type="checkbox"><label>Leia e anote o número registrado no relógio</label></div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-md);padding:12px;margin:10px 0;display:flex;flex-direction:column;gap:8px;">
+              <div style="font-weight:800;font-size:12px;font-family:var(--font-display);">Como registrar o consumo:</div>
+              <div style="font-size:13px;line-height:1.6;"><strong>Relógio analógico:</strong> anote os números em preto<br><strong>Relógio digital:</strong> anote todos os números</div>
+              <div style="font-size:13px;line-height:1.6;"><strong>Registro manual:</strong> Subtraia o número de hoje pelo do dia anterior → resultado = consumo de água em M³ nas últimas 24h</div>
+              <div style="font-size:13px;line-height:1.6;"><strong>Registro digital:</strong> insira o número anotado no controle digital → o site realiza o cálculo automaticamente</div>
+            </div>
+
+            <div class="check-item"><input type="checkbox"><label>Compare com o consumo ideal/dia do mês correspondente registrado no controle do restaurante</label></div>
+            <div class="check-item"><input type="checkbox"><label>Se o consumo estiver <strong>fora do ideal</strong>: verifique a existência de vazamentos na Área de Preparação, válvulas de descarga dos sanitários, torneiras em geral, mangueiras e tubulações</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verifique se a mangueira utilizada para regar jardins possui o <strong>revólver "tipo esguicho"</strong> — caso não possua, realize a instalação</label></div>
+            <div class="alert warn" style="margin-top:8px;">⚠️ Se não conseguir visualizar possível vazamento, informe o Técnico de Manutenção imediatamente sobre o alto consumo de água.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⚡</div><h2>Leitura Diária de Energia</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 25B</div>
+          <div class="period-tag">⏱ Diária — horário padrão (tolerância ±30 min)</div>
+          <div class="tools-list">
+            <div class="tool-chip">✏️ Caneta</div>
+            <div class="tool-chip">📓 Caderno de leitura</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Dirija-se ao <strong>relógio de medição de KWH</strong> localizado no QGBT principal do restaurante</label></div>
+            <div class="check-item"><input type="checkbox"><label>No relógio, procure o valor do KWH pressionando a tecla <strong>HOME</strong> até encontrar o valor</label></div>
+            <div class="check-item"><input type="checkbox"><label>Leia e anote o número registrado</label></div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-md);padding:12px;margin:10px 0;display:flex;flex-direction:column;gap:8px;">
+              <div style="font-weight:800;font-size:12px;font-family:var(--font-display);">Como registrar o consumo:</div>
+              <div style="font-size:13px;line-height:1.6;"><strong>Registro manual:</strong> Subtraia o número de hoje pelo do dia anterior → resultado = consumo de energia em KWH nas últimas 24h</div>
+              <div style="font-size:13px;line-height:1.6;"><strong>Registro digital:</strong> insira o número no controle digital → o site realiza o cálculo automaticamente</div>
+            </div>
+
+            <div class="check-item"><input type="checkbox"><label>Compare com o consumo ideal/dia do mês correspondente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Se o consumo estiver fora do ideal, verifique se os procedimentos abaixo estão sendo seguidos:</label></div>
+            <div class="rota-items" style="margin-left:8px;margin-bottom:10px;">
+              <div class="rota-head c1">Escala Fire-Up</div>
+              <div class="rota-item">Está sendo utilizada conforme o horário de ligar e desligar os equipamentos</div>
+              <div class="rota-head c2">Preventivas de Refrigeração</div>
+              <div class="rota-item">Está sendo realizada conforme a programação</div>
+              <div class="rota-head c3">Fritadeiras</div>
+              <div class="rota-item">As cubas ficam tampadas quando não estão sendo usadas e são ligadas conforme a escala Fire-Up</div>
+              <div class="rota-head c4">Chapa</div>
+              <div class="rota-item">Os platens ficam abaixados quando não estão sendo usados</div>
+              <div class="rota-head c1">Áreas internas</div>
+              <div class="rota-item">Sala break, WC de funcionários, área de estoque e gerência possuem interruptores ou sensor de presença</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-mccafe">
+
+      <div class="section-label">McCafé — Máquina de Café Expresso</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Limpeza e Sanitização da Máquina de Café Expresso</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1A McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="alert danger" style="margin-bottom:10px;">🔴 <strong>EPI obrigatório:</strong> luva látex</div>
+          <div class="tools-list">
+            <div class="tool-chip">🔧 Chave Fenda</div>
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🧻 Panos</div>
+            <div class="tool-chip">🟦 3M branca</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire todas as xícaras e pires que estiverem sobre a máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe e sanitize a parte superior da máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire os porta-filtros dos grupos e remova as borras que neles estiverem</label></div>
+            <div class="check-item"><input type="checkbox"><label>Separe os filtros dos porta-filtros utilizando a <strong>chave de fenda</strong> — coloque a ponta da chave no orifício e gire</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe os filtros com auxílio da 3M branca, solução de limpeza e solução sanitizante</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe os porta-filtros e encaixe novamente os filtros nos porta-filtros</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque o porta-filtro na máquina</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔄</div><h2>Retrolavagem da Máquina de Café Expresso</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1D McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">⭕ Filtro cego</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Coloque o <strong>filtro cego</strong> dentro do porta-filtros</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque o porta-filtro no grupo, como na operação de extração de café</label></div>
+            <div class="check-item"><input type="checkbox"><label>Aperte a tecla stop, conte <strong>5 segundos</strong> e aperte novamente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Despeje a água quente que está no porta-filtro</label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita essa operação <strong>3 vezes</strong> e em cada um dos grupos da máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Após executar em todos os grupos, retire o filtro cego do porta-filtro</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque o filtro correto nos seus respectivos porta-filtros</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔄</div><h2>Sanitização do Forno Giratório</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 2B McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Abra a porta</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire a prateleira e as bandejas internas</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com pano umedecido no sanitizante, passe nas partes internas, externas, prateleira e nas bandejas</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque a prateleira e as bandejas no equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Feche a porta</label></div>
+            <div class="check-item"><input type="checkbox"><label>Ligue o equipamento e aguarde <strong>20 minutos</strong> antes de utilizá-lo</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🪟</div><h2>Sanitização da Vitrine</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 4B McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Abra a porta de acesso</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire as bandejas para produtos e execute a sanitização</label></div>
+            <div class="check-item"><input type="checkbox"><label>Execute sanitização interna e externa do equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque as bandejas para produtos</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔄</div><h2>Retrolavagem do Filtro de Água do McCafé</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 9C McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🔨 Martelo de borracha</div>
+            <div class="tool-chip">🔧 Mangueira ½"</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="alert danger" style="margin-bottom:10px;">🔴 Durante a retrolavagem, <strong>não extrair nenhum café</strong> e não utilizar a máquina de lavar xícara.</div>
+            <div class="check-item"><input type="checkbox"><label>Feche o registro de água após o <strong>filtro MIB</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Gire o bico de drenagem de água no sentido <strong>anti-horário</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Engate a mangueira no bico de drenagem até o ralo</label></div>
+            <div class="check-item"><input type="checkbox"><label>Gire a alavanca que fica na parte superior do filtro T-9 no sentido <strong>horário</strong> para abrir a passagem de água para o bico de drenagem</label></div>
+            <div class="check-item"><input type="checkbox"><label>Bata moderadamente com o <strong>martelo de borracha</strong> no meio do filtro T-9</label></div>
+            <div class="check-item"><input type="checkbox"><label>Continue batendo até que a água saia limpa</label></div>
+            <div class="check-item"><input type="checkbox"><label>Feche a alavanca que você abriu anteriormente (cessará a saída de água pelo bico de drenagem)</label></div>
+            <div class="check-item"><input type="checkbox"><label>Gire o bico de drenagem de água no sentido <strong>horário</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita os passos de 4 a 10 para todos os filtros T-9</label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra a torneira que está na saída dos filtros T-9 para que dispense água por aproximadamente <strong>1 minuto</strong> e feche novamente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra os registros que foram fechados no começo da preventiva</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Limpeza Externa da Guarnição do Grupo</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1C McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+            <div class="tool-chip">🖌️ Escova nylon cerdas duras</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Retire a bandeja de drenagem levantando a parte frontal e puxando</label></div>
+            <div class="check-item"><input type="checkbox"><label>Leve a bandeja até a área de preparação e faça a limpeza e sanitização</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe a região embaixo da área de drenagem da máquina, secando-a em seguida</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque a bandeja — cuidado na recolocação, pois a bandeja possui grelhas e tem posição correta</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe a guarnição dos grupos</label></div>
+            <div class="check-item"><input type="checkbox"><label>Introduza a escova com cerdas duras entre o grupo e a saída de água, retirando todo o resíduo de café</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔥</div><h2>Limpeza Interna e Externa do Forno Giratório</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 2A McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra as portas do equipamento e deixe-o esfriar</label></div>
+            <div class="check-item"><input type="checkbox"><label>Remova as bandejas internas e a estrutura</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio da 3M branca e solução de limpeza, limpe a parte interna e externa do forno</label></div>
+            <div class="alert info" style="margin:6px 0 10px;">💡 Na parte inferior, entre o suporte da turbina e a base do forno, faça limpeza mais cuidadosa pelo acúmulo de gordura. Se necessário, remova o suporte da turbina.</div>
+            <div class="check-item"><input type="checkbox"><label>Lave as bandejas com 3M branca e solução de limpeza</label></div>
+            <div class="alert warn" style="margin:6px 0 10px;">⚠️ Não utilizar material abrasivo — pode danificar o teflon das bandejas.</div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque a estrutura e as bandejas internas</label></div>
+            <div class="check-item"><input type="checkbox"><label>Feche a porta do forno</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⚙️</div><h2>Limpeza e Sanitização do Moinho de Café</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 3A McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🧻 Panos</div>
+            <div class="tool-chip">🖌️ Escova nylon cerdas duras</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desconecte o plug da tomada</label></div>
+            <div class="check-item"><input type="checkbox"><label>Feche a portinhola de descida de grãos — fica no lado esquerdo da máquina, logo abaixo da cúpula de grãos</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire a tampa e a cúpula de grãos da máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque os grãos da cúpula em um recipiente sanitizado</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe e sanitize a cúpula</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio da escova, limpe internamente o reservatório do grão moído</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe a portinhola de descida dos grãos</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio do pano umedecido na solução sanitizante, limpe todo o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque a cúpula de grãos com a tampa</label></div>
+            <div class="check-item"><input type="checkbox"><label>Reconecte o plug na tomada</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🪟</div><h2>Limpeza Interna e Externa da Vitrine</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 4A McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra a porta de acesso — aguarde o equipamento esfriar se a vitrine for aquecida</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire as bandejas para os produtos</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desmonte e retire as bases para as bandejas de produtos</label></div>
+            <div class="check-item"><input type="checkbox"><label>Execute limpeza das bandejas de produtos e das bases com solução de limpeza → passe pano seco</label></div>
+            <div class="check-item"><input type="checkbox"><label>Reinstale as bases e as bandejas no equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe toda a parte externa do equipamento</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">❄️</div><h2>Limpar o Refrigerador e Congelador</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 5A McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verifique a parte interna do congelador e do refrigerador</label></div>
+            <div class="alert danger" style="margin:6px 0 10px;">🔴 No caso do congelador, nunca use ferramentas para desprender o gelo — use água morna.</div>
+            <div class="check-item"><input type="checkbox"><label>Limpe a parede interna com solução de limpeza e sanitizante para evitar mau cheiro → seque bem</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe as gaxetas das portas</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🍵</div><h2>Limpeza Interna e Externa da Máquina de Lavar Xícara</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 10A McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="alert danger" style="margin-bottom:10px;">🔴 <strong>EPI obrigatório:</strong> luva látex</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue a máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desconecte o plug da tomada</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire a base giratória de dentro da máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o dreno para esgotamento de água</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio da 3M branca e solução de limpeza, limpe todo o interior da máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o filtro da bomba, lave-o e recoloque-o em seu respectivo lugar</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque o dreno e a base giratória</label></div>
+            <div class="check-item"><input type="checkbox"><label>Reconecte o plug na tomada</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🫙</div><h2>Limpeza e Sanitização do Liquidificador</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 11A McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desconecte o plug da tomada</label></div>
+            <div class="check-item"><input type="checkbox"><label>Execute a limpeza externa e interna do equipamento com auxílio da 3M branca</label></div>
+            <div class="alert warn" style="margin:6px 0 10px;">⚠️ Cuidado com a lâmina no interior do recipiente. Nunca utilizar material abrasivo — pode danificar o equipamento.</div>
+            <div class="check-item"><input type="checkbox"><label>Execute a sanitização externa e interna do equipamento</label></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-maquinas">
+
+      <div class="section-label">Fichas — Melitta CT8</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Limpeza do Reservatório de Borra — Melitta CT8</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 11M McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="alert danger" style="margin-bottom:10px;">🔴 <strong>EPI obrigatório:</strong> luva de alta temperatura</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="alert info" style="margin-bottom:10px;">📌 Componentes identificados: <strong>1 = Tubo de saída de água</strong> · <strong>2 = Bico de vapor</strong> · <strong>3 = Tampa do reservatório</strong></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o bico de vapor e o tubo de saída de água da frente da tampa do reservatório, girando para o lado — use luva de alta temperatura</label></div>
+            <div class="check-item"><input type="checkbox"><label>Pressione a tampa do reservatório</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o reservatório de borra de café</label></div>
+            <div class="check-item"><input type="checkbox"><label>Descarte a borra</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe e sanitize o reservatório com auxílio da 3M branca, solução de limpeza e solução sanitizante</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque o reservatório e feche a porta da máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Irá aparecer na tela uma mensagem — pressione <strong>"Sim"</strong> confirmando que o reservatório foi esvaziado</label></div>
+            <div class="check-item"><input type="checkbox"><label>Volte o bico de vapor e o tubo de saída de água quente na sua posição — use luva de alta temperatura</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📱</div><h2>Limpeza da Tela Touch Screen — Melitta CT8</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 10 McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🔑 Chave do administrador verde</div>
+            <div class="tool-chip">🧻 Pano úmido com sanitizante</div>
+            <div class="tool-chip">🧻 Pano seco</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Com auxílio da <strong>chave do administrador verde</strong>, mantenha em contato com a superfície frontal do equipamento — o menu de limpeza será liberado</label></div>
+            <div class="check-item"><input type="checkbox"><label>Selecione o modo aparelho</label></div>
+            <div class="check-item"><input type="checkbox"><label>Pressione a opção de <strong>limpar o tela touch screen</strong> — a tela ficará bloqueada</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio do pano úmido com sanitizante, limpe a tela cuidadosamente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio do pano seco, finalize a limpeza da tela</label></div>
+            <div class="check-item"><input type="checkbox"><label>Após a finalização, realize o <strong>desbloqueio da tela</strong> conforme o processo indicado na tela (sequência de toques nos cantos: 4 → 1 → 2 → 3)</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">💧</div><h2>Limpeza do Sistema de Água — Melitta CT8</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1N McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🔑 Chave do administrador verde</div>
+            <div class="tool-chip">💊 Pastilha de limpeza</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Com auxílio da chave do administrador verde, mantenha em contato com a superfície frontal do equipamento — o menu de limpeza será liberado</label></div>
+            <div class="check-item"><input type="checkbox"><label>Selecione o modo aparelho</label></div>
+            <div class="check-item"><input type="checkbox"><label>Pressione a opção de <strong>limpeza do sistema completa</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra a porta de acesso ao suporte de pastilha</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o suporte de pastilha — gire 1/4 de volta no sentido <strong>anti-horário</strong> para destravar e puxe para fora</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque uma <strong>pastilha de limpeza</strong> no suporte e recoloque na máquina — gire 1/4 de volta no sentido horário para travar</label></div>
+            <div class="alert info" style="margin:6px 0 10px;">📌 Pastilha disponível na central de pedido · Fornecedor: Gran Coffee · Código: 2028</div>
+            <div class="check-item"><input type="checkbox"><label>Feche a porta e pressione a opção <strong>"pastilha de limpeza inserida"</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>O processo de limpeza se iniciará automaticamente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Após a finalização do processo, a máquina estará disponível para utilização</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:20px;">Fichas — Melitta XT4</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Limpeza e Sanitização da Máquina Melitta XT4</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1Q McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+            <div class="tool-chip">💊 Pastilha de limpeza</div>
+            <div class="tool-chip">🧴 Detergente líquido para máquina</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Pressione o botão menu até aparecer a tela inicial</label></div>
+            <div class="check-item"><input type="checkbox"><label>Selecione a função <strong>limpar</strong> e em seguida a função <strong>limpeza intermediária</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire a gaveta de borra de café, leve até a área de preparação, esvazie e limpe com auxílio da 3M branca, solução de limpeza e pano seco</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque novamente a gaveta na máquina, limpa e seca</label></div>
+            <div class="check-item"><input type="checkbox"><label>Na tela aparecerá a pergunta "Gavetas de resíduos está vazias?" — confirme pressionando <strong>"Ok"</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe o sistema de leite</label></div>
+            <div class="check-item"><input type="checkbox"><label>Separe um recipiente com <strong>500 ml de água</strong> e inclua <strong>25 ml de detergente líquido</strong> para limpeza da máquina</label></div>
+            <div class="alert danger" style="margin:6px 0 10px;">🔴 Nunca utilizar outro produto para limpeza da máquina além do detergente indicado.</div>
+            <div class="check-item"><input type="checkbox"><label>Insira o tubo de leite na mistura para limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label>Na tela aparecerá "Líquido de limpeza preparado?" — confirme pressionando <strong>"Ok"</strong> para iniciar o processo de limpeza do sistema</label></div>
+            <div class="check-item"><input type="checkbox"><label>Após o processo, na tela aparecerá "Enxaguadura preparada?"</label></div>
+            <div class="check-item"><input type="checkbox"><label>Lave o recipiente, acrescente <strong>500 ml de água limpa</strong> para enxágue do sistema — insira o tubo de leite e confirme com "Ok"</label></div>
+            <div class="check-item"><input type="checkbox"><label>Sistema de leite limpo</label></div>
+            <div class="check-item"><input type="checkbox"><label>Na tela mostrará "Inserir a pastilha de limpeza"</label></div>
+            <div class="check-item"><input type="checkbox"><label>Abra a tampa e insira a pastilha na caixa de lançamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Feche a tampa e confirme com <strong>"Ok"</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>O sistema de fervura começa a limpar automaticamente — após alguns minutos, a máquina retorna ao menu de bebidas</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio do pano úmido no sanitizante, limpe as peças plásticas e a superfície do equipamento</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:20px;">Fichas — Franke A400</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Limpeza e Sanitização da Máquina Franke A400</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1K McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução limpeza Franke</div>
+            <div class="tool-chip">🧴 Solução sanitizante (50 ml)</div>
+            <div class="tool-chip">💊 Pastilha de limpeza</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+            <div class="tool-chip">🖌️ Kit escova Franke</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Toque no logotipo da marca <strong>Franke</strong> na tela</label></div>
+            <div class="check-item"><input type="checkbox"><label>Insira o código de serviço e aperte <strong>"OK"</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Selecionar a <strong>limpeza e manutenção</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Selecionar <strong>"Limpar máquina de café"</strong> e confirmar com <strong>"Sim"</strong> para iniciar a limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label>Remova as peças móveis e leve até a área de preparação</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com auxílio do kit de escovas, 3M branca e solução de limpeza, limpe todas as peças removíveis e com as escovas limpe o tubo de sucção do leite</label></div>
+            <div class="check-item"><input type="checkbox"><label>Enxague bem as peças em água corrente e com auxílio de pano seco, seque todas as peças</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque novamente as peças removíveis no equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque uma pastilha de limpeza no compartimento indicado</label></div>
+            <div class="check-item"><input type="checkbox"><label>Siga as instruções na tela</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o reservatório de leite e coloque o recipiente de limpeza com <strong>50 ml de solução sanitizante Franke</strong> → siga as instruções da tela</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o recipiente de limpeza e recoloque o reservatório de leite no equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Confirme a finalização do processo de limpeza na tela</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🗑️</div><h2>Limpeza do Reservatório de Borra — Franke A400</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1L McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Abra a porta</label></div>
+            <div class="check-item"><input type="checkbox"><label>Remova o recipiente de descarte da borra de café</label></div>
+            <div class="check-item"><input type="checkbox"><label>Esvazie e limpe o recipiente com auxílio da 3M branca e solução de limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label>Seque o recipiente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque o recipiente de descarte</label></div>
+            <div class="check-item"><input type="checkbox"><label>Feche a porta</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🥛</div><h2>Limpeza do Reservatório de Leite — Franke A400</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 1J McCafé</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Abra a porta do equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire o recipiente de leite</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque o leite na geladeira ou, se necessário, descarte-o</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpe e sanitize o recipiente de leite, as peças condutora de leite e o compartimento de resfriamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque o recipiente de leite no equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desligue a unidade de resfriamento, caso não seja mais necessário</label></div>
+            <div class="alert info" style="margin-top:8px;">📌 Deixe a porta da unidade de resfriamento um pouco aberta para evitar odores na parte interna.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-leite">
+
+      <div class="section-label">Ficha 44A — Máquina de Leite Foamino</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥛</div><h2>Limpeza do Tubo e Bico de Extração — Foamino</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 44A</div>
+          <div class="period-tag">⏱ Diária — ao término de cada dia de trabalho</div>
+          <div class="tools-list">
+            <div class="tool-chip">🥤 Copo medidor</div>
+            <div class="tool-chip">🪣 Cuba acrílica</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+            <div class="tool-chip">🧻 Panos</div>
+            <div class="tool-chip">🖌️ Escova de limpeza do tubo</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Ligue o equipamento pressionando o <strong>botão vermelho inferior</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque uma cuba vazia em baixo do bico de saída, levante o tubo de leite e pressione a tecla de dispensar para <strong>drenar o restante do leite</strong> do sistema</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desligue o equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desconecte o tubo de leite e remova o sistema de tubos juntamente com o reservatório de leite → lave o sistema de tubo e o reservatório de leite na área de preparação</label></div>
+            <div class="check-item"><input type="checkbox"><label>Remova e limpe a tampa de entrada de ar com auxílio do kit escova de limpeza e pano</label></div>
+            <div class="alert warn" style="margin:6px 0 10px;">⚠️ As peças móveis são frágeis — ter cuidado ao fazer a limpeza das mesmas.</div>
+            <div class="check-item"><input type="checkbox"><label>Limpe a base de aquecimento com auxílio da 3M branca e pano — remova toda a água que sobrar no fundo do recipiente</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:20px;">Ficha 44D — Máquina de Leite Aquagel</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥛</div><h2>Limpeza e Sanitização do Sistema — Aquagel</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 44D</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza neutra</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🪣 Recipiente 500 ml</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Prepare em um recipiente <strong>500 ml de solução de limpeza neutra</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Posicione a mangueira de leite no recipiente com a solução de limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label>Pressione a tecla <strong>CLEAN</strong> para que o equipamento bombeie a solução por todo o sistema — repita esse acionamento algumas vezes até esvaziar completamente o recipiente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita os passos de 1 a 3 utilizando a <strong>solução sanitizante</strong> no lugar de solução de limpeza</label></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-sorvete">
+      <div class="section-label">Máquina de Sorvete — Modelo HT-C602 ou HT-C716</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⚖️</div><h2>Calibragem da Velocidade de Extração do Sorvete</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 120</div>
+          <div class="period-tag">⏱ 2 vezes ao dia</div>
+          <div class="tools-list">
+            <div class="tool-chip">🥤 Copo de 500 ml</div>
+            <div class="tool-chip">⚖️ Balança</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="alert info" style="margin-bottom:10px;">📌 Este procedimento deve ser feito em <strong>todas as válvulas de extração</strong> de sorvete.</div>
+            <div style="background:var(--bg);border-radius:var(--radius-md);padding:12px;margin-bottom:12px;">
+              <div style="font-family:var(--font-display);font-weight:800;font-size:12px;margin-bottom:6px;">🎯 Peso padrão de extração (10 segundos)</div>
+              <div style="display:flex;gap:12px;font-size:13px;">
+                <div style="text-align:center;flex:1;background:var(--card);border-radius:8px;padding:10px;border:1.5px solid var(--border);">
+                  <div style="font-size:10px;font-weight:700;color:var(--muted);">ONÇAS</div>
+                  <div style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--red);">5 – 7,5 oz</div>
+                </div>
+                <div style="text-align:center;flex:1;background:var(--card);border-radius:8px;padding:10px;border:1.5px solid var(--border);">
+                  <div style="font-size:10px;font-weight:700;color:var(--muted);">GRAMAS</div>
+                  <div style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--red);">142 – 213 g</div>
+                </div>
+              </div>
+            </div>
+            <div class="check-item"><input type="checkbox"><label>Coloque o copo de 500 ml na balança e zere a marcação</label></div>
+            <div class="check-item"><input type="checkbox"><label>Extraia o sorvete no copo durante <strong>10 segundos</strong></label></div>
+            <div class="check-item"><input type="checkbox"><label>Coloque o copo na balança e verifique o peso — deve ser de <strong>142 a 213 gramas</strong> (5 a 7,5 oz)</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Acima do padrão:</strong> gire o parafuso da alavanca no sentido <strong>horário</strong> (menor extração) → repita passos 2 e 3</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Abaixo do padrão:</strong> gire o parafuso no sentido <strong>anti-horário</strong> (maior extração) → repita passos 2 e 3</label></div>
+            <div class="check-item"><input type="checkbox"><label>Repita para as outras válvulas de extração da máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Realize o procedimento para cada máquina de sorvete do restaurante</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Limpeza das Tampas, Agitadores e Válvulas de Extração</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 12E</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🧻 Pano</div>
+            <div class="tool-chip">🧽 Escova máquina sorvete (bege)</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Retire as tampas dos reservatórios — utilize luva descartável antes do próximo passo</label></div>
+            <div class="check-item"><input type="checkbox"><label>Retire os agitadores dos reservatórios de mix</label></div>
+            <div class="check-item"><input type="checkbox"><label>Leve as tampas e agitadores para a área de preparação</label></div>
+            <div class="check-item"><input type="checkbox"><label>Lave e sanitize no <strong>sistema de três cubas</strong> → seque</label></div>
+            <div class="check-item"><input type="checkbox"><label>Aplique uma fina camada de <strong>Petrogel</strong> nos agitadores antes de recolocar no equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Recoloque as tampas e agitadores no equipamento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Prepare solução sanitizante em uma cuba acrílica</label></div>
+            <div class="check-item"><input type="checkbox"><label>Mergulhe a escova na solução e escove as saídas e a parte inferior das válvulas de extração por <strong>~30 segundos</strong> cada, mergulhando diversas vezes a escova na solução</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🥜</div><h2>Limpeza e Sanitização do Dispensador de Amendoim</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 12N</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🧴 Solução de limpeza</div>
+            <div class="tool-chip">🧴 Solução sanitizante</div>
+            <div class="tool-chip">🟦 3M branca</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Retire o dispensador da máquina</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desmonte todas as peças do dispensador</label></div>
+            <div class="check-item"><input type="checkbox"><label>Com a 3M branca e solução de limpeza, passe em todas as peças</label></div>
+            <div class="check-item"><input type="checkbox"><label>Enxágue com água quente corrente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Deixe dentro da cuba por <strong>7 minutos</strong> na solução sanitizante</label></div>
+            <div class="check-item"><input type="checkbox"><label>Monte o dispensador de amendoim</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Verificação da Temperatura do Banho-Maria das Coberturas</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 12I</div>
+          <div class="period-tag">⏱ Diária</div>
+          <div class="tools-list">
+            <div class="tool-chip">🌡️ Pirômetro</div>
+            <div class="tool-chip">🌡️ Sensor de imersão</div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="check-item"><input type="checkbox"><label>Cheque o nível da água e complete se necessário</label></div>
+            <div class="check-item"><input type="checkbox"><label>Ligue o banho-maria</label></div>
+            <div class="check-item"><input type="checkbox"><label>Aguarde <strong>15 minutos</strong> para estabilizar a temperatura</label></div>
+            <div class="check-item"><input type="checkbox"><label>Mergulhe o sensor de imersão no banho-maria e cheque a temperatura</label></div>
+            <div style="background:var(--bg);border-radius:var(--radius-md);padding:12px;margin:10px 0;text-align:center;">
+              <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">TEMPERATURA IDEAL DA ÁGUA</div>
+              <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--red);">57°C – 63°C</div>
+            </div>
+            <div class="alert warn">⚠️ Fora da faixa? Informe o Técnico de Manutenção imediatamente.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Quiz — Manutenção e Preventivas</div>
+      <div id="quiz-app"></div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Manutenção e Preventivas · Adrian
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_MANUTENCAO = [
+        { category: "🔥 Chapa · Ficha 1R", question: "Quantos ml do produto concentrado são usados na limpeza das superfícies de aquecimento da chapa?", options: ["50 ml", "100 ml", "150 ml", "200 ml"], answer: "100 ml", explanation: "A solução de limpeza da chapa é preparada com 100 ml do produto concentrado — não diluir em água." },
+        { category: "🔥 Chapa · Ficha 1R", question: "Após a limpeza da chapa, quando os teflons devem ser recolocados no platen?", options: ["Imediatamente após a limpeza", "No mesmo dia pelo gerente", "Pelo operador do dia seguinte após verificar se estão limpos", "Somente após a manutenção mensal"], answer: "Pelo operador do dia seguinte após verificar se estão limpos", explanation: "Os teflons não devem ser colocados no platen ao término da limpeza. O operador do dia seguinte verificará se estão limpos e apropriados." },
+        { category: "🔥 Chapa · Ficha 1R", question: "Qual o modo da chapa que deve ser ativado antes da limpeza?", options: ["MODO PRODUÇÃO", "MODO LIMPEZA", "MODO ESPERA", "MODO RECOVERY"], answer: "MODO LIMPEZA", explanation: "Antes da limpeza das superfícies da chapa, deve-se ativar o MODO LIMPEZA pressionando menu → Clean." },
+        { category: "🍟 Fritadeira · Ficha 2R", question: "Quando deve ser realizada a drenagem da cuba da fritadeira?", options: ["À tarde", "Durante o pico do almoço", "Pela manhã, com o equipamento desligado e gordura fria", "Após o fechamento com o óleo quente"], answer: "Pela manhã, com o equipamento desligado e gordura fria", explanation: "A drenagem deve ser executada pela manhã, com o equipamento desligado e com a gordura fria." },
+        { category: "❄️ Câmaras · Ficha 15B", question: "O que indica que a gaxeta da porta do congelador precisa ser substituída?", options: ["Cheiro forte", "Formação excessiva de gelo na porta", "Temperatura alta no interior", "Barulho ao fechar"], answer: "Formação excessiva de gelo na porta", explanation: "A formação de muito gelo é decorrente da má vedação da gaxeta da porta. Se rasgada ou danificada, deve ser substituída." },
+        { category: "❄️ Câmaras · Ficha 15B", question: "O que NUNCA deve ser usado para desprender o gelo das paredes do congelador?", options: ["Água morna", "Pano úmido", "Espátula ou ferramenta", "Solução de limpeza neutra"], answer: "Espátula ou ferramenta", explanation: "Nunca usar ferramentas para desprender o gelo da parede ou evaporador — pode danificar o equipamento. Usar água morna." },
+        { category: "🥫 Molhos · Ficha 20A", question: "No dispensador de 1/3 oz, quantos tiros devem ser dados e quanto deve haver no copo medidor?", options: ["4 tiros — 2 onças", "6 tiros — 2 onças", "3 tiros — 1 onça", "6 tiros — 4 onças"], answer: "6 tiros — 2 onças", explanation: "Dispensador de 1/3 oz: apertar o gatilho 6 vezes (6 tiros). O copo de calibragem deve ter 2 onças fluidas." },
+        { category: "🥫 Molhos · Ficha 20A", question: "No dispensador de 1 oz, quantos tiros devem ser dados e quanto deve haver no copo medidor?", options: ["4 tiros — 4 onças", "6 tiros — 2 onças", "3 tiros — 3 onças", "4 tiros — 2 onças"], answer: "4 tiros — 4 onças", explanation: "Dispensador de 1 oz: apertar o gatilho 4 vezes (4 tiros). O copo de calibragem deve ter 4 onças fluidas." },
+        { category: "🥫 Molhos · Ficha 20B", question: "Qual produto é usado para lubrificar a haste do dispensador de molho?", options: ["Óleo de cozinha", "Vaselina", "Petrogel", "QSR Multiuso"], answer: "Petrogel", explanation: "O Petrogel é o produto usado para lubrificar os dentes da haste do dispensador de molho." },
+        { category: "💧 Hidráulica · Ficha 33A", question: "Qual a faixa aceitável de cloro na água do restaurante?", options: ["0,1 a 0,5 ppm", "0,5 a 1,5 ppm", "1,0 a 2,0 ppm", "2,0 a 4,0 ppm"], answer: "0,5 a 1,5 ppm", explanation: "O valor mínimo aceitável de cloro é 0,5 ppm e o máximo é 1,5 ppm." },
+        { category: "💧 Hidráulica · Ficha 33A", question: "Quantas gotas da solução Orto-tolidina são adicionadas ao tubo com a água para análise de cloro?", options: ["2 gotas", "3 gotas", "4 gotas", "6 gotas"], answer: "4 gotas", explanation: "Adicionar 4 gotas da solução Orto-tolidina no tubo com a água para análise de cloro." },
+        { category: "💧 Hidráulica · Ficha 33A", question: "Com que frequência deve ser feita a análise de cloro?", options: ["Uma vez ao dia", "Duas vezes ao dia", "A cada 3 horas", "Semanalmente"], answer: "Duas vezes ao dia", explanation: "A análise de cloro deve ser realizada diariamente, 2 vezes ao dia." },
+        { category: "📊 Consumo · Ficha 25B", question: "Qual tecla deve ser pressionada no relógio de KWH para encontrar o valor de consumo de energia?", options: ["START", "MENU", "HOME", "OK"], answer: "HOME", explanation: "No relógio de medição de KWH, pressionar a tecla HOME até encontrar o valor." },
+        { category: "☕ McCafé · Ficha 1D", question: "Na retrolavagem da máquina de café expresso, quantas vezes a operação deve ser repetida por grupo?", options: ["1 vez", "2 vezes", "3 vezes", "5 vezes"], answer: "3 vezes", explanation: "A operação (stop, 5 segundos, stop, despejar água) deve ser repetida 3 vezes em cada um dos grupos da máquina." },
+        { category: "☕ McCafé · Ficha 2B", question: "Quantos minutos o forno giratório deve ser aguardado antes de ser utilizado após a sanitização?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "20 minutos", explanation: "Após a sanitização do forno giratório, ligar o equipamento e aguardar 20 minutos antes de utilizá-lo." },
+        { category: "☕ McCafé · Ficha 9C", question: "O que NÃO deve ser feito durante a retrolavagem do filtro de água do McCafé?", options: ["Usar martelo de borracha", "Extrair café ou usar a máquina de lavar xícara", "Fechar o registro MIB", "Abrir a alavanca do filtro T-9"], answer: "Extrair café ou usar a máquina de lavar xícara", explanation: "Durante a preventiva de retrolavagem do filtro, não extrair nenhum café e não utilizar a máquina de lavar xícara." },
+        { category: "🧊 Encestador · Ficha 46B", question: "Em lojas que funcionam 24 horas, por quanto tempo o encestador deve ser desligado por dia?", options: ["30 minutos", "1 hora", "2 a 3 horas", "4 horas"], answer: "2 a 3 horas", explanation: "Nas lojas que funcionam 24 horas, o encestador deve ser desligado pelo menos de 2 a 3 horas por dia." },
+        { category: "🍅 LOPE · Ficha 19B", question: "O que deve ser verificado ao virar o fatiador de tomate de cabeça para baixo?", options: ["Se as lâminas estão afiadas", "Se o fatiador tem a trava de lâminas", "Se o carro está limpo", "Se o petrogel está aplicado"], answer: "Se o fatiador tem a trava de lâminas", explanation: "Ao virar o fatiador de cabeça para baixo, verificar se possui a trava de lâminas. Caso não possua, informar o Técnico de Manutenção para instalação." },
+        { category: "☕ McCafé · Ficha 1Q", question: "Na limpeza da Melitta XT4, qual a proporção de detergente e água para limpeza do sistema de leite?", options: ["10 ml em 500 ml de água", "25 ml em 500 ml de água", "50 ml em 1 litro de água", "100 ml em 500 ml de água"], answer: "25 ml em 500 ml de água", explanation: "Separar um recipiente com 500 ml de água e incluir 25 ml de detergente líquido para limpeza da máquina." },
+        { category: "☕ McCafé · Ficha 11M", question: "Ao retirar o reservatório de borra da Melitta CT8, o que deve ser confirmado na tela?", options: ["Que o café está pronto", "Que o reservatório foi esvaziado pressionando 'Sim'", "Que a máquina está desligada", "Que a limpeza foi concluída"], answer: "Que o reservatório foi esvaziado pressionando 'Sim'", explanation: "Após recolocar o reservatório e fechar a porta, irá aparecer na tela uma mensagem de pergunta — pressionar 'Sim' confirmando que o reservatório foi esvaziado." },
+        { category: "☕ McCafé · Ficha 10", question: "Como desbloquear a tela da Melitta CT8 após a limpeza do touch screen?", options: ["Pressionar o botão power", "Digitar o código de serviço", "Tocar nos cantos na sequência indicada na tela (4→1→2→3)", "Apertar Stop por 5 segundos"], answer: "Tocar nos cantos na sequência indicada na tela (4→1→2→3)", explanation: "Após a limpeza, realizar o desbloqueio da tela conforme o processo indicado na tela — sequência de toques nos cantos." },
+        { category: "☕ McCafé · Ficha 1N", question: "Qual o código do fornecedor da pastilha de limpeza usada na Melitta CT8?", options: ["1234", "2028", "4456", "0808"], answer: "2028", explanation: "Pastilha disponível na central de pedido, Fornecedor: Gran Coffee, com o código 2028." },
+        { category: "☕ McCafé · Ficha 1K", question: "Qual o volume de solução sanitizante Franke usado no recipiente de limpeza durante o ciclo final da Franke A400?", options: ["25 ml", "50 ml", "100 ml", "500 ml"], answer: "50 ml", explanation: "Retirar o reservatório de leite e colocar o recipiente de limpeza com 50 ml de solução sanitizante Franke, seguindo as instruções da tela." },
+        { category: "☕ McCafé · Ficha 3A", question: "O que deve ser fechado antes de retirar a cúpula de grãos do moinho de café?", options: ["A porta da câmara", "O registro de água", "A portinhola de descida de grãos", "O bico dispensador"], answer: "A portinhola de descida de grãos", explanation: "Antes de retirar a cúpula, fechar a portinhola de descida de grãos que fica no lado esquerdo da máquina, logo abaixo da cúpula de grãos." },
+        { category: "🥛 Leite · Ficha 44D", question: "Na limpeza do sistema Aquagel, qual tecla deve ser pressionada para que o equipamento bombeie a solução?", options: ["START", "CLEAN", "PUMP", "OK"], answer: "CLEAN", explanation: "Pressionar a tecla CLEAN para que o equipamento bombeie a solução por todo o sistema. Repetir até esvaziar completamente o recipiente." },
+        { category: "🥛 Leite · Ficha 44A", question: "Qual botão deve ser pressionado para ligar a máquina de leite Foamino?", options: ["Botão verde superior", "Botão azul lateral", "Botão vermelho inferior", "Botão amarelo central"], answer: "Botão vermelho inferior", explanation: "Ligar o equipamento Foamino pressionando o botão vermelho inferior." },
+        { category: "🍦 Sorvete · Ficha 120", question: "Qual o peso correto do sorvete extraído em 10 segundos na calibragem da máquina?", options: ["100 a 150 gramas", "142 a 213 gramas", "200 a 300 gramas", "50 a 100 gramas"], answer: "142 a 213 gramas", explanation: "O peso padrão de extração em 10 segundos deve ser de 142 a 213 gramas (5 a 7,5 onças)." },
+        { category: "🍦 Sorvete · Ficha 120", question: "Se o peso do sorvete estiver ACIMA do padrão, como ajustar o parafuso da alavanca?", options: ["Sentido anti-horário (maior extração)", "Sentido horário (menor extração)", "Não mexer no parafuso", "Substituir a válvula"], answer: "Sentido horário (menor extração)", explanation: "Se estiver acima do padrão, girar o parafuso no sentido horário para reduzir a extração." },
+        { category: "🍦 Sorvete · Ficha 120", question: "Com que frequência deve ser feita a calibragem da velocidade de extração do sorvete?", options: ["1 vez ao dia", "2 vezes ao dia", "1 vez por semana", "A cada turno"], answer: "2 vezes ao dia", explanation: "A calibragem da velocidade de extração do sorvete deve ser feita 2 vezes ao dia em todas as válvulas." },
+        { category: "🍦 Sorvete · Ficha 12I", question: "Qual a faixa de temperatura ideal da água do banho-maria das coberturas?", options: ["40°C a 50°C", "57°C a 63°C", "70°C a 80°C", "85°C a 90°C"], answer: "57°C a 63°C", explanation: "A temperatura da água do banho-maria deve estar entre 57°C e 63°C. Fora dessa faixa, acionar o Técnico de Manutenção." },
+        { category: "🍦 Sorvete · Ficha 12I", question: "Quantos minutos aguardar para estabilizar a temperatura do banho-maria antes de medir?", options: ["5 minutos", "10 minutos", "15 minutos", "30 minutos"], answer: "15 minutos", explanation: "Após ligar o banho-maria, aguardar 15 minutos para estabilizar a temperatura antes de mergulhar o sensor." },
+        { category: "🍦 Sorvete · Ficha 12N", question: "Por quantos minutos o dispensador de amendoim deve ficar na solução sanitizante?", options: ["3 minutos", "5 minutos", "7 minutos", "10 minutos"], answer: "7 minutos", explanation: "Após enxaguar com água quente, deixar o dispensador de amendoim dentro da cuba por 7 minutos na solução sanitizante." },
+        { category: "🍦 Sorvete · Ficha 12E", question: "O que deve ser aplicado nos agitadores antes de recolocá-los na máquina de sorvete?", options: ["Óleo de cozinha", "Vaselina", "Petrogel", "QSR Multiuso"], answer: "Petrogel", explanation: "Aplicar uma fina camada de Petrogel nos agitadores antes de colocar no equipamento." },
+    ];
+
+    // Initialize quiz when the quiz tab is activated
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const tab = this.dataset.tab;
+        if (tab === 'quiz') {
+          const mode = window._quizMode || 'multiple';
+          if (mode === 'multiple') initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
+          else if (mode === 'flash') initFlashcard(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
+          else if (mode === 'lacuna') initLacuna(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
+        }
+      });
+    });
+
+    // Also init if user lands directly on quiz tab
+    window.addEventListener('load', function() {
+      const quizPanel = document.getElementById('panel-quiz');
+      if (quizPanel && quizPanel.classList.contains('active')) {
+        initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
+      }
+    });
+  </script>
+</body>
+</html>

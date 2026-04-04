@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOPE — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="lope">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>LOPE</h1>
+        <p>Apoio e Preparação · Produção</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="prepico">🔥 Pré-Pico</button>
+      <button class="tab-btn" data-tab="cebola">🧅 Cebola</button>
+      <button class="tab-btn" data-tab="tomate">🍅 Tomate</button>
+      <button class="tab-btn" data-tab="queijo">🧀 Queijo</button>
+      <button class="tab-btn" data-tab="alface">🥬 Alface</button>
+      <button class="tab-btn" data-tab="bacon">🥓 Bacon</button>
+      <button class="tab-btn" data-tab="rota">🔄 Rota ¼h</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">Resumo Geral</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Tempos de Vida dos Produtos</h2></div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box"><div class="stat-label">Cebola reidratada</div><div class="stat-value">24h</div><div class="stat-sub">Reidratar mín. 1h · Ceboleiro: 4h</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Tomate fatiado</div><div class="stat-value">2h+2h</div><div class="stat-sub">Fatiado + mesa de condimentação</div></div>
+            <div class="stat-box blue"><div class="stat-label">Queijo</div><div class="stat-value">4h</div><div class="stat-sub">Ambientar 2h · 15°C–18°C</div></div>
+            <div class="stat-box green"><div class="stat-label">Bacon pronto</div><div class="stat-value">6h</div><div class="stat-sub">Descongelar 12h em refrigeração</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Alface / Cebola fresca</div><div class="stat-value">2h</div><div class="stat-sub">Após abrir embalagem</div></div>
+            <div class="stat-box"><div class="stat-label">Ambientação Tomate</div><div class="stat-value">2h</div><div class="stat-sub">Obrigatório antes de fatiar</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧼</div><h2>Higiene & Segurança</h2></div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Padrões de Higiene</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Uniforme e crachá limpos</li>
+                <li>Sapato antiderrapante</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Segurança</h3>
+              <ul>
+                <li class="blue">EPI completo para câmaras</li>
+                <li class="blue">Mangotes e avental p/ chapas</li>
+                <li class="blue">Lavar mãos 20s com bactericida</li>
+                <li class="blue">Gel sanitizante antes de assumir</li>
+              </ul>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💧</div>
+            <div><strong>Lavar mãos a cada rodada</strong> de preparação, sem exceção.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📌</div><h2>Antes de Começar</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num y">1</div><div class="step-text">Manter <strong>2 panos limpos</strong>, sanitizados e dobrados. Limpar e sanitizar a estação antes de iniciar</div></div>
+            <div class="step"><div class="step-num y">2</div><div class="step-text">Verificar se a <strong>Tabela de Charts</strong> está impressa e atualizada (GCs X projetadas)</div></div>
+            <div class="step"><div class="step-num y">3</div><div class="step-text">Manter utensílios limpos e <strong>no local correto</strong> para cada produto</div></div>
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Validar os <strong>tempos e temperaturas</strong> dos equipamentos antes de iniciar</div></div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Produtos nas câmaras devem ser mantidos em suas <strong>caixas originais</strong>. Pacotes abertos devem ser <strong>datados</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-prepico">
+      <div class="section-label">Preparação / Pré-Pico</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">✅</div><h2>Checklist Pré-Pico</h2><div class="badge badge-yellow">Marque cada item</div></div>
+        <div class="card-body">
+          <div class="check-cat">🍅 Tomate</div>
+          <div class="checklist" style="margin-top:6px;">
+            <label class="check-item"><input type="checkbox"> Sanitizar tomates de 10 a 15 min usando a tabela de chart para 2h</label>
+            <label class="check-item"><input type="checkbox"> Preparar os tomates para ambientação de 2h</label>
+          </div>
+          <div class="check-cat" style="margin-top:12px;">🧀 Queijo</div>
+          <div class="checklist" style="margin-top:6px;">
+            <label class="check-item"><input type="checkbox"> Preparar queijos cheddar e ementhal para ambientar usando a tabela de chart</label>
+          </div>
+          <div class="check-cat" style="margin-top:12px;">🧅 Cebola</div>
+          <div class="checklist" style="margin-top:6px;">
+            <label class="check-item"><input type="checkbox"> Preparar cebola reidratada</label>
+            <label class="check-item"><input type="checkbox"> Drenar a cebola reidratada</label>
+            <label class="check-item"><input type="checkbox"> Preparar ceboleiros e deixar na câmara de resfriado</label>
+          </div>
+          <div class="check-cat" style="margin-top:12px;">🥫 Molhos & Estoque</div>
+          <div class="checklist" style="margin-top:6px;">
+            <label class="check-item"><input type="checkbox"> Preparar molhos refrigerados para ambientar usando a tabela de chart</label>
+            <label class="check-item"><input type="checkbox"> Estocar carnes brancas, vermelhas, tortas e batatas</label>
+            <label class="check-item"><input type="checkbox"> Estocar molhos, tubos recarregáveis e FIFOs</label>
+            <label class="check-item"><input type="checkbox"> Estocar os pães</label>
+          </div>
+          <div class="check-cat" style="margin-top:12px;">🥬 Alface & Suco</div>
+          <div class="checklist" style="margin-top:6px;">
+            <label class="check-item"><input type="checkbox"> Preparar cubas de alface/cebola fresca usando a tabela de chart</label>
+            <label class="check-item"><input type="checkbox"> Estocar sucos, gelo e bebida láctea</label>
+          </div>
+          <div class="check-cat" style="margin-top:12px;">🥓 Final</div>
+          <div class="checklist" style="margin-top:6px;">
+            <label class="check-item"><input type="checkbox"> Fatiar tomates sanitizados para 2h usando a tabela de chart</label>
+            <label class="check-item"><input type="checkbox"> Preparar lâminas de bacon para 6h usando a tabela de chart</label>
+            <label class="check-item"><input type="checkbox"> Preparar o bacon na chapa para 6h usando a tabela de chart</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert warn">
+        <div class="alert-icon">⚠️</div>
+        <div>Pacotes abertos devem ser <strong>datados</strong> e mantidos em suas caixas originais.</div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-cebola">
+      <div class="section-label">Cebola Reidratada</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">💧</div><h2>Hidratação da Cebola</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Despejar no recipiente o conteúdo de <strong>1 pacote de cebola desidratada</strong></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Encher com <strong>água fria (1°C a 4°C)</strong> da máquina de suco, deixando margem de <strong>3 cm da borda</strong></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Colocar etiqueta de <strong>24h</strong> e levar ao refrigerador por no mínimo <strong>1 hora</strong></div></div>
+          </div>
+          <div class="alert info"><div class="alert-icon">💡</div><div>Quanto mais tempo hidratando, <strong>melhor a qualidade</strong>. Realizar a drenagem somente no momento de utilização.</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔧</div><h2>Preparação da Cebola</h2><div class="badge badge-yellow">Antes de usar</div></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Despejar o conteúdo no <strong>filtro de aço inoxidável</strong></div></div>
+            <div class="step"><div class="step-num y">5</div><div class="step-text">Deixar a água escorrer bem por <strong>20" a 30"</strong>. Certificar que foi bem drenado</div></div>
+            <div class="step"><div class="step-num y">6</div><div class="step-text">Colocar o filtro sobre a cuba e realizar a <strong>estocagem</strong></div></div>
+          </div>
+          <div class="alert danger"><div class="alert-icon">⚠️</div><div>Os pedaços de cebola reidratada devem ser <strong>grossos e brancos</strong>. Caso contrário, verificar temperatura da água (1°C–4°C).</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🏪</div><h2>Ceboleiro — Best Burger</h2><div class="badge badge-red">Best Burger</div></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num b">7</div><div class="step-text">Reabastecer os dispensadores com concha até a <strong>linha de abastecimento</strong>. Rosquear a tampa até ouvir um clique</div></div>
+            <div class="step"><div class="step-num b">8</div><div class="step-text">Colocar todos no suporte dentro de um recipiente com tampa. Etiquetar com a <strong>mesma data e horário da preparação</strong>. Guardar na câmara respeitando o limite de <strong>24h</strong></div></div>
+            <div class="step"><div class="step-num b">9</div><div class="step-text">Para estocagem na chapa: retirar o dispensador da câmara, posicionar sobre a chapa e marcar o <strong>tempo de vida de 4 horas</strong></div></div>
+          </div>
+          <div class="grid-3" style="margin-top:4px;">
+            <div class="stat-box"><div class="stat-label">Vida útil</div><div class="stat-value">24h</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Reidratação mín.</div><div class="stat-value">1h</div></div>
+            <div class="stat-box blue"><div class="stat-label">No ceboleiro</div><div class="stat-value">4h</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-tomate">
+      <div class="section-label">Tomate Fatiado</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧪</div><h2>Sanitização e Ambientação</h2><div class="badge badge-red">Obrigatório</div></div>
+        <div class="card-body">
+          <div class="alert danger" ><div class="alert-icon">🚫</div><div>É necessário <strong>SANITIZAR e AMBIENTAR</strong> todos os tomates antes de fatiar.</div></div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">No balde branco, selecionar a quantidade conforme <strong>tabela de chart</strong>. Anotar a data no relógio de controle</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Encher com <strong>CHLORINE SANITIZER BB5L</strong> até cobrir todos. Deixar de molho por <strong>10 a 15 minutos</strong></div></div>
+            <div class="step"><div class="step-num y">3</div><div class="step-text">Enxaguar <strong>um a um esfregando com as mãos</strong> em água corrente na área do Back Room</div></div>
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Organizar na cuba branca para ambientação de no <strong>mínimo 2 horas</strong></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔪</div><h2>Procedimento para Fatiar</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num g">1</div><div class="step-text">Posicionar o tomate no fatiador com o <strong>olho para baixo</strong>. Empurrar de uma só vez</div></div>
+            <div class="step"><div class="step-num g">2</div><div class="step-text"><strong>Selecionar e descartar</strong> as fatias das pontas que não contêm sementes</div></div>
+            <div class="step"><div class="step-num g">3</div><div class="step-text">Colocar na cuba branca com divisórias. Marcar tempo de vida de <strong>2 horas</strong></div></div>
+            <div class="step"><div class="step-num g">4</div><div class="step-text">Estocar na cuba com dreno na <strong>mesa de condimentação</strong></div></div>
+          </div>
+          <div class="alert danger"><div class="alert-icon">🚫</div><div>Tomates após ambientados e fatiados <strong>NÃO podem retornar</strong> para câmara de resfriados.</div></div>
+          <div class="grid-3">
+            <div class="stat-box"><div class="stat-label">Sanitização</div><div class="stat-value">15min</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Ambientação</div><div class="stat-value">2h</div></div>
+            <div class="stat-box green"><div class="stat-label">Fatiado (vida útil)</div><div class="stat-value">2h</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-queijo">
+      <div class="section-label">Queijo Cheddar / Ementhal</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧀</div><h2>Preparação do Queijo</h2><div class="badge badge-yellow">PEPS</div></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Separar a <strong>cuba limpa e sanitizada</strong></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Conforme a <strong>tabela de charts</strong>, retirar a barra e posicionar na mesa de preparação</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Separar o bloco <strong>ao meio (20 fatias)</strong> e posicionar em <strong>linha vertical</strong> na cuba</div></div>
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Anotar o <strong>tempo de vida primário</strong> (data da caixa) e secundário <strong>(+2h para uso)</strong> com caneta piloto</div></div>
+            <div class="step"><div class="step-num y">5</div><div class="step-text">Estocar na mesa de condimentação por blocos <strong>(20 fatias em 20 fatias)</strong>, rotação <strong>PEPS</strong></div></div>
+          </div>
+          <div class="grid-3">
+            <div class="stat-box blue"><div class="stat-label">Temperatura</div><div class="stat-value">15–18°C</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Ideal</div><div class="stat-value">17,5°C</div></div>
+            <div class="stat-box"><div class="stat-label">Ambientação</div><div class="stat-value">2h</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📊</div><h2>Tabela — Quantidade por Hora</h2></div>
+        <div class="card-body">
+          <table class="data-table">
+            <tr><th>Hora Retirada</th><th>Hora p/ Uso</th><th>Hora Vencimento</th><th>Qtd. Fatias</th></tr>
+            <tr><td>10:00</td><td>12:00 (30 GCs)</td><td>14:00</td><td><strong>40 unid.</strong></td></tr>
+            <tr><td>11:00</td><td>13:00 (60 GCs)</td><td>15:00</td><td><strong>80 unid.</strong></td></tr>
+            <tr><td>12:00</td><td>14:00 (100 GCs)</td><td>16:00</td><td><strong>120 unid.</strong></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-alface">
+      <div class="section-label">Alface / Cebola Fresca</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📦</div><h2>Quantidade de Cubas por Pacote</h2></div>
+        <div class="card-body">
+          <table class="data-table">
+            <tr><th>Produto</th><th>Cubas Rasas (250g)</th><th>Cubas Médias (500g)</th></tr>
+            <tr><td>1 pacote Alface</td><td><strong>8 cubas</strong></td><td><strong>4 cubas</strong></td></tr>
+            <tr><td>1 pacote Cebola</td><td><strong>10 cubas</strong></td><td>—</td></tr>
+          </table>
+          <div class="pill-row">
+            <div class="pill yellow">⬇️ Baixo movimento → Cubas rasas</div>
+            <div class="pill red">🔥 Hora pico → Cubas médias (alface)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Procedimento de Preparação</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Separar cubas limpas e sanitizadas conforme o horário (rasas ou médias)</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Conforme a <strong>tabela de charts</strong>, retirar o pacote da câmara</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Preparar as cubas para uso (<strong>hora fechada</strong>). Anotar o tempo de vida de <strong>2h</strong> em cada cuba</div></div>
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Colocar as cubas no <strong>refrigerador da mesa de condimentação</strong></div></div>
+            <div class="step"><div class="step-num y">5</div><div class="step-text">Se não utilizou o pacote inteiro, retornar à câmara com etiqueta de <strong>24h alface / 24h cebola</strong></div></div>
+          </div>
+          <div class="highlight">✏️ Horário de retirada + 2h = vencimento<br>Ex.: Retirada 10:00 → Vencimento 12:00</div>
+          <div class="alert warn"><div class="alert-icon">🙌</div><div>Após preparação das cubas, é <strong>obrigatório lavar e sanitizar as mãos</strong>.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-bacon">
+      <div class="section-label">Bacon</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⚙️</div><h2>Equipamento & Produto</h2></div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box"><div class="stat-label">Temp. inferior</div><div class="stat-value">177°C</div></div>
+            <div class="stat-box"><div class="stat-label">Temp. superior</div><div class="stat-value">218°C</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Cocção · GAP</div><div class="stat-value">40s · 90</div></div>
+            <div class="stat-box green"><div class="stat-label">Validade pronto</div><div class="stat-value">6h</div></div>
+          </div>
+          <div class="pill-row">
+            <div class="pill red">2 platens → 8 fatias/lâmina</div>
+            <div class="pill red">3 platens → 6 fatias/lâmina</div>
+            <div class="pill green">Ambientação: 12h em refrigeração</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥓</div><h2>Procedimento de Preparo</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Separar a quantidade para <strong>6 horas</strong> conforme tabela de chart. Abrir com <strong>tesoura sem ponta</strong>. Colocar em lâmina de produção na bandeja de inox</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Certificar cocção de <strong>40s e GAP 90</strong>. Posicionar a bandeja na borda da chapa</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Ativar fatias <strong>de uma única vez</strong>. Abaixar o platen acionando o timer. <strong>Sanitizar as mãos imediatamente</strong></div></div>
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Ao finalizar, colocar o <strong>vencimento de 6h</strong> na placa. Posicionar bacons no rack partidos ao meio</div></div>
+            <div class="step"><div class="step-num y">5</div><div class="step-text"><strong>Lavar os utensílios</strong>: espátulas, raspadores, rodinho e platen</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-rota">
+      <div class="section-label">Operação — Rota por ¼ de Hora</div>
+
+      <div class="alert info"><div class="alert-icon">🔄</div><div>Seguir esta rota a cada <strong>15 minutos</strong> durante toda a operação.</div></div>
+
+      <div class="rota-block">
+        <div class="rota-head c1">⏱️ 1ª Rodada — 15 min <span class="rota-timer">Início do turno</span></div>
+        <div class="rota-items">
+          <div class="rota-item"><div class="rota-dot"></div>Estocar mesa de condimentação</div>
+          <div class="rota-item"><div class="rota-dot"></div>Estocar o <strong>ceboleiro</strong> na área da chapa</div>
+          <div class="rota-item"><div class="rota-dot"></div>Estocar pães</div>
+          <div class="rota-item"><div class="rota-dot"></div>Estocar carnes brancas e vermelhas</div>
+          <div class="rota-item"><div class="rota-dot"></div>Estocar tortas e batatas</div>
+          <div class="rota-item"><div class="rota-dot"></div>Passar esfregão no chão da cozinha</div>
+        </div>
+      </div>
+
+      <div class="rota-block">
+        <div class="rota-head c2">⏱️ 2ª Rodada — 30 min <span class="rota-timer">15 min depois</span></div>
+        <div class="rota-items">
+          <div class="rota-item"><div class="rota-dot"></div>Preparar os <strong>tomates</strong> para sanitização de 10–15 min antes de fatiar</div>
+          <div class="rota-item"><div class="rota-dot"></div>Fazer <strong>esquema 3 cubas</strong></div>
+          <div class="rota-item"><div class="rota-dot"></div>Verificar estocagem da mesa de condimentação</div>
+          <div class="rota-item"><div class="rota-dot"></div>Verificar estocagem do ceboleiro na área da chapa</div>
+          <div class="rota-item"><div class="rota-dot"></div>Verificar estocagem de sucos e bebida láctea do balcão</div>
+        </div>
+      </div>
+
+      <div class="rota-block">
+        <div class="rota-head c3">⏱️ 3ª Rodada — 45 min <span class="rota-timer">30 min depois</span></div>
+        <div class="rota-items">
+          <div class="rota-item"><div class="rota-dot"></div>Verificar estocagem de carnes brancas e vermelhas</div>
+          <div class="rota-item"><div class="rota-dot"></div>Verificar estocagem do ceboleiro na área da chapa</div>
+          <div class="rota-item"><div class="rota-dot"></div>Verificar estocagem dos pães</div>
+          <div class="rota-item"><div class="rota-dot"></div><strong>Fatiar tomates</strong> de acordo com a tabela de chart para 2h</div>
+          <div class="rota-item"><div class="rota-dot"></div>Lavar e sanitizar as cubas de alface/cebola fresca</div>
+        </div>
+      </div>
+
+      <div class="rota-block">
+        <div class="rota-head c4">⏱️ 4ª Rodada — 60 min <span class="rota-timer">45 min depois</span></div>
+        <div class="rota-items">
+          <div class="rota-item"><div class="rota-dot"></div>Verificar estocagem da mesa de condimentação</div>
+          <div class="rota-item"><div class="rota-dot"></div>Verificar estocagem do ceboleiro na área da chapa</div>
+          <div class="rota-item"><div class="rota-dot"></div>Preparar <strong>cubas de alface/cebola</strong> para próxima hora</div>
+          <div class="rota-item"><div class="rota-dot"></div>Preparar <strong>queijos/cheddar e ementhal</strong> usando a tabela de chart</div>
+          <div class="rota-item"><div class="rota-dot"></div>Passar esfregão no chão da cozinha</div>
+        </div>
+      </div>
+
+      <div class="alert danger"><div class="alert-icon">🙌</div><div><strong>IMPORTANTE:</strong> Lavar e sanitizar as mãos a cada rodada de preparação.</div></div>
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Quiz — LOPE</h2><div class="badge badge-yellow">12 perguntas</div></div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · LOPE · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_LOPE = [
+      { category: "⏱️ Tempos de Vida", question: "Qual o tempo de vida útil do tomate fatiado na mesa de condimentação?", options: ["1 hora", "2 horas", "4 horas", "6 horas"], answer: "2 horas", explanation: "O tomate fatiado tem vida útil de 2 horas na mesa de condimentação." },
+      { category: "⏱️ Tempos de Vida", question: "Qual é o tempo mínimo de reidratação da cebola?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "1 hora", explanation: "A cebola deve ser reidratada por no mínimo 1 hora. Quanto mais tempo, melhor a qualidade." },
+      { category: "⏱️ Tempos de Vida", question: "Por quanto tempo o ceboleiro Best Burger pode ficar na chapa?", options: ["2 horas", "3 horas", "4 horas", "6 horas"], answer: "4 horas", explanation: "O ceboleiro Best Burger tem vida útil de 4 horas na área da chapa." },
+      { category: "⏱️ Tempos de Vida", question: "Qual é a validade da cebola reidratada?", options: ["6 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "A cebola reidratada tem validade de 24 horas." },
+      { category: "🍅 Tomate", question: "Qual produto é usado para sanitizar os tomates?", options: ["Água com sal", "CHLORINE SANITIZER BB5L", "Álcool 70%", "Água quente"], answer: "CHLORINE SANITIZER BB5L", explanation: "Os tomates devem ser sanitizados com CHLORINE SANITIZER BB5L por 10 a 15 minutos." },
+      { category: "🍅 Tomate", question: "Por quanto tempo o tomate deve ser ambientado antes de ser fatiado?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "2 horas", explanation: "O tomate precisa de no mínimo 2 horas de ambientação antes de ser fatiado." },
+      { category: "🍅 Tomate", question: "Após fatiado e ambientado, o tomate pode retornar para a câmara?", options: ["Sim, por até 2 horas", "Sim, se dentro do prazo", "Não, nunca", "Sim, se embalado"], answer: "Não, nunca", explanation: "Tomates após ambientados e fatiados NÃO podem retornar para câmara de resfriados." },
+      { category: "🧀 Queijo", question: "Qual é a temperatura ideal do queijo para uso?", options: ["10°C", "13°C", "17,5°C", "22°C"], answer: "17,5°C", explanation: "A temperatura ideal do queijo é 17,5°C (entre 15°C e 18°C)." },
+      { category: "🧀 Queijo", question: "Como o queijo deve ser separado no bloco?", options: ["10 fatias", "15 fatias", "20 fatias", "25 fatias"], answer: "20 fatias", explanation: "O queijo deve ser separado ao meio com 20 fatias por bloco, posicionado em linha vertical." },
+      { category: "🥬 Alface", question: "Quantas cubas rasas rende 1 pacote de alface?", options: ["4 cubas", "6 cubas", "8 cubas", "10 cubas"], answer: "8 cubas", explanation: "1 pacote de alface rende 8 cubas rasas (250g) ou 4 cubas médias (500g)." },
+      { category: "🧅 Cebola", question: "Em que temperatura deve estar a água para reidratação da cebola?", options: ["0°C a 2°C", "1°C a 4°C", "5°C a 8°C", "10°C a 15°C"], answer: "1°C a 4°C", explanation: "A água para reidratação deve estar entre 1°C e 4°C (água fria da máquina de suco)." },
+      { category: "🔄 Rota", question: "A cada quantos minutos o LOPE deve seguir a rota de operação?", options: ["5 minutos", "10 minutos", "15 minutos", "30 minutos"], answer: "15 minutos", explanation: "O LOPE deve seguir a rota de operação a cada 15 minutos durante todo o turno." },
+      { category: "🍅 LOPE · Tomate", question: "Qual a espessura correta do tomate fatiado?", options: ["3mm a 4mm", "5mm a 6mm", "7mm a 8mm", "10mm"], answer: "5mm a 6mm", explanation: "O tomate deve ser fatiado com 5mm a 6mm de espessura." },
+      { category: "🍅 LOPE · Tomate", question: "Tomate ambientado e fatiado pode retornar para a câmara de resfriados?", options: ["Sim, por até 2 horas", "Sim, se dentro do prazo", "Não, nunca", "Sim, se embalado"], answer: "Não, nunca", explanation: "Tomates após ambientados e fatiados NÃO podem retornar para câmara de resfriados." },
+      { category: "🧀 LOPE · Queijo", question: "Qual é a faixa de temperatura correta do queijo?", options: ["10°C a 13°C", "13°C a 15°C", "15°C a 18°C", "18°C a 22°C"], answer: "15°C a 18°C", explanation: "O queijo deve estar entre 15°C e 18°C (ideal: 17,5°C)." },
+      { category: "🥬 LOPE · Alface", question: "Quantas gramas tem cada cuba rasa de alface?", options: ["150g", "200g", "250g", "300g"], answer: "250g", explanation: "1 pacote rende 8 cubas rasas de 250g ou 4 cubas médias de 500g." },
+      { category: "🧅 LOPE · Cebola", question: "Por quanto tempo máximo a cebola reidratada é válida?", options: ["6 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "A cebola reidratada tem validade de 24 horas." },
+      { category: "🧅 LOPE · Cebola", question: "O que acontece se a cebola reidratar por mais tempo que o mínimo?", options: ["Piora a qualidade", "Melhora a qualidade", "Não faz diferença", "Fica amarga"], answer: "Melhora a qualidade", explanation: "Quanto mais tempo de reidratação (mínimo 1 hora), melhor a qualidade da cebola." },
+      { category: "⏱️ LOPE · Tempos", question: "Por quanto tempo o tomate deve ser sanitizado antes de fatiar?", options: ["5 a 10 minutos", "10 a 15 minutos", "15 a 30 minutos", "30 minutos"], answer: "15 a 30 minutos", explanation: "Os tomates devem ser sanitizados por 15 a 30 minutos com CHLORINE SANITIZER." },
+      { category: "🧅 LOPE · BB", question: "Qual o tempo de vida do ceboleiro Best Burger na área da chapa?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "4 horas", explanation: "O ceboleiro Best Burger tem vida útil de 4 horas na área da chapa." },
+      { category: "⚙️ LOPE · Preparação", question: "Quantas cubas devem ser feitas a cada rota de 15 minutos?", options: ["1 cuba", "2 cubas", "3 cubas", "4 cubas"], answer: "3 cubas", explanation: "A cada rota de 15 minutos, o LOPE faz o esquema de 3 cubas." },
+      { category: "⚙️ LOPE · Preparação", question: "O que significa PEPS na estocagem?", options: ["Primeiro a Entrar, Primeiro a Sair", "Produto Em Perfeito Estado Sanitário", "Padrão de Estocagem Por Setor", "Procedimento de Estoque Padronizado"], answer: "Primeiro a Entrar, Primeiro a Sair", explanation: "PEPS = Primeiro a Entrar, Primeiro a Sair. Produtos mais antigos devem ser usados antes." },
+      { category: "🔄 LOPE · Rota", question: "O que o LOPE deve verificar além da mesa de condimentação na rota?", options: ["Apenas a mesa", "Mesa, sucos, gelo e bebida láctea", "Mesa e temperatura da UHC", "Apenas sucos"], answer: "Mesa, sucos, gelo e bebida láctea", explanation: "O LOPE deve verificar a estocagem da mesa de condimentação, sucos, gelo e bebida láctea." },
+      { category: "🍅 LOPE · Tomate", question: "Por quanto tempo o tomate deve ser sanitizado?", options: ["5-10 min", "10-15 min", "15-30 min", "30 min"], answer: "15-30 min", explanation: "Os tomates devem ser sanitizados por 15 a 30 minutos com CHLORINE SANITIZER." },
+      { category: "🥬 LOPE · Alface", question: "Quantas gramas tem cada cuba média de alface?", options: ["250g", "350g", "500g", "750g"], answer: "500g", explanation: "1 pacote rende 4 cubas médias de 500g ou 8 cubas rasas de 250g." },
+      { category: "🧅 LOPE · Cebola", question: "O que acontece se a cebola reidratar por mais tempo?", options: ["Piora a qualidade", "Melhora a qualidade", "Não faz diferença", "Fica amarga"], answer: "Melhora a qualidade", explanation: "Quanto mais tempo de reidratação (mínimo 1 hora), melhor a qualidade da cebola." },
+      { category: "🧀 LOPE · Queijo", question: "Quantas fatias devem ter cada bloco de queijo ao ser separado?", options: ["10 fatias", "15 fatias", "20 fatias", "25 fatias"], answer: "20 fatias", explanation: "O queijo deve ser separado ao meio em blocos de 20 fatias, posicionado em linha vertical." },
+      { category: "🍅 LOPE · Tomate", question: "Qual produto é usado para sanitizar os tomates antes de fatiar?", options: ["Água sanitária", "CHLORINE SANITIZER", "QSR Multiuso", "Água quente"], answer: "CHLORINE SANITIZER", explanation: "Sanitizar os tomates com CHLORINE SANITIZER por 15 a 30 minutos antes de fatiar." },
+      { category: "🥬 LOPE · Alface", question: "Qual o peso de cada cuba rasa de alface?", options: ["150g", "200g", "250g", "350g"], answer: "250g", explanation: "1 pacote de alface rende 8 cubas rasas de 250g ou 4 cubas médias de 500g." },
+      { category: "🧀 LOPE · Queijo", question: "A qual temperatura o queijo fica com consistência ideal para o padrão visual do sanduíche?", options: ["10°C", "13°C", "17,5°C", "22°C"], answer: "17,5°C", explanation: "A temperatura ideal do queijo para o padrão visual é 17,5°C, dentro da faixa de 15°C a 18°C." },
+      { category: "🥬 LOPE · Rota", question: "Com que frequência o LOPE realiza a rota de reposição?", options: ["A cada 5 minutos", "A cada 10 minutos", "A cada 15 minutos", "A cada 30 minutos"], answer: "A cada 15 minutos", explanation: "O LOPE faz a rota de reposição a cada 15 minutos para garantir a disponibilidade dos ingredientes." },
+      { category: "🧅 LOPE · Cebola", question: "Qual o volume mínimo de água para reidratação da cebola?", options: ["200ml", "300ml", "500ml", "1 litro"], answer: "500ml", explanation: "Para reidratação adequada, utilizar no mínimo 500ml de água fria (1°C a 4°C) para a cebola." },
+      { category: "🍅 LOPE · Tomate", question: "Qual o número máximo de fatias aproveitáveis por tomate?", options: ["3 fatias", "4 fatias", "5 fatias", "6 fatias"], answer: "5 fatias", explanation: "Cada tomate rende aproximadamente 5 fatias aproveitáveis de 5mm a 6mm." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_LOPE);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_LOPE);
+    });
+  </script>
+</body>
+</html>

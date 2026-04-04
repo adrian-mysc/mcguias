@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monte o Sanduíche — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="jogo-condimentacao">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Monte o Sanduíche</h1>
+        <p>Treino de Condimentação</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-content" style="max-width:520px;">
+
+    <div style="background:#fff8e1;border:1.5px solid #ffe082;border-radius:12px;padding:12px 14px;margin-bottom:4px;display:flex;gap:10px;align-items:flex-start;">
+      <span style="font-size:20px;line-height:1.3;">🧪</span>
+      <div>
+        <div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#5d4037;margin-bottom:3px;">Fase de Testes</div>
+        <div style="font-size:12px;color:#6d4c41;line-height:1.6;">Este jogo está em desenvolvimento. Pode haver erros nos ingredientes ou no comportamento. Em breve: <strong>modelos animados</strong> dos ingredientes e dos sanduíches montados em camadas. Encontrou algo errado? <a href="https://wa.me/5581997656174" target="_blank" rel="noopener" style="color:#2e7d32;font-weight:700;text-decoration:none;">🇧🇷 📲 Fale com o Adrian no WhatsApp</a></div>
+      </div>
+    </div>
+
+    <div id="game-root"></div>
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Monte o Sanduíche · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+/* ============================================================
+   MONTE O SANDUÍCHE — Treino de Condimentação
+   Selecione QUAIS ingredientes compõem o sanduíche.
+   Ordem não importa. Acerte todos sem selecionar errados.
+   ============================================================ */
+
+/* ---------- Dados dos sanduíches ---------- */
+// Fonte: condimentacao.html — ingredientes únicos por sanduíche (sem duplicatas de camada)
+const SANDWICHES = [
+  {
+    id: 'bigmac',
+    name: 'Big Mac',
+    emoji: '🍔',
+    correct: [
+      'Pão Big Mac (3 partes)',
+      'Carne 10:1 (2x)',
+      'Queijo Cheddar (1 fatia)',
+      'Picles (2 fatias)',
+      'Alface',
+      'Molho Big Mac',
+    ],
+  },
+  {
+    id: 'bigtasty',
+    name: 'Big Tasty',
+    emoji: '🔥',
+    correct: [
+      'Pão Tasty',
+      'Carne 4:1 (2x)',
+      'Queijo Emental (3 fatias)',
+      'Tomate (2 fatias)',
+      'Alface',
+      'Cebola fresca',
+      'Molho Tasty',
+    ],
+  },
+  {
+    id: 'mcnificobacon',
+    name: 'McNífico Bacon',
+    emoji: '🥓',
+    correct: [
+      'Pão Quarterão',
+      'Carne 4:1',
+      'Queijo Cheddar (1 fatia)',
+      'Bacon (2 fatias)',
+      'Tomate (2 fatias)',
+      'Alface',
+      'Maionese',
+      'Cebola fresca',
+      'Ketchup',
+      'Mostarda',
+    ],
+  },
+  {
+    id: 'chickendeluxe',
+    name: 'Chicken Deluxe',
+    emoji: '🍗',
+    correct: [
+      'Pão Crispy',
+      'Carne Crispy',
+      'Tomate (2 fatias)',
+      'Alface',
+      'Maionese',
+    ],
+  },
+  {
+    id: 'chickenlegend',
+    name: 'Chicken Legend',
+    emoji: '🍗',
+    correct: [
+      'Pão Crispy',
+      'Carne Crispy',
+      'Queijo Cheddar (1 fatia)',
+      'Bacon (2 fatias)',
+      'Alface',
+      'Cebola Crispy',
+      'Molho CBO',
+    ],
+  },
+  {
+    id: 'chickenbaconranch',
+    name: 'Chicken Bacon Ranch',
+    emoji: '🍗',
+    correct: [
+      'Pão de Batata',
+      'Filé de McCrispy',
+      'Bacon (3 fatias)',
+      'Tomate (2 fatias)',
+      'Alface',
+      'Molho Ranch',
+    ],
+  },
+  {
+    id: 'brabissimobeef',
+    name: 'Brabíssimo Beef',
+    emoji: '⭐',
+    correct: [
+      'Pão Brioche',
+      'Carne 4:1 (2x)',
+      'Queijo Cheddar (2 fatias)',
+      'Bacon (3 fatias)',
+      'Alface',
+      'Cebola Crispy',
+      'Molho CBO',
+    ],
+  },
+  {
+    id: 'brabissimofrango',
+    name: 'Brabíssimo Frango',
+    emoji: '⭐',
+    correct: [
+      'Pão Brioche',
+      'Carne Chicken (2x)',
+      'Queijo Cheddar (2 fatias)',
+      'Bacon (3 fatias)',
+      'Alface',
+      'Cebola Crispy',
+      'Molho CBO',
+    ],
+  },
+  {
+    id: 'brabissimoclubhouse',
+    name: 'Brabíssimo Clubhouse',
+    emoji: '⭐',
+    correct: [
+      'Pão Brioche',
+      'Carne 4:1 (2x)',
+      'Queijo Emmental (2 fatias)',
+      'Bacon (3 fatias)',
+      'Tomate (1 fatia)',
+      'Alface',
+      'Cebola shoyu',
+      'Molho Méquinese',
+      'Molho Big Mac',
+    ],
+  },
+];
+
+/* ---------- Pool global de ingredientes ---------- */
+// Todos os ingredientes únicos do sistema (corretos + distratores realistas)
+const ALL_INGREDIENTS = [
+  // Pães
+  'Pão Big Mac (3 partes)', 'Pão Tasty', 'Pão Quarterão', 'Pão Crispy', 'Pão de Batata', 'Pão Brioche',
+  // Carnes
+  'Carne 10:1 (2x)', 'Carne 4:1', 'Carne 4:1 (2x)', 'Carne Crispy', 'Filé de McCrispy', 'Carne Chicken (2x)',
+  // Queijos
+  'Queijo Cheddar (1 fatia)', 'Queijo Cheddar (2 fatias)', 'Queijo Emental (3 fatias)', 'Queijo Emmental (2 fatias)',
+  // Vegetais
+  'Alface', 'Tomate (1 fatia)', 'Tomate (2 fatias)', 'Cebola fresca', 'Cebola Crispy', 'Cebola shoyu',
+  // Picles / acréscimos
+  'Picles (2 fatias)',
+  // Frios
+  'Bacon (2 fatias)', 'Bacon (3 fatias)',
+  // Molhos
+  'Molho Big Mac', 'Molho Tasty', 'Molho CBO', 'Molho Ranch', 'Molho Méquinese',
+  'Maionese', 'Ketchup', 'Mostarda',
+  // Distratores que nunca aparecem nesses sanduíches
+  'Molho tártaro', 'Cebola reidratada', 'Queijo Prato', 'Pepino em conserva',
+];
+
+/* ---------- Estado ---------- */
+let state = {
+  phase: 'menu',        // 'menu' | 'playing' | 'done'
+  sandwich: null,
+  selected: new Set(),  // ingredientes clicados pelo jogador
+  submitted: false,     // após clicar em "Confirmar"
+  session: [],          // [{ id, perfect }]
+  score: { perfect: 0, played: 0 },
+};
+
+/* ---------- Root ---------- */
+const root = document.getElementById('game-root');
+
+function render() {
+  if (state.phase === 'menu')    renderMenu();
+  else if (state.phase === 'playing') renderGame();
+}
+
+/* ============ MENU ============ */
+function renderMenu() {
+  const hasSession = state.session.length > 0;
+  const scoreHtml = hasSession
+    ? `<div class="jg-score-bar">Sessão: <strong>${state.score.perfect}</strong> perfeito(s) de <strong>${state.score.played}</strong> jogado(s)</div>`
+    : '';
+
+  root.innerHTML = `
+    <div class="jg-header">
+      <div class="jg-header-icon">🍔</div>
+      <h2 class="jg-title">Monte o Sanduíche</h2>
+      <p class="jg-sub">Selecione todos os ingredientes do sanduíche — sem adicionar nenhum errado</p>
+    </div>
+    ${scoreHtml}
+    <div class="jg-grid">
+      ${SANDWICHES.map(s => {
+        const entry = state.session.find(e => e.id === s.id);
+        const badge = !entry ? ''
+          : entry.perfect
+            ? '<span class="jg-badge green">⭐ Perfeito</span>'
+            : '<span class="jg-badge yellow">✓ Feito</span>';
+        return `<button class="jg-card" onclick="startGame('${s.id}')">
+          <span class="jg-card-emoji">${s.emoji}</span>
+          <span class="jg-card-name">${s.name}</span>
+          ${badge}
+        </button>`;
+      }).join('')}
+    </div>
+    <button class="jg-btn-random" onclick="startRandom()">🎲 Aleatório</button>
+  `;
+}
+
+/* ============ GAME ============ */
+function buildPool(sandwich) {
+  const correct = new Set(sandwich.correct);
+  // Pick distractors: wrong ingredients not in this sandwich
+  const wrongs = ALL_INGREDIENTS.filter(i => !correct.has(i));
+  // Always include 4–6 distractors
+  const shuffledWrongs = wrongs.sort(() => Math.random() - 0.5).slice(0, 5);
+  // Combine + shuffle
+  return [...sandwich.correct, ...shuffledWrongs].sort(() => Math.random() - 0.5);
+}
+
+function renderGame() {
+  const sw = state.sandwich;
+  const pool = state._pool;
+  const correct = new Set(sw.correct);
+  const submitted = state.submitted;
+
+  const total = sw.correct.length;
+  const chosen = state.selected.size;
+
+  // Status message when submitted
+  let feedback = '';
+  if (submitted) {
+    const missed   = sw.correct.filter(i => !state.selected.has(i));
+    const wrong    = [...state.selected].filter(i => !correct.has(i));
+    const perfect  = missed.length === 0 && wrong.length === 0;
+    if (perfect) {
+      feedback = `<div class="jg-feedback perfect"><span class="jg-fb-icon">⭐</span><strong>Perfeito!</strong> Todos os ingredientes corretos.</div>`;
+    } else {
+      const parts = [];
+      if (wrong.length)  parts.push(`<span class="jg-err">❌ ${wrong.length} errado(s)</span>`);
+      if (missed.length) parts.push(`<span class="jg-miss">⚠️ ${missed.length} faltando</span>`);
+      feedback = `<div class="jg-feedback wrong">${parts.join(' · ')}</div>`;
+    }
+  }
+
+  const btnHtml = pool.map(ing => {
+    const isSelected = state.selected.has(ing);
+    const isCorrect  = correct.has(ing);
+
+    let cls = 'jg-ing';
+    let extra = '';
+    if (submitted) {
+      if (isCorrect && isSelected)  { cls += ' correct';  extra = '<span class="jg-check">✓</span>'; }
+      if (isCorrect && !isSelected) { cls += ' missed';   extra = '<span class="jg-check">!</span>'; }
+      if (!isCorrect && isSelected) { cls += ' wrong-sel';extra = '<span class="jg-check">✗</span>'; }
+    } else {
+      if (isSelected) cls += ' selected';
+    }
+
+    const disabled = submitted ? 'disabled' : '';
+    return `<button class="${cls}" onclick="toggleIng('${ing.replace(/'/g,"\'")}')" ${disabled}>
+      ${ing}${extra}
+    </button>`;
+  }).join('');
+
+  const confirmBtn = !submitted
+    ? `<button class="jg-btn-confirm ${chosen === 0 ? 'disabled' : ''}" onclick="confirmSelection()" ${chosen === 0 ? 'disabled' : ''}>
+        Confirmar seleção (${chosen} selecionado${chosen !== 1 ? 's' : ''})
+      </button>`
+    : `<div class="jg-after-btns">
+        <button class="jg-btn-next" onclick="nextSandwich()">Próximo →</button>
+        <button class="jg-btn-replay" onclick="startGame('${sw.id}')">🔄 Repetir</button>
+        <button class="jg-btn-menu" onclick="goMenu()">🏠 Menu</button>
+      </div>`;
+
+  root.innerHTML = `
+    <div class="jg-game-top">
+      <button class="jg-back" onclick="goMenu()">← Voltar</button>
+      <span class="jg-game-name">${sw.emoji} ${sw.name}</span>
+    </div>
+
+    <div class="jg-instruction">
+      Toque em <strong>todos</strong> os ingredientes deste sanduíche
+    </div>
+
+    <div class="jg-ings-wrap">
+      ${btnHtml}
+    </div>
+
+    ${feedback}
+    ${confirmBtn}
+
+    ${submitted ? `<div class="jg-recipe-box">
+      <div class="jg-recipe-title">📋 Composição oficial</div>
+      <div class="jg-recipe-list">${sw.correct.map(i => `<span class="jg-recipe-item">✓ ${i}</span>`).join('')}</div>
+    </div>` : ''}
+  `;
+}
+
+/* ---------- Interações ---------- */
+window.startGame = function(id) {
+  const sw = SANDWICHES.find(s => s.id === id);
+  state.sandwich  = sw;
+  state.selected  = new Set();
+  state.submitted = false;
+  state._pool     = buildPool(sw);
+  state.phase     = 'playing';
+  render();
+};
+
+window.startRandom = function() {
+  const unplayed = SANDWICHES.filter(s => !state.session.find(e => e.id === s.id));
+  const pool = unplayed.length ? unplayed : SANDWICHES;
+  const sw = pool[Math.floor(Math.random() * pool.length)];
+  startGame(sw.id);
+};
+
+window.toggleIng = function(ing) {
+  if (state.submitted) return;
+  if (state.selected.has(ing)) state.selected.delete(ing);
+  else state.selected.add(ing);
+  render();
+};
+
+window.confirmSelection = function() {
+  if (state.selected.size === 0) return;
+  const sw = state.sandwich;
+  const correct = new Set(sw.correct);
+  const missed  = sw.correct.filter(i => !state.selected.has(i));
+  const wrong   = [...state.selected].filter(i => !correct.has(i));
+  const perfect = missed.length === 0 && wrong.length === 0;
+
+  state.submitted = true;
+  // Update session
+  const existing = state.session.find(e => e.id === sw.id);
+  if (!existing) {
+    state.session.push({ id: sw.id, perfect });
+    state.score.played++;
+    if (perfect) state.score.perfect++;
+  } else if (perfect && !existing.perfect) {
+    existing.perfect = true;
+    state.score.perfect++;
+  }
+  render();
+};
+
+window.nextSandwich = function() {
+  const idx = SANDWICHES.findIndex(s => s.id === state.sandwich.id);
+  const next = SANDWICHES[(idx + 1) % SANDWICHES.length];
+  startGame(next.id);
+};
+
+window.goMenu = function() {
+  state.phase = 'menu';
+  render();
+};
+
+/* ---------- CSS ---------- */
+const style = document.createElement('style');
+style.textContent = `
+/* Header */
+.jg-header { text-align:center; padding:18px 0 10px; }
+.jg-header-icon { font-size:44px; margin-bottom:6px; }
+.jg-title { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text); margin:0 0 4px; }
+.jg-sub { font-size:13px; color:var(--muted); margin:0; line-height:1.5; }
+
+/* Score bar */
+.jg-score-bar { background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:10px 14px; font-size:13px; color:var(--muted); text-align:center; margin-bottom:12px; }
+
+/* Menu grid */
+.jg-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; }
+.jg-card { background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-lg); padding:14px 10px; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; position:relative; transition:border-color .15s, transform .1s; }
+.jg-card:active { transform:scale(.97); border-color:var(--red); }
+.jg-card-emoji { font-size:30px; }
+.jg-card-name { font-family:var(--font-display); font-size:11px; font-weight:700; color:var(--text); text-align:center; line-height:1.3; }
+.jg-badge { position:absolute; top:7px; right:7px; font-size:10px; font-weight:700; padding:2px 7px; border-radius:20px; }
+.jg-badge.green { background:#e8f5e9; color:#2e7d32; }
+.jg-badge.yellow { background:#fff8e1; color:#f57f17; }
+.jg-btn-random { width:100%; padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-md); font-family:var(--font-display); font-size:15px; font-weight:800; cursor:pointer; }
+.jg-btn-random:active { opacity:.85; }
+
+/* Game top bar */
+.jg-game-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+.jg-back { background:none; border:1.5px solid var(--border); border-radius:var(--radius-md); padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted); cursor:pointer; }
+.jg-game-name { font-family:var(--font-display); font-size:15px; font-weight:800; color:var(--text); }
+
+/* Instruction */
+.jg-instruction { background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:10px 14px; font-size:13px; color:var(--muted); margin-bottom:12px; text-align:center; }
+
+/* Ingredient buttons */
+.jg-ings-wrap { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+.jg-ing { background:var(--card); border:2px solid var(--border); border-radius:var(--radius-md); padding:9px 14px; font-size:13px; font-weight:600; color:var(--text); cursor:pointer; transition:border-color .12s, background .12s, transform .1s; position:relative; display:flex; align-items:center; gap:6px; }
+.jg-ing:active { transform:scale(.96); }
+.jg-ing.selected { border-color:var(--red); background:#fff5f5; color:var(--red); }
+.jg-ing.correct  { border-color:#43a047; background:#e8f5e9; color:#2e7d32; cursor:default; }
+.jg-ing.missed   { border-color:#f57f17; background:#fff8e1; color:#e65100; cursor:default; }
+.jg-ing.wrong-sel{ border-color:#e53935; background:#ffebee; color:#c62828; text-decoration:line-through; cursor:default; }
+.jg-ing:disabled { cursor:default; }
+.jg-check { font-size:12px; font-weight:800; }
+
+/* Feedback banner */
+.jg-feedback { border-radius:var(--radius-md); padding:12px 14px; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+.jg-feedback.perfect { background:#e8f5e9; border:1.5px solid #a5d6a7; color:#2e7d32; }
+.jg-feedback.wrong   { background:#fff3e0; border:1.5px solid #ffcc80; color:#e65100; }
+.jg-fb-icon { font-size:20px; }
+.jg-err  { color:#c62828; }
+.jg-miss { color:#e65100; }
+
+/* Confirm button */
+.jg-btn-confirm { width:100%; padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-md); font-family:var(--font-display); font-size:15px; font-weight:800; cursor:pointer; margin-bottom:0; }
+.jg-btn-confirm.disabled { background:#ccc; cursor:not-allowed; }
+.jg-btn-confirm:not(.disabled):active { opacity:.85; }
+
+/* After buttons */
+.jg-after-btns { display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
+.jg-btn-next   { padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-md); font-family:var(--font-display); font-size:15px; font-weight:800; cursor:pointer; }
+.jg-btn-replay,
+.jg-btn-menu   { padding:11px; background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-md); font-family:var(--font-display); font-size:14px; font-weight:700; color:var(--text); cursor:pointer; }
+
+/* Recipe box */
+.jg-recipe-box { background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:12px 14px; margin-top:4px; }
+.jg-recipe-title { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+.jg-recipe-list { display:flex; flex-wrap:wrap; gap:6px; }
+.jg-recipe-item { background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:5px 10px; font-size:12px; font-weight:600; color:var(--text); }
+`;
+document.head.appendChild(style);
+
+document.addEventListener('DOMContentLoaded', () => { render(); });
+  </script>
+</body>
+</html>

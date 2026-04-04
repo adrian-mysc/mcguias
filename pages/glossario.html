@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário Operacional — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <style>
+    /* ---- Glossário Styles ---- */
+    .gloss-search-wrap {
+      position: sticky;
+      top: 56px;
+      z-index: 100;
+      background: var(--bg);
+      padding: 10px 16px;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .gloss-search {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--card);
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6660' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: 12px center;
+    }
+    .gloss-search:focus { border-color: var(--red); }
+    .gloss-no-results {
+      text-align: center;
+      padding: 40px 16px;
+      color: var(--muted);
+      font-size: 14px;
+      display: none;
+    }
+
+    /* Alphabet index bar */
+    .alpha-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 10px 16px 6px;
+    }
+    .alpha-btn {
+      min-width: 28px; height: 28px;
+      padding: 0 6px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .alpha-btn:hover, .alpha-btn.active {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+    .alpha-btn.disabled { opacity: 0.3; pointer-events: none; }
+
+    /* Group heading (letter) */
+    .gloss-group { margin-bottom: 8px; }
+    .gloss-group-letter {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--red);
+      padding: 16px 16px 4px;
+    }
+
+    /* Entry card */
+    .gloss-entry {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin: 0 16px 10px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .gloss-entry:hover { box-shadow: var(--shadow-md); }
+
+    .gloss-entry-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .gloss-entry-badge {
+      background: var(--red);
+      color: white;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .gloss-entry-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      flex: 1;
+      line-height: 1.3;
+    }
+    .gloss-entry-name span {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .gloss-entry-chevron {
+      color: var(--muted);
+      font-size: 16px;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .gloss-entry.open .gloss-entry-chevron { transform: rotate(90deg); }
+
+    .gloss-entry-body {
+      display: none;
+      border-top: 1.5px solid var(--border);
+      padding: 14px 16px;
+    }
+    .gloss-entry.open .gloss-entry-body { display: block; }
+
+    .gloss-def {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .gloss-detail {
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .gloss-detail strong { color: var(--text); }
+
+    .gloss-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 4px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .gloss-tag.producao  { background: #fdecea; color: #b71c1c; }
+    .gloss-tag.experiencia { background: #e8f5e9; color: #1b5e20; }
+    .gloss-tag.gestao    { background: #e3f2fd; color: #0d47a1; }
+    .gloss-tag.sistema   { background: #f3e5f5; color: #4a148c; }
+    .gloss-tag.carreira  { background: #fff3e0; color: #e65100; }
+    .gloss-tag.drive     { background: #fce4ec; color: #880e4f; }
+    .gloss-tag.bebidas   { background: #e0f7fa; color: #006064; }
+
+    .gloss-where {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .gloss-where strong { color: var(--text); font-size: 11px; }
+
+    /* Stats bar */
+    .gloss-stats {
+      text-align: center;
+      padding: 10px 16px 6px;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .gloss-stats strong { color: var(--red); font-size: 14px; }
+
+    [data-theme="dark"] .gloss-search { background: #1e1d1b; border-color: #2e2c28; color: var(--text); }
+    [data-theme="dark"] .gloss-entry  { background: #1e1d1b; border-color: #2e2c28; }
+    [data-theme="dark"] .gloss-detail { background: #111110; }
+    [data-theme="dark"] .alpha-btn    { background: #1e1d1b; border-color: #2e2c28; }
+    [data-theme="dark"] .gloss-tag.producao   { background: #2a0808; color: #ef9a9a; }
+    [data-theme="dark"] .gloss-tag.experiencia{ background: #0a1f0a; color: #a5d6a7; }
+    [data-theme="dark"] .gloss-tag.gestao     { background: #071525; color: #90caf9; }
+    [data-theme="dark"] .gloss-tag.sistema    { background: #150a1e; color: #ce93d8; }
+    [data-theme="dark"] .gloss-tag.carreira   { background: #1e1000; color: #ffcc80; }
+    [data-theme="dark"] .gloss-tag.drive      { background: #1e050f; color: #f48fb1; }
+    [data-theme="dark"] .gloss-tag.bebidas    { background: #001a1b; color: #80deea; }
+  </style>
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="glossario">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Glossário Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Glossário Operacional</h1>
+        <p>Siglas · Termos · Sistemas</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="gloss-search-wrap">
+    <input class="gloss-search" id="glossSearch" type="text" placeholder="Buscar sigla ou termo... (ex: UHC, R2P, PEPS)" autocomplete="off">
+  </div>
+
+  <div class="page-content" style="padding:0 0 40px;">
+
+    <div class="gloss-stats">
+      <strong id="visibleCount">46</strong> termos · Toque para expandir
+    </div>
+
+    <div class="alpha-bar" id="alphaBar"></div>
+
+    <div id="glossaryContainer">
+
+      <div class="gloss-group" data-letter="A">
+        <div class="gloss-group-letter">A</div>
+
+        <div class="gloss-entry" data-term="ALP" data-full="Avançando na Liderança de Plantão" data-tags="carreira">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">ALP</div>
+            <div class="gloss-entry-name">Avançando na Liderança de Plantão <span>Treinamento gerencial</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag carreira">Carreira</span>
+            <p class="gloss-def">Curso obrigatório para quem está sendo promovido ao cargo de <strong>Gerente de Plantão</strong>. É realizado ao final do PDGP (Programa de Desenvolvimento para Gestão de Plantão), após 10 semanas de treinamento prático no restaurante.</p>
+            <div class="gloss-detail">
+              <strong>Onde aparece:</strong> Trilha de Promoção Interna → Gerente de Plantão<br>
+              <strong>Sequência:</strong> Aprovação no PPI → PDGP (10 semanas) → Curso ALP → Gerente de Plantão
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="B">
+        <div class="gloss-group-letter">B</div>
+
+        <div class="gloss-entry" data-term="BDAP" data-full="Bebidas, Dessert Center e Apoio à Produção" data-tags="bebidas">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">BDAP</div>
+            <div class="gloss-entry-name">Bebidas, Dessert Center e Apoio <span>Distribuição de funções</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag bebidas">Bebidas</span>
+            <p class="gloss-def">Sistema de <strong>distribuição de funções</strong> na área de bebidas e sobremesas. Define quem faz o quê de acordo com o número de pessoas disponíveis no turno.</p>
+            <div class="gloss-detail">
+              <strong>Com 2 pessoas:</strong><br>
+              — Função 1: bebidas frias (BLZ / refrigerantes)<br>
+              — Função 2: bebidas quentes, sorvetes e sobremesas<br><br>
+              <strong>Com 1 pessoa:</strong> acumula todas as funções.<br><br>
+              <strong>Importante:</strong> o BDAP garante que nenhum pedido fique sem bebida, especialmente em picos.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Bebidas e Sobremesas</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="Best Burger" data-full="Modelo de loja com preparo de hambúrgueres frescos na chapa" data-tags="producao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">BB</div>
+            <div class="gloss-entry-name">Best Burger <span>Modelo operacional de loja</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag producao">Produção</span>
+            <p class="gloss-def">Formato de restaurante com <strong>chapa de preparo de hambúrguer fresco</strong> (não congelado). As carnes são grelhadas no momento do pedido, exigindo maior controle de tempo e temperatura.</p>
+            <div class="gloss-detail">
+              <strong>Diferenças práticas do Best Burger:</strong><br>
+              — Filtragem do óleo <strong>2× ao dia</strong> (vs. 1× no padrão)<br>
+              — Cada lâmina comporta <strong>1 sanduíche</strong> (vs. múltiplos no padrão)<br>
+              — Ceboleiro tem vida útil de <strong>4 horas</strong> na chapa<br>
+              — Pegadores diferenciados por tipo de carne<br>
+              — Limpeza mensal com produto específico (KAY Best Burger)
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Chapa, LOPE, Fechamento</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="BLZ" data-full="Área de espera de bebidas" data-tags="bebidas">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">BLZ</div>
+            <div class="gloss-entry-name">Área de Espera de Bebidas <span>Estação física de bebidas</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag bebidas">Bebidas</span>
+            <p class="gloss-def">Mesa ou estação onde as bebidas prontas aguardam antes de serem servidas ao cliente pelo Bump Bar. É o ponto intermediário entre o preparo e a entrega.</p>
+            <div class="gloss-detail">
+              <strong>Uso correto:</strong> após preparar um McShake ou bebida fria, o copo vai para a BLZ. Só vai ao balcão quando o pedido estiver completo e o crew confirmar no Bump Bar.<br><br>
+              <strong>Atenção:</strong> não deixar bebidas com gelo na BLZ por tempo excessivo — o gelo derrete e dilui a bebida.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Bebidas e Sobremesas</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="Bump Bar" data-full="Controle de monitores de pedidos" data-tags="sistema">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">BUMP</div>
+            <div class="gloss-entry-name">Bump Bar <span>Controle dos monitores KVS/ORB</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag sistema">Sistema</span>
+            <p class="gloss-def">Dispositivo físico (teclado ou painel de botões) usado para <strong>confirmar a entrega de pedidos</strong> e limpar as telas dos monitores KVS e ORB. Cada botão corresponde a um pedido ou item na tela.</p>
+            <div class="gloss-detail">
+              <strong>Ação principal:</strong> apertar o bump bar após entregar o pedido ao cliente → o item some do monitor KVS e o número do pedido é enviado ao Monitor ORB (de apresentação).<br><br>
+              <strong>Não confundir com:</strong> o KVS (monitor de preparo) e o ORB (monitor de chamada de pedidos para o cliente).
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Montagem e Entrega, Bebidas e Sobremesas</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="C">
+        <div class="gloss-group-letter">C</div>
+
+        <div class="gloss-entry" data-term="CBO" data-full="Molho Chicken Bacon Original" data-tags="producao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">CBO</div>
+            <div class="gloss-entry-name">Molho CBO <span>Condimentação — sanduíches de frango</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag producao">Produção</span>
+            <p class="gloss-def">Molho exclusivo usado na condimentação de determinados sanduíches de frango, como o <strong>Chicken Deluxe</strong> e o <strong>Brabíssimo Beef</strong>. É aplicado em quantidade de <strong>1 oz</strong>.</p>
+            <div class="gloss-detail">
+              <strong>Usado em:</strong> Chicken Deluxe 1, Brabíssimo Beef 1<br>
+              <strong>Quantidade:</strong> 1 oz por sanduíche<br>
+              <strong>Não confundir com:</strong> Molho Ranch (usado no Chicken Bacon Ranch), Molho Tasty (usado no Big Tasty)
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Condimentação</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="COD" data-full="Coletor de Dados / Tomador de Pedidos no Drive" data-tags="drive">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">COD</div>
+            <div class="gloss-entry-name">Pessoa do COD <span>Drive-Thru — tomada de pedidos</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag drive">Drive-Thru</span>
+            <p class="gloss-def">Função do Drive-Thru responsável por <strong>receber o pedido do cliente via headset</strong> (interfone) e registrá-lo no sistema. É a primeira pessoa a interagir com o cliente no Drive.</p>
+            <div class="gloss-detail">
+              <strong>Responsabilidades do COD:</strong><br>
+              1. Saudar o cliente no microfone<br>
+              2. Registrar o pedido (digitando no sistema)<br>
+              3. Sugerir itens adicionais (venda sugestiva)<br>
+              4. Confirmar o pedido e totalizar<br>
+              5. Informar o valor e direcionar ao caixa<br><br>
+              <strong>Trabalha junto com:</strong> Pessoa do Tablet (que coordena o fluxo dos carros)
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Drive-Thru</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="Cooltura de Serviço" data-full="Cultura de atendimento ao cliente" data-tags="experiencia">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">CS</div>
+            <div class="gloss-entry-name">Cooltura de Serviço <span>Postura de atendimento</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag experiencia">Experiência</span>
+            <p class="gloss-def">Conjunto de comportamentos e atitudes esperados de todo colaborador durante o atendimento ao cliente. Engloba simpatia, proatividade, contato visual e postura acolhedora em todos os momentos, independente da função.</p>
+            <div class="gloss-detail">
+              <strong>Pilares da Cooltura de Serviço:</strong><br>
+              — Sorriso e linguagem positiva<br>
+              — Contato visual com o cliente<br>
+              — Atitude proativa (antecipação de necessidades)<br>
+              — Abordar clientes no salão e auxiliar nos totens NGK<br>
+              — Ser exemplo em QSL&V (Qualidade, Serviço, Limpeza e Valor)<br><br>
+              <strong>Quem avalia:</strong> Gerente de Plantão, Supervisor e auditorias MCRV
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Salão e NGK, Treinadores, Supervisores</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="CTL" data-full="Curso de Transição à Liderança" data-tags="carreira">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">CTL</div>
+            <div class="gloss-entry-name">Transição à Liderança <span>Treinamento para Supervisor</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag carreira">Carreira</span>
+            <p class="gloss-def">Curso obrigatório para a promoção ao cargo de <strong>Supervisor de Área</strong>. É realizado após o PDGA (Programa de Desenvolvimento para Gestão de Áreas) e a atuação como Supervisor Coach.</p>
+            <div class="gloss-detail">
+              <strong>Sequência para Supervisor:</strong><br>
+              Gerente RDM → PDGA (2 semanas) → Curso CTL → Certificação Gerencial → Supervisor de Área
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Promoção Interna</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="E">
+        <div class="gloss-group-letter">E</div>
+
+        <div class="gloss-entry" data-term="EPI" data-full="Equipamento de Proteção Individual" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">EPI</div>
+            <div class="gloss-entry-name">Equipamento de Proteção Individual <span>Segurança operacional</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Conjunto de equipamentos usados para <strong>proteger o colaborador</strong> de riscos físicos (queimaduras, cortes, quedas) durante operações de risco como fritadeiras, chapas, limpeza de pista e câmaras.</p>
+            <div class="gloss-detail">
+              <strong>EPI por situação:</strong><br>
+              — <strong>Fritadeiras:</strong> avental + mangote<br>
+              — <strong>Câmaras frias:</strong> avental térmico + mangotes + luvas de proteção<br>
+              — <strong>Limpeza de lixeiras:</strong> jaleco + luvas de látex<br>
+              — <strong>Pista Drive-Thru:</strong> luvas + colete de PVC + botas<br>
+              — <strong>Chapa (fechamento):</strong> avental + luvas de borracha + óculos de proteção<br><br>
+              <strong>Regra:</strong> nunca operar equipamento de risco sem o EPI correspondente.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Fritos, Limpeza, Fechamento, Segurança Alimentar</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="F">
+        <div class="gloss-group-letter">F</div>
+
+        <div class="gloss-entry" data-term="FIFO" data-full="First In, First Out" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">FIFO</div>
+            <div class="gloss-entry-name">First In, First Out <span>Versão em inglês do PEPS</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Equivalente em inglês do <strong>PEPS</strong>. Significa "Primeiro a Entrar, Primeiro a Sair". Pode aparecer em embalagens, manuais de origem importada ou em documentos operacionais técnicos.</p>
+            <div class="gloss-detail">
+              Também é o nome dado aos dispensers/tubos de condimentos (ex: "FIFO de manteiga") — recipientes com válvula que dispensam o produto mais antigo primeiro, por gravidade. Muito usados na linha de condimentação.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Estoque e Recebimento, LOPE, Linha</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="G">
+        <div class="gloss-group-letter">G</div>
+
+        <div class="gloss-entry" data-term="GAP" data-full="Tempo de abertura/intervalo entre ciclos na chapa" data-tags="producao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">GAP</div>
+            <div class="gloss-entry-name">GAP <span>Parâmetro de tempo na chapa</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag producao">Produção</span>
+            <p class="gloss-def">Parâmetro programado na chapa que define o <strong>intervalo entre a abertura do platen e o início do ciclo de cocção</strong>. Garante que a pressão seja aplicada no momento certo para o cozimento correto.</p>
+            <div class="gloss-detail">
+              <strong>Valores padrão:</strong><br>
+              — <strong>Carnes vermelhas (hambúrguer):</strong> GAP 060 (60 segundos)<br>
+              — <strong>Bacon:</strong> GAP 090 (90 segundos) com cocção de 40s<br><br>
+              <strong>Como verificar:</strong> a configuração do GAP é visível no display da chapa. Sempre conferir antes de iniciar a produção.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Chapa</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="GC" data-full="Guest Count — Contagem de clientes atendidos" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">GC</div>
+            <div class="gloss-entry-name">Guest Count <span>Contagem de clientes</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Métrica que indica o <strong>número de clientes atendidos</strong> em um período. É um dos principais KPIs do restaurante para avaliar volume de movimento e desempenho do atendimento.</p>
+            <div class="gloss-detail">
+              <strong>Uso prático:</strong> supervisores usam o GC para posicionar a equipe conforme o volume esperado. Em McCafé Corner, há metas específicas de GC que determinam se o espaço precisa de reforço.<br><br>
+              <strong>Relacionado a:</strong> URD (units per receipt — bebidas por cupom), ticket médio
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Supervisores, McCafé</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="GPRS" data-full="Terminal de pagamento portátil para Caixa Móvel" data-tags="drive">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">GPRS</div>
+            <div class="gloss-entry-name">GPRS — Terminal de Pagamento Portátil <span>Drive-Thru — Caixa Móvel</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag drive">Drive-Thru</span>
+            <p class="gloss-def">Maquininha de pagamento <strong>portátil sem fio</strong> usada pelo Caixa Móvel no Drive-Thru. Permite antecipar o pagamento dos clientes que estão na fila, antes de chegarem à janela.</p>
+            <div class="gloss-detail">
+              <strong>Como funciona:</strong><br>
+              1. O Caixa Móvel vai até os carros a partir do 2° carro da fila<br>
+              2. Identifica o pedido por "recall por número" no POS<br>
+              3. Digita o valor no GPRS e processa o pagamento<br>
+              4. Aceita todas as modalidades (débito, crédito, Pix)<br><br>
+              <strong>Benefício:</strong> reduz o tempo de espera na janela de pagamento e melhora o R2P do Drive.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Drive-Thru</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="K">
+        <div class="gloss-group-letter">K</div>
+
+        <div class="gloss-entry" data-term="KPI" data-full="Key Performance Indicator — Indicador de Performance" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">KPI</div>
+            <div class="gloss-entry-name">Key Performance Indicator <span>Indicador de desempenho</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Indicadores numéricos usados para medir o <strong>desempenho do restaurante</strong> em áreas-chave. São monitorados por supervisores e gerentes para tomar decisões operacionais e garantir metas.</p>
+            <div class="gloss-detail">
+              <strong>Principais KPIs monitorados:</strong><br>
+              — <strong>R2P:</strong> tempo do pedido ao pronto<br>
+              — <strong>GC:</strong> número de clientes atendidos<br>
+              — <strong>URD:</strong> bebidas vendidas por cupom<br>
+              — <strong>Ticket médio:</strong> valor médio por pedido<br>
+              — <strong>Audit score (MCRV):</strong> nota de qualidade e padrão<br>
+              — <strong>Compostos polares do óleo:</strong> qualidade do óleo de fritura
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Supervisores</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="KVS" data-full="Kitchen Video System — Monitor de preparo de pedidos" data-tags="sistema">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">KVS</div>
+            <div class="gloss-entry-name">Kitchen Video System <span>Monitor de cozinha</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag sistema">Sistema</span>
+            <p class="gloss-def">Monitor instalado na cozinha que exibe os <strong>pedidos em tempo real</strong>, indicando o que deve ser preparado, em que ordem e com quanto tempo restante. É o principal sistema de controle de produção.</p>
+            <div class="gloss-detail">
+              <strong>Cores no KVS:</strong><br>
+              — <strong>Normal:</strong> pedido dentro do tempo<br>
+              — <strong>Amarelo:</strong> pedido próximo do prazo<br>
+              — <strong>Vermelho:</strong> pedido atrasado — ação imediata<br><br>
+              <strong>Como encerrar um pedido:</strong> após a entrega ao cliente, usar o Bump Bar para limpar o item do KVS.<br><br>
+              <strong>McCafé Corner:</strong> possui KVS exclusivo para os pedidos do café.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Linha, Bebidas e Sobremesas, Montagem e Entrega</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="L">
+        <div class="gloss-group-letter">L</div>
+
+        <div class="gloss-entry" data-term="LOPE" data-full="Linha de Operação e Preparação de Extras" data-tags="producao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">LOPE</div>
+            <div class="gloss-entry-name">LOPE <span>Área de apoio e preparação</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag producao">Produção</span>
+            <p class="gloss-def">Estação de trabalho responsável pela <strong>preparação e reposição dos ingredientes</strong> usados na condimentação dos sanduíches: cebola, tomate, queijo, alface e outros complementos.</p>
+            <div class="gloss-detail">
+              <strong>Funções do LOPE:</strong><br>
+              — Hidratar a cebola seca<br>
+              — Fatiar tomate e cebolinha<br>
+              — Preparar e abastecer cubas de queijo<br>
+              — Manter rotação (PEPS) dos ingredientes<br>
+              — Seguir rota de reposição conforme demanda<br><br>
+              <strong>LOPE 2 (Apoio):</strong> versão mais extensa que inclui também preparação de bacon, suco, gelo, panos, cebola cheddar e gerenciamento de lixeiras.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de LOPE e LOPE 2</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="LSM" data-full="Local Store Marketing — Marketing local do restaurante" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">LSM</div>
+            <div class="gloss-entry-name">Local Store Marketing <span>Marketing local</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Conjunto de ações de marketing executadas localmente pelo próprio restaurante para <strong>atrair clientes e aumentar vendas</strong> na sua área de influência, complementando as campanhas nacionais.</p>
+            <div class="gloss-detail">
+              <strong>Exemplos de LSM:</strong><br>
+              — Distribuição de flyers em escolas próximas<br>
+              — Promoções para trabalhadores do bairro<br>
+              — Ações em datas comemorativas locais<br>
+              — Parcerias com comércios vizinhos<br><br>
+              <strong>Supervisores:</strong> possuem acesso ao Playbook LSM com ações padronizadas que podem ser adaptadas por região.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Supervisores, Treinadores</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="M">
+        <div class="gloss-group-letter">M</div>
+
+        <div class="gloss-entry" data-term="MCRV" data-full="Auditoria de qualidade e padrão operacional" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">MCRV</div>
+            <div class="gloss-entry-name">MCRV <span>Auditoria operacional e de qualidade</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Sistema de auditoria interna que avalia o restaurante em <strong>qualidade, serviço, limpeza e procedimentos operacionais</strong>. A nota MCRV é um dos principais KPIs de desempenho.</p>
+            <div class="gloss-detail">
+              <strong>O que é avaliado:</strong><br>
+              — Temperaturas de equipamentos e produtos<br>
+              — Procedimentos de higiene e segurança alimentar<br>
+              — Atendimento e Cooltura de Serviço<br>
+              — Limpeza do salão, banheiros e cozinha<br>
+              — Organização e PEPS do estoque<br><br>
+              <strong>Ferramentas MCRV:</strong> checklists de pré-pico que supervisores e gerentes usam para garantir conformidade antes do horário de maior movimento.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Supervisores</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="MFY" data-full="Made For You — Sistema de preparo por pedido" data-tags="sistema">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">MFY</div>
+            <div class="gloss-entry-name">Made For You <span>Sistema de produção por pedido</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag sistema">Sistema</span>
+            <p class="gloss-def">Filosofia e sistema operacional em que cada sanduíche é <strong>preparado individualmente após o pedido</strong>, garantindo frescor. O oposto do sistema de estoque pronto (antigo "batch cooking").</p>
+            <div class="gloss-detail">
+              <strong>Implicações para a operação:</strong><br>
+              — O KVS coordena o disparo preciso de cada item<br>
+              — O R2P é o indicador-chave (tempo do pedido ao pronto)<br>
+              — Exige sincronia entre LOPE, Chapa, Linha e Montagem<br><br>
+              <strong>Manuais MFY:</strong> documentos de referência que detalham os procedimentos de cada estação dentro do sistema.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Treinadores, Supervisores</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="MOP" data-full="Mobile Order and Pay — Pedido pelo app com retirada no restaurante" data-tags="sistema">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">MOP</div>
+            <div class="gloss-entry-name">Mobile Order and Pay <span>Pedido pelo app Meu Méqui</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag sistema">Sistema</span>
+            <p class="gloss-def">Modalidade de pedido em que o cliente faz o pedido e paga pelo <strong>app Meu Méqui</strong> antes de chegar ao restaurante, apenas retirando no balcão ou drive.</p>
+            <div class="gloss-detail">
+              <strong>No sistema:</strong> pedidos MOP chegam com status "Armazenado" nos monitores — o crew deve fazer o recall no POS para liberar o preparo quando o cliente chegar.<br><br>
+              <strong>Não confundir com:</strong> NGK (totem físico no salão) ou McDelivery (entrega por motoboy).<br><br>
+              <strong>MOP no Drive:</strong> o cliente anuncia na pista que tem pedido MOP e a pessoa do COD faz o recall.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de McDelivery, Drive-Thru, Salão e NGK</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="N">
+        <div class="gloss-group-letter">N</div>
+
+        <div class="gloss-entry" data-term="NGK" data-full="Totem de autoatendimento no salão" data-tags="experiencia">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">NGK</div>
+            <div class="gloss-entry-name">NGK — Totem de Autoatendimento <span>Pedido no salão</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag experiencia">Experiência</span>
+            <p class="gloss-def">Totem touchscreen instalado no salão onde o cliente pode fazer o pedido de forma <strong>autônoma</strong>, sem passar pelo balcão. É o principal canal de pedidos presenciais modernos.</p>
+            <div class="gloss-detail">
+              <strong>Papel do crew no NGK:</strong><br>
+              — Auxiliar clientes com dificuldades, sem tomar o controle do pedido<br>
+              — Fazer venda sugestiva enquanto auxilia (sugerir combo, upgrade, sobremesa)<br>
+              — Verificar papel, tela e funcionamento no checklist de abertura<br><br>
+              <strong>Meu Méqui no NGK:</strong> o cliente pode vincular o app digitando o CPF ou escaneando o QR Code no início do pedido.<br><br>
+              <strong>McCafé Corner:</strong> não tem POS exclusivo — produtos do café são vendidos via NGK, balcão ou MOP.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Salão e NGK, Influencer Vendedor</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="O">
+        <div class="gloss-group-letter">O</div>
+
+        <div class="gloss-entry" data-term="OAT" data-full="Order Assembly Table — Mesa de Montagem de Pedidos" data-tags="experiencia">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">OAT</div>
+            <div class="gloss-entry-name">Order Assembly Table <span>Mesa de montagem de pedidos</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag experiencia">Experiência</span>
+            <p class="gloss-def">Mesa ou estação onde o crew <strong>monta e confere os pedidos</strong> antes de entregá-los ao cliente. É o ponto final do fluxo de produção — onde bandeja, saco ou sacola é finalizada.</p>
+            <div class="gloss-detail">
+              <strong>O que fica na OAT:</strong><br>
+              — Monitor que exibe os pedidos a montar<br>
+              — Sacos, caixinhas de McLanche Feliz e suprimentos<br>
+              — Pano descartável limpo sanitizado<br>
+              — Pick List impresso para conferência<br><br>
+              <strong>Posições:</strong> OAT 1 fica próxima ao expedidor (quem busca os sanduíches). Em lojas com Dual Point, há OATs posicionadas estrategicamente.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Montagem e Entrega, Salão e NGK</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="ORB" data-full="Monitor de chamada de pedidos para o cliente" data-tags="sistema">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">ORB</div>
+            <div class="gloss-entry-name">Monitor ORB <span>Chamada de pedidos prontos</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag sistema">Sistema</span>
+            <p class="gloss-def">Monitor voltado para o <strong>cliente</strong> que exibe o número do pedido quando ele está pronto para retirada. O número aparece na tela após o crew apertar o Bump Bar na entrega.</p>
+            <div class="gloss-detail">
+              <strong>Dois tipos:</strong><br>
+              — <strong>Monitor ORB principal:</strong> tela grande, visível de longe — exibe múltiplos pedidos prontos<br>
+              — <strong>Mini ORB (Conferente):</strong> monitor menor próximo à janela de entrega, usado pelo crew para confirmar o número antes de entregar<br><br>
+              <strong>Fluxo:</strong> crew aperta Bump Bar → número some do KVS → número aparece no ORB para o cliente → cliente vai ao balcão retirar.<br><br>
+              <strong>Dual Point com mesa extensora:</strong> o Mini ORB fica próximo à janela de entrega.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Montagem e Entrega, Linha</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="OZ" data-full="Onça — unidade de medida de molhos e condimentos" data-tags="producao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">OZ</div>
+            <div class="gloss-entry-name">Onça (OZ) <span>Medida de molhos e condimentos</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag producao">Produção</span>
+            <p class="gloss-def">Unidade de medida usada para especificar a <strong>quantidade de molhos e condimentos</strong> aplicados nos sanduíches. 1 oz equivale aproximadamente a 30 ml.</p>
+            <div class="gloss-detail">
+              <strong>Referência de disparos por OZ:</strong><br>
+              — <strong>Ketchup Regular:</strong> 6 tiros = 2 oz (60 ml)<br>
+              — <strong>Mostarda:</strong> 47 tiros = 1 oz (30 ml)<br>
+              — <strong>Molho CBO:</strong> 1 oz por sanduíche<br><br>
+              <strong>Por que OZ?</strong> A maioria dos equipamentos de dosagem foi desenvolvida com padrão americano (onças), que é o padrão original da rede.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Condimentação</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="P">
+        <div class="gloss-group-letter">P</div>
+
+        <div class="gloss-entry" data-term="PDGA" data-full="Programa de Desenvolvimento para Gestão de Áreas" data-tags="carreira">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">PDGA</div>
+            <div class="gloss-entry-name">Programa de Desenvolvimento para Gestão de Áreas <span>Treinamento para Supervisor</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag carreira">Carreira</span>
+            <p class="gloss-def">Programa de treinamento com duração de <strong>2 semanas</strong> destinado a Gerentes RDM que estão sendo preparados para o cargo de Supervisor de Área.</p>
+            <div class="gloss-detail">
+              <strong>Sequência completa para Supervisor:</strong><br>
+              Gerente RDM → PDGA (2 semanas) → Atuação como Supervisor Coach → Curso CTL → Certificação Gerencial → Supervisor de Área
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Promoção Interna</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="PDGP" data-full="Programa de Desenvolvimento para Gestão de Plantão" data-tags="carreira">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">PDGP</div>
+            <div class="gloss-entry-name">Programa de Desenvolvimento para Gestão de Plantão <span>Treinamento para Gerente</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag carreira">Carreira</span>
+            <p class="gloss-def">Programa de treinamento intensivo com duração de <strong>10 semanas</strong> destinado a preparar o candidato para o cargo de Gerente de Plantão. Inclui rotação por todos os departamentos do restaurante.</p>
+            <div class="gloss-detail">
+              <strong>Sequência completa para Gerente de Plantão:</strong><br>
+              Aprovação no PPI → PDGP (10 semanas) → Curso ALP → Gerente de Plantão<br><br>
+              <strong>Após ser Gerente de Plantão:</strong> 6 meses de experiência → Gerente RDM (3 departamentos + Módulo RDM)
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Promoção Interna</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="PEPS" data-full="Primeiro a Entrar, Primeiro a Sair" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">PEPS</div>
+            <div class="gloss-entry-name">Primeiro a Entrar, Primeiro a Sair <span>Regra de controle de estoque</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Regra fundamental de gestão de estoque: o produto com <strong>data de validade mais próxima sai antes dos mais novos</strong>. Garante que nenhum produto vença sem ser usado.</p>
+            <div class="gloss-detail">
+              <strong>Como aplicar:</strong><br>
+              — Câmaras: novos produtos vão atrás, antigos ficam na frente<br>
+              — Prateleiras: validade mais curta por cima ou na frente<br>
+              — Embalagens abertas: sempre usar antes de abrir novo<br>
+              — Verificação diária de validades obrigatória<br><br>
+              <strong>Equivalente em inglês:</strong> FIFO (First In, First Out).<br>
+              <strong>Erro mais comum:</strong> empurrar o produto antigo para o fundo ao guardar o novo.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Estoque e Recebimento, Fechamento, LOPE</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="Pick List" data-full="Lista de itens do pedido impressa na OAT" data-tags="experiencia">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">PICK</div>
+            <div class="gloss-entry-name">Pick List <span>Lista de conferência do pedido</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag experiencia">Experiência</span>
+            <p class="gloss-def">Lista impressa pela OAT que detalha <strong>todos os itens de um pedido</strong>. É usada pelo crew para conferir se o pedido está completo antes da entrega ao cliente.</p>
+            <div class="gloss-detail">
+              <strong>Quando imprimir:</strong> após o pedido aparecer na tela da OAT com status PAGO e todos os itens prontos.<br><br>
+              <strong>McDelivery:</strong> o Pick List é colado junto com o adesivo de lacre no saco de entrega, com o número do pedido sinalizado para o entregador.<br><br>
+              <strong>Dupla checagem:</strong> antes de fechar o saco do McDelivery, conferir cada item da Pick List.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Montagem e Entrega, McDelivery</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="PLS" data-full="Par Level System — Nível de reposição da UHC" data-tags="producao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">PLS</div>
+            <div class="gloss-entry-name">Par Level System <span>Controle de nível da UHC</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag producao">Produção</span>
+            <p class="gloss-def">Sistema visual que indica o <strong>nível ideal de carnes que devem estar na UHC</strong> (gaveta de manutenção). O chapeiro observa o monitor PLS para produzir a quantidade certa — nem a mais, nem a menos.</p>
+            <div class="gloss-detail">
+              <strong>Regra do PLS:</strong><br>
+              — Observar o monitor PLS<br>
+              — Preparar carnes apenas para atingir o nível indicado<br>
+              — Limite máximo: 10:1 ou 4:1 conforme o produto<br><br>
+              <strong>Objetivo:</strong> evitar desperdício (produção acima do nível → produto vence na UHC) e evitar falta (nível muito baixo → produto sai sem carne pronta).
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Chapa, Linha</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="POS" data-full="Point of Sale — Terminal de caixa" data-tags="sistema">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">POS</div>
+            <div class="gloss-entry-name">Point of Sale <span>Terminal de caixa / registro</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag sistema">Sistema</span>
+            <p class="gloss-def">Sistema de caixa (terminal de registro de vendas) onde os atendentes <strong>registram pedidos, processam pagamentos e aplicam promoções</strong>. É o coração do atendimento no balcão e no Drive.</p>
+            <div class="gloss-detail">
+              <strong>Funções principais:</strong><br>
+              — Digitar e totalizar pedidos<br>
+              — Processar pagamentos (dinheiro, cartão, Pix, voucher)<br>
+              — Fazer recall de pedidos MOP<br>
+              — Aplicar cupons digitais (QR Code ou código manual)<br>
+              — Emitir comprovante de pagamento<br><br>
+              <strong>McCafé Corner:</strong> não tem POS exclusivo — usa o POS do balcão principal.<br>
+              <strong>Dica:</strong> em pedidos diferenciados, digitar um produto por vez.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Influencer Vendedor, Drive-Thru, McDelivery, McCafé</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="PPM" data-full="Partes por Milhão — concentração de sanitizante" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">PPM</div>
+            <div class="gloss-entry-name">Partes por Milhão <span>Concentração de sanitizante</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Unidade de medida de <strong>concentração de sanitizante</strong> nas soluções de higienização. Indica quantas partes do produto ativo existem para cada milhão de partes de água.</p>
+            <div class="gloss-detail">
+              <strong>Concentrações de referência:</strong><br>
+              — <strong>200 ppm:</strong> concentração padrão do sanitizante para superfícies de preparo (ex: área da cebola cheddar)<br>
+              — <strong>Sistema de 3 cubas:</strong> 1ª cuba detergente, 2ª enxágue, 3ª sanitizante na concentração correta<br><br>
+              <strong>Por que é importante:</strong> abaixo da concentração mínima o sanitizante não elimina bactérias. Acima, pode ser tóxico ao alimento.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Segurança Alimentar, Limpeza, LOPE</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="PPI" data-full="Prova de Proficiência Interna" data-tags="carreira">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">PPI</div>
+            <div class="gloss-entry-name">Prova de Proficiência Interna <span>Avaliação para promoção</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag carreira">Carreira</span>
+            <p class="gloss-def">Avaliação obrigatória que o colaborador deve ser aprovado para ser elegível a uma promoção. Existe versão específica para cada cargo (Treinador, Gerente de Plantão, etc.).</p>
+            <div class="gloss-detail">
+              <strong>PPI — Treinador:</strong><br>
+              — 113 questões dissertativas com gabarito<br>
+              — Versão de múltipla escolha com 81 perguntas<br>
+              — Após aprovação, o treinamento é disponibilizado na plataforma SABER<br><br>
+              <strong>Processo:</strong> aprovação no PPI → o Gerente de Pessoas valida o treinamento → acesso à plataforma SABER para módulos complementares.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Treinadores, Promoção Interna</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="Q">
+        <div class="gloss-group-letter">Q</div>
+
+        <div class="gloss-entry" data-term="QSL&V" data-full="Qualidade, Serviço, Limpeza e Valor" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">QSL&V</div>
+            <div class="gloss-entry-name">Qualidade, Serviço, Limpeza e Valor <span>Pilares operacionais</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Os quatro pilares fundamentais que definem a <strong>excelência operacional</strong> do restaurante. Todo procedimento, treinamento e auditoria está conectado a um ou mais desses pilares.</p>
+            <div class="gloss-detail">
+              <strong>Q — Qualidade:</strong> produto no padrão correto (temperatura, ingredientes, apresentação)<br>
+              <strong>S — Serviço:</strong> atendimento rápido, amigável e dentro do R2P<br>
+              <strong>L — Limpeza:</strong> restaurante, equipamentos e uniforme impecáveis<br>
+              <strong>V — Valor:</strong> o cliente percebe que o preço vale pelo conjunto entregue<br><br>
+              <strong>Na prática:</strong> um Treinador deve atingir 100% de QSL&V e ser exemplo de Cooltura de Serviço.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Treinadores, Supervisores, Salão e NGK</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="QSR" data-full="Quick Service Restaurant — Restaurante de serviço rápido / linha de produtos de limpeza" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">QSR</div>
+            <div class="gloss-entry-name">QSR — Quick Service Restaurant <span>Categoria e linha de produtos de limpeza</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Tem dois significados distintos no contexto dos guias: <strong>(1) Categoria de restaurante:</strong> "Quick Service Restaurant" — o segmento de fast food. <strong>(2) Linha de produtos de limpeza</strong> específicos para uso em restaurantes da rede (ex: QSR Multiuso, QSR Limpador para Chapas).</p>
+            <div class="gloss-detail">
+              <strong>Produtos QSR mais usados:</strong><br>
+              — <strong>QSR Limpador para Chapas:</strong> 90 ml para umedecer esponja na limpeza diária da chapa<br>
+              — <strong>QSR Limpador para Chapas e Tostadeiras (KAY):</strong> 60 ml (2 pumps) por aplicação<br>
+              — <strong>QSR Multiuso:</strong> limpeza geral de superfícies<br><br>
+              Cada produto tem diluição específica — nunca usar concentrado onde se pede diluído.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Limpeza, Chapa, LOPE</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="R">
+        <div class="gloss-group-letter">R</div>
+
+        <div class="gloss-entry" data-term="R2P" data-full="Receipt to Present — tempo do pedido ao pronto" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">R2P</div>
+            <div class="gloss-entry-name">Receipt to Present <span>Tempo do pedido ao pronto</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag gestao">Gestão</span>
+            <span class="gloss-tag sistema">Sistema</span>
+            <p class="gloss-def">Métrica principal de velocidade de serviço: mede o tempo entre o <strong>momento em que o pedido entra como "PREPARANDO"</strong> e o momento em que o crew marca como <strong>"PRONTO"</strong> para entrega.</p>
+            <div class="gloss-detail">
+              <strong>Tempo máximo R2P:</strong> 90 segundos (padrão geral)<br><br>
+              <strong>O cronômetro começa:</strong> quando o pedido muda de status para PREPARANDO no sistema.<br>
+              <strong>O cronômetro para:</strong> quando o crew confirma no sistema que o pedido está PRONTO.<br><br>
+              <strong>O que impacta o R2P:</strong><br>
+              — Sincronismo entre LOPE, Chapa e Linha<br>
+              — Disponibilidade de carnes na UHC (PLS)<br>
+              — Velocidade de montagem na OAT<br>
+              — Número de pessoas posicionadas<br><br>
+              <strong>No Drive-Thru:</strong> o GPRS ajuda a reduzir o R2P antecipando o pagamento.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Montagem e Entrega, Supervisores, Treinadores</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="RDM" data-full="Gerente de Departamento / Registro de Desempenho Mensal" data-tags="carreira">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">RDM</div>
+            <div class="gloss-entry-name">Gerente RDM <span>Cargo de gestão de departamento</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag carreira">Carreira</span>
+            <p class="gloss-def">Cargo de gestão responsável por <strong>3 departamentos do restaurante</strong>, com domínio técnico e operacional de cada um. É o nível acima de Gerente de Plantão e abaixo de Supervisor.</p>
+            <div class="gloss-detail">
+              <strong>Como chegar ao RDM:</strong><br>
+              Gerente de Plantão → 6 meses de experiência → Módulo RDM + responsabilidade por 3 departamentos → Gerente RDM<br><br>
+              <strong>Responsabilidades adicionais do RDM:</strong><br>
+              — Define a ordem de montagem da bandeja do turno<br>
+              — Coordena KPIs do seu departamento<br>
+              — Prepara candidatos para o PDGA (próximo passo: Supervisor)
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Promoção Interna, Montagem e Entrega, Supervisores</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="Recall" data-full="Recuperar pedido no POS" data-tags="sistema">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">RCL</div>
+            <div class="gloss-entry-name">Recall <span>Recuperar pedido no POS</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag sistema">Sistema</span>
+            <p class="gloss-def">Função do POS que permite <strong>recuperar um pedido já registrado</strong> pelo número, para processar o pagamento ou liberar o preparo. Muito usada no Drive-Thru e para pedidos MOP.</p>
+            <div class="gloss-detail">
+              <strong>Quando usar recall:</strong><br>
+              — <strong>Drive-Thru (Caixa Móvel):</strong> "recall por número" no GPRS para antecipar pagamento na fila<br>
+              — <strong>Pedidos MOP:</strong> o pedido chega como "Armazenado" — o crew faz recall quando o cliente chega para liberar o preparo<br>
+              — <strong>Drive-Thru na janela:</strong> a pessoa do caixa faz recall para fechar o pagamento do carro que chegou<br><br>
+              <strong>Ação:</strong> puxar o recall do POS imediatamente ao receber o pedido.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Drive-Thru, McDelivery</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="S">
+        <div class="gloss-group-letter">S</div>
+
+        <div class="gloss-entry" data-term="SABER" data-full="Plataforma de treinamento online" data-tags="carreira">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">SABER</div>
+            <div class="gloss-entry-name">Plataforma SABER <span>Treinamento online</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag carreira">Carreira</span>
+            <p class="gloss-def">Plataforma digital de <strong>treinamento e desenvolvimento</strong> usada pela rede. Disponibiliza módulos complementares de aprendizado, trilhas formativas e materiais de estudo para cada cargo.</p>
+            <div class="gloss-detail">
+              <strong>Como acessar:</strong> disponível após aprovação no PPI e validação pelo Gerente de Pessoas.<br><br>
+              <strong>Trilha Formativa SABER — Treinador:</strong> 6 meses de módulos disponibilizados progressivamente após aprovação como Treinador.<br><br>
+              <strong>Conteúdo disponível:</strong> vídeos, apostilas, quizzes e simulações por função e departamento.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Promoção Interna, Treinadores</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="U">
+        <div class="gloss-group-letter">U</div>
+
+        <div class="gloss-entry" data-term="UHC" data-full="Ultra-Hold Cabinet — Gaveta de manutenção de temperatura" data-tags="producao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">UHC</div>
+            <div class="gloss-entry-name">Ultra-Hold Cabinet <span>Gaveta de manutenção de temperatura</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag producao">Produção</span>
+            <p class="gloss-def">Equipamento de <strong>manutenção de temperatura</strong> instalado abaixo da chapa, onde as carnes prontas ficam armazenadas quentes aguardando a montagem do sanduíche.</p>
+            <div class="gloss-detail">
+              <strong>Temperaturas:</strong><br>
+              — <strong>Carnes vermelhas (hambúrguer):</strong> 79°C — vida útil de 10 minutos<br>
+              — <strong>Carnes brancas (frango):</strong> 85°C — vida útil variável por produto<br><br>
+              <strong>Tempos de vida na UHC:</strong><br>
+              — McChicken: 30 min<br>
+              — Nuggets: 30 min<br>
+              — McCrispy: 60 min<br>
+              — McCafé ovos: máximo 5 unidades por gaveta<br><br>
+              <strong>Regras:</strong> produto que passou do tempo de vida deve ser descartado — nunca servir produto fora do prazo.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Chapa, Linha, Fritos, Fechamento</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="URD" data-full="Units per Receipt — Bebidas por cupom" data-tags="gestao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">URD</div>
+            <div class="gloss-entry-name">Units per Receipt <span>Bebidas por cupom — KPI do McCafé</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag bebidas">Bebidas</span>
+            <span class="gloss-tag gestao">Gestão</span>
+            <p class="gloss-def">Métrica que mede a <strong>quantidade média de bebidas vendidas por cupom (pedido)</strong>. É um KPI específico do McCafé usado para avaliar se a equipe está oferecendo café em todos os pedidos.</p>
+            <div class="gloss-detail">
+              <strong>Meta:</strong> ≥ meta definida pelo restaurante (varia por unidade).<br><br>
+              <strong>Como melhorar o URD:</strong> cada atendente deve oferecer café associado a qualquer pedido — a sugestão deve ser natural e contextual.<br><br>
+              <strong>Exemplo:</strong> "Vai querer um café coado pra acompanhar?" ao vender qualquer item do cardápio, não só salgados.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de McCafé, Supervisores</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gloss-group" data-letter="V">
+        <div class="gloss-group-letter">V</div>
+
+        <div class="gloss-entry" data-term="VAP" data-full="Máquina de pressão para limpeza de chapas" data-tags="producao">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">VAP</div>
+            <div class="gloss-entry-name">Máquina VAP <span>Pressão para limpeza de chapas</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag producao">Produção</span>
+            <p class="gloss-def">Equipamento de pressão usado para <strong>remover manchas resistentes</strong> na superfície da chapa após a limpeza padrão. É acionado quando o procedimento normal com QSR não é suficiente.</p>
+            <div class="gloss-detail">
+              <strong>Quando usar:</strong> após o procedimento de limpeza diária da chapa, se ainda houver manchas visíveis → acionar a máquina de pressão VAP.<br><br>
+              <strong>Atenção:</strong> usar sempre com EPI completo (avental, luvas e óculos de proteção).
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guia de Limpeza</div>
+          </div>
+        </div>
+
+        <div class="gloss-entry" data-term="Venda Sugestiva" data-full="Técnica de oferecer itens adicionais ao cliente" data-tags="experiencia">
+          <div class="gloss-entry-head" onclick="toggleEntry(this)">
+            <div class="gloss-entry-badge">VS</div>
+            <div class="gloss-entry-name">Venda Sugestiva <span>Técnica de aumento de ticket</span></div>
+            <div class="gloss-entry-chevron">›</div>
+          </div>
+          <div class="gloss-entry-body">
+            <span class="gloss-tag experiencia">Experiência</span>
+            <p class="gloss-def">Técnica de atendimento em que o crew <strong>sugere itens adicionais</strong> de forma natural durante o pedido, aumentando o ticket médio e melhorando a experiência do cliente.</p>
+            <div class="gloss-detail">
+              <strong>Tipos de venda sugestiva:</strong><br>
+              — <strong>Combo:</strong> "Vai querer batata e bebida?"<br>
+              — <strong>Upgrade de tamanho:</strong> "Posso deixar em tamanho médio por apenas R$ X a mais?"<br>
+              — <strong>Item complementar:</strong> "Uma casquinha pra completar?" (McFlurry)<br><br>
+              <strong>Pequenos saltos:</strong> complementos de baixo custo que aumentam o pedido sem forçar uma venda cara.<br><br>
+              <strong>Onde praticar:</strong> balcão, COD no Drive, NGK (auxiliando o cliente), McCafé.
+            </div>
+            <div class="gloss-where"><strong>Aparece em:</strong> Guias de Influencer Vendedor, Drive-Thru, Salão e NGK</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="gloss-no-results" id="glossNoResults">
+      <div style="font-size:32px;margin-bottom:8px;">🔍</div>
+      Nenhum termo encontrado para "<span id="glossNoTerm"></span>"
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Glossário Operacional · Adrian
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // ---- Build alphabet bar ----
+    const groups = document.querySelectorAll('.gloss-group[data-letter]');
+    const letters = [...groups].map(g => g.dataset.letter);
+    const alphaBar = document.getElementById('alphaBar');
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(l => {
+      const btn = document.createElement('button');
+      btn.className = 'alpha-btn' + (letters.includes(l) ? '' : ' disabled');
+      btn.textContent = l;
+      if (letters.includes(l)) {
+        btn.onclick = () => {
+          document.querySelector(`.gloss-group[data-letter="${l}"]`)
+            .scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.querySelectorAll('.alpha-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        };
+      }
+      alphaBar.appendChild(btn);
+    });
+
+    // ---- Toggle entry expand ----
+    function toggleEntry(head) {
+      head.closest('.gloss-entry').classList.toggle('open');
+    }
+
+    // ---- Search filter ----
+    const searchInput = document.getElementById('glossSearch');
+    const noResults   = document.getElementById('glossNoResults');
+    const noTerm      = document.getElementById('glossNoTerm');
+    const countEl     = document.getElementById('visibleCount');
+    const allEntries  = document.querySelectorAll('.gloss-entry');
+    const allGroups   = document.querySelectorAll('.gloss-group');
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      let visible = 0;
+
+      allEntries.forEach(entry => {
+        const term = (entry.dataset.term || '').toLowerCase();
+        const full = (entry.dataset.full || '').toLowerCase();
+        const text = entry.textContent.toLowerCase();
+        const match = !q || term.includes(q) || full.includes(q) || text.includes(q);
+        entry.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      allGroups.forEach(group => {
+        const hasVisible = [...group.querySelectorAll('.gloss-entry')]
+          .some(e => e.style.display !== 'none');
+        group.style.display = hasVisible ? '' : 'none';
+      });
+
+      countEl.textContent = visible;
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+      noTerm.textContent = searchInput.value;
+    });
+  </script>
+</body>
+</html>

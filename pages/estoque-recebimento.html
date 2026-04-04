@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estoque e Recebimento — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="estoque">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Estoque e Recebimento</h1>
+        <p>PEPS · Câmaras · Validades</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="peps">📦 PEPS</button>
+      <button class="tab-btn" data-tab="recebimento">🚛 Recebimento</button>
+      <button class="tab-btn" data-tab="camaras">❄️ Câmaras</button>
+      <button class="tab-btn" data-tab="etiquetagem">🏷️ Etiquetagem</button>
+      <button class="tab-btn" data-tab="validades">⏱️ Validades</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-peps">
+      <div class="section-label">PEPS — Primeiro a Entrar, Primeiro a Sair</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📦</div><h2>O que é PEPS (FIFO)</h2></div>
+        <div class="card-body">
+          <div class="info-block">PEPS significa <strong>Primeiro a Entrar, Primeiro a Sair</strong> (em inglês: FIFO — First In, First Out). É a regra fundamental de organização de estoque: o produto mais antigo sempre sai primeiro.</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;">
+            <div style="background:#e8f5e9;border:2px solid #43a047;border-radius:12px;padding:14px;display:flex;align-items:center;gap:14px;">
+              <div style="font-size:32px;">1️⃣</div>
+              <div><div style="font-weight:700;color:#2e7d32;">Primeiro a ENTRAR</div><div style="font-size:12px;color:var(--muted);margin-top:4px;">O produto mais antigo (com validade mais próxima) fica na <strong>frente</strong> ou por cima</div></div>
+            </div>
+            <div style="text-align:center;font-size:22px;color:var(--muted);">↓</div>
+            <div style="background:#e3f2fd;border:2px solid #1976d2;border-radius:12px;padding:14px;display:flex;align-items:center;gap:14px;">
+              <div style="font-size:32px;">1️⃣</div>
+              <div><div style="font-weight:700;color:#1565c0;">Primeiro a SAIR</div><div style="font-size:12px;color:var(--muted);margin-top:4px;">Esse produto mais antigo é o <strong>primeiro a ser usado</strong> na produção</div></div>
+            </div>
+          </div>
+          <div class="alert warn" style="margin-top:12px;">⚠️ Nunca colocar produto novo na frente do antigo. O produto antigo empurrado para o fundo vence sem ser usado.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">✅</div><h2>Como Aplicar o PEPS</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Na câmara / congelador</div>
+            <div class="rota-item">Ao guardar novos produtos, empurre os antigos para a <strong>frente</strong>. Os novos ficam atrás. Use sempre o que está na frente primeiro.</div>
+            <div class="rota-head c2">Em prateleiras e cubas</div>
+            <div class="rota-item">Produtos com validade mais próxima ficam <strong>por cima ou na frente</strong>. Os novos vão por baixo ou atrás.</div>
+            <div class="rota-head c3">Embalagens abertas</div>
+            <div class="rota-item">Sempre usar a embalagem já aberta antes de abrir uma nova. Datar a abertura com etiqueta.</div>
+            <div class="rota-head c4">Verificação diária</div>
+            <div class="rota-item">Checar validades todos os dias e separar produtos próximos do vencimento para uso prioritário.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-recebimento">
+      <div class="section-label">Recebimento de Mercadorias</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🚛</div><h2>Conferência no Recebimento</h2></div>
+        <div class="card-body">
+          <div class="info-block">Cada entrega deve ser conferida antes de aceitar. Receber um produto fora dos padrões compromete toda a operação.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">1 — Documentação</div>
+            <div class="rota-item">Conferir nota fiscal: quantidade, descrição, fornecedor e data de emissão</div>
+            <div class="rota-head c2">2 — Temperatura</div>
+            <div class="rota-item">Medir a temperatura dos produtos na chegada:<br>Refrigerados: <strong>máx. 4°C</strong> · Congelados: <strong>-18°C ou abaixo</strong></div>
+            <div class="rota-head c3">3 — Embalagem</div>
+            <div class="rota-item">Verificar: embalagens íntegras (sem rasgos, furos ou amassados), sem sinais de reembalagem, lacres preservados</div>
+            <div class="rota-head c4">4 — Validade</div>
+            <div class="rota-item">Conferir a data de validade de cada item. Recusar produtos vencidos ou com validade insuficiente para o uso</div>
+            <div class="rota-head c1">5 — Aparência</div>
+            <div class="rota-item">Verificar cor, odor e textura quando possível. Produto com aspecto alterado deve ser recusado</div>
+            <div class="rota-head c2">6 — Quantidade</div>
+            <div class="rota-item">Contar e conferir com a nota fiscal. Registrar divergências antes de assinar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">❌</div><h2>Quando Recusar o Produto</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Temperatura fora do padrão (refrigerado acima de 4°C ou congelado acima de -18°C)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Embalagem violada, rasgada, amassada ou com sinais de vazamento</label></div>
+          <div class="check-item"><input type="checkbox"><label>Produto vencido ou com validade inferior ao prazo mínimo aceitável</label></div>
+          <div class="check-item"><input type="checkbox"><label>Presença de insetos, sujeira ou corpo estranho</label></div>
+          <div class="check-item"><input type="checkbox"><label>Odor ou aparência alterada</label></div>
+          <div class="check-item"><input type="checkbox"><label>Sinais de descongelamento e recongelamento (cristais de gelo irregulares, produto deformado)</label></div>
+          <div class="alert warn" style="margin-top:10px;">⚠️ Em caso de dúvida, recusar o produto e acionar o gerente responsável. Nunca aceitar produto comprometido.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⚡</div><h2>Prioridade de Armazenamento</h2></div>
+        <div class="card-body">
+          <div class="info-block">Após receber e conferir, os produtos devem ser armazenados imediatamente — especialmente os perecíveis.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">1ª prioridade</div>
+            <div class="rota-item">Congelados → câmara de congelamento imediatamente</div>
+            <div class="rota-head c2">2ª prioridade</div>
+            <div class="rota-item">Refrigerados → câmara de resfriamento</div>
+            <div class="rota-head c3">3ª prioridade</div>
+            <div class="rota-item">Secos e embalados → área de estoque seco, limpa e organizada</div>
+          </div>
+          <div class="alert info" style="margin-top:8px;">💡 Aplicar PEPS imediatamente — os produtos novos vão atrás dos antigos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-camaras">
+      <div class="section-label">Câmaras e Temperatura</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">❄️</div><h2>Temperaturas das Câmaras</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Câmara / Equipamento</th><th>Temperatura</th><th>Produtos</th></tr></thead>
+              <tbody>
+                <tr><td>Câmara de refrigeração</td><td><strong>1°C a 4°C</strong></td><td>Carnes, laticínios, frios, vegetais</td></tr>
+                <tr><td>Câmara / congelador</td><td><strong>-18°C ou abaixo</strong></td><td>Carnes congeladas, batatas, tortas</td></tr>
+                <tr><td>Congelador portátil</td><td><strong>-18°C ou abaixo</strong></td><td>McFritas, carnes em uso</td></tr>
+                <tr><td>Refrigerador de bebidas</td><td><strong>1°C a 4°C</strong></td><td>Bebida láctea, sucos</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Organização da Câmara</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Posição vertical</div>
+            <div class="rota-item">Produtos devem estar em prateleiras ou caixas — nunca diretamente no chão da câmara</div>
+            <div class="rota-head c2">Separação</div>
+            <div class="rota-item">Carnes cruas <strong>sempre abaixo</strong> de produtos prontos ou vegetais. Evitar contaminação cruzada por gotejamento</div>
+            <div class="rota-head c3">Identificação</div>
+            <div class="rota-item">Produtos nas caixas originais sempre que possível. Embalagens abertas datadas com etiqueta</div>
+            <div class="rota-head c4">Circulação de ar</div>
+            <div class="rota-item">Não sobrecarregar a câmara. Deixar espaço entre os produtos para circulação de ar frio</div>
+            <div class="rota-head c1">Limpeza</div>
+            <div class="rota-item">Câmara limpa e sem resíduos. Derramamentos limpos imediatamente</div>
+          </div>
+          <div class="alert info" style="margin-top:10px;">💡 Sempre usar EPI completo para câmaras frias: mangotes, avental e luvas de proteção ao frio.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Validades nas Câmaras</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Produto</th><th>Validade na Câmara</th></tr></thead>
+              <tbody>
+                <tr><td>Cebola reidratada (cuba)</td><td>24 horas</td></tr>
+                <tr><td>Pão Brioche (após retirar do congelador)</td><td>12h descongelando + 36h uso (48h total)</td></tr>
+                <tr><td>Sacos de McFritas (congelador portátil)</td><td>24 horas após abertura</td></tr>
+                <tr><td>Tomate fatiado (câmara)</td><td>2 horas na mesa · após, descartar</td></tr>
+                <tr><td>Bacon pronto (câmara)</td><td>5 dias refrigerado</td></tr>
+                <tr><td>Molho Ranch após abertura</td><td>7 dias refrigerado</td></tr>
+                <tr><td>Bag de suco após aberta</td><td>7 dias</td></tr>
+                <tr><td>Molho cheddar em sachê (refrigerado)</td><td>48 horas após abertura</td></tr>
+                <tr><td>Cebola cheddar após abrir embalagem</td><td>48 horas refrigerada</td></tr>
+                <tr><td>Molhos especiais refrigerados</td><td>Conforme etiqueta (1–4°C)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-etiquetagem">
+      <div class="section-label">Etiquetagem e Identificação</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🏷️</div><h2>O que deve conter a etiqueta</h2></div>
+        <div class="card-body">
+          <div class="info-block">Toda embalagem aberta ou produto preparado deve ser identificado com etiqueta. Produto sem identificação é produto não rastreável — deve ser descartado em caso de dúvida.</div>
+          <div style="background:var(--bg);border:2px dashed var(--border);border-radius:12px;padding:16px;margin-top:10px;">
+            <div style="font-family:var(--font-display);font-size:12px;font-weight:800;color:var(--muted);margin-bottom:8px;text-transform:uppercase;">Etiqueta padrão</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="font-size:13px;color:var(--text);">📛 <strong>Nome do produto</strong></div>
+              <div style="font-size:13px;color:var(--text);">📅 <strong>Data de abertura / preparo</strong></div>
+              <div style="font-size:13px;color:var(--text);">⏰ <strong>Hora de abertura / preparo</strong></div>
+              <div style="font-size:13px;color:var(--text);">📅 <strong>Data de validade / descarte</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">✅</div><h2>Checklist de Etiquetagem</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Toda embalagem aberta está datada com hora de abertura</label></div>
+          <div class="check-item"><input type="checkbox"><label>Produtos preparados (cebola, molhos, tomate) com etiqueta de hora e validade</label></div>
+          <div class="check-item"><input type="checkbox"><label>Embalagens originais preservadas com dados de validade do fabricante visíveis</label></div>
+          <div class="check-item"><input type="checkbox"><label>Produtos em câmara identificados (especialmente os fora da embalagem original)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Produtos preparados com validade menor que a do fabricante — usar o menor prazo</label></div>
+          <div class="check-item"><input type="checkbox"><label>Produtos próximos do vencimento separados e marcados para uso prioritário</label></div>
+          <div class="alert warn" style="margin-top:10px;">⚠️ Produto sem etiqueta = produto sem identidade. Em caso de auditoria ou dúvida, o correto é descartar.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-validades">
+      <div class="section-label">Controle de Validades</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Validades Primárias e Secundárias</h2></div>
+        <div class="card-body">
+          <div class="info-block">Um produto tem duas validades: a do fabricante (primária) e a definida após abertura ou preparo (secundária). Sempre usar o <strong>menor prazo</strong>.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Validade Primária</div>
+            <div class="rota-item">Data impressa na embalagem pelo fabricante. Produto vencido por essa data deve ser descartado imediatamente.</div>
+            <div class="rota-head c2">Validade Secundária</div>
+            <div class="rota-item">Prazo definido após abertura da embalagem, preparo ou transferência para outra condição. Geralmente mais curta. Registrada na etiqueta.</div>
+            <div class="rota-head c3">Regra</div>
+            <div class="rota-item">Se a validade primária vence antes da secundária, usar a primária. Nunca estender o prazo além do fabricante.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Referência de Validades Secundárias</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Produto</th><th>Condição</th><th>Validade Secundária</th></tr></thead>
+              <tbody>
+                <tr><td>Sacos de batata (congelador portátil)</td><td>Após abertura</td><td>24 horas</td></tr>
+                <tr><td>Bacon frito</td><td>Câmara 1–4°C</td><td>5 dias</td></tr>
+                <tr><td>Óleo vegetal (fritadeira)</td><td>Em uso</td><td>14 dias ou Compostos Polares ≤24%</td></tr>
+                <tr><td>Cebola reidratada</td><td>Câmara 1–4°C</td><td>24 horas</td></tr>
+                <tr><td>Molho Ranch</td><td>Após abertura, refrigerado</td><td>7 dias</td></tr>
+                <tr><td>Bag de suco</td><td>Após abertura</td><td>7 dias</td></tr>
+                <tr><td>Tubo de cheddar</td><td>Após abertura, refrigerado</td><td>48 horas</td></tr>
+                <tr><td>Pão Brioche</td><td>Após descongelar (câmara)</td><td>36 horas de uso</td></tr>
+                <tr><td>Leite na Foamino</td><td>Em uso</td><td>8 horas</td></tr>
+                <tr><td>Café pronto</td><td>Na jarra</td><td>1 hora</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🗑️</div><h2>Descarte Correto</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Produto vencido → descartar imediatamente, sem questionar a aparência</label></div>
+          <div class="check-item"><input type="checkbox"><label>Registrar o descarte no sistema (se aplicável) para controle de perdas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Separar resíduos: orgânico, papel, plástico e óleo usado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Óleo usado: armazenar em recipiente específico, nunca jogar no esgoto</label></div>
+          <div class="check-item"><input type="checkbox"><label>Avisar o gerente sobre produtos descartados em grande quantidade</label></div>
+          <div class="alert warn" style="margin-top:10px;">⚠️ Produto vencido nunca deve ser reaproveitado, reembalado ou servido — independentemente do aspecto visual ou do odor.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Quiz — Estoque e Recebimento</h2></div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+          <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Estoque e Recebimento · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.switchMode = function(mode) {
+      var btns = { multiple: document.getElementById('btnMultiple'), flash: document.getElementById('btnFlash'), lacuna: document.getElementById('btnLacuna') };
+      Object.keys(btns).forEach(function(k) { if (btns[k]) btns[k].className = k === mode ? 'btn-primary' : 'btn-secondary'; });
+      if (!window._quizData || !window._quizGuia) return;
+      if (mode === 'multiple') initQuiz(window._quizData, window._quizGuia);
+      else if (mode === 'flash') initFlashcard(window._quizData, window._quizGuia);
+      else if (mode === 'lacuna') initLacuna(window._quizData, window._quizGuia);
+    };
+
+    const QUIZ_ESTOQUE = [
+      { category: "📦 PEPS · Conceito", question: "O que significa PEPS?", options: ["Produto Em Prazo de Segurança", "Primeiro a Entrar, Primeiro a Sair", "Padrão de Estoque e Produto Seguro", "Protocolo de Embalagem Por Setor"], answer: "Primeiro a Entrar, Primeiro a Sair", explanation: "PEPS (FIFO em inglês) significa Primeiro a Entrar, Primeiro a Sair — o produto mais antigo é sempre usado primeiro." },
+      { category: "📦 PEPS · Aplicação", question: "Ao guardar produtos novos na câmara, onde devem ficar os mais antigos?", options: ["Atrás dos novos", "Na frente dos novos", "Na mesma posição", "No nível de baixo"], answer: "Na frente dos novos", explanation: "Os produtos mais antigos ficam na frente e são usados primeiro. Os novos vão atrás — assim garante-se o PEPS." },
+      { category: "📦 PEPS · Validade", question: "O que fazer com produto próximo da validade?", options: ["Descartar imediatamente", "Guardar no fundo da câmara", "Separar e usar com prioridade", "Congelar para estender a validade"], answer: "Separar e usar com prioridade", explanation: "Produtos próximos do vencimento devem ser separados e marcados para uso prioritário, seguindo o PEPS." },
+      { category: "🚛 Recebimento · Temperatura", question: "Qual a temperatura máxima aceitável para receber carnes refrigeradas?", options: ["0°C", "4°C", "7°C", "10°C"], answer: "4°C", explanation: "Produtos refrigerados devem chegar a no máximo 4°C. Acima disso, o produto deve ser recusado." },
+      { category: "🚛 Recebimento · Temperatura", question: "Qual a temperatura máxima aceitável para receber produtos congelados?", options: ["-10°C", "-15°C", "-18°C", "-12°C"], answer: "-18°C", explanation: "Produtos congelados devem estar a -18°C ou abaixo na entrega. Acima disso indica descongelamento parcial e o produto deve ser recusado." },
+      { category: "🚛 Recebimento · Rejeição", question: "Qual destes produtos deve ser recusado no recebimento?", options: ["Produto refrigerado a 3°C", "Produto com embalagem levemente amassada", "Produto com embalagem rasgada e temperatura alterada", "Produto com validade para o próximo mês"], answer: "Produto com embalagem rasgada e temperatura alterada", explanation: "Embalagem rasgada combinada com temperatura fora do padrão são motivos obrigatórios de recusa." },
+      { category: "❄️ Câmaras · Temperatura", question: "Qual a temperatura correta das câmaras de refrigeração?", options: ["0°C a 2°C", "1°C a 4°C", "4°C a 8°C", "5°C a 10°C"], answer: "1°C a 4°C", explanation: "As câmaras de refrigeração devem ser mantidas entre 1°C e 4°C para conservação adequada dos produtos." },
+      { category: "❄️ Câmaras · Organização", question: "Como carnes cruas devem ser posicionadas em relação a produtos prontos na câmara?", options: ["Acima dos prontos", "Abaixo dos prontos", "No mesmo nível", "Separadas em câmara diferente sempre"], answer: "Abaixo dos prontos", explanation: "Carnes cruas ficam abaixo de produtos prontos para evitar contaminação cruzada por gotejamento." },
+      { category: "🏷️ Etiquetagem · Obrigação", question: "O que toda embalagem aberta deve ter obrigatoriamente?", options: ["Apenas o nome do produto", "Data de abertura, hora e validade", "Apenas a data de validade do fabricante", "Etiqueta de preço"], answer: "Data de abertura, hora e validade", explanation: "Toda embalagem aberta deve ter etiqueta com: nome do produto, data e hora de abertura, e data/hora de validade/descarte." },
+      { category: "🏷️ Etiquetagem · Validade", question: "Se a validade secundária de um produto é 7 dias mas o fabricante indica 5 dias, qual usar?", options: ["7 dias (mais longa)", "5 dias (do fabricante, menor)", "A média: 6 dias", "Depende do produto"], answer: "5 dias (do fabricante, menor)", explanation: "Sempre usar o menor prazo. Nunca estender a validade além do que o fabricante indica na embalagem original." },
+      { category: "⏱️ Validades · Secundárias", question: "Qual a validade do tubo de cheddar após aberto e refrigerado?", options: ["24 horas", "48 horas", "5 dias", "7 dias"], answer: "48 horas", explanation: "O tubo de cheddar após aberto deve ser refrigerado com validade secundária de 48 horas." },
+      { category: "⏱️ Validades · Secundárias", question: "Qual a validade da cebola reidratada na câmara (1–4°C)?", options: ["4 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "A cebola reidratada tem validade de 24 horas quando armazenada na câmara a 1–4°C." },
+      { category: "⏱️ Validades · Secundárias", question: "Qual a validade do molho Ranch após abertura e refrigerado?", options: ["24 horas", "3 dias", "5 dias", "7 dias"], answer: "7 dias", explanation: "O molho Ranch após aberto deve ser refrigerado com validade de 7 dias." },
+      { category: "⏱️ Validades · Secundárias", question: "Qual a validade da bag de suco após aberta?", options: ["24 horas", "3 dias", "7 dias", "14 dias"], answer: "7 dias", explanation: "A bag de suco tem validade secundária de 7 dias após a abertura." },
+      { category: "⏱️ Validades · Descarte", question: "Produto vencido com aparência normal pode ser servido?", options: ["Sim, se o cheiro estiver bom", "Sim, se foi mantido na temperatura correta", "Não — deve ser descartado", "Sim, apenas para funcionários"], answer: "Não — deve ser descartado", explanation: "Produto vencido nunca deve ser servido, independentemente da aparência ou odor. Descartar imediatamente." },
+      { category: "🚛 Recebimento · Prioridade", question: "Qual produto deve ser armazenado primeiro ao receber uma entrega?", options: ["Embalagens secas", "Produtos congelados", "Bebidas", "Material de limpeza"], answer: "Produtos congelados", explanation: "Produtos congelados devem ser armazenados imediatamente por serem os mais sensíveis à variação de temperatura." },
+      { category: "📦 PEPS · Embalagem aberta", question: "Ao receber produto novo, o que fazer com a embalagem já aberta do mesmo item?", options: ["Guardar a nova primeiro", "Usar a aberta primeiro, antes de abrir a nova", "Descartar a antiga", "Misturar tudo"], answer: "Usar a aberta primeiro, antes de abrir a nova", explanation: "Seguindo o PEPS, a embalagem já aberta é usada primeiro. A nova embalagem só é aberta quando a anterior acabar." }
+    ];
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initQuiz(QUIZ_ESTOQUE, 'Estoque e Recebimento');
+    });
+  </script>
+</body>
+</html>

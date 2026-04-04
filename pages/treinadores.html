@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteúdo para Treinadores — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="treinadores">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>👨‍🏫 Conteúdo para Treinadores</h1>
+        <p>Área Restrita</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+    <div class="page-tabs">
+      <div class="page-tabs-inner">
+        <button class="tab-btn active" data-tab="orientacoes">📋 Orientações</button>
+        <button class="tab-btn" data-tab="treinamento">📚 Treinamento</button>
+        <button class="tab-btn" data-tab="checklists">✅ Checklists</button>
+        <button class="tab-btn" data-tab="aptidao">🏅 Aptidão</button>
+        <button class="tab-btn" data-tab="acompanhamento">📈 Acompanhamento</button>
+        <button class="tab-btn" data-tab="prova-ppi">📝 Prova PPI</button>
+        <button class="tab-btn" data-tab="quiz-ppi">🎯 Quiz PPI</button>
+        <button class="tab-btn" data-tab="feedback">💬 Feedback</button>
+        <button class="tab-btn" data-tab="quiz-area">🎯 Quiz</button>
+      </div>
+    </div>
+    <div class="page-content">
+
+      <div class="tab-panel active" id="panel-orientacoes">
+        <div class="section-label">Orientações para Treinadores</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">📋</div><h2>Papel do Treinador</h2></div>
+          <div class="card-body">
+            <div class="info-block">
+              O treinador é responsável por <strong>apresentar as estações</strong> e acompanhar todo o treinamento do novo atendente, utilizando o tablet disponível no restaurante. Deve operar todas as funções dentro dos mais altos padrões de QSL&V (100% procedimentos) e ser um exemplo de Cooltura de Serviço.
+            </div>
+            <div class="rota-items" style="margin-top:12px;">
+              <div class="rota-head c1">Responsabilidades</div>
+              <div class="rota-item">Treinar e desenvolver os atendentes nas funções do restaurante</div>
+              <div class="rota-head c2">Ferramentas</div>
+              <div class="rota-item">Plataforma SABER — módulos complementares disponíveis para cada seção</div>
+              <div class="rota-head c3">Fluxo de Treinamento McCafé</div>
+              <div class="rota-item">1ª Bebidas quentes/frias → 2ª Forno/Vitrine/Estocagem → 3ª Caixa/Entrega/Salão (5 dias, 8 funções)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">⭐</div><h2>Perfil do Treinador Ideal</h2></div>
+          <div class="card-body">
+            <div class="check-item"><input type="checkbox"><label>Opera todas as funções dentro dos padrões de QSL&V (100% procedimentos)</label></div>
+            <div class="check-item"><input type="checkbox"><label>É exemplo de Cooltura de Serviço em todos os momentos</label></div>
+            <div class="check-item"><input type="checkbox"><label>Conhece profundamente os procedimentos operacionais de todas as estações</label></div>
+            <div class="check-item"><input type="checkbox"><label>Sabe comunicar de forma clara e paciente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Acompanha o desenvolvimento do treinado com feedback constante</label></div>
+            <div class="check-item"><input type="checkbox"><label>Valida o aprendizado antes de liberar o atendente para operar sozinho</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-treinamento">
+        <div class="section-label">Guias de Treinamento por Estação</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">📚</div><h2>Sequência Recomendada de Treinamento</h2></div>
+          <div class="card-body">
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead><tr><th>Dia</th><th>Estação</th><th>Foco Principal</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Dia 1</strong></td><td>Linha / Condimentação</td><td>Ingredientes, ordem de montagem, pesos e medidas</td></tr>
+                  <tr><td><strong>Dia 2</strong></td><td>Chapa / Fritos</td><td>Temperaturas, tempos, limpeza e segurança</td></tr>
+                  <tr><td><strong>Dia 3</strong></td><td>LOPE / McFritas</td><td>Tempos de vida, reposição, PEPS</td></tr>
+                  <tr><td><strong>Dia 4</strong></td><td>Balcão / Influencer</td><td>Atendimento, POS, pagamentos, Meu Méqui</td></tr>
+                  <tr><td><strong>Dia 5</strong></td><td>NGK / Salão / Entrega</td><td>Totens, Cooltura de Serviço, higiene do salão</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="alert info" style="margin-top:10px;">
+              💡 Após cada dia, aplicar uma rodada do <strong>Simulado Geral</strong> filtrado pela estação do dia para reforçar o conteúdo.
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">✅</div><h2>Checklist de Validação do Treinamento</h2></div>
+          <div class="card-body">
+            <div class="check-item"><input type="checkbox"><label><strong>Chapa:</strong> Sabe operar Clean Mode, conhece temperaturas e tempos de cocção</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>LOPE:</strong> Sabe sanitizar tomate, reidratar cebola, fazer rota de 15 min</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Linha:</strong> Monta sanduíches na sequência correta com pesos e ingredientes certos</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Fritos/Fritas:</strong> Opera fritadeiras, verifica óleo, salga corretamente</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Balcão:</strong> Executa os passos do atendimento, opera POS, realiza venda sugestiva</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Salão/NGK:</strong> Auxilia clientes nos totens, realiza rota de limpeza</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Limpeza:</strong> Conhece produtos QSR, diluições e procedimentos por área</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-checklists">
+        <div class="section-label">Checklists Operacionais</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">🌅</div><h2>Checklist de Abertura</h2></div>
+          <div class="card-body">
+            <div class="check-item"><input type="checkbox"><label>Verificar temperaturas de todos os equipamentos (UHC, fritadeiras, chapa)</label></div>
+            <div class="check-item"><input type="checkbox"><label>Ligar máquina de café e aguardar 30 min para verificação de temperatura (75°C a 85°C)</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verificar estoque de ingredientes e sinalizar faltas ao gerente</label></div>
+            <div class="check-item"><input type="checkbox"><label>Conferir limpeza das estações e áreas de preparo</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verificar funcionamento dos totens NGK (papel, tela, comunicação)</label></div>
+            <div class="check-item"><input type="checkbox"><label>Conferir produtos na vitrine com tempo de vida marcado</label></div>
+            <div class="check-item"><input type="checkbox"><label>Verificar estoque de embalagens e suprimentos no balcão</label></div>
+            <div class="check-item"><input type="checkbox"><label>Conferir fundo de caixa com o gerente</label></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">🌙</div><h2>Checklist de Fechamento</h2></div>
+          <div class="card-body">
+            <div class="check-item"><input type="checkbox"><label>Executar limpeza completa de todas as estações</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desligar e limpar a máquina de café (finalização)</label></div>
+            <div class="check-item"><input type="checkbox"><label>Realizar limpeza da chapa (Clean Mode) e deixar Teflons alternados</label></div>
+            <div class="check-item"><input type="checkbox"><label>Desligar e limpar tostadeiras conforme procedimento</label></div>
+            <div class="check-item"><input type="checkbox"><label>Lavar e sanitizar todos os utensílios no sistema de 3 cubas</label></div>
+            <div class="check-item"><input type="checkbox"><label>Separar pães Brioche para ambientação (12h descongelamento)</label></div>
+            <div class="check-item"><input type="checkbox"><label>Limpar e organizar salão, banheiros e área externa</label></div>
+            <div class="check-item"><input type="checkbox"><label>Conferir e fechar caixa com o gerente</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-aptidao">
+
+        <div class="section-label">Avaliação de Aptidão por Estação</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">🏅</div><h2>Verificação de Aptidão</h2></div>
+          <div class="card-body">
+            <div class="info-block" style="margin-bottom:12px;">
+              Use para verificar se um funcionário está pronto para operar uma estação de forma independente. Avalie cada critério e veja o resultado ao final.
+            </div>
+
+            <div style="margin-bottom:12px;display:flex;gap:8px;align-items:flex-end;">
+              <div style="flex:1;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">NOME DO FUNCIONÁRIO</div>
+                <input type="text" id="apt-nome" placeholder="Digite o nome..." style="width:100%;box-sizing:border-box;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+              </div>
+            </div>
+
+            <div class="sv-apt-list">
+
+        <div class="sv-apt-estacao" id="aptidao-chapa">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('chapa')">
+            <span>🔥 Chapa</span>
+            <span class="sv-apt-resumo" id="res-chapa">—</span>
+            <span class="sv-apt-arr" id="arr-apt-chapa">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-chapa" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-chapa-0"><div class="sv-apt-status" id="st-chapa-0">⬜</div><div class="sv-apt-text">Conhece as temperaturas da chapa (superior 177°C / inferior 218°C)</div><div class="sv-apt-btns"><button onclick="setApt('chapa',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-chapa-1"><div class="sv-apt-status" id="st-chapa-1">⬜</div><div class="sv-apt-text">Sabe ajustar para Clean Mode e aguardar READY TO CLEAN</div><div class="sv-apt-btns"><button onclick="setApt('chapa',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-chapa-2"><div class="sv-apt-status" id="st-chapa-2">⬜</div><div class="sv-apt-text">Executa a limpeza do Teflon corretamente (retirar, limpar 2 lados, repor alternando pares e ímpares)</div><div class="sv-apt-btns"><button onclick="setApt('chapa',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-chapa-3"><div class="sv-apt-status" id="st-chapa-3">⬜</div><div class="sv-apt-text">Conhece o tempo de cocção por tipo de carne (10:1: 39s · 4:1: 126s · 3:1: 156-160s)</div><div class="sv-apt-btns"><button onclick="setApt('chapa',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-chapa-4"><div class="sv-apt-status" id="st-chapa-4">⬜</div><div class="sv-apt-text">Sabe raspar a chapa a cada rodada e manter o Teflon limpo</div><div class="sv-apt-btns"><button onclick="setApt('chapa',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-chapa-5"><div class="sv-apt-status" id="st-chapa-5">⬜</div><div class="sv-apt-text">Conhece o limite máximo por rodada (6 carnes) e o GAP do bacon (090)</div><div class="sv-apt-btns"><button onclick="setApt('chapa',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-chapa-6"><div class="sv-apt-status" id="st-chapa-6">⬜</div><div class="sv-apt-text">Sabe usar o pegador correto por tipo de carne (vermelho = com cebola · azul = sem cebola e brancos)</div><div class="sv-apt-btns"><button onclick="setApt('chapa',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-chapa-7"><div class="sv-apt-status" id="st-chapa-7">⬜</div><div class="sv-apt-text">Conhece o tempo de vida do bacon (6h) e armazena corretamente no rack (partidos ao meio)</div><div class="sv-apt-btns"><button onclick="setApt('chapa',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-chapa-8"><div class="sv-apt-status" id="st-chapa-8">⬜</div><div class="sv-apt-text">Consegue operar sem supervisão por 30 minutos mantendo o padrão</div><div class="sv-apt-btns"><button onclick="setApt('chapa',8,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('chapa',8,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('chapa',8,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('chapa')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-lope">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('lope')">
+            <span>🥬 LOPE</span>
+            <span class="sv-apt-resumo" id="res-lope">—</span>
+            <span class="sv-apt-arr" id="arr-apt-lope">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-lope" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-lope-0"><div class="sv-apt-status" id="st-lope-0">⬜</div><div class="sv-apt-text">Sabe sanitizar o tomate (CHLORINE SANITIZER, 15–30 min) e fatiar na espessura correta (5–6mm)</div><div class="sv-apt-btns"><button onclick="setApt('lope',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-lope-1"><div class="sv-apt-status" id="st-lope-1">⬜</div><div class="sv-apt-text">Conhece o tempo de ambientação do tomate (2h) e sabe que não pode retornar à câmara após fatiar</div><div class="sv-apt-btns"><button onclick="setApt('lope',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-lope-2"><div class="sv-apt-status" id="st-lope-2">⬜</div><div class="sv-apt-text">Sabe reidratar a cebola (água 1–4°C, mínimo 1h) e conhece o tempo de vida (2h na mesa)</div><div class="sv-apt-btns"><button onclick="setApt('lope',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-lope-3"><div class="sv-apt-status" id="st-lope-3">⬜</div><div class="sv-apt-text">Conhece os volumes corretos de alface por produto (Big Mac: 12g/nível · McChicken: 12g · McNífico: 14g)</div><div class="sv-apt-btns"><button onclick="setApt('lope',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-lope-4"><div class="sv-apt-status" id="st-lope-4">⬜</div><div class="sv-apt-text">Conhece a temperatura ideal do queijo (15–18°C) e como organizá-lo (blocos de 20 fatias)</div><div class="sv-apt-btns"><button onclick="setApt('lope',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-lope-5"><div class="sv-apt-status" id="st-lope-5">⬜</div><div class="sv-apt-text">Executa a rota de reposição a cada 15 minutos verificando mesa, sucos, gelo e bebida láctea</div><div class="sv-apt-btns"><button onclick="setApt('lope',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-lope-6"><div class="sv-apt-status" id="st-lope-6">⬜</div><div class="sv-apt-text">Conhece os tempos de vida de todos os ingredientes na mesa de condimentação</div><div class="sv-apt-btns"><button onclick="setApt('lope',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-lope-7"><div class="sv-apt-status" id="st-lope-7">⬜</div><div class="sv-apt-text">Sabe aplicar PEPS corretamente no estoque de ingredientes</div><div class="sv-apt-btns"><button onclick="setApt('lope',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-lope-8"><div class="sv-apt-status" id="st-lope-8">⬜</div><div class="sv-apt-text">Consegue manter a mesa abastecida durante um período de pico completo</div><div class="sv-apt-btns"><button onclick="setApt('lope',8,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('lope',8,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('lope',8,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('lope')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-mcfritas">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('mcfritas')">
+            <span>🍟 McFritas</span>
+            <span class="sv-apt-resumo" id="res-mcfritas">—</span>
+            <span class="sv-apt-arr" id="arr-apt-mcfritas">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-mcfritas" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-mcfritas-0"><div class="sv-apt-status" id="st-mcfritas-0">⬜</div><div class="sv-apt-text">Conhece a temperatura das fritadeiras (168°C) e verifica antes de fritar</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-mcfritas-1"><div class="sv-apt-status" id="st-mcfritas-1">⬜</div><div class="sv-apt-text">Sabe o tempo de fritura das McFritas (3 min) e aplica o sal imediatamente após sair da fritadeira</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-mcfritas-2"><div class="sv-apt-status" id="st-mcfritas-2">⬜</div><div class="sv-apt-text">Conhece o tempo de validade das McFritas (7 min após salgadas)</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-mcfritas-3"><div class="sv-apt-status" id="st-mcfritas-3">⬜</div><div class="sv-apt-text">Usa o copo medidor correto para cada tamanho e porciona pelo fundo do cesto</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-mcfritas-4"><div class="sv-apt-status" id="st-mcfritas-4">⬜</div><div class="sv-apt-text">Verifica os Compostos Polares do óleo regularmente (limite: 24%)</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-mcfritas-5"><div class="sv-apt-status" id="st-mcfritas-5">⬜</div><div class="sv-apt-text">Conhece os sinais de óleo velho (cor escura, fumaça, espuma, odor) e sabe quando descartar</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-mcfritas-6"><div class="sv-apt-status" id="st-mcfritas-6">⬜</div><div class="sv-apt-text">Sabe filtrar o óleo a cada 4 horas de uso</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-mcfritas-7"><div class="sv-apt-status" id="st-mcfritas-7">⬜</div><div class="sv-apt-text">Conhece as causas de McFritas grudadas e como prevenir</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-mcfritas-8"><div class="sv-apt-status" id="st-mcfritas-8">⬜</div><div class="sv-apt-text">Mantém os sacos de batata em pé no congelador portátil e respeita a validade após abertura (8h)</div><div class="sv-apt-btns"><button onclick="setApt('mcfritas',8,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('mcfritas',8,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('mcfritas',8,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('mcfritas')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-fritos">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('fritos')">
+            <span>🍗 Fritos</span>
+            <span class="sv-apt-resumo" id="res-fritos">—</span>
+            <span class="sv-apt-arr" id="arr-apt-fritos">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-fritos" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-fritos-0"><div class="sv-apt-status" id="st-fritos-0">⬜</div><div class="sv-apt-text">Conhece a temperatura das fritadeiras de frango/tortas (168°C)</div><div class="sv-apt-btns"><button onclick="setApt('fritos',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('fritos',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('fritos',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-fritos-1"><div class="sv-apt-status" id="st-fritos-1">⬜</div><div class="sv-apt-text">Sabe o tempo de fritura do McChicken (3min30s), Chicken Select (4min), Nuggets (75s), Tortas (5min)</div><div class="sv-apt-btns"><button onclick="setApt('fritos',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('fritos',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('fritos',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-fritos-2"><div class="sv-apt-status" id="st-fritos-2">⬜</div><div class="sv-apt-text">Conhece os tempos de vida na UHC: McChicken (30 min), Nuggets (30 min), McCrispy (60 min), Tortas (30 min)</div><div class="sv-apt-btns"><button onclick="setApt('fritos',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('fritos',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('fritos',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-fritos-3"><div class="sv-apt-status" id="st-fritos-3">⬜</div><div class="sv-apt-text">Sabe posicionar os Nuggets em camada única no cesto</div><div class="sv-apt-btns"><button onclick="setApt('fritos',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('fritos',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('fritos',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-fritos-4"><div class="sv-apt-status" id="st-fritos-4">⬜</div><div class="sv-apt-text">Conhece o tempo de resfriamento das tortas (20 min, máx. 4 por cesta)</div><div class="sv-apt-btns"><button onclick="setApt('fritos',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('fritos',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('fritos',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-fritos-5"><div class="sv-apt-status" id="st-fritos-5">⬜</div><div class="sv-apt-text">Verifica a temperatura interna mínima do frango (74°C)</div><div class="sv-apt-btns"><button onclick="setApt('fritos',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('fritos',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('fritos',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-fritos-6"><div class="sv-apt-status" id="st-fritos-6">⬜</div><div class="sv-apt-text">Sabe identificar tortas com defeito (poucas bolhas = óleo frio ou torta úmida)</div><div class="sv-apt-btns"><button onclick="setApt('fritos',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('fritos',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('fritos',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-fritos-7"><div class="sv-apt-status" id="st-fritos-7">⬜</div><div class="sv-apt-text">Conoce os limites de empilhamento (Nuggets: máx. 3 caixas)</div><div class="sv-apt-btns"><button onclick="setApt('fritos',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('fritos',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('fritos',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('fritos')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-linha">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('linha')">
+            <span>🍔 Linha / Condimentação</span>
+            <span class="sv-apt-resumo" id="res-linha">—</span>
+            <span class="sv-apt-arr" id="arr-apt-linha">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-linha" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-linha-0"><div class="sv-apt-status" id="st-linha-0">⬜</div><div class="sv-apt-text">Monta os sanduíches principais (Big Mac, QPC, Cheeseburger, McDouble) com ingredientes e pesos corretos</div><div class="sv-apt-btns"><button onclick="setApt('linha',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('linha',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('linha',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-linha-1"><div class="sv-apt-status" id="st-linha-1">⬜</div><div class="sv-apt-text">Conhece o molho Big Mac (0,75oz / 3 tiros por nível) e a calibragem dos outros molhos</div><div class="sv-apt-btns"><button onclick="setApt('linha',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('linha',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('linha',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-linha-2"><div class="sv-apt-status" id="st-linha-2">⬜</div><div class="sv-apt-text">Executa a montagem em até 30 segundos</div><div class="sv-apt-btns"><button onclick="setApt('linha',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('linha',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('linha',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-linha-3"><div class="sv-apt-status" id="st-linha-3">⬜</div><div class="sv-apt-text">Conhece o ciclo de caramelização dos pães (11s) e os tempos de vida (15 min após tostar)</div><div class="sv-apt-btns"><button onclick="setApt('linha',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('linha',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('linha',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-linha-4"><div class="sv-apt-status" id="st-linha-4">⬜</div><div class="sv-apt-text">Sabe posicionar a base corretamente na mesa (lado cortado para cima)</div><div class="sv-apt-btns"><button onclick="setApt('linha',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('linha',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('linha',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-linha-5"><div class="sv-apt-status" id="st-linha-5">⬜</div><div class="sv-apt-text">Conhece o empilhamento máximo de pães (Big Mac: 8 / demais: 10)</div><div class="sv-apt-btns"><button onclick="setApt('linha',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('linha',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('linha',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-linha-6"><div class="sv-apt-status" id="st-linha-6">⬜</div><div class="sv-apt-text">Executa a dupla conferência antes de fechar o sanduíche</div><div class="sv-apt-btns"><button onclick="setApt('linha',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('linha',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('linha',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-linha-7"><div class="sv-apt-status" id="st-linha-7">⬜</div><div class="sv-apt-text">Conhece as causas de pão ressecado e como prevenir</div><div class="sv-apt-btns"><button onclick="setApt('linha',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('linha',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('linha',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('linha')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-influencer">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('influencer')">
+            <span>💰 Influencer / Caixa</span>
+            <span class="sv-apt-resumo" id="res-influencer">—</span>
+            <span class="sv-apt-arr" id="arr-apt-influencer">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-influencer" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-influencer-0"><div class="sv-apt-status" id="st-influencer-0">⬜</div><div class="sv-apt-text">Executa os passos do atendimento na ordem correta (saudar → registrar → sugerir → totalizar → receber → agradecer)</div><div class="sv-apt-btns"><button onclick="setApt('influencer',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('influencer',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('influencer',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-influencer-1"><div class="sv-apt-status" id="st-influencer-1">⬜</div><div class="sv-apt-text">Pratica a venda sugestiva de forma natural (combo, upgrade, complementar)</div><div class="sv-apt-btns"><button onclick="setApt('influencer',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('influencer',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('influencer',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-influencer-2"><div class="sv-apt-status" id="st-influencer-2">⬜</div><div class="sv-apt-text">Opera o POS corretamente: registra personalizações, cupons e Meu Méqui</div><div class="sv-apt-btns"><button onclick="setApt('influencer',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('influencer',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('influencer',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-influencer-3"><div class="sv-apt-status" id="st-influencer-3">⬜</div><div class="sv-apt-text">Conhece as formas de pagamento e a ordem de prioridade (voucher → dinheiro → débito → crédito)</div><div class="sv-apt-btns"><button onclick="setApt('influencer',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('influencer',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('influencer',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-influencer-4"><div class="sv-apt-status" id="st-influencer-4">⬜</div><div class="sv-apt-text">Mantém o dinheiro visível sobre o caixa até dar o troco</div><div class="sv-apt-btns"><button onclick="setApt('influencer',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('influencer',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('influencer',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-influencer-5"><div class="sv-apt-status" id="st-influencer-5">⬜</div><div class="sv-apt-text">Conhece o McLanche Feliz: confirma lanche, bebida e brinquedo</div><div class="sv-apt-btns"><button onclick="setApt('influencer',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('influencer',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('influencer',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-influencer-6"><div class="sv-apt-status" id="st-influencer-6">⬜</div><div class="sv-apt-text">Sabe registrar pedidos com personalizações usando modificadores no POS</div><div class="sv-apt-btns"><button onclick="setApt('influencer',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('influencer',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('influencer',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-influencer-7"><div class="sv-apt-status" id="st-influencer-7">⬜</div><div class="sv-apt-text">Tem boa postura, sorri e mantém contato visual durante o atendimento</div><div class="sv-apt-btns"><button onclick="setApt('influencer',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('influencer',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('influencer',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('influencer')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-drive">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('drive')">
+            <span>🚗 Drive-Thru</span>
+            <span class="sv-apt-resumo" id="res-drive">—</span>
+            <span class="sv-apt-arr" id="arr-apt-drive">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-drive" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-drive-0"><div class="sv-apt-status" id="st-drive-0">⬜</div><div class="sv-apt-text">Conhece o procedimento completo do COD (saudar, registrar, sugerir, confirmar, totalizar)</div><div class="sv-apt-btns"><button onclick="setApt('drive',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('drive',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('drive',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-drive-1"><div class="sv-apt-status" id="st-drive-1">⬜</div><div class="sv-apt-text">Sabe a diferença entre módulo vendedor (baixo volume) e módulo rápido (alto volume)</div><div class="sv-apt-btns"><button onclick="setApt('drive',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('drive',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('drive',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-drive-2"><div class="sv-apt-status" id="st-drive-2">⬜</div><div class="sv-apt-text">Executa o procedimento de pagamento na cabine corretamente (dinheiro visível, troco antecipado)</div><div class="sv-apt-btns"><button onclick="setApt('drive',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('drive',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('drive',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-drive-3"><div class="sv-apt-status" id="st-drive-3">⬜</div><div class="sv-apt-text">Conhece o uso do GPRS no Caixa Móvel</div><div class="sv-apt-btns"><button onclick="setApt('drive',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('drive',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('drive',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-drive-4"><div class="sv-apt-status" id="st-drive-4">⬜</div><div class="sv-apt-text">Nunca deixa espaço vazio na pista durante o atendimento</div><div class="sv-apt-btns"><button onclick="setApt('drive',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('drive',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('drive',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-drive-5"><div class="sv-apt-status" id="st-drive-5">⬜</div><div class="sv-apt-text">Sabe fazer a leitura de cupons digitais (QR Code ou código manual)</div><div class="sv-apt-btns"><button onclick="setApt('drive',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('drive',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('drive',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-drive-6"><div class="sv-apt-status" id="st-drive-6">⬜</div><div class="sv-apt-text">Conhece o tempo máximo de atendimento no COD (30s para iniciar)</div><div class="sv-apt-btns"><button onclick="setApt('drive',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('drive',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('drive',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-drive-7"><div class="sv-apt-status" id="st-drive-7">⬜</div><div class="sv-apt-text">Consegue manter o SOS dentro da meta durante pico</div><div class="sv-apt-btns"><button onclick="setApt('drive',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('drive',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('drive',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('drive')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-delivery">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('delivery')">
+            <span>📦 McDelivery</span>
+            <span class="sv-apt-resumo" id="res-delivery">—</span>
+            <span class="sv-apt-arr" id="arr-apt-delivery">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-delivery" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-delivery-0"><div class="sv-apt-status" id="st-delivery-0">⬜</div><div class="sv-apt-text">Faz a dupla conferência em todos os pedidos antes de lacrar</div><div class="sv-apt-btns"><button onclick="setApt('delivery',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('delivery',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('delivery',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-delivery-1"><div class="sv-apt-status" id="st-delivery-1">⬜</div><div class="sv-apt-text">Separa itens quentes e frios em sacolas distintas</div><div class="sv-apt-btns"><button onclick="setApt('delivery',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('delivery',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('delivery',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-delivery-2"><div class="sv-apt-status" id="st-delivery-2">⬜</div><div class="sv-apt-text">Lacra corretamente com adesivo e identifica o pedido</div><div class="sv-apt-btns"><button onclick="setApt('delivery',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('delivery',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('delivery',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-delivery-3"><div class="sv-apt-status" id="st-delivery-3">⬜</div><div class="sv-apt-text">Conhece o tempo meta de preparação (4 min) e o tempo máximo de espera do entregador (10 min)</div><div class="sv-apt-btns"><button onclick="setApt('delivery',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('delivery',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('delivery',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-delivery-4"><div class="sv-apt-status" id="st-delivery-4">⬜</div><div class="sv-apt-text">Coloca bebidas quentes com tampa lacrada na posição vertical</div><div class="sv-apt-btns"><button onclick="setApt('delivery',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('delivery',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('delivery',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-delivery-5"><div class="sv-apt-status" id="st-delivery-5">⬜</div><div class="sv-apt-text">Inclui mínimo 3 guardanapos e molhos em envelope separado</div><div class="sv-apt-btns"><button onclick="setApt('delivery',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('delivery',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('delivery',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-delivery-6"><div class="sv-apt-status" id="st-delivery-6">⬜</div><div class="sv-apt-text">Nunca libera pedido pelo nome — usa número do pedido ou código</div><div class="sv-apt-btns"><button onclick="setApt('delivery',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('delivery',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('delivery',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-delivery-7"><div class="sv-apt-status" id="st-delivery-7">⬜</div><div class="sv-apt-text">Conhece o procedimento para embalagem de sobremesas frias</div><div class="sv-apt-btns"><button onclick="setApt('delivery',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('delivery',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('delivery',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('delivery')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-salao">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('salao')">
+            <span>🪑 Salão / NGK</span>
+            <span class="sv-apt-resumo" id="res-salao">—</span>
+            <span class="sv-apt-arr" id="arr-apt-salao">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-salao" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-salao-0"><div class="sv-apt-status" id="st-salao-0">⬜</div><div class="sv-apt-text">Verifica o totem NGK antes de assumir (papel, tela, funcionamento)</div><div class="sv-apt-btns"><button onclick="setApt('salao',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('salao',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('salao',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-salao-1"><div class="sv-apt-status" id="st-salao-1">⬜</div><div class="sv-apt-text">Auxilia clientes com dificuldades de forma proativa sem assumir o controle do pedido</div><div class="sv-apt-btns"><button onclick="setApt('salao',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('salao',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('salao',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-salao-2"><div class="sv-apt-status" id="st-salao-2">⬜</div><div class="sv-apt-text">Conhece os serviços disponíveis no NGK (Meu Méqui, formas de pagamento, cupons)</div><div class="sv-apt-btns"><button onclick="setApt('salao',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('salao',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('salao',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-salao-3"><div class="sv-apt-status" id="st-salao-3">⬜</div><div class="sv-apt-text">Executa a rota de limpeza do salão a cada 15–30 min</div><div class="sv-apt-btns"><button onclick="setApt('salao',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('salao',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('salao',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-salao-4"><div class="sv-apt-status" id="st-salao-4">⬜</div><div class="sv-apt-text">Conhece o procedimento de limpeza de mesas, vidros e pisos</div><div class="sv-apt-btns"><button onclick="setApt('salao',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('salao',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('salao',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-salao-5"><div class="sv-apt-status" id="st-salao-5">⬜</div><div class="sv-apt-text">Faz rota de cortesia verificando satisfação dos clientes</div><div class="sv-apt-btns"><button onclick="setApt('salao',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('salao',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('salao',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-salao-6"><div class="sv-apt-status" id="st-salao-6">⬜</div><div class="sv-apt-text">Conhece o serviço Curbside e como direcionar o cliente</div><div class="sv-apt-btns"><button onclick="setApt('salao',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('salao',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('salao',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-salao-7"><div class="sv-apt-status" id="st-salao-7">⬜</div><div class="sv-apt-text">Inspeciona banheiros a cada 1 hora e mantém o padrão de higiene</div><div class="sv-apt-btns"><button onclick="setApt('salao',7,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('salao',7,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('salao',7,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('salao')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+        <div class="sv-apt-estacao" id="aptidao-limpeza_t">
+          <div class="sv-apt-header" onclick="toggleAptEstacao('limpeza_t')">
+            <span>🧹 Limpeza / Higiene</span>
+            <span class="sv-apt-resumo" id="res-limpeza_t">—</span>
+            <span class="sv-apt-arr" id="arr-apt-limpeza_t">▼</span>
+          </div>
+          <div class="sv-apt-body" id="body-apt-limpeza_t" style="display:none;">
+            <div class="info-block" style="margin-bottom:10px;">Avalie cada item: <strong>Sim</strong> = domina · <strong>Parcial</strong> = em desenvolvimento · <strong>Não</strong> = precisa de treino</div>
+            <div class="sv-apt-item" id="apt-limpeza_t-0"><div class="sv-apt-status" id="st-limpeza_t-0">⬜</div><div class="sv-apt-text">Conhece o sistema de 3 cubas (lavar 5min → enxaguar → sanitizar 1min → secar)</div><div class="sv-apt-btns"><button onclick="setApt('limpeza_t',0,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('limpeza_t',0,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('limpeza_t',0,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-limpeza_t-1"><div class="sv-apt-status" id="st-limpeza_t-1">⬜</div><div class="sv-apt-text">Sabe a diluição e uso do QSR Limpador para Chapas (90ml, produto correto)</div><div class="sv-apt-btns"><button onclick="setApt('limpeza_t',1,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('limpeza_t',1,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('limpeza_t',1,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-limpeza_t-2"><div class="sv-apt-status" id="st-limpeza_t-2">⬜</div><div class="sv-apt-text">Conhece o procedimento de limpeza da tostadeira (desligar, 60ml/2 pumps, não remover correias)</div><div class="sv-apt-btns"><button onclick="setApt('limpeza_t',2,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('limpeza_t',2,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('limpeza_t',2,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-limpeza_t-3"><div class="sv-apt-status" id="st-limpeza_t-3">⬜</div><div class="sv-apt-text">Sabe a diluição do desengordurante para pista Drive (500ml produto + 500ml água)</div><div class="sv-apt-btns"><button onclick="setApt('limpeza_t',3,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('limpeza_t',3,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('limpeza_t',3,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-limpeza_t-4"><div class="sv-apt-status" id="st-limpeza_t-4">⬜</div><div class="sv-apt-text">Higieniza as mãos a cada 30 minutos ou sempre que necessário</div><div class="sv-apt-btns"><button onclick="setApt('limpeza_t',4,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('limpeza_t',4,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('limpeza_t',4,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-limpeza_t-5"><div class="sv-apt-status" id="st-limpeza_t-5">⬜</div><div class="sv-apt-text">Conhece quais panos são usados em cada área e os mantém separados (chapa, salão, banheiro)</div><div class="sv-apt-btns"><button onclick="setApt('limpeza_t',5,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('limpeza_t',5,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('limpeza_t',5,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div><div class="sv-apt-item" id="apt-limpeza_t-6"><div class="sv-apt-status" id="st-limpeza_t-6">⬜</div><div class="sv-apt-text">Conhece as temperaturas mínimas de armazenamento (refrigerado: 1–4°C · congelado: -18°C)</div><div class="sv-apt-btns"><button onclick="setApt('limpeza_t',6,'sim')" class="sv-apt-btn sim">✓ Sim</button><button onclick="setApt('limpeza_t',6,'nao')" class="sv-apt-btn nao">✗ Não</button><button onclick="setApt('limpeza_t',6,'parcial')" class="sv-apt-btn parcial">~ Parcial</button></div></div>
+            <div style="margin-top:10px;display:flex;gap:8px;">
+              <button onclick="resetApt('limpeza_t')" style="flex:1;padding:10px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">↺ Resetar</button>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-acompanhamento">
+
+        <div class="section-label">Acompanhamento de Funcionários</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">📈</div><h2>Registro de Progresso</h2></div>
+          <div class="card-body">
+            <div class="info-block" style="margin-bottom:12px;">
+              Registre observações de desempenho e evolução de cada funcionário. Os dados ficam salvos neste dispositivo.
+            </div>
+            <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+              <div style="flex:2;min-width:140px;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">NOME</div>
+                <input type="text" id="ac-nome" placeholder="Nome do funcionário" style="width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+              </div>
+              <div style="min-width:90px;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">CRACHÁ Nº</div>
+                <input type="text" id="ac-cracha" placeholder="ex: 12345" style="width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+              </div>
+              <div style="min-width:120px;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">ESTAÇÃO</div>
+                <select id="ac-estacao" style="width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+                  <option>🔥 Chapa</option><option>🥬 LOPE</option><option>🍟 McFritas</option>
+                  <option>🍗 Fritos</option><option>🍔 Linha</option><option>💰 Caixa</option>
+                  <option>🚗 Drive-Thru</option><option>📦 McDelivery</option><option>🪑 Salão/NGK</option>
+                  <option>☕ McCafé</option><option>🧹 Limpeza</option><option>Geral</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">OBSERVAÇÃO</div>
+              <textarea id="ac-obs" placeholder="Desempenho, pontos de melhoria, evolução observada..." rows="3" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--bg);resize:vertical;margin-bottom:8px;"></textarea>
+            </div>
+            <div style="display:flex;gap:8px;margin-bottom:14px;">
+              <button onclick="salvarAcompanhamento()" style="flex:1;padding:11px;background:var(--red);color:#fff;border:none;border-radius:10px;font-family:var(--font-display);font-size:14px;font-weight:800;cursor:pointer;">💾 Salvar registro</button>
+              <button onclick="limparAcompanhamento()" style="padding:11px 14px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:14px;color:var(--muted);cursor:pointer;">🗑️</button>
+            </div>
+            <div id="ac-lista"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">📅</div><h2>Plano de Treinamento Semanal</h2></div>
+          <div class="card-body">
+            <div class="info-block" style="margin-bottom:10px;">Monte o plano da semana para um novo funcionário ou para reciclagem.</div>
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead><tr><th>Dia</th><th>Estação foco</th><th>Meta do dia</th><th>✅</th></tr></thead>
+                <tbody>
+                  <tr><td>Dia 1</td><td><input type="text" class="plano-input" placeholder="ex: Linha" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="text" class="plano-input" placeholder="ex: Montar Big Mac no tempo" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="checkbox"></td></tr>
+                  <tr><td>Dia 2</td><td><input type="text" class="plano-input" placeholder="" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="text" class="plano-input" placeholder="" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="checkbox"></td></tr>
+                  <tr><td>Dia 3</td><td><input type="text" class="plano-input" placeholder="" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="text" class="plano-input" placeholder="" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="checkbox"></td></tr>
+                  <tr><td>Dia 4</td><td><input type="text" class="plano-input" placeholder="" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="text" class="plano-input" placeholder="" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="checkbox"></td></tr>
+                  <tr><td>Dia 5</td><td><input type="text" class="plano-input" placeholder="" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="text" class="plano-input" placeholder="" style="width:100%;border:none;background:transparent;font-family:var(--font-body);color:var(--text);font-size:13px;"></td><td><input type="checkbox"></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tab-panel" id="panel-prova-ppi">
+        <div class="section-label">Prova PPI — Treinador</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">📝</div><h2>Simulado PPI — Treinador</h2></div>
+          <div class="card-body">
+            <div class="info-block">
+              <strong>113 questões dissertativas</strong> organizadas por tema. Escreva sua resposta e toque em <strong>Ver gabarito</strong> para conferir.
+            </div>
+            <div class="alert info" style="margin-top:8px;">
+              💡 As respostas ficam apenas neste dispositivo e não são enviadas a ninguém.
+            </div>
+          </div>
+        </div>
+
+        <div class="ppi-accordion">
+
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---drive-thru-e-deliv')">
+            <span>🚗 Drive-Thru e Delivery</span>
+            <span class="ppi-section-count">7 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---drive-thru-e-deliv">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---drive-thru-e-deliv" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">1</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quem é a pessoa que deve entregar o pedido em um carro que foi enviado para a área de espera?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q1',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q1" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">A pessoa do suporte / Tablet — responsável por levar o pedido ao carro na área de espera.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">2</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Tempo máximo que o cliente pode esperar no Drive para que o atendente o receba:</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q2',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q2" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">30 segundos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">3</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quais são os aspectos fundamentais que devemos considerar ao montar e preparar os pedidos do Mc Delivery?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q3',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q3" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Verificação do pedido (dupla conferência), embalagem correta separando quente e frio, lacre da sacola.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">4</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quem deve colocar a assinatura de verificação no pedido do Mc Delivery?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q4',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q4" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">A pessoa responsável pela conferência do pedido.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">5</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quais são os aspectos fundamentais que devem ser considerados para montar e preparar os pedidos de Mc Delivery?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q5',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q5" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Conferência dos itens, embalagem adequada separando quente/frio, lacre e identificação.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">6</div>
+            <div class="ppi-body">
+              <div class="ppi-question">No drive, quem realiza o segundo 'P' do procedimento: Pergunta, pergunta e fala?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q6',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q6" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">A pessoa do Tablet.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">7</div>
+            <div class="ppi-body">
+              <div class="ppi-question">O cliente solicitou bebidas para viagem, quando usamos o suporte neste caso?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q7',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q7" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Sempre — usar suporte porta-copos para pedidos de viagem.</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---bebidas-e-sobremes')">
+            <span>🥤 Bebidas e Sobremesas</span>
+            <span class="ppi-section-count">15 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---bebidas-e-sobremes">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---bebidas-e-sobremes" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">8</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o tempo de vida das bebidas quentes depois de pronta?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q8',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q8" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">30 minutos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">9</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual a temperatura de extração da mistura do sorvete</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q9',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q9" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">-1°C a 2°C.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">10</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a quantidade de cobertura que devemos colocar em um sundae?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q10',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q10" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">1oz (1 tiro) de cobertura.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">11</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quantas onças de sorvete um sundae deve ter?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q11',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q11" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">4,5oz de bebida láctea.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">12</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a temperatura do banho-maria das coberturas para sundae?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q12',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q12" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">46°C a 52°C.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">13</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual a temperatura de extração das coberturas de sorvete?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q13',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q13" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">46°C a 52°C.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">14</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de R2P?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q14',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q14" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">90 segundos (Ready to Present).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">15</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o tempo de vida do refrigerante depois de pronto?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q15',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q15" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">30 minutos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">16</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Não é um passo operacional da pessoa da bebidas balcão:</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q16',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q16" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Preparar carnes na chapa (função da pessoa da chapa).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">17</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a quantidade de gelo nas bebidas P, M e G respectivamente?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q17',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q17" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Seguir a marcação interna do copo (aproximadamente 1/3 do volume).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">18</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a temperatura de extração e o do banho-maria das coberturas?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q18',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q18" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Extração: 46°C a 52°C · Banho-maria: 46°C a 52°C.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">19</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a temperatura de extração do suco?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q19',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q19" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">1°C a 4°C.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">20</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual a temperatura do mix de sundae no reservatório?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q20',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q20" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">1°C a 4°C.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">21</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a descrição do padrão Ouro de Qualidade da casquinha?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q21',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q21" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">22</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a quantidade de gelo nas bebidas P,M e G respectivamente?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q22',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q22" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Seguir a marcação interna do copo (aproximadamente 1/3 do volume).</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---chapa-e-carnes')">
+            <span>🔥 Chapa e Carnes</span>
+            <span class="ppi-section-count">15 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---chapa-e-carnes">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---chapa-e-carnes" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">23</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Os filtros da chapa devem ser lavados:</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q23',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q23" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Diariamente, após o fechamento.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">24</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o tempo inicial para o cozimento das carnes de 10:1?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q24',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q24" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">39 segundos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">25</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Levando em consideração a rotação dos teflons, qual cor deve ser utilizado nos dias ímpares?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q25',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q25" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Teflon azul nos dias ímpares.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">26</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a quantidade máxima de Mc chicken que pode ser armazenada em uma bandeja de UHC?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q26',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q26" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">6 unidades por bandeja.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">27</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quando se deve raspar as chapas?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q27',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q27" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">A cada rodada de preparo de carnes, antes de colocar novas carnes.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">28</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a quantidade mínima de bandejas que devem ser mantidas de carne 10:1 sem cebola na UHC?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q28',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q28" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Mínimo 1 bandeja.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">29</div>
+            <div class="ppi-body">
+              <div class="ppi-question">É um procedimento operacional da pessoa da Chapas - Carnes vermelhas - 02 platens:</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q29',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q29" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Ativar os pães no sinal, colocar carnes nos platens, raspar e monitorar o timer.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">30</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a quantidade máxima de carnes 3:1 que devemos ativar?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q30',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q30" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">6 carnes por rodada.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">31</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a temperatura e o tempo de aquecimento das chapas?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q31',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q31" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">177°C (350°F) superior e 218°C (425°F) inferior.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">32</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de cozimento para as carnes de 4:1?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q32',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q32" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">126 segundos (Taylor Next Generation).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">33</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a quantidade máxima de carnes 4:1 que devemos ativar?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q33',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q33" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">6 carnes por rodada.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">34</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a temperatura mínima interna das carnes de frango e bovina respectivamente?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q34',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q34" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Frango: 74°C (165°F) · Bovina: 70°C (158°F).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">35</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de cozimento para as carnes de 3:1?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q35',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q35" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Aproximadamente 156 a 160 segundos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">36</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de cozimento para as carnes de McChicken?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q36',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q36" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">3 minutos e 30 segundos (210 segundos).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">37</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quem é o responsável por realizar o Checklist diário de carnes?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q37',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q37" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">O gerente ou responsável pela chapa no turno.</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---lope-e-condimenta-')">
+            <span>🥬 LOPE e Condimentação</span>
+            <span class="ppi-section-count">19 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---lope-e-condimenta-">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---lope-e-condimenta-" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">38</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o padrão de sabor que um Big Mac deve ter?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q38',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q38" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Saboroso, com equilíbrio de molho Big Mac, picles, cebola, alface e queijo.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">39</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o padrão de sabor que um Cheeseburger deve ter?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q39',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q39" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Sabor de carne grelhada, queijo derretido, ketchup, mostarda, picles e cebola equilibrados.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">40</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida da cebola reidratada depois de pronta?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q40',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q40" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">2 horas na mesa de condimentação.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">41</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o padrão de sabor que um McChicken deve ter?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q41',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q41" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Sabor suave de frango crocante com maionese e alface fresca.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">42</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual a quantidade de alface no sanduíche McChicken?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q42',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q42" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">12g de alface.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">43</div>
+            <div class="ppi-body">
+              <div class="ppi-question">A qual temperatura devemos conservar os molhos de Big Mac?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q43',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q43" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">1°C a 4°C (refrigerado).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">44</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Para qual lado a base deve ficar quando colocamos na mesa de condimentação?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q44',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q44" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Lado cortado para cima, voltado para o atendente.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">45</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quais dos itens abaixo não faz parte da aparência do Big Mac?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q45',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q45" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Ausência de sementes no pão intermediário (apenas a coroa tem sementes).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">46</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a calibragem do molho Big Mac?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q46',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q46" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">0,75oz (3 tiros) por nível.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">47</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é quantidade de alface no Big Mac?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q47',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q47" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">12g por nível.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">48</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o empilhamento máximo dos pães de Big Mac e dos demais pães?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q48',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q48" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Big Mac: 8 pães · Demais: 10 pães.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">49</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de ambientação do molho Cheddar?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q49',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q49" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Mínimo 30 minutos em temperatura ambiente.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">50</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual tempo de vida secundário da cebola reidratada?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q50',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q50" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">2 horas na mesa de condimentação.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">51</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quantas gramas de alface colocamos no Mcnífico?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q51',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q51" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">14g.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">52</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a capacidade de carnes de McChicken em uma gaveta?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q52',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q52" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">6 unidades.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">53</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o tempo de vida primário do tomate?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q53',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q53" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">2 horas na mesa de condimentação.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">54</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a quantidade de mostarda nos sanduíches a cada 1 tiro?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q54',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q54" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">0,25oz por tiro.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">55</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o rendimento da mostarda pouch?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q55',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q55" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Aproximadamente 80 tiros por pouch.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">56</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida primário da mostarda pouch?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q56',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q56" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">14 dias após aberto.</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---mcfritas-e-fritos')">
+            <span>🍟 McFritas e Fritos</span>
+            <span class="ppi-section-count">24 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---mcfritas-e-fritos">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---mcfritas-e-fritos" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">57</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quais são os inimigos da gordura?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q57',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q57" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Sal, água, resíduos de alimentos e temperatura incorreta.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">58</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Por que devemos sacudir as McFritas após 30 segundos?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q58',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q58" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Para eliminar o excesso de gordura e garantir a crocância.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">59</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a temperatura do óleo para cozinhar McNuggets?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q59',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q59" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">168°C (335°F).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">60</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quais são as principais características das Batatas Fritas padrão do McDonald's?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q60',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q60" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Douradas, crocantes por fora, macias por dentro, bem salgadas e servidas quentes.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">61</div>
+            <div class="ppi-body">
+              <div class="ppi-question">O que pode ter acontecido para que uma torta tenha poucas bolhas ou nenhuma?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q61',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q61" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Óleo frio demais, torta molhada ou congelada ao ser colocada na fritadeira.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">62</div>
+            <div class="ppi-body">
+              <div class="ppi-question">O que pode ter acontecido quando encontramos McFritas grudadas?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q62',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q62" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Excesso de batatas no cesto, óleo frio ou cesto não sacudido após imersão.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">63</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Pensando no cliente, o que a pessoa do Salão deve fazer?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q63',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q63" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Manter o salão limpo, organizado, abordar clientes proativamente.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">64</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a principal causa de uma Mc Fritas com quantidade imprópria de sal?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q64',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q64" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Aplicar o sal depois que as batatas esfriaram.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">65</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o sinal que temos quando a gordura está velha?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q65',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q65" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">66</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida do óleo vegetal?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q66',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q66" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">14 dias ou conforme Compostos Polares (máx. 24%).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">67</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida dos molhos de Mc Nuggets?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q67',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q67" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">30 dias após aberto, refrigerado.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">68</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida primário das Mc Fritas?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q68',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q68" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">7 minutos após salgadas.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">69</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual tempo de vida secundário das tortas?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q69',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q69" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">30 minutos após a fritura.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">70</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual empilhamento máximo das caixa de McNuggets?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q70',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q70" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Máximo 3 caixas empilhadas.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">71</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quais causas que podem diminuir o tempo de vida da gordura?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q71',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q71" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Sal, água, resíduos, temperatura incorreta e não filtrar regularmente.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">72</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a primeira coisa que a pessoa do chão do Salão deve realizar antes de limpar a área com esfregão?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q72',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q72" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Varrer com vassoura e recolher os resíduos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">73</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a principal causa de uma McFritas com quantidade imprópria de sal?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q73',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q73" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Aplicar o sal depois que as batatas esfriaram.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">74</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o peso de uma McFritas Kids, pequena, Média e Grande respectivamente?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q74',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q74" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Kids: 65g · P: 87g · M: 102g · G: 150g.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">75</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de drenagem das McFritas?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q75',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q75" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">5 segundos sobre a fritadeira.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">76</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de resfriamento das tortas e quantas no máximo que podemos ativar?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q76',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q76" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">20 minutos de resfriamento · Máximo 4 tortas por cesta.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">77</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual pode ser a causa de uma torta fria demais?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q77',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q77" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Temperatura do óleo baixa ou tempo insuficiente de fritura.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">78</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida primário das McFritas?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q78',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q78" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">7 minutos após salgadas.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">79</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida do óleo vegetal?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q79',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q79" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">14 dias ou conforme Compostos Polares (máx. 24%).</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">80</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida dos molhos de McNuggets?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q80',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q80" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">30 dias após aberto, refrigerado.</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---linha-e-sandu-ches')">
+            <span>🍔 Linha e Sanduíches</span>
+            <span class="ppi-section-count">10 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---linha-e-sandu-ches">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---linha-e-sandu-ches" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">81</div>
+            <div class="ppi-body">
+              <div class="ppi-question">O que significa a estocagem 24/2?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q81',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q81" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">24 horas de validade no refrigerador / 2 horas na mesa de condimentação.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">82</div>
+            <div class="ppi-body">
+              <div class="ppi-question">O que significa comida segura?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q82',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q82" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Alimento preparado dentro dos padrões de temperatura, higiene e tempo de vida, sem risco de contaminação.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">83</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Para que serve a caramelização dos pães</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q83',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q83" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Criar superfície dourada e crocante que melhora sabor, textura e aparência do sanduíche.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">84</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Como deve ser o padrão de temperatura dos sanduíches?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q84',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q84" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Servidos quentes, acima de 60°C internamente.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">85</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual deve ser o tempo de montagem de um produto na linha?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q85',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q85" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Máximo de 30 segundos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">86</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quais são as causas de um pão ressecado?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q86',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q86" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Pão exposto sem cobertura, caramelização excessiva ou temperatura alta da tostadeira.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">87</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o procedimento certo para abrir os sacos de pães?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q87',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q87" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Abrir pelo lado correto indicado no saco, nunca rasgar lateralmente.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">88</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é o tempo de vida do pão fresco?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q88',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q88" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">15 minutos após sair da tostadeira.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">89</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o ciclo de caramelização dos pães?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q89',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q89" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">11 segundos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">90</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o ciclo de caramelização?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q90',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q90" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">11 segundos.</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---atendimento-e-vend')">
+            <span>🎯 Atendimento e Vendas</span>
+            <span class="ppi-section-count">7 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---atendimento-e-vend">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---atendimento-e-vend" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">91</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Em relação à Evolução da Cooltura de Serviço, qual é o nosso propósito?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q91',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q91" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Ser referência em atendimento ao cliente, criando experiências inesquecíveis.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">92</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Mencione uma das três metas fundamentais do programa Influencer Vendedor:</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q92',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q92" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Aumentar o ticket médio, aumentar a frequência de visitas, ou melhorar a satisfação do cliente.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">93</div>
+            <div class="ppi-body">
+              <div class="ppi-question">O que significa Dual Point?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q93',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q93" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Sistema onde o cliente faz o pedido em um ponto e retira em outro ponto separado.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">94</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Porque devemos Utilizar as Técnicas de Influencers Vendedores?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q94',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q94" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Para aumentar ticket médio, melhorar a experiência do cliente e atingir as metas.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">95</div>
+            <div class="ppi-body">
+              <div class="ppi-question">É um objetivo da Abordagem de Vendas:</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q95',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q95" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Aumentar o ticket médio oferecendo combos, upgrades e itens complementares.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">96</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual dos itens não faz parte do trinômio de treinamento?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q96',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q96" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">O trinômio é: Demonstrar, Praticar, Avaliar.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">97</div>
+            <div class="ppi-body">
+              <div class="ppi-question">O que queremos mostrar a com a técnica de Influencer Vendedor &quot;Vivenciamos as mesmas coisas&quot;?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q97',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q97" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Criar conexão com o cliente mostrando empatia e experiência comum.</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---higiene-e-limpeza')">
+            <span>🧹 Higiene e Limpeza</span>
+            <span class="ppi-section-count">7 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---higiene-e-limpeza">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---higiene-e-limpeza" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">98</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Com que frequência os utensílios da cozinha que entram em contato com os alimentos devem ser limpos e higienizados?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q98',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q98" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">A cada 4 horas ou sempre que necessário.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">99</div>
+            <div class="ppi-body">
+              <div class="ppi-question">De quanto em quanto tempo deve ser feita a rota dos banheiros?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q99',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q99" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">A cada 1 hora.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">100</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual a frequência de lavagem das mãos?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q100',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q100" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">A cada 30 minutos ou sempre que necessário.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">101</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a temperatura interna mínima dos produtos na UHC?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q101',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q101" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">60°C.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">102</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual a frequência de lavagem dos utensílios da cozinha?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q102',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q102" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">A cada 4 horas.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">103</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual a temperatura que devemos manter os produtos congelados?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q103',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q103" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">-18°C ou abaixo.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">104</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a temperatura do Refrigerador do Balcão?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q104',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q104" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">1°C a 4°C.</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---gest-o-e-treinamen')">
+            <span>📋 Gestão e Treinamento</span>
+            <span class="ppi-section-count">5 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---gest-o-e-treinamen">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---gest-o-e-treinamen" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">105</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Em que ano Ray Kroc fundou o McDonald's e abriu seu primeiro restaurante?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q105',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q105" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">1955, em Des Plaines, Illinois.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">106</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Os princípios da Cooltua de Serviço são:</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q106',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q106" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Sorrir, Ser gentil, Ser ágil, Antecipar as necessidades do cliente.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">107</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual o tempo de reação do iniciador</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q107',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q107" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">8 segundos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">108</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Quais são os atributos de qualidade dos nossos produtos?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q108',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q108" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Aparência, sabor, temperatura e textura corretos.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">109</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Como deve estar configurada a tela de pedidos do iniciador?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q109',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q109" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Exibir o item de maior tempo de preparo primeiro (modo de prioridade).</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="ppi-section">
+          <button class="ppi-section-btn" onclick="toggleSection('acc---geral')">
+            <span>📝 Geral</span>
+            <span class="ppi-section-count">4 questões</span>
+            <span class="ppi-section-arrow" id="arr-acc---geral">▼</span>
+          </button>
+          <div class="ppi-section-body" id="acc---geral" style="display:none;">
+
+          <div class="ppi-item">
+            <div class="ppi-num">110</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Com qual pegador devemos manipular as carnes brancas após o cozimento?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q110',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q110" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Pegador azul.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">111</div>
+            <div class="ppi-body">
+              <div class="ppi-question">O que acontecerá se deixarmos os pães descobertos?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q111',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q111" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Os pães ressecarão e perderão umidade.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">112</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Qual é a descrição do Padrão Ouro de Qualidade do Cheeseburguer?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q112',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q112" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Pão caramelizado, carne suculenta, queijo derretido, ketchup, mostarda, picles e cebola na proporção certa.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ppi-item">
+            <div class="ppi-num">113</div>
+            <div class="ppi-body">
+              <div class="ppi-question">Todas as temperaturas internas dos produtos de frango devem estar a 74°C (165°F) ou mais depois de ser cozidos?</div>
+              <textarea class="ppi-answer" placeholder="Escreva sua resposta aqui..." rows="2"></textarea>
+              <button class="ppi-gab-btn" onclick="toggleGab('q113',this)">👁️ Ver gabarito</button>
+              <div class="ppi-gabarito" id="q113" style="display:none;">
+                <div class="ppi-gab-label">📖 Gabarito</div>
+                <div class="ppi-gab-text">Sim — 74°C (165°F) é a temperatura interna mínima para todos os produtos de frango.</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-quiz-ppi">
+        <div class="section-label">Quiz da Prova PPI</div>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-head-icon">🎯</div>
+            <h2>Quiz PPI — Múltipla Escolha</h2>
+            <div class="badge badge-red">81 perguntas</div>
+          </div>
+          <div class="card-body">
+            <div class="info-block" style="margin-bottom:10px;">
+              Versão com alternativas das perguntas da Prova PPI. Ideal para treinar antes da avaliação oficial.
+            </div>
+            <div id="quiz-ppi-app"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-feedback">
+        <div class="section-label">Técnicas de Feedback</div>
+
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">💬</div><h2>Modelo SBI — Situação · Comportamento · Impacto</h2></div>
+          <div class="card-body">
+            <div class="info-block">
+              O <strong>SBI</strong> é o modelo padrão para dar feedback construtivo de forma clara, objetiva e respeitosa. Use sempre que precisar corrigir ou elogiar um atendente.
+            </div>
+            <div class="rota-items" style="margin-top:12px;">
+              <div class="rota-head c1">S — Situação</div>
+              <div class="rota-item">Descreva <em>quando e onde</em> o comportamento aconteceu.<br><span style="font-size:12px;opacity:.75;">Ex: "Hoje, às 13h, durante o pico no Drive-Thru..."</span></div>
+              <div class="rota-head c2">B — Comportamento</div>
+              <div class="rota-item">Descreva <em>o que você observou</em> de forma concreta — sem julgamentos.<br><span style="font-size:12px;opacity:.75;">Ex: "...você esqueceu de salgar as McFritas antes de servir..."</span></div>
+              <div class="rota-head c3">I — Impacto</div>
+              <div class="rota-item">Explique o <em>efeito real</em> do comportamento no cliente, equipe ou operação.<br><span style="font-size:12px;opacity:.75;">Ex: "...e o cliente reclamou que estava sem sal, o que gerou uma reposição e atraso."</span></div>
+            </div>
+            <div class="alert info" style="margin-top:12px;">
+              💡 Após o SBI, pergunte: <strong>"O que você faria diferente da próxima vez?"</strong> — isso ativa a reflexão sem impor a solução.
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">🏆</div><h2>Feedback Positivo — Como Elogiar Corretamente</h2></div>
+          <div class="card-body">
+            <div class="info-block">
+              Elogios genéricos ("bom trabalho") têm pouco efeito. Elogios <strong>específicos e imediatos</strong> reforçam o comportamento correto.
+            </div>
+            <div class="rota-items" style="margin-top:12px;">
+              <div class="rota-head c2">Fórmula do Elogio Eficaz</div>
+              <div class="rota-item"><strong>Nomear + Comportamento + Impacto</strong><br>
+              Ex: <em>"Carlos, você percebeu que o cliente estava com dificuldade no totem e foi ajudar sem esperar ser chamado. Isso é exatamente a Cooltura de Serviço que queremos!"</em></div>
+              <div class="rota-head c1">Timing</div>
+              <div class="rota-item">Dê o elogio <strong>na hora</strong> ou logo depois — não acumule para o final do turno.</div>
+              <div class="rota-head c3">Público vs Privado</div>
+              <div class="rota-item"><strong>Elogios:</strong> podem ser feitos em público para motivar a equipe.<br><strong>Correções:</strong> sempre em particular — nunca exponha o funcionário na frente dos outros.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">📝</div><h2>Registro de Feedback</h2></div>
+          <div class="card-body">
+            <div class="info-block" style="margin-bottom:12px;">
+              Registre os feedbacks dados para acompanhar a evolução. Dados salvos apenas neste dispositivo.
+            </div>
+            <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+              <div style="flex:2;min-width:130px;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">FUNCIONÁRIO</div>
+                <input type="text" id="fb-nome" placeholder="Nome..." style="width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+              </div>
+              <div style="min-width:110px;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">TIPO</div>
+                <select id="fb-tipo" style="width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+                  <option value="positivo">✅ Positivo</option>
+                  <option value="corretivo">🔧 Corretivo</option>
+                  <option value="desenvolvimento">📈 Desenvolvimento</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">FEEDBACK (Situação · Comportamento · Impacto)</div>
+              <textarea id="fb-texto" rows="3" placeholder="Ex: Durante o pico (S), você não salgou as fritas antes de servir (B), o que gerou reclamação do cliente (I)." style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--bg);resize:vertical;margin-bottom:8px;"></textarea>
+            </div>
+            <button onclick="salvarFeedback()" style="width:100%;padding:11px;background:var(--red);color:#fff;border:none;border-radius:10px;font-family:var(--font-display);font-size:14px;font-weight:800;cursor:pointer;margin-bottom:12px;">💾 Salvar feedback</button>
+            <div id="fb-lista"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">⚠️</div><h2>Erros Comuns ao Dar Feedback</h2></div>
+          <div class="card-body">
+            <div class="rota-items">
+              <div class="rota-head c4">❌ Evitar</div>
+              <div class="rota-item">Feedback vago: <em>"Você tem que melhorar"</em> — sem especificar o quê</div>
+              <div class="rota-item">Acumular feedback: guardar vários problemas para falar de uma vez</div>
+              <div class="rota-item">Feedback na frente de clientes ou da equipe</div>
+              <div class="rota-item">Comparar com outros funcionários: <em>"O João faz assim..."</em></div>
+              <div class="rota-item">Misturar feedback com avaliação de caráter: <em>"Você é descuidado"</em></div>
+              <div class="rota-head c2">✅ Fazer</div>
+              <div class="rota-item">Ser específico, imediato e focado no comportamento (não na pessoa)</div>
+              <div class="rota-item">Terminar com uma pergunta que ative a reflexão</div>
+              <div class="rota-item">Verificar se a pessoa entendeu e perguntar se precisa de apoio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="tab-panel" id="panel-quiz-area">
+        <div class="section-label">Simulado</div>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-head-icon">🎯</div>
+            <h2>Quiz — Conteúdo para Treinadores</h2>
+          </div>
+          <div class="card-body">
+            <div id="quiz-app"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Conteúdo para Treinadores · Área Restrita
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* PPI Functions */
+    window.toggleGab = function(id, btn) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var visible = el.style.display !== 'none';
+      el.style.display = visible ? 'none' : 'block';
+      btn.textContent = visible ? '👁️ Ver gabarito' : '🙈 Esconder gabarito';
+    };
+
+    window.toggleSection = function(id) {
+      var body = document.getElementById(id);
+      var arr  = document.getElementById('arr-' + id);
+      if (!body) return;
+      var open = body.style.display !== 'none';
+      body.style.display = open ? 'none' : 'block';
+      if (arr) arr.style.transform = open ? '' : 'rotate(180deg)';
+    };
+
+    /* ===== APTIDÃO TOOLS ===== */
+    var _aptData = {};
+
+    window.setApt = function(estacao, idx, valor) {
+      if (!_aptData[estacao]) _aptData[estacao] = {};
+      _aptData[estacao][idx] = valor;
+      var st = document.getElementById('st-' + estacao + '-' + idx);
+      if (st) {
+        st.textContent = valor === 'sim' ? '✅' : valor === 'nao' ? '❌' : '⚠️';
+        st.style.fontSize = '18px';
+      }
+      // Highlight selected button
+      var item = document.getElementById('apt-' + estacao + '-' + idx);
+      if (item) {
+        item.querySelectorAll('.sv-apt-btn').forEach(function(b) { b.style.opacity = '0.4'; });
+        var active = item.querySelector('.sv-apt-btn.' + valor);
+        if (active) active.style.opacity = '1';
+      }
+      updateAptResumo(estacao);
+    };
+
+    function updateAptResumo(estacao) {
+      var res = document.getElementById('res-' + estacao);
+      if (!res) return;
+      var d = _aptData[estacao] || {};
+      var sim = 0, parcial = 0, nao = 0, total = Object.keys(d).length;
+      Object.values(d).forEach(function(v) {
+        if (v === 'sim') sim++;
+        else if (v === 'parcial') parcial++;
+        else nao++;
+      });
+      if (!total) { res.textContent = '—'; res.style.color = 'var(--muted)'; return; }
+      var color = nao === 0 && parcial === 0 ? '#2e7d32' : nao === 0 ? '#f57f17' : '#c62828';
+      var label = nao === 0 && parcial === 0 ? '✅ Apto' : nao === 0 ? '⚠️ Em desenvolvimento' : '❌ Requer treino';
+      res.textContent = label;
+      res.style.color = color;
+    }
+
+    window.resetApt = function(estacao) {
+      _aptData[estacao] = {};
+      document.querySelectorAll('[id^="st-' + estacao + '-"]').forEach(function(el) {
+        el.textContent = '⬜'; el.style.fontSize = '';
+      });
+      document.querySelectorAll('[id^="apt-' + estacao + '-"] .sv-apt-btn').forEach(function(b) {
+        b.style.opacity = '1';
+      });
+      updateAptResumo(estacao);
+    };
+
+    window.toggleAptEstacao = function(eid) {
+      var body = document.getElementById('body-apt-' + eid);
+      var arr  = document.getElementById('arr-apt-' + eid);
+      if (!body) return;
+      var open = body.style.display !== 'none';
+      body.style.display = open ? 'none' : 'block';
+      if (arr) arr.style.transform = open ? '' : 'rotate(180deg)';
+    };
+
+    /* ===== ACOMPANHAMENTO ===== */
+    var _acData = JSON.parse(localStorage.getItem('mc_acompanhamento') || '[]');
+
+    function renderAcompanhamento() {
+      var lista = document.getElementById('ac-lista');
+      if (!lista) return;
+      if (!_acData.length) {
+        lista.innerHTML = '<div style="font-size:12px;color:var(--muted);text-align:center;padding:8px;">Nenhum registro ainda.</div>';
+        return;
+      }
+      lista.innerHTML = _acData.slice().reverse().map(function(r) {
+        return '<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:6px;">'
+          + '<div style="display:flex;justify-content:space-between;margin-bottom:4px;">'
+          + '<strong style="font-size:13px;color:var(--text);">' + r.nome.replace(/</g,'&lt;') + '</strong>'
+          + (r.cracha ? '<span style="font-size:11px;background:#e3f2fd;padding:2px 8px;border-radius:20px;color:#1565c0;border:1px solid #90caf9;font-weight:700;">🪪 ' + r.cracha.replace(/</g,'&lt;') + '</span>' : '')
+          + '<span style="font-size:11px;background:var(--card);padding:2px 8px;border-radius:20px;color:var(--muted);border:1px solid var(--border);">' + r.estacao + '</span>'
+          + '</div>'
+          + '<div style="font-size:12px;color:var(--muted);margin-bottom:4px;">' + r.data + '</div>'
+          + '<div style="font-size:13px;color:var(--text);white-space:pre-wrap;">' + r.obs.replace(/</g,'&lt;') + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    window.salvarAcompanhamento = function() {
+      var nome   = document.getElementById('ac-nome');
+      var cracha = document.getElementById('ac-cracha');
+      var est    = document.getElementById('ac-estacao');
+      var obs    = document.getElementById('ac-obs');
+      if (!nome || !nome.value.trim() || !obs || !obs.value.trim()) return;
+      var now = new Date();
+      _acData.push({
+        nome: nome.value.trim(),
+        cracha: cracha ? cracha.value.trim() : '',
+        estacao: est ? est.value : 'Geral',
+        obs: obs.value.trim(),
+        data: now.toLocaleDateString('pt-BR') + ' ' + now.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'})
+      });
+      if (_acData.length > 100) _acData = _acData.slice(-100);
+      localStorage.setItem('mc_acompanhamento', JSON.stringify(_acData));
+      obs.value = '';
+      nome.value = '';
+      if (cracha) cracha.value = '';
+      renderAcompanhamento();
+      renderFeedbacks();
+    };
+
+    window.limparAcompanhamento = function() {
+      if (!confirm('Limpar todos os registros de acompanhamento?')) return;
+      _acData = [];
+      localStorage.removeItem('mc_acompanhamento');
+      renderAcompanhamento();
+    };
+
+        document.addEventListener('DOMContentLoaded', function() {
+      if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+        unlock();
+      }
+      renderAcompanhamento();
+      var input = document.getElementById('pw-input');
+      if (input) input.focus();
+
+      // Quiz PPI init
+      var quizPpiPanel = document.getElementById('panel-quiz-ppi');
+      if (quizPpiPanel) {
+        var observerPpi = new MutationObserver(function() {
+          if (quizPpiPanel.classList.contains('active')) {
+            var appEl = document.getElementById('quiz-ppi-app');
+            if (appEl) appEl.id = 'quiz-app';
+            initQuiz(QUIZ_PPI, 'Quiz PPI — Treinador');
+            observerPpi.disconnect();
+          }
+        });
+        observerPpi.observe(quizPpiPanel, { attributes: true, attributeFilter: ['class'] });
+      }
+
+      var quizPanel = document.getElementById('panel-quiz-area');
+      if (quizPanel) {
+        var observer = new MutationObserver(function() {
+          if (quizPanel.classList.contains('active')) {
+            initQuiz(QUIZ_TREINADORES, 'Conteúdo para Treinadores');
+            observer.disconnect();
+          }
+        });
+        observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
+        if (quizPanel.classList.contains('active')) initQuiz(QUIZ_TREINADORES, 'Conteúdo para Treinadores');
+      }
+    });
+
+    /* ===== FEEDBACK ===== */
+    var _fbData = JSON.parse(localStorage.getItem('mc_feedback') || '[]');
+
+    function renderFeedbacks() {
+      var lista = document.getElementById('fb-lista');
+      if (!lista) return;
+      if (!_fbData.length) {
+        lista.innerHTML = '<div style="font-size:12px;color:var(--muted);text-align:center;padding:8px;">Nenhum feedback registrado ainda.</div>';
+        return;
+      }
+      var tipoColors = { positivo: '#e8f5e9|#2e7d32|✅', corretivo: '#fff3e0|#e65100|🔧', desenvolvimento: '#e3f2fd|#1565c0|📈' };
+      lista.innerHTML = _fbData.slice().reverse().map(function(r) {
+        var c = (tipoColors[r.tipo] || '').split('|');
+        return '<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:6px;">'
+          + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">'
+          + '<strong style="font-size:13px;">' + r.nome.replace(/</g,'&lt;') + '</strong>'
+          + '<span style="font-size:11px;padding:2px 8px;border-radius:20px;background:' + (c[0]||'var(--bg)') + ';color:' + (c[1]||'var(--muted)') + ';border:1px solid ' + (c[1]||'var(--border)') + ';font-weight:700;">' + (c[2]||'') + ' ' + (r.tipo||'') + '</span>'
+          + '</div>'
+          + '<div style="font-size:11px;color:var(--muted);margin-bottom:4px;">' + r.data + '</div>'
+          + '<div style="font-size:13px;color:var(--text);white-space:pre-wrap;">' + r.texto.replace(/</g,'&lt;') + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    window.salvarFeedback = function() {
+      var nome  = document.getElementById('fb-nome');
+      var tipo  = document.getElementById('fb-tipo');
+      var texto = document.getElementById('fb-texto');
+      if (!nome || !nome.value.trim() || !texto || !texto.value.trim()) return;
+      var now = new Date();
+      _fbData.push({
+        nome: nome.value.trim(),
+        tipo: tipo ? tipo.value : 'positivo',
+        texto: texto.value.trim(),
+        data: now.toLocaleDateString('pt-BR') + ' ' + now.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'})
+      });
+      if (_fbData.length > 200) _fbData = _fbData.slice(-200);
+      localStorage.setItem('mc_feedback', JSON.stringify(_fbData));
+      nome.value = ''; texto.value = '';
+      renderFeedbacks();
+    };
+
+        const QUIZ_TREINADORES = [
+      { category: "📋 Treinadores · Papel", question: "Qual é a principal ferramenta de treinamento digital disponível para atendentes?", options: ["YouTube", "Plataforma SABER", "Google Classroom", "WhatsApp"], answer: "Plataforma SABER", explanation: "A plataforma SABER contém os módulos complementares de cada estação do restaurante." },
+      { category: "📋 Treinadores · Papel", question: "O treinador deve operar as funções dentro de qual padrão?", options: ["80% dos procedimentos", "90% dos procedimentos", "100% dos procedimentos (QSL&V)", "Apenas os procedimentos principais"], answer: "100% dos procedimentos (QSL&V)", explanation: "O treinador deve operar dentro dos mais altos padrões de QSL&V — 100% dos procedimentos." },
+      { category: "📋 Treinadores · Fluxo", question: "No fluxo de treinamento do McCafé, qual é a primeira função a ser treinada?", options: ["Caixa (Influencer Vendedor)", "Bebidas quentes e frias", "Forno e Vitrine", "Entrega Interna"], answer: "Bebidas quentes e frias", explanation: "Fluxo McCafé: 1ª Bebidas quentes/frias → 2ª Forno/Vitrine/Estocagem → 3ª Caixa/Entrega/Salão." },
+      { category: "📋 Treinadores · Fluxo", question: "Quantos dias e funções abrange o treinamento completo do McCafé?", options: ["3 dias, 5 funções", "4 dias, 6 funções", "5 dias, 8 funções", "7 dias, 10 funções"], answer: "5 dias, 8 funções", explanation: "O treinamento do McCafé abrange 5 dias e 8 funções diferentes." },
+      { category: "📋 Treinadores · Validação", question: "Antes de liberar o atendente para operar sozinho, o que o treinador deve fazer?", options: ["Assinar a folha de ponto", "Validar o aprendizado com feedback constante", "Avisar apenas o gerente", "Não é necessário validar"], answer: "Validar o aprendizado com feedback constante", explanation: "O treinador deve validar o aprendizado antes de liberar o atendente para operar sozinho." },
+      { category: "📋 Treinadores · Checklists", question: "Após quantos minutos de funcionamento a máquina de café deve ter a temperatura verificada na abertura?", options: ["15 minutos", "30 minutos", "45 minutos", "60 minutos"], answer: "30 minutos", explanation: "Ligar a máquina e após 30 minutos verificar a temperatura da água (75°C a 85°C)." },
+      { category: "📋 Treinadores · Checklists", question: "O que deve ser separado no fechamento para ambientação de 12 horas?", options: ["Tomates para fatiar", "Cebolas para reidratação", "Pães Brioche para descongelamento", "Bacon para o dia seguinte"], answer: "Pães Brioche para descongelamento", explanation: "No fechamento, separar pães Brioche: 12h de descongelamento + 36h de uso = 48h total." },
+      { category: "📋 Treinadores · Orientação", question: "Qual recurso do MC Guias é recomendado usar após cada dia de treinamento?", options: ["Apenas os guias", "Simulado Geral filtrado pela estação do dia", "Apenas flashcards", "Nenhum recurso específico"], answer: "Simulado Geral filtrado pela estação do dia", explanation: "Após cada dia de treinamento, aplicar o Simulado Geral filtrado pela estação para reforçar o conteúdo." }
+    ];
+  </script>
+</body>
+</html>

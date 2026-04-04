@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bebidas e Sobremesas — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .produto-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      margin-bottom: 10px;
+    }
+    .tag-casquinha  { background: #fff3cd; color: #6b4200; border: 1.5px solid #ffe082; }
+    .tag-mccolosso  { background: #fdecea; color: #7a1a12; border: 1.5px solid #f5c6c3; }
+    .tag-sundae     { background: #e8f5e9; color: #1a5c2a; border: 1.5px solid #b2dfca; }
+    .tag-mcflurry   { background: #e8f4fd; color: #0d3d66; border: 1.5px solid #b8d9f5; }
+    .tag-topsundae  { background: #f3e5f5; color: #4a148c; border: 1.5px solid #ce93d8; }
+    .tag-mcshake    { background: #fff8e1; color: #7a4a00; border: 1.5px solid #ffcc02; }
+
+    .pesos-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .pesos-table th {
+      background: var(--red);
+      color: white;
+      padding: 8px 10px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-align: left;
+    }
+    .pesos-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .pesos-table tr:nth-child(even) td { background: var(--bg); }
+    .produto-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .pl-yellow { background: var(--yellow); color: #5c3800; }
+    .pl-red    { background: var(--red);    color: white; }
+
+    .temp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .temp-item {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+    }
+    .temp-label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .temp-value { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--red); margin-top: 2px; }
+
+    .gelo-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .gelo-item {
+      flex: 1;
+      min-width: 80px;
+      background: #e8f4fd;
+      border: 1.5px solid #b8d9f5;
+      border-radius: var(--radius-md);
+      padding: 10px;
+      text-align: center;
+    }
+    .gelo-size { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--blue); }
+    .gelo-qty  { font-size: 12px; color: var(--text); margin-top: 4px; font-weight: 600; }
+  </style>
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="bebidas-sobremesas">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Bebidas e Sobremesas</h1>
+        <p>Guia Rápido Operacional · Dessert Center</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="sobremesas">🍦 Sobremesas</button>
+      <button class="tab-btn" data-tab="mcshake">🥤 McShake</button>
+      <button class="tab-btn" data-tab="bebidas">🧃 Bebidas</button>
+      <button class="tab-btn" data-tab="dessert">🏪 Dessert Center</button>
+      <button class="tab-btn" data-tab="pesos">⚖️ Pesos e Porções</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧼</div>
+          <h2>Padrões de Higiene</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Apresentação Pessoal</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Higiene das Mãos</h3>
+              <ul>
+                <li class="blue">Lavar mãos e antebraços com sabonete bactericida por 20"</li>
+                <li class="blue">Usar gel sanitizante antes de assumir a função</li>
+                <li class="blue">Higienizar após atividade de limpeza</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🌡️</div>
+          <h2>Tempos & Temperaturas — Equipamento</h2>
+        </div>
+        <div class="card-body">
+          <div class="temp-grid">
+            <div class="temp-item">
+              <div class="temp-label">Reservatório</div>
+              <div class="temp-value">1°C a 4°C</div>
+            </div>
+            <div class="temp-item">
+              <div class="temp-label">Massa de sorvete</div>
+              <div class="temp-value">-9°C a -8°C</div>
+            </div>
+            <div class="temp-item">
+              <div class="temp-label">Banho Maria</div>
+              <div class="temp-value">57°C a 63°C</div>
+            </div>
+            <div class="temp-item">
+              <div class="temp-label">Cobertura</div>
+              <div class="temp-value">46°C a 52°C</div>
+            </div>
+            <div class="temp-item">
+              <div class="temp-label">Refrigerante</div>
+              <div class="temp-value">1°C a 4°C</div>
+            </div>
+            <div class="temp-item">
+              <div class="temp-label">Suco</div>
+              <div class="temp-value">1°C a 7°C</div>
+            </div>
+          </div>
+          <div class="pill-row" style="margin-top:4px;">
+            <div class="pill yellow">⚡ Velocidade de extração: 5oz a 7,5oz em 10"</div>
+            <div class="pill green">Overrun: 55% a 65%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧊</div>
+          <h2>Quantidade de Gelo no Copo</h2>
+        </div>
+        <div class="card-body">
+          <div class="gelo-row">
+            <div class="gelo-item">
+              <div class="gelo-size">P</div>
+              <div class="gelo-qty">½ pá de gelo</div>
+            </div>
+            <div class="gelo-item">
+              <div class="gelo-size">M</div>
+              <div class="gelo-qty">1 pá cheia de gelo</div>
+            </div>
+            <div class="gelo-item">
+              <div class="gelo-size">G</div>
+              <div class="gelo-qty">1 pá e ½ de gelo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Preparação — Checklist Inicial</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Suprimentos, produtos e embalagens em quantidade suficiente para o volume de vendas esperado e dentro do tempo de vida</label>
+            <label class="check-item"><input type="checkbox"> 2 panos descartáveis limpos, sanitizados e dobrados (1 atrás da Torre de Bebidas longe da visão do cliente, 1 junto com borrifador sanitizante)</label>
+            <label class="check-item"><input type="checkbox"> Bobina reserva e troco suficiente · gaveta rotulada e organizada</label>
+            <label class="check-item"><input type="checkbox"> 3 panos descartáveis limpos, sanitizados e dobrados para Dessert Center (1 para o caixa, 1 para extração, 1 para entrega)</label>
+            <label class="check-item"><input type="checkbox"> Luvas descartáveis em quantidade suficiente</label>
+            <label class="check-item"><input type="checkbox"> Estações limpas e organizadas</label>
+            <label class="check-item"><input type="checkbox"> Verificar funcionamento dos equipamentos (velocidade de extração, bombas de cobertura, dispensadores)</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-sobremesas">
+
+      <div class="section-label">Receitas de Sobremesas</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍦</div>
+          <h2>Receitas de Sobremesas</h2>
+        </div>
+        <div class="card-body">
+
+          <div class="produto-tag tag-casquinha">🍦 Casquinha</div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Com o auxílio do guardanapo, centralize o cone sob o bico de extração e com a outra mão abaixe a alavanca até o fim.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Deixe formar uma base de massa iniciando pela borda do cone e execute movimentos circulares no mesmo diâmetro do cone, <strong>completando 3 voltas e meia</strong> de bebida láctea.</div>
+            </div>
+          </div>
+
+          <div class="produto-tag tag-mccolosso" style="margin-top:16px;">🍦 McColosso</div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Com o auxílio do guardanapo, pegue o McColosso (não deve estar quebrado) e adicione <strong>2 voltas e meia</strong> de bebida láctea.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Adicione <strong>1/2oz de cobertura</strong>, girando o cascão para que a cobertura se espalhe.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Com o pegador, <strong>coloque 1 biju</strong> inteiro em uma das laterais do cascão.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Na lateral oposta ao biju, <strong>coloque a colher</strong>.</div>
+            </div>
+          </div>
+
+          <div class="produto-tag tag-sundae" style="margin-top:16px;">🍨 Sundae</div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Centralize o copo de sundae sob o bico e abaixe a alavanca, completando o copo com <strong>4 voltas e meia de bebida láctea</strong>, fazendo o bico.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Adicione <strong>2 tiros de 1/2oz de cobertura</strong>, totalizando 1oz, girando o copo para a cobertura se espalhar.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Adicione <strong>7 gramas de amendoim</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Finalize adicionando a <strong>colher</strong>.</div>
+            </div>
+          </div>
+
+          <div class="produto-tag tag-mcflurry" style="margin-top:16px;">🍦 McFlurry</div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Pegue o copo de Flurry e coloque <strong>5 voltas de bebida láctea</strong>, sem o bico, girando cuidadosamente o copo para preencher toda lateral.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Dispense <strong>2 tiros de 1/2oz de cobertura</strong>, totalizando 1oz.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Com a concha de 1oz, adicione <strong>1 porção de Ovomaltine</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Com a concha de 1oz, adicione <strong>1 porção de Rocks</strong>.</div>
+            </div>
+          </div>
+
+          <div class="produto-tag tag-topsundae" style="margin-top:16px;">🏆 Top Sundae</div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Dispense <strong>1 tiro equivalente a meia oz de cobertura</strong>, girando o copo para espalhar.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Centralize o copo sob o bico e abaixe a alavanca, completando <strong>6 voltas de bebida láctea</strong>, fazendo o bico.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Adicione <strong>1 tiro equivalente a meia oz de cobertura</strong>, girando para espalhar.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Com a concha de 1oz, adicione <strong>uma porção de paçoca</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Com o pegador, coloque <strong>2 bijus inteiros na lateral</strong> do copo.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Na outra lateral do copo, insira a <strong>colher</strong>.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-mcshake">
+
+      <div class="section-label">Preparo do McShake</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🥤</div>
+          <h2>McShake — Passo a Passo</h2>
+          <div class="badge badge-yellow">7 voltas</div>
+        </div>
+        <div class="card-body">
+          <div class="produto-tag tag-mcshake">🥤 McShake</div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Pegue o copo de McShake e coloque <strong>15ml de leite no copo</strong> até a marcação do copo.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Centralize o copo sob o bico de extração, abaixe a alavanca dispensando <strong>7 voltas de bebida láctea</strong> em toda lateral do copo, deixando um espaço no meio.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Coloque a <strong>quantidade correta de complemento</strong> (sabor).</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Coloque uma <strong>tampa para McShake</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Centralize o copo no batedor, aperte o <strong>botão vermelho</strong> para ligar (segure apertado) e bata por <strong>18 segundos</strong>, fazendo leves movimentos circulares para bater uniformemente.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Após o preparo, a <strong>tampa deve ser descartada</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">7</div>
+              <div class="step-text">Coloque o copo de McShake na <strong>área de espera de bebidas (BLZ)</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">8</div>
+              <div class="step-text">Sirva o pedido do monitor usando o <strong>botão de controle (bump bar)</strong>.</div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>A tampa é colocada apenas para o batimento — <strong>deve ser descartada após o preparo</strong>. Não sirva com a tampa de batimento.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔬</div>
+          <h2>Brixagem das Bebidas</h2>
+        </div>
+        <div class="card-body">
+          <div class="data-table">
+            <table>
+              <tr><th>Bebida</th><th>Brix de xarope</th></tr>
+              <tr><td>Coca-Cola e Coca Zero</td><td><strong>5,2</strong></td></tr>
+              <tr><td>Guaraná, Sprite e Sprite Zero</td><td><strong>4,2</strong></td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-bebidas">
+
+      <div class="section-label">Procedimento — Refrigerantes e Sucos</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧃</div>
+          <h2>Refrigerantes e Sucos</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Após o pedido aparecer no KVS, siga a <strong>sequência correta do pedido no monitor</strong> e prepare as bebidas. Coloque as pedras de gelo de acordo com o tamanho do copo (P: ½ pá / M: 1 pá / G: 1 pá e ½).</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Para Coca-Cola Zero, Sprite Zero e Água gaseificada: realize a identificação de forma manual — com caneta hidrográfica dentro do círculo vermelho, identifique no copo as letras <strong>"Z" ou "A"</strong>. Conforme a sequência do pedido no KVS, marque e coloque as pedras de gelo.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Centralize o copo sob a bica correspondente e selecione o botão correto. <strong>Após transferir a bebida para a mesa BLZ, sirva no Bumbar.</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Após finalizar, posicione a bebida sobre a <strong>mesa BLZ</strong>. Coloque as bebidas de forma organizada por sabores. Realizar a limpeza da estação a cada rodada.</div>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div><strong>Em pedidos para viagem e Drive Thru: utilize a tampa.</strong><br>Para evitar desperdício, siga a sequência correta de bebidas do KVS.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛵</div>
+          <h2>Bebidas McDelivery</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Para bebidas McDelivery, seguir a <strong>sequência de extração conforme monitor KVS</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Posicione o copo na seladora e aperte o botão descrito como <strong>selagem manual</strong>. Após a selagem, retire o copo e verifique se está sem vazamento.</div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Caso a selagem da bebida não esteja adequada, <strong>descarte o copo na lixeira adequada</strong> e repita o procedimento utilizando um novo copo.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">👥</div>
+          <h2>BDAP — Distribuição de Funções</h2>
+          <div class="badge badge-blue">2 pessoas</div>
+        </div>
+        <div class="card-body">
+          <div class="rota-block">
+            <div class="rota-head c1">👤 1 Pessoa</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Produz bebidas frias, bebidas quentes e sobremesas posicionando na mesa BLZ</div></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c3">👥 2 Pessoas</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div><strong>Função 1:</strong> Produz bebidas frias e posiciona na mesa BLZ</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div><strong>Função 2:</strong> Produz bebidas quentes e sobremesas posicionando na mesa BLZ</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-dessert">
+
+      <div class="section-label">Procedimento Operacional — Dessert Center</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🗣️</div>
+          <h2>Influencer Vendedor — Dessert Center</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Recepcione o cliente de forma amistosa e com <strong>cultura de serviço</strong>. Dar atenção ao cliente de trás e sempre que oportuno, faça a sugestão de venda <strong>"McFlurry"</strong>. Depois, faça a venda sugestiva — seja para "pequenos saltos" (casquinha para McColosso) ou para completar o pedido (sugerir água ao término da compra). <strong>Sempre divulgar o Meu Méqui.</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Conclua o pagamento junto ao cliente (cartão ou dinheiro), entregue o <strong>cupom fiscal com o troco</strong> se necessário, já direcionando o cliente para a área de entrega ao lado.</div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>A entrega do cupom fiscal ao cliente é <strong>obrigatória para todas as formas de pagamento</strong>. A produção do produto deve ser realizada através da visualização do monitor KVS (caso não esteja funcionando, a pessoa do caixa informa o próximo produto a ser produzido).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍦</div>
+          <h2>Pessoa da Extração</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Inicia a preparação pegando o copo ou cone de acordo com a tela, colocando a massa (e o primeiro tiro de cobertura se necessário, conforme o produto) e <strong>transfere o produto para a pessoa da condimentação</strong>, para que ela finalize e entregue ao cliente.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Continua o procedimento para <strong>todos os próximos produtos</strong> que aparecem no monitor.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍫</div>
+          <h2>Pessoa da Condimentação</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Finaliza o produto adicionando as coberturas e complementos de acordo com as <strong>quantidades corretas</strong> de cada produto, finalizando com a colher (sorvetes de copo, McColosso ou canudo no Shake). <strong>Obs: Em casquinha não adicionar colher e enviar somente um guardanapo junto com o cone (não enrolar).</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Continua o procedimento de acordo com a <strong>sequência de produtos</strong> que recebe do extrator.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛎️</div>
+          <h2>Pessoa da Entrega</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Organiza os clientes que estiverem em espera. Ao receber o produto pronto da pessoa da condimentação, entrega a sobremesa, <strong>conferindo o pedido na tela</strong>, despede-se de forma cordial e amistosa, utilizando a cultura de Serviço, <strong>servido no bump bar</strong> e apagando a tela.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Continua o procedimento de acordo com a <strong>sequência da fila de entrega</strong>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Verificação de Equipamentos</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Velocidade de extração: <strong>5 a 7,5oz em 10"</strong> — verificar com o Gerente. O parafuso de velocidade deve estar com porca travada por chave de boca.</label>
+            <label class="check-item"><input type="checkbox"> Bombas de cobertura estocadas e com <strong>dois restritores para tiro de ½oz</strong></label>
+            <label class="check-item"><input type="checkbox"> Dispensadores com as molas e borrachas funcionando</label>
+            <label class="check-item"><input type="checkbox"> Banho Maria · cubas · tampas · pegador de biju · conchas em perfeito funcionamento</label>
+            <label class="check-item"><input type="checkbox"> Coberturas e complementos estocados · área limpa e organizada após finalizar sobremesas</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-pesos">
+
+      <div class="section-label">Pesos e Porções — Tabela de Referência</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚖️</div>
+          <h2>Pesos e Porções — Sobremesas</h2>
+        </div>
+        <div class="card-body">
+          <table class="pesos-table">
+            <tr>
+              <th>Produto</th>
+              <th>Bebida Láctea</th>
+              <th>Volume</th>
+              <th>Cobertura</th>
+              <th>Volume</th>
+            </tr>
+            <tr>
+              <td><span class="produto-label pl-yellow">CASQUINHA</span></td>
+              <td>3,5 voltas</td>
+              <td>105,63 ml</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><span class="produto-label pl-yellow">McCOLOSSO</span></td>
+              <td>2,5 voltas</td>
+              <td>74,23 ml</td>
+              <td>1/2 oz</td>
+              <td>15 ml</td>
+            </tr>
+            <tr>
+              <td><span class="produto-label pl-yellow">SUNDAE</span></td>
+              <td>4,5 voltas</td>
+              <td>136,69 ml</td>
+              <td>1 oz</td>
+              <td>30 ml</td>
+            </tr>
+            <tr>
+              <td><span class="produto-label pl-yellow">TOP SUNDAE</span></td>
+              <td>6 voltas</td>
+              <td>218,53 ml</td>
+              <td>1 oz</td>
+              <td>30 ml</td>
+            </tr>
+            <tr>
+              <td><span class="produto-label pl-yellow">McFLURRY</span></td>
+              <td>5 voltas</td>
+              <td>210,16 ml</td>
+              <td>1 oz</td>
+              <td>30 ml</td>
+            </tr>
+            <tr>
+              <td><span class="produto-label pl-red">McSHAKE MORANGO</span></td>
+              <td>7 voltas</td>
+              <td>284 ml</td>
+              <td>2 oz</td>
+              <td>30 ml</td>
+            </tr>
+            <tr>
+              <td><span class="produto-label pl-red">McSHAKE CHOCOLATE</span></td>
+              <td>7 voltas</td>
+              <td>284 ml</td>
+              <td>2 oz</td>
+              <td>60 ml</td>
+            </tr>
+            <tr>
+              <td><span class="produto-label pl-red">McSHAKE OVOMALTINE</span></td>
+              <td>7 voltas</td>
+              <td>284 ml</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+          </table>
+          <div class="alert info" style="margin-top:8px;">
+            <div class="alert-icon">💡</div>
+            <div>Casquinha: <strong>3,5 voltas</strong> · McColosso: <strong>2,5 voltas</strong> · Sundae: <strong>4,5 voltas</strong> · Top Sundae: <strong>6 voltas</strong> · McFlurry: <strong>5 voltas</strong> · McShake: <strong>7 voltas</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — Bebidas e Sobremesas</h2>
+          <div class="badge badge-red">12 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Bebidas e Sobremesas · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_BEBIDAS = [
+      {
+        category: "🍦 Sobremesas · Casquinha",
+        question: "Quantas voltas de bebida láctea completa a Casquinha?",
+        options: ["2 voltas e meia", "3 voltas", "3 voltas e meia", "4 voltas"],
+        answer: "3 voltas e meia",
+        explanation: "A Casquinha leva 3,5 voltas de bebida láctea (105,63ml)."
+      },
+      {
+        category: "🍦 Sobremesas · McColosso",
+        question: "Quantas voltas de bebida láctea leva o McColosso?",
+        options: ["1 volta e meia", "2 voltas", "2 voltas e meia", "3 voltas"],
+        answer: "2 voltas e meia",
+        explanation: "O McColosso leva 2,5 voltas de bebida láctea (74,23ml) mais 1/2oz de cobertura."
+      },
+      {
+        category: "🍦 Sobremesas · Sundae",
+        question: "Quantas gramas de amendoim leva o Sundae?",
+        options: ["5 gramas", "7 gramas", "10 gramas", "15 gramas"],
+        answer: "7 gramas",
+        explanation: "O Sundae leva 7 gramas de amendoim, após as 4,5 voltas de bebida láctea e 1oz de cobertura."
+      },
+      {
+        category: "🥤 McShake",
+        question: "Por quantos segundos deve ser batido o McShake?",
+        options: ["10 segundos", "15 segundos", "18 segundos", "25 segundos"],
+        answer: "18 segundos",
+        explanation: "O McShake é batido por 18 segundos, fazendo leves movimentos circulares para ficar uniforme."
+      },
+      {
+        category: "🥤 McShake",
+        question: "O que deve ser feito com a tampa do McShake após o batimento?",
+        options: ["Mantê-la para servir ao cliente", "Descartá-la", "Trocá-la por outra tampa", "Guardá-la para o próximo shake"],
+        answer: "Descartá-la",
+        explanation: "Após o preparo do McShake, a tampa deve ser descartada. Nunca sirva com a tampa de batimento."
+      },
+      {
+        category: "🥤 McShake",
+        question: "Quantas voltas de bebida láctea leva o McShake?",
+        options: ["5 voltas", "6 voltas", "7 voltas", "8 voltas"],
+        answer: "7 voltas",
+        explanation: "O McShake leva 7 voltas de bebida láctea (284ml), dispensadas em toda a lateral do copo deixando um espaço no meio."
+      },
+      {
+        category: "🧃 Bebidas · Gelo",
+        question: "Qual é a quantidade correta de gelo para o copo médio?",
+        options: ["½ pá de gelo", "1 pá cheia de gelo", "1 pá e ½ de gelo", "2 pás de gelo"],
+        answer: "1 pá cheia de gelo",
+        explanation: "Copo pequeno: ½ pá / Copo médio: 1 pá cheia / Copo grande: 1 pá e ½."
+      },
+      {
+        category: "🧃 Bebidas · Identificação",
+        question: "Qual letra é usada para identificar manualmente a Coca-Cola Zero no copo?",
+        options: ["C", "X", "Z", "0"],
+        answer: "Z",
+        explanation: "Para Coca-Cola Zero e Sprite Zero, identifica-se com a letra 'Z' dentro do círculo vermelho com caneta hidrográfica."
+      },
+      {
+        category: "🌡️ Temperaturas",
+        question: "Qual é a temperatura correta da massa de sorvete?",
+        options: ["-5°C a -3°C", "-9°C a -8°C", "-12°C a -10°C", "0°C a 2°C"],
+        answer: "-9°C a -8°C",
+        explanation: "A temperatura da massa de sorvete deve ser entre -9°C e -8°C."
+      },
+      {
+        category: "🌡️ Temperaturas",
+        question: "Qual é a temperatura correta da cobertura?",
+        options: ["30°C a 40°C", "46°C a 52°C", "57°C a 63°C", "65°C a 70°C"],
+        answer: "46°C a 52°C",
+        explanation: "A temperatura da cobertura deve ser entre 46°C e 52°C. O banho Maria fica entre 57°C e 63°C."
+      },
+      {
+        category: "🏪 Dessert Center",
+        question: "O que a Pessoa da Condimentação NÃO deve fazer na casquinha?",
+        options: [
+          "Adicionar cobertura",
+          "Adicionar colher e enrolar com guardanapo",
+          "Enviar apenas um guardanapo junto com o cone",
+          "Receber do extrator"
+        ],
+        answer: "Adicionar colher e enrolar com guardanapo",
+        explanation: "Em casquinha: NÃO adicionar colher e NÃO enrolar. Enviar somente um guardanapo junto com o cone."
+      },
+      {
+        category: "🏪 Dessert Center",
+        question: "A entrega do cupom fiscal é obrigatória para quais formas de pagamento?",
+        options: [
+          "Apenas pagamento em dinheiro",
+          "Apenas pagamento com cartão",
+          "Apenas pagamento por aproximação",
+          "Todas as formas de pagamento"
+        ],
+        answer: "Todas as formas de pagamento",
+        explanation: "A entrega do cupom fiscal ao cliente é obrigatória para TODAS as formas de pagamento."
+      },
+      { category: "🍦 Bebidas · Top Sundae", question: "Quantas voltas de bebida láctea leva o Top Sundae?", options: ["4 voltas", "4,5 voltas", "5 voltas", "6 voltas"], answer: "6 voltas", explanation: "Top Sundae leva 6 voltas de bebida láctea (218,53ml) mais 1oz de cobertura total." },
+      { category: "🍦 Bebidas · Sundae", question: "Quantas voltas de bebida láctea leva o Sundae?", options: ["3,5 voltas", "4 voltas", "4,5 voltas", "5 voltas"], answer: "4,5 voltas", explanation: "Sundae leva 4,5 voltas de bebida láctea (136,69ml) mais 1oz de cobertura e 7g de amendoim." },
+      { category: "🍦 Bebidas · McColosso", question: "Qual a quantidade de cobertura no McColosso?", options: ["1/4oz", "1/2oz", "1oz", "2oz"], answer: "1/2oz", explanation: "McColosso: 2,5 voltas de bebida láctea + 1/2oz de cobertura (15ml)." },
+      { category: "🍦 Bebidas · McFlurry", question: "Como deve ser feita a extração de bebida láctea no McFlurry?", options: ["Com o bico, em movimento circular", "Sem o bico, girando o copo para preencher toda lateral", "Com o bico, preenchendo o centro", "Sem girar o copo"], answer: "Sem o bico, girando o copo para preencher toda lateral", explanation: "McFlurry: sem o bico, girando cuidadosamente o copo para preencher toda lateral com 5 voltas." },
+      { category: "🍦 Bebidas · Top Sundae", question: "Qual o complemento adicionado no Top Sundae?", options: ["Amendoim", "Ovomaltine", "Rocks", "Paçoca"], answer: "Paçoca", explanation: "Top Sundae: cobertura (base) + 6 voltas + cobertura (topo) + paçoca + 2 bijus + colher." },
+      { category: "🥤 Bebidas · McShake", question: "Qual o volume de leite adicionado antes da extração no McShake?", options: ["5ml", "10ml", "15ml", "20ml"], answer: "15ml", explanation: "Pegue o copo de McShake e coloque 15ml de leite no copo até a marcação antes de extrair a bebida láctea." },
+      { category: "🥤 Bebidas · McShake", question: "Onde o McShake deve ser colocado após o batimento?", options: ["Diretamente para o cliente", "Na área de espera de bebidas (BLZ)", "Na mesa de condimentação", "No balcão de entrega"], answer: "Na área de espera de bebidas (BLZ)", explanation: "Após o preparo, colocar o copo de McShake na área de espera de bebidas (BLZ) e servir pelo bump bar." },
+      { category: "🧃 Bebidas · Refrigerante", question: "Como identificar manualmente a Água gaseificada no copo?", options: ["Letra G", "Letra A", "Letra Z", "Nenhuma identificação"], answer: "Letra A", explanation: "Para Água gaseificada: identificar com a letra 'A' dentro do círculo vermelho com caneta hidrográfica. Zero = 'Z'." },
+      { category: "🧃 Bebidas · Refrigerante", question: "O que fazer após transferir a bebida para a mesa BLZ?", options: ["Aguardar o cliente pegar", "Servir no Bumbar", "Chamar o expedidor", "Colocar a tampa"], answer: "Servir no Bumbar", explanation: "Após transferir a bebida para a mesa BLZ, servir no Bumbar para registrar a entrega no sistema." },
+      { category: "🧃 Bebidas · Suco", question: "Qual botão deve ser pressionado para testar o suco após estocagem?", options: ["POWER", "RESET", "FLOW", "TEST"], answer: "FLOW", explanation: "Após estocagem do reservatório na máquina, limpar a borda e gaxeta e apertar a tecla FLOW para testar o produto." },
+      { category: "🌡️ Bebidas · Temperaturas", question: "Qual a temperatura do banho Maria do equipamento de sorvete?", options: ["40°C a 50°C", "46°C a 52°C", "57°C a 63°C", "70°C a 75°C"], answer: "57°C a 63°C", explanation: "Temperatura do banho Maria: 57°C a 63°C. Cobertura: 46°C a 52°C. Reservatório: 1°C a 4°C." },
+      { category: "🏪 Bebidas · Dessert Center", question: "Como a Pessoa da Extração inicia o preparo de cada produto?", options: ["Espera o pedido do cliente diretamente", "Pega o copo/cone pela tela, coloca a massa e transfere para a Condimentação", "Finaliza o produto completo", "Entrega diretamente ao cliente"], answer: "Pega o copo/cone pela tela, coloca a massa e transfere para a Condimentação", explanation: "A Extração inicia pegando o copo/cone conforme a tela, coloca a massa (e cobertura se necessário) e transfere para a Condimentação finalizar." },
+      { category: "🏪 Bebidas · Dessert Center", question: "Qual o papel da Pessoa da Entrega no Dessert Center?", options: ["Extrair a massa", "Adicionar coberturas e complementos", "Organizar clientes em espera, receber produto pronto e entregar conferindo na tela", "Operar o caixa"], answer: "Organizar clientes em espera, receber produto pronto e entregar conferindo na tela", explanation: "A Pessoa da Entrega organiza clientes, recebe o produto pronto da Condimentação, confere na tela, entrega e usa o bump bar." },
+      { category: "🏪 Bebidas · Dessert Center", question: "Qual é a velocidade de extração correta do equipamento de sorvete?", options: ["2 a 3oz em 10 segundos", "3 a 5oz em 10 segundos", "5 a 7,5oz em 10 segundos", "8 a 10oz em 10 segundos"], answer: "5 a 7,5oz em 10 segundos", explanation: "A velocidade de extração correta é de 5 a 7,5oz em 10 segundos. Verificar com o Gerente." },
+      { category: "🥤 Bebidas · BDAP", question: "No BDAP com 2 pessoas, qual é a Função 2?", options: ["Produz bebidas frias e posiciona na BLZ", "Produz bebidas quentes e sobremesas posicionando na BLZ", "Atende o caixa", "Faz a entrega ao cliente"], answer: "Produz bebidas quentes e sobremesas posicionando na BLZ", explanation: "Com 2 pessoas no BDAP: Função 1 = bebidas frias na BLZ. Função 2 = bebidas quentes e sobremesas na BLZ." },
+      { category: "🍦 Bebidas · McColosso", question: "Quantas voltas leva o McColosso?", options: ["1,5 voltas", "2 voltas", "2,5 voltas", "3 voltas"], answer: "2,5 voltas", explanation: "McColosso: 2,5 voltas de bebida láctea + 1/2oz de cobertura." },
+      { category: "🍦 Bebidas · McFlurry", question: "Como deve ser a extração de bebida láctea no McFlurry?", options: ["Com o bico, circular", "Sem o bico, girando o copo", "Com o bico, preenchendo o centro", "Sem girar o copo"], answer: "Sem o bico, girando o copo", explanation: "McFlurry: sem o bico, girando cuidadosamente o copo para preencher toda lateral com 5 voltas." },
+      { category: "🌡️ Bebidas · Temperaturas", question: "Qual a temperatura do reservatório de bebida láctea?", options: ["0-2°C", "1-4°C", "5-8°C", "10-12°C"], answer: "1-4°C", explanation: "O reservatório de bebida láctea deve estar entre 1°C e 4°C." },
+      { category: "🏪 Bebidas · Dessert Center", question: "Qual a velocidade de extração correta do equipamento de sorvete?", options: ["2-3oz em 10s", "3-5oz em 10s", "5-7,5oz em 10s", "8-10oz em 10s"], answer: "5-7,5oz em 10s", explanation: "A velocidade de extração correta é de 5 a 7,5oz em 10 segundos." },
+      { category: "🏪 Bebidas · Dessert Center", question: "Qual é o papel da pessoa da Extração no Dessert Center?", options: ["Finalizar e entregar ao cliente", "Pegar copo/cone, colocar a massa e transferir para Condimentação", "Apenas operar o caixa", "Atender o cliente diretamente"], answer: "Pegar copo/cone, colocar a massa e transferir para Condimentação", explanation: "A Extração pega o copo/cone conforme a tela, coloca a massa e transfere para a Condimentação finalizar." },
+      { category: "🧃 Bebidas · Suco", question: "Qual botão pressionar para testar o suco após estocagem?", options: ["POWER", "RESET", "FLOW", "TEST"], answer: "FLOW", explanation: "Após estocagem do reservatório, limpar a borda e gaxeta e apertar a tecla FLOW para testar." },
+      { category: "🥤 Bebidas · BDAP", question: "No BDAP com 2 pessoas, qual é a Função 1?", options: ["Bebidas quentes e sobremesas", "Bebidas frias na BLZ", "Entregar ao cliente", "Operar o caixa"], answer: "Bebidas frias na BLZ", explanation: "Com 2 pessoas no BDAP: Função 1 = bebidas frias na BLZ. Função 2 = bebidas quentes e sobremesas." },
+      { category: "🍦 Bebidas · Casquinha", question: "Quantas voltas leva a Casquinha?", options: ["1 volta", "1,5 volta", "2 voltas", "2,5 voltas"], answer: "1 volta", explanation: "A Casquinha leva 1 volta de bebida láctea." },
+      { category: "🏪 Bebidas · Dessert Center", question: "Qual a cobertura de temperatura do reservatório de cobertura?", options: ["40-46°C", "46-52°C", "52-58°C", "57-63°C"], answer: "46-52°C", explanation: "A cobertura deve estar entre 46°C e 52°C." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_BEBIDAS);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_BEBIDAS);
+    });
+  </script>
+</body>
+</html>

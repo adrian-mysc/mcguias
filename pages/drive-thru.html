@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drive-Thru: Influencer e Pagamento — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .role-cod    { background: var(--red); color: white; }
+    .role-tablet { background: #e65c00; color: white; }
+    .role-caixa  { background: #1a5fa8; color: white; }
+    .role-movel  { background: #1a7a42; color: white; }
+
+    .meu-mequi-box {
+      background: linear-gradient(135deg, #DA291C 0%, #b01f14 100%);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      color: white;
+    }
+  </style>
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="drive-thru">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Drive-Thru</h1>
+        <p>Influencer Vendedor e Pagamento · Drive</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="cod">🎙️ Pessoa do COD</button>
+      <button class="tab-btn" data-tab="tablet">📱 Pessoa do Tablet</button>
+      <button class="tab-btn" data-tab="caixa">💰 Pessoa do Caixa</button>
+      <button class="tab-btn" data-tab="meumequi">⭐ Meu Méqui</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧼</div>
+          <h2>Padrões de Higiene</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Apresentação Pessoal</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Higiene das Mãos</h3>
+              <ul>
+                <li class="blue">Lavar mãos e antebraços com sabonete bactericida por 20"</li>
+                <li class="blue">Usar gel sanitizante antes de assumir a função</li>
+                <li class="blue">Higienizar após atividade de limpeza</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">👥</div>
+          <h2>Funções do Drive-Thru</h2>
+        </div>
+        <div class="card-body">
+          <div class="rota-block">
+            <div class="rota-head c2">🎙️ Pessoa do COD</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Recepciona o cliente na cabine de entrada, registra o pedido, realiza saltos de venda</div></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head" style="background:#fff3e0;color:#6b3500;">📱 Pessoa do Tablet</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Atende o 2° carro, registra no Tablet, coordena o fluxo com a Pessoa do COD</div></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c3">💰 Pessoa do Caixa</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Recebe o pagamento na cabine, entrega cupom fiscal e brinquedos do McLanche</div></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c4">🚗 Pessoa do Caixa Móvel</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Antecipa cobranças a partir do 2° carro, se direciona até o veículo para cobrar</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Preparação — Checklist Inicial</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Todos os equipamentos, materiais, produtos e suprimentos preparados para vender</label>
+            <label class="check-item"><input type="checkbox"> Tablet carregado e funcionando · cardápios (produtos e brinquedos)</label>
+            <label class="check-item"><input type="checkbox"> Tela padrão e monitores legíveis e em boas condições</label>
+            <label class="check-item"><input type="checkbox"> Cardápio dos COD (legível) · Headset carregado e com baterias reservas</label>
+            <label class="check-item"><input type="checkbox"> 1 pano limpo, sanitizado e dobrado</label>
+            <label class="check-item"><input type="checkbox"> Cardápios, troco suficiente, bobina reserva, gaveta rotulada com layout definido</label>
+            <label class="check-item"><input type="checkbox"> Brinquedos para o dia, organizados de acordo com o layout</label>
+            <label class="check-item"><input type="checkbox"> GPRS carregados e extensor para Pin Pad</label>
+            <label class="check-item"><input type="checkbox"> Caneta piloto para anotar no saco o número do pedido · sacos estocados e ventilados</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-cod">
+
+      <div class="section-label">Procedimento — Pessoa do COD</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎙️</div>
+          <h2>Pessoa do COD</h2>
+          <div class="badge badge-red">Cabine de entrada</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Recepcione o cliente de forma amável. Se estiver em dupla com a Pessoa do Tablet, aperte a tecla <strong>"Abre Pedido"</strong> para assegurar a sequência correta ao carro chegar no COD. Use o Headset se necessário.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Realize sugestão de vendas usando o conceito <strong>módulo rápido e módulo vendedor</strong> (alto volume = módulo rápido / baixo volume = módulo vendedor). No McLanche Feliz, identifique o brinquedo pelo cardápio e registre.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Saiba informar sobre o desconto de todas as <strong>McOfertas</strong>, inclusive com McShakes (McOferta personalizada). Conheça o preço de todos os produtos. Familiarizado com a tela do POS e promoções vigentes.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Caso o pedido tenha cupom, <strong>faça a leitura dos BOGs</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Esclareça tamanhos e sabores com <strong>perguntas fechadas</strong> para garantir exatidão. Ex.: <em>"Sua bebida é Coca-Cola?"</em></div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Caso não tenha anotado todo o pedido, <strong>repita apenas os itens anotados</strong> e pergunte ao cliente: <em>"Eu deixei de anotar alguma coisa?"</em></div>
+            </div>
+            <div class="step">
+              <div class="step-num">7</div>
+              <div class="step-text">Escute o cliente, lidere a conversa. Desenvolva atitude proativa, <strong>mantenha contato visual sempre que possível</strong> e seja simpático.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">8</div>
+              <div class="step-text">Ao totalizar o pedido, <strong>solicite ao cliente que confirme</strong> se o pedido está correto no monitor.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">9</div>
+              <div class="step-text">Informe o valor do pedido e <strong>sugira o pagamento por aproximação</strong> já indicando para que tenha a forma de pagamento em mãos (agilizar atendimento).</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">10</div>
+              <div class="step-text">Separe os <strong>brindes para o caixa drive</strong> sempre que possível.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">11</div>
+              <div class="step-text">Saiba comunicar-se de forma diferenciada ao atender crianças, <strong>sem usar termos técnicos</strong>. Ex.: "refrigerante pequeno" ao invés de "refrigerante de 300ml".</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">12</div>
+              <div class="step-text">Agradeça e despeça-se de forma rápida e cortês, sempre mantendo contato visual, e <strong>solicite que se dirija para a próxima cabine</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">13</div>
+              <div class="step-text">Sempre que possível, <strong>mantenha a pista drive e os pontos de venda limpos e alinhados</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">14</div>
+              <div class="step-text"><strong>Lidere e mantenha a organização da sequência de pedidos na pista!</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-tablet">
+
+      <div class="section-label">Procedimento — Pessoa do Tablet</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📱</div>
+          <h2>Pessoa do Tablet</h2>
+          <div class="badge badge-yellow">2° carro</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Recepcione o cliente de forma amável e inicie o atendimento do <strong>2° carro</strong>. Em dupla com a Pessoa do COD, só inicie o registro no Tablet após visualizar na tela do COD a informação de que o pedido foi aberto <strong>("Abre Pedido")</strong>. Use o Headset para comunicação.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Realize sugestão de vendas usando o conceito <strong>módulo rápido e módulo vendedor</strong>. No McLanche Feliz, identifique o brinquedo pelo cardápio e registre.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Saiba informar sobre o desconto de todas as <strong>McOfertas</strong>, inclusive com McShakes. Conheça o preço de todos os produtos e promoções vigentes.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Caso o cliente apresente cupom promocional, <strong>faça a leitura dos BOGs através do leitor do Tablet</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Esclareça tamanhos e sabores com <strong>perguntas fechadas</strong>. Ex.: <em>"Sua bebida é Coca-Cola?"</em></div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Se não anotou todo o pedido, repita os itens anotados e pergunte: <strong>"Eu deixei de anotar alguma coisa?"</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num">7</div>
+              <div class="step-text">Informe o valor do pedido e <strong>sugira pagamento por aproximação</strong> em mãos.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">8</div>
+              <div class="step-text">Se o carro atendido no COD avançar, <strong>ande com o carro que está atendendo passando do Totem</strong> para que a Pessoa do COD possa iniciar o atendimento do próximo carro. <strong>Nunca deixe espaço na pista.</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num y">9</div>
+              <div class="step-text">Se a Pessoa do COD não finalizou o atendimento, <strong>siga para o próximo carro</strong> iniciando a tomada do pedido.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">10</div>
+              <div class="step-text">Saiba comunicar-se de forma diferenciada ao atender crianças, <strong>sem usar termos técnicos</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">11</div>
+              <div class="step-text">Agradeça e despeça-se de forma rápida e cortês, mantendo contato visual, e <strong>solicite que se dirija para a próxima cabine</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">12</div>
+              <div class="step-text">Sempre que possível, <strong>mantenha a pista e os pontos de venda limpos e alinhados</strong>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-caixa">
+
+      <div class="section-label">Procedimento — Pessoa do Caixa</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">💰</div>
+          <h2>Pessoa do Caixa (Drive)</h2>
+          <div class="badge badge-blue">Cabine de pagamento</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Antecipe os pagamentos puxando <strong>"recall por número"</strong>, fechando com a modalidade GPRS ou a modalidade escolhida pelo cliente.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Prepare o <strong>troco e o cupom fiscal</strong>. Para pagamentos com cartão, prepare o Pin Pad. Para dinheiro ou Sem Parar, aguarde o cliente chegar no caixa Drive.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Mantenha a janela fechada</strong>, abrindo-a somente quando o cliente estiver se aproximando.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Recepcione o cliente, cumprimentando-o sempre de <strong>forma amável e contato visual</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Ao trabalhar em dupla com o Caixa Móvel, realize a cobrança do pagamento do <strong>1° carro</strong> e informe o valor do próximo pedido a ser cobrado por ela.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Para pagamento com cartão, <strong>disponibilize o Pin Pad</strong>. Solicite que o cliente insira o cartão e digit a senha. <strong>Evite tocar no cartão do cliente.</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num">7</div>
+              <div class="step-text">Receba e mantenha o dinheiro <strong>horizontalmente sobre o caixa</strong> até concluir o troco ao cliente.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">8</div>
+              <div class="step-text">Conte em <strong>voz alta corretamente o troco</strong> ao devolvê-lo, junto com o cupom fiscal.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">9</div>
+              <div class="step-text">No caso de pedido com McLanche, <strong>entregue o brinquedo correto</strong> que está marcado no pedido.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">10</div>
+              <div class="step-text">Utilize a tela do monitor para <strong>modificar o pedido</strong> alterado pelo cliente, se necessário.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">11</div>
+              <div class="step-text">Saiba avisar ao Caixa Móvel os <strong>valores e formas de pagamento</strong> dos próximos pedidos, trabalhando em equipe.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">12</div>
+              <div class="step-text">Mantenha a <strong>gaveta organizada e fechada</strong> durante a operação. Solicite o gerente em todos os casos de erro, anulação ou quando prever falta de troco.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">13</div>
+              <div class="step-text">Mantenha o <strong>troco antecipado</strong> em pagamento com dinheiro.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">14</div>
+              <div class="step-text">Quando o veículo atendido pelo caixa móvel chegar à cabine, <strong>entregue o cupom fiscal</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">15</div>
+              <div class="step-text">Agradeça e despeça-se de forma rápida e cortês, mantendo contato visual, e <strong>direcione para a próxima cabine</strong>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🚗</div>
+          <h2>Pessoa do Caixa Móvel</h2>
+          <div class="badge badge-green">2° carro em diante</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Solicite ao caixa drive o valor e forma de pagamento do <strong>próximo carro a ser cobrado (sempre a partir do 2° carro)</strong> e digite o valor no GPRS.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Se direcione até o veículo, cumprimentando o cliente sempre de <strong>forma amável e contato visual</strong>, informando o valor do pedido.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Solicite que o cliente insira o cartão e digit a senha (<strong>não toque no cartão do cliente</strong>) e entregue o comprovante. Guarde a 2ª via para conferência.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Direcione o cliente para a <strong>cabine de pagamento</strong> para receber o cupom fiscal e, se houver McLanche Feliz, também o brinquedo.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">5</div>
+              <div class="step-text">Para pagamentos com Sem Parar e dinheiro, <strong>direcione o carro para a cabine de pagamento</strong> e cobre o pedido do próximo carro.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">6</div>
+              <div class="step-text">Se o caixa drive não tiver finalizado o pedido do carro na cabine, <strong>cobre o pedido do próximo carro</strong>. Se a fila avançar para a cabine de entrega, <strong>caminhe junto com o carro, não deixando espaço na pista</strong>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-meumequi">
+
+      <div class="section-label">Programa de Fidelidade</div>
+
+      <div class="meu-mequi-box">
+        <div style="font-family:var(--font-display);font-size:22px;font-weight:800;">Meu <span style="color:var(--yellow);">Méqui</span></div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.80);margin-top:10px;line-height:1.6;">
+          Programa de Fidelidade disponível no App do McDonald's — simples e todos podem participar!
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⭐</div>
+          <h2>O que é o Meu Méqui?</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill yellow">📱 App do McDonald's</div>
+            <div class="pill green">Acumula pontos</div>
+            <div class="pill blue">Personaliza experiência</div>
+            <div class="pill red">Incentiva futuras visitas</div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>O cliente pode acumular pontos em todos os segmentos do restaurante, <strong>exceto nos aplicativos de Delivery terceiros</strong>.</div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">🗣️</div>
+            <div>Perguntar para <strong>TODOS OS CLIENTES</strong>: <em>"Você participa do Meu Méqui?"</em> — para que possam acumular pontos no momento da compra.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — Drive-Thru</h2>
+          <div class="badge badge-red">10 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Drive-Thru: Influencer e Pagamento · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_DRIVE = [
+      {
+        category: "🎙️ Drive · COD",
+        question: "Ao trabalhar em dupla no Drive, quando a Pessoa do Tablet deve iniciar o registro no Tablet?",
+        options: [
+          "Assim que o carro chegar",
+          "Após visualizar na tela do COD que o pedido foi aberto ('Abre Pedido')",
+          "Após o cliente se identificar",
+          "Quando o caixa autorizar"
+        ],
+        answer: "Após visualizar na tela do COD que o pedido foi aberto ('Abre Pedido')",
+        explanation: "A Pessoa do Tablet só inicia o registro no Tablet após visualizar na tela do COD a informação de que o pedido foi aberto ('Abre Pedido')."
+      },
+      {
+        category: "🎙️ Drive · COD",
+        question: "Como deve ser confirmado o pedido ao cliente no Drive?",
+        options: [
+          "Lendo o pedido completo em voz alta",
+          "Solicitando ao cliente que confirme se o pedido está correto no monitor",
+          "Imprimindo e entregando o ticket",
+          "Apenas verbalmente sem apoio visual"
+        ],
+        answer: "Solicitando ao cliente que confirme se o pedido está correto no monitor",
+        explanation: "Ao totalizar o pedido, solicite ao cliente que confirme se o pedido está correto no monitor."
+      },
+      {
+        category: "🎙️ Drive · COD",
+        question: "Como comunicar um refrigerante pequeno para uma criança no Drive?",
+        options: [
+          '"Refrigerante de 300ml"',
+          '"Refrigerante pequeno"',
+          '"Bebida tamanho P"',
+          '"Copo menor"'
+        ],
+        answer: '"Refrigerante pequeno"',
+        explanation: "Saiba se comunicar de forma diferenciada com crianças, sem usar termos técnicos. Ex.: 'refrigerante pequeno' ao invés de 'refrigerante de 300ml'."
+      },
+      {
+        category: "📱 Drive · Tablet",
+        question: "O que a Pessoa do Tablet deve fazer se o carro atendido no COD avançar?",
+        options: [
+          "Ficar parado e aguardar",
+          "Andar com o carro que está atendendo passando do Totem, nunca deixando espaço na pista",
+          "Chamar o gerente",
+          "Cancelar o atendimento atual"
+        ],
+        answer: "Andar com o carro que está atendendo passando do Totem, nunca deixando espaço na pista",
+        explanation: "Se o carro atendido no COD avançar, ande com o carro que está atendendo passando do Totem para que a Pessoa do COD possa iniciar o próximo. Nunca deixe espaço na pista."
+      },
+      {
+        category: "💰 Drive · Caixa",
+        question: "Como deve ser mantida a janela da cabine de pagamento?",
+        options: [
+          "Sempre aberta para agilizar o atendimento",
+          "Fechada, abrindo somente quando o cliente estiver se aproximando",
+          "Aberta durante todo o horário de pico",
+          "Fechada somente no frio"
+        ],
+        answer: "Fechada, abrindo somente quando o cliente estiver se aproximando",
+        explanation: "Mantenha a janela fechada, abrindo-a somente quando o cliente estiver se aproximando."
+      },
+      {
+        category: "💰 Drive · Caixa",
+        question: "O que fazer com o dinheiro recebido antes de dar o troco?",
+        options: [
+          "Guardar na gaveta imediatamente",
+          "Manter horizontalmente sobre o caixa até concluir o troco",
+          "Mostrar ao gerente",
+          "Colocar na máquina de conferência"
+        ],
+        answer: "Manter horizontalmente sobre o caixa até concluir o troco",
+        explanation: "Receba e mantenha o dinheiro horizontalmente sobre o caixa até concluir o troco para o cliente."
+      },
+      {
+        category: "🚗 Drive · Caixa Móvel",
+        question: "A partir de qual carro o Caixa Móvel deve iniciar a cobrança?",
+        options: ["1° carro", "2° carro", "3° carro", "Qualquer carro"],
+        answer: "2° carro",
+        explanation: "O Caixa Móvel solicita ao caixa drive o valor do próximo carro a ser cobrado — sempre a partir do 2° carro."
+      },
+      {
+        category: "🚗 Drive · Caixa Móvel",
+        question: "O que fazer com a 2ª via do comprovante do cartão no Caixa Móvel?",
+        options: [
+          "Entregar ao cliente",
+          "Guardar para conferência",
+          "Entregar ao gerente imediatamente",
+          "Descartar"
+        ],
+        answer: "Guardar para conferência",
+        explanation: "Após o pagamento, entregue o comprovante ao cliente e guarde a 2ª via para conferência."
+      },
+      {
+        category: "💰 Drive · Caixa",
+        question: "Quando solicitar a presença do gerente no caixa?",
+        options: [
+          "Apenas em casos de roubo",
+          "Em todos os casos de erro, anulação ou quando prever falta de troco",
+          "Apenas ao final do turno",
+          "Somente quando o cliente reclamar"
+        ],
+        answer: "Em todos os casos de erro, anulação ou quando prever falta de troco",
+        explanation: "Solicitar a presença do gerente em todos os casos de erro ou anulação, ou quando prever falta de troco (antes de acabar)."
+      },
+      {
+        category: "🎙️ Drive · COD",
+        question: "Como deve ser feita a sugestão de venda no Drive em alto volume?",
+        options: [
+          "Módulo vendedor",
+          "Módulo rápido",
+          "Sem sugestão em alto volume",
+          "Apenas McOferta"
+        ],
+        answer: "Módulo rápido",
+        explanation: "Em alto volume = módulo rápido. Em baixo volume = módulo vendedor."
+      },
+      { category: "🎙️ Drive · COD", question: "O que deve ser feito se um cliente apresentar cupom no COD?", options: ["Ignorar e registrar o pedido normalmente", "Fazer a leitura dos BOGs", "Chamar o gerente", "Pedir para o cliente ir ao balcão"], answer: "Fazer a leitura dos BOGs", explanation: "Caso o pedido tenha cupom, fazer a leitura dos BOGs." },
+      { category: "🎙️ Drive · COD", question: "O que dizer ao cliente quando não entendeu o pedido completo?", options: ['"Pode repetir tudo?"', '"Eu deixei de anotar alguma coisa?"', '"Qual era o pedido mesmo?"', '"Aguarde um momento"'], answer: '"Eu deixei de anotar alguma coisa?"', explanation: 'Repetir apenas os itens anotados e perguntar: "Eu deixei de anotar alguma coisa?"' },
+      { category: "🎙️ Drive · COD", question: "Como solicitar ao cliente que confirme o pedido no COD?", options: ["Ler o pedido completo em voz alta", "Pedir que confirme se o pedido está correto no monitor", "Imprimir o ticket e mostrar", "Chamar o gerente para confirmar"], answer: "Pedir que confirme se o pedido está correto no monitor", explanation: "Ao totalizar o pedido, solicitar ao cliente que confirme se o pedido está correto no monitor." },
+      { category: "🎙️ Drive · COD", question: "Como deve ser feita a comunicação ao atender crianças no Drive?", options: ["Usar termos técnicos normalmente", "Usar linguagem simples sem termos técnicos, ex: refrigerante pequeno", "Falar mais devagar", "Chamar os pais para confirmar"], answer: "Usar linguagem simples sem termos técnicos, ex: refrigerante pequeno", explanation: "Saiba comunicar-se de forma diferenciada com crianças: 'refrigerante pequeno' ao invés de 'refrigerante de 300ml'." },
+      { category: "🎙️ Drive · COD", question: "O que é o módulo rápido no Drive?", options: ["Atendimento mais lento e detalhado", "Sugestão de venda usada em baixo volume", "Sugestão de venda ágil usada em alto volume", "Apenas registrar o pedido sem sugestão"], answer: "Sugestão de venda ágil usada em alto volume", explanation: "Em alto volume = módulo rápido (ágil). Em baixo volume = módulo vendedor (mais detalhado)." },
+      { category: "📱 Drive · Tablet", question: "O que fazer se a Pessoa do COD não finalizou o atendimento do carro atual?", options: ["Aguardar parado", "Ir para o próximo carro e iniciar a tomada do pedido", "Chamar o gerente", "Retornar ao início da fila"], answer: "Ir para o próximo carro e iniciar a tomada do pedido", explanation: "Se a Pessoa do COD não finalizou, siga para o próximo carro iniciando a tomada do pedido." },
+      { category: "📱 Drive · Tablet", question: "Qual o procedimento ao carro atendido no COD avançar enquanto o Tablet atende outro?", options: ["Ficar parado no lugar", "Andar com o carro que está atendendo passando do Totem, nunca deixar espaço na pista", "Voltar para a cabine", "Chamar reforço"], answer: "Andar com o carro que está atendendo passando do Totem, nunca deixar espaço na pista", explanation: "Se o carro do COD avançar, ande com o carro que está atendendo passando do Totem. Nunca deixe espaço na pista." },
+      { category: "💰 Drive · Caixa", question: "O que deve ser preparado antes do cliente chegar à cabine de pagamento?", options: ["Nada, esperar o cliente chegar", "Troco e cupom fiscal (e Pin Pad se cartão)", "Apenas o cupom fiscal", "Apenas o Pin Pad"], answer: "Troco e cupom fiscal (e Pin Pad se cartão)", explanation: "Preparar antecipadamente o troco e o cupom fiscal. Para pagamento com cartão, preparar o Pin Pad." },
+      { category: "💰 Drive · Caixa", question: "O que fazer ao receber dinheiro no caixa Drive?", options: ["Guardar na gaveta antes de dar o troco", "Manter o dinheiro horizontalmente sobre o caixa até concluir o troco", "Colocar na máquina de conferência primeiro", "Pedir para o cliente segurar"], answer: "Manter o dinheiro horizontalmente sobre o caixa até concluir o troco", explanation: "Receber e manter o dinheiro horizontalmente sobre o caixa até concluir o troco para o cliente." },
+      { category: "💰 Drive · Caixa", question: "O que fazer quando o pedido tem McLanche Feliz na cabine de pagamento?", options: ["O brinquedo é entregue na janela de entrega", "Entregar o brinquedo correto marcado no pedido junto com o cupom fiscal", "Perguntar ao cliente qual brinquedo quer", "Deixar o brinquedo no saco"], answer: "Entregar o brinquedo correto marcado no pedido junto com o cupom fiscal", explanation: "No caso de McLanche Feliz, entregar o brinquedo correto marcado no pedido." },
+      { category: "🚗 Drive · Caixa Móvel", question: "O que fazer se a seladora de pagamento não finalizar o pedido do carro na cabine?", options: ["Esperar sem fazer nada", "Cobrar o próximo carro e caminhar com a fila sem deixar espaço", "Chamar o gerente imediatamente", "Cancelar a operação"], answer: "Cobrar o próximo carro e caminhar com a fila sem deixar espaço", explanation: "Se o caixa drive não finalizou, cobre o próximo carro. Se a fila avançar para entrega, caminhe junto não deixando espaço na pista." },
+      { category: "🚗 Drive · Caixa Móvel", question: "O que fazer com o comprovante de cartão ao usar o Caixa Móvel?", options: ["Entregar ao cliente e descartar a 2ª via", "Entregar ao cliente a 1ª via e guardar a 2ª via para conferência", "Guardar as duas vias", "Descartar ambas as vias"], answer: "Entregar ao cliente a 1ª via e guardar a 2ª via para conferência", explanation: "Entregar o comprovante ao cliente e guardar a 2ª via para conferência." },
+      { category: "⚙️ Drive · Preparação", question: "Qual o papel do GPRS no Drive?", options: ["Monitor de pedidos", "Terminal de pagamento portátil para Caixa Móvel", "Comunicação por rádio", "Impressora de tickets"], answer: "Terminal de pagamento portátil para Caixa Móvel", explanation: "O GPRS é o terminal de pagamento portátil usado pelo Caixa Móvel para antecipar cobranças." },
+      { category: "⚙️ Drive · Preparação", question: "Para que serve o Headset no Drive-Thru?", options: ["Ouvir música durante o trabalho", "Comunicação entre COD e Tablet quando necessário", "Receber pedidos do gerente", "Monitorar a pista"], answer: "Comunicação entre COD e Tablet quando necessário", explanation: "O Headset é usado para comunicação entre a Pessoa do COD e a Pessoa do Tablet quando necessário." },
+      { category: "⭐ Drive · Meu Méqui", question: "Onde o cliente acumula pontos do Meu Méqui no Drive?", options: ["Não acumula no Drive", "Acumula normalmente como em qualquer segmento do restaurante", "Apenas no COD, não no Tablet", "Apenas com pagamento em cartão"], answer: "Acumula normalmente como em qualquer segmento do restaurante", explanation: "O cliente pode acumular pontos do Meu Méqui em todos os segmentos do restaurante, incluindo Drive-Thru." },
+      { category: "🎙️ Drive · COD", question: "O que fazer se um cliente apresentar cupom no COD?", options: ["Ignorar e registrar normalmente", "Fazer a leitura dos BOGs", "Chamar o gerente", "Pedir para ir ao balcão"], answer: "Fazer a leitura dos BOGs", explanation: "Caso o pedido tenha cupom, fazer a leitura dos BOGs." },
+      { category: "💰 Drive · Caixa", question: "O que preparar antes do cliente chegar à cabine de pagamento?", options: ["Nada, esperar chegar", "Troco e cupom fiscal (e Pin Pad se cartão)", "Apenas o cupom fiscal", "Apenas o Pin Pad"], answer: "Troco e cupom fiscal (e Pin Pad se cartão)", explanation: "Preparar antecipadamente o troco e o cupom fiscal. Para cartão, preparar o Pin Pad." },
+      { category: "💰 Drive · Caixa", question: "Como manter o dinheiro ao receber na cabine?", options: ["Guardar na gaveta antes do troco", "Horizontalmente sobre o caixa até concluir o troco", "Colocar na máquina de conferência", "Pedir para o cliente segurar"], answer: "Horizontalmente sobre o caixa até concluir o troco", explanation: "Manter o dinheiro horizontalmente sobre o caixa até concluir o troco para o cliente." },
+      { category: "🚗 Drive · Caixa Móvel", question: "O que fazer com o comprovante de cartão no Caixa Móvel?", options: ["Entregar ao cliente e descartar a 2ª via", "Entregar a 1ª via ao cliente e guardar a 2ª via", "Guardar as duas vias", "Descartar ambas"], answer: "Entregar a 1ª via ao cliente e guardar a 2ª via", explanation: "Entregar o comprovante ao cliente e guardar a 2ª via para conferência." },
+      { category: "⚙️ Drive · Preparação", question: "Para que serve o GPRS no Drive?", options: ["Monitor de pedidos", "Terminal de pagamento portátil para Caixa Móvel", "Comunicação por rádio", "Impressora de tickets"], answer: "Terminal de pagamento portátil para Caixa Móvel", explanation: "O GPRS é o terminal de pagamento portátil usado pelo Caixa Móvel para antecipar cobranças." },
+      { category: "⭐ Drive · Meu Méqui", question: "O cliente pode acumular pontos do Meu Méqui no Drive?", options: ["Não acumula no Drive", "Acumula normalmente como em qualquer segmento", "Apenas no COD, não no Tablet", "Apenas com pagamento em cartão"], answer: "Acumula normalmente como em qualquer segmento", explanation: "O cliente pode acumular pontos do Meu Méqui em todos os segmentos do restaurante." },
+      { category: "💰 Drive · McLanche", question: "O que fazer ao receber McLanche Feliz na cabine de pagamento?", options: ["Brinquedo vai para janela de entrega", "Entregar o brinquedo correto marcado no pedido junto ao cupom", "Perguntar qual brinquedo o cliente quer", "Deixar o brinquedo no saco"], answer: "Entregar o brinquedo correto marcado no pedido junto ao cupom", explanation: "No caso de McLanche Feliz, entregar o brinquedo correto marcado no pedido." },
+      { category: "🚗 Drive · Pista", question: "O que fazer se a fila avançar enquanto o Tablet está atendendo outro carro?", options: ["Ficar parado no lugar", "Caminhar com o carro atendido, nunca deixar espaço na pista", "Voltar para a cabine", "Chamar reforço"], answer: "Caminhar com o carro atendido, nunca deixar espaço na pista", explanation: "Nunca deixe espaço na pista. Ande com o carro que está atendendo passando do Totem." },
+      { category: "💰 Drive · Caixa", question: "Quando deve ser assinado novamente o cupom financeiro no Drive?", options: ["Apenas na abertura", "Apenas no fechamento", "Na abertura e quando o Gerente fizer retirada", "A cada hora"], answer: "Na abertura e quando o Gerente fizer retirada", explanation: "Assinar na abertura do turno e novamente quando o Gerente fizer retirada do troco." },
+      { category: "🎙️ Drive · COD", question: "Qual a diferença entre módulo vendedor e módulo rápido?", options: ["Módulo rápido é mais detalhado", "Módulo vendedor é mais ágil", "Módulo vendedor é usado em alto volume, rápido em baixo", "Módulo vendedor é mais detalhado, rápido é mais ágil"], answer: "Módulo vendedor é mais detalhado, rápido é mais ágil", explanation: "Em baixo volume = módulo vendedor (detalhado). Em alto volume = módulo rápido (ágil)." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_DRIVE);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_DRIVE);
+    });
+  </script>
+</body>
+</html>

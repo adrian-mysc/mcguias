@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conteúdo para Supervisores — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="supervisores">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>👔 Conteúdo para Supervisores</h1>
+        <p>Área Restrita</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+    <div class="page-tabs">
+      <div class="page-tabs-inner">
+        <button class="tab-btn active" data-tab="gestao">📊 Gestão</button>
+        <button class="tab-btn" data-tab="turno">⏱️ Turno</button>
+        <button class="tab-btn" data-tab="checklists">✅ Checklists</button>
+        <button class="tab-btn" data-tab="auditorias">🔍 Auditorias</button>
+        <button class="tab-btn" data-tab="ferramentas">🛠️ Ferramentas</button>
+        <button class="tab-btn" data-tab="indicadores">📈 Indicadores</button>
+        <button class="tab-btn" data-tab="quiz-area">🎯 Quiz</button>
+      </div>
+    </div>
+    <div class="page-content">
+
+      <div class="tab-panel active" id="panel-gestao">
+        <div class="section-label">Gestão Operacional</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">📊</div><h2>Indicadores de Desempenho — McCafé</h2></div>
+          <div class="card-body">
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead><tr><th>KPI</th><th>Descrição</th><th>Meta</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Vendas Comp. McCafé</strong></td><td>Crescimento comparado ao ano anterior</td><td>Positivo</td></tr>
+                  <tr><td><strong>GCs McCafé</strong></td><td>Guests Counts — clientes no McCafé</td><td>Crescimento</td></tr>
+                  <tr><td><strong>URDs de Café</strong></td><td>Units per Receipt — bebidas por cupom</td><td>≥ meta do restaurante</td></tr>
+                  <tr><td><strong>McExperiência</strong></td><td>Avaliação de satisfação do cliente</td><td>Meta por restaurante</td></tr>
+                  <tr><td><strong>IP McCafé</strong></td><td>Índice de Produtividade (mín. 3.000 GCs/mês)</td><td>Produtividade ≥ 6</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="alert warn" style="margin-top:10px;">
+              ⚠️ McCafés que realizam menos de 3.000 GCs/mês ou não atingem produtividade mínima de 6 devem ser avaliados nos pontos: projeções x posicionamento, layout, utensílios, equipamentos e nível de treinamento.
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">👥</div><h2>Parâmetros de Posicionamento — McCafé</h2></div>
+          <div class="card-body">
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead><tr><th>GCs/hora</th><th>Mínimo de pessoas</th><th>Funções cobertas</th></tr></thead>
+                <tbody>
+                  <tr><td>0 a 7</td><td>1</td><td>Todas</td></tr>
+                  <tr><td>8 a 14</td><td>2</td><td>Bebidas + Caixa</td></tr>
+                  <tr><td>15 a 21</td><td>3</td><td>+ Forno/Vitrine</td></tr>
+                  <tr><td>22 a 28</td><td>4</td><td>+ Entrega Interna</td></tr>
+                  <tr><td>29 a 35</td><td>5</td><td>+ Salão</td></tr>
+                  <tr><td>36 a 55</td><td>6</td><td>+ Estocagem</td></tr>
+                  <tr><td>56 a 65</td><td>7</td><td>+ Bebidas McCafé 2</td></tr>
+                  <tr><td>66 a 75</td><td>8</td><td>+ Entrega Externa 2</td></tr>
+                  <tr><td>Acima de 76</td><td>9</td><td>Completo</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-auditorias">
+        <div class="section-label">Auditoria e Padrão</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">🔍</div><h2>Checklist MCRV — Pré-Pico</h2></div>
+          <div class="card-body">
+            <div class="info-block">
+              O <strong>Checklist Pré-Pico e Segurança Alimentar</strong> contém atividades que devem ser realizadas antes da hora pico. Executado pelo <strong>Gerente</strong> a cada período de pico.
+            </div>
+            <div class="section-label" style="margin-top:12px;">Áreas a Avaliar</div>
+            <div class="check-item"><input type="checkbox"><label><strong>Equipamentos:</strong> Funcionamento, temperatura e limpeza de todos os equipamentos</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Organização:</strong> Layout correto e estoque adequado em todas as estações</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Gerenciamento:</strong> Posicionamento correto da equipe conforme projeção de GCs</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Segurança do Alimento:</strong> Temperaturas, tempos de vida marcados, etiquetas corretas</label></div>
+            <div class="check-item"><input type="checkbox"><label><strong>Manutenção:</strong> Verificar equipamentos com possíveis problemas e abrir chamado se necessário</label></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">📋</div><h2>Pontos Críticos de Fiscalização</h2></div>
+          <div class="card-body">
+            <div class="rota-items">
+              <div class="rota-head c1">Segurança do Alimento</div>
+              <div class="rota-item">Temperaturas de UHC, fritadeiras e câmaras dentro dos padrões · Compostos Polares do óleo ≤ 24% · Tempos de vida marcados e respeitados em todas as estações</div>
+              <div class="rota-head c2">Padrão de Produto</div>
+              <div class="rota-item">Sanduíches montados conforme receita · Porções corretas de McFritas · Temperatura de serviço das bebidas dentro do padrão</div>
+              <div class="rota-head c3">Atendimento e Serviço</div>
+              <div class="rota-item">SOS (Speed of Service) dentro da meta · Posicionamento adequado por volume de GCs · Venda sugestiva sendo praticada</div>
+              <div class="rota-head c4">Limpeza e Higiene</div>
+              <div class="rota-item">Rota de salão a cada 15-30 min · Banheiros inspecionados a cada hora · Panos separados por área (chapa, salão, banheiro)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">⚠️</div><h2>Ações Corretivas Imediatas</h2></div>
+          <div class="card-body">
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead><tr><th>Desvio encontrado</th><th>Ação imediata</th></tr></thead>
+                <tbody>
+                  <tr><td>Temperatura fora do padrão (UHC, câmara)</td><td>Descartar produto, chamar manutenção, registrar ocorrência</td></tr>
+                  <tr><td>Compostos Polares do óleo acima de 24%</td><td>Descartar o óleo imediatamente, limpar a fritadeira e repor</td></tr>
+                  <tr><td>Produto sem etiqueta de tempo de vida</td><td>Descartar produto, retreinar a equipe da estação</td></tr>
+                  <tr><td>Equipamento com mau funcionamento</td><td>Abrir chamado de manutenção imediatamente, comunicar gerente</td></tr>
+                  <tr><td>Posicionamento insuficiente para o volume</td><td>Redistribuir a equipe conforme tabela de posicionamento</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-ferramentas">
+        <div class="section-label">Ferramentas de Gestão</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">🛠️</div><h2>Ferramentas MCRV</h2></div>
+          <div class="card-body">
+            <div class="rota-items">
+              <div class="rota-head c1">Checklist Pré-Pico</div>
+              <div class="rota-item">Atividades pré-hora pico · Objetivo: máximo de GCs com produto de alto padrão · Periodicidade: a cada pico</div>
+              <div class="rota-head c2">MCRV (avaliação de restaurante)</div>
+              <div class="rota-item">Avaliação periódica de Qualidade, Serviço, Limpeza e Valor · Base para planos de ação e metas</div>
+              <div class="rota-head c3">IP (Índice de Produtividade)</div>
+              <div class="rota-item">Monitorar GCs/hora por colaborador · Meta mínima: produtividade 6 · Avaliação mensal</div>
+              <div class="rota-head c4">LSM (Marketing Local)</div>
+              <div class="rota-item">Ações de promoção locais · Atrair novos GCs · Aumentar frequência de visitas · Incrementar ticket médio</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">📈</div><h2>Objetivos de Venda — McCafé</h2></div>
+          <div class="card-body">
+            <div class="info-block">
+              <strong>Atrair GCs:</strong> Focar em itens exclusivos de baixo preço · Promover frequência de visitas e fidelidade.<br><br>
+              <strong>Aumentar Ticket Médio:</strong> Focar em itens premium ou combos · Impulsionar upgrade de produto.<br><br>
+              <strong>URDs:</strong> Cada atendente deve oferecer café associado a qualquer pedido — café e produto doce/salgado juntos aumentam o ticket médio e o URD.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-turno">
+
+        <div class="section-label">Controle de Turno</div>
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Registro de Turno</h2></div>
+          <div class="card-body">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+              <div>
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">ABERTURA</div>
+                <input type="time" id="turno-inicio" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+              </div>
+              <div>
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">FECHAMENTO</div>
+                <input type="time" id="turno-fim" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+              <div>
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">GCs PROJETADOS</div>
+                <input type="number" id="turno-gcs-proj" placeholder="ex: 450" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+              </div>
+              <div>
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">GCs REALIZADOS</div>
+                <input type="number" id="turno-gcs-real" placeholder="ex: 478" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+              </div>
+            </div>
+            <button onclick="calcTurno()" style="width:100%;padding:12px;background:var(--red);color:#fff;border:none;border-radius:10px;font-family:var(--font-display);font-size:14px;font-weight:800;cursor:pointer;margin-bottom:10px;">Calcular</button>
+            <div id="turno-resultado" style="display:none;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px;"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">👥</div><h2>Calculadora de Posicionamento</h2></div>
+          <div class="card-body">
+            <div class="info-block" style="margin-bottom:10px;">Informe os GCs/hora previstos para calcular o posicionamento mínimo recomendado.</div>
+            <div style="display:flex;gap:10px;align-items:flex-end;margin-bottom:10px;">
+              <div style="flex:1;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">GCs / HORA</div>
+                <input type="number" id="pos-gcs" placeholder="ex: 32" oninput="calcPosicionamento()" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:16px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+              </div>
+            </div>
+            <div id="pos-resultado"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">📝</div><h2>Ocorrências do Turno</h2></div>
+          <div class="card-body">
+            <textarea id="ocorrencias-texto" placeholder="Registre aqui ocorrências, manutenções solicitadas, observações do turno..." rows="5" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--bg);resize:vertical;margin-bottom:8px;"></textarea>
+            <div style="display:flex;gap:8px;">
+              <button onclick="salvarOcorrencia()" style="flex:1;padding:10px;background:var(--red);color:#fff;border:none;border-radius:10px;font-family:var(--font-display);font-size:13px;font-weight:800;cursor:pointer;">💾 Salvar</button>
+              <button onclick="limparOcorrencias()" style="padding:10px 14px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">🗑️</button>
+            </div>
+            <div id="ocorrencias-lista" style="margin-top:10px;display:flex;flex-direction:column;gap:6px;"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tab-panel" id="panel-checklists">
+
+        <div class="section-label">Checklists de Supervisão</div>
+
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">🌅</div><h2>Abertura do Restaurante</h2>
+            <button onclick="resetChecklist('ab')" style="background:none;border:none;font-size:11px;color:var(--muted);cursor:pointer;font-weight:600;">↺ Resetar</button>
+          </div>
+          <div class="card-body">
+            <div class="sv-progress" id="prog-ab"></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Verificar temperaturas: UHC, fritadeiras, câmaras e chapa</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Máquina de café ligada — verificar temperatura da água após 30 min (75°C–85°C)</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Estoque de ingredientes conferido — faltas sinalizadas</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Limpeza das estações e áreas de preparo verificada</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Totens NGK: papel, tela e funcionamento conferidos</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Vitrine com produtos dentro do tempo de vida marcado</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Embalagens e suprimentos do balcão abastecidos</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Fundo de caixa conferido com o gerente</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Posicionamento da equipe alinhado conforme projeção de GCs</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="ab" onchange="updateProgress('ab')"><label>Salão, banheiros e área externa limpos antes da abertura</label></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">🔥</div><h2>Pré-Pico</h2>
+            <button onclick="resetChecklist('pp')" style="background:none;border:none;font-size:11px;color:var(--muted);cursor:pointer;font-weight:600;">↺ Resetar</button>
+          </div>
+          <div class="card-body">
+            <div class="sv-progress" id="prog-pp"></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>Posicionamento ajustado para o volume previsto</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>Estoque de carnes, batatas e ingredientes antecipado</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>Fritadeiras na temperatura correta (168°C)</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>Chapa na temperatura e Clean Mode revisados</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>UHC abastecida e com temperaturas dentro do padrão</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>LOPE: alface, tomate, cebola e molhos repostos</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>Balcão e entrega abastecidos com embalagens</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>Delivery: sacolas, lacres e embalagens disponíveis</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="pp" onchange="updateProgress('pp')"><label>Comunicação com a equipe sobre metas do período</label></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">🌙</div><h2>Fechamento do Restaurante</h2>
+            <button onclick="resetChecklist('fe')" style="background:none;border:none;font-size:11px;color:var(--muted);cursor:pointer;font-weight:600;">↺ Resetar</button>
+          </div>
+          <div class="card-body">
+            <div class="sv-progress" id="prog-fe"></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Limpeza completa de todas as estações realizada</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Chapa: Clean Mode executado, Teflons alternados</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Tostadeiras desligadas e limpas conforme procedimento</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Máquina de café: finalização e limpeza executadas</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Utensílios lavados e sanitizados no sistema de 3 cubas</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Pães Brioche separados para ambientação (12h descongelamento)</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Câmaras e congeladores organizados com PEPS</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Salão, banheiros e área externa limpos</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Caixa conferido e fechado com o gerente</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Ocorrências do turno registradas</label></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">🧹</div><h2>Rota de Salão</h2>
+            <button onclick="resetChecklist('sa')" style="background:none;border:none;font-size:11px;color:var(--muted);cursor:pointer;font-weight:600;">↺ Resetar</button>
+          </div>
+          <div class="card-body">
+            <div class="info-block" style="margin-bottom:8px;">Frequência recomendada: a cada <strong>15–30 minutos</strong> durante a operação.</div>
+            <div class="sv-progress" id="prog-sa"></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="sa" onchange="updateProgress('sa')"><label>Mesas e cadeiras limpas e organizadas</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="sa" onchange="updateProgress('sa')"><label>Piso varrido e esfregado nas áreas necessárias</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="sa" onchange="updateProgress('sa')"><label>Napkineiras abastecidas (guardanapos, sal, pimenta)</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="sa" onchange="updateProgress('sa')"><label>Banheiros inspecionados e limpos</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="sa" onchange="updateProgress('sa')"><label>Lixeiras esvaziadas e trocadas</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="sa" onchange="updateProgress('sa')"><label>Vidros e espelhos sem marcas visíveis</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="sa" onchange="updateProgress('sa')"><label>Cortesia realizada com clientes</label></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Checklist de Temperatura</h2>
+            <button onclick="resetChecklist('te')" style="background:none;border:none;font-size:11px;color:var(--muted);cursor:pointer;font-weight:600;">↺ Resetar</button>
+          </div>
+          <div class="card-body">
+            <div style="overflow-x:auto;margin-bottom:10px;">
+              <table class="data-table">
+                <thead><tr><th>Equipamento</th><th>Padrão</th><th>✅</th></tr></thead>
+                <tbody>
+                  <tr><td>Chapa inferior</td><td>218°C (425°F)</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Chapa superior</td><td>177°C (350°F)</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Fritadeiras McFritas</td><td>168°C (335°F)</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Fritadeiras frango/tortas</td><td>168°C (335°F)</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>UHC (produtos)</td><td>≥ 60°C interno</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Câmara de resfriados</td><td>1°C a 4°C</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Câmara de congelados</td><td>-18°C ou abaixo</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Máquina de café (água)</td><td>75°C a 85°C</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Leite Foamino</td><td>70°C a 74°C</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Refrigerador do balcão</td><td>1°C a 4°C</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                  <tr><td>Compostos Polares (óleo)</td><td>≤ 24%</td><td><input type="checkbox" class="sv-check" data-group="te" onchange="updateProgress('te')"></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sv-progress" id="prog-te"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tab-panel" id="panel-indicadores">
+        <div class="section-label">Indicadores Operacionais</div>
+
+        <div class="card">
+          <div class="card-head"><div class="card-head-icon">⏱️</div><h2>SOS — Speed of Service</h2></div>
+          <div class="card-body">
+            <div class="info-block">
+              O <strong>SOS</strong> mede o tempo total desde o registro do pedido até a entrega ao cliente. É o principal indicador de velocidade do restaurante.
+            </div>
+            <div style="overflow-x:auto;margin-top:10px;">
+              <table class="data-table">
+                <thead><tr><th>Canal</th><th>Meta de SOS</th><th>Referência</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Balcão (Front Counter)</strong></td><td>≤ 90s</td><td>Do pedido à entrega</td></tr>
+                  <tr><td><strong>Drive-Thru</strong></td><td>≤ 180s</td><td>Do COD à janela de entrega</td></tr>
+                  <tr><td><strong>McDelivery</strong></td><td>≤ 4 min</td><td>Do pedido à entrega ao motoboy</td></tr>
+                  <tr><td><strong>NGK / Totem</strong></td><td>≤ 120s</td><td>Do pagamento à entrega</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="alert warn" style="margin-top:10px;">
+              ⚠️ SOS acima da meta indica gargalo — verifique: posicionamento insuficiente, produto em falta, equipamento lento ou fila de montagem.
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">🎯</div><h2>MCRV — Métricas de Qualidade</h2></div>
+          <div class="card-body">
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead><tr><th>Indicador</th><th>O que mede</th><th>Impacto</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>QSL&V</strong></td><td>Qualidade, Serviço, Limpeza e Valor</td><td>Base da avaliação MCRV</td></tr>
+                  <tr><td><strong>McExperiência</strong></td><td>Satisfação do cliente pós-visita</td><td>Reputação e fidelização</td></tr>
+                  <tr><td><strong>Auditoria Interna</strong></td><td>Conformidade operacional por estação</td><td>Identificar gaps de treinamento</td></tr>
+                  <tr><td><strong>Ticket Médio</strong></td><td>Valor médio por cupom</td><td>Eficácia da venda sugestiva</td></tr>
+                  <tr><td><strong>GCs/hora</strong></td><td>Clientes atendidos por hora</td><td>Capacidade operacional</td></tr>
+                  <tr><td><strong>Compostos Polares</strong></td><td>Qualidade do óleo (max 24%)</td><td>Segurança alimentar</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Temperaturas de Referência — Supervisão</h2></div>
+          <div class="card-body">
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead><tr><th>Equipamento / Produto</th><th>Temperatura</th><th>Frequência de verificação</th></tr></thead>
+                <tbody>
+                  <tr><td>UHC — carnes</td><td>≥ 60°C interno</td><td>A cada turno</td></tr>
+                  <tr><td>Chapa — placa superior</td><td>177°C (350°F)</td><td>Abertura e após limpeza</td></tr>
+                  <tr><td>Chapa — placa inferior</td><td>218°C (425°F)</td><td>Abertura e após limpeza</td></tr>
+                  <tr><td>Fritadeira</td><td>168°C (335°F)</td><td>Antes de cada fritura</td></tr>
+                  <tr><td>Câmara refrigerada</td><td>1°C a 4°C</td><td>2x por turno</td></tr>
+                  <tr><td>Congelador</td><td>≤ -18°C</td><td>2x por turno</td></tr>
+                  <tr><td>Mix sorvete (reservatório)</td><td>1°C a 4°C</td><td>Abertura e meio de turno</td></tr>
+                  <tr><td>Coberturas sundae (banho-maria)</td><td>46°C a 52°C</td><td>A cada 2h</td></tr>
+                  <tr><td>Água café coado</td><td>75°C a 85°C</td><td>30 min após ligar</td></tr>
+                  <tr><td>Tomate (mesa)</td><td>Amb. ≤ 2h após fatiar</td><td>A cada reposição</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="card-head"><div class="card-head-icon">📊</div><h2>Calculadora de SOS Estimado</h2></div>
+          <div class="card-body">
+            <div class="info-block" style="margin-bottom:12px;">
+              Estime o tempo de serviço médio do turno. Insira os dados abaixo.
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+              <div style="flex:1;min-width:120px;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">PEDIDOS NO PERÍODO</div>
+                <input type="number" id="sos-pedidos" min="1" placeholder="ex: 80" style="width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+              </div>
+              <div style="flex:1;min-width:120px;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">DURAÇÃO (minutos)</div>
+                <input type="number" id="sos-minutos" min="1" placeholder="ex: 60" style="width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+              </div>
+              <div style="flex:1;min-width:120px;">
+                <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">CANAL</div>
+                <select id="sos-canal" style="width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+                  <option value="90">Balcão (meta 90s)</option>
+                  <option value="180">Drive-Thru (meta 180s)</option>
+                  <option value="240">McDelivery (meta 240s)</option>
+                  <option value="120">NGK/Totem (meta 120s)</option>
+                </select>
+              </div>
+            </div>
+            <button onclick="calcularSOS()" style="width:100%;padding:11px;background:var(--red);color:#fff;border:none;border-radius:10px;font-family:var(--font-display);font-size:14px;font-weight:800;cursor:pointer;margin-bottom:10px;">📊 Calcular</button>
+            <div id="sos-resultado"></div>
+          </div>
+        </div>
+
+      </div>
+
+            <div class="tab-panel" id="panel-quiz-area">
+        <div class="section-label">Simulado</div>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-head-icon">🎯</div>
+            <h2>Quiz — Supervisores</h2>
+            <div class="badge badge-red">28 perguntas</div>
+          </div>
+          <div class="card-body">
+            <div id="quiz-app"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Conteúdo para Supervisores · Área Restrita
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+      if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+        unlock();
+      }
+      initProgressBars();
+      renderOcorrencias();
+      var input = document.getElementById('pw-input');
+      if (input) input.focus();
+
+      var quizPanel = document.getElementById('panel-quiz-area');
+      if (quizPanel) {
+        var observer = new MutationObserver(function() {
+          if (quizPanel.classList.contains('active')) {
+            initQuiz(QUIZ_SUPERVISORES, 'Conteúdo para Supervisores');
+            observer.disconnect();
+          }
+        });
+        observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
+        if (quizPanel.classList.contains('active')) initQuiz(QUIZ_SUPERVISORES, 'Conteúdo para Supervisores');
+      }
+    });
+
+    window.calcularSOS = function() {
+      var pedidos = parseInt(document.getElementById('sos-pedidos').value, 10);
+      var minutos = parseInt(document.getElementById('sos-minutos').value, 10);
+      var meta    = parseInt(document.getElementById('sos-canal').value, 10);
+      var res     = document.getElementById('sos-resultado');
+      if (!pedidos || !minutos || pedidos <= 0 || minutos <= 0) {
+        res.innerHTML = '<div style="color:var(--muted);font-size:13px;text-align:center;">Preencha os campos acima.</div>';
+        return;
+      }
+      var gcsPorHora  = Math.round((pedidos / minutos) * 60);
+      var segsTotal   = minutos * 60;
+      var sosEstimado = Math.round(segsTotal / pedidos);
+      var ok = sosEstimado <= meta;
+      var cor = ok ? '#2e7d32' : '#c62828';
+      var bg  = ok ? '#e8f5e9' : '#ffebee';
+      res.innerHTML = '<div style="background:' + bg + ';border:1.5px solid ' + cor + ';border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;">'
+        + '<div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:' + cor + ';">'
+        + (ok ? '✅' : '⚠️') + ' SOS estimado: ' + sosEstimado + 's</div>'
+        + '<div style="font-size:13px;color:var(--text);">GCs/hora: <strong>' + gcsPorHora + '</strong> · Meta do canal: <strong>' + meta + 's</strong></div>'
+        + (ok ? '<div style="font-size:12px;color:#2e7d32;">Dentro da meta — bom trabalho!</div>'
+              : '<div style="font-size:12px;color:#c62828;">Acima da meta em <strong>' + (sosEstimado - meta) + 's</strong> — verifique posicionamento e gargalos.</div>')
+        + '</div>';
+    };
+
+        const QUIZ_SUPERVISORES = [
+      { category: "📊 Supervisores · KPIs", question: "Qual o mínimo de GCs mensais para que um McCafé seja considerado produtivo?", options: ["1.000 GCs", "2.000 GCs", "3.000 GCs", "5.000 GCs"], answer: "3.000 GCs", explanation: "McCafés que realizam menos de 3.000 GCs/mês devem ser avaliados quanto a posicionamento, layout e treinamento." },
+      { category: "📊 Supervisores · KPIs", question: "Qual a produtividade mínima esperada no McCafé?", options: ["4", "5", "6", "8"], answer: "6", explanation: "A produtividade mínima esperada no McCafé é 6. Abaixo disso, avaliar posicionamento e treinamento." },
+      { category: "📊 Supervisores · Posicionamento", question: "Quantas pessoas são necessárias para um volume de 22 a 28 GCs/hora?", options: ["3 pessoas", "4 pessoas", "5 pessoas", "6 pessoas"], answer: "4 pessoas", explanation: "Para 22 a 28 GCs/hora: mínimo 4 pessoas no McCafé." },
+      { category: "📊 Supervisores · Posicionamento", question: "Quantas pessoas para atender acima de 76 GCs/hora?", options: ["7 pessoas", "8 pessoas", "9 pessoas", "10 pessoas"], answer: "9 pessoas", explanation: "Para acima de 76 GCs/hora: máximo de 9 pessoas, cobrindo todas as funções do McCafé." },
+      { category: "🔍 Supervisores · Auditoria", question: "Qual o limite máximo de Compostos Polares no óleo antes do descarte?", options: ["15%", "20%", "24%", "30%"], answer: "24%", explanation: "O óleo deve ser descartado quando os Compostos Polares atingirem 24%." },
+      { category: "🔍 Supervisores · Auditoria", question: "O que fazer ao encontrar produto sem etiqueta de tempo de vida?", options: ["Anotar e continuar", "Descartar produto e retreinar a equipe", "Colocar etiqueta com estimativa", "Perguntar ao atendente"], answer: "Descartar produto e retreinar a equipe", explanation: "Produto sem etiqueta: descartar imediatamente e retreinar a equipe da estação sobre o procedimento." },
+      { category: "🛠️ Supervisores · Ferramentas", question: "Qual a periodicidade do Checklist Pré-Pico e Segurança Alimentar?", options: ["Uma vez por dia", "A cada turno", "A cada período de pico", "Semanalmente"], answer: "A cada período de pico", explanation: "O Checklist Pré-Pico deve ser executado a cada período de pico do restaurante." },
+      { category: "📈 Supervisores · Vendas", question: "Qual estratégia de venda foca em itens premium para aumentar o ticket médio?", options: ["LSM", "URD", "IP", "Ticket Médio — combos e upgrades"], answer: "Ticket Médio — combos e upgrades", explanation: "Para aumentar ticket médio: focar em itens premium ou combos e impulsionar upgrade de produto." }
+,
+      // Posicionamento
+      { category: "👥 Supervisores · Posicionamento", question: "Quantas pessoas são necessárias para 15 a 21 GCs/hora no McCafé?", options: ["1 pessoa", "2 pessoas", "3 pessoas", "4 pessoas"], answer: "3 pessoas", explanation: "Para 15 a 21 GCs/hora: mínimo 3 pessoas no McCafé." },
+      { category: "👥 Supervisores · Posicionamento", question: "Quantas pessoas para 29 a 35 GCs/hora?", options: ["3 pessoas", "4 pessoas", "5 pessoas", "6 pessoas"], answer: "5 pessoas", explanation: "Para 29 a 35 GCs/hora: mínimo 5 pessoas." },
+      { category: "👥 Supervisores · Posicionamento", question: "Qual a função adicional ao passar de 35 para 36 GCs/hora?", options: ["Caixa 2", "Estocagem", "Entrega Externa 2", "Salão"], answer: "Estocagem", explanation: "De 36 a 55 GCs/hora: 6 pessoas — a função adicional é Estocagem." },
+      // KPIs e metas
+      { category: "📊 Supervisores · KPIs", question: "O que é o IP (Índice de Produtividade) no McCafé?", options: ["Itens por pedido", "GCs por colaborador por hora", "Vendas por turno", "Ticket médio por cliente"], answer: "GCs por colaborador por hora", explanation: "IP = Índice de Produtividade: mede GCs por colaborador por hora. Meta mínima: 6." },
+      { category: "📊 Supervisores · KPIs", question: "O que significa URD no contexto do McCafé?", options: ["Unidade de Receita Diária", "Units per Receipt — bebidas por cupom", "Unidade de Revisão Diária", "Usuários Registrados no Dia"], answer: "Units per Receipt — bebidas por cupom", explanation: "URD = Units per Receipt: quantidade de itens McCafé por cupom fiscal. Meta monitorada diariamente." },
+      { category: "📊 Supervisores · KPIs", question: "O que analisar em um McCafé com IP abaixo de 6?", options: ["Apenas o treinamento", "Posicionamento, layout, utensílios, equipamentos e nível de treinamento", "Apenas o posicionamento", "Apenas a qualidade do produto"], answer: "Posicionamento, layout, utensílios, equipamentos e nível de treinamento", explanation: "IP abaixo de 6 exige avaliação completa: posicionamento x projeção, layout, utensílios, equipamentos e treinamento." },
+      // Segurança do alimento
+      { category: "🌡️ Supervisores · Seg. Alimento", question: "Qual a temperatura mínima interna de todos os produtos na UHC?", options: ["55°C", "60°C", "65°C", "74°C"], answer: "60°C", explanation: "Todos os produtos na UHC devem ter temperatura interna mínima de 60°C." },
+      { category: "🌡️ Supervisores · Seg. Alimento", question: "Qual a temperatura de armazenamento dos produtos refrigerados?", options: ["0°C a 2°C", "1°C a 4°C", "5°C a 8°C", "8°C a 12°C"], answer: "1°C a 4°C", explanation: "Produtos refrigerados: manter entre 1°C e 4°C." },
+      { category: "🌡️ Supervisores · Seg. Alimento", question: "Qual a temperatura máxima para produtos congelados?", options: ["-10°C", "-15°C", "-18°C", "-20°C"], answer: "-18°C", explanation: "Produtos congelados devem ser mantidos a -18°C ou abaixo." },
+      { category: "🌡️ Supervisores · Seg. Alimento", question: "Qual a temperatura interna mínima do frango após o cozimento?", options: ["65°C", "70°C", "74°C", "80°C"], answer: "74°C", explanation: "Todos os produtos de frango devem atingir 74°C (165°F) internamente após o cozimento." },
+      // Ações corretivas
+      { category: "⚠️ Supervisores · Ações", question: "O que fazer ao encontrar temperatura da câmara fora do padrão?", options: ["Monitorar por 1 hora antes de agir", "Descartar produtos, chamar manutenção e registrar ocorrência", "Apenas aumentar o termostato", "Transferir produtos para outra câmara e ignorar"], answer: "Descartar produtos, chamar manutenção e registrar ocorrência", explanation: "Câmara fora do padrão: descartar produtos afetados, chamar manutenção imediatamente e registrar a ocorrência." },
+      { category: "⚠️ Supervisores · Ações", question: "Óleo com Compostos Polares acima de 24% — qual a ação correta?", options: ["Filtrar o óleo e continuar usando", "Adicionar óleo novo para diluir", "Descartar imediatamente e repor com óleo novo", "Aguardar o fim do turno para trocar"], answer: "Descartar imediatamente e repor com óleo novo", explanation: "Óleo com Compostos Polares acima de 24% deve ser descartado imediatamente. Não filtrar nem diluir." },
+      { category: "⚠️ Supervisores · Ações", question: "Ao encontrar um equipamento com mau funcionamento, qual o primeiro passo?", options: ["Tentar reparar por conta própria", "Desligar e abandonar o equipamento", "Abrir chamado de manutenção e comunicar o gerente", "Aguardar o dia seguinte para verificar"], answer: "Abrir chamado de manutenção e comunicar o gerente", explanation: "Equipamento com problema: abrir chamado imediatamente e comunicar o gerente para ajustar o posicionamento." },
+      // Ferramentas MCRV
+      { category: "🛠️ Supervisores · Ferramentas", question: "Qual a diferença entre LSM e uma promoção nacional?", options: ["LSM é mais caro", "LSM é uma ação de marketing local focada no cliente da região", "São a mesma coisa", "LSM é feito pela franqueadora"], answer: "LSM é uma ação de marketing local focada no cliente da região", explanation: "LSM (Local Store Marketing) é uma ação local desenvolvida pelo próprio restaurante para atrair e fidelizar clientes da região." },
+      { category: "🛠️ Supervisores · Ferramentas", question: "Qual o objetivo principal do Checklist Pré-Pico?", options: ["Conferir o caixa", "Garantir máximo de GCs com produto de alto padrão no horário de pico", "Treinar novos funcionários", "Fazer inventário de estoque"], answer: "Garantir máximo de GCs com produto de alto padrão no horário de pico", explanation: "O Checklist Pré-Pico garante que o restaurante esteja pronto para captar o máximo de GCs oferecendo produto de alto padrão." },
+      { category: "🛠️ Supervisores · Ferramentas", question: "O que avaliar para aumentar as URDs de café?", options: ["Apenas o preço do café", "Garantir que todos ofereçam café associado a qualquer pedido", "Apenas a qualidade do café", "Quantidade de máquinas de café"], answer: "Garantir que todos ofereçam café associado a qualquer pedido", explanation: "Para aumentar URDs: cada atendente deve oferecer café + produto salgado/doce associado a qualquer pedido." },
+      { category: "👥 Supervisores · Posicionamento", question: "Qual função é adicionada ao passar de 55 para 56 GCs/hora?", options: ["Estocagem", "Bebidas McCafé 2", "Entrega Externa 2", "Salão"], answer: "Bebidas McCafé 2", explanation: "De 56 a 65 GCs/hora: 7 pessoas — função adicional é Bebidas McCafé 2." },
+      { category: "📊 Supervisores · KPIs", question: "Qual é a meta de Vendas Comp. no McCafé?", options: ["Negativa", "Zero", "Positiva — crescimento sobre ano anterior", "Igual ao ano anterior"], answer: "Positiva — crescimento sobre ano anterior", explanation: "Vendas Comp. McCafé deve ser positiva: crescimento comparado ao mesmo período do ano anterior." },
+      { category: "🌡️ Supervisores · Seg. Alimento", question: "Com que frequência verificar os Compostos Polares do óleo?", options: ["Semanalmente", "Uma vez ao dia", "A cada turno", "A cada 2 horas"], answer: "A cada turno", explanation: "Os Compostos Polares devem ser verificados a cada turno de operação." },
+      { category: "⚠️ Supervisores · Ações", question: "O que fazer se a equipe estiver insuficiente para o volume de GCs?", options: ["Ignorar e continuar", "Redistribuir conforme tabela de posicionamento", "Fechar parte do restaurante", "Reduzir o menu"], answer: "Redistribuir conforme tabela de posicionamento", explanation: "Redistribuir a equipe imediatamente conforme a tabela de posicionamento para o volume atual." }
+    ];
+  </script>
+</body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promoção Interna — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="promocao-interna">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Promoção Interna</h1>
+        <p>Trilha de Crescimento</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">🗺️ Visão Geral</button>
+      <button class="tab-btn" data-tab="embaixador">😊 Embaixador</button>
+      <button class="tab-btn" data-tab="treinador">👨‍🏫 Treinador</button>
+      <button class="tab-btn" data-tab="supervisor">👔 Supervisor</button>
+      <button class="tab-btn" data-tab="gerente">🏪 Ger. Plantão</button>
+      <button class="tab-btn" data-tab="rdm">📊 Ger. RDM</button>
+      <button class="tab-btn" data-tab="gun">🏢 Ger. UN</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">Programa de Promoção Interna</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🗺️</div><h2>Trilha de Crescimento</h2></div>
+        <div class="card-body">
+          <div class="info-block">O McDonald's oferece um programa estruturado de desenvolvimento para quem quer crescer dentro da empresa. Selecione um cargo nas abas acima para ver os requisitos, cursos e responsabilidades.</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+
+            <div style="background:linear-gradient(90deg,#fff9c4,#fff);border:2px solid #f9a825;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="document.querySelector('[data-tab]').parentNode.querySelector('[data-tab=visao]') && switchTab('visao')">
+              <div style="font-size:28px;">👷</div>
+              <div><div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#f57f17;">01 — ATENDENTE</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Posição de entrada · Aprendizado das estações</div></div>
+            </div>
+            <div style="text-align:center;font-size:18px;color:var(--muted);">↓</div>
+
+            <div style="background:linear-gradient(90deg,#e8f5e9,#fff);border:2px solid #43a047;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="switchTabById('embaixador')">
+              <div style="font-size:28px;">😊</div>
+              <div style="flex:1;"><div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#2e7d32;">02 — EMBAIXADOR DA EXPERIÊNCIA DO CLIENTE</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Referência em atendimento · 15 dias (externo) ou 7 dias (interno)</div></div>
+              <span style="font-size:11px;color:#43a047;font-weight:700;">Ver →</span>
+            </div>
+            <div style="text-align:center;font-size:18px;color:var(--muted);">↓</div>
+
+            <div style="background:linear-gradient(90deg,#e3f2fd,#fff);border:2px solid #1976d2;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="switchTabById('treinador')">
+              <div style="font-size:28px;">👨‍🏫</div>
+              <div style="flex:1;"><div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#1565c0;">03 — TREINADOR</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">PDT · 5 dias + Verificação Mensal + Certificação Semestral</div></div>
+              <span style="font-size:11px;color:#1976d2;font-weight:700;">Ver →</span>
+            </div>
+            <div style="text-align:center;font-size:18px;color:var(--muted);">↓</div>
+
+            <div style="background:linear-gradient(90deg,#f3e5f5,#fff);border:2px solid #8e24aa;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="switchTabById('supervisor')">
+              <div style="font-size:28px;">👔</div>
+              <div style="flex:1;"><div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#6a1b9a;">04 — SUPERVISOR DE ÁREA</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">PDGA · 2 semanas + Curso CTL + Certificação Gerencial</div></div>
+              <span style="font-size:11px;color:#8e24aa;font-weight:700;">Ver →</span>
+            </div>
+            <div style="text-align:center;font-size:18px;color:var(--muted);">↓</div>
+
+            <div style="background:linear-gradient(90deg,#fff3e0,#fff);border:2px solid #ef6c00;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="switchTabById('gerente')">
+              <div style="font-size:28px;">🏪</div>
+              <div style="flex:1;"><div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#e65100;">05 — GERENTE DE PLANTÃO</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">PDGP · 10 semanas + Curso ALP</div></div>
+              <span style="font-size:11px;color:#ef6c00;font-weight:700;">Ver →</span>
+            </div>
+            <div style="text-align:center;font-size:18px;color:var(--muted);">↓</div>
+
+            <div style="background:linear-gradient(90deg,#fce4ec,#fff);border:2px solid #e91e63;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="switchTabById('rdm')">
+              <div style="font-size:28px;">📊</div>
+              <div style="flex:1;"><div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#c2185b;">06 — GERENTE DE DEPTO. RDM</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Módulo RDM · 3 departamentos · Após 6 meses como Ger. Plantão</div></div>
+              <span style="font-size:11px;color:#e91e63;font-weight:700;">Ver →</span>
+            </div>
+            <div style="text-align:center;font-size:18px;color:var(--muted);">↓</div>
+
+            <div style="background:linear-gradient(90deg,#e8eaf6,#fff);border:2px solid #3949ab;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="switchTabById('gun')">
+              <div style="font-size:28px;">🏢</div>
+              <div style="flex:1;"><div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#283593;">07 — GERENTE DE UNIDADE DE NEGÓCIO</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">LRE · LF · Topo da trilha</div></div>
+              <span style="font-size:11px;color:#3949ab;font-weight:700;">Ver →</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-embaixador">
+      <div class="section-label">02 — Embaixador da Experiência do Cliente</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">😊</div><h2>Programa de Desenvolvimento</h2></div>
+        <div class="card-body">
+          <div class="info-block">Ferramenta digital de treinamento para Embaixadores da Experiência do Cliente, dividida em 2 trilhas: <strong>Candidato Externo</strong> e <strong>Funcionário Interno</strong>. Todo o processo ocorre no restaurante em que ele já atua. O RDM de Pessoas valida o treinamento. Disponível na plataforma <strong>SABER</strong> após aprovação no PPI.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🆕</div><h2>Candidato Externo — 15 dias</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Semana 1 — Produção e Exp. Cliente</div>
+            <div class="rota-item"><strong>Produção:</strong> Produtos Fritos · Menu Regular/Linha · McFritas · Chapa<br><strong>Exp. do Cliente:</strong> Bebidas e Sobremesas · Salão e NGK · Balcão: Influencer Vendedor e Pagamento · Balcão Montagem e Entrega · Drive-Thru: Influencer Vendedor e Pagamento · Drive-Thru: Montagem e Entrega</div>
+            <div class="rota-head c2">Semana 2 — Comportamental</div>
+            <div class="rota-item">Embaixador da Experiência do Cliente · Criando um Ambiente Acolhedor · Criando Momentos de Bem Estar · Conectando-se com o Cliente · Liderando a Experiência da Hospitalidade</div>
+            <div class="rota-head c3">Semana 3 — Verificação</div>
+            <div class="rota-item">Avaliação de verificação do treinamento</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔄</div><h2>Candidato Interno — 7 dias</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Semana 1 — Comportamental</div>
+            <div class="rota-item">Embaixador da Experiência do Cliente · Criando um Ambiente Acolhedor · Criando Momentos de Bem Estar · Conectando-se com o Cliente · Liderando a Experiência da Hospitalidade</div>
+            <div class="rota-head c2">Semana 1 — Verificação</div>
+            <div class="rota-item">Verificação realizada na mesma semana do treinamento comportamental</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Treinamento Técnico: Sistemas e Comportamental</h2></div>
+        <div class="card-body">
+          <div class="section-label">12 Vídeos</div>
+          <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:10px;">
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Mudando pouco mudamos muito</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Cumprir o que prometemos</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Nossos valores</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">10 comportamentos do Embaixador</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Embaixador da Experiência do Cliente</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Cause uma excelente primeira impressão</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Como criar uma ótima primeira impressão</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Bem-vindo à Entrega a mesa</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Lâmina de pintar</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Sou um feiticeiro</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Receber feedback do cliente</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);">Instituto Ronald</div>
+          </div>
+          <div class="section-label">6 E-learnings</div>
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;">Nossos valores</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;">Exame de autoavaliação</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;">Navegar pelos aplicativos de pedidos</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;">Bem-vindo ao módulo de limpeza</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;">Inteligência emocional</div>
+            <div style="font-size:13px;color:var(--text);padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;">Navegação pelo curso</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📅</div><h2>Verificação Mensal</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">O que é</div>
+            <div class="rota-item">Avaliação mensal para reforçar o papel do Embaixador e suas responsabilidades no restaurante</div>
+            <div class="rota-head c2">Quem aplica</div>
+            <div class="rota-item">Gerente de Plantão ou Gerente de Unidade de Negócio</div>
+            <div class="rota-head c3">Como acessar</div>
+            <div class="rota-item">Plataforma SABER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🛠️</div><h2>Ferramentas de Apoio</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Tipo</th><th>Conteúdo</th></tr></thead>
+              <tbody>
+                <tr><td>Módulo de Treinamento</td><td>Embaixador da Experiência do Cliente</td></tr>
+                <tr><td>Verificação</td><td>Embaixador da Experiência do Cliente</td></tr>
+                <tr><td>Manual</td><td>O Trajeto do Embaixador da Experiência do Cliente</td></tr>
+                <tr><td>Manual</td><td>Playbook LSM</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📚</div><h2>Trilha Formativa SABER</h2></div>
+        <div class="card-body">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Programa OLÁ</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Segurança do Alimento</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Qualidade</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Prevenção de Riscos Laborais</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Hospitalidade 1, 2, 3 e 4</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Fundamentos da Marca Crew — Prevenção e Violência</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Fundamentos da Marca Crew — Vieses Inconscientes</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Fundamentos da Marca Crew — Construindo Lugar Seguro</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Receita do Futuro</div>
+          </div>
+          <div class="section-label" style="margin-top:12px;">Obrigatórios nos primeiros 30 dias</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Game Normas de Conduta</div>
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Diversidade e Respeito — Sessão 1, 2 e 3</div>
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Bora Falar 1, 2 e 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-treinador">
+      <div class="section-label">03 — Treinador</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">👨‍🏫</div><h2>Programa de Desenvolvimento de Treinadores (PDT)</h2></div>
+        <div class="card-body">
+          <div class="info-block">Ferramenta digital de treinamento para Treinadores. Todo o processo ocorre no restaurante em que ele já atua. O RDM de Pessoas valida o treinamento. Disponível na plataforma <strong>SABER</strong> após aprovação no PPI.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📅</div><h2>PDT — 5 dias de treinamento</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Dia 1</div>
+            <div class="rota-item">Minha Função / Fundamentos do Treinador</div>
+            <div class="rota-head c2">Dia 2</div>
+            <div class="rota-item">Treinando em Busca da Excelência</div>
+            <div class="rota-head c3">Dia 3</div>
+            <div class="rota-item">Prática de Treinamento em uma Área de Exp. Cliente / Produção</div>
+            <div class="rota-head c4">Dia 4</div>
+            <div class="rota-item">Coaching para o Desempenho</div>
+            <div class="rota-head c1">Dia 5</div>
+            <div class="rota-item">Simulação com o Coach</div>
+          </div>
+          <div class="alert info" style="margin-top:10px;">➕ Após o PDT: <strong>Verificação Mensal do Treinador</strong></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Treinamento Técnico: 5 Vídeos + 8 E-learnings</h2></div>
+        <div class="card-body">
+          <div class="section-label">5 Vídeos</div>
+          <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:10px;">
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);color:var(--text);">Qual é minha função?</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);color:var(--text);">Como cumprir a promessa?</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);color:var(--text);">Apoiando a cultura da hospitalidade</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);color:var(--text);">Atitude positiva</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--red);color:var(--text);">Treinamento das pessoas</div>
+          </div>
+          <div class="section-label">8 E-learnings</div>
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;color:var(--text);">Comunique-se com clareza</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;color:var(--text);">Como conectar-se com seu coach?</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;color:var(--text);">Como aprendem as pessoas?</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;color:var(--text);">A habilidade de fazer perguntas</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;color:var(--text);">Feedback — Como e quando usá-lo?</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;color:var(--text);">Método de 3 etapas: Observar – Praticar – Verificar</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;color:var(--text);">Coaching</div>
+            <div style="font-size:13px;padding:6px 10px;background:var(--bg);border-radius:8px;border-left:3px solid #1976d2;color:var(--text);">Estratégias para conversações difíceis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📅</div><h2>Verificação Mensal de Treinadores</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">O que é</div>
+            <div class="rota-item">Avaliação mensal para reforçar o papel do Treinador e suas responsabilidades no restaurante</div>
+            <div class="rota-head c2">Quem aplica</div>
+            <div class="rota-item">Gerente de Plantão ou Gerente de Unidade de Negócio</div>
+            <div class="rota-head c3">Frequência</div>
+            <div class="rota-item">Mensal — plataforma SABER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🏅</div><h2>Certificação Semestral de Treinadores</h2></div>
+        <div class="card-body">
+          <div class="info-block">Certifica que o Treinador conhece seu papel como <strong>Guardião dos Padrões McDonald's</strong>, garantindo a atuação no treinamento e desenvolvimento dos funcionários.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Frequência</div>
+            <div class="rota-item">Semestral</div>
+            <div class="rota-head c2">Duração</div>
+            <div class="rota-item">40 minutos com exame de 40 questões</div>
+            <div class="rota-head c3">Como acessar</div>
+            <div class="rota-item">Plataforma SABER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🛠️</div><h2>Ferramentas de Apoio</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Tipo</th><th>Conteúdo</th></tr></thead>
+              <tbody>
+                <tr><td>Módulos SABER</td><td>Exp. do Cliente: 7 · Produção: 5 · McCafé: 1 · Café da Manhã: 1</td></tr>
+                <tr><td>Guia de Qualidade</td><td>Guia de Dados de Qualidade (MCampus)</td></tr>
+                <tr><td>Manuais</td><td>MFY · Drive-Thru · Dessert Center · McCafé · Dual Point · McDelivery</td></tr>
+                <tr><td>Vídeos</td><td>10 Experiência do Cliente · 11 Produção</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📚</div><h2>Trilha Formativa SABER + Obrigatórios 30 dias</h2></div>
+        <div class="card-body">
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;">
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #1565c0;color:var(--text);">Mês 1 — Conversas Difíceis</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #1565c0;color:var(--text);">Mês 2 — Construa um Mindset de Aprendizagem</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #1565c0;color:var(--text);">Mês 3 — Resolução de Conflitos: Estratégias e Ferramentas</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #1565c0;color:var(--text);">Mês 4 — Inteligência Emocional</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #1565c0;color:var(--text);">Mês 5 — Aprendendo a Aprender</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #1565c0;color:var(--text);">Mês 6 — Derrubando Mitos sobre a Diversidade</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #1565c0;color:var(--text);">Extra — Comunicação Não Violenta</div>
+          </div>
+          <div class="section-label">Obrigatórios nos primeiros 30 dias</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Game Normas de Conduta</div>
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Diversidade e Respeito — Sessão 1, 2 e 3</div>
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Bora Falar 1, 2 e 3</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔔</div><h2>Trinômio do Treinamento</h2></div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+            <div style="background:var(--bg);border:2px solid var(--red);border-radius:10px;padding:12px;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">👁️</div><div style="font-family:var(--font-display);font-size:11px;font-weight:800;color:var(--red);">DEMONSTRAR</div></div>
+            <div style="background:var(--bg);border:2px solid var(--red);border-radius:10px;padding:12px;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">🤲</div><div style="font-family:var(--font-display);font-size:11px;font-weight:800;color:var(--red);">PRATICAR</div></div>
+            <div style="background:var(--bg);border:2px solid var(--red);border-radius:10px;padding:12px;text-align:center;"><div style="font-size:24px;margin-bottom:6px;">✅</div><div style="font-family:var(--font-display);font-size:11px;font-weight:800;color:var(--red);">AVALIAR</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-supervisor">
+      <div class="section-label">04 — Supervisor de Área</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">👔</div><h2>Programa de Desenvolvimento para Gestão de Áreas (PDGA)</h2></div>
+        <div class="card-body">
+          <div class="info-block">Ferramenta desenvolvida a partir do esquema <strong>70/20/10</strong> para formação de novos Gerentes. O Supervisor de Área realiza o treinamento em um restaurante RCT, com E-learnings, atividades e trabalho ombro a ombro com o <strong>Supervisor Coach</strong>. Ao finalizar, deve realizar o curso <strong>CTL — Transição à Liderança</strong>.</div>
+          <div class="alert info" style="margin-top:10px;"><strong>Objetivo:</strong> Desenvolver e capacitar os novos cargos gerenciais. Disponível na plataforma SABER após aprovação no PPI.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📅</div><h2>PDGA — 2 semanas + Curso CTL</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Semana 1</div>
+            <div class="rota-item">Introdução · Melhores Juntos · Planejamento Pré-Plantão · Operando a Produção</div>
+            <div class="rota-head c2">Semana 2</div>
+            <div class="rota-item">Operando o Drive-Thru · Operando o Serviço · Pós-Plantão · Reflexão</div>
+            <div class="rota-head c3">Curso CTL</div>
+            <div class="rota-item">CTL — Transição à Liderança (realizado após o PDGA)</div>
+          </div>
+          <div style="background:#f3e5f5;border:1.5px solid #ce93d8;border-radius:10px;padding:10px 14px;margin-top:10px;text-align:center;">
+            <div style="font-size:11px;font-weight:700;color:#6a1b9a;text-transform:uppercase;margin-bottom:2px;">Tempo Total de Treinamento</div>
+            <div style="font-size:16px;font-weight:800;color:#6a1b9a;">2 Semanas + Curso CTL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🏆</div><h2>Certificação Gerencial</h2></div>
+        <div class="card-body">
+          <div class="info-block">Avaliação para certificar e reforçar o papel do Supervisor de Área e suas responsabilidades no restaurante.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Quem aplica</div>
+            <div class="rota-item">Gerente de Plantão ou Gerente de Unidade de Negócio</div>
+            <div class="rota-head c2">1ª realização</div>
+            <div class="rota-item">Ao final do treinamento para certificação e aprovação do Treinando</div>
+            <div class="rota-head c3">2ª em diante</div>
+            <div class="rota-item">A cada 3 meses como processo contínuo de desenvolvimento</div>
+            <div class="rota-head c4">Como acessar</div>
+            <div class="rota-item">Plataforma SABER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🛠️</div><h2>Ferramentas de Apoio</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Tipo</th><th>Conteúdo</th></tr></thead>
+              <tbody>
+                <tr><td>Módulos SABER</td><td>Exp. do Cliente: 7 · Produção: 5 · McCafé: 1 · Café da Manhã: 1</td></tr>
+                <tr><td>Guia de Qualidade</td><td>Guia de Dados de Qualidade (MCampus)</td></tr>
+                <tr><td>Manuais</td><td>MFY · Drive-Thru · Dessert Center · McCafé · Dual Point · McDelivery · Book de Layout · Playbook LSM</td></tr>
+                <tr><td>Certificação Trimestral</td><td>Certificação de Produção + Certificação de Serviço</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📚</div><h2>Trilha Formativa SABER</h2></div>
+        <div class="card-body">
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;">
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Hospitalidade</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Fundamentos da Marca Gerencial — Prevenção e Violência</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Fundamentos da Marca Gerencial — Vieses Inconscientes</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Fundamentos da Marca Gerencial — Construindo Lugar Seguro</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Receita do Futuro</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Segurança do Alimento (Certificação Anual)</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Game de Normas de Conduta II</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Respeito e Diversidade</div>
+            <div style="font-size:13px;padding:8px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #8e24aa;color:var(--text);">Comunicação Não Violenta</div>
+          </div>
+          <div class="section-label">Obrigatórios nos primeiros 30 dias</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Game Normas de Conduta</div>
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Diversidade e Respeito — Sessão 1, 2 e 3</div>
+            <div style="font-size:13px;padding:8px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Bora Falar 1, 2 e 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-gerente">
+      <div class="section-label">05 — Gerente de Plantão</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🏪</div><h2>PDGP — Programa de Desenvolvimento para Gestão de Plantão</h2></div>
+        <div class="card-body">
+          <div class="info-block">Desenvolvido a partir do modelo <strong>70/20/10</strong>. O Gerente de Plantão realiza o PDGP em um restaurante RCT, ombro a ombro com o <strong>Gerente de Plantão Coach</strong>. Depois realiza o gerenciamento do plantão por +2 semanas em seu restaurante de origem. Em seguida, inicia o treinamento avançado <strong>PDGPA</strong> por 2 semanas no restaurante de origem. Ao finalizar, realiza o curso <strong>ALP — Avançando na Liderança de Plantão</strong>.</div>
+          <div style="background:#fff3e0;border:1.5px solid #ef6c00;border-radius:10px;padding:10px 14px;margin-top:10px;text-align:center;">
+            <div style="font-size:11px;font-weight:700;color:#e65100;text-transform:uppercase;margin-bottom:2px;">Tempo Total</div>
+            <div style="font-size:16px;font-weight:800;color:#e65100;">10 Semanas + Curso ALP</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📅</div><h2>PDGP — Fase 1 (Semanas 1 a 6)</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Semana 1</div><div class="rota-item">Fundamentos do Gerenciamento de Plantões</div>
+            <div class="rota-head c2">Semana 2</div><div class="rota-item">Gestão de Plantões</div>
+            <div class="rota-head c3">Semana 3</div><div class="rota-item">Gerente de Plantão</div>
+            <div class="rota-head c4">Semana 4</div><div class="rota-item">Maximizando o Plantão</div>
+            <div class="rota-head c1">Semanas 5 e 6</div><div class="rota-item">Gerenciamento do Plantão</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📅</div><h2>PDGPA — Fase Avançada (Semanas 7 a 10)</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c2">Semana 1</div><div class="rota-item">Gerente de Plantão Avançado</div>
+            <div class="rota-head c3">Semana 2</div><div class="rota-item">Gerenciamento de Plantão Avançado · Maximizando o Plantão</div>
+            <div class="rota-head c4">Semanas 3 e 4</div><div class="rota-item">Gerencimento do Plantão</div>
+            <div class="rota-head c1">Curso Final</div><div class="rota-item">Curso ALP — Avançando na Liderança de Plantão</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🏆</div><h2>Certificação Gerencial</h2></div>
+        <div class="card-body">
+          <div class="info-block">Avaliação para certificar e reforçar o papel do Gerente de Plantão e suas responsabilidades no restaurante.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Quem aplica</div><div class="rota-item">Gerente de Unidade de Negócio</div>
+            <div class="rota-head c2">1ª realização</div><div class="rota-item">Ao final do treinamento PDGP</div>
+            <div class="rota-head c3">2ª realização</div><div class="rota-item">Ao final do treinamento PDGPA</div>
+            <div class="rota-head c4">3ª em diante</div><div class="rota-item">Trimestralmente como processo contínuo de desenvolvimento</div>
+            <div class="rota-head c1">Avaliação Trimestral</div><div class="rota-item">Certificação do Gerente de Plantão</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🛠️</div><h2>Ferramentas de Apoio</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Tipo</th><th>Conteúdo</th></tr></thead>
+              <tbody>
+                <tr><td>Guia de Qualidade</td><td>MCampus</td></tr>
+                <tr><td>Manuais</td><td>MFY · Drive-Thru · Dessert Center · McCafé · Dual Point · McDelivery · Book de Layout · Segurança e Higiene de Nossas Pessoas · Playbook LSM</td></tr>
+                <tr><td>Avaliação Trimestral</td><td>Certificação do Gerente de Plantão</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📚</div><h2>Trilha Formativa + Cursos dos Primeiros 30 Dias</h2></div>
+        <div class="card-body">
+          <div class="section-label">Trilha Formativa SABER</div>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px;">
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #e65100;color:var(--text);">Hospitalidade</div>
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #e65100;color:var(--text);">Fundamentos da Marca Gerencial — Prevenção e Violência</div>
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #e65100;color:var(--text);">Fundamentos da Marca Gerencial — Vieses Inconscientes</div>
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #e65100;color:var(--text);">Fundamentos da Marca Gerencial — Construindo Lugar Seguro</div>
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #e65100;color:var(--text);">Receita do Futuro</div>
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #e65100;color:var(--text);">Segurança do Alimento (Certificação Anual)</div>
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #e65100;color:var(--text);">Game de Normas de Conduta II</div>
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #e65100;color:var(--text);">Respeito e Diversidade</div>
+          </div>
+          <div class="section-label">Obrigatórios nos primeiros 30 dias</div>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px;">
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Game Normas de Conduta</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Diversidade e Respeito — Sessão 1, 2 e 3</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Bora Falar 1, 2 e 3</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Comunicação Não Violenta</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Como Ser um Líder de Pessoas</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Compromisso com as Práticas de Relacionamento com as Pessoas</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 Como Oferecer a Melhor Experiência ao Cliente</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #f57c00;color:var(--text);">🚨 A Arte de Liderar</div>
+          </div>
+          <div class="section-label">Cursos para Aperfeiçoamento</div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Tudo Sobre Proteção e Segurança</div>
+            <div style="font-size:13px;padding:7px 12px;background:var(--bg);border-radius:8px;border-left:3px solid #43a047;color:var(--text);">Tudo Sobre Lucratividade</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-rdm">
+      <div class="section-label">06 — Gerente de Departamento RDM</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📊</div><h2>Programa de Formação de Gerentes — Módulo RDM</h2></div>
+        <div class="card-body">
+          <div class="info-block">Desenvolvido a partir do modelo <strong>70/20/10</strong>. O Gerente de Plantão inicia como RDM responsável por um departamento após <strong>6 meses de atuação no cargo</strong>. O treinamento ocorre no próprio restaurante, via SABER, acompanhado por outro RDM certificado e pelo Gerente de Unidade de Negócio.</div>
+          <div class="alert info" style="margin-top:8px;"><strong>Pré-requisito:</strong> Mínimo 6 meses atuando como Gerente de Plantão antes de iniciar o Módulo RDM.</div>
+          <div style="background:#fce4ec;border:1.5px solid #e91e63;border-radius:10px;padding:10px 14px;margin-top:8px;text-align:center;">
+            <div style="font-size:11px;font-weight:700;color:#c2185b;text-transform:uppercase;margin-bottom:2px;">Tempo Total</div>
+            <div style="font-size:16px;font-weight:800;color:#c2185b;">3 Semanas + Curso DLM</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📅</div><h2>Três Módulos RDM</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">RDM Exp. do Cliente & Segmentos</div>
+            <div class="rota-item"><strong>3 semanas</strong> + Curso DLM (6h — Desenvolvendo o Líder em Mim)<br>Certificação do Departamento de Exp. do Cliente & Segmentos</div>
+            <div class="rota-head c2">RDM Produção & Sustentabilidade</div>
+            <div class="rota-item"><strong>3 semanas</strong><br>Certificação do Departamento de Produção & Sustentabilidade</div>
+            <div class="rota-head c3">RDM Gestão de Pessoas</div>
+            <div class="rota-item"><strong>4 semanas</strong><br>Certificação do Departamento de Gestão de Pessoas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🏆</div><h2>Certificação do Gerente RDM</h2></div>
+        <div class="card-body">
+          <div class="info-block">Avalia os Gerentes RDM, validando se estão realizando as tarefas descritas em seu departamento e entregando os KPIs.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Quem aplica</div><div class="rota-item">Gerente de Unidade de Negócio</div>
+            <div class="rota-head c2">1ª realização</div><div class="rota-item">Após finalizar o treinamento de cada módulo</div>
+            <div class="rota-head c3">Continuidade</div><div class="rota-item">A cada 6 meses</div>
+            <div class="rota-head c4">Avaliação Semestral</div><div class="rota-item">RDM Exp. do Cliente & Segmentos · RDM Produção & Sustentabilidade · RDM Gestão de Pessoas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🛠️</div><h2>Ferramentas de Apoio</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Tipo</th><th>Conteúdo</th></tr></thead>
+              <tbody>
+                <tr><td>Guias de Treinamento</td><td>Exp. do Cliente: 7 · Produção: 5 · McCafé: 1 · Café da Manhã: 1</td></tr>
+                <tr><td>Guia de Qualidade</td><td>MCampus</td></tr>
+                <tr><td>Manuais</td><td>MFY · Drive-Thru · Dessert Center · McCafé · Dual Point · McDelivery · RDM · Playbook LSM · Auditoria Segurança do Alimento · Situações Especiais · Controle Integrado de Praga · Segurança e Higiene de Nossas Pessoas · Qualidade da Água</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-gun">
+      <div class="section-label">07 — Gerente de Unidade de Negócio</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🏢</div><h2>Topo da Trilha de Crescimento</h2></div>
+        <div class="card-body">
+          <div class="info-block">O Gerente de Unidade de Negócio é o responsável máximo pelo restaurante. Além de todos os cursos dos cargos anteriores, tem cursos obrigatórios específicos e duas formações presenciais exclusivas.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🚨</div><h2>Cursos Obrigatórios — SABER</h2></div>
+        <div class="card-body">
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Game Normas de Conduta II</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Segurança do Alimento (Certificação Anual)</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">LSM & Combat Plan</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Tudo Sobre Contas P&L</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Projeções para RDM e Gerente de Restaurante</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Tudo sobre Mão de Obra <em>(apenas restaurantes próprios)</em></div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Flex — Gestão Financeira <em>(apenas restaurantes próprios)</em></div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Obcecados pela Qualidade</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Fundamentos da Marca Gerencial — Prevenção e Violência</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Fundamentos da Marca Gerencial — Vieses Inconscientes</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Fundamentos da Marca Gerencial — Construindo Lugar Seguro</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Respeito e Diversidade</div>
+            <div style="font-size:13px;padding:7px 12px;background:#fff3e0;border-radius:8px;border-left:3px solid #3949ab;color:var(--text);">Comunicação Não Violenta</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🏫</div><h2>Cursos Presenciais Exclusivos</h2></div>
+        <div class="card-body">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+              <div style="font-size:24px;">🎓</div>
+              <div><div style="font-size:13px;font-weight:700;color:var(--text);">LRE — Liderando Restaurantes de Excelência</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Curso presencial</div></div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+              <div style="font-size:24px;">🚀</div>
+              <div><div style="font-size:13px;font-weight:700;color:var(--text);">LF — Liderando para o Futuro</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Curso presencial</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🛠️</div><h2>Ferramentas de Apoio</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Tipo</th><th>Conteúdo</th></tr></thead>
+              <tbody>
+                <tr><td>Verificações</td><td>RDM — Todos os Departamentos</td></tr>
+                <tr><td>Guia de Qualidade</td><td>MCampus</td></tr>
+                <tr><td>Manuais</td><td>Labor · PACE · MFY · Drive-Thru · Dessert Center · McCafé · Dual Point · McDelivery · Playbook LSM · RDM</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Promoção Interna · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.switchTabById = function(tabId) {
+      var btns = document.querySelectorAll('.tab-btn');
+      var panels = document.querySelectorAll('.tab-panel');
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      var btn = document.querySelector('[data-tab="' + tabId + '"]');
+      var panel = document.getElementById('panel-' + tabId);
+      if (btn) { btn.classList.add('active'); btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); }
+      if (panel) panel.classList.add('active');
+    };
+    document.addEventListener('DOMContentLoaded', function() {});
+  </script>
+</body>
+</html>

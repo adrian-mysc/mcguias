@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McFritas & Fritos — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="fritas">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>McFritas & Fritos</h1>
+        <p>Guia Rápido Operacional · Produção</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="mcfritas">🍟 McFritas</button>
+      <button class="tab-btn" data-tab="fritos">🍗 Produtos Fritos</button>
+      <button class="tab-btn" data-tab="tortas">🥧 Tortas</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧼</div><h2>Higiene & Segurança</h2></div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Padrões de Higiene</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+                <li>Utilizar avental</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Segurança</h3>
+              <ul>
+                <li class="blue">EPI completo (avental e mangote) para operar a fritadeira</li>
+                <li class="blue">Lavar mãos com sabonete bactericida por 20"</li>
+                <li class="blue">Gel sanitizante antes de assumir</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Tempos & Temperaturas — Resumo</h2></div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">🍟 McFritas</div>
+          <div class="grid-2">
+            <div class="stat-box"><div class="stat-label">Temp. Fritadeira</div><div class="stat-value">168°C</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Tempo de Fritura</div><div class="stat-value">3'10"</div></div>
+            <div class="stat-box blue"><div class="stat-label">Compostos Polares</div><div class="stat-value">≤ 24%</div></div>
+            <div class="stat-box"><div class="stat-label">Validade sacos</div><div class="stat-value">24h</div></div>
+          </div>
+          <div class="pill-row" style="margin-top:4px;">
+            <div class="pill yellow">P = 73g</div>
+            <div class="pill yellow">M = 102g</div>
+            <div class="pill yellow">G = 146g</div>
+          </div>
+
+          <div class="section-label" style="margin-top:14px; margin-bottom:8px;">🍗 Produtos Fritos (Frango & Tortas)</div>
+          <div class="grid-2">
+            <div class="stat-box"><div class="stat-label">Temp. Fritadeira</div><div class="stat-value">180°C</div></div>
+            <div class="stat-box blue"><div class="stat-label">UHC Carnes Brancas</div><div class="stat-value">85°C</div></div>
+          </div>
+
+          <div class="section-label" style="margin-top:14px; margin-bottom:8px;">⏱️ Tempo de Fritura — Produtos</div>
+          <div class="grid-2">
+            <div class="stat-box green"><div class="stat-label">Nuggets, Chicken e Junior</div><div class="stat-value">3'15"</div></div>
+            <div class="stat-box green"><div class="stat-label">McCrispy</div><div class="stat-value">6'</div></div>
+            <div class="stat-box green"><div class="stat-label">Tortas</div><div class="stat-value">6'</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Resfriamento Tortas</div><div class="stat-value">20 min</div></div>
+          </div>
+
+          <div class="section-label" style="margin-top:14px; margin-bottom:8px;">⏱️ Tempo de Vida na UHC — Carnes Brancas</div>
+          <div class="grid-2">
+            <div class="stat-box green"><div class="stat-label">McCrispy</div><div class="stat-value">60'</div></div>
+            <div class="stat-box green"><div class="stat-label">McChicken</div><div class="stat-value">30'</div></div>
+            <div class="stat-box green"><div class="stat-label">McNuggets e McJunior</div><div class="stat-value">20'</div></div>
+            <div class="stat-box green"><div class="stat-label">Tortas</div><div class="stat-value">2h total</div><div class="stat-sub">inclui 20 min de resfriamento</div></div>
+          </div>
+
+          <div class="section-label" style="margin-top:14px; margin-bottom:8px;">📦 Capacidade Máxima dos Cestos</div>
+          <div class="grid-2">
+            <div class="stat-box"><div class="stat-label">McChicken</div><div class="stat-value">6 unid.</div></div>
+            <div class="stat-box"><div class="stat-label">McNuggets</div><div class="stat-value">24 unid.</div></div>
+            <div class="stat-box"><div class="stat-label">Chicken Jr</div><div class="stat-value">6 unid.</div></div>
+            <div class="stat-box"><div class="stat-label">Crispy</div><div class="stat-value">4 unid.</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Tortas</div><div class="stat-value">16 unid.</div></div>
+          </div>
+
+          <div class="alert info">
+            <div class="alert-icon">📌</div>
+            <div><strong>Compostos Polares</strong> devem ser iguais ou abaixo de <strong>24%</strong> em todas as fritadeiras.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-mcfritas">
+      <div class="section-label">McFritas</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⚙️</div><h2>Preparação</h2></div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Estocar embalagens suficientes para o horário, organizadas conforme layout padrão</label>
+            <label class="check-item"><input type="checkbox"> Estocar no congelador portátil ou encestadora a quantidade necessária de sacos de McFritas conforme tabela de níveis — validade de 24h</label>
+            <label class="check-item"><input type="checkbox"> Manter o nível adequado de óleo respeitando a <strong>segunda linha na cuba</strong>. Se necessário, repor comunicando o Gerente</label>
+            <label class="check-item"><input type="checkbox"> Não utilizar óleo com sinais de decomposição e manter a fritadeira tampada sempre que não estiver usando</label>
+            <label class="check-item"><input type="checkbox"> Verificar o tempo e temperatura do equipamento (168°C · 3'10")</label>
+            <label class="check-item"><input type="checkbox"> Manter 2 panos limpos, sanitizados e dobrados e o saleiro limpo, estocado e em perfeito funcionamento</label>
+            <label class="check-item"><input type="checkbox"> Usar a peneira para remover os resíduos do óleo</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🍟</div><h2>Referência Rápida</h2></div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box"><div class="stat-label">Temp. Fritadeira</div><div class="stat-value">168°C</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Tempo de Fritura</div><div class="stat-value">3'10"</div></div>
+            <div class="stat-box blue"><div class="stat-label">Compostos Polares</div><div class="stat-value">≤ 24%</div></div>
+            <div class="stat-box"><div class="stat-label">Validade sacos (congelador)</div><div class="stat-value">24h</div></div>
+          </div>
+          <div class="section-label" style="margin-top:4px; margin-bottom:8px;">Tamanhos</div>
+          <div class="grid-3">
+            <div class="stat-box yellow"><div class="stat-label">Pequena (P)</div><div class="stat-value">73g</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Média (M)</div><div class="stat-value">102g</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Grande (G)</div><div class="stat-value">146g</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-fritos">
+      <div class="section-label">Produtos Fritos — Frango</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⚙️</div><h2>Preparação</h2></div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Estocar carnes suficientes com qualidade (sem sinais de descongelamento ou desidratação) — validade máxima 24h</label>
+            <label class="check-item"><input type="checkbox"> Após estocagem, ajustar imediatamente a marcação do tempo de validade no relógio de controle</label>
+            <label class="check-item"><input type="checkbox"> Verificar se todos os clipes estão disponíveis nas gavetas da estufa UHC conforme a tabela de cores</label>
+            <label class="check-item"><input type="checkbox"> Manter 1 pegador preto para carnes de frango</label>
+            <label class="check-item"><input type="checkbox"> Manter o nível adequado de óleo na cuba</label>
+            <label class="check-item"><input type="checkbox"> Não utilizar óleo com sinais de decomposição. Manter a fritadeira tampada sempre que possível</label>
+            <label class="check-item"><input type="checkbox"> Manter 1 pano limpo, sanitizado e dobrado para área de fritura</label>
+            <label class="check-item"><input type="checkbox"> Verificar tempos e temperaturas das fritadeiras</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🍗</div><h2>Procedimento Operacional</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Identificar qual carne deve ser ativada conforme as <strong>cores dos clipes nas gavetas na estufa UHC</strong> (gaveta no sistema de garagem). Conforme o nível no PLS, repor o produto na gaveta</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Retirar a embalagem da respectiva carne do <strong>congelador portátil</strong> e fechar imediatamente a porta</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Com o <strong>pegador de carnes (pegador preto — exceto McNuggets)</strong>, colocar as carnes no cesto de fritura, <strong>longe da cuba</strong></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Colocar no óleo e <strong>ativar imediatamente o timer</strong> da carne correspondente. (No McNuggets: sacudir o cesto com as duas mãos para distribuir as carnes antes de ativar)</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Retornar o saco de carnes para o congelador portátil, mantendo-o <strong>sempre fechado</strong></div></div>
+            <div class="step"><div class="step-num">6</div><div class="step-text">Ao soar o timer, desativá-lo e com as duas mãos <strong>erguer o cesto</strong> prendendo-o no suporte da cuba, aguardando o óleo escorrer por <strong>5" a 10"</strong></div></div>
+            <div class="step"><div class="step-num">7</div><div class="step-text">Com o auxílio de uma bandeja de inox, <strong>despejar as carnes do cesto sobre suas respectivas gavetas</strong></div></div>
+            <div class="step"><div class="step-num">8</div><div class="step-text"><strong>Organizar a gaveta</strong> distribuindo as carnes para garantir a temperatura do produto dentro da UHC</div></div>
+            <div class="step"><div class="step-num y">9</div><div class="step-text">Transferir a gaveta para a UHC e, usando o <strong>dedo polegar, acionar o timer ao mesmo tempo em que encaixa a gaveta na estufa</strong>, fechando-a totalmente até a linha indicada pelo <strong>"STOP"</strong>, evitando a perda de temperatura</div></div>
+          </div>
+
+          <div class="grid-2" style="margin-top:4px;">
+            <div class="card" style="border-color:#ffe082;">
+              <div class="card-head" style="background:#fff8e1; border-bottom-color:#ffe082;">
+                <div class="card-head-icon">⚠️</div>
+                <h2 style="font-size:13px; color:#7a4a00;">Sistemas</h2>
+              </div>
+              <div class="card-body" style="font-size:12.5px; gap:8px;">
+                <div><strong>Manutenção:</strong> Ative apenas a quantidade necessária para manter o nível estabelecido (PLS) da gaveta</div>
+                <div><strong>Recuperação:</strong> Ative a quantidade necessária para completar o nível (PLS) das gavetas zeradas</div>
+              </div>
+            </div>
+            <div class="card" style="border-color:#b8d9f5;">
+              <div class="card-head" style="background:#e8f4fd; border-bottom-color:#b8d9f5;">
+                <div class="card-head-icon">💡</div>
+                <h2 style="font-size:13px; color:#0d3d66;">Não Esqueça</h2>
+              </div>
+              <div class="card-body" style="font-size:12.5px;">
+                Manter <strong>fechadas as cubas</strong> que não estejam sendo utilizadas. Efetuar a <strong>limpeza da estação</strong> a cada rodada.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-tortas">
+      <div class="section-label">Tortas</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🥧</div><h2>Procedimento — Tortas</h2><div class="badge badge-yellow">Tempo total: 2h</div></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Colocar o <strong>cesto de Tortas</strong> sobre uma bandeja de inox limpa, seca, sanitizada e longe da cuba</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Retirar a bandeja com as tortas do <strong>congelador portátil</strong>, fechando-o imediatamente</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Colocar no cesto (com as mãos) a quantidade de tortas solicitadas com a <strong>costura para cima</strong> (encostando a parte superior na lâmina que separa os espaços do cesto)</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Segurar o cesto com as duas mãos e com cuidado <strong>colocar no óleo</strong>, ativando imediatamente o timer da fritadeira (<strong>6 minutos</strong>)</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Retornar a bandeja (se ainda houver tortas) para o congelador portátil</div></div>
+            <div class="step"><div class="step-num">6</div><div class="step-text">Ao soar o timer, desativá-lo e com as duas mãos erguer o cesto prendendo-o no suporte, aguardando o óleo escorrer por <strong>5" a 10"</strong></div></div>
+            <div class="step"><div class="step-num y">7</div><div class="step-text">Destravar e inclinar o cesto cuidadosamente sobre uma bandeja de inox limpa e sanitizada. Colocar as Tortas com a <strong>"barriga" (bolhas) voltada para cima</strong> na bandeja para resfriamento. Utilizar o <strong>pegador de produtos fritos BEGE</strong> para retirar as Tortas grudadas</div></div>
+            <div class="step"><div class="step-num y">8</div><div class="step-text">Controlar o tempo efetuando a marcação do <strong>tempo de resfriamento de 20 minutos</strong> no relógio de controle</div></div>
+            <div class="step"><div class="step-num y">9</div><div class="step-text">Enquanto as tortas resfriam, anotar o <strong>tempo de validade de 2 horas</strong> (incluindo o tempo de resfriamento) no círculo branco na extremidade oposta à janela da embalagem</div></div>
+            <div class="step"><div class="step-num y">10</div><div class="step-text">Embalar as tortas após o resfriamento, fechando a embalagem de forma que o aviso <strong>"cuidado, recheio quente"</strong> fique visível para o cliente. A embalagem deve ser fechada com o sabor correspondente</div></div>
+          </div>
+
+          <div class="alert danger">
+            <div class="alert-icon">⚠️</div>
+            <div>Atenção ao aviso <strong>"cuidado, recheio quente"</strong> — deve estar visível ao cliente. Usar a embalagem com o sabor correto da torta.</div>
+          </div>
+
+          <div class="grid-2" style="margin-top:4px;">
+            <div class="stat-box"><div class="stat-label">Fritura</div><div class="stat-value">6'</div><div class="stat-sub">a 180°C</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Resfriamento</div><div class="stat-value">20 min</div></div>
+            <div class="stat-box green"><div class="stat-label">Validade total</div><div class="stat-value">2h</div><div class="stat-sub">inclui resfriamento</div></div>
+            <div class="stat-box"><div class="stat-label">Capacidade do cesto</div><div class="stat-value">16 unid.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Quiz — McFritas & Fritos</h2><div class="badge badge-red">12 perguntas</div></div>
+        <div class="card-body"><div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+          <div id="quiz-app"></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · McFritas & Fritos · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_FRITAS = [
+      { category: "🍟 McFritas", question: "Qual a temperatura da fritadeira de McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "A fritadeira de McFritas opera a 168°C." },
+      { category: "🍟 McFritas", question: "Qual o tempo de fritura das McFritas?", options: ["2'30\"", "3'00\"", "3'10\"", "4'00\""], answer: "3'10\"", explanation: "O tempo de fritura das McFritas é 3 minutos e 10 segundos." },
+      { category: "🍟 McFritas", question: "Qual o peso da McFritas tamanho Médio?", options: ["73g", "95g", "102g", "146g"], answer: "102g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
+      { category: "🍟 McFritas", question: "Qual é a validade dos sacos de McFritas no congelador portátil?", options: ["6 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "Os sacos de McFritas no congelador portátil têm validade de 24 horas." },
+      { category: "🍗 Fritos", question: "Qual a temperatura da fritadeira para produtos de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "A fritadeira para frango e tortas opera a 180°C." },
+      { category: "🍗 Fritos", question: "Qual o tempo de fritura do McCrispy?", options: ["3'15\"", "4'00\"", "5'00\"", "6'"], answer: "6'", explanation: "McCrispy e Tortas: 6 minutos. Nuggets, Chicken e Junior: 3'15\"." },
+      { category: "🍗 Fritos", question: "Qual o tempo de fritura de Nuggets, McChicken e Junior?", options: ["2'30\"", "3'00\"", "3'15\"", "4'00\""], answer: "3'15\"", explanation: "Nuggets, Chicken e Junior têm tempo de fritura de 3 minutos e 15 segundos." },
+      { category: "🍗 Fritos", question: "Qual a temperatura da UHC para carnes brancas?", options: ["72°C", "79°C", "85°C", "90°C"], answer: "85°C", explanation: "A UHC para carnes brancas opera a 85°C." },
+      { category: "🍗 Fritos", question: "Qual a capacidade máxima de McNuggets no cesto?", options: ["12 unidades", "16 unidades", "20 unidades", "24 unidades"], answer: "24 unidades", explanation: "Capacidade máxima: McChicken 6, McNuggets 24, Chicken Jr 6, Crispy 4, Tortas 16." },
+      { category: "🥧 Tortas", question: "Qual o tempo total de validade das tortas após a fritura?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "As tortas têm 2 horas de validade total, incluindo os 20 minutos de resfriamento." },
+      { category: "🥧 Tortas", question: "Qual o tempo de resfriamento das tortas?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "20 minutos", explanation: "As tortas devem resfriar por 20 minutos antes de serem embaladas." },
+      { category: "🌡️ Geral", question: "Qual o limite máximo de Compostos Polares no óleo?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "Os Compostos Polares devem ser iguais ou abaixo de 24%." },
+      { category: "🍟 Fritas · Preparo", question: "Quando deve ser aplicado o sal nas McFritas?", options: ["Antes de fritar", "Imediatamente após sair da fritadeira", "Antes de servir ao cliente", "A qualquer momento"], answer: "Imediatamente após sair da fritadeira", explanation: "O sal deve ser aplicado imediatamente após sair da fritadeira, ainda quentes." },
+      { category: "⏱️ Fritas · Tempos", question: "Qual a validade das McFritas prontas na manutenção de calor?", options: ["4 minutos", "7 minutos", "10 minutos", "15 minutos"], answer: "7 minutos", explanation: "McFritas têm validade de 7 minutos na área de manutenção de calor após salgadas." },
+      { category: "🍟 Fritas · Qualidade", question: "Qual o aspecto visual correto das McFritas prontas?", options: ["Brancas e moles", "Douradas e crocantes", "Escuras e crocantes", "Douradas e macias"], answer: "Douradas e crocantes", explanation: "McFritas de qualidade são douradas, crocantes por fora e macias por dentro." },
+      { category: "🍟 Fritas · Porção", question: "Como garantir a porção correta de McFritas?", options: ["Estimar visualmente", "Usar o copo medidor específico para cada tamanho", "Pesar na balança", "Contar as batatas"], answer: "Usar o copo medidor específico para cada tamanho", explanation: "Usar o copo medidor de fritas correto para cada tamanho (P, M, G, GG)." },
+      { category: "🛢️ Fritas · Óleo", question: "Com que frequência deve ser filtrado o óleo?", options: ["Semanalmente", "Diariamente uma vez", "A cada 4 horas de uso ou no pré-pico", "Apenas quando escurecer"], answer: "A cada 4 horas de uso ou no pré-pico", explanation: "Filtrar o óleo a cada 4 horas de uso contínuo ou no pré-pico." },
+      { category: "🍟 Fritas · Estocagem", question: "Qual a validade dos sacos de batata no congelador portátil após abertura?", options: ["2 horas", "4 horas", "8 horas", "12 horas"], answer: "8 horas", explanation: "Após a abertura, os sacos de batata têm validade de 8 horas no congelador portátil." },
+      { category: "🛢️ Fritas · Segurança", question: "O que NUNCA fazer em caso de fogo no óleo?", options: ["Usar extintor CO2", "Jogar água", "Abafar com tampa", "Chamar socorro"], answer: "Jogar água", explanation: "NUNCA jogar água em óleo em chamas — pode causar explosão. Usar extintor CO2 ou abafar." },
+      { category: "🍗 Fritas · McNuggets", question: "Qual o tempo de validade do McNuggets na UHC?", options: ["15 minutos", "20 minutos", "30 minutos", "40 minutos"], answer: "30 minutos", explanation: "McNuggets têm 30 minutos de validade na UHC após a fritura." },
+      { category: "🍟 Fritas · Descarte", question: "O que fazer com McFritas fora do tempo de validade?", options: ["Ressalar e servir", "Descartar e preparar novo lote", "Guardar para uso posterior", "Aquecer no micro-ondas"], answer: "Descartar e preparar novo lote", explanation: "McFritas fora do tempo devem ser descartadas imediatamente." },
+      { category: "🍟 Fritas · Pré-pico", question: "O que fazer no pré-pico para garantir McFritas sempre disponíveis?", options: ["Fritar o máximo possível de uma vez", "Lotes menores e frequentes calculados pela demanda", "Não há preparo especial", "Estoque de fritas prontas por 30 min"], answer: "Lotes menores e frequentes calculados pela demanda", explanation: "Lotes menores e mais frequentes garantem qualidade e evitam desperdício." },
+      { category: "🍟 Fritas · Óleo", question: "Qual o intervalo de verificação dos Compostos Polares no óleo?", options: ["A cada 2 horas", "A cada turno", "Diariamente uma vez", "Semanalmente"], answer: "A cada turno", explanation: "Os Compostos Polares devem ser verificados a cada turno de operação." },
+      { category: "🍟 Fritas · Estocagem", question: "Como devem ser posicionados os sacos de batata no congelador portátil?", options: ["Deitados horizontalmente", "Em pé verticalmente", "De qualquer forma", "Empilhados no máximo 3"], answer: "Em pé verticalmente", explanation: "Os sacos de batata devem ficar em pé verticalmente no congelador portátil." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_FRITAS); observer.disconnect(); }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_FRITAS);
+    });
+  </script>
+</body>
+</html>

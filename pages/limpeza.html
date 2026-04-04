@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limpeza e Sanitização — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="limpeza">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Limpeza e Sanitização</h1>
+        <p>Procedimentos Operacionais</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="chapa">🔥 Chapa</button>
+      <button class="tab-btn" data-tab="tostadeira">🍞 Tostadeira</button>
+      <button class="tab-btn" data-tab="salao">🪑 Salão</button>
+      <button class="tab-btn" data-tab="utensilios">🫙 Utensílios</button>
+      <button class="tab-btn" data-tab="pista">🚗 Pista Drive</button>
+      <button class="tab-btn" data-tab="produtos">🧪 Produtos</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-chapa">
+
+      <div class="section-label">Limpeza Diária da Chapa</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Equipamentos Necessários</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>EPI e materiais obrigatórios:</strong>
+            <ul style="margin:6px 0 0 16px;font-size:13px;line-height:1.8;">
+              <li>QSR Limpador para Chapas</li>
+              <li>Esponja não abrasiva</li>
+              <li>Luvas para altas temperaturas</li>
+              <li>Panos</li>
+              <li>Bandeja</li>
+              <li>Avental</li>
+              <li>Suporte de Limpeza</li>
+              <li>Escova de limpeza para alta temperatura</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔥</div><h2>Procedimento — Limpeza Diária</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Garanta que o sistema de exaustão esteja ligado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Ajuste o equipamento para <strong>Clean Mode</strong></label></div>
+          <div class="alert warn" style="margin:8px 0;">
+            ⚠️ Espere até o equipamento atingir a temperatura de limpeza — sinal luminoso e mensagem <strong>"READY TO CLEAN"</strong> na tela
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Remova o excesso de gordura do Teflon com pano úmido e retire o Teflon do platen</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque 90ml do produto QSR no recipiente e umedeça a esponja</label></div>
+          <div class="check-item"><input type="checkbox"><label>Aplique o produto em toda a superfície superior e nas laterais</label></div>
+          <div class="check-item"><input type="checkbox"><label>Aguarde o tempo de ação do produto</label></div>
+          <div class="check-item"><input type="checkbox"><label>Esfregue com esponja não abrasiva</label></div>
+          <div class="check-item"><input type="checkbox"><label>Enxágue a placa superior e as laterais com pano limpo e água morna</label></div>
+          <div class="check-item"><input type="checkbox"><label>Enxágue a placa inferior com água morna e a escova para altas temperaturas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque o Teflon sobre a chapa e limpe os 2 lados com a esponja úmida com limpador</label></div>
+          <div class="check-item"><input type="checkbox"><label>Enxágue o Teflon com pano úmido e água morna</label></div>
+          <div class="check-item"><input type="checkbox"><label>Remova a sujeira das calhas, limpe com desengordurante e substitua</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe a placa inferior e a frente da placa com pano limpo e sanitizado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque os Teflons novamente, alternando os lados <strong>pares e ímpares</strong></label></div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Limpeza Mensal — Best Burger (Limpeza Profunda)</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧽</div><h2>Procedimento — Limpeza Mensal</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Coloque luvas resistentes ao calor e o avental</label></div>
+          <div class="check-item"><input type="checkbox"><label>Selecione <strong>RECOVERY (285°F)</strong> no painel de controle da chapa</label></div>
+          <div class="check-item"><input type="checkbox"><label>Desmonte e esvazie as canaletas de gordura, enxágue e recoloque. Descarte a gordura adequadamente</label></div>
+          <div class="check-item"><input type="checkbox"><label>Retire as abraçadeiras, barras e chapas removíveis</label></div>
+          <div class="check-item"><input type="checkbox"><label>Lave, enxágue e sanitize as abraçadeiras e barras no <strong>sistema de 3 cubas</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe as chapas superior e inferior com pano de chapa limpo embebido em sanitizante. Descarte o pano no balde de panos sujos. Raspe a chapa</label></div>
+          <div class="check-item"><input type="checkbox"><label>Abra um frasco novo do <strong>limpador de chapas e tostadeiras ativado por calor</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Aplique o limpador na esponja ou pano e cubra as bordas das chapas superiores</label></div>
+          <div class="check-item"><input type="checkbox"><label>Despeje o restante do limpador uniformemente cobrindo toda a superfície da chapa inferior</label></div>
+          <div class="check-item"><input type="checkbox"><label>Abaixe os platens sobre o limpador de chapa</label></div>
+          <div class="info-block" style="margin:8px 0;">
+            ⏱️ Os platens permanecem abaixados automaticamente por <strong>17 minutos</strong> para amolecer a sujeira
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Levante os platens e esfregue com as ferramentas para chapa até dissolver a sujeira</label></div>
+          <div class="check-item"><input type="checkbox"><label>Com o rodinho de borracha, empurre o limpador para dentro das canaletas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Enxágue com panos embebidos em sanitizante. Descarte os panos no balde de toalhas sujas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Desmonte e esvazie novamente as canaletas de gordura, enxágue e recoloque</label></div>
+          <div class="check-item"><input type="checkbox"><label>Reinstale as chapas removíveis, as barras e as braçadeiras</label></div>
+          <div class="check-item"><input type="checkbox"><label>Lave, enxágue e sanitize todos os utensílios, ferramentas e EPIs no <strong>sistema de 3 cubas</strong></label></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-tostadeira">
+
+      <div class="section-label">Limpeza Diária da Tostadeira</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Equipamentos Necessários</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>EPI e materiais obrigatórios:</strong>
+            <ul style="margin:6px 0 0 16px;font-size:13px;line-height:1.8;">
+              <li>QSR Limpador para Tostadeiras</li>
+              <li>Esponja não abrasiva</li>
+              <li>Luvas para altas temperaturas</li>
+              <li>Panos</li>
+              <li>QSR Multiuso</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🍞</div><h2>Procedimento — Limpeza Diária</h2></div>
+        <div class="card-body">
+          <div class="alert danger" style="margin-bottom:10px;">
+            🔴 <strong>ANTES DE INICIAR:</strong> Desligue a Tostadeira e coloque luvas resistentes ao calor
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Remova o alimentador de pão, a tampa frontal e a tampa traseira</label></div>
+          <div class="check-item"><input type="checkbox"><label>Lave, enxágue e sanitize as peças removíveis no <strong>sistema de 3 cubas</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Lave, enxágue e sanitize o alimentador de pães e a rampa no sistema de 3 cubas. Deixe secar ao ar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Remova a folha de Teflon</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque 60ml (2 pumps) do Kay QSR Limpador para Chapas e Tostadeiras diretamente na cuba de inox</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe a folha de Teflon com pano limpo em solução Multiuso. Se acúmulo pesado: use QSR Limpador de Tostadeira</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe e enxágue também o verso da folha de Teflon</label></div>
+          <div class="check-item"><input type="checkbox"><label>Com pano limpo embebido em solução Multiuso: limpe o exterior da tostadeira. Descarte o pano nos panos sujos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Com pano molhado no Kay QSR Limpador: limpe a correia até ficar limpa. Descarte o pano</label></div>
+          <div class="alert info" style="margin:8px 0;">
+            📌 <strong>Atenção:</strong> Não remova as correias da tostadeira. Gire as correias para limpar todas as seções
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Enxágue as correias com pano limpo embebido em sanitizante. Descarte o pano</label></div>
+          <div class="check-item"><input type="checkbox"><label>Remonte, conecte a Tostadeira e ligue-a</label></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-pista">
+
+      <div class="section-label">Limpeza da Pista Drive-Thru</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Equipamentos Necessários</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>EPI e materiais obrigatórios:</strong>
+            <ul style="margin:6px 0 0 16px;font-size:13px;line-height:1.8;">
+              <li>Escova de cerdas duras (náilon) para limpar manchas</li>
+              <li>Espátula para remover chiclete</li>
+              <li>Luvas, Colete de PVC e Botas</li>
+              <li>QSR Desengordurante</li>
+              <li>Spray (borrifador)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🚗</div><h2>Procedimento — Limpeza Diária</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Retire todo o chiclete da pista com a espátula</label></div>
+          <div class="check-item"><input type="checkbox"><label>Dilua o Desengordurante em partes iguais: <strong>500ml de produto + 500ml de água</strong> diretamente no borrifador</label></div>
+          <div class="check-item"><input type="checkbox"><label>Pulverize a solução sobre manchas de óleo, guias e paredes, pegadas e tartarugas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Escove as manchas com escova de cerdas duras de náilon para misturar o desengordurante</label></div>
+          <div class="check-item"><input type="checkbox"><label>Deixe agir por <strong>3 horas</strong>. Para melhores resultados, aplicar no asfalto e deixar agir durante a noite</label></div>
+          <div class="check-item"><input type="checkbox"><label>Escove as manchas novamente e enxágue com água</label></div>
+          <div class="info-block" style="margin-top:8px;">
+            💡 <strong>Se ainda houver manchas após o procedimento:</strong> usar a máquina de pressão <strong>"VAP"</strong>
+          </div>
+          <div class="alert warn" style="margin-top:8px;">
+            ⛈️ <strong>Não aplicar em dias chuvosos</strong> — a chuva diluirá ou enxaguará o produto gerando desperdício
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Diluição do Desengordurante</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧪</div><h2>Proporção de Diluição</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Produto</th><th>Água</th><th>Total</th><th>Uso</th></tr></thead>
+              <tbody>
+                <tr><td><strong>500ml</strong></td><td><strong>500ml</strong></td><td>1 litro</td><td>Aplicação na pista (borrifador)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-salao">
+
+      <div class="section-label">Limpeza de Superfícies</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🪑</div><h2>Mesas e Cadeiras</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Materiais necessários:</strong> QSR Multiuso · Panos · Sanitizante
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Pulverize a solução Multiuso no pano</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe a parte superior, lateral e inferior da mesa</label></div>
+          <div class="check-item"><input type="checkbox"><label>Use outro pano para limpar e sanitizar cadeiras e pernas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Passe o pano sobre mesas, cadeiras, paredes, fórmicas, luminárias, etc.</label></div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Limpeza de Vidros e Espelhos</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🪟</div><h2>Vidros e Espelhos</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Materiais necessários:</strong> QSR Multiuso · Panos · Rodo · Borrifadores · Papel Toalha
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Pulverize o Multiuso sobre um pano seco ou na lâ do rodo de limpeza de vidros</label></div>
+          <div class="check-item"><input type="checkbox"><label>Espalhe o Multiuso em toda a superfície do vidro com movimentos uniformes</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque toalha de papel seca ao longo da base da janela para absorver o escoamento</label></div>
+          <div class="check-item"><input type="checkbox"><label>Com o rodo, comece pela parte superior e puxe para baixo em direção ao meio da janela</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe o rodo de borracha após cada passagem com um pano sanitizado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Passe o rodo ao longo da metade inferior da janela</label></div>
+          <div class="check-item"><input type="checkbox"><label>Seque o rodo e os cantos com um pano seco</label></div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Limpeza de Pisos</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Pisos — Limpeza Diária (Restaurante Aberto)</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Materiais:</strong> QSR Limpador para pisos · QSR Desengordurante · Pá e vassoura · Esfregão · Placa de "piso molhado"
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Passe a vassoura por todo o salão, passando por todos os cantos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Junte tudo na pá coletora e jogue as sujidades na lixeira</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque o esfregão no balde para absorver a solução de limpeza. Torça para retirar o excesso</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque a placa de "piso molhado" e limpe a área. Divida em partes menores para minimizar risco de escorregões</label></div>
+          <div class="check-item"><input type="checkbox"><label>Enxágue/seque com esfregão limpo, <strong>virando a cada 1 metro</strong> e <strong>torcendo a cada 2 metros</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Esvazie o balde na pia para esfregões e enxágue balde e esfregão com água quente</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque todo o material no local apropriado</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧽</div><h2>Pisos — Limpeza Profunda (Restaurante Fechado)</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Varrer todo o salão e jogar sujidades na lixeira</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coloque placas de PISO MOLHADO ao redor do perímetro da área a ser limpa</label></div>
+          <div class="check-item"><input type="checkbox"><label>Use esfregão úmido para aplicar generosamente a Solução FC no piso</label></div>
+          <div class="check-item"><input type="checkbox"><label>Molhe o piso e deixe agir antes de esfregar novamente</label></div>
+          <div class="info-block" style="margin:8px 0;">⏱️ Deixe o FC agir no chão por <strong>2 minutos</strong></div>
+          <div class="check-item"><input type="checkbox"><label>Limpe a solução suja; mova para a próxima área</label></div>
+          <div class="alert warn" style="margin:8px 0;">⚠️ Só remova a placa de piso molhado quando o piso estiver completamente seco</div>
+          <div class="check-item"><input type="checkbox"><label>Enxágue as ferramentas na pia do esfregão e pendure para secar ao ar antes de guardar</label></div>
+          <div class="info-block" style="margin-top:8px;"><strong>Limpeza Semanal:</strong> Borrifar rodapés com solução desengordurante e limpar com pano limpo</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Limpeza de Banheiros</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🚽</div><h2>Banheiros — Procedimento Completo</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>EPIs e materiais:</strong> QSR Limpeza e Desinfecção de Banheiros · Luvas de Borracha · Panos limpos higienizados · Avental · Escova de sanitários
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Encha o borrifador com água e pressione 2 vezes com o limpador desinfetante perfumado</label></div>
+          <div class="rota-items" style="margin-top:10px;">
+            <div class="rota-head c1">Pias</div>
+            <div class="rota-item">Pulverize dentro e fora da pia → Deixar agir 2 min → Esfregar com esponja não abrasiva → Enxaguar e secar com pano limpo</div>
+            <div class="rota-head c2">Sanitários e Mictórios</div>
+            <div class="rota-item">Aplicar solução dentro e fora → Deixar agir 2 min → Esfregar interior com escova → Dar a descarga → Secar parte externa e tampas com pano limpo</div>
+            <div class="rota-head c3">Paredes, espelho, portas</div>
+            <div class="rota-item">Pulverizar solução de limpeza para banheiros e secar com pano limpo e seco</div>
+          </div>
+          <div class="info-block" style="margin-top:10px;">
+            <strong>Pisos do banheiro:</strong> Diluir <strong>60ml (2 pumps)</strong> de produto de limpeza para banheiros em balde de 5L. Aplicar com esfregão ligeiramente torcido. Fazer sempre que necessário.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-utensilios">
+
+      <div class="section-label">Sistema de 3 Cubas</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🫙</div><h2>Lavagem de Utensílios</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Materiais necessários:</strong> QSR Detergente Concentrado · Esponja não abrasiva · Escova · Aventais de plástico · Sanitizante
+          </div>
+          <div class="rota-items" style="margin-top:10px;">
+            <div class="rota-head c1">1. Raspar</div>
+            <div class="rota-item">Raspe os restos de comida e jogue no lixo</div>
+            <div class="rota-head c2">2. Lavar</div>
+            <div class="rota-item">Coloque os itens na solução de Detergente e deixe de molho por <strong>5 minutos</strong>. Limpe com esponja não abrasiva ou escova</div>
+            <div class="rota-head c3">3. Enxaguar</div>
+            <div class="rota-item">Enxágue os utensílios em água corrente</div>
+            <div class="rota-head c4">4. Sanitizar</div>
+            <div class="rota-item">Coloque na solução sanitizante por <strong>1 minuto</strong>. Todas as superfícies devem entrar em contato com o sanitizante</div>
+          </div>
+          <div class="check-item" style="margin-top:10px;"><input type="checkbox"><label>Remova os itens; coloque cubas de cabeça para baixo e bandejas de lado em posição de drenagem sobre superfície limpa e sanitizada</label></div>
+          <div class="check-item"><input type="checkbox"><label>Deixe secar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Armazene os itens limpos e sanitizados adequadamente</label></div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Jarras de Café</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Limpeza das Jarras de Café</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>Materiais:</strong> QSR KAY Coffee Pot Cleaner · Esponja não abrasiva
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Coloque o produto Kay Coffee na jarra a ser lavada</label></div>
+          <div class="check-item"><input type="checkbox"><label>Despeje água quente até cobrir a base metálica e tampe a jarra</label></div>
+          <div class="check-item"><input type="checkbox"><label>Faça leves movimentos circulares para dissolver o produto</label></div>
+          <div class="info-block" style="margin:8px 0;">⏱️ Deixar agir por <strong>5 minutos</strong></div>
+          <div class="check-item"><input type="checkbox"><label>Enquanto age: umedeça a esponja não abrasiva com a solução da jarra e limpe toda a superfície externa</label></div>
+          <div class="check-item"><input type="checkbox"><label>Repita o processo para o filtro</label></div>
+          <div class="check-item"><input type="checkbox"><label>Enxágue em água corrente no sistema de 3 cubas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Deixar na solução sanitizante por <strong>1 minuto</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Deixe secar</label></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-produtos">
+
+      <div class="section-label">Guia de Produtos e Diluições</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧪</div><h2>Produtos QSR — Uso e Diluição</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Produto</th><th>Uso</th><th>Diluição Manual</th></tr></thead>
+              <tbody>
+                <tr><td><strong>KAY Detergente Multiuso</strong></td><td>Utensílios</td><td>40L água quente + 1 pacote de detergente</td></tr>
+                <tr><td><strong>KAY Sanitizante</strong></td><td>Utensílios e superfícies</td><td>10 gal. água morna (70-90°F) + 1 sachê</td></tr>
+                <tr><td><strong>KAY5 Sanitizante Superfícies</strong></td><td>Superfícies, máquina de sorvete, panos</td><td>10 gal. água morna + 1 sachê</td></tr>
+                <tr><td><strong>KAY Multi-superfícies e Vidros</strong></td><td>Cadeiras, mesas, balcões, janelas, portas</td><td>1 sachê em garrafa de 1L</td></tr>
+                <tr><td><strong>KAY Limpador de Pisos</strong></td><td>Pisos</td><td>Operação: 4 gal. água + 1 pacote. Fechamento: 1 envelope + 4 gal. água quente</td></tr>
+                <tr><td><strong>KAY Desengordurante</strong></td><td>Exteriores, calçadas, rodapés, fritadeiras</td><td>Exteriores: 1:1 (parte água + parte produto)</td></tr>
+                <tr><td><strong>KAY Limpador de Chapas</strong></td><td>Chapas e tostadeiras</td><td>90ml pronto para usar ou 1 sachê por limpeza</td></tr>
+                <tr><td><strong>KAY Limpador de Chapas Best Burger</strong></td><td>Chapas com Best Burger</td><td>Pronto para usar 1 garrafa/platen</td></tr>
+                <tr><td><strong>KAY Limpador de Fritadeiras</strong></td><td>Fritadeiras</td><td>Aplicar na esponja enquanto óleo drena (5-8 min)</td></tr>
+                <tr><td><strong>KAY Limpador de Banheiros</strong></td><td>Banheiros</td><td>Pronto para usar. Agir mín. 5 min antes de esfregar</td></tr>
+                <tr><td><strong>KAY Coffee Pot Cleaner</strong></td><td>Jarras de café</td><td>1 comprimido ou 4 medidas por jarra</td></tr>
+                <tr><td><strong>KAY Hand Sanitizer</strong></td><td>Mãos após lavagem</td><td>Pronto para usar. Encher saboneteira até 3/4</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert info" style="margin-top:10px;">
+            📌 <strong>Importante:</strong> Lave os panos da chapa, salão e banheiro <strong>separadamente</strong>.
+          </div>
+          <div class="info-block" style="margin-top:8px;">
+            <strong>Lavagem de panos (carga normal):</strong> 1 pacote de detergente + 1 sachê de alvejante.<br>
+            Panos para grelhar: 18 a 20 por carga. Panos para servir: 30 a 40 por carga.<br>
+            <strong>Carga grande/muito suja:</strong> Use 2 pacotes de detergente.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — Limpeza e Sanitização</h2>
+          <div class="badge badge-red">31 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Limpeza e Sanitização · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_LIMPEZA = [
+      // Chapa - Limpeza Diária
+      { category: "🔥 Limpeza · Chapa Diária", question: "Qual mensagem aparece na tela quando a chapa está pronta para limpeza?", options: ["CLEAN READY", "READY TO CLEAN", "START CLEANING", "CLEAN MODE ON"], answer: "READY TO CLEAN", explanation: "Aguardar o sinal luminoso e a mensagem READY TO CLEAN na tela antes de iniciar a limpeza." },
+      { category: "🔥 Limpeza · Chapa Diária", question: "Quantos ml do produto QSR devem ser colocados no recipiente para umedecer a esponja?", options: ["45ml", "60ml", "90ml", "120ml"], answer: "90ml", explanation: "Colocar 90ml do produto QSR no recipiente e umedecer a esponja." },
+      { category: "🔥 Limpeza · Chapa Diária", question: "Como devem ser recolocados os Teflons ao final da limpeza diária da chapa?", options: ["Todos do mesmo lado", "Alternando lados pares e ímpares", "Sempre com o lado limpo para cima", "Na mesma posição que estavam"], answer: "Alternando lados pares e ímpares", explanation: "Ao recolocar os Teflons, alternando os lados pares e ímpares." },
+      { category: "🔥 Limpeza · Chapa Diária", question: "Com o que se enxágua a placa inferior da chapa?", options: ["Pano seco", "Água fria e esponja", "Água morna e escova para altas temperaturas", "Apenas pano úmido"], answer: "Água morna e escova para altas temperaturas", explanation: "Enxaguar a placa inferior com água morna e a escova para altas temperaturas." },
+      { category: "🔥 Limpeza · Chapa Diária", question: "Qual o primeiro passo antes de iniciar a limpeza diária da chapa?", options: ["Remover o Teflon", "Aplicar o produto", "Garantir que o sistema de exaustão esteja ligado e ajustar para Clean Mode", "Esfregar com esponja"], answer: "Garantir que o sistema de exaustão esteja ligado e ajustar para Clean Mode", explanation: "Primeiro garantir que o sistema de exaustão esteja ligado, depois ajustar para Clean Mode." },
+
+      // Chapa - Limpeza Mensal
+      { category: "🔥 Limpeza · Chapa Mensal", question: "Qual modo deve ser selecionado no painel para a limpeza mensal da chapa?", options: ["CLEAN MODE", "RECOVERY (285°F)", "DEEP CLEAN", "WASH MODE"], answer: "RECOVERY (285°F)", explanation: "Para a limpeza mensal (Best Burger), selecionar RECOVERY (285°F) no painel de controle." },
+      { category: "🔥 Limpeza · Chapa Mensal", question: "Quantos minutos os platens permanecem abaixados sobre o limpador na limpeza mensal?", options: ["10 minutos", "15 minutos", "17 minutos", "20 minutos"], answer: "17 minutos", explanation: "Os platens permanecem abaixados automaticamente por 17 minutos para amolecer a sujeira." },
+      { category: "🔥 Limpeza · Chapa Mensal", question: "No que devem ser sanitizadas as abraçadeiras e barras removidas na limpeza mensal?", options: ["Balde com sanitizante", "Sistema de 3 cubas", "Cuba com água quente", "Máquina de lavar"], answer: "Sistema de 3 cubas", explanation: "Lave, enxágue e sanitize as abraçadeiras e barras no sistema de 3 cubas." },
+      { category: "🔥 Limpeza · Chapa Mensal", question: "Para que serve o rodinho de borracha na limpeza mensal da chapa?", options: ["Esfregar a superfície", "Empurrar o limpador para dentro das canaletas", "Remover o excesso de água", "Aplicar o sanitizante"], answer: "Empurrar o limpador para dentro das canaletas", explanation: "Com o rodinho de borracha, empurrar o limpador de chapas para dentro das canaletas." },
+
+      // Tostadeira
+      { category: "🍞 Limpeza · Tostadeira", question: "O que deve ser feito ANTES de iniciar a limpeza da tostadeira?", options: ["Aplicar o produto", "Remover o Teflon", "Desligar a tostadeira e colocar luvas resistentes ao calor", "Ligar o sistema de exaustão"], answer: "Desligar a tostadeira e colocar luvas resistentes ao calor", explanation: "ANTES DE INICIAR: Desligar a Tostadeira e colocar luvas resistentes ao calor." },
+      { category: "🍞 Limpeza · Tostadeira", question: "Quantos ml (pumps) do limpador devem ser colocados na cuba de inox?", options: ["30ml (1 pump)", "60ml (2 pumps)", "90ml (3 pumps)", "120ml (4 pumps)"], answer: "60ml (2 pumps)", explanation: "Colocar 60ml (2 pumps) de Kay QSR Limpador para Chapas e Tostadeiras diretamente na cuba de inox." },
+      { category: "🍞 Limpeza · Tostadeira", question: "O que NÃO se deve fazer ao limpar a correia da tostadeira?", options: ["Usar pano molhado com limpador", "Remover as correias da tostadeira", "Girar as correias para limpar todas as seções", "Enxaguar com sanitizante"], answer: "Remover as correias da tostadeira", explanation: "NOTA: Não remova as correias da tostadeira. Gire as correias para limpar todas as seções." },
+      { category: "🍞 Limpeza · Tostadeira", question: "O que usar para limpar o exterior da tostadeira?", options: ["QSR Limpador de Chapas", "Água e sabão", "Pano limpo embebido em solução Multiuso", "Esponja abrasiva"], answer: "Pano limpo embebido em solução Multiuso", explanation: "Limpar o exterior da tostadeira com pano limpo embebido em solução Multiuso." },
+      { category: "🍞 Limpeza · Tostadeira", question: "O que fazer com os panos após uso na limpeza da tostadeira?", options: ["Reutilizar", "Lavar e reaproveitar", "Descartar no balde de panos sujos", "Deixar secar ao ar"], answer: "Descartar no balde de panos sujos", explanation: "Descartar os panos no balde de panos sujos após o uso." },
+
+      // Pista Drive
+      { category: "🚗 Limpeza · Pista Drive", question: "Qual a proporção de diluição do Desengordurante para a limpeza da pista?", options: ["250ml produto + 750ml água", "500ml produto + 500ml água", "750ml produto + 250ml água", "1 litro produto puro"], answer: "500ml produto + 500ml água", explanation: "Diluir o Desengordurante em partes iguais: 500ml de produto + 500ml de água no borrifador." },
+      { category: "🚗 Limpeza · Pista Drive", question: "Por quanto tempo o desengordurante deve agir na pista?", options: ["30 minutos", "1 hora", "3 horas", "6 horas"], answer: "3 horas", explanation: "Deixar agir por 3 horas. Para melhores resultados, aplicar no asfalto e deixar agir durante a noite." },
+      { category: "🚗 Limpeza · Pista Drive", question: "Por que não se deve aplicar o desengordurante em dias chuvosos?", options: ["O produto perde eficácia com o frio", "A chuva diluirá ou enxaguará o produto gerando desperdício", "Pode escorregar na pista", "O produto reage com a água da chuva"], answer: "A chuva diluirá ou enxaguará o produto gerando desperdício", explanation: "Recomenda-se não aplicar em dias chuvosos pois a chuva diluirá ou enxaguará o produto gerando desperdício." },
+      { category: "🚗 Limpeza · Pista Drive", question: "Qual equipamento usar se ainda houver manchas após o procedimento padrão da pista?", options: ["Esponja abrasiva", "Mais desengordurante puro", "Máquina de pressão VAP", "Escova de ferro"], answer: "Máquina de pressão VAP", explanation: "Se após o procedimento ainda houver manchas, usar a máquina de pressão VAP." },
+      { category: "🚗 Limpeza · Pista Drive", question: "Quais EPIs são obrigatórios para a limpeza da pista?", options: ["Apenas luvas", "Luvas, óculos e máscara", "Luvas, Colete de PVC e Botas", "Avental e luvas"], answer: "Luvas, Colete de PVC e Botas", explanation: "EPIs obrigatórios para limpeza da pista: Luvas, Colete de PVC e Botas." },
+
+      // Salão
+      { category: "🪑 Limpeza · Salão · Pisos", question: "A cada quantos metros deve ser invertido o lado do esfregão ao enxaguar o piso?", options: ["A cada 50cm", "A cada 1 metro", "A cada 2 metros", "A cada 3 metros"], answer: "A cada 1 metro", explanation: "Enxaguar/secar com esfregão limpo, virando a cada 1 metro e torcendo a cada 2 metros." },
+      { category: "🪑 Limpeza · Salão · Pisos", question: "Por quanto tempo a Solução FC deve agir no piso na limpeza profunda?", options: ["1 minuto", "2 minutos", "5 minutos", "10 minutos"], answer: "2 minutos", explanation: "Deixe o FC agir no chão por 2 minutos antes de limpar a solução suja." },
+      { category: "🪑 Limpeza · Salão · Pisos", question: "Quando se pode remover a placa de piso molhado após a limpeza profunda?", options: ["Imediatamente após limpar", "Após 5 minutos", "Quando o piso estiver completamente seco", "Após 30 minutos"], answer: "Quando o piso estiver completamente seco", explanation: "Só remova a placa de piso molhado quando o piso estiver completamente seco." },
+      { category: "🪑 Limpeza · Salão · Banheiros", question: "Quantos pumps do limpador desinfetante de banheiro devem ser colocados no borrifador?", options: ["1 pump", "2 pumps", "3 pumps", "4 pumps"], answer: "2 pumps", explanation: "Encher o borrifador com água e pressionar 2 vezes com o limpador desinfetante perfumado." },
+      { category: "🪑 Limpeza · Salão · Banheiros", question: "Por quanto tempo a solução deve agir nas pias e sanitários antes de esfregar?", options: ["30 segundos", "1 minuto", "2 minutos", "5 minutos"], answer: "2 minutos", explanation: "Aplicar a solução e deixar agir por 2 minutos antes de esfregar pias e sanitários." },
+      { category: "🪑 Limpeza · Salão · Banheiros", question: "Quanto produto de limpeza de banheiro deve ser diluído para limpeza do piso?", options: ["30ml (1 pump) em 5L", "60ml (2 pumps) em 5L", "90ml (3 pumps) em 5L", "120ml em 5L"], answer: "60ml (2 pumps) em 5L", explanation: "Diluir 60ml (2 pumps) de produto de limpeza para banheiros em um balde de 5L." },
+
+      // Utensílios
+      { category: "🫙 Limpeza · Utensílios", question: "Por quanto tempo os utensílios devem ficar de molho na solução de detergente?", options: ["1 minuto", "3 minutos", "5 minutos", "10 minutos"], answer: "5 minutos", explanation: "Colocar os itens na solução de Detergente e deixar de molho por 5 minutos." },
+      { category: "🫙 Limpeza · Utensílios", question: "Por quanto tempo os utensílios devem ficar na solução sanitizante?", options: ["30 segundos", "1 minuto", "2 minutos", "5 minutos"], answer: "1 minuto", explanation: "Colocar na solução sanitizante por 1 minuto. Todas as superfícies devem entrar em contato com o sanitizante." },
+      { category: "🫙 Limpeza · Utensílios", question: "Como devem ser posicionadas as cubas para secar após a sanitização?", options: ["Direitas, abertas para cima", "De cabeça para baixo em posição de drenagem", "Empilhadas", "Em qualquer posição"], answer: "De cabeça para baixo em posição de drenagem", explanation: "Remova os itens; coloque as cubas de cabeça para baixo e as bandejas de lado, em posição de drenagem." },
+      { category: "🫙 Limpeza · Jarras de Café", question: "Por quanto tempo o produto Kay Coffee deve agir dentro da jarra?", options: ["1 minuto", "3 minutos", "5 minutos", "10 minutos"], answer: "5 minutos", explanation: "Fazer movimentos circulares para dissolver o produto e deixar agir por 5 minutos." },
+
+      // Produtos
+      { category: "🧪 Limpeza · Produtos", question: "Qual a diluição manual do KAY Detergente Multiuso para utensílios?", options: ["20L água + 1 sachê", "30L água + 1 sachê", "40L água quente + 1 pacote", "10L água + 2 sachês"], answer: "40L água quente + 1 pacote", explanation: "Encher a cuba com 40L (10 gal) de água quente e despejar 1 pacote de detergente multiuso." },
+      { category: "🧪 Limpeza · Produtos", question: "Qual a diluição manual do KAY Multi-superfícies e Vidros?", options: ["1 sachê em 500ml", "1 sachê em 1L", "2 sachês em 1L", "1 sachê em 2L"], answer: "1 sachê em 1L", explanation: "Diluição manual: diluir 1 sachê em uma garrafa de 1L." },
+      { category: "🧪 Limpeza · Produtos", question: "Como devem ser lavados os panos da chapa, salão e banheiro?", options: ["Todos juntos na mesma lavagem", "Chapa com salão, banheiro separado", "Todos separadamente", "Pode ser em qualquer combinação"], answer: "Todos separadamente", explanation: "Importante: Lave os panos da chapa, salão e banheiro separadamente." }
+,
+      { category: "🔥 Limpeza · Chapa", question: "O que deve ser feito com as calhas após a limpeza diária?", options: ["Deixar molhadas", "Remover sujeira, limpar com desengordurante e substituir", "Apenas enxaguar com água", "Não precisam ser limpas diariamente"], answer: "Remover sujeira, limpar com desengordurante e substituir", explanation: "Remover a sujeira das calhas, limpar com desengordurante e substituir." },
+      { category: "🔥 Limpeza · Chapa Mensal", question: "O que é feito com as canaletas de gordura na limpeza mensal?", options: ["Apenas limpar por fora", "Desmontar, esvaziar, enxaguar e recolocar", "Não são desmontadas", "Substituir por novas"], answer: "Desmontar, esvaziar, enxaguar e recolocar", explanation: "Na limpeza mensal: desmontar e esvaziar as canaletas de gordura, enxaguar e recolocar." },
+      { category: "🍞 Limpeza · Tostadeira", question: "O que fazer após remontar e conectar a tostadeira limpa?", options: ["Deixar desligada até amanhã", "Ligar imediatamente após conectar", "Aguardar 30 min antes de ligar", "Testar com um pão antes de ligar"], answer: "Ligar imediatamente após conectar", explanation: "Após remontar: conectar a tostadeira e ligar imediatamente." },
+      { category: "🚗 Limpeza · Pista Drive", question: "Qual o equipamento para remover chiclete da pista?", options: ["Escova de cerdas duras", "Espátula", "Rodo", "Mangueira de pressão"], answer: "Espátula", explanation: "Usar a espátula específica para remover chiclete da pista." },
+      { category: "🪑 Limpeza · Salão Pisos", question: "A cada quantos metros deve ser torcido o esfregão ao enxaguar?", options: ["A cada 1 metro", "A cada 2 metros", "A cada 3 metros", "A cada 5 metros"], answer: "A cada 2 metros", explanation: "Torcer o esfregão a cada 2 metros para não espalhar a sujeira." },
+      { category: "🪑 Limpeza · Vidros", question: "De onde para onde se move o rodo na limpeza de vidros?", options: ["De baixo para cima", "Da esquerda para direita", "Da parte superior para o meio, depois inferior", "Em círculos"], answer: "Da parte superior para o meio, depois inferior", explanation: "Começar pela parte superior, puxar o rodo para baixo até o meio, depois limpar a metade inferior." },
+      { category: "🫙 Limpeza · Utensílios", question: "Qual o primeiro passo na lavagem de utensílios?", options: ["Colocar na solução de detergente", "Raspar os restos de comida e jogar no lixo", "Enxaguar em água corrente", "Colocar no sanitizante"], answer: "Raspar os restos de comida e jogar no lixo", explanation: "O primeiro passo sempre é raspar os restos de comida e descartá-los antes de lavar." },
+      { category: "🧪 Limpeza · Produtos", question: "Qual produto usar para limpeza de pisos durante a operação?", options: ["QSR Desengordurante puro", "QSR Limpador de pisos (4 gal água + 1 pacote)", "QSR Multiuso", "Água quente apenas"], answer: "QSR Limpador de pisos (4 gal água + 1 pacote)", explanation: "Limpeza de piso durante operação: 4 galões de água + 1 pacote de limpador de piso." },
+      { category: "🧪 Limpeza · Produtos", question: "Por quanto tempo o limpador de banheiros deve agir antes de esfregar?", options: ["1 minuto", "2 minutos", "5 minutos", "10 minutos"], answer: "5 minutos", explanation: "O limpador de banheiros deve agir por pelo menos 5 minutos antes de esfregar e enxaguar." },
+      { category: "🫙 Limpeza · Jarras", question: "Qual produto é usado para limpeza das jarras de café?", options: ["QSR Multiuso", "QSR Detergente Concentrado", "QSR KAY Coffee Pot Cleaner", "Água quente apenas"], answer: "QSR KAY Coffee Pot Cleaner", explanation: "Usar QSR KAY Coffee Pot Cleaner para limpeza das jarras de café." },
+      { category: "🔥 Limpeza · Chapa Diária", question: "Com o que deve ser feita a limpeza final da placa inferior e frente?", options: ["Esponja abrasiva", "Pano limpo e sanitizado", "Apenas água morna", "Produto QSR direto"], answer: "Pano limpo e sanitizado", explanation: "A limpeza final da placa inferior e frente é feita com pano limpo e sanitizado." },
+      { category: "🪑 Limpeza · Banheiro", question: "Onde se aplica a solução de limpeza de banheiro nas paredes?", options: ["Apenas na parte inferior", "Pulverizar a solução e secar com pano limpo e seco", "Somente esfregar sem produto", "Apenas no espelho"], answer: "Pulverizar a solução e secar com pano limpo e seco", explanation: "Nas paredes, espelho, portas: pulverizar a solução de limpeza para banheiros e secar com pano limpo e seco." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_LIMPEZA, "Limpeza e Sanitização");
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_LIMPEZA, "Limpeza e Sanitização");
+    });
+  </script>
+</body>
+</html>

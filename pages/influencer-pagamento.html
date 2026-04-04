@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influencer Vendedor e Pagamento — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .quatro-grupos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .grupo-item {
+      border-radius: var(--radius-md);
+      padding: 14px 12px;
+      text-align: center;
+      border: 1.5px solid var(--border);
+    }
+    .grupo-item .grupo-emoji { font-size: 26px; margin-bottom: 6px; }
+    .grupo-item h3 { font-size: 13px; }
+    .grupo-item.g1 { background: #fdecea; border-color: #f5c6c3; }
+    .grupo-item.g2 { background: #e8f4fd; border-color: #b8d9f5; }
+    .grupo-item.g3 { background: #fff8e1; border-color: #ffe082; }
+    .grupo-item.g4 { background: #e8f5e9; border-color: #b2dfca; }
+
+    .meu-mequi-box {
+      background: linear-gradient(135deg, #DA291C 0%, #b01f14 100%);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      color: white;
+    }
+    .meu-mequi-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .meu-mequi-title span { color: var(--yellow); }
+  </style>
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="influencer-pagamento">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Influencer Vendedor</h1>
+        <p>Guia Rápido Operacional · Experiência do Cliente</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="vendedor">🗣️ Influencer Vendedor</button>
+      <button class="tab-btn" data-tab="pagamento">💳 Pagamento</button>
+      <button class="tab-btn" data-tab="meumequi">⭐ Meu Méqui</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧼</div>
+          <h2>Padrões de Higiene</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Apresentação Pessoal</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+                <li>Penteados e Make — nada que possa cair</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Higiene das Mãos</h3>
+              <ul>
+                <li class="blue">Lavar mãos e antebraços com sabonete bactericida por 20"</li>
+                <li class="blue">Usar gel sanitizante antes de assumir a função</li>
+                <li class="blue">Higienizar após atividade de limpeza</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍔</div>
+          <h2>Os 4 Grupos da Refeição Completa</h2>
+          <div class="badge badge-yellow">Saltos de venda</div>
+        </div>
+        <div class="card-body">
+          <div class="quatro-grupos">
+            <div class="grupo-item g1"><div class="grupo-emoji">🍔</div><h3>Sanduíches</h3></div>
+            <div class="grupo-item g2"><div class="grupo-emoji">🥤</div><h3>Bebidas</h3></div>
+            <div class="grupo-item g3"><div class="grupo-emoji">🍟</div><h3>Acompanhamentos</h3></div>
+            <div class="grupo-item g4"><div class="grupo-emoji">🍦</div><h3>Sobremesas</h3></div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Sugira sempre as <strong>3 primeiras categorias</strong> antes de oferecer sobremesa. Complete as 4 para uma refeição ideal!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Preparação — Checklist Inicial</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> 1 pano descartável limpo, sanitizado e dobrado · 1 caneta · cardápio de preços · cardápio de surpresas do McLanche Feliz · bobina reserva — longe da visão do cliente</label>
+            <label class="check-item"><input type="checkbox"> Troco suficiente (de acordo com o movimento) e gaveta rotulada e organizada</label>
+            <label class="check-item"><input type="checkbox"> Assinar o cupom financeiro que o Gerente entrega — confirmar e manter dentro da gaveta</label>
+            <label class="check-item"><input type="checkbox"> Ao Gerente fazer retirada do troco: acompanhá-lo e assinar novamente o cupom confirmando a retirada</label>
+            <label class="check-item"><input type="checkbox"> Familiarizado com a tela do POS (teclas promocionais)</label>
+            <label class="check-item"><input type="checkbox"> Conhecer todos os produtos e ingredientes do cardápio</label>
+            <label class="check-item"><input type="checkbox"> Conhecer preços e promoções vigentes</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-vendedor">
+
+      <div class="section-label">Procedimento Operacional — Influencer Vendedor</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🗣️</div>
+          <h2>Atendimento e Vendas</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Recepcione o cliente sempre com <strong>sorriso espontâneo e contato visual</strong>. Trabalhe com vários tipos de cumprimentos de acordo com o <strong>MOMENTO DO CLIENTE</strong>, criando vínculo com as técnicas dos Influencers Vendedores.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Escute o cliente, <strong>lidere a conversa</strong>. Desenvolva uma atitude proativa e protagonista, oferecendo produtos usando as <strong>6 técnicas dos influencers vendedores</strong>. Seja objetivo, sem perder a cortesia, sinceridade, contato visual e simpatia.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Realize os <strong>pequenos saltos de venda</strong> toda vez que o pedido não incluir os 4 grupos da refeição (sanduíches, bebidas, acompanhamentos e sobremesas). Sugira completar as <strong>3 primeiras categorias antes de oferecer sobremesa</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Realize a venda a partir do que o cliente pedir, com o objetivo de <strong>completar os 4 itens da bandeja</strong>. Realize a venda associando produtos ao pedido.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">5</div>
+              <div class="step-text"><strong>Esclareça tamanhos e sabores</strong> ao término do pedido e após ter feito os saltos de venda, caso não tenha ficado claro.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">6</div>
+              <div class="step-text">Digite corretamente o pedido da primeira vez. No caso de pedidos diferenciados, <strong>digite um produto por vez</strong>. Caso não tenha entendido todo o pedido, repita apenas os itens registrados e pergunte: <strong>"Eu deixei de registrar alguma coisa?"</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-pagamento">
+
+      <div class="section-label">Procedimento Operacional — Pagamento</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">💳</div>
+          <h2>Pagamento e Encerramento</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Totalize o pedido e <strong>pergunte a forma de pagamento</strong> já com a opção de maior saída do restaurante.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">No caso de pagamento em dinheiro, mantenha a <strong>cédula recebida horizontalmente sobre o balcão</strong> e próximo ao caixa enquanto o troco correto é contado em voz alta ao ser devolvido ao cliente.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Em pagamento com cartão, <strong>disponibilize o Pin Pad</strong> para o cliente, solicitando que ele passe o cartão e digite a senha.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Pense no <strong>segundo cliente</strong>, informando que logo irá atendê-lo, de forma a dar-lhe atenção.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">5</div>
+              <div class="step-text">Entregue o <strong>cupom fiscal</strong> informando o número do pedido de maneira clara.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">6</div>
+              <div class="step-text">Direcione o cliente de maneira <strong>verbal e gestual</strong>: mostrando o número do pedido e informando que aparecerá no Monitor (ORB). Conduza para a <strong>área de entrega</strong> com um movimento do braço sinalizando o local.</div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Ao receber dinheiro, <strong>nunca guarde a cédula antes de dar o troco</strong>. Mantenha-a visível sobre o balcão até contar e devolver o troco em voz alta.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-meumequi">
+
+      <div class="section-label">Programa de Fidelidade</div>
+
+      <div class="meu-mequi-box">
+        <div class="meu-mequi-title">Meu <span>Méqui</span></div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.80);margin-top:10px;line-height:1.6;">
+          Programa de Fidelidade disponível no App do McDonald's — simples e todos podem participar!
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⭐</div>
+          <h2>O que é o Meu Méqui?</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill yellow">📱 App do McDonald's</div>
+            <div class="pill green">Acumula pontos</div>
+            <div class="pill blue">Personaliza experiência</div>
+            <div class="pill red">Incentiva futuras visitas</div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>O cliente pode acumular pontos em todos os segmentos do restaurante, <strong>exceto nos aplicativos de Delivery terceiros</strong>.</div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">🗣️</div>
+            <div>Perguntar para <strong>TODOS OS CLIENTES</strong>: <em>"Você participa do Meu Méqui?"</em> — para que possam acumular pontos no momento da compra.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — Influencer Vendedor e Pagamento</h2>
+          <div class="badge badge-red">10 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Influencer Vendedor e Pagamento · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_INFLUENCER = [
+      {
+        category: "🗣️ Influencer Vendedor",
+        question: "Qual frase deve ser usada quando não entendeu todo o pedido do cliente?",
+        options: [
+          '"Pode repetir tudo de novo?"',
+          '"Eu deixei de registrar alguma coisa?"',
+          '"Confirme seu pedido por favor."',
+          '"O que mais vai querer?"'
+        ],
+        answer: '"Eu deixei de registrar alguma coisa?"',
+        explanation: 'Repita apenas os itens já registrados e pergunte: "Eu deixei de registrar alguma coisa?"'
+      },
+      {
+        category: "🗣️ Influencer Vendedor",
+        question: "Quais são os 4 grupos da refeição completa para os saltos de venda?",
+        options: [
+          "Sanduíches, fritas, molhos e bebidas",
+          "Sanduíches, bebidas, acompanhamentos e sobremesas",
+          "Entrada, prato principal, sobremesa e bebida",
+          "Hambúrguer, batata, sorvete e suco"
+        ],
+        answer: "Sanduíches, bebidas, acompanhamentos e sobremesas",
+        explanation: "Os 4 grupos são: Sanduíches, Bebidas, Acompanhamentos e Sobremesas. Sugira as 3 primeiras antes de oferecer sobremesa."
+      },
+      {
+        category: "🗣️ Influencer Vendedor",
+        question: "Em pedidos diferenciados, como deve ser digitado o pedido?",
+        options: [
+          "Todos os itens de uma vez",
+          "Um produto por vez",
+          "Começando pelas bebidas",
+          "Após confirmar o total"
+        ],
+        answer: "Um produto por vez",
+        explanation: "No caso de pedidos diferenciados, digite um produto por vez para evitar erros."
+      },
+      {
+        category: "💳 Pagamento",
+        question: "Como deve ser tratada a cédula ao receber pagamento em dinheiro?",
+        options: [
+          "Guardar imediatamente na gaveta",
+          "Manter horizontalmente sobre o balcão até devolver o troco em voz alta",
+          "Mostrar ao gerente primeiro",
+          "Colocar na máquina de conferência"
+        ],
+        answer: "Manter horizontalmente sobre o balcão até devolver o troco em voz alta",
+        explanation: "A cédula deve ficar horizontalmente sobre o balcão enquanto o troco é contado em voz alta ao cliente."
+      },
+      {
+        category: "💳 Pagamento",
+        question: "Como direcionar o cliente após o pagamento?",
+        options: [
+          "Apenas informar o número do pedido verbalmente",
+          "De forma verbal e gestual — número do pedido + movimento do braço indicando a área de entrega",
+          "Apontar para o monitor ORB sem falar nada",
+          "Pedir que aguarde no balcão"
+        ],
+        answer: "De forma verbal e gestual — número do pedido + movimento do braço indicando a área de entrega",
+        explanation: "Direcionar de forma verbal E gestual: informar o número do pedido e sinalizar com o braço o local de retirada."
+      },
+      {
+        category: "💳 Pagamento",
+        question: "O que fazer quando um segundo cliente está esperando?",
+        options: [
+          "Ignorar e focar no cliente atual",
+          "Informar que logo irá atendê-lo, de forma a dar-lhe atenção",
+          "Pedir para o colega atender",
+          "Chamar o gerente"
+        ],
+        answer: "Informar que logo irá atendê-lo, de forma a dar-lhe atenção",
+        explanation: "Pense no segundo cliente, informando que logo irá atendê-lo — demonstrando atenção a ele também."
+      },
+      {
+        category: "⭐ Meu Méqui",
+        question: "Para quem deve ser perguntado sobre o Meu Méqui?",
+        options: [
+          "Apenas clientes que pedirem",
+          "Clientes com o app aberto",
+          "Todos os clientes",
+          "Apenas clientes frequentes"
+        ],
+        answer: "Todos os clientes",
+        explanation: "Perguntar para TODOS OS CLIENTES: 'Você participa do Meu Méqui?' para que possam acumular pontos."
+      },
+      {
+        category: "⭐ Meu Méqui",
+        question: "Onde o cliente NÃO pode acumular pontos do Meu Méqui?",
+        options: [
+          "No balcão",
+          "No NGK (totem)",
+          "Nos aplicativos de Delivery terceiros",
+          "No Drive-Thru"
+        ],
+        answer: "Nos aplicativos de Delivery terceiros",
+        explanation: "O cliente pode acumular pontos em todos os segmentos do restaurante, EXCETO nos aplicativos de Delivery terceiros."
+      },
+      {
+        category: "⚙️ Preparação",
+        question: "O que fazer quando o Gerente fizer retirada do troco?",
+        options: [
+          "Apenas observar",
+          "Acompanhá-lo e assinar novamente o cupom confirmando a retirada",
+          "Registrar no POS",
+          "Chamar outro crew como testemunha"
+        ],
+        answer: "Acompanhá-lo e assinar novamente o cupom confirmando a retirada",
+        explanation: "Ao Gerente fazer retirada do troco, acompanhá-lo e assinar novamente o cupom confirmando a retirada."
+      },
+      {
+        category: "🗣️ Influencer Vendedor",
+        question: "Qual a ordem correta dos saltos de venda?",
+        options: [
+          "Sobremesa primeiro, depois bebida",
+          "Completar as 3 primeiras categorias (sanduíche, bebida, acompanhamento) antes de oferecer sobremesa",
+          "Oferecer todos os grupos ao mesmo tempo",
+          "Apenas oferecer o que o cliente pediu"
+        ],
+        answer: "Completar as 3 primeiras categorias (sanduíche, bebida, acompanhamento) antes de oferecer sobremesa",
+        explanation: "Sugira sempre de forma a completar as 3 primeiras categorias antes de oferecer sobremesa."
+      }
+,
+      { category: "🗣️ Influencer · Atendimento", question: "O que é o 'MOMENTO DO CLIENTE' no atendimento?", options: ["O momento em que o cliente chega", "O perfil e estado emocional do cliente que define a abordagem", "O tempo de espera do cliente", "O pedido do cliente"], answer: "O perfil e estado emocional do cliente que define a abordagem", explanation: "O MOMENTO DO CLIENTE define a forma de cumprimentar e criar vínculo — cada cliente pode exigir uma abordagem diferente." },
+      { category: "🗣️ Influencer · Atendimento", question: "Qual a postura correta ao receber o cliente no balcão?", options: ["Aguardar o cliente falar primeiro", "Sorriso espontâneo, contato visual e cumprimento de acordo com o momento do cliente", "Apenas perguntar o pedido", "Acenos com a cabeça"], answer: "Sorriso espontâneo, contato visual e cumprimento de acordo com o momento do cliente", explanation: "Recepcionar sempre com sorriso espontâneo, contato visual e trabalhar vários tipos de cumprimento de acordo com o MOMENTO DO CLIENTE." },
+      { category: "🗣️ Influencer · Vendas", question: "Qual a ordem correta para completar os grupos da refeição?", options: ["Sobremesa, bebida, acompanhamento, sanduíche", "Sanduíche, bebida e acompanhamento antes de oferecer sobremesa", "Oferecer todos ao mesmo tempo", "Apenas o que o cliente pedir"], answer: "Sanduíche, bebida e acompanhamento antes de oferecer sobremesa", explanation: "Sugira sempre de forma a completar as 3 primeiras categorias (sanduíche, bebida, acompanhamento) antes de oferecer sobremesa." },
+      { category: "🗣️ Influencer · Vendas", question: "O que fazer em pedidos diferenciados ao digitar no POS?", options: ["Digitar todos de uma vez", "Digitar um produto por vez", "Pedir para o cliente repetir tudo no final", "Aguardar o cliente listar tudo antes de digitar"], answer: "Digitar um produto por vez", explanation: "No caso de pedidos diferenciados, digitar um produto por vez para evitar erros." },
+      { category: "💳 Influencer · Pagamento", question: "O que fazer ao devolver o troco em dinheiro?", options: ["Colocar direto na mão do cliente", "Contar o troco em voz alta ao devolvê-lo junto com o cupom fiscal", "Apenas colocar sobre o balcão", "Pedir para o cliente conferir sozinho"], answer: "Contar o troco em voz alta ao devolvê-lo junto com o cupom fiscal", explanation: "Contar em voz alta corretamente o troco ao ser devolvido para o cliente, junto com o cupom fiscal." },
+      { category: "💳 Influencer · Pagamento", question: "Quando deve ser assinado novamente o cupom financeiro?", options: ["Apenas na abertura do turno", "Apenas no fechamento", "Na abertura e quando o Gerente fizer retirada do troco", "A cada hora"], answer: "Na abertura e quando o Gerente fizer retirada do troco", explanation: "Assinar o cupom financeiro na abertura do turno e novamente quando o Gerente fizer retirada do troco." },
+      { category: "💳 Influencer · Pagamento", question: "O que perguntar a cada cliente antes de finalizar o pedido?", options: ["Se quer repetir o pedido", "Se quer adicionar mais alguma coisa e a forma de pagamento preferida", "Apenas a forma de pagamento", "Se tem cupom de desconto"], answer: "Se quer adicionar mais alguma coisa e a forma de pagamento preferida", explanation: "Totalizar o pedido e perguntar a forma de pagamento já com a opção de maior saída do restaurante." },
+      { category: "💳 Influencer · Pagamento", question: "Qual a direção correta para direcionar o cliente após o pagamento?", options: ["Para a saída", "Verbal e gestualmente para a área de entrega com movimento do braço", "Para o gerente", "Para a fila novamente"], answer: "Verbal e gestualmente para a área de entrega com movimento do braço", explanation: "Direcionar verbal e gestualmente: mostrar o número do pedido e sinalizar com o braço o local de retirada." },
+      { category: "⚙️ Influencer · Preparação", question: "Quem deve acompanhar o Gerente na retirada do troco?", options: ["Ninguém, é responsabilidade do Gerente", "O atendente deve acompanhar e assinar o cupom confirmando a retirada", "O supervisor de turno", "Outro Gerente"], answer: "O atendente deve acompanhar e assinar o cupom confirmando a retirada", explanation: "Quando o Gerente fizer a retirada do troco, acompanhá-lo e assinar novamente o cupom confirmando a retirada." },
+      { category: "⚙️ Influencer · Preparação", question: "Onde deve ficar o pano descartável no caixa?", options: ["Em cima da gaveta", "Longe da visão do cliente, no caixa registrador", "Na frente do balcão", "Na mesa de condimentação"], answer: "Longe da visão do cliente, no caixa registrador", explanation: "1 pano descartável limpo, sanitizado e dobrado deve ficar no caixa registrador, longe da visão do cliente." },
+      { category: "⭐ Influencer · Meu Méqui", question: "Qual é a frase recomendada para oferecer o Meu Méqui?", options: ["Você tem cadastro?", "Você participa do Meu Méqui?", "Quer acumular pontos?", "Tem o app?"], answer: "Você participa do Meu Méqui?", explanation: "Perguntar para TODOS OS CLIENTES: 'Você participa do Meu Méqui?' para que possam acumular pontos no momento da compra." },
+      { category: "🗣️ Influencer · Vendas", question: "O que fazer ao esclarecer tamanhos e sabores?", options: ["Só esclarecer se o cliente perguntar", "Esclarecer ao término do pedido e após os saltos de venda", "Esclarecer antes de registrar qualquer item", "Não é necessário esclarecer"], answer: "Esclarecer ao término do pedido e após os saltos de venda", explanation: "Esclarecer tamanhos e sabores ao término do pedido e após ter feito os saltos de venda, caso não tenha ficado claro." }
+,
+      { category: "💳 Influencer · Pagamento", question: "Qual a ordem de recebimento de formas de pagamento?", options: ["Débito, crédito, dinheiro, voucher", "Voucher, dinheiro, débito, crédito", "Dinheiro, voucher, débito, crédito", "Crédito, débito, voucher, dinheiro"], answer: "Voucher, dinheiro, débito, crédito", explanation: "Ordem: voucher → dinheiro → débito → crédito." },
+      { category: "💳 Influencer · Pagamento", question: "O que fazer se o cliente quiser pagar com duas formas de pagamento?", options: ["Aceitar apenas uma forma por pedido", "Registrar o valor pago de cada e saldar o restante", "Cancelar e refazer o pedido", "Aceitar apenas se um for dinheiro"], answer: "Registrar o valor pago de cada e saldar o restante", explanation: "Aceitar múltiplas formas: registrar cada valor no POS e saldar o restante com a outra forma." },
+      { category: "🎯 Influencer · Venda", question: "Qual a técnica de venda sugestiva para aumentar o ticket?", options: ["Oferecer desconto", "Sugerir combo, tamanho maior ou item complementar", "Acelerar o atendimento", "Não sugerir para não irritar o cliente"], answer: "Sugerir combo, tamanho maior ou item complementar", explanation: "Venda sugestiva: oferecer combo, upgrade de tamanho ou item complementar ao pedido." },
+      { category: "💳 Influencer · Meu Méqui", question: "Em que momento perguntar sobre o Meu Méqui ao cliente?", options: ["Após o pagamento", "No início do atendimento, antes de registrar o pedido", "Apenas se o cliente perguntar", "Ao entregar o pedido"], answer: "No início do atendimento, antes de registrar o pedido", explanation: "Perguntar sobre o Meu Méqui no início do atendimento para vincular pontos ao pedido." },
+      { category: "💳 Influencer · Troco", question: "Onde deve ficar o dinheiro do cliente durante o processo de troco?", options: ["Na gaveta do caixa", "Na mão do funcionário", "Visível sobre o caixa até concluir o troco", "Devolvido imediatamente"], answer: "Visível sobre o caixa até concluir o troco", explanation: "Manter o dinheiro visível sobre o caixa até concluir o troco para evitar erros." },
+      { category: "🎯 Influencer · Atendimento", question: "Qual a ordem correta dos passos do atendimento?", options: ["Registrar, saudar, sugerir, totalizar, receber, agradecer", "Saudar, registrar, sugerir, totalizar, receber, agradecer", "Saudar, sugerir, registrar, totalizar, receber, agradecer", "Registrar, totalizar, receber, saudar, agradecer"], answer: "Saudar, registrar, sugerir, totalizar, receber, agradecer", explanation: "Ordem: saudar → registrar o pedido → sugerir → totalizar → receber pagamento → agradecer." },
+      { category: "💳 Influencer · Cartão", question: "O que deve ser conferido ao receber pagamento em cartão?", options: ["Apenas passar o cartão", "Conferir o valor no terminal antes de o cliente confirmar", "Não é necessário confirmar nada", "Guardar o comprovante sem mostrar ao cliente"], answer: "Conferir o valor no terminal antes de o cliente confirmar", explanation: "Conferir o valor correto no terminal antes de o cliente digitar a senha ou aproximar o cartão." },
+      { category: "🎯 Influencer · Personalização", question: "Como registrar um pedido com personalização (sem cebola, etc.)?", options: ["Anotar num papel separado", "Usar a função de modificadores no POS e avisar a produção", "Deixar o cliente falar direto com a cozinha", "Não é possível personalizar"], answer: "Usar a função de modificadores no POS e avisar a produção", explanation: "Usar os modificadores no POS para registrar personalizações e garantir que a produção seja avisada." },
+      { category: "💳 Influencer · Cancelamento", question: "Quem pode autorizar o cancelamento de um item já registrado?", options: ["O próprio atendente", "Apenas o gerente", "Qualquer funcionário", "O cliente autoriza sozinho"], answer: "Apenas o gerente", explanation: "Cancelamentos de itens já registrados no POS precisam de autorização do gerente." },
+      { category: "🎯 Influencer · McLanche Feliz", question: "O que perguntar ao registrar um McLanche Feliz?", options: ["Apenas confirmar o lanche", "Confirmar lanche, bebida, tamanho e brinquedo (menino/menina)", "Apenas perguntar o brinquedo", "Nada, deixar o padrão"], answer: "Confirmar lanche, bebida, tamanho e brinquedo (menino/menina)", explanation: "McLanche Feliz: confirmar lanche, bebida, tamanho e tipo de brinquedo." },
+      { category: "💳 Influencer · Fechamento", question: "O que fazer com o fundo de caixa ao final do turno?", options: ["Guardar na gaveta", "Contar e entregar ao gerente com o relatório", "Levar para casa e devolver amanhã", "Misturar com o próximo turno"], answer: "Contar e entregar ao gerente com o relatório", explanation: "Ao final do turno, contar o fundo de caixa e entregar ao gerente junto com o relatório." },
+      { category: "🎯 Influencer · Sugestão", question: "Qual é a frase correta para sugestão de venda de sobremesa?", options: ["Quer alguma coisa mais?", "Que tal uma sobremesa para complementar seu pedido?", "Temos sobremesas.", "Sobremesa não vai?"], answer: "Que tal uma sobremesa para complementar seu pedido?", explanation: "Usar linguagem positiva e específica na sugestão: 'Que tal uma sobremesa para complementar seu pedido?'" },
+      { category: "💳 Influencer · PIX", question: "Após receber pagamento via PIX, o que confirmar antes de liberar o pedido?", options: ["Nada, o sistema confirma automaticamente", "Confirmar a aprovação do pagamento no terminal", "Perguntar ao cliente se pagou", "Aguardar 5 minutos"], answer: "Confirmar a aprovação do pagamento no terminal", explanation: "Aguardar a confirmação do PIX no terminal antes de liberar o pedido para produção." },
+      { category: "🎯 Influencer · Abertura", question: "O que o influencer deve verificar antes de abrir o caixa?", options: ["Apenas ligar o monitor", "Fundo de caixa, suprimentos de embalagem e funcionamento do POS", "Apenas contar o dinheiro", "Nada, o gerente verifica"], answer: "Fundo de caixa, suprimentos de embalagem e funcionamento do POS", explanation: "Antes de abrir: verificar fundo de caixa, embalagens disponíveis e funcionamento do POS." },
+      { category: "💳 Influencer · Cupom", question: "O que fazer quando o cliente apresenta cupom digital pelo app?", options: ["Não aceitar cupons digitais", "Fazer a leitura do QR Code ou inserir o código no POS", "Digitar o valor manualmente", "Chamar o gerente"], answer: "Fazer a leitura do QR Code ou inserir o código no POS", explanation: "Cupons digitais: escanear o QR Code ou inserir o código manualmente no POS." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_INFLUENCER);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_INFLUENCER);
+    });
+  </script>
+</body>
+</html>

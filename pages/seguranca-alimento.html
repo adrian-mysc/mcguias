@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurança do Alimento — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="seguranca">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Segurança do Alimento</h1>
+        <p>Higiene e Boas Práticas</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="perigos">⚠️ Perigos</button>
+      <button class="tab-btn" data-tab="temperatura">🌡️ Temperatura</button>
+      <button class="tab-btn" data-tab="higiene">🧼 Higiene Pessoal</button>
+      <button class="tab-btn" data-tab="contaminacao">🦠 Contaminação</button>
+      <button class="tab-btn" data-tab="sanitizacao">🧪 Sanitização</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-perigos">
+      <div class="section-label">Os 3 Tipos de Perigo</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⚠️</div><h2>Perigos para a Segurança do Alimento</h2></div>
+        <div class="card-body">
+          <div class="info-block">Segurança do Alimento significa garantir que o produto chegue ao cliente sem risco à saúde. Existem 3 tipos de perigos que devem ser prevenidos em todas as etapas da operação.</div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;">
+
+            <div style="background:#ffebee;border:2px solid #e53935;border-radius:12px;padding:14px;">
+              <div style="font-size:24px;margin-bottom:6px;">🦠</div>
+              <div style="font-family:var(--font-display);font-size:14px;font-weight:800;color:#c62828;">PERIGO BIOLÓGICO</div>
+              <div style="font-size:13px;color:var(--text);margin-top:6px;">Microrganismos como bactérias, vírus, fungos e parasitas. São o perigo mais comum e perigoso em alimentos.</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:6px;"><strong>Exemplos:</strong> Salmonella, E. coli, Staphylococcus aureus, Listeria</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:4px;"><strong>Prevenção:</strong> Controle de temperatura, higiene das mãos, sanitização de superfícies</div>
+            </div>
+
+            <div style="background:#fff3e0;border:2px solid #fb8c00;border-radius:12px;padding:14px;">
+              <div style="font-size:24px;margin-bottom:6px;">⚗️</div>
+              <div style="font-family:var(--font-display);font-size:14px;font-weight:800;color:#e65100;">PERIGO QUÍMICO</div>
+              <div style="font-size:13px;color:var(--text);margin-top:6px;">Substâncias químicas que podem contaminar o alimento durante a produção, limpeza ou armazenamento.</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:6px;"><strong>Exemplos:</strong> Resíduos de produtos de limpeza, pesticidas, aditivos em excesso</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:4px;"><strong>Prevenção:</strong> Enxágue correto de utensílios, armazenar produtos longe de alimentos</div>
+            </div>
+
+            <div style="background:#f3e5f5;border:2px solid #8e24aa;border-radius:12px;padding:14px;">
+              <div style="font-size:24px;margin-bottom:6px;">🪨</div>
+              <div style="font-family:var(--font-display);font-size:14px;font-weight:800;color:#6a1b9a;">PERIGO FÍSICO</div>
+              <div style="font-size:13px;color:var(--text);margin-top:6px;">Objetos estranhos que podem estar presentes no alimento e causar dano ao consumidor.</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:6px;"><strong>Exemplos:</strong> Fragmentos de vidro, metal, ossos, plástico, cabelos</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:4px;"><strong>Prevenção:</strong> Inspeção visual, uso de touca, cuidado com embalagens e utensílios</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🦠</div><h2>Bactérias — O Maior Risco</h2></div>
+        <div class="card-body">
+          <div class="info-block">As bactérias precisam de 4 condições para se multiplicar. Eliminar qualquer uma delas interrompe a reprodução.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:4px;">🌡️</div>
+              <div style="font-size:12px;font-weight:800;color:var(--text);">Temperatura</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px;">5°C a 60°C<br><em>zona de perigo</em></div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:4px;">💧</div>
+              <div style="font-size:12px;font-weight:800;color:var(--text);">Umidade</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px;">Alimentos úmidos<br><em>favorecem crescimento</em></div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:4px;">🍖</div>
+              <div style="font-size:12px;font-weight:800;color:var(--text);">Nutrientes</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px;">Proteínas e carboidratos<br><em>alimento das bactérias</em></div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:4px;">⏱️</div>
+              <div style="font-size:12px;font-weight:800;color:var(--text);">Tempo</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px;">A cada 20 min dobram<br><em>na zona de perigo</em></div>
+            </div>
+          </div>
+          <div class="alert warn" style="margin-top:10px;">⚠️ Na zona de perigo (5°C–60°C) as bactérias podem dobrar de quantidade a cada 20 minutos. Nunca deixar alimentos perecíveis nessa faixa por mais de 2 horas.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-temperatura">
+      <div class="section-label">Controle de Temperatura</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Faixas Críticas de Temperatura</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Situação</th><th>Temperatura</th><th>Regra</th></tr></thead>
+              <tbody>
+                <tr><td>Zona de Perigo</td><td><strong>5°C a 60°C</strong></td><td>⚠️ Evitar — bactérias se multiplicam</td></tr>
+                <tr><td>Refrigeração (câmaras)</td><td><strong>1°C a 4°C</strong></td><td>✅ Carnes, laticínios, frios</td></tr>
+                <tr><td>Congelamento</td><td><strong>-18°C ou abaixo</strong></td><td>✅ Produtos congelados</td></tr>
+                <tr><td>Carne cozida (segura)</td><td><strong>≥ 74°C interna</strong></td><td>✅ Frango, carne bovina</td></tr>
+                <tr><td>Ovo cozido</td><td><strong>≥ 74°C interna</strong></td><td>✅ Obrigatório</td></tr>
+                <tr><td>MyBreak (arroz/feijão)</td><td><strong>≥ 60°C</strong></td><td>✅ Manutenção a quente</td></tr>
+                <tr><td>Mesa de condimentação</td><td><strong>49°C a 57°C</strong></td><td>✅ Mantém produtos quentes</td></tr>
+                <tr><td>UHC — carnes vermelhas</td><td><strong>79°C</strong></td><td>✅ Manutenção</td></tr>
+                <tr><td>UHC — carnes brancas</td><td><strong>85°C</strong></td><td>✅ Manutenção</td></tr>
+                <tr><td>Saladas</td><td><strong>Abaixo de 4°C</strong></td><td>✅ Refrigeradas</td></tr>
+                <tr><td>Queijo para uso</td><td><strong>15°C a 18°C</strong></td><td>✅ Temperatura ambiente controlada</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">❄️</div><h2>Descongelamento Correto</h2></div>
+        <div class="card-body">
+          <div class="info-block">O descongelamento incorreto é uma das principais causas de contaminação. Nunca descongelar em temperatura ambiente.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">✅ Método correto</div>
+            <div class="rota-item">Refrigeração — transferir do congelador para a câmara (1–4°C) com antecedência</div>
+            <div class="rota-head c2">✅ Aceitável</div>
+            <div class="rota-item">Sob água corrente fria (máx. 21°C) em recipiente adequado</div>
+            <div class="rota-head c3">✅ Aceitável</div>
+            <div class="rota-item">No micro-ondas, desde que o produto seja cozido imediatamente</div>
+            <div class="rota-head c4">❌ PROIBIDO</div>
+            <div class="rota-item">Em temperatura ambiente — favorece multiplicação de bactérias</div>
+            <div class="rota-head c1">❌ PROIBIDO</div>
+            <div class="rota-item">Recongelar produto já descongelado — perde qualidade e segurança</div>
+          </div>
+          <div class="alert info" style="margin-top:10px;">💡 Pão Brioche: retirar do congelador no fechamento → 12h descongelando em refrigeração → 36h de uso = 48h total.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Tempos de Vida e Regra das 2 Horas</h2></div>
+        <div class="card-body">
+          <div class="info-block">Alimentos perecíveis na zona de perigo (5°C–60°C) por mais de <strong>2 horas</strong> devem ser descartados — independentemente da aparência.</div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Produto / Área</th><th>Tempo de Vida</th></tr></thead>
+              <tbody>
+                <tr><td>Produtos na mesa de condimentação</td><td>2 horas</td></tr>
+                <tr><td>Produtos no balcão</td><td>2 horas</td></tr>
+                <tr><td>Produtos na UHC</td><td>10 minutos (carnes)</td></tr>
+                <tr><td>McFritas prontas (manutenção)</td><td>7 minutos</td></tr>
+                <tr><td>Tortas após resfriamento</td><td>2 horas</td></tr>
+                <tr><td>Saladas montadas</td><td>30 minutos</td></tr>
+                <tr><td>Café pronto</td><td>1 hora</td></tr>
+                <tr><td>Leite na Foamino</td><td>8 horas</td></tr>
+                <tr><td>Cebola reidratada (câmara)</td><td>24 horas</td></tr>
+                <tr><td>Tomate fatiado (mesa condimentação)</td><td>2 horas</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-higiene">
+      <div class="section-label">Higiene Pessoal</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧼</div><h2>Lavagem das Mãos</h2></div>
+        <div class="card-body">
+          <div class="info-block">A lavagem correta das mãos é a medida mais eficaz de prevenção de contaminação biológica. Deve ser feita com <strong>sabonete bactericida</strong>.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Passo 1</div><div class="rota-item">Molhar as mãos com água corrente</div>
+            <div class="rota-head c2">Passo 2</div><div class="rota-item">Aplicar sabonete bactericida e esfregar por <strong>20 segundos</strong> — palmas, dorso, entre os dedos, unhas e punhos</div>
+            <div class="rota-head c3">Passo 3</div><div class="rota-item">Enxaguar completamente com água corrente</div>
+            <div class="rota-head c4">Passo 4</div><div class="rota-item">Secar com papel toalha descartável — nunca com pano de prato</div>
+            <div class="rota-head c1">Passo 5</div><div class="rota-item">Aplicar gel sanitizante antes de retornar ao trabalho</div>
+          </div>
+          <div class="section-label" style="margin-top:12px;">Quando lavar as mãos obrigatoriamente</div>
+          <div class="check-item"><input type="checkbox"><label>Ao chegar ao trabalho e antes de assumir a estação</label></div>
+          <div class="check-item"><input type="checkbox"><label>Antes e depois de manipular alimentos crus</label></div>
+          <div class="check-item"><input type="checkbox"><label>Após usar o banheiro</label></div>
+          <div class="check-item"><input type="checkbox"><label>Após tocar no rosto, cabelo ou corpo</label></div>
+          <div class="check-item"><input type="checkbox"><label>Após manusear dinheiro ou equipamentos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Após tossir, espirrar ou assoar o nariz</label></div>
+          <div class="check-item"><input type="checkbox"><label>Após recolher lixo ou limpar superfícies</label></div>
+          <div class="check-item"><input type="checkbox"><label>A cada rodada na chapa (se não usar luvas)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Ao trocar de estação de trabalho</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">👕</div><h2>Apresentação e Uniforme</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Uniforme limpo e completo — camisa, calça, avental quando necessário</label></div>
+          <div class="check-item"><input type="checkbox"><label>Touca ou protetor de cabelo — nenhum fio deve ficar exposto na área de produção</label></div>
+          <div class="check-item"><input type="checkbox"><label>Unhas curtas, limpas e sem esmalte</label></div>
+          <div class="check-item"><input type="checkbox"><label>Sem anéis, pulseiras, relógio ou outros adornos nas mãos e punhos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Sem maquiagem excessiva na área de produção</label></div>
+          <div class="check-item"><input type="checkbox"><label>Ferimentos nas mãos: usar luva plástica descartável por cima do curativo</label></div>
+          <div class="check-item"><input type="checkbox"><label>Funcionário doente (diarreia, vômito, febre, feridas abertas): afastar da manipulação</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧤</div><h2>Uso de Luvas</h2></div>
+        <div class="card-body">
+          <div class="info-block">As luvas não substituem a lavagem das mãos — elas são uma barreira adicional, não uma solução.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Quando usar</div>
+            <div class="rota-item">Manipulação de alimentos prontos para consumo · Ferimentos nas mãos · Limpeza com produtos químicos · Câmaras frias</div>
+            <div class="rota-head c2">Troca obrigatória</div>
+            <div class="rota-item">Ao trocar de tarefa · Após toque em superfícies não sanitizadas · Quando rasgarem · A cada 2 horas no mínimo</div>
+            <div class="rota-head c3">Atenção</div>
+            <div class="rota-item">Lavar as mãos antes de calçar e após remover as luvas. Luvas sujas são tão perigosas quanto mãos sujas.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-contaminacao">
+      <div class="section-label">Contaminação Cruzada</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🦠</div><h2>O que é Contaminação Cruzada</h2></div>
+        <div class="card-body">
+          <div class="info-block">Contaminação cruzada ocorre quando microrganismos ou substâncias nocivas são transferidos de um alimento para outro — diretamente ou por meio de superfícies, utensílios ou mãos.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Direta</div>
+            <div class="rota-item">Contato físico entre alimento cru e alimento pronto. Ex: carne crua tocando pão já tostado.</div>
+            <div class="rota-head c2">Indireta</div>
+            <div class="rota-item">Via utensílio, superfície ou mão. Ex: usar a mesma faca para carne crua e vegetais sem higienizar entre eles.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔀</div><h2>Como Prevenir</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Nunca usar o mesmo utensílio para carne crua e produto pronto sem higienizar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Panos separados por área — cores diferentes para cada zona (ver guia de limpeza)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Armazenar carnes cruas <strong>abaixo</strong> de alimentos prontos na câmara</label></div>
+          <div class="check-item"><input type="checkbox"><label>Higienizar superfícies entre diferentes tipos de produto</label></div>
+          <div class="check-item"><input type="checkbox"><label>Não tocar em alimentos prontos após manusear embalagens, dinheiro ou superfícies</label></div>
+          <div class="check-item"><input type="checkbox"><label>Recipientes com tampa — nunca deixar produtos expostos sem proteção</label></div>
+          <div class="check-item"><input type="checkbox"><label>Produtos de limpeza armazenados longe e separados de alimentos</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Cores dos Panos por Área — MC Guias</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Cor</th><th>Área de Uso</th></tr></thead>
+              <tbody>
+                <tr><td><span style="background:#e53935;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Vermelha</span></td><td>Área de cozinha / produção</td></tr>
+                <tr><td><span style="background:#1565c0;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Azul</span></td><td>Balcão e salão</td></tr>
+                <tr><td><span style="background:#2e7d32;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Verde</span></td><td>Banheiros e sala de lixo</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert warn" style="margin-top:8px;">⚠️ Nunca usar pano de banheiro em área de alimentos. Trocar panos a cada 2 horas.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-sanitizacao">
+      <div class="section-label">Sanitização e Higienização</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧪</div><h2>Higienização ≠ Sanitização</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Limpeza</div>
+            <div class="rota-item">Remove sujeira visível, resíduos de alimento e gordura. Usa detergente e água. Não elimina microrganismos.</div>
+            <div class="rota-head c2">Sanitização</div>
+            <div class="rota-item">Reduz os microrganismos a níveis seguros. Feita após a limpeza, com produto sanitizante. Nunca sanitizar sem limpar antes.</div>
+          </div>
+          <div class="alert info" style="margin-top:10px;">💡 Sequência obrigatória: <strong>Limpar → Enxaguar → Sanitizar → Não enxaguar</strong>. Enxaguar após sanitizar anula o efeito.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🫙</div><h2>Sistema de 3 Cubas</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">Cuba 1 — Lavagem</div>
+            <div class="rota-item">Água quente + detergente · Esfregar com esponja · Deixar de molho por <strong>5 minutos</strong></div>
+            <div class="rota-head c2">Cuba 2 — Enxágue</div>
+            <div class="rota-item">Água limpa corrente · Remover todo o resíduo de detergente</div>
+            <div class="rota-head c3">Cuba 3 — Sanitização</div>
+            <div class="rota-item">Solução sanitizante · Deixar <strong>1 minuto</strong> · <strong>Não enxaguar depois</strong> · Secar ao ar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🥬</div><h2>Sanitização de Vegetais</h2></div>
+        <div class="card-body">
+          <div class="info-block">Tomates, alface e demais vegetais devem ser sanitizados antes do uso para eliminar microrganismos superficiais e resíduos de agrotóxicos.</div>
+          <div class="rota-items">
+            <div class="rota-head c1">Produto</div>
+            <div class="rota-item">CHLORINE SANITIZER BB5L — solução clorada específica para vegetais</div>
+            <div class="rota-head c2">Tomate</div>
+            <div class="rota-item">Imergir na solução por <strong>15 a 30 minutos</strong> antes de fatiar</div>
+            <div class="rota-head c3">Alface</div>
+            <div class="rota-item">Higienizar antes de usar conforme procedimento padrão</div>
+            <div class="rota-head c4">Importante</div>
+            <div class="rota-item">Nunca sanitizar e preparar sem cumprir o tempo mínimo de contato</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Frequências de Sanitização</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Superfície / Utensílio</th><th>Frequência</th></tr></thead>
+              <tbody>
+                <tr><td>Mãos com bactericida</td><td>A cada operação / troca de tarefa</td></tr>
+                <tr><td>Panos de limpeza</td><td>A cada 2 horas</td></tr>
+                <tr><td>Mesa de condimentação</td><td>A cada troca de produto / 2h</td></tr>
+                <tr><td>Utensílios (espátulas, cubas)</td><td>A cada 4 horas ou ao final do turno</td></tr>
+                <tr><td>Superfície da chapa</td><td>A cada 15 minutos (limpeza) + Clean Mode no fechamento</td></tr>
+                <tr><td>Equipamento de sorvete</td><td>Limpeza diária conforme procedimento</td></tr>
+                <tr><td>Jarras de café</td><td>Ao final de cada turno</td></tr>
+                <tr><td>Tomates</td><td>15–30 min em sanitizante antes de fatiar</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Quiz — Segurança do Alimento</h2></div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+          <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Segurança do Alimento · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.switchMode = function(mode) {
+      var btns = { multiple: document.getElementById('btnMultiple'), flash: document.getElementById('btnFlash'), lacuna: document.getElementById('btnLacuna') };
+      Object.keys(btns).forEach(function(k) { if (btns[k]) btns[k].className = k === mode ? 'btn-primary' : 'btn-secondary'; });
+      if (!window._quizData || !window._quizGuia) return;
+      if (mode === 'multiple') initQuiz(window._quizData, window._quizGuia);
+      else if (mode === 'flash') initFlashcard(window._quizData, window._quizGuia);
+      else if (mode === 'lacuna') initLacuna(window._quizData, window._quizGuia);
+    };
+
+    const QUIZ_SEGURANCA = [
+      { category: "🦠 Perigos · Biológico", question: "Quais são os 3 tipos de perigos para a segurança do alimento?", options: ["Biológico, Químico e Físico", "Bacteriano, Viral e Fúngico", "Temperatura, Higiene e Tempo", "Biológico, Físico e Operacional"], answer: "Biológico, Químico e Físico", explanation: "Os 3 perigos são: Biológico (bactérias, vírus, fungos), Químico (resíduos de limpeza, pesticidas) e Físico (objetos estranhos)." },
+      { category: "🌡️ Temperatura · Zona de Perigo", question: "Qual é a faixa de temperatura chamada de zona de perigo?", options: ["0°C a 40°C", "5°C a 60°C", "10°C a 70°C", "4°C a 65°C"], answer: "5°C a 60°C", explanation: "Na zona de perigo (5°C a 60°C) as bactérias se multiplicam rapidamente, podendo dobrar a cada 20 minutos." },
+      { category: "🌡️ Temperatura · Zona de Perigo", question: "A cada quantos minutos as bactérias podem dobrar na zona de perigo?", options: ["5 minutos", "10 minutos", "20 minutos", "60 minutos"], answer: "20 minutos", explanation: "Na zona de perigo (5°C–60°C) as bactérias podem dobrar de quantidade a cada 20 minutos." },
+      { category: "🌡️ Temperatura · Câmaras", question: "Qual a temperatura correta das câmaras de refrigeração?", options: ["0°C a 2°C", "1°C a 4°C", "4°C a 8°C", "Abaixo de 10°C"], answer: "1°C a 4°C", explanation: "As câmaras de refrigeração devem manter temperatura entre 1°C e 4°C para conservar corretamente carnes, laticínios e frios." },
+      { category: "🌡️ Temperatura · Congelamento", question: "Qual a temperatura mínima para manter produtos congelados?", options: ["-10°C", "-15°C", "-18°C", "-20°C"], answer: "-18°C", explanation: "Produtos congelados devem ser mantidos a -18°C ou abaixo para garantir a segurança do alimento." },
+      { category: "🌡️ Temperatura · Cozimento", question: "Qual a temperatura interna mínima para carne de frango e ovos cozidos?", options: ["60°C", "68°C", "74°C", "80°C"], answer: "74°C", explanation: "A temperatura interna mínima de segurança para frango e ovos cozidos é 74°C, garantindo a eliminação de patógenos." },
+      { category: "⏱️ Tempo · Zona de Perigo", question: "Por quanto tempo no máximo um alimento perecível pode ficar na zona de perigo?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "2 horas", explanation: "Alimentos perecíveis na zona de perigo (5°C–60°C) por mais de 2 horas devem ser descartados, independentemente da aparência." },
+      { category: "🧼 Higiene · Mãos", question: "Por quantos segundos devem ser esfregadas as mãos com sabonete bactericida?", options: ["10 segundos", "15 segundos", "20 segundos", "30 segundos"], answer: "20 segundos", explanation: "A lavagem das mãos deve durar no mínimo 20 segundos com sabonete bactericida para ser eficaz." },
+      { category: "🧼 Higiene · Mãos", question: "O que deve ser usado para secar as mãos após a lavagem?", options: ["Pano de prato", "Avental", "Papel toalha descartável", "Ar quente"], answer: "Papel toalha descartável", explanation: "As mãos devem ser secas com papel toalha descartável — nunca com pano de prato, que acumula bactérias." },
+      { category: "🧼 Higiene · Panos", question: "Com que frequência devem ser trocados os panos de limpeza?", options: ["A cada 1 hora", "A cada 2 horas", "A cada turno", "Uma vez ao dia"], answer: "A cada 2 horas", explanation: "Os panos de limpeza devem ser trocados a cada 2 horas para evitar contaminação cruzada." },
+      { category: "🦠 Contaminação Cruzada", question: "O que é contaminação cruzada indireta?", options: ["Contato direto entre alimento cru e pronto", "Transferência de microrganismos via utensílio, superfície ou mão", "Alimento exposto à temperatura ambiente", "Produto sem etiqueta de validade"], answer: "Transferência de microrganismos via utensílio, superfície ou mão", explanation: "Contaminação cruzada indireta ocorre quando microrganismos são transferidos por meio de utensílios, superfícies ou mãos contaminadas." },
+      { category: "🦠 Contaminação Cruzada", question: "Como produtos crus devem ser armazenados na câmara em relação a prontos?", options: ["Acima dos prontos", "Abaixo dos prontos", "No mesmo nível", "Não importa a posição"], answer: "Abaixo dos prontos", explanation: "Carnes cruas devem ficar abaixo de alimentos prontos para consumo na câmara, evitando que gotejamentos contaminem os produtos prontos." },
+      { category: "🧪 Sanitização · 3 Cubas", question: "Por quanto tempo os utensílios devem ficar na solução sanitizante (Cuba 3)?", options: ["30 segundos", "1 minuto", "3 minutos", "5 minutos"], answer: "1 minuto", explanation: "Na Cuba 3, os utensílios devem ficar imersos por 1 minuto na solução sanitizante. Não enxaguar depois." },
+      { category: "🧪 Sanitização · 3 Cubas", question: "O que fazer após a sanitização na Cuba 3?", options: ["Enxaguar com água quente", "Enxaguar com água fria", "Não enxaguar", "Enxaguar e secar com pano"], answer: "Não enxaguar", explanation: "Após a sanitização, não se deve enxaguar — o enxágue remove o efeito sanitizante. Deixar secar ao ar." },
+      { category: "🥬 Vegetais · Sanitização", question: "Por quanto tempo os tomates devem ser sanitizados antes de fatiar?", options: ["5 minutos", "10 minutos", "15 a 30 minutos", "45 minutos"], answer: "15 a 30 minutos", explanation: "Os tomates devem ser sanitizados por 15 a 30 minutos com CHLORINE SANITIZER BB5L antes de serem fatiados." },
+      { category: "🥬 Vegetais · Sanitização", question: "Qual produto é usado para sanitizar os tomates?", options: ["Detergente neutro", "Álcool 70%", "CHLORINE SANITIZER BB5L", "QSR Multiuso"], answer: "CHLORINE SANITIZER BB5L", explanation: "O CHLORINE SANITIZER BB5L é o produto específico para sanitização de vegetais como tomates." },
+      { category: "🦠 Bactérias · Condições", question: "Quais são as 4 condições necessárias para as bactérias se multiplicarem?", options: ["Calor, Frio, Umidade, Luz", "Temperatura, Umidade, Nutrientes, Tempo", "Oxigênio, Temperatura, Luz, Tempo", "Água, Calor, Sujeira, Ar"], answer: "Temperatura, Umidade, Nutrientes, Tempo", explanation: "As bactérias precisam de Temperatura (zona de perigo), Umidade, Nutrientes (proteínas/carboidratos) e Tempo para se multiplicar. Eliminar qualquer um interrompe a reprodução." },
+      { category: "❄️ Descongelamento", question: "Qual é o método correto de descongelamento no McDonald's?", options: ["Temperatura ambiente", "Em água quente", "Na câmara de refrigeração (1–4°C)", "Ao sol"], answer: "Na câmara de refrigeração (1–4°C)", explanation: "O descongelamento deve ser feito na câmara de refrigeração a 1–4°C. Nunca em temperatura ambiente, pois favorece a multiplicação de bactérias." },
+      { category: "🌡️ Temperatura · MyBreak", question: "Qual a temperatura mínima para manter arroz e feijão (MyBreak) com segurança?", options: ["40°C", "50°C", "60°C", "74°C"], answer: "60°C", explanation: "O arroz e feijão do MyBreak devem ser mantidos a no mínimo 60°C para garantir a segurança do alimento." },
+      { category: "🧤 Luvas · Uso", question: "As luvas substituem a lavagem das mãos?", options: ["Sim, completamente", "Sim, se forem descartáveis", "Não — são uma barreira adicional", "Apenas para alimentos frios"], answer: "Não — são uma barreira adicional", explanation: "As luvas não substituem a lavagem das mãos — são uma barreira adicional. É obrigatório lavar as mãos antes de calçar e após remover as luvas." },
+      { category: "🦠 Perigos · Químico", question: "Qual é um exemplo de perigo químico nos alimentos?", options: ["Cabelo", "Fragmento de vidro", "Resíduo de produto de limpeza", "Salmonella"], answer: "Resíduo de produto de limpeza", explanation: "Perigo químico inclui resíduos de produtos de limpeza, pesticidas e aditivos em excesso. O enxágue correto de utensílios é a principal prevenção." }
+    ];
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initQuiz(QUIZ_SEGURANCA, 'Segurança do Alimento');
+    });
+  </script>
+</body>
+</html>

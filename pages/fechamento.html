@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procedimento de Fechamento — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="fechamento">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Fechamento</h1>
+        <p>Procedimento Operacional</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="geral">📋 Geral</button>
+      <button class="tab-btn" data-tab="fritadeiras">🛢️ Fritadeiras</button>
+      <button class="tab-btn" data-tab="chapa">🔥 Chapa</button>
+      <button class="tab-btn" data-tab="tostadeira">🍞 Tostadeira</button>
+      <button class="tab-btn" data-tab="utensilios">🫙 Utensílios</button>
+      <button class="tab-btn" data-tab="salao">🪑 Salão</button>
+      <button class="tab-btn" data-tab="estoque">📦 Estoque</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-geral">
+      <div class="section-label">Visão Geral do Fechamento</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Sequência de Fechamento</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            Execute as etapas na ordem abaixo para garantir um fechamento seguro, higiênico e organizado.
+          </div>
+          <div class="rota-items">
+            <div class="rota-head c1">1ª — Fritadeiras</div>
+            <div class="rota-item">Filtrar o óleo · Desligar os equipamentos · Tampar as cubas</div>
+            <div class="rota-head c2">2ª — Chapa</div>
+            <div class="rota-item">Executar Clean Mode · Limpar os Teflons · Raspar e sanitizar</div>
+            <div class="rota-head c3">3ª — Tostadeira</div>
+            <div class="rota-item">Desligar antes de limpar · Aplicar produto · Não remover correias</div>
+            <div class="rota-head c4">4ª — Utensílios</div>
+            <div class="rota-item">Sistema de 3 cubas · Sanitizar jarras de café · Descartar panos usados</div>
+            <div class="rota-head c1">5ª — Salão e Banheiros</div>
+            <div class="rota-item">Piso profundo com FC · Banheiros completos · Lixeiras e vidros</div>
+            <div class="rota-head c2">6ª — Estoque e Câmaras</div>
+            <div class="rota-item">PEPS · Etiquetagem · Pães Brioche para ambientação</div>
+            <div class="rota-head c3">7ª — Equipamentos McCafé</div>
+            <div class="rota-item">Finalização da máquina de café · Limpeza dos filtros · Bandejas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⚠️</div><h2>Pontos Críticos</h2></div>
+        <div class="card-body">
+          <div class="alert warn">⚠️ NUNCA limpar a tostadeira com ela ligada — risco de queimadura e dano ao equipamento.</div>
+          <div class="alert warn" style="margin-top:8px;">⚠️ NUNCA jogar água em óleo em chamas — usar extintor CO₂ ou abafar com tampa.</div>
+          <div class="alert warn" style="margin-top:8px;">⚠️ Óleo com Compostos Polares acima de 24% deve ser descartado, não filtrado.</div>
+          <div class="alert info" style="margin-top:8px;">💡 Separar pães Brioche no fechamento: 12h de descongelamento + 36h de uso = 48h total.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-fritadeiras">
+      <div class="section-label">Fechamento das Fritadeiras</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🛢️</div><h2>Filtragem do Óleo</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            A filtragem remove resíduos e prolonga a vida útil do óleo. Em lojas <strong>Best Burger</strong>, o óleo deve ser filtrado <strong>2 vezes ao dia</strong>. Em operação contínua, filtrar <strong>a cada 4 horas de uso</strong> ou no pré-pico.
+          </div>
+
+          <div class="section-label" style="margin-top:12px;">Quando filtrar</div>
+          <div class="check-item"><input type="checkbox"><label>A cada 4 horas de uso contínuo ou no pré-pico</label></div>
+          <div class="check-item"><input type="checkbox"><label>Ao final do turno / fechamento</label></div>
+          <div class="check-item"><input type="checkbox"><label>Sempre que aparecer espuma excessiva, cor escura, cheiro forte ou fumaça</label></div>
+
+          <div class="section-label" style="margin-top:12px;">Procedimento de Filtragem</div>
+          <div class="rota-items">
+            <div class="rota-head c1">1</div>
+            <div class="rota-item">Aguardar o óleo esfriar o suficiente para manusear com segurança</div>
+            <div class="rota-head c2">2</div>
+            <div class="rota-item">Usar o filtro/peneira para remover todos os resíduos sólidos da cuba</div>
+            <div class="rota-head c3">3</div>
+            <div class="rota-item">Verificar o nível do óleo — manter na <strong>segunda linha da cuba</strong>. Repor se necessário, comunicando o gerente</div>
+            <div class="rota-head c4">4</div>
+            <div class="rota-item">Medir os Compostos Polares com o Testo — descartar se ≥ 24%</div>
+            <div class="rota-head c1">5</div>
+            <div class="rota-item">Após filtrar e verificar, tampar a fritadeira</div>
+          </div>
+
+          <div class="section-label" style="margin-top:12px;">Sinais de que o óleo deve ser descartado</div>
+          <div class="check-item"><input type="checkbox"><label>Compostos Polares ≥ 24% (medido com Testo)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Cor escura (marrom escuro ou preta)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Fumaça excessiva durante o uso</label></div>
+          <div class="check-item"><input type="checkbox"><label>Espuma excessiva que não some</label></div>
+          <div class="check-item"><input type="checkbox"><label>Odor desagradável</label></div>
+          <div class="alert warn" style="margin-top:10px;">⚠️ Óleo velho não pode ser diluído com óleo novo — deve ser descartado completamente.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⚙️</div><h2>Desligamento das Fritadeiras</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Filtrar o óleo antes de desligar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Aguardar o equipamento esfriar antes de limpar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Manter a fritadeira <strong>tampada</strong> sempre que não estiver em uso</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar se os cestos estão limpos e no lugar correto</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar o nível do óleo para o próximo turno</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Inimigos do Óleo</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            Evitar estas causas prolonga a vida útil do óleo e garante a qualidade dos produtos fritos.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">🧂</div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Sal</div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">💧</div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Água</div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">🍞</div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Resíduos</div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px;text-align:center;">
+              <div style="font-size:24px;margin-bottom:4px;">🌡️</div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Temperatura incorreta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-chapa">
+      <div class="section-label">Fechamento da Chapa</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔥</div><h2>Clean Mode — Limpeza Diária</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            A limpeza diária da chapa é obrigatória ao fechamento. Utilize EPI completo: avental, luvas de borracha e óculos de proteção.
+          </div>
+          <div class="rota-items">
+            <div class="rota-head c1">1</div>
+            <div class="rota-item">Acionar o <strong>Clean Mode</strong> no painel da chapa</div>
+            <div class="rota-head c2">2</div>
+            <div class="rota-item">Aguardar o sinal <strong>"READY TO CLEAN"</strong> na tela antes de iniciar</div>
+            <div class="rota-head c3">3</div>
+            <div class="rota-item">Raspar a superfície inferior com o raspador segurando com as duas mãos, lâmina a <strong>15°</strong> em relação à superfície — realizar <strong>3 a 4 raspagens</strong> para cobrir toda a área</div>
+            <div class="rota-head c4">4</div>
+            <div class="rota-item">Remover o excesso de gordura do Teflon com pano úmido e retirar o Teflon do platen</div>
+            <div class="rota-head c1">5</div>
+            <div class="rota-item">Colocar <strong>90ml do produto QSR</strong> no recipiente e umedecer a esponja</div>
+            <div class="rota-head c2">6</div>
+            <div class="rota-item">Aplicar o produto em toda a superfície superior e inferior do Teflon</div>
+            <div class="rota-head c3">7</div>
+            <div class="rota-item">Limpar os 2 lados com a esponja úmida, enxaguar com pano úmido e água morna</div>
+            <div class="rota-head c4">8</div>
+            <div class="rota-item">Remover a sujeira das calhas e limpar com pano limpo e sanitizado</div>
+            <div class="rota-head c1">9</div>
+            <div class="rota-item">Recolocar os Teflons <strong>alternando os lados pares e ímpares</strong></div>
+            <div class="rota-head c2">10</div>
+            <div class="rota-item">Lavar os utensílios: espátulas, raspadores, rodinho e platen no sistema de 3 cubas</div>
+          </div>
+          <div class="alert info" style="margin-top:10px;">💡 Manter 4 panos disponíveis para a chapa: 2 para utensílios, 1 para áreas gordurosas e 1 para áreas não gordurosas.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Rotação de Teflons</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            A alternância dos Teflons garante desgaste uniforme e vida útil prolongada.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+            <div style="background:#e3f2fd;border:1.5px solid #90caf9;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:22px;margin-bottom:4px;">📅</div>
+              <div style="font-size:12px;font-weight:800;color:#1565c0;">DIAS PARES</div>
+              <div style="font-size:13px;font-weight:600;color:#1565c0;margin-top:4px;">Teflon Verde</div>
+            </div>
+            <div style="background:#fff3e0;border:1.5px solid #ffcc80;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:22px;margin-bottom:4px;">📅</div>
+              <div style="font-size:12px;font-weight:800;color:#e65100;">DIAS ÍMPARES</div>
+              <div style="font-size:13px;font-weight:600;color:#e65100;margin-top:4px;">Teflon Azul</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-tostadeira">
+      <div class="section-label">Fechamento da Tostadeira</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🍞</div><h2>Limpeza Diária da Tostadeira</h2></div>
+        <div class="card-body">
+          <div class="alert warn">⚠️ <strong>Desligue a tostadeira antes de iniciar a limpeza.</strong> Nunca limpar com o equipamento ligado.</div>
+          <div class="rota-items" style="margin-top:12px;">
+            <div class="rota-head c1">1</div>
+            <div class="rota-item"><strong>Desligar a tostadeira</strong> e colocar as luvas antes de iniciar</div>
+            <div class="rota-head c2">2</div>
+            <div class="rota-item">Colocar <strong>60ml (2 pumps)</strong> do KAY QSR Limpador para Chapas e Tostadeiras no recipiente</div>
+            <div class="rota-head c3">3</div>
+            <div class="rota-item">Umedecer a esponja não abrasiva e aplicar nas superfícies internas</div>
+            <div class="rota-head c4">4</div>
+            <div class="rota-item">Limpar as placas, paredes internas e a bandeja coletora</div>
+            <div class="rota-head c1">5</div>
+            <div class="rota-item">Enxaguar com pano úmido limpo e secar</div>
+            <div class="rota-head c2">6</div>
+            <div class="rota-item"><strong>Nunca remover as correias</strong> da tostadeira vertical</div>
+            <div class="rota-head c3">7</div>
+            <div class="rota-item">Verificar se as placas A e B estão limpas (271°C) e placa C (254°C) para o próximo turno</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Referência de Temperaturas</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Placa</th><th>Temperatura</th></tr></thead>
+              <tbody>
+                <tr><td>Placas A e B</td><td><strong>271°C</strong></td></tr>
+                <tr><td>Placa C</td><td><strong>254°C</strong></td></tr>
+                <tr><td>Caramelização</td><td><strong>22 segundos</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-utensilios">
+      <div class="section-label">Lavagem de Utensílios</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🫙</div><h2>Sistema de 3 Cubas</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            Todos os utensílios que entram em contato com alimentos devem ser lavados e higienizados a cada 4 horas ou ao final do turno.
+          </div>
+          <div class="rota-items">
+            <div class="rota-head c1">CUBA 1 — Lavagem</div>
+            <div class="rota-item">Água quente + detergente · Deixar de molho por <strong>5 minutos</strong> · Esfregar com esponja</div>
+            <div class="rota-head c2">CUBA 2 — Enxágue</div>
+            <div class="rota-item">Água limpa · Remover todo o resíduo de detergente</div>
+            <div class="rota-head c3">CUBA 3 — Sanitização</div>
+            <div class="rota-item">Solução sanitizante · Deixar <strong>1 minuto</strong> · <strong>Não enxaguar depois</strong></div>
+            <div class="rota-head c4">Secagem</div>
+            <div class="rota-item">Secar ao ar ou com pano limpo e sanitizado · Não usar o mesmo pano para alimentos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>Jarras de Café — Kay Coffee Pot Cleaner</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">1</div>
+            <div class="rota-item">Encher a jarra com água quente e adicionar 1 dose do Kay Coffee Pot Cleaner</div>
+            <div class="rota-head c2">2</div>
+            <div class="rota-item">Agitar levemente e deixar agir por <strong>5 minutos</strong></div>
+            <div class="rota-head c3">3</div>
+            <div class="rota-item">Esfregar internamente com escova própria</div>
+            <div class="rota-head c4">4</div>
+            <div class="rota-item">Enxaguar com água limpa</div>
+            <div class="rota-head c1">5</div>
+            <div class="rota-item">Aplicar solução sanitizante e deixar agir <strong>1 minuto</strong> — não enxaguar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🧺</div><h2>Panos — Troca e Descarte</h2></div>
+        <div class="card-body">
+          <div class="info-block">Os panos devem ser trocados a cada <strong>2 horas</strong> e mantidos separados por área.</div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Área</th><th>Cor do pano</th></tr></thead>
+              <tbody>
+                <tr><td>Chapa — utensílios</td><td>Específico da chapa</td></tr>
+                <tr><td>Chapa — área gordurosa</td><td>Específico da chapa</td></tr>
+                <tr><td>Balcão e salão</td><td>Ponteira/garra azul · lã branca</td></tr>
+                <tr><td>Banheiros e sala de lixo</td><td>Ponteira/garra verde · lã verde</td></tr>
+                <tr><td>Área de cozinha</td><td>Ponteira/garra vermelha · lã vermelha</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert info" style="margin-top:10px;">💡 Descartar os panos usados ao final. Nunca reutilizar pano de banheiro em área de alimentos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-salao">
+      <div class="section-label">Fechamento do Salão e Banheiros</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🪑</div><h2>Limpeza Profunda do Piso (Fechamento)</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            No fechamento, o piso recebe a <strong>limpeza profunda</strong> com Solução FC, diferente da limpeza operacional durante o dia.
+          </div>
+          <div class="rota-items">
+            <div class="rota-head c1">1</div>
+            <div class="rota-item">Varrer o salão com vassoura e recolher todos os resíduos antes de usar o esfregão</div>
+            <div class="rota-head c2">2</div>
+            <div class="rota-item">Aplicar a <strong>Solução FC</strong> no piso e deixar agir por <strong>2 minutos</strong></div>
+            <div class="rota-head c3">3</div>
+            <div class="rota-item">Esfregar com o esfregão em movimentos de <strong>2 metros quadrados</strong> por passagem</div>
+            <div class="rota-head c4">4</div>
+            <div class="rota-item">Colocar a placa de piso molhado — retirar <strong>somente quando o piso estiver seco</strong></div>
+            <div class="rota-head c1">5</div>
+            <div class="rota-item">Limpar rodapés, cantos e embaixo das mesas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🚻</div><h2>Banheiros</h2></div>
+        <div class="card-body">
+          <div class="rota-items">
+            <div class="rota-head c1">1</div>
+            <div class="rota-item">Aplicar <strong>2 pumps</strong> do limpador desinfetante no vaso e deixar agir por <strong>2 minutos</strong></div>
+            <div class="rota-head c2">2</div>
+            <div class="rota-item">Aplicar <strong>60ml (2 pumps)</strong> do produto em <strong>5 litros de água</strong> no balde para piso</div>
+            <div class="rota-head c3">3</div>
+            <div class="rota-item">Limpar pia, torneiras, espelho, secador e porta</div>
+            <div class="rota-head c4">4</div>
+            <div class="rota-item">Esfregar o vaso sanitário por dentro e por fora</div>
+            <div class="rota-head c1">5</div>
+            <div class="rota-item">Passar esfregão no piso do banheiro</div>
+            <div class="rota-head c2">6</div>
+            <div class="rota-item">Repor papel higiênico, papel toalha e sabonete</div>
+            <div class="rota-head c3">7</div>
+            <div class="rota-item">Esvaziar e limpar a lixeira, repor saco novo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🗑️</div><h2>Lixeiras e Salão</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Esvaziar todas as lixeiras e compactador de lixo</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpar a tampa, porta e interior das lixeiras</label></div>
+          <div class="check-item"><input type="checkbox"><label>Repor <strong>5 a 7 sacos de lixo dobrados</strong> em cada lixeira (verdes e pretos)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpar mesas, cadeiras e bancos com pano úmido e Multiuso</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpar vidros com rodo: superior → meio → inferior</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar área externa — varrida e sem resíduos</label></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-estoque">
+      <div class="section-label">Estoque e Câmaras</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📦</div><h2>Organização PEPS</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            <strong>PEPS = Primeiro a Entrar, Primeiro a Sair.</strong> Os produtos mais antigos devem ficar na frente e ser usados primeiro.
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Verificar datas de validade de todos os produtos nas câmaras</label></div>
+          <div class="check-item"><input type="checkbox"><label>Produtos mais antigos na frente, mais novos atrás</label></div>
+          <div class="check-item"><input type="checkbox"><label>Embalagens abertas devem estar datadas com hora de abertura</label></div>
+          <div class="check-item"><input type="checkbox"><label>Manter produtos em suas caixas originais nas câmaras</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar temperaturas: refrigerados 1–4°C · congelados -18°C ou abaixo</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🍞</div><h2>Pães Brioche — Preparação para o Dia Seguinte</h2></div>
+        <div class="card-body">
+          <div class="info-block">
+            Os pães Brioche precisam ser retirados do congelador <strong>no fechamento</strong> para ambientação.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:10px 0;">
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px;text-align:center;">
+              <div style="font-size:20px;margin-bottom:4px;">❄️</div>
+              <div style="font-size:11px;font-weight:700;color:var(--muted);">CONGELADOR</div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">Retirar no fechamento</div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px;text-align:center;">
+              <div style="font-size:20px;margin-bottom:4px;">🌡️</div>
+              <div style="font-size:11px;font-weight:700;color:var(--muted);">DESCONGELAMENTO</div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">12 horas</div>
+            </div>
+            <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px;text-align:center;">
+              <div style="font-size:20px;margin-bottom:4px;">🍞</div>
+              <div style="font-size:11px;font-weight:700;color:var(--muted);">TEMPO DE USO</div>
+              <div style="font-size:13px;font-weight:700;color:var(--text);">36 horas (48h total)</div>
+            </div>
+          </div>
+          <div class="check-item"><input type="checkbox"><label>Calcular a quantidade necessária para o próximo turno</label></div>
+          <div class="check-item"><input type="checkbox"><label>Retirar do congelador e deixar em refrigeração (1–4°C)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Etiquetar com data e hora de retirada</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">☕</div><h2>McCafé — Finalização</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Executar o procedimento de finalização da máquina de café conforme manual</label></div>
+          <div class="check-item"><input type="checkbox"><label>Lavar os filtros de papel em água corrente</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpar as bandejas: água corrente → sabão + esponja 3M → secar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Lavar e sanitizar as jarras de café com Kay Coffee Pot Cleaner</label></div>
+          <div class="check-item"><input type="checkbox"><label>Guardar os utensílios do McCafé limpos e protegidos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar estoque de café e insumos para o próximo dia</label></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Quiz — Procedimento de Fechamento</h2></div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+          <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Procedimento de Fechamento · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.switchMode = function(mode) {
+      var btns = { multiple: document.getElementById('btnMultiple'), flash: document.getElementById('btnFlash'), lacuna: document.getElementById('btnLacuna') };
+      Object.keys(btns).forEach(function(k) { if (btns[k]) btns[k].className = k === mode ? 'btn-primary' : 'btn-secondary'; });
+      var q = window._quizData, g = window._quizGuia;
+      if (!q || !g) return;
+      if (mode === 'multiple') initQuiz(q, g);
+      else if (mode === 'flash') initFlashcard(q, g);
+      else if (mode === 'lacuna') initLacuna(q, g);
+    };
+
+    const QUIZ_FECHAMENTO = [
+      { category: "🛢️ Fechamento · Fritadeiras", question: "Quantas vezes por dia o óleo deve ser filtrado em lojas Best Burger?", options: ["1 vez", "2 vezes", "3 vezes", "A cada turno"], answer: "2 vezes", explanation: "Em lojas Best Burger, o óleo das fritadeiras deve ser filtrado 2 vezes ao dia." },
+      { category: "🛢️ Fechamento · Fritadeiras", question: "A cada quantas horas de uso contínuo o óleo deve ser filtrado?", options: ["2 horas", "4 horas", "6 horas", "8 horas"], answer: "4 horas", explanation: "Filtrar o óleo a cada 4 horas de uso contínuo ou no pré-pico para prolongar a vida útil." },
+      { category: "🛢️ Fechamento · Fritadeiras", question: "Qual o limite máximo de Compostos Polares no óleo antes do descarte?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "O óleo deve ser descartado quando os Compostos Polares atingirem 24% — medido com o Testo." },
+      { category: "🛢️ Fechamento · Fritadeiras", question: "O que fazer com óleo que tem Compostos Polares acima de 24%?", options: ["Filtrar e continuar", "Adicionar óleo novo para diluir", "Descartar completamente", "Aguardar esfriar e verificar novamente"], answer: "Descartar completamente", explanation: "Óleo com Compostos Polares acima de 24% deve ser descartado imediatamente. Não diluir com óleo novo." },
+      { category: "🛢️ Fechamento · Fritadeiras", question: "Em qual linha da cuba deve ser mantido o nível do óleo?", options: ["Primeira linha", "Segunda linha", "Terceira linha", "Borda da cuba"], answer: "Segunda linha", explanation: "O nível do óleo deve respeitar a segunda linha na cuba. Repor se necessário, comunicando o gerente." },
+      { category: "🔥 Fechamento · Chapa", question: "Qual modo deve ser acionado para a limpeza diária da chapa?", options: ["RECOVERY", "CLEAN MODE", "STANDBY", "READY TO COOK"], answer: "CLEAN MODE", explanation: "Acionar o Clean Mode e aguardar o sinal READY TO CLEAN antes de iniciar a limpeza." },
+      { category: "🔥 Fechamento · Chapa", question: "A que ângulo deve estar a lâmina do raspador em relação à superfície da chapa?", options: ["5°", "10°", "15°", "45°"], answer: "15°", explanation: "A lâmina do raspador deve estar a 15° em relação à superfície da chapa durante a raspagem." },
+      { category: "🔥 Fechamento · Chapa", question: "Quantas raspagens são necessárias para cobrir toda a superfície da chapa?", options: ["1 a 2", "2 a 3", "3 a 4", "5 a 6"], answer: "3 a 4", explanation: "Realizar 3 a 4 raspagens cobrindo toda a superfície da chapa durante a limpeza." },
+      { category: "🔥 Fechamento · Chapa", question: "Qual a cor do Teflon utilizado nos dias ímpares?", options: ["Verde", "Azul", "Vermelho", "Amarelo"], answer: "Azul", explanation: "Teflon azul nos dias ímpares, Teflon verde nos dias pares — alternância para desgaste uniforme." },
+      { category: "🔥 Fechamento · Chapa", question: "Quantos ml do produto QSR devem ser usados na limpeza da chapa?", options: ["30ml", "60ml", "90ml", "120ml"], answer: "90ml", explanation: "Colocar 90ml do produto QSR Limpador para Chapas no recipiente para a limpeza diária." },
+      { category: "🍞 Fechamento · Tostadeira", question: "O que deve ser feito antes de limpar a tostadeira?", options: ["Ligar no nível máximo", "Desligar o equipamento", "Aplicar água fria", "Remover as correias"], answer: "Desligar o equipamento", explanation: "A tostadeira deve ser desligada antes de qualquer limpeza — risco de queimadura e dano ao equipamento." },
+      { category: "🍞 Fechamento · Tostadeira", question: "Quantos ml (pumps) do limpador devem ser usados na limpeza da tostadeira?", options: ["30ml (1 pump)", "60ml (2 pumps)", "90ml (3 pumps)", "120ml (4 pumps)"], answer: "60ml (2 pumps)", explanation: "Usar 60ml (2 pumps) do KAY QSR Limpador para Chapas e Tostadeiras na limpeza diária." },
+      { category: "🫙 Fechamento · Utensílios", question: "Por quanto tempo os utensílios devem ficar na solução de detergente (Cuba 1)?", options: ["1 minuto", "3 minutos", "5 minutos", "10 minutos"], answer: "5 minutos", explanation: "Na Cuba 1, os utensílios devem ficar de molho por 5 minutos na solução de detergente." },
+      { category: "🫙 Fechamento · Utensílios", question: "Por quanto tempo os utensílios devem ficar na solução sanitizante (Cuba 3)?", options: ["30 segundos", "1 minuto", "3 minutos", "5 minutos"], answer: "1 minuto", explanation: "Na Cuba 3, deixar na solução sanitizante por 1 minuto. Não enxaguar depois." },
+      { category: "🫙 Fechamento · Utensílios", question: "Com que frequência os panos de limpeza devem ser trocados?", options: ["A cada 1 hora", "A cada 2 horas", "A cada turno", "Uma vez ao dia"], answer: "A cada 2 horas", explanation: "Os panos de limpeza devem ser trocados a cada 2 horas durante a operação." },
+      { category: "🪑 Fechamento · Salão", question: "Por quanto tempo a Solução FC deve agir no piso na limpeza profunda?", options: ["30 segundos", "1 minuto", "2 minutos", "5 minutos"], answer: "2 minutos", explanation: "Aplicar a Solução FC e deixar agir por 2 minutos antes de esfregar com o esfregão." },
+      { category: "🪑 Fechamento · Salão", question: "Quantos sacos de lixo devem ser mantidos dobrados em cada lixeira?", options: ["2 a 3 sacos", "3 a 5 sacos", "5 a 7 sacos", "10 sacos"], answer: "5 a 7 sacos", explanation: "Manter 5 a 7 sacos de lixo dobrados (verdes e pretos) em cada lixeira para facilitar a troca." },
+      { category: "🪑 Fechamento · Salão", question: "Quantos pumps do limpador de banheiro devem ser usados no vaso?", options: ["1 pump", "2 pumps", "3 pumps", "4 pumps"], answer: "2 pumps", explanation: "Aplicar 2 pumps do limpador desinfetante no vaso e deixar agir por 2 minutos antes de esfregar." },
+      { category: "📦 Fechamento · Estoque", question: "O que significa PEPS na estocagem?", options: ["Padrão Especial de Produto Seguro", "Primeiro a Entrar, Primeiro a Sair", "Procedimento de Estoque por Produto e Shelf", "Protocolo de Embalagem Para Segurança"], answer: "Primeiro a Entrar, Primeiro a Sair", explanation: "PEPS: produtos mais antigos ficam na frente e são usados primeiro para evitar vencimento." },
+      { category: "📦 Fechamento · Estoque", question: "Quanto tempo total tem o pão Brioche após ser retirado do congelador?", options: ["24 horas", "36 horas", "48 horas", "72 horas"], answer: "48 horas", explanation: "Pão Brioche: 12h de descongelamento + 36h de uso = 48 horas total. Retirar no fechamento para o dia seguinte." },
+      { category: "📦 Fechamento · Estoque", question: "Qual a temperatura mínima para manter produtos congelados?", options: ["-10°C", "-15°C", "-18°C", "-20°C"], answer: "-18°C", explanation: "Produtos congelados devem ser mantidos a -18°C ou abaixo para garantir a segurança do alimento." }
+    ];
+
+      initQuiz(QUIZ_FECHAMENTO, 'Procedimento de Fechamento');
+  </script>
+</body>
+</html>

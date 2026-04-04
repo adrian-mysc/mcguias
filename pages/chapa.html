@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapa — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="chapa">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Chapa</h1>
+        <p>Guia Rápido Operacional · Produção</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="carnes">🥩 Carnes</button>
+      <button class="tab-btn" data-tab="bacon">🥓 Bacon</button>
+      <button class="tab-btn" data-tab="limpeza">🧹 Limpeza</button>
+      <button class="tab-btn" data-tab="checklist">✅ Checklist</button>
+        <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🌡️</div>
+          <h2>Tempos & Temperaturas</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box">
+              <div class="stat-label">Chapa inferior</div>
+              <div class="stat-value">177°C</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Chapa superior</div>
+              <div class="stat-value">218°C</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">UHC</div>
+              <div class="stat-value">79°C</div>
+              <div class="stat-sub">Vida útil: 10 min</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Cozimento interno</div>
+              <div class="stat-value">70–77°C</div>
+              <div class="stat-sub">158°F a 170°F</div>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">📌</div>
+            <div>
+              <strong>Ponto de partida (exceto Taylor NG):</strong> 10:1 = 39" · 4:1 = 110"<br>
+              <strong>Ponto de partida (Taylor Next Generation):</strong> 10:1 = 41" · 4:1 = 126"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧼</div>
+          <h2>Higiene & Segurança</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Padrões de Higiene</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Segurança</h3>
+              <ul>
+                <li class="blue">EPI completo (avental e mangote)</li>
+                <li class="blue">Lavar mãos com sabonete bactericida por 20"</li>
+                <li class="blue">Gel sanitizante antes de assumir função</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📦</div>
+          <h2>Regras da UHC</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill red">10:1 → remover de 3 em 3 · máx. 12 na gaveta</div>
+            <div class="pill yellow">4:1 → uma a uma · não empilhar</div>
+            <div class="pill green">Retirar tudo em 18 segundos</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-carnes">
+
+      <div class="section-label">Procedimento Operacional</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🥩</div>
+          <h2>Passo a Passo — Carnes</h2>
+          <div class="badge badge-red">10:1 / 4:1</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Observar o monitor <strong>PLS</strong>. Preparar a quantidade corretamente: <strong>10:1 ou 4:1</strong>. Limite máximo: 6 carnes para 10:1 e 4 carnes para 4:1</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Usar <strong>luvas azuis</strong> (verifique se exigidas na sua região). Pegar carnes no <strong>congelador lateral</strong>. Higienizar mãos a cada rodada se não usar luvas</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Colocar carnes utilizando o <strong>guia de colocação</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text"><strong>Descartar as luvas</strong> após a colocação</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Iniciar o cozimento na chapa. <strong>Servir o pedido do monitor</strong> se necessário</div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Preparar a gaveta UHC com a lâmina. Ao soar o timer de <strong>5"</strong>: espátulas, dispensador de sal e pimenta na mão</div>
+            </div>
+            <div class="step">
+              <div class="step-num">7</div>
+              <div class="step-text">Subindo o platen: <strong>salgar as carnes uma a uma, da direita para esquerda, da frente para o fundo</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num y">8</div>
+              <div class="step-text">Remover carnes da <strong>direita para esquerda</strong>, colocar na gaveta UHC seguindo o procedimento:
+                <br>• 10:1 → remover de 3 em 3 · máx. 12 na gaveta
+                <br>• 4:1 → uma a uma, sem empilhar
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num y">9</div>
+              <div class="step-text">Adicionar <strong>cebola em cada carne</strong> usando o dispensador em movimento de martelo, segurando pelas laterais para evitar queimaduras</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">10</div>
+              <div class="step-text">Remover todas as carnes em <strong>18 segundos</strong></div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Segure o dispensador de cebola pelas <strong>laterais</strong> para evitar queimar a mão no platen superior.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🗺️</div>
+          <h2>Guia de Colocação das Carnes</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box">
+              <div class="stat-label">Carnes 10:1</div>
+              <div class="stat-value">6 unid.</div>
+              <div class="stat-sub">máximo por lote</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Carnes 4:1</div>
+              <div class="stat-value">4 unid.</div>
+              <div class="stat-sub">máximo por lote</div>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Iniciar a salga sempre pela <strong>1ª carne da direita</strong> em forma de <strong>"S"</strong>. Aplicar cebola em cada carne na mesma sequência da salga, em movimento de martelo lateral.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-bacon">
+
+      <div class="section-label">Preparação Bacon</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Equipamento & Produto</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box">
+              <div class="stat-label">Temp. inferior</div>
+              <div class="stat-value">177°C</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Temp. superior</div>
+              <div class="stat-value">218°C</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Cocção</div>
+              <div class="stat-value">40s</div>
+              <div class="stat-sub">GAP: 90</div>
+            </div>
+            <div class="stat-box green">
+              <div class="stat-label">Validade pronto</div>
+              <div class="stat-value">6h</div>
+              <div class="stat-sub">Sec.: 5 dias refrig.</div>
+            </div>
+          </div>
+          <div class="pill-row">
+            <div class="pill blue">Armazenamento: Congelado</div>
+            <div class="pill yellow">Validade primária: 180 dias</div>
+            <div class="pill green">Ambientação: 12h em refrigeração</div>
+            <div class="pill red">2 platens → 8 fatias/lâmina</div>
+            <div class="pill red">3 platens → 6 fatias/lâmina</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🥓</div>
+          <h2>Procedimento de Preparo</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Separar a quantidade de bacon para <strong>6 horas</strong> de acordo com a tabela de chart. Abrir o pacote com <strong>tesoura sem ponta</strong>. Separar as fatias (chapa 2 platens: <strong>8 fatias</strong>; chapa 3 platens: <strong>6 fatias</strong>). Colocar em lâmina de produção sobre a bandeja de inox</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Certificar que a chapa está com cocção de <strong>40 segundos e GAP 90</strong>. Posicionar a bandeja na borda da chapa. Reservar outra bandeja para remoção dos bacons prontos</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Ativar as fatias <strong>de uma única vez</strong> na chapa com a espátula e o apoiador para soltar os bacons crus. Abaixar o platen acionando o timer. <strong>Sanitizar as mãos imediatamente</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Ao finalizar todas as rodadas, colocar o <strong>tempo de vencimento de 6h</strong> na placa de validade secundária. Posicionar os bacons no rack <strong>partindo ao meio</strong>, facilitando a estocagem na mesa de condimentação</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">5</div>
+              <div class="step-text">Ao final, <strong>lavar os utensílios</strong>: espátulas, raspadores, rodinho e platen. Só utilizar o platen novamente para carne bovina após concluir tudo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-limpeza">
+
+      <div class="section-label">Limpeza da Chapa</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧹</div>
+          <h2>Procedimento de Limpeza</h2>
+          <div class="badge badge-yellow">A cada 15 min</div>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">11</div>
+              <div class="step-text">Raspar a superfície inferior com o <strong>raspador da chapa</strong> segurando com as duas mãos, lâmina a <strong>15° em relação à superfície</strong>. Raspar sempre da frente para trás, de <strong>3 a 4 raspagens</strong> cobrindo toda a superfície</div>
+            </div>
+            <div class="step">
+              <div class="step-num">12</div>
+              <div class="step-text">Pegar o <strong>rodinho de borracha pela alça</strong> e apoiar a borracha na placa superior da chapa</div>
+            </div>
+            <div class="step">
+              <div class="step-num">13</div>
+              <div class="step-text">Arrastar a borracha <strong>de cima para baixo</strong>, empurrando possíveis resíduos. Empurrar os resíduos da parte de trás para a <strong>calha de gordura</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num y">14</div>
+              <div class="step-text">A cada <strong>15 minutos</strong>, reforçar a limpeza passando de 2 a 3 vezes com um pano limpo e sanitizado e o rodinho sobre toda a superfície do <strong>Teflon</strong> para garantir a retirada total dos resíduos</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">15</div>
+              <div class="step-text"><strong>Descartar o pano</strong></div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Mantenha <strong>4 panos limpos</strong> disponíveis para a chapa: 2 para utensílios, 1 para áreas gordurosas e 1 para áreas não gordurosas.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-checklist">
+      <div class="section-label">Checklist Operacional</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌅</div><h2>Abertura da Chapa</h2><div class="badge badge-yellow">Antes de iniciar</div></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Verificar temperatura da chapa superior: <strong>218°C (425°F)</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar temperatura da chapa inferior: <strong>177°C (350°F)</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar se o Teflon do dia está posicionado corretamente (pares em dias pares, ímpares em dias ímpares)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar temperatura da UHC: <strong>79°C</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Preparar gavetas UHC com lâminas para cada tipo de carne</label></div>
+          <div class="check-item"><input type="checkbox"><label>Conferir estoque de carnes na câmara e na linha de produção</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar pegadores: vermelho (com cebola) e azul/branco (sem cebola e brancos)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Conferir bacon: fatiado, partido ao meio, no rack em camada única</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar espátulas, dispensador de sal e pimenta posicionados</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔄</div><h2>Durante a Operação</h2><div class="badge badge-red">Por rodada</div></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Raspar a chapa antes de cada nova rodada</label></div>
+          <div class="check-item"><input type="checkbox"><label>Verificar se o GAP do bacon está em <strong>090</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Não ultrapassar <strong>6 carnes</strong> por lote (qualquer tipo)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Remover todas as carnes do lote em até <strong>18 segundos</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Reforçar limpeza do Teflon a cada <strong>15 minutos</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Descartar produtos da UHC após <strong>10 minutos</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Bacon pronto: registrar hora de preparo (validade <strong>6 horas</strong>)</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🌙</div><h2>Limpeza Diária — Clean Mode</h2><div class="badge badge-yellow">Fechamento</div></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Ajustar chapa para <strong>Clean Mode</strong> e aguardar indicação <em>READY TO CLEAN</em></label></div>
+          <div class="check-item"><input type="checkbox"><label>Retirar Teflons e limpar os dois lados completamente</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpar superfície da chapa com produto correto (QSR Limpador de Chapas — 90ml)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Repor Teflons na alternância correta para o próximo dia</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpar filtros e calhas coletoras de gordura</label></div>
+          <div class="check-item"><input type="checkbox"><label>Limpar gavetas e lâminas da UHC com solução sanitizante</label></div>
+          <div class="check-item"><input type="checkbox"><label>Registrar limpeza na ficha SMPD</label></div>
+        </div>
+      </div>
+    </div>
+
+        <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — Chapa</h2>
+          <div class="badge badge-red">10 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Chapa · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_CHAPA = [
+      {
+        category: "🌡️ Temperaturas",
+        question: "Qual é a temperatura da chapa inferior?",
+        options: ["150°C", "177°C", "200°C", "218°C"],
+        answer: "177°C",
+        explanation: "A chapa inferior opera a 177°C."
+      },
+      {
+        category: "🌡️ Temperaturas",
+        question: "Qual é a temperatura da chapa superior?",
+        options: ["177°C", "200°C", "218°C", "240°C"],
+        answer: "218°C",
+        explanation: "A chapa superior opera a 218°C."
+      },
+      {
+        category: "🌡️ Temperaturas",
+        question: "Qual a temperatura da UHC?",
+        options: ["65°C", "72°C", "79°C", "85°C"],
+        answer: "79°C",
+        explanation: "A UHC opera a 79°C com vida útil de 10 minutos."
+      },
+      {
+        category: "📦 UHC",
+        question: "Qual é o tempo de vida útil dos produtos na UHC?",
+        options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"],
+        answer: "10 minutos",
+        explanation: "Os produtos têm vida útil de 10 minutos na UHC."
+      },
+      {
+        category: "📦 UHC",
+        question: "Como devem ser removidas as carnes 4:1 para a UHC?",
+        options: ["De 3 em 3", "De 2 em 2", "Uma a uma, sem empilhar", "Todas ao mesmo tempo"],
+        answer: "Uma a uma, sem empilhar",
+        explanation: "Carnes 4:1 são removidas uma a uma e não devem ser empilhadas na gaveta."
+      },
+      {
+        category: "🥩 Carnes",
+        question: "Qual é o limite máximo de carnes 10:1 por lote?",
+        options: ["4 carnes", "6 carnes", "8 carnes", "10 carnes"],
+        answer: "6 carnes",
+        explanation: "O limite é de 6 carnes para o 10:1 por rodada."
+      },
+      {
+        category: "🥩 Carnes",
+        question: "Em quanto tempo devem ser removidas todas as carnes?",
+        options: ["10 segundos", "15 segundos", "18 segundos", "25 segundos"],
+        answer: "18 segundos",
+        explanation: "Todas as carnes devem ser removidas em 18 segundos."
+      },
+      {
+        category: "🥓 Bacon",
+        question: "Qual é o tempo de cocção do bacon na chapa?",
+        options: ["20 segundos", "30 segundos", "40 segundos", "60 segundos"],
+        answer: "40 segundos",
+        explanation: "O bacon é cozinhado por 40 segundos com GAP de 90."
+      },
+      {
+        category: "🥓 Bacon",
+        question: "Qual é a validade do produto de bacon pronto?",
+        options: ["2 horas", "4 horas", "6 horas", "8 horas"],
+        answer: "6 horas",
+        explanation: "O bacon pronto tem validade de 6 horas."
+      },
+      {
+        category: "🧹 Limpeza",
+        question: "Com que frequência deve ser reforçada a limpeza do Teflon da chapa?",
+        options: ["A cada 5 minutos", "A cada 10 minutos", "A cada 15 minutos", "A cada 30 minutos"],
+        answer: "A cada 15 minutos",
+        explanation: "A cada 15 minutos, reforçar a limpeza passando 2 a 3 vezes com pano e rodinho sobre toda a superfície do Teflon."
+      },
+      { category: "🌡️ Chapa · Temperaturas", question: "Qual é o ponto de partida de cocção para carnes 10:1 (exceto Taylor NG)?", options: ["30 segundos", "35 segundos", "39 segundos", "45 segundos"], answer: "39 segundos", explanation: "Ponto de partida (exceto Taylor NG): 10:1 = 39 segundos." },
+      { category: "🌡️ Chapa · Temperaturas", question: "Qual é o ponto de partida para carnes 4:1 na Taylor Next Generation?", options: ["100 segundos", "110 segundos", "120 segundos", "126 segundos"], answer: "126 segundos", explanation: "Taylor Next Generation: 4:1 = 126 segundos." },
+      { category: "🌡️ Chapa · Temperaturas", question: "Qual a temperatura mínima de cozimento interno das carnes?", options: ["60°C", "65°C", "70°C", "77°C"], answer: "70°C", explanation: "A temperatura de cozimento interno deve ser entre 70°C e 77°C (158°F a 170°F)." },
+      { category: "🥩 Chapa · Carnes", question: "Em que sentido deve ser feita a salga das carnes?", options: ["Da esquerda para direita, de frente para fundo", "Da direita para esquerda, de frente para fundo", "De frente para o fundo, da esquerda para direita", "Em qualquer sentido"], answer: "Da direita para esquerda, de frente para fundo", explanation: "A salga deve ser feita da direita para esquerda, da frente para o fundo, em forma de S." },
+      { category: "🥩 Chapa · Carnes", question: "Como devem ser removidas as carnes 10:1 para a UHC?", options: ["Uma a uma", "De 2 em 2", "De 3 em 3", "Todas ao mesmo tempo"], answer: "De 3 em 3", explanation: "Carnes 10:1 são removidas de 3 em 3, com máximo de 12 na gaveta." },
+      { category: "🥩 Chapa · Carnes", question: "Qual é o limite máximo de carnes 10:1 na gaveta UHC?", options: ["6 carnes", "8 carnes", "10 carnes", "12 carnes"], answer: "12 carnes", explanation: "A gaveta UHC suporta no máximo 12 carnes 10:1." },
+      { category: "🥩 Chapa · Carnes", question: "Ao soar o timer de 5 segundos antes do fim, o que o chapeiro deve fazer?", options: ["Abrir o platen", "Pegar espátulas, dispensador de sal e pimenta", "Sanitizar as mãos", "Preparar a UHC"], answer: "Pegar espátulas, dispensador de sal e pimenta", explanation: "Com 5 segundos restantes: espátulas, dispensador de sal e pimenta devem estar na mão." },
+      { category: "🧅 Chapa · Cebola", question: "Como deve ser aplicada a cebola nas carnes?", options: ["Em círculos amplos", "Em movimento de martelo, segurando pelas laterais", "Despejando de cima", "Com colher"], answer: "Em movimento de martelo, segurando pelas laterais", explanation: "A cebola é aplicada com o dispensador em movimento de martelo, segurando pelas laterais para evitar queimaduras." },
+      { category: "🥓 Chapa · Bacon", question: "Qual o GAP programado para o bacon na chapa?", options: ["060", "075", "090", "120"], answer: "090", explanation: "O bacon deve estar com tempo de 40 segundos e GAP de 090 programado." },
+      { category: "🥓 Chapa · Bacon", question: "Após preparar o bacon, o que deve ser lavado antes de usar o platen para carne bovina?", options: ["Apenas as espátulas", "Apenas o raspador", "Espátulas, raspador, rodinho e chapas", "Somente o platen"], answer: "Espátulas, raspador, rodinho e chapas", explanation: "Ao final do processo de bacon, espátulas, raspador, rodinho e chapas devem ser lavados antes de usar o platen para carne bovina." },
+      { category: "🥓 Chapa · Bacon", question: "Como devem ficar os bacons no rack após a preparação?", options: ["Inteiros empilhados", "Partidos ao meio no próprio rack", "Dobrados ao meio", "Separados por papel manteiga"], answer: "Partidos ao meio no próprio rack", explanation: "Os bacons devem ficar partidos ao meio no próprio rack, facilitando a colocação na mesa de condimentação." },
+      { category: "🧹 Chapa · Limpeza", question: "Com quantas raspagens o raspador deve cobrir toda a superfície da chapa?", options: ["1 a 2 raspagens", "2 a 3 raspagens", "3 a 4 raspagens", "5 a 6 raspagens"], answer: "3 a 4 raspagens", explanation: "Raspar da frente para trás com 3 a 4 raspagens cobrindo toda a superfície." },
+      { category: "🧹 Chapa · Limpeza", question: "A que ângulo deve estar a lâmina do raspador em relação à superfície da chapa?", options: ["5°", "10°", "15°", "30°"], answer: "15°", explanation: "A lâmina do raspador deve estar a 15° em relação à superfície da chapa." },
+      { category: "🧹 Chapa · Limpeza", question: "Quantos panos limpos devem estar disponíveis para a chapa?", options: ["2 panos", "3 panos", "4 panos", "6 panos"], answer: "4 panos", explanation: "Manter 4 panos limpos: 2 para utensílios, 1 para áreas gordurosas e 1 para áreas não gordurosas." },
+      { category: "🧼 Chapa · Higiene", question: "Quando devem ser higienizadas as mãos durante o trabalho na chapa sem luvas?", options: ["A cada hora", "A cada rodada de preparação", "Apenas no início do turno", "Quando sujar"], answer: "A cada rodada de preparação", explanation: "Sem luvas, higienizar as mãos a cada rodada de preparo de carnes." },
+      { category: "🌡️ Chapa · Temperaturas", question: "Qual é a temperatura da chapa para preparação dos ovos no Café da Manhã?", options: ["100°C", "115°C", "135°C", "150°C"], answer: "135°C", explanation: "O platen dedicado para ovos no Café da Manhã deve estar a 135°C." },
+      { category: "🥩 Chapa · Carnes", question: "Qual é o limite máximo de carnes 4:1 na gaveta UHC?", options: ["4 carnes", "6 carnes", "8 carnes", "10 carnes"], answer: "6 carnes", explanation: "Carnes 4:1 são removidas uma a uma e não empilhadas. Máximo 6 carnes na gaveta." },
+      { category: "🥩 Chapa · Carnes", question: "Em quanto tempo devem ser removidas todas as carnes da chapa?", options: ["10 segundos", "15 segundos", "18 segundos", "25 segundos"], answer: "18 segundos", explanation: "Todas as carnes devem ser removidas em 18 segundos." },
+      { category: "🧹 Chapa · Limpeza", question: "Quantas raspagens deve cobrir o raspador na limpeza da chapa?", options: ["1-2", "2-3", "3-4", "5-6"], answer: "3-4", explanation: "Raspar da frente para trás com 3 a 4 raspagens cobrindo toda a superfície." },
+      { category: "🧼 Chapa · Higiene", question: "Quando deve ser higienizado as mãos durante o trabalho na chapa sem luvas?", options: ["A cada hora", "A cada rodada de preparo", "Apenas no início do turno", "Quando sujar"], answer: "A cada rodada de preparo", explanation: "Sem luvas, higienizar as mãos a cada rodada de preparo de carnes." },
+      { category: "🧹 Chapa · Limpeza", question: "Com que frequência deve ser reforçada a limpeza do Teflon?", options: ["A cada 5 min", "A cada 10 min", "A cada 15 min", "A cada 30 min"], answer: "A cada 15 min", explanation: "A cada 15 minutos, reforçar a limpeza passando 2-3 vezes com pano e rodinho." },
+      { category: "🌡️ Chapa · Temperaturas", question: "Qual é o ponto de partida de cocção para carnes 10:1 exceto Taylor NG?", options: ["30s", "35s", "39s", "45s"], answer: "39s", explanation: "Ponto de partida (exceto Taylor NG): 10:1 = 39 segundos." },
+      { category: "🥓 Chapa · Bacon", question: "Qual o tempo de cocção do bacon na chapa?", options: ["20s", "30s", "40s", "60s"], answer: "40s", explanation: "O bacon é cozinhado por 40 segundos com GAP de 090." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_CHAPA);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+
+      // Se já estiver ativo no carregamento
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_CHAPA);
+    });
+  </script>
+</body>
+</html>

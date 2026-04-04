@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salão e NGK — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="salao-ngk">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Salão e NGK</h1>
+        <p>Guia Rápido Operacional · Experiência do Cliente</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="ngk">🖥️ NGK</button>
+      <button class="tab-btn" data-tab="salao">🪑 Salão</button>
+      <button class="tab-btn" data-tab="limpeza">🧹 Limpeza</button>
+      <button class="tab-btn" data-tab="metodo">📦 Método Preparo</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧼</div>
+          <h2>Padrões de Higiene</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Apresentação Pessoal</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Higiene das Mãos</h3>
+              <ul>
+                <li class="blue">Lavar mãos e antebraços com sabonete bactericida por 20"</li>
+                <li class="blue">Usar gel sanitizante antes de assumir a função</li>
+                <li class="blue">Higienizar após atividade de limpeza</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛒</div>
+          <h2>Materiais Necessários</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Por área</div>
+
+          <div class="rota-block">
+            <div class="rota-head c1">🪑 Mesas e Bancos</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>1 pano úmido com sanitizante <strong>(mesas)</strong></div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 pano seco <strong>(mesas)</strong></div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 pano úmido com sanitizante <strong>(bancos)</strong></div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 pano seco <strong>(bancos)</strong></div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 borrifador sanitizante</div></div>
+            </div>
+          </div>
+
+          <div class="rota-block">
+            <div class="rota-head c2">🧹 Chão</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>1 esfregão verde <em>(banheiro)</em>, 1 esfregão azul <em>(salão)</em>, 1 nano azul</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 espátula para chiclete, 1 placa de piso molhado</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 kit de limpa-vidros, 1 pá de lixo, 1 vassoura (área externa)</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 balde amarelo — apenas na abertura e fechamento</div></div>
+            </div>
+          </div>
+
+          <div class="rota-block">
+            <div class="rota-head c3">🗑️ Lixeiras</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>5 a 7 sacos de lixo dobrados <strong>(verdes e pretos)</strong></div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 pano limpo sanitizado e úmido</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 compactador e 1 borrifador sanitizante</div></div>
+            </div>
+          </div>
+
+          <div class="rota-block">
+            <div class="rota-head c4">🚻 Banheiros</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>2 panos limpos sanitizados úmidos</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>1 borrifador sanitizante</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Preparação — Checklist Inicial</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Materiais de limpeza organizados e limpos, em quantidade suficiente</label>
+            <label class="check-item"><input type="checkbox"> Sacos de lixo: <strong>preto</strong> = resíduos orgânicos · <strong>verde</strong> = recicláveis</label>
+            <label class="check-item"><input type="checkbox"> Troca de panos a cada 2 horas (ou quando necessário)</label>
+            <label class="check-item"><input type="checkbox"> Iluminação, ar condicionado, som, paisagismo, WiFi verificados</label>
+            <label class="check-item"><input type="checkbox"> Posicionamento dos sacos corretos nas lixeiras de reciclagem</label>
+            <label class="check-item"><input type="checkbox"> Estocagem dos dispensadores de álcool gel</label>
+            <label class="check-item"><input type="checkbox"> Higienização: mesas, bancos, portas, maçanetas, corrimãos e vitrine de brindes</label>
+            <label class="check-item"><input type="checkbox"> Limpeza das lixeiras e dos pisos</label>
+            <label class="check-item"><input type="checkbox"> Limpeza do NGK, mobiliário e vidros</label>
+            <label class="check-item"><input type="checkbox"> Limpeza dos banheiros sociais e deficientes</label>
+            <label class="check-item"><input type="checkbox"> Estocagem de suprimentos para o plantão no DLM</label>
+            <label class="check-item"><input type="checkbox"> Conhecer todos os preços, produtos e promoções em vigor</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-ngk">
+
+      <div class="section-label">Procedimento Operacional NGK</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🖥️</div>
+          <h2>Procedimento NGK</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Verificar se os <strong>Totens estão ligados</strong> e se a comunicação está de acordo com a campanha em vigor.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Abordar o cliente e <strong>incentivá-lo a utilizar o totem</strong>, demonstrando a variedade de produtos dentro da plataforma e auxiliando no manuseio das telas.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Fazer uma interação e aproveitar para <strong>falar dos produtos e campanhas atuais</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Estar atento às necessidades do cliente, <strong>demonstrando onde deve ser retirado o pedido</strong> após a finalização na plataforma.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-salao">
+
+      <div class="section-label">Procedimento Operacional Salão</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🪑</div>
+          <h2>Atendimento no Salão</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Recepcionar o cliente sempre com <strong>sorriso espontâneo e contato visual</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Ser empático e capaz de <strong>identificar o momento de cada cliente</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Memorizar número e <strong>locais de mesas disponíveis</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Identificar o número de pessoas, <strong>acomodá-las em uma mesa limpa</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Ajudar <strong>pessoas idosas, mães com crianças</strong> ou pessoas com pacotes/sacolas, oferecendo-se para levar a bandeja.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Oferecer/levar <strong>cadeirões para pais com crianças pequenas</strong>, sempre higienizando antes da criança sentar.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">7</div>
+              <div class="step-text">Explicar a <strong>correta separação de resíduos</strong> (orgânicos / papel e plástico / líquido) ao cliente quando for descartar o lixo da bandeja.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">8</div>
+              <div class="step-text">Agradecer e <strong>despedir-se do cliente</strong> de forma rápida e cortês, mantendo sempre contato visual.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-limpeza">
+
+      <div class="section-label">Procedimentos de Limpeza</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🪑</div>
+          <h2>Mesas e Bancos</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Limpar o tampo da mesa assim que o cliente se retirar com <strong>1 pano descartável úmido, sanitizado e dobrado</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Com outro pano descartável sanitizado e levemente umedecido, <strong>tirar o excesso de umidade</strong> do tampo da mesa.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Trocar os panos a cada 2 horas</strong> ou quando necessário.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Limpar os bancos assim que o cliente se retirar com <strong>1 pano descartável úmido, sanitizado e dobrado</strong>. Em seguida, tirar o excesso de umidade com outro pano.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧹</div>
+          <h2>Chão</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text"><strong>Sinalizar a área</strong> onde vai passar o esfregão com a placa de piso molhado.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Limpar apenas onde está sujo, com o esfregão sempre em forma de <strong>"∞"</strong> — 1 metro vira e 1 metro lava, lavando a cada 2m², invertendo o lado do esfregão a cada metro.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Manter-se atento, sempre com <strong>foco nos clientes</strong>. Tirar chicletes com a espátula.</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Seguir uma <strong>rota lógica</strong> (caminho do cliente) para garantir a limpeza e estocagem de todas as áreas, procurando sempre identificar as necessidades dos clientes.</div>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Movimento do esfregão: forma de <strong>"∞"</strong> (infinito) — 1 metro vira, 1 metro lava.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🗑️</div>
+          <h2>Lixeiras e Vidros</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Compactar o lixo dentro dos sacos, trocando quando estiverem <strong>3/4 cheios</strong> — sempre atento para colocar sacos pretos para orgânicos e <strong>verdes para recicláveis</strong>.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Manter de <strong>5 a 7 sacos de lixo</strong> nas lixeiras para troca rápida, em alto movimento (hora pico).</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">3</div>
+              <div class="step-text">Limpar a <strong>tampa, porta e o interior</strong> da lixeira e o compactador de lixo.</div>
+            </div>
+          </div>
+          <div class="alert warn">
+            <div class="alert-icon">⚠️</div>
+            <div>Saco <strong>preto</strong> = resíduos orgânicos · Saco <strong>verde</strong> = recicláveis (papel e plástico)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-metodo">
+
+      <div class="section-label">Método de Preparação do Pedido</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📦</div>
+          <h2>Onde Será Consumido o Pedido</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">IN</h3>
+              <ul>
+                <li>Cliente comendo no salão</li>
+                <li>Pedido servido em bandeja</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">OUT</h3>
+              <ul>
+                <li class="blue">Pedido para viagem</li>
+                <li class="blue">Embalagem diferenciada</li>
+              </ul>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">📌</div>
+            <div>O <strong>Método de Preparação</strong> indica onde será consumido o pedido — no restaurante, para viagem, Serviço na Mesa, Delivery ou pelo celular. Isso afeta a forma de preparação.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔍</div>
+          <h2>Tipos de Pedido na OAT</h2>
+        </div>
+        <div class="card-body">
+
+          <div class="rota-block">
+            <div class="rota-head c1">📱 MOP — Pedidos por Celular</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Para MOP não há ícone na tela do pedido.</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>O pedido aparece na OAT igual ao feito pelo balcão ou NGK.</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>O pedido será mostrado como <strong>"Armazenado"</strong> na parte inferior (perto da contagem de tempo) — o crew deve fazer o <strong>recall do pedido</strong>.</div></div>
+            </div>
+          </div>
+
+          <div class="rota-block">
+            <div class="rota-head c2">🚗 Curbside — Entrega no Estacionamento</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Pedidos Curbside são mostrados na OAT com o nome <strong>"Curb + número da vaga"</strong>.</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Exemplo: <strong>"CURB 01"</strong></div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Uma vez preparado, levar até o número de vaga indicado na <strong>barra inferior</strong>.</div></div>
+            </div>
+          </div>
+
+          <div class="rota-block">
+            <div class="rota-head c3">🍽️ Entrega na Mesa</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Pedidos de Entrega na Mesa são mostrados no lugar do nome <strong>"Bandeja"</strong> com o número da mesa do cliente.</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Uma vez preparado, levar até o número de mesa indicado na <strong>barra superior</strong>.</div></div>
+            </div>
+          </div>
+
+          <div class="rota-block">
+            <div class="rota-head c4">🔢 Número de Registro</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><div>Números na parte superior direita do pedido indicam o <strong>número de registro e de pedido</strong>.</div></div>
+              <div class="rota-item"><div class="rota-dot"></div><div>Use-os para falar com o <strong>anotador de pedidos</strong> se tiver alguma dúvida.</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — Salão e NGK</h2>
+          <div class="badge badge-red">10 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+                    <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Salão e NGK · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_SALAO = [
+      {
+        category: "🧼 Higiene",
+        question: "Por quanto tempo deve-se lavar as mãos com sabonete bactericida?",
+        options: ["10 segundos", "15 segundos", "20 segundos", "30 segundos"],
+        answer: "20 segundos",
+        explanation: "Lave as mãos e antebraços com sabonete bactericida por 20 segundos."
+      },
+      {
+        category: "🧼 Higiene",
+        question: "Com qual frequência devem ser trocados os panos de limpeza?",
+        options: ["A cada 30 minutos", "A cada 1 hora", "A cada 2 horas", "A cada 4 horas"],
+        answer: "A cada 2 horas",
+        explanation: "A troca de panos deve ocorrer a cada 2 horas, ou sempre que necessário."
+      },
+      {
+        category: "🗑️ Lixo",
+        question: "Qual cor de saco de lixo é usada para resíduos recicláveis?",
+        options: ["Preto", "Azul", "Verde", "Amarelo"],
+        answer: "Verde",
+        explanation: "Saco verde = resíduos recicláveis (papel e plástico). Saco preto = resíduos orgânicos."
+      },
+      {
+        category: "🗑️ Lixo",
+        question: "Quando deve ser trocado o saco de lixo dentro das lixeiras?",
+        options: ["Quando estiver cheio", "Quando estiver 1/2 cheio", "Quando estiver 3/4 cheio", "A cada 1 hora"],
+        answer: "Quando estiver 3/4 cheio",
+        explanation: "Compactar o lixo e trocar o saco quando estiver 3/4 cheio."
+      },
+      {
+        category: "🧹 Chão",
+        question: "Em qual formato deve ser feito o movimento do esfregão no chão?",
+        options: ["Linha reta", "Círculos", "Forma de ∞ (infinito)", "Zigue-zague"],
+        answer: "Forma de ∞ (infinito)",
+        explanation: "O esfregão deve ser usado em forma de '∞' — 1 metro vira e 1 metro lava, a cada 2m²."
+      },
+      {
+        category: "🖥️ NGK",
+        question: "Qual é o objetivo do procedimento NGK?",
+        options: [
+          "Apenas registrar pedidos",
+          "Incentivar o cliente a usar o totem e auxiliar no manuseio",
+          "Substituir o atendimento no balcão",
+          "Apenas verificar se os totens estão ligados"
+        ],
+        answer: "Incentivar o cliente a usar o totem e auxiliar no manuseio",
+        explanation: "O procedimento NGK inclui abordar o cliente, incentivar o uso do totem, auxiliar no manuseio e falar sobre produtos e campanhas."
+      },
+      {
+        category: "📦 Método de Preparação",
+        question: "O que significa 'IN' no método de preparação?",
+        options: ["Pedido para viagem", "Cliente comendo no salão", "Delivery", "Pedido pelo celular"],
+        answer: "Cliente comendo no salão",
+        explanation: "IN significa que o cliente está comendo no salão. OUT significa pedido para viagem."
+      },
+      {
+        category: "📦 Método de Preparação",
+        question: "Como um pedido Curbside aparece na OAT?",
+        options: ["Com o nome do cliente", "Com o número da mesa", "Com 'Curb + número da vaga'", "Como 'Armazenado'"],
+        answer: "Com 'Curb + número da vaga'",
+        explanation: "Pedidos Curbside aparecem na OAT com o nome 'Curb + número da vaga', ex: CURB 01."
+      },
+      {
+        category: "📦 Método de Preparação",
+        question: "Como um pedido MOP (por celular) aparece na OAT?",
+        options: [
+          "Com ícone especial de celular",
+          "Com a palavra 'MOP' em destaque",
+          "Igual a um pedido de balcão, mas como 'Armazenado'",
+          "Com o nome do aplicativo"
+        ],
+        answer: "Igual a um pedido de balcão, mas como 'Armazenado'",
+        explanation: "Para MOP não há ícone. O pedido aparece na OAT igual ao de balcão, mas com status 'Armazenado' para que o crew faça o recall."
+      },
+      {
+        category: "🪑 Salão",
+        question: "O que deve ser feito ao ver uma família com crianças pequenas chegando ao salão?",
+        options: [
+          "Aguardar eles se acomodarem sozinhos",
+          "Oferecer/levar cadeirão, higienizando antes da criança sentar",
+          "Apenas indicar uma mesa",
+          "Perguntar se precisam de ajuda apenas se solicitarem"
+        ],
+        answer: "Oferecer/levar cadeirão, higienizando antes da criança sentar",
+        explanation: "Ofereça ou leve cadeirões para pais com crianças pequenas, sempre higienizando antes da criança sentar."
+      },
+      { category: "🪑 Salão · Atendimento", question: "O que fazer ao identificar uma pessoa com deficiência ou idoso chegando?", options: ["Aguardar ser chamado", "Oferecer ajuda proativamente para se acomodar e carregar a bandeja", "Apenas indicar uma mesa livre", "Chamar o gerente"], answer: "Oferecer ajuda proativamente para se acomodar e carregar a bandeja", explanation: "Ajudar pessoas idosas, mães com crianças ou pessoas com dificuldades, oferecendo-se para levar a bandeja e acomodá-las." },
+      { category: "🧹 Salão · Mesas", question: "Quantos panos são necessários para limpeza de mesas e bancos?", options: ["1 pano para tudo", "2 panos (1 úmido + 1 seco) para mesas e 2 para bancos", "3 panos", "4 panos"], answer: "2 panos (1 úmido + 1 seco) para mesas e 2 para bancos", explanation: "Mesas: 1 pano úmido sanitizado + 1 pano seco. Bancos: mesma combinação." },
+      { category: "🧹 Salão · Chão", question: "Qual é a área coberta a cada passagem do esfregão no chão?", options: ["1 metro quadrado", "2 metros quadrados", "3 metros quadrados", "4 metros quadrados"], answer: "2 metros quadrados", explanation: "O esfregão cobre 2m² a cada passagem em movimento de infinito (∞)." },
+      { category: "🧹 Salão · Chão", question: "A quantos metros deve ser invertido o lado do esfregão?", options: ["A cada 50cm", "A cada metro", "A cada 2 metros", "A cada 3 metros"], answer: "A cada metro", explanation: "O esfregão deve ter o lado invertido a cada metro de lavagem." },
+      { category: "🗑️ Salão · Lixeiras", question: "Quantos sacos de lixo devem ser mantidos nas lixeiras para troca rápida?", options: ["2 a 3 sacos", "3 a 5 sacos", "5 a 7 sacos", "8 a 10 sacos"], answer: "5 a 7 sacos", explanation: "Manter de 5 a 7 sacos de lixo nas lixeiras para troca rápida, especialmente em hora pico." },
+      { category: "🖥️ Salão · NGK", question: "O que verificar nos totens antes de assumir a função NGK?", options: ["Apenas se estão ligados", "Se estão ligados e se a comunicação está de acordo com a campanha em vigor", "Apenas a campanha vigente", "Se há clientes usando"], answer: "Se estão ligados e se a comunicação está de acordo com a campanha em vigor", explanation: "Verificar se os Totens estão ligados e se a comunicação está de acordo com a campanha em vigor." },
+      { category: "📦 Salão · Método Preparo", question: "O que significa 'OUT' no método de preparação?", options: ["Cliente no salão", "Pedido para viagem", "Serviço na mesa", "Delivery"], answer: "Pedido para viagem", explanation: "OUT significa que o pedido é para viagem. IN = cliente comendo no salão." },
+      { category: "📦 Salão · OAT", question: "Onde fica indicado o número de vaga para pedidos Curbside?", options: ["Na barra superior do pedido", "Na barra inferior do pedido", "No número de registro", "No nome do cliente"], answer: "Na barra inferior do pedido", explanation: "Pedidos Curbside: levar até o número de vaga indicado na barra inferior da OAT." },
+      { category: "📦 Salão · OAT", question: "Como é mostrado o local da mesa nos pedidos de Entrega na Mesa?", options: ["No lugar do número de registro", "No lugar do nome 'Bandeja' na barra superior", "Na barra inferior", "No número do pedido"], answer: "No lugar do nome 'Bandeja' na barra superior", explanation: "Pedidos de Entrega na Mesa: o número da mesa aparece no lugar de 'Bandeja' na barra superior." },
+      { category: "🧹 Salão · Separação", question: "Como deve ser explicada a separação de resíduos ao cliente?", options: ["Não é necessário explicar", "Mostrar as lixeiras e orientar sobre orgânico, papel/plástico e líquido", "Apenas apontar para as lixeiras", "Só orientar se o cliente perguntar"], answer: "Mostrar as lixeiras e orientar sobre orgânico, papel/plástico e líquido", explanation: "Explicar a correta separação (orgânicos / papel e plástico / líquido) ao cliente quando for descartar o lixo da bandeja." },
+      { category: "🪑 Salão · Atendimento", question: "Como deve ser a despedida ao cliente no salão?", options: ["Formal e protocolar", "Rápida, cortês, com contato visual, solicitando o retorno", "Apenas acenar com a mão", "Somente se o cliente se despedir primeiro"], answer: "Rápida, cortês, com contato visual, solicitando o retorno", explanation: "Agradecer e despedir-se de forma rápida e cortês, mantendo sempre contato visual." },
+      { category: "🧼 Salão · Higiene", question: "Quando deve ser usado o gel sanitizante nas mãos?", options: ["Apenas ao chegar", "Antes de assumir a função e após atividade de limpeza", "Apenas após usar o banheiro", "A cada hora"], answer: "Antes de assumir a função e após atividade de limpeza", explanation: "Usar gel sanitizante antes de assumir a função e após ter realizado qualquer atividade de limpeza." },
+      { category: "🖥️ Salão · NGK", question: "Qual a principal técnica de vendas no NGK?", options: ["Empurrar produtos mais caros", "Fazer venda sugestiva e auxiliar no manuseio das telas", "Apenas registrar pedidos", "Orientar o cliente a ir ao balcão"], answer: "Fazer venda sugestiva e auxiliar no manuseio das telas", explanation: "No NGK: abordar o cliente, incentivar o uso do totem, auxiliar no manuseio e fazer venda sugestiva sobre produtos e campanhas." },
+      { category: "🗑️ Salão · Lixeiras", question: "Qual EPI deve ser usado na limpeza das lixeiras?", options: ["Apenas luvas", "Jaleco e luvas de látex", "Máscara e avental", "Luvas e óculos"], answer: "Jaleco e luvas de látex", explanation: "Utilizar sempre o EPI completo: jaleco e luvas de látex para limpeza das lixeiras." },
+      { category: "🧹 Salão · Mesas", question: "O que fazer com o pano úmido após limpar a mesa?", options: ["Deixar sobre a mesa para próximo uso", "Usar o mesmo pano para o próximo cliente", "Trocar a cada 2 horas ou quando necessário", "Jogar no lixo imediatamente após cada mesa"], answer: "Trocar a cada 2 horas ou quando necessário", explanation: "Os panos devem ser trocados a cada 2 horas ou sempre que necessário durante o turno." },
+      { category: "🖥️ NGK · Atendimento", question: "O que fazer quando um cliente parece ter dificuldades com o totem?", options: ["Ignorar, o cliente deve aprender", "Abordar proativamente e oferecer assistência", "Chamar o gerente", "Pedir para ir ao balcão"], answer: "Abordar proativamente e oferecer assistência", explanation: "Abordar proativamente o cliente com dificuldades, auxiliar sem assumir o controle do pedido." },
+      { category: "🖥️ NGK · Meu Méqui", question: "Como o cliente vincula o Meu Méqui no NGK?", options: ["Não é possível no NGK", "Digitando CPF ou escaneando QR code no início do pedido", "Apenas no balcão", "Informando ao atendente do NGK"], answer: "Digitando CPF ou escaneando QR code no início do pedido", explanation: "No NGK, o cliente vincula o Meu Méqui digitando CPF ou escaneando o QR code na tela inicial." },
+      { category: "🪑 Salão · Limpeza", question: "Com que frequência deve ser feita a rota de limpeza do salão?", options: ["Apenas antes de abrir e fechar", "A cada 15-30 minutos durante a operação", "Uma vez por hora", "Apenas quando sujar visivelmente"], answer: "A cada 15-30 minutos durante a operação", explanation: "A rota de limpeza do salão deve ser feita a cada 15 a 30 minutos durante a operação." },
+      { category: "🪑 Salão · Organização", question: "O que fazer ao encontrar uma mesa suja após o cliente sair?", options: ["Aguardar o próximo cliente reclama", "Limpar imediatamente com pano e solução multiuso", "Apenas jogar fora o lixo da mesa", "Avisar outro funcionário para limpar"], answer: "Limpar imediatamente com pano e solução multiuso", explanation: "Limpar imediatamente mesa e cadeiras com pano e solução multiuso após o cliente sair." },
+      { category: "🖥️ NGK · Curbside", question: "O que é o serviço Curbside?", options: ["Entrega na mesa do salão", "Cliente faz pedido no app e recebe no carro sem sair", "Delivery para casa", "Retirada no balcão"], answer: "Cliente faz pedido no app e recebe no carro sem sair", explanation: "Curbside: cliente faz o pedido pelo app e recebe diretamente no carro estacionado na vaga indicada." },
+      { category: "🖥️ NGK · Problema", question: "O que fazer se o totem travar ou apresentar erro?", options: ["Desligar e religar imediatamente", "Notificar o gerente e sinalizar o totem como indisponível", "Ignorar e continuar no totem ao lado", "Pedir ao cliente para tentar novamente várias vezes"], answer: "Notificar o gerente e sinalizar o totem como indisponível", explanation: "Em caso de erro no totem, notificar o gerente e sinalizar o totem como temporariamente indisponível." },
+      { category: "🪑 Salão · Banheiro", question: "Com que frequência deve ser inspecionado o banheiro?", options: ["Uma vez ao dia", "A cada hora ou sempre que for utilizado intensamente", "Apenas no fechamento", "A cada 30 minutos"], answer: "A cada hora ou sempre que for utilizado intensamente", explanation: "Inspecionar o banheiro a cada hora ou com maior frequência nos horários de pico." },
+      { category: "🖥️ NGK · Venda", question: "Como o NGK ajuda na venda sugestiva?", options: ["Não há venda sugestiva no NGK", "O sistema sugere automaticamente complementos e upgrades", "O atendente sugere verbalmente", "Apenas com panfletos"], answer: "O sistema sugere automaticamente complementos e upgrades", explanation: "O NGK sugere automaticamente complementos e upgrades na tela, facilitando a venda sugestiva." },
+      { category: "🪑 Salão · Playground", question: "O que verificar no playground durante a rota de salão?", options: ["Apenas a limpeza visual", "Limpeza, segurança estrutural e ausência de objetos cortantes", "Apenas se as crianças estão bem", "Somente limpeza do piso"], answer: "Limpeza, segurança estrutural e ausência de objetos cortantes", explanation: "No playground: verificar limpeza, integridade estrutural e ausência de objetos que possam causar acidentes." },
+      { category: "🖥️ NGK · Pagamento", question: "O cliente pode pagar no totem com qualquer forma de pagamento?", options: ["Apenas cartão de crédito", "Débito, crédito e Meu Méqui (pontos)", "Apenas dinheiro", "Qualquer forma incluindo dinheiro"], answer: "Débito, crédito e Meu Méqui (pontos)", explanation: "No NGK, são aceitos: cartão de débito, crédito e pagamento com pontos Meu Méqui." },
+      { category: "🪑 Salão · Cortesia", question: "O que é a rota de cortesia no salão?", options: ["Limpeza das mesas", "Verificar a satisfação dos clientes e oferecer auxílio", "Repor napkineiras e condimentos", "Limpar o chão"], answer: "Verificar a satisfação dos clientes e oferecer auxílio", explanation: "Rota de cortesia: percorrer o salão verificando a satisfação dos clientes e oferecendo auxílio quando necessário." },
+      { category: "🖥️ NGK · Cupom", question: "O que fazer quando o totem não imprime o cupom do cliente?", options: ["Dizer ao cliente que não tem solução", "Verificar o papel, se necessário imprimir manualmente ou orientar o cliente", "Ignorar o problema", "Pedir ao cliente para refazer o pedido"], answer: "Verificar o papel, se necessário imprimir manualmente ou orientar o cliente", explanation: "Sem impressão: verificar papel primeiro; se necessário, imprimir via POS ou orientar o cliente." },
+      { category: "🪑 Salão · Napkineira", question: "O que verificar nas napkineiras durante a rota de salão?", options: ["Apenas se estão no lugar", "Limpeza, quantidade de guardanapos e sachês de sal/pimenta", "Apenas a limpeza externa", "Nada, o LOPE cuida disso"], answer: "Limpeza, quantidade de guardanapos e sachês de sal/pimenta", explanation: "Verificar limpeza das napkineiras e se estão abastecidas com guardanapos e sachês." },
+      { category: "🖥️ NGK · Acessibilidade", question: "Como auxiliar clientes com necessidades especiais no NGK?", options: ["Encaminhar ao balcão", "Oferecer assistência pessoal e usar os recursos de acessibilidade do totem", "Pedir para outro cliente ajudar", "Não há suporte para isso"], answer: "Oferecer assistência pessoal e usar os recursos de acessibilidade do totem", explanation: "Oferecer assistência personalizada e ativar os recursos de acessibilidade do totem (fonte maior, contraste)." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) {
+          initQuiz(QUIZ_SALAO);
+          observer.disconnect();
+        }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_SALAO);
+    });
+  </script>
+</body>
+</html>

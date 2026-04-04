@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linha — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="linha">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Linha</h1>
+        <p>Guia Rápido Operacional · Produção</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="qualidade">⭐ Qualidade</button>
+      <button class="tab-btn" data-tab="procedimento">🔧 Procedimento</button>
+      <button class="tab-btn" data-tab="checklist">✅ Checklist</button>
+        <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">Resumo Rápido</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧼</div><h2>Higiene & Segurança</h2></div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Padrões de Higiene</h3>
+              <ul>
+                <li>Cabelos presos, unhas curtas</li>
+                <li>Sem esmaltes, barba feita</li>
+                <li>Sem adornos, com redinha</li>
+                <li>Sapato antiderrapante</li>
+                <li>Uniforme e crachá limpos</li>
+                <li>Utilizar avental</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Segurança</h3>
+              <ul>
+                <li class="blue">EPI completo (avental) para qualquer posição da linha</li>
+                <li class="blue">Lavar mãos com sabonete bactericida por 20"</li>
+                <li class="blue">Gel sanitizante antes de assumir a função</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Tempos & Temperaturas</h2></div>
+        <div class="card-body">
+
+          <div class="section-label" style="margin-bottom:8px;">🍞 Tostadeira</div>
+          <div class="grid-2">
+            <div class="stat-box">
+              <div class="stat-label">Placa A e B</div>
+              <div class="stat-value">271°C</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Placa C</div>
+              <div class="stat-value">254°C</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Caramelização</div>
+              <div class="stat-value">22"</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Compressão do Pão</div>
+              <div class="stat-value">5D</div>
+              <div class="stat-sub">Temp. interna: &gt;70°C</div>
+            </div>
+          </div>
+
+          <div class="section-label" style="margin-top:12px; margin-bottom:8px;">🧊 UHC</div>
+          <div class="grid-2">
+            <div class="stat-box blue">
+              <div class="stat-label">UHC Carnes Vermelhas</div>
+              <div class="stat-value">79°C</div>
+            </div>
+            <div class="stat-box blue">
+              <div class="stat-label">UHC Carnes Brancas</div>
+              <div class="stat-value">85°C</div>
+            </div>
+          </div>
+
+          <div class="section-label" style="margin-top:12px; margin-bottom:8px;">⏱️ Tempo de Vida na UHC</div>
+          <div class="grid-2">
+            <div class="stat-box green"><div class="stat-label">McCrispy</div><div class="stat-value">60'</div></div>
+            <div class="stat-box green"><div class="stat-label">McChicken</div><div class="stat-value">30'</div></div>
+            <div class="stat-box green"><div class="stat-label">McNuggets e McJunior</div><div class="stat-value">20'</div></div>
+            <div class="stat-box green"><div class="stat-label">Carnes Vermelhas</div><div class="stat-value">10'</div></div>
+          </div>
+
+          <div class="section-label" style="margin-top:12px; margin-bottom:8px;">🧂 Mesa de Condimentação</div>
+          <div class="grid-2">
+            <div class="stat-box yellow">
+              <div class="stat-label">Temperatura</div>
+              <div class="stat-value">49–57°C</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Layout</div>
+              <div class="stat-value" style="font-size:14px;">Book de Produtos</div>
+              <div class="stat-sub">Seguir último book</div>
+            </div>
+          </div>
+
+          <div class="alert info">
+            <div class="alert-icon">🔵</div>
+            <div>
+              <strong>Pegador vermelho</strong> → carnes vermelhas &nbsp;|&nbsp;
+              <strong>Pegador verde</strong> → carnes brancas
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🏪</div><h2>Lojas Best Burger — Diferenciais</h2><div class="badge badge-red">Best Burger</div></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num b">🍞</div><div class="step-text"><strong>Tostadeira:</strong> Placa A e B = 271°C · Placa C = 254°C · Caramelização: 22" · Compressão inicial: 4 · Velocidade do motor: a partir de 3300 · Temp. interna &gt;70°C</div></div>
+            <div class="step"><div class="step-num b">❄️</div><div class="step-text"><strong>UHC:</strong> Carnes vermelhas 79°C · Carnes brancas 85°C · Dedicar mínimo <strong>2 gavetas para carnes SEM CEBOLA</strong>, identificadas com clips azul</div></div>
+            <div class="step"><div class="step-num b">🧅</div><div class="step-text"><strong>Mesa de Condimentação:</strong> A cuba de cebola reidratada passa a ser preparada nos ceboleiros. Após estocados: vida primária de <strong>24h na câmara</strong> e secundária de até <strong>4h na chapa</strong></div></div>
+          </div>
+          <div class="pill-row">
+            <div class="pill blue">🔵 Pegador azul → carnes 4:1 e 10:1 (sem cebola)</div>
+            <div class="pill red">🔴 Pegador vermelho → carnes vermelhas</div>
+            <div class="pill green">🟢 Pegador verde → carnes brancas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-qualidade">
+      <div class="section-label">Fundamentos da Qualidade</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⭐</div><h2>Preparação da Linha</h2><div class="badge badge-yellow">Antes de iniciar</div></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Separar as cubas limpas, secas e sanitizadas para preparação do <strong>alface/cebola</strong> (baixo movimento: cubas rasas / hora pico: cubas médias) de acordo com a tabela de charts</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Retirar a quantidade de <strong>fatias necessárias para o uso (hora fechada)</strong> e retornar o restante da barra para a câmara de resfriados com a <strong>etiqueta de 24h</strong></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Verificar os <strong>dispensadores de molhos calibrados</strong> e estocados:<br>
+              • <strong>Mostarda:</strong> 47 tiros = 1 OZ / 30 ML<br>
+              • <strong>Ketchup Regular:</strong> 6 tiros = 2 OZ / 60 ML<br>
+              • <strong>Quarteirão:</strong> 6 tiros = 3 OZ / 90 ML
+            </div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Dispensador de Molho de <strong>1/2 OZ BIG MAC</strong>: apertar o gatilho 4 vezes para dispensar 4 tiros. Verificar o copo de calibragem — deve haver <strong>2 onças fluida = 60 ML</strong></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📦</div><h2>Antes de Operar — Checklist</h2></div>
+        <div class="card-body">
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox"> Manter 1 pano limpo, sanitizado e dobrado para a tostadeira vertical</label>
+            <label class="check-item"><input type="checkbox"> Estocar quantidade de pães suficiente para o horário dentro do tempo de validade</label>
+            <label class="check-item"><input type="checkbox"> Estocar embalagens e lâminas suficientes de acordo com a tabela de níveis</label>
+            <label class="check-item"><input type="checkbox"> Verificar tempos e temperatura da tostadeira</label>
+            <label class="check-item"><input type="checkbox"> Verificar o funcionamento do KVS e impressora grill</label>
+            <label class="check-item"><input type="checkbox"> Garantir todos os pegadores posicionados na UHC</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-procedimento">
+      <div class="section-label">Procedimento Operacional</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔧</div><h2>Operação da Linha</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Estar atento aos pedidos do monitor com tempo de reação de <strong>3 a 5 segundos</strong> para ativar os pães. O monitor deve estar configurado em <strong>4x2</strong></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Colocar os pães na <strong>seção correta da tostadeira</strong>; não colocar mais de <strong>dois pães por vez</strong></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Preparar a embalagem ou lâmina no sentido certo: <strong>base dos sanduíches em direção à UHC/OAT</strong> e a cora em direção à tostadeira. Para pedido diferenciado, colocar o selo "especial para você" junto com a comanda (adesivo + picklist deve estar colado na <strong>borda inferior da embalagem</strong>)</div></div>
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Quando os pães saem da tostadeira, o <strong>iniciador só aperta a tecla "servido"</strong> após colocar os dois primeiros condimentos, ou quando a pessoa da condimentação entrar no lugar dele. Trabalhando com <strong>1 pessoa na linha</strong>: realize a finalização do produto e aperte a tecla "servido" no final da linha</div></div>
+          </div>
+          <div class="alert danger">
+            <div class="alert-icon">⚠️</div>
+            <div><strong>O produto jamais deve ser abandonado</strong> até que outra pessoa assuma a condimentação.<br><strong>Tempo de linha: 35 a 50 segundos.</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-checklist">
+      <div class="section-label">Checklists da Linha</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌅</div><h2>Antes de Iniciar a Montagem</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Mesa de condimentação limpa e sanitizada</label></div>
+          <div class="check-item"><input type="checkbox"><label>Tostadeira na temperatura correta — ciclo de caramelização <strong>11 segundos</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>UHC na temperatura correta (<strong>79°C</strong>) com gavetas e lâminas higienizadas</label></div>
+          <div class="check-item"><input type="checkbox"><label>Molhos calibrados: Big Mac <strong>0,75oz / 3 tiros</strong> · Ketchup/Mostarda <strong>0,25oz / 1 tiro</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Ingredientes com tempo de vida marcado: alface, tomate, cebola, queijo</label></div>
+          <div class="check-item"><input type="checkbox"><label>Embalagens corretas disponíveis para cada sanduíche</label></div>
+          <div class="check-item"><input type="checkbox"><label>KVS / ORB / BumpBar funcionando</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">🔄</div><h2>Durante a Operação — A cada Lote</h2></div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Montar sanduíche em até <strong>30 segundos</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Base posicionada com lado cortado para cima</label></div>
+          <div class="check-item"><input type="checkbox"><label>Empilhamento máximo respeitado: Big Mac <strong>8 pães</strong> · demais <strong>10 pães</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Dupla conferência antes de fechar o sanduíche</label></div>
+          <div class="check-item"><input type="checkbox"><label>Pões tostados dentro de <strong>15 minutos</strong> (descartar após)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Carnes na UHC: descartar após <strong>10 minutos</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Reposição de ingredientes antes de zerar (não deixar esvaziar)</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Tempos de Vida — Referência Rápida</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Item</th><th>Vida útil</th><th>Condição</th></tr></thead>
+              <tbody>
+                <tr><td>Pão tostado</td><td><strong>15 min</strong></td><td>Após sair da tostadeira</td></tr>
+                <tr><td>Carnes (UHC)</td><td><strong>10 min</strong></td><td>Na gaveta UHC a 79°C</td></tr>
+                <tr><td>Tomate fatiado</td><td><strong>2h</strong></td><td>Na mesa de condimentação</td></tr>
+                <tr><td>Cebola reidratada</td><td><strong>2h</strong></td><td>Na mesa de condimentação</td></tr>
+                <tr><td>Alface</td><td><strong>Uso imediato</strong></td><td>Repor por demanda</td></tr>
+                <tr><td>Queijo</td><td><strong>2h</strong></td><td>Na mesa (15–18°C ideal)</td></tr>
+                <tr><td>Sanduíche montado</td><td><strong>Imediato</strong></td><td>Entregar assim que pronto</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Quiz — Linha</h2><div class="badge badge-red">10 perguntas</div></div>
+        <div class="card-body"><div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+          <div id="quiz-app"></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Linha · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const QUIZ_LINHA = [
+      { category: "🍞 Tostadeira", question: "Qual a temperatura das placas A e B da tostadeira?", options: ["254°C", "265°C", "271°C", "280°C"], answer: "271°C", explanation: "Placas A e B = 271°C. Placa C = 254°C." },
+      { category: "🍞 Tostadeira", question: "Qual o tempo de caramelização na tostadeira?", options: ["15 segundos", "18 segundos", "22 segundos", "30 segundos"], answer: "22 segundos", explanation: "O tempo de caramelização é de 22 segundos." },
+      { category: "🌡️ UHC", question: "Qual a temperatura da UHC para carnes vermelhas?", options: ["72°C", "75°C", "79°C", "85°C"], answer: "79°C", explanation: "UHC: carnes vermelhas = 79°C e carnes brancas = 85°C." },
+      { category: "🌡️ UHC", question: "Qual o tempo de vida do McCrispy na UHC?", options: ["20 minutos", "30 minutos", "45 minutos", "60 minutos"], answer: "60 minutos", explanation: "McCrispy: 60 min · McChicken: 30 min · McNuggets/McJunior: 20 min · Carnes vermelhas: 10 min." },
+      { category: "🌡️ UHC", question: "Qual o tempo de vida de carnes vermelhas na UHC?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "10 minutos", explanation: "Carnes vermelhas têm vida útil de 10 minutos na UHC." },
+      { category: "🧂 Mesa", question: "Qual a faixa de temperatura da mesa de condimentação?", options: ["35°C a 45°C", "42°C a 55°C", "49°C a 57°C", "55°C a 65°C"], answer: "49°C a 57°C", explanation: "A mesa de condimentação opera entre 49°C e 57°C." },
+      { category: "🧂 Mesa", question: "Para calibrar o Ketchup Regular, quantos tiros devem ser dados?", options: ["4 tiros", "6 tiros", "8 tiros", "47 tiros"], answer: "6 tiros", explanation: "Ketchup Regular: 6 tiros = 2 OZ / 60 ML." },
+      { category: "⏱️ Linha", question: "Qual é o tempo de linha estabelecido?", options: ["15 a 25 segundos", "25 a 35 segundos", "35 a 50 segundos", "50 a 60 segundos"], answer: "35 a 50 segundos", explanation: "O tempo de linha deve ser de 35 a 50 segundos." },
+      { category: "⏱️ Linha", question: "Em quantos segundos o iniciador deve reagir para ativar os pães?", options: ["1 a 2 segundos", "3 a 5 segundos", "5 a 8 segundos", "10 segundos"], answer: "3 a 5 segundos", explanation: "O tempo de reação para ativar os pães é de 3 a 5 segundos." },
+      { category: "🏪 Best Burger", question: "No Best Burger, qual pegador é usado para carnes sem cebola?", options: ["Pegador vermelho", "Pegador verde", "Pegador azul", "Pegador preto"], answer: "Pegador azul", explanation: "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola." },
+      { category: "🍞 Linha · Tostadeira", question: "Qual a temperatura da placa C da tostadeira?", options: ["220°C", "240°C", "254°C", "271°C"], answer: "254°C", explanation: "Placa C = 254°C. Placas A e B = 271°C." },
+      { category: "🍞 Linha · Tostadeira", question: "Quantos segundos o iniciador tem para reagir e ativar os pães?", options: ["1 a 2 segundos", "3 a 5 segundos", "5 a 8 segundos", "10 segundos"], answer: "3 a 5 segundos", explanation: "O tempo de reação para ativar os pães é de 3 a 5 segundos." },
+      { category: "🌡️ Linha · UHC", question: "Qual a temperatura da UHC para carnes brancas?", options: ["72°C", "79°C", "85°C", "90°C"], answer: "85°C", explanation: "UHC: carnes brancas = 85°C. Carnes vermelhas = 79°C." },
+      { category: "⏱️ Linha · UHC", question: "Qual o tempo de vida do McChicken na UHC?", options: ["10 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "30 minutos", explanation: "McChicken: 30 minutos na UHC." },
+      { category: "⏱️ Linha · UHC", question: "Qual o tempo de vida dos McNuggets e McJunior na UHC?", options: ["10 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "20 minutos", explanation: "McNuggets e McJunior têm 20 minutos de vida útil na UHC." },
+      { category: "🧂 Linha · Mesa", question: "Qual a temperatura da mesa de condimentação?", options: ["35°C a 45°C", "42°C a 55°C", "49°C a 57°C", "55°C a 65°C"], answer: "49°C a 57°C", explanation: "A mesa de condimentação opera entre 49°C e 57°C." },
+      { category: "⏱️ Linha · Tempo", question: "Qual o tempo de linha estabelecido?", options: ["15 a 25 segundos", "25 a 35 segundos", "35 a 50 segundos", "50 a 60 segundos"], answer: "35 a 50 segundos", explanation: "O tempo de linha deve ser de 35 a 50 segundos." },
+      { category: "🧂 Linha · Calibração", question: "Quantos tiros de Ketchup Regular equivalem a 2 OZ?", options: ["4 tiros", "6 tiros", "8 tiros", "10 tiros"], answer: "6 tiros", explanation: "Ketchup Regular: 6 tiros = 2 OZ / 60 ML." },
+      { category: "🏪 Linha · Best Burger", question: "Qual pegador é usado para carnes sem cebola no Best Burger?", options: ["Vermelho", "Verde", "Azul", "Preto"], answer: "Azul", explanation: "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola." },
+      { category: "🍞 Linha · Tostadeira", question: "Em que sentido o iniciador deve colocar os pães na tostadeira?", options: ["Qualquer sentido", "Com a face cortada para cima", "Com a face cortada voltada para as placas", "Alternando os lados"], answer: "Com a face cortada voltada para as placas", explanation: "Os pães devem ser posicionados com a face cortada voltada para as placas quentes da tostadeira." },
+      { category: "⚙️ Linha · Procedimento", question: "O que o finalizador deve fazer ao receber a base do sanduíche?", options: ["Aguardar o condimentador terminar", "Verificar qualidade, montar e fechar o sanduíche", "Chamar o iniciador para conferência", "Apenas embalar"], answer: "Verificar qualidade, montar e fechar o sanduíche", explanation: "O finalizador recebe a base, verifica qualidade, monta e fecha o sanduíche." },
+      { category: "⚙️ Linha · Procedimento", question: "Qual função monitora o PLS e determina quantas carnes produzir?", options: ["Iniciador", "Condimentador", "Chapeiro", "Finalizador"], answer: "Chapeiro", explanation: "O chapeiro observa o monitor PLS para determinar a quantidade correta de carnes a produzir." },
+      { category: "🧂 Linha · Mesa", question: "Qual o tempo de vida dos produtos na mesa de condimentação?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "Os produtos na mesa de condimentação têm vida útil de 2 horas, controlado pela placa de tempo secundário." },
+      { category: "⏱️ Linha · Tempos", question: "Quantos segundos o iniciador tem para reagir ao sinal e ativar os pães?", options: ["5 segundos", "8 segundos", "10 segundos", "15 segundos"], answer: "8 segundos", explanation: "O iniciador deve reagir em 8 segundos ao sinal e ativar os pães na tostadeira." },
+      { category: "⏱️ Linha · Tempos", question: "Qual o tempo de vida do pão após sair da tostadeira?", options: ["5 minutos", "10 minutos", "15 minutos", "30 minutos"], answer: "15 minutos", explanation: "O pão tostado tem vida útil de 15 minutos." },
+      { category: "🥩 Linha · Pré-pico", question: "Qual a quantidade máxima de carnes em estoque no pré-pico?", options: ["2 rodadas", "3 rodadas", "4 rodadas", "5 rodadas"], answer: "3 rodadas", explanation: "No pré-pico, o estoque máximo é de 3 rodadas de carnes para garantir frescor." },
+      { category: "🍞 Linha · Pão", question: "Qual pão é usado no Big Mac?", options: ["Pão regular", "Pão especial (com gergelim e camadas)", "Pão brioche", "Pão de hambúrguer simples"], answer: "Pão especial (com gergelim e camadas)", explanation: "O Big Mac usa o pão especial com 3 camadas (coroa, meio e base) com gergelim." },
+      { category: "⚙️ Linha · Comunicação", question: "Como o iniciador avisa o finalizador sobre um sanduíche sem acompanhamento padrão?", options: ["Por escrito no papel", "Verbalmente e com sinal no produto", "Pelo KVS automaticamente", "Não precisa avisar"], answer: "Verbalmente e com sinal no produto", explanation: "O iniciador comunica verbalmente e usa sinalização no produto para avisar o finalizador." },
+      { category: "🍞 Linha · Tostadeira", question: "Em que posição deve entrar o pão na tostadeira?", options: ["Lado cortado para baixo", "Lado cortado para cima", "Qualquer posição", "Depende do pão"], answer: "Lado cortado para baixo", explanation: "O pão deve entrar na tostadeira com o lado cortado para baixo (face de tostagem)." },
+      { category: "⚙️ Linha · KVS", question: "O que significa quando um item fica vermelho no KVS?", options: ["Item cancelado", "Item em espera há muito tempo — prioridade máxima", "Item pronto para entregar", "Falta de ingrediente"], answer: "Item em espera há muito tempo — prioridade máxima", explanation: "Item em vermelho no KVS indica que está esperando há muito tempo e deve ser priorizado." },
+      { category: "🥩 Linha · Carnes", question: "O que o iniciador deve checar antes de acionar os pães?", options: ["Apenas o tipo do lanche", "Se há carne disponível e o tempo correto na chapa", "Apenas a quantidade de pão disponível", "Nada, apenas acionar"], answer: "Se há carne disponível e o tempo correto na chapa", explanation: "Verificar se há carne no tempo correto na chapa antes de acionar os pães." },
+      { category: "⚙️ Linha · Posições", question: "Qual a principal responsabilidade do finalizador?", options: ["Preparar as carnes", "Tostar os pães", "Montar e condimentar os sanduíches", "Entregar ao cliente"], answer: "Montar e condimentar os sanduíches", explanation: "O finalizador é responsável por montar os sanduíches com os ingredientes corretos." },
+      { category: "🍞 Linha · Best Burger", question: "O que diferencia a montagem Best Burger da montagem convencional?", options: ["Ingredientes diferentes", "Montagem manual com carne plana e sem prensa", "Tempo de preparo menor", "Pão diferente"], answer: "Montagem manual com carne plana e sem prensa", explanation: "No Best Burger, a montagem é manual, com carne plana, sem prensa e com foco na apresentação." },
+      { category: "⏱️ Linha · Tempos", question: "Qual o tempo máximo entre o preparo e a entrega do sanduíche?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "10 minutos", explanation: "O sanduíche deve ser entregue em até 10 minutos após o preparo para garantir qualidade." },
+      { category: "⚙️ Linha · Expedidor", question: "Qual a função do expedidor na linha?", options: ["Preparar carnes", "Coordenar a montagem e garantir que pedidos saiam completos e no tempo", "Operar a tostadeira", "Controlar o estoque"], answer: "Coordenar a montagem e garantir que pedidos saiam completos e no tempo", explanation: "O expedidor coordena a linha, garante que os pedidos saiam corretos e no tempo." },
+      { category: "🥩 Linha · Carnes Best Burger", question: "Qual pegador usar para carnes com cebola no Best Burger?", options: ["Pegador vermelho", "Pegador azul", "Pegador amarelo", "Nenhum pegador específico"], answer: "Pegador vermelho", explanation: "No Best Burger, pegador vermelho para carnes com cebola e pegador azul para carnes sem cebola." },
+      { category: "⏱️ Linha · Tempos", question: "Qual o tempo máximo de preparo do pedido para o segmento balcão?", options: ["60 segundos", "90 segundos", "2 minutos", "3 minutos"], answer: "90 segundos", explanation: "O tempo meta para preparação de pedido no balcão é de 90 segundos." },
+      { category: "⚙️ Linha · Comunicação", question: "O que significa a sigla SOS na linha de produção?", options: ["Sistema de Operação do Sanduíche", "Speed of Service — velocidade de atendimento", "Serviço de Orientação ao Sanduíche", "Sinalização de Operação de Sucesso"], answer: "Speed of Service — velocidade de atendimento", explanation: "SOS = Speed of Service, indicador de velocidade de atendimento monitorado no restaurante." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_LINHA); observer.disconnect(); }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_LINHA);
+    });
+  </script>
+</body>
+</html>

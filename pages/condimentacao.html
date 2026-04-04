@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Condimentação — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* ---- Sandwich Card ----------------------------------- */
+    .sandwich-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 480px) {
+      .sandwich-grid { grid-template-columns: 1fr; }
+    }
+
+    .sandwich-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .sandwich-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    .sandwich-card-head {
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sandwich-card-head h3 {
+      font-size: 13px;
+      line-height: 1.2;
+      flex: 1;
+    }
+    .sandwich-card-head .s-emoji { font-size: 22px; }
+
+    .sandwich-layers {
+      padding: 10px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .layer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+    .layer-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Layer type colors */
+    .layer.pao       { background: #fff8e1; }
+    .layer.pao .layer-dot { background: #d4a017; }
+
+    .layer.carne     { background: #fdecea; }
+    .layer.carne .layer-dot { background: var(--red); }
+
+    .layer.queijo    { background: #fffde7; }
+    .layer.queijo .layer-dot { background: #f5c842; }
+
+    .layer.molho     { background: #fce4ec; }
+    .layer.molho .layer-dot { background: #e91e63; }
+
+    .layer.vegetal   { background: #e8f5e9; }
+    .layer.vegetal .layer-dot { background: var(--green); }
+
+    .layer.bacon     { background: #fbe9e7; }
+    .layer.bacon .layer-dot { background: #bf360c; }
+
+    .layer.outros    { background: #f3e5f5; }
+    .layer.outros .layer-dot { background: #7b1fa2; }
+
+    .layer-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 3px 0;
+    }
+
+    /* category headers */
+    .cat-head {
+      padding: 8px 14px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .cat-red    { background: #fdecea; color: var(--red); border-bottom: 1.5px solid #f5c6c3; }
+    .cat-orange { background: #fff3e0; color: #e65100; border-bottom: 1.5px solid #ffcc80; }
+    .cat-dark   { background: #263238; color: white;   border-bottom: 1.5px solid #37474f; }
+    .cat-green  { background: #e8f5e9; color: #1b5e20; border-bottom: 1.5px solid #b2dfca; }
+
+    /* note box */
+    .sandwich-note {
+      margin: 8px 12px 12px;
+      background: #fff8e1;
+      border: 1.5px solid #ffe082;
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      font-size: 11.5px;
+      color: #7a4a00;
+      font-weight: 600;
+    }
+
+    /* full-width single sandwich */
+    .sandwich-card.full { grid-column: 1 / -1; }
+
+    /* search */
+    .search-wrap {
+      position: relative;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 11px 14px 11px 38px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+      font-family: var(--font-body);
+      font-size: 14px;
+      background: var(--card);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-wrap input:focus { border-color: var(--red); }
+    .search-icon {
+      position: absolute;
+      left: 12px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      pointer-events: none;
+    }
+  </style>
+
+  <script>
+    // Splash — dismiss after fonts + content ready
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="condimentacao">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <div id="disclaimer-popup">
+    <div id="disclaimer-box">
+      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
+      <button id="disclaimer-close">Entendi</button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Condimentação</h1>
+        <p>Receitas dos Sanduíches · Linha</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="classicos">🍔 Clássicos</button>
+      <button class="tab-btn" data-tab="chicken">🍗 Chicken</button>
+      <button class="tab-btn" data-tab="brabissimo">⭐ Brabíssimo</button>
+      <button class="tab-btn" data-tab="outros">🥗 Outros</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Buscar ingrediente ou sanduíche..." oninput="filterCards(this.value)">
+    </div>
+
+    <div class="tab-panel active" id="panel-classicos">
+      <div class="section-label">Sanduíches Clássicos</div>
+      <div class="sandwich-grid">
+
+        <div class="sandwich-card" data-name="big mac">
+          <div class="sandwich-card-head cat-red">
+            <span class="s-emoji">🍔</span>
+            <h3>Big Mac</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão Big Mac</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Cebola reidratada 3,5g</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne 10:1 — 1 unid</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Picles 2 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface em tiras 12g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho Big Mac 1/3oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Clube Pão Big Mac</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Cebola reidratada 3,5g</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne 10:1 — 1 unid</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Cheddar 1 fatia</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface em tiras 12g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho Big Mac 1/3oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão Big Mac</div>
+          </div>
+        </div>
+
+        <div class="sandwich-card" data-name="big tasty">
+          <div class="sandwich-card-head cat-red">
+            <span class="s-emoji">🔥</span>
+            <h3>Big Tasty</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão Tasty</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho Tasty 1oz</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Emental 2 fatias</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne 4:1 — 1 unid</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne 4:1 — 1 unid</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Emental 1 fatia</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Tomate 2 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface em tiras 28g</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Cebola fresca 10g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho Tasty 1oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão Tasty</div>
+          </div>
+          <div class="sandwich-note">⚠️ Mais de 1 carne: acrescentar 2 ou 3 carnes 4:1</div>
+        </div>
+
+        <div class="sandwich-card" data-name="mcnifico bacon">
+          <div class="sandwich-card-head cat-red" style="background:#fce4ec; color:#880e4f; border-bottom-color:#f8bbd0;">
+            <span class="s-emoji">🥓</span>
+            <h3>McNífico Bacon</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão Quarterão</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne 4:1 — 1 unid</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Cheddar 1 fatia</div>
+            <div class="layer bacon"><div class="layer-dot"></div>Bacon 2 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Tomate 2 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface em Tiras 28g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Maionese 1/3oz</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Cebola fresca 7g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Ketchup 1/2oz</div>
+            <div class="layer molho"><div class="layer-dot"></div>Mostarda 1/40oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão Quarterão</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-chicken">
+      <div class="section-label">Sanduíches Chicken</div>
+      <div class="sandwich-grid">
+
+        <div class="sandwich-card" data-name="chicken deluxe">
+          <div class="sandwich-card-head cat-orange">
+            <span class="s-emoji">🐔</span>
+            <h3>Chicken Deluxe 1</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão de Batata</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne Crispy — 1 unid</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Tomate 2 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface em tiras 28g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Maionese 2/3oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão de Batata</div>
+          </div>
+        </div>
+
+        <div class="sandwich-card" data-name="chicken legend">
+          <div class="sandwich-card-head cat-orange">
+            <span class="s-emoji">⭐</span>
+            <h3>Chicken Legend 2</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão de Batata</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho CBO 1oz</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne Crispy — 1 unid</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Cheddar 1 fatia</div>
+            <div class="layer bacon"><div class="layer-dot"></div>Bacon 2 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface em tiras 28g</div>
+            <div class="layer outros"><div class="layer-dot"></div>Cebola Crispy 10g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho CBO 1oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão de Batata</div>
+          </div>
+        </div>
+
+        <div class="sandwich-card" data-name="chicken bacon ranch">
+          <div class="sandwich-card-head cat-orange">
+            <span class="s-emoji">🥓</span>
+            <h3>Chicken Bacon Ranch 3</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão de Batata</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho Ranch 2/3oz</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne Crispy</div>
+            <div class="layer bacon"><div class="layer-dot"></div>Bacon 3 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Tomate 2 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface em tiras 28g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho Ranch 2/3oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão de Batata</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-brabissimo">
+      <div class="section-label">Brabíssimo</div>
+      <div class="sandwich-grid">
+
+        <div class="sandwich-card" data-name="brabissimo beef">
+          <div class="sandwich-card-head cat-dark">
+            <span class="s-emoji">🥩</span>
+            <h3>Brabíssimo Beef 1</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão tipo Brioche</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho CBO 1oz</div>
+            <div class="layer outros"><div class="layer-dot"></div>Cebola Crispy 10g</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Cheddar 1 fatia</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne 4:1</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne 4:1</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Cheddar 1 fatia</div>
+            <div class="layer bacon"><div class="layer-dot"></div>Bacon 3 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface 28g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho CBO 1oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão tipo Brioche</div>
+          </div>
+        </div>
+
+        <div class="sandwich-card" data-name="brabissimo frango">
+          <div class="sandwich-card-head cat-dark">
+            <span class="s-emoji">🍗</span>
+            <h3>Brabíssimo Frango 3</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão tipo Brioche</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho CBO 1oz</div>
+            <div class="layer outros"><div class="layer-dot"></div>Cebola Crispy 10g</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Cheddar 1 fatia</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne chicken</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne chicken</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Cheddar 1 fatia</div>
+            <div class="layer bacon"><div class="layer-dot"></div>Bacon 3 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface 28g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho CBO 1oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão tipo Brioche</div>
+          </div>
+        </div>
+
+        <div class="sandwich-card" data-name="brabissimo clubhouse">
+          <div class="sandwich-card-head cat-dark">
+            <span class="s-emoji">🏆</span>
+            <h3>Brabíssimo Clubhouse</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Base Pão tipo Brioche</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho Méquinese</div>
+            <div class="layer outros"><div class="layer-dot"></div>Cebola shoyu 15g</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Emmental 1 fatia</div>
+            <div class="layer carne"><div class="layer-dot"></div>Carne 4:1 — 2 unid</div>
+            <div class="layer queijo"><div class="layer-dot"></div>Queijo Emmental 1 fatia</div>
+            <div class="layer bacon"><div class="layer-dot"></div>Bacon 3 fatias</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Tomate 1 fatia</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface em tiras 28g</div>
+            <div class="layer molho"><div class="layer-dot"></div>Molho BigMac 2/3oz</div>
+            <div class="layer-divider"></div>
+            <div class="layer pao"><div class="layer-dot"></div>Coroa Pão tipo Brioche</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-outros">
+      <div class="section-label">Outros Produtos</div>
+      <div class="sandwich-grid">
+
+        <div class="sandwich-card" data-name="side salad">
+          <div class="sandwich-card-head cat-green">
+            <span class="s-emoji">🥗</span>
+            <h3>Side Salad</h3>
+          </div>
+          <div class="sandwich-layers">
+            <div class="layer pao"><div class="layer-dot"></div>Embalagem Pote Genérico</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Alface 85g</div>
+            <div class="layer vegetal"><div class="layer-dot"></div>Tomate Grape 2 unidades</div>
+            <div class="layer-divider"></div>
+            <div class="layer outros"><div class="layer-dot"></div>Tampa p/ Pote Genérico</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado</div>
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Quiz — Condimentação</h2><div class="badge badge-red">15 perguntas</div></div>
+        <div class="card-body"><div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+          <div id="quiz-app"></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Condimentação · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // ---- Search ----------------------------------------
+    function filterCards(query) {
+      const q = query.toLowerCase().trim();
+      document.querySelectorAll(".sandwich-card").forEach(card => {
+        const name = card.dataset.name || "";
+        const text = card.innerText.toLowerCase();
+        card.style.display = (!q || text.includes(q) || name.includes(q)) ? "" : "none";
+      });
+    }
+
+    // ---- Quiz ------------------------------------------
+    const QUIZ_COND = [
+      { category: "🍔 Big Mac", question: "Qual a quantidade de cebola reidratada em cada andar do Big Mac?", options: ["2g", "3,5g", "5g", "7g"], answer: "3,5g", explanation: "Cada andar do Big Mac leva cebola reidratada 3,5g." },
+      { category: "🍔 Big Mac", question: "Qual a quantidade de alface em cada andar do Big Mac?", options: ["8g", "10g", "12g", "15g"], answer: "12g", explanation: "Alface em tiras 12g em cada andar do Big Mac." },
+      { category: "🍔 Big Mac", question: "Qual o molho e quantidade usados no Big Mac?", options: ["Maionese 1/3oz", "Molho Big Mac 1/3oz", "Ketchup 1/2oz", "Molho Ranch 2/3oz"], answer: "Molho Big Mac 1/3oz", explanation: "O Big Mac usa Molho Big Mac 1/3oz em cada andar." },
+      { category: "🍔 Big Mac", question: "No Big Mac, o queijo Cheddar fica em qual andar?", options: ["Andar superior (clube)", "Andar inferior (base)", "Nos dois andares", "Não tem queijo"], answer: "Andar inferior (base)", explanation: "O queijo Cheddar fica no andar inferior, entre a segunda carne e a alface." },
+      { category: "🔥 Big Tasty", question: "Qual queijo é usado no Big Tasty?", options: ["Queijo Cheddar", "Queijo Emmental", "Queijo Prato", "Queijo Mussarela"], answer: "Queijo Emmental", explanation: "O Big Tasty usa Queijo Emental — 2 fatias em cima e 1 fatia embaixo das carnes." },
+      { category: "🔥 Big Tasty", question: "Quantas carnes leva o Big Tasty padrão?", options: ["1 carne 4:1", "2 carnes 4:1", "1 carne 10:1", "2 carnes 10:1"], answer: "1 carne 4:1", explanation: "O Big Tasty padrão leva 1 carne 4:1. Com mais de 1 carne: acrescentar 2 ou 3 carnes 4:1." },
+      { category: "🥓 McNífico Bacon", question: "Qual a quantidade de bacon no McNífico Bacon?", options: ["1 fatia", "2 fatias", "3 fatias", "4 fatias"], answer: "2 fatias", explanation: "O McNífico Bacon leva 2 fatias de bacon." },
+      { category: "🥓 McNífico Bacon", question: "Qual o pão do McNífico Bacon?", options: ["Pão de Batata", "Pão Big Mac", "Pão Quarterão", "Pão Brioche"], answer: "Pão Quarterão", explanation: "O McNífico Bacon é servido no Pão Quarterão." },
+      { category: "🐔 Chicken Deluxe", question: "Qual o molho do Chicken Deluxe 1?", options: ["Molho Ranch 2/3oz", "Molho CBO 1oz", "Maionese 2/3oz", "Molho Big Mac 1/3oz"], answer: "Maionese 2/3oz", explanation: "O Chicken Deluxe 1 leva Maionese 2/3oz." },
+      { category: "🥓 Chicken Bacon Ranch", question: "Qual o pão do Chicken Bacon Ranch 3?", options: ["Pão de Batata", "Pão Big Mac", "Pão de Batata", "Pão Brioche"], answer: "Pão de Batata", explanation: "O Chicken Bacon Ranch 3 é servido no Pão de Batata." },
+      { category: "🥓 Chicken Bacon Ranch", question: "Quantas fatias de bacon tem o Chicken Bacon Ranch 3?", options: ["1 fatia", "2 fatias", "3 fatias", "4 fatias"], answer: "3 fatias", explanation: "O Chicken Bacon Ranch 3 leva 3 fatias de bacon." },
+      { category: "⭐ Brabíssimo Beef", question: "Qual o molho do Brabíssimo Beef 1?", options: ["Molho Big Mac", "Molho Ranch", "Molho CBO 1oz", "Molho Tasty"], answer: "Molho CBO 1oz", explanation: "O Brabíssimo Beef 1 leva Molho CBO 1oz (em cima e embaixo)." },
+      { category: "⭐ Brabíssimo Beef", question: "Qual o tipo de cebola do Brabíssimo Beef 1?", options: ["Cebola reidratada", "Cebola fresca", "Cebola Crispy 10g", "Cebola shoyu"], answer: "Cebola Crispy 10g", explanation: "O Brabíssimo Beef 1 leva Cebola Crispy 10g." },
+      { category: "🏆 Brabíssimo Clubhouse", question: "Qual o tipo de cebola do Brabíssimo Clubhouse?", options: ["Cebola reidratada", "Cebola fresca", "Cebola Crispy", "Cebola shoyu 15g"], answer: "Cebola shoyu 15g", explanation: "O Brabíssimo Clubhouse leva Cebola shoyu 15g." },
+      { category: "🥗 Side Salad", question: "Quantas unidades de Tomate Grape tem o Side Salad?", options: ["1 unidade", "2 unidades", "3 unidades", "4 unidades"], answer: "2 unidades", explanation: "O Side Salad leva Alface 85g e Tomate Grape 2 unidades no Pote Genérico." },
+      { category: "🍔 Cond · Princípios", question: "O que é condimentação por camadas?", options: ["Adicionar todos os ingredientes de uma vez", "Montar o sanduíche seguindo a sequência exata de ingredientes de baixo para cima", "Colocar os ingredientes em qualquer ordem", "Colocar os ingredientes separados"], answer: "Montar o sanduíche seguindo a sequência exata de ingredientes de baixo para cima", explanation: "A condimentação por camadas garante que cada sanduíche seja montado na sequência correta para o sabor e apresentação ideais." },
+      { category: "🍔 Cond · Big Mac", question: "Quantos andares tem o Big Mac?", options: ["1 andar", "2 andares", "3 andares", "4 andares"], answer: "2 andares", explanation: "O Big Mac tem 2 andares (base e clube), cada um com carne, queijo, alface, cebola e molho." },
+      { category: "🍔 Cond · Big Mac", question: "Qual queijo é usado no Big Mac?", options: ["Queijo Emmental", "Queijo Prato", "Queijo Cheddar", "Queijo Mussarela"], answer: "Queijo Cheddar", explanation: "O Big Mac usa Queijo Cheddar no andar inferior (base), entre a segunda carne e a alface." },
+      { category: "🔥 Cond · Big Tasty", question: "Quantas fatias de queijo Emmental leva o Big Tasty?", options: ["1 fatia", "2 fatias", "3 fatias (2 em cima + 1 embaixo)", "4 fatias"], answer: "3 fatias (2 em cima + 1 embaixo)", explanation: "O Big Tasty usa 3 fatias de Queijo Emmental: 2 em cima e 1 embaixo das carnes." },
+      { category: "🔥 Cond · Big Tasty", question: "O Big Tasty usa qual tipo de carne?", options: ["10:1", "4:1", "3:1", "Frango"], answer: "4:1", explanation: "O Big Tasty padrão leva 1 carne 4:1." },
+      { category: "🥓 Cond · McNífico", question: "Qual o pão usado no McNífico?", options: ["Pão Big Mac", "Pão Brioche", "Pão de Batata", "Pão de Batata"], answer: "Pão Brioche", explanation: "O McNífico é servido no Pão Brioche." },
+      { category: "🐔 Cond · Chicken", question: "Qual a diferença entre Chicken Deluxe 1 e 2?", options: ["Tamanho do frango", "O molho utilizado", "A quantidade de alface", "O tipo de pão"], answer: "O molho utilizado", explanation: "Chicken Deluxe 1 = Maionese 2/3oz. Chicken Deluxe 2 tem molho diferente. O pão e demais ingredientes variam." },
+      { category: "🥗 Cond · Side Salad", question: "Qual o peso da alface no Side Salad?", options: ["50g", "65g", "85g", "100g"], answer: "85g", explanation: "O Side Salad leva Alface 85g e Tomate Grape 2 unidades." },
+      { category: "🔥 Cond · Princípios", question: "O que deve ser verificado antes de montar qualquer sanduíche?", options: ["Apenas se há ingredientes suficientes", "Qualidade, quantidade, temperatura e aparência dos produtos", "Apenas a temperatura dos pães", "Apenas se o pão está tostado"], answer: "Qualidade, quantidade, temperatura e aparência dos produtos", explanation: "Antes de montar, verificar qualidade, quantidade, temperatura e aparência de todos os ingredientes." },
+      { category: "🥓 Cond · McNífico Bacon", question: "Quantas fatias de bacon leva o McNífico Bacon?", options: ["1 fatia", "2 fatias", "3 fatias", "4 fatias"], answer: "2 fatias", explanation: "O McNífico Bacon leva 2 fatias de bacon." },
+      { category: "🍔 Condimentação · Big Mac", question: "Qual a ordem correta de montagem do Big Mac (de baixo para cima)?", options: ["Base, carne, queijo, alface, Big Mac, carne, cebola, picles, molho, coroa", "Base, molho, alface, cebola, picles, carne, queijo, Big Mac, carne, molho, coroa", "Base, Big Mac, carne, queijo, molho, alface, cebola, picles, carne, coroa", "Base, carne, Big Mac, carne, queijo, alface, molho, picles, cebola, coroa"], answer: "Base, molho, alface, cebola, picles, carne, queijo, Big Mac, carne, molho, coroa", explanation: "Montagem Big Mac: Base → molho → alface → cebola → picles → carne → queijo → meio (Big Mac) → carne → molho → coroa." },
+      { category: "🍔 Condimentação · Filet-O-Fish", question: "Quanto molho tártaro leva o Filet-O-Fish?", options: ["0,5oz", "1oz", "1,5oz", "2oz"], answer: "1oz", explanation: "O Filet-O-Fish leva 1oz de molho tártaro." },
+      { category: "🍔 Condimentação · QPC", question: "Quantas gramas de carne tem o Quarter Pounder?", options: ["113g", "128g", "142g", "170g"], answer: "113g", explanation: "O Quarter Pounder tem 113g (4oz) de carne cru." },
+      { category: "🍔 Condimentação · Big Mac", question: "Quantos tiros de molho Big Mac leva cada nível do sanduíche?", options: ["0,5oz em cada", "1oz na base e 0,5oz no meio", "0,75oz em cada nível", "1oz na base, 0,5oz no meio"], answer: "0,75oz em cada nível", explanation: "O molho Big Mac leva 0,75oz (3 tiros) em cada nível." },
+      { category: "🧀 Condimentação · Queijo", question: "Como deve ser posicionado o queijo sobre a carne?", options: ["Centralizado e sobrepondo totalmente a carne", "Nas bordas da carne", "Centralizado com as bordas dobradas para cima", "Cobrindo apenas metade da carne"], answer: "Centralizado e sobrepondo totalmente a carne", explanation: "O queijo deve ser centralizado sobre a carne, cobrindo-a totalmente." },
+      { category: "🥗 Condimentação · Saladas", question: "A que temperatura devem ser mantidas as saladas?", options: ["Abaixo de 2°C", "Abaixo de 4°C", "Abaixo de 7°C", "Abaixo de 10°C"], answer: "Abaixo de 4°C", explanation: "As saladas devem ser mantidas abaixo de 4°C para garantir a segurança alimentar." },
+      { category: "🍔 Condimentação · Pão", question: "O que fazer quando o pão sai da tostadeira?", options: ["Estocar na bandeja e tostar quando precisar", "Usar imediatamente ou dentro do tempo de vida", "Guardar na estufa", "Pode ser tostado novamente se esfriar"], answer: "Usar imediatamente ou dentro do tempo de vida", explanation: "Usar o pão imediatamente após sair da tostadeira ou respeitar o tempo de vida." },
+      { category: "🥒 Condimentação · Picles", question: "Quantos picles leva o McDouble?", options: ["1", "2", "3", "4"], answer: "2", explanation: "O McDouble leva 2 picles." },
+      { category: "🍔 Condimentação · Chicken", question: "O que diferencia o McChicken do Chicken Select?", options: ["Tamanho do pão", "Tipo de frango: McChicken é prensado, Chicken Select é filezinho", "Molho diferente", "Ambos são iguais"], answer: "Tipo de frango: McChicken é prensado, Chicken Select é filezinho", explanation: "McChicken usa frango prensado redondo. Chicken Select usa filé de frango crocante." },
+      { category: "🧂 Condimentação · Temperos", question: "Em que momento se aplica sal e pimenta na carne?", options: ["Antes de colocar na chapa", "Imediatamente após virar a carne na chapa", "Ao retirar da chapa", "Na mesa de condimentação"], answer: "Imediatamente após virar a carne na chapa", explanation: "Sal e pimenta são aplicados imediatamente após virar a carne na chapa." },
+      { category: "🍔 Condimentação · Embrulho", question: "Em que direção se dobra o papel de embrulho no final?", options: ["Para a frente, cobrindo o topo", "Para baixo, cobrindo o fundo", "Para a esquerda", "Para a direita"], answer: "Para a frente, cobrindo o topo", explanation: "A última dobra do embrulho é para frente, cobrindo o topo do sanduíche." },
+      { category: "🍔 Condimentação · Best Burger", question: "No Best Burger, qual é o máximo de sanduíches por lâmina?", options: ["1", "2", "3", "4"], answer: "1", explanation: "No Best Burger, cada lâmina comporta 1 sanduíche para garantir o padrão." },
+      { category: "🧄 Condimentação · Molhos", question: "Qual molho é usado no McArabia?", options: ["Barbecue", "Big Mac", "Tahine", "Ranch"], answer: "Tahine", explanation: "O McArabia leva molho tahine." },
+      { category: "🥗 Condimentação · Saladas", question: "Qual o tempo de vida de uma salada montada na área de entrega?", options: ["15 minutos", "30 minutos", "1 hora", "2 horas"], answer: "30 minutos", explanation: "Uma salada montada tem validade de 30 minutos na área de entrega." },
+      { category: "🍔 Condimentação · Sequência", question: "Qual é a regra geral para a ordem de montagem dos sanduíches?", options: ["Molho sempre em cima", "Frescos embaixo, quentes em cima", "Tudo na base primeiro", "Queijo sempre na base"], answer: "Frescos embaixo, quentes em cima", explanation: "Regra geral: ingredientes frescos (alface, tomate) ficam embaixo, ingredientes quentes em cima." }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quizPanel = document.getElementById("panel-quiz");
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_COND); observer.disconnect(); }
+      });
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_COND);
+    });
+  </script>
+</body>
+</html>
