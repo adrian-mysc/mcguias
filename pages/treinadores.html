@@ -2000,7 +2000,7 @@
         </div>
       </div>
 
-            <div class="tab-panel" id="panel-quiz-area">
+      <div class="tab-panel" id="panel-quiz-area">
         <div class="section-label">Simulado</div>
         <div class="card">
           <div class="card-head">
@@ -2008,7 +2008,7 @@
             <h2>Quiz — Conteúdo para Treinadores</h2>
           </div>
           <div class="card-body">
-            <div id="quiz-app"></div>
+            <div id="quiz-area-app"></div>
           </div>
         </div>
       </div>
@@ -2199,51 +2199,51 @@
       renderAcompanhamento();
     };
 
-        document.addEventListener('DOMContentLoaded', function() {
+        // Helper: inicia quiz usando container com id customizado
+    function initQuizIn(questions, name, containerId) {
+      var orig = document.getElementById('quiz-app');
+      var target = document.getElementById(containerId);
+      if (!target) return;
+      // Renomeia temporariamente para quiz-app (que initQuiz espera)
+      var savedId = null;
+      if (orig && orig !== target) { orig.id = '__quiz_app_saved'; savedId = '__quiz_app_saved'; }
+      target.id = 'quiz-app';
+      initQuiz(questions, name);
+      // Restaura
+      if (savedId) {
+        var saved = document.getElementById(savedId);
+        if (saved) saved.id = 'quiz-app';
+        target.id = containerId;
+      }
+    }
+
+    function setupQuizObserver(panelId, containerId, questions, name) {
+      var panel = document.getElementById(panelId);
+      if (!panel) return;
+      var inited = false;
+      var obs = new MutationObserver(function() {
+        if (panel.classList.contains('active') && !inited) {
+          inited = true;
+          // Para evitar conflito: dar ao container o id que initQuiz espera
+          var container = document.getElementById(containerId);
+          if (container) container.id = 'quiz-app';
+          initQuiz(questions, name);
+          if (container) container.id = containerId;
+          obs.disconnect();
+        }
+      });
+      obs.observe(panel, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
       if (sessionStorage.getItem(STORAGE_KEY) === '1') {
         unlock();
       }
       renderAcompanhamento();
       var input = document.getElementById('pw-input');
       if (input) input.focus();
-
-      // Quiz PPI init
-      var quizPpiPanel = document.getElementById('panel-quiz-ppi');
-      if (quizPpiPanel) {
-        var _ppiInited = false;
-        var observerPpi = new MutationObserver(function() {
-          if (quizPpiPanel.classList.contains('active') && !_ppiInited) {
-            _ppiInited = true;
-            // Temporariamente dar o id correto para o initQuiz encontrar
-            var appEl = document.getElementById('quiz-ppi-app');
-            var quizEl = document.getElementById('quiz-app');
-            if (appEl) {
-              // Salvar e trocar ids para o initQuiz funcionar
-              appEl.id = 'quiz-app';
-              if (quizEl) quizEl.id = 'quiz-app-area';
-            }
-            initQuiz(QUIZ_PPI, 'Quiz PPI — Treinador');
-            observerPpi.disconnect();
-          }
-        });
-        observerPpi.observe(quizPpiPanel, { attributes: true, attributeFilter: ['class'] });
-      }
-
-      var quizPanel = document.getElementById('panel-quiz-area');
-      if (quizPanel) {
-        var _areaInited = false;
-        var observer = new MutationObserver(function() {
-          if (quizPanel.classList.contains('active') && !_areaInited) {
-            _areaInited = true;
-            // Garantir que quiz-app-area volta ao id correto
-            var el = document.getElementById('quiz-app-area');
-            if (el) el.id = 'quiz-app';
-            initQuiz(QUIZ_TREINADORES, 'Conteúdo para Treinadores');
-            observer.disconnect();
-          }
-        });
-        observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
-      }
+      setupQuizObserver('panel-quiz-ppi',  'quiz-ppi-app',  QUIZ_PPI,         'Quiz PPI — Treinador');
+      setupQuizObserver('panel-quiz-area', 'quiz-area-app', QUIZ_TREINADORES, 'Conteúdo para Treinadores');
     });
 
     /* ===== FEEDBACK ===== */
@@ -2288,7 +2288,7 @@
       renderFeedbacks();
     };
 
-        const QUIZ_TREINADORES = [
+    var QUIZ_TREINADORES = [
       { category: "📋 Treinadores · Papel", question: "Qual é a principal ferramenta de treinamento digital disponível para atendentes?", options: ["YouTube", "Plataforma SABER", "Google Classroom", "WhatsApp"], answer: "Plataforma SABER", explanation: "A plataforma SABER contém os módulos complementares de cada estação do restaurante." },
       { category: "📋 Treinadores · Papel", question: "O treinador deve operar as funções dentro de qual padrão?", options: ["80% dos procedimentos", "90% dos procedimentos", "100% dos procedimentos (QSL&V)", "Apenas os procedimentos principais"], answer: "100% dos procedimentos (QSL&V)", explanation: "O treinador deve operar dentro dos mais altos padrões de QSL&V — 100% dos procedimentos." },
       { category: "📋 Treinadores · Fluxo", question: "No fluxo de treinamento do McCafé, qual é a primeira função a ser treinada?", options: ["Caixa (Influencer Vendedor)", "Bebidas quentes e frias", "Forno e Vitrine", "Entrega Interna"], answer: "Bebidas quentes e frias", explanation: "Fluxo McCafé: 1ª Bebidas quentes/frias → 2ª Forno/Vitrine/Estocagem → 3ª Caixa/Entrega/Salão." },
@@ -2296,7 +2296,126 @@
       { category: "📋 Treinadores · Validação", question: "Antes de liberar o atendente para operar sozinho, o que o treinador deve fazer?", options: ["Assinar a folha de ponto", "Validar o aprendizado com feedback constante", "Avisar apenas o gerente", "Não é necessário validar"], answer: "Validar o aprendizado com feedback constante", explanation: "O treinador deve validar o aprendizado antes de liberar o atendente para operar sozinho." },
       { category: "📋 Treinadores · Checklists", question: "Após quantos minutos de funcionamento a máquina de café deve ter a temperatura verificada na abertura?", options: ["15 minutos", "30 minutos", "45 minutos", "60 minutos"], answer: "30 minutos", explanation: "Ligar a máquina e após 30 minutos verificar a temperatura da água (75°C a 85°C)." },
       { category: "📋 Treinadores · Checklists", question: "O que deve ser separado no fechamento para ambientação de 12 horas?", options: ["Tomates para fatiar", "Cebolas para reidratação", "Pães Brioche para descongelamento", "Bacon para o dia seguinte"], answer: "Pães Brioche para descongelamento", explanation: "No fechamento, separar pães Brioche: 12h de descongelamento + 36h de uso = 48h total." },
-      { category: "📋 Treinadores · Orientação", question: "Qual recurso do MC Guias é recomendado usar após cada dia de treinamento?", options: ["Apenas os guias", "Simulado Geral filtrado pela estação do dia", "Apenas flashcards", "Nenhum recurso específico"], answer: "Simulado Geral filtrado pela estação do dia", explanation: "Após cada dia de treinamento, aplicar o Simulado Geral filtrado pela estação para reforçar o conteúdo." }
+      { category: "📋 Treinadores · Orientação", question: "Qual recurso do MC Guias é recomendado usar após cada dia de treinamento?", options: ["Apenas os guias", "Simulado Geral filtrado pela estação do dia", "Apenas flashcards", "Nenhum recurso específico"], answer: "Simulado Geral filtrado pela estação do dia", explanation: "Após cada dia de treinamento, aplicar o Simulado Geral filtrado pela estação para reforçar o conteúdo." },
+      { category: "📋 Treinadores · Trinômio", question: "Quais são os 3 passos do trinômio de treinamento?", options: ["Explicar, Praticar, Avaliar", "Demonstrar, Praticar, Avaliar", "Observar, Corrigir, Aprovar", "Treinar, Testar, Liberar"], answer: "Demonstrar, Praticar, Avaliar", explanation: "O trinômio de treinamento é: Demonstrar → Praticar → Avaliar." },
+      { category: "📋 Treinadores · Feedback", question: "Qual modelo estrutura o feedback em Situação, Comportamento e Impacto?", options: ["SCI", "SBI", "ABC", "KPI"], answer: "SBI", explanation: "O modelo SBI (Situação · Comportamento · Impacto) é o padrão para feedback construtivo." },
+      { category: "📋 Treinadores · Feedback", question: "Onde deve ser dado o feedback corretivo?", options: ["Em público para servir de exemplo", "Em particular, nunca na frente de outros", "No grupo de WhatsApp da equipe", "No relatório mensal"], answer: "Em particular, nunca na frente de outros", explanation: "Feedback corretivo sempre em particular. Elogios podem ser públicos." }
+    ];
+
+    var QUIZ_PPI = [
+      { category: "🚗 Drive-Thru · Delivery", question: "Quem é a pessoa que deve entregar o pedido em um carro que foi enviado para a área de espera?", options: ["O gerente do turno", "O supervisor", "Qualquer atendente", "A pessoa do suporte / Tablet"], answer: "A pessoa do suporte / Tablet", explanation: "A pessoa do suporte / Tablet — responsável por levar o pedido ao carro na área de espera." },
+      { category: "🚗 Drive-Thru · Delivery", question: "Tempo máximo que o cliente pode esperar no Drive para que o atendente o receba:", options: ["20 segundos", "40 segundos", "60 segundos", "30 segundos."], answer: "30 segundos.", explanation: "30 segundos." },
+      { category: "🚗 Drive-Thru · Delivery", question: "Quais são os aspectos fundamentais que devemos considerar ao montar e preparar os pedidos do Mc Delivery?", options: ["A pessoa do balcão", "O gerente", "O treinador", "Verificação do pedido (dupla conferência),"], answer: "Verificação do pedido (dupla conferência),", explanation: "Verificação do pedido (dupla conferência), embalagem correta separando quente e frio, lacre da sacola." },
+      { category: "🚗 Drive-Thru · Delivery", question: "Quem deve colocar a assinatura de verificação no pedido do Mc Delivery?", options: ["O gerente do turno", "O supervisor", "Qualquer atendente", "A pessoa responsável pela conferência do pedido."], answer: "A pessoa responsável pela conferência do pedido.", explanation: "A pessoa responsável pela conferência do pedido." },
+      { category: "🚗 Drive-Thru · Delivery", question: "Quais são os aspectos fundamentais que devem ser considerados para montar e preparar os pedidos de Mc Delivery?", options: ["A pessoa do balcão", "O gerente", "O treinador", "Conferência dos itens,"], answer: "Conferência dos itens,", explanation: "Conferência dos itens, embalagem adequada separando quente/frio, lacre e identificação." },
+      { category: "🚗 Drive-Thru · Delivery", question: "No drive, quem realiza o segundo 'P' do procedimento: Pergunta, pergunta e fala?", options: ["O gerente do turno", "O supervisor", "Qualquer atendente", "A pessoa do Tablet."], answer: "A pessoa do Tablet.", explanation: "A pessoa do Tablet." },
+      { category: "🚗 Drive-Thru · Delivery", question: "O cliente solicitou bebidas para viagem, quando usamos o suporte neste caso?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Sempre"], answer: "Sempre", explanation: "Sempre — usar suporte porta-copos para pedidos de viagem." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual o tempo de vida das bebidas quentes depois de pronta?", options: ["20 minutos", "40 minutos", "45 minutos", "30 minutos."], answer: "30 minutos.", explanation: "30 minutos." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual a temperatura de extração da mistura do sorvete", options: ["4°C", "-6°C", "9°C", "-1°C a 2°C."], answer: "-1°C a 2°C.", explanation: "-1°C a 2°C." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual é a quantidade de cobertura que devemos colocar em um sundae?", options: ["0,5oz", "1,5oz", "2oz", "1oz (1 tiro) de cobertura."], answer: "1oz (1 tiro) de cobertura.", explanation: "1oz (1 tiro) de cobertura." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Quantas onças de sorvete um sundae deve ter?", options: ["0,5oz", "1,5oz", "2oz", "4,5oz de bebida láctea."], answer: "4,5oz de bebida láctea.", explanation: "4,5oz de bebida láctea." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual é a temperatura do banho-maria das coberturas para sundae?", options: ["36°C", "56°C", "61°C", "46°C a 52°C."], answer: "46°C a 52°C.", explanation: "46°C a 52°C." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual a temperatura de extração das coberturas de sorvete?", options: ["36°C", "56°C", "61°C", "46°C a 52°C."], answer: "46°C a 52°C.", explanation: "46°C a 52°C." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual é o tempo de R2P?", options: ["80 segundos", "100 segundos", "180 segundos", "90 segundos (Ready to Present)."], answer: "90 segundos (Ready to Present).", explanation: "90 segundos (Ready to Present)." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual o tempo de vida do refrigerante depois de pronto?", options: ["20 minutos", "40 minutos", "45 minutos", "30 minutos."], answer: "30 minutos.", explanation: "30 minutos." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Não é um passo operacional da pessoa da bebidas balcão:", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Preparar carnes na chapa (função da pessoa da chapa)."], answer: "Preparar carnes na chapa (função da pessoa da chapa).", explanation: "Preparar carnes na chapa (função da pessoa da chapa)." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual é a quantidade de gelo nas bebidas P, M e G respectivamente?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Seguir a marcação interna do copo (aproximadamente 1/3 do volume)."], answer: "Seguir a marcação interna do copo (aproximadamente 1/3 do volume).", explanation: "Seguir a marcação interna do copo (aproximadamente 1/3 do volume)." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual é a temperatura de extração e o do banho-maria das coberturas?", options: ["36°C", "56°C", "61°C", "Extração: 46°C a 52°C · Banho-maria: 46°C a 52°C."], answer: "Extração: 46°C a 52°C · Banho-maria: 46°C a 52°C.", explanation: "Extração: 46°C a 52°C · Banho-maria: 46°C a 52°C." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual é a temperatura de extração do suco?", options: ["-9°C", "11°C", "16°C", "1°C a 4°C."], answer: "1°C a 4°C.", explanation: "1°C a 4°C." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual a temperatura do mix de sundae no reservatório?", options: ["-9°C", "11°C", "16°C", "1°C a 4°C."], answer: "1°C a 4°C.", explanation: "1°C a 4°C." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual é a descrição do padrão Ouro de Qualidade da casquinha?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos."], answer: "1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos.", explanation: "1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos." },
+      { category: "🥤 Bebidas · Sobremesas", question: "Qual é a quantidade de gelo nas bebidas P,M e G respectivamente?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Seguir a marcação interna do copo (aproximadamente 1/3 do volume)."], answer: "Seguir a marcação interna do copo (aproximadamente 1/3 do volume).", explanation: "Seguir a marcação interna do copo (aproximadamente 1/3 do volume)." },
+      { category: "🔥 Chapa · Carnes", question: "Os filtros da chapa devem ser lavados:", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Diariamente, após o fechamento."], answer: "Diariamente, após o fechamento.", explanation: "Diariamente, após o fechamento." },
+      { category: "🔥 Chapa · Carnes", question: "Qual o tempo inicial para o cozimento das carnes de 10:1?", options: ["29 segundos", "49 segundos", "78 segundos", "39 segundos."], answer: "39 segundos.", explanation: "39 segundos." },
+      { category: "🔥 Chapa · Carnes", question: "Levando em consideração a rotação dos teflons, qual cor deve ser utilizado nos dias ímpares?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Teflon azul nos dias ímpares."], answer: "Teflon azul nos dias ímpares.", explanation: "Teflon azul nos dias ímpares." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual é a quantidade máxima de Mc chicken que pode ser armazenada em uma bandeja de UHC?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "6 unidades por bandeja."], answer: "6 unidades por bandeja.", explanation: "6 unidades por bandeja." },
+      { category: "🔥 Chapa · Carnes", question: "Quando se deve raspar as chapas?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "A cada rodada de preparo de carnes, antes de colocar novas carnes."], answer: "A cada rodada de preparo de carnes, antes de colocar novas carnes.", explanation: "A cada rodada de preparo de carnes, antes de colocar novas carnes." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é a quantidade mínima de bandejas que devem ser mantidas de carne 10:1 sem cebola na UHC?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Mínimo 1 bandeja."], answer: "Mínimo 1 bandeja.", explanation: "Mínimo 1 bandeja." },
+      { category: "🔥 Chapa · Carnes", question: "É um procedimento operacional da pessoa da Chapas - Carnes vermelhas - 02 platens:", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Ativar os pães no sinal,"], answer: "Ativar os pães no sinal,", explanation: "Ativar os pães no sinal, colocar carnes nos platens, raspar e monitorar o timer." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é a quantidade máxima de carnes 3:1 que devemos ativar?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "6 carnes por rodada."], answer: "6 carnes por rodada.", explanation: "6 carnes por rodada." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é a temperatura e o tempo de aquecimento das chapas?", options: ["167°C", "187°C", "192°C", "177°C (350°F) superior e 218°C (425°F) inferior."], answer: "177°C (350°F) superior e 218°C (425°F) inferior.", explanation: "177°C (350°F) superior e 218°C (425°F) inferior." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é o tempo de cozimento para as carnes de 4:1?", options: ["116 segundos", "136 segundos", "252 segundos", "126 segundos (Taylor Next Generation)."], answer: "126 segundos (Taylor Next Generation).", explanation: "126 segundos (Taylor Next Generation)." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é a quantidade máxima de carnes 4:1 que devemos ativar?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "6 carnes por rodada."], answer: "6 carnes por rodada.", explanation: "6 carnes por rodada." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é a temperatura mínima interna das carnes de frango e bovina respectivamente?", options: ["64°C", "84°C", "89°C", "Frango: 74°C (165°F) · Bovina: 70°C (158°F)."], answer: "Frango: 74°C (165°F) · Bovina: 70°C (158°F).", explanation: "Frango: 74°C (165°F) · Bovina: 70°C (158°F)." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é o tempo de cozimento para as carnes de 3:1?", options: ["146 segundos", "166 segundos", "312 segundos", "Aproximadamente 156 a 160 segundos."], answer: "Aproximadamente 156 a 160 segundos.", explanation: "Aproximadamente 156 a 160 segundos." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é o tempo de cozimento para as carnes de McChicken?", options: ["5 segundos", "13 segundos", "6 segundos", "3 minutos e 30 segundos (210 segundos)."], answer: "3 minutos e 30 segundos (210 segundos).", explanation: "3 minutos e 30 segundos (210 segundos)." },
+      { category: "🔥 Chapa · Carnes", question: "Quem é o responsável por realizar o Checklist diário de carnes?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "O gerente ou responsável pela chapa no turno."], answer: "O gerente ou responsável pela chapa no turno.", explanation: "O gerente ou responsável pela chapa no turno." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual o padrão de sabor que um Big Mac deve ter?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Saboroso, com equilíbrio de molho Big Mac, picles, cebola, alface e queijo."], answer: "Saboroso, com equilíbrio de molho Big Mac, picles, cebola, alface e queijo.", explanation: "Saboroso, com equilíbrio de molho Big Mac, picles, cebola, alface e queijo." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual o padrão de sabor que um Cheeseburger deve ter?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Sabor de carne grelhada,"], answer: "Sabor de carne grelhada,", explanation: "Sabor de carne grelhada, queijo derretido, ketchup, mostarda, picles e cebola equilibrados." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é o tempo de vida da cebola reidratada depois de pronta?", options: ["1 horas", "4 horas", "6 horas", "2 horas na mesa de condimentação."], answer: "2 horas na mesa de condimentação.", explanation: "2 horas na mesa de condimentação." },
+      { category: "🔥 Chapa · Carnes", question: "Qual o padrão de sabor que um McChicken deve ter?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Sabor suave de frango crocante com maionese e alface fresca."], answer: "Sabor suave de frango crocante com maionese e alface fresca.", explanation: "Sabor suave de frango crocante com maionese e alface fresca." },
+      { category: "🔥 Chapa · Carnes", question: "Qual a quantidade de alface no sanduíche McChicken?", options: ["7g", "17g", "22g", "12g de alface."], answer: "12g de alface.", explanation: "12g de alface." },
+      { category: "🥬 LOPE · Condimentação", question: "A qual temperatura devemos conservar os molhos de Big Mac?", options: ["-9°C", "11°C", "16°C", "1°C a 4°C (refrigerado)."], answer: "1°C a 4°C (refrigerado).", explanation: "1°C a 4°C (refrigerado)." },
+      { category: "🥬 LOPE · Condimentação", question: "Para qual lado a base deve ficar quando colocamos na mesa de condimentação?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Lado cortado para cima, voltado para o atendente."], answer: "Lado cortado para cima, voltado para o atendente.", explanation: "Lado cortado para cima, voltado para o atendente." },
+      { category: "🥬 LOPE · Condimentação", question: "Quais dos itens abaixo não faz parte da aparência do Big Mac?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Ausência de sementes no pão intermediário (apenas a coroa tem sementes)."], answer: "Ausência de sementes no pão intermediário (apenas a coroa tem sementes).", explanation: "Ausência de sementes no pão intermediário (apenas a coroa tem sementes)." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é a calibragem do molho Big Mac?", options: ["0,5oz", "1,5oz", "2oz", "0,75oz (3 tiros) por nível."], answer: "0,75oz (3 tiros) por nível.", explanation: "0,75oz (3 tiros) por nível." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é quantidade de alface no Big Mac?", options: ["7g", "17g", "22g", "12g por nível."], answer: "12g por nível.", explanation: "12g por nível." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é o empilhamento máximo dos pães de Big Mac e dos demais pães?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Big Mac: 8 pães · Demais: 10 pães."], answer: "Big Mac: 8 pães · Demais: 10 pães.", explanation: "Big Mac: 8 pães · Demais: 10 pães." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é o tempo de ambientação do molho Cheddar?", options: ["20 minutos", "40 minutos", "45 minutos", "Mínimo 30 minutos em temperatura ambiente."], answer: "Mínimo 30 minutos em temperatura ambiente.", explanation: "Mínimo 30 minutos em temperatura ambiente." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual tempo de vida secundário da cebola reidratada?", options: ["1 horas", "4 horas", "6 horas", "2 horas na mesa de condimentação."], answer: "2 horas na mesa de condimentação.", explanation: "2 horas na mesa de condimentação." },
+      { category: "🥬 LOPE · Condimentação", question: "Quantas gramas de alface colocamos no Mcnífico?", options: ["9g", "19g", "24g", "14g."], answer: "14g.", explanation: "14g." },
+      { category: "🔥 Chapa · Carnes", question: "Qual é a capacidade de carnes de McChicken em uma gaveta?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "6 unidades."], answer: "6 unidades.", explanation: "6 unidades." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual o tempo de vida primário do tomate?", options: ["1 horas", "4 horas", "6 horas", "2 horas na mesa de condimentação."], answer: "2 horas na mesa de condimentação.", explanation: "2 horas na mesa de condimentação." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é a quantidade de mostarda nos sanduíches a cada 1 tiro?", options: ["0,5oz", "1,5oz", "2oz", "0,25oz por tiro."], answer: "0,25oz por tiro.", explanation: "0,25oz por tiro." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é o rendimento da mostarda pouch?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Aproximadamente 80 tiros por pouch."], answer: "Aproximadamente 80 tiros por pouch.", explanation: "Aproximadamente 80 tiros por pouch." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é o tempo de vida primário da mostarda pouch?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "14 dias após aberto."], answer: "14 dias após aberto.", explanation: "14 dias após aberto." },
+      { category: "🍟 McFritas · Fritos", question: "Quais são os inimigos da gordura?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Sal, água, resíduos de alimentos e temperatura incorreta."], answer: "Sal, água, resíduos de alimentos e temperatura incorreta.", explanation: "Sal, água, resíduos de alimentos e temperatura incorreta." },
+      { category: "🍟 McFritas · Fritos", question: "Por que devemos sacudir as McFritas após 30 segundos?", options: ["Temperatura do equipamento alta", "Procedimento executado corretamente", "Falta de treinamento", "Para eliminar o excesso de gordura e garantir a crocância."], answer: "Para eliminar o excesso de gordura e garantir a crocância.", explanation: "Para eliminar o excesso de gordura e garantir a crocância." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é a temperatura do óleo para cozinhar McNuggets?", options: ["158°C", "178°C", "183°C", "168°C (335°F)."], answer: "168°C (335°F).", explanation: "168°C (335°F)." },
+      { category: "🍟 McFritas · Fritos", question: "Quais são as principais características das Batatas Fritas padrão do McDonald's?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Douradas, crocantes por fora, macias por dentro, bem salgadas e servidas..."], answer: "Douradas, crocantes por fora, macias por dentro, bem salgadas e servidas...", explanation: "Douradas, crocantes por fora, macias por dentro, bem salgadas e servidas quentes." },
+      { category: "🍟 McFritas · Fritos", question: "O que pode ter acontecido para que uma torta tenha poucas bolhas ou nenhuma?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Óleo frio demais, torta molhada ou congelada ao ser colocada na fritadeira."], answer: "Óleo frio demais, torta molhada ou congelada ao ser colocada na fritadeira.", explanation: "Óleo frio demais, torta molhada ou congelada ao ser colocada na fritadeira." },
+      { category: "🍟 McFritas · Fritos", question: "O que pode ter acontecido quando encontramos McFritas grudadas?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Excesso de batatas no cesto, óleo frio ou cesto não sacudido após imersão."], answer: "Excesso de batatas no cesto, óleo frio ou cesto não sacudido após imersão.", explanation: "Excesso de batatas no cesto, óleo frio ou cesto não sacudido após imersão." },
+      { category: "🍟 McFritas · Fritos", question: "Pensando no cliente, o que a pessoa do Salão deve fazer?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Manter o salão limpo, organizado, abordar clientes proativamente."], answer: "Manter o salão limpo, organizado, abordar clientes proativamente.", explanation: "Manter o salão limpo, organizado, abordar clientes proativamente." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é a principal causa de uma Mc Fritas com quantidade imprópria de sal?", options: ["Temperatura do equipamento alta", "Procedimento executado corretamente", "Falta de treinamento", "Aplicar o sal depois que as batatas esfriaram."], answer: "Aplicar o sal depois que as batatas esfriaram.", explanation: "Aplicar o sal depois que as batatas esfriaram." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é o sinal que temos quando a gordura está velha?", options: ["19%", "29%", "34%", "Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%."], answer: "Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%.", explanation: "Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é o tempo de vida do óleo vegetal?", options: ["9%", "19%", "24%", "14 dias ou conforme Compostos Polares (máx. 24%)."], answer: "14 dias ou conforme Compostos Polares (máx. 24%).", explanation: "14 dias ou conforme Compostos Polares (máx. 24%)." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é o tempo de vida dos molhos de Mc Nuggets?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "30 dias após aberto, refrigerado."], answer: "30 dias após aberto, refrigerado.", explanation: "30 dias após aberto, refrigerado." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é o tempo de vida primário das Mc Fritas?", options: ["1 minutos", "17 minutos", "22 minutos", "7 minutos após salgadas."], answer: "7 minutos após salgadas.", explanation: "7 minutos após salgadas." },
+      { category: "🍟 McFritas · Fritos", question: "Qual tempo de vida secundário das tortas?", options: ["20 minutos", "40 minutos", "45 minutos", "30 minutos após a fritura."], answer: "30 minutos após a fritura.", explanation: "30 minutos após a fritura." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual empilhamento máximo das caixa de McNuggets?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Máximo 3 caixas empilhadas."], answer: "Máximo 3 caixas empilhadas.", explanation: "Máximo 3 caixas empilhadas." },
+      { category: "🍟 McFritas · Fritos", question: "Quais causas que podem diminuir o tempo de vida da gordura?", options: ["Temperatura do equipamento alta", "Procedimento executado corretamente", "Falta de treinamento", "Sal, água, resíduos, temperatura incorreta e não filtrar regularmente."], answer: "Sal, água, resíduos, temperatura incorreta e não filtrar regularmente.", explanation: "Sal, água, resíduos, temperatura incorreta e não filtrar regularmente." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é a primeira coisa que a pessoa do chão do Salão deve realizar antes de limpar a área com esfregão?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Varrer com vassoura e recolher os resíduos."], answer: "Varrer com vassoura e recolher os resíduos.", explanation: "Varrer com vassoura e recolher os resíduos." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é a principal causa de uma McFritas com quantidade imprópria de sal?", options: ["Temperatura do equipamento alta", "Procedimento executado corretamente", "Falta de treinamento", "Aplicar o sal depois que as batatas esfriaram."], answer: "Aplicar o sal depois que as batatas esfriaram.", explanation: "Aplicar o sal depois que as batatas esfriaram." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é o peso de uma McFritas Kids, pequena, Média e Grande respectivamente?", options: ["60g", "70g", "75g", "Kids: 65g · P: 87g · M: 102g · G: 150g."], answer: "Kids: 65g · P: 87g · M: 102g · G: 150g.", explanation: "Kids: 65g · P: 87g · M: 102g · G: 150g." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é o tempo de drenagem das McFritas?", options: ["5 segundos", "15 segundos", "10 segundos", "5 segundos sobre a fritadeira."], answer: "5 segundos sobre a fritadeira.", explanation: "5 segundos sobre a fritadeira." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é o tempo de resfriamento das tortas e quantas no máximo que podemos ativar?", options: ["10 minutos", "30 minutos", "35 minutos", "20 minutos de resfriamento · Máximo 4 tortas por cesta."], answer: "20 minutos de resfriamento · Máximo 4 tortas por cesta.", explanation: "20 minutos de resfriamento · Máximo 4 tortas por cesta." },
+      { category: "🍟 McFritas · Fritos", question: "Qual pode ser a causa de uma torta fria demais?", options: ["Temperatura do equipamento alta", "Procedimento executado corretamente", "Falta de treinamento", "Temperatura do óleo baixa ou tempo insuficiente de fritura."], answer: "Temperatura do óleo baixa ou tempo insuficiente de fritura.", explanation: "Temperatura do óleo baixa ou tempo insuficiente de fritura." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é o tempo de vida primário das McFritas?", options: ["1 minutos", "17 minutos", "22 minutos", "7 minutos após salgadas."], answer: "7 minutos após salgadas.", explanation: "7 minutos após salgadas." },
+      { category: "🍟 McFritas · Fritos", question: "Qual é o tempo de vida do óleo vegetal?", options: ["9%", "19%", "24%", "14 dias ou conforme Compostos Polares (máx. 24%)."], answer: "14 dias ou conforme Compostos Polares (máx. 24%).", explanation: "14 dias ou conforme Compostos Polares (máx. 24%)." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é o tempo de vida dos molhos de McNuggets?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "30 dias após aberto, refrigerado."], answer: "30 dias após aberto, refrigerado.", explanation: "30 dias após aberto, refrigerado." },
+      { category: "🥬 LOPE · Condimentação", question: "O que significa a estocagem 24/2?", options: ["22 horas", "26 horas", "28 horas", "24 horas de validade no refrigerador / 2 horas na mesa de condimentação."], answer: "24 horas de validade no refrigerador / 2 horas na mesa de condimentação.", explanation: "24 horas de validade no refrigerador / 2 horas na mesa de condimentação." },
+      { category: "📋 Gestão · Procedimentos", question: "O que significa comida segura?", options: ["Reduzir custos operacionais", "Aumentar o controle de estoque", "Melhorar o posicionamento", "Alimento preparado dentro dos padrões de temperatura,"], answer: "Alimento preparado dentro dos padrões de temperatura,", explanation: "Alimento preparado dentro dos padrões de temperatura, higiene e tempo de vida, sem risco de contaminação." },
+      { category: "🥬 LOPE · Condimentação", question: "Para que serve a caramelização dos pães", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Criar superfície dourada e crocante que melhora sabor,"], answer: "Criar superfície dourada e crocante que melhora sabor,", explanation: "Criar superfície dourada e crocante que melhora sabor, textura e aparência do sanduíche." },
+      { category: "🥬 LOPE · Condimentação", question: "Como deve ser o padrão de temperatura dos sanduíches?", options: ["50°C", "70°C", "75°C", "Servidos quentes, acima de 60°C internamente."], answer: "Servidos quentes, acima de 60°C internamente.", explanation: "Servidos quentes, acima de 60°C internamente." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual deve ser o tempo de montagem de um produto na linha?", options: ["20 segundos", "40 segundos", "60 segundos", "Máximo de 30 segundos."], answer: "Máximo de 30 segundos.", explanation: "Máximo de 30 segundos." },
+      { category: "🥬 LOPE · Condimentação", question: "Quais são as causas de um pão ressecado?", options: ["Temperatura do equipamento alta", "Procedimento executado corretamente", "Falta de treinamento", "Pão exposto sem cobertura,"], answer: "Pão exposto sem cobertura,", explanation: "Pão exposto sem cobertura, caramelização excessiva ou temperatura alta da tostadeira." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual é o procedimento certo para abrir os sacos de pães?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Abrir pelo lado correto indicado no saco, nunca rasgar lateralmente."], answer: "Abrir pelo lado correto indicado no saco, nunca rasgar lateralmente.", explanation: "Abrir pelo lado correto indicado no saco, nunca rasgar lateralmente." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual é o tempo de vida do pão fresco?", options: ["5 minutos", "25 minutos", "30 minutos", "15 minutos após sair da tostadeira."], answer: "15 minutos após sair da tostadeira.", explanation: "15 minutos após sair da tostadeira." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual o ciclo de caramelização dos pães?", options: ["5 segundos", "21 segundos", "22 segundos", "11 segundos."], answer: "11 segundos.", explanation: "11 segundos." },
+      { category: "🥬 LOPE · Condimentação", question: "Qual o ciclo de caramelização?", options: ["5 segundos", "21 segundos", "22 segundos", "11 segundos."], answer: "11 segundos.", explanation: "11 segundos." },
+      { category: "🎯 Atendimento · Vendas", question: "Em relação à Evolução da Cooltura de Serviço, qual é o nosso propósito?", options: ["Reduzir custos operacionais", "Aumentar o controle de estoque", "Melhorar o posicionamento", "Ser referência em atendimento ao cliente,"], answer: "Ser referência em atendimento ao cliente,", explanation: "Ser referência em atendimento ao cliente, criando experiências inesquecíveis." },
+      { category: "🎯 Atendimento · Vendas", question: "Mencione uma das três metas fundamentais do programa Influencer Vendedor:", options: ["Reduzir custos operacionais", "Aumentar o controle de estoque", "Melhorar o posicionamento", "Aumentar o ticket médio,"], answer: "Aumentar o ticket médio,", explanation: "Aumentar o ticket médio, aumentar a frequência de visitas, ou melhorar a satisfação do cliente." },
+      { category: "🎯 Atendimento · Vendas", question: "O que significa Dual Point?", options: ["Reduzir custos operacionais", "Aumentar o controle de estoque", "Melhorar o posicionamento", "Sistema onde o cliente faz o pedido em um ponto e retira em outro ponto ..."], answer: "Sistema onde o cliente faz o pedido em um ponto e retira em outro ponto ...", explanation: "Sistema onde o cliente faz o pedido em um ponto e retira em outro ponto separado." },
+      { category: "🎯 Atendimento · Vendas", question: "Porque devemos Utilizar as Técnicas de Influencers Vendedores?", options: ["Temperatura do equipamento alta", "Procedimento executado corretamente", "Falta de treinamento", "Para aumentar ticket médio,"], answer: "Para aumentar ticket médio,", explanation: "Para aumentar ticket médio, melhorar a experiência do cliente e atingir as metas." },
+      { category: "🎯 Atendimento · Vendas", question: "É um objetivo da Abordagem de Vendas:", options: ["Reduzir custos operacionais", "Aumentar o controle de estoque", "Melhorar o posicionamento", "Aumentar o ticket médio oferecendo combos, upgrades e itens complementares."], answer: "Aumentar o ticket médio oferecendo combos, upgrades e itens complementares.", explanation: "Aumentar o ticket médio oferecendo combos, upgrades e itens complementares." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual dos itens não faz parte do trinômio de treinamento?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "O trinômio é: Demonstrar, Praticar, Avaliar."], answer: "O trinômio é: Demonstrar, Praticar, Avaliar.", explanation: "O trinômio é: Demonstrar, Praticar, Avaliar." },
+      { category: "🎯 Atendimento · Vendas", question: "O que queremos mostrar a com a técnica de Influencer Vendedor &quot;Vivenciamos as mesmas coisas&quot;?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Criar conexão com o cliente mostrando empatia e experiência comum."], answer: "Criar conexão com o cliente mostrando empatia e experiência comum.", explanation: "Criar conexão com o cliente mostrando empatia e experiência comum." },
+      { category: "🧹 Higiene · Limpeza", question: "Com que frequência os utensílios da cozinha que entram em contato com os alimentos devem ser limpos e higienizados?", options: ["2 horas", "6 horas", "8 horas", "A cada 4 horas ou sempre que necessário."], answer: "A cada 4 horas ou sempre que necessário.", explanation: "A cada 4 horas ou sempre que necessário." },
+      { category: "🧹 Higiene · Limpeza", question: "De quanto em quanto tempo deve ser feita a rota dos banheiros?", options: ["1 horas", "3 horas", "5 horas", "A cada 1 hora."], answer: "A cada 1 hora.", explanation: "A cada 1 hora." },
+      { category: "🧹 Higiene · Limpeza", question: "Qual a frequência de lavagem das mãos?", options: ["20 minutos", "40 minutos", "45 minutos", "A cada 30 minutos ou sempre que necessário."], answer: "A cada 30 minutos ou sempre que necessário.", explanation: "A cada 30 minutos ou sempre que necessário." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual é a temperatura interna mínima dos produtos na UHC?", options: ["50°C", "70°C", "75°C", "60°C."], answer: "60°C.", explanation: "60°C." },
+      { category: "🧹 Higiene · Limpeza", question: "Qual a frequência de lavagem dos utensílios da cozinha?", options: ["2 horas", "6 horas", "8 horas", "A cada 4 horas."], answer: "A cada 4 horas.", explanation: "A cada 4 horas." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual a temperatura que devemos manter os produtos congelados?", options: ["-13°C", "-23°C", "-8°C", "-18°C ou abaixo."], answer: "-18°C ou abaixo.", explanation: "-18°C ou abaixo." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual é a temperatura do Refrigerador do Balcão?", options: ["-9°C", "11°C", "16°C", "1°C a 4°C."], answer: "1°C a 4°C.", explanation: "1°C a 4°C." },
+      { category: "📋 Gestão · Procedimentos", question: "Em que ano Ray Kroc fundou o McDonald's e abriu seu primeiro restaurante?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "1955, em Des Plaines, Illinois."], answer: "1955, em Des Plaines, Illinois.", explanation: "1955, em Des Plaines, Illinois." },
+      { category: "🎯 Atendimento · Vendas", question: "Os princípios da Cooltua de Serviço são:", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Sorrir, Ser gentil, Ser ágil, Antecipar as necessidades do cliente."], answer: "Sorrir, Ser gentil, Ser ágil, Antecipar as necessidades do cliente.", explanation: "Sorrir, Ser gentil, Ser ágil, Antecipar as necessidades do cliente." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual o tempo de reação do iniciador", options: ["5 segundos", "18 segundos", "16 segundos", "8 segundos."], answer: "8 segundos.", explanation: "8 segundos." },
+      { category: "📋 Gestão · Procedimentos", question: "Quais são os atributos de qualidade dos nossos produtos?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Aparência, sabor, temperatura e textura corretos."], answer: "Aparência, sabor, temperatura e textura corretos.", explanation: "Aparência, sabor, temperatura e textura corretos." },
+      { category: "📋 Gestão · Procedimentos", question: "Como deve estar configurada a tela de pedidos do iniciador?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Exibir o item de maior tempo de preparo primeiro (modo de prioridade)."], answer: "Exibir o item de maior tempo de preparo primeiro (modo de prioridade).", explanation: "Exibir o item de maior tempo de preparo primeiro (modo de prioridade)." },
+      { category: "🔥 Chapa · Carnes", question: "Com qual pegador devemos manipular as carnes brancas após o cozimento?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Pegador azul."], answer: "Pegador azul.", explanation: "Pegador azul." },
+      { category: "📋 Gestão · Procedimentos", question: "O que acontecerá se deixarmos os pães descobertos?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Os pães ressecarão e perderão umidade."], answer: "Os pães ressecarão e perderão umidade.", explanation: "Os pães ressecarão e perderão umidade." },
+      { category: "📋 Gestão · Procedimentos", question: "Qual é a descrição do Padrão Ouro de Qualidade do Cheeseburguer?", options: ["Depende do volume do turno", "O gerente define", "Não há padrão fixo", "Pão caramelizado,"], answer: "Pão caramelizado,", explanation: "Pão caramelizado, carne suculenta, queijo derretido, ketchup, mostarda, picles e cebola na proporção certa." },
+      { category: "🔥 Chapa · Carnes", question: "Todas as temperaturas internas dos produtos de frango devem estar a 74°C (165°F) ou mais depois de ser cozidos?", options: ["Não", "Somente no fechamento", "Depende do gerente", "Sim"], answer: "Sim", explanation: "Sim — 74°C (165°F) é a temperatura interna mínima para todos os produtos de frango." }
     ];
   </script>
 </body>

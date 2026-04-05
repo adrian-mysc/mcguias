@@ -525,6 +525,9 @@
       var cont = document.getElementById('pw-content');
       if (wall) wall.style.display = 'none';
       if (cont) cont.style.display = 'block';
+      setTimeout(function() {
+        if (typeof renderOcorrencias === 'function') renderOcorrencias();
+      }, 50);
     }
 
     window.checkPassword = function() {
@@ -550,25 +553,141 @@
     });
   </script>
   <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    /* ===== OCORRÊNCIAS ===== */
+    var _ocData = JSON.parse(localStorage.getItem('mc_ocorrencias') || '[]');
+
+    function renderOcorrencias() {
+      var lista = document.getElementById('ocorrencias-lista');
+      if (!lista) return;
+      if (!_ocData.length) { lista.innerHTML = ''; return; }
+      lista.innerHTML = _ocData.slice().reverse().map(function(r) {
+        return '<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;">'
+          + '<div style="font-size:11px;color:var(--muted);margin-bottom:4px;">' + r.data + '</div>'
+          + '<div style="font-size:13px;color:var(--text);white-space:pre-wrap;">' + r.texto.replace(/</g,'&lt;') + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    window.salvarOcorrencia = function() {
+      var el = document.getElementById('ocorrencias-texto');
+      if (!el || !el.value.trim()) return;
+      var now = new Date();
+      _ocData.push({
+        texto: el.value.trim(),
+        data: now.toLocaleDateString('pt-BR') + ' ' + now.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'})
+      });
+      if (_ocData.length > 50) _ocData = _ocData.slice(-50);
+      localStorage.setItem('mc_ocorrencias', JSON.stringify(_ocData));
+      el.value = '';
+      renderOcorrencias();
+    };
+
+    window.limparOcorrencias = function() {
+      if (!confirm('Limpar todas as ocorrências?')) return;
+      _ocData = [];
+      localStorage.removeItem('mc_ocorrencias');
+      renderOcorrencias();
+    };
+
+    /* ===== TURNO ===== */
+    window.calcTurno = function() {
+      var ini   = document.getElementById('turno-inicio').value;
+      var fim   = document.getElementById('turno-fim').value;
+      var proj  = parseInt(document.getElementById('turno-gcs-proj').value, 10);
+      var real  = parseInt(document.getElementById('turno-gcs-real').value, 10);
+      var res   = document.getElementById('turno-resultado');
+      if (!res) return;
+      var html = '<div style="display:flex;flex-direction:column;gap:6px;">';
+      if (ini && fim) {
+        var [hi,mi] = ini.split(':').map(Number);
+        var [hf,mf] = fim.split(':').map(Number);
+        var mins = (hf*60+mf) - (hi*60+mi);
+        if (mins > 0) html += '<div style="font-size:13px;"><strong>Duração:</strong> ' + Math.floor(mins/60) + 'h ' + (mins%60) + 'min</div>';
+      }
+      if (!isNaN(proj) && !isNaN(real)) {
+        var diff = real - proj;
+        var cor  = diff >= 0 ? '#2e7d32' : '#c62828';
+        html += '<div style="font-size:13px;"><strong>GCs:</strong> ' + real + ' realizados vs ' + proj + ' projetados</div>';
+        html += '<div style="font-size:14px;font-weight:800;color:'+cor+';">' + (diff >= 0 ? '✅ +' : '❌ ') + diff + ' GCs</div>';
+      }
+      html += '</div>';
+      res.innerHTML = html;
+      res.style.display = 'block';
+    };
+
+    /* ===== POSICIONAMENTO ===== */
+    var POS_TABLE = [
+      [0,7,1,'Todas'], [8,14,2,'Bebidas + Caixa'], [15,21,3,'+ Forno/Vitrine'],
+      [22,28,4,'+ Entrega Interna'], [29,35,5,'+ Salão'], [36,55,6,'+ Estocagem'],
+      [56,65,7,'+ Bebidas McCafé 2'], [66,75,8,'+ Entrega Externa 2'], [76,999,9,'Completo']
+    ];
+
+    window.calcPosicionamento = function() {
+      var gcs = parseInt(document.getElementById('pos-gcs').value, 10);
+      var res = document.getElementById('pos-resultado');
+      if (!res || isNaN(gcs) || gcs < 0) { if(res) res.innerHTML=''; return; }
+      var row = POS_TABLE.find(function(r){ return gcs >= r[0] && gcs <= r[1]; });
+      if (!row) { res.innerHTML=''; return; }
+      res.innerHTML = '<div style="background:#e8f5e9;border:1.5px solid #43a047;border-radius:10px;padding:12px 14px;margin-top:6px;">'
+        + '<div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:#2e7d32;">' + row[2] + ' pessoa' + (row[2]>1?'s':'') + '</div>'
+        + '<div style="font-size:13px;color:#2e7d32;margin-top:4px;">Funções: ' + row[3] + '</div>'
+        + '</div>';
+    };
+
+    function initProgressBars() { /* placeholder */ }
+
+    /* ===== RESET CHECKLIST ===== */
+    window.resetChecklist = function(prefix) {
+      var pageId = document.body.dataset.page;
+      var key = pageId ? 'mc_checks_' + pageId : null;
+      if (key) {
+        // Limpar apenas os checkboxes do grupo pelo prefixo do card
+        var saved = JSON.parse(localStorage.getItem(key) || '{}');
+        // Encontrar o card pelo id do botão de reset e desmarcar seus checkboxes
+        var cards = document.querySelectorAll('.card');
+        cards.forEach(function(card) {
+          var btn = card.querySelector('button[onclick*="resetChecklist('' + prefix + ''"]');
+          if (!btn) return;
+          var cbs = card.querySelectorAll('input[type=checkbox]');
+          cbs.forEach(function(cb, i) {
+            // Descobrir índice global
+            var allCbs = document.querySelectorAll('.check-item input[type=checkbox]');
+            var globalIdx = Array.from(allCbs).indexOf(cb);
+            if (globalIdx >= 0) delete saved[globalIdx];
+            cb.checked = false;
+            cb.closest('.check-item').classList.remove('done');
+          });
+          // Remover badge de completo
+          var badge = card.querySelector('.check-complete-badge');
+          if (badge) badge.remove();
+          var prog = card.querySelector('.check-progress-fill');
+          if (prog) { prog.style.width = '0%'; prog.style.background = 'var(--red)'; }
+          var label = card.querySelector('.check-progress-label');
+          if (label) label.textContent = '0/' + cbs.length;
+        });
+        localStorage.setItem(key, JSON.stringify(saved));
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
       if (sessionStorage.getItem(STORAGE_KEY) === '1') {
         unlock();
       }
-      initProgressBars();
       renderOcorrencias();
       var input = document.getElementById('pw-input');
       if (input) input.focus();
 
       var quizPanel = document.getElementById('panel-quiz-area');
       if (quizPanel) {
+        var _inited = false;
         var observer = new MutationObserver(function() {
-          if (quizPanel.classList.contains('active')) {
+          if (quizPanel.classList.contains('active') && !_inited) {
+            _inited = true;
             initQuiz(QUIZ_SUPERVISORES, 'Conteúdo para Supervisores');
             observer.disconnect();
           }
         });
         observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
-        if (quizPanel.classList.contains('active')) initQuiz(QUIZ_SUPERVISORES, 'Conteúdo para Supervisores');
       }
     });
 
@@ -596,7 +715,7 @@
         + '</div>';
     };
 
-        const QUIZ_SUPERVISORES = [
+    var QUIZ_SUPERVISORES = [
       { category: "📊 Supervisores · KPIs", question: "Qual o mínimo de GCs mensais para que um McCafé seja considerado produtivo?", options: ["1.000 GCs", "2.000 GCs", "3.000 GCs", "5.000 GCs"], answer: "3.000 GCs", explanation: "McCafés que realizam menos de 3.000 GCs/mês devem ser avaliados quanto a posicionamento, layout e treinamento." },
       { category: "📊 Supervisores · KPIs", question: "Qual a produtividade mínima esperada no McCafé?", options: ["4", "5", "6", "8"], answer: "6", explanation: "A produtividade mínima esperada no McCafé é 6. Abaixo disso, avaliar posicionamento e treinamento." },
       { category: "📊 Supervisores · Posicionamento", question: "Quantas pessoas são necessárias para um volume de 22 a 28 GCs/hora?", options: ["3 pessoas", "4 pessoas", "5 pessoas", "6 pessoas"], answer: "4 pessoas", explanation: "Para 22 a 28 GCs/hora: mínimo 4 pessoas no McCafé." },
