@@ -184,6 +184,11 @@ function initQuiz(questions, guiaName) {
   window._quizData = questions;
   window._quizGuia = guiaName || 'Simulado';
 
+  // Remover mode-bar antigo sempre que initQuiz for chamado
+  // Garante que os listeners usem o dataset correto (importante quando há 2 quizzes na mesma página)
+  var oldBar = document.getElementById('quiz-mode-bar');
+  if (oldBar) oldBar.remove();
+
   if (!document.getElementById('quiz-mode-bar')) {
     const bar = document.createElement('div');
     bar.id = 'quiz-mode-bar';
@@ -209,11 +214,13 @@ function initQuiz(questions, guiaName) {
     document.getElementById('btnMultiple').addEventListener('click', function() {
       document.getElementById('btnMultiple').className = 'btn-primary';
       document.getElementById('btnFlash').className    = 'btn-secondary';
+      document.getElementById('btnLacuna').className   = 'btn-secondary';
       initQuiz(window._quizData, window._quizGuia);
     });
     document.getElementById('btnFlash').addEventListener('click', function() {
       document.getElementById('btnMultiple').className = 'btn-secondary';
       document.getElementById('btnFlash').className    = 'btn-primary';
+      document.getElementById('btnLacuna').className   = 'btn-secondary';
       initFlashcard(window._quizData, window._quizGuia);
     });
     document.getElementById('btnLacuna').addEventListener('click', function() {
