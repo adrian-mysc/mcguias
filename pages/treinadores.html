@@ -2217,6 +2217,36 @@
       }
     }
 
+    // Mapa: containerId → id original (para restaurar quando outra aba ativar)
+    var _quizContainerMap = {};
+
+    function activateQuizContainer(containerId) {
+      // Restaurar qualquer container que estava como 'quiz-app'
+      var current = document.getElementById('quiz-app');
+      if (current) {
+        // Achar o id original deste container
+        var origId = null;
+        for (var cid in _quizContainerMap) {
+          if (_quizContainerMap[cid] === 'quiz-app' && cid !== containerId) {
+            origId = cid;
+            break;
+          }
+        }
+        if (origId) current.id = origId;
+        else if (current.id === 'quiz-app' && !_quizContainerMap[containerId]) {
+          // não é nosso — deixar
+        }
+      }
+      // Ativar o container solicitado
+      var target = document.getElementById(containerId) || document.getElementById('quiz-app');
+      if (target && target.id !== 'quiz-app') {
+        _quizContainerMap[containerId] = containerId; // salva original
+        target.id = 'quiz-app';
+      }
+      _quizContainerMap['quiz-app'] = containerId;
+      return document.getElementById('quiz-app');
+    }
+
     function setupQuizObserver(panelId, containerId, questions, name) {
       var panel = document.getElementById(panelId);
       if (!panel) return;
@@ -2224,11 +2254,15 @@
       var obs = new MutationObserver(function() {
         if (panel.classList.contains('active') && !inited) {
           inited = true;
-          // Para evitar conflito: dar ao container o id que initQuiz espera
-          var container = document.getElementById(containerId);
-          if (container) container.id = 'quiz-app';
+
+          // Remover mode-bar existente
+          var oldBar = document.getElementById('quiz-mode-bar');
+          if (oldBar) oldBar.remove();
+
+          // Ativar o container correto como #quiz-app
+          activateQuizContainer(containerId);
+
           initQuiz(questions, name);
-          if (container) container.id = containerId;
           obs.disconnect();
         }
       });
