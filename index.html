@@ -289,8 +289,11 @@
         <h1>MC Guias</h1>
         <p>Estudo Operacional · Adrian Silva</p>
       </div>
-      <button class="changelog-btn" id="changelogBtn" title="Ver alterações recentes">📋 Novidades</button>
-      <button class="changelog-btn" id="roadmapBtn" title="Atualizações futuras" style="background:rgba(255,199,44,0.18);border-color:rgba(255,199,44,0.35);">🚀 Em breve</button>
+      <div style="display:flex;gap:6px;flex-shrink:0;">
+        <button class="changelog-btn" id="changelogBtn" title="Ver alterações recentes">📋 Novidades</button>
+        <button class="changelog-btn" id="roadmapBtn" title="Atualizações futuras" style="background:rgba(255,199,44,0.18);border-color:rgba(255,199,44,0.35);">🚀 Em breve</button>
+        <button class="changelog-btn" id="updateBtnNav" title="Verificar atualização" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);">🔄</button>
+      </div>
     </div>
   </nav>
 
@@ -1062,9 +1065,16 @@
     rmOverlay.addEventListener('click', e => { if (e.target === rmOverlay) rmOverlay.classList.remove('open'); });
 
     // ── Update button ────────────────────────────────────────────────
-    const updateBtn     = document.getElementById('updateBtn');
     const updateOverlay = document.getElementById('updateOverlay');
     const updateClose   = document.getElementById('updateClose');
+
+    function openUpdateOverlay() {
+      // Close any other open overlay first
+      document.querySelectorAll('.cl-overlay.open').forEach(el => el.classList.remove('open'));
+      updateOverlay.classList.add('open');
+      checkForUpdate();
+    }
+    window.openUpdateOverlay = openUpdateOverlay;
 
     function setUpdateUI(icon, title, sub, actionHTML) {
       document.getElementById('update-icon').textContent  = icon;
@@ -1131,18 +1141,23 @@
       });
     };
 
-    if (updateBtn) {
-      updateBtn.addEventListener('click', function() {
-        updateOverlay.classList.add('open');
-        checkForUpdate();
-      });
-    }
     if (updateClose) {
       updateClose.addEventListener('click', () => updateOverlay.classList.remove('open'));
     }
     updateOverlay && updateOverlay.addEventListener('click', e => {
       if (e.target === updateOverlay) updateOverlay.classList.remove('open');
     });
+
+    // Nav update button
+    const updateBtnNav = document.getElementById('updateBtnNav');
+    if (updateBtnNav) {
+      updateBtnNav.addEventListener('click', openUpdateOverlay);
+    }
+    // Legacy updateBtn inside clOverlay (if still present)
+    const updateBtn = document.getElementById('updateBtn');
+    if (updateBtn) {
+      updateBtn.addEventListener('click', openUpdateOverlay);
+    }
     // Card stagger entrance animation
     document.querySelectorAll('.guide-card:not(.locked)').forEach((card, i) => {
       card.style.setProperty('--card-i', i);
@@ -1238,6 +1253,6 @@
     }
   </script>
         <div style="border-top:1.5px solid var(--border);padding-top:14px;margin-top:8px;">
-          <button id="updateBtn" onclick="document.getElementById('clOverlay').classList.remove('open');document.getElementById('updateOverlay').classList.add('open');checkForUpdate();" style="width:100%;padding:12px;background:rgba(21,101,192,0.1);border:1.5px solid rgba(21,101,192,0.3);border-radius:var(--radius-md);font-family:var(--font-display);font-size:14px;font-weight:700;color:#1565c0;cursor:pointer;">🔄 Verificar atualização</button>
+          <button id="updateBtn" onclick="openUpdateOverlay();" style="width:100%;padding:12px;background:rgba(21,101,192,0.1);border:1.5px solid rgba(21,101,192,0.3);border-radius:var(--radius-md);font-family:var(--font-display);font-size:14px;font-weight:700;color:#1565c0;cursor:pointer;">🔄 Verificar atualização</button>
         </div>
 
