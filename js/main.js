@@ -181,6 +181,14 @@ function initQuiz(questions, guiaName) {
   const app = document.getElementById("quiz-app");
   if (!app) return;
 
+  // Inject key badge style once
+  if (!document.getElementById('mc-quiz-opt-style')) {
+    var s = document.createElement('style');
+    s.id = 'mc-quiz-opt-style';
+    s.textContent = '.quiz-opt-key{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:rgba(0,0,0,0.08);font-size:11px;font-weight:900;margin-right:6px;flex-shrink:0;font-family:var(--font-display);}';
+    document.head.appendChild(s);
+  }
+
   window._quizData = questions;
   window._quizGuia = guiaName || 'Simulado';
 
@@ -208,6 +216,7 @@ function initQuiz(questions, guiaName) {
     bar.innerHTML = '<button class="btn-primary" id="btnMultiple" style="flex:1;font-size:13px;padding:9px 0;">🎯 Múltipla escolha</button>'
                   + '<button class="btn-secondary" id="btnFlash" style="flex:1;font-size:13px;padding:9px 0;">⚡ Flashcard</button>'
                   + '<button class="btn-secondary" id="btnLacuna" style="flex:1;font-size:13px;padding:9px 0;">✏️ Lacunas</button>'
+                  + '<button id="btnAutoAdv" style="flex-shrink:0;font-size:12px;padding:9px 10px;white-space:nowrap;border-radius:var(--radius-md);font-family:var(--font-display);font-weight:800;cursor:pointer;border:1.5px solid var(--border);transition:all .2s;" title="Auto-avançar após acerto">⚡ Auto</button>'
                   + timerDropdownHTML;
     app.parentNode.insertBefore(bar, app);
 
@@ -266,15 +275,43 @@ function initQuiz(questions, guiaName) {
       var dd = document.getElementById('timer-dropdown');
       if (dd) dd.style.display = 'none';
     });
+
+    // Auto-advance toggle
+    function syncAutoBtn() {
+      var btn = document.getElementById('btnAutoAdv');
+      if (!btn) return;
+      if (window._quizAutoAdvance) {
+        btn.style.background = 'var(--accent, #da291c)';
+        btn.style.color = '#fff';
+        btn.style.borderColor = 'var(--accent, #da291c)';
+        btn.textContent = '⚡ Auto ON';
+      } else {
+        btn.style.background = 'var(--card)';
+        btn.style.color = 'var(--muted)';
+        btn.style.borderColor = 'var(--border)';
+        btn.textContent = '⚡ Auto OFF';
+      }
+    }
+    if (typeof window._quizAutoAdvance === 'undefined') window._quizAutoAdvance = true;
+    syncAutoBtn();
+    document.getElementById('btnAutoAdv').addEventListener('click', function() {
+      window._quizAutoAdvance = !window._quizAutoAdvance;
+      syncAutoBtn();
+    });
   }
   if (typeof window._quizTimerEnabled === 'undefined') window._quizTimerEnabled = false;
   if (typeof window._quizTimerSecs    === 'undefined') window._quizTimerSecs    = 20;
+  if (typeof window._quizAutoAdvance  === 'undefined') window._quizAutoAdvance  = true;
 
   var pool          = prioritizeQuestions(questions);
   var current       = 0;
   var score         = 0;
+  var streak        = 0;
+  var bestStreak    = 0;
   var answered      = false;
-  var _wrongAnswers = []; // track wrong answers for end review
+  var _wrongAnswers = [];
+  var _sessionStart = Date.now();
+  var _qStart       = Date.now();
 
   function render() {
     if (current >= pool.length) { showResult(); return; }
@@ -282,6 +319,7 @@ function initQuiz(questions, guiaName) {
     var opts = shuffle(q.options.slice());
     var pct  = Math.round((current / pool.length) * 100);
     answered = false;
+    _qStart  = Date.now();
 
     var timerSVG = window._quizTimerEnabled
       ? '<div style="position:relative;display:flex;justify-content:center;margin-bottom:-4px;"><svg width="56" height="56" viewBox="0 0 32 32" style="transform:rotate(-90deg);"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--border)" stroke-width="3"/><circle id="quiz-timer-arc" cx="16" cy="16" r="14" fill="none" stroke="var(--red)" stroke-width="3" stroke-dasharray="88" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .3s;"/></svg><div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:56px;height:56px;display:flex;align-items:center;justify-content:center;"><span id="quiz-timer-num" style="font-family:var(--font-display);font-size:15px;font-weight:800;color:var(--text);"></span></div></div>'
@@ -292,7 +330,7 @@ function initQuiz(questions, guiaName) {
       +   '<div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:' + pct + '%"></div></div>'
       +   '<div style="display:flex;justify-content:space-between;margin-top:4px;">'
       +     '<span class="quiz-counter">Pergunta ' + (current + 1) + ' de ' + pool.length + '</span>'
-      +     '<span class="quiz-counter">✅ ' + score + ' corretas</span>'
+      +     '<span class="quiz-counter">✅ ' + score + ' corretas' + (streak >= 3 ? ' &nbsp;' + (streak >= 10 ? '🏆' : streak >= 5 ? '⚡' : '🔥') + ' ' + streak : '') + '</span>'
       +   '</div>'
       + '</div>'
       + '<div class="quiz-question-card">'
@@ -302,7 +340,9 @@ function initQuiz(questions, guiaName) {
       +     opts.map(function(o, oi) {
               window['_opt_'+oi] = o;
               window['_isCorrect_'+oi] = (o === q.answer);
-              return '<button class="quiz-option" onclick="handleQuizOption('+oi+')" data-correct="'+(o===q.answer)+'">' + o + '</button>';
+              return '<button class="quiz-option" onclick="handleQuizOption('+oi+')" data-correct="'+(o===q.answer)+'" data-idx="'+oi+'">'
+                + '<span class="quiz-opt-key">' + String.fromCharCode(65+oi) + '</span> ' + o
+                + '</button>';
             }).join('')
       +   '</div>'
       + '</div>'
@@ -314,6 +354,19 @@ function initQuiz(questions, guiaName) {
       +   '</button>'
       + '</div>'
       + '</div>';
+
+    // Animate options in staggered
+    setTimeout(function() {
+      document.querySelectorAll('.quiz-option').forEach(function(b, i) {
+        b.style.opacity = '0';
+        b.style.transform = 'translateY(8px)';
+        setTimeout(function() {
+          b.style.transition = 'opacity .2s ease, transform .2s ease';
+          b.style.opacity = '1';
+          b.style.transform = 'translateY(0)';
+        }, i * 60);
+      });
+    }, 10);
 
     window._currentQ = q;
 
@@ -365,6 +418,72 @@ function initQuiz(questions, guiaName) {
       var btn  = btns[optIndex];
       if (btn) handleAnswer(btn, q.answer, q.explanation, q);
     };
+
+    // Keyboard shortcuts: A/B/C/D = select option, Enter/Space = next
+    if (window._quizKeyHandler) document.removeEventListener('keydown', window._quizKeyHandler);
+    window._quizKeyHandler = function(e) {
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+      var key = e.key.toUpperCase();
+      if (!answered) {
+        var idx = ['A','B','C','D'].indexOf(key);
+        if (idx !== -1) {
+          var btns = document.querySelectorAll('.quiz-option');
+          if (btns[idx]) { btns[idx].click(); }
+        }
+      } else if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        var nb = document.getElementById('btn-next');
+        if (nb && nb.style.display !== 'none') nb.click();
+      }
+    };
+    document.addEventListener('keydown', window._quizKeyHandler);
+  } // end render()
+
+  function showStreakToast(streakCount) {
+    var existing = document.getElementById('streak-toast');
+    if (existing) existing.remove();
+    var milestones = { 3: '🔥 3 seguidas!', 5: '⚡ 5 seguidas!', 10: '🏆 10 seguidas!', 15: '🌟 15 seguidas!', 20: '🚀 20 seguidas!' };
+    var msg = milestones[streakCount];
+    if (!msg) return;
+    var toast = document.createElement('div');
+    toast.id = 'streak-toast';
+    toast.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.5);z-index:9999;background:linear-gradient(135deg,#da291c,#ff6b35);color:#fff;padding:18px 32px;border-radius:20px;font-family:var(--font-display);font-size:28px;font-weight:900;text-align:center;box-shadow:0 8px 40px rgba(218,41,28,0.5);pointer-events:none;opacity:0;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    requestAnimationFrame(function() {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translate(-50%,-50%) scale(1)';
+    });
+    setTimeout(function() {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translate(-50%,-60%) scale(0.8)';
+      setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300);
+    }, 1200);
+  }
+
+  function startAutoAdvanceCountdown(onComplete) {
+    var nb = document.getElementById('btn-next');
+    if (!nb) return;
+    var duration = 1500;
+    var start = Date.now();
+    // Add countdown bar inside feedback
+    var fb = document.getElementById('quiz-feedback');
+    var bar = document.createElement('div');
+    bar.id = 'auto-countdown-bar';
+    bar.style.cssText = 'height:3px;background:rgba(255,255,255,0.3);border-radius:2px;margin-top:10px;overflow:hidden;';
+    var fill = document.createElement('div');
+    fill.style.cssText = 'height:100%;background:rgba(255,255,255,0.8);width:100%;transition:width ' + duration + 'ms linear;border-radius:2px;';
+    bar.appendChild(fill);
+    if (fb) fb.appendChild(bar);
+    requestAnimationFrame(function() { fill.style.width = '0%'; });
+
+    window._autoAdvanceTimer = setTimeout(function() {
+      if (answered && current < pool.length) {
+        current++;
+        render();
+      }
+      if (onComplete) onComplete();
+    }, duration);
   }
 
   function handleAnswer(btn, correct, explanation, q) {
@@ -374,7 +493,10 @@ function initQuiz(questions, guiaName) {
     var isCorrect = btn.dataset.correct === "true";
     if (isCorrect) {
       score++;
+      streak++;
+      if (streak > bestStreak) bestStreak = streak;
     } else {
+      streak = 0;
       _wrongAnswers.push({ question: q.question, answer: q.answer, userAnswer: btn.textContent, explanation: q.explanation, category: q.category });
     }
 
@@ -386,17 +508,47 @@ function initQuiz(questions, guiaName) {
     });
     var fb = document.getElementById("quiz-feedback");
     fb.className = "quiz-feedback show " + (isCorrect ? "correct" : "wrong");
+
+    // Streak badge
+    var streakEmoji = streak >= 10 ? '🏆' : streak >= 5 ? '⚡' : '🔥';
+    var streakBadge = (isCorrect && streak >= 3)
+      ? ' <span style="display:inline-block;background:rgba(255,255,255,0.25);border-radius:8px;padding:2px 9px;font-size:13px;font-weight:800;margin-left:6px;">' + streakEmoji + ' ' + streak + ' seguidas!</span>'
+      : '';
+
     fb.innerHTML = isCorrect
-      ? "✅ <strong>Correto!</strong> " + (explanation || "")
-      : "❌ <strong>Incorreto.</strong> A resposta certa é: <strong>" + correct + "</strong>. " + (explanation || "");
-    document.getElementById("btn-next").style.display = "inline-flex";
+      ? "✅ <strong>Correto!</strong>" + streakBadge + "<br><span style='font-size:13px;opacity:.9;'>" + (explanation || "") + "</span>"
+      : "❌ <strong>Incorreto.</strong> A resposta certa é: <strong>" + correct + "</strong>.<br><span style='font-size:13px;opacity:.9;'>" + (explanation || "") + "</span>";
+
+    var nb = document.getElementById("btn-next");
+    if (nb) nb.style.display = "inline-flex";
+
+    // Streak milestone toast
+    if (isCorrect && [3, 5, 10, 15, 20].indexOf(streak) !== -1) {
+      showStreakToast(streak);
+    }
+
+    // Auto-advance with countdown bar (only on correct + if enabled)
+    if (isCorrect && window._quizAutoAdvance !== false) {
+      startAutoAdvanceCountdown();
+    }
   }
 
-  window.nextQuestion = function() { current++; render(); };
+  window.nextQuestion = function() {
+    if (window._autoAdvanceTimer) { clearTimeout(window._autoAdvanceTimer); window._autoAdvanceTimer = null; }
+    if (window._quizKeyHandler) { document.removeEventListener('keydown', window._quizKeyHandler); window._quizKeyHandler = null; }
+    current++;
+    render();
+  };
 
   function showResult() {
     var pct  = Math.round((score / pool.length) * 100);
     var msg  = pct >= 80 ? "🎉 Excelente!" : pct >= 60 ? "👍 Bom trabalho!" : "📚 Continue estudando!";
+    var elapsed = Math.round((Date.now() - _sessionStart) / 1000);
+    var mins = Math.floor(elapsed / 60);
+    var secs = elapsed % 60;
+    var timeStr = mins > 0 ? mins + 'min ' + secs + 's' : secs + 's';
+    var avgSec = pool.length > 0 ? Math.round(elapsed / pool.length) : 0;
+    if (window._quizKeyHandler) { document.removeEventListener('keydown', window._quizKeyHandler); window._quizKeyHandler = null; }
     saveQuizResult(guiaName || window._quizGuia || "Simulado", score, pool.length);
     var isRoot     = window.location.pathname.indexOf("/pages/") !== -1;
     var homeLink   = isRoot ? "../index.html" : "index.html";
@@ -431,7 +583,22 @@ function initQuiz(questions, guiaName) {
       + '</svg>'
       + '<div class="quiz-result-ring-num" style="color:' + ringColor + ';">' + pct + '%</div>'
       + '</div>';
-    app.innerHTML = '<div class="quiz-result-card">'      + ringHTML      + '<div class="quiz-score">' + score + '/' + pool.length + '</div>'      + '<div class="quiz-score-label">' + msg + '</div>'      + '<div style="margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">'      +   '<button class="btn-primary" onclick="initQuiz(window._quizData,window._quizGuia)">🔀 Tentar Novamente</button>'      +   extraBtn      + '</div>'      + '<button class="btn-share" onclick="shareQuizResult(' + score + ',' + pool.length + ',window._quizGuia)" style="margin-top:12px;">📤 Compartilhar resultado</button>'      + errorsHTML      + '<div id="hist-inline" style="margin-top:20px;display:flex;flex-direction:column;gap:8px;text-align:left;"></div>'      + '</div>';
+    app.innerHTML = '<div class="quiz-result-card">'
+      + ringHTML
+      + '<div class="quiz-score">' + score + '/' + pool.length + '</div>'
+      + '<div class="quiz-score-label">' + msg + '</div>'
+      + '<div style="display:flex;gap:10px;justify-content:center;margin:12px 0;flex-wrap:wrap;">'
+      +   (bestStreak >= 3 ? '<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;color:var(--text);">'+(bestStreak>=10?'🏆':bestStreak>=5?'⚡':'🔥')+' Melhor sequência: '+bestStreak+'</div>' : '')
+      +   '<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;color:var(--text);">⏱️ '+timeStr+' · ~'+avgSec+'s/pergunta</div>'
+      + '</div>'
+      + '<div style="margin-top:8px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">'
+      +   '<button class="btn-primary" onclick="initQuiz(window._quizData,window._quizGuia)">🔀 Tentar Novamente</button>'
+      +   extraBtn
+      + '</div>'
+      + '<button class="btn-share" onclick="shareQuizResult(' + score + ',' + pool.length + ',window._quizGuia)" style="margin-top:12px;">📤 Compartilhar resultado</button>'
+      + errorsHTML
+      + '<div id="hist-inline" style="margin-top:20px;display:flex;flex-direction:column;gap:8px;text-align:left;"></div>'
+      + '</div>';
 
     // Animate progress ring
     setTimeout(function() {
@@ -463,13 +630,19 @@ function initFlashcard(questions, guiaName) {
   if (!app) return;
   const pool = shuffle([...questions]);
   let current = 0;
+  let knew = 0;
+  let didntKnow = 0;
+
   function render() {
     if (current >= pool.length) {
       const isRoot = window.location.pathname.includes('/pages/') ? '../index.html' : 'index.html';
+      const pct = pool.length > 0 ? Math.round((knew / pool.length) * 100) : 0;
+      const medal = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '📖';
       app.innerHTML = `<div class="quiz-result-card">
-        <div style="font-size:48px;margin-bottom:10px;">⚡</div>
-        <div class="quiz-score-label" style="font-size:18px;font-weight:700;">Flashcards concluídos!</div>
-        <div style="font-size:14px;color:var(--muted);margin-top:8px;">${pool.length} cartões revisados</div>
+        <div style="font-size:48px;margin-bottom:10px;">${medal}</div>
+        <div class="quiz-score">${knew}/${pool.length}</div>
+        <div class="quiz-score-label" style="font-size:18px;font-weight:700;">${pct >= 80 ? 'Ótimo domínio!' : pct >= 60 ? 'Bom progresso!' : 'Continue praticando!'}</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px;">✅ Sabia: ${knew} &nbsp;|&nbsp; ❌ Não sabia: ${didntKnow}</div>
         <div style="margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
           <button class="btn-primary" onclick="initFlashcard(window._quizData,window._quizGuia)">🔀 Repetir</button>
           <a href="${isRoot}" class="btn-secondary">🏠 Início</a>
@@ -484,7 +657,7 @@ function initFlashcard(questions, guiaName) {
         <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
         <div style="display:flex;justify-content:space-between;margin-top:4px;">
           <span class="quiz-counter">Cartão ${current + 1} de ${pool.length}</span>
-          <span class="quiz-counter" style="color:var(--muted);">Toque para revelar</span>
+          <span class="quiz-counter">✅ ${knew} sabia · ❌ ${didntKnow} não</span>
         </div>
       </div>
       <div class="flashcard" id="fc" onclick="revealCard()">
@@ -493,8 +666,8 @@ function initFlashcard(questions, guiaName) {
         <div class="flashcard-a">✅ ${q.answer}${q.explanation ? '<br><span style="font-size:12px;color:var(--muted);margin-top:6px;display:block;">' + q.explanation + '</span>' : ''}</div>
       </div>
       <div class="flashcard-nav" id="fc-nav" style="display:none;">
-        <button class="btn-secondary" onclick="initFlashcard(window._quizData,window._quizGuia)" style="font-size:13px;padding:9px 14px;">🔀 Embaralhar</button>
-        <button class="btn-primary" onclick="nextCard()" style="font-size:13px;padding:9px 22px;">${current + 1 < pool.length ? "Próximo →" : "Concluir ✓"}</button>
+        <button class="btn-wrong" onclick="rateCard(false)" style="flex:1;padding:12px;font-size:14px;font-weight:800;background:#ffebee;color:#c62828;border:1.5px solid #fecaca;border-radius:var(--radius-md);cursor:pointer;">❌ Não sabia</button>
+        <button class="btn-correct" onclick="rateCard(true)" style="flex:1;padding:12px;font-size:14px;font-weight:800;background:#e8f5e9;color:#2e7d32;border:1.5px solid #b2dfca;border-radius:var(--radius-md);cursor:pointer;">✅ Sabia!</button>
       </div>
       <p style="text-align:center;font-size:11px;color:var(--muted);">Categoria: ${q.category}</p>
     </div>`;
@@ -503,7 +676,14 @@ function initFlashcard(questions, guiaName) {
     document.getElementById('fc').classList.add('revealed');
     document.getElementById('fc-nav').style.display = 'flex';
   };
-  window.nextCard = () => { current++; render(); };
+  window.rateCard = (didKnow) => {
+    if (didKnow) knew++; else didntKnow++;
+    updateSRData(getQuestionHash(pool[current]), didKnow);
+    current++;
+    render();
+  };
+  // Keep backward compat
+  window.nextCard = () => window.rateCard(true);
   window._quizData = questions;
   window._quizGuia = guiaName || 'Flashcard';
   render();
@@ -518,15 +698,29 @@ function shuffle(arr) {
 }
 
 window.shareQuizResult = function(score, total, guia) {
-  var g    = guia || window._quizGuia || 'Simulado';
-  var pct  = Math.round((score / total) * 100);
-  var medal = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '📖';
-  var text = medal + ' MC Guias — ' + g + '\n'
-           + '✅ ' + score + '/' + total + ' (' + pct + '% de acertos)\n'
-           + '🔗 Acesse: https://mc-guias.github.io/mcguias/';
-
+  var g = guia || window._quizGuia || 'Simulado';
+  var pct;
+  if (total && typeof score === 'number') {
+    pct = Math.round((score / total) * 100);
+  } else {
+    pct = parseInt(score, 10) || 0;
+    total = null;
+  }
+  var medal  = pct >= 90 ? '🏆' : pct >= 80 ? '⭐' : pct >= 60 ? '👍' : '📖';
+  var nivel  = pct >= 90 ? 'Excelente!' : pct >= 80 ? 'Muito bom!' : pct >= 60 ? 'Bom trabalho!' : 'Continue estudando!';
+  var bars   = '';
+  var filled = Math.round(pct / 10);
+  for (var i = 0; i < 10; i++) bars += (i < filled ? '🟩' : '⬜');
+  var guiaLabel  = g.replace(/\s*✏️\s*$/, '').trim();
+  var scoreStr   = total ? (score + '/' + total + ' (' + pct + '%)') : (pct + '%');
+  var text = medal + ' ' + nivel + '\n'
+           + '📋 Guia: ' + guiaLabel + '\n'
+           + '✅ ' + scoreStr + '\n'
+           + bars + '\n'
+           + '📱 MC Guias — Treine onde estiver\n'
+           + '🔗 mc-guias.github.io/mcguias/';
   if (navigator && navigator.share) {
-    navigator.share({ title: 'MC Guias — ' + g, text: text })
+    navigator.share({ title: 'MC Guias — ' + guiaLabel, text: text })
       .catch(function() { mcCopyToClipboard(text); });
     return;
   }
@@ -714,16 +908,18 @@ function initLacuna(questions, guiaName) {
     if (answered) return;
     hintUsed = true;
     var q = window._lacunaQ;
-
-    var partial = q.answer.replace(/(\d+)/g, function(n, _, offset, str) {
-      if (offset === str.search(/\d+/)) return n; // reveal first number group
-      return '_'.repeat(n.length);
-    });
+    // Reveal first char + mask the rest by word
+    var hint = q.answer.split('').map(function(ch, i) {
+      if (i === 0) return ch;
+      if (ch === ' ' || ch === '°' || ch === '/' || ch === ':') return ch;
+      return '_';
+    }).join('');
     var hintEl = document.getElementById('lacuna-hint-text');
     if (hintEl) {
-      hintEl.textContent = partial;
+      hintEl.textContent = hint;
       hintEl.style.color = 'var(--text)';
       hintEl.style.fontWeight = '700';
+      hintEl.style.letterSpacing = '3px';
     }
     var hintBtn = document.getElementById('btn-lacuna-hint');
     if (hintBtn) { hintBtn.disabled = true; hintBtn.style.opacity = '0.5'; }
