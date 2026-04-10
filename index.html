@@ -209,29 +209,30 @@
     }
     .cl-body { padding: 16px 18px 32px; display: flex; flex-direction: column; gap: 22px; }
     .cl-entry { display: flex; flex-direction: column; gap: 8px; }
-    .cl-date-row { display: flex; align-items: center; gap: 10px; }
+    .cl-date-row { display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; overflow: hidden; }
     .cl-date {
       font-family: var(--font-display); font-size: 11px;
       font-weight: 800; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--muted); white-space: nowrap;
+      color: var(--muted); white-space: nowrap; flex-shrink: 0;
     }
-    .cl-date-line { flex: 1; height: 1px; background: var(--border); }
-    .cl-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+    .cl-date-line { flex: 1; height: 1px; background: var(--border); min-width: 8px; }
+    .cl-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
     .cl-badge.novo     { background: #e8f5e9; color: #1a5c2a; }
     .cl-badge.melhoria { background: #e8f4fd; color: #0d3d66; }
     .cl-badge.correcao { background: #fdecea; color: #7a1a12; }
     .cl-items { display: flex; flex-direction: column; gap: 7px; }
     .cl-item {
       display: flex; align-items: flex-start; gap: 10px;
-      padding: 9px 12px;
+      padding: 10px 12px;
       background: var(--bg); border-radius: var(--radius-md);
       border: 1.5px solid var(--border);
-      font-size: 13px; line-height: 1.45;
+      font-size: 13px; line-height: 1.5;
+      flex-wrap: nowrap;
     }
-    .cl-item-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-    .cl-item-text { flex: 1; }
+    .cl-item-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; width: 20px; text-align: center; }
+    .cl-item-text { flex: 1; min-width: 0; word-break: break-word; }
     .cl-item-text strong { color: var(--red); }
-    .cl-tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; flex-shrink: 0; margin-top: 2px; }
+    .cl-tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; flex-shrink: 0; align-self: flex-start; margin-top: 3px; white-space: nowrap; }
     .cl-tag.guia    { background: var(--yellow); color: #5c3800; }
     .cl-tag.quiz    { background: #fdecea; color: #7a1a12; }
     .cl-tag.sistema { background: #e8f4fd; color: #0d3d66; }
@@ -592,11 +593,6 @@
           </div>
         </div>
 
-        <div class="cl-entry">
-          <div class="cl-date-row">
-            <span class="cl-date">27 Mar 2026</span>
-            <div class="cl-date-line"></div>
-            <span class="cl-badge novo">Novo conteúdo</span>
         <div class="cl-entry">
           <div class="cl-date-row">
             <span class="cl-date">27 Mar 2026</span>
