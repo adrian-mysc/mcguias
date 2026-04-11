@@ -276,10 +276,80 @@
     <div class="splash-bar"><div class="splash-bar-fill"></div></div>
   </div>
 
-  <div id="disclaimer-popup">
-    <div id="disclaimer-box">
-      <p>Plataforma de estudos pessoais sem fins comerciais ou lucrativos desenvolvida por <strong>Adrian E. Silva</strong>.</p>
-      <button id="disclaimer-close">Entendi</button>
+  <!-- Onboarding (primeira visita) -->
+  <div id="onboarding-overlay" style="display:none;">
+    <div id="onboarding-box">
+      <div id="onboarding-slides">
+
+        <!-- Slide 1 -->
+        <div class="ob-slide active">
+          <div class="ob-emoji">👋</div>
+          <h2 class="ob-title">Bem-vindo ao MC Guias</h2>
+          <p class="ob-desc">Material de estudo operacional com guias, simulados e jogos. Tudo para você dominar cada estação do restaurante.</p>
+          <div class="ob-features">
+            <div class="ob-feat"><span>📋</span> 25+ guias operacionais</div>
+            <div class="ob-feat"><span>❓</span> 565+ perguntas no simulado</div>
+            <div class="ob-feat"><span>🎮</span> Jogo de condimentação</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="ob-slide">
+          <div class="ob-emoji">🎯</div>
+          <h2 class="ob-title">3 modos de estudo</h2>
+          <p class="ob-desc">Escolha como quer treinar no Simulado:</p>
+          <div class="ob-modes">
+            <div class="ob-mode">
+              <span class="ob-mode-icon">🎯</span>
+              <div>
+                <strong>Múltipla escolha</strong>
+                <span>4 opções, resposta imediata</span>
+              </div>
+            </div>
+            <div class="ob-mode">
+              <span class="ob-mode-icon">⚡</span>
+              <div>
+                <strong>Flashcard</strong>
+                <span>Toque para revelar a resposta</span>
+              </div>
+            </div>
+            <div class="ob-mode">
+              <span class="ob-mode-icon">✏️</span>
+              <div>
+                <strong>Lacunas</strong>
+                <span>Digite o número exato</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="ob-slide">
+          <div class="ob-emoji">💡</div>
+          <h2 class="ob-title">Dicas rápidas</h2>
+          <div class="ob-tips">
+            <div class="ob-tip">⌨️ Use <strong>A B C D</strong> para responder e <strong>Enter</strong> para avançar</div>
+            <div class="ob-tip">🔥 Acerte em sequência para ganhar streak</div>
+            <div class="ob-tip">📲 Adicione à tela inicial para usar como app</div>
+            <div class="ob-tip">🧠 Erros aparecem mais vezes para reforçar o aprendizado</div>
+          </div>
+          <button id="ob-start-btn" class="ob-btn-start">Começar a estudar →</button>
+        </div>
+
+      </div>
+
+      <!-- Navegação -->
+      <div id="ob-nav">
+        <div id="ob-dots">
+          <span class="ob-dot active"></span>
+          <span class="ob-dot"></span>
+          <span class="ob-dot"></span>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button id="ob-skip" class="ob-btn-skip">Pular</button>
+          <button id="ob-next" class="ob-btn-next">Próximo →</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -906,25 +976,25 @@
     <div class="cl-sheet">
       <div class="cl-header">
         <span style="font-size:20px;">🚀</span>
-        <h2>Em Breve</h2>
+        <h2>Em Breve — V9</h2>
         <button class="cl-close" id="roadmapClose">✕</button>
       </div>
       <div class="cl-body">
 
         <div style="background:var(--bg);border-radius:var(--radius-md);border:1.5px solid var(--border);padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.6;">
-          📌 Lista do que está sendo planejado e desenvolvido. As datas são estimativas.
+          📌 Roadmap atualizado em Abr 2026. Itens com ✅ já foram entregues.
         </div>
 
         <div class="cl-entry">
           <div class="cl-date-row">
             <span class="cl-date">Abr 2026</span>
             <div class="cl-date-line"></div>
-            <span class="cl-badge melhoria">Em desenvolvimento</span>
+            <span class="cl-badge melhoria">V9 — Em desenvolvimento</span>
           </div>
           <div class="cl-items">
             <div class="cl-item">
-              <div class="cl-item-icon">✅</div>
-              <div class="cl-item-text" style="opacity:.5;text-decoration:line-through;"><strong>Modo completar a lacuna</strong> — digitar a resposta em vez de escolher entre opções, ideal para memorizar temperaturas e tempos exatos</div>
+              <div class="cl-item-icon">⭐</div>
+              <div class="cl-item-text"><strong>Perguntas favoritas</strong> — marcar perguntas difíceis com ⭐ para revisar separadamente</div>
               <span class="cl-tag quiz">Quiz</span>
             </div>
             <div class="cl-item">
@@ -933,19 +1003,19 @@
               <span class="cl-tag sistema">Sistema</span>
             </div>
             <div class="cl-item">
-              <div class="cl-item-icon">✅</div>
-              <div class="cl-item-text" style="opacity:.5;text-decoration:line-through;"><strong>Timer no quiz</strong> — cronômetro opcional por pergunta para simular a pressão do ambiente real</div>
+              <div class="cl-item-icon">🔁</div>
+              <div class="cl-item-text"><strong>Modo "Só erros"</strong> — iniciar quiz filtrando automaticamente perguntas com histórico de erro</div>
               <span class="cl-tag quiz">Quiz</span>
             </div>
             <div class="cl-item">
-              <div class="cl-item-icon">✅</div>
-              <div class="cl-item-text" style="opacity:.5;text-decoration:line-through;"><strong>Revisão de erros no final do simulado</strong> — seção com as perguntas erradas, resposta do usuário, resposta correta e explicação</div>
-              <span class="cl-tag quiz">Quiz</span>
+              <div class="cl-item-icon">📈</div>
+              <div class="cl-item-text"><strong>Estatísticas detalhadas</strong> — % de acerto por guia, evolução ao longo do tempo e perguntas mais erradas</div>
+              <span class="cl-tag sistema">Sistema</span>
             </div>
             <div class="cl-item">
-              <div class="cl-item-icon">🌡️</div>
-              <div class="cl-item-text"><strong>Treino rápido de números</strong> — modo focado em temperaturas, tempos e quantidades para memorização rápida</div>
-              <span class="cl-tag quiz">Quiz</span>
+              <div class="cl-item-icon">🔔</div>
+              <div class="cl-item-text"><strong>Lembrete diário</strong> — notificação via PWA para manter a sequência de estudo</div>
+              <span class="cl-tag sistema">Sistema</span>
             </div>
           </div>
         </div>
@@ -959,37 +1029,52 @@
           <div class="cl-items">
             <div class="cl-item">
               <div class="cl-item-icon">🔒</div>
-              <div class="cl-item-text"><strong>Abertura e Fechamento</strong> — checklist completo de abertura e fechamento por seção do restaurante</div>
+              <div class="cl-item-text"><strong>Abertura do Restaurante</strong> — checklist completo de abertura por seção</div>
               <span class="cl-tag guia">Guia</span>
             </div>
             <div class="cl-item">
-              <div class="cl-item-icon">🌡️</div>
-              <div class="cl-item-text"><strong>Segurança do Alimento</strong> — temperaturas críticas, higiene pessoal, boas práticas de manipulação e controle de pragas</div>
-              <span class="cl-tag guia">Guia</span>
-            </div>
-            <div class="cl-item">
-              <div class="cl-item-icon">📦</div>
-              <div class="cl-item-text"><strong>Estoque e Recebimento</strong> — recebimento de mercadorias, PEPS, etiquetagem e controle de validades</div>
-              <span class="cl-tag guia">Guia</span>
+              <div class="cl-item-icon">📲</div>
+              <div class="cl-item-text"><strong>APK Android nativo</strong> — versão instalável via PWABuilder para distribuir diretamente pelo WhatsApp</div>
+              <span class="cl-tag sistema">Sistema</span>
             </div>
           </div>
         </div>
 
         <div class="cl-entry">
           <div class="cl-date-row">
-            <span class="cl-date">Jun 2026</span>
+            <span class="cl-date">Entregues</span>
             <div class="cl-date-line"></div>
-            <span class="cl-badge melhoria">Melhorias técnicas</span>
+            <span class="cl-badge novo">✅ Concluído</span>
           </div>
           <div class="cl-items">
-            <div class="cl-item">
-              <div class="cl-item-icon">📲</div>
-              <div class="cl-item-text"><strong>APK Android nativo</strong> — versão instalável via PWABuilder para distribuir diretamente pelo WhatsApp</div>
-              <span class="cl-tag sistema">Sistema</span>
-            </div>
-            <div class="cl-item">
+            <div class="cl-item" style="opacity:.55;">
               <div class="cl-item-icon">✅</div>
-              <div class="cl-item-text" style="opacity:.5;text-decoration:line-through;"><strong>Monte o Sanduíche</strong> — jogo de treino de condimentação com os 9 sanduíches reais: Big Mac, Big Tasty, McNífico Bacon, Chicken Deluxe, Chicken Legend, Chicken Bacon Ranch e Brabíssimos</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Modo completar a lacuna</strong> — digitar a resposta em vez de escolher entre opções</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Timer configurável</strong> — cronômetro por pergunta: 10s, 15s, 20s ou 30s</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Revisão de erros</strong> — seção colapsável com perguntas erradas ao final do simulado</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Monte o Sanduíche</strong> — jogo com os 9 sanduíches reais da condimentação</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Segurança do Alimento e Estoque</strong> — guias completos acessíveis na home</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Auto-avançar, streak e atalhos de teclado</strong> — melhorias de UX no quiz</div>
               <span class="cl-tag quiz">Quiz</span>
             </div>
           </div>
@@ -998,6 +1083,10 @@
         <div style="text-align:center;padding:8px 0 4px;">
           <span style="font-size:11px;color:var(--muted);">Sugestões? Fale com <strong style="color:var(--text);">Adrian E. Silva</strong></span>
         </div>
+
+      </div>
+    </div>
+  </div>
 
       </div>
     </div>
