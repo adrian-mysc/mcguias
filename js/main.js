@@ -4,6 +4,14 @@
    ============================================================ */
 "use strict";
 
+// switchMode — called from inline onclick in guide pages
+window.switchMode = function(mode) {
+  if (window.setActiveMode) window.setActiveMode(mode);
+  if (mode === 'flash')    { initFlashcard(window._quizData, window._quizGuia); return; }
+  if (mode === 'lacuna')   { initLacuna(window._quizData, window._quizGuia);    return; }
+  initQuiz(window._quizData, window._quizGuia);
+};
+
 function initTabs() {
   const tabBtns   = document.querySelectorAll(".tab-btn");
   const tabPanels = document.querySelectorAll(".tab-panel");
