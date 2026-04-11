@@ -1,10 +1,8 @@
 /* ============================================================
    MC GUIAS — Shared JavaScript
-   Versão: 2.0 — dark mode · checklists persistentes · histórico · flashcard
+   Versão: 2.1 — onboarding · flashcard Sabia/Não sabia · streak toasts · keyboard shortcuts
    ============================================================ */
 "use strict";
-
-/* Dark mode removido — tema fixo claro */
 
 function initTabs() {
   const tabBtns   = document.querySelectorAll(".tab-btn");
@@ -143,10 +141,10 @@ function updateSRData(hash, correct) {
   const entry = data[hash];
   if (correct) {
     entry.correct++;
-    entry.interval = Math.min(entry.interval * 2, 30); // double interval, max 30 days
+    entry.interval = Math.min(entry.interval * 2, 30);
   } else {
     entry.wrong++;
-    entry.interval = 1; // reset on wrong
+    entry.interval = 1;
   }
   entry.nextReview = Date.now() + entry.interval * 24 * 60 * 60 * 1000;
   data[hash] = entry;
@@ -192,8 +190,6 @@ function initQuiz(questions, guiaName) {
   window._quizData = questions;
   window._quizGuia = guiaName || 'Simulado';
 
-  // Remover mode-bar antigo sempre que initQuiz for chamado
-  // Garante que os listeners usem o dataset correto (importante quando há 2 quizzes na mesma página)
   var oldBar = document.getElementById('quiz-mode-bar');
   if (oldBar) oldBar.remove();
 
@@ -220,22 +216,27 @@ function initQuiz(questions, guiaName) {
                   + timerDropdownHTML;
     app.parentNode.insertBefore(bar, app);
 
+    window.setActiveMode = function(mode) {
+      var btnM = document.getElementById('btnMultiple');
+      var btnF = document.getElementById('btnFlash');
+      var btnL = document.getElementById('btnLacuna');
+      if (!btnM) return;
+      btnM.className = mode === 'multiple' ? 'btn-primary' : 'btn-secondary';
+      btnF.className = mode === 'flash'    ? 'btn-primary' : 'btn-secondary';
+      btnL.className = mode === 'lacuna'   ? 'btn-primary' : 'btn-secondary';
+    };
+    window._quizActiveMode = 'multiple';
+
     document.getElementById('btnMultiple').addEventListener('click', function() {
-      document.getElementById('btnMultiple').className = 'btn-primary';
-      document.getElementById('btnFlash').className    = 'btn-secondary';
-      document.getElementById('btnLacuna').className   = 'btn-secondary';
+      setActiveMode('multiple');
       initQuiz(window._quizData, window._quizGuia);
     });
     document.getElementById('btnFlash').addEventListener('click', function() {
-      document.getElementById('btnMultiple').className = 'btn-secondary';
-      document.getElementById('btnFlash').className    = 'btn-primary';
-      document.getElementById('btnLacuna').className   = 'btn-secondary';
+      setActiveMode('flash');
       initFlashcard(window._quizData, window._quizGuia);
     });
     document.getElementById('btnLacuna').addEventListener('click', function() {
-      document.getElementById('btnMultiple').className = 'btn-secondary';
-      document.getElementById('btnFlash').className    = 'btn-secondary';
-      document.getElementById('btnLacuna').className   = 'btn-primary';
+      setActiveMode('lacuna');
       initLacuna(window._quizData, window._quizGuia);
     });
 
@@ -338,8 +339,6 @@ function initQuiz(questions, guiaName) {
       +   '<div class="quiz-question">' + q.question + '</div>'
       +   '<div class="quiz-options" id="quiz-options">'
       +     opts.map(function(o, oi) {
-              window['_opt_'+oi] = o;
-              window['_isCorrect_'+oi] = (o === q.answer);
               return '<button class="quiz-option" onclick="handleQuizOption('+oi+')" data-correct="'+(o===q.answer)+'" data-idx="'+oi+'">'
                 + '<span class="quiz-opt-key">' + String.fromCharCode(65+oi) + '</span> ' + o
                 + '</button>';
@@ -348,7 +347,7 @@ function initQuiz(questions, guiaName) {
       + '</div>'
       + '<div class="quiz-feedback" id="quiz-feedback"></div>'
       + '<div class="quiz-nav">'
-      +   '<button class="btn-secondary" onclick="initQuiz(window._quizData,window._quizGuia)">🔀 Reiniciar</button>'
+      +   '<button class="btn-secondary" onclick="if(window.setActiveMode)window.setActiveMode(\'multiple\');initQuiz(window._quizData,window._quizGuia)">🔀 Reiniciar</button>'
       +   '<button class="btn-primary" id="btn-next" style="display:none;" onclick="nextQuestion()">'
       +     (current + 1 < pool.length ? "Próxima →" : "Ver Resultado →")
       +   '</button>'
@@ -419,7 +418,6 @@ function initQuiz(questions, guiaName) {
       if (btn) handleAnswer(btn, q.answer, q.explanation, q);
     };
 
-    // Keyboard shortcuts: A/B/C/D = select option, Enter/Space = next
     if (window._quizKeyHandler) document.removeEventListener('keydown', window._quizKeyHandler);
     window._quizKeyHandler = function(e) {
       if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
@@ -437,7 +435,7 @@ function initQuiz(questions, guiaName) {
       }
     };
     document.addEventListener('keydown', window._quizKeyHandler);
-  } // end render()
+  }
 
   function showStreakToast(streakCount) {
     var existing = document.getElementById('streak-toast');
@@ -461,12 +459,10 @@ function initQuiz(questions, guiaName) {
     }, 1200);
   }
 
-  function startAutoAdvanceCountdown(onComplete) {
+  function startAutoAdvanceCountdown() {
     var nb = document.getElementById('btn-next');
     if (!nb) return;
     var duration = 1500;
-    var start = Date.now();
-    // Add countdown bar inside feedback
     var fb = document.getElementById('quiz-feedback');
     var bar = document.createElement('div');
     bar.id = 'auto-countdown-bar';
@@ -482,7 +478,6 @@ function initQuiz(questions, guiaName) {
         current++;
         render();
       }
-      if (onComplete) onComplete();
     }, duration);
   }
 
@@ -509,7 +504,6 @@ function initQuiz(questions, guiaName) {
     var fb = document.getElementById("quiz-feedback");
     fb.className = "quiz-feedback show " + (isCorrect ? "correct" : "wrong");
 
-    // Streak badge
     var streakEmoji = streak >= 10 ? '🏆' : streak >= 5 ? '⚡' : '🔥';
     var streakBadge = (isCorrect && streak >= 3)
       ? ' <span style="display:inline-block;background:rgba(255,255,255,0.25);border-radius:8px;padding:2px 9px;font-size:13px;font-weight:800;margin-left:6px;">' + streakEmoji + ' ' + streak + ' seguidas!</span>'
@@ -522,12 +516,10 @@ function initQuiz(questions, guiaName) {
     var nb = document.getElementById("btn-next");
     if (nb) nb.style.display = "inline-flex";
 
-    // Streak milestone toast
     if (isCorrect && [3, 5, 10, 15, 20].indexOf(streak) !== -1) {
       showStreakToast(streak);
     }
 
-    // Auto-advance with countdown bar (only on correct + if enabled)
     if (isCorrect && window._quizAutoAdvance !== false) {
       startAutoAdvanceCountdown();
     }
@@ -592,7 +584,7 @@ function initQuiz(questions, guiaName) {
       +   '<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;color:var(--text);">⏱️ '+timeStr+' · ~'+avgSec+'s/pergunta</div>'
       + '</div>'
       + '<div style="margin-top:8px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">'
-      +   '<button class="btn-primary" onclick="initQuiz(window._quizData,window._quizGuia)">🔀 Tentar Novamente</button>'
+      +   '<button class="btn-primary" onclick="if(window.setActiveMode)window.setActiveMode(\'multiple\');initQuiz(window._quizData,window._quizGuia)">🔀 Tentar Novamente</button>'
       +   extraBtn
       + '</div>'
       + '<button class="btn-share" onclick="shareQuizResult(' + score + ',' + pool.length + ',window._quizGuia)" style="margin-top:12px;">📤 Compartilhar resultado</button>'
@@ -644,7 +636,7 @@ function initFlashcard(questions, guiaName) {
         <div class="quiz-score-label" style="font-size:18px;font-weight:700;">${pct >= 80 ? 'Ótimo domínio!' : pct >= 60 ? 'Bom progresso!' : 'Continue praticando!'}</div>
         <div style="font-size:13px;color:var(--muted);margin-top:6px;">✅ Sabia: ${knew} &nbsp;|&nbsp; ❌ Não sabia: ${didntKnow}</div>
         <div style="margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-          <button class="btn-primary" onclick="initFlashcard(window._quizData,window._quizGuia)">🔀 Repetir</button>
+          <button class="btn-primary" onclick="if(window.setActiveMode)window.setActiveMode('flash');initFlashcard(window._quizData,window._quizGuia)">🔀 Repetir</button>
           <a href="${isRoot}" class="btn-secondary">🏠 Início</a>
         </div>
       </div>`;
@@ -682,8 +674,6 @@ function initFlashcard(questions, guiaName) {
     current++;
     render();
   };
-  // Keep backward compat
-  window.nextCard = () => window.rateCard(true);
   window._quizData = questions;
   window._quizGuia = guiaName || 'Flashcard';
   render();
@@ -886,7 +876,7 @@ function initLacuna(questions, guiaName) {
       +   '<button class="btn-primary" id="btn-lacuna-confirm" onclick="checkLacuna()" style="flex:2;">✓ Confirmar</button>'
       + '</div>'
       + '<div class="quiz-nav">'
-      +   '<button class="btn-secondary" onclick="initLacuna(window._quizData,window._quizGuia)">🔀 Reiniciar</button>'
+      +   '<button class="btn-secondary" onclick="if(window.setActiveMode)window.setActiveMode(\'lacuna\');initLacuna(window._quizData,window._quizGuia)">🔀 Reiniciar</button>'
       +   '<button class="btn-primary" id="btn-next" style="display:none;" onclick="lacunaNext()">Próxima →</button>'
       + '</div>'
       + '</div>';
@@ -987,7 +977,7 @@ function initLacuna(questions, guiaName) {
       + '<div style="font-size:14px;color:var(--muted);margin-bottom:4px;">' + score + ' corretas · ' + scoreHalf + ' com dica · ' + (total - score - scoreHalf) + ' erradas</div>'
       + '<div style="font-size:13px;color:var(--muted);margin-bottom:20px;">de ' + total + ' perguntas</div>'
       + '<div style="display:flex;flex-direction:column;gap:8px;">'
-      + '<button class="btn-primary" onclick="initLacuna(window._quizData,window._quizGuia)">🔄 Repetir</button>'
+      + '<button class="btn-primary" onclick="if(window.setActiveMode)window.setActiveMode(\'lacuna\');initLacuna(window._quizData,window._quizGuia)">🔄 Repetir</button>'
       + '<button class="btn-secondary" onclick="shareQuizResult(' + halfPct + ',' + total + ',window._quizGuia)">📤 Compartilhar</button>'
       + '</div>'
       + '</div>';
@@ -996,33 +986,55 @@ function initLacuna(questions, guiaName) {
   render();
 }
 
-function initDisclaimer() {
-  const popup = document.getElementById('disclaimer-popup');
-  const box   = document.getElementById('disclaimer-box');
-  const btn   = document.getElementById('disclaimer-close');
-  if (!popup || !box || !btn) return;
+function initOnboarding() {
+  const overlay = document.getElementById('onboarding-overlay');
+  if (!overlay) return;
 
-  if (sessionStorage.getItem('mc_disclaimer_seen')) {
-    popup.style.display = 'none';
-    return;
+  // Only show on first ever visit (localStorage, not sessionStorage)
+  if (localStorage.getItem('mc_onboarding_done')) return;
+
+  overlay.style.display = 'flex';
+
+  const slides  = overlay.querySelectorAll('.ob-slide');
+  const dots    = overlay.querySelectorAll('.ob-dot');
+  const nextBtn = document.getElementById('ob-next');
+  const skipBtn = document.getElementById('ob-skip');
+  const startBtn= document.getElementById('ob-start-btn');
+  let current = 0;
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    // Last slide: hide next button
+    if (nextBtn) nextBtn.style.display = current === slides.length - 1 ? 'none' : 'inline-flex';
   }
 
-  function closeDisclaimer() {
-    box.classList.add('hide');
-    setTimeout(() => { popup.style.display = 'none'; }, 320);
-    sessionStorage.setItem('mc_disclaimer_seen', '1');
+  function close() {
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity .25s';
+    setTimeout(() => { overlay.style.display = 'none'; }, 250);
+    localStorage.setItem('mc_onboarding_done', '1');
   }
 
-  btn.addEventListener('click', closeDisclaimer);
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    if (current < slides.length - 1) goTo(current + 1);
+  });
+  if (skipBtn) skipBtn.addEventListener('click', close);
+  if (startBtn) startBtn.addEventListener('click', close);
 
-  setTimeout(closeDisclaimer, 5000);
+  // Tap outside to skip
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+
+  goTo(0);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-
   initTabs();
   initChecklist();
-  initDisclaimer();
+  initOnboarding();
 });
 
 if ('serviceWorker' in navigator) {
