@@ -199,11 +199,25 @@ function initQuiz(questions, guiaName) {
   window._quizGuia = guiaName || 'Simulado';
 
   var oldBar = document.getElementById('quiz-mode-bar');
-  if (oldBar) oldBar.remove();
+  // Only remove bar if it was created dynamically by JS (not hardcoded in HTML)
+  // We detect this by checking if it has our data attribute
+  if (oldBar && oldBar.dataset.dynamic === '1') oldBar.remove();
+
+  // Always define setActiveMode regardless of whether bar is hardcoded or dynamic
+  window.setActiveMode = function(mode) {
+    var btnM = document.getElementById('btnMultiple');
+    var btnF = document.getElementById('btnFlash');
+    var btnL = document.getElementById('btnLacuna');
+    if (!btnM) return;
+    btnM.className = mode === 'multiple' ? 'btn-primary' : 'btn-secondary';
+    btnF.className = mode === 'flash'    ? 'btn-primary' : 'btn-secondary';
+    btnL.className = mode === 'lacuna'   ? 'btn-primary' : 'btn-secondary';
+  };
 
   if (!document.getElementById('quiz-mode-bar')) {
     const bar = document.createElement('div');
     bar.id = 'quiz-mode-bar';
+    bar.dataset.dynamic = '1';
     bar.style.cssText = 'display:flex;gap:8px;margin-bottom:14px;';
 
     var timerOptions = [10, 15, 20, 30];
@@ -224,15 +238,6 @@ function initQuiz(questions, guiaName) {
                   + timerDropdownHTML;
     app.parentNode.insertBefore(bar, app);
 
-    window.setActiveMode = function(mode) {
-      var btnM = document.getElementById('btnMultiple');
-      var btnF = document.getElementById('btnFlash');
-      var btnL = document.getElementById('btnLacuna');
-      if (!btnM) return;
-      btnM.className = mode === 'multiple' ? 'btn-primary' : 'btn-secondary';
-      btnF.className = mode === 'flash'    ? 'btn-primary' : 'btn-secondary';
-      btnL.className = mode === 'lacuna'   ? 'btn-primary' : 'btn-secondary';
-    };
     window._quizActiveMode = 'multiple';
 
     document.getElementById('btnMultiple').addEventListener('click', function() {
@@ -557,7 +562,7 @@ function initQuiz(questions, guiaName) {
       document.getElementById("quiz-setup").style.display = "block";
       document.getElementById("quiz-app").style.display   = "none";
       var ob = document.getElementById("quiz-mode-bar");
-      if (ob) ob.remove();
+      if (ob && ob.dataset.dynamic === '1') ob.remove();
     };
     var extraBtn = isQuizPage
       ? '<button class="btn-secondary" onclick="backToSetup()">📚 Escolher Guia</button>'
