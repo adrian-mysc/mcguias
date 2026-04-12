@@ -1,6 +1,6 @@
-// MC Guias — Service Worker v12
+// MC Guias — Service Worker v13
 
-const CACHE = "mc-guias-v20";
+const CACHE = "mc-guias-v21";
 const offlineFallbackPage = "/mcguias/offline.html";
 
 // ---- Install: pre-cache all pages ----
@@ -46,73 +46,74 @@ self.addEventListener('install', async (event) => {
       '/mcguias/pages/glossario.html',
     ]))
   );
-  // Take over immediately without waiting for old SW to be released
+  // Take over immediately — no waiting for old SW to release
   self.skipWaiting();
 });
 
-// ---- Activate: clean old caches + notify clients ----
+// ---- Activate: clean old caches, claim clients, reload pages ----
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
       const oldCaches = keys.filter((key) => key !== CACHE);
-      const hadOldCache = oldCaches.length > 0;
-      return Promise.all(oldCaches.map((key) => {
-        console.log('[SW] Deleting old cache:', key);
-        return caches.delete(key);
-      })).then(() => {
-        // Take control of all open pages immediately
-        return self.clients.claim();
-      }).then(() => {
-        // Only notify if this is a real update (old cache existed), not first install
-        if (!hadOldCache) return;
-        return self.clients.matchAll({ type: 'window' }).then((clients) => {
-          clients.forEach((client) => {
-            client.postMessage({ type: 'SW_UPDATED', version: CACHE });
+      const isUpdate = oldCaches.length > 0;
+      return Promise.all(oldCaches.map((key) => caches.delete(key)))
+        .then(() => self.clients.claim())
+        .then(() => {
+          if (!isUpdate) return;
+          // Force reload all open windows so fresh JS/CSS applies immediately
+          return self.clients.matchAll({ type: 'window' }).then((clients) => {
+            clients.forEach((client) => {
+              client.postMessage({ type: 'SW_UPDATED', version: CACHE });
+              client.navigate(client.url);
+            });
           });
         });
-      });
     })
   );
 });
 
-// ---- Message: manual skip waiting from page ----
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
+// ---- Message handler ----
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
-  if (event.data && event.data.type === "GET_VERSION") {
+  if (event.data && event.data.type === 'GET_VERSION') {
     event.source && event.source.postMessage({ type: 'SW_VERSION', version: CACHE });
   }
 });
 
-// ---- Fetch: network first for navigation, cache first for assets ----
+// ---- Fetch strategy ----
+// Images: cache-first (rarely change, save bandwidth)
+// HTML, JS, CSS: network-first with cache fallback
+//   → ensures fresh code loads after every deploy, no manual cache clear needed
 self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        const networkResp = await fetch(event.request);
-        // Update cache with fresh response
-        const cache = await caches.open(CACHE);
-        cache.put(event.request, networkResp.clone());
-        return networkResp;
-      } catch (error) {
-        const cache = await caches.open(CACHE);
-        return (await cache.match(event.request)) || (await cache.match(offlineFallbackPage));
-      }
-    })());
-  } else {
-    // Cache first for static assets (CSS, JS, images)
+  const url = new URL(event.request.url);
+  const isImage = /\.(png|jpg|jpeg|svg|webp|ico)$/.test(url.pathname);
+  const isNavigate = event.request.mode === 'navigate';
+
+  if (isImage) {
     event.respondWith(
       caches.match(event.request).then(cached => {
         if (cached) return cached;
         return fetch(event.request).then(resp => {
-          // Cache the new asset
-          return caches.open(CACHE).then(cache => {
-            cache.put(event.request, resp.clone());
-            return resp;
-          });
+          caches.open(CACHE).then(c => c.put(event.request, resp.clone()));
+          return resp;
         });
       })
     );
+    return;
   }
+
+  // Network-first for HTML, JS, CSS
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE);
+    try {
+      const networkResp = await fetch(event.request);
+      cache.put(event.request, networkResp.clone());
+      return networkResp;
+    } catch {
+      return (await cache.match(event.request))
+          || (isNavigate ? await cache.match(offlineFallbackPage) : new Response('', { status: 408 }));
+    }
+  })());
 });
