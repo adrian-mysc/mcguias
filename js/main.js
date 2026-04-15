@@ -1,8 +1,144 @@
 /* ============================================================
    MC GUIAS — Shared JavaScript
-   Versão: 2.1 — onboarding · flashcard Sabia/Não sabia · streak toasts · keyboard shortcuts
+   Versão: 2.2 — estatísticas · som · transição de perguntas
    ============================================================ */
 "use strict";
+
+// ── Sound Engine (Web Audio API — no external files) ──────────
+var _audioCtx = null;
+function _getAudioCtx() {
+  if (!_audioCtx) _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return _audioCtx;
+}
+function mcPlaySound(type) {
+  if (localStorage.getItem('mc_sound_off') === '1') return;
+  try {
+    var ctx = _getAudioCtx();
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    if (type === 'correct') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(520, ctx.currentTime);
+      osc.frequency.linearRampToValueAtTime(780, ctx.currentTime + 0.12);
+      gain.gain.setValueAtTime(0.18, ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.22);
+      osc.start(ctx.currentTime);
+      osc.stop(ctx.currentTime + 0.22);
+    } else if (type === 'wrong') {
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, ctx.currentTime);
+      osc.frequency.linearRampToValueAtTime(140, ctx.currentTime + 0.18);
+      gain.gain.setValueAtTime(0.12, ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.22);
+      osc.start(ctx.currentTime);
+      osc.stop(ctx.currentTime + 0.22);
+    } else if (type === 'streak') {
+      // Three quick ascending beeps
+      [0, 0.1, 0.2].forEach(function(t, i) {
+        var o2 = ctx.createOscillator();
+        var g2 = ctx.createGain();
+        o2.connect(g2); g2.connect(ctx.destination);
+        o2.type = 'sine';
+        o2.frequency.value = 600 + i * 150;
+        g2.gain.setValueAtTime(0.15, ctx.currentTime + t);
+        g2.gain.linearRampToValueAtTime(0, ctx.currentTime + t + 0.09);
+        o2.start(ctx.currentTime + t);
+        o2.stop(ctx.currentTime + t + 0.1);
+      });
+    }
+  } catch(e) {}
+}
+
+// ── Statistics ────────────────────────────────────────────────
+function renderStats(containerId) {
+  var el = document.getElementById(containerId);
+  if (!el) return;
+
+  var hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+  var srData = JSON.parse(localStorage.getItem('mc_sr_data') || '{}');
+
+  if (!hist.length) {
+    el.innerHTML = '<p style="color:var(--muted);font-size:13px;padding:16px 0;text-align:center;">Nenhum simulado realizado ainda.</p>';
+    return;
+  }
+
+  // Aggregate by guia
+  var byGuia = {};
+  hist.forEach(function(h) {
+    if (!byGuia[h.guia]) byGuia[h.guia] = { scores: [], total: 0, count: 0 };
+    byGuia[h.guia].scores.push(Math.round((h.score / h.total) * 100));
+    byGuia[h.guia].total += h.total;
+    byGuia[h.guia].count++;
+  });
+
+  // Overall stats
+  var allPcts = hist.map(function(h) { return Math.round((h.score / h.total) * 100); });
+  var avgAll = Math.round(allPcts.reduce(function(a, b) { return a + b; }, 0) / allPcts.length);
+  var best = Math.max.apply(null, allPcts);
+
+  // SR wrong ratio — top 5 hardest questions
+  var srEntries = Object.entries(srData).map(function(e) {
+    var d = e[1];
+    return { ratio: d.wrong / (d.correct + d.wrong + 0.001), wrong: d.wrong, correct: d.correct };
+  }).filter(function(e) { return e.wrong > 0; })
+    .sort(function(a, b) { return b.ratio - a.ratio; });
+
+  var totalCorrect = Object.values(srData).reduce(function(s, d) { return s + d.correct; }, 0);
+  var totalWrong   = Object.values(srData).reduce(function(s, d) { return s + d.wrong; }, 0);
+
+  // Build HTML
+  var guiaRows = Object.entries(byGuia).sort(function(a, b) {
+    var avgA = a[1].scores.reduce(function(x,y){return x+y;},0)/a[1].scores.length;
+    var avgB = b[1].scores.reduce(function(x,y){return x+y;},0)/b[1].scores.length;
+    return avgA - avgB; // worst first
+  }).map(function(entry) {
+    var guia = entry[0], data = entry[1];
+    var avg = Math.round(data.scores.reduce(function(a,b){return a+b;},0) / data.scores.length);
+    var color = avg >= 80 ? '#22c55e' : avg >= 60 ? '#f59e0b' : 'var(--red)';
+    var emoji = avg >= 80 ? '🏆' : avg >= 60 ? '👍' : '📖';
+    return '<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);">'
+      + '<div style="flex:1;font-size:13px;font-weight:600;color:var(--text);">' + emoji + ' ' + guia + '</div>'
+      + '<div style="font-size:11px;color:var(--muted);">' + data.count + 'x</div>'
+      + '<div style="width:80px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;">'
+      +   '<div style="height:100%;width:' + avg + '%;background:' + color + ';border-radius:3px;transition:width .6s;"></div>'
+      + '</div>'
+      + '<div style="font-size:13px;font-weight:800;color:' + color + ';width:36px;text-align:right;">' + avg + '%</div>'
+      + '</div>';
+  }).join('');
+
+  el.innerHTML =
+    '<div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;">'
+    + '<div style="flex:1;min-width:90px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:12px;text-align:center;">'
+    +   '<div style="font-family:var(--font-display);font-size:22px;font-weight:900;color:var(--red);">' + hist.length + '</div>'
+    +   '<div style="font-size:11px;color:var(--muted);margin-top:2px;">Simulados</div>'
+    + '</div>'
+    + '<div style="flex:1;min-width:90px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:12px;text-align:center;">'
+    +   '<div style="font-family:var(--font-display);font-size:22px;font-weight:900;color:var(--red);">' + avgAll + '%</div>'
+    +   '<div style="font-size:11px;color:var(--muted);margin-top:2px;">Média geral</div>'
+    + '</div>'
+    + '<div style="flex:1;min-width:90px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:12px;text-align:center;">'
+    +   '<div style="font-family:var(--font-display);font-size:22px;font-weight:900;color:#22c55e;">' + best + '%</div>'
+    +   '<div style="font-size:11px;color:var(--muted);margin-top:2px;">Melhor resultado</div>'
+    + '</div>'
+    + '<div style="flex:1;min-width:90px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:12px;text-align:center;">'
+    +   '<div style="font-family:var(--font-display);font-size:22px;font-weight:900;color:#f59e0b;">' + totalWrong + '</div>'
+    +   '<div style="font-size:11px;color:var(--muted);margin-top:2px;">Total erros</div>'
+    + '</div>'
+    + '</div>'
+    + '<div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">% Médio por guia</div>'
+    + '<div style="display:flex;flex-direction:column;">' + guiaRows + '</div>'
+    + (srEntries.length ? '<div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;">Acertos vs Erros (SR)</div>'
+    +   '<div style="display:flex;gap:6px;align-items:center;font-size:13px;">'
+    +   '<div style="flex:' + totalCorrect + ';height:10px;background:#22c55e;border-radius:4px 0 0 4px;min-width:4px;" title="Corretas: ' + totalCorrect + '"></div>'
+    +   '<div style="flex:' + totalWrong + ';height:10px;background:var(--red);border-radius:0 4px 4px 0;min-width:4px;" title="Erradas: ' + totalWrong + '"></div>'
+    +   '</div>'
+    +   '<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px;">'
+    +   '<span>✅ ' + totalCorrect + ' corretas</span><span>❌ ' + totalWrong + ' erradas</span></div>' : '');
+}
+
+window.renderStats = renderStats;
 
 // switchMode — called from inline onclick in guide pages
 window.switchMode = function(mode) {
@@ -235,6 +371,8 @@ function initQuiz(questions, guiaName) {
                   + '<button class="btn-secondary" id="btnFlash" style="flex:1;font-size:13px;padding:9px 0;">⚡ Flashcard</button>'
                   + '<button class="btn-secondary" id="btnLacuna" style="flex:1;font-size:13px;padding:9px 0;">✏️ Lacunas</button>'
                   + '<button id="btnAutoAdv" style="flex-shrink:0;font-size:12px;padding:9px 10px;white-space:nowrap;border-radius:var(--radius-md);font-family:var(--font-display);font-weight:800;cursor:pointer;border:1.5px solid var(--border);transition:all .2s;" title="Auto-avançar após acerto">⚡ Auto</button>'
+                  + '<button id="btnSound" style="flex-shrink:0;font-size:18px;padding:9px 10px;border-radius:var(--radius-md);cursor:pointer;border:1.5px solid var(--border);background:var(--card);transition:all .2s;" title="Som de acerto/erro"></button>'
+                  + '<button id="btnStats" style="flex-shrink:0;font-size:18px;padding:9px 10px;border-radius:var(--radius-md);cursor:pointer;border:1.5px solid var(--border);background:var(--card);transition:all .2s;" title="Estatísticas">📊</button>'
                   + timerDropdownHTML;
     app.parentNode.insertBefore(bar, app);
 
@@ -311,6 +449,41 @@ function initQuiz(questions, guiaName) {
     document.getElementById('btnAutoAdv').addEventListener('click', function() {
       window._quizAutoAdvance = !window._quizAutoAdvance;
       syncAutoBtn();
+    });
+
+    // Sound toggle
+    function syncSoundBtn() {
+      var btn = document.getElementById('btnSound');
+      if (!btn) return;
+      var off = localStorage.getItem('mc_sound_off') === '1';
+      btn.textContent = off ? '🔇' : '🔊';
+      btn.style.opacity = off ? '0.5' : '1';
+    }
+    syncSoundBtn();
+    document.getElementById('btnSound').addEventListener('click', function() {
+      var off = localStorage.getItem('mc_sound_off') === '1';
+      localStorage.setItem('mc_sound_off', off ? '0' : '1');
+      syncSoundBtn();
+      if (off) mcPlaySound('correct'); // preview
+    });
+
+    // Stats button — show stats overlay
+    document.getElementById('btnStats').addEventListener('click', function() {
+      var existing = document.getElementById('stats-overlay');
+      if (existing) { existing.remove(); return; }
+      var overlay = document.createElement('div');
+      overlay.id = 'stats-overlay';
+      overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:400;display:flex;align-items:flex-end;justify-content:center;animation:obFadeIn .2s ease;';
+      overlay.innerHTML = '<div style="background:var(--card);border-radius:20px 20px 0 0;width:100%;max-width:780px;max-height:82vh;overflow-y:auto;padding:20px 18px 32px;box-shadow:0 -8px 40px rgba(0,0,0,0.2);animation:obSlideUp .25s cubic-bezier(0.22,1,.36,1);">'
+        + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">'
+        +   '<div style="font-family:var(--font-display);font-size:16px;font-weight:900;">📊 Minhas Estatísticas</div>'
+        +   '<button onclick="document.getElementById(\'stats-overlay\').remove()" style="background:var(--bg);border:1.5px solid var(--border);border-radius:50%;width:30px;height:30px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);">✕</button>'
+        + '</div>'
+        + '<div id="stats-content"></div>'
+        + '</div>';
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+      document.body.appendChild(overlay);
+      renderStats('stats-content');
     });
   }
   if (typeof window._quizTimerEnabled === 'undefined') window._quizTimerEnabled = false;
@@ -509,6 +682,7 @@ function initQuiz(questions, guiaName) {
     }
 
     updateSRData(getQuestionHash(q), isCorrect);
+    mcPlaySound(isCorrect ? 'correct' : 'wrong');
     document.querySelectorAll(".quiz-option").forEach(function(b) {
       b.disabled = true;
       if (b.dataset.correct === "true") b.classList.add("correct");
@@ -531,6 +705,7 @@ function initQuiz(questions, guiaName) {
 
     if (isCorrect && [3, 5, 10, 15, 20].indexOf(streak) !== -1) {
       showStreakToast(streak);
+      mcPlaySound('streak');
     }
 
     if (isCorrect && window._quizAutoAdvance !== false) {
