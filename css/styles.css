@@ -394,6 +394,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   border: 1.5px solid var(--border);
   padding: 20px 18px;
   box-shadow: var(--shadow-md);
+  animation: quizSlideIn .22s cubic-bezier(0.22,1,.36,1);
+}
+@keyframes quizSlideIn {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 .quiz-category {
   font-size: 10px;
