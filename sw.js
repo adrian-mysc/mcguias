@@ -1,6 +1,6 @@
 // MC Guias — Service Worker v13
 
-const CACHE = "mc-guias-v21";
+const CACHE = "mc-guias-v22";
 const offlineFallbackPage = "/mcguias/offline.html";
 
 // ---- Install: pre-cache all pages ----
