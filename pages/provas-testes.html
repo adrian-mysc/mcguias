@@ -236,8 +236,2088 @@
     // Cada prova tem: id, titulo, descricao, icon, perguntas[]
     // Cada pergunta: texto, opcoes[], correta (index 0-based), explicacao
     const PROVAS = [
-      // PDFs serão adicionados aqui
-    ];
+  {
+    id: "pre-prova-treinador",
+    titulo: "Pré Prova PDT — Treinador",
+    descricao: "Processo de Desenvolvimento para Treinador · Nível Castro",
+    icon: "🎓",
+    perguntas: [
+      {
+        texto: "O que é liderar por exemplo?",
+        opcoes: [
+          "É demonstrar a forma correta, ensinando e direcionando os seus liderados",
+          "É demonstrar a forma que não deve ser feita e deixando as pessoas descobrirem o erro",
+          "É demonstrar dizer 'faça o que eu digo, mas não faça o que eu faço'",
+          "Nenhuma das anteriores"
+        ],
+        correta: 0,
+        explicacao: "Liderar por exemplo significa demonstrar a forma correta, ensinando e direcionando os liderados."
+      },
+      {
+        texto: "Qual das ferramentas abaixo faz parte do kit para avaliar o desempenho de um funcionário?",
+        opcoes: [
+          "Descrição de cargo",
+          "Avaliação de desempenho passada",
+          "Dicionário de competências",
+          "Todas as anteriores"
+        ],
+        correta: 3,
+        explicacao: "O kit de avaliação de desempenho inclui: descrição de cargo, avaliação de desempenho passada e dicionário de competências."
+      },
+      {
+        texto: "Que cuidados devemos ter ao dar um feedback?",
+        opcoes: [
+          "Declarar o propósito",
+          "Descrever o seu ponto de vista",
+          "Discutir o ocorrido e fechar uma conclusão",
+          "Nenhuma das anteriores"
+        ],
+        correta: 2,
+        explicacao: "Ao dar feedback deve-se: declarar o propósito, descrever o ponto de vista E discutir o ocorrido fechando uma conclusão. A opção correta abrange todos os cuidados necessários."
+      },
+      {
+        texto: "Qual dos exemplos abaixo NÃO faz parte de um bom comportamento de líder?",
+        opcoes: [
+          "Explicar os porquês e direcionar as ações",
+          "Tomar a frente nas situações difíceis",
+          "Aguardar as iniciativas da equipe em uma situação de crise",
+          "Escutar as diversas opiniões do grupo e expor suas ideias"
+        ],
+        correta: 2,
+        explicacao: "Aguardar passivamente as iniciativas da equipe em uma crise NÃO é um bom comportamento de liderança. O líder deve agir proativamente."
+      },
+      {
+        texto: "Em uma sessão de aconselhamento é importante:",
+        opcoes: [
+          "Ouvir",
+          "Fechar um compromisso",
+          "Expor o problema",
+          "Todas as anteriores"
+        ],
+        correta: 3,
+        explicacao: "Em uma sessão de aconselhamento, todas as alternativas são importantes: ouvir, fechar um compromisso e expor o problema."
+      },
+      {
+        texto: "Qual é o programa que o funcionário deve participar quando entra na empresa?",
+        opcoes: [
+          "Meus 3 primeiros meses",
+          "Cipa",
+          "Sipat",
+          "PDT"
+        ],
+        correta: 0,
+        explicacao: "O programa 'Meus 3 primeiros meses' é destinado ao funcionário que entra na empresa."
+      },
+      {
+        texto: "Qual função abaixo o funcionário NÃO deve aprender logo que entra na empresa?",
+        opcoes: [
+          "Salão",
+          "Segmentos",
+          "Fritura",
+          "Apoio balcão"
+        ],
+        correta: 1,
+        explicacao: "A função de Segmentos não é ensinada logo no início. O funcionário começa por Salão, Fritura e Apoio ao balcão."
+      },
+      {
+        texto: "Qual é o tempo de vida do óleo vegetal?",
+        opcoes: [
+          "120 dias",
+          "180 dias",
+          "100 dias",
+          "90 dias"
+        ],
+        correta: 1,
+        explicacao: "O tempo de vida do óleo vegetal é de 180 dias."
+      },
+      {
+        texto: "Qual é a temperatura interna mínima das carnes 10:1 após cozida?",
+        opcoes: [
+          "69°C — Todas as 9 carnes",
+          "69°C — Todas as 8 carnes",
+          "72°C — Todas as 9 carnes",
+          "71°C — Todas as 8 carnes"
+        ],
+        correta: 0,
+        explicacao: "A temperatura interna mínima das carnes 10:1 é 69°C, verificada em todas as 9 carnes da rodada."
+      },
+      {
+        texto: "Qual é o tempo de vida do pão fresco?",
+        opcoes: [
+          "6 dias",
+          "5 dias",
+          "7 dias",
+          "90 dias"
+        ],
+        correta: 1,
+        explicacao: "O tempo de vida do pão fresco é de 5 dias."
+      },
+      {
+        texto: "Qual é o tempo de cozimento para as carnes de 4:1?",
+        opcoes: [
+          "Até 104 segundos",
+          "A partir de 102 segundos",
+          "A partir de 104 segundos",
+          "Até 106 segundos"
+        ],
+        correta: 2,
+        explicacao: "O tempo de cozimento para as carnes de 4:1 é a partir de 104 segundos."
+      },
+      {
+        texto: "Qual é o tempo de vida secundário do molho de Big Mac?",
+        opcoes: [
+          "02 horas depois de deslacrado",
+          "24 horas depois de deslacrado",
+          "12 horas depois de deslacrado",
+          "06 horas depois de deslacrado"
+        ],
+        correta: 1,
+        explicacao: "O molho de Big Mac tem vida secundária de 24 horas após ser deslacrado."
+      },
+      {
+        texto: "Qual é o tempo de ambientação do molho Cheddar?",
+        opcoes: [
+          "02 horas",
+          "04 horas",
+          "03 horas",
+          "06 horas"
+        ],
+        correta: 1,
+        explicacao: "O molho Cheddar requer 04 horas de ambientação."
+      },
+      {
+        texto: "Quem é o responsável pelo treinamento no 1º dia do funcionário novo?",
+        opcoes: [
+          "Escritório do McDonald's",
+          "Treinador",
+          "Gerente de Treinamento",
+          "Anfitrião"
+        ],
+        correta: 3,
+        explicacao: "O Anfitrião é o responsável pelo treinamento no 1º dia do funcionário novo."
+      },
+      {
+        texto: "Qual é a temperatura e o tempo de aquecimento da tostadeira rápida?",
+        opcoes: [
+          "293°C Principal / 204°C Auxiliar — 25 minutos",
+          "293°C Principal / 204°C Auxiliar — 30 minutos",
+          "293°C Principal / 204°C Auxiliar — 15 minutos",
+          "293°C Principal / 204°C Auxiliar — 20 minutos"
+        ],
+        correta: 3,
+        explicacao: "A tostadeira rápida aquece a 293°C (principal) e 204°C (auxiliar) em 20 minutos."
+      },
+      {
+        texto: "Qual é o peso de uma McFritas Pequena, Média e Grande respectivamente?",
+        opcoes: [
+          "74g, 102g, 146g",
+          "73g, 103g, 145g",
+          "73g, 102g, 146g",
+          "75g, 105g, 145g"
+        ],
+        correta: 2,
+        explicacao: "Os pesos padrão das McFritas são: Pequena = 73g, Média = 102g, Grande = 146g."
+      },
+      {
+        texto: "Qual é a capacidade de carnes de Grill em uma gaveta?",
+        opcoes: [
+          "5 carnes",
+          "6 carnes",
+          "7 carnes",
+          "8 carnes"
+        ],
+        correta: 1,
+        explicacao: "Cada gaveta suporta até 6 carnes de Grill."
+      },
+      {
+        texto: "Qual é o tempo de vida do pão congelado depois de descongelado?",
+        opcoes: [
+          "2 horas",
+          "7 dias, incluindo a data de fabricação",
+          "48 horas, incluindo 12 horas de descongelamento",
+          "6 dias, incluindo a data de fabricação"
+        ],
+        correta: 2,
+        explicacao: "O pão congelado após descongelado tem vida útil de 48 horas, incluindo as 12 horas de descongelamento."
+      },
+      {
+        texto: "Qual é o tempo de aquecimento das fritadeiras, tempo de cozimento das tortas e tempo de drenagem dos produtos fritos?",
+        opcoes: [
+          "50 min. com ciclo de derretimento, 05 minutos e 05 a 10 segundos de escorrimento",
+          "45 min. com ciclo de derretimento, 06 minutos e 05 a 10 segundos de escorrimento",
+          "45 min. com ciclo de derretimento, 05 minutos e 05 a 10 segundos de escorrimento",
+          "50 min. com ciclo de derretimento, 07 minutos e 05 a 10 segundos de escorrimento"
+        ],
+        correta: 2,
+        explicacao: "Fritadeiras: 45 min. (com ciclo de derretimento); tortas: 05 min. de cozimento; drenagem: 05 a 10 segundos."
+      },
+      {
+        texto: "Qual é o peso da McFritas Kids, Pequena, Média e Grande respectivamente?",
+        opcoes: [
+          "Kids = 1 Oz, Pequena = 2,5 Oz, Média = 3,5 Oz, Grande = 5,0 Oz",
+          "Kids = 0,5 Oz, Pequena = 2,5 Oz, Média = 3,5 Oz, Grande = 5,0 Oz",
+          "Kids = 1 Oz, Pequena = 2,0 Oz, Média = 3,5 Oz, Grande = 5,0 Oz",
+          "Kids = 1 Oz, Pequena = 2,5 Oz, Média = 3,0 Oz, Grande = 5,0 Oz"
+        ],
+        correta: 0,
+        explicacao: "Pesos em onças: Kids = 1 Oz, Pequena = 2,5 Oz, Média = 3,5 Oz, Grande = 5,0 Oz."
+      },
+      {
+        texto: "Qual é o tempo de vida dos xaropes de Coca-Cola, Coca Zero e Guaraná Kuat respectivamente?",
+        opcoes: [
+          "Coca-Cola = 70 dias, Coca Zero = 45 dias, Guaraná Kuat = 75 dias",
+          "Coca-Cola = 75 dias, Coca Zero = 40 dias, Guaraná Kuat = 75 dias",
+          "Coca-Cola = 75 dias, Coca Zero = 45 dias, Guaraná Kuat = 75 dias",
+          "Coca-Cola = 75 dias, Coca Zero = 45 dias, Guaraná Kuat = 70 dias"
+        ],
+        correta: 2,
+        explicacao: "Coca-Cola = 75 dias, Coca Zero = 45 dias, Guaraná Kuat = 75 dias."
+      },
+      {
+        texto: "Quais são os 05 passos de atendimento no salão?",
+        opcoes: [
+          "Recepcionar, direcionar, acomodar, atender e agradecer",
+          "Cumprimentar, direcionar, acomodar, atender e agradecer",
+          "Recepcionar, direcionar, anotar o pedido, atender e agradecer",
+          "Recepcionar, direcionar, acomodar, atender e verificar as necessidades do cliente"
+        ],
+        correta: 0,
+        explicacao: "Os 5 passos de atendimento no salão são: Recepcionar, Direcionar, Acomodar, Atender e Agradecer."
+      },
+      {
+        texto: "Qual é o tempo de vida dos pães congelados?",
+        opcoes: [
+          "60 dias",
+          "90 dias",
+          "120 dias",
+          "75 dias"
+        ],
+        correta: 1,
+        explicacao: "O tempo de vida dos pães congelados é de 90 dias."
+      },
+      {
+        texto: "Qual é a temperatura para carnes de Grill na UHC?",
+        opcoes: [
+          "95ºC",
+          "94ºC",
+          "84ºC",
+          "85ºC"
+        ],
+        correta: 3,
+        explicacao: "A temperatura para carnes de Grill na UHC é de 85°C."
+      },
+      {
+        texto: "Quantos mL de água despejamos no copo central de cozimento do anel para ativar carnes de Grill?",
+        opcoes: [
+          "75 mL",
+          "70 mL",
+          "73 mL",
+          "74 mL"
+        ],
+        correta: 0,
+        explicacao: "São despejados 75 mL de água no copo central para ativar as carnes de Grill."
+      },
+      {
+        texto: "Quantos mL de água despejamos na gaveta da UHC após o cozimento da carne de grill?",
+        opcoes: [
+          "177 mL de água filtrada",
+          "174 mL de água fria",
+          "177 mL de água morna",
+          "174 mL de água morna"
+        ],
+        correta: 2,
+        explicacao: "Após o cozimento, despeja-se 177 mL de água morna na gaveta da UHC."
+      },
+      {
+        texto: "Qual é o tempo de cozimento do bacon e da carne de grill respectivamente?",
+        opcoes: [
+          "60 segundos e 3'45\" total para grill",
+          "52 segundos e 3'45\" de cada lado para grill",
+          "56 segundos e 2'45\" total de cada lado para grill",
+          "60 segundos e 3'45\" de cada lado para grill"
+        ],
+        correta: 0,
+        explicacao: "Bacon: 60 segundos; Carne de grill: 3'45\" no total."
+      },
+      {
+        texto: "Qual é a temperatura de fritura, tempo de vida e o peso da Batata Rústica?",
+        opcoes: [
+          "180°C — 7 minutos — 172 gramas",
+          "180°C — 7 minutos — 200 gramas",
+          "168°C — 7 minutos — 172 gramas",
+          "177°C — 10 minutos — 200 gramas"
+        ],
+        correta: 0,
+        explicacao: "A Batata Rústica é frita a 180°C, tem vida útil de 7 minutos e pesa 172 gramas."
+      },
+      {
+        texto: "Para a certificação Made For You, qual a temperatura que deve atingir o Big Mac e o Cheeseburguer respectivamente?",
+        opcoes: [
+          "50ºC e 57ºC",
+          "57ºC e 60ºC",
+          "54ºC e 57ºC",
+          "60ºC e 47ºC"
+        ],
+        correta: 2,
+        explicacao: "Para a certificação MFY: Big Mac deve atingir 54°C e Cheeseburguer 57°C."
+      },
+      {
+        texto: "Para a certificação Made For You, qual é o Tempo de Fila (TF) e o Tempo de Montagem (TM) do balcão?",
+        opcoes: [
+          "90\" ou menos para TF e 90\" ou menos para TM",
+          "90\" ou menos para TF e 60\" ou menos para TM",
+          "60\" ou menos para TF e 60\" ou menos para TM",
+          "90\" ou menos para TF e 102\" ou menos para TM"
+        ],
+        correta: 1,
+        explicacao: "Certificação MFY no balcão: Tempo de Fila ≤ 90\" e Tempo de Montagem ≤ 60\"."
+      },
+      {
+        texto: "Quem é o responsável por realizar o Check-List diário de Segurança Alimentar?",
+        opcoes: [
+          "Gerente de Restaurante",
+          "Coordenador de Qualidade e Serviço",
+          "Gerente de Plantão",
+          "Treinador"
+        ],
+        correta: 2,
+        explicacao: "O Gerente de Plantão é o responsável por realizar o Check-List diário de Segurança Alimentar."
+      },
+      {
+        texto: "Qual é o tempo de vida primário e secundário da cebola desidratada?",
+        opcoes: [
+          "360 dias e 04 horas na mesa de preparação / 24 horas na câmara de resfriados",
+          "365 dias e 06 horas na mesa de preparação / 24 horas na câmara de resfriados",
+          "365 dias e 04 horas na mesa de preparação / 24 horas na câmara de resfriados",
+          "365 dias e 02 horas na mesa de preparação / 24 horas na câmara de resfriados"
+        ],
+        correta: 2,
+        explicacao: "Cebola desidratada: 365 dias (primário), 04 horas na mesa de preparação e 24 horas na câmara de resfriados (secundário)."
+      },
+      {
+        texto: "Qual é o tempo de vida das McFritas na estufa?",
+        opcoes: [
+          "06 minutos",
+          "05 minutos",
+          "07 minutos",
+          "10 minutos"
+        ],
+        correta: 1,
+        explicacao: "As McFritas têm vida útil de 05 minutos na estufa."
+      },
+      {
+        texto: "Qual é o tempo de vida dos lanches na estufa OAT?",
+        opcoes: [
+          "05 minutos",
+          "07 minutos",
+          "10 minutos",
+          "Não há tempo de vida"
+        ],
+        correta: 2,
+        explicacao: "Os lanches têm vida útil de 10 minutos na estufa OAT."
+      },
+      {
+        texto: "Em quantas fatias devemos cortar as carnes de Grill e Crispy para as Saladas?",
+        opcoes: [
+          "6 a 8 fatias",
+          "7 a 8 fatias",
+          "8 a 9 fatias",
+          "7 a 10 fatias"
+        ],
+        correta: 1,
+        explicacao: "As carnes de Grill e Crispy para saladas devem ser cortadas em 7 a 8 fatias."
+      },
+      {
+        texto: "Qual é o terceiro passo de atendimento do balcão?",
+        opcoes: [
+          "Atender o cliente fazendo sugestão de venda",
+          "Anotar o pedido fazendo venda sugestiva",
+          "Montar o pedido",
+          "Apresentar o pedido"
+        ],
+        correta: 1,
+        explicacao: "O 3º passo do atendimento do balcão é anotar o pedido fazendo venda sugestiva."
+      },
+      {
+        texto: "Qual é o tempo de vida da alface no refrigerador portátil?",
+        opcoes: [
+          "1 hora",
+          "24 horas",
+          "2 horas",
+          "4 horas"
+        ],
+        correta: 2,
+        explicacao: "A alface tem vida útil de 2 horas no refrigerador portátil."
+      },
+      {
+        texto: "Qual é a característica da qualidade dos sucos?",
+        opcoes: [
+          "Frio, cor brilhante, sabor doce",
+          "Temperatura ambiente, cor neutra e sabor doce",
+          "Frio, cor escura e sabor doce",
+          "Nenhuma das alternativas anteriores"
+        ],
+        correta: 0,
+        explicacao: "Os sucos de qualidade devem estar frios, com cor brilhante e sabor doce."
+      },
+      {
+        texto: "Qual é a temperatura da UHC?",
+        opcoes: [
+          "93ºC",
+          "92ºC",
+          "94ºC",
+          "95ºC"
+        ],
+        correta: 3,
+        explicacao: "A temperatura da UHC é de 95°C."
+      },
+      {
+        texto: "Qual é o tempo de cozimento para as carnes 10:1?",
+        opcoes: [
+          "A partir de 38 segundos",
+          "A partir de 39 segundos",
+          "A partir de 40 segundos",
+          "A partir de 42 segundos"
+        ],
+        correta: 2,
+        explicacao: "O tempo de cozimento das carnes 10:1 é a partir de 40 segundos."
+      },
+      {
+        texto: "Qual é o tempo de vida primário do molho de Big Mac?",
+        opcoes: [
+          "90 dias",
+          "120 dias",
+          "60 dias",
+          "30 dias"
+        ],
+        correta: 1,
+        explicacao: "O tempo de vida primário do molho de Big Mac é de 120 dias."
+      },
+      {
+        texto: "Qual é o tempo de cozimento para as carnes de McJunior?",
+        opcoes: [
+          "1 min e 50 seg",
+          "2 min e 10 seg",
+          "1 min e 30 seg",
+          "1 min e 10 seg"
+        ],
+        correta: 0,
+        explicacao: "O tempo de cozimento das carnes de McJunior é de 1 min e 50 seg."
+      },
+      {
+        texto: "Qual é a temperatura de extração dos refrigerantes?",
+        opcoes: [
+          "0ºC a 4ºC",
+          "1ºC a 4ºC",
+          "1ºC a 7ºC",
+          "1ºC a 9ºC"
+        ],
+        correta: 1,
+        explicacao: "A temperatura de extração dos refrigerantes é de 1°C a 4°C."
+      },
+      {
+        texto: "Qual é a velocidade de extração da Coca-Cola?",
+        opcoes: [
+          "450 mL em 10 segundos",
+          "400 mL em 10 segundos",
+          "450 mL em 12 segundos",
+          "400 mL em 12 segundos"
+        ],
+        correta: 0,
+        explicacao: "A Coca-Cola deve ser extraída a 450 mL em 10 segundos."
+      },
+      {
+        texto: "Quem é o responsável em entregar canudo e guardanapo ao cliente?",
+        opcoes: [
+          "O caixa do balcão",
+          "O apoio do balcão",
+          "Ou o caixa ou o apoio",
+          "Nenhuma das alternativas anteriores"
+        ],
+        correta: 2,
+        explicacao: "Tanto o caixa quanto o apoio do balcão podem entregar canudo e guardanapo ao cliente."
+      },
+      {
+        texto: "Qual é o tempo de vida primário das carnes de 10:1?",
+        opcoes: [
+          "90 dias",
+          "80 dias",
+          "120 dias",
+          "180 dias"
+        ],
+        correta: 3,
+        explicacao: "O tempo de vida primário das carnes de 10:1 é de 180 dias."
+      },
+      {
+        texto: "Qual é o tempo de vida das carnes de nuggets?",
+        opcoes: [
+          "130 dias",
+          "140 dias",
+          "120 dias",
+          "150 dias"
+        ],
+        correta: 1,
+        explicacao: "O tempo de vida das carnes de nuggets é de 140 dias."
+      },
+      {
+        texto: "Qual é o tempo de vida das McFritas (produto congelado)?",
+        opcoes: [
+          "90 dias",
+          "275 dias",
+          "180 dias",
+          "360 dias"
+        ],
+        correta: 3,
+        explicacao: "O tempo de vida primário das McFritas (produto congelado) é de 360 dias."
+      },
+      {
+        texto: "Qual é o tempo de vida do queijo muçarela?",
+        opcoes: [
+          "45 dias",
+          "40 dias",
+          "50 dias",
+          "30 dias"
+        ],
+        correta: 0,
+        explicacao: "O tempo de vida do queijo muçarela é de 45 dias."
+      },
+      {
+        texto: "Qual o tempo de vida do leite após aberto?",
+        opcoes: [
+          "2 horas",
+          "3 horas",
+          "4 horas",
+          "48 horas"
+        ],
+        correta: 2,
+        explicacao: "O leite após aberto tem vida útil de 4 horas."
+      },
+      {
+        texto: "Um bom comportamento proporciona:",
+        opcoes: [
+          "Um desenvolvimento melhor e correto para o funcionário",
+          "Um desenvolvimento correto e um diferencial para si",
+          "Um desenvolvimento normal igual aos demais",
+          "Alternativas A e B estão corretas"
+        ],
+        correta: 3,
+        explicacao: "Um bom comportamento proporciona tanto um desenvolvimento melhor para o funcionário quanto um diferencial para si mesmo."
+      },
+      {
+        texto: "Qual é a Principal Característica de Relações Interpessoais que deve ter um Treinador?",
+        opcoes: [
+          "Comunicação",
+          "Profissionalismo",
+          "Liderança",
+          "Teoria McDonald's"
+        ],
+        correta: 0,
+        explicacao: "A principal característica de relações interpessoais de um treinador é a Comunicação."
+      },
+      {
+        texto: "Assinale 2 maneiras de gerar uma atitude de cooperação:",
+        opcoes: [
+          "Elogiar o bom trabalho da equipe e lembrar a todos que devem trabalhar juntos",
+          "Gritar e mandar fazer o que se deve",
+          "Assumir as tarefas e corrigir em voz alta",
+          "Alternativas B e C estão corretas"
+        ],
+        correta: 0,
+        explicacao: "Para gerar cooperação: elogiar o bom trabalho e lembrar a todos da importância do trabalho em equipe."
+      },
+      {
+        texto: "Não faz parte da conduta de um Bom Treinador:",
+        opcoes: [
+          "Cumprimentar os funcionários pelo nome",
+          "Dizer 'por favor' e 'obrigado'",
+          "Mandar ao invés de pedir",
+          "Tratar os outros como eles gostariam de ser tratados"
+        ],
+        correta: 2,
+        explicacao: "Mandar ao invés de pedir não faz parte da conduta de um bom treinador."
+      },
+      {
+        texto: "Quem é o responsável pelas LIVES AVANÇADAS?",
+        opcoes: [
+          "Qualquer gerente previamente escalado",
+          "Qualquer instrutor previamente escalado",
+          "Qualquer coordenador previamente escalado",
+          "Qualquer anfitriã previamente escalada"
+        ],
+        correta: 1,
+        explicacao: "As LIVES AVANÇADAS são de responsabilidade de qualquer instrutor previamente escalado."
+      },
+      {
+        texto: "Qual das alternativas abaixo NÃO fazem parte de um bom Treinador?",
+        opcoes: [
+          "Ser líder",
+          "Possuir faltas em seu prontuário",
+          "Ser assíduo",
+          "Ter a avaliação de desempenho maior que 90%"
+        ],
+        correta: 1,
+        explicacao: "Possuir faltas no prontuário não é compatível com o perfil de um bom treinador."
+      },
+      {
+        texto: "Quantos objetivos temos que trabalhar diariamente?",
+        opcoes: [
+          "Vendas / GCs / Arcopco / Turnover",
+          "Vendas / GCs / Arcopco / CSS",
+          "Vendas / GCs / Arcopco / Turnover / CSS",
+          "GCs / Arcopco / Turnover / CSS"
+        ],
+        correta: 2,
+        explicacao: "Os 5 objetivos diários são: Vendas, GCs, Arcopco, Turnover e CSS."
+      },
+      {
+        texto: "O que é feedback apreciativo e construtivo?",
+        opcoes: [
+          "É reforçar os pontos negativos e elogiar",
+          "É reforçar os pontos positivos e também os pontos de oportunidades direcionando",
+          "É reforçar os pontos positivos e elogiar",
+          "É reforçar os pontos de oportunidade"
+        ],
+        correta: 1,
+        explicacao: "Feedback apreciativo e construtivo: reforça pontos positivos E aponta oportunidades de melhoria com direcionamento."
+      },
+      {
+        texto: "O que significa ter mentalidade aberta ao Feedback?",
+        opcoes: [
+          "Manter o foco somente no resultado",
+          "Evitar julgamento sobre personalidade",
+          "Prestar atenção e não deixar o funcionário falar",
+          "Receber feedback somente quando estiver disponível"
+        ],
+        correta: 1,
+        explicacao: "Ter mentalidade aberta ao feedback significa evitar julgamentos sobre personalidade e focar nos comportamentos."
+      },
+      {
+        texto: "O que significa treinamento 4/30?",
+        opcoes: [
+          "4 áreas em 30 dias",
+          "4 funções em 30 dias",
+          "4 estações em 30 dias",
+          "Nenhuma das anteriores"
+        ],
+        correta: 1,
+        explicacao: "O treinamento 4/30 significa treinar o funcionário em 4 funções em 30 dias."
+      },
+      {
+        texto: "O que significa ter Responsabilidade Pessoal?",
+        opcoes: [
+          "Assumir a responsabilidade por tudo",
+          "Ter dividido as responsabilidades dentro do restaurante, na qual você tem a sua",
+          "Sentir-se auto capacitado",
+          "Ter responsabilidade geral do restaurante"
+        ],
+        correta: 1,
+        explicacao: "Responsabilidade Pessoal é ter clareza das suas responsabilidades específicas dentro da divisão de tarefas do restaurante."
+      },
+      {
+        texto: "Criatividade é:",
+        opcoes: [
+          "A capacidade de pensar de forma igual gerando novas ideias",
+          "A capacidade de pensar de forma diferente a fim de gerar várias abordagens e soluções",
+          "A capacidade de agir de forma diferente gerando novas soluções",
+          "A capacidade de agir de forma igual gerando novas ideias"
+        ],
+        correta: 1,
+        explicacao: "Criatividade é a capacidade de pensar de forma diferente para gerar várias abordagens e soluções."
+      },
+      {
+        texto: "Quais são as ferramentas que o instrutor deve usar para treinar um funcionário?",
+        opcoes: [
+          "Guias de estação e LIVEs",
+          "Aulas E-learning",
+          "Escala de instrutor e planejamento mensal",
+          "Todas as anteriores"
+        ],
+        correta: 3,
+        explicacao: "O instrutor deve utilizar todas as ferramentas disponíveis: guias, LIVEs, e-learning, escala e planejamento."
+      },
+      {
+        texto: "Quantos dias de treinamento deve acontecer para a pessoa do expedidor?",
+        opcoes: [
+          "4 a 5 dias",
+          "3 a 4 dias",
+          "2 a 3 dias",
+          "1 a 2 dias"
+        ],
+        correta: 1,
+        explicacao: "O treinamento para o expedidor deve acontecer em 3 a 4 dias."
+      },
+      {
+        texto: "Quem é o responsável por controlar sobras e faltas de tortas na área de balcão?",
+        opcoes: [
+          "O gerente de cozinha",
+          "O gerente de balcão",
+          "O gerente de Plantão",
+          "Nenhuma das anteriores"
+        ],
+        correta: 1,
+        explicacao: "O gerente de balcão é responsável por controlar sobras e faltas de tortas."
+      },
+      {
+        texto: "Qual é o número de funcionários ideal para cada instrutor poder dar treinamento?",
+        opcoes: [
+          "07 funcionários",
+          "06 funcionários",
+          "11 funcionários",
+          "08 funcionários"
+        ],
+        correta: 3,
+        explicacao: "O número ideal é de 08 funcionários por instrutor."
+      },
+      {
+        texto: "Qual é o significado da sigla SMP?",
+        opcoes: [
+          "Sistema de Manutenção Preventiva",
+          "Sistema de Migração Preventiva",
+          "Sistema de Manutenção Programada",
+          "Sistema de Manutenção Prévia"
+        ],
+        correta: 0,
+        explicacao: "SMP = Sistema de Manutenção Preventiva."
+      },
+      {
+        texto: "Qual é o tempo de vida do pão congelado?",
+        opcoes: [
+          "90 dias a partir da data do giro de estoque da Arizta",
+          "90 dias a partir da data de validade secundária certificado pelo McDonald's",
+          "90 dias a partir da data de armazenagem no Chicago certificado pelo McDonald's",
+          "90 dias a partir da data de fabricação"
+        ],
+        correta: 3,
+        explicacao: "O tempo de vida do pão congelado é de 90 dias a partir da data de fabricação."
+      },
+      {
+        texto: "Quantos dias é necessário para desenvolver treinamento básico na estação linha?",
+        opcoes: [
+          "5 dias",
+          "8 dias",
+          "10 dias",
+          "3 dias"
+        ],
+        correta: 2,
+        explicacao: "São necessários 10 dias para o treinamento básico na estação linha."
+      },
+      {
+        texto: "Como é dividido as áreas de atuação de treinamento do McDonald's?",
+        opcoes: [
+          "Qualidade, Serviço, Segmentos",
+          "Linha de Produção, Serviço, Colds",
+          "Produção, Experiência do Cliente e Segmentos",
+          "Qualidade, Experiência do Cliente e Segmentos"
+        ],
+        correta: 2,
+        explicacao: "As áreas de atuação do treinamento são: Produção, Experiência do Cliente e Segmentos."
+      },
+      {
+        texto: "Qual o posicionamento da pessoa do Iniciador?",
+        opcoes: [
+          "Na frente da OAT",
+          "Na frente da mesa de Condimentação",
+          "Na frente da Tostadeira Vertical",
+          "Na frente do carrinho de Pães"
+        ],
+        correta: 2,
+        explicacao: "O Iniciador se posiciona na frente da Tostadeira Vertical."
+      },
+      {
+        texto: "Qual é o objetivo da técnica de trabalho ombro a ombro?",
+        opcoes: [
+          "Eliminar obstáculos e desobstruir a linha de trabalho",
+          "Ajudar o funcionário a ter ritmo McDonald's",
+          "Ajudar o funcionário em seus problemas no treinamento",
+          "Identificar e solucionar barreiras"
+        ],
+        correta: 3,
+        explicacao: "A técnica ombro a ombro tem como objetivo identificar e solucionar barreiras no treinamento."
+      },
+      {
+        texto: "De acordo com as preventivas, qual é a frequência de limpeza do teflon da tostadeira vertical e drenagem das cubas das fritadeiras?",
+        opcoes: [
+          "Semanal",
+          "Quinzenal",
+          "Mensal",
+          "Diária"
+        ],
+        correta: 3,
+        explicacao: "A limpeza do teflon da tostadeira vertical e a drenagem das cubas das fritadeiras ocorre diariamente."
+      },
+      {
+        texto: "De acordo com o calendário de Preventivas, qual é o dia de limpeza e sanitização da Máquina de Gelo?",
+        opcoes: [
+          "Terça-Feira",
+          "Segunda-Feira",
+          "Quinta-Feira",
+          "Quarta-Feira"
+        ],
+        correta: 3,
+        explicacao: "A limpeza e sanitização da Máquina de Gelo ocorre na Quarta-Feira."
+      },
+      {
+        texto: "De acordo com o calendário de Preventivas, qual é o dia de preventiva de limpeza dos equipamentos Made For You?",
+        opcoes: [
+          "Segunda-Feira",
+          "Terça-Feira",
+          "Sábado",
+          "Quarta-Feira"
+        ],
+        correta: 1,
+        explicacao: "A preventiva dos equipamentos Made For You ocorre na Terça-Feira."
+      },
+      {
+        texto: "Qual é o dia de desmontar, limpar e sanitizar as bombas de cobertura e fazer a quebra de ciclo?",
+        opcoes: [
+          "Segunda-Feira",
+          "Sexta-Feira",
+          "Domingo",
+          "Sábado"
+        ],
+        correta: 3,
+        explicacao: "As bombas de cobertura são desmontadas, limpas e sanitizadas no Sábado."
+      },
+      {
+        texto: "Qual é o tempo de vida do Nuggets na UHC?",
+        opcoes: [
+          "15 minutos",
+          "30 minutos",
+          "25 minutos",
+          "20 minutos"
+        ],
+        correta: 3,
+        explicacao: "Os Nuggets têm vida útil de 20 minutos na UHC."
+      },
+      {
+        texto: "Qual é a velocidade de extração do Sundae?",
+        opcoes: [
+          "5 a 7 oz em 10 segundos",
+          "5 a 7,5 oz em 10 segundos",
+          "6 a 8,5 oz em 11 segundos",
+          "7 a 7,5 oz em 10 segundos"
+        ],
+        correta: 1,
+        explicacao: "O Sundae deve ser extraído a 5 a 7,5 oz em 10 segundos."
+      },
+      {
+        texto: "Qual é o máximo de tortas que podemos ativar em uma rodada completa?",
+        opcoes: [
+          "12 tortas",
+          "15 tortas",
+          "16 tortas",
+          "14 tortas"
+        ],
+        correta: 0,
+        explicacao: "O máximo de tortas ativáveis em uma rodada completa é de 12 tortas."
+      },
+      {
+        texto: "Qual é o tempo de aquecimento das coberturas?",
+        opcoes: [
+          "2 horas",
+          "1 hora",
+          "3 horas",
+          "4 horas"
+        ],
+        correta: 0,
+        explicacao: "As coberturas levam 2 horas para aquecimento."
+      },
+      {
+        texto: "Qual é o peso de um Sundae (massa), da sua cobertura e amendoim respectivamente?",
+        opcoes: [
+          "4 oz — 0/1 oz — 7g",
+          "4,5 oz — 1 oz — 7g",
+          "4 oz — 1/2 oz — 7g",
+          "4 oz — 1 oz — 7g"
+        ],
+        correta: 3,
+        explicacao: "Sundae: massa = 4 oz, cobertura = 1 oz, amendoim = 7g."
+      },
+      {
+        texto: "O que significa CAT?",
+        opcoes: [
+          "Comunicação de Acidente de Trabalho",
+          "Comunicado de Alteração de Trabalho",
+          "Campanha Assistencial de Trabalhadores",
+          "Comissão de Acidente de Trabalho"
+        ],
+        correta: 0,
+        explicacao: "CAT = Comunicação de Acidente de Trabalho."
+      },
+      {
+        texto: "Quais as temperaturas da tostadeira rápida e do vaporizador rápido respectivamente?",
+        opcoes: [
+          "293ºC e 152ºC",
+          "293ºC e 154ºC",
+          "293ºC e 151ºC",
+          "292ºC e 151ºC"
+        ],
+        correta: 2,
+        explicacao: "Tostadeira rápida: 293°C; Vaporizador rápido: 151°C."
+      },
+      {
+        texto: "Quais são os três pilares de sustentação de nossos valores?",
+        opcoes: [
+          "Acreditar, Valorizar e Vender",
+          "Acreditar, Valorizar e Influenciar",
+          "Acreditar, Praticar e Influenciar",
+          "Preparar, Apresentar, Praticar e Acompanhar"
+        ],
+        correta: 2,
+        explicacao: "Os três pilares de sustentação dos valores são: Acreditar, Praticar e Influenciar."
+      },
+      {
+        texto: "Qual é a altura do pão de Big Tasty?",
+        opcoes: [
+          "4,12cm a 4,26cm",
+          "4,12cm a 4,76cm",
+          "4,13cm a 4,86cm",
+          "4,13cm a 4,76cm"
+        ],
+        correta: 3,
+        explicacao: "A altura padrão do pão de Big Tasty é de 4,13cm a 4,76cm."
+      },
+      {
+        texto: "Qual é a altura e diâmetro do pão regular?",
+        opcoes: [
+          "3,6cm a 4,4cm / 9,5cm a 9,8cm",
+          "3,6cm a 5,4cm / 9,6cm a 9,8cm",
+          "3,7cm a 4,1cm / 9,7cm a 9,9cm",
+          "3,6cm a 4,4cm / 9,5cm a 9,7cm"
+        ],
+        correta: 0,
+        explicacao: "Pão regular: altura 3,6cm a 4,4cm e diâmetro 9,5cm a 9,8cm."
+      },
+      {
+        texto: "Qual a quantidade de alface no Big Tasty?",
+        opcoes: [
+          "27 gramas",
+          "28 gramas",
+          "28,5 gramas",
+          "22 gramas"
+        ],
+        correta: 1,
+        explicacao: "O Big Tasty leva 28 gramas de alface."
+      },
+      {
+        texto: "Qual é a temperatura da água na área de preparação?",
+        opcoes: [
+          "57ºC a 73ºC",
+          "57ºC a 93ºC",
+          "47ºC a 63ºC",
+          "57ºC a 63ºC"
+        ],
+        correta: 3,
+        explicacao: "A temperatura da água na área de preparação é de 57°C a 63°C."
+      },
+      {
+        texto: "Qual a temperatura da placa auxiliar da tostadeira vertical?",
+        opcoes: [
+          "204ºC",
+          "205ºC",
+          "203ºC",
+          "293ºC"
+        ],
+        correta: 0,
+        explicacao: "A placa auxiliar da tostadeira vertical opera a 204°C."
+      },
+      {
+        texto: "Qual é a temperatura de extração das coberturas quentes de sundae?",
+        opcoes: [
+          "10ºC a 28ºC",
+          "46ºC a 52ºC",
+          "11ºC a 27ºC",
+          "45ºC a 53ºC"
+        ],
+        correta: 1,
+        explicacao: "A temperatura de extração das coberturas quentes de sundae é de 46°C a 52°C."
+      },
+      {
+        texto: "Qual é a temperatura de armazenagem dos produtos congelados?",
+        opcoes: [
+          "Entre -23ºC a -18ºC",
+          "Entre -22ºC a -18ºC",
+          "Entre -23ºC a -19ºC",
+          "Entre -21ºC a -18ºC"
+        ],
+        correta: 0,
+        explicacao: "Produtos congelados devem ser armazenados entre -23°C e -18°C."
+      },
+      {
+        texto: "Qual é a missão dos Arcos Dourados McDonald's?",
+        opcoes: [
+          "Oferecer qualidade, serviço e limpeza aos clientes, operando em um ambiente ético e responsável",
+          "Servir comida de qualidade, proporcionando sempre uma experiência extraordinária",
+          "Contribuir para o desenvolvimento das comunidades nas quais operamos e maximizar a rentabilidade",
+          "Oferecer um bom sanduíche a um preço justo"
+        ],
+        correta: 1,
+        explicacao: "A missão dos Arcos Dourados é: Servir comida de qualidade, proporcionando sempre uma experiência extraordinária."
+      },
+      {
+        texto: "Qual é a temperatura da câmara de resfriado?",
+        opcoes: [
+          "Entre 1ºC a 6ºC (34ºF a 46ºF), ideal inferior a 6",
+          "Entre 1ºC a 5ºC (34ºF a 43ºF), ideal inferior a 5",
+          "Entre 1ºC a 4ºC (34ºF a 42ºF), ideal inferior a 4",
+          "Entre 1ºC a 7ºC (34ºF a 45ºF), ideal inferior a 7"
+        ],
+        correta: 2,
+        explicacao: "A câmara de resfriado deve estar entre 1°C e 4°C (34°F a 42°F), com temperatura ideal abaixo de 4°C."
+      },
+      {
+        texto: "Qual a temperatura de extração do sundae?",
+        opcoes: [
+          "9ºC a 8ºC (-16ºF a -18ºF)",
+          "8ºC a 9ºC (-18ºF a -16ºF)",
+          "-9ºC a -8ºC (16ºF a 18ºF)",
+          "-8ºC a -9ºC (18ºF a 16ºF)"
+        ],
+        correta: 2,
+        explicacao: "O sundae deve ser extraído entre -9°C e -8°C (16°F a 18°F)."
+      },
+      {
+        texto: "Qual a temperatura do banho-maria das coberturas de sundae?",
+        opcoes: [
+          "57ºC a 63ºC",
+          "47ºC a 53ºC",
+          "57ºC a 73ºC",
+          "56ºC a 73ºC"
+        ],
+        correta: 0,
+        explicacao: "O banho-maria das coberturas de sundae deve estar entre 57°C e 63°C."
+      },
+      {
+        texto: "Qual a temperatura da estufa de tortas?",
+        opcoes: [
+          "66ºC a 82ºC",
+          "76ºC a 82ºC",
+          "66ºC a 92ºC",
+          "-66ºC a -82ºC"
+        ],
+        correta: 0,
+        explicacao: "A estufa de tortas opera entre 66°C e 82°C."
+      },
+      {
+        texto: "Qual a temperatura do café dentro da jarra?",
+        opcoes: [
+          "76ºC a 81ºC (170ºF a 179ºF)",
+          "77ºC a 80ºC (171ºF a 178ºF)",
+          "76ºC a 82ºC (170ºF a 180ºF)",
+          "77ºC a 82ºC (171ºF a 180ºF)"
+        ],
+        correta: 0,
+        explicacao: "O café dentro da jarra deve estar entre 76°C e 81°C (170°F a 179°F)."
+      },
+      {
+        texto: "Qual é a altura ideal de uma Casquinha?",
+        opcoes: [
+          "7,5 cm",
+          "8,5 cm",
+          "9,5 cm",
+          "5,5 cm"
+        ],
+        correta: 1,
+        explicacao: "A altura ideal de uma Casquinha é de 8,5 cm."
+      },
+      {
+        texto: "Quais são os 4 momentos da venda?",
+        opcoes: [
+          "Cumprimentos, Tomada de Pedido, Pagamento, Agradecimento/Despedida",
+          "Cumprimentos, Registrar no POS em voz alta e clara, Despedir, Direcionar ao lado",
+          "Cumprimentos, Tomada de Pedido, Realizar Venda Sugestiva, Pagamento/Despedida",
+          "Cumprimentos, Tomada de Pedido, Venda Sugestiva, Agradecimento/Despedida"
+        ],
+        correta: 3,
+        explicacao: "Os 4 momentos da venda são: Cumprimentos, Tomada de Pedido, Venda Sugestiva e Agradecimento/Despedida."
+      },
+      {
+        texto: "Qual o tempo de vida primário do alface, cebola fresca, queijo e picles respectivamente?",
+        opcoes: [
+          "10 dias / 10 dias / 60 dias / 180 dias",
+          "10 dias / 10 dias / 120 dias / 190 dias",
+          "10 dias / 10 dias / 120 dias / 180 dias",
+          "7 dias / 7 dias / 120 dias / 180 dias"
+        ],
+        correta: 2,
+        explicacao: "Tempos de vida primários: alface = 10 dias, cebola fresca = 10 dias, queijo = 120 dias, picles = 180 dias."
+      },
+      {
+        texto: "O que é Overrun?",
+        opcoes: [
+          "Peso da massa líquida",
+          "Peso da massa sólida acrescido de gás",
+          "Porcentagem de ar acrescido à mistura",
+          "Porcentagem de mistura acrescido de ar"
+        ],
+        correta: 2,
+        explicacao: "Overrun é a porcentagem de ar acrescido à mistura de sorvete/sundae."
+      },
+      {
+        texto: "Qual o tempo de cozimento da carne de Grill na chapa?",
+        opcoes: [
+          "2 tempos de 2 minutos e 35 segundos",
+          "2 tempos de 2 minutos e 45 segundos",
+          "3 tempos de 3 minutos e 45 segundos",
+          "2 tempos de 3 minutos e 45 segundos"
+        ],
+        correta: 3,
+        explicacao: "A carne de Grill é cozida em 2 tempos de 3 minutos e 45 segundos cada."
+      },
+      {
+        texto: "Quais são as ferramentas de Diagnóstico das carnes?",
+        opcoes: [
+          "Produto desidratado, Compressão, Temperatura, Tempo e Desrespeito ao tempo de remoção das carnes",
+          "Produto ótimo, Compressão, Temperatura, Tempo e Desrespeito ao tempo de remoção da chapa",
+          "Produto desidratado, Compressão, Temperatura, Tempo e Desrespeito ao tempo de remoção com saleiro e espátula",
+          "Produto em bom estado, Compressão, Temperatura, Tempo e Desrespeito ao tempo de remoção da lâmina de gordura"
+        ],
+        correta: 0,
+        explicacao: "As 5 ferramentas de diagnóstico das carnes são: Produto desidratado, Compressão, Temperatura, Tempo e Desrespeito ao tempo de remoção."
+      },
+      {
+        texto: "No Programa Inovação em Serviço, o que significa o conceito SMILE?",
+        opcoes: [
+          "Serviço, Medir, Influenciar, Limpar e Envolver",
+          "Servir, Medir, Inovar, Liderar e Encantar",
+          "Servir, Medir, Inspecionar, Liderar e Encantar",
+          "Serviço, Medir, Inovar, Limpar e Envolver"
+        ],
+        correta: 1,
+        explicacao: "SMILE = Servir, Medir, Inovar, Liderar e Encantar."
+      },
+      {
+        texto: "Cite quatro benefícios de um bom treinamento:",
+        opcoes: [
+          "Eleva o nível do QSL, motiva a equipe, aumenta a produtividade e aumenta as vendas",
+          "Eleva o nível da concorrência, motiva a equipe, aumenta a produtividade e aumenta as vendas",
+          "Eleva o nível de QSL, motiva a equipe, aumenta a produtividade e aumenta a fidelidade de clientes",
+          "Eleva o nível de QSL, motiva a equipe, aumenta a produtividade e desenvolve funcionários rapidamente"
+        ],
+        correta: 0,
+        explicacao: "Um bom treinamento: eleva o QSL, motiva a equipe, aumenta a produtividade e aumenta as vendas."
+      },
+      {
+        texto: "Qual a temperatura interna mínima de integridade das carnes vermelhas?",
+        opcoes: [
+          "69ºC ou 165ºF",
+          "74ºC ou 165ºF",
+          "71ºC ou 155ºF",
+          "69ºC ou 155ºF"
+        ],
+        correta: 3,
+        explicacao: "A temperatura interna mínima de integridade das carnes vermelhas é 69°C (155°F)."
+      },
+      {
+        texto: "Qual é o teor de gordura da mistura de Sundae?",
+        opcoes: [
+          "4%",
+          "5%",
+          "2%",
+          "20%"
+        ],
+        correta: 1,
+        explicacao: "O teor de gordura da mistura de Sundae é de 5%."
+      },
+      {
+        texto: "Qual é o tempo de montagem da bandeja a partir da totalização do pedido?",
+        opcoes: [
+          "35 a 50 segundos",
+          "50 segundos",
+          "60 segundos",
+          "90 segundos"
+        ],
+        correta: 2,
+        explicacao: "O tempo de montagem da bandeja é de 60 segundos a partir da totalização do pedido."
+      }
+    ]
+  },
+
+  {
+    id: "avaliacao-treinador-2018",
+    titulo: "Avaliação para Treinador — 2018",
+    descricao: "Avaliação oficial para o cargo de Treinador · 1ª Etapa",
+    icon: "📝",
+    perguntas: [
+      {
+        texto: "Qual é o tempo de vida do óleo vegetal?",
+        opcoes: ["120 dias", "180 dias", "100 dias", "90 dias"],
+        correta: 1,
+        explicacao: "O tempo de vida do óleo vegetal é de 180 dias."
+      },
+      {
+        texto: "Qual é a temperatura interna mínima das carnes 10:1 após cozida?",
+        opcoes: [
+          "69°C — Todas as 9 carnes",
+          "69°C — Todas as 8 carnes",
+          "72°C — Todas as 9 carnes",
+          "71°C — Todas as 8 carnes"
+        ],
+        correta: 0,
+        explicacao: "A temperatura interna mínima das carnes 10:1 é 69°C em todas as 9 carnes."
+      },
+      {
+        texto: "Qual é o tempo de vida do pão fresco?",
+        opcoes: ["6 dias", "5 dias", "7 dias", "90 dias"],
+        correta: 1,
+        explicacao: "O pão fresco tem vida útil de 5 dias."
+      },
+      {
+        texto: "Qual é o tempo de cozimento para as carnes de 4:1?",
+        opcoes: [
+          "Até 104 segundos",
+          "A partir de 102 segundos",
+          "A partir de 104 segundos",
+          "Até 106 segundos"
+        ],
+        correta: 2,
+        explicacao: "O cozimento das carnes de 4:1 é a partir de 104 segundos."
+      },
+      {
+        texto: "Qual é o tempo de vida secundário do molho de Big Mac?",
+        opcoes: [
+          "02 horas depois de deslacrado",
+          "24 horas depois de deslacrado",
+          "12 horas depois de deslacrado",
+          "06 horas depois de deslacrado"
+        ],
+        correta: 1,
+        explicacao: "O molho de Big Mac tem vida secundária de 24 horas após deslacrado."
+      },
+      {
+        texto: "Qual é o tempo de ambientação do molho Cheddar?",
+        opcoes: ["02 horas", "04 horas", "03 horas", "06 horas"],
+        correta: 1,
+        explicacao: "O molho Cheddar requer 04 horas de ambientação."
+      },
+      {
+        texto: "Quem é o responsável pelo treinamento no 1º dia do funcionário novo?",
+        opcoes: [
+          "Escritório do McDonald's",
+          "Treinador",
+          "Gerente de Treinamento",
+          "Anfitrião"
+        ],
+        correta: 3,
+        explicacao: "O Anfitrião é o responsável pelo treinamento no 1º dia."
+      },
+      {
+        texto: "Qual é a temperatura e o tempo de aquecimento da tostadeira rápida?",
+        opcoes: [
+          "293°C Principal / 204°C Auxiliar — 25 minutos",
+          "293°C Principal / 204°C Auxiliar — 30 minutos",
+          "293°C Principal / 204°C Auxiliar — 15 minutos",
+          "293°C Principal / 204°C Auxiliar — 20 minutos"
+        ],
+        correta: 3,
+        explicacao: "Tostadeira rápida: 293°C (principal), 204°C (auxiliar), aquecimento em 20 minutos."
+      },
+      {
+        texto: "Qual é o peso de uma McFritas Pequena, Média e Grande respectivamente?",
+        opcoes: [
+          "74g, 102g, 146g",
+          "73g, 103g, 145g",
+          "73g, 102g, 146g",
+          "75g, 105g, 145g"
+        ],
+        correta: 2,
+        explicacao: "McFritas: Pequena = 73g, Média = 102g, Grande = 146g."
+      },
+      {
+        texto: "Qual é a capacidade de carnes de Grill em uma gaveta?",
+        opcoes: ["5 carnes", "6 carnes", "7 carnes", "8 carnes"],
+        correta: 1,
+        explicacao: "Cada gaveta comporta 6 carnes de Grill."
+      },
+      {
+        texto: "Qual é a temperatura para carnes de Grill na UHC?",
+        opcoes: ["95ºC", "94ºC", "84ºC", "85ºC"],
+        correta: 3,
+        explicacao: "A temperatura para carnes de Grill na UHC é de 85°C."
+      },
+      {
+        texto: "Quantos mL de água despejamos no copo central para ativar carnes de Grill?",
+        opcoes: ["75 mL", "70 mL", "73 mL", "74 mL"],
+        correta: 0,
+        explicacao: "São 75 mL de água no copo central para ativar as carnes de Grill."
+      },
+      {
+        texto: "Quantos mL de água despejamos na gaveta da UHC após o cozimento da carne de grill?",
+        opcoes: [
+          "177 mL de água filtrada",
+          "174 mL de água fria",
+          "177 mL de água morna",
+          "174 mL de água morna"
+        ],
+        correta: 2,
+        explicacao: "Após o cozimento: 177 mL de água morna na gaveta da UHC."
+      },
+      {
+        texto: "Qual é o tempo de cozimento do bacon e da carne de grill respectivamente?",
+        opcoes: [
+          "60 segundos e 3'45\" total para grill",
+          "52 segundos e 3'45\" de cada lado para grill",
+          "56 segundos e 2'45\" total de cada lado para grill",
+          "60 segundos e 3'45\" de cada lado para grill"
+        ],
+        correta: 0,
+        explicacao: "Bacon: 60 seg; Grill: 3'45\" total."
+      },
+      {
+        texto: "Qual é a temperatura de fritura, tempo de vida e peso da Batata Rústica?",
+        opcoes: [
+          "180°C — 7 minutos — 172 gramas",
+          "180°C — 7 minutos — 200 gramas",
+          "168°C — 7 minutos — 172 gramas",
+          "177°C — 10 minutos — 200 gramas"
+        ],
+        correta: 0,
+        explicacao: "Batata Rústica: fritura a 180°C, vida útil de 7 minutos, peso de 172 gramas."
+      },
+      {
+        texto: "Para a certificação Made For You, qual a temperatura que deve atingir o Big Mac e o Cheeseburguer?",
+        opcoes: [
+          "50ºC e 57ºC",
+          "57ºC e 60ºC",
+          "54ºC e 57ºC",
+          "60ºC e 47ºC"
+        ],
+        correta: 2,
+        explicacao: "Certificação MFY: Big Mac = 54°C, Cheeseburguer = 57°C."
+      },
+      {
+        texto: "Para a certificação Made For You, qual é o Tempo de Fila (TF) e o Tempo de Montagem (TM) do balcão?",
+        opcoes: [
+          "90\" ou menos para TF e 90\" ou menos para TM",
+          "90\" ou menos para TF e 60\" ou menos para TM",
+          "60\" ou menos para TF e 60\" ou menos para TM",
+          "90\" ou menos para TF e 102\" ou menos para TM"
+        ],
+        correta: 1,
+        explicacao: "MFY no balcão: TF ≤ 90\" e TM ≤ 60\"."
+      },
+      {
+        texto: "Para a certificação Made For You, qual é o TF e o Tempo de Face/Speaker do Drive-Thru?",
+        opcoes: [
+          "90\" ou menos para TF e 90\" ou menos para Face/Speaker",
+          "90\" ou menos para TF e 102\" ou menos para Face/Speaker",
+          "70\" ou menos para TF e 120\" ou menos para Face/Speaker",
+          "70\" ou menos para TF e 110\" ou menos para Face/Speaker"
+        ],
+        correta: 1,
+        explicacao: "MFY no Drive-Thru: TF ≤ 90\" e Face/Speaker ≤ 102\"."
+      },
+      {
+        texto: "Quem é o responsável por realizar o Check-List diário de Segurança Alimentar?",
+        opcoes: [
+          "Gerente de Restaurante",
+          "Coordenador de Qualidade e Serviço",
+          "Gerente de Plantão",
+          "Treinador"
+        ],
+        correta: 2,
+        explicacao: "O Gerente de Plantão é o responsável pelo Check-List diário de Segurança Alimentar."
+      }
+    ]
+  },
+
+  {
+    id: "avaliacao-treinador-ga",
+    titulo: "Avaliação Treinador → Gerente de Área",
+    descricao: "Questões de Segurança Alimentar e Gestão Operacional para GA",
+    icon: "🏅",
+    perguntas: [
+      {
+        texto: "João, Gerente de Plantão, não passou por um ponto na Certificação de Segurança Alimentar. Para ajudá-lo você:",
+        opcoes: [
+          "Antes de entregar o plantão, completa com ele a planilha de Segurança Alimentar",
+          "Se assegura de que ele esteja bem preparado para o próximo teste dentro de um mês e, enquanto isso, completa com ele a planilha de Segurança Alimentar",
+          "Escala os plantões dele para serem supervisionados pelo Gerente Assistente até aprovação na Certificação",
+          "Nenhuma das anteriores"
+        ],
+        correta: 1,
+        explicacao: "A ação correta é prepará-lo para o próximo teste e mantê-lo acompanhado enquanto isso, completando a planilha juntos."
+      },
+      {
+        texto: "A cada quanto tempo as gavetas da UHC, utensílios da chapa e da mesa de condimentação devem ser higienizados e sanitizados?",
+        opcoes: ["A cada 3 horas", "A cada 2 horas", "A cada 4 horas", "A cada 1 hora"],
+        correta: 2,
+        explicacao: "Os utensílios devem ser higienizados e sanitizados a cada 4 horas."
+      },
+      {
+        texto: "Se já realizou a integridade de todos os platens pela manhã, não é necessário um segundo teste durante a hora de maior movimento.",
+        opcoes: ["Verdadeiro", "Falso", "Depende do volume de carnes", "Depende do gerente"],
+        correta: 1,
+        explicacao: "FALSO. O teste de temperatura interna deve ser realizado em cada rodada, inclusive durante o horário de pico."
+      },
+      {
+        texto: "O responsável por atender um fiscal da vigilância sanitária deve ser:",
+        opcoes: [
+          "O Gerente de Plantão",
+          "O Gerente do Restaurante",
+          "O Gerente de maior hierarquia presente no restaurante",
+          "Qualquer gerente disponível"
+        ],
+        correta: 2,
+        explicacao: "O fiscal da vigilância sanitária deve ser atendido pelo gerente de maior hierarquia presente no restaurante."
+      },
+      {
+        texto: "Qual é a temperatura interna mínima de cozimento de ovos?",
+        opcoes: ["60°C (140°F)", "74°C (165°F)", "71°C (160°F)", "69°C (155°F)"],
+        correta: 1,
+        explicacao: "A temperatura interna mínima de cozimento de ovos deve atingir 74°C (165°F)."
+      },
+      {
+        texto: "Medição de temperaturas: se a rodada completa é menor que 4 porções de carne, o correto é:",
+        opcoes: [
+          "Tirar a temperatura de uma das porções da rodada",
+          "Tirar a temperatura de todas as porções da rodada",
+          "Tirar a temperatura das porções dos cantos da rodada",
+          "Não é necessário medir"
+        ],
+        correta: 1,
+        explicacao: "Quando a rodada tem menos de 4 porções, deve-se medir a temperatura de todas elas."
+      },
+      {
+        texto: "Quais são os 3 pilares fundamentais para o gerenciamento integrado de pragas?",
+        opcoes: [
+          "Higiene - Limpeza - Exterminação",
+          "Higiene - Ordem - Exclusão",
+          "Higiene - Sanitização - Exterminação",
+          "Limpeza - Ordem - Exclusão"
+        ],
+        correta: 1,
+        explicacao: "Os 3 pilares do gerenciamento integrado de pragas são: Higiene, Ordem e Exclusão."
+      },
+      {
+        texto: "Qual é a temperatura interna que devem ter todos os produtos na UHC?",
+        opcoes: [
+          "60°C (140°F) ou mais",
+          "71°C (160°F) ou mais",
+          "69°C (155°F)",
+          "74°C (165°F) ou mais"
+        ],
+        correta: 0,
+        explicacao: "Todos os produtos na UHC devem estar a 60°C (140°F) ou mais."
+      },
+      {
+        texto: "Todas as temperaturas internas de McNuggets, Crispy Chicken, Chicken Grill e frango devem estar a 74°C (165°F) ou mais após o cozimento.",
+        opcoes: ["Verdadeiro", "Falso", "Apenas Crispy e Frango", "Apenas Nuggets"],
+        correta: 0,
+        explicacao: "VERDADEIRO. Todos os produtos de frango e peixe devem atingir no mínimo 74°C (165°F) após o cozimento."
+      },
+      {
+        texto: "O que é uma rodada completa?",
+        opcoes: [
+          "É o número máximo de porções que o restaurante cozinha ao mesmo tempo para um tipo de produto em um platen ou cuba para um dia determinado",
+          "É a quantidade máxima de carnes definida pelo Departamento de Qualidade e Equipamentos",
+          "É a quantidade de carnes definida pelo Gerente de Plantão na noite anterior",
+          "É a quantidade ideal para o horário de pico"
+        ],
+        correta: 0,
+        explicacao: "Rodada completa é o número máximo de porções que o restaurante cozinha ao mesmo tempo para um produto específico em um platen ou cuba para aquele dia."
+      },
+      {
+        texto: "Por que é importante verificar o tempo de validade secundário dos produtos na área de preparação?",
+        opcoes: [
+          "Porque são alimentos que podem estragar rapidamente",
+          "Porque são produtos sensíveis à temperatura — fora do padrão por tempo prolongado ativa multiplicação bacteriana e degradação sensorial",
+          "Porque é um requisito de Qualidade e Supply Chain da Arcos Dourados",
+          "Todas as anteriores"
+        ],
+        correta: 3,
+        explicacao: "Todas as alternativas são corretas: risco de deterioração, multiplicação bacteriana e requisito da Arcos Dourados."
+      },
+      {
+        texto: "Qual é a temperatura interna de cozimento da carne bovina?",
+        opcoes: [
+          "Todas devem atingir 69°C (155°F) ou mais",
+          "Todas devem atingir 74°C (165°F) ou mais",
+          "Devem estar a menos de 71°C (160°F)",
+          "Pelo menos uma deve estar entre 69°C e 74°C"
+        ],
+        correta: 0,
+        explicacao: "Todas as temperaturas internas da carne bovina devem atingir 69°C (155°F) ou mais após o cozimento."
+      },
+      {
+        texto: "Quando você encontra temperatura de produtos refrigerados 3°C fora do padrão, você deve:",
+        opcoes: [
+          "Entrar em contato imediatamente com a equipe de manutenção",
+          "Deixar registrada a causa do problema na planilha de Segurança",
+          "Revisar as áreas indicadas na seção de investigação de falhas para achar a causa e tomar ação corretiva",
+          "Esperar o próximo plantão para verificar"
+        ],
+        correta: 2,
+        explicacao: "Ao encontrar temperatura fora do padrão, deve-se revisar as áreas de investigação de falhas e tomar a ação corretiva apropriada."
+      },
+      {
+        texto: "Quais são os riscos de utilizar produtos de carne submetidos a abuso de temperatura?",
+        opcoes: [
+          "Causa desidratação, descongelamento e recongelamento, congelamento excessivo — com mudanças de umidade e estrutura, causando problemas no cozimento",
+          "Causa perda de nutrientes",
+          "Causa mudanças de sabor e afeta o tamanho por desidratação e reidratação",
+          "Apenas mudança de cor do produto"
+        ],
+        correta: 0,
+        explicacao: "O abuso de temperatura causa: desidratação, descongelamento/recongelamento e congelamento excessivo, afetando a umidade, estrutura e o cozimento."
+      },
+      {
+        texto: "Ao detectar produto fora dos padrões de qualidade em uma rota, como responsável você:",
+        opcoes: [
+          "Faz reclamação de qualidade e o descarta para evitar fiscalização",
+          "Faz reclamação de qualidade, deixa separado e o identifica com etiqueta NÃO USE",
+          "Faz reclamação de qualidade e o envia ao Centro de Distribuição com o próximo descarregamento",
+          "Descarta imediatamente sem registrar"
+        ],
+        correta: 1,
+        explicacao: "Produto fora do padrão: fazer reclamação de qualidade, separar e identificar com etiqueta NÃO USE."
+      },
+      {
+        texto: "Qual a ferramenta diagnóstico número 2 das carnes?",
+        opcoes: ["Produto", "Compressão", "Tempo", "Temperatura", "Remoção"],
+        correta: 1,
+        explicacao: "A ferramenta diagnóstico nº 2 das carnes é a Compressão."
+      },
+      {
+        texto: "No processo de sanitização da máquina HT, qual a quantidade de solução sanitizante que colocamos em cada lado?",
+        opcoes: ["10 litros", "5 litros", "8 litros", "6 litros"],
+        correta: 1,
+        explicacao: "São 5 litros de solução sanitizante em cada lado da máquina HT."
+      },
+      {
+        texto: "Qual o nome do pirômetro utilizado para verificação da temperatura do congelador portátil?",
+        opcoes: [
+          "Pirômetro de ambiente",
+          "Pirômetro de agulha",
+          "Pirômetro de imersão",
+          "Pirômetro de superfície"
+        ],
+        correta: 2,
+        explicacao: "O pirômetro de imersão é utilizado para verificar a temperatura do congelador portátil."
+      },
+      {
+        texto: "Qual a quantidade de escovas de limpeza da máquina HT que vem em um kit?",
+        opcoes: ["10 escovas", "12 escovas", "9 escovas", "8 escovas"],
+        correta: 2,
+        explicacao: "O kit de limpeza da máquina HT vem com 9 escovas."
+      },
+      {
+        texto: "Padrões de Tempo do balcão — Tempo de experiência total:",
+        opcoes: [
+          "3 min e 30 seg",
+          "180 seg",
+          "90 seg",
+          "3 min e 90 seg"
+        ],
+        correta: 0,
+        explicacao: "O tempo de experiência total no balcão é de 3 minutos e 30 segundos."
+      }
+    ]
+  },
+
+  {
+    id: "gerente-de-turno",
+    titulo: "Prova — Gerente de Turno (Plantão)",
+    descricao: "PPI · Processo de Promoção Interna · Anexo 8",
+    icon: "⭐",
+    perguntas: [
+      {
+        texto: "Quais dos básicos abaixo faz parte do PLANEJAMENTO no plantão?",
+        opcoes: ["Plano de chão", "Experimentação", "Pós Plantão", "Pré Plantão"],
+        correta: 3,
+        explicacao: "O Pré Plantão faz parte do planejamento. O plano de chão é uma ferramenta, mas o básico de planejamento é o Pré Plantão."
+      },
+      {
+        texto: "Quem é o responsável pela garantia do check list de carnes?",
+        opcoes: [
+          "O Gerente de restaurante",
+          "O Gerente de Vendas",
+          "O Gerente de Plantão",
+          "O Gerente de qualidade"
+        ],
+        correta: 2,
+        explicacao: "O Gerente de Plantão é responsável pela garantia do check list de carnes."
+      },
+      {
+        texto: "Qual alternativa NÃO está dentro da zona de perigo?",
+        opcoes: [
+          "3 ou menos fritas na estufa",
+          "3 ou menos pedidos na tela do MFY",
+          "3 ou mais carros na área de espera",
+          "3 ou mais clientes na fila esperando por produtos"
+        ],
+        correta: 1,
+        explicacao: "3 ou MENOS pedidos na tela do MFY NÃO é zona de perigo. As zonas de perigo são: poucas fritas, muitos carros na espera e muitos clientes na fila."
+      },
+      {
+        texto: "Com quanto tempo de antecedência devemos fazer o plano de chão?",
+        opcoes: ["24 horas antes", "48 horas antes", "08 horas antes", "02 horas antes"],
+        correta: 0,
+        explicacao: "O plano de chão deve ser feito com 24 horas de antecedência."
+      },
+      {
+        texto: "Quem é o responsável pela realização de caixa surpresa no plantão?",
+        opcoes: [
+          "O Gerente de Operações",
+          "O Gerente de restaurante",
+          "A Assistente Administrativa",
+          "O Gerente de Plantão"
+        ],
+        correta: 3,
+        explicacao: "O Gerente de Plantão é responsável pela realização de caixa surpresa."
+      },
+      {
+        texto: "Qual dos itens abaixo NÃO faz parte dos básicos de um plantão?",
+        opcoes: ["Check list", "Experimentação", "Rota de inspeção", "Plano paralelo"],
+        correta: 3,
+        explicacao: "Plano paralelo não é um básico de plantão. Os básicos são: Check list, Experimentação, Rota de inspeção, Pré e Pós plantão, e Plano de chão."
+      },
+      {
+        texto: "Quando experimentamos os refrigerantes, qual é o ÚLTIMO sabor que devemos experimentar?",
+        opcoes: ["Fanta", "Guaraná", "Coca-cola", "Não há sequência de experimentação"],
+        correta: 2,
+        explicacao: "O último refrigerante a ser experimentado é a Coca-cola."
+      },
+      {
+        texto: "Qual ferramenta nos garante uma estocagem precisa para o consumo daquele período?",
+        opcoes: ["Tabela 24X2", "Maverick", "Plano de chão", "Nenhuma das anteriores"],
+        correta: 1,
+        explicacao: "O Maverick é a ferramenta que garante estocagem precisa para o período."
+      },
+      {
+        texto: "Quais são os básicos do plantão?",
+        opcoes: [
+          "Plano de chão, rota de inspeção",
+          "Check list, pré plantão, pós plantão",
+          "Posicionamento, experimentação",
+          "Todas as alternativas estão corretas"
+        ],
+        correta: 3,
+        explicacao: "Todos os itens citados fazem parte dos básicos de plantão."
+      },
+      {
+        texto: "De quanto em quanto tempo os funcionários devem lavar as mãos?",
+        opcoes: ["De 1 em 1 hora", "De 2 em 2 horas", "De 3 em 3 horas", "De 4 em 4 horas"],
+        correta: 1,
+        explicacao: "Os funcionários devem lavar as mãos a cada 2 horas."
+      },
+      {
+        texto: "Quais dos padrões abaixo NÃO garantem hospitalidade?",
+        opcoes: [
+          "Boas vindas e agradecimentos sinceros",
+          "Pedidos entregues",
+          "Exatidão nos pedidos",
+          "Criar momentos mágicos"
+        ],
+        correta: 1,
+        explicacao: "Apenas 'pedidos entregues' não garante hospitalidade por si só — a hospitalidade vai além da entrega física."
+      },
+      {
+        texto: "Quais dos itens abaixo NÃO fazem parte dos passos de serviço?",
+        opcoes: [
+          "Entregar a nota fiscal e pedir para o cliente aguardar ao lado",
+          "Montar e apresentar o pedido",
+          "Cumprimentar o cliente fazendo Sugestão de venda",
+          "Agradecer o cliente e pedir seu retorno"
+        ],
+        correta: 0,
+        explicacao: "Entregar nota fiscal e pedir para aguardar ao lado não faz parte dos passos de serviço."
+      },
+      {
+        texto: "Qual é o tempo médio do serviço no balcão?",
+        opcoes: [
+          "60 segundos de montagem e 3 min e 30 seg de experiência",
+          "60 segundos de montagem e 3 min e 15 seg de experiência",
+          "80 segundos de montagem e 3 min e 20 seg de experiência",
+          "40 segundos de montagem e 3 min e 30 seg de experiência"
+        ],
+        correta: 0,
+        explicacao: "O tempo médio do balcão é: 60 segundos de montagem e 3 min e 30 seg de experiência total."
+      },
+      {
+        texto: "Qual é a sequência de lavagem das mãos para a área de serviço?",
+        opcoes: [
+          "Pessoa das bebidas, caixa e apoio",
+          "Caixa, apoio e bebidas",
+          "Caixa, bebidas e apoio",
+          "Apoio, bebidas e caixa"
+        ],
+        correta: 0,
+        explicacao: "A sequência de lavagem das mãos no serviço é: bebidas → caixa → apoio."
+      },
+      {
+        texto: "Qual é a sequência de lavagem das mãos para a área de drive?",
+        opcoes: [
+          "Cabine 1, cabine 2 e cabine 3",
+          "Cabine 2, cabine 3 e cabine 1",
+          "Cabine 2, cabine 1 e cabine 3",
+          "Cabine 3, cabine 2 e cabine 1"
+        ],
+        correta: 1,
+        explicacao: "No Drive, a sequência é: cabine 2 → cabine 3 → cabine 1."
+      },
+      {
+        texto: "Qual o tempo de vida da gordura?",
+        opcoes: ["90 dias", "120 dias", "180 dias", "365 dias"],
+        correta: 2,
+        explicacao: "O tempo de vida da gordura é de 180 dias."
+      },
+      {
+        texto: "Qual o tempo máximo de remoção das carnes 10:1?",
+        opcoes: ["22 segundos", "15 segundos", "24 segundos", "18 segundos"],
+        correta: 3,
+        explicacao: "O tempo máximo de remoção das carnes 10:1 é de 18 segundos."
+      },
+      {
+        texto: "No plano de chão, os treinamentos INICIAIS devem estar programados em que horário?",
+        opcoes: ["No pico", "No pré pico", "No pós pico", "No pré e no pós pico"],
+        correta: 3,
+        explicacao: "Os treinamentos iniciais devem ser programados tanto no pré quanto no pós pico."
+      },
+      {
+        texto: "No plano de chão, os treinamentos CONTÍNUOS devem estar programados em que horário?",
+        opcoes: ["No pico", "No pré pico", "No pós pico", "No pré e no pós pico"],
+        correta: 0,
+        explicacao: "Os treinamentos contínuos devem ser programados no horário de pico."
+      },
+      {
+        texto: "No plano de chão, quem é o responsável pela aplicação do treinamento contínuo?",
+        opcoes: [
+          "O instrutor",
+          "O gerente de restaurante",
+          "O gerente de plantão",
+          "Qualquer membro da equipe gerencial"
+        ],
+        correta: 0,
+        explicacao: "A responsabilidade do treinamento contínuo no plano de chão é do instrutor."
+      },
+      {
+        texto: "Quais são as 3 primeiras ferramentas diagnóstico do balcão?",
+        opcoes: [
+          "McFritas, Troco, Bebidas",
+          "Bebidas, Posicionamento e McFritas",
+          "McFritas, Bebidas e Falta de lanches",
+          "McFritas, Falta de lanches e bebidas"
+        ],
+        correta: 1,
+        explicacao: "As 3 primeiras ferramentas diagnóstico do balcão são: Bebidas, Posicionamento e McFritas."
+      },
+      {
+        texto: "Qual é o tempo de fritura do McChicken?",
+        opcoes: ["3'25\"", "3'10\"", "3'15\"", "3'45\""],
+        correta: 2,
+        explicacao: "O McChicken é frito em 3'15\"."
+      },
+      {
+        texto: "Qual a importância de se realizar uma experimentação de produtos?",
+        opcoes: [
+          "Uniformizar padrão e checar se há oportunidades em algum produto",
+          "Uniformizar padrão e verificar se não há produto vencido",
+          "Verificar se há produto vencido",
+          "Nenhuma das anteriores"
+        ],
+        correta: 0,
+        explicacao: "A experimentação serve para uniformizar o padrão e identificar oportunidades de melhoria nos produtos."
+      },
+      {
+        texto: "Qual é o básico de plantão que GARANTIRÁ a qualidade do produto final ao cliente?",
+        opcoes: ["Experimentação", "Rota de inspeção", "Pré plantão", "Check list"],
+        correta: 0,
+        explicacao: "A Experimentação é o básico de plantão que garante a qualidade do produto final entregue ao cliente."
+      },
+      {
+        texto: "Qual é o básico de plantão que nos garante ter todos os produtos, pessoas e equipamentos disponíveis?",
+        opcoes: ["Experimentação", "Pré plantão", "Check list", "Pós plantão"],
+        correta: 1,
+        explicacao: "O Pré Plantão é o básico que garante a disponibilidade de produtos, pessoas e equipamentos."
+      },
+      {
+        texto: "Quem em seu plantão garante que os clientes se sintam bem-vindos e atrai as crianças com brincadeiras?",
+        opcoes: ["Anfitriã", "Canário", "Pessoa do salão", "Pessoa do caixa"],
+        correta: 0,
+        explicacao: "A Anfitriã é responsável por receber os clientes e criar um ambiente acolhedor, especialmente para crianças."
+      },
+      {
+        texto: "O ar condicionado não está funcionando. Qual atributo abaixo segue na valorização dos clientes?",
+        opcoes: ["Ambiente", "Cortesia", "Bebida", "Nenhuma das anteriores"],
+        correta: 1,
+        explicacao: "Mesmo com o ar condicionado quebrado, a Cortesia continua sendo um atributo que valoriza o cliente."
+      },
+      {
+        texto: "Quais são os tipos de perfis de clientes que podemos atender?",
+        opcoes: [
+          "Perfeccionista e comunicador",
+          "Socializador e executor",
+          "Perfeccionista e Comprador",
+          "Somente as alternativas A e B estão corretas"
+        ],
+        correta: 3,
+        explicacao: "Os perfis de clientes incluem: Perfeccionista, Comunicador, Socializador e Executor."
+      },
+      {
+        texto: "O que é feedback apreciativo e construtivo?",
+        opcoes: [
+          "É reforçar os pontos negativos e elogiar",
+          "É reforçar os pontos positivos e também os pontos de oportunidades direcionando",
+          "É reforçar os pontos positivos e elogiar",
+          "É reforçar os pontos de oportunidade"
+        ],
+        correta: 1,
+        explicacao: "Feedback apreciativo e construtivo: reforça os positivos E aponta oportunidades com direcionamento."
+      },
+      {
+        texto: "O que significa ter mentalidade aberta ao Feedback?",
+        opcoes: [
+          "Manter o foco somente no resultado",
+          "Evitar julgamento sobre personalidade",
+          "Prestar atenção e não deixar o funcionário falar",
+          "Receber feedback somente quando estiver disponível"
+        ],
+        correta: 1,
+        explicacao: "Mentalidade aberta ao feedback significa evitar julgamento sobre personalidade e focar em comportamentos."
+      },
+      {
+        texto: "Quais são os itens que devemos garantir na reunião de pós plantão?",
+        opcoes: [
+          "Se todos os objetivos do plantão foram cumpridos",
+          "Pontos a melhorar para o próximo plantão",
+          "Nenhuma das alternativas estão corretas",
+          "As alternativas A e B estão corretas"
+        ],
+        correta: 3,
+        explicacao: "No pós plantão: verificar cumprimento dos objetivos E identificar pontos de melhoria para o próximo."
+      },
+      {
+        texto: "Quais são as funções que devemos trabalhar na área de salão?",
+        opcoes: [
+          "Função",
+          "Território",
+          "Localidade",
+          "As alternativas A e B estão corretas"
+        ],
+        correta: 3,
+        explicacao: "No salão, os funcionários trabalham por Função e por Território."
+      },
+      {
+        texto: "Qual é o momento em que garantimos que os funcionários estão seguindo o plano de chão?",
+        opcoes: [
+          "Na Rota de inspeção",
+          "No posicionamento",
+          "Na Pré Plantão",
+          "No pós Plantão"
+        ],
+        correta: 0,
+        explicacao: "A Rota de inspeção é o momento em que verificamos se o plano de chão está sendo seguido."
+      },
+      {
+        texto: "Qual é a ferramenta ideal que mede o clima dentro do restaurante?",
+        opcoes: [
+          "Sessão de participação",
+          "Dia da comunicação",
+          "Pesquisa de satisfação do público interno",
+          "Todas as anteriores"
+        ],
+        correta: 3,
+        explicacao: "Todas as ferramentas citadas servem para medir o clima organizacional do restaurante."
+      },
+      {
+        texto: "Qual é a PRIMEIRA ferramenta diagnóstico da área de serviço?",
+        opcoes: ["Bebidas", "Posicionamento", "Troco", "McFritas"],
+        correta: 3,
+        explicacao: "A primeira ferramenta diagnóstico da área de serviço são as McFritas."
+      },
+      {
+        texto: "A carne saiu crua. O que pode ser diagnosticado nessa questão?",
+        opcoes: ["Tempo", "Temperatura", "Produto", "Todas as anteriores"],
+        correta: 3,
+        explicacao: "Carne crua pode ser resultado de problema de Tempo, Temperatura ou qualidade do Produto — todos devem ser investigados."
+      },
+      {
+        texto: "Qual o tempo de preparo das carnes grill?",
+        opcoes: ["3'45\"", "6'45\"", "3'30\"", "1'50\""],
+        correta: 0,
+        explicacao: "O tempo de preparo das carnes grill é de 3'45\"."
+      },
+      {
+        texto: "Qual é o tempo de vida primário das carnes 10:1?",
+        opcoes: ["60 dias", "90 dias", "120 dias", "180 dias"],
+        correta: 3,
+        explicacao: "O tempo de vida primário das carnes 10:1 é de 180 dias."
+      },
+      {
+        texto: "O que o certifica um Gerente de Turno para exercer a sua função?",
+        opcoes: [
+          "Ter concluído o PDG1 com excelência e ter feito o curso CGP",
+          "Ter concluído o PDG1 com excelência e ter gerenciado pelo menos 2 plantões sem 'sombra'",
+          "Ter concluído o PDG1",
+          "Nenhuma das anteriores"
+        ],
+        correta: 1,
+        explicacao: "Para ser certificado como Gerente de Turno: concluir o PDG1 com excelência e gerenciar pelo menos 2 plantões sem 'sombra'."
+      },
+      {
+        texto: "Qual a temperatura da estufa de tortas?",
+        opcoes: ["66 a 82°C", "60 a 66°C", "93°C", "82 a 88°C"],
+        correta: 0,
+        explicacao: "A estufa de tortas opera entre 66°C e 82°C."
+      },
+      {
+        texto: "Coaching significa:",
+        opcoes: [
+          "Ensinar o que precisa ser feito",
+          "Conduzir um grupo para algo ou atingimento de um objetivo",
+          "Liderar uma equipe",
+          "Auxiliar / direcionar um grupo para algo ou atingimento de um objetivo"
+        ],
+        correta: 3,
+        explicacao: "Coaching significa auxiliar e direcionar um grupo para algo ou para o atingimento de um objetivo."
+      }
+    ]
+  },
+
+  {
+    id: "recrutamento-interno",
+    titulo: "Processo de Recrutamento Interno",
+    descricao: "Prova Treinador — questões de múltipla escolha operacionais",
+    icon: "🔍",
+    perguntas: [
+      {
+        texto: "Qual é a temperatura da chapa superior e inferior, respectivamente?",
+        opcoes: ["177°C e 218°C", "69°C e 72°C", "218°C e 177°C", "118°C e 277°C"],
+        correta: 2,
+        explicacao: "A chapa superior opera a 218°C e a inferior a 177°C."
+      },
+      {
+        texto: "Qual é a temperatura ideal do ar condicionado no restaurante?",
+        opcoes: ["18°C a 23°C", "22°C a 25°C", "24°C a 27°C", "25°C a 28°C"],
+        correta: 1,
+        explicacao: "O ar condicionado do restaurante deve estar entre 22°C e 25°C."
+      },
+      {
+        texto: "Você observa que as batatas fritas estão todas grudadas ao retirar a cesta. Qual poderia ser a causa?",
+        opcoes: [
+          "A pessoa das McFritas não está sacudindo a cesta após 30 segundos",
+          "O nível do óleo na cuba está baixo demais",
+          "A pessoa das McFritas encheu demais a cesta",
+          "Todas as opções acima estão corretas"
+        ],
+        correta: 3,
+        explicacao: "Batatas grudadas podem ser causadas por: falta de sacudida após 30s, nível baixo de óleo ou excesso na cesta."
+      },
+      {
+        texto: "Qual a temperatura interna mínima de integridade das carnes vermelhas?",
+        opcoes: ["69°C", "74°C", "71°C", "68°C"],
+        correta: 0,
+        explicacao: "A temperatura interna mínima de integridade das carnes vermelhas é 69°C."
+      },
+      {
+        texto: "Qual a temperatura de extração do McShake?",
+        opcoes: [
+          "-4,0°C a -3,0°C",
+          "-5,0°C a -3,6°C",
+          "-2,6°C a -3,4°C",
+          "-8,0°C a -9,0°C"
+        ],
+        correta: 1,
+        explicacao: "A temperatura de extração do McShake é de -5,0°C a -3,6°C."
+      },
+      {
+        texto: "Qual é o objetivo de trabalhar como dispositivo de segurança?",
+        opcoes: [
+          "É para que o produto não saia fora dos padrões de qualidade exigidos pela cnap",
+          "É para que o produto não saia fora dos baixos padrões de qualidade",
+          "É para que o produto não saia fora dos altos padrões de qualidade",
+          "É para que o serviço não saia fora dos altos padrões do concorrente"
+        ],
+        correta: 2,
+        explicacao: "Trabalhar como dispositivo de segurança é garantir que o produto não saia fora dos altos padrões de qualidade do McDonald's."
+      },
+      {
+        texto: "Qual o rendimento do mix de Sundae?",
+        opcoes: [
+          "9,75 sundaes por litro",
+          "8,75 sundaes por litro",
+          "6,75 sundaes por litro",
+          "5,75 sundaes por litro"
+        ],
+        correta: 0,
+        explicacao: "O rendimento do mix de Sundae é de 9,75 sundaes por litro."
+      },
+      {
+        texto: "Quais são as etapas de treinamento no McDonald's?",
+        opcoes: [
+          "Preparar, Apresentar, Praticar, Ajudar e Acompanhar",
+          "Preparar, Apontar, Praticar e Acompanhar",
+          "Preparar, Apresentar, Pragmatizar, Ajudar e Acompanhar",
+          "Preparar, Apresentar, Praticar e Acompanhar"
+        ],
+        correta: 3,
+        explicacao: "As etapas de treinamento são: Preparar, Apresentar, Praticar e Acompanhar."
+      },
+      {
+        texto: "Qual é a temperatura interna das tortas?",
+        opcoes: ["55°C a 70°C", "56°C a 67°C", "57°C a 65°C", "58°C a 95°C"],
+        correta: 2,
+        explicacao: "A temperatura interna das tortas deve estar entre 57°C e 65°C."
+      },
+      {
+        texto: "Dentro da estrutura de apoio para um serviço rápido, o que significa Níveis?",
+        opcoes: [
+          "É a quantidade de produto necessário em cada estação para atender a demanda",
+          "É a quantidade de equipamentos necessários em cada estação",
+          "É a quantidade de layout necessário em cada estação",
+          "É a quantidade de produto necessário para atender o funcionário"
+        ],
+        correta: 0,
+        explicacao: "Níveis = quantidade de produto necessário em cada estação para atender a demanda dos clientes."
+      },
+      {
+        texto: "O que proporciona a técnica de trabalho ombro a ombro?",
+        opcoes: [
+          "Identificar e não solucionar barreiras",
+          "Não identificar e solucionar barreiras",
+          "Dar treinamento contínuo",
+          "Identificar e solucionar barreiras"
+        ],
+        correta: 3,
+        explicacao: "A técnica ombro a ombro proporciona a identificação E solução de barreiras no treinamento."
+      },
+      {
+        texto: "Quais são os três processos que influenciam diretamente a qualidade?",
+        opcoes: [
+          "Funcionários, produtos e limpeza",
+          "Produtos, equipamentos e procedimentos",
+          "Serviço, limpeza e cooperação",
+          "Produtos, equipamentos e qualidade"
+        ],
+        correta: 1,
+        explicacao: "Os três processos que influenciam diretamente a qualidade são: Produtos, Equipamentos e Procedimentos."
+      },
+      {
+        texto: "Cite dois passos do processo de recuperação de clientes:",
+        opcoes: [
+          "Apresentar-se / Oferecer uma desculpa sincera",
+          "Não se apresentar / Oferecer uma desculpa sincera",
+          "Apresentar-se / Não oferecer uma desculpa sincera",
+          "Apresentar-se / Falar o que o cliente gostaria de ouvir"
+        ],
+        correta: 0,
+        explicacao: "Os primeiros passos da recuperação de clientes são: Apresentar-se e Oferecer uma desculpa sincera."
+      },
+      {
+        texto: "Quais os (quatro) 4 fundamentos básicos no McDonald's?",
+        opcoes: [
+          "Qualidade, Serviço, Limpeza e Valor",
+          "Qualidade, Serviço, Localização e Valor",
+          "Qualidade, Serviço, Limpeza e Velocidade",
+          "Qualidade, Solução, Limpeza e Valor"
+        ],
+        correta: 0,
+        explicacao: "Os 4 fundamentos do McDonald's são: Qualidade, Serviço, Limpeza e Valor (QSL&V)."
+      }
+    ]
+  }
+];
 
     /* ── Estado local por prova ─────────────────────────────────── */
     function getState(provaId) {
