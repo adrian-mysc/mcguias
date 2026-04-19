@@ -153,6 +153,57 @@
     .empty-state h3 { font-family: var(--font-display); font-size: 16px; color: var(--text); margin-bottom: 6px; }
     .empty-state p  { font-size: 13px; line-height: 1.5; }
 
+    /* ── Lock screen ─────────────────────────────────────────── */
+    #lock-screen {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--bg);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 32px 24px;
+    }
+    #lock-screen.unlocked { display: none; }
+    .lock-icon { font-size: 52px; margin-bottom: 12px; }
+    .lock-title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 900;
+      color: var(--text); margin-bottom: 4px; text-align: center;
+    }
+    .lock-sub {
+      font-size: 13px; color: var(--muted); margin-bottom: 28px; text-align: center;
+    }
+    .lock-input-wrap {
+      display: flex; gap: 10px; width: 100%; max-width: 300px;
+    }
+    .lock-input {
+      flex: 1; padding: 12px 14px; border-radius: var(--radius-md);
+      border: 1.5px solid var(--border); background: var(--card);
+      font-size: 20px; font-family: var(--font-display); font-weight: 800;
+      color: var(--text); letter-spacing: 6px; text-align: center;
+      outline: none; transition: border-color .15s;
+    }
+    .lock-input:focus { border-color: var(--red); }
+    .lock-input.shake {
+      animation: lock-shake .35s ease;
+      border-color: var(--red);
+    }
+    .lock-btn {
+      padding: 12px 18px; border-radius: var(--radius-md);
+      background: var(--red); color: #fff; border: none;
+      font-family: var(--font-display); font-weight: 800; font-size: 15px;
+      cursor: pointer; transition: opacity .15s;
+    }
+    .lock-btn:hover { opacity: .85; }
+    .lock-error {
+      margin-top: 12px; font-size: 12px; color: var(--red);
+      font-weight: 700; min-height: 18px; text-align: center;
+    }
+    @keyframes lock-shake {
+      0%,100% { transform: translateX(0); }
+      20%      { transform: translateX(-8px); }
+      40%      { transform: translateX(8px); }
+      60%      { transform: translateX(-6px); }
+      80%      { transform: translateX(6px); }
+    }
+
     .prova-tag {
       display: inline-flex; align-items: center; gap: 4px;
       padding: 3px 9px; border-radius: 20px;
@@ -164,6 +215,21 @@
 </head>
 
 <body data-page="provas-testes">
+
+  <!-- Lock screen -->
+  <div id="lock-screen">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-title">Provas e Testes</div>
+    <div class="lock-sub">Digite a senha para acessar</div>
+    <div class="lock-input-wrap">
+      <input id="lock-input" class="lock-input" type="password"
+             inputmode="numeric" maxlength="10"
+             placeholder="••••"
+             onkeydown="if(event.key==='Enter') checkLock()">
+      <button class="lock-btn" onclick="checkLock()">→</button>
+    </div>
+    <div class="lock-error" id="lock-error"></div>
+  </div>
 
   <div id="splash">
     <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
@@ -232,6 +298,31 @@
 
   <script src="../js/main.js"></script>
   <script>
+    /* ── Lock screen ────────────────────────────────────────── */
+    (function() {
+      var SENHA = '3009';
+      var KEY   = 'mc_provas_unlock';
+      if (localStorage.getItem(KEY) === '1') {
+        document.getElementById('lock-screen').classList.add('unlocked');
+      }
+    })();
+
+    function checkLock() {
+      var input = document.getElementById('lock-input');
+      var error = document.getElementById('lock-error');
+      if (input.value === '3009') {
+        localStorage.setItem('mc_provas_unlock', '1');
+        document.getElementById('lock-screen').classList.add('unlocked');
+      } else {
+        input.classList.remove('shake');
+        void input.offsetWidth; // reflow para reiniciar animação
+        input.classList.add('shake');
+        error.textContent = 'Senha incorreta. Tente novamente.';
+        input.value = '';
+        setTimeout(function() { error.textContent = ''; }, 2500);
+      }
+    }
+
     /* ── Dados das provas ────────────────────────────────────────── */
     // Cada prova tem: id, titulo, descricao, icon, perguntas[]
     // Cada pergunta: texto, opcoes[], correta (index 0-based), explicacao
@@ -2314,6 +2405,487 @@
         ],
         correta: 0,
         explicacao: "Os 4 fundamentos do McDonald's são: Qualidade, Serviço, Limpeza e Valor (QSL&V)."
+      }
+    ]
+  }
+  ,
+  {
+    id: "prova-supervisor",
+    titulo: "Prova de Supervisor",
+    descricao: "Questões operacionais — MFY, Treinamento, Serviço, Produção e Drive",
+    icon: "🏆",
+    perguntas: [
+      {
+        texto: "Quantas semanas possui o PDT (Processo de Desenvolvimento para Treinador)?",
+        opcoes: ["3 semanas", "4 semanas", "5 semanas", "6 semanas"],
+        correta: 2,
+        explicacao: "O PDT possui 5 semanas."
+      },
+      {
+        texto: "Manter os mais altos padrões de QSL&V é uma atividade:",
+        opcoes: ["Secundária", "Primária", "Opcional", "Complementar"],
+        correta: 1,
+        explicacao: "Manter os mais altos padrões de QSL&V é uma atividade PRIMÁRIA."
+      },
+      {
+        texto: "Quais são os caminhos da trilha de Treinamento?",
+        opcoes: [
+          "Qualidade, Serviço e Limpeza",
+          "Produção, Serviço e Manutenção",
+          "Experiência do Cliente, Produção e Segmentos",
+          "Cozinha, Balcão e Drive"
+        ],
+        correta: 2,
+        explicacao: "Os três caminhos da trilha de treinamento são: Experiência do Cliente, Produção e Segmentos."
+      },
+      {
+        texto: "O que contempla o método Preparar no treinamento?",
+        opcoes: [
+          "Preparar o cardápio, preparar o caixa e preparar o cliente",
+          "Preparar a si mesmo, preparar a área e preparar o funcionário",
+          "Preparar o uniforme, preparar o equipamento e preparar o produto",
+          "Nenhuma das anteriores"
+        ],
+        correta: 1,
+        explicacao: "O método Preparar contempla: preparar a si mesmo, preparar a área e preparar o funcionário."
+      },
+      {
+        texto: "Quais ferramentas digitais temos disponíveis para o treinamento?",
+        opcoes: [
+          "McCampus e Saber",
+          "Google e YouTube",
+          "McApp e Moodle",
+          "E-learning e Teams"
+        ],
+        correta: 0,
+        explicacao: "As ferramentas digitais de treinamento disponíveis são McCampus e Saber."
+      },
+      {
+        texto: "Quando devemos abrir o segundo lado da linha?",
+        opcoes: [
+          "Quando tiverem 5 pessoas do lado 1 ou a partir de 150 lanches por hora",
+          "Quando tiverem 2 pessoas do lado 1 ou a partir de 100 lanches por hora",
+          "Quando tiverem 3 pessoas do lado 1 ou a partir de 125 lanches por hora",
+          "Quando o gerente solicitar"
+        ],
+        correta: 2,
+        explicacao: "O segundo lado deve ser aberto quando tiverem 3 pessoas no lado 1 ou a partir de 125 lanches/hora."
+      },
+      {
+        texto: "O sistema MFY com 2 pontos de iniciação pode preparar até quantos produtos por hora?",
+        opcoes: ["600", "700", "800", "900"],
+        correta: 2,
+        explicacao: "O sistema MFY com 2 pontos de iniciação pode preparar até 800 produtos por hora."
+      },
+      {
+        texto: "Qual é o tempo de reação da tela KVS?",
+        opcoes: ["1 a 2 segundos", "3 a 5 segundos", "5 a 8 segundos", "10 segundos"],
+        correta: 1,
+        explicacao: "O tempo de reação da tela KVS é de 3 a 5 segundos."
+      },
+      {
+        texto: "Qual é o tempo de tostagem do pão?",
+        opcoes: ["18 segundos", "20 segundos", "22 segundos", "25 segundos"],
+        correta: 2,
+        explicacao: "O tempo de tostagem do pão é de 22 segundos."
+      },
+      {
+        texto: "Quanto tempo o Chaiser pode permanecer na linha?",
+        opcoes: ["10 minutos", "15 minutos", "20 minutos", "30 minutos"],
+        correta: 1,
+        explicacao: "O Chaiser pode permanecer na linha por no máximo 15 minutos."
+      },
+      {
+        texto: "O tempo total de produção de um produto deve ser de:",
+        opcoes: ["20 a 30 segundos", "30 a 45 segundos", "35 a 50 segundos", "50 a 60 segundos"],
+        correta: 2,
+        explicacao: "O tempo total de produção de um produto deve ser de 35 a 50 segundos."
+      },
+      {
+        texto: "Quais são as zonas de perigo da cozinha dentro do MFY?",
+        opcoes: [
+          "3 ou mais pedidos no KVS",
+          "3 ou mais pedidos no KVS e 3 ou mais gavetas na garagem",
+          "5 ou mais pedidos no KVS",
+          "Falta de produto na UHC"
+        ],
+        correta: 1,
+        explicacao: "As zonas de perigo da cozinha MFY são: 3 ou mais pedidos no KVS e 3 ou mais gavetas na garagem."
+      },
+      {
+        texto: "Quais são as funções para a linha MFY?",
+        opcoes: [
+          "Iniciador, condimentação e finalização",
+          "Iniciador, condimentação 1, condimentação 2, finalização 1 e finalização 2",
+          "Iniciador, chapeiro, condimentação e expedidor",
+          "Cozinheiro, condimentador e expedidor"
+        ],
+        correta: 1,
+        explicacao: "As funções da linha MFY são: Iniciador, Condimentação 1, Condimentação 2, Finalização 1 e Finalização 2."
+      },
+      {
+        texto: "O que significa Dual Point?",
+        opcoes: [
+          "Sistema de dois caixas simultâneos",
+          "Sistema que usa dois cardápios digitais",
+          "Sistema de serviço no balcão que separa fisicamente o ponto de solicitar o pedido e o ponto de recebê-lo",
+          "Sistema com dois pontos de fritura"
+        ],
+        correta: 2,
+        explicacao: "Dual Point separa fisicamente onde o cliente pede e onde retira — todos os pedidos são entregues numa mesma área de retirada."
+      },
+      {
+        texto: "Quais são as posições-chave no serviço Dual Point?",
+        opcoes: [
+          "Caixa e Apoio",
+          "Influencer e Apoio",
+          "Expedidor e Caixa",
+          "Anfitriã e Apoio"
+        ],
+        correta: 1,
+        explicacao: "As posições-chave do Dual Point são o Influencer e o Apoio."
+      },
+      {
+        texto: "Qual o tempo total de Serviço no Balcão?",
+        opcoes: [
+          "60 segundos para pedir e 60 segundos para retirar",
+          "90 segundos para pedir e 60 segundos para retirar",
+          "90 segundos para pedir e 90 segundos para retirar",
+          "120 segundos para pedir e 90 segundos para retirar"
+        ],
+        correta: 2,
+        explicacao: "O tempo total de serviço no balcão é de 90 segundos para pedir e 90 segundos para retirar."
+      },
+      {
+        texto: "Quando a pessoa do apoio deve subir a bandeja?",
+        opcoes: [
+          "Quando o caixa confirmar o pedido",
+          "Quando estiver com status PAGO e todos os itens prontos",
+          "Assim que o pedido for lançado no sistema",
+          "Quando o cliente solicitar"
+        ],
+        correta: 1,
+        explicacao: "A bandeja deve ser subida quando o pedido estiver com status PAGO e todos os itens estiverem prontos."
+      },
+      {
+        texto: "Para que serve a mesa BLZ?",
+        opcoes: [
+          "Mesa de condimentação de sanduíches especiais",
+          "Mesa de bebidas e sobremesas devidamente adesivada",
+          "Mesa de apoio para embalagem de delivery",
+          "Mesa de controle de qualidade"
+        ],
+        correta: 1,
+        explicacao: "A mesa BLZ é a mesa de bebidas e sobremesas devidamente adesivada."
+      },
+      {
+        texto: "Que POS devo abrir primeiro no balcão com o primeiro funcionário posicionado no caixa?",
+        opcoes: [
+          "O POS mais central",
+          "O POS mais distante da OAT",
+          "O caixa que estiver mais próximo da apresentação e OAT",
+          "Qualquer POS disponível"
+        ],
+        correta: 2,
+        explicacao: "O primeiro POS a abrir deve ser o caixa mais próximo da área de apresentação e OAT."
+      },
+      {
+        texto: "Por que a área de entrega deve estar localizada mais perto possível da mesa OAT e da fritura final?",
+        opcoes: [
+          "Para facilitar o abastecimento de materiais",
+          "Para minimizar os passos da pessoa do apoio balcão",
+          "Para evitar contaminação cruzada",
+          "Para cumprir normas de segurança alimentar"
+        ],
+        correta: 1,
+        explicacao: "A área de entrega próxima à OAT e fritura serve para minimizar os passos da pessoa do apoio do balcão."
+      },
+      {
+        texto: "É correto afirmar que as McFritas não devem ser montadas antes que os sanduíches estejam disponíveis?",
+        opcoes: ["Verdadeiro", "Falso", "Depende do volume", "Apenas no delivery"],
+        correta: 0,
+        explicacao: "VERDADEIRO. As McFritas não devem ser montadas antes que os sanduíches estejam disponíveis."
+      },
+      {
+        texto: "O que significa a sigla PPF?",
+        opcoes: [
+          "Produto, Preço e Forma",
+          "Pergunte, Pergunte e Fale",
+          "Processo, Padrão e Forma",
+          "Prepare, Posicione e Finalize"
+        ],
+        correta: 1,
+        explicacao: "PPF = Pergunte, Pergunte e Fale — técnica de venda sugestiva."
+      },
+      {
+        texto: "Qual o tempo de atendimento do Drive Thru?",
+        opcoes: ["90 segundos", "100 segundos", "120 segundos", "150 segundos"],
+        correta: 2,
+        explicacao: "O tempo de atendimento no Drive Thru é de 120 segundos."
+      },
+      {
+        texto: "Quantas voltas tem uma casquinha?",
+        opcoes: ["2,5 voltas", "3 voltas", "3,5 voltas", "4 voltas"],
+        correta: 2,
+        explicacao: "Uma casquinha padrão tem 3,5 voltas."
+      },
+      {
+        texto: "Para o preparo do McShake utilizamos quantos mL de leite?",
+        opcoes: ["10 mL", "15 mL", "20 mL", "25 mL"],
+        correta: 1,
+        explicacao: "O McShake utiliza 15 mL de leite no preparo."
+      },
+      {
+        texto: "Qual o percentual ideal para o Overrun do mix de sundae?",
+        opcoes: ["40 a 50%", "45 a 55%", "55 a 65%", "65 a 75%"],
+        correta: 2,
+        explicacao: "O Overrun ideal do mix de sundae é de 55 a 65%."
+      },
+      {
+        texto: "O restaurante está recebendo de 40 a 49 pedidos do McDelivery por hora. Quantos funcionários devemos ter posicionados?",
+        opcoes: ["2 pessoas", "3 pessoas", "4 pessoas", "5 pessoas"],
+        correta: 2,
+        explicacao: "Para 40 a 49 pedidos/hora no McDelivery, o posicionamento ideal é de 4 pessoas."
+      },
+      {
+        texto: "Quem é o responsável por realizar a dupla checagem do pedido no McDelivery?",
+        opcoes: ["Gerente de plantão", "Caixa", "Conferente", "Apoio"],
+        correta: 2,
+        explicacao: "O Conferente é o responsável pela dupla checagem do pedido no McDelivery."
+      },
+      {
+        texto: "Qual o momento em que devemos preparar as sobremesas e McShakes no McDelivery?",
+        opcoes: [
+          "Assim que o pedido entrar no sistema",
+          "Quando o motoboy correspondente chegar",
+          "10 minutos antes da entrega estimada",
+          "Logo após montar os sanduíches"
+        ],
+        correta: 1,
+        explicacao: "As sobremesas e McShakes devem ser preparados quando o motoboy correspondente chegar."
+      },
+      {
+        texto: "A que altura devemos salgar as McFritas?",
+        opcoes: ["10 cm", "15 cm", "20 cm", "25 cm"],
+        correta: 2,
+        explicacao: "As McFritas devem ser salgadas a uma altura de 20 cm."
+      },
+      {
+        texto: "O Big Mac leva 12 gramas de alface na base e 12 gramas de alface no clube?",
+        opcoes: ["Verdadeiro", "Falso", "Apenas 12g na base", "Apenas 12g no clube"],
+        correta: 0,
+        explicacao: "VERDADEIRO. O Big Mac leva 12 gramas de alface na base e 12 gramas no clube."
+      },
+      {
+        texto: "Qual é o tempo de experiência total de Serviço do Balcão (em segundos)?",
+        opcoes: ["60", "90", "120", "180"],
+        correta: 1,
+        explicacao: "O tempo de experiência total de serviço do balcão é de 90 segundos."
+      },
+      {
+        texto: "Qual é a temperatura de armazenamento para os McNuggets na UHC?",
+        opcoes: ["85°C", "88°C", "93°C", "95°C"],
+        correta: 2,
+        explicacao: "Os McNuggets devem ser mantidos a 93°C na UHC."
+      },
+      {
+        texto: "Com que frequência os agitadores da máquina HT devem ser lavados e sanitizados?",
+        opcoes: ["Semanalmente", "A cada 2 dias", "Diariamente", "A cada turno"],
+        correta: 2,
+        explicacao: "Os agitadores da máquina HT devem ser lavados e sanitizados diariamente."
+      },
+      {
+        texto: "Qual a quantidade de cebola o Big Mac leva?",
+        opcoes: ["5 gramas", "6 gramas", "7 gramas", "8 gramas"],
+        correta: 2,
+        explicacao: "O Big Mac leva 7 gramas de cebola."
+      },
+      {
+        texto: "Qual a capacidade máxima de carnes 10:1 na gaveta da UHC?",
+        opcoes: ["12 carnes", "14 carnes", "16 carnes", "18 carnes"],
+        correta: 2,
+        explicacao: "A gaveta da UHC comporta no máximo 16 carnes 10:1."
+      },
+      {
+        texto: "Qual é o tempo de vida dos nuggets na UHC?",
+        opcoes: ["10 minutos", "15 minutos", "20 minutos", "30 minutos"],
+        correta: 2,
+        explicacao: "Os nuggets têm vida útil de 20 minutos na UHC."
+      },
+      {
+        texto: "Qual a quantidade de maionese que devemos colocar no McNífico?",
+        opcoes: ["1/4 Oz", "1/3 Oz", "1/2 Oz", "1 Oz"],
+        correta: 1,
+        explicacao: "O McNífico leva 1/3 Oz de maionese."
+      },
+      {
+        texto: "Qual deve ser a distância entre as pilhas das caixas e as paredes do congelador?",
+        opcoes: [
+          "2,5 cm da parede e 5 cm entre as caixas",
+          "5 cm da parede e 2,5 cm entre as caixas",
+          "10 cm da parede e 5 cm entre as caixas",
+          "5 cm da parede e 5 cm entre as caixas"
+        ],
+        correta: 1,
+        explicacao: "A distância correta é: 5 cm da parede e 2,5 cm entre as caixas."
+      },
+      {
+        texto: "Qual é a temperatura de recebimento para as carnes de 10:1?",
+        opcoes: [
+          "-15°C a -10°C",
+          "-18°C a -12°C",
+          "-23°C a -18°C (crítica: -15°C)",
+          "-25°C a -20°C"
+        ],
+        correta: 2,
+        explicacao: "As carnes 10:1 devem ser recebidas entre -23°C e -18°C (temperatura crítica: -15°C)."
+      },
+      {
+        texto: "Quais são os inimigos do óleo?",
+        opcoes: [
+          "Sal, Ar, Água, Altas temperaturas, Resíduos de carbono e Detergente",
+          "Sal, Fogo, Água, Baixas temperaturas e Resíduos",
+          "Ar, Umidade, Calor, Fumaça e Resíduos",
+          "Sal, Gordura, Água, Temperatura e Limpeza"
+        ],
+        correta: 0,
+        explicacao: "Os 6 inimigos do óleo são: Sal, Ar, Água, Altas temperaturas, Resíduos de carbono e Detergente."
+      },
+      {
+        texto: "Qual o tempo máximo para o cliente ser cumprimentado pelo tomador de pedidos no Drive Thru?",
+        opcoes: ["5 segundos", "8 segundos", "10 segundos", "15 segundos"],
+        correta: 2,
+        explicacao: "O cliente deve ser cumprimentado em no máximo 10 segundos após chegar ao Drive Thru."
+      },
+      {
+        texto: "Qual é a temperatura interna mínima das carnes 10:1 após cozida?",
+        opcoes: [
+          "69°C — 8 carnes",
+          "69°C — 9 carnes",
+          "72°C — 8 carnes",
+          "74°C — todas as carnes"
+        ],
+        correta: 0,
+        explicacao: "A temperatura interna mínima das carnes 10:1 é 69°C verificada nas 8 carnes da rodada."
+      },
+      {
+        texto: "Qual é a temperatura e o tempo de congelamento dos congeladores portáteis?",
+        opcoes: [
+          "-18°C a -15°C em 30 minutos",
+          "-23°C a -18°C em 45 minutos",
+          "-25°C a -20°C em 60 minutos",
+          "-15°C a -10°C em 30 minutos"
+        ],
+        correta: 1,
+        explicacao: "Os congeladores portáteis operam entre -23°C e -18°C e atingem essa temperatura em 45 minutos."
+      },
+      {
+        texto: "Qual a temperatura e tempo de aquecimento do forno no café da manhã?",
+        opcoes: [
+          "160°C — 15 min",
+          "170°C — 18 min",
+          "180°C — 20 min",
+          "200°C — 25 min"
+        ],
+        correta: 2,
+        explicacao: "O forno do café da manhã aquece a 180°C em 20 minutos."
+      },
+      {
+        texto: "Qual o rendimento do picles?",
+        opcoes: [
+          "155 sanduíches por Kg",
+          "200 sanduíches por Kg",
+          "255 sanduíches por Kg",
+          "355 sanduíches por Kg"
+        ],
+        correta: 2,
+        explicacao: "O rendimento do picles é de 255 sanduíches por Kg."
+      },
+      {
+        texto: "Qual é o tempo de vida dos produtos na mesa de condimentação?",
+        opcoes: ["1 hora", "2 horas", "3 horas", "4 horas"],
+        correta: 1,
+        explicacao: "Os produtos têm vida útil de 2 horas na mesa de condimentação."
+      },
+      {
+        texto: "Qual é o tempo de vida do pão congelado depois de descongelado?",
+        opcoes: [
+          "24 horas",
+          "36 horas contando 12 horas de ambientação",
+          "48 horas contando 12 horas de ambientação",
+          "72 horas"
+        ],
+        correta: 2,
+        explicacao: "O pão congelado depois de descongelado tem 48 horas de vida útil, incluindo as 12 horas de ambientação."
+      },
+      {
+        texto: "Qual é o tempo de fritura das tortas e o tempo de drenagem?",
+        opcoes: [
+          "5 minutos de fritura e 5 a 10 segundos de drenagem",
+          "6 minutos de fritura e 5 a 10 segundos de drenagem",
+          "7 minutos de fritura e 10 a 15 segundos de drenagem",
+          "5 minutos de fritura e 15 segundos de drenagem"
+        ],
+        correta: 1,
+        explicacao: "Tortas: 6 minutos de fritura e 5 a 10 segundos de drenagem."
+      },
+      {
+        texto: "Qual é o peso da McFritas Kids, Pequena, Média e Grande respectivamente?",
+        opcoes: [
+          "0,5 oz / 2,0 oz / 3,0 oz / 4,5 oz",
+          "1 oz / 2,5 oz / 3,5 oz / 5 oz",
+          "1 oz / 3 oz / 4 oz / 5,5 oz",
+          "0,5 oz / 2,5 oz / 3,5 oz / 5 oz"
+        ],
+        correta: 1,
+        explicacao: "Pesos em onças: Kids = 1 oz, Pequena = 2,5 oz, Média = 3,5 oz, Grande = 5 oz."
+      },
+      {
+        texto: "Qual alternativa NÃO está dentro da zona de perigo?",
+        opcoes: [
+          "3 ou mais clientes na fila",
+          "3 ou mais carros na espera",
+          "3 McFritas na estufa",
+          "3 ou mais pedidos no KVS"
+        ],
+        correta: 2,
+        explicacao: "3 McFritas na estufa NÃO é zona de perigo — é uma quantidade normal. As zonas de perigo envolvem acúmulo de clientes, carros e pedidos."
+      },
+      {
+        texto: "Quando experimentamos os refrigerantes, qual é o ÚLTIMO sabor que devemos experimentar?",
+        opcoes: ["Guaraná", "Coca-Cola", "Fanta", "Sprite"],
+        correta: 2,
+        explicacao: "O último refrigerante a ser experimentado é a Fanta."
+      },
+      {
+        texto: "Qual ferramenta nos garante uma estocagem precisa para o consumo daquele período?",
+        opcoes: ["Maverick", "24x2", "Plano de chão", "Check list"],
+        correta: 1,
+        explicacao: "A ferramenta 24x2 garante uma estocagem precisa para o consumo do período."
+      },
+      {
+        texto: "Qual o tempo máximo de remoção das carnes 10:1?",
+        opcoes: ["12 segundos", "15 segundos", "18 segundos", "22 segundos"],
+        correta: 2,
+        explicacao: "O tempo máximo de remoção das carnes 10:1 é de 18 segundos."
+      },
+      {
+        texto: "Qual o tempo de aquecimento da tostadeira vertical?",
+        opcoes: ["10 min", "15 min", "20 min", "25 min"],
+        correta: 2,
+        explicacao: "O tempo de aquecimento da tostadeira vertical é de 20 minutos."
+      },
+      {
+        texto: "Qual o ponto de partida para o cozimento das carnes 10:1?",
+        opcoes: ["34 segundos", "36 segundos", "38 segundos", "40 segundos"],
+        correta: 2,
+        explicacao: "O ponto de partida para cozimento das carnes 10:1 é de 38 segundos."
+      },
+      {
+        texto: "Qual o ponto de partida para cozimento das carnes Picanha 4:1 e 3:1?",
+        opcoes: ["96 segundos", "100 segundos", "104 segundos", "110 segundos"],
+        correta: 2,
+        explicacao: "O ponto de partida para cozimento das carnes Picanha 4:1 e 3:1 é de 104 segundos."
       }
     ]
   }
