@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provas e Testes — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') setTimeout(hideSplash, 700);
+      else window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="preload" href="../js/main.js" as="script">
+
+  <style>
+    .prova-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 12px;
+    }
+    .prova-head {
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: background .15s;
+    }
+    .prova-head:hover { background: var(--bg); }
+    .prova-head-icon { font-size: 28px; flex-shrink: 0; }
+    .prova-head-info { flex: 1; }
+    .prova-head-info h3 { font-family: var(--font-display); font-size: 15px; font-weight: 900; }
+    .prova-head-info p  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .prova-head-arrow { font-size: 18px; color: var(--muted); transition: transform .2s; }
+    .prova-card.open .prova-head-arrow { transform: rotate(90deg); }
+    .prova-body {
+      display: none;
+      padding: 0 16px 16px;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .prova-card.open .prova-body { display: flex; }
+
+    .prova-q {
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+      padding: 12px 14px;
+    }
+    .prova-q-num {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .prova-q-text {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .prova-opts {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .prova-opt {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      transition: border-color .15s, background .15s;
+      text-align: left;
+      width: 100%;
+    }
+    .prova-opt:hover { border-color: var(--red); }
+    .prova-opt.selected { border-color: var(--red); background: #fdecea; }
+    .prova-opt.correct-reveal  { border-color: #22c55e; background: #e8f5e9; color: #1a5c2a; font-weight: 700; }
+    .prova-opt.wrong-reveal    { border-color: var(--red); background: #fdecea; color: #7a1a12; }
+    .prova-opt-key {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; border-radius: 6px;
+      background: rgba(0,0,0,0.07); font-size: 11px; font-weight: 900;
+      flex-shrink: 0; font-family: var(--font-display);
+    }
+    .prova-explanation {
+      font-size: 12px; color: var(--muted); margin-top: 8px;
+      padding: 8px 10px; background: #f0f9ff; border-radius: 8px;
+      border-left: 3px solid #38bdf8; display: none; line-height: 1.5;
+    }
+    .prova-explanation.show { display: block; }
+
+    .prova-footer {
+      padding: 12px 16px;
+      border-top: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .prova-score {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .prova-reset-btn {
+      font-size: 12px; padding: 7px 14px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+      background: var(--card); cursor: pointer;
+      font-family: var(--font-display); font-weight: 700;
+      color: var(--text); transition: border-color .15s;
+    }
+    .prova-reset-btn:hover { border-color: var(--red); color: var(--red); }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+    .empty-state-icon { font-size: 48px; margin-bottom: 12px; }
+    .empty-state h3 { font-family: var(--font-display); font-size: 16px; color: var(--text); margin-bottom: 6px; }
+    .empty-state p  { font-size: 13px; line-height: 1.5; }
+
+    .prova-tag {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 9px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; flex-shrink: 0;
+    }
+    .prova-tag.proibido { background: #fdecea; color: #7a1a12; }
+    .prova-tag.disponivel { background: #e8f5e9; color: #1a5c2a; }
+  </style>
+</head>
+
+<body data-page="provas-testes">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Provas e Testes</h1>
+        <p>Simulados Oficiais McDonald's</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="provas">📋 Provas</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Simulado</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tab-panel active" id="panel-provas">
+
+      <div class="empty-state" id="empty-provas">
+        <div class="empty-state-icon">📬</div>
+        <h3>Provas a caminho</h3>
+        <p>Os PDFs das provas estão sendo adicionados.<br>Em breve esta seção estará completa.</p>
+      </div>
+
+      <!-- Provas serão inseridas aqui -->
+      <div id="provas-container"></div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Simulado — Provas e Testes</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Quiz — Provas Oficiais</h2>
+          <div class="badge badge-red" id="quiz-count-badge">0 perguntas</div>
+        </div>
+        <div class="card-body">
+          <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+            <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+            <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+            <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+          </div>
+          <div id="quiz-app"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Provas e Testes · Material de estudo pessoal
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* ── Dados das provas ────────────────────────────────────────── */
+    // Cada prova tem: id, titulo, descricao, icon, perguntas[]
+    // Cada pergunta: texto, opcoes[], correta (index 0-based), explicacao
+    const PROVAS = [
+      // PDFs serão adicionados aqui
+    ];
+
+    /* ── Estado local por prova ─────────────────────────────────── */
+    function getState(provaId) {
+      return JSON.parse(localStorage.getItem('mc_prova_' + provaId) || '{}');
+    }
+    function saveState(provaId, state) {
+      localStorage.setItem('mc_prova_' + provaId, JSON.stringify(state));
+    }
+    function resetState(provaId) {
+      localStorage.removeItem('mc_prova_' + provaId);
+    }
+
+    /* ── Render provas ──────────────────────────────────────────── */
+    function renderProvas() {
+      var container = document.getElementById('provas-container');
+      var empty = document.getElementById('empty-provas');
+      if (!PROVAS.length) { empty.style.display = ''; container.innerHTML = ''; return; }
+      empty.style.display = 'none';
+
+      container.innerHTML = PROVAS.map(function(prova) {
+        var state = getState(prova.id);
+        var answered = Object.keys(state).length;
+        var correct  = Object.values(state).filter(function(v) { return v.correct; }).length;
+        var total    = prova.perguntas.length;
+        var pct = answered > 0 ? Math.round((correct / total) * 100) : null;
+        var scoreText = answered > 0
+          ? correct + '/' + total + ' (' + pct + '%)'
+          : total + ' perguntas';
+        var tagClass = answered === 0 ? 'disponivel' : pct >= 70 ? 'disponivel' : 'proibido';
+        var tagText  = answered === 0 ? '🔓 Disponível' : pct >= 70 ? '✅ ' + pct + '%' : '❌ ' + pct + '%';
+
+        return '<div class="prova-card" id="card-' + prova.id + '">'
+          + '<div class="prova-head" onclick="toggleProva(\'' + prova.id + '\')">'
+          +   '<div class="prova-head-icon">' + prova.icon + '</div>'
+          +   '<div class="prova-head-info">'
+          +     '<h3>' + prova.titulo + '</h3>'
+          +     '<p>' + prova.descricao + '</p>'
+          +   '</div>'
+          +   '<span class="prova-tag ' + tagClass + '">' + tagText + '</span>'
+          +   '<span class="prova-head-arrow">›</span>'
+          + '</div>'
+          + renderProvaBody(prova, state)
+          + '</div>';
+      }).join('');
+    }
+
+    function renderProvaBody(prova, state) {
+      var total   = prova.perguntas.length;
+      var correct = Object.values(state).filter(function(v) { return v.correct; }).length;
+      var answered = Object.keys(state).length;
+
+      var questsHtml = prova.perguntas.map(function(q, qi) {
+        var ans = state[qi];
+        var revealed = !!ans;
+        var keys = ['A','B','C','D','E'];
+
+        var optsHtml = q.opcoes.map(function(opt, oi) {
+          var cls = 'prova-opt';
+          if (revealed) {
+            if (oi === q.correta) cls += ' correct-reveal';
+            else if (ans && ans.chosen === oi && oi !== q.correta) cls += ' wrong-reveal';
+          } else if (ans && ans.chosen === oi) cls += ' selected';
+          var onclick = revealed ? '' : 'onclick="chooseAnswer(\'' + prova.id + '\',' + qi + ',' + oi + ')"';
+          return '<button class="' + cls + '" ' + onclick + ' ' + (revealed ? 'disabled' : '') + '>'
+            + '<span class="prova-opt-key">' + keys[oi] + '</span>' + opt
+            + '</button>';
+        }).join('');
+
+        var expHtml = revealed
+          ? '<div class="prova-explanation show">' + (q.explicacao || '') + '</div>'
+          : '<div class="prova-explanation"></div>';
+
+        return '<div class="prova-q" id="' + prova.id + '-q' + qi + '">'
+          + '<div class="prova-q-num">Questão ' + (qi+1) + ' de ' + total + '</div>'
+          + '<div class="prova-q-text">' + q.texto + '</div>'
+          + '<div class="prova-opts">' + optsHtml + '</div>'
+          + expHtml
+          + '</div>';
+      }).join('');
+
+      var scoreHtml = answered > 0
+        ? '<div class="prova-score">✅ ' + correct + '/' + total + ' corretas</div>'
+        : '<div class="prova-score" style="color:var(--muted);">0/' + total + ' respondidas</div>';
+
+      return '<div class="prova-body">'
+        + questsHtml
+        + '<div class="prova-footer">'
+        +   scoreHtml
+        +   '<button class="prova-reset-btn" onclick="resetProva(\'' + prova.id + '\')">🔄 Refazer</button>'
+        + '</div>'
+        + '</div>';
+    }
+
+    function toggleProva(id) {
+      var card = document.getElementById('card-' + id);
+      card.classList.toggle('open');
+    }
+
+    function chooseAnswer(provaId, qi, chosen) {
+      var prova = PROVAS.find(function(p) { return p.id === provaId; });
+      var q = prova.perguntas[qi];
+      var state = getState(provaId);
+      if (state[qi]) return; // already answered
+      state[qi] = { chosen: chosen, correct: chosen === q.correta };
+      saveState(provaId, state);
+
+      // Re-render just this question
+      var qEl = document.getElementById(provaId + '-q' + qi);
+      var revealed = true;
+      var keys = ['A','B','C','D','E'];
+      var optsHtml = q.opcoes.map(function(opt, oi) {
+        var cls = 'prova-opt';
+        if (oi === q.correta) cls += ' correct-reveal';
+        else if (chosen === oi && oi !== q.correta) cls += ' wrong-reveal';
+        return '<button class="' + cls + '" disabled>'
+          + '<span class="prova-opt-key">' + keys[oi] + '</span>' + opt + '</button>';
+      }).join('');
+
+      qEl.querySelector('.prova-opts').innerHTML = optsHtml;
+      if (q.explicacao) {
+        qEl.querySelector('.prova-explanation').textContent = q.explicacao;
+        qEl.querySelector('.prova-explanation').classList.add('show');
+      }
+
+      // Update score in footer
+      var card = document.getElementById('card-' + provaId);
+      var newState = getState(provaId);
+      var correct = Object.values(newState).filter(function(v) { return v.correct; }).length;
+      var answered = Object.keys(newState).length;
+      var total = prova.perguntas.length;
+      var scoreEl = card.querySelector('.prova-score');
+      if (scoreEl) scoreEl.innerHTML = '✅ ' + correct + '/' + total + ' corretas';
+
+      // Update tag
+      var pct = Math.round((correct / total) * 100);
+      var tag = card.querySelector('.prova-tag');
+      if (tag) {
+        tag.className = 'prova-tag ' + (pct >= 70 ? 'disponivel' : 'proibido');
+        tag.textContent = (pct >= 70 ? '✅ ' : '❌ ') + pct + '%';
+      }
+    }
+
+    function resetProva(provaId) {
+      resetState(provaId);
+      renderProvas();
+      // Re-open the card
+      setTimeout(function() { toggleProva(provaId); }, 50);
+    }
+
+    /* ── Quiz tab ───────────────────────────────────────────────── */
+    // Build quiz pool from all PROVAS questions
+    const QUIZ_PROVAS = PROVAS.flatMap ? PROVAS.flatMap(function(p) {
+      return p.perguntas.map(function(q) {
+        return {
+          guide: 'provas',
+          category: '📋 ' + p.titulo,
+          question: q.texto,
+          options: q.opcoes,
+          answer: q.opcoes[q.correta],
+          explanation: q.explicacao || ''
+        };
+      });
+    }) : [];
+
+    // Update badge
+    document.getElementById('quiz-count-badge').textContent = QUIZ_PROVAS.length + ' perguntas';
+
+    /* ── Init ───────────────────────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', function() {
+      initTabs();
+      renderProvas();
+      if (QUIZ_PROVAS.length) {
+        var quizPanel = document.getElementById('panel-quiz');
+        var observer = new MutationObserver(function() {
+          if (quizPanel.classList.contains('active')) {
+            initQuiz(QUIZ_PROVAS, 'Provas Oficiais');
+            observer.disconnect();
+          }
+        });
+        observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
+        if (quizPanel.classList.contains('active')) initQuiz(QUIZ_PROVAS, 'Provas Oficiais');
+      }
+    });
+  </script>
+</body>
+</html>
