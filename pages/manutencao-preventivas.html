@@ -1270,6 +1270,11 @@
 
     <div class="tab-panel" id="panel-quiz">
       <div class="section-label">Quiz — Manutenção e Preventivas</div>
+      <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+        <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+        <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+        <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+      </div>
       <div id="quiz-app"></div>
     </div>
 
@@ -1317,25 +1322,16 @@
         { category: "🍦 Sorvete · Ficha 12E", question: "O que deve ser aplicado nos agitadores antes de recolocá-los na máquina de sorvete?", options: ["Óleo de cozinha", "Vaselina", "Petrogel", "QSR Multiuso"], answer: "Petrogel", explanation: "Aplicar uma fina camada de Petrogel nos agitadores antes de colocar no equipamento." },
     ];
 
-    // Initialize quiz when the quiz tab is activated
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const tab = this.dataset.tab;
-        if (tab === 'quiz') {
-          const mode = window._quizMode || 'multiple';
-          if (mode === 'multiple') initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
-          else if (mode === 'flash') initFlashcard(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
-          else if (mode === 'lacuna') initLacuna(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
+    document.addEventListener('DOMContentLoaded', () => {
+      const quizPanel = document.getElementById('panel-quiz');
+      const observer = new MutationObserver(() => {
+        if (quizPanel.classList.contains('active')) {
+          initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
+          observer.disconnect();
         }
       });
-    });
-
-    // Also init if user lands directly on quiz tab
-    window.addEventListener('load', function() {
-      const quizPanel = document.getElementById('panel-quiz');
-      if (quizPanel && quizPanel.classList.contains('active')) {
-        initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
-      }
+      observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
+      if (quizPanel.classList.contains('active')) initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
     });
   </script>
 </body>

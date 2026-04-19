@@ -486,6 +486,11 @@
             <div class="badge badge-red">28 perguntas</div>
           </div>
           <div class="card-body">
+            <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+              <button class="btn-primary" id="btnMultiple" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('multiple')">🎯 Múltipla escolha</button>
+              <button class="btn-secondary" id="btnFlash" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('flash')">⚡ Flashcard</button>
+              <button class="btn-secondary" id="btnLacuna" style="flex:1;min-width:80px;font-size:13px;padding:9px 0;" onclick="switchMode('lacuna')">✏️ Lacunas</button>
+            </div>
             <div id="quiz-app"></div>
           </div>
         </div>
@@ -675,11 +680,17 @@
         var observer = new MutationObserver(function() {
           if (quizPanel.classList.contains('active') && !_inited) {
             _inited = true;
-            initQuiz(QUIZ_SUPERVISORES, 'Conteúdo para Supervisores');
             observer.disconnect();
+            if (window.switchMode) switchMode('multiple');
+            else initQuiz(QUIZ_SUPERVISORES, 'Conteúdo para Supervisores');
           }
         });
         observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
+        if (quizPanel.classList.contains('active')) {
+          _inited = true;
+          if (window.switchMode) switchMode('multiple');
+          else initQuiz(QUIZ_SUPERVISORES, 'Conteúdo para Supervisores');
+        }
       }
     });
 
