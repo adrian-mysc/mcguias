@@ -340,5 +340,43 @@
       if (quizPanel.classList.contains("active")) initQuiz(QUIZ_FRITAS);
     });
   </script>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <a class="bottom-nav-item" href="/mcguias/index.html" data-nav="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+      <span>Início</span>
+    </a>
+    <a class="bottom-nav-item" href="/mcguias/pages/quiz.html" data-nav="quiz">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+      <span>Quiz</span>
+    </a>
+    <a class="bottom-nav-item" href="/mcguias/pages/treinadores.html" data-nav="treinadores">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <span>Treinadores</span>
+    </a>
+    <a class="bottom-nav-item" href="/mcguias/pages/condimentacao.html" data-nav="condimentacao">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      <span>Cardápio</span>
+    </a>
+  </nav>
+
+  <!-- FAB Quiz -->
+  <a class="fab-quiz" href="/mcguias/pages/quiz.html" aria-label="Ir para o Quiz" title="Quiz">🎯</a>
+
+<script>
+// Bottom Nav — highlight active item
+(function() {
+  var path = window.location.pathname;
+  document.querySelectorAll('.bottom-nav-item').forEach(function(item) {
+    var nav = item.getAttribute('data-nav');
+    if (nav === 'home' && (path.endsWith('index.html') || path.endsWith('/mcguias/') || path === '/mcguias')) {
+      item.classList.add('active');
+    } else if (nav && path.includes(nav)) {
+      item.classList.add('active');
+    }
+  });
+})();
+</script>
 </body>
 </html>
