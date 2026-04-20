@@ -1,891 +1,928 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drive-Thru — MC Guias</title>
-  <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    /* ── Inline overrides / additions ── */
-    .highlight-box {
-      background: #fff3cd;
-      border-left: 4px solid #f0a500;
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin: 12px 0;
-      font-size: 0.92em;
-    }
-    .highlight-box.red {
-      background: #fdecea;
-      border-color: #da3633;
-    }
-    .highlight-box.green {
-      background: #e6f4ea;
-      border-color: #1a7f37;
-    }
-    .highlight-box.blue {
-      background: #e8f0fe;
-      border-color: #1a73e8;
-    }
-    .role-card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 14px 16px;
-      margin: 10px 0;
-    }
-    .role-card h3 {
-      margin: 0 0 8px;
-      font-size: 0.95em;
-      color: #c8102e;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-    .role-card ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-    .role-card li {
-      margin-bottom: 4px;
-      font-size: 0.88em;
-      line-height: 1.45;
-    }
-    .config-card {
-      background: linear-gradient(135deg, #c8102e 0%, #9b0b21 100%);
-      color: #fff;
-      border-radius: 10px;
-      padding: 14px 16px;
-      margin: 10px 0;
-    }
-    .config-card h3 {
-      margin: 0 0 4px;
-      font-size: 1em;
-    }
-    .config-card .capacity {
-      font-size: 0.82em;
-      opacity: 0.85;
-      margin-bottom: 8px;
-    }
-    .config-card ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-    .config-card li {
-      font-size: 0.85em;
-      line-height: 1.45;
-      margin-bottom: 3px;
-    }
-    .time-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 12px 0;
-    }
-    .time-cell {
-      background: #fff;
-      border: 2px solid #c8102e;
-      border-radius: 10px;
-      padding: 12px;
-      text-align: center;
-    }
-    .time-cell .label {
-      font-size: 0.75em;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-    }
-    .time-cell .value {
-      font-size: 1.6em;
-      font-weight: 800;
-      color: #c8102e;
-      line-height: 1.1;
-    }
-    .time-cell .unit {
-      font-size: 0.72em;
-      color: #555;
-    }
-    .step-list {
-      counter-reset: step;
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .step-list li {
-      counter-increment: step;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      margin-bottom: 10px;
-      font-size: 0.88em;
-      line-height: 1.45;
-    }
-    .step-list li::before {
-      content: counter(step);
-      min-width: 24px;
-      height: 24px;
-      background: #c8102e;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.82em;
-      flex-shrink: 0;
-    }
-    .barrier-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin: 10px 0;
-    }
-    .barrier-cell {
-      border: 2px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      font-size: 0.8em;
-    }
-    .barrier-cell.blocked { border-color: #da3633; background: #fdecea; }
-    .barrier-cell.ok { border-color: #1a7f37; background: #e6f4ea; }
-    .barrier-cell strong { display: block; margin-bottom: 4px; }
-    .equip-card {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 12px 14px;
-      margin: 10px 0;
-    }
-    .equip-card .icon {
-      font-size: 1.8em;
-      flex-shrink: 0;
-    }
-    .equip-card h3 {
-      margin: 0 0 4px;
-      font-size: 0.9em;
-      color: #c8102e;
-    }
-    .equip-card p {
-      margin: 0;
-      font-size: 0.82em;
-      line-height: 1.45;
-      color: #444;
-    }
-    .pyramid {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 12px;
-      margin: 12px 0;
-    }
-    .pyramid-level {
-      padding: 7px 12px;
-      border-radius: 6px;
-      font-size: 0.82em;
-      font-weight: 600;
-      margin: 3px auto;
-      text-align: center;
-      color: #fff;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
 
-  <!-- ── MODE BAR ── -->
-  <div class="mode-bar" id="modeBar">
-    <button class="mode-btn active" data-mode="estudo" onclick="setMode('estudo')">📖 Estudo</button>
-    <button class="mode-btn" data-mode="checklist" onclick="setMode('checklist')">✅ Checklist</button>
-  </div>
-
-  <!-- ── HEADER ── -->
-  <header class="page-header">
-    <a href="../index.html" class="back-btn" aria-label="Voltar">&#8592;</a>
-    <div class="header-info">
-      <span class="header-emoji">🚗</span>
-      <h1>Drive-Thru</h1>
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="../index.html" class="navbar-back">← Início</a>
+      <a href="../index.html" class="navbar-logo">M</a>
+      <div class="navbar-brand">
+        <h1>Drive-Thru</h1>
+        <p>Manual 2020</p>
+      </div>
     </div>
-  </header>
-
-  <!-- ── TAB NAV ── -->
-  <nav class="tab-nav" id="tabNav">
-    <button class="tab-btn active" onclick="openTab(event,'funções')">Funções</button>
-    <button class="tab-btn" onclick="openTab(event,'atendimento')">Atendimento</button>
-    <button class="tab-btn" onclick="openTab(event,'configurações')">Configurações</button>
-    <button class="tab-btn" onclick="openTab(event,'equipamentos')">Equipamentos</button>
-    <button class="tab-btn" onclick="openTab(event,'tempos')">Tempos</button>
-    <button class="tab-btn" onclick="openTab(event,'diagnóstico')">Diagnóstico</button>
   </nav>
 
-  <!-- ══════════════════════════════════════════
-       ABA 1 — FUNÇÕES
-  ══════════════════════════════════════════ -->
-  <main class="tab-content active" id="tab-funções">
+  <!-- ── TABS ── -->
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" onclick="openTab(event,'funcoes')">Funções</button>
+      <button class="tab-btn" onclick="openTab(event,'atendimento')">Atendimento</button>
+      <button class="tab-btn" onclick="openTab(event,'configuracoes')">Configurações</button>
+      <button class="tab-btn" onclick="openTab(event,'equipamentos')">Equipamentos</button>
+      <button class="tab-btn" onclick="openTab(event,'tempos')">Tempos</button>
+      <button class="tab-btn" onclick="openTab(event,'diagnostico')">Diagnóstico</button>
+    </div>
+  </div>
 
-    <section>
-      <h2 class="section-title">Para a equipe ser eficiente</h2>
-      <div class="highlight-box">
-        <strong>Antes de tudo:</strong> ter gerente RDM, selecionar bem a equipe, ter número de funcionários de acordo com a VHL e garantir treinamento e avaliações (live).
-      </div>
-    </section>
+  <div class="page-content">
 
-    <section>
-      <h2 class="section-title">Funções e Responsabilidades</h2>
+    <!-- ══ ABA 1 — FUNÇÕES ══ -->
+    <div class="tab-panel active" id="tab-funcoes">
 
-      <div class="role-card">
-        <h3>🎙️ Anotador de Pedidos</h3>
-        <ul>
-          <li>Cumprimentar o cliente</li>
-          <li>Utilizar técnicas de Influencers Vendedores</li>
-          <li>Ingressar o pedido</li>
-          <li>Informar o total da venda</li>
-          <li>Armazenar os pedidos para garantir a sequência dos carros</li>
-          <li>Direcionar o cliente para a cabine do caixa</li>
-        </ul>
-      </div>
+      <p class="section-label">Para a equipe ser eficiente</p>
 
-      <div class="role-card">
-        <h3>🪧 Anotador Externo (Tablet)</h3>
-        <ul>
-          <li>Cumprimentar o 1º carro e direcioná-lo ao speaker/COD</li>
-          <li>Cumprimentar o 2º carro e iniciar o atendimento</li>
-          <li>Utilizar técnicas de Influencers Vendedores</li>
-          <li>Informar total e número do pedido</li>
-          <li>Direcionar ao caixa e armazenar o pedido</li>
-          <li>Iniciar o registro no tablet somente <strong>após</strong> o AP interno iniciar o seu no COD</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>📦 Apoio Drive-Thru</h3>
-        <ul>
-          <li>Montar o pedido na sequência do monitor: sanduíche primeiro, depois McFritas</li>
-          <li>Comparar duas vezes o pedido com o monitor</li>
-          <li>Levar o pedido montado à mesa da pessoa da entrega</li>
-          <li>Incluir condimentos, guardanapos e canudos</li>
-          <li>Indicar à entrega quando o pedido está completo</li>
-          <li>Se incompleto, comunicar que o carro deve estacionar</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>💳 Caixa Drive-Thru</h3>
-        <ul>
-          <li>Cumprimentar o cliente de forma amável</li>
-          <li>Informar o total da venda</li>
-          <li>Receber pagamento e entregar troco</li>
-          <li>Agradecer e entregar o cupom fiscal</li>
-          <li>Direcionar à cabine de entrega</li>
-          <li>Se o cliente trocar item, alterar no POS e comunicar via headset</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>📱 Caixa Móvel</h3>
-        <ul>
-          <li>Interagir com o caixa para cobranças indicadas por ele</li>
-          <li>Digitar o valor no Pin Pad/GPRS, solicitar cartão e senha</li>
-          <li>Evitar tocar no cartão do cliente</li>
-          <li>Direcionar clientes com pagamento por aproximação à cabine de pagamento</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>🛍️ Entrega Drive-Thru</h3>
-        <ul>
-          <li>Esperar o cliente com o pedido na mão</li>
-          <li>Entregar saco fechado — sanduíche primeiro, depois bebidas</li>
-          <li>Entregar condimentos extras se solicitado</li>
-          <li>Agradecer e convidar a voltar</li>
-          <li>Ficar visível até o cliente ir embora</li>
-          <li>Se o pedido demorar mais de 10 segundos → enviar para Espera</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>🥤 Bebidas e Sobremesas</h3>
-        <ul>
-          <li>Servir sempre revisando as tampas</li>
-          <li>2 ou mais bebidas → usar porta-copos</li>
-          <li>Levar bebidas e sobremesas corretas à mesa da entrega</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>🔍 Conferente</h3>
-        <ul>
-          <li>Conferir pedidos entregues pelo apoio e bebidas</li>
-          <li>Deixar o pedido na sequência correta para a entrega</li>
-          <li>Se pedido for para Espera, posicionar o prisma com o número do pedido</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>👔 Gerente Drive-Thru</h3>
-        <ul>
-          <li>Coordenar pessoas e procedimentos</li>
-          <li>Garantir tempos de montagem e exatidão</li>
-          <li>Gerenciar as esperas</li>
-          <li>Observar e reagir às zonas de perigo</li>
-          <li>Comunicar objetivos à equipe a cada 15 min</li>
-          <li>Garantir que todas as estações tenham suprimentos</li>
-          <li>Resolver reclamações de clientes rapidamente</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Tipos de Responsabilidade</h2>
-      <div class="highlight-box blue">
-        <strong>Primária:</strong> função principal.<br>
-        <strong>Secundária:</strong> ajuda na função de outros + limpeza/estocagem.<br>
-        <strong>Compartilhada:</strong> quando áreas não estão cobertas, uma pessoa faz mais de uma função primária.<br><br>
-        ⚠️ Cumpra sempre as primárias <strong>antes</strong> das secundárias e compartilhadas.
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ══════════════════════════════════════════
-       ABA 2 — ATENDIMENTO
-  ══════════════════════════════════════════ -->
-  <main class="tab-content" id="tab-atendimento">
-
-    <section>
-      <h2 class="section-title">Influencers Vendedores</h2>
-
-      <div class="role-card">
-        <h3>🤝 Cumprimentar e Criar Vínculo</h3>
-        <ul>
-          <li><strong>Máximo 10 segundos</strong> para cumprimentar após o carro parar no COD</li>
-          <li>O cliente deve sentir o sorriso através da voz</li>
-          <li>Atendimento breve — cada palavra acrescenta tempo para todos na fila</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>↗️ Pequenos Saltos (Venda Cruzada)</h3>
-        <ul>
-          <li>Sugerir itens associados de forma natural</li>
-          <li>Não sugerir se o cliente já finalizou o pedido dizendo "é isso tudo"</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>📋 Ingresso do Pedido</h3>
-        <ul>
-          <li><strong>25 segundos ou menos</strong> para ingressar</li>
-          <li>Não interrompa o cliente — ele pedirá mais rápido se não for interrompido</li>
-          <li>Quando o cliente fizer pausa, não diga "É isso tudo?" — já passe para Pequenos Saltos</li>
-          <li>Ingresse no POS à medida que o cliente fala</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">PPF — Pergunte, Pergunte, Fale</h2>
-      <div class="highlight-box green">
-        Procedimento para melhorar a precisão dos pedidos no Drive-Thru.
-      </div>
-
-      <div class="role-card">
-        <h3>Anotador — PERGUNTE</h3>
-        <ul>
-          <li>Cumprimente o cliente</li>
-          <li>Ingresse o pedido</li>
-          <li><em>"Seu pedido é uma McOferta do Big Mac com Coca?"</em></li>
-          <li>Após confirmação, informe o total</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>Caixa — PERGUNTE</h3>
-        <ul>
-          <li>Cumprimente o cliente</li>
-          <li><em>"Seu pedido é um Big Mac com Coca?"</em></li>
-          <li>Após confirmação, informe o total e processe o pagamento</li>
-          <li><strong>15 segundos ou menos</strong> para cobrar</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>Entrega — FALE</h3>
-        <ul>
-          <li>Confira no monitor de apresentação</li>
-          <li>Cumprimente e <em>"Seu pedido é um Big Mac com Coca."</em></li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Sequência de Montagem do Pedido</h2>
-      <ol class="step-list">
-        <li>Bebidas frias / McShakes</li>
-        <li>Bebidas quentes McCafé</li>
-        <li>Sobremesas</li>
-        <li>Sanduíches / Saladas</li>
-        <li>McFritas / McNuggets</li>
-      </ol>
-
-      <h2 class="section-title">Capacidade dos Sacos</h2>
-      <div class="highlight-box">
-        <strong>1 item:</strong> sanduíche de lâmina, McFritas P, café da manhã, tortas<br>
-        <strong>2 itens:</strong> sanduíche em caixa pequena (BigMac, Cheddar…) + McFritas M<br>
-        <strong>3 itens:</strong> McFritas G<br>
-        <strong>4 itens:</strong> sanduíche em caixa grande (Signature, Tasty…)<br>
-        <strong>7 itens:</strong> Saladas<br><br>
-        ⚠️ Nunca coloque no saco: casquinhas, McFlurry, bebidas — a menos que o cliente peça.
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Tempos do Processo de Atendimento</h2>
-      <div class="time-grid">
-        <div class="time-cell">
-          <div class="label">Ingresso do pedido</div>
-          <div class="value">25</div>
-          <div class="unit">segundos ou menos</div>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🏆</span>
+          <h2>Bases da equipe Drive</h2>
         </div>
-        <div class="time-cell">
-          <div class="label">Pagamento (caixa)</div>
-          <div class="value">15</div>
-          <div class="unit">segundos ou menos</div>
-        </div>
-        <div class="time-cell">
-          <div class="label">Montagem</div>
-          <div class="value">16</div>
-          <div class="unit">segundos ou menos</div>
-        </div>
-        <div class="time-cell">
-          <div class="label">Pagamento → Entrega</div>
-          <div class="value">45</div>
-          <div class="unit">segundos (ideal)</div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ══════════════════════════════════════════
-       ABA 3 — CONFIGURAÇÕES
-  ══════════════════════════════════════════ -->
-  <main class="tab-content" id="tab-configurações">
-
-    <section>
-      <h2 class="section-title">Capacidade por Configuração</h2>
-
-      <div class="config-card">
-        <h3>🔁 Pista Única</h3>
-        <div class="capacity">100 a 120 carros por hora</div>
-        <ul>
-          <li>Pedido no speaker/COD → Pagamento no caixa → Entrega na cabine</li>
-        </ul>
-      </div>
-
-      <div class="config-card" style="background: linear-gradient(135deg, #c8102e 0%, #7a0617 100%);">
-        <h3>👥 Em Duplas (COD + Tablet)</h3>
-        <div class="capacity">120 a 150 carros por hora • Brasil: apenas via Tablet</div>
-        <ul>
-          <li>Dois pedidos simultâneos: AP interno no COD + AP externo com Tablet</li>
-          <li>Ativar ao atingir 80% da capacidade (ex.: pista única de 100 carros → a partir de 80)</li>
-          <li>Não usar se: sinal fraco, problemas de segurança, chuva forte, DT fora de padrão</li>
-        </ul>
-      </div>
-
-      <div class="config-card" style="background: linear-gradient(135deg, #9b0b21 0%, #6e0716 100%);">
-        <h3>↔️ Side by Side (Pista Dupla)</h3>
-        <div class="capacity">150 a 180 carros por hora</div>
-        <ul>
-          <li>Pista dividida em Side 1 e Side 2 — ambos sempre abertos</li>
-          <li>Mínimo 2 funcionários na equipe do Drive-Thru</li>
-          <li>Dois pedidos ingressados ao mesmo tempo de forma consistente</li>
-          <li>Captura de foto do carro associada ao pedido</li>
-        </ul>
-      </div>
-
-      <div class="config-card" style="background: linear-gradient(135deg, #700010 0%, #4a000b 100%);">
-        <h3>⚡ Fast Forward</h3>
-        <div class="capacity">mais de 180 carros por hora</div>
-        <ul>
-          <li>Duas cabines de entrega (Entrega #1 e #2)</li>
-          <li>Carros saem pela lateral sem aguardar a fila</li>
-          <li>Maioria dos clientes completa a experiência em menos de 5 minutos</li>
-          <li>Pull Forward (esperas) mais consistente e fácil de executar</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Posicionamento por Nº de Funcionários</h2>
-      <div class="highlight-box blue">
-        Consulte as tabelas de posicionamento no manual conforme a configuração do seu restaurante (Pista Única, Duplas, Side by Side ou Fast Forward) e o número de GCs previsto para o plantão.
-      </div>
-      <div class="highlight-box">
-        <strong>Referência rápida — Pista Única:</strong><br>
-        0–18 GCs → 2 pessoas<br>
-        19–25 GCs → 3 pessoas<br>
-        26–69 GCs → 4 pessoas<br>
-        70–89 GCs → 5 pessoas<br>
-        90–115 GCs → 6 pessoas<br>
-        &gt;116 GCs → 7 pessoas (+ AP Externo)
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Quando Ativar o AP Externo (Duplas)?</h2>
-      <div class="highlight-box green">
-        Posição fixa: ao atingir <strong>80% da capacidade</strong> do Drive.<br>
-        Os gargalos mais comuns estão no <strong>tempo de reação dos iniciadores, no caixa e na entrega</strong> — não na anotação. Garanta esses pontos antes de colocar o AP externo.
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ══════════════════════════════════════════
-       ABA 4 — EQUIPAMENTOS
-  ══════════════════════════════════════════ -->
-  <main class="tab-content" id="tab-equipamentos">
-
-    <section>
-      <h2 class="section-title">Equipamentos de Comunicação</h2>
-
-      <div class="equip-card">
-        <div class="icon">📢</div>
-        <div>
-          <h3>Speaker / COD</h3>
-          <p>Tela que exibe o pedido ao cliente (Customer Order Display) + speaker bidirecional entre AP e cliente. Deve ter câmera e alto-falantes em bom estado, sempre limpo.</p>
+        <div class="card-body">
+          <div class="alert info">
+            <span class="alert-icon">ℹ️</span>
+            <span>Ter gerente RDM, selecionar bem a equipe, escalar de acordo com a VHL e garantir treinamento e avaliações (live).</span>
+          </div>
+          <div class="alert warn">
+            <span class="alert-icon">⚠️</span>
+            <span>Cumpra sempre as responsabilidades <strong>primárias</strong> antes das secundárias e compartilhadas.</span>
+          </div>
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Primária</h3>
+              <ul><li>Função principal</li></ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Secundária</h3>
+              <ul><li>Apoio + limpeza / estocagem</li></ul>
+            </div>
+          </div>
+          <div class="info-block">
+            <h3 class="red">Compartilhada</h3>
+            <ul><li>Uma pessoa faz mais de uma função primária quando áreas não estão cobertas</li></ul>
+          </div>
         </div>
       </div>
 
-      <div class="equip-card">
-        <div class="icon">🎧</div>
-        <div>
-          <h3>Headsets</h3>
-          <p>Peça fundamental. Manter no mínimo <strong>5 unidades</strong> funcionando. O braço do microfone deve estar alinhado com o ângulo da boca — microfones são direcionais e perdem qualidade fora da posição. Verificar manutenção regularmente.</p>
+      <p class="section-label">Funções e responsabilidades</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🎙️</span>
+          <h2>Anotador de Pedidos</h2>
+          <span class="badge badge-red">AP</span>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Cumprimentar o cliente</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Utilizar técnicas de <strong>Influencers Vendedores</strong></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Ingressar o pedido no POS</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Informar o total da venda</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Armazenar os pedidos para garantir a sequência correta dos carros</div></div>
+            <div class="step"><div class="step-num">6</div><div class="step-text">Direcionar o cliente para a cabine do caixa</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="equip-card">
-        <div class="icon">📱</div>
-        <div>
-          <h3>Tablet Drive-Thru</h3>
-          <p>Mesmas funcionalidades do POS/COD. Usado pelo AP Externo para atendimento em Duplas. Requer boa intensidade de sinal e treinamento adequado para sincronizar a sequência de pedidos.</p>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🪧</span>
+          <h2>Anotador Externo (Tablet)</h2>
+          <span class="badge badge-red">AP Ext.</span>
+        </div>
+        <div class="card-body">
+          <div class="alert info">
+            <span class="alert-icon">📱</span>
+            <span>Inicie o registro no Tablet somente <strong>após</strong> o AP interno começar no COD — assim a sequência dos pedidos é mantida.</span>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Cumprimentar o 1º carro e adiantá-lo ao speaker/COD</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Cumprimentar o 2º carro e iniciar o atendimento</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Utilizar Influencers Vendedores</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Informar total e número do pedido</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Direcionar ao caixa e armazenar o pedido</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="equip-card">
-        <div class="icon">📊</div>
-        <div>
-          <h3>HME Cloud (2 monitores)</h3>
-          <p><strong>Monitor 1:</strong> resultados do restaurante vs. mercado.<br>
-          <strong>Monitor 2:</strong> tempos de cada etapa na pista — ajuda a diagnosticar barreiras e manter as rodas em movimento. Cria clima de competição entre restaurantes.</p>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">📦</span>
+          <h2>Apoio Drive-Thru</h2>
         </div>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Sinalização e Visibilidade</h2>
-
-      <div class="equip-card">
-        <div class="icon">🚧</div>
-        <div>
-          <h3>Pórtico</h3>
-          <p>Colocado no acesso à pista. Limitador de altura recomendado: <strong>3 m</strong>.</p>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Montar o pedido na sequência do monitor: <strong>sanduíche primeiro</strong>, depois McFritas</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Comparar <strong>duas vezes</strong> o pedido com o monitor</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Levar o pedido montado à mesa da pessoa da entrega</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Incluir condimentos, guardanapos e canudos</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Indicar à entrega quando o pedido está completo</div></div>
+            <div class="step"><div class="step-num y">!</div><div class="step-text">Se incompleto, comunicar que o carro deve ir para Espera</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="equip-card">
-        <div class="icon">🍟</div>
-        <div>
-          <h3>Canopy, Display McLanche Feliz e COD</h3>
-          <p>Canopy = telhado semicoberto no ponto de pedido. Display deve estar em boas condições com o brinquedo atual. COD com câmera e alto-falantes funcionando.</p>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">💳</span>
+          <h2>Caixa Drive-Thru</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Cumprimentar o cliente de forma amável</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Informar o total, receber pagamento e entregar troco</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Agradecer e entregar o cupom fiscal</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Direcionar à cabine de entrega</div></div>
+            <div class="step"><div class="step-num y">!</div><div class="step-text">Se cliente trocar item: alterar no POS e comunicar equipe <strong>via headset</strong></div></div>
+          </div>
         </div>
       </div>
 
-      <div class="equip-card">
-        <div class="icon">📍</div>
-        <div>
-          <h3>Direcionais e Pre Sell / Menuboard</h3>
-          <p>Sinalização é o primeiro contato com a marca. O gerente deve percorrer o restaurante e identificar oportunidades de visibilidade. Todos os pontos de venda limpos e conforme a campanha atual.</p>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🛍️</span>
+          <h2>Entrega Drive-Thru</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Esperar o cliente com o pedido na mão</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Entregar saco fechado — <strong>sanduíche primeiro</strong>, depois bebidas</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Entregar condimentos extras se solicitado</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Agradecer, convidar a voltar e ficar visível até o cliente partir</div></div>
+            <div class="step"><div class="step-num y">!</div><div class="step-text">Se o pedido demorar <strong>mais de 10 segundos</strong> → enviar para Espera</div></div>
+          </div>
         </div>
       </div>
-    </section>
 
-  </main>
-
-  <!-- ══════════════════════════════════════════
-       ABA 5 — TEMPOS
-  ══════════════════════════════════════════ -->
-  <main class="tab-content" id="tab-tempos">
-
-    <section>
-      <h2 class="section-title">Objetivos de Tempo</h2>
-      <div class="time-grid">
-        <div class="time-cell">
-          <div class="label">Tempo de Fila (TF)</div>
-          <div class="value">70</div>
-          <div class="unit">segundos ou menos<br>(a partir do 3º carro)</div>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🥤</span>
+          <h2>Bebidas e Sobremesas</h2>
         </div>
-        <div class="time-cell">
-          <div class="label">OEPE</div>
-          <div class="value">120</div>
-          <div class="unit">segundos ou menos</div>
-        </div>
-        <div class="time-cell">
-          <div class="label">Tempo de Pedido</div>
-          <div class="value">25</div>
-          <div class="unit">segundos ou menos</div>
-        </div>
-        <div class="time-cell">
-          <div class="label">Tempo de Pagamento</div>
-          <div class="value">15</div>
-          <div class="unit">segundos ou menos</div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Servir sempre revisando as tampas</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">2 ou mais bebidas → usar porta-copos</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Levar bebidas e sobremesas corretas à mesa da entrega</div></div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section>
-      <h2 class="section-title">O que é OEPE?</h2>
-      <div class="highlight-box blue">
-        <strong>Order End to Present End</strong><br>
-        Tempo desde a <strong>finalização do pedido</strong> (AP pressiona TOTAL no POS) até a <strong>finalização da entrega</strong> (Entrega pressiona SERVIDO no Bump Par).<br><br>
-        ✅ OEPE ótimo: <strong>120 segundos ou menos</strong><br>
-        Reduzir o OEPE pode acrescentar até <strong>9 carros por dia</strong> no pico.
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Cores do HME (OEPE)</h2>
-      <div class="highlight-box green">🟢 Verde: até 120 segundos — ótimo</div>
-      <div class="highlight-box" style="background:#fff3cd;border-color:#f0a500;">🟡 Amarelo: 121–180 segundos — atenção</div>
-      <div class="highlight-box red">🔴 Vermelho: mais de 180 segundos — resolver</div>
-
-      <h2 class="section-title" style="margin-top:16px;">Cores do HME (Caixa)</h2>
-      <div class="highlight-box green">🟢 Verde: até 15 segundos</div>
-      <div class="highlight-box" style="background:#fff3cd;border-color:#f0a500;">🟡 Amarelo: 16–49 segundos</div>
-      <div class="highlight-box red">🔴 Vermelho: 50+ segundos</div>
-
-      <h2 class="section-title" style="margin-top:16px;">Cores do HME (Entrega)</h2>
-      <div class="highlight-box green">🟢 Verde: até 15 segundos</div>
-      <div class="highlight-box" style="background:#fff3cd;border-color:#f0a500;">🟡 Amarelo: 16–40 segundos</div>
-      <div class="highlight-box red">🔴 Vermelho: 41+ segundos</div>
-
-      <h2 class="section-title" style="margin-top:16px;">% Atingimento OEPE</h2>
-      <div class="highlight-box green">🟢 Verde: acima de 70%</div>
-      <div class="highlight-box" style="background:#fff3cd;border-color:#f0a500;">🟡 Amarelo: 40%–69%</div>
-      <div class="highlight-box red">🔴 Vermelho: abaixo de 39%</div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Espera (Pull Forward)</h2>
-      <div class="highlight-box green">
-        A espera ajuda a <strong>manter as rodas em movimento</strong>. Use durante todo o dia para dar consistência à equipe e ao cliente.
-      </div>
-
-      <h3 style="font-size:0.9em;margin:12px 0 6px;color:#333;">Ao enviar para Espera:</h3>
-      <ol class="step-list">
-        <li>Tome a decisão em <strong>0 a 10 segundos</strong></li>
-        <li>Explique que está <em>"preparando"</em> o pedido (não "esperando")</li>
-        <li>Avise o tempo — diga um tempo <strong>maior</strong>, não menor</li>
-        <li>Confira a precisão do pedido e ofereça condimentos adicionais</li>
-      </ol>
-
-      <div class="highlight-box red">
-        ⚠️ Enviar muitos carros para espera <strong>nem sempre é bom</strong>. O envio para espera só aumenta a capacidade quando o <strong>Lado 2 da cozinha está aberto e respondendo</strong>.
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Pirâmide de Áreas Fundamentais</h2>
-      <div class="pyramid">
-        <div class="pyramid-level" style="width:50%;background:#c8102e;">7. Investimentos de Capital</div>
-        <div class="pyramid-level" style="width:62%;background:#d9443a;">6. Objetivos e Motivação</div>
-        <div class="pyramid-level" style="width:72%;background:#e06050;">5. Ger. de Plantão</div>
-        <div class="pyramid-level" style="width:80%;background:#e87060;">4. Preparação do Plantão</div>
-        <div class="pyramid-level" style="width:88%;background:#f08060;">3. Gestão de Produção / KVS</div>
-        <div class="pyramid-level" style="width:94%;background:#f09070;">2. Layout e Manutenção</div>
-        <div class="pyramid-level" style="width:100%;background:#999;">1. Escalas, Posicionamento e Treinamento ← Comece aqui</div>
-      </div>
-      <p style="font-size:0.8em;color:#666;text-align:center;">Trabalhe de baixo para cima. Só invista em capital quando todas as outras áreas estiverem ok.</p>
-    </section>
-
-  </main>
-
-  <!-- ══════════════════════════════════════════
-       ABA 6 — DIAGNÓSTICO
-  ══════════════════════════════════════════ -->
-  <main class="tab-content" id="tab-diagnóstico">
-
-    <section>
-      <h2 class="section-title">Tipos de Bloqueio</h2>
-      <div class="barrier-grid">
-        <div class="barrier-cell blocked">
-          <strong>Bloqueado no Pedido</strong>
-          Ponto de pedido ocupado por outro carro
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🔍</span>
+          <h2>Conferente</h2>
         </div>
-        <div class="barrier-cell blocked">
-          <strong>Bloqueado no Caixa</strong>
-          Cabine de pagamento ocupada por outro carro
-        </div>
-        <div class="barrier-cell blocked">
-          <strong>Bloqueado na Entrega</strong>
-          Ponto de entrega ocupado por outro carro
-        </div>
-        <div class="barrier-cell ok">
-          <strong>Não Bloqueado ✅</strong>
-          Gap, Gap, Bom! Rodas em movimento
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Conferir pedidos entregues pelo apoio e bebidas</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Deixar o pedido na sequência correta para a entrega</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Se for para Espera: posicionar o prisma com o número do pedido</div></div>
+          </div>
         </div>
       </div>
-      <div class="highlight-box">
-        <strong>Barreira ≠ Bloqueio.</strong> A Barreira ocorre por falta de preparação (ex.: falta de torta na estufa) e manda o carro para Espera, mas não trava a fila. O Bloqueio trava todos os carros a partir daquele ponto.
-      </div>
-    </section>
 
-    <section>
-      <h2 class="section-title">5 Principais Causas de Tempos Altos</h2>
-      <ol class="step-list">
-        <li>Falta de níveis de produtos</li>
-        <li>Posicionamento incorreto de pessoas</li>
-        <li>Falta de preparação para os horários de pico</li>
-        <li>Complexidade dos pedidos</li>
-        <li>Mau funcionamento de equipamentos</li>
-      </ol>
-      <p style="font-size:0.75em;color:#888;text-align:right;">Fonte: ROIP Global</p>
-    </section>
-
-    <section>
-      <h2 class="section-title">Causas de Bloqueio por Ponto</h2>
-
-      <div class="role-card">
-        <h3>Bloqueado no Pedido</h3>
-        <ul>
-          <li>AP ocupado com outra tarefa / multitarefa</li>
-          <li>AP interrompe o cliente com perguntas desnecessárias</li>
-          <li>Funcionário não sabe responder ao cliente</li>
-          <li>2º ponto de pedido não utilizado</li>
-          <li>Alto-falante / Headset não funciona ou não é claro</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>Bloqueado no Caixa</h3>
-        <ul>
-          <li>Pedidos fora de sequência no POS</li>
-          <li>Cliente faz mudanças no pedido após a cobrança</li>
-          <li>Funções não divididas / multitarefa</li>
-          <li>Falta de troco, Pin Pad ou leitor com problema</li>
-          <li>Funcionário não sabe registrar cupom/oferta celular</li>
-        </ul>
-      </div>
-
-      <div class="role-card">
-        <h3>Bloqueado na Entrega</h3>
-        <ul>
-          <li>Cozinha: sanduíches não prontos</li>
-          <li>Bebidas não prontas</li>
-          <li>McFritas / HB não prontos</li>
-          <li>Sobremesas não prontas</li>
-          <li>Apoio não terminou de montar (itens prontos mas não reunidos)</li>
-          <li>Carro não foi enviado para Espera após 10 segundos</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Como Diagnosticar (Método de Observação)</h2>
-      <ol class="step-list">
-        <li><strong>Passo 1 — Observe durante o pico.</strong> Identifique qual bloqueio ocorre com mais frequência (Pedido, Caixa ou Entrega).</li>
-        <li><strong>Passo 2 — Registre as causas.</strong> Use prancheta ou dispositivo eletrônico. Marque cada ocorrência na coluna correspondente. Quanto mais marcações, maior a prioridade.</li>
-        <li><strong>Passo 3 — Alinhe prioridades.</strong> Decida a área de maior oportunidade e estude mais profundamente as causas.</li>
-        <li><strong>Passo 4 — Atualize o Plano de Ação ROIP.</strong> Delegue pontos de ação com responsáveis, meta e prazo.</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2 class="section-title">6 Áreas para Corrigir Barreiras</h2>
-      <div class="highlight-box">
-        <strong>Pessoas:</strong> equipe, escala, posicionamento, treinamento, multitarefas<br>
-        <strong>Processos:</strong> reação às esperas, zonas de perigo<br>
-        <strong>Produto:</strong> níveis de UHC, McFritas e bebidas prontas<br>
-        <strong>Comunicação:</strong> headsets funcionando, quantidade suficiente<br>
-        <strong>Planta Física:</strong> área de espera, layout, ponto de fusão (Side by Side)<br>
-        <strong>Equipamento:</strong> book de layout, headsets, Pin Pads, COD
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Ferramentas de Apoio</h2>
-      <div class="equip-card">
-        <div class="icon">⏱️</div>
-        <div>
-          <h3>HME / TSP</h3>
-          <p>Temporizador por estação: verde (ok), amarelo (atenção), vermelho (problema). Rastreia contagem de carros por hora em tempo real.</p>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">👔</span>
+          <h2>Gerente Drive-Thru</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Coordenar pessoas e procedimentos</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Garantir tempos de montagem e exatidão</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Gerenciar as esperas (Pull Forward)</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Comunicar objetivos e consultar GCs a cada <strong>15 minutos</strong></div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Observar e reagir às <strong>zonas de perigo</strong></div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Garantir suprimentos suficientes em todas as estações</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Resolver reclamações de clientes rapidamente</div></div>
+          </div>
         </div>
       </div>
-      <div class="equip-card">
-        <div class="icon">📄</div>
-        <div>
-          <h3>Relatório Waystation (DT Hourly SOS)</h3>
-          <p>Imprimir após fechar o dia (ou às 23:45 para 24h). Arquivar para análise gerencial. Mostra CARSV, OT, OECB, CASH, TOTL, OEPE% e PFWD% por hora.</p>
-        </div>
-      </div>
-      <div class="equip-card">
-        <div class="icon">📓</div>
-        <div>
-          <h3>Guia de Bolso Drive-Thru</h3>
-          <p>Para Gerentes de Plantão e RDM. Identifica a causa principal dos problemas durante o plantão.</p>
-        </div>
-      </div>
-      <div class="equip-card">
-        <div class="icon">🔍</div>
-        <div>
-          <h3>CEV — Visita de Experiência do Cliente</h3>
-          <p>5 sessões avaliadas: Limpeza, Qualidade, Amabilidade, Rapidez, Exatidão. O consultor inicia sempre pelo Drive-Thru.</p>
-        </div>
-      </div>
-    </section>
 
-  </main>
+    </div><!-- /funcoes -->
+
+
+    <!-- ══ ABA 2 — ATENDIMENTO ══ -->
+    <div class="tab-panel" id="tab-atendimento">
+
+      <p class="section-label">Momento da venda</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">#️⃣</span>
+          <h2>Influencers Vendedores</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="stat-box">
+              <div class="stat-label">Cumprimento</div>
+              <div class="stat-value">10s</div>
+              <div class="stat-sub">máx. após parar no COD</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Ingresso do pedido</div>
+              <div class="stat-value">25s</div>
+              <div class="stat-sub">ou menos</div>
+            </div>
+          </div>
+          <div class="alert info">
+            <span class="alert-icon">💡</span>
+            <span><strong>Não interrompa</strong> o cliente — ele pedirá mais rápido. Quando fizer pausa, não diga "É isso tudo?", passe direto aos Pequenos Saltos.</span>
+          </div>
+          <div class="alert success">
+            <span class="alert-icon">↗️</span>
+            <span><strong>Pequenos Saltos:</strong> sugira itens associados naturalmente. Não sugira se o cliente já finalizou.</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">PPF — Pergunte, Pergunte, Fale</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🗣️</span>
+          <h2>Como funciona o PPF</h2>
+          <span class="badge badge-green">Precisão</span>
+        </div>
+        <div class="card-body">
+          <div class="alert success">
+            <span class="alert-icon">✅</span>
+            <span>Reduz erros de exatidão, reembolsos e queixas. Aumenta GCs e melhora os tempos.</span>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c1">🎙️ Anotador — PERGUNTE</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><span>Cumprimente e ingresse o pedido</span></div>
+              <div class="rota-item"><div class="rota-dot"></div><span><em>"Seu pedido é uma McOferta do Big Mac com Coca?"</em></span></div>
+              <div class="rota-item"><div class="rota-dot"></div><span>Após confirmação, informe o total</span></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c3">💳 Caixa — PERGUNTE</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><span>Cumprimente o cliente</span></div>
+              <div class="rota-item"><div class="rota-dot"></div><span><em>"Seu pedido é um Big Mac com Coca?"</em></span></div>
+              <div class="rota-item"><div class="rota-dot"></div><span>Após confirmação, processe o pagamento</span></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c4">🛍️ Entrega — FALE</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><span>Confira no monitor de apresentação</span></div>
+              <div class="rota-item"><div class="rota-dot"></div><span><em>"Seu pedido é um Big Mac com Coca."</em></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">Montagem do pedido</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">📋</span>
+          <h2>Sequência de Montagem</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Bebidas frias / McShakes</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Bebidas quentes McCafé</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Sobremesas</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Sanduíches / Saladas</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">McFritas / McNuggets</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🛒</span>
+          <h2>Capacidade dos Sacos</h2>
+        </div>
+        <div class="card-body">
+          <table class="data-table">
+            <thead><tr><th>Itens</th><th>Produtos</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1</strong></td><td>Sanduíche de lâmina, McFritas P, café da manhã, tortas</td></tr>
+              <tr><td><strong>2</strong></td><td>Sanduíche caixa pequena (BigMac, Cheddar…) + McFritas M</td></tr>
+              <tr><td><strong>3</strong></td><td>McFritas G</td></tr>
+              <tr><td><strong>4</strong></td><td>Sanduíche caixa grande (Signature, Tasty…)</td></tr>
+              <tr><td><strong>7</strong></td><td>Saladas</td></tr>
+            </tbody>
+          </table>
+          <div class="alert warn">
+            <span class="alert-icon">⚠️</span>
+            <span>Nunca coloque nos sacos: casquinhas, McFlurry nem bebidas — a menos que o cliente peça.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">⏱️</span>
+          <h2>Tempos por Etapa</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="stat-box">
+              <div class="stat-label">Ingresso</div>
+              <div class="stat-value">25s</div>
+              <div class="stat-sub">ou menos</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Pagamento</div>
+              <div class="stat-value">15s</div>
+              <div class="stat-sub">ou menos</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Montagem</div>
+              <div class="stat-value">16s</div>
+              <div class="stat-sub">ou menos</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Pag. → Entrega</div>
+              <div class="stat-value">45s</div>
+              <div class="stat-sub">ideal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /atendimento -->
+
+
+    <!-- ══ ABA 3 — CONFIGURAÇÕES ══ -->
+    <div class="tab-panel" id="tab-configuracoes">
+
+      <p class="section-label">Capacidade por configuração</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🔁</span>
+          <h2>Pista Única</h2>
+          <span class="badge badge-yellow">100–120/h</span>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Pedido no speaker/COD</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Pagamento na cabine do caixa</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Recebimento na cabine de entrega</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">👥</span>
+          <h2>Em Duplas (COD + Tablet)</h2>
+          <span class="badge badge-red">120–150/h</span>
+        </div>
+        <div class="card-body">
+          <div class="alert info">
+            <span class="alert-icon">📱</span>
+            <span>No Brasil: apenas via Tablet. Ativar ao atingir <strong>80% da capacidade</strong>.</span>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">AP interno atende no COD</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">AP externo atende simultaneamente com o Tablet</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Pedidos enviados em duplas para o caixa</div></div>
+          </div>
+          <div class="alert danger">
+            <span class="alert-icon">🚫</span>
+            <span><strong>Não usar</strong> se: sinal fraco, problemas de segurança, chuva forte, calor/frio extremo, zonas de perigo na produção, ou equipe não treinada.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">↔️</span>
+          <h2>Side by Side (Pista Dupla)</h2>
+          <span class="badge badge-red">150–180/h</span>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Pista dividida: <strong>Side 1</strong> e <strong>Side 2</strong> — ambos sempre abertos</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Dois pedidos ingressados ao mesmo tempo</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Carros avançam em dupla para a cabine de pagamento</div></div>
+          </div>
+          <div class="alert warn">
+            <span class="alert-icon">⚠️</span>
+            <span>Mínimo <strong>2 funcionários</strong>. Nunca operar com apenas um lado.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">⚡</span>
+          <h2>Fast Forward</h2>
+          <span class="badge badge-red">&gt;180/h</span>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Pedido e pagamento como no padrão</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Pedido pronto → <strong>Cabine de Entrega #1</strong></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Pedido não pronto → <strong>Cabine de Entrega #2</strong></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Carros saem pela lateral sem aguardar a fila</div></div>
+          </div>
+          <div class="alert success">
+            <span class="alert-icon">✅</span>
+            <span>Maioria dos clientes completa a experiência em <strong>menos de 5 minutos</strong>.</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">Posicionamento — Pista Única</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">📍</span>
+          <h2>Referência Rápida</h2>
+        </div>
+        <div class="card-body">
+          <table class="data-table">
+            <thead><tr><th>GCs</th><th>Pessoas</th><th>Funções primárias</th></tr></thead>
+            <tbody>
+              <tr><td><strong>0–18</strong></td><td>2</td><td>AP/Caixa + Apoio/Entrega</td></tr>
+              <tr><td><strong>19–25</strong></td><td>3</td><td>AP/Caixa + Apoio + Entrega</td></tr>
+              <tr><td><strong>26–69</strong></td><td>4</td><td>AP + Caixa + Apoio + Entrega</td></tr>
+              <tr><td><strong>70–89</strong></td><td>5</td><td>+ Prep. Bebidas/Sobremesas</td></tr>
+              <tr><td><strong>90–115</strong></td><td>6</td><td>+ Conferente</td></tr>
+              <tr><td><strong>&gt;116</strong></td><td>7</td><td>+ AP Externo</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div><!-- /configuracoes -->
+
+
+    <!-- ══ ABA 4 — EQUIPAMENTOS ══ -->
+    <div class="tab-panel" id="tab-equipamentos">
+
+      <p class="section-label">Comunicação</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">📢</span>
+          <h2>Speaker / COD</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:13.5px;line-height:1.55">Tela que exibe o pedido ao cliente (Customer Order Display) + speaker bidirecional. A câmera no COD permite ao AP ver quantas pessoas estão no carro e adaptar as técnicas de venda.</p>
+          <div class="alert info">
+            <span class="alert-icon">✓</span>
+            <span>Câmera e alto-falantes sempre em bom estado e limpos.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🎧</span>
+          <h2>Headsets</h2>
+          <span class="badge badge-red">Mín. 5 unidades</span>
+        </div>
+        <div class="card-body">
+          <div class="alert warn">
+            <span class="alert-icon">⚠️</span>
+            <span>Braço do microfone deve estar <strong>alinhado com o ângulo da boca</strong>. Microfones são direcionais — fora da posição, a qualidade cai significativamente.</span>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Verificar estado e manutenção regularmente</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Manter no mínimo <strong>5 unidades</strong> funcionando</div></div>
+            <div class="step"><div class="step-num g">✓</div><div class="step-text">Clientes e funcionários devem se escutar com clareza</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">📱</span>
+          <h2>Tablet Drive-Thru</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:13.5px;line-height:1.55">Mesmas funcionalidades do POS/COD. Usado pelo AP Externo para atendimento em Duplas.</p>
+          <div class="alert info">
+            <span class="alert-icon">📶</span>
+            <span>Requer boa intensidade de sinal e treinamento adequado para sincronizar a sequência dos pedidos.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">📊</span>
+          <h2>HME Cloud</h2>
+          <span class="badge badge-blue">2 monitores</span>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Monitor 1</h3>
+              <ul>
+                <li>Resultados do restaurante</li>
+                <li>Comparação com o mercado</li>
+                <li>Ranking entre restaurantes</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Monitor 2</h3>
+              <ul>
+                <li>Tempos em cada etapa da pista</li>
+                <li>Diagnóstico de barreiras em tempo real</li>
+                <li>Ajuda a manter rodas em movimento</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">Sinalização</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🚧</span>
+          <h2>Sinalização e Visibilidade</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num b">P</div><div class="step-text"><strong>Pórtico:</strong> no acesso à pista. Limitador de altura recomendado: <strong>3 m</strong></div></div>
+            <div class="step"><div class="step-num b">M</div><div class="step-text"><strong>Menuboard / Pre Sell:</strong> limpos e de acordo com a campanha atual</div></div>
+            <div class="step"><div class="step-num b">C</div><div class="step-text"><strong>Canopy + Display McLanche Feliz:</strong> brinquedo atual em boas condições</div></div>
+            <div class="step"><div class="step-num b">D</div><div class="step-text"><strong>Direcionais:</strong> gerente deve percorrer o restaurante e identificar oportunidades de visibilidade</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /equipamentos -->
+
+
+    <!-- ══ ABA 5 — TEMPOS ══ -->
+    <div class="tab-panel" id="tab-tempos">
+
+      <p class="section-label">Metas principais</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🎯</span>
+          <h2>Objetivos de Tempo</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="stat-box">
+              <div class="stat-label">Tempo de Fila (TF)</div>
+              <div class="stat-value">70s</div>
+              <div class="stat-sub">a partir do 3º carro</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">OEPE</div>
+              <div class="stat-value">120s</div>
+              <div class="stat-sub">ou menos</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Pedido</div>
+              <div class="stat-value">25s</div>
+              <div class="stat-sub">ou menos</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Pagamento</div>
+              <div class="stat-value">15s</div>
+              <div class="stat-sub">ou menos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">O que é OEPE?</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">⏱️</span>
+          <h2>Order End to Present End</h2>
+        </div>
+        <div class="card-body">
+          <div class="rota-block">
+            <div class="rota-head c2">Início — AP pressiona TOTAL no POS</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><span>Pedido finalizado → Recall → Pagamento → Gaveta fechada</span></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c4">Fim — Entrega pressiona SERVIDO no Bump Par</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><span>Pedido entregue ao cliente</span></div>
+            </div>
+          </div>
+          <div class="alert success">
+            <span class="alert-icon">📈</span>
+            <span>Reduzir o OEPE pode acrescentar até <strong>9 carros por dia</strong> no horário de pico.</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">Cores do HME</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🟡</span>
+          <h2>Indicadores por Estação</h2>
+        </div>
+        <div class="card-body">
+          <table class="data-table">
+            <thead><tr><th>Estação</th><th>🟢 Verde</th><th>🟡 Amarelo</th><th>🔴 Vermelho</th></tr></thead>
+            <tbody>
+              <tr><td><strong>OEPE</strong></td><td>≤ 120s</td><td>121–180s</td><td>&gt; 180s</td></tr>
+              <tr><td><strong>Caixa</strong></td><td>≤ 15s</td><td>16–49s</td><td>≥ 50s</td></tr>
+              <tr><td><strong>Entrega</strong></td><td>≤ 15s</td><td>16–40s</td><td>≥ 41s</td></tr>
+              <tr><td><strong>% Ating. OEPE</strong></td><td>&gt; 70%</td><td>40–69%</td><td>&lt; 39%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="section-label">Espera — Pull Forward</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🅿️</span>
+          <h2>Como Gerenciar a Espera</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert info">
+            <span class="alert-icon">💡</span>
+            <span>Mantém as rodas em movimento. Use durante todo o dia para dar consistência à equipe e ao cliente.</span>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Tome a decisão em <strong>0 a 10 segundos</strong></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Explique que está <em>"preparando"</em> — nunca diga "esperando"</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Avise um tempo de espera <strong>maior</strong> do que o real</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Confira a precisão do pedido e ofereça condimentos adicionais</div></div>
+          </div>
+          <div class="alert danger">
+            <span class="alert-icon">🚫</span>
+            <span>Enviar muitos carros para Espera <strong>sem o Lado 2 aberto</strong> não aumenta a capacidade.</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">Pirâmide de áreas fundamentais</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🏗️</span>
+          <h2>Como Atingir 80% da Capacidade</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert success">
+            <span class="alert-icon">⬇️</span>
+            <span>Trabalhe <strong>de baixo para cima</strong>. Só avance quando o nível anterior estiver sólido.</span>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Escalas, posicionamento e pessoas treinadas</strong> — comece sempre aqui</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Layout e manutenção</strong> — Book de Layout, preventivas em dia</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Gestão de produção / KVS</strong> — gerente de qualidade com headset, revisar níveis a cada ¼h</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Preparação do plantão</strong> — checklists de cozinha e Drive para os picos</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text"><strong>Gerenciamento de plantão</strong> — plano de chão com 24h de antecedência</div></div>
+            <div class="step"><div class="step-num">6</div><div class="step-text"><strong>Objetivos e motivação</strong> — comunicar metas, envolver a equipe</div></div>
+            <div class="step"><div class="step-num">7</div><div class="step-text"><strong>Investimentos de capital</strong> — apenas após todas as outras áreas ok</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tempos -->
+
+
+    <!-- ══ ABA 6 — DIAGNÓSTICO ══ -->
+    <div class="tab-panel" id="tab-diagnostico">
+
+      <p class="section-label">Tipos de bloqueio</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🚦</span>
+          <h2>Bloqueio vs. Barreira</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Bloqueio</h3>
+              <ul>
+                <li>Trava a fila inteira</li>
+                <li>Ex.: caixa sem troco</li>
+                <li>Carros não avançam</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Barreira</h3>
+              <ul>
+                <li>Manda 1 carro p/ Espera</li>
+                <li>Ex.: falta de torta</li>
+                <li>Fila continua girando</li>
+              </ul>
+            </div>
+          </div>
+          <div class="alert info">
+            <span class="alert-icon">💡</span>
+            <span>Comunique-se rapidamente com o cliente. Ele fica menos estressado quando sabe por que está esperando.</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">Causas por ponto</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🎙️</span>
+          <h2>Bloqueado no Pedido</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <span class="pill red">AP em multitarefa</span>
+            <span class="pill red">AP interrompe cliente</span>
+            <span class="pill red">AP não sabe responder</span>
+            <span class="pill red">2º ponto não usado</span>
+            <span class="pill red">Headset com problema</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">💳</span>
+          <h2>Bloqueado no Caixa</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <span class="pill red">Pedido fora de sequência</span>
+            <span class="pill red">Cliente mudou o pedido</span>
+            <span class="pill red">Multitarefa</span>
+            <span class="pill red">Falta de troco</span>
+            <span class="pill red">Pin Pad / leitor com problema</span>
+            <span class="pill red">Não sabe usar cupom/oferta</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🛍️</span>
+          <h2>Bloqueado na Entrega</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <span class="pill red">Sanduíches não prontos</span>
+            <span class="pill red">Bebidas não prontas</span>
+            <span class="pill red">McFritas / HB não prontos</span>
+            <span class="pill red">Sobremesas não prontas</span>
+            <span class="pill red">Apoio não terminou de montar</span>
+            <span class="pill red">Carro não enviado à Espera</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">5 causas mais comuns</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">📉</span>
+          <h2>Causas de Tempos Altos — ROIP Global</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Falta de níveis de produtos</strong></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Posicionamento incorreto de pessoas</strong></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Falta de preparação para os picos</strong></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Complexidade dos pedidos</strong></div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text"><strong>Mau funcionamento de equipamentos</strong></div></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">Método de diagnóstico</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">📋</span>
+          <h2>4 Passos para Diagnosticar</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Observe durante o pico.</strong> Qual bloqueio ocorre mais: Pedido, Caixa ou Entrega?</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Registre as causas.</strong> Cada ocorrência = uma marcação. Mais marcações = maior prioridade</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Alinhe prioridades</strong> com a equipe e estude a área com mais marcações</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Atualize o Plano de Ação ROIP</strong> com responsável, meta e prazo</div></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">6 áreas para corrigir barreiras</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🛠️</span>
+          <h2>Onde Atuar</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Pessoas</h3>
+              <ul><li>Equipe e escala</li><li>Posicionamento</li><li>Treinamento</li><li>Multitarefas</li></ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Processos</h3>
+              <ul><li>Reação às esperas</li><li>Zonas de perigo</li><li>Projeção de GCs</li></ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Produto</h3>
+              <ul><li>Níveis de UHC</li><li>McFritas prontas</li><li>Bebidas prontas</li></ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Comunicação</h3>
+              <ul><li>Headsets funcionando</li><li>Quantidade suficiente</li></ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Planta Física</h3>
+              <ul><li>Área de Espera</li><li>Layout do Drive</li><li>Ponto de fusão (SBS)</li></ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Equipamento</h3>
+              <ul><li>Book de Layout</li><li>Headsets, KVSs</li><li>Pin Pads, COD</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-label">Ferramentas de apoio</p>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-head-icon">🧰</span>
+          <h2>Ferramentas Disponíveis</h2>
+        </div>
+        <div class="card-body">
+          <div class="rota-block">
+            <div class="rota-head c3">⏱️ HME / TSP</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><span>Temporizador por estação: 🟢 verde / 🟡 amarelo / 🔴 vermelho</span></div>
+              <div class="rota-item"><div class="rota-dot"></div><span>Rastreia contagem de carros por hora em tempo real</span></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c4">📄 Waystation — DT Hourly SOS Report</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><span>Imprimir após fechar o dia (ou às 23:45 para drive 24h)</span></div>
+              <div class="rota-item"><div class="rota-dot"></div><span>Arquivar para análise gerencial — mostra CARSV, OT, OEPE%, PFWD% por hora</span></div>
+            </div>
+          </div>
+          <div class="rota-block">
+            <div class="rota-head c1">🔍 CEV — Visita de Experiência do Cliente</div>
+            <div class="rota-items">
+              <div class="rota-item"><div class="rota-dot"></div><span>Consultor inicia sempre pelo Drive-Thru</span></div>
+              <div class="rota-item"><div class="rota-dot"></div><span>5 sessões: Limpeza, Qualidade, Amabilidade, Rapidez, Exatidão</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /diagnostico -->
+
+  </div><!-- /page-content -->
 
   <!-- ── SCRIPTS ── -->
-  <script src="../js/app.js"></script>
   <script>
-    // ── Tab logic ──────────────────────────────────
-    const PAGE_KEY = 'dt_activeTab';
+    const PAGE_KEY = 'dt2020_tab';
 
-    function openTab(evt, tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      document.getElementById('tab-' + tabId).classList.add('active');
+    function openTab(evt, id) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
       if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
-      sessionStorage.setItem(PAGE_KEY, tabId);
+      sessionStorage.setItem(PAGE_KEY, id);
     }
 
-    // Restore last active tab
+    // Restore last tab
     (function () {
       const saved = sessionStorage.getItem(PAGE_KEY);
-      if (saved) {
-        const btn = [...document.querySelectorAll('.tab-btn')]
-          .find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + saved + "'"));
-        if (btn) btn.click();
-      }
+      if (!saved) return;
+      const btn = [...document.querySelectorAll('.tab-btn')]
+        .find(b => (b.getAttribute('onclick') || '').includes("'" + saved + "'"));
+      if (btn) btn.click();
     })();
 
-    // ── Mode bar logic ──────────────────────────────
-    const MODE_KEY = 'dt_mode';
-
-    function setMode(mode) {
-      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-      document.querySelector('[data-mode="' + mode + '"]').classList.add('active');
-      document.body.setAttribute('data-mode', mode);
-      sessionStorage.setItem(MODE_KEY, mode);
-    }
-
+    // Theme sync with rest of the app
     (function () {
-      const saved = sessionStorage.getItem(MODE_KEY) || 'estudo';
-      setMode(saved);
+      const t = localStorage.getItem('mcguias_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
 </body>
