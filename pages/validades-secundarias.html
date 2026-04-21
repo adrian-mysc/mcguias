@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validades Secundárias — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #DA291C;
+      --yellow: #FFC72C;
+      --bg: #f5f2ec;
+      --card-bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --border: #e0dbd3;
+      --green: #2e7d32;
+      --orange: #e65100;
+      --blue: #1565c0;
+      --purple: #6a1b9a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: var(--red);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .navbar a.back {
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .navbar-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.3px;
+    }
+    .navbar-sub {
+      font-size: 12px;
+      opacity: .82;
+      margin-top: 1px;
+    }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: linear-gradient(135deg, var(--red) 0%, #b71c1c 100%);
+      color: #fff;
+      padding: 22px 16px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .hero p {
+      font-size: 13px;
+      opacity: .88;
+      margin-top: 4px;
+    }
+
+    /* ── ALERT ── */
+    .alert {
+      background: #fff8e1;
+      border-left: 4px solid var(--yellow);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #5d4037;
+      margin: 14px 14px 0;
+    }
+    .alert strong { color: #e65100; }
+
+    /* ── SEARCH ── */
+    .search-wrap {
+      padding: 12px 14px 4px;
+    }
+    .search-box {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 12px center;
+      transition: border-color .2s;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--red); }
+
+    /* ── TABS ── */
+    .page-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 10px 14px 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .page-tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      flex-shrink: 0;
+      padding: 7px 14px;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      background: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .tab-btn.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+
+    /* ── COUNTER ── */
+    .results-count {
+      padding: 8px 14px 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── TABLE WRAPPER ── */
+    .table-wrap {
+      padding: 10px 14px 24px;
+    }
+
+    /* ── CATEGORY HEADER ── */
+    .cat-header {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      padding: 14px 0 6px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
+
+    /* ── PRODUCT CARD (mobile-first) ── */
+    .prod-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 8px;
+      overflow: hidden;
+      transition: box-shadow .2s;
+    }
+    .prod-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.08); }
+
+    .prod-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 14px 9px;
+      cursor: pointer;
+      gap: 8px;
+    }
+    .prod-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      flex: 1;
+    }
+    .prod-seg {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .seg-restaurante { background: #fce4ec; color: #b71c1c; }
+    .seg-mccafe      { background: #fff8e1; color: #e65100; }
+    .seg-quiosque    { background: #e8f5e9; color: #2e7d32; }
+    .seg-cafemanha   { background: #e3f2fd; color: #1565c0; }
+    .seg-break       { background: #f3e5f5; color: #6a1b9a; }
+    .seg-multi       { background: #f5f5f5; color: #424242; }
+
+    .prod-chevron {
+      font-size: 12px;
+      color: var(--muted);
+      transition: transform .25s;
+      flex-shrink: 0;
+    }
+    .prod-card.open .prod-chevron { transform: rotate(180deg); }
+
+    .prod-body {
+      display: none;
+      border-top: 1px solid var(--border);
+    }
+    .prod-card.open .prod-body { display: block; }
+
+    .val-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .val-cell {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .val-cell:nth-child(odd) { border-right: 1px solid var(--border); }
+    .val-cell:last-child, .val-cell:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+    .val-cell.full { grid-column: 1 / -1; border-right: none; }
+    .val-cell.full:last-child { border-bottom: none; }
+
+    .val-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .val-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .val-value.destacado { color: var(--red); }
+    .val-value.na { color: var(--muted); font-weight: 400; font-style: italic; font-size: 13px; }
+
+    /* badge descontinuado */
+    .badge-disc {
+      display: inline-block;
+      background: #ffebee;
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+    .empty-state .icon { font-size: 40px; margin-bottom: 10px; }
+    .empty-state p { font-size: 14px; }
+
+    /* ── LEGENDA ── */
+    .legend {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 0 14px 16px;
+      padding: 12px 14px;
+    }
+    .legend-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      margin-bottom: 8px;
+    }
+    .legend-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a class="back" href="../index.html">&#8592;</a>
+  <div>
+    <div class="navbar-title">Validades Secundárias</div>
+    <div class="navbar-sub">Guia de Referência — MC Guias</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>⏱️ Validades de Produtos</h1>
+  <p>Validade primária, ambientação e validade secundária por produto</p>
+</div>
+
+<!-- ALERT -->
+<div class="alert">
+  <strong>⚠️ Atenção:</strong> Sempre respeitar a validade mais curta entre a primária e a secundária. Após abrir, registrar data/hora e descartar no prazo indicado.
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <input class="search-box" type="search" id="searchInput" placeholder="Buscar produto..." autocomplete="off" />
+</div>
+
+<!-- TABS -->
+<div class="page-tabs" id="tabsContainer">
+  <button class="tab-btn active" data-seg="todos">Todos</button>
+  <button class="tab-btn" data-seg="restaurante">🍔 Restaurante</button>
+  <button class="tab-btn" data-seg="mccafe">☕ McCafé</button>
+  <button class="tab-btn" data-seg="quiosque">🍦 Quiosque</button>
+  <button class="tab-btn" data-seg="cafemanha">🌅 Café da Manhã</button>
+  <button class="tab-btn" data-seg="break">📦 Break</button>
+</div>
+
+<!-- RESULTS COUNT -->
+<div class="results-count" id="resultsCount"></div>
+
+<!-- LEGENDA -->
+<div class="legend" id="legendaBox">
+  <div class="legend-title">Segmentos</div>
+  <div class="legend-grid">
+    <div class="legend-item"><div class="legend-dot" style="background:#b71c1c"></div> Restaurante</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e65100"></div> McCafé</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#2e7d32"></div> Quiosque</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#1565c0"></div> Café da Manhã</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#6a1b9a"></div> Break</div>
+  </div>
+</div>
+
+<!-- TABLE -->
+<div class="table-wrap" id="tableWrap"></div>
+
+<script>
+// ── DADOS ──────────────────────────────────────────────────────────────────
+const PRODUTOS = [
+  // ── RESTAURANTE ──────────────────────────────────────────────────────────
+  { nome:"Alface Americana (JFC)", prim:"10 dias", amb:"N/A", secForn:"Não consta", secMcd:"24 hrs refrigeração; 2 hrs mesa condimentação", seg:["restaurante","break"] },
+  { nome:"Alface Americana (Rio de U)", prim:"10 dias", amb:"N/A", secForn:"10 dias", secMcd:"24 hrs refrigeração; 2 hrs mesa condimentação", seg:["restaurante","break"] },
+  { nome:"Bacon Cru", prim:"6 meses", amb:"12 hrs sob refrigeração", secForn:"5 dias sob refrigeração", secMcd:"12 hrs câmara descongelando; 6 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Bacon Pronto", prim:"120 dias", amb:"Não consta", secForn:"Não consta", secMcd:"24 hrs câmara descongelado; 2 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Carne CBO", prim:"180 dias", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil / UHC 30 min", seg:["restaurante"] },
+  { nome:"Carnes — Hamburguer", prim:"90 dias", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil / UHC: 10:1, 3:1, 4:1 e Angus 15 min / Tasty 30 min", seg:["restaurante","break"] },
+  { nome:"Carne Crispy", prim:"180 dias", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil / UHC 30 min", seg:["restaurante"] },
+  { nome:"Catchup Bag (Unilever)", prim:"Seguir fornecedor", amb:"N/A", secForn:"7 dias", secMcd:"24 hrs embalagem original no dispensador do salão", seg:["restaurante"] },
+  { nome:"Catchup Bag (Júnior)", prim:"Seguir fornecedor", amb:"N/A", secForn:"20 dias", secMcd:"24 hrs embalagem original no dispensador do salão", seg:["restaurante"] },
+  { nome:"Catchup Sachê", prim:"Seguir fornecedor", amb:"N/A", secForn:"N/A", secMcd:"N/A", seg:["restaurante"] },
+  { nome:"Catchup Pounch (Unilever)", prim:"180 dias", amb:"N/A", secForn:"48 hrs refrigeração ou 24 hrs temp. ambiente", secMcd:"24 hrs embalagem após aberta; 4 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Catchup Pounch (Júnior)", prim:"180 dias", amb:"N/A", secForn:"24 hrs temp. ambiente", secMcd:"24 hrs embalagem após aberta; 4 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Catchup Pounch (GL Lab.)", prim:"180 dias", amb:"N/A", secForn:"Não consta", secMcd:"24 hrs embalagem após aberta; 2 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Cebola Cheddar", prim:"120 dias", amb:"N/A", secForn:"12 hrs temp. ambiente; 48 hrs refrigeração", secMcd:"2 hrs mesa condimentação; 48 hrs após aberto refrigerado", seg:["restaurante"] },
+  { nome:"Cebola Crispy", prim:"360 dias", amb:"N/A", secForn:"Não consta", secMcd:"2 hrs mesa condimentação; 7 dias embalagem após aberta (temp. ambiente)", seg:["restaurante"] },
+  { nome:"Cebola Desidratada", prim:"12 meses", amb:"1 hora (reidratação)", secForn:"Refrig. 24 hrs (preparada); mesa 4 hrs", secMcd:"24 hrs embalagem após aberta; 2 hrs mesa condimentação", seg:["restaurante","break"] },
+  { nome:"Cebola Fresca (Rio de U)", prim:"10 dias", amb:"N/A", secForn:"24 hrs refrigeração; 2 hrs mesa condimentação", secMcd:"48 hrs embalagem após aberta; 2 hrs mesa condimentação", seg:["restaurante","break"] },
+  { nome:"Cebola Fresca (JFC)", prim:"10 dias", amb:"N/A", secForn:"Não consta", secMcd:"48 hrs embalagem após aberta; 2 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Cebola Roxa (Rio de U)", prim:"10 dias", amb:"N/A", secForn:"48 hrs refrigeração ou 2 hrs temp. ambiente", secMcd:"2 hrs mesa condimentação; 48 hrs após aberto refrigerado", seg:["restaurante"] },
+  { nome:"Cebola Roxa (JFC)", prim:"10 dias", amb:"N/A", secForn:"Não consta", secMcd:"2 hrs mesa condimentação; 48 hrs após aberto refrigerado", seg:["restaurante"] },
+  { nome:"Cenoura", prim:"10 dias", amb:"N/A", secForn:"24 hrs refrigeração; 2 hrs mesa condimentação", secMcd:"24 hrs refrigerada após aberta / 9 hrs salada pronta", seg:["restaurante","break"] },
+  { nome:"Chicken", prim:"180 dias", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil / UHC 30 min", seg:["restaurante"] },
+  { nome:"Chicken Junior", prim:"180 dias", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil / UHC 15 min", seg:["restaurante","break"] },
+  { nome:"Cobertura CBB (Chocolate/Caramelo)", prim:"12 meses", amb:"N/A", secForn:"30 dias embalagem original", secMcd:"30 dias temp. ambiente na garrafa; 7 dias na bisnaga (temp. ambiente, ciclo semanal)", seg:["restaurante"] },
+  { nome:"Cobertura Chocolate/Caramelo (Cargill)", prim:"180 dias", amb:"N/A", secForn:"7 dias, máx. 52°C", secMcd:"7 dias — ciclo semanal (máquina sundae vedada)", seg:["restaurante","quiosque","mccafe"] },
+  { nome:"Cobertura Morango (Cargill)", prim:"180 dias", amb:"N/A", secForn:"7 dias, máx. 52°C", secMcd:"7 dias — ciclo semanal (máquina sundae vedada)", seg:["restaurante","quiosque","mccafe"] },
+  { nome:"Condimento Angus", prim:"120 dias", amb:"N/A", secForn:"Não consta", secMcd:"1 dia embalagem (temp. ambiente); 12 hrs no saleiro", seg:["restaurante"] },
+  { nome:"Danoninho", prim:"45 dias", amb:"N/A", secForn:"N/A", secMcd:"N/A", seg:["restaurante"] },
+  { nome:"Drageado de Chocolate", prim:"240 dias", amb:"N/A", secForn:"Não consta", secMcd:"20 dias embalagem após aberta refrigerado; 7 dias na cuba tampada", seg:["restaurante","quiosque"] },
+  { nome:"Farofa Temperada Bacon (Sustentare)", prim:"10 meses", amb:"N/A", secForn:"30 dias", secMcd:"10 dias embalagem original fechada (temp. ambiente); 2 hrs na cuba aberta (temp. ambiente)", seg:["restaurante"] },
+  { nome:"Fish", prim:"180 dias", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil / UHC 30 min", seg:["restaurante","break"] },
+  { nome:"Frapés", prim:"Seguir fornecedor", amb:"N/A", secForn:"7 dias (1 a 4°C)", secMcd:"7 dias sob refrigeração, embalagem original", seg:["restaurante"] },
+  { nome:"Grill", prim:"180 dias", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil / UHC 60 min", seg:["restaurante"] },
+  { nome:"Iogurte CBB", prim:"45 dias", amb:"N/A", secForn:"5 dias (1 a 4°C)", secMcd:"5 dias sob refrigeração, embalagem original", seg:["restaurante"] },
+  { nome:"Miçanga", prim:"12 meses", amb:"N/A", secForn:"30 dias (Mil Cores)", secMcd:"30 dias embalagem original após aberta", seg:["restaurante"] },
+  { nome:"Mix Folhas (Rio de U)", prim:"10 dias", amb:"N/A", secForn:"24 hrs refrigeração", secMcd:"24 hrs refrigerado após aberto; 9 hrs salada pronta", seg:["restaurante","mccafe"] },
+  { nome:"Mix Folhas (JFC)", prim:"10 dias", amb:"N/A", secForn:"Não consta", secMcd:"24 hrs refrigerado após aberto; 9 hrs salada pronta", seg:["restaurante","mccafe"] },
+  { nome:"Mix Shake", prim:"45 dias", amb:"N/A", secForn:"24 hrs", secMcd:"24 hrs após aberto (câmara/reservatório); 7 dias máquina HT", seg:["restaurante"] },
+  { nome:"Mix Sundae", prim:"40 dias", amb:"N/A", secForn:"24 hrs", secMcd:"24 hrs após aberto (câmara/reservatório); 7 dias máquina HT", seg:["restaurante","quiosque"] },
+  { nome:"Molho Barbecue (Wrap)", prim:"180 dias", amb:"N/A", secForn:"24 hrs temp. ambiente; 48 hrs refrigeração", secMcd:"48 hrs embalagem após aberta (refrigerador portátil); 2 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Molho CBO", prim:"120 dias", amb:"2 hrs", secForn:"24 horas", secMcd:"24 hrs após aberto, incluindo 2 hrs de ambientação", seg:["restaurante"] },
+  { nome:"Molho Cheddar", prim:"120 dias", amb:"2 hrs", secForn:"8 horas", secMcd:"8 hrs após aberto, incluindo 2 hrs de ambientação", seg:["restaurante"] },
+  { nome:"Molhos para Nuggets", prim:"120 dias", amb:"N/A", secForn:"N/A", secMcd:"N/A", seg:["restaurante"] },
+  { nome:"Molhos Secos", prim:"120 dias", amb:"N/A", secForn:"24 hrs", secMcd:"24 hrs após aberto na mesa de condimentação", seg:["restaurante","mccafe","break"] },
+  { nome:"Mostarda Bag", prim:"180 dias", amb:"N/A", secForn:"7 dias", secMcd:"7 dias embalagem original após aberta (dispensador do salão)", seg:["restaurante"] },
+  { nome:"Mostarda Pouch", prim:"8 meses", amb:"N/A", secForn:"GL: não consta / Unilever: 7 dias (temp. ambiente)", secMcd:"24 hrs embalagem após aberta (refrigerador portátil); 4 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Mostarda Dusseldorf", prim:"180 dias", amb:"N/A", secForn:"24 hrs temp. ambiente; 48 hrs refrigeração (1–4°C)", secMcd:"2 hrs mesa condimentação (bisnaga); 24 hrs embalagem (temp. ambiente); 48 hrs embalagem (refrigeração)", seg:["restaurante"] },
+  { nome:"Mostarda Sachê", prim:"Seguir fornecedor", amb:"N/A", secForn:"N/A", secMcd:"N/A", seg:["restaurante"] },
+  { nome:"Nuggets", prim:"120 dias", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil / UHC 20 min", seg:["restaurante","break"] },
+  { nome:"Ovomaltine", prim:"365 dias", amb:"N/A", secForn:"30 dias embalagem original", secMcd:"Embalagem após aberta: 30 dias; dispensador: 7 dias", seg:["restaurante","quiosque"] },
+  { nome:"Paçoca", prim:"180 dias", amb:"N/A", secForn:"Não consta", secMcd:"Embalagem após aberta: 10 dias; dispensador: 7 dias", seg:["restaurante","quiosque"] },
+  { nome:"Pão Congelado", prim:"90 dias", amb:"12 hrs", secForn:"48 hrs", secMcd:"48 hrs incluindo 12 hrs de ambientação", seg:["restaurante","cafemanha","mccafe","break"] },
+  { nome:"Pão de Queijo", prim:"180 dias", amb:"N/A", secForn:"Após assamento, manter refrig. 12 hrs", secMcd:"Congelador portátil 2 hrs; UHC 30 min / Vitrine refrig. 12 hrs", seg:["restaurante","mccafe"] },
+  { nome:"Pão Fresco", prim:"5 dias", amb:"N/A", secForn:"N/A", secMcd:"Carro da Tostadeira 2 hrs", seg:["restaurante","break"] },
+  { nome:"Picles", prim:"180 dias", amb:"N/A", secForn:"24 hrs refrigeração; 2 hrs temp. ambiente", secMcd:"24 hrs refrigerador portátil após aberto; 2 hrs mesa condimentação", seg:["restaurante","break"] },
+  { nome:"Queijo Cheddar", prim:"120 dias", amb:"1 hr", secForn:"6 hrs fora refrig. (fechado); 4 hrs após aberto (fora refrig.)", secMcd:"Câmara refrig. 24 hrs (após aberta); Cuba ambientação 1 hr; Cuba acrílica 4 hrs incl. 2 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Queijo Cheddar com Pimenta", prim:"120 dias", amb:"1 hr", secForn:"6 hrs temp. ambiente; 24 hrs refrigeração", secMcd:"Câmara 24 hrs (após aberto); Cuba 1 hr; Cuba acrílica 3 hrs incl. 2 hrs mesa condimentação", seg:["restaurante"] },
+  { nome:"Queijo Emental", prim:"120 dias", amb:"1 hr", secForn:"6 hrs fora refrig. (fechado); 4 hrs após aberto", secMcd:"Câmara 24 hrs (após aberto); Cuba 1 hr; Cuba acrílica 3 hrs incl. 2 hrs mesa condimentação", seg:["restaurante","mccafe"] },
+  { nome:"Queijo Mussarela Nó", prim:"50 dias", amb:"N/A", secForn:"5 dias sob refrigeração", secMcd:"Refrigerador portátil 5 dias", seg:["restaurante"] },
+  { nome:"Saladas (Side e Premium)", prim:"N/A", amb:"N/A", secForn:"N/A", secMcd:"Saco principal 24 hrs refrigerado após aberto; salada pronta 9 hrs", seg:["restaurante"] },
+  { nome:"Smothies", prim:"Seguir fornecedor", amb:"N/A", secForn:"Não consta", secMcd:"21 dias sob refrigeração, embalagem original", seg:["restaurante"] },
+  { nome:"Tomate", prim:"10 dias", amb:"N/A", secForn:"Não consta", secMcd:"Temp. ambiente 4 hrs; mesa condimentação 2 hrs", seg:["restaurante","mccafe","cafemanha","break"] },
+  { nome:"Tomate Grape (Caprese)", prim:"15 dias", amb:"N/A", secForn:"Não consta", secMcd:"Refrigerador portátil 48 hrs após sanitizado; salada pronta 9 hrs", seg:["restaurante"] },
+  { nome:"Tortas (Banana/Maçã)", prim:"120 dias", amb:"20 min resfriamento", secForn:"Não consta", secMcd:"2 hrs no congelador portátil", seg:["restaurante"] },
+  { nome:"Xarope Baunilha e Morango", prim:"180 dias", amb:"N/A", secForn:"7 dias", secMcd:"7 dias após aberto (temp. ambiente) — ciclo semanal", seg:["restaurante"] },
+  { nome:"Xarope (Shake) Chocolate", prim:"180 dias", amb:"N/A", secForn:"Recipiente transferido: 12 hrs (temp. ambiente)", secMcd:"7 dias após aberto (temp. ambiente) — ciclo semanal", seg:["restaurante"] },
+  // ── MCCAFÉ ───────────────────────────────────────────────────────────────
+  { nome:"Blueberry", prim:"Seguir fornecedor", amb:"N/A", secForn:"Não consta", secMcd:"30 dias embalagem original após aberta (congelador portátil)", seg:["mccafe"] },
+  { nome:"Bolo Laranja", prim:"120 dias (congelado)", amb:"4 hrs refrigerado a 4°C", secForn:"4 dias (temp. ambiente)", secMcd:"4 dias no refrigerador", seg:["mccafe"] },
+  { nome:"Bolo Maçã com Nozes", prim:"90 dias (congelado)", amb:"4 hrs refrigerado a 4°C", secForn:"4 dias (temp. ambiente)", secMcd:"4 dias no refrigerador", seg:["mccafe"] },
+  { nome:"Brownie", prim:"120 dias", amb:"24 hrs sob refrigeração", secForn:"6 dias sob refrigeração", secMcd:"6 dias na vitrine refrigerada", seg:["mccafe"] },
+  { nome:"Café em Grão", prim:"6 meses", amb:"N/A", secForn:"Armazenar na geladeira após aberto", secMcd:"48 hrs embalagem original após aberta (refrigerador portátil); 48 hrs no moinho", seg:["mccafe"] },
+  { nome:"Chás", prim:"24 meses", amb:"N/A", secForn:"Consumir imediatamente ou até 8 hrs em refrig.", secMcd:"Não consta", seg:["mccafe"] },
+  { nome:"Cookies", prim:"120 dias", amb:"1 hr (temp. ambiente)", secForn:"23 hrs temp. ambiente após descongelamento", secMcd:"23 hrs na vitrine seca", seg:["mccafe"] },
+  { nome:"Creme Chantilly (Chanti Mix Amélia)", prim:"12 meses", amb:"N/A", secForn:"4 dias após aberto (5–8°C)", secMcd:"4 dias após aberto, sob refrigeração", seg:["mccafe"] },
+  { nome:"Croissant de Presunto e Queijo (McCafé)", prim:"120 dias", amb:"8 hrs sob refrigeração", secForn:"16 hrs sob refrigeração", secMcd:"UHC 60 min / McCafé 16 hrs vitrine refrigerada", seg:["mccafe"] },
+  { nome:"Croissant Chocolate", prim:"120 dias", amb:"1 hr temp. ambiente", secForn:"23 hrs temp. ambiente", secMcd:"23 hrs na vitrine seca", seg:["mccafe"] },
+  { nome:"Croissant Requeijão", prim:"120 dias", amb:"8 hrs sob refrigeração", secForn:"16 hrs sob refrigeração", secMcd:"16 hrs vitrine refrigerada", seg:["mccafe"] },
+  { nome:"Folhado", prim:"120 dias", amb:"8 hrs sob refrigeração", secForn:"40 hrs sob refrigeração", secMcd:"40 hrs na vitrine refrigerada", seg:["mccafe"] },
+  { nome:"Framboesa", prim:"2 anos", amb:"N/A", secForn:"Não consta", secMcd:"30 dias no congelador portátil", seg:["mccafe"] },
+  { nome:"Morango", prim:"2 anos", amb:"N/A", secForn:"Não consta", secMcd:"30 dias no congelador portátil", seg:["mccafe"] },
+  { nome:"Muffin", prim:"120 dias", amb:"1 hr temp. ambiente", secForn:"47 hrs temp. ambiente", secMcd:"47 hrs na vitrine seca", seg:["mccafe"] },
+  { nome:"Negresco", prim:"8 meses", amb:"N/A", secForn:"10 dias embalagem hermeticamente fechada", secMcd:"10 dias, área do McCafé", seg:["mccafe"] },
+  { nome:"Quiche", prim:"120 dias", amb:"8 hrs", secForn:"Não consta", secMcd:"Não consta", seg:["mccafe"] },
+  { nome:"Torta Holandesa", prim:"120 dias", amb:"Não consta", secForn:"5 dias sob refrigeração", secMcd:"Vitrine refrigerada 5 dias", seg:["mccafe"] },
+  { nome:"Torta de Coco com Leite Condensado", prim:"90 dias", amb:"6 hrs sob refrigeração", secForn:"5 dias sob refrigeração", secMcd:"5 dias no refrigerador", seg:["mccafe"] },
+  { nome:"Torta Mousse Chocolate", prim:"90 dias", amb:"6 hrs sob refrigeração", secForn:"5 dias sob refrigeração", secMcd:"5 dias no refrigerador", seg:["mccafe"] },
+  { nome:"Xaropes (Macadâmia, Menta, Baunilha)", prim:"3 anos", amb:"N/A", secForn:"45 dias na área do McCafé", secMcd:"45 dias na área do McCafé", seg:["mccafe"] },
+  // ── CAFÉ DA MANHÃ ─────────────────────────────────────────────────────────
+  { nome:"Café em Grão Torrado e Moído", prim:"180 dias", amb:"N/A", secForn:"N/A", secMcd:"30 min na jarra na máquina de café no balcão", seg:["cafemanha"] },
+  { nome:"Chocolate em Pó (Café da Manhã)", prim:"12 meses", amb:"N/A", secForn:"30 dias embalagem original", secMcd:"30 dias embalagem após aberta; 7 dias na cuba da mesa de preparação", seg:["cafemanha"] },
+  { nome:"Cream Cheese", prim:"90 dias (sob refrigeração)", amb:"N/A", secForn:"5 dias sob refrigeração", secMcd:"5 dias embalagem após aberta (refrigerador); 30 min na mesa de condimentos", seg:["cafemanha"] },
+  { nome:"Croissant de Presunto e Queijo (Restaurante)", prim:"120 dias", amb:"8 hrs sob refrigeração", secForn:"16 hrs sob refrigeração", secMcd:"UHC 60 min / 24 hrs (incl. 8 hrs ambientação) embalagem fechada câmara resfriados", seg:["cafemanha","restaurante"] },
+  { nome:"Mix Margarina com Manteiga", prim:"120 dias", amb:"N/A", secForn:"Não consta", secMcd:"10 dias aberto sob refrigeração; 30 min aberto mesa condimentação", seg:["cafemanha"] },
+  { nome:"Orégano", prim:"180 dias", amb:"N/A", secForn:"30 dias após aberto", secMcd:"30 dias após aberto embalagem original; 2 dias no dispensador", seg:["cafemanha"] },
+  { nome:"Ovo In Natura", prim:"60 dias (sob refrigeração)", amb:"-", secForn:"-", secMcd:"UHC após chapa 20 min", seg:["cafemanha"] },
+  { nome:"Presunto Redondo", prim:"90 dias (congelado)", amb:"12 hrs", secForn:"10 dias (embalagem fechada) / 48 hrs após aberto", secMcd:"Embalagem lacrada câmara resfriado 10 dias; 48 hrs após aberto", seg:["cafemanha"] },
+  { nome:"Sucos", prim:"12 meses (congelado)", amb:"2 dias (sob refrigeração)", secForn:"Não consta", secMcd:"Câmara de resfriado 14 dias, incl. 2 dias descongelamento; máquina de suco — mesmo tempo da caixa na câmara", seg:["cafemanha","restaurante","break"] },
+  // ── BREAK ─────────────────────────────────────────────────────────────────
+  { nome:"Arroz", prim:"10 meses", amb:"N/A", secForn:"5 hrs na panela (>60°C) após preparado; 48 hrs embalagem aberta (local seco)", secMcd:"5 hrs na panela acima de 60°C", seg:["break"] },
+  { nome:"Batata", prim:"9 meses", amb:"N/A", secForn:"N/A", secMcd:"2 hrs congelador portátil; imediato encestamento manual; 2 hrs encestadora eletrônica", seg:["restaurante","break"] },
+  { nome:"Feijão", prim:"12 meses", amb:"N/A", secForn:"48 hrs refrigeração", secMcd:"Consumir imediatamente após abrir. Na panela: até 5 hrs (>60°C)", seg:["break"] },
+  { nome:"Seleta de Legumes", prim:"2 anos", amb:"N/A", secForn:"Não consta", secMcd:"Não consta", seg:["break"] },
+  { nome:"Vinagre", prim:"Seguir fornecedor", amb:"N/A", secForn:"N/A", secMcd:"N/A", seg:["break"] },
+  { nome:"Tortilha Congelada", prim:"90 dias", amb:"12 hrs (temp. ambiente)", secForn:"Não consta", secMcd:"48 hrs temp. ambiente, incl. tempo de ambientação", seg:["restaurante"] },
+  { nome:"Tortilha Fresca", prim:"Seguir fornecedor", amb:"N/A", secForn:"Não consta", secMcd:"48 hrs temp. ambiente", seg:["restaurante"] },
+  // ── QUIOSQUE / SOBREMESAS (PDF 1) ─────────────────────────────────────────
+  { nome:"Água Copo", prim:"275 dias", amb:"N/A", secForn:"N/A", secMcd:"275 dias", seg:["restaurante"] },
+  { nome:"Amendoim Picado", prim:"180 dias", amb:"N/A", secForn:"10 dias", secMcd:"10 dias embalagem após aberta; 5 dias no dispensador", seg:["restaurante","quiosque"] },
+  { nome:"Biju", prim:"270 dias", amb:"N/A", secForn:"3 dias", secMcd:"3 dias / 24 hrs no dispensador", seg:["restaurante","quiosque"] },
+  { nome:"Casquinha", prim:"180 dias", amb:"N/A", secForn:"20 dias embalagem original", secMcd:"20 dias embalagem original; 24 hrs dispensador de casquinha", seg:["restaurante","quiosque"] },
+  { nome:"Cascão", prim:"180 dias", amb:"N/A", secForn:"3 dias embalagem original", secMcd:"20 dias embalagem original; 24 hrs dispensador de casquinha", seg:["restaurante","quiosque"] },
+  { nome:"Chantilly", prim:"365 dias (12 meses)", amb:"N/A", secForn:"10 dias sob refrigeração", secMcd:"10 dias sob refrigeração, embalagem original", seg:["restaurante"] },
+  { nome:"Cob. Brigadeiro", prim:"180 dias", amb:"N/A", secForn:"7 dias", secMcd:"7 dias", seg:["quiosque"] },
+  { nome:"Gotas Kopenhagen", prim:"540 dias", amb:"1 dia", secForn:"10 dias", secMcd:"10 dias", seg:["quiosque"] },
+  { nome:"KitKat", prim:"540 dias", amb:"N/A", secForn:"48 hrs", secMcd:"48 hrs", seg:["quiosque"] },
+  { nome:"Laka Diamante", prim:"540 dias", amb:"1 hr", secForn:"48 hrs", secMcd:"48 hrs", seg:["quiosque"] },
+  { nome:"Leite", prim:"120 dias", amb:"N/A", secForn:"48 hrs sob refrigeração", secMcd:"48 hrs embalagem após aberta (refrigerador)", seg:["restaurante","cafemanha","mccafe"] },
+  { nome:"Mix Paçoca", prim:"180 dias", amb:"N/A", secForn:"10 dias", secMcd:"10 dias embalagem; 7 dias no dispensador", seg:["quiosque"] },
+  { nome:"Mix Sorvete", prim:"45 dias", amb:"N/A", secForn:"24 hrs", secMcd:"24 hrs / 7 dias na máquina", seg:["quiosque"] },
+  { nome:"Óreo", prim:"9 meses (270 dias guia)", amb:"N/A", secForn:"N/A", secMcd:"N/A", seg:["quiosque"] },
+  { nome:"Prestígio", prim:"540 dias", amb:"N/A", secForn:"48 hrs", secMcd:"48 hrs", seg:["quiosque"] },
+  { nome:"Rockes", prim:"9 meses (270 dias guia)", amb:"N/A", secForn:"24 hrs", secMcd:"24 hrs / 15 dias dispensador", seg:["quiosque"] },
+  { nome:"Chocolate em Pó (McCafé)", prim:"10 meses", amb:"N/A", secForn:"30 dias embalagem original", secMcd:"30 dias embalagem após aberta; 7 dias na cuba da mesa de preparação", seg:["mccafe"] },
+  { nome:"Coca-Cola", prim:"75 dias", amb:"N/A", secForn:"N/A", secMcd:"Consumo imediato", seg:["restaurante"] },
+  { nome:"Coca-Cola Zero", prim:"45 dias", amb:"N/A", secForn:"N/A", secMcd:"Consumo imediato", seg:["restaurante"] },
+  { nome:"Fanta", prim:"75 dias", amb:"N/A", secForn:"N/A", secMcd:"Consumo imediato", seg:["restaurante"] },
+  { nome:"Kuat", prim:"120 dias", amb:"N/A", secForn:"N/A", secMcd:"Consumo imediato", seg:["restaurante"] },
+  { nome:"Kuat Zero", prim:"60 dias", amb:"N/A", secForn:"N/A", secMcd:"Consumo imediato", seg:["restaurante"] },
+  { nome:"Molho Caesar e Balsâmico", prim:"Seguir fornecedor", amb:"N/A", secForn:"N/A", secMcd:"N/A", seg:["restaurante"] },
+  { nome:"Molhos Caesar e Italian (Break)", prim:"Seguir fornecedor", amb:"N/A", secForn:"N/A", secMcd:"N/A", seg:["break"] },
+  { nome:"Sal Sachê", prim:"Seguir fornecedor", amb:"N/A", secForn:"N/A", secMcd:"Não consta", seg:["restaurante","break"] },
+  { nome:"Sal com Pimenta", prim:"365 dias", amb:"N/A", secForn:"Não consta", secMcd:"Dispensador — mesmos dados de validade e lote da embalagem", seg:["restaurante"] },
+  { nome:"Polpa Manga", prim:"Seguir fornecedor", amb:"N/A", secForn:"N/A", secMcd:"Não fracionado — seguir validade primária", seg:["mccafe"] },
+];
+
+// normalizar segmento para classe CSS
+function segClass(s) {
+  const map = { restaurante:"seg-restaurante", mccafe:"seg-mccafe", quiosque:"seg-quiosque", cafemanha:"seg-cafemanha", break:"seg-break" };
+  return map[s] || "seg-multi";
+}
+function segLabel(s) {
+  const map = { restaurante:"Restaurante", mccafe:"McCafé", quiosque:"Quiosque", cafemanha:"Café da Manhã", break:"Break" };
+  return map[s] || s;
+}
+function segBadges(segs) {
+  if (!segs || segs.length === 0) return "";
+  if (segs.length === 1) return `<span class="prod-seg ${segClass(segs[0])}">${segLabel(segs[0])}</span>`;
+  // multiple segments — show "multi"
+  return `<span class="prod-seg seg-multi">Múltiplos</span>`;
+}
+
+// ── RENDER ─────────────────────────────────────────────────────────────────
+const tableWrap = document.getElementById("tableWrap");
+const resultsEl  = document.getElementById("resultsCount");
+
+let activeSeg    = "todos";
+let searchQuery  = "";
+let openCards    = new Set();
+
+function valStr(v) {
+  if (!v || v === "N/A" || v === "NA" || v === "-") return `<span class="val-value na">—</span>`;
+  return `<span class="val-value">${v}</span>`;
+}
+function valStrDestacado(v) {
+  if (!v || v === "N/A" || v === "NA" || v === "-") return `<span class="val-value na">—</span>`;
+  return `<span class="val-value destacado">${v}</span>`;
+}
+
+function renderAll() {
+  const q = searchQuery.toLowerCase().trim();
+  const filtered = PRODUTOS.filter(p => {
+    const inSeg = activeSeg === "todos" || p.seg.includes(activeSeg);
+    const inQ   = !q || p.nome.toLowerCase().includes(q) || p.secMcd.toLowerCase().includes(q);
+    return inSeg && inQ;
+  });
+
+  resultsEl.textContent = `${filtered.length} produto${filtered.length !== 1 ? "s" : ""} encontrado${filtered.length !== 1 ? "s" : ""}`;
+
+  if (filtered.length === 0) {
+    tableWrap.innerHTML = `<div class="empty-state"><div class="icon">🔍</div><p>Nenhum produto encontrado para "<strong>${searchQuery}</strong>"</p></div>`;
+    return;
+  }
+
+  let html = "";
+  filtered.forEach((p, i) => {
+    const isOpen = openCards.has(i);
+    html += `
+    <div class="prod-card${isOpen ? " open" : ""}" data-idx="${i}">
+      <div class="prod-header" onclick="toggleCard(${i})">
+        <div class="prod-name">${p.nome}</div>
+        ${segBadges(p.seg)}
+        <div class="prod-chevron">▼</div>
+      </div>
+      <div class="prod-body">
+        <div class="val-grid">
+          <div class="val-cell">
+            <div class="val-label">⏳ Val. Primária</div>
+            ${valStr(p.prim)}
+          </div>
+          <div class="val-cell">
+            <div class="val-label">🌡️ Ambientação</div>
+            ${valStr(p.amb)}
+          </div>
+          <div class="val-cell">
+            <div class="val-label">📦 Sec. Fornecedor</div>
+            ${valStr(p.secForn)}
+          </div>
+          <div class="val-cell">
+            <div class="val-label">✅ Guia MCD</div>
+            ${valStrDestacado(p.secMcd)}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+
+  tableWrap.innerHTML = html;
+}
+
+function toggleCard(idx) {
+  if (openCards.has(idx)) {
+    openCards.delete(idx);
+  } else {
+    openCards.add(idx);
+  }
+  const card = tableWrap.querySelector(`.prod-card[data-idx="${idx}"]`);
+  if (card) card.classList.toggle("open");
+}
+
+// ── TABS ───────────────────────────────────────────────────────────────────
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeSeg = btn.dataset.seg;
+    openCards.clear();
+    renderAll();
+  });
+});
+
+// ── SEARCH ────────────────────────────────────────────────────────────────
+document.getElementById("searchInput").addEventListener("input", e => {
+  searchQuery = e.target.value;
+  openCards.clear();
+  renderAll();
+});
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+renderAll();
+</script>
+</body>
+</html>
