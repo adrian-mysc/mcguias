@@ -5,6 +5,16 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [v4] — 2026-04-25
+
+### Adicionado
+- **Guia: Validades Secundárias** (`pages/validades-secundarias.html`) — ~90 produtos com Validade Primária, Ambientação, Validade Secundária do Fornecedor e Guia MCD. Inclui busca em tempo real e filtro por segmento (Restaurante, McCafé, Quiosque, Café da Manhã, Break). Dados consolidados dos documentos oficiais "Validades Produtos MCD" e "Validades Secundárias"
+
+### Corrigido
+- **Service Worker** atualizado para `mc-guias-v23`: adicionados `validades-secundarias.html`, `provas-testes.html` e `quiz.html` (raiz) que estavam fora do cache offline
+
+---
+
 ## [v3] — 2026-03-24
 
 ### Corrigido
@@ -13,11 +23,8 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 - **Quiz quiz.html (Simulado Geral):** as mesmas 3 perguntas corrigidas no banco central
 
 ### Alterado
-- **Jogo Monte o Sanduíche (`jogo-condimentacao.html`):** substituídos os 10 sanduíches genéricos/incorretos pelos 9 sanduíches reais da página de condimentação, com ingredientes exatos:
-  - Big Mac, Big Tasty, McNífico Bacon
-  - Chicken Deluxe, Chicken Legend, Chicken Bacon Ranch
-  - Brabíssimo Beef, Brabíssimo Frango, Brabíssimo Clubhouse
-- "Cebola reidratada" movida para a lista de **distratores** do jogo (opção errada, nunca ingrediente correto)
+- **Jogo Monte o Sanduíche (`jogo-condimentacao.html`):** substituídos os 10 sanduíches genéricos/incorretos pelos 9 sanduíches reais da página de condimentação, com ingredientes exatos: Big Mac, Big Tasty, McNífico Bacon, Chicken Deluxe, Chicken Legend, Chicken Bacon Ranch, Brabíssimo Beef, Brabíssimo Frango e Brabíssimo Clubhouse
+- "Cebola reidratada" movida para a lista de **distratores** do jogo
 
 ### Adicionado
 - `CHANGELOG.md` — este arquivo
@@ -28,12 +35,12 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 ## [v2] — 2026-03-24
 
 ### Adicionado
-- **Timer configurável:** o botão de timer do quiz foi expandido com um dropdown que permite escolher o tempo por pergunta — 10s, 15s, 20s ou 30s (anteriormente fixo em 20s)
-- **Revisão de erros:** ao finalizar um simulado de múltipla escolha, exibe seção colapsável com todas as perguntas erradas, a resposta do usuário, a resposta correta e a explicação. Erros por tempo esgotado também são capturados
+- **Timer configurável:** dropdown para escolher 10s, 15s, 20s ou 30s por pergunta
+- **Revisão de erros:** seção colapsável ao final do simulado com perguntas erradas, resposta do usuário, correta e explicação
 
-### Corrigido (v2)
-- **Bug — Modo Lacunas:** tag `<input id="lacuna-input">` estava duplicada no HTML gerado, causando comportamento imprevisível ao digitar
-- **Bug — Histórico Lacunas:** `saveQuizResult()` era chamada com argumentos na ordem errada `(score, total, guia)` em vez de `(guia, score, total)`, corrompendo o histórico após completar o modo Lacunas
+### Corrigido
+- **Bug — Modo Lacunas:** `<input id="lacuna-input">` duplicado no DOM
+- **Bug — Histórico Lacunas:** `saveQuizResult()` com argumentos na ordem errada
 
 ---
 
@@ -41,11 +48,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ### Estado inicial
 - 20 guias operacionais com navegação por abas
-- Simulado Geral com 590 perguntas
-- Modos de quiz: múltipla escolha, flashcard e lacunas
-- Repetição espaçada (spaced repetition)
-- Histórico de simulados
-- Compartilhamento de resultado
-- Jogo Monte o Sanduíche (dados ainda genéricos — corrigido em v3)
-- PWA com Service Worker cobrindo todos os guias para uso offline
-- Design responsivo mobile-first
+- Simulado Geral com 590 perguntas (múltipla escolha, flashcard, lacunas)
+- Repetição espaçada, histórico, compartilhamento de resultado
+- Jogo Monte o Sanduíche (dados genéricos — corrigido em v3)
+- PWA com Service Worker, design responsivo mobile-first

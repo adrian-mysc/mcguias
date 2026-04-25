@@ -1,6 +1,6 @@
 // MC Guias — Service Worker v13
 
-const CACHE = "mc-guias-v22";
+const CACHE = "mc-guias-v23";
 const offlineFallbackPage = "/mcguias/offline.html";
 
 // ---- Install: pre-cache all pages ----
@@ -44,6 +44,9 @@ self.addEventListener('install', async (event) => {
       '/mcguias/pages/seguranca-alimento.html',
       '/mcguias/pages/manutencao-preventivas.html',
       '/mcguias/pages/glossario.html',
+      '/mcguias/pages/provas-testes.html',
+      '/mcguias/pages/validades-secundarias.html',
+      '/mcguias/quiz.html',
     ]))
   );
   // Take over immediately — no waiting for old SW to release
