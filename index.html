@@ -9,6 +9,8 @@
 
   <link rel="stylesheet" href="css/styles.css">
   <style>
+    html { scroll-behavior: smooth; }
+    body { overscroll-behavior-y: contain; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     /* =============================================
        INDEX — LAYOUT SOFISTICADO
        ============================================= */
@@ -16,202 +18,41 @@
     .home-content { max-width:780px; margin:0 auto; padding:24px 16px 80px; display:flex; flex-direction:column; gap:36px; }
 
     /* ---- Hero ---- */
-.hero {
-  background: var(--red);
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  bottom: -60px; right: -60px;
-  width: 260px; height: 260px;
-  border-radius: 50%;
-  border: 40px solid rgba(255,199,44,.13);
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  top: -80px; right: -30px;
-  width: 200px; height: 200px;
-  border-radius: 50%;
-  border: 28px solid rgba(255,255,255,.055);
-  pointer-events: none;
-}
-.hero-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px 0;
-  position: relative; z-index: 2;
-}
-.hero-eyebrow {
-  font-family: var(--font-display);
-  font-size: 10px; font-weight: 800;
-  letter-spacing: 3px; text-transform: uppercase;
-  color: rgba(255,199,44,.90);
-}
-.hero-inner {
-  position: relative; z-index: 1;
-  padding: 18px 18px 22px;
-  color: white;
-}
-.hero-title-wrap { margin-bottom: 14px; }
-.hero-title-wrap h2 {
-  font-size: 32px; line-height: 1.05;
-  letter-spacing: -0.8px; font-weight: 800;
-}
-.hero-title-wrap h2 em { font-style: normal; color: var(--yellow); }
-.hero-title-wrap p {
-  font-size: 12.5px; opacity: .72;
-  margin-top: 7px; line-height: 1.6;
-  max-width: 300px;
-}
-.hero-bento {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 6px;
-  margin-bottom: 14px;
-}
-.hero-bento-card {
-  background: rgba(0,0,0,.18);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 10px;
-  padding: 10px 10px 8px;
-  backdrop-filter: blur(4px);
-}
-.hero-bento-num {
-  font-family: var(--font-display);
-  font-size: 20px; font-weight: 800;
-  color: var(--yellow);
-  line-height: 1;
-}
-.hero-bento-label {
-  font-size: 9px; opacity: .65;
-  margin-top: 3px; letter-spacing: .5px;
-  text-transform: uppercase;
-}
-.hero-pills {
-  display: flex; flex-wrap: wrap; gap: 6px;
-  margin-bottom: 14px;
-}
-.hero-pill {
-  display: flex; align-items: center; gap: 5px;
-  background: rgba(255,255,255,.10);
-  border: 1px solid rgba(255,255,255,.18);
-  color: white; padding: 5px 11px;
-  border-radius: 20px; font-size: 11.5px;
-  font-weight: 600; cursor: default;
-  transition: background .15s, transform .15s;
-}
-.hero-pill:hover {
-  background: rgba(255,255,255,.20);
-  transform: translateY(-1px);
-}
-.hero-footer {
-  display: flex; align-items: center;
-  gap: 8px; flex-wrap: wrap;
-}
-/* ---- Guide Grid ---- */
-    .guide-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
+    .hero { background:var(--red); padding:0; position:relative; overflow:hidden; }
+    .hero::before {
+      content:''; position:absolute; inset:0;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(-45deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 20px);
+      pointer-events:none;
     }
-    .guide-card {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding: 13px 13px 11px;
-      background: rgba(255,255,255,0.60);
-      backdrop-filter: blur(12px) saturate(1.4);
-      -webkit-backdrop-filter: blur(12px) saturate(1.4);
-      border: 1.5px solid rgba(255,255,255,0.75);
-      border-radius: var(--radius-lg);
-      text-decoration: none;
-      color: var(--text);
-      box-shadow: 0 2px 10px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-      transition: transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s, border-color .18s, background .18s;
-      position: relative;
-      overflow: hidden;
+    .hero::after {
+      content:''; position:absolute; bottom:-40px; right:-40px;
+      width:180px; height:180px; background:rgba(255,199,44,0.10);
+      border-radius:50%; pointer-events:none;
     }
-    .guide-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%);
-      pointer-events: none;
-      border-radius: inherit;
+    .hero-inner { position:relative; z-index:1; padding:30px 20px 26px; color:white; }
+    .hero-eyebrow {
+      font-family:var(--font-display); font-size:10px; font-weight:800;
+      letter-spacing:3px; text-transform:uppercase; color:rgba(255,199,44,0.9); margin-bottom:8px;
     }
-    .guide-card:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 28px rgba(0,0,0,.11), 0 2px 6px rgba(0,0,0,.06);
-      border-color: rgba(218,41,28,0.35);
-      background: rgba(255,255,255,0.80);
-    }
-    .guide-card:active { transform: scale(0.97); transition-duration: .08s; }
+    .hero-inner h2 { font-size:30px; line-height:1.1; letter-spacing:-0.5px; }
+    .hero-inner h2 em { font-style:normal; color:var(--yellow); }
+    .hero-inner > p { font-size:13px; opacity:0.72; margin-top:8px; line-height:1.6; max-width:320px; }
 
-    [data-theme="dark"] .guide-card {
-      background: rgba(30,29,27,0.65);
-      border-color: rgba(255,255,255,0.09);
-      box-shadow: 0 2px 10px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.18);
-    }
-    [data-theme="dark"] .guide-card::before {
-      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 60%);
-    }
-    [data-theme="dark"] .guide-card:hover {
-      background: rgba(38,36,33,0.85);
-      border-color: rgba(218,41,28,0.45);
-      box-shadow: 0 8px 28px rgba(0,0,0,.35);
-    }
+    .hero-stats { display:flex; gap:0; margin-top:20px; border-top:1px solid rgba(255,255,255,0.15); padding-top:16px; }
+    .hero-stat { flex:1; padding-right:16px; border-right:1px solid rgba(255,255,255,0.15); }
+    .hero-stat:last-child { border-right:none; padding-right:0; padding-left:16px; }
+    .hero-stat:first-child { padding-left:0; }
+    .hero-stat-num { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--yellow); line-height:1; }
+    .hero-stat-label { font-size:10px; opacity:0.65; margin-top:3px; letter-spacing:0.5px; text-transform:uppercase; }
 
-    /* Emoji */
-    .guide-card-emoji {
-      font-size: 26px;
-      line-height: 1;
-      filter: drop-shadow(0 1px 3px rgba(0,0,0,.10));
-      transition: transform .28s cubic-bezier(.34,1.5,.64,1);
+    .hero-chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
+    .hero-chip {
+      background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.20);
+      color:white; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:600; display:inline-block;
     }
-    .guide-card:hover .guide-card-emoji { transform: scale(1.18) rotate(-5deg); }
-
-    /* Text block */
-    .guide-card-body { flex: 1; }
-    .guide-card-body h3 {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.2;
-    }
-    .guide-card-body p {
-      font-size: 10.5px;
-      color: var(--muted);
-      margin-top: 3px;
-      line-height: 1.45;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    /* Arrow */
-    .guide-card-arrow {
-      align-self: flex-end;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--red);
-      opacity: .55;
-      transition: transform .2s cubic-bezier(.34,1.3,.64,1), opacity .2s;
-    }
-    .guide-card:hover .guide-card-arrow { transform: translateX(3px); opacity: 1; }
-
-    /* Locked */
-    .guide-card.locked {
-      opacity: .45;
-      pointer-events: none;
-      filter: grayscale(.5) blur(0.3px);
-    }
+    .hero-audio { margin-top:16px; }
 
     /* ---- Banners ---- */
     .home-banner { display:flex; align-items:center; gap:12px; padding:11px 16px; border-left:4px solid; border-radius:0 var(--radius-md) var(--radius-md) 0; font-size:12px; line-height:1.5; }
@@ -285,21 +126,9 @@
     @keyframes heroSlideDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
     @keyframes heroFadeUp    { from{opacity:0;transform:translateY(16px)}  to{opacity:1;transform:translateY(0)} }
     @keyframes chipPop       { from{opacity:0;transform:scale(0.7) translateY(8px)} to{opacity:1;transform:scale(1) translateY(0)} }
-    .hero-eyebrow          { animation: heroSlideDown .5s cubic-bezier(.22,1,.36,1) both; }
-    .hero-title-wrap h2    { animation: heroSlideDown .6s .06s cubic-bezier(.22,1,.36,1) both; }
-    .hero-title-wrap p     { animation: heroFadeUp .55s .14s cubic-bezier(.22,1,.36,1) both; }
-    .hero-bento            { animation: heroFadeUp .5s .20s cubic-bezier(.22,1,.36,1) both; }
-    .hero-pills            { animation: heroFadeUp .5s .28s cubic-bezier(.22,1,.36,1) both; }
-    .hero-pill             { display: flex; animation: chipPop .4s cubic-bezier(.34,1.5,.64,1) both; }
-    .hero-pill:nth-child(1){ animation-delay: .34s }
-    .hero-pill:nth-child(2){ animation-delay: .42s }
-    .hero-pill:nth-child(3){ animation-delay: .50s }
-    .hero-pill:nth-child(4){ animation-delay: .58s }
-    .hero-pill:nth-child(5){ animation-delay: .64s }
-    .hero-footer           { animation: heroFadeUp .45s .68s cubic-bezier(.22,1,.36,1) both; }
     @keyframes bannerSlide   { from{opacity:0;transform:translateX(-14px)} to{opacity:1;transform:translateX(0)} }
     @keyframes searchReveal  { from{opacity:0;transform:scaleX(0.9) translateY(10px)} to{opacity:1;transform:scaleX(1) translateY(0)} }
-    @keyframes scrollReveal  { from{opacity:0;transform:translateY(26px) scale(0.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+    @keyframes scrollReveal  { from{opacity:0;transform:translateY(10px) scale(0.99)} to{opacity:1;transform:translateY(0) scale(1)} }
     @keyframes pulseRing {
       0%  {box-shadow:0 6px 24px rgba(218,41,28,0.35),0 0 0 0 rgba(218,41,28,0.4)}
       70% {box-shadow:0 6px 24px rgba(218,41,28,0.35),0 0 0 12px rgba(218,41,28,0)}
@@ -322,13 +151,13 @@
     .quiz-cta{animation:scrollReveal .5s .58s cubic-bezier(0.22,1,.36,1),pulseRing 1s 1.4s ease-out;animation-fill-mode:both}
     .hist-strip{animation:scrollReveal .45s .68s cubic-bezier(0.22,1,.36,1) both}
 
-    .category-label.sr-label{opacity:0;transform:translateX(-12px);transition:opacity .45s cubic-bezier(0.22,1,.36,1),transform .45s cubic-bezier(0.22,1,.36,1)}
+    .category-label.sr-label{opacity:0;transform:translateX(-6px);transition:opacity .3s cubic-bezier(0.22,1,.36,1),transform .3s cubic-bezier(0.22,1,.36,1)}
     .category-label.sr-label.sr-visible{opacity:1;transform:translateX(0)}
-    .home-section-head{opacity:0;transform:translateX(-10px);transition:opacity .45s cubic-bezier(0.22,1,.36,1),transform .45s cubic-bezier(0.22,1,.36,1)}
+    .home-section-head{opacity:0;transform:translateX(-6px);transition:opacity .3s cubic-bezier(0.22,1,.36,1),transform .3s cubic-bezier(0.22,1,.36,1)}
     .home-section-head.sr-visible{opacity:1;transform:translateX(0)}
     .home-section-title{}  .home-section-title.sr-visible{}
 
-    .guide-grid.sr-grid{opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(0.22,1,.36,1),transform .5s cubic-bezier(0.22,1,.36,1)}
+    .guide-grid.sr-grid{opacity:0;transform:translateY(10px);transition:opacity .32s cubic-bezier(0.22,1,.36,1),transform .32s cubic-bezier(0.22,1,.36,1);will-change:transform,opacity}
     .guide-grid.sr-grid.sr-visible{opacity:1;transform:translateY(0)}
     .guide-grid.sr-visible .guide-card{animation:none;opacity:1}
 
@@ -542,64 +371,51 @@
   </nav>
 
   <div class="hero">
-
-  <!-- Topbar: eyebrow + botões -->
-  
-
-  <div class="hero-inner">
-
-    <!-- Título -->
-    <div class="hero-title-wrap">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">MC Guias · Estudo Operacional</div>
       <h2>Guias <em>Rápidos</em><br>Operacionais</h2>
       <p>Material de estudo baseado nos guias oficiais de uma rede de fast food fictícia. Consulte, pratique e evolua.</p>
-    </div>
 
-    <!-- Stats bento -->
-    <div class="hero-bento">
-      <div class="hero-bento-card">
-        <div class="hero-bento-num">25+</div>
-        <div class="hero-bento-label">Guias</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">25+</div>
+          <div class="hero-stat-label">Guias</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">600+</div>
+          <div class="hero-stat-label">Questões</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">35+</div>
+          <div class="hero-stat-label">Fichas SMPD</div>
+        </div>
       </div>
-      <div class="hero-bento-card">
-        <div class="hero-bento-num">600+</div>
-        <div class="hero-bento-label">Questões</div>
+
+      <div class="hero-chips">
+        <span class="hero-chip">📋 Procedimentos</span>
+        <span class="hero-chip">✅ Checklists</span>
+        <span class="hero-chip">🎯 Quiz</span>
+        <span class="hero-chip">🔧 Preventivas</span>
       </div>
-      <div class="hero-bento-card">
-        <div class="hero-bento-num">35+</div>
-        <div class="hero-bento-label">Fichas SMPD</div>
+
+      <div class="hero-audio" id="heroAudio">
+        <audio id="presentationAudio" preload="none">
+          <source src="audio/apresentacao.mp3" type="audio/mpeg">
+          <source src="audio/apresentacao.ogg" type="audio/ogg">
+        </audio>
+        <button class="audio-play-btn" id="audioPlayBtn" onclick="toggleAudio()" title="Ouvir apresentação">
+          <span class="audio-play-icon" id="audioPlayIcon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="audio-label" id="audioLabel">Ouvir apresentação</span>
+          <span class="audio-progress-wrap">
+            <span class="audio-progress-bar" id="audioProgressBar"></span>
+          </span>
+          <span class="audio-time" id="audioTime"></span>
+        </button>
       </div>
     </div>
-
-    <!-- Pills -->
-    <div class="hero-pills">
-      <span class="hero-pill">📋 Procedimentos</span>
-      <span class="hero-pill">✅ Checklists</span>
-      <span class="hero-pill">🎯 Quiz</span>
-      <span class="hero-pill">🔧 Preventivas</span>
-      <span class="hero-pill">⏱️ Validades</span>
-    </div>
-
-    <!-- Footer: audio + atualizar -->
-    <div class="hero-footer" id="heroAudio">
-      <audio id="presentationAudio" preload="none">
-        <source src="audio/apresentacao.mp3" type="audio/mpeg">
-        <source src="audio/apresentacao.ogg" type="audio/ogg">
-      </audio>
-      <button class="audio-play-btn" id="audioPlayBtn" onclick="toggleAudio()" title="Ouvir apresentação">
-        <span class="audio-play-icon" id="audioPlayIcon">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-        <span class="audio-label" id="audioLabel">Ouvir apresentação</span>
-        <span class="audio-progress-wrap">
-          <span class="audio-progress-bar" id="audioProgressBar"></span>
-        </span>
-        <span class="audio-time" id="audioTime"></span>
-      </button>
-      <button class="changelog-btn" id="updateBtn" title="Verificar atualização" style="background:rgba(255,255,255,.08);">🔄 Atualizar</button>
-    </div>
-
   </div>
-</div>
 
   <div class="home-content" style="padding-bottom:0;gap:10px;padding-top:14px;">
     <div class="banner-anim banner-anim-1 home-banner warn">
@@ -635,25 +451,39 @@
       <div class="category-label"><div class="category-label-dot"></div><span class="category-label-text">Produção</span><div class="category-label-line"></div></div>
       <div class="guide-grid">
         <a href="pages/chapa.html" class="guide-card" data-keywords="chapa temperatura carne bacon limpeza uhc platen">
-          <div class="guide-card-emoji">🔥</div><div class="guide-card-body"><h3>Chapa</h3><p>Procedimentos, temperaturas, bacon e limpeza</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fdecea 0%,#fff0ef 100%);">
+            <div class="guide-card-emoji">🔥</div><h3>Chapa</h3><p>Procedimentos, temperaturas, bacon e limpeza</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
-        <a href="pages/lope.html" class="guide-card" data-keywords="lope apoio preparação cebola tomate queijo rota">
-          <div class="guide-card-emoji">🥬</div><div class="guide-card-body"><h3>LOPE</h3><p>Apoio e preparação, cebola, tomate, queijo e rota</p></div><span class="guide-card-arrow">›</span>
+        <a href="pages/lope.html" class="guide-card" data-keywords="loop apoio preparação cebola tomate queijo rota">
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff8e1 0%,#fff3cd 100%);">
+            <div class="guide-card-emoji">🥬</div><h3>LOOP</h3><p>Apoio e preparação, cebola, tomate, queijo e rota</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
-        <a href="pages/lope2.html" class="guide-card" data-keywords="lope2 panos bacon cebola cheddar suco gelo cobertura lixeiras esfregão mybreak">
-          <div class="guide-card-emoji">🥬</div><div class="guide-card-body"><h3>LOPE 2 — Apoio</h3><p>Panos, bacon, cebola, suco, gelo, lixeiras e esfregão</p></div><span class="guide-card-arrow">›</span>
+        <a href="pages/lope2.html" class="guide-card" data-keywords="loop2 panos bacon cebola cheddar suco gelo cobertura lixeiras esfregão mybreak">
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#f3e5f5 0%,#e8d5f0 100%);">
+            <div class="guide-card-emoji">🥬</div><h3>LOOP2</h3><p>Panos, bacon, cebola, suco, gelo, lixeiras e esfregão</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/linha.html" class="guide-card" data-keywords="linha tostadeira uhc mesa condimentação procedimento pão">
-          <div class="guide-card-emoji">🍔</div><div class="guide-card-body"><h3>Linha</h3><p>Tostadeira, UHC, mesa de condimentação e procedimento</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f4fd 0%,#dbeeff 100%);">
+            <div class="guide-card-emoji">🍔</div><h3>Linha</h3><p>Tostadeira, UHC, mesa de condimentação e procedimento</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/mcfritas.html" class="guide-card" data-keywords="mcfritas fritas batata temperatura óleo fritadeira">
-          <div class="guide-card-emoji">🍟</div><div class="guide-card-body"><h3>McFritas</h3><p>Temperaturas, tamanhos, óleo e preparação</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff8e1 0%,#ffefc0 100%);">
+            <div class="guide-card-emoji">🍟</div><h3>McFritas</h3><p>Temperaturas, tamanhos, óleo e preparação</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/fritos.html" class="guide-card" data-keywords="fritos frango torta produto frito fritadeira procedimento">
-          <div class="guide-card-emoji">🍗</div><div class="guide-card-body"><h3>Produtos Fritos</h3><p>Frango, procedimento operacional e tortas</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fdecea 0%,#ffe5e2 100%);">
+            <div class="guide-card-emoji">🍗</div><h3>Produtos Fritos</h3><p>Frango, procedimento operacional e tortas</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/condimentacao.html" class="guide-card" data-keywords="condimentação receita sanduíche big mac molho ingredientes">
-          <div class="guide-card-emoji">🧂</div><div class="guide-card-body"><h3>Condimentação</h3><p>Receitas de todos os sanduíches por camadas</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f5e9 0%,#d0f0da 100%);">
+            <div class="guide-card-emoji">🧂</div><h3>Condimentação</h3><p>Receitas de todos os sanduíches por camadas</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
       </div>
     </div>
@@ -662,38 +492,95 @@
       <div class="category-label"><div class="category-label-dot"></div><span class="category-label-text">Experiência do Cliente</span><div class="category-label-line"></div></div>
       <div class="guide-grid">
         <a href="pages/salao-ngk.html" class="guide-card" data-keywords="salão ngk limpeza totem atendimento mesas bancos chão lixeiras método preparo">
-          <div class="guide-card-emoji">🪑</div><div class="guide-card-body"><h3>Salão e NGK</h3><p>Atendimento, limpeza, método de preparação e totens</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);">
+            <div class="guide-card-emoji">🪑</div><h3>Salão e NGK</h3><p>Atendimento, limpeza, método de preparação e totens</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/montagem-entrega.html" class="guide-card" data-keywords="montagem entrega bandeja r2p pick list oat orb bump bar">
-          <div class="guide-card-emoji">🛎️</div><div class="guide-card-body"><h3>Montagem e Entrega</h3><p>Montagem, layout de bandeja, entrega ao cliente e R2P</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff8e1 0%,#ffefc0 100%);">
+            <div class="guide-card-emoji">🛎️</div><h3>Montagem e Entrega</h3><p>Montagem, layout de bandeja, entrega ao cliente e R2P</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/influencer-pagamento.html" class="guide-card" data-keywords="influencer vendedor pagamento venda salto meu méqui cartão troco">
-          <div class="guide-card-emoji">🗣️</div><div class="guide-card-body"><h3>Influencer Vendedor</h3><p>Atendimento, saltos de venda, pagamento e Meu Méqui</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff3e0 0%,#ffe0b2 100%);">
+            <div class="guide-card-emoji">🗣️</div><h3>Influencer Vendedor</h3><p>Atendimento, saltos de venda, pagamento e Meu Méqui</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/drive-thru.html" class="guide-card" data-keywords="drive thru cod tablet caixa móvel pista headset gprs">
-          <div class="guide-card-emoji">🚗</div><div class="guide-card-body"><h3>Drive-Thru</h3><p>COD, Tablet, Caixa, Caixa Móvel e Meu Méqui</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fce4ec 0%,#f8bbd0 100%);">
+            <div class="guide-card-emoji">🚗</div><h3>Drive-Thru</h3><p>COD, Tablet, Caixa, Caixa Móvel e Meu Méqui</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/bebidas-sobremesas.html" class="guide-card" data-keywords="bebidas sobremesas casquinha sundae mcflurry mcshake refrigerante suco temperatura voltas dessert center">
-          <div class="guide-card-emoji">🍦</div><div class="guide-card-body"><h3>Bebidas e Sobremesas</h3><p>Sobremesas, McShake, bebidas, Dessert Center e pesos</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fce4ec 0%,#e3f2fd 100%);">
+            <div class="guide-card-emoji">🍦</div><h3>Bebidas e Sobremesas</h3><p>Sobremesas, McShake, bebidas, Dessert Center e pesos</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
         <a href="pages/mcdelivery.html" class="guide-card" data-keywords="mcdelivery delivery saco lacre dupla checagem código entregador pos tablet">
-          <div class="guide-card-emoji">🛵</div><div class="guide-card-body"><h3>McDelivery</h3><p>Montagem, dupla checagem, carrinho e liberação de pedidos</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f4fd 0%,#c8dff5 100%);">
+            <div class="guide-card-emoji">🛵</div><h3>McDelivery</h3><p>Montagem, dupla checagem, carrinho e liberação de pedidos</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
               <a href="pages/mccafe.html" class="guide-card" data-keywords="mccafe café espresso coado barista bebidas salgados pão queijo medialuna croissant cookies ovos café manhã">
-          <div class="guide-card-emoji">☕</div><div class="guide-card-body"><h3>McCafé</h3><p>Café, bebidas, salgados, doces e café da manhã</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff8e1 0%,#ffe0b2 100%);">
+            <div class="guide-card-emoji">☕</div><h3>McCafé</h3><p>Café, bebidas, salgados, doces e café da manhã</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
               <a href="pages/limpeza.html" class="guide-card" data-keywords="limpeza chapa tostadeira pista drive sanitização desengordurante teflon platen epsonia">
-          <div class="guide-card-emoji">🧹</div><div class="guide-card-body"><h3>Limpeza e Sanitização</h3><p>Chapa, tostadeira e pista Drive-Thru</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);">
+            <div class="guide-card-emoji">🧹</div><h3>Limpeza e Sanitização</h3><p>Chapa, tostadeira e pista Drive-Thru</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
               <a href="pages/fechamento.html" class="guide-card" data-keywords="fechamento fechar turno limpeza chapa tostadeira óleo filtrar fritadeira salão banheiro estoque peps brioche utensílios 3 cubas">
-          <div class="guide-card-emoji">🌙</div><div class="guide-card-body"><h3>Procedimento de Fechamento</h3><p>Fritadeiras, chapa, salão, estoque e mais</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8eaf6 0%,#c5cae9 100%);">
+            <div class="guide-card-emoji">🌙</div><h3>Procedimento de Fechamento</h3><p>Fritadeiras, chapa, salão, estoque e mais</p>
+          </div><div class="guide-card-foot">Ver guia <span>›</span></div>
+        </a>
+        <a href="pages/jogo-condimentacao.html" class="guide-card" data-keywords="jogo condimentacao sanduíche monte bigmac quarter pounder chicken filet mcnificow">
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fce4ec 0%,#f8bbd0 100%);">
+            <div class="guide-card-emoji">🎮</div><h3>Monte o Sanduíche</h3><p>Jogo de treino de condimentação</p>
+          </div><div class="guide-card-foot">Jogar agora <span>›</span></div>
+        </a>
+        <a href="pages/provas-testes.html" class="guide-card" data-keywords="provas testes simulado oficial avaliação questões respostas">
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8eaf6 0%,#c5cae9 100%);">
+            <div class="guide-card-emoji">📋</div><h3>Provas e Testes</h3><p>Simulados oficiais McDonald's</p>
+          </div><div class="guide-card-foot">Abrir provas <span>›</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="category-section" id="cat-gestao">
+      <div class="category-label"><div class="category-label-dot"></div><span class="category-label-text">Gestão e Segurança</span><div class="category-label-line"></div></div>
+      <div class="guide-grid">
+        <a href="pages/estoque-recebimento.html" class="guide-card" data-keywords="estoque recebimento peps validade etiquetagem mercadorias controle armazenamento">
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f5e9 0%,#b9f6ca 100%);">
+            <div class="guide-card-emoji">📦</div><h3>Estoque e Recebimento</h3><p>Recebimento, PEPS, etiquetagem e controle de validades</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
 
         <a href="pages/validades-secundarias.html" class="guide-card" data-keywords="validades secundarias prazo descarte abertura etiqueta refrigerado">
-  <div class="guide-card-emoji">⏱️</div><div class="guide-card-body"><h3>Validades Secundárias</h3><p>Prazos após abertura, etiquetagem e descarte por produto</p></div><span class="guide-card-arrow">›</span>
+  <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f4fd 0%,#d0eaff 100%);">
+    <div class="guide-card-emoji">⏱️</div>
+    <h3>Validades Secundárias</h3>
+    <p>Prazos após abertura, etiquetagem e descarte por produto</p>
+  </div>
+  <div class="guide-card-foot">Abrir guia <span>›</span></div>
+</a>
+        
+        <a href="pages/seguranca-alimento.html" class="guide-card" data-keywords="segurança alimentar higiene contaminação temperatura zona perigo haccp manipulação">
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff3e0 0%,#ffe0b2 100%);">
+            <div class="guide-card-emoji">🛡️</div><h3>Segurança Alimentar</h3><p>Higiene, contaminação, temperaturas e boas práticas</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
-        <a href="pages/glossario.html" class="guide-card" data-keywords="glossário siglas termos uhc r2p peps lope ngk cod oat orb kvs pos bdap rsp rdm saber ppi eppis">
-          <div class="guide-card-emoji">📖</div><div class="guide-card-body"><h3>Glossário Operacional</h3><p>Todas as siglas e termos explicados em detalhes</p></div><span class="guide-card-arrow">›</span>
+        <a href="pages/glossario.html" class="guide-card" data-keywords="glossário siglas termos uhc r2p peps loop ngk cod oat orb kvs pos bdap rsp rdm saber ppi eppis">
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8eaf6 0%,#c5cae9 100%);">
+            <div class="guide-card-emoji">📖</div><h3>Glossário Operacional</h3><p>Todas as siglas e termos explicados em detalhes</p>
+          </div><div class="guide-card-foot">Consultar <span>›</span></div>
+        </a>
+        <a href="pages/manutencao-preventivas.html" class="guide-card" data-keywords="manutenção preventivas diárias smpd chapa fritadeira uhc encestador congelador refrigerador dispensador molho fatiador tomate caixa gordura cloro água energia mccafe filtro retrolavagem">
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#fce4ec 0%,#f8bbd0 100%);">
+            <div class="guide-card-emoji">🔧</div><h3>Manutenção e Preventivas</h3><p>Fichas SMPD diárias de todos os equipamentos</p>
+          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
         </a>
       </div>
     </div>
@@ -706,7 +593,9 @@
       </div>
       <div class="guide-grid">
         <a href="pages/promocao-interna.html" class="guide-card" data-keywords="promoção interna crescimento treinador embaixador supervisor gerente rdm cargo carreira saber mcampus trilha cursos requisitos ppi">
-          <div class="guide-card-emoji">📈</div><div class="guide-card-body"><h3>Promoção Interna</h3><p>Embaixador · Treinador · Supervisor · Gerente</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e3f2fd 0%,#1976d2 100%);">
+            <div class="guide-card-emoji">📈</div><h3>Promoção Interna</h3><p>Embaixador · Treinador · Supervisor · Gerente</p>
+          </div><div class="guide-card-foot">Ver trilha completa <span>›</span></div>
         </a>
       </div>
     </div>
@@ -719,10 +608,14 @@
       </div>
       <div class="guide-grid">
         <a href="pages/treinadores.html" class="guide-card" data-keywords="treinadores treinamento checklist validação abertura fechamento">
-          <div class="guide-card-emoji">👨‍🏫</div><div class="guide-card-body"><h3>Conteúdo para Treinadores</h3><p>Orientações, fluxos e checklists de treinamento</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#e3f2fd 0%,#bbdefb 100%);">
+            <div class="guide-card-emoji">👨‍🏫</div><h3>Conteúdo para Treinadores</h3><p>Orientações, fluxos e checklists de treinamento</p>
+          </div><div class="guide-card-foot">🔐 Acesso restrito <span>›</span></div>
         </a>
         <a href="pages/supervisores.html" class="guide-card" data-keywords="supervisores gestão kpi auditoria posicionamento mcrv">
-          <div class="guide-card-emoji">👔</div><div class="guide-card-body"><h3>Conteúdo para Supervisores</h3><p>KPIs, auditorias e ferramentas de gestão</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:linear-gradient(135deg,#f3e5f5 0%,#e1bee7 100%);">
+            <div class="guide-card-emoji">👔</div><h3>Conteúdo para Supervisores</h3><p>KPIs, auditorias e ferramentas de gestão</p>
+          </div><div class="guide-card-foot">🔐 Acesso restrito <span>›</span></div>
         </a>
       </div>
     </div>
@@ -731,7 +624,9 @@
       <div class="category-label"><div class="category-label-dot" style="background:var(--muted)"></div><span class="category-label-text" style="color:var(--muted)">Em Breve</span><div class="category-label-line"></div></div>
       <div class="guide-grid">
         <div class="guide-card locked">
-          <div class="guide-card-emoji">🔒</div><div class="guide-card-body"><h3>Em breve</h3><p>Novo guia será adicionado em breve</p></div><span class="guide-card-arrow">›</span>
+          <div class="guide-card-top" style="background:var(--bg);">
+            <div class="guide-card-emoji">🔒</div><h3>Em breve</h3><p>Novo guia será adicionado em breve</p>
+          </div><div class="guide-card-foot">Em breve <span>›</span></div>
         </div>
       </div>
     </div>
@@ -751,147 +646,341 @@
       </div>
       <div class="cl-body">
 
-  <div style="text-align:center;padding:4px 0 8px;">
-    <span style="font-size:11px;color:var(--muted);">Desenvolvido por <strong style="color:var(--text);">Adrian E. Silva</strong></span>
-  </div>
+        <div style="text-align:center;padding:4px 0 8px;">
+          <span style="font-size:11px;color:var(--muted);">Desenvolvido por <strong style="color:var(--text);">Adrian E. Silva</strong></span>
+        </div>
 
-  <!-- ── 25 Abr 2026 — NOVO ── -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">25 Abr 2026</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge novo">Novo conteúdo</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item">
-        <div class="cl-item-icon">⏱️</div>
-        <div class="cl-item-text"><strong>Guia de Validades Secundárias</strong> — ~90 produtos com Validade Primária, Ambientação, Validade do Fornecedor e Guia MCD. Busca em tempo real e filtro por segmento: Restaurante, McCafé, Quiosque, Café da Manhã e Break</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">🔧</div>
-        <div class="cl-item-text"><strong>Cache offline corrigido</strong> — <code>provas-testes.html</code>, <code>validades-secundarias.html</code> e <code>quiz.html</code> (raiz) agora disponíveis sem internet (Service Worker v23)</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-    </div>
-  </div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">19 Abr 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge melhoria">Correções e Melhorias</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">🎯</div>
+              <div class="cl-item-text"><strong>Mode bar nas páginas de Manutenção e Supervisores</strong> — Flashcard e Lacunas agora funcionam nas páginas de Manutenção e Preventivas e Conteúdo para Supervisores</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text"><strong>8 respostas corrigidas na Área de Treinadores</strong> com base no material oficial "Futuros Treinadores": extração do sorvete (−1°C a 2°C → <strong>−9°C a −8°C</strong>), banho-maria coberturas (46°C a 52°C → <strong>57°C a 63°C</strong>), temperatura das chapas invertida (<strong>218°C superior / 177°C inferior</strong>), alface McChicken (12g → <strong>22g</strong>), pesos das McFritas (Kids:65/P:87 → <strong>Kids:31/P:73/M:114/G:146g</strong>), cozimento 10:1 (39s → <strong>38s</strong>) e vida das tortas (30min → <strong>90min</strong>)</div>
+              <span class="cl-tag guia">Conteúdo</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- ── 19 Abr 2026 ── -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">19 Abr 2026</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge melhoria">Correções e Melhorias</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item">
-        <div class="cl-item-icon">🎯</div>
-        <div class="cl-item-text"><strong>Mode bar nas páginas de Manutenção e Supervisores</strong> — Flashcard e Lacunas agora funcionam nas páginas de Manutenção e Preventivas e Conteúdo para Supervisores</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text"><strong>8 respostas corrigidas na Área de Treinadores</strong> com base no material oficial</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">🔧</div>
-        <div class="cl-item-text"><strong>Cache offline atualizado</strong> — Service Worker v22 inclui novos guias e corrige arquivos desatualizados em cache</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-    </div>
-  </div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">09 Abr 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge melhoria">Correções e Melhorias</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text"><strong>Auditoria completa do Simulado</strong> — 565 perguntas verificadas e 9 erros corrigidos: Casquinha (1 volta → 3,5 voltas), temperatura frango/tortas (168°C → 180°C), tempo das tortas (5min → 6min), pão do McNífico Bacon (Quartão → Brioche) e mais</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">⚡</div>
+              <div class="cl-item-text"><strong>Modo Treino Rápido</strong> — novo modo focado em números: temperaturas, tempos e quantidades. Ideal para memorização antes do turno</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🔥</div>
+              <div class="cl-item-text"><strong>Sistema de Sequência (Streak)</strong> — acerte em sequência e ganhe bônus visual. A sequência reinicia ao errar</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📤</div>
+              <div class="cl-item-text"><strong>Compartilhamento aprimorado</strong> — resultado agora inclui estrelas de desempenho e sequência máxima</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- ── 05 Abr 2026 ── -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">05 Abr 2026</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge novo">Novo conteúdo</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item">
-        <div class="cl-item-icon">📊</div>
-        <div class="cl-item-text"><strong>Estatísticas detalhadas</strong> — % de acerto por guia, perguntas mais erradas e histórico de desempenho</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">📝</div>
-        <div class="cl-item-text"><strong>Modo Lacunas</strong> — digitar a resposta correta em vez de escolher entre opções; disponível em todos os guias com quiz</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">🎓</div>
-        <div class="cl-item-text"><strong>Área de Treinadores</strong> — Conteúdo para Supervisores e Provas &amp; Testes com simulado próprio e modo Flashcard</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-    </div>
-  </div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">27 Mar 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge novo">Novo conteúdo</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">🔧</div>
+              <div class="cl-item-text"><strong>Manutenção e Preventivas Diárias</strong> — 19 fichas SMPD completas com checklists interativos: Chapa (1R), Fritadeira (2R), UHC (5I), Encestador (46A/46B), Congeladores (15B), Dispensadores de molho (20A/20B), Fatiador de tomate (19B), Caixa de gordura (22D), Análise de cloro (33A), Leituras de água e energia (25A/25B) e fichas McCafé (1A, 1D, 2B, 4B, 9C). Com quiz de 18 perguntas</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📖</div>
+              <div class="cl-item-text"><strong>Glossário Operacional</strong> — 46 termos e siglas explicados em detalhes: UHC, R2P, PEPS, LOOP, NGK, KVS, ORB, OAT, BDAP, PPI, SABER, RDM e muito mais. Com busca e índice alfabético</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📦</div>
+              <div class="cl-item-text">Guia <strong>Estoque e Recebimento</strong> — recebimento de mercadorias, PEPS, etiquetagem e controle de validades agora acessível na página inicial</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🛡️</div>
+              <div class="cl-item-text">Guia <strong>Segurança Alimentar</strong> — higiene, contaminação, temperaturas e boas práticas agora acessível na página inicial</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">✨</div>
+              <div class="cl-item-text"><strong>Animações nos cards</strong> — entrada em cascata, efeito shimmer no hover, emoji animado e seta deslizante no rodapé</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- ── 22 Mar 2026 ── -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">22 Mar 2026</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge melhoria">Melhorias</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item">
-        <div class="cl-item-icon">🔔</div>
-        <div class="cl-item-text"><strong>Prova PPI — Treinador</strong> — 113 questões dissertativas com gabarito retrátil + versão de múltipla escolha com 81 perguntas</div>
-        <span class="cl-tag guia">Conteúdo</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">🔔</div>
-        <div class="cl-item-text"><strong>Atualização automática</strong> — o app detecta novas versões e exibe aviso com botão para atualizar</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-    </div>
-  </div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">24 Mar 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge melhoria">Correções e Melhorias</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">⏱️</div>
+              <div class="cl-item-text"><strong>Timer configurável</strong> — escolha o tempo por pergunta: 10s, 15s, 20s ou 30s. O botão agora exibe o tempo ativo e um dropdown para trocar sem reiniciar o quiz</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">❌</div>
+              <div class="cl-item-text"><strong>Revisão de erros ao final</strong> — ao terminar um simulado, uma seção colapsável exibe cada pergunta errada com sua resposta, a correta e a explicação. Erros por tempo esgotado também são incluídos</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🍔</div>
+              <div class="cl-item-text">Jogo <strong>Monte o Sanduíche</strong> atualizado — substituídos os sanduíches genéricos pelos 9 reais da condimentação: Big Mac, Big Tasty, McNífico Bacon, Chicken Deluxe, Chicken Legend, Chicken Bacon Ranch, Brabíssimo Beef, Brabíssimo Frango e Brabíssimo Clubhouse</div>
+              <span class="cl-tag sistema">Jogo</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🧅</div>
+              <div class="cl-item-text"><strong>Big Mac corrigido</strong> — removida a cebola reidratada das camadas do sanduíche e das perguntas do quiz. O Big Mac não leva cebola</div>
+              <span class="cl-tag guia">Conteúdo</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🐛</div>
+              <div class="cl-item-text">Corrigidos dois bugs no <strong>Modo Lacunas</strong>: campo de resposta duplicado no DOM e histórico salvo com os campos na ordem errada</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- ── 20 Mar 2026 ── -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">20 Mar 2026</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge novo">Novo conteúdo</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item">
-        <div class="cl-item-icon">🧹</div>
-        <div class="cl-item-text">Guia <strong>Limpeza e Sanitização</strong> expandido — salão, banheiros, utensílios, jarras de café e guia completo de produtos QSR com diluições</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">❓</div>
-        <div class="cl-item-text"><strong>633 perguntas</strong> no Simulado Geral — banco expandido com 15+ novas perguntas por guia</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">🎮</div>
-        <div class="cl-item-text">Jogo <strong>Monte o Sanduíche</strong> — treino de condimentação por clique</div>
-        <span class="cl-tag sistema">Jogo</span>
-      </div>
-    </div>
-  </div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">21 Mar 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge melhoria">Melhorias</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">📈</div>
+              <div class="cl-item-text">Guia <strong>Promoção Interna</strong> — trilha do cargo Treinador: requisitos, cursos obrigatórios, trilha formativa SABER (6 meses), ferramentas e manuais</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🌙</div>
+              <div class="cl-item-text">Guia <strong>Procedimento de Fechamento</strong> — filtragem de fritadeiras, Clean Mode da chapa, tostadeira, sistema de 3 cubas, salão, banheiros, estoque e quiz com 21 perguntas</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">✏️</div>
+              <div class="cl-item-text"><strong>Modo Completar a Lacuna</strong> — novo modo de estudo com 254 perguntas numéricas: digitar temperatura, tempo ou quantidade em vez de escolher entre opções</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🔤</div>
+              <div class="cl-item-text"><strong>Revisão gramatical</strong> — corrigido "tube/tubes" → "tubo/tubos" em todo o banco de questões</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🧹</div>
+              <div class="cl-item-text"><strong>Revisão dos quizzes</strong> — 43 perguntas duplicadas removidas e respostas muito repetidas substituídas por perguntas variadas. Total: 633 → 590 perguntas mais precisas</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📤</div>
+              <div class="cl-item-text"><strong>Compartilhar resultado</strong> corrigido — agora funciona em mais navegadores com fallback automático para área de transferência</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🔐</div>
+              <div class="cl-item-text">Área restrita para <strong>Treinadores</strong> e <strong>Supervisores</strong> — conteúdo exclusivo protegido por senha</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📝</div>
+              <div class="cl-item-text"><strong>Prova PPI — Treinador</strong> adicionada na área de Treinadores: 113 questões dissertativas com gabarito retrátil + versão de múltipla escolha com 81 perguntas</div>
+              <span class="cl-tag guia">Conteúdo</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🔔</div>
+              <div class="cl-item-text"><strong>Atualização automática</strong> — o app agora detecta novas versões e exibe um aviso com botão para atualizar sem precisar limpar o cache manualmente</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- ── 05 Jan 2026 ── -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">05 Jan 2026</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge novo">Lançamento</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item">
-        <div class="cl-item-icon">🚀</div>
-        <div class="cl-item-text">Lançamento do <strong>MC Guias</strong> — Chapa, LOPE, Linha, McFritas, Fritos e Condimentação</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-    </div>
-  </div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">20 Mar 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge novo">Novo conteúdo</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">🧹</div>
+              <div class="cl-item-text">Guia <strong>Limpeza e Sanitização</strong> expandido — salão, banheiros, lavagem de utensílios, jarras de café e guia completo de produtos QSR com diluições</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">❓</div>
+              <div class="cl-item-text"><strong>633 perguntas</strong> no Simulado Geral — banco expandido com 15+ novas perguntas por guia em todos os módulos</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🎮</div>
+              <div class="cl-item-text">Jogo <strong>Monte o Sanduíche</strong> — treino de condimentação por clique: Big Mac, QPC, McDouble, Cheeseburger, McChicken, Chicken Select, Filet-O-Fish e McNífico</div>
+              <span class="cl-tag sistema">Jogo</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🌙</div>
+              <div class="cl-item-text">Removido o botão de <strong>modo escuro</strong> — interface padronizada em tema claro</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">18 Mar 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge novo">Novo conteúdo</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">☕</div>
+              <div class="cl-item-text">Guia <strong>McCafé</strong> — café coado, espresso, bebidas quentes e frias, salgados, doces, café da manhã e equipamentos</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🧹</div>
+              <div class="cl-item-text">Guia <strong>Limpeza e Sanitização</strong> — chapa (diária e mensal Best Burger), tostadeira e pista Drive-Thru</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📤</div>
+              <div class="cl-item-text"><strong>Compartilhar resultado</strong> — botão ao final do simulado para enviar pontuação pelo WhatsApp ou copiar</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🚀</div>
+              <div class="cl-item-text">Painel <strong>Em breve</strong> — lista de funcionalidades e guias em desenvolvimento</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">10 Mar 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge melhoria">Melhorias</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">🔀</div>
+              <div class="cl-item-text"><strong>Repetição espaçada</strong> — perguntas erradas aparecem com mais frequência para reforçar o aprendizado</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📲</div>
+              <div class="cl-item-text"><strong>PWA instalável</strong> — site pode ser adicionado como aplicativo na tela inicial do celular</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🌅</div>
+              <div class="cl-item-text"><strong>Tela de loading</strong> com ícone personalizado e barra de progresso</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🃏</div>
+              <div class="cl-item-text"><strong>Modo Flashcard</strong> — toque na carta para revelar a resposta</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📋</div>
+              <div class="cl-item-text"><strong>Histórico de simulados</strong> — registra últimas pontuações com data e percentual</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">15 Fev 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge novo">Novo conteúdo</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">🚗</div>
+              <div class="cl-item-text">Guias <strong>Drive-Thru</strong> e <strong>Bebidas e Sobremesas</strong></div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📦</div>
+              <div class="cl-item-text">Guias <strong>McDelivery</strong> e <strong>Influencer Vendedor</strong></div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🥬</div>
+              <div class="cl-item-text">Guia <strong>LOOP2</strong> — cebola cheddar, molhos especiais e itens de apoio</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">20 Jan 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge novo">Novo conteúdo</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">🪑</div>
+              <div class="cl-item-text">Guias <strong>Salão e NGK</strong> e <strong>Montagem e Entrega</strong></div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🎯</div>
+              <div class="cl-item-text"><strong>Simulado Geral</strong> — quiz com filtro por guia e histórico de pontuações</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">05 Jan 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge novo">Lançamento</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">🚀</div>
+              <div class="cl-item-text">Lançamento do <strong>MC Guias</strong> — Chapa, LOOP, Linha, McFritas, Fritos e Condimentação</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -929,143 +1018,128 @@
       </div>
       <div class="cl-body">
 
-  <div style="background:var(--bg);border-radius:var(--radius-md);border:1.5px solid var(--border);padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.6;">
-    📌 Roadmap atualizado em Abr 2026. Itens com ✅ já foram entregues.
-  </div>
+        <div style="background:var(--bg);border-radius:var(--radius-md);border:1.5px solid var(--border);padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.6;">
+          📌 Roadmap atualizado em Abr 2026. Itens com ✅ já foram entregues.
+        </div>
 
-  <!-- Mai 2026 — V11 -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">Mai 2026</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge melhoria">V11 — Em desenvolvimento</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item">
-        <div class="cl-item-icon">⭐</div>
-        <div class="cl-item-text"><strong>Perguntas favoritas</strong> — marcar perguntas difíceis com ⭐ para revisar separadamente</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">🔁</div>
-        <div class="cl-item-text"><strong>Modo "Só erros"</strong> — iniciar quiz filtrando automaticamente perguntas com histórico de erro</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">📊</div>
-        <div class="cl-item-text"><strong>Progresso visível na home</strong> — cada card mostrará a última pontuação e um indicador de domínio por guia</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">🔔</div>
-        <div class="cl-item-text"><strong>Lembrete diário</strong> — notificação via PWA para manter a sequência de estudo</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">📲</div>
-        <div class="cl-item-text"><strong>APK Android nativo</strong> — versão instalável via PWABuilder para distribuir diretamente pelo WhatsApp</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-    </div>
-  </div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">Mai 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge melhoria">V11 — Em desenvolvimento</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">⭐</div>
+              <div class="cl-item-text"><strong>Perguntas favoritas</strong> — marcar perguntas difíceis com ⭐ para revisar separadamente</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🔁</div>
+              <div class="cl-item-text"><strong>Modo "Só erros"</strong> — iniciar quiz filtrando automaticamente perguntas com histórico de erro</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📊</div>
+              <div class="cl-item-text"><strong>Progresso visível na home</strong> — cada card mostrará a última pontuação e um indicador de domínio por guia</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">🔔</div>
+              <div class="cl-item-text"><strong>Lembrete diário</strong> — notificação via PWA para manter a sequência de estudo</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📲</div>
+              <div class="cl-item-text"><strong>APK Android nativo</strong> — versão instalável via PWABuilder para distribuir diretamente pelo WhatsApp</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- Jun 2026 — Guias planejados -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">Jun 2026</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge novo">Guias planejados</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item">
-        <div class="cl-item-icon">🔒</div>
-        <div class="cl-item-text"><strong>Abertura do Restaurante</strong> — checklist completo de abertura por seção</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">📋</div>
-        <div class="cl-item-text"><strong>Provas e Testes — novos conteúdos</strong> — expansão da área de Provas com novos módulos baseados nos documentos de formação</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-      <div class="cl-item">
-        <div class="cl-item-icon">🧪</div>
-        <div class="cl-item-text"><strong>Quiz de Validades</strong> — simulado focado em validades primárias e secundárias dos produtos MCD</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-    </div>
-  </div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">Jun 2026</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge novo">Guias planejados</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item">
+              <div class="cl-item-icon">🔒</div>
+              <div class="cl-item-text"><strong>Abertura do Restaurante</strong> — checklist completo de abertura por seção</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item">
+              <div class="cl-item-icon">📋</div>
+              <div class="cl-item-text"><strong>Provas e Testes — novos conteúdos</strong> — expansão da área de Provas com novos módulos baseados nos documentos de formação</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- Entregues -->
-  <div class="cl-entry">
-    <div class="cl-date-row">
-      <span class="cl-date">Entregues</span>
-      <div class="cl-date-line"></div>
-      <span class="cl-badge novo">✅ Concluído</span>
-    </div>
-    <div class="cl-items">
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Guia de Validades Secundárias</strong> — ~90 produtos com busca e filtro por segmento</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Mode bar Manutenção e Supervisores</strong> — Flashcard e Lacunas funcionais nessas páginas</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Estatísticas detalhadas</strong> — % de acerto por guia e perguntas mais erradas</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Modo completar a lacuna</strong> — digitar a resposta em vez de escolher entre opções</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Provas e Testes</strong> — área de Treinadores com provas interativas e simulado próprio</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Som e Streak</strong> — feedback sonoro e sistema de sequência de acertos</div>
-        <span class="cl-tag sistema">Sistema</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Timer configurável</strong> — cronômetro por pergunta: 10s, 15s, 20s ou 30s</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Revisão de erros</strong> — seção colapsável com perguntas erradas ao final do simulado</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Monte o Sanduíche</strong> — jogo com os 9 sanduíches reais da condimentação</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Segurança do Alimento e Estoque</strong> — guias completos acessíveis na home</div>
-        <span class="cl-tag guia">Guia</span>
-      </div>
-      <div class="cl-item" style="opacity:.55;">
-        <div class="cl-item-icon">✅</div>
-        <div class="cl-item-text" style="text-decoration:line-through;"><strong>Auto-avançar, streak e atalhos de teclado</strong> — melhorias de UX no quiz</div>
-        <span class="cl-tag quiz">Quiz</span>
-      </div>
-    </div>
-  </div>
-
-  <div style="text-align:center;padding:8px 0 4px;">
-    <span style="font-size:11px;color:var(--muted);">Sugestões? Fale com <strong style="color:var(--text);">Adrian E. Silva</strong></span>
-  </div>
-
-</div>
+        <div class="cl-entry">
+          <div class="cl-date-row">
+            <span class="cl-date">Entregues</span>
+            <div class="cl-date-line"></div>
+            <span class="cl-badge novo">✅ Concluído</span>
+          </div>
+          <div class="cl-items">
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Mode bar Manutenção e Supervisores</strong> — Flashcard e Lacunas funcionais nessas páginas</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Estatísticas detalhadas</strong> — % de acerto por guia e perguntas mais erradas</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Modo completar a lacuna</strong> — digitar a resposta em vez de escolher entre opções</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Provas e Testes</strong> — área de Treinadores com provas interativas e simulado próprio</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Som e Streak</strong> — feedback sonoro e sistema de sequência de acertos</div>
+              <span class="cl-tag sistema">Sistema</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Seleções Méqui 2026</strong> — 6 novos sanduíches especiais na condimentação</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Timer configurável</strong> — cronômetro por pergunta: 10s, 15s, 20s ou 30s</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Revisão de erros</strong> — seção colapsável com perguntas erradas ao final do simulado</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Monte o Sanduíche</strong> — jogo com os 9 sanduíches reais da condimentação</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Segurança do Alimento e Estoque</strong> — guias completos acessíveis na home</div>
+              <span class="cl-tag guia">Guia</span>
+            </div>
+            <div class="cl-item" style="opacity:.55;">
+              <div class="cl-item-icon">✅</div>
+              <div class="cl-item-text" style="text-decoration:line-through;"><strong>Auto-avançar, streak e atalhos de teclado</strong> — melhorias de UX no quiz</div>
+              <span class="cl-tag quiz">Quiz</span>
+            </div>
+          </div>
+        </div>
 
         <div style="text-align:center;padding:8px 0 4px;">
           <span style="font-size:11px;color:var(--muted);">Sugestões? Fale com <strong style="color:var(--text);">Adrian E. Silva</strong></span>
