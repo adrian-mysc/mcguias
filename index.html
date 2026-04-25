@@ -113,7 +113,97 @@
   display: flex; align-items: center;
   gap: 8px; flex-wrap: wrap;
 }
-/* ---- Banners ---- */
+/* ---- Guide Grid ---- */
+    .guide-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .guide-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--text);
+      transition: background .15s, border-color .15s, transform .18s cubic-bezier(.22,1,.36,1), box-shadow .18s;
+      position: relative;
+      overflow: hidden;
+    }
+    .guide-card:hover {
+      background: var(--card-hover, var(--surface-2, #f5f4f0));
+      border-color: var(--red);
+      transform: translateX(3px);
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    }
+    .guide-card:active { transform: scale(0.98); transition-duration: .08s; }
+    [data-theme="dark"] .guide-card:hover { background: #222120; }
+
+    /* Emoji badge */
+    .guide-card-emoji {
+      font-size: 22px;
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: transform .25s cubic-bezier(.34,1.5,.64,1);
+    }
+    .guide-card:hover .guide-card-emoji { transform: scale(1.12) rotate(-4deg); }
+    [data-theme="dark"] .guide-card-emoji { background: #1a1917; }
+
+    /* Text block */
+    .guide-card-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .guide-card-body h3 {
+      font-family: var(--font-display);
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+    .guide-card-body p {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.3;
+    }
+
+    /* Arrow */
+    .guide-card-arrow {
+      flex-shrink: 0;
+      font-size: 16px;
+      color: var(--muted);
+      opacity: .45;
+      transition: transform .2s cubic-bezier(.34,1.3,.64,1), opacity .2s, color .15s;
+    }
+    .guide-card:hover .guide-card-arrow {
+      transform: translateX(4px);
+      opacity: 1;
+      color: var(--red);
+    }
+
+    /* Locked state */
+    .guide-card.locked {
+      opacity: .52;
+      pointer-events: none;
+      filter: grayscale(.4);
+    }
+    .guide-card.locked .guide-card-arrow { display: none; }
+
+    /* ---- Banners ---- */
     .home-banner { display:flex; align-items:center; gap:12px; padding:11px 16px; border-left:4px solid; border-radius:0 var(--radius-md) var(--radius-md) 0; font-size:12px; line-height:1.5; }
     .home-banner.warn  { background:#fff8f0; border-color:#f59e0b; color:#78350f; }
     .home-banner.info  { background:#f0fdf4; border-color:#22c55e; color:#14532d; }
@@ -541,39 +631,25 @@
       <div class="category-label"><div class="category-label-dot"></div><span class="category-label-text">Produção</span><div class="category-label-line"></div></div>
       <div class="guide-grid">
         <a href="pages/chapa.html" class="guide-card" data-keywords="chapa temperatura carne bacon limpeza uhc platen">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fdecea 0%,#fff0ef 100%);">
-            <div class="guide-card-emoji">🔥</div><h3>Chapa</h3><p>Procedimentos, temperaturas, bacon e limpeza</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🔥</div><div class="guide-card-body"><h3>Chapa</h3><p>Procedimentos, temperaturas, bacon e limpeza</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/lope.html" class="guide-card" data-keywords="lope apoio preparação cebola tomate queijo rota">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff8e1 0%,#fff3cd 100%);">
-            <div class="guide-card-emoji">🥬</div><h3>LOPE</h3><p>Apoio e preparação, cebola, tomate, queijo e rota</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🥬</div><div class="guide-card-body"><h3>LOPE</h3><p>Apoio e preparação, cebola, tomate, queijo e rota</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/lope2.html" class="guide-card" data-keywords="lope2 panos bacon cebola cheddar suco gelo cobertura lixeiras esfregão mybreak">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#f3e5f5 0%,#e8d5f0 100%);">
-            <div class="guide-card-emoji">🥬</div><h3>LOPE 2 — Apoio</h3><p>Panos, bacon, cebola, suco, gelo, lixeiras e esfregão</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🥬</div><div class="guide-card-body"><h3>LOPE 2 — Apoio</h3><p>Panos, bacon, cebola, suco, gelo, lixeiras e esfregão</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/linha.html" class="guide-card" data-keywords="linha tostadeira uhc mesa condimentação procedimento pão">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f4fd 0%,#dbeeff 100%);">
-            <div class="guide-card-emoji">🍔</div><h3>Linha</h3><p>Tostadeira, UHC, mesa de condimentação e procedimento</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🍔</div><div class="guide-card-body"><h3>Linha</h3><p>Tostadeira, UHC, mesa de condimentação e procedimento</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/mcfritas.html" class="guide-card" data-keywords="mcfritas fritas batata temperatura óleo fritadeira">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff8e1 0%,#ffefc0 100%);">
-            <div class="guide-card-emoji">🍟</div><h3>McFritas</h3><p>Temperaturas, tamanhos, óleo e preparação</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🍟</div><div class="guide-card-body"><h3>McFritas</h3><p>Temperaturas, tamanhos, óleo e preparação</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/fritos.html" class="guide-card" data-keywords="fritos frango torta produto frito fritadeira procedimento">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fdecea 0%,#ffe5e2 100%);">
-            <div class="guide-card-emoji">🍗</div><h3>Produtos Fritos</h3><p>Frango, procedimento operacional e tortas</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🍗</div><div class="guide-card-body"><h3>Produtos Fritos</h3><p>Frango, procedimento operacional e tortas</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/condimentacao.html" class="guide-card" data-keywords="condimentação receita sanduíche big mac molho ingredientes">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f5e9 0%,#d0f0da 100%);">
-            <div class="guide-card-emoji">🧂</div><h3>Condimentação</h3><p>Receitas de todos os sanduíches por camadas</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🧂</div><div class="guide-card-body"><h3>Condimentação</h3><p>Receitas de todos os sanduíches por camadas</p></div><span class="guide-card-arrow">›</span>
         </a>
       </div>
     </div>
@@ -582,95 +658,38 @@
       <div class="category-label"><div class="category-label-dot"></div><span class="category-label-text">Experiência do Cliente</span><div class="category-label-line"></div></div>
       <div class="guide-grid">
         <a href="pages/salao-ngk.html" class="guide-card" data-keywords="salão ngk limpeza totem atendimento mesas bancos chão lixeiras método preparo">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);">
-            <div class="guide-card-emoji">🪑</div><h3>Salão e NGK</h3><p>Atendimento, limpeza, método de preparação e totens</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🪑</div><div class="guide-card-body"><h3>Salão e NGK</h3><p>Atendimento, limpeza, método de preparação e totens</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/montagem-entrega.html" class="guide-card" data-keywords="montagem entrega bandeja r2p pick list oat orb bump bar">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff8e1 0%,#ffefc0 100%);">
-            <div class="guide-card-emoji">🛎️</div><h3>Montagem e Entrega</h3><p>Montagem, layout de bandeja, entrega ao cliente e R2P</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🛎️</div><div class="guide-card-body"><h3>Montagem e Entrega</h3><p>Montagem, layout de bandeja, entrega ao cliente e R2P</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/influencer-pagamento.html" class="guide-card" data-keywords="influencer vendedor pagamento venda salto meu méqui cartão troco">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff3e0 0%,#ffe0b2 100%);">
-            <div class="guide-card-emoji">🗣️</div><h3>Influencer Vendedor</h3><p>Atendimento, saltos de venda, pagamento e Meu Méqui</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🗣️</div><div class="guide-card-body"><h3>Influencer Vendedor</h3><p>Atendimento, saltos de venda, pagamento e Meu Méqui</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/drive-thru.html" class="guide-card" data-keywords="drive thru cod tablet caixa móvel pista headset gprs">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fce4ec 0%,#f8bbd0 100%);">
-            <div class="guide-card-emoji">🚗</div><h3>Drive-Thru</h3><p>COD, Tablet, Caixa, Caixa Móvel e Meu Méqui</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🚗</div><div class="guide-card-body"><h3>Drive-Thru</h3><p>COD, Tablet, Caixa, Caixa Móvel e Meu Méqui</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/bebidas-sobremesas.html" class="guide-card" data-keywords="bebidas sobremesas casquinha sundae mcflurry mcshake refrigerante suco temperatura voltas dessert center">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fce4ec 0%,#e3f2fd 100%);">
-            <div class="guide-card-emoji">🍦</div><h3>Bebidas e Sobremesas</h3><p>Sobremesas, McShake, bebidas, Dessert Center e pesos</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🍦</div><div class="guide-card-body"><h3>Bebidas e Sobremesas</h3><p>Sobremesas, McShake, bebidas, Dessert Center e pesos</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/mcdelivery.html" class="guide-card" data-keywords="mcdelivery delivery saco lacre dupla checagem código entregador pos tablet">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f4fd 0%,#c8dff5 100%);">
-            <div class="guide-card-emoji">🛵</div><h3>McDelivery</h3><p>Montagem, dupla checagem, carrinho e liberação de pedidos</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🛵</div><div class="guide-card-body"><h3>McDelivery</h3><p>Montagem, dupla checagem, carrinho e liberação de pedidos</p></div><span class="guide-card-arrow">›</span>
         </a>
               <a href="pages/mccafe.html" class="guide-card" data-keywords="mccafe café espresso coado barista bebidas salgados pão queijo medialuna croissant cookies ovos café manhã">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff8e1 0%,#ffe0b2 100%);">
-            <div class="guide-card-emoji">☕</div><h3>McCafé</h3><p>Café, bebidas, salgados, doces e café da manhã</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">☕</div><div class="guide-card-body"><h3>McCafé</h3><p>Café, bebidas, salgados, doces e café da manhã</p></div><span class="guide-card-arrow">›</span>
         </a>
               <a href="pages/limpeza.html" class="guide-card" data-keywords="limpeza chapa tostadeira pista drive sanitização desengordurante teflon platen epsonia">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);">
-            <div class="guide-card-emoji">🧹</div><h3>Limpeza e Sanitização</h3><p>Chapa, tostadeira e pista Drive-Thru</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🧹</div><div class="guide-card-body"><h3>Limpeza e Sanitização</h3><p>Chapa, tostadeira e pista Drive-Thru</p></div><span class="guide-card-arrow">›</span>
         </a>
               <a href="pages/fechamento.html" class="guide-card" data-keywords="fechamento fechar turno limpeza chapa tostadeira óleo filtrar fritadeira salão banheiro estoque peps brioche utensílios 3 cubas">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8eaf6 0%,#c5cae9 100%);">
-            <div class="guide-card-emoji">🌙</div><h3>Procedimento de Fechamento</h3><p>Fritadeiras, chapa, salão, estoque e mais</p>
-          </div><div class="guide-card-foot">Ver guia <span>›</span></div>
-        </a>
-        <a href="pages/jogo-condimentacao.html" class="guide-card" data-keywords="jogo condimentacao sanduíche monte bigmac quarter pounder chicken filet mcnificow">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fce4ec 0%,#f8bbd0 100%);">
-            <div class="guide-card-emoji">🎮</div><h3>Monte o Sanduíche</h3><p>Jogo de treino de condimentação</p>
-          </div><div class="guide-card-foot">Jogar agora <span>›</span></div>
-        </a>
-        <a href="pages/provas-testes.html" class="guide-card" data-keywords="provas testes simulado oficial avaliação questões respostas">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8eaf6 0%,#c5cae9 100%);">
-            <div class="guide-card-emoji">📋</div><h3>Provas e Testes</h3><p>Simulados oficiais McDonald's</p>
-          </div><div class="guide-card-foot">Abrir provas <span>›</span></div>
-        </a>
-      </div>
-    </div>
-
-    <div class="category-section" id="cat-gestao">
-      <div class="category-label"><div class="category-label-dot"></div><span class="category-label-text">Gestão e Segurança</span><div class="category-label-line"></div></div>
-      <div class="guide-grid">
-        <a href="pages/estoque-recebimento.html" class="guide-card" data-keywords="estoque recebimento peps validade etiquetagem mercadorias controle armazenamento">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f5e9 0%,#b9f6ca 100%);">
-            <div class="guide-card-emoji">📦</div><h3>Estoque e Recebimento</h3><p>Recebimento, PEPS, etiquetagem e controle de validades</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">🌙</div><div class="guide-card-body"><h3>Procedimento de Fechamento</h3><p>Fritadeiras, chapa, salão, estoque e mais</p></div><span class="guide-card-arrow">›</span>
         </a>
 
         <a href="pages/validades-secundarias.html" class="guide-card" data-keywords="validades secundarias prazo descarte abertura etiqueta refrigerado">
-  <div class="guide-card-top" style="background:linear-gradient(135deg,#e8f4fd 0%,#d0eaff 100%);">
-    <div class="guide-card-emoji">⏱️</div>
-    <h3>Validades Secundárias</h3>
-    <p>Prazos após abertura, etiquetagem e descarte por produto</p>
-  </div>
-  <div class="guide-card-foot">Abrir guia <span>›</span></div>
-</a>
-        
-        <a href="pages/seguranca-alimento.html" class="guide-card" data-keywords="segurança alimentar higiene contaminação temperatura zona perigo haccp manipulação">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fff3e0 0%,#ffe0b2 100%);">
-            <div class="guide-card-emoji">🛡️</div><h3>Segurança Alimentar</h3><p>Higiene, contaminação, temperaturas e boas práticas</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+  <div class="guide-card-emoji">⏱️</div><div class="guide-card-body"><h3>Validades Secundárias</h3><p>Prazos após abertura, etiquetagem e descarte por produto</p></div><span class="guide-card-arrow">›</span>
         </a>
         <a href="pages/glossario.html" class="guide-card" data-keywords="glossário siglas termos uhc r2p peps lope ngk cod oat orb kvs pos bdap rsp rdm saber ppi eppis">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#e8eaf6 0%,#c5cae9 100%);">
-            <div class="guide-card-emoji">📖</div><h3>Glossário Operacional</h3><p>Todas as siglas e termos explicados em detalhes</p>
-          </div><div class="guide-card-foot">Consultar <span>›</span></div>
-        </a>
-        <a href="pages/manutencao-preventivas.html" class="guide-card" data-keywords="manutenção preventivas diárias smpd chapa fritadeira uhc encestador congelador refrigerador dispensador molho fatiador tomate caixa gordura cloro água energia mccafe filtro retrolavagem">
-          <div class="guide-card-top" style="background:linear-gradient(135deg,#fce4ec 0%,#f8bbd0 100%);">
-            <div class="guide-card-emoji">🔧</div><h3>Manutenção e Preventivas</h3><p>Fichas SMPD diárias de todos os equipamentos</p>
-          </div><div class="guide-card-foot">Abrir guia <span>›</span></div>
+          <div class="guide-card-emoji">📖</div><div class="guide-card-body"><h3>Glossário Operacional</h3><p>Todas as siglas e termos explicados em detalhes</p></div><span class="guide-card-arrow">›</span>
         </a>
       </div>
     </div>
