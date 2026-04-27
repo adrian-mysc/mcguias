@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MC Guias</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-number { font-size: 2.5rem; font-weight: bold; margin: 10px 0; }
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            background: #4ade80;
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+        .achievement-badge {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background: #fbbf24;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px;
+        }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-secondary {
+            background: #4ade80;
+            color: white;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        body.dark-mode .card {
+            background: #1e1e2e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">📊 Meu Progresso</h1>
+        
+        <div class="stats-grid" id="statsGrid"></div>
+        
+        <div class="card">
+            <h2>📈 Evolução de Acertos</h2>
+            <canvas id="progressChart" width="400" height="200"></canvas>
+        </div>
+        
+        <div class="card">
+            <h2>🏆 Conquistas</h2>
+            <div id="achievementsList" style="text-align: center;"></div>
+        </div>
+        
+        <div class="card">
+            <h2>📚 Áreas para Melhorar</h2>
+            <div id="weakTopicsList"></div>
+        </div>
+        
+        <div class="btn-group">
+            <button onclick="exportData()" class="btn-primary">📤 Exportar Backup</button>
+            <button onclick="importData()" class="btn-secondary">📥 Importar Backup</button>
+        </div>
+        
+        <div style="text-align: center; margin: 20px;">
+            <a href="../index.html" style="text-decoration: none;">← Voltar ao Início</a>
+        </div>
+    </div>
+    
+    <script>
+        function loadStats() {
+            const quizHistory = JSON.parse(localStorage.getItem('quizHistory') || '[]');
+            
+            const totalQuizzes = quizHistory.length;
+            const avgScore = totalQuizzes > 0 
+                ? (quizHistory.reduce((sum, q) => sum + (q.score / q.total * 100), 0) / totalQuizzes).toFixed(1)
+                : 0;
+            const bestScore = totalQuizzes > 0
+                ? Math.max(...quizHistory.map(q => (q.score / q.total * 100)))
+                : 0;
+            const totalQuestions = quizHistory.reduce((sum, q) => sum + q.total, 0);
+            const totalCorrect = quizHistory.reduce((sum, q) => sum + q.score, 0);
+            
+            document.getElementById('statsGrid').innerHTML = `
+                <div class="stat-card">
+                    <h3>📝 Simulados</h3>
+                    <div class="stat-number">${totalQuizzes}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>⭐ Média</h3>
+                    <div class="stat-number">${avgScore}%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${avgScore}%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>🏆 Melhor</h3>
+                    <div class="stat-number">${bestScore}%</div>
+                </div>
+                <div class="stat-card">
+                    <h3>✅ Acertos</h3>
+                    <div class="stat-number">${totalCorrect}/${totalQuestions}</div>
+                </div>
+            `;
+            
+            // Gráfico
+            const last10Quizzes = quizHistory.slice(-10);
+            const ctx = document.getElementById('progressChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: last10Quizzes.map((_, i) => `#${i+1}`),
+                    datasets: [{
+                        label: 'Pontuação (%)',
+                        data: last10Quizzes.map(q => (q.score / q.total * 100)),
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+            
+            // Conquistas
+            const achievements = [];
+            if(totalQuizzes >= 10) achievements.push('🎓 10 Simulados');
+            if(avgScore >= 80) achievements.push('⭐ Mestre (80%+)');
+            if(totalCorrect >= 100) achievements.push('💯 Centenário');
+            if(bestScore === 100) achievements.push('🏆 Perfeição');
+            
+            document.getElementById('achievementsList').innerHTML = achievements.length > 0 
+                ? achievements.map(a => `<span class="achievement-badge">${a}</span>`).join('')
+                : '<p>Faça simulados para ganhar conquistas!</p>';
+            
+            // Tópicos fracos
+            const topicErrors = {};
+            quizHistory.forEach(quiz => {
+                if(quiz.mistakes) {
+                    quiz.mistakes.forEach(mistake => {
+                        topicErrors[mistake.topic] = (topicErrors[mistake.topic] || 0) + 1;
+                    });
+                }
+            });
+            
+            const weakHtml = Object.entries(topicErrors).sort((a,b) => b[1] - a[1]).slice(0,5)
+                .map(([topic, errors]) => `<div class="progress-bar" style="margin: 10px 0;">
+                    <div class="progress-fill" style="width: ${Math.min(100, errors * 10)}%; background: #ef4444;">
+                        ${topic}: ${errors} erros
+                    </div>
+                </div>`).join('');
+            
+            document.getElementById('weakTopicsList').innerHTML = weakHtml || '<p>Continue praticando! 🎯</p>';
+        }
+        
+        function exportData() {
+            const data = {
+                version: '1.0',
+                date: new Date().toISOString(),
+                quizHistory: localStorage.getItem('quizHistory'),
+                checklists: getAllChecklists()
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `mcguias_backup_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            alert('✅ Backup salvo!');
+        }
+        
+        function getAllChecklists() {
+            const checklists = {};
+            for(let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if(key && key.startsWith('checklist_')) {
+                    checklists[key] = localStorage.getItem(key);
+                }
+            }
+            return checklists;
+        }
+        
+        function importData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'application/json';
+            input.onchange = e => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = event => {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        if(data.quizHistory) localStorage.setItem('quizHistory', data.quizHistory);
+                        if(data.checklists) {
+                            Object.entries(data.checklists).forEach(([key, value]) => {
+                                localStorage.setItem(key, value);
+                            });
+                        }
+                        alert('✅ Restaurado! Recarregue a página.');
+                        location.reload();
+                    } catch(err) {
+                        alert('❌ Arquivo inválido!');
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        }
+        
+        loadStats();
+    </script>
+</body>
+  </html>
