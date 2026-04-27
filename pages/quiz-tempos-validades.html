@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Tempos e Validades — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* ── Layout ── */
+    .quiz-page { max-width:700px; margin:0 auto; padding:16px 14px 80px; }
+
+    /* ── Start card ── */
+    .start-card {
+      background:var(--card); border-radius:var(--radius-lg);
+      border:1.5px solid var(--border); padding:22px 18px;
+      text-align:center; box-shadow:var(--shadow-md);
+    }
+    .start-card-icon { font-size:48px; margin-bottom:12px; }
+    .start-card h2 { font-size:20px; margin-bottom:6px; }
+    .start-card p  { font-size:13.5px; color:var(--muted); margin-bottom:18px; line-height:1.55; }
+
+    /* Filter chips */
+    .filter-row { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; margin-bottom:18px; }
+    .filter-btn {
+      padding:6px 13px; border-radius:20px; font-size:12.5px; font-weight:600;
+      font-family:var(--font-body); border:2px solid var(--border);
+      background:var(--card); color:var(--muted); cursor:pointer; transition:all .15s;
+    }
+    .filter-btn.active { background:var(--red); border-color:var(--red); color:white; }
+    .filter-btn:hover:not(.active) { border-color:var(--red); color:var(--red); }
+
+    /* Mode bar */
+    .mode-bar {
+      display:flex; gap:6px; background:var(--bg);
+      border:1.5px solid var(--border); border-radius:var(--radius-lg);
+      padding:4px; margin-bottom:18px;
+    }
+    .mode-btn {
+      flex:1; padding:8px 4px; border-radius:var(--radius-md);
+      font-size:12px; font-weight:700; font-family:var(--font-body);
+      border:none; background:none; color:var(--muted); cursor:pointer;
+      transition:all .15s; display:flex; align-items:center; justify-content:center; gap:4px;
+    }
+    .mode-btn.active { background:white; color:var(--text); box-shadow:0 1px 6px rgba(0,0,0,0.08); }
+
+    /* Start button */
+    .btn-start {
+      background:var(--red); color:white; border:none;
+      padding:13px 32px; border-radius:var(--radius-lg);
+      font-family:var(--font-display); font-size:15px; font-weight:800;
+      cursor:pointer; transition:transform .2s, box-shadow .2s;
+      box-shadow:0 4px 16px rgba(218,41,28,0.3);
+    }
+    .btn-start:hover { transform:translateY(-2px); box-shadow:0 6px 22px rgba(218,41,28,0.38); }
+    .btn-start:active { transform:scale(0.97); }
+
+    /* Stats row in start card */
+    .quiz-stats-row { display:flex; gap:0; justify-content:center; margin-bottom:16px; }
+    .quiz-stat { text-align:center; flex:1; padding:0 12px; border-right:1px solid var(--border); }
+    .quiz-stat:last-child { border-right:none; }
+    .quiz-stat-num { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--red); }
+    .quiz-stat-lbl { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-top:2px; }
+
+    /* ── Quiz card ── */
+    .quiz-container { display:none; flex-direction:column; gap:14px; }
+    .quiz-container.active { display:flex; }
+
+    .quiz-progress-bar-wrap {
+      height:4px; background:var(--border); border-radius:2px; overflow:hidden;
+    }
+    .quiz-progress-bar-fill {
+      height:100%; background:var(--red); border-radius:2px;
+      transition:width .4s cubic-bezier(0.22,1,.36,1);
+    }
+
+    .quiz-meta {
+      display:flex; align-items:center; justify-content:space-between;
+      font-size:12px; color:var(--muted);
+    }
+    .quiz-meta-cat {
+      background:var(--bg); border:1.5px solid var(--border);
+      border-radius:20px; padding:3px 10px; font-weight:600; font-size:11px;
+    }
+    .streak-badge {
+      background:linear-gradient(135deg,#ff6f00,#ffc107); color:white;
+      padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700;
+      display:none; animation:popIn .3s cubic-bezier(0.34,1.5,0.64,1);
+    }
+    @keyframes popIn { from{transform:scale(0.5);opacity:0} to{transform:scale(1);opacity:1} }
+    .streak-badge.show { display:inline-block; }
+
+    .quiz-card {
+      background:var(--card); border-radius:var(--radius-lg);
+      border:1.5px solid var(--border); padding:18px 16px;
+      box-shadow:var(--shadow-sm);
+    }
+    .quiz-question {
+      font-family:var(--font-display); font-size:16px; font-weight:700;
+      line-height:1.4; color:var(--text); margin-bottom:16px;
+    }
+
+    /* Multiple choice options */
+    .options-grid { display:flex; flex-direction:column; gap:8px; }
+    .option-btn {
+      text-align:left; padding:11px 14px;
+      background:var(--bg); border:1.5px solid var(--border);
+      border-radius:var(--radius-md); font-family:var(--font-body);
+      font-size:13.5px; font-weight:500; color:var(--text); cursor:pointer;
+      transition:border-color .15s, background .15s, transform .15s;
+      display:flex; align-items:center; gap:10px;
+    }
+    .option-btn:hover:not(:disabled) { border-color:var(--red); background:#fff5f5; transform:translateX(2px); }
+    .option-letter {
+      width:22px; height:22px; border-radius:6px;
+      background:var(--border); color:var(--muted);
+      display:flex; align-items:center; justify-content:center;
+      font-size:11px; font-weight:800; flex-shrink:0;
+    }
+    .option-btn.correct { background:#f0fdf4; border-color:#22c55e; }
+    .option-btn.correct .option-letter { background:#22c55e; color:white; }
+    .option-btn.wrong   { background:#fef2f2; border-color:#ef4444; }
+    .option-btn.wrong   .option-letter { background:#ef4444; color:white; }
+
+    /* Explanation */
+    .explanation {
+      margin-top:12px; padding:11px 13px;
+      background:#f8f7f4; border:1.5px solid var(--border);
+      border-radius:var(--radius-md); font-size:12.5px; color:var(--muted);
+      line-height:1.55; display:none;
+    }
+    .explanation.show { display:block; animation:fadeSlide .25s ease; }
+    @keyframes fadeSlide { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+    .explanation strong { color:var(--text); }
+
+    /* Flashcard mode */
+    .flashcard-wrap { perspective:1000px; }
+    .flashcard {
+      position:relative; height:180px;
+      transform-style:preserve-3d; transition:transform .45s cubic-bezier(0.4,0,0.2,1);
+      cursor:pointer;
+    }
+    .flashcard.flipped { transform:rotateX(180deg); }
+    .flashcard-front, .flashcard-back {
+      position:absolute; inset:0;
+      backface-visibility:hidden; border-radius:var(--radius-lg);
+      display:flex; align-items:center; justify-content:center;
+      padding:18px; text-align:center;
+    }
+    .flashcard-front {
+      background:var(--card); border:1.5px solid var(--border);
+      font-family:var(--font-display); font-size:15px; font-weight:700;
+      line-height:1.4; color:var(--text);
+    }
+    .flashcard-back {
+      background:linear-gradient(135deg,#1a5fa8,#0d3a6e);
+      color:white; font-size:20px; font-weight:800;
+      font-family:var(--font-display); letter-spacing:-0.3px;
+      transform:rotateX(180deg);
+    }
+    .flashcard-hint { text-align:center; font-size:11.5px; color:var(--muted); margin-top:6px; }
+
+    /* Lacunas (fill-in) mode */
+    .lacuna-wrap { display:flex; flex-direction:column; gap:10px; }
+    .lacuna-input-row { display:flex; gap:8px; align-items:center; }
+    .lacuna-input {
+      flex:1; padding:11px 14px; font-size:15px;
+      font-family:var(--font-display); font-weight:700;
+      border:2px solid var(--border); border-radius:var(--radius-md);
+      background:var(--bg); color:var(--text); outline:none;
+      text-align:center; transition:border-color .15s;
+    }
+    .lacuna-input:focus { border-color:var(--red); }
+    .lacuna-input.correct { border-color:#22c55e; background:#f0fdf4; color:#166534; }
+    .lacuna-input.wrong   { border-color:#ef4444; background:#fef2f2; color:#991b1b; }
+    .lacuna-unit { font-size:13px; font-weight:600; color:var(--muted); white-space:nowrap; }
+    .btn-check {
+      padding:11px 20px; background:var(--red); color:white; border:none;
+      border-radius:var(--radius-md); font-family:var(--font-display);
+      font-size:13px; font-weight:800; cursor:pointer; flex-shrink:0;
+      transition:background .15s;
+    }
+    .btn-check:hover { background:var(--red-dark); }
+
+    /* Timer bar */
+    .timer-wrap {
+      height:3px; background:var(--border); border-radius:2px; overflow:hidden; margin-bottom:2px;
+    }
+    .timer-fill {
+      height:100%; background:var(--red); border-radius:2px;
+      transition:width .5s linear, background .3s;
+    }
+
+    /* Nav buttons */
+    .quiz-nav { display:flex; gap:8px; margin-top:4px; }
+    .btn-next {
+      flex:1; padding:13px; background:var(--text); color:white; border:none;
+      border-radius:var(--radius-md); font-family:var(--font-display);
+      font-size:14px; font-weight:800; cursor:pointer; transition:background .15s, transform .15s;
+    }
+    .btn-next:hover { background:#2c2a26; transform:translateY(-1px); }
+    .btn-next:disabled { opacity:.4; cursor:not-allowed; transform:none; }
+
+    /* ── Result ── */
+    .result-card {
+      background:var(--card); border-radius:var(--radius-lg);
+      border:1.5px solid var(--border); padding:24px 18px;
+      text-align:center; box-shadow:var(--shadow-md); display:none;
+    }
+    .result-card.active { display:block; }
+    .result-emoji { font-size:52px; margin-bottom:10px; }
+    .result-score { font-family:var(--font-display); font-size:36px; font-weight:800; color:var(--red); }
+    .result-label { font-size:14px; color:var(--muted); margin-top:4px; margin-bottom:16px; }
+    .result-stars { font-size:26px; letter-spacing:3px; margin-bottom:18px; }
+    .result-actions { display:flex; gap:8px; }
+    .btn-restart {
+      flex:1; padding:12px; background:var(--red); color:white; border:none;
+      border-radius:var(--radius-md); font-family:var(--font-display);
+      font-size:14px; font-weight:800; cursor:pointer; transition:transform .15s;
+    }
+    .btn-restart:hover { transform:translateY(-1px); }
+    .btn-home {
+      padding:12px 16px; background:var(--bg); color:var(--text);
+      border:1.5px solid var(--border); border-radius:var(--radius-md);
+      font-family:var(--font-display); font-size:13px; font-weight:700;
+      cursor:pointer; text-decoration:none; display:flex; align-items:center;
+    }
+
+    /* Error review */
+    .error-review { margin-top:18px; text-align:left; }
+    .error-toggle {
+      background:none; border:1.5px solid var(--border); border-radius:var(--radius-md);
+      padding:10px 14px; width:100%; text-align:left; font-family:var(--font-display);
+      font-size:13px; font-weight:700; cursor:pointer; color:var(--text);
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .error-list { display:none; flex-direction:column; gap:8px; margin-top:8px; }
+    .error-list.open { display:flex; }
+    .error-item {
+      background:#fff5f5; border:1.5px solid #fecaca; border-radius:var(--radius-md);
+      padding:11px 13px;
+    }
+    .error-q { font-size:12.5px; font-weight:700; color:var(--text); margin-bottom:5px; }
+    .error-yours { font-size:12px; color:#ef4444; }
+    .error-correct { font-size:12px; color:#16a34a; font-weight:700; margin-top:2px; }
+  </style>
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') setTimeout(hideSplash, 700);
+      else window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+</head>
+<body data-page="quiz-tv">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Tempos e Validades</h1>
+        <p>Quiz Especializado</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="quiz-page">
+
+    <!-- START CARD -->
+    <div class="start-card" id="startCard">
+      <div class="start-card-icon">⏱️</div>
+      <h2>Quiz Tempos & Validades</h2>
+      <p>Tempos de UHC, validades secundárias após abertura, temperaturas de manutenção e segurança alimentar.</p>
+
+      <div class="quiz-stats-row">
+        <div class="quiz-stat"><div class="quiz-stat-num" id="totalQCount">50</div><div class="quiz-stat-lbl">Perguntas</div></div>
+        <div class="quiz-stat"><div class="quiz-stat-num">3</div><div class="quiz-stat-lbl">Categorias</div></div>
+        <div class="quiz-stat"><div class="quiz-stat-num">⏱️</div><div class="quiz-stat-lbl">Focado</div></div>
+      </div>
+
+      <div class="filter-row" id="filterRow">
+        <button class="filter-btn active" data-filter="all">Tudo</button>
+        <button class="filter-btn" data-filter="uhc">⏰ Tempos UHC</button>
+        <button class="filter-btn" data-filter="validades">📦 Validades</button>
+        <button class="filter-btn" data-filter="temp">🌡️ Temperaturas</button>
+      </div>
+
+      <div class="mode-bar">
+        <button class="mode-btn active" data-mode="mc">🎯 Múltipla</button>
+        <button class="mode-btn" data-mode="flash">⚡ Flashcard</button>
+        <button class="mode-btn" data-mode="lacuna">✏️ Lacunas</button>
+      </div>
+
+      <button class="btn-start" id="btnStart">Começar Quiz →</button>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="quiz-container" id="quizContainer">
+
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-bar-fill" id="progressFill" style="width:0%"></div>
+      </div>
+
+      <div class="quiz-meta">
+        <span class="quiz-meta-cat" id="quizCat">—</span>
+        <span id="quizCounter" style="font-weight:700;">1 / 50</span>
+        <span class="streak-badge" id="streakBadge">🔥 0</span>
+      </div>
+
+      <div class="timer-wrap"><div class="timer-fill" id="timerFill" style="width:100%"></div></div>
+
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-question" id="quizQuestion">—</div>
+
+        <!-- MC mode -->
+        <div class="options-grid" id="optionsGrid"></div>
+
+        <!-- Flashcard mode -->
+        <div class="flashcard-wrap" id="flashcardWrap" style="display:none">
+          <div class="flashcard" id="flashcard" onclick="flipCard()">
+            <div class="flashcard-front" id="flashFront">—</div>
+            <div class="flashcard-back" id="flashBack">—</div>
+          </div>
+          <div class="flashcard-hint">Toque no cartão para revelar a resposta</div>
+        </div>
+
+        <!-- Lacuna mode -->
+        <div class="lacuna-wrap" id="lacunaWrap" style="display:none">
+          <div class="lacuna-input-row">
+            <input class="lacuna-input" id="lacunaInput" type="text" inputmode="numeric" placeholder="Digite o número">
+            <span class="lacuna-unit" id="lacunaUnit"></span>
+            <button class="btn-check" id="btnCheck" onclick="checkLacuna()">Verificar</button>
+          </div>
+        </div>
+
+        <div class="explanation" id="explanation"></div>
+      </div>
+
+      <!-- Flashcard self-eval -->
+      <div id="flashEval" style="display:none;gap:8px;flex-direction:column;">
+        <div style="font-size:12px;color:var(--muted);text-align:center;">Você acertou?</div>
+        <div style="display:flex;gap:8px;">
+          <button onclick="flashAnswer(true)"  style="flex:1;padding:11px;background:#f0fdf4;border:1.5px solid #22c55e;border-radius:var(--radius-md);font-family:var(--font-display);font-size:14px;font-weight:700;color:#166534;cursor:pointer;">✅ Acertei</button>
+          <button onclick="flashAnswer(false)" style="flex:1;padding:11px;background:#fef2f2;border:1.5px solid #ef4444;border-radius:var(--radius-md);font-family:var(--font-display);font-size:14px;font-weight:700;color:#991b1b;cursor:pointer;">❌ Errei</button>
+        </div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn-next" id="btnNext" onclick="nextQuestion()" disabled>Próxima →</button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-card" id="resultCard">
+      <div class="result-emoji" id="resultEmoji">🏆</div>
+      <div class="result-score" id="resultScore">0/0</div>
+      <div class="result-label" id="resultLabel">—</div>
+      <div class="result-stars" id="resultStars">⭐⭐⭐</div>
+
+      <div class="result-actions">
+        <a href="../index.html" class="btn-home">🏠 Início</a>
+        <button class="btn-restart" id="btnRestart" onclick="restart()">🔄 Refazer</button>
+      </div>
+
+      <div class="error-review" id="errorReview" style="display:none">
+        <button class="error-toggle" onclick="toggleErrors(this)">
+          <span>📋 Ver erros</span><span id="errorToggleIcon">▼</span>
+        </button>
+        <div class="error-list" id="errorList"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Quiz Tempos e Validades · Desenvolvido por Adrian E. Silva
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* ============================================================
+       BANCO DE QUESTÕES — TEMPOS E VALIDADES
+       ============================================================ */
+    const ALL_QUESTIONS = [
+
+      /* ── UHC / TEMPOS DE MANUTENÇÃO ── */
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil dos hambúrgueres 10:1, 3:1, 4:1 e Angus na UHC?",
+        options:["10 min","15 min","20 min","30 min"], answer:"15 min",
+        explanation:"Hambúrgueres 10:1, 3:1, 4:1 e Angus têm vida útil de 15 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil do Big Tasty na UHC?",
+        options:["10 min","15 min","20 min","30 min"], answer:"30 min",
+        explanation:"O Big Tasty tem vida útil de 30 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil do Chicken Junior na UHC?",
+        options:["10 min","15 min","20 min","30 min"], answer:"15 min",
+        explanation:"O Chicken Junior tem vida útil de 15 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil do Chicken, Fish e CBO na UHC?",
+        options:["10 min","15 min","20 min","30 min"], answer:"30 min",
+        explanation:"Chicken, Fish e CBO têm vida útil de 30 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil do Nuggets na UHC?",
+        options:["10 min","15 min","20 min","30 min"], answer:"20 min",
+        explanation:"Os Nuggets têm vida útil de 20 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil do Grill (frango grelhado) na UHC?",
+        options:["20 min","30 min","45 min","60 min"], answer:"60 min",
+        explanation:"O Grill tem vida útil de 60 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil do Ovo In Natura na UHC após a chapa?",
+        options:["10 min","15 min","20 min","30 min"], answer:"20 min",
+        explanation:"O ovo tem vida útil de 20 minutos na UHC após ser preparado na chapa." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil da Crispy Chicken na UHC?",
+        options:["10 min","15 min","20 min","30 min"], answer:"30 min",
+        explanation:"A Carne Crispy (Chicken Crispy) tem vida útil de 30 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"lacuna",
+        question:"O hambúrguer 10:1 tem vida útil de ___ minutos na UHC.",
+        answer:"15", unit:"min",
+        explanation:"Hambúrgueres 10:1 (e também 3:1, 4:1, Angus) têm 15 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"lacuna",
+        question:"O Big Tasty tem vida útil de ___ minutos na UHC.",
+        answer:"30", unit:"min",
+        explanation:"O Big Tasty tem 30 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"lacuna",
+        question:"O Grill tem vida útil de ___ minutos na UHC.",
+        answer:"60", unit:"min",
+        explanation:"O Grill tem 60 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"lacuna",
+        question:"Os Nuggets têm vida útil de ___ minutos na UHC.",
+        answer:"20", unit:"min",
+        explanation:"Nuggets têm 20 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"flash",
+        question:"Qual o tempo de UHC do hambúrguer Angus?", answer:"15 min",
+        explanation:"Angus tem 15 minutos na UHC (igual ao 10:1, 3:1 e 4:1)." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"flash",
+        question:"Qual o tempo de UHC do Chicken (frango empanado)?", answer:"30 min",
+        explanation:"Chicken tem 30 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Após quantas horas os produtos devem ser descartados do congelador portátil?",
+        options:["1 hora","2 horas","4 horas","8 horas"], answer:"2 horas",
+        explanation:"Produtos no congelador portátil devem ser descartados após 2 horas." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é a temperatura de operação da UHC?",
+        options:["60°C","72°C","79°C","85°C"], answer:"79°C",
+        explanation:"A UHC opera a 79°C para manter os produtos seguros e na temperatura correta." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil do Pão de Queijo na UHC?",
+        options:["10 min","20 min","30 min","60 min"], answer:"30 min",
+        explanation:"O Pão de Queijo tem vida útil de 30 minutos na UHC." },
+
+      { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
+        question:"Qual é o tempo de vida útil do Croissant de Presunto e Queijo na UHC?",
+        options:["20 min","30 min","45 min","60 min"], answer:"60 min",
+        explanation:"O Croissant de Presunto e Queijo tem vida útil de 60 minutos na UHC." },
+
+      /* ── VALIDADES SECUNDÁRIAS ── */
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade do molho Cheddar após aberto?",
+        options:["2 horas","4 horas","8 horas","24 horas"], answer:"8 horas",
+        explanation:"O molho Cheddar tem validade de 8 horas após aberto, incluindo 2 horas de ambientação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade do molho CBO após aberto?",
+        options:["8 horas","12 horas","24 horas","48 horas"], answer:"24 horas",
+        explanation:"O molho CBO tem validade de 24 horas após aberto, incluindo as 2 horas de ambientação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é o tempo de ambientação do molho Cheddar antes de usar?",
+        options:["30 min","1 hora","2 horas","3 horas"], answer:"2 horas",
+        explanation:"O molho Cheddar requer 2 horas de ambientação após sair do refrigerador." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é o tempo de reidratação da cebola desidratada?",
+        options:["15 min","30 min","1 hora","2 horas"], answer:"1 hora",
+        explanation:"A cebola desidratada precisa de 1 hora para reidratação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Após preparada, qual é a validade da cebola reidratada na mesa de condimentação?",
+        options:["1 hora","2 horas","4 horas","6 horas"], answer:"2 horas",
+        explanation:"A cebola reidratada tem validade de 2 horas na mesa de condimentação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade do Cream Cheese após aberto, sob refrigeração?",
+        options:["2 dias","3 dias","5 dias","7 dias"], answer:"5 dias",
+        explanation:"O Cream Cheese tem validade de 5 dias sob refrigeração após aberto." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade do Cream Cheese na mesa de condimentos?",
+        options:["15 min","20 min","30 min","1 hora"], answer:"30 min",
+        explanation:"O Cream Cheese tem validade de 30 minutos na mesa de condimentos." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade do café preparado na jarra na máquina de café?",
+        options:["15 min","30 min","1 hora","2 horas"], answer:"30 min",
+        explanation:"O café em grão torrado e moído (preparado) tem validade de 30 minutos na jarra na máquina de café." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é o prazo de validade da cebola desidratada após a embalagem aberta (sem reidratar)?",
+        options:["4 horas","8 horas","12 horas","24 horas"], answer:"24 horas",
+        explanation:"A cebola desidratada seca tem validade de 24 horas após a embalagem aberta." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade do Mix Margarina com Manteiga aberto na mesa de condimentação?",
+        options:["15 min","20 min","30 min","1 hora"], answer:"30 min",
+        explanation:"O Mix Margarina com Manteiga tem validade de 30 minutos aberto na mesa de condimentação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade do Mix Margarina com Manteiga aberto sob refrigeração?",
+        options:["5 dias","7 dias","10 dias","14 dias"], answer:"10 dias",
+        explanation:"O Mix Margarina com Manteiga tem validade de 10 dias aberto sob refrigeração." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade secundária da Torta (Banana/Maçã) no congelador portátil?",
+        options:["30 min","1 hora","2 horas","4 horas"], answer:"2 horas",
+        explanation:"As tortas têm validade de 2 horas no congelador portátil após o preparo." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é o prazo de resfriamento necessário para as Tortas após o forno?",
+        options:["10 min","15 min","20 min","30 min"], answer:"20 min",
+        explanation:"As tortas precisam de 20 minutos de resfriamento após saírem do forno." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade secundária do Pão de Queijo na vitrine refrigerada do McCafé?",
+        options:["4 horas","8 horas","12 horas","24 horas"], answer:"12 horas",
+        explanation:"O Pão de Queijo tem validade de 12 horas na vitrine refrigerada após o assamento." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"lacuna",
+        question:"O molho Cheddar tem validade de ___ horas após aberto.",
+        answer:"8", unit:"horas",
+        explanation:"O molho Cheddar tem 8 horas de validade após aberto, incluindo 2 horas de ambientação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"lacuna",
+        question:"O molho CBO tem validade de ___ horas após aberto.",
+        answer:"24", unit:"horas",
+        explanation:"O molho CBO tem 24 horas de validade após aberto." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"lacuna",
+        question:"O café preparado na jarra tem validade de ___ minutos.",
+        answer:"30", unit:"min",
+        explanation:"O café preparado tem validade de 30 minutos na jarra na máquina de café." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"lacuna",
+        question:"O Cream Cheese aberto tem validade de ___ dias sob refrigeração.",
+        answer:"5", unit:"dias",
+        explanation:"O Cream Cheese tem 5 dias de validade sob refrigeração após aberto." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"flash",
+        question:"Validade do molho Cheddar após aberto?", answer:"8 horas",
+        explanation:"8 horas, incluindo 2 horas de ambientação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"flash",
+        question:"Validade da cebola reidratada na mesa de condimentação?", answer:"2 horas",
+        explanation:"A cebola reidratada dura 2 horas na mesa de condimentação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"flash",
+        question:"Validade do Mix Margarina com Manteiga aberto na mesa?", answer:"30 min",
+        explanation:"30 minutos aberto na mesa de condimentação." },
+
+      { cat:"validades", category:"📦 Validades Secundárias", mode:"mc",
+        question:"Qual é a validade secundária da cebola desidratada preparada (reidratada) sob refrigeração?",
+        options:["8 horas","12 horas","18 horas","24 horas"], answer:"24 horas",
+        explanation:"A cebola preparada/reidratada tem validade de 24 horas sob refrigeração." },
+
+      /* ── TEMPERATURAS ── */
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual é a 'zona de perigo' de temperatura para alimentos (faixa onde bactérias se multiplicam)?",
+        options:["0°C a 30°C","5°C a 60°C","10°C a 70°C","0°C a 55°C"], answer:"5°C a 60°C",
+        explanation:"A zona de perigo é de 5°C a 60°C. Nessa faixa bactérias se multiplicam rapidamente. Fora dela, o crescimento é interrompido." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"A qual temperatura a UHC deve operar para manter os produtos quentes?",
+        options:["65°C","72°C","79°C","85°C"], answer:"79°C",
+        explanation:"A UHC opera a 79°C, garantindo que os produtos se mantenham acima da zona de perigo." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual deve ser a temperatura mínima interna dos produtos após o cozimento para segurança alimentar?",
+        options:["60°C","70°C","74°C","80°C"], answer:"74°C",
+        explanation:"A temperatura interna mínima para produtos cozidos é de 74°C, garantindo eliminação de patógenos." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual é a temperatura de operação da chapa superior (Best Burger)?",
+        options:["180°C","200°C","218°C","230°C"], answer:"218°C",
+        explanation:"A chapa superior (Best Burger) opera a 218°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual é a temperatura de operação da chapa inferior (Best Burger)?",
+        options:["160°C","177°C","200°C","218°C"], answer:"177°C",
+        explanation:"A chapa inferior (Best Burger) opera a 177°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual é a temperatura máxima para o sorvete de máquina (soft serve)?",
+        options:["−12°C a −10°C","−9°C a −8°C","−6°C a −4°C","−3°C a 0°C"], answer:"−9°C a −8°C",
+        explanation:"O sorvete de máquina deve ser extraído entre −9°C e −8°C para textura e segurança corretas." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"A qual temperatura devem ser mantidos os produtos congelados?",
+        options:["−10°C","−15°C","−18°C","−22°C"], answer:"−18°C",
+        explanation:"Produtos congelados devem ser mantidos a −18°C ou menos para garantir a segurança e qualidade." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"A qual temperatura máxima devem ser mantidos os produtos refrigerados?",
+        options:["0°C","4°C","8°C","10°C"], answer:"4°C",
+        explanation:"Produtos refrigerados devem ser mantidos a no máximo 4°C para inibir o crescimento bacteriano." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual a temperatura mínima de fritagem do óleo para frango e tortas?",
+        options:["168°C","175°C","180°C","190°C"], answer:"180°C",
+        explanation:"O óleo para frango e tortas deve atingir no mínimo 180°C para garantir o cozimento correto." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual é o intervalo de temperatura para recebimento de carnes frescas refrigeradas?",
+        options:["0°C a 4°C","1°C a 5°C","2°C a 7°C","0°C a 10°C"], answer:"0°C a 4°C",
+        explanation:"Carnes frescas refrigeradas devem ser recebidas entre 0°C e 4°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"lacuna",
+        question:"A zona de perigo se inicia em ___ °C (temperatura mínima).",
+        answer:"5", unit:"°C",
+        explanation:"A zona de perigo vai de 5°C a 60°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"lacuna",
+        question:"A zona de perigo termina em ___ °C (temperatura máxima).",
+        answer:"60", unit:"°C",
+        explanation:"A zona de perigo vai de 5°C a 60°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"lacuna",
+        question:"A chapa superior (Best Burger) opera a ___ °C.",
+        answer:"218", unit:"°C",
+        explanation:"Chapa superior: 218°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"lacuna",
+        question:"A UHC opera a ___ °C.",
+        answer:"79", unit:"°C",
+        explanation:"A UHC opera a 79°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"flash",
+        question:"Qual a zona de perigo alimentar?", answer:"5°C a 60°C",
+        explanation:"Nessa faixa bactérias se multiplicam rapidamente." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"flash",
+        question:"Temperatura de operação da UHC?", answer:"79°C",
+        explanation:"A UHC opera a 79°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"flash",
+        question:"Temperatura mínima interna de alimentos cozidos?", answer:"74°C",
+        explanation:"74°C garante a eliminação de patógenos como Salmonella e E. coli." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"flash",
+        question:"Temperatura de extração do sorvete?", answer:"−9°C a −8°C",
+        explanation:"O sorvete deve sair da máquina entre −9°C e −8°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual a temperatura dos banho-maria das coberturas (sundae)?",
+        options:["46°C a 52°C","52°C a 57°C","57°C a 63°C","63°C a 70°C"], answer:"57°C a 63°C",
+        explanation:"O banho-maria das coberturas deve ser mantido entre 57°C e 63°C." },
+
+      { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
+        question:"Qual deve ser a temperatura máxima de recebimento de produtos congelados?",
+        options:["−5°C","−10°C","−15°C","−18°C"], answer:"−18°C",
+        explanation:"Produtos congelados devem ser recebidos a −18°C ou menos." },
+
+    ];
+
+    /* ============================================================
+       STATE & CONFIG
+       ============================================================ */
+    let currentQuestions = [];
+    let currentIndex     = 0;
+    let score            = 0;
+    let streak           = 0;
+    let maxStreak        = 0;
+    let errors           = [];
+    let answered         = false;
+    let activeFilter     = 'all';
+    let activeMode       = 'mc';
+    let timerInterval    = null;
+    let timerDuration    = 15; // seconds per question
+
+    /* ============================================================
+       DOM REFS
+       ============================================================ */
+    const startCard      = document.getElementById('startCard');
+    const quizContainer  = document.getElementById('quizContainer');
+    const resultCard     = document.getElementById('resultCard');
+    const quizQuestion   = document.getElementById('quizQuestion');
+    const optionsGrid    = document.getElementById('optionsGrid');
+    const quizCat        = document.getElementById('quizCat');
+    const quizCounter    = document.getElementById('quizCounter');
+    const progressFill   = document.getElementById('progressFill');
+    const streakBadge    = document.getElementById('streakBadge');
+    const explanation    = document.getElementById('explanation');
+    const btnNext        = document.getElementById('btnNext');
+    const flashcardWrap  = document.getElementById('flashcardWrap');
+    const lacunaWrap     = document.getElementById('lacunaWrap');
+    const flashEval      = document.getElementById('flashEval');
+    const flashcard      = document.getElementById('flashcard');
+    const flashFront     = document.getElementById('flashFront');
+    const flashBack      = document.getElementById('flashBack');
+    const lacunaInput    = document.getElementById('lacunaInput');
+    const lacunaUnit     = document.getElementById('lacunaUnit');
+    const timerFill      = document.getElementById('timerFill');
+
+    /* ============================================================
+       FILTER & MODE SELECTION
+       ============================================================ */
+    document.getElementById('filterRow').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      updateTotalCount();
+    });
+
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeMode = btn.dataset.mode;
+      });
+    });
+
+    function updateTotalCount() {
+      let qs = activeFilter === 'all' ? ALL_QUESTIONS
+             : ALL_QUESTIONS.filter(q => q.cat === activeFilter);
+      document.getElementById('totalQCount').textContent = qs.length;
+    }
+    updateTotalCount();
+
+    /* ============================================================
+       START
+       ============================================================ */
+    document.getElementById('btnStart').addEventListener('click', startQuiz);
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function startQuiz() {
+      let pool = activeFilter === 'all' ? [...ALL_QUESTIONS]
+               : ALL_QUESTIONS.filter(q => q.cat === activeFilter);
+
+      // Filter by mode compatibility
+      if (activeMode === 'lacuna') {
+        pool = pool.filter(q => q.mode === 'lacuna' || q.mode === 'mc');
+      } else if (activeMode === 'flash') {
+        pool = pool.filter(q => q.mode === 'flash' || q.mode === 'mc');
+      }
+      // mc mode can use all
+
+      currentQuestions = shuffle(pool);
+      currentIndex = 0; score = 0; streak = 0; maxStreak = 0; errors = [];
+
+      startCard.style.display = 'none';
+      quizContainer.classList.add('active');
+      resultCard.classList.remove('active');
+
+      renderQuestion();
+    }
+
+    /* ============================================================
+       RENDER QUESTION
+       ============================================================ */
+    function renderQuestion() {
+      if (currentIndex >= currentQuestions.length) { showResult(); return; }
+      answered = false;
+      btnNext.disabled = true;
+
+      const q = currentQuestions[currentIndex];
+      quizCat.textContent     = q.category;
+      quizQuestion.textContent= q.question;
+      quizCounter.textContent = `${currentIndex + 1} / ${currentQuestions.length}`;
+      progressFill.style.width= `${(currentIndex / currentQuestions.length) * 100}%`;
+      explanation.textContent = '';
+      explanation.classList.remove('show');
+
+      // Streak badge
+      streakBadge.classList.toggle('show', streak >= 3);
+      if (streak >= 3) streakBadge.textContent = `🔥 ${streak}`;
+
+      // Reset mode panels
+      optionsGrid.style.display     = 'none';
+      flashcardWrap.style.display   = 'none';
+      lacunaWrap.style.display      = 'none';
+      flashEval.style.display       = 'none';
+      flashcard.classList.remove('flipped');
+
+      // Decide which mode to show
+      const renderMode = activeMode === 'mc'     ? 'mc'
+                       : activeMode === 'flash'  ? (q.mode === 'lacuna' ? 'mc' : 'flash')
+                       : /* lacuna */ (q.mode === 'lacuna' ? 'lacuna' : 'mc');
+
+      if (renderMode === 'mc') renderMC(q);
+      else if (renderMode === 'flash') renderFlash(q);
+      else renderLacuna(q);
+
+      startTimer();
+    }
+
+    /* ---- MC ---- */
+    function renderMC(q) {
+      optionsGrid.style.display = 'flex';
+      const letters = ['A','B','C','D'];
+      const opts    = shuffle([...q.options]);
+      optionsGrid.innerHTML = opts.map((opt, i) =>
+        `<button class="option-btn" onclick="selectOption(this, '${opt}', '${q.answer}', \`${q.explanation}\`)">
+          <span class="option-letter">${letters[i]}</span>
+          <span>${opt}</span>
+        </button>`
+      ).join('');
+    }
+
+    function selectOption(btn, selected, correct, exp) {
+      if (answered) return;
+      answered = true;
+      clearInterval(timerInterval);
+      timerFill.style.width = '0%';
+
+      const isCorrect = selected === correct;
+      document.querySelectorAll('.option-btn').forEach(b => {
+        b.disabled = true;
+        const label = b.querySelector('span:last-child').textContent;
+        if (label === correct) b.classList.add('correct');
+        if (b === btn && !isCorrect) b.classList.add('wrong');
+      });
+
+      handleResult(isCorrect, currentQuestions[currentIndex]);
+      explanation.innerHTML = `<strong>${isCorrect ? '✅ Correto!' : '❌ Incorreto.'}</strong> ${exp}`;
+      explanation.classList.add('show');
+      btnNext.disabled = false;
+    }
+
+    /* ---- Flashcard ---- */
+    function renderFlash(q) {
+      flashcardWrap.style.display = 'block';
+      flashFront.textContent = q.question;
+      flashBack.textContent  = q.answer;
+    }
+
+    function flipCard() {
+      if (answered) return;
+      flashcard.classList.toggle('flipped');
+      if (flashcard.classList.contains('flipped')) {
+        flashEval.style.display = 'flex';
+        flashEval.style.flexDirection = 'column';
+      }
+    }
+
+    function flashAnswer(correct) {
+      answered = true;
+      clearInterval(timerInterval);
+      timerFill.style.width = '0%';
+      flashEval.style.display = 'none';
+      const q = currentQuestions[currentIndex];
+      handleResult(correct, q);
+      explanation.innerHTML = `<strong>${correct ? '✅ Certo!' : '❌ Errou.'}</strong> ${q.explanation}`;
+      explanation.classList.add('show');
+      btnNext.disabled = false;
+    }
+
+    /* ---- Lacuna ---- */
+    function renderLacuna(q) {
+      lacunaWrap.style.display = 'flex';
+      lacunaInput.value = '';
+      lacunaInput.classList.remove('correct','wrong');
+      lacunaUnit.textContent = q.unit || '';
+      lacunaInput.focus();
+    }
+
+    function checkLacuna() {
+      if (answered) return;
+      const q   = currentQuestions[currentIndex];
+      const val = lacunaInput.value.trim().replace(',','.');
+      const ans = String(q.answer).trim().replace(',','.');
+      const ok  = val === ans || parseFloat(val) === parseFloat(ans);
+      answered = true;
+      clearInterval(timerInterval);
+      timerFill.style.width = '0%';
+
+      lacunaInput.classList.add(ok ? 'correct' : 'wrong');
+      if (!ok) lacunaInput.value = q.answer;
+      handleResult(ok, q);
+      explanation.innerHTML = `<strong>${ok ? '✅ Correto!' : `❌ Incorreto. Resposta: ${q.answer} ${q.unit||''}`}</strong> ${q.explanation}`;
+      explanation.classList.add('show');
+      btnNext.disabled = false;
+    }
+
+    lacunaInput && lacunaInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkLacuna();
+    });
+
+    /* ============================================================
+       TIMER
+       ============================================================ */
+    function startTimer() {
+      clearInterval(timerInterval);
+      let elapsed = 0;
+      timerFill.style.width = '100%';
+      timerFill.style.background = 'var(--red)';
+      timerFill.style.transition = 'none';
+
+      setTimeout(() => {
+        timerFill.style.transition = `width ${timerDuration}s linear, background .3s`;
+        timerFill.style.width = '0%';
+      }, 50);
+
+      timerInterval = setInterval(() => {
+        elapsed++;
+        const pct = 1 - (elapsed / timerDuration);
+        if (pct < 0.25) timerFill.style.background = '#ef4444';
+        if (elapsed >= timerDuration) {
+          clearInterval(timerInterval);
+          if (!answered) timeOut();
+        }
+      }, 1000);
+    }
+
+    function timeOut() {
+      answered = true;
+      const q = currentQuestions[currentIndex];
+      document.querySelectorAll('.option-btn').forEach(b => {
+        b.disabled = true;
+        if (b.querySelector('span:last-child').textContent === q.answer) b.classList.add('correct');
+      });
+      handleResult(false, q);
+      explanation.innerHTML = `<strong>⏰ Tempo esgotado.</strong> Resposta correta: <strong>${q.answer}</strong>. ${q.explanation}`;
+      explanation.classList.add('show');
+      btnNext.disabled = false;
+    }
+
+    /* ============================================================
+       HANDLE RESULT
+       ============================================================ */
+    function handleResult(correct, q) {
+      if (correct) {
+        score++;
+        streak++;
+        if (streak > maxStreak) maxStreak = streak;
+      } else {
+        errors.push({ q: q.question, yours: '—', correct: q.answer });
+        streak = 0;
+      }
+      streakBadge.classList.toggle('show', streak >= 3);
+      if (streak >= 3) streakBadge.textContent = `🔥 ${streak}`;
+    }
+
+    /* ============================================================
+       NEXT / RESULT
+       ============================================================ */
+    function nextQuestion() {
+      currentIndex++;
+      renderQuestion();
+    }
+    window.nextQuestion = nextQuestion;
+
+    function showResult() {
+      quizContainer.classList.remove('active');
+      resultCard.classList.add('active');
+
+      const total = currentQuestions.length;
+      const pct   = Math.round((score / total) * 100);
+      const emoji = pct >= 90 ? '🏆' : pct >= 70 ? '🎉' : pct >= 50 ? '👍' : '📖';
+      const label = pct >= 90 ? 'Excelente! Você domina os tempos e validades!'
+                  : pct >= 70 ? 'Muito bom! Continue praticando.'
+                  : pct >= 50 ? 'Você está no caminho certo. Revise os erros.'
+                  : 'Precisa reforçar o estudo. Consulte os guias!';
+      const stars = pct >= 90 ? '⭐⭐⭐' : pct >= 70 ? '⭐⭐' : '⭐';
+
+      document.getElementById('resultEmoji').textContent  = emoji;
+      document.getElementById('resultScore').textContent  = `${score}/${total}`;
+      document.getElementById('resultLabel').textContent  = label;
+      document.getElementById('resultStars').textContent  = stars;
+      progressFill.style.width = '100%';
+
+      // Save history
+      const hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+      hist.unshift({
+        score, total, guia: 'Tempos e Validades',
+        date: new Date().toLocaleDateString('pt-BR'),
+        pct
+      });
+      localStorage.setItem('mc_quiz_history', JSON.stringify(hist.slice(0, 20)));
+
+      // Show error review
+      const er = document.getElementById('errorReview');
+      const el = document.getElementById('errorList');
+      if (errors.length > 0) {
+        er.style.display = 'block';
+        el.innerHTML = errors.map(e =>
+          `<div class="error-item">
+            <div class="error-q">❓ ${e.q}</div>
+            <div class="error-correct">✅ ${e.correct}</div>
+          </div>`
+        ).join('');
+      } else {
+        er.style.display = 'none';
+      }
+    }
+
+    function restart() {
+      resultCard.classList.remove('active');
+      startCard.style.display = 'block';
+    }
+    window.restart = restart;
+
+    function toggleErrors(btn) {
+      const list = document.getElementById('errorList');
+      const icon = document.getElementById('errorToggleIcon');
+      list.classList.toggle('open');
+      icon.textContent = list.classList.contains('open') ? '▲' : '▼';
+    }
+    window.toggleErrors = toggleErrors;
+    window.flipCard = flipCard;
+    window.flashAnswer = flashAnswer;
+    window.checkLacuna = checkLacuna;
+  </script>
+</body>
+</html>
