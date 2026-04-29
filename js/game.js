@@ -136,7 +136,7 @@ function renderGame() {
     ${sub?`<div class="jg-recipe-box"><div class="jg-recipe-title">📋 Composição oficial</div><div class="jg-recipe-list">${sw.correct.map(i=>`<span class="jg-recipe-item">${ingEmoji(i)} ${i}</span>`).join('')}</div></div>`:''}`;
 
   window._toggleIng=ing=>{if(state.submitted)return;if(state.selected.has(ing))state.selected.delete(ing);else state.selected.add(ing);renderGame();};
-  window._confirmSel=()=>{if(!state.selected.size)return;const correct2=new Set(sw.correct),missed=sw.correct.filter(i=>!state.selected.has(i)),wrong=[...state.selected].filter(i=>!correct2.has(i)),perfect=!missed.length&&!wrong.length;state.submitted=true;const ex=state.session.find(e=>e.id===sw.id);if(!ex){state.session.push({id:sw.id,perfect});state.score.played++;if(perfect)state.score.perfect++;}else if(perfect&&!ex.perfect){ex.perfect=true;state.score.perfect++;}renderGame();};
+  window._confirmSel=()=>{if(!state.selected.size)return;const correct2=new Set(sw.correct),missed=sw.correct.filter(i=>!state.selected.has(i)),wrong=[...state.selected].filter(i=>!correct2.has(i)),perfect=!missed.length&&!wrong.length;state.submitted=true;const ex=state.session.find(e=>e.id===sw.id);if(!ex){state.session.push({id:sw.id,perfect});state.score.played++;if(perfect)state.score.perfect++;}else if(perfect&&!ex.perfect){ex.perfect=true;state.score.perfect++;}if(perfect&&window.Gamificacao)window.Gamificacao.onJogoComplete();renderGame();};
   window._nextSw=()=>{const idx=SANDWICHES.findIndex(s=>s.id===sw.id);window._startGame(SANDWICHES[(idx+1)%SANDWICHES.length].id);};
   window._goMenu=()=>{state.phase='menu';render();};
 }

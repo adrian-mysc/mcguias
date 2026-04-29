@@ -730,7 +730,18 @@ function initQuiz(questions, guiaName) {
     var avgSec = pool.length > 0 ? Math.round(elapsed / pool.length) : 0;
     if (window._quizKeyHandler) { document.removeEventListener('keydown', window._quizKeyHandler); window._quizKeyHandler = null; }
     saveQuizResult(guiaName || window._quizGuia || "Simulado", score, pool.length);
-    var isRoot     = window.location.pathname.indexOf("/pages/") !== -1;
+    if (window.Gamificacao) {
+      window.Gamificacao.onQuizComplete({
+        guide:       (guiaName || window._quizGuia || 'simulado').toLowerCase(),
+        score:       score,
+        total:       pool.length,
+        pct:         Math.round((score / pool.length) * 100),
+        hour:        new Date().getHours(),
+        maxStreak:   bestStreak || 0,
+        fastAnswers: 0,
+        mode:        'mc',
+      });
+    }
     var homeLink   = isRoot ? "../index.html" : "index.html";
     var isQuizPage = window.location.pathname.indexOf("quiz.html") !== -1;
     window.backToSetup = function() {
@@ -855,6 +866,7 @@ function initFlashcard(questions, guiaName) {
   window.revealCard = () => {
     document.getElementById('fc').classList.add('revealed');
     document.getElementById('fc-nav').style.display = 'flex';
+    if (window.Gamificacao) window.Gamificacao.onFlashcard();
   };
   window.rateCard = (didKnow) => {
     if (didKnow) knew++; else didntKnow++;
@@ -1157,8 +1169,18 @@ function initLacuna(questions, guiaName) {
     var medal    = halfPct >= 80 ? '🏆' : halfPct >= 60 ? '👍' : '📖';
 
     saveQuizResult(score + Math.round(scoreHalf * 0.5), total, (guiaName || 'Lacunas') + ' ✏️');
-
-    app.innerHTML =
+    if (window.Gamificacao) {
+      window.Gamificacao.onQuizComplete({
+        guide:      (guiaName || window._quizGuia || 'lacunas').toLowerCase(),
+        score:      score,
+        total:      total,
+        pct:        halfPct,
+        hour:       new Date().getHours(),
+        maxStreak:  0,
+        fastAnswers:0,
+        mode:       'lacuna',
+      });
+    }
       '<div style="text-align:center;padding:16px 0;">'
       + '<div style="font-size:48px;margin-bottom:8px;">' + medal + '</div>'
       + '<div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--text);margin-bottom:4px;">' + halfPct + '%</div>'
