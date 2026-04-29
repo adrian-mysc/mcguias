@@ -1,6 +1,6 @@
-// MC Guias — Service Worker v14
+// MC Guias — Service Worker v15
 
-const CACHE = "mc-guias-v24";
+const CACHE = "mc-guias-v25";
 const offlineFallbackPage = "/mcguias/offline.html";
 
 // ---- Install: pre-cache all pages ----
@@ -13,12 +13,14 @@ self.addEventListener('install', async (event) => {
       '/mcguias/css/styles.css',
       '/mcguias/js/main.js',
       '/mcguias/js/game.js',
+      '/mcguias/js/gamificacao.js',
       '/mcguias/manifest.json',
       '/mcguias/icons/icon-192.png',
       '/mcguias/icons/icon-512.png',
       '/mcguias/icons/splash-icon.png',
       '/mcguias/pages/quiz.html',
       '/mcguias/pages/quiz-tempos-validades.html',
+      '/mcguias/pages/conquistas.html',
       '/mcguias/pages/chapa.html',
       '/mcguias/pages/lope.html',
       '/mcguias/pages/lope2.html',
