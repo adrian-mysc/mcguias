@@ -843,10 +843,74 @@
     }
 
     /* ---- MC ---- */
+    /* Gera opções plausíveis para perguntas lacuna/flash sem options definidas */
+    function generateOptions(answer) {
+      const ans = String(answer).trim();
+
+      // Padrões numéricos com unidade (ex: "15 min", "2 horas", "79°C", "5 dias")
+      const numUnit = ans.match(/^(-?\d+(?:[,.]?\d+)?)\s*(.*)$/);
+      if (numUnit) {
+        const num  = parseFloat(numUnit[1].replace(',', '.'));
+        const unit = numUnit[2].trim();
+
+        // Conjuntos pré-definidos por unidade para máxima plausibilidade
+        const pools = {
+          'min':    [10, 15, 20, 30, 45, 60, 90, 120],
+          'minutos':[10, 15, 20, 30, 45, 60, 90, 120],
+          'horas':  [1, 2, 4, 6, 8, 12, 24, 48],
+          'hora':   [1, 2, 4, 6, 8, 12, 24, 48],
+          'dias':   [1, 2, 3, 5, 7, 10, 14, 30],
+          'dia':    [1, 2, 3, 5, 7, 10, 14, 30],
+          '°C':     [0, 4, 5, 60, 72, 74, 75, 79, 85, 100],
+          '°c':     [0, 4, 5, 60, 72, 74, 75, 79, 85, 100],
+        };
+        const unitKey = Object.keys(pools).find(k => unit.toLowerCase().startsWith(k));
+        let candidates = unitKey
+          ? pools[unitKey].filter(n => n !== num)
+          : [num * 0.5, num * 2, num + Math.ceil(num * 0.3)].map(Math.round).filter(n => n > 0 && n !== num);
+
+        // Garante ao menos 3 distractores únicos
+        const seen = new Set([num]);
+        const distractors = [];
+        for (const c of candidates) {
+          if (!seen.has(c)) { seen.add(c); distractors.push(c); }
+          if (distractors.length === 3) break;
+        }
+        // Completa se faltar
+        let delta = 1;
+        while (distractors.length < 3) {
+          const candidate = num + delta;
+          if (!seen.has(candidate) && candidate > 0) { seen.add(candidate); distractors.push(candidate); }
+          delta = delta > 0 ? -delta : -delta + 1;
+        }
+        const opts4 = shuffle([num, ...distractors.slice(0, 3)].map(n => {
+          const display = Number.isInteger(n) ? String(n) : String(n).replace('.', ',');
+          return unit ? `${display} ${unit}` : display;
+        }));
+        return { opts: opts4, correctLabel: unit ? `${num} ${unit}` : String(num) };
+      }
+
+      // Resposta de texto puro — retorna apenas a opção correta + genéricas
+      return {
+        opts: shuffle([ans, 'Não sei', 'Outra opção', 'Nenhuma das anteriores']),
+        correctLabel: ans
+      };
+    }
+
     function renderMC(q) {
       optionsGrid.style.display = 'flex';
       const letters = ['A','B','C','D'];
-      const opts    = shuffle([...q.options]);
+
+      // Se a questão não tem options (lacuna/flash forçadas ao modo MC), gera automaticamente
+      let opts, correctLabel;
+      if (q.options && q.options.length) {
+        opts = shuffle([...q.options]);
+        correctLabel = q.answer;
+      } else {
+        const gen = generateOptions(q.answer);
+        opts = gen.opts;
+        correctLabel = gen.correctLabel;
+      }
 
       optionsGrid.innerHTML = opts.map((opt, i) =>
         `<button class="option-btn">
@@ -860,9 +924,11 @@
       btns.forEach((btn, i) => {
         btn.querySelector('span:last-child').textContent = opts[i];
         btn.addEventListener('click', function() {
-          selectOption(this, opts[i], q.answer, q.explanation);
+          selectOption(this, opts[i], correctLabel, q.explanation);
         });
       });
+      // Guarda correctLabel para o timeOut poder encontrar a opção certa
+      optionsGrid.dataset.correctLabel = correctLabel;
     }
 
     function selectOption(btn, selected, correct, exp) {
@@ -973,13 +1039,15 @@
     function timeOut() {
       answered = true;
       const q = currentQuestions[currentIndex];
+      // Usa correctLabel armazenado no dataset para questões sem options próprias
+      const correctLabel = optionsGrid.dataset.correctLabel || q.answer;
       document.querySelectorAll('.option-btn').forEach(b => {
         b.disabled = true;
-        if (b.querySelector('span:last-child').textContent === q.answer) b.classList.add('correct');
+        if (b.querySelector('span:last-child').textContent === correctLabel) b.classList.add('correct');
       });
       handleResult(false, q);
       explanation.innerHTML = `<strong>⏰ Tempo esgotado.</strong> Resposta correta: <strong></strong>. `;
-      explanation.querySelector('strong:last-child').textContent = q.answer;
+      explanation.querySelector('strong:last-child').textContent = correctLabel;
       explanation.appendChild(document.createTextNode(q.explanation));
       explanation.classList.add('show');
       btnNext.disabled = false;
