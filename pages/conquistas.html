@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conquistas — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .cq-page { max-width:700px; margin:0 auto; padding:16px 14px 90px; display:flex; flex-direction:column; gap:22px; }
+
+    /* ── Stats bar ── */
+    .cq-stats {
+      background:linear-gradient(135deg,var(--red) 0%,#a01810 100%);
+      border-radius:var(--radius-lg); padding:18px 16px; color:white;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+      box-shadow:0 4px 18px rgba(218,41,28,0.28);
+    }
+    .cq-stat { text-align:center; padding:0 8px; border-right:1px solid rgba(255,255,255,0.15); }
+    .cq-stat:last-child { border-right:none; }
+    .cq-stat-num { font-family:var(--font-display); font-size:24px; font-weight:800; line-height:1; }
+    .cq-stat-lbl { font-size:9.5px; opacity:.65; text-transform:uppercase; letter-spacing:.8px; margin-top:3px; }
+
+    /* ── Section header ── */
+    .cq-section-head {
+      display:flex; align-items:center; gap:9px;
+      font-family:var(--font-display); font-size:11px; font-weight:800;
+      letter-spacing:2px; text-transform:uppercase; color:var(--muted);
+    }
+    .cq-section-line { flex:1; height:1px; background:var(--border); }
+
+    /* ── Achievement cards ── */
+    .cq-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+    .cq-card {
+      background:var(--card); border-radius:13px; border:1.5px solid var(--border);
+      padding:14px 12px; display:flex; flex-direction:column; gap:7px;
+      transition:transform .2s, box-shadow .2s;
+      position:relative; overflow:hidden;
+    }
+    .cq-card.unlocked {
+      border-color:transparent;
+      box-shadow:0 0 0 2px rgba(251,191,36,0.5), 0 4px 16px rgba(251,191,36,0.18);
+    }
+    .cq-card.unlocked::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background:linear-gradient(135deg,rgba(251,191,36,0.06) 0%,transparent 60%);
+    }
+    .cq-card.locked { opacity:.48; filter:saturate(0.3); }
+
+    .cq-card-icon { font-size:28px; line-height:1; }
+    .cq-card-name { font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--text); line-height:1.2; }
+    .cq-card-desc { font-size:11px; color:var(--muted); line-height:1.45; flex:1; }
+    .cq-card-badge {
+      font-size:9px; font-weight:800; padding:2px 8px; border-radius:20px;
+      text-transform:uppercase; letter-spacing:.5px; align-self:flex-start;
+    }
+    .cq-card.unlocked .cq-card-badge { background:rgba(251,191,36,0.2); color:#92400e; }
+    .cq-card.locked   .cq-card-badge { background:var(--bg); color:var(--muted); border:1px solid var(--border); }
+
+    /* ── Weekly challenges ── */
+    .cq-challenges { display:flex; flex-direction:column; gap:10px; }
+
+    .cq-challenge {
+      background:var(--card); border-radius:13px; border:1.5px solid var(--border);
+      padding:14px 14px 12px; transition:border-color .2s;
+    }
+    .cq-challenge.done { border-color:rgba(34,197,94,0.4); background:#f0fdf4; }
+    [data-theme="dark"] .cq-challenge.done { background:#002a0e; border-color:#059669; }
+    .cq-challenge-top { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; }
+    .cq-challenge-icon { font-size:22px; flex-shrink:0; line-height:1; margin-top:1px; }
+    .cq-challenge-info { flex:1; min-width:0; }
+    .cq-challenge-name { font-family:var(--font-display); font-size:14px; font-weight:800; color:var(--text); }
+    .cq-challenge-desc { font-size:12px; color:var(--muted); margin-top:2px; line-height:1.4; }
+    .cq-challenge-count { font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--red); flex-shrink:0; white-space:nowrap; }
+    .cq-challenge.done .cq-challenge-count { color:#16a34a; }
+
+    .cq-progress-wrap { height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+    .cq-progress-fill { height:100%; border-radius:3px; transition:width .6s cubic-bezier(0.22,1,.36,1); }
+
+    /* ── Reset button ── */
+    .cq-reset-btn {
+      background:none; border:1.5px solid var(--border); border-radius:var(--radius-md);
+      padding:10px 14px; font-family:var(--font-display); font-size:12px; font-weight:700;
+      color:var(--muted); cursor:pointer; width:100%; display:flex; align-items:center;
+      justify-content:center; gap:6px;
+    }
+    .cq-reset-btn:hover { border-color:#ef4444; color:#ef4444; }
+
+    /* ── Week label ── */
+    .cq-week-lbl {
+      font-size:11px; color:var(--muted); font-weight:600;
+      background:var(--bg); border:1.5px solid var(--border);
+      border-radius:20px; padding:3px 11px; align-self:flex-start;
+    }
+
+    /* ── Empty state ── */
+    .cq-empty { text-align:center; padding:24px; color:var(--muted); font-size:13px; }
+    .cq-empty-icon { font-size:36px; display:block; margin-bottom:8px; }
+
+    /* ── Category filter ── */
+    .cq-filter-row { display:flex; gap:6px; flex-wrap:wrap; }
+    .cq-filter-btn {
+      padding:5px 12px; border-radius:20px; font-size:12px; font-weight:600;
+      font-family:var(--font-body); border:1.5px solid var(--border);
+      background:var(--card); color:var(--muted); cursor:pointer; transition:all .15s;
+    }
+    .cq-filter-btn.active { background:var(--red); border-color:var(--red); color:white; }
+
+    /* Animations */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+    .cq-stats       { animation:fadeUp .4s .05s cubic-bezier(0.22,1,.36,1) both; }
+    .cq-challenges  { animation:fadeUp .4s .15s cubic-bezier(0.22,1,.36,1) both; }
+    .cq-grid        { animation:fadeUp .4s .25s cubic-bezier(0.22,1,.36,1) both; }
+  </style>
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() { var s=document.getElementById('splash'); if(!s)return; s.classList.add('hide'); setTimeout(function(){s.style.display='none'},420); }
+      if(document.readyState==='complete') setTimeout(hideSplash,700);
+      else window.addEventListener('load',function(){setTimeout(hideSplash,700);});
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#DA291C">
+</head>
+<body data-page="conquistas">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Conquistas</h1>
+        <p>Seu progresso</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="cq-page">
+
+    <!-- Stats bar -->
+    <div class="cq-stats" id="cqStats">
+      <div class="cq-stat"><div class="cq-stat-num" id="stUnlocked">0</div><div class="cq-stat-lbl">Conquistas</div></div>
+      <div class="cq-stat"><div class="cq-stat-num" id="stStreak">0</div><div class="cq-stat-lbl">Dias seguidos</div></div>
+      <div class="cq-stat"><div class="cq-stat-num" id="stQuizzes">0</div><div class="cq-stat-lbl">Quizzes feitos</div></div>
+    </div>
+
+    <!-- Weekly challenges -->
+    <div>
+      <div class="cq-section-head">
+        <span>🗓️ Desafios Semanais</span>
+        <span class="cq-section-line"></span>
+        <span class="cq-week-lbl" id="cqWeekLbl">Esta semana</span>
+      </div>
+      <div style="height:10px"></div>
+      <div class="cq-challenges" id="cqChallenges"></div>
+    </div>
+
+    <!-- Achievements -->
+    <div>
+      <div class="cq-section-head" style="margin-bottom:10px;">
+        <span>🏅 Conquistas</span>
+        <span class="cq-section-line"></span>
+        <span id="cqUnlockCount" style="font-size:12px;font-weight:700;color:var(--red);white-space:nowrap;">0/14</span>
+      </div>
+      <div class="cq-filter-row" id="cqFilters" style="margin-bottom:12px;"></div>
+      <div class="cq-grid" id="cqGrid"></div>
+    </div>
+
+    <!-- Estatísticas detalhadas -->
+    <div>
+      <div class="cq-section-head" style="margin-bottom:10px;">
+        <span>📊 Estatísticas</span>
+        <span class="cq-section-line"></span>
+      </div>
+      <div id="cqStatsDetail" style="background:var(--card);border-radius:13px;border:1.5px solid var(--border);padding:14px 16px;display:flex;flex-direction:column;gap:10px;"></div>
+    </div>
+
+    <!-- Reset -->
+    <div>
+      <button class="cq-reset-btn" onclick="confirmReset()">🗑️ Resetar progresso</button>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Conquistas · Desenvolvido por Adrian E. Silva
+  </footer>
+
+  <script src="../js/gamificacao.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    var _activeFilter = 'all';
+
+    /* ── Category labels ── */
+    var CAT_LABELS = {
+      estudo:      '📖 Estudo',
+      precisao:    '🎯 Precisão',
+      persistencia:'🔥 Persistência',
+      especial:    '🏆 Especial',
+      jogo:        '🎮 Jogo',
+    };
+
+    function _mondayLabel(str) {
+      try {
+        var d = new Date(str + 'T12:00:00');
+        return d.toLocaleDateString('pt-BR', { day:'2-digit', month:'short' });
+      } catch(e) { return str; }
+    }
+
+    function _progressColor(pct) {
+      if (pct >= 100) return '#22c55e';
+      if (pct >= 50)  return '#f59e0b';
+      return 'var(--red)';
+    }
+
+    function renderFilters(catalogo) {
+      var cats = [...new Set(catalogo.map(function(c){return c.cat;}))];
+      var row  = document.getElementById('cqFilters');
+      var btns = [{cat:'all',label:'Todas'}].concat(cats.map(function(c){return {cat:c,label:CAT_LABELS[c]||c};}));
+      row.innerHTML = btns.map(function(b){
+        return '<button class="cq-filter-btn' + (b.cat==='all'?' active':'') + '" onclick="filterCards(\'' + b.cat + '\')">' + b.label + '</button>';
+      }).join('');
+    }
+
+    window.filterCards = function(cat) {
+      _activeFilter = cat;
+      document.querySelectorAll('.cq-filter-btn').forEach(function(b){
+        b.classList.toggle('active', b.textContent.includes(CAT_LABELS[cat]||cat) || (cat==='all' && b.textContent==='Todas'));
+      });
+      renderCards(window._cqSnap);
+    };
+
+    function renderStats(snap) {
+      var s = snap.estatisticas;
+      document.getElementById('stUnlocked').textContent  = snap.conquistas.length;
+      document.getElementById('stStreak').textContent    = s.diasConsecutivos || 0;
+      document.getElementById('stQuizzes').textContent   = s.quizzesCompletos || 0;
+
+      var mon = snap.desafiosSemanais.semana;
+      document.getElementById('cqWeekLbl').textContent = 'Semana de ' + _mondayLabel(mon);
+      document.getElementById('cqUnlockCount').textContent = snap.conquistas.length + '/' + snap.catalogo.length;
+
+      var statsRows = [
+        { label:'Total de perguntas respondidas', val: s.totalPerguntas || 0 },
+        { label:'Maior sequência de acertos',     val: s.perguntasSeguidasCertas || 0 },
+        { label:'Respostas rápidas (<30s)',        val: s.respostasRapidas || 0 },
+        { label:'Flashcards revisados',           val: s.totalFlashcards || 0 },
+        { label:'Quizzes após as 22h',            val: s.quizzesApos22h || 0 },
+      ];
+      document.getElementById('cqStatsDetail').innerHTML = statsRows.map(function(r){
+        return '<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;">'
+          + '<span style="color:var(--muted);">' + r.label + '</span>'
+          + '<strong style="color:var(--text);">' + r.val + '</strong>'
+          + '</div>';
+      }).join('<div style="height:1px;background:var(--border);"></div>');
+    }
+
+    function renderChallenges(snap) {
+      var prog   = snap.desafiosSemanais.progresso;
+      var concl  = snap.desafiosSemanais.concluidos;
+      var container = document.getElementById('cqChallenges');
+
+      container.innerHTML = snap.desafiosCatalogo.map(function(d){
+        var isDone = concl.indexOf(d.id) !== -1;
+        var valor  = d.isArray
+          ? (prog[d.campo] ? prog[d.campo].length : 0)
+          : (prog[d.campo] || 0);
+        var pct    = Math.min(100, Math.round((valor / d.meta) * 100));
+
+        return '<div class="cq-challenge' + (isDone?' done':'') + '">'
+          + '<div class="cq-challenge-top">'
+          + '<div class="cq-challenge-icon">' + d.emblema + '</div>'
+          + '<div class="cq-challenge-info">'
+          + '<div class="cq-challenge-name">' + d.nome + '</div>'
+          + '<div class="cq-challenge-desc">' + d.desc + '</div>'
+          + '</div>'
+          + '<div class="cq-challenge-count">' + (isDone ? '✅' : valor + '/' + d.meta) + '</div>'
+          + '</div>'
+          + '<div class="cq-progress-wrap">'
+          + '<div class="cq-progress-fill" style="width:' + pct + '%;background:' + _progressColor(pct) + ';"></div>'
+          + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    function renderCards(snap) {
+      window._cqSnap = snap;
+      var unlocked = snap.conquistas;
+      var list     = _activeFilter === 'all'
+        ? snap.catalogo
+        : snap.catalogo.filter(function(c){ return c.cat === _activeFilter; });
+
+      // Sort: unlocked first
+      list = list.slice().sort(function(a,b){
+        var au = unlocked.indexOf(a.id) !== -1;
+        var bu = unlocked.indexOf(b.id) !== -1;
+        return (bu ? 1 : 0) - (au ? 1 : 0);
+      });
+
+      document.getElementById('cqGrid').innerHTML = list.map(function(c){
+        var isUnlocked = unlocked.indexOf(c.id) !== -1;
+        return '<div class="cq-card' + (isUnlocked?' unlocked':' locked') + '">'
+          + '<div class="cq-card-icon">' + c.icon + '</div>'
+          + '<div class="cq-card-name">' + c.nome + '</div>'
+          + '<div class="cq-card-desc">' + c.desc + '</div>'
+          + '<div class="cq-card-badge">' + (isUnlocked ? '✅ Desbloqueada' : '🔒 Bloqueada') + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    function render() {
+      if (!window.Gamificacao) { setTimeout(render, 100); return; }
+      var snap = window.Gamificacao.getSnapshot();
+      window._cqSnap = snap;
+      renderStats(snap);
+      renderChallenges(snap);
+      renderFilters(snap.catalogo);
+      renderCards(snap);
+    }
+
+    window.confirmReset = function() {
+      if (confirm('Resetar TODAS as conquistas, desafios e estatísticas? Esta ação não pode ser desfeita.')) {
+        if (window.Gamificacao) window.Gamificacao.resetAll();
+        render();
+      }
+    };
+
+    render();
+  </script>
+</body>
+</html>

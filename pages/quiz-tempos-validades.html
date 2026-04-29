@@ -398,6 +398,7 @@
     <strong>MC Guias</strong> · Quiz Tempos e Validades · Desenvolvido por Adrian E. Silva
   </footer>
 
+  <script src="../js/gamificacao.js"></script>
   <script src="../js/main.js"></script>
   <script>
     /* ============================================================
@@ -846,12 +847,22 @@
       optionsGrid.style.display = 'flex';
       const letters = ['A','B','C','D'];
       const opts    = shuffle([...q.options]);
+
       optionsGrid.innerHTML = opts.map((opt, i) =>
-        `<button class="option-btn" onclick="selectOption(this, '${opt}', '${q.answer}', \`${q.explanation}\`)">
+        `<button class="option-btn">
           <span class="option-letter">${letters[i]}</span>
-          <span>${opt}</span>
+          <span></span>
         </button>`
       ).join('');
+
+      // Set text via textContent (safe — no HTML injection or quote escaping issues)
+      const btns = optionsGrid.querySelectorAll('.option-btn');
+      btns.forEach((btn, i) => {
+        btn.querySelector('span:last-child').textContent = opts[i];
+        btn.addEventListener('click', function() {
+          selectOption(this, opts[i], q.answer, q.explanation);
+        });
+      });
     }
 
     function selectOption(btn, selected, correct, exp) {
@@ -863,13 +874,13 @@
       const isCorrect = selected === correct;
       document.querySelectorAll('.option-btn').forEach(b => {
         b.disabled = true;
-        const label = b.querySelector('span:last-child').textContent;
-        if (label === correct) b.classList.add('correct');
+        if (b.querySelector('span:last-child').textContent === correct) b.classList.add('correct');
         if (b === btn && !isCorrect) b.classList.add('wrong');
       });
 
       handleResult(isCorrect, currentQuestions[currentIndex]);
-      explanation.innerHTML = `<strong>${isCorrect ? '✅ Correto!' : '❌ Incorreto.'}</strong> ${exp}`;
+      explanation.innerHTML = `<strong>${isCorrect ? '✅ Correto!' : '❌ Incorreto.'}</strong> `;
+      explanation.appendChild(document.createTextNode(exp));
       explanation.classList.add('show');
       btnNext.disabled = false;
     }
@@ -967,7 +978,9 @@
         if (b.querySelector('span:last-child').textContent === q.answer) b.classList.add('correct');
       });
       handleResult(false, q);
-      explanation.innerHTML = `<strong>⏰ Tempo esgotado.</strong> Resposta correta: <strong>${q.answer}</strong>. ${q.explanation}`;
+      explanation.innerHTML = `<strong>⏰ Tempo esgotado.</strong> Resposta correta: <strong></strong>. `;
+      explanation.querySelector('strong:last-child').textContent = q.answer;
+      explanation.appendChild(document.createTextNode(q.explanation));
       explanation.classList.add('show');
       btnNext.disabled = false;
     }
@@ -1024,6 +1037,20 @@
         pct
       });
       localStorage.setItem('mc_quiz_history', JSON.stringify(hist.slice(0, 20)));
+
+      // Gamificação
+      if (window.Gamificacao) {
+        window.Gamificacao.onQuizComplete({
+          guide:       'tempos-validades',
+          score:       score,
+          total:       total,
+          pct:         pct,
+          hour:        new Date().getHours(),
+          maxStreak:   maxStreak,
+          fastAnswers: 0,
+          mode:        activeMode,
+        });
+      }
 
       // Show error review
       const er = document.getElementById('errorReview');
