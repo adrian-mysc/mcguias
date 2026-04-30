@@ -6,51 +6,14 @@ const offlineFallbackPage = "/mcguias/offline.html";
 // ---- Install: pre-cache all pages ----
 self.addEventListener('install', async (event) => {
   event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll([
-      offlineFallbackPage,
-      '/mcguias/',
-      '/mcguias/index.html',
-      '/mcguias/css/styles.css',
-      '/mcguias/js/main.js',
-      '/mcguias/js/game.js',
-      '/mcguias/js/gamificacao.js',
-      '/mcguias/manifest.json',
-      '/mcguias/icons/icon-192.png',
-      '/mcguias/icons/icon-512.png',
-      '/mcguias/icons/splash-icon.png',
-      '/mcguias/pages/quiz.html',
-      '/mcguias/pages/quiz-tempos-validades.html',
-      '/mcguias/pages/conquistas.html',
-      '/mcguias/pages/chapa.html',
-      '/mcguias/pages/lope.html',
-      '/mcguias/pages/lope2.html',
-      '/mcguias/pages/linha.html',
-      '/mcguias/pages/mcfritas.html',
-      '/mcguias/pages/fritas.html',
-      '/mcguias/pages/fritos.html',
-      '/mcguias/pages/condimentacao.html',
-      '/mcguias/pages/salao-ngk.html',
-      '/mcguias/pages/montagem-entrega.html',
-      '/mcguias/pages/mcdelivery.html',
-      '/mcguias/pages/influencer-pagamento.html',
-      '/mcguias/pages/drive-thru.html',
-      '/mcguias/pages/bebidas-sobremesas.html',
-      '/mcguias/pages/mccafe.html',
-      '/mcguias/pages/limpeza.html',
-      '/mcguias/pages/jogo-condimentacao.html',
-      '/mcguias/pages/treinadores.html',
-      '/mcguias/pages/supervisores.html',
-      '/mcguias/404.html',
-      '/mcguias/pages/fechamento.html',
-      '/mcguias/pages/promocao-interna.html',
-      '/mcguias/pages/estoque-recebimento.html',
-      '/mcguias/pages/seguranca-alimento.html',
-      '/mcguias/pages/manutencao-preventivas.html',
-      '/mcguias/pages/glossario.html',
-      '/mcguias/pages/provas-testes.html',
-      '/mcguias/pages/validades-secundarias.html',
-      '/mcguias/quiz.html',
-    ]))
+    caches.keys().then(keys => Promise.all(
+      keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
+    )).then(() => clients.claim())
+      .then(() => {
+        clients.matchAll({ type: 'window' }).then(wcs => {
+          wcs.forEach(wc => wc.postMessage({ type: 'SW_UPDATED' }));
+        });
+      })
   );
   // Take over immediately — no waiting for old SW to release
   self.skipWaiting();
