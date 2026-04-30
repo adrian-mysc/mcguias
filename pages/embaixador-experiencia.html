@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embaixador da Experiência — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 700);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="preload" href="../js/main.js" as="script">
+
+  <style>
+    .perfil-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .perfil-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-2, #f5f5f5);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-1, #1a1a1a);
+    }
+    .perfil-item .pi-icon { font-size: 1.2rem; }
+
+    .sim-nao-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .sim-col, .nao-col { display: flex; flex-direction: column; gap: 8px; }
+    .sim-col .sn-header {
+      background: #27ae60;
+      color: #fff;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .nao-col .sn-header {
+      background: #e74c3c;
+      color: #fff;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .sn-item {
+      border-radius: 10px;
+      padding: 9px 11px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .sim-col .sn-item { background: #eafaf1; color: #1e8449; border-left: 3px solid #27ae60; }
+    .nao-col .sn-item { background: #fdf2f2; color: #c0392b; border-left: 3px solid #e74c3c; }
+
+    .atividade-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.82rem; }
+    .atividade-table th {
+      background: var(--brand, #DA291C);
+      color: #fff;
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .atividade-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border, #e8e8e8);
+      color: var(--text-1, #1a1a1a);
+      vertical-align: top;
+    }
+    .atividade-table tr:nth-child(even) td { background: var(--surface-2, #f7f7f7); }
+    .periodo-badge {
+      display: inline-block;
+      background: #fff3cd;
+      color: #856404;
+      border-radius: 6px;
+      padding: 2px 7px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .smg-faq { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .smg-faq-item {
+      background: var(--surface-2, #f5f5f5);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .smg-faq-q {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-1, #1a1a1a);
+      cursor: pointer;
+    }
+    .smg-faq-num {
+      min-width: 26px; height: 26px;
+      background: var(--brand, #DA291C);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700;
+    }
+    .smg-faq-a {
+      display: none;
+      padding: 0 14px 12px 50px;
+      font-size: 0.83rem;
+      color: var(--text-2, #555);
+      line-height: 1.5;
+    }
+    .smg-faq-item.open .smg-faq-a { display: block; }
+    .smg-faq-item.open .smg-faq-q { color: var(--brand, #DA291C); }
+
+    .balao-steps { display: flex; flex-direction: column; gap: 14px; margin-top: 12px; }
+    .balao-step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .balao-step-num {
+      min-width: 32px; height: 32px;
+      background: var(--brand, #DA291C);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .balao-step-body { font-size: 0.84rem; line-height: 1.5; color: var(--text-1, #1a1a1a); }
+    .balao-step-body strong { color: var(--brand, #DA291C); }
+
+    .animais-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .animal-card {
+      background: var(--surface-2, #f5f5f5);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .animal-card .animal-icon { font-size: 2rem; margin-bottom: 6px; }
+    .animal-card h4 { font-size: 0.85rem; font-weight: 700; margin: 0 0 6px; }
+    .animal-card ul { margin: 0; padding-left: 16px; font-size: 0.78rem; color: var(--text-2, #555); line-height: 1.6; }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #fff3cd, #ffe69c);
+      border-left: 4px solid #ffc107;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: #664d03;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .highlight-box strong { color: #212529; }
+
+    .smg-steps { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .smg-step {
+      display: flex; gap: 10px; align-items: flex-start;
+      background: var(--surface-2, #f5f5f5);
+      border-radius: 10px; padding: 11px 12px;
+    }
+    .smg-step-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .smg-step-text { font-size: 0.83rem; line-height: 1.5; color: var(--text-1, #1a1a1a); }
+    .smg-step-text strong { display: block; font-weight: 700; margin-bottom: 2px; }
+  </style>
+</head>
+<body data-page="embaixador-experiencia">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Embaixador da Experiência</h1>
+        <p>Anfitrião · McExperiência · Balões</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="cargo">🌟 O Cargo</button>
+      <button class="tab-btn" data-tab="atividades">📋 Atividades</button>
+      <button class="tab-btn" data-tab="smg">📊 McExperiência</button>
+      <button class="tab-btn" data-tab="baloes">🎈 Balões</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- ========== ABA: O CARGO ========== -->
+    <div class="tab-panel active" id="panel-cargo">
+
+      <div class="section-label">Visão Geral</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🌟</div>
+          <h2>Embaixador da Experiência do Cliente</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:0.88rem;line-height:1.6;margin:0 0 14px;">
+            Executa atividades de <strong>atendimento ao cliente no local</strong> para que cada cliente vivencie a <strong>Experiência McDonald's</strong>, proporcionando um momento único para cada visitante.
+          </p>
+
+          <div class="section-label" style="margin-bottom:8px;">Perfil desejado</div>
+          <div class="perfil-grid">
+            <div class="perfil-item"><span class="pi-icon">❤️</span> Vocação para Serviço</div>
+            <div class="perfil-item"><span class="pi-icon">😊</span> Hospitalidade e Sorriso</div>
+            <div class="perfil-item"><span class="pi-icon">🗣️</span> Boa Comunicação</div>
+            <div class="perfil-item"><span class="pi-icon">🤝</span> Extroversão</div>
+            <div class="perfil-item"><span class="pi-icon">🧒</span> Empatia com Crianças</div>
+            <div class="perfil-item"><span class="pi-icon">⚡</span> Atitude Positiva e Proativa</div>
+            <div class="perfil-item"><span class="pi-icon">👔</span> Imagem Pessoal</div>
+            <div class="perfil-item"><span class="pi-icon">💰</span> Foco na Venda</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">✅</div>
+          <h2>O que FAZER vs. NÃO FAZER</h2>
+        </div>
+        <div class="card-body">
+          <div class="sim-nao-grid">
+            <div class="sim-col">
+              <div class="sn-header">✅ SIM</div>
+              <div class="sn-item">Pós-venda no almoço e jantar</div>
+              <div class="sn-item">Vender sobremesas e bebidas no salão</div>
+              <div class="sn-item">Entregar PDPs às crianças</div>
+              <div class="sn-item">Oferecer e conduzir Tours</div>
+              <div class="sn-item">Realizar a 2ª volta do café</div>
+              <div class="sn-item">Promover festas de aniversário</div>
+              <div class="sn-item">Conversar com clientes sobre a experiência</div>
+              <div class="sn-item">Assegurar ambiente agradável no salão</div>
+            </div>
+            <div class="nao-col">
+              <div class="sn-header">❌ NÃO</div>
+              <div class="sn-item">Limpar mesas, banheiros ou lixeiras</div>
+              <div class="sn-item">Atuar como caixa ou anotador de pedidos</div>
+              <div class="sn-item">Deixar de fazer pós-venda no almoço/jantar</div>
+              <div class="sn-item">Interromper a criança enquanto fala</div>
+              <div class="sn-item">Ficar 100% do tempo fazendo balões</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========== ABA: ATIVIDADES ========== -->
+    <div class="tab-panel" id="panel-atividades">
+
+      <div class="section-label">5 Funções Principais</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🤗</div>
+          <h2>1 · Hospitalidade</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <div class="checklist-item">Dar boas-vindas a todos os clientes; chamar habituais pelo nome</div>
+            <div class="checklist-item">Serviço na mesa dos clientes com necessidades especiais</div>
+            <div class="checklist-item">Ajudar mães com crianças pequenas e pessoas da terceira idade</div>
+            <div class="checklist-item">Assegurar ambiente agradável e limpo no salão/lobby</div>
+            <div class="checklist-item">Realizar a 2ª volta do café (manhã e tarde)</div>
+            <div class="checklist-item">Conversar com clientes e solicitar feedback sobre a experiência</div>
+            <div class="checklist-item">Informar o Gerente de Plantão sobre dúvidas ou reclamações</div>
+            <div class="checklist-item">Oferecer e conduzir Tours pelo restaurante</div>
+            <div class="checklist-item">Executar atividades do Plano de LSM</div>
+          </div>
+          <div class="periodo-badge">⏰ Período chave: almoço e jantar (dias úteis), dia todo (fins de semana)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">💰</div>
+          <h2>2 · Venda Além do Balcão</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <div class="checklist-item">Vender sobremesas e bebidas nas mesas (frias e quentes)</div>
+            <div class="checklist-item">Promover e vender festas de aniversário</div>
+            <div class="checklist-item">Distribuir cupons e panfletos — até 2 km do restaurante</div>
+            <div class="checklist-item">Degustação de produtos a cada lançamento</div>
+          </div>
+          <div class="periodo-badge">⏰ Distribuição: antes do almoço nos dias úteis (programado)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🧒</div>
+          <h2>3 · Diversão das Crianças</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <div class="checklist-item">Entregar PDPs às crianças que visitam o restaurante</div>
+            <div class="checklist-item">Criar um momento especial para cada criança — tratá-las como <strong>estrelas</strong></div>
+            <div class="checklist-item">Trabalhar no lobby produzindo ambiente festivo e alegre</div>
+            <div class="checklist-item">Realizar ao menos 1 atividade em período de baixo e 1 em alto movimento</div>
+            <div class="checklist-item">Dar apoio nos shows do Ronald McDonald realizados no local</div>
+          </div>
+          <div class="periodo-badge">⏰ Período chave: meio dia e tarde (dias úteis), dia todo (fins de semana)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎂</div>
+          <h2>4 · Festas de Aniversário</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <div class="checklist-item">Promover e vender as festas de aniversário</div>
+            <div class="checklist-item">Incluir comemorações escolares e empresariais</div>
+            <div class="checklist-item">Executar a festa: recepção, serviço, pedidos e diversão</div>
+          </div>
+          <div class="periodo-badge">⏰ Execução: manhã, tarde ou noite — dias de baixo volume do restaurante</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🏪</div>
+          <h2>5 · Apoio ao Merchandising</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <div class="checklist-item">Revisar peças de comunicação conforme guias de implementação</div>
+            <div class="checklist-item">Assegurar que estejam limpas e em bom estado de conservação</div>
+            <div class="checklist-item">Notificar caso estejam danificadas ou precisem ser trocadas</div>
+          </div>
+          <div class="periodo-badge">⏰ Período chave: manhã nos dias úteis, antes do almoço</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========== ABA: MCEXPERIÊNCIA / SMG ========== -->
+    <div class="tab-panel" id="panel-smg">
+
+      <div class="section-label">O Programa</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📊</div>
+          <h2>McExperiência — O que é?</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:0.87rem;line-height:1.6;margin:0 0 12px;">
+            O objetivo do programa <strong>McExperiência</strong> é aprender com os clientes por meio de seus comentários para <strong>promover a lealdade</strong>, aumentar as chances de retorno e melhorar o desempenho financeiro.
+          </p>
+          <div class="highlight-box">
+            <strong>Parceira:</strong> A <strong>SMG (Service Management Group)</strong> é a provedora da pesquisa do McExperiência e ajuda a filtrar respostas de menor qualidade ou falsas.
+          </div>
+
+          <div class="section-label" style="margin:14px 0 8px;">Como acessar a plataforma</div>
+          <div class="smg-steps">
+            <div class="smg-step">
+              <div class="smg-step-icon">🌐</div>
+              <div class="smg-step-text">
+                <strong>Acesso Web</strong>
+                Via <strong>reporting.smg.com</strong> com e-mail corporativo ou e-mail do restaurante (ex: sto.xxx@br.mcd.com) e senha inicial <strong>$Arcos123</strong>
+              </div>
+            </div>
+            <div class="smg-step">
+              <div class="smg-step-icon">📱</div>
+              <div class="smg-step-text">
+                <strong>App SMG360</strong>
+                Disponível na App Store e Google Play. Instalar no celular do restaurante e manter atualizado.
+              </div>
+            </div>
+            <div class="smg-step">
+              <div class="smg-step-icon">🔑</div>
+              <div class="smg-step-text">
+                <strong>Franqueados</strong>
+                Usuários e senhas serão enviados pela <strong>ABFM</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">❓</div>
+          <h2>Perguntas e Respostas Frequentes</h2>
+        </div>
+        <div class="card-body">
+          <div class="smg-faq">
+            <div class="smg-faq-item">
+              <div class="smg-faq-q">
+                <div class="smg-faq-num">1</div>
+                Por que minhas pesquisas não são computadas?
+              </div>
+              <div class="smg-faq-a">Todas as perguntas devem ser respondidas para que seja considerada válida pelo sistema.</div>
+            </div>
+            <div class="smg-faq-item">
+              <div class="smg-faq-q">
+                <div class="smg-faq-num">2</div>
+                Qual pesquisa gera pontuação positiva?
+              </div>
+              <div class="smg-faq-a">A única que é considerada para pontuação positiva é a de <strong>"Muito Satisfeito"</strong>, aumentando a nota.</div>
+            </div>
+            <div class="smg-faq-item">
+              <div class="smg-faq-q">
+                <div class="smg-faq-num">3</div>
+                Qual pesquisa gera pontuação negativa?
+              </div>
+              <div class="smg-faq-a">Pesquisas com <strong>"Insatisfeito"</strong> e <strong>"Muito Insatisfeito"</strong> são pontuadas negativamente, diminuindo a nota.</div>
+            </div>
+            <div class="smg-faq-item">
+              <div class="smg-faq-q">
+                <div class="smg-faq-num">4</div>
+                O que o sistema considera como pesquisa inválida?
+              </div>
+              <div class="smg-faq-a">Pesquisas realizadas com <strong>tempo menor que 2 minutos</strong> ou <strong>seguidas do mesmo dispositivo</strong>. O celular do restaurante NÃO deve ser usado para pesquisas.</div>
+            </div>
+            <div class="smg-faq-item">
+              <div class="smg-faq-q">
+                <div class="smg-faq-num">5</div>
+                Por quanto tempo o cupom fiscal é válido?
+              </div>
+              <div class="smg-faq-a">O cupom fiscal tem validade de <strong>7 dias</strong> após a compra realizada.</div>
+            </div>
+            <div class="smg-faq-item">
+              <div class="smg-faq-q">
+                <div class="smg-faq-num">6</div>
+                Qual o tempo mínimo para a pesquisa ser válida?
+              </div>
+              <div class="smg-faq-a">O tempo mínimo para realização da pesquisa é de <strong>2 minutos</strong> logado no sistema.</div>
+            </div>
+            <div class="smg-faq-item">
+              <div class="smg-faq-q">
+                <div class="smg-faq-num">7</div>
+                Quantas pesquisas pode o mesmo dispositivo fazer em 30 dias?
+              </div>
+              <div class="smg-faq-a">O cliente pode realizar apenas <strong>2 pesquisas dentro de 30 dias</strong> pelo mesmo dispositivo. Caso contrário, o sistema invalida.</div>
+            </div>
+            <div class="smg-faq-item">
+              <div class="smg-faq-q">
+                <div class="smg-faq-num">8</div>
+                Posso usar o celular do restaurante para pesquisas?
+              </div>
+              <div class="smg-faq-a"><strong>Não.</strong> O celular do restaurante NÃO deve ser utilizado para realizar a pesquisa com o cliente.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========== ABA: BALÕES ========== -->
+    <div class="tab-panel" id="panel-baloes">
+
+      <div class="section-label">Dicas Gerais</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎈</div>
+          <h2>Materiais e Dicas Básicas</h2>
+        </div>
+        <div class="card-body">
+          <div class="checklist">
+            <div class="checklist-item"><strong>Bomba de ar</strong> — use sempre; mais rápido que soprar com a boca</div>
+            <div class="checklist-item"><strong>Caneta permanente preta</strong> — a mais imparcial para detalhes</div>
+            <div class="checklist-item">Não encher o balão até o final — deixar <strong>~5 cm sem ar</strong> na ponta</div>
+            <div class="checklist-item">Espaço sem ar varia conforme o número de dobraduras e nós necessários</div>
+          </div>
+          <div class="highlight-box">
+            <strong>⚠️ Atenção:</strong> Se as orelhas/partes do balão ficarem muito duras durante a modelagem, é sinal que a borracha está esticada demais e o balão pode estourar. Desmanche e refaça.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Esculturas</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚔️</div>
+          <h2>Espada de Balão</h2>
+        </div>
+        <div class="card-body">
+          <div class="balao-steps">
+            <div class="balao-step">
+              <div class="balao-step-num">1</div>
+              <div class="balao-step-body">Encher o balão deixando <strong>~5 cm de rabinho</strong> (menor que o usual)</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">2</div>
+              <div class="balao-step-body">Fazer um <strong>gomo de ~24 cm</strong> começando pelo lado oposto ao bocal</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">3</div>
+              <div class="balao-step-body">Fazer um gomo menor de <strong>~6 cm</strong> logo em seguida</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">4</div>
+              <div class="balao-step-body">Com o gomo de 6 cm, <strong>dar uma volta ao redor do gomo grande</strong> (lâmina)</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">5</div>
+              <div class="balao-step-body">Encontrar o ponto de torção entre os gomos e <strong>amarrar com o rabinho</strong></div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">6</div>
+              <div class="balao-step-body">A <strong>extremidade com o bocal</strong> forma a lâmina; os gomos menores formam a guarda</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🐕</div>
+          <h2>Cachorro de Balão</h2>
+        </div>
+        <div class="card-body">
+          <div class="balao-steps">
+            <div class="balao-step">
+              <div class="balao-step-num">1</div>
+              <div class="balao-step-body">Fazer a <strong>cabeça com orelhas</strong> (gomos básicos: 1 grande + 2 menores torcidos)</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">2</div>
+              <div class="balao-step-body">Torcer uma bolinha para o <strong>pescoço</strong> e segurar com a mão esquerda</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">3</div>
+              <div class="balao-step-body">Fazer as <strong>pernas dianteiras</strong> (2 gomos iguais torcidos juntos no ponto do pescoço)</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">4</div>
+              <div class="balao-step-body">Marcar o <strong>corpo</strong> — reservar espaço para que as pernas traseiras tenham o mesmo tamanho</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">5</div>
+              <div class="balao-step-body">Fazer os <strong>2 gomos das pernas traseiras</strong> e torcê-los no ponto marcado para o corpo</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">6</div>
+              <div class="balao-step-body">O restante do balão forma o <strong>rabo</strong>. Detalhes com caneta permanente preta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🦒</div>
+          <h2>Girafa de Balão</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:0.84rem;margin:0 0 10px;">Mesma técnica do cachorro, com diferenças de tamanho:</p>
+          <table class="atividade-table">
+            <thead>
+              <tr><th>Parte</th><th>Tamanho</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cabeça</td><td>7 cm</td></tr>
+              <tr><td>Orelhas</td><td>4 cm cada</td></tr>
+              <tr><td>Pescoço</td><td><strong>19 cm</strong> (muito mais longo!)</td></tr>
+              <tr><td>Pernas dianteiras</td><td>9 cm cada</td></tr>
+              <tr><td>Corpo</td><td>11 cm</td></tr>
+              <tr><td>Pernas traseiras</td><td>9 cm cada</td></tr>
+              <tr><td>Rabo</td><td>10 cm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🐝</div>
+          <h2>Abelha de Balão</h2>
+        </div>
+        <div class="card-body">
+          <div class="highlight-box" style="margin-top:0;margin-bottom:12px;">
+            Use balões de <strong>cores vivas</strong> como amarelo e laranja.
+          </div>
+          <div class="balao-steps">
+            <div class="balao-step">
+              <div class="balao-step-num">1</div>
+              <div class="balao-step-body">Fazer um <strong>gomo na extremidade do bocal</strong> para a cabeça</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">2</div>
+              <div class="balao-step-body">Sem soltar o gomo, <strong>cruzar o resto do balão</strong> sobre ele formando uma volta (com ponta do outro lado)</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">3</div>
+              <div class="balao-step-body">Fazer um gomo <strong>ligeiramente maior</strong> na outra extremidade — o "rabinho" será o <strong>ferrão</strong></div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">4</div>
+              <div class="balao-step-body">Torcer os dois gomos juntos para que <strong>não se soltem</strong></div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">5</div>
+              <div class="balao-step-body">Apertar o círculo contra o ponto de torção — ficará <strong>uma laçada de cada lado</strong> (as asas)</div>
+            </div>
+            <div class="balao-step">
+              <div class="balao-step-num">6</div>
+              <div class="balao-step-body">Torcer cada laçada até ficarem bem presas</div>
+            </div>
+          </div>
+          <div class="highlight-box">
+            💡 Com a mesma técnica da abelha pode-se fazer um <strong>beija-flor</strong>: a área com o bocal vira o corpo e o ferrão vira o bico.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========== ABA: QUIZ ========== -->
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Quiz Rápido</div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Pratique seus conhecimentos</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:0.87rem;line-height:1.6;margin:0 0 14px;">
+            Acesse o Quiz completo do MC Guias para praticar as perguntas sobre o Embaixador da Experiência, McExperiência e Escultura de Balões.
+          </p>
+          <a href="quiz.html" class="btn-primary" style="display:block;text-align:center;padding:14px;background:var(--brand,#DA291C);color:#fff;border-radius:12px;font-weight:700;text-decoration:none;font-size:0.95rem;">
+            🎯 Ir para o Quiz — Embaixador da Experiência
+          </a>
+          <p style="font-size:0.78rem;color:var(--text-2,#888);text-align:center;margin-top:10px;">
+            No quiz, filtre por <strong>"🌟 Embaixador da Experiência"</strong> para focar neste conteúdo.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page-content -->
+
+  <script src="../js/main.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.smg-faq-item').forEach(function(item) {
+      item.querySelector('.smg-faq-q').addEventListener('click', function() {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
