@@ -1,0 +1,294 @@
+{
+  "versions": [
+    {
+      "version": "v4",
+      "date": "2026-04-25",
+      "date_display": "25 Abr 2026",
+      "badge": "Novo conteúdo",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "📅",
+          "text": "Guia **Validades Secundárias** — ~90 produtos com Validade Primária, Ambientação, Validade Secundária do Fornecedor e Guia MCD. Inclui busca em tempo real e filtro por segmento (Restaurante, McCafé, Quiosque, Café da Manhã, Break).",
+          "tag": "guia"
+        },
+        {
+          "icon": "⚙️",
+          "text": "**Service Worker** atualizado para mc-guias-v23: adicionados validades-secundarias.html, provas-testes.html e quiz.html (raiz) que estavam fora do cache offline.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
+      "version": "v3.1",
+      "date": "2026-03-27",
+      "date_display": "27 Mar 2026",
+      "badge": "Novo conteúdo",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🔧",
+          "text": "**Manutenção e Preventivas Diárias** — 19 fichas SMPD completas com checklists interativos: Chapa (1R), Fritadeira (2R), UHC (5I), Encestador (46A/46B), Congeladores (15B), Dispensadores de molho (20A/20B), Fatiador de tomate (19B), Caixa de gordura (22D), Análise de cloro (33A), Leituras de água e energia (25A/25B) e fichas McCafé (1A, 1D, 2B, 4B, 9C). Com quiz de 18 perguntas.",
+          "tag": "guia"
+        },
+        {
+          "icon": "📖",
+          "text": "**Glossário Operacional** — 46 termos e siglas explicados em detalhes: UHC, R2P, PEPS, LOPE, NGK, KVS, ORB, OAT, BDAP, PPI, SABER, RDM e muito mais. Com busca e índice alfabético.",
+          "tag": "guia"
+        },
+        {
+          "icon": "📦",
+          "text": "Guia **Estoque e Recebimento** — recebimento de mercadorias, PEPS, etiquetagem e controle de validades agora acessível na página inicial.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🛡️",
+          "text": "Guia **Segurança Alimentar** — higiene, contaminação, temperaturas e boas práticas agora acessível na página inicial.",
+          "tag": "guia"
+        },
+        {
+          "icon": "✨",
+          "text": "**Animações nos cards** — entrada em cascata, efeito shimmer no hover, emoji animado e seta deslizante no rodapé.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
+      "version": "v3",
+      "date": "2026-03-24",
+      "date_display": "24 Mar 2026",
+      "badge": "Correções e Melhorias",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "⏱️",
+          "text": "**Timer configurável** — escolha o tempo por pergunta: 10s, 15s, 20s ou 30s. O botão agora exibe o tempo ativo e um dropdown para trocar sem reiniciar o quiz.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "❌",
+          "text": "**Revisão de erros ao final** — ao terminar um simulado, uma seção colapsável exibe cada pergunta errada com sua resposta, a correta e a explicação. Erros por tempo esgotado também são incluídos.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🍔",
+          "text": "Jogo **Monte o Sanduíche** atualizado — substituídos os sanduíches genéricos pelos 9 reais da condimentação: Big Mac, Big Tasty, McNífico Bacon, Chicken Deluxe, Chicken Legend, Chicken Bacon Ranch, Brabíssimo Beef, Brabíssimo Frango e Brabíssimo Clubhouse.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🧅",
+          "text": "**Big Mac corrigido** — removida a cebola reidratada das camadas do sanduíche e das perguntas do quiz. O Big Mac não leva cebola.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🐛",
+          "text": "Corrigidos dois bugs no **Modo Lacunas**: campo de resposta duplicado no DOM e histórico salvo com os campos na ordem errada.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
+      "version": "v2",
+      "date": "2026-03-21",
+      "date_display": "21 Mar 2026",
+      "badge": "Melhorias",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "📈",
+          "text": "Guia **Promoção Interna** — trilha do cargo Treinador: requisitos, cursos obrigatórios, trilha formativa SABER (6 meses), ferramentas e manuais.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🌙",
+          "text": "Guia **Procedimento de Fechamento** — filtragem de fritadeiras, Clean Mode da chapa, tostadeira, sistema de 3 cubas, salão, banheiros, estoque e quiz com 21 perguntas.",
+          "tag": "guia"
+        },
+        {
+          "icon": "✏️",
+          "text": "**Modo Completar a Lacuna** — novo modo de estudo com 254 perguntas numéricas: digitar temperatura, tempo ou quantidade em vez de escolher entre opções.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🔤",
+          "text": "**Revisão gramatical** — corrigido \"tube/tubes\" → \"tubo/tubos\" em todo o banco de questões.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🧹",
+          "text": "**Revisão dos quizzes** — 43 perguntas duplicadas removidas e respostas muito repetidas substituídas por perguntas variadas. Total: 633 → 590 perguntas mais precisas.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "📤",
+          "text": "**Compartilhar resultado** corrigido — agora funciona em mais navegadores com fallback automático para área de transferência.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🔐",
+          "text": "Área restrita para **Treinadores** e **Supervisores** — conteúdo exclusivo protegido por senha.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "📝",
+          "text": "**Prova PPI — Treinador** adicionada na área de Treinadores: 113 questões dissertativas com gabarito retrátil + versão de múltipla escolha com 81 perguntas.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🔔",
+          "text": "**Atualização automática** — o app agora detecta novas versões e exibe um aviso com botão para atualizar sem precisar limpar o cache manualmente.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
+      "version": "v1.2",
+      "date": "2026-03-20",
+      "date_display": "20 Mar 2026",
+      "badge": "Novo conteúdo",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🧹",
+          "text": "Guia **Limpeza e Sanitização** expandido — salão, banheiros, lavagem de utensílios, jarras de café e guia completo de produtos QSR com diluições.",
+          "tag": "guia"
+        },
+        {
+          "icon": "❓",
+          "text": "**633 perguntas** no Simulado Geral — banco expandido com 15+ novas perguntas por guia em todos os módulos.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🎮",
+          "text": "Jogo **Monte o Sanduíche** — treino de condimentação por clique com Big Mac, QPC, McDouble, Cheeseburger, McChicken, Chicken Select, Filet-O-Fish e McNífico.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🌙",
+          "text": "Removido o botão de **modo escuro** — interface padronizada em tema claro.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
+      "version": "v1.1",
+      "date": "2026-03-18",
+      "date_display": "18 Mar 2026",
+      "badge": "Novo conteúdo",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "☕",
+          "text": "Guia **McCafé** — café coado, espresso, bebidas quentes e frias, salgados, doces, café da manhã e equipamentos.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🧹",
+          "text": "Guia **Limpeza e Sanitização** — chapa (diária e mensal Best Burger), tostadeira e pista Drive-Thru.",
+          "tag": "guia"
+        },
+        {
+          "icon": "📤",
+          "text": "**Compartilhar resultado** — botão ao final do simulado para enviar pontuação pelo WhatsApp ou copiar.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🚀",
+          "text": "Painel **Em breve** — lista de funcionalidades e guias em desenvolvimento.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
+      "version": "v1",
+      "date": "2026-03-10",
+      "date_display": "10 Mar 2026",
+      "badge": "Melhorias",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "🔀",
+          "text": "**Repetição espaçada** — perguntas erradas aparecem com mais frequência para reforçar o aprendizado.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "📲",
+          "text": "**PWA instalável** — site pode ser adicionado como aplicativo na tela inicial do celular.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🌅",
+          "text": "**Tela de loading** com ícone personalizado e barra de progresso.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🃏",
+          "text": "**Modo Flashcard** — toque na carta para revelar a resposta.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "📋",
+          "text": "**Histórico de simulados** — registra últimas pontuações com data e percentual.",
+          "tag": "quiz"
+        }
+      ]
+    },
+    {
+      "version": "v0.3",
+      "date": "2026-02-15",
+      "date_display": "15 Fev 2026",
+      "badge": "Novo conteúdo",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🚗",
+          "text": "Guias **Drive-Thru** e **Bebidas e Sobremesas**.",
+          "tag": "guia"
+        },
+        {
+          "icon": "📦",
+          "text": "Guias **McDelivery** e **Influencer Vendedor**.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🥬",
+          "text": "Guia **LOPE 2** — cebola cheddar, molhos especiais e itens de apoio.",
+          "tag": "guia"
+        }
+      ]
+    },
+    {
+      "version": "v0.2",
+      "date": "2026-01-20",
+      "date_display": "20 Jan 2026",
+      "badge": "Novo conteúdo",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🪑",
+          "text": "Guias **Salão e NGK** e **Montagem e Entrega**.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🎯",
+          "text": "**Simulado Geral** — quiz com filtro por guia e histórico de pontuações.",
+          "tag": "quiz"
+        }
+      ]
+    },
+    {
+      "version": "v0.1",
+      "date": "2026-01-05",
+      "date_display": "05 Jan 2026",
+      "badge": "Lançamento",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🚀",
+          "text": "Lançamento do **MC Guias** — Chapa, LOPE, Linha, McFritas, Fritos e Condimentação.",
+          "tag": "guia"
+        }
+      ]
+    }
+  ]
+}
