@@ -1,3 +1,12 @@
+function applyUpdate(reg) {
+  const r = reg || window._swRegistration;
+  if (r && r.waiting) {
+    r.waiting.postMessage({ type: 'SKIP_WAITING' });
+  } else {
+    window.location.reload();
+  }
+}
+
 /* ============================================================
    MC GUIAS — Shared JavaScript
    Versão: 2.2 — estatísticas · som · transição de perguntas
@@ -1292,3 +1301,5 @@ function mcShowUpdateToast() {
     + '<button onclick="this.parentNode.remove()" style="background:rgba(255,255,255,0.2);color:#fff;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:14px;line-height:1;flex-shrink:0;">×</button>';
   document.body.appendChild(toast);
 }
+// Checar atualizações a cada 60s
+setInterval(() => { if (window._swRegistration) window._swRegistration.update(); }, 60000);
