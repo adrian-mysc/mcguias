@@ -1,5 +1,22 @@
 # Changelog — MC Guias
 
+## [v5.26] — 2026-04-30
+
+### Corrigido
+
+* **sw.js** — sistema de atualização PWA reescrito:
+  * Cache bumped: `mc-guias-v25` → `mc-guias-v26`
+  * Evento `activate` corrigido: `clients.claim()` + `postMessage(SW_UPDATED)`
+  * Listener `SKIP_WAITING` adicionado
+* **js/main.js** — registro do Service Worker corrigido:
+  * `updatefound` → `statechange` (banner só quando realmente pronto)
+  * `applyUpdate()` envia `postMessage(SKIP_WAITING)` ao invés de reload direto
+  * Listener `SW_UPDATED` adicionado para reload automático após ativação
+  * `setInterval` de 60s para checar atualizações periodicamente
+
+---
+
+
 Todas as alterações relevantes do projeto estão documentadas aqui.  
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
