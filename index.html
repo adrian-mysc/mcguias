@@ -1007,18 +1007,26 @@
 
       setUpdateUI('🔍', 'Verificando...', 'Consultando o servidor por uma versão nova', '');
 
+      var finished = false;
+      function done() { finished = true; }
+
+      // Timeout — se não resolver em 8s, mostra erro
+      var timeout = setTimeout(function() {
+        if (!finished) {
+          done();
+          setUpdateUI('📴', 'Sem conexão', 'Não foi possível verificar. Verifique sua internet e tente novamente.', '');
+        }
+      }, 8000);
+
       navigator.serviceWorker.ready.then(function(reg) {
-        // Ask current SW its version
-        var currentVersion = localStorage.getItem('mc_sw_version') || null;
-
-        // Force check for new SW
+        if (finished) return;
         reg.update().then(function() {
-          // After update check, see if there's a waiting SW (new version found)
-          var waiting  = reg.waiting;
+          if (finished) return;
+          clearTimeout(timeout);
+          done();
+          var waiting   = reg.waiting;
           var installing = reg.installing;
-
           if (waiting) {
-            // New version downloaded and waiting
             setUpdateUI(
               '🆕', 'Nova versão disponível!',
               'Uma versão nova foi encontrada e está pronta para instalar.',
@@ -1027,11 +1035,20 @@
             window._pendingReg = waiting;
           } else if (installing) {
             setUpdateUI('⬇️', 'Baixando...', 'A nova versão está sendo baixada. Aguarde.', '');
-            installing.addEventListener('statechange', function() {
-              if (installing.state === 'installed') checkForUpdate();
-            });
+            var onStateChange = function() {
+              if (installing.state === 'installed' || installing.state === 'activated') {
+                installing.removeEventListener('statechange', onStateChange);
+                checkForUpdate();
+              }
+            };
+            installing.addEventListener('statechange', onStateChange);
+            setTimeout(function() {
+              if (!reg.waiting) {
+                setUpdateUI('✅', 'Tudo atualizado!', 'Você já está usando a versão mais recente do MC Guias.',
+                  '<button onclick="document.getElementById(\'updateOverlay\').classList.remove(\'open\')" style="padding:11px 24px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text);cursor:pointer;">Fechar</button>');
+              }
+            }, 10000);
           } else {
-            // No new SW — already up to date
             setUpdateUI(
               '✅', 'Tudo atualizado!',
               'Você já está usando a versão mais recente do MC Guias.',
@@ -1039,9 +1056,15 @@
             );
           }
         }).catch(function() {
+          if (finished) return;
+          clearTimeout(timeout);
+          done();
           setUpdateUI('📴', 'Sem conexão', 'Não foi possível verificar. Verifique sua internet e tente novamente.', '');
         });
       }).catch(function() {
+        if (finished) return;
+        clearTimeout(timeout);
+        done();
         setUpdateUI('⚠️', 'Erro', 'Não foi possível verificar a atualização.', '');
       });
     }
@@ -1253,18 +1276,26 @@
 
       setUpdateUI('🔍', 'Verificando...', 'Consultando o servidor por uma versão nova', '');
 
+      var finished = false;
+      function done() { finished = true; }
+
+      // Timeout — se não resolver em 8s, mostra erro
+      var timeout = setTimeout(function() {
+        if (!finished) {
+          done();
+          setUpdateUI('📴', 'Sem conexão', 'Não foi possível verificar. Verifique sua internet e tente novamente.', '');
+        }
+      }, 8000);
+
       navigator.serviceWorker.ready.then(function(reg) {
-        // Ask current SW its version
-        var currentVersion = localStorage.getItem('mc_sw_version') || null;
-
-        // Force check for new SW
+        if (finished) return;
         reg.update().then(function() {
-          // After update check, see if there's a waiting SW (new version found)
-          var waiting  = reg.waiting;
+          if (finished) return;
+          clearTimeout(timeout);
+          done();
+          var waiting   = reg.waiting;
           var installing = reg.installing;
-
           if (waiting) {
-            // New version downloaded and waiting
             setUpdateUI(
               '🆕', 'Nova versão disponível!',
               'Uma versão nova foi encontrada e está pronta para instalar.',
@@ -1273,11 +1304,20 @@
             window._pendingReg = waiting;
           } else if (installing) {
             setUpdateUI('⬇️', 'Baixando...', 'A nova versão está sendo baixada. Aguarde.', '');
-            installing.addEventListener('statechange', function() {
-              if (installing.state === 'installed') checkForUpdate();
-            });
+            var onStateChange = function() {
+              if (installing.state === 'installed' || installing.state === 'activated') {
+                installing.removeEventListener('statechange', onStateChange);
+                checkForUpdate();
+              }
+            };
+            installing.addEventListener('statechange', onStateChange);
+            setTimeout(function() {
+              if (!reg.waiting) {
+                setUpdateUI('✅', 'Tudo atualizado!', 'Você já está usando a versão mais recente do MC Guias.',
+                  '<button onclick="document.getElementById(\'updateOverlay\').classList.remove(\'open\')" style="padding:11px 24px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text);cursor:pointer;">Fechar</button>');
+              }
+            }, 10000);
           } else {
-            // No new SW — already up to date
             setUpdateUI(
               '✅', 'Tudo atualizado!',
               'Você já está usando a versão mais recente do MC Guias.',
@@ -1285,9 +1325,15 @@
             );
           }
         }).catch(function() {
+          if (finished) return;
+          clearTimeout(timeout);
+          done();
           setUpdateUI('📴', 'Sem conexão', 'Não foi possível verificar. Verifique sua internet e tente novamente.', '');
         });
       }).catch(function() {
+        if (finished) return;
+        clearTimeout(timeout);
+        done();
         setUpdateUI('⚠️', 'Erro', 'Não foi possível verificar a atualização.', '');
       });
     }
