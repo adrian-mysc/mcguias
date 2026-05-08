@@ -24,6 +24,21 @@
     { id: 'rei_revisao',        nome: 'Rei da Revisão',       desc: 'Revisou 50 perguntas com flashcards',                icon: '🔁', cat: 'estudo',     cor: '#60a5fa' },
     { id: 'maratonista_estudo', nome: 'Maratonista',          desc: 'Completou 100 perguntas no total',                   icon: '🏅', cat: 'persistencia', cor: '#f87171' },
     { id: 'perfeccionista_all', nome: 'Perfeccionista',       desc: 'Atingiu 90% de acerto em qualquer quiz',             icon: '💎', cat: 'precisao',   cor: '#67e8f9' },
+    // ── Troféus por guia ──────────────────────────────────────
+    { id: 'trofeu_chapa',       nome: 'Troféu Chapa',         desc: 'Completou 100% do checklist de Chapa',               icon: '🥇', cat: 'trofeu',     cor: '#f59e0b' },
+    { id: 'trofeu_fritas',      nome: 'Troféu Fritas',        desc: 'Completou 100% do checklist de MC Fritas',           icon: '🥇', cat: 'trofeu',     cor: '#f59e0b' },
+    { id: 'trofeu_limpeza',     nome: 'Troféu Limpeza',       desc: 'Completou 100% do checklist de Limpeza',             icon: '🥇', cat: 'trofeu',     cor: '#22c55e' },
+    { id: 'trofeu_drive',       nome: 'Troféu Drive-Thru',    desc: 'Completou 100% do checklist de Drive-Thru',          icon: '🥇', cat: 'trofeu',     cor: '#38bdf8' },
+    { id: 'trofeu_mccafe',      nome: 'Troféu McCafé',        desc: 'Completou 100% do checklist de McCafé',              icon: '🥇', cat: 'trofeu',     cor: '#a78bfa' },
+    { id: 'trofeu_fechamento',  nome: 'Troféu Fechamento',    desc: 'Completou 100% do checklist de Fechamento',          icon: '🥇', cat: 'trofeu',     cor: '#818cf8' },
+    { id: 'trofeu_manutencao',  nome: 'Troféu Manutenção',    desc: 'Completou 100% do checklist de Manutenção',          icon: '🥇', cat: 'trofeu',     cor: '#fb923c' },
+    // ── Prova ────────────────────────────────────────────────
+    { id: 'aprovado_turno',     nome: 'Aprovado — Turno',     desc: 'Atingiu 70%+ na Prova de Gerente de Turno',          icon: '📋', cat: 'prova',      cor: '#34d399' },
+    { id: 'aprovado_plantao',   nome: 'Aprovado — Plantão',   desc: 'Atingiu 70%+ na Prova de Gerente de Plantão',        icon: '📋', cat: 'prova',      cor: '#34d399' },
+    { id: 'excelencia_turno',   nome: 'Excelência — Turno',   desc: 'Atingiu 90%+ na Prova de Gerente de Turno',          icon: '🌟', cat: 'prova',      cor: '#fbbf24' },
+    // ── Tempo de estudo ───────────────────────────────────────
+    { id: 'hora_de_estudo',     nome: '1 Hora de Estudo',     desc: 'Acumulou 60 minutos estudando no MC Guias',          icon: '⏱️', cat: 'persistencia', cor: '#f472b6' },
+    { id: 'estudante_dedicado', nome: 'Dedicado',             desc: 'Acumulou 5 horas estudando no MC Guias',             icon: '🎓', cat: 'persistencia', cor: '#818cf8' },
   ];
 
   /* ============================================================
@@ -66,7 +81,10 @@
         quizzesApos22h: 0,
         totalFlashcards: 0,
         ultimaAtividade: null,
-        totalPerguntas: 0
+        totalPerguntas: 0,
+        minEstudo: 0,
+        guiasConcluidos: [],
+        provasAprovadas: []
       }
     };
   }
@@ -77,13 +95,16 @@
 
   function getData() {
     var d = loadData() || defaultData();
-    // Migrate: ensure all keys exist
     var def = defaultData();
     if (!d.conquistas)        d.conquistas        = [];
     if (!d.desafiosSemanais)  d.desafiosSemanais  = def.desafiosSemanais;
     if (!d.estatisticas)      d.estatisticas      = def.estatisticas;
-    if (!d.estatisticas.totalFlashcards)         d.estatisticas.totalFlashcards = 0;
-    if (!d.estatisticas.totalPerguntas)          d.estatisticas.totalPerguntas  = 0;
+    var s = d.estatisticas;
+    if (!s.totalFlashcards)   s.totalFlashcards   = 0;
+    if (!s.totalPerguntas)    s.totalPerguntas     = 0;
+    if (!s.minEstudo)         s.minEstudo          = 0;
+    if (!s.guiasConcluidos)   s.guiasConcluidos    = [];
+    if (!s.provasAprovadas)   s.provasAprovadas    = [];
     if (!d.desafiosSemanais.progresso.categoriasEstudadas) {
       d.desafiosSemanais.progresso.categoriasEstudadas = [];
     }
@@ -239,12 +260,35 @@
     check('rei_revisao',        stats.totalFlashcards >= 50);
     check('maratonista_estudo', stats.totalPerguntas >= 100);
     check('perfeccionista_all', !!extras.perfeccionista);
+    // Troféus por guia (checklist 100%)
+    var gc = stats.guiasConcluidos || [];
+    check('trofeu_chapa',      gc.indexOf('chapa') !== -1);
+    check('trofeu_fritas',     gc.indexOf('mcfritas') !== -1);
+    check('trofeu_limpeza',    gc.indexOf('limpeza') !== -1);
+    check('trofeu_drive',      gc.indexOf('drive-thru') !== -1);
+    check('trofeu_mccafe',     gc.indexOf('mccafe') !== -1);
+    check('trofeu_fechamento', gc.indexOf('fechamento') !== -1);
+    check('trofeu_manutencao', gc.indexOf('manutencao-preventivas') !== -1);
+    // Prova
+    var pa = stats.provasAprovadas || [];
+    check('aprovado_turno',    pa.indexOf('gerente-de-turno') !== -1);
+    check('aprovado_plantao',  pa.indexOf('gerente-de-plantao') !== -1);
+    check('excelencia_turno',  !!extras.excelencia_turno);
+    // Tempo de estudo
+    check('hora_de_estudo',    (stats.minEstudo || 0) >= 60);
+    check('estudante_dedicado',(stats.minEstudo || 0) >= 300);
 
-    // Show toasts for new unlocks (staggered)
+    // Show toasts and push notifications for new unlocks (staggered)
     newOnes.forEach(function (id, i) {
       var c = CONQUISTAS.filter(function (x) { return x.id === id; })[0];
       if (!c) return;
-      setTimeout(function () { showToast(c.icon, c.nome, c.desc); }, i * 4500);
+      setTimeout(function () {
+        showToast(c.icon, c.nome, c.desc);
+        // Notificação push só se o app estiver em background (visibilityState hidden)
+        if (document.visibilityState === 'hidden') {
+          _notifyConquista(c);
+        }
+      }, i * 4500);
     });
 
     return newOnes;
@@ -370,6 +414,168 @@
     save(data);
   }
 
+  /**
+   * Call when a guide checklist reaches 100%.
+   * @param {string} guideId  — page id, e.g. 'chapa', 'limpeza', 'mccafe'
+   */
+  function onChecklistComplete(guideId) {
+    if (!guideId) return;
+    var data = getData();
+    checkWeekReset(data);
+    updateStreak(data.estatisticas);
+    var gc = data.estatisticas.guiasConcluidos;
+    if (gc.indexOf(guideId) === -1) gc.push(guideId);
+    verificarConquistas(data, {});
+    save(data);
+  }
+
+  /**
+   * Call when a prova is completed.
+   * @param {string} provaId  — prova id, e.g. 'gerente-de-turno'
+   * @param {number} pct      — percentage 0-100
+   */
+  function onProvaComplete(provaId, pct) {
+    if (!provaId) return;
+    var data = getData();
+    checkWeekReset(data);
+    updateStreak(data.estatisticas);
+    var pa = data.estatisticas.provasAprovadas;
+    if (pct >= 70 && pa.indexOf(provaId) === -1) pa.push(provaId);
+    var extras = {
+      excelencia_turno: provaId === 'gerente-de-turno' && pct >= 90,
+    };
+    verificarConquistas(data, extras);
+    save(data);
+  }
+
+  /**
+   * Add study minutes (call on page unload or after timed session).
+   * @param {number} minutes
+   */
+  function addStudyMinutes(minutes) {
+    if (!minutes || minutes <= 0) return;
+    var data = getData();
+    data.estatisticas.minEstudo = (data.estatisticas.minEstudo || 0) + Math.round(minutes);
+    verificarConquistas(data, {});
+    save(data);
+  }
+
+  /**
+   * Request permission for daily reminder notifications (local + push via SW).
+   * Returns a promise resolving to 'granted' | 'denied' | 'unsupported'.
+   */
+  function requestNotificationReminder() {
+    if (!('Notification' in window)) return Promise.resolve('unsupported');
+
+    if (Notification.permission === 'granted') {
+      _scheduleReminderCheck();
+      _setupPushReminder();
+      return Promise.resolve('granted');
+    }
+
+    return Notification.requestPermission().then(function(perm) {
+      if (perm === 'granted') {
+        _scheduleReminderCheck();
+        _setupPushReminder();
+      }
+      return perm;
+    });
+  }
+
+  /**
+   * Dispara uma notificação local imediata via Service Worker (mais confiável
+   * que new Notification() em mobile/Android, que às vezes é bloqueada).
+   */
+  function _showLocalNotification(title, body, tag) {
+    tag = tag || 'mc-reminder';
+    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+      navigator.serviceWorker.ready.then(function(reg) {
+        reg.showNotification(title, {
+          body:     body,
+          icon:     '/mcguias/icons/icon-192.png',
+          badge:    '/mcguias/icons/icon-192.png',
+          tag:      tag,
+          renotify: false,
+          data:     { url: '/mcguias/' },
+          actions:  [
+            { action: 'open',    title: '📖 Estudar agora' },
+            { action: 'dismiss', title: '✕ Fechar' },
+          ],
+        });
+      }).catch(function() {
+        // Fallback para Notification API direta
+        try {
+          new Notification(title, { body: body, icon: '/mcguias/icons/icon-192.png', tag: tag });
+        } catch(e) {}
+      });
+    } else {
+      try {
+        new Notification(title, { body: body, icon: '/mcguias/icons/icon-192.png', tag: tag });
+      } catch(e) {}
+    }
+  }
+
+  function _scheduleReminderCheck() {
+    var today   = new Date().toISOString().slice(0, 10);
+    var lastKey = 'mc_last_notif';
+    if (localStorage.getItem(lastKey) === today) return;
+
+    var data         = getData();
+    var lastActivity = data.estatisticas.ultimaAtividade;
+    var streak       = data.estatisticas.diasConsecutivos || 0;
+
+    if (lastActivity !== today) {
+      setTimeout(function() {
+        if (Notification.permission !== 'granted') return;
+        var msg = streak > 0
+          ? 'Não perca seu streak de ' + streak + ' dia' + (streak !== 1 ? 's' : '') + '! Estude pelo menos 1 quiz hoje.'
+          : 'Que tal estudar hoje? Abra um guia e complete um quiz rápido!';
+        _showLocalNotification('MC Guias 📚', msg, 'mc-daily-reminder');
+        localStorage.setItem(lastKey, today);
+      }, 3000);
+    }
+  }
+
+  /**
+   * Configura lembretes recorrentes usando setTimeout encadeado.
+   * Simula um alarme diário às 20h (horário do dispositivo) —
+   * funciona enquanto o navegador/PWA estiver aberto.
+   * Para notificações 100% background seria necessário servidor VAPID,
+   * que está além do escopo de um app estático; esta abordagem cobre
+   * a grande maioria dos casos (usuário abre o app ao longo do dia).
+   */
+  function _setupPushReminder() {
+    var REMINDER_KEY = 'mc_push_reminder_set';
+    if (localStorage.getItem(REMINDER_KEY) === '1') return;
+    localStorage.setItem(REMINDER_KEY, '1');
+
+    function scheduleNext() {
+      var now    = new Date();
+      var target = new Date();
+      target.setHours(20, 0, 0, 0); // 20h local
+      if (now >= target) target.setDate(target.getDate() + 1);
+      var delay = target.getTime() - now.getTime();
+      setTimeout(function() {
+        _scheduleReminderCheck();
+        scheduleNext(); // agenda o próximo dia
+      }, delay);
+    }
+
+    scheduleNext();
+  }
+
+  /**
+   * Verifica e mostra notificação de conquista desbloqueada.
+   */
+  function _notifyConquista(conquista) {
+    if (Notification.permission !== 'granted') return;
+    _showLocalNotification(
+      '🏆 Conquista desbloqueada!',
+      conquista.icon + ' ' + conquista.nome + ' — ' + conquista.desc,
+      'mc-conquista-' + conquista.id
+    );
+  }
+
   /** Returns current data snapshot (for the conquistas page). */
   function getSnapshot() {
     var d = getData();
@@ -392,13 +598,17 @@
      EXPOSE
      ============================================================ */
   window.Gamificacao = {
-    onQuizComplete: onQuizComplete,
-    onFlashcard:    onFlashcard,
-    onJogoComplete: onJogoComplete,
-    getSnapshot:    getSnapshot,
-    resetAll:       resetAll,
-    CONQUISTAS:     CONQUISTAS,
-    DESAFIOS:       DESAFIOS,
+    onQuizComplete:              onQuizComplete,
+    onFlashcard:                 onFlashcard,
+    onJogoComplete:              onJogoComplete,
+    onChecklistComplete:         onChecklistComplete,
+    onProvaComplete:             onProvaComplete,
+    addStudyMinutes:             addStudyMinutes,
+    requestNotificationReminder: requestNotificationReminder,
+    getSnapshot:                 getSnapshot,
+    resetAll:                    resetAll,
+    CONQUISTAS:                  CONQUISTAS,
+    DESAFIOS:                    DESAFIOS,
   };
 
 })();
