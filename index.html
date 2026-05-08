@@ -776,6 +776,7 @@
           <div id="update-icon" style="font-size:48px;margin-bottom:12px;">🔍</div>
           <div id="update-title" style="font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--text);margin-bottom:6px;">Verificando...</div>
           <div id="update-sub" style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px;">Aguarde um momento</div>
+          <div id="update-version-badge" style="display:inline-block;font-size:11px;font-weight:700;color:var(--muted);background:var(--bg);border:1.5px solid var(--border);border-radius:99px;padding:3px 10px;margin-bottom:16px;letter-spacing:.03em;">mc-guias-v27</div>
           <div id="update-action"></div>
         </div>
 
@@ -1459,6 +1460,51 @@
         timeEl.textContent = '';
       });
     }
+  </script>
+
+  <script>
+    /* ── Swipe-to-close para todos os overlays (.cl-overlay) ── */
+    (function() {
+      var THRESHOLD = 80; // px para fechar
+      document.querySelectorAll('.cl-overlay').forEach(function(overlay) {
+        var inner = overlay.querySelector('.cl-panel, .cl-box, [class*="cl-"]');
+        if (!inner) return;
+        var startY = 0, currentY = 0, dragging = false;
+        inner.addEventListener('touchstart', function(e) {
+          // Só inicia se o scroll do inner estiver no topo
+          if (inner.scrollTop > 0) return;
+          startY = e.touches[0].clientY;
+          dragging = true;
+          inner.style.transition = 'none';
+        }, { passive: true });
+        inner.addEventListener('touchmove', function(e) {
+          if (!dragging) return;
+          currentY = e.touches[0].clientY;
+          var dy = currentY - startY;
+          if (dy < 0) { inner.style.transform = ''; return; }
+          inner.style.transform = 'translateY(' + dy + 'px)';
+          inner.style.opacity = Math.max(0, 1 - dy / 250);
+        }, { passive: true });
+        inner.addEventListener('touchend', function() {
+          if (!dragging) return;
+          dragging = false;
+          inner.style.transition = '';
+          var dy = currentY - startY;
+          if (dy > THRESHOLD) {
+            inner.style.transform = 'translateY(100%)';
+            inner.style.opacity = '0';
+            setTimeout(function() {
+              overlay.classList.remove('open');
+              inner.style.transform = '';
+              inner.style.opacity = '';
+            }, 220);
+          } else {
+            inner.style.transform = '';
+            inner.style.opacity = '';
+          }
+        });
+      });
+    })();
   </script>
 
   <script src="js/changelog.js"></script>

@@ -1,6 +1,55 @@
 {
   "versions": [
     {
+      "version": "v5",
+      "date": "2026-05-07",
+      "date_display": "07 Mai 2026",
+      "badge": "Correções e Melhorias",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "🏅",
+          "text": "**Nova Prova — Gerente de Plantão** com 37 questões cobrindo os 7 Básicos, SST, segurança patrimonial, câmaras frias, CIPA e inteligência emocional.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "✏️",
+          "text": "**Prova Gerente de Turno** corrigida: 14 respostas alinhadas ao gabarito oficial e 9 questões faltantes inseridas (calibragem de mostarda, Responsabilidade Pessoal, Criatividade, Liderar por Exemplo, Kit de Avaliação, feedback, recuperação de cliente e mais). Total: **50 questões**.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🍟",
+          "text": "Peso da **McFritas Média** corrigido de 114g para **102g** em tabela, gabarito PPI e questões de quiz.",
+          "tag": "bug"
+        },
+        {
+          "icon": "🔄",
+          "text": "**Botão de atualização** corrigido: não fica mais verificando infinitamente. Timeout de 8s garante resposta mesmo sem Service Worker ativo.",
+          "tag": "bug"
+        },
+        {
+          "icon": "📊",
+          "text": "**Barra de progresso** nas provas: indicador fixo mostra questões respondidas em tempo real conforme o usuário avança.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "👆",
+          "text": "**Swipe para fechar** overlays em mobile — gesto de arrastar para baixo fecha painéis de Novidades, Atualização e Roadmap.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🏷️",
+          "text": "Botão de atualização exibe a **versão atual** do app (mc-guias-v27).",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🛡️",
+          "text": "**Validação de JSON** nos arrays de quiz: erros de sintaxe são capturados e exibidos no painel em vez de silenciar todo o quiz.",
+          "tag": "bug"
+        }
+      ]
+    },
+    {
       "version": "v4",
       "date": "2026-04-25",
       "date_display": "25 Abr 2026",
