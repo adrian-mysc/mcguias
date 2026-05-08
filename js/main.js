@@ -332,6 +332,29 @@ function initQuiz(questions, guiaName) {
   const app = document.getElementById("quiz-app");
   if (!app) return;
 
+  // ── Validação de dados ──────────────────────────────────────
+  if (!Array.isArray(questions) || questions.length === 0) {
+    app.innerHTML = '<div style="padding:24px;text-align:center;color:#c62828;">'
+      + '<div style="font-size:32px;margin-bottom:8px;">⚠️</div>'
+      + '<strong>Erro ao carregar quiz</strong><br>'
+      + '<span style="font-size:13px;color:var(--muted);">Nenhuma questão encontrada. Verifique o console para detalhes.</span>'
+      + '</div>';
+    console.error('[MC Guias] initQuiz: array de questões vazio ou inválido para "' + guiaName + '".');
+    return;
+  }
+  var invalidIdx = questions.findIndex(function(q) {
+    return !q || typeof q.question === 'undefined' || !Array.isArray(q.options);
+  });
+  if (invalidIdx !== -1) {
+    app.innerHTML = '<div style="padding:24px;text-align:center;color:#c62828;">'
+      + '<div style="font-size:32px;margin-bottom:8px;">⚠️</div>'
+      + '<strong>Erro na questão ' + (invalidIdx + 1) + '</strong><br>'
+      + '<span style="font-size:13px;color:var(--muted);">Estrutura inválida detectada. Verifique o console.</span>'
+      + '</div>';
+    console.error('[MC Guias] initQuiz: questão inválida no índice ' + invalidIdx + ':', questions[invalidIdx]);
+    return;
+  }
+
   // Inject key badge style once
   if (!document.getElementById('mc-quiz-opt-style')) {
     var s = document.createElement('style');
