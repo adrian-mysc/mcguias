@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página não encontrada — MC Guias</title>
@@ -21,9 +22,9 @@
         setTimeout(function() { s.style.display = 'none'; }, 420);
       }
       if (document.readyState === 'complete') {
-        setTimeout(hideSplash, 700);
+        setTimeout(hideSplash, 200);
       } else {
-        window.addEventListener('load', function() { setTimeout(hideSplash, 700); });
+        window.addEventListener('load', function() { setTimeout(hideSplash, 200); });
       }
     })();
   </script>
@@ -60,6 +61,6 @@
     <strong>MC Guias</strong> · Estudo Operacional · Adrian E. Silva
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
