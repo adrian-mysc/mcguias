@@ -1,262 +1,520 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - MC Guias</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .stat-card:hover { transform: translateY(-5px); }
-        .stat-number { font-size: 2.5rem; font-weight: bold; margin: 10px 0; }
-        .progress-bar {
-            background: rgba(255,255,255,0.2);
-            border-radius: 10px;
-            height: 20px;
-            overflow: hidden;
-            margin: 10px 0;
-        }
-        .progress-fill {
-            background: #4ade80;
-            height: 100%;
-            transition: width 0.5s ease;
-        }
-        .achievement-badge {
-            display: inline-block;
-            margin: 5px;
-            padding: 8px 15px;
-            background: #fbbf24;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        .btn-group {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin: 20px;
-        }
-        button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-        .btn-secondary {
-            background: #4ade80;
-            color: white;
-        }
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        body.dark-mode .card {
-            background: #1e1e2e;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — MC Guias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    /* ── Layout base ── */
+    .dash-section { margin-bottom: 24px; }
+    .dash-section-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* ── Cards de estatística ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .stat-card-num {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+    }
+    .stat-card-num.green  { color: #22c55e; }
+    .stat-card-num.yellow { color: #f59e0b; }
+    .stat-card-num.blue   { color: #3b82f6; }
+    .stat-card-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ── Gráfico de barras por guia ── */
+    .guia-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .guia-row:last-child { border-bottom: none; }
+    .guia-row-name {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .guia-row-count {
+      font-size: 11px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .guia-bar-wrap {
+      width: 72px;
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .guia-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width .6s cubic-bezier(0.34,1,0.64,1);
+    }
+    .guia-row-pct {
+      font-size: 13px;
+      font-weight: 800;
+      width: 36px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* ── Histórico ── */
+    .hist-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .hist-badge {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 900;
+      min-width: 46px;
+      text-align: center;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+    .hist-badge.good   { background: #e8f5e9; color: #1a5c2a; }
+    .hist-badge.ok     { background: #fff8e1; color: #7c5200; }
+    .hist-badge.bad    { background: #ffebee; color: #b71c1c; }
+    .hist-meta { flex: 1; overflow: hidden; }
+    .hist-guia { font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hist-date { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+    /* ── SR ratio bar ── */
+    .sr-bar-wrap {
+      display: flex;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+    .sr-bar-correct { background: #22c55e; }
+    .sr-bar-wrong   { background: var(--red); }
+
+    /* ── Botões de ação ── */
+    .action-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .action-row .btn-secondary,
+    .action-row .btn-primary {
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      padding: 11px 8px;
+    }
+
+    /* ── Conquistas no dash ── */
+    .cq-mini-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .cq-mini {
+      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+    }
+    .cq-mini.locked { opacity: 0.3; filter: grayscale(1); }
+
+    /* ── Empty state ── */
+    .dash-empty {
+      text-align: center;
+      padding: 28px 16px;
+      color: var(--muted);
+      font-size: 13px;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+    .dash-empty span { font-size: 32px; display: block; margin-bottom: 8px; }
+
+    [data-theme="dark"] .hist-badge.good { background: #052e16; color: #86efac; }
+    [data-theme="dark"] .hist-badge.ok   { background: #1c1400; color: #fcd34d; }
+    [data-theme="dark"] .hist-badge.bad  { background: #1a0000; color: #fca5a5; }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <h1 style="text-align: center;">📊 Meu Progresso</h1>
-        
-        <div class="stats-grid" id="statsGrid"></div>
-        
-        <div class="card">
-            <h2>📈 Evolução de Acertos</h2>
-            <canvas id="progressChart" width="400" height="200"></canvas>
-        </div>
-        
-        <div class="card">
-            <h2>🏆 Conquistas</h2>
-            <div id="achievementsList" style="text-align: center;"></div>
-        </div>
-        
-        <div class="card">
-            <h2>📚 Áreas para Melhorar</h2>
-            <div id="weakTopicsList"></div>
-        </div>
-        
-        <div class="btn-group">
-            <button onclick="exportData()" class="btn-primary">📤 Exportar Backup</button>
-            <button onclick="importData()" class="btn-secondary">📥 Importar Backup</button>
-        </div>
-        
-        <div style="text-align: center; margin: 20px;">
-            <a href="../index.html" style="text-decoration: none;">← Voltar ao Início</a>
-        </div>
+<body data-page="dashboard">
+
+  <!-- Navbar padrão -->
+  <nav class="navbar">
+    <a class="navbar-back" href="../index.html">‹</a>
+    <span class="navbar-title">📊 Meu Progresso</span>
+  </nav>
+
+  <div class="page-content" style="padding: 16px; max-width: 680px; margin: 0 auto;">
+
+    <!-- ── Estatísticas gerais ── -->
+    <div class="dash-section">
+      <div class="dash-section-title">Resumo geral</div>
+      <div class="stat-grid" id="statGrid">
+        <div class="stat-card"><div class="stat-card-num" id="sSimulados">—</div><div class="stat-card-label">Simulados feitos</div></div>
+        <div class="stat-card"><div class="stat-card-num green" id="sMedia">—</div><div class="stat-card-label">Média geral</div></div>
+        <div class="stat-card"><div class="stat-card-num yellow" id="sMelhor">—</div><div class="stat-card-label">Melhor resultado</div></div>
+        <div class="stat-card"><div class="stat-card-num blue"  id="sStreak">—</div><div class="stat-card-label">Dias consecutivos</div></div>
+        <div class="stat-card"><div class="stat-card-num" id="sPerguntas">—</div><div class="stat-card-label">Perguntas respondidas</div></div>
+        <div class="stat-card"><div class="stat-card-num green" id="sConquistas">—</div><div class="stat-card-label">Conquistas</div></div>
+      </div>
     </div>
-    
-    <script>
-        function loadStats() {
-            const quizHistory = JSON.parse(localStorage.getItem('quizHistory') || '[]');
-            
-            const totalQuizzes = quizHistory.length;
-            const avgScore = totalQuizzes > 0 
-                ? (quizHistory.reduce((sum, q) => sum + (q.score / q.total * 100), 0) / totalQuizzes).toFixed(1)
-                : 0;
-            const bestScore = totalQuizzes > 0
-                ? Math.max(...quizHistory.map(q => (q.score / q.total * 100)))
-                : 0;
-            const totalQuestions = quizHistory.reduce((sum, q) => sum + q.total, 0);
-            const totalCorrect = quizHistory.reduce((sum, q) => sum + q.score, 0);
-            
-            document.getElementById('statsGrid').innerHTML = `
-                <div class="stat-card">
-                    <h3>📝 Simulados</h3>
-                    <div class="stat-number">${totalQuizzes}</div>
-                </div>
-                <div class="stat-card">
-                    <h3>⭐ Média</h3>
-                    <div class="stat-number">${avgScore}%</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${avgScore}%"></div>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <h3>🏆 Melhor</h3>
-                    <div class="stat-number">${bestScore}%</div>
-                </div>
-                <div class="stat-card">
-                    <h3>✅ Acertos</h3>
-                    <div class="stat-number">${totalCorrect}/${totalQuestions}</div>
-                </div>
-            `;
-            
-            // Gráfico
-            const last10Quizzes = quizHistory.slice(-10);
-            const ctx = document.getElementById('progressChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: last10Quizzes.map((_, i) => `#${i+1}`),
-                    datasets: [{
-                        label: 'Pontuação (%)',
-                        data: last10Quizzes.map(q => (q.score / q.total * 100)),
-                        borderColor: '#667eea',
-                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { position: 'bottom' }
-                    }
-                }
-            });
-            
-            // Conquistas
-            const achievements = [];
-            if(totalQuizzes >= 10) achievements.push('🎓 10 Simulados');
-            if(avgScore >= 80) achievements.push('⭐ Mestre (80%+)');
-            if(totalCorrect >= 100) achievements.push('💯 Centenário');
-            if(bestScore === 100) achievements.push('🏆 Perfeição');
-            
-            document.getElementById('achievementsList').innerHTML = achievements.length > 0 
-                ? achievements.map(a => `<span class="achievement-badge">${a}</span>`).join('')
-                : '<p>Faça simulados para ganhar conquistas!</p>';
-            
-            // Tópicos fracos
-            const topicErrors = {};
-            quizHistory.forEach(quiz => {
-                if(quiz.mistakes) {
-                    quiz.mistakes.forEach(mistake => {
-                        topicErrors[mistake.topic] = (topicErrors[mistake.topic] || 0) + 1;
-                    });
-                }
-            });
-            
-            const weakHtml = Object.entries(topicErrors).sort((a,b) => b[1] - a[1]).slice(0,5)
-                .map(([topic, errors]) => `<div class="progress-bar" style="margin: 10px 0;">
-                    <div class="progress-fill" style="width: ${Math.min(100, errors * 10)}%; background: #ef4444;">
-                        ${topic}: ${errors} erros
-                    </div>
-                </div>`).join('');
-            
-            document.getElementById('weakTopicsList').innerHTML = weakHtml || '<p>Continue praticando! 🎯</p>';
-        }
-        
-        function exportData() {
-            const data = {
-                version: '1.0',
-                date: new Date().toISOString(),
-                quizHistory: localStorage.getItem('quizHistory'),
-                checklists: getAllChecklists()
-            };
-            
-            const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `mcguias_backup_${new Date().toISOString().split('T')[0]}.json`;
-            a.click();
-            URL.revokeObjectURL(url);
-            alert('✅ Backup salvo!');
-        }
-        
-        function getAllChecklists() {
-            const checklists = {};
-            for(let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                if(key && key.startsWith('checklist_')) {
-                    checklists[key] = localStorage.getItem(key);
-                }
+
+    <!-- ── Acertos vs Erros (SR) ── -->
+    <div class="dash-section" id="srSection" style="display:none;">
+      <div class="dash-section-title">Acertos vs Erros (Repetição Espaçada)</div>
+      <div class="card" style="padding:14px 16px;">
+        <div class="sr-bar-wrap" id="srBar"></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px;">
+          <span id="srCorrect">✅ 0 corretas</span>
+          <span id="srWrong">❌ 0 erradas</span>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:var(--muted);text-align:center;" id="srTaxaAcerto"></div>
+      </div>
+    </div>
+
+    <!-- ── Desempenho por guia ── -->
+    <div class="dash-section">
+      <div class="dash-section-title">Desempenho por guia</div>
+      <div class="card" style="padding:14px 16px;" id="guiaList">
+        <div class="dash-empty"><span>📋</span>Faça simulados para ver seu desempenho por guia.</div>
+      </div>
+    </div>
+
+    <!-- ── Histórico recente ── -->
+    <div class="dash-section">
+      <div class="dash-section-title">Histórico recente</div>
+      <div id="histList">
+        <div class="dash-empty"><span>🕐</span>Nenhum simulado realizado ainda.</div>
+      </div>
+    </div>
+
+    <!-- ── Conquistas ── -->
+    <div class="dash-section">
+      <div class="dash-section-title">Conquistas <span id="cqCount" style="font-weight:400;font-size:11px;"></span></div>
+      <div class="card" style="padding:14px 16px;">
+        <div class="cq-mini-grid" id="cqGrid">
+          <div style="font-size:13px;color:var(--muted);">Carregando…</div>
+        </div>
+        <div style="margin-top:10px;text-align:center;">
+          <a href="conquistas.html" style="font-size:12px;font-weight:700;color:var(--red);text-decoration:none;">Ver todas as conquistas →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Ações: backup ── -->
+    <div class="dash-section">
+      <div class="dash-section-title">Dados</div>
+      <div class="action-row">
+        <button class="btn-primary"   onclick="exportarBackup()">📤 Exportar backup</button>
+        <button class="btn-secondary" onclick="importarBackup()">📥 Importar backup</button>
+      </div>
+      <div style="margin-top:8px;text-align:center;">
+        <button onclick="confirmarReset()" style="font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 8px;">🗑️ Resetar todos os dados</button>
+      </div>
+    </div>
+
+  </div><!-- /page-content -->
+
+  <script src="../js/gamificacao.js"></script>
+  <script>
+  /* ============================================================
+     Dashboard — MC Guias
+     Dados unificados: mc_quiz_history + mc_sr_data + gamificacao
+  ============================================================ */
+  (function() {
+    'use strict';
+
+    // ── Helpers ──────────────────────────────────────────────
+    function getQuizHistory() {
+      try { return JSON.parse(localStorage.getItem('mc_quiz_history') || '[]'); } catch(e) { return []; }
+    }
+    function getSRData() {
+      try { return JSON.parse(localStorage.getItem('mc_sr_data') || '{}'); } catch(e) { return {}; }
+    }
+    function getGamData() {
+      try { return JSON.parse(localStorage.getItem('gamificacao') || 'null'); } catch(e) { return null; }
+    }
+    function pct(score, total) {
+      return total > 0 ? Math.round((score / total) * 100) : 0;
+    }
+    function colorFor(p) {
+      return p >= 80 ? '#22c55e' : p >= 60 ? '#f59e0b' : 'var(--red)';
+    }
+    function el(id) { return document.getElementById(id); }
+
+    // ── Renderiza estatísticas gerais ────────────────────────
+    function renderStats(hist, srData, gamData) {
+      var total     = hist.length;
+      var allPcts   = hist.map(function(h) { return pct(h.score, h.total); });
+      var avg       = total > 0 ? Math.round(allPcts.reduce(function(a,b){return a+b;},0) / total) : 0;
+      var best      = total > 0 ? Math.max.apply(null, allPcts) : 0;
+      var streak    = gamData ? (gamData.estatisticas.diasConsecutivos || 0) : 0;
+      var totalQ    = gamData ? (gamData.estatisticas.totalPerguntas || 0)  : hist.reduce(function(s,h){return s+h.total;},0);
+      var cqCount   = gamData ? gamData.conquistas.length : 0;
+
+      el('sSimulados').textContent  = total;
+      el('sMedia').textContent      = total > 0 ? avg + '%'  : '—';
+      el('sMelhor').textContent     = total > 0 ? best + '%' : '—';
+      el('sStreak').textContent     = streak + (streak === 1 ? ' dia' : ' dias');
+      el('sPerguntas').textContent  = totalQ;
+      el('sConquistas').textContent = cqCount;
+    }
+
+    // ── Renderiza SR ratio ───────────────────────────────────
+    function renderSR(srData) {
+      var values = Object.values(srData);
+      if (!values.length) return;
+      var correct = values.reduce(function(s,d){return s+(d.correct||0);},0);
+      var wrong   = values.reduce(function(s,d){return s+(d.wrong||0);},0);
+      var total   = correct + wrong;
+      if (!total) return;
+      var cPct = Math.round((correct/total)*100);
+      el('srSection').style.display = '';
+      el('srBar').innerHTML =
+        '<div class="sr-bar-correct" style="flex:' + correct + ';"></div>' +
+        '<div class="sr-bar-wrong"   style="flex:' + wrong   + ';"></div>';
+      el('srCorrect').textContent = '✅ ' + correct + ' corretas';
+      el('srWrong').textContent   = '❌ ' + wrong   + ' erradas';
+      el('srTaxaAcerto').textContent = 'Taxa de acerto geral: ' + cPct + '%  (' + total + ' respostas registradas)';
+    }
+
+    // ── Renderiza desempenho por guia ────────────────────────
+    function renderGuias(hist) {
+      var container = el('guiaList');
+      if (!hist.length) return;
+
+      var byGuia = {};
+      hist.forEach(function(h) {
+        var g = h.guia || 'Simulado';
+        if (!byGuia[g]) byGuia[g] = { scores: [], count: 0 };
+        byGuia[g].scores.push(pct(h.score, h.total));
+        byGuia[g].count++;
+      });
+
+      var rows = Object.entries(byGuia)
+        .map(function(e) {
+          var name = e[0], d = e[1];
+          var avg  = Math.round(d.scores.reduce(function(a,b){return a+b;},0) / d.scores.length);
+          return { name: name, avg: avg, count: d.count };
+        })
+        .sort(function(a,b) { return a.avg - b.avg; }); // piores primeiro
+
+      var emoji = function(p) { return p>=80?'🏆':p>=60?'👍':'📖'; };
+
+      container.innerHTML = rows.map(function(r) {
+        var c = colorFor(r.avg);
+        return '<div class="guia-row">' +
+          '<div class="guia-row-name">' + emoji(r.avg) + ' ' + r.name + '</div>' +
+          '<div class="guia-row-count">' + r.count + 'x</div>' +
+          '<div class="guia-bar-wrap"><div class="guia-bar-fill" style="width:' + r.avg + '%;background:' + c + ';"></div></div>' +
+          '<div class="guia-row-pct" style="color:' + c + ';">' + r.avg + '%</div>' +
+          '</div>';
+      }).join('');
+    }
+
+    // ── Renderiza histórico ──────────────────────────────────
+    function renderHist(hist) {
+      var container = el('histList');
+      if (!hist.length) return;
+
+      container.innerHTML = hist.slice(0, 10).map(function(h) {
+        var p   = pct(h.score, h.total);
+        var cls = p >= 80 ? 'good' : p >= 60 ? 'ok' : 'bad';
+        return '<div class="hist-card">' +
+          '<div class="hist-badge ' + cls + '">' + p + '%</div>' +
+          '<div class="hist-meta">' +
+            '<div class="hist-guia">' + (h.guia || 'Simulado') + '</div>' +
+            '<div class="hist-date">' + (h.date || '') + ' · ' + h.score + '/' + h.total + '</div>' +
+          '</div></div>';
+      }).join('');
+    }
+
+    // ── Renderiza conquistas ─────────────────────────────────
+    function renderConquistas(gamData) {
+      var grid = el('cqGrid');
+      var countEl = el('cqCount');
+      if (!gamData || !window.Gamificacao) { grid.innerHTML = '<div style="font-size:13px;color:var(--muted);">Faça um quiz para ganhar conquistas!</div>'; return; }
+
+      var snap      = window.Gamificacao.getSnapshot();
+      var unlocked  = snap.conquistas;
+      var catalogo  = snap.catalogo;
+
+      countEl.textContent = '(' + unlocked.length + '/' + catalogo.length + ')';
+
+      grid.innerHTML = catalogo.map(function(c) {
+        var isUnlocked = unlocked.indexOf(c.id) !== -1;
+        return '<div class="cq-mini ' + (isUnlocked ? '' : 'locked') + '" title="' + c.nome + (isUnlocked ? ' ✅' : ' 🔒') + '">' + c.icon + '</div>';
+      }).join('');
+    }
+
+    // ── Backup / Restore ─────────────────────────────────────
+    window.exportarBackup = function() {
+      var data = {
+        version:     'mc-guias-backup-v2',
+        date:        new Date().toISOString(),
+        quizHistory: localStorage.getItem('mc_quiz_history'),
+        srData:      localStorage.getItem('mc_sr_data'),
+        gamificacao: localStorage.getItem('gamificacao'),
+      };
+      // Adicionar checklists
+      var checks = {};
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.startsWith('mc_checks_')) checks[k] = localStorage.getItem(k);
+      }
+      data.checklists = checks;
+
+      var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      var url  = URL.createObjectURL(blob);
+      var a    = document.createElement('a');
+      a.href   = url;
+      a.download = 'mcguias-backup-' + new Date().toISOString().slice(0,10) + '.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      mcShowToastDash('✅ Backup exportado!', false);
+    };
+
+    window.importarBackup = function() {
+      var input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'application/json';
+      input.onchange = function(e) {
+        var file   = e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(ev) {
+          try {
+            var data = JSON.parse(ev.target.result);
+            if (data.quizHistory)  localStorage.setItem('mc_quiz_history', data.quizHistory);
+            if (data.srData)       localStorage.setItem('mc_sr_data',      data.srData);
+            if (data.gamificacao)  localStorage.setItem('gamificacao',     data.gamificacao);
+            if (data.checklists) {
+              Object.entries(data.checklists).forEach(function(p) {
+                localStorage.setItem(p[0], p[1]);
+              });
             }
-            return checklists;
+            mcShowToastDash('✅ Backup restaurado! Recarregando…', false);
+            setTimeout(function() { location.reload(); }, 1200);
+          } catch(err) {
+            mcShowToastDash('❌ Arquivo inválido!', true);
+          }
+        };
+        reader.readAsText(file);
+      };
+      input.click();
+    };
+
+    window.confirmarReset = function() {
+      if (confirm('⚠️ Resetar TODOS os dados?\n\nIsso apagará seu histórico de quizzes, conquistas, desafios e estatísticas.\n\nEsta ação não pode ser desfeita.')) {
+        ['mc_quiz_history','mc_sr_data','gamificacao','mc_last_notif','mc_push_reminder_set'].forEach(function(k) {
+          localStorage.removeItem(k);
+        });
+        // Remove checklists
+        var toRemove = [];
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          if (k && k.startsWith('mc_checks_')) toRemove.push(k);
         }
-        
-        function importData() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'application/json';
-            input.onchange = e => {
-                const file = e.target.files[0];
-                const reader = new FileReader();
-                reader.onload = event => {
-                    try {
-                        const data = JSON.parse(event.target.result);
-                        if(data.quizHistory) localStorage.setItem('quizHistory', data.quizHistory);
-                        if(data.checklists) {
-                            Object.entries(data.checklists).forEach(([key, value]) => {
-                                localStorage.setItem(key, value);
-                            });
-                        }
-                        alert('✅ Restaurado! Recarregue a página.');
-                        location.reload();
-                    } catch(err) {
-                        alert('❌ Arquivo inválido!');
-                    }
-                };
-                reader.readAsText(file);
-            };
-            input.click();
-        }
-        
-        loadStats();
-    </script>
+        toRemove.forEach(function(k) { localStorage.removeItem(k); });
+        mcShowToastDash('✅ Dados resetados.', false);
+        setTimeout(function() { location.reload(); }, 1000);
+      }
+    };
+
+    function mcShowToastDash(msg, isWarn) {
+      var old = document.getElementById('dash-toast');
+      if (old) old.remove();
+      var t = document.createElement('div');
+      t.id = 'dash-toast';
+      t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);' +
+        'background:' + (isWarn ? '#f57f17' : '#1b5e20') + ';color:#fff;' +
+        'padding:11px 20px;border-radius:24px;font-size:14px;font-weight:700;' +
+        'z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.25);white-space:nowrap;';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(function() { if (t.parentNode) t.remove(); }, 3000);
+    }
+
+    // ── Bootstrap ────────────────────────────────────────────
+    function init() {
+      var hist    = getQuizHistory();
+      var srData  = getSRData();
+      var gamData = getGamData();
+
+      renderStats(hist, srData, gamData);
+      renderSR(srData);
+      renderGuias(hist);
+      renderHist(hist);
+      renderConquistas(gamData);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+  <script src="../js/main.js"></script>
 </body>
-  </html>
+</html>
