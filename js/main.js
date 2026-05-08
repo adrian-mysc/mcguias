@@ -525,6 +525,10 @@ function initQuiz(questions, guiaName) {
   if (typeof window._quizTimerSecs    === 'undefined') window._quizTimerSecs    = 20;
   if (typeof window._quizAutoAdvance  === 'undefined') window._quizAutoAdvance  = true;
 
+  // Limpa timers de sessão anterior para evitar avanço duplo ao trocar de modo
+  if (window._quizTimerInterval) { clearInterval(window._quizTimerInterval); window._quizTimerInterval = null; }
+  if (window._autoAdvanceTimer)  { clearTimeout(window._autoAdvanceTimer);   window._autoAdvanceTimer  = null; }
+
   var pool          = prioritizeQuestions(questions);
   var current       = 0;
   var score         = 0;
@@ -1203,7 +1207,7 @@ function initLacuna(questions, guiaName) {
     var halfPct  = Math.round(((score + scoreHalf * 0.5) / total) * 100);
     var medal    = halfPct >= 80 ? '🏆' : halfPct >= 60 ? '👍' : '📖';
 
-    saveQuizResult(score + Math.round(scoreHalf * 0.5), total, (guiaName || 'Lacunas') + ' ✏️');
+    saveQuizResult((guiaName || 'Lacunas') + ' ✏️', score + Math.round(scoreHalf * 0.5), total);
     if (window.Gamificacao) {
       window.Gamificacao.onQuizComplete({
         guide:      (guiaName || window._quizGuia || 'lacunas').toLowerCase(),

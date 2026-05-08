@@ -375,7 +375,7 @@
     }
 
     // perfeccionista
-    if (pct >= 90) prog.quizPerfeito = 1;
+    if (pct >= 90) prog.quizPerfeito = (prog.quizPerfeito || 0) + 1;
 
     // maratonista
     prog.totalPerguntas = (prog.totalPerguntas || 0) + (opts.total || 0);
