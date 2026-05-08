@@ -151,6 +151,7 @@ window.renderStats = renderStats;
 
 // switchMode — called from inline onclick in guide pages
 window.switchMode = function(mode) {
+  if (!window._quizData) return; // data not loaded yet
   if (window.setActiveMode) window.setActiveMode(mode);
   if (mode === 'flash')    { initFlashcard(window._quizData, window._quizGuia); return; }
   if (mode === 'lacuna')   { initLacuna(window._quizData, window._quizGuia);    return; }
@@ -225,6 +226,8 @@ function initChecklist() {
         badge.textContent = '✅ Checklist completo!';
         var cardBody = card.querySelector('.card-body');
         if (cardBody) cardBody.appendChild(badge);
+        // Fire gamification trophy
+        if (window.Gamificacao && pageId) window.Gamificacao.onChecklistComplete(pageId);
       }
     } else {
       var badge = card.querySelector('.check-complete-badge');
