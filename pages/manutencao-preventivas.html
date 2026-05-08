@@ -1324,18 +1324,20 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       const quizPanel = document.getElementById('panel-quiz');
+      function startQuiz() {
+        window._quizData = QUIZ_MANUTENCAO;
+        window._quizGuia = 'Manutenção e Preventivas';
+        if (window.switchMode) switchMode('multiple');
+        else initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
+      }
       const observer = new MutationObserver(() => {
         if (quizPanel.classList.contains('active')) {
-          if (window.switchMode) switchMode('multiple');
-          else initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
+          startQuiz();
           observer.disconnect();
         }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ['class'] });
-      if (quizPanel.classList.contains('active')) {
-        if (window.switchMode) switchMode('multiple');
-        else initQuiz(QUIZ_MANUTENCAO, 'Manutenção e Preventivas');
-      }
+      if (quizPanel.classList.contains('active')) startQuiz();
     });
   </script>
 

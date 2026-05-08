@@ -212,6 +212,8 @@
       persistencia:'🔥 Persistência',
       especial:    '🏆 Especial',
       jogo:        '🎮 Jogo',
+      trofeu:      '🥇 Troféus',
+      prova:       '📋 Provas',
     };
 
     function _mondayLabel(str) {
@@ -254,12 +256,18 @@
       document.getElementById('cqWeekLbl').textContent = 'Semana de ' + _mondayLabel(mon);
       document.getElementById('cqUnlockCount').textContent = snap.conquistas.length + '/' + snap.catalogo.length;
 
+      var hrs  = Math.floor((s.minEstudo || 0) / 60);
+      var mins = (s.minEstudo || 0) % 60;
+      var tempoStr = hrs > 0 ? hrs + 'h ' + mins + 'm' : ((s.minEstudo || 0) + 'm');
       var statsRows = [
         { label:'Total de perguntas respondidas', val: s.totalPerguntas || 0 },
         { label:'Maior sequência de acertos',     val: s.perguntasSeguidasCertas || 0 },
         { label:'Respostas rápidas (<30s)',        val: s.respostasRapidas || 0 },
         { label:'Flashcards revisados',           val: s.totalFlashcards || 0 },
         { label:'Quizzes após as 22h',            val: s.quizzesApos22h || 0 },
+        { label:'Tempo total de estudo',          val: tempoStr },
+        { label:'Guias com checklist 100%',       val: (s.guiasConcluidos || []).length },
+        { label:'Provas aprovadas (≥70%)',        val: (s.provasAprovadas || []).length },
       ];
       document.getElementById('cqStatsDetail').innerHTML = statsRows.map(function(r){
         return '<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;">'
