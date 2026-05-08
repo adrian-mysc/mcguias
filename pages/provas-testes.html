@@ -119,6 +119,46 @@
     }
     .prova-explanation.show { display: block; }
 
+    .prova-progress-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--card);
+      border-bottom: 1.5px solid var(--border);
+      padding: 10px 16px 8px;
+    }
+    .prova-progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .prova-progress-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .prova-progress-count {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .prova-progress-bar {
+      height: 5px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .prova-progress-fill {
+      height: 100%;
+      background: var(--red);
+      border-radius: 99px;
+      transition: width .35s cubic-bezier(.4,0,.2,1), background .3s;
+    }
+
     .prova-footer {
       padding: 12px 16px;
       border-top: 1.5px solid var(--border);
@@ -3436,6 +3476,17 @@
       var correct = Object.values(state).filter(function(v) { return v.correct; }).length;
       var answered = Object.keys(state).length;
 
+      var progressPct = total > 0 ? Math.round((answered / total) * 100) : 0;
+      var progressBar = '<div class="prova-progress-wrap" id="prog-' + prova.id + '">'
+        + '<div class="prova-progress-info">'
+        +   '<span class="prova-progress-label">Progresso</span>'
+        +   '<span class="prova-progress-count" id="prog-count-' + prova.id + '">' + answered + ' / ' + total + '</span>'
+        + '</div>'
+        + '<div class="prova-progress-bar">'
+        +   '<div class="prova-progress-fill" id="prog-fill-' + prova.id + '" style="width:' + progressPct + '%"></div>'
+        + '</div>'
+        + '</div>';
+
       var questsHtml = prova.perguntas.map(function(q, qi) {
         var ans = state[qi];
         var revealed = !!ans;
@@ -3470,6 +3521,7 @@
         : '<div class="prova-score" style="color:var(--muted);">0/' + total + ' respondidas</div>';
 
       return '<div class="prova-body">'
+        + progressBar
         + questsHtml
         + '<div class="prova-footer">'
         +   scoreHtml
@@ -3517,6 +3569,13 @@
       var total = prova.perguntas.length;
       var scoreEl = card.querySelector('.prova-score');
       if (scoreEl) scoreEl.innerHTML = '✅ ' + correct + '/' + total + ' corretas';
+
+      // Update progress bar
+      var progFill  = document.getElementById('prog-fill-' + provaId);
+      var progCount = document.getElementById('prog-count-' + provaId);
+      if (progFill)  progFill.style.width = Math.round((answered / total) * 100) + '%';
+      if (progCount) progCount.textContent = answered + ' / ' + total;
+      if (answered === total && progFill) progFill.style.background = correct / total >= 0.7 ? 'var(--green,#22c55e)' : '#e53935';
 
       // Update tag
       var pct = Math.round((correct / total) * 100);
