@@ -235,16 +235,24 @@ function initChecklist() {
     }
   }
 
+  // Estado em memória — evita JSON.parse a cada tick
+  var checkState = Object.assign({}, saved);
+  var _saveTimer = null;
+  function flushCheckState() {
+    if (key) localStorage.setItem(key, JSON.stringify(checkState));
+  }
+
   document.querySelectorAll(".check-item input[type=checkbox]").forEach((cb, i) => {
     if (saved[i]) { cb.checked = true; cb.closest(".check-item").classList.add("done"); }
     var card = cb.closest('.card');
     if (card) updateCheckProgress(card);
     cb.addEventListener("change", () => {
       cb.closest(".check-item").classList.toggle("done", cb.checked);
+      if (cb.checked) checkState[i] = true; else delete checkState[i];
+      // Debounce: agrupa escritas em uma única operação após 120ms
       if (key) {
-        const cur = JSON.parse(localStorage.getItem(key) || '{}');
-        if (cb.checked) cur[i] = true; else delete cur[i];
-        localStorage.setItem(key, JSON.stringify(cur));
+        clearTimeout(_saveTimer);
+        _saveTimer = setTimeout(flushCheckState, 120);
       }
       var card = cb.closest('.card');
       if (card) updateCheckProgress(card);
@@ -310,9 +318,11 @@ function updateSRData(hash, correct) {
 function prioritizeQuestions(questions) {
   const data = getSRData();
   const now  = Date.now();
+  // Pré-computa hashes uma vez — evita ~13.400 chamadas dentro do comparator
+  const hashes = new Map(questions.map(q => [q, getQuestionHash(q)]));
   return [...questions].sort((a, b) => {
-    const ha = getQuestionHash(a);
-    const hb = getQuestionHash(b);
+    const ha = hashes.get(a);
+    const hb = hashes.get(b);
     const da = data[ha];
     const db = data[hb];
 
