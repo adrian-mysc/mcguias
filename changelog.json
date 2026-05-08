@@ -46,6 +46,31 @@
           "icon": "🛡️",
           "text": "**Validação de JSON** nos arrays de quiz: erros de sintaxe são capturados e exibidos no painel em vez de silenciar todo o quiz.",
           "tag": "bug"
+        },
+        {
+          "icon": "🔥",
+          "text": "**Streak diário** visível na tela inicial: card mostra dias consecutivos, conquistas, quizzes feitos e tempo de estudo acumulado. Botão 🔔 para ativar lembrete push diário.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🥇",
+          "text": "**7 novos troféus por guia** — desbloqueados ao completar 100% do checklist de Chapa, MC Fritas, Limpeza, Drive-Thru, McCafé, Fechamento e Manutenção.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "📋",
+          "text": "**3 conquistas de prova** — Aprovado Turno (≥70%), Aprovado Plantão (≥70%) e Excelência Turno (≥90%) desbloqueadas automaticamente ao concluir as provas.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "⏱️",
+          "text": "**Rastreamento de tempo de estudo** — cada sessão é contabilizada. Conquistas '1 Hora' e 'Dedicado' desbloqueadas ao acumular 60min e 5h.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "📡",
+          "text": "**Modo offline aprimorado** — nova página offline mostra todos os guias em cache, redirecionamento automático ao reconectar e spinner de verificação.",
+          "tag": "sistema"
         }
       ]
     },

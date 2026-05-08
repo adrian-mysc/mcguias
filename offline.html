@@ -6,61 +6,134 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MC Guias — Sem conexão</title>
-
   <link rel="stylesheet" href="css/styles.css">
   <link rel="manifest" href="/mcguias/manifest.json">
-  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <meta name="theme-color" content="#DA291C">
   <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 32px 24px;
-      gap: 16px;
-    }
-    .offline-icon { font-size: 64px; margin-bottom: 8px; }
-    .offline-title {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--text);
-    }
-    .offline-sub {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 280px;
-      line-height: 1.6;
-    }
-    .offline-btn {
-      background: var(--red);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 12px 28px;
-      font-size: 15px;
-      font-weight: 700;
-      font-family: var(--font-display);
-      cursor: pointer;
-      margin-top: 8px;
-      transition: background 0.15s;
-    }
-    .offline-btn:hover { background: var(--red-dark); }
+    body { padding:0; margin:0; }
+    .ol-hero { background:linear-gradient(135deg,#DA291C 0%,#a01810 100%); color:white; padding:40px 24px 32px; text-align:center; }
+    .ol-icon { font-size:52px; margin-bottom:12px; line-height:1; }
+    .ol-title { font-family:var(--font-display); font-size:22px; font-weight:800; margin-bottom:6px; }
+    .ol-sub { font-size:14px; opacity:.8; line-height:1.55; max-width:300px; margin:0 auto 20px; }
+    .ol-retry-btn { background:white; color:var(--red); border:none; border-radius:12px; padding:11px 28px; font-family:var(--font-display); font-size:14px; font-weight:800; cursor:pointer; }
+    .ol-body { max-width:500px; margin:0 auto; padding:20px 16px 90px; }
+    .ol-status-row { display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+    .ol-status-row::after { content:''; flex:1; height:1px; background:var(--border); }
+    .ol-loading { text-align:center; padding:32px; color:var(--muted); font-size:13px; }
+    .ol-loading-spinner { width:28px; height:28px; border:3px solid var(--border); border-top-color:var(--red); border-radius:50%; animation:spin .7s linear infinite; margin:0 auto 12px; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .ol-empty { text-align:center; padding:28px 16px; }
+    .ol-empty-icon { font-size:36px; margin-bottom:10px; }
+    .ol-empty-text { font-size:13px; color:var(--muted); line-height:1.6; }
+    .ol-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .ol-page-card { background:var(--card); border:1.5px solid var(--border); border-radius:13px; padding:14px 12px; text-decoration:none; color:var(--text); display:flex; flex-direction:column; gap:5px; transition:transform .15s; }
+    .ol-page-card:active { transform:scale(.97); }
+    .ol-page-card-icon { font-size:24px; line-height:1; }
+    .ol-page-card-name { font-family:var(--font-display); font-size:13px; font-weight:800; line-height:1.2; }
+    .ol-page-card-badge { font-size:10px; font-weight:700; color:#16a34a; background:#f0fdf4; border-radius:20px; padding:2px 8px; align-self:flex-start; }
+    .ol-tip { background:var(--card); border:1.5px solid var(--border); border-radius:13px; padding:14px 16px; font-size:13px; color:var(--muted); line-height:1.55; display:flex; gap:10px; align-items:flex-start; }
+    .ol-tip-icon { font-size:20px; flex-shrink:0; margin-top:1px; }
   </style>
-  <script>
-    (function() {
-      var t = localStorage.getItem('mc_theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
-    })();
-  </script>
+  <script>(function(){var t=localStorage.getItem('mc_theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
-  <div class="offline-icon">📡</div>
-  <div class="offline-title">Sem conexão</div>
-  <p class="offline-sub">Você está offline. Conecte-se à internet para acessar o MC Guias.</p>
-  <button class="offline-btn" onclick="location.reload()">Tentar novamente</button>
-  <a href="index.html" style="font-size:13px;color:var(--muted);margin-top:4px;">← Voltar ao início</a>
+  <div class="ol-hero">
+    <div class="ol-icon" id="olIcon">📡</div>
+    <div class="ol-title">Sem conexão</div>
+    <p class="ol-sub">Você está offline, mas alguns guias podem estar disponíveis abaixo.</p>
+    <button class="ol-retry-btn" onclick="tryReconnect()">🔄 Tentar reconectar</button>
+  </div>
+  <div class="ol-body">
+    <div class="ol-status-row">📦 Disponível offline</div>
+    <div id="olCachedList"><div class="ol-loading"><div class="ol-loading-spinner"></div>Verificando cache…</div></div>
+    <div style="height:16px"></div>
+    <div class="ol-tip"><div class="ol-tip-icon">💡</div><div>Para ter mais guias disponíveis offline, <strong>abra-os com conexão</strong> pelo menos uma vez. O app guarda automaticamente os mais recentes.</div></div>
+  </div>
+  <script>
+    var PAGE_META = {
+      '/mcguias/':'/mcguias/index.html'===location.pathname?null:null,
+    };
+    var PAGES = [
+      {p:'/mcguias/',               icon:'🏠',name:'Início'},
+      {p:'/mcguias/index.html',     icon:'🏠',name:'Início'},
+      {p:'/mcguias/pages/chapa.html',               icon:'🍔',name:'Chapa'},
+      {p:'/mcguias/pages/lope.html',                icon:'🥗',name:'LOPE'},
+      {p:'/mcguias/pages/lope2.html',               icon:'🥗',name:'LOPE 2'},
+      {p:'/mcguias/pages/linha.html',               icon:'🍞',name:'Linha'},
+      {p:'/mcguias/pages/mcfritas.html',            icon:'🍟',name:'MC Fritas'},
+      {p:'/mcguias/pages/fritos.html',              icon:'🍗',name:'Fritos'},
+      {p:'/mcguias/pages/condimentacao.html',       icon:'🧂',name:'Condimentação'},
+      {p:'/mcguias/pages/montagem-entrega.html',    icon:'📦',name:'Montagem e Entrega'},
+      {p:'/mcguias/pages/bebidas-sobremesas.html',  icon:'🥤',name:'Bebidas e Sobremesas'},
+      {p:'/mcguias/pages/drive-thru.html',          icon:'🚗',name:'Drive-Thru'},
+      {p:'/mcguias/pages/salao-ngk.html',           icon:'🪑',name:'Salão NGK'},
+      {p:'/mcguias/pages/limpeza.html',             icon:'🧹',name:'Limpeza'},
+      {p:'/mcguias/pages/fechamento.html',          icon:'🔒',name:'Fechamento'},
+      {p:'/mcguias/pages/mccafe.html',              icon:'☕',name:'McCafé'},
+      {p:'/mcguias/pages/mcdelivery.html',          icon:'🛵',name:'McDelivery'},
+      {p:'/mcguias/pages/influencer-pagamento.html',icon:'💳',name:'Pagamento'},
+      {p:'/mcguias/pages/embaixador-experiencia.html',icon:'⭐',name:'Embaixador'},
+      {p:'/mcguias/pages/seguranca-alimento.html',  icon:'🛡️',name:'Segurança Alimentar'},
+      {p:'/mcguias/pages/estoque-recebimento.html', icon:'📦',name:'Estoque e Recebimento'},
+      {p:'/mcguias/pages/validades-secundarias.html',icon:'📅',name:'Validades Secundárias'},
+      {p:'/mcguias/pages/manutencao-preventivas.html',icon:'🔧',name:'Manutenção Preventivas'},
+      {p:'/mcguias/pages/glossario.html',           icon:'📖',name:'Glossário'},
+      {p:'/mcguias/pages/provas-testes.html',       icon:'📝',name:'Provas e Testes'},
+      {p:'/mcguias/pages/quiz.html',                icon:'🎯',name:'Quiz Geral'},
+      {p:'/mcguias/pages/quiz-tempos-validades.html',icon:'⏱️',name:'Quiz Tempos'},
+      {p:'/mcguias/pages/treinadores.html',         icon:'🏅',name:'Treinadores'},
+      {p:'/mcguias/pages/supervisores.html',        icon:'👔',name:'Supervisores'},
+      {p:'/mcguias/pages/promocao-interna.html',    icon:'🚀',name:'Promoção Interna'},
+      {p:'/mcguias/pages/conquistas.html',          icon:'🏆',name:'Conquistas'},
+      {p:'/mcguias/pages/jogo-condimentacao.html',  icon:'🎮',name:'Jogo Sanduíche'},
+    ];
+    var META_MAP = {};
+    PAGES.forEach(function(pg){META_MAP[pg.p]=pg;});
+
+    function tryReconnect(){
+      document.getElementById('olIcon').textContent='🔄';
+      setTimeout(function(){
+        if(navigator.onLine){location.href='/mcguias/';}
+        else{document.getElementById('olIcon').textContent='📡';alert('Ainda sem conexão.');}
+      },800);
+    }
+    function showEmpty(c){c.innerHTML='<div class="ol-empty"><div class="ol-empty-icon">📭</div><div class="ol-empty-text">Nenhum guia encontrado no cache ainda.<br>Abra os guias com conexão para que fiquem disponíveis offline.</div></div>';}
+
+    function loadCachedPages(){
+      var c=document.getElementById('olCachedList');
+      if(!('caches' in window)){c.innerHTML='<div class="ol-empty"><div class="ol-empty-icon">🔒</div><div class="ol-empty-text">Seu navegador não suporta verificação de cache.</div></div>';return;}
+      caches.keys().then(function(keys){
+        if(!keys.length){showEmpty(c);return Promise.reject('no-cache');}
+        var name=keys.slice().sort().reverse()[0];
+        return caches.open(name).then(function(cache){return cache.keys();});
+      }).then(function(reqs){
+        if(!reqs||!reqs.length){showEmpty(c);return;}
+        var cachedPaths=new Set(reqs.map(function(r){try{return new URL(r.url).pathname;}catch(e){return r.url;}}));
+        var found=PAGES.filter(function(pg){return cachedPaths.has(pg.p);});
+        // dedupe by name
+        var seenNames=new Set(), deduped=[];
+        found.forEach(function(f){if(!seenNames.has(f.name)){seenNames.add(f.name);deduped.push(f);}});
+        // sort: home first
+        deduped.sort(function(a,b){if(a.name==='Início')return -1;if(b.name==='Início')return 1;return a.name.localeCompare(b.name,'pt-BR');});
+        if(!deduped.length){showEmpty(c);return;}
+        c.innerHTML='';
+        var lbl=document.createElement('div');
+        lbl.style.cssText='font-size:12px;color:var(--muted);margin-bottom:12px;';
+        lbl.textContent=deduped.length+' '+(deduped.length===1?'página disponível':'páginas disponíveis')+' no cache';
+        c.appendChild(lbl);
+        var grid=document.createElement('div');grid.className='ol-grid';
+        deduped.forEach(function(f){
+          var a=document.createElement('a');a.className='ol-page-card';a.href=f.p;
+          a.innerHTML='<div class="ol-page-card-icon">'+f.icon+'</div>'
+            +'<div class="ol-page-card-name">'+f.name+'</div>'
+            +'<div class="ol-page-card-badge">✓ Em cache</div>';
+          grid.appendChild(a);
+        });
+        c.appendChild(grid);
+      }).catch(function(){showEmpty(c);});
+    }
+    loadCachedPages();
+    window.addEventListener('online',function(){setTimeout(function(){location.href='/mcguias/';},500);});
+  </script>
 </body>
 </html>

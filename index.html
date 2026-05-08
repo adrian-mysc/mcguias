@@ -522,6 +522,24 @@
 
   <div class="home-content">
 
+    <!-- Streak + Gamificação widget -->
+    <div id="streakWidget" style="display:none;background:linear-gradient(135deg,#DA291C 0%,#a01810 100%);border-radius:16px;padding:14px 16px;color:white;margin-bottom:2px;animation:revealUp .35s .1s cubic-bezier(0.22,1,.36,1) both;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div id="streakFlame" style="font-size:30px;line-height:1;transition:transform .3s;">🔥</div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:800;line-height:1;"><span id="streakDays">0</span> dias seguidos</div>
+            <div style="font-size:11px;opacity:.75;margin-top:2px;" id="streakSub">Continue estudando!</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <a href="pages/conquistas.html" style="background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);border-radius:10px;padding:7px 12px;font-family:var(--font-display);font-size:12px;font-weight:800;color:white;text-decoration:none;white-space:nowrap;">🏆 Ver tudo</a>
+          <button id="notifBtn" onclick="requestReminder()" style="display:none;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);border-radius:10px;padding:7px 10px;font-size:16px;cursor:pointer;" title="Ativar lembrete diário">🔔</button>
+        </div>
+      </div>
+      <div id="streakMiniStats" style="display:flex;gap:0;margin-top:12px;border-top:1px solid rgba(255,255,255,0.18);padding-top:10px;"></div>
+    </div>
+
     <a href="pages/quiz.html" class="quiz-cta" data-keywords="simulado quiz perguntas teste">
       <div class="quiz-cta-icon">🎯</div>
       <div><h3>Simulado Geral</h3><p>Teste seus conhecimentos com perguntas de todos os guias</p></div>
@@ -1194,6 +1212,87 @@
   </script>
   <script src="js/gamificacao.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    /* ── Streak widget ──────────────────────────────────────── */
+    (function() {
+      function initStreakWidget() {
+        if (!window.Gamificacao) { setTimeout(initStreakWidget, 150); return; }
+        var snap = window.Gamificacao.getSnapshot();
+        var s    = snap.estatisticas;
+        var streak = s.diasConsecutivos || 0;
+        var widget = document.getElementById('streakWidget');
+        if (!widget) return;
+
+        widget.style.display = 'block';
+
+        document.getElementById('streakDays').textContent = streak;
+
+        var flame = document.getElementById('streakFlame');
+        if (streak >= 7) { flame.textContent = '🔥'; flame.style.transform = 'scale(1.2)'; }
+        else if (streak >= 3) { flame.textContent = '🔥'; }
+        else if (streak === 0) { flame.textContent = '💤'; }
+
+        var sub = document.getElementById('streakSub');
+        if (streak === 0) sub.textContent = 'Comece a estudar hoje!';
+        else if (streak === 1) sub.textContent = 'Bom começo! Volte amanhã.';
+        else if (streak < 5) sub.textContent = streak + ' dias consecutivos!';
+        else if (streak < 7) sub.textContent = 'Quase na semana completa!';
+        else sub.textContent = 'Semana completa! Incrível! 🎉';
+
+        // Mini stats
+        var hrs = Math.floor((s.minEstudo || 0) / 60);
+        var mins = (s.minEstudo || 0) % 60;
+        var tempoStr = hrs > 0 ? hrs + 'h ' + mins + 'm' : (s.minEstudo || 0) + 'm';
+        var miniStats = [
+          { icon: '🏆', val: snap.conquistas.length, lbl: 'Conquistas' },
+          { icon: '🎯', val: s.quizzesCompletos || 0, lbl: 'Quizzes' },
+          { icon: '⏱️', val: tempoStr, lbl: 'Estudo' },
+        ];
+        var container = document.getElementById('streakMiniStats');
+        container.innerHTML = miniStats.map(function(m) {
+          return '<div style="flex:1;text-align:center;">'
+            + '<div style="font-family:var(--font-display);font-size:15px;font-weight:800;line-height:1;">' + m.val + '</div>'
+            + '<div style="font-size:10px;opacity:.65;margin-top:2px;">' + m.lbl + '</div>'
+            + '</div>';
+        }).join('<div style="width:1px;background:rgba(255,255,255,0.18);"></div>');
+
+        // Show notification bell if not granted
+        if ('Notification' in window && Notification.permission !== 'granted') {
+          document.getElementById('notifBtn').style.display = '';
+        }
+
+        // Request reminder check if already granted
+        window.Gamificacao.requestNotificationReminder();
+      }
+      initStreakWidget();
+
+      window.requestReminder = function() {
+        if (!window.Gamificacao) return;
+        window.Gamificacao.requestNotificationReminder().then(function(perm) {
+          var btn = document.getElementById('notifBtn');
+          if (perm === 'granted') { btn.textContent = '🔔'; btn.style.opacity = '.5'; btn.onclick = null; }
+          else if (perm === 'denied') { btn.style.display = 'none'; }
+        });
+      };
+    })();
+
+    /* ── Study time session tracker ────────────────────────── */
+    (function() {
+      var _sessionStart = Date.now();
+      var _sent = false;
+      function sendTime() {
+        if (_sent || !window.Gamificacao) return;
+        _sent = true;
+        var mins = Math.round((Date.now() - _sessionStart) / 60000);
+        if (mins > 0) window.Gamificacao.addStudyMinutes(mins);
+      }
+      window.addEventListener('beforeunload', sendTime);
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'hidden') sendTime();
+        else { _sessionStart = Date.now(); _sent = false; }
+      });
+    })();
+  </script>
   <script>
     const searchInput = document.getElementById('searchInput');
     const allCards = document.querySelectorAll('.guide-card:not(.locked), .quiz-cta');
