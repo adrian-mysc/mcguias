@@ -1,6 +1,40 @@
 {
   "versions": [
     {
+      "version": "v6",
+      "date": "2026-05-08",
+      "date_display": "08 Mai 2026",
+      "badge": "Dashboard · Service Worker · Notificações",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "📊",
+          "text": "**Dashboard unificado com dados reais** — estatísticas consolidadas de `mc_quiz_history`, `mc_sr_data` e `gamificacao`. Cards de resumo, gráfico de acertos vs erros por SR, desempenho detalhado por guia, histórico recente e grade de conquistas, tudo em uma tela.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🔔",
+          "text": "**Notificações Push aprimoradas** — lembrete diário às 20h agendado localmente, entregue via Service Worker (mais confiável em Android/iOS). Conquistas desbloqueadas em background também disparam notificação. Fallback para `Notification` API direta quando SW não está ativo.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🛠️",
+          "text": "**Bug crítico do Service Worker corrigido** — variável `CACHE_NAME` (undefined) no evento `install` substituída pela constante `CACHE` correta. O SW agora instala sem erros silenciosos. Cache bumped para `mc-guias-v28`.",
+          "tag": "bug"
+        },
+        {
+          "icon": "🚫",
+          "text": "**SW não cacheia mais cross-origin** — requisições para CDNs externos (Google Fonts, chart.js) não são mais interceptadas pelo fetch handler, evitando falhas de cache e erros offline.",
+          "tag": "bug"
+        },
+        {
+          "icon": "📤",
+          "text": "**Backup unificado** — exportação e importação no Dashboard agora inclui histórico de quizzes, dados de repetição espaçada, gamificação e todos os checklists em um único arquivo `.json`.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
       "version": "v5",
       "date": "2026-05-07",
       "date_display": "07 Mai 2026",

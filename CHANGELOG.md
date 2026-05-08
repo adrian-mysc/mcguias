@@ -1,5 +1,21 @@
 # Changelog — MC Guias
 
+## [v6] — 2026-05-08
+
+### Adicionado
+- **Dashboard unificado** (`pages/dashboard.html`) — estatísticas consolidadas de `mc_quiz_history`, `mc_sr_data` e `gamificacao`. Cards de resumo, gráfico de acertos vs erros por SR, desempenho por guia (pior → melhor), histórico recente (10 últimos) e grade visual de conquistas. Backup unificado exporta e importa todos os dados em um único `.json`.
+- **Push Notifications aprimoradas** — lembrete diário às 20h agendado localmente via `setTimeout`, entregue pelo Service Worker (`reg.showNotification`) para maior compatibilidade com Android/iOS. Conquistas desbloqueadas em background também disparam notificação via SW. Fallback para `Notification` API direta quando SW não está ativo.
+
+### Corrigido
+- **Bug crítico no Service Worker** — variável `CACHE_NAME` (undefined) no evento `install` substituída por `CACHE`. O SW agora instala sem erros silenciosos. Cache bumped `mc-guias-v27` → `mc-guias-v28`.
+- **SW não cacheia mais cross-origin** — requisições para CDNs externos (Google Fonts, etc.) não são mais interceptadas pelo fetch handler, eliminando falhas de cache offline.
+
+### Alterado
+- **Roadmap "Em Breve"** atualizado para V12: Dashboard e Lembrete diário marcados como ✅ entregues.
+- **Badge de versão** no overlay de atualização atualizado para `mc-guias-v28`.
+
+---
+
 ## [v5.26] — 2026-04-30
 
 ### Corrigido
