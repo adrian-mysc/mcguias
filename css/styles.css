@@ -616,7 +616,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .guide-card-top {
   padding: 20px 18px 14px;
   display: flex; flex-direction: column; gap: 10px;
+  background: var(--bg) !important;
 }
+.guide-card h3 { color: #111 !important; font-weight: 800 !important; }
+.guide-card p { color: #555 !important; font-weight: 600 !important; }
+[data-theme="dark"] .guide-card h3 { color: #f0f0f0 !important; }
+[data-theme="dark"] .guide-card p { color: #bbb !important; }
 
 .guide-card-emoji {
   font-size: 32px;
