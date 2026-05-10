@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Burger — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') { setTimeout(hideSplash, 200); }
+      else { window.addEventListener('load', function() { setTimeout(hideSplash, 200); }); }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="preload" href="../js/main.js" as="script">
+
+  <style>
+    /* ====================================
+       BEST BURGER — página exclusiva
+       ==================================== */
+
+    /* Hero banner */
+    .bb-hero {
+      background: linear-gradient(135deg, #DA291C 0%, #b01f15 60%, #7a1510 100%);
+      padding: 20px 16px 18px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .bb-hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 90% at 95% 10%, rgba(255,199,44,0.25) 0%, transparent 55%);
+    }
+    .bb-hero::after {
+      content: 'BB';
+      position: absolute; right: -10px; bottom: -18px;
+      font-family: var(--font-display); font-size: 96px; font-weight: 800;
+      color: rgba(255,255,255,0.06); line-height: 1; pointer-events: none;
+      letter-spacing: -4px;
+    }
+    .bb-hero-inner { position: relative; z-index: 1; }
+    .bb-hero-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px; padding: 3px 10px; font-size: 10px;
+      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .bb-hero h1 {
+      font-family: var(--font-display); font-size: 28px; font-weight: 800;
+      margin: 0 0 6px; line-height: 1.05; letter-spacing: -0.5px;
+    }
+    .bb-hero p { font-size: 12.5px; opacity: 0.78; margin: 0; line-height: 1.5; }
+    .bb-hero-stats {
+      display: flex; gap: 10px; margin-top: 14px;
+    }
+    .bb-hero-stat {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px; padding: 8px 12px; text-align: center; flex: 1;
+    }
+    .bb-hero-stat-val {
+      font-family: var(--font-display); font-size: 18px; font-weight: 800;
+      line-height: 1;
+    }
+    .bb-hero-stat-lbl { font-size: 9.5px; opacity: 0.7; margin-top: 2px; }
+
+    /* Highlight box for important rules */
+    .bb-rule {
+      background: linear-gradient(135deg, rgba(218,41,28,0.07), rgba(218,41,28,0.03));
+      border: 1.5px solid rgba(218,41,28,0.2);
+      border-left: 4px solid var(--red);
+      border-radius: 10px; padding: 12px 14px; margin-bottom: 10px;
+      font-size: 13px; line-height: 1.5;
+    }
+    .bb-rule strong { color: var(--red); }
+    [data-theme="dark"] .bb-rule { background: rgba(218,41,28,0.08); border-color: rgba(218,41,28,0.3); }
+
+    .bb-rule.yellow {
+      background: linear-gradient(135deg, rgba(255,199,44,0.1), rgba(255,199,44,0.03));
+      border-color: rgba(255,199,44,0.3); border-left-color: var(--yellow);
+    }
+    .bb-rule.yellow strong { color: #92670a; }
+    [data-theme="dark"] .bb-rule.yellow strong { color: var(--yellow); }
+
+    .bb-rule.green {
+      background: rgba(26,122,66,0.07);
+      border-color: rgba(26,122,66,0.25); border-left-color: var(--green);
+    }
+    .bb-rule.green strong { color: var(--green); }
+
+    /* Validade table */
+    .bb-table {
+      width: 100%; border-collapse: collapse; font-size: 12.5px;
+      border-radius: 10px; overflow: hidden;
+    }
+    .bb-table th {
+      background: var(--red); color: white;
+      padding: 8px 10px; text-align: left; font-weight: 700; font-size: 11.5px;
+    }
+    .bb-table td {
+      padding: 8px 10px; border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .bb-table tr:last-child td { border-bottom: none; }
+    .bb-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+    [data-theme="dark"] .bb-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .bb-table td:first-child { font-weight: 600; }
+    .bb-table .tag {
+      display: inline-block; padding: 1px 7px; border-radius: 20px;
+      font-size: 10.5px; font-weight: 700;
+    }
+    .tag-red { background: rgba(218,41,28,0.12); color: var(--red); }
+    .tag-yellow { background: rgba(255,199,44,0.2); color: #92670a; }
+    [data-theme="dark"] .tag-yellow { color: var(--yellow); }
+    .tag-green { background: rgba(26,122,66,0.1); color: var(--green); }
+
+    /* Config boxes */
+    .bb-config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .bb-config-box {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 12px; text-align: center;
+    }
+    [data-theme="dark"] .bb-config-box { background: #1e1d1b; border-color: #2e2c28; }
+    .bb-config-label { font-size: 10.5px; color: var(--muted); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+    .bb-config-val {
+      font-family: var(--font-display); font-size: 22px; font-weight: 800;
+      color: var(--red); line-height: 1.1;
+    }
+    .bb-config-sub { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+
+    /* Tostadeira params table */
+    .bb-tost { font-size: 11.5px; width: 100%; border-collapse: collapse; }
+    .bb-tost th { background: rgba(0,0,0,0.06); padding: 6px 8px;
+      text-align: center; font-weight: 700; font-size: 10.5px; }
+    [data-theme="dark"] .bb-tost th { background: rgba(255,255,255,0.06); }
+    .bb-tost td { padding: 6px 8px; border-bottom: 1px solid var(--border);
+      text-align: center; }
+    .bb-tost tr:last-child td { border-bottom: none; }
+    .bb-tost td:first-child { font-weight: 700; text-align: left; color: var(--red); }
+
+    /* Pão chips */
+    .bb-pao-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: 8px; padding: 8px 12px; font-size: 12px; font-weight: 600;
+      margin-bottom: 6px; width: 100%;
+    }
+    [data-theme="dark"] .bb-pao-chip { background: #1e1d1b; border-color: #2e2c28; }
+    .bb-pao-chip .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .bb-pao-chip .val { margin-left: auto; color: var(--red); font-weight: 700; }
+
+    /* Queijo timeline */
+    .bb-timeline { position: relative; padding-left: 24px; }
+    .bb-timeline::before {
+      content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px;
+      width: 2px; background: var(--border);
+    }
+    .bb-tl-step { position: relative; margin-bottom: 14px; }
+    .bb-tl-step:last-child { margin-bottom: 0; }
+    .bb-tl-dot {
+      position: absolute; left: -20px; top: 3px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--red); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--red);
+    }
+    .bb-tl-step h4 { font-size: 13px; font-weight: 700; margin: 0 0 3px; }
+    .bb-tl-step p { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    /* Pegadores */
+    .bb-pegadores { display: flex; flex-direction: column; gap: 8px; }
+    .bb-peg {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 10px;
+      border: 1.5px solid var(--border);
+      font-size: 13px;
+    }
+    .bb-peg-circle {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 800; color: white;
+    }
+    .peg-blue { background: #1565c0; border-color: rgba(21,101,192,0.3); }
+    .peg-red-bg { background: #c62828; border-color: rgba(198,40,40,0.3); }
+    .peg-green-bg { background: #2e7d32; border-color: rgba(46,125,50,0.3); }
+
+    /* Sanduíche quality cards */
+    .bb-sandwich {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 14px; margin-bottom: 10px;
+    }
+    [data-theme="dark"] .bb-sandwich { background: #1e1d1b; border-color: #2e2c28; }
+    .bb-sandwich-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+    }
+    .bb-sandwich-icon {
+      width: 40px; height: 40px; border-radius: 10px; background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .bb-sandwich-header h3 { font-size: 15px; font-weight: 800; margin: 0; }
+    .bb-sandwich-header p { font-size: 11px; color: var(--muted); margin: 0; }
+    .bb-sandwich-attrs { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .bb-attr {
+      font-size: 11px; font-weight: 700; padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .attr-app { background: rgba(218,41,28,0.1); color: var(--red); }
+    .attr-temp { background: rgba(255,199,44,0.2); color: #92670a; }
+    [data-theme="dark"] .attr-temp { color: var(--yellow); }
+    .attr-sabor { background: rgba(26,122,66,0.1); color: var(--green); }
+    .bb-sandwich p { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin: 8px 0 0; }
+
+    /* Section divider */
+    .bb-section {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--muted); margin: 14px 0 8px;
+    }
+    .bb-section::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+  </style>
+</head>
+<body data-page="best-burguer">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Best Burger</h1>
+        <p>Guia de Implementação</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bb-hero">
+    <div class="bb-hero-inner">
+      <div class="bb-hero-label">🏆 Projeto Global</div>
+      <h1>Best Burger</h1>
+      <p>Hambúrgueres sempre quentes, suculentos, frescos e deliciosos. Pequenas mudanças que fazem uma grande diferença.</p>
+      <div class="bb-hero-stats">
+        <div class="bb-hero-stat">
+          <div class="bb-hero-stat-val">5–8'</div>
+          <div class="bb-hero-stat-lbl">Rotação alvo UHC</div>
+        </div>
+        <div class="bb-hero-stat">
+          <div class="bb-hero-stat-val">30'</div>
+          <div class="bb-hero-stat-lbl">Obj. mesa condim.</div>
+        </div>
+        <div class="bb-hero-stat">
+          <div class="bb-hero-stat-val">10'</div>
+          <div class="bb-hero-stat-lbl">Vida útil carnes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="paes">🍞 Pães</button>
+      <button class="tab-btn" data-tab="preparacao">🧅 Preparação</button>
+      <button class="tab-btn" data-tab="carnes">🥩 Carnes</button>
+      <button class="tab-btn" data-tab="sanduiches">🍔 Sanduíches</button>
+      <button class="tab-btn" data-tab="materiais">📦 Materiais</button>
+      <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- ============ VISÃO GERAL ============ -->
+    <div class="tab-panel active" id="panel-visao">
+
+      <div class="section-label">O que é o Best Burger?</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🌍</div>
+          <h2>Projeto Global</h2>
+          <div class="badge badge-red">BB</div>
+        </div>
+        <div class="card-body">
+          <p style="font-size:13px;line-height:1.6;margin:0 0 12px">O Best Burger é um projeto global implementado em todos os restaurantes McDonald's para que todos os hambúrgueres tenham o <strong>mesmo sabor</strong> independente da unidade. O objetivo é impulsionar as vendas do cardápio Core e melhorar a percepção do consumidor através de <strong>carne quente e suculenta</strong>.</p>
+          <div class="bb-rule">
+            <strong>Filosofia:</strong> Muitas pequenas mudanças para fazer uma grande diferença — ajuste holístico das operações focado em carnes e pães.
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-section">Principais componentes</div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num" style="background:var(--yellow);color:#1c1a17;">🍞</div>
+              <div class="step-text"><strong>Pães reformulados</strong> — mais macios, com glaceado leve, melhor retenção de calor e caramelização mais intensa. Base +0,3 cm de altura.</div>
+            </div>
+            <div class="step">
+              <div class="step-num" style="background:var(--yellow);color:#1c1a17;">🧀</div>
+              <div class="step-text"><strong>Queijo em temperatura ambiente</strong> — ambientado por 2h antes do uso para derretimento perfeito e melhor sabor.</div>
+            </div>
+            <div class="step">
+              <div class="step-num" style="background:var(--yellow);color:#1c1a17;">🧅</div>
+              <div class="step-text"><strong>Cebola reidratada na chapa</strong> — dispensada diretamente sobre cada carne 10:1 para maximizar suculência e sabor caramelizado.</div>
+            </div>
+            <div class="step">
+              <div class="step-num b">🥩</div>
+              <div class="step-text"><strong>Carne sempre fresquinha</strong> — vida útil na UHC reduzida para 10 min, com rotação de 5–8 min, cozinhando constantemente para repor com monitor Look & Cook.</div>
+            </div>
+            <div class="step">
+              <div class="step-num b">🌿</div>
+              <div class="step-text"><strong>Ingredientes frescos</strong> — tempo objetivo de 30 min na mesa de condimentação. "Mesas com menos produto com mais frequência."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-section">Diferenciais vs operação padrão</div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="bb-table" style="display:block;overflow-x:auto">
+            <table class="bb-table">
+              <thead>
+                <tr><th>Item</th><th>Padrão</th><th>Best Burger</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Vida útil UHC (carne)</td><td>15 min</td><td><strong class="red">10 min</strong></td></tr>
+                <tr><td>Filtragem óleo</td><td>1× ao dia</td><td><strong class="red">2× ao dia</strong></td></tr>
+                <tr><td>Sanduíches por lâmina</td><td>Múltiplos</td><td><strong class="red">1 sanduíche</strong></td></tr>
+                <tr><td>Queijo cheddar</td><td>Refrigerado</td><td><strong class="red">Ambientado (15–18°C)</strong></td></tr>
+                <tr><td>Cebola</td><td>Mesa condimentação</td><td><strong class="red">Dispensada na chapa</strong></td></tr>
+                <tr><td>Tempo mesa condimentação</td><td>2h</td><td><strong class="red">Objetivo 30 min</strong></td></tr>
+                <tr><td>Rotação carnes</td><td>Baseada em PLS</td><td><strong class="red">PLS + monitor Look &amp; Cook</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🏪</div><h2>Lojas Best Burger — Diferenciais</h2><div class="badge badge-red">Best Burger</div></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num b">🍞</div><div class="step-text"><strong>Tostadeira:</strong> Placa A e B = 271°C · Placa C = 254°C · Caramelização: 22" · Compressão inicial: 4 · Velocidade do motor: a partir de 3300 · Temp. interna &gt;70°C</div></div>
+            <div class="step"><div class="step-num b">❄️</div><div class="step-text"><strong>UHC:</strong> Carnes vermelhas 79°C · Dedicar mínimo <strong>2 gavetas para carnes SEM CEBOLA</strong>, identificadas com clips azul</div></div>
+            <div class="step"><div class="step-num b">🧅</div><div class="step-text"><strong>Mesa de Condimentação:</strong> Cebola reidratada preparada nos ceboleiros. Vida primária: <strong>24h na câmara</strong> · Vida secundária: até <strong>4h na chapa</strong></div></div>
+          </div>
+          <div class="pill-row">
+            <div class="pill blue">🔵 Pegador azul → carnes 4:1 e 10:1 (sem cebola)</div>
+            <div class="pill red">🔴 Pegador vermelho → carnes vermelhas com cebola</div>
+            <div class="pill green">🟢 Pegador verde → carnes brancas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PÃES ============ -->
+    <div class="tab-panel" id="panel-paes">
+
+      <div class="section-label">Novos Pães Best Burger</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📐</div><h2>Dimensões & Características</h2></div>
+        <div class="card-body">
+          <div class="bb-pao-chip">
+            <div class="dot" style="background:#e0a020;"></div>
+            <span>Pão Regular</span>
+            <span class="val">Ø 9,5 cm · base +0,3 cm</span>
+          </div>
+          <div class="bb-pao-chip">
+            <div class="dot" style="background:#b06010;"></div>
+            <span>Pão Quarterão</span>
+            <span class="val">Ø 10 cm · glaceado brillante</span>
+          </div>
+          <div class="bb-pao-chip">
+            <div class="dot" style="background:#7a3510;"></div>
+            <span>Pão Big Mac</span>
+            <span class="val">Ø 10 cm · cor mais escura</span>
+          </div>
+          <div class="alert info" style="margin-top:10px">
+            <div class="alert-icon">💡</div>
+            <div>Base +0,3 cm em Regular e Quarterão. Mordida mais macia, mais resistente e melhor sabor. Sem corantes, aromas ou conservantes artificiais.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Parâmetros das Tostadeiras</h2></div>
+        <div class="card-body">
+          <div class="bb-section">Antunes</div>
+          <div style="overflow-x:auto">
+            <table class="bb-tost">
+              <thead>
+                <tr><th>Modelo</th><th>GAP</th><th>Placa A</th><th>Placa B</th><th>Placa C</th><th>Motor</th><th>Carameiz.</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>HEBT-5V</td><td>4</td><td>271°C</td><td>271°C</td><td>254°C</td><td>3300</td><td>22"</td></tr>
+                <tr><td>HEBT-3V</td><td>4</td><td>271°C</td><td>271°C</td><td>—</td><td>66</td><td>22"</td></tr>
+                <tr><td>VCT-250</td><td>D/5</td><td>204°C</td><td>293°C</td><td>—</td><td>—</td><td>22"</td></tr>
+                <tr><td>VCT-200</td><td>D/5</td><td>204°C</td><td>293°C</td><td>—</td><td>—</td><td>22"</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bb-section" style="margin-top:14px">Prince Castle</div>
+          <div style="overflow-x:auto">
+            <table class="bb-tost">
+              <thead>
+                <tr><th>Modelo</th><th>GAP B/C</th><th>Platina</th><th>Club Top</th><th>Club Bot.</th><th>Carameiz.</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>DCFT</td><td>3 / B</td><td>257°C</td><td>254°C</td><td>257°C</td><td>22"</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bb-section" style="margin-top:14px">Vaporizador Prince Castle 625</div>
+          <div class="grid-2" style="gap:8px">
+            <div class="stat-box"><div class="stat-label">Secs On</div><div class="stat-value">8"</div></div>
+            <div class="stat-box"><div class="stat-label">Secs Off</div><div class="stat-value">2.5"</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Temperatura</div><div class="stat-value">176°C</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Pressão</div><div class="stat-value">20–31 PSI</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📦</div><h2>Armazenamento & Validades</h2></div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box"><div class="stat-label">Validade Primária</div><div class="stat-value">120 dias</div></div>
+            <div class="stat-box red"><div class="stat-label">Validade Secundária</div><div class="stat-value">48h</div><div class="stat-sub">incl. descongelamento</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Descongelamento</div><div class="stat-value">Mín. 4h</div></div>
+            <div class="stat-box"><div class="stat-label">Temp. interna (após tostar)</div><div class="stat-value">&gt;70°C</div></div>
+          </div>
+          <div class="bb-rule" style="margin-top:12px">
+            <strong>⚠️ Atenção:</strong> Abra o saco sempre de um lado. Dobre para fechar quando não estiver usando. Siga PEPS — use os mais antigos primeiro.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">✅</div><h2>Checklist Diário de Pães</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Descongele apenas a quantidade necessária para 1 dia de venda</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Use os mais antigos primeiro (PEPS). Não usar pão vencido</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Feche os sacos corretamente. Longe de calor ou ventilação excessiva</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Verifique DIARIAMENTE se a tostagem está correta — cor, textura, temperatura</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Experimente o produto todos os dias. Teste de sabor: caramelizado, quente, macio</div></div>
+            <div class="step"><div class="step-num">6</div><div class="step-text">Garanta que coroas e bases coincidam após sair da tostadeira (Regular ≠ Quarterão ≠ Big Mac)</div></div>
+            <div class="step"><div class="step-num b">7</div><div class="step-text">Na montagem: <strong>evitar marcas digitais na coroa</strong>. Pão muito mais macio — manusear com cuidado</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PREPARAÇÃO ============ -->
+    <div class="tab-panel" id="panel-preparacao">
+
+      <div class="section-label">Queijo Cheddar</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧀</div><h2>Ambientação do Queijo</h2><div class="badge badge-red">Novidade BB</div></div>
+        <div class="card-body">
+          <div class="grid-2" style="margin-bottom:12px">
+            <div class="stat-box"><div class="stat-label">Tempo ambientação</div><div class="stat-value">2h</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Temp. alvo</div><div class="stat-value">15–18°C</div></div>
+            <div class="stat-box"><div class="stat-label">Tempo objetivo na mesa</div><div class="stat-value">30 min</div></div>
+            <div class="stat-box red"><div class="stat-label">Vencimento total</div><div class="stat-value">4h</div></div>
+          </div>
+          <div class="bb-timeline">
+            <div class="bb-tl-step">
+              <div class="bb-tl-dot"></div>
+              <h4>1. Retire do refrigerador</h4>
+              <p>Divida a barra em 4 blocos e corte ao meio. 1 recipiente = 4 blocos = 8 metades = 1 barra completa.</p>
+            </div>
+            <div class="bb-tl-step">
+              <div class="bb-tl-dot"></div>
+              <h4>2. Marque a etiqueta</h4>
+              <p>Anote data primária, horário de ambientação e vencimento. Deixe ambientar por pelo menos 2 horas.</p>
+            </div>
+            <div class="bb-tl-step">
+              <div class="bb-tl-dot"></div>
+              <h4>3. Espaço entre os blocos</h4>
+              <p>Mantenha espaço entre os blocos para o ar circular e atingir 15–18°C. NÃO guardar o recipiente no refrigerador.</p>
+            </div>
+            <div class="bb-tl-step">
+              <div class="bb-tl-dot"></div>
+              <h4>4. Abasteça a mesa (30 min)</h4>
+              <p>Uma vez ambientado, abasteça a mesa com necessidade de 30 min. Após esse tempo, descarte e reabasteça.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Cebola Reidratada</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧅</div><h2>Hidratação da Cebola</h2></div>
+        <div class="card-body">
+          <div class="grid-2" style="margin-bottom:12px">
+            <div class="stat-box"><div class="stat-label">Água (máquina suco)</div><div class="stat-value">3 litros</div><div class="stat-sub">1°C a 4°C</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Hidratação mín.</div><div class="stat-value">1h</div><div class="stat-sub">refrigerado</div></div>
+            <div class="stat-box"><div class="stat-label">Val. sec. refrigerada</div><div class="stat-value">24h</div></div>
+            <div class="stat-box red"><div class="stat-label">Val. sec. dispensador</div><div class="stat-value">4h</div><div class="stat-sub">em temperatura ambiente</div></div>
+          </div>
+          <div class="bb-rule yellow">
+            <strong>Cebola bem hidratada:</strong> Peças maiores, mais grossas e de cor BRANCA. Se ficaram amarelas e pequenas → precisa mais tempo ou verificar nível de água.
+          </div>
+          <div class="bb-section" style="margin-top:12px">Procedimento de preparo</div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Despeje 1 pacote de cebola desidratada no recipiente com 3L de água fria</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Etiquetar 24h e guardar no refrigerador por pelo menos <strong>1 hora</strong></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Despejar no filtro de aço inox. Remover com colher e deixar escorrer por <strong>20" a 30"</strong></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Reabasteça os dispensadores até a linha de enchimento com a concha. Rosqueie até ouvir o clique</div></div>
+            <div class="step"><div class="step-num b">5</div><div class="step-text">Armazenar os dispensadores no refrigerador. Transferir adesivo 24h para o recipiente de armazenamento</div></div>
+          </div>
+          <div class="bb-section" style="margin-top:12px">Dados do dispensador</div>
+          <div style="overflow-x:auto">
+            <table class="bb-tost">
+              <thead><tr><th>Item</th><th>Valor</th></tr></thead>
+              <tbody>
+                <tr><td>Peso cebola por carne 10:1</td><td>3,5 g</td></tr>
+                <tr><td>Porções por dispensador</td><td>49 disparos</td></tr>
+                <tr><td>Dispensadores por saco</td><td>7 unidades</td></tr>
+                <tr><td>Total de disparos por saco</td><td>343</td></tr>
+                <tr><td>Desperdício médio por ceboleiro</td><td>27,2 g</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Validades Ingredientes</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⏱️</div><h2>Tabela de Validades — Mesa Condimentação</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto">
+            <table class="bb-table">
+              <thead>
+                <tr><th>Ingrediente</th><th>Val. secundária</th><th>Obj. BB mesa</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Alface</td><td>2h (saco aberto)</td><td><span class="tag tag-red">30 min</span></td></tr>
+                <tr><td>Cebola fresca</td><td>2h (saco aberto)</td><td><span class="tag tag-red">30 min</span></td></tr>
+                <tr><td>Pepinos (picles)</td><td>3 dias (saco c/líquido)</td><td><span class="tag tag-green">Todo o dia</span></td></tr>
+                <tr><td>Fatias de tomate</td><td>2h (cortado)</td><td><span class="tag tag-red">30 min</span></td></tr>
+                <tr><td>Cebola reidratada</td><td>24h refrigerada · 4h dispensador</td><td><span class="tag tag-red">30 min</span></td></tr>
+                <tr><td>Queijo Cheddar</td><td>2h + 2h ambientação</td><td><span class="tag tag-red">30 min</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>Regra de ouro:</strong> Apenas molhos e queijos precisam de ambientação. Todos os demais ingredientes devem ser mantidos refrigerados e rotacionados a cada 30 minutos.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Molhos & Saleiros</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🫙</div><h2>Dispensadores — Calibragem</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto">
+            <table class="bb-table">
+              <thead>
+                <tr><th>Molho</th><th>Identificação</th><th>Regular</th><th>Quarterão</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mostarda</td><td><span class="tag tag-yellow">Tampa AMARELA</span></td><td>1 disparo = 0,7 ml · 47 tiros no copo</td><td>Igual</td></tr>
+                <tr><td>Ketchup</td><td><span class="tag tag-red">Tampa VERMELHA</span></td><td>6 disparos = 60 ml</td><td>4 disparos = 90 ml</td></tr>
+                <tr><td>Molho Big Mac</td><td>Pistola FlexPrep</td><td colspan="2">15 ml (½ oz) — 1 ponto de saída</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>⚠️ Calibrar DIARIAMENTE.</strong> Muito ou pouco molho afeta a experiência do cliente. Descartar produto restante no fechamento e lavar no sistema de 3 cubas.
+          </div>
+          <div class="bb-section" style="margin-top:12px">Saleiros da Chapa</div>
+          <div class="bb-pegadores">
+            <div class="bb-peg peg-green-bg" style="border-color:rgba(46,125,50,0.3);">
+              <div class="bb-peg-circle" style="background:#2e7d32;">V</div>
+              <div><strong>Saleiro VERDE</strong> — Carnes 10:1 · <strong>0,3 g</strong> por disparo</div>
+            </div>
+            <div class="bb-peg peg-blue" style="border-color:rgba(21,101,192,0.3);">
+              <div class="bb-peg-circle" style="background:#424242;">C</div>
+              <div><strong>Saleiro CINZA</strong> — Carnes 4:1 · <strong>0,4 g</strong> por disparo</div>
+            </div>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px">Um saleiro cheio dispensa 500–600 vezes antes de precisar reabastecer. Limpar, desinfectar e secar durante a noite.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CARNES ============ -->
+    <div class="tab-panel" id="panel-carnes">
+
+      <div class="section-label">Configuração das Chapas</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🌡️</div><h2>Temperaturas Best Burger</h2></div>
+        <div class="card-body">
+          <div class="bb-config-grid">
+            <div class="bb-config-box">
+              <div class="bb-config-label">Placa Superior</div>
+              <div class="bb-config-val">218°C</div>
+              <div class="bb-config-sub">425°F</div>
+            </div>
+            <div class="bb-config-box">
+              <div class="bb-config-label">Placa Inferior</div>
+              <div class="bb-config-val">177°C</div>
+              <div class="bb-config-sub">350°F</div>
+            </div>
+          </div>
+          <div class="bb-section" style="margin-top:14px">Configuração por tipo de carne</div>
+          <div style="overflow-x:auto">
+            <table class="bb-table">
+              <thead>
+                <tr><th>Parâmetro</th><th>10:1</th><th>4:1</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Stage 1 Gap</td><td>.225" / 20"</td><td>.400" / 20"</td></tr>
+                <tr><td>Global/Final Gap</td><td>.290"</td><td>.450"</td></tr>
+                <tr><td>Tempo inicial cozimento</td><td><strong>39 seg</strong></td><td><strong>110 seg</strong></td></tr>
+                <tr><td>Máximo por rodada</td><td><strong>6 carnes</strong></td><td><strong>4 carnes</strong></td></tr>
+                <tr><td>Procedimento pós-chapa</td><td>Sal + cebola · pilhas de 3</td><td>Sal · SEM empilhar</td></tr>
+                <tr><td>UHC temperatura</td><td colspan="2"><strong>79°C (175°F)</strong></td></tr>
+                <tr><td>Tempo UHC</td><td colspan="2"><strong>10 min</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert info" style="margin-top:10px">
+            <div class="alert-icon">🔧</div>
+            <div><strong>Taylor Next Generation:</strong> 10:1 = 41" · 4:1 = 126". Stage 1 Gap: 10:1 = .245" / 4:1 sem Final Gap.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🎯</div><h2>Padrões de Qualidade — Integridade</h2></div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box red"><div class="stat-label">Padrão segurança</div><div class="stat-value">&gt;70°C</div><div class="stat-sub">TODAS as carnes</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Padrão qualidade</div><div class="stat-value">70–77°C</div><div class="stat-sub">mín. 3 de 4 carnes</div></div>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>Se alguma carne &lt;70°C:</strong> Descartar todo o lote, higienizar tudo, investigar equipamento e produto. Aumentar tempo de cozimento em 1 segundo e repetir teste.
+          </div>
+          <div class="bb-rule yellow" style="margin-top:8px">
+            <strong>Se &lt;3 carnes entre 70–77°C:</strong> Carne segura para uso. Diminuir tempo de cozimento em 1 segundo e repetir teste na próxima rodada.
+          </div>
+          <div class="alert info" style="margin-top:10px">
+            <div class="alert-icon">👥</div>
+            <div>Sempre use <strong>2 pessoas</strong> para testar temperaturas: uma mede, outra registra. Para 10:1 medir imediatamente ao retirar da chapa (esfria rápido).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">👁️</div><h2>Look, Bump & Cook</h2><div class="badge badge-red">Sistema BB</div></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text"><strong>OLHA</strong> — Verificar o monitor PLS/Look & Cook para quantidade necessária</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text"><strong>APAGA</strong> — Inserir as carnes no monitor e apagar o que foi colocado na chapa</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text"><strong>COZINHA</strong> — Colocar carnes na chapa da direita para esquerda, da frente para trás. Separação de ~1 cm entre elas</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Iniciar o processo de cozimento</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Temperar com saleiro (10:1 = verde / 4:1 = cinza)</div></div>
+            <div class="step"><div class="step-num">6</div><div class="step-text">10:1: Colocar cebola com <strong>movimento de martelo</strong> segurando o dispensador pelas laterais</div></div>
+            <div class="step"><div class="step-num">7</div><div class="step-text">Retirar em <strong>máximo 18 segundos</strong>: 10:1 em pilhas de 3 · 4:1 individualmente, sem empilhar</div></div>
+            <div class="step"><div class="step-num b">8</div><div class="step-text">Colocar na UHC e ativar temporizador. Rotação alvo: <strong>5 a 8 minutos</strong></div></div>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>PLS:</strong> O nível básico muda a cada 15 minutos conforme volume projetado. O sistema usa uma rotação entre 5–8 minutos. Cada bandeja de carnes no monitor é exibida como <strong>1</strong>.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧅</div><h2>Cebola na Chapa</h2></div>
+        <div class="card-body">
+          <div class="bb-rule yellow">
+            <strong>Cebola SOMENTE na chapa.</strong> NÃO é aceitável adicionar cebola a carnes já na UHC ou na mesa de preparo durante a montagem.
+          </div>
+          <div class="steps" style="margin-top:10px">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Quando o platen se levantar, pegar o dispensador <strong>pelas laterais</strong> (não por cima)</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Virar de cabeça para baixo com <strong>movimento rápido de martelo</strong> sobre cada carne 10:1</div></div>
+            <div class="step"><div class="step-num b">3</div><div class="step-text">Nível objetivo: cobertura uniforme, sem exagero. Baixo inaceitável = pouca cebola visível. Excesso inaceitável = cobertura total demais.</div></div>
+          </div>
+          <div class="bb-section" style="margin-top:12px">Pedidos sem cebola</div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Na maioria dos casos: preparar <strong>na hora</strong></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Se alta demanda: manter mín. <strong>2 gavetas identificadas com clips azul</strong> para 10:1 SEM cebola na UHC</div></div>
+            <div class="step"><div class="step-num b">3</div><div class="step-text">Cozinhar lotes mistos: criar espaço entre carnes com/sem cebola, retirar sem cebola primeiro com espátula limpa</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧹</div><h2>Limpeza da Chapa</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Raspar superfície inferior com raspador em ângulo de <strong>15°</strong>, sempre da frente para trás</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Usar borracha para empurrar restos para o depósito de gordura</div></div>
+            <div class="step"><div class="step-num b">3</div><div class="step-text">A cada <strong>15 minutos</strong>: pano limpo e sanitizado sobre o teflon para retirar todos os restos</div></div>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>Lâminas de espátula e raspador:</strong> Trocar a cada <strong>10 dias</strong> no máximo. Lâminas cegas quebram a carne ao retirar → descartar a carne quebrada.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔑</div><h2>Pegadores — Best Burger</h2></div>
+        <div class="card-body">
+          <div class="bb-pegadores">
+            <div class="bb-peg peg-blue">
+              <div class="bb-peg-circle" style="background:#1565c0;">🔵</div>
+              <div><strong>Pegador AZUL</strong> — Carnes 4:1 e 10:1 <strong>SEM cebola</strong></div>
+            </div>
+            <div class="bb-peg peg-red-bg">
+              <div class="bb-peg-circle" style="background:#c62828;">🔴</div>
+              <div><strong>Pegador VERMELHO</strong> — Carnes vermelhas <strong>COM cebola</strong></div>
+            </div>
+            <div class="bb-peg peg-green-bg">
+              <div class="bb-peg-circle" style="background:#2e7d32;">🟢</div>
+              <div><strong>Pegador VERDE</strong> — Carnes brancas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SANDUÍCHES ============ -->
+    <div class="tab-panel" id="panel-sanduiches">
+
+      <div class="section-label">Padrões de Qualidade — Menu Principal</div>
+
+      <div class="bb-sandwich">
+        <div class="bb-sandwich-header">
+          <div class="bb-sandwich-icon">🍔</div>
+          <div>
+            <h3>Hambúrguer & Cheeseburger</h3>
+            <p>Pão Regular · 10:1 com cebola</p>
+          </div>
+        </div>
+        <div class="bb-sandwich-attrs">
+          <span class="bb-attr attr-app">Pão macio e dourado com brilho</span>
+          <span class="bb-attr attr-temp">Quente · carne suculenta</span>
+          <span class="bb-attr attr-sabor">Pão tostado + ketchup + mostarda + cebola</span>
+        </div>
+        <p><strong>Aparência:</strong> pão levemente brilhante, coroa abaulada, pode ter alguns defeitos mínimos. <strong>Cheeseburger:</strong> queijo derretido observado nos cantos.</p>
+        <p><strong>Sabor:</strong> equilíbrio de pão tostado na hora, cebola macia, ketchup doce-picante, nota ácida de picles, mostarda e final de carne suave e temperada.</p>
+      </div>
+
+      <div class="bb-sandwich">
+        <div class="bb-sandwich-header">
+          <div class="bb-sandwich-icon" style="background:linear-gradient(135deg,#c62828,#7a1510);">🍔</div>
+          <div>
+            <h3>Big Mac</h3>
+            <p>Pão Big Mac · 2× 10:1 · molho Big Mac</p>
+          </div>
+        </div>
+        <div class="bb-sandwich-attrs">
+          <span class="bb-attr attr-app">Pão marrom escuro + gergelim + glaceado</span>
+          <span class="bb-attr attr-temp">Quente · estrutura mantida</span>
+          <span class="bb-attr attr-sabor">Molho BB + alface + queijo + cebola doce</span>
+        </div>
+        <p><strong>Aparência:</strong> sanduíche mais alto da linha. Pão marrom escuro e brilhante. Quantidade certa de alface, cantos do queijo derretidos na borda.</p>
+        <p><strong>Sabor:</strong> mistura aromática de pão + gergelim, carne temperada suave, molho Big Mac cremoso (mostarda azeda + picles doce + cebola), queijo cheddar cremoso e picles picantes.</p>
+      </div>
+
+      <div class="bb-sandwich">
+        <div class="bb-sandwich-header">
+          <div class="bb-sandwich-icon" style="background:linear-gradient(135deg,#e65100,#b71c1c);">🍔</div>
+          <div>
+            <h3>Quarterão com Queijo</h3>
+            <p>Pão Quarterão · 4:1 · cebola fresca</p>
+          </div>
+        </div>
+        <div class="bb-sandwich-attrs">
+          <span class="bb-attr attr-app">Pão marrom médio + gergelim glaceado</span>
+          <span class="bb-attr attr-temp">Quente · carne visível fora do pão</span>
+          <span class="bb-attr attr-sabor">Carne dominante + ketchup + picles + cebola fresca</span>
+        </div>
+        <p><strong>Aparência:</strong> cantos do queijo derretidos invertidos e escalonados. A carne é visível fora do pão.</p>
+        <p><strong>Sabor:</strong> sabor da carne bovina é dominante, queijo cheddar cremoso, ketchup + mostarda, sabor forte e ácido de picles e cebola fresca.</p>
+      </div>
+
+      <div class="bb-sandwich">
+        <div class="bb-sandwich-header">
+          <div class="bb-sandwich-icon" style="background:linear-gradient(135deg,#1565c0,#0d3a6e);">🐟</div>
+          <div>
+            <h3>Filé de Peixe</h3>
+            <p>Pão Regular · molho tártaro</p>
+          </div>
+        </div>
+        <div class="bb-sandwich-attrs">
+          <span class="bb-attr attr-app">Pão dourado uniforme + glaceado leve</span>
+          <span class="bb-attr attr-temp">Quente · úmido · resistente</span>
+          <span class="bb-attr attr-sabor">Peixe macio + tártaro azedo + queijo cheddar</span>
+        </div>
+        <p><strong>Brasil:</strong> ativar o pão na tostadeira vertical entre 3' a 5', separando a coroa da base.</p>
+        <p><strong>Sabor:</strong> pão fresco tostado, sabor de peixe predominante, molho tártaro com endro e cebola equilibrados, queijo cheddar persistente.</p>
+      </div>
+
+      <div class="bb-sandwich">
+        <div class="bb-sandwich-header">
+          <div class="bb-sandwich-icon" style="background:linear-gradient(135deg,#f57f17,#e65100);">🍗</div>
+          <div>
+            <h3>McChicken / McNífico</h3>
+            <p>Pão Quarterão · frango</p>
+          </div>
+        </div>
+        <div class="bb-sandwich-attrs">
+          <span class="bb-attr attr-app">Pão marrom médio + gergelim</span>
+          <span class="bb-attr attr-temp">Quente · frango crocante por fora</span>
+          <span class="bb-attr attr-sabor">Ervas + carne de frango + maionese + alface</span>
+        </div>
+        <p><strong>McChicken:</strong> frango crocante por fora, suculento por dentro, alface crocante, maionese cremosa e pungente. Sabor limpo e fresco.</p>
+        <p><strong>McNífico:</strong> carne bovina dominante, queijo cheddar + maionese cremosa, alface e tomate frescos.</p>
+      </div>
+
+    </div>
+
+    <!-- ============ MATERIAIS DE TREINAMENTO ============ -->
+    <div class="tab-panel" id="panel-materiais">
+
+      <div class="section-label">Kit de Treinamento Best Burger</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🛒</div><h2>Materiais Disponíveis</h2><div class="badge badge-red">Central de Pedidos</div></div>
+        <div class="card-body">
+          <p style="font-size:13px;line-height:1.6;margin:0 0 12px">Os materiais de treinamento estão disponíveis na <strong>Central de Pedidos</strong> (fornecedor Glass Point) e são enviados automaticamente para os restaurantes seguindo os custos abaixo.</p>
+          <div style="overflow-x:auto">
+            <table class="bb-table">
+              <thead>
+                <tr><th>Código</th><th>Descrição</th><th>Valor</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>GP754</td><td>Régua de Condimentação c/ Suporte Best Burger</td><td>R$ 97,80</td></tr>
+                <tr><td>GP755</td><td>Guia da Chapa Best Burger</td><td>R$ 79,80</td></tr>
+                <tr><td>GP756</td><td>Relógio Controle Mesa Condimentação Best Burger</td><td>R$ 75,00</td></tr>
+                <tr><td>GP757</td><td>Relógio Controle Molhos Best Burger</td><td>R$ 89,00</td></tr>
+                <tr><td>GP758</td><td>Pôster de Caramelização do Pão Best Burger</td><td>R$ 29,00</td></tr>
+                <tr><td>GP760</td><td>Pôster Cebola Reidratada Best Burger</td><td>R$ 19,00</td></tr>
+                <tr><td>GP761</td><td>Régua de Medir Pães Best Burger</td><td>R$ 45,90</td></tr>
+                <tr><td>GP762</td><td>Ponto de Checagem Gerencial Best Burger</td><td>R$ 16,90</td></tr>
+                <tr><td>GP767</td><td>Card LOPE c/ Cordão — Best Burger</td><td>R$ 17,90</td></tr>
+                <tr><td>GP476</td><td>Placa Tempo de Vida Carnes Vermelhas</td><td>R$ 104,60</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Qualidosos — Etapas do Programa</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">1️⃣</div><h2>Qualidosos 1 — Preparação e Ambientação</h2></div>
+        <div class="card-body">
+          <p style="font-size:13px;line-height:1.6;margin:0 0 10px">Visando melhorias no <strong>sabor, temperatura e aparência</strong> dos condimentos, a primeira etapa foca no armazenamento e ambientação de queijos, alfaces, cebolas e tomates.</p>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num" style="background:var(--yellow);color:#1c1a17;">🧀</div>
+              <div class="step-text"><strong>Queijo Cheddar:</strong> Ambientação de <strong>2h</strong> antes do uso · Objetivo na mesa: <strong>30 min</strong> · Vencimento total: <strong>4h</strong> · Temperatura ideal: 15–18°C</div>
+            </div>
+            <div class="step">
+              <div class="step-num" style="background:var(--yellow);color:#1c1a17;">🥬</div>
+              <div class="step-text"><strong>Alface e Cebola:</strong> Uso de cubas rasas e médias para maior giro dos ingredientes · Responsabilidade da preparação: LOPE · Seguir tabela Charts hora a hora</div>
+            </div>
+            <div class="step">
+              <div class="step-num" style="background:var(--yellow);color:#1c1a17;">🍅</div>
+              <div class="step-text"><strong>Tomates:</strong> Sanitização por turno é a mais indicada · Ambientação de 4h antes de fatiar · LOPE faz a preparação hora a hora · Descartar fatias das pontas sem sementes</div>
+            </div>
+            <div class="step">
+              <div class="step-num" style="background:var(--yellow);color:#1c1a17;">🧅</div>
+              <div class="step-text"><strong>Cebola Reidratada:</strong> Papel crucial na chapa — melhora o sabor e a suculência · Preparação direta no ceboleiro · Uso na área da chapa para carnes 10:1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">2️⃣</div><h2>Qualidosos 2 — Molhos, Saleiros e Ceboleiros</h2></div>
+        <div class="card-body">
+          <p style="font-size:13px;line-height:1.6;margin:0 0 10px">Reforço da calibragem dos molhos, mudanças na distribuição do Molho Big Mac e uso correto dos saleiros.</p>
+          <div class="bb-rule">
+            <strong>Molho Big Mac:</strong> Quantidade mantida em <strong>15 ml (½ oz)</strong> dispensados com pistola Flex Prep · Cartuchos habilitados para <strong>1 ponto de saída</strong>
+          </div>
+          <div class="bb-rule yellow">
+            <strong>Saleiro VERDE</strong> (Carnes 10:1): 0,3 g por disparo · <strong>Saleiro CINZA</strong> (Carnes 4:1): 0,4 g por disparo · Um saleiro cheio dispensa <strong>500–600 vezes</strong>
+          </div>
+          <div class="steps" style="margin-top:10px">
+            <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Ceboleiro — 1 pacote rende 7 dispensadores.</strong> Usar concha vazada para encher até a marcação.</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Colocar todos os dispensadores preparados em cuba grande com tampa · Vida secundária: <strong>24h</strong> na câmara fria.</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Ao levar para a chapa: marcar timer de <strong>4h</strong> diretamente no dispensador.</div></div>
+            <div class="step"><div class="step-num b">4</div><div class="step-text">Lavar, enxaguar e sanitizar dispensadores, cubas e potes após cada uso.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">3️⃣</div><h2>Qualidosos 3 — Carnes e Pães</h2></div>
+        <div class="card-body">
+          <p style="font-size:13px;line-height:1.6;margin:0 0 10px">Mudanças significativas em carnes e pães com novos equipamentos, novas receitas e atualização de procedimentos.</p>
+          <div class="grid-2" style="margin-bottom:12px">
+            <div class="stat-box red"><div class="stat-label">Padrão Segurança</div><div class="stat-value">&gt;70°C</div><div class="stat-sub">todas as carnes</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Padrão Qualidade</div><div class="stat-value">70–77°C</div><div class="stat-sub">mín. 3 carnes</div></div>
+            <div class="stat-box"><div class="stat-label">Lote máx. 10:1</div><div class="stat-value">6 carnes</div></div>
+            <div class="stat-box"><div class="stat-label">Lote máx. 4:1</div><div class="stat-value">4 carnes</div></div>
+          </div>
+          <div class="bb-rule">
+            <strong>4 pilares da carne perfeita:</strong> Textura (deve ceder ao morder) · Suculência (não cozinhar em excesso) · Douragem (crosta fina da chapa realça sabor) · Tempero (sal + cebola reidratada imediatamente antes de sair)
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Programação Tostadeira HEBT-5V</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">⚙️</div><h2>Como Programar Tempo e Temperatura</h2><div class="badge badge-red">SMPD Mensal</div></div>
+        <div class="card-body">
+          <div class="bb-rule yellow">
+            <strong>⚠️ Precaução:</strong> Certifique-se que o equipamento está ligado antes de iniciar. Número de série, tempo decorrido e controle de temperatura <strong>não podem ser ajustados</strong>.
+          </div>
+          <div class="steps" style="margin-top:10px">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Com o equipamento ligado, <strong>mantenha pressionado o botão do menu por 5 segundos.</strong> O painel mostrará: "Placa A", temperatura atual, ciclo de funcionamento em % e temperatura programada.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Use a <strong>seta para a direita</strong> para percorrer as configurações: Placa A / Placa B / Placa C · Unidades (C/F) · Buzina · Linguagem · Número de Série · Mensagem de Serviço · Tempo decorrido · Controle de Temperatura · Motor.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Para <strong>alterar uma definição:</strong> pressione OK → use setas esquerda/direita para ajustar → pressione OK novamente para salvar.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Usar <strong>Compressão #5</strong> e temperaturas padrão: <strong>Placa A: 275°C · Placa B: 275°C · Placa C: 255°C</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num b">5</div>
+              <div class="step-text">Velocidade do motor: ajustar para o pão sair em <strong>22 segundos</strong>. Ajuste da velocidade deve estar entre <strong>2940 a 3522</strong>. Fora desse intervalo, verificar teflon, correias, etc.</div>
+            </div>
+          </div>
+          <div class="bb-section" style="margin-top:12px">Temperaturas Padrão — Referência Rápida</div>
+          <div style="overflow-x:auto">
+            <table class="bb-tost">
+              <thead><tr><th>Modelo</th><th>Placa A/Heater A</th><th>Placa B/Heater B</th><th>Placa C/Heater C</th><th>Motor</th><th>Tempo</th></tr></thead>
+              <tbody>
+                <tr><td><strong>HEBT-5V</strong></td><td>271°C (520°F)</td><td>271°C (520°F)</td><td>254°C (490°F)</td><td>3300</td><td>22"</td></tr>
+                <tr><td><strong>HEBT-3V</strong></td><td>271°C (520°F)</td><td>271°C (520°F)</td><td>—</td><td>66</td><td>22"</td></tr>
+                <tr><td><strong>VCT-250</strong></td><td>204°C (400°F)</td><td>293°C (560°F)</td><td>—</td><td>—</td><td>22"</td></tr>
+                <tr><td><strong>VCT-200</strong></td><td>204°C (400°F)</td><td>293°C (560°F)</td><td>—</td><td>—</td><td>22"</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Tabela Chart — Características dos Ingredientes</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">📊</div><h2>Tempo de Vida e Características</h2></div>
+        <div class="card-body">
+          <div style="overflow-x:auto">
+            <table class="bb-table">
+              <thead>
+                <tr><th>Ingrediente</th><th>Val. Primária</th><th>Val. Secundária</th><th>Tempo na Mesa</th><th>Rotatividade</th><th>Temp. Recebimento</th><th>Temp. Armazenamento</th><th>Característica</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Alface Americana</strong></td><td>10 dias</td><td>24h</td><td>2h</td><td>30 min</td><td>1°C a 4°C</td><td>1°C a 4°C</td><td>Fresco e Crocante</td></tr>
+                <tr><td><strong>Cebola Fresca</strong></td><td>10 dias</td><td>24h</td><td>2h</td><td>30 min</td><td>1°C a 4°C</td><td>1°C a 4°C</td><td>Fresco e Crocante</td></tr>
+                <tr><td><strong>Queijo Cheddar</strong></td><td>120 dias</td><td>4h</td><td>2h</td><td>30 min</td><td>1°C a 4°C</td><td>1°C a 4°C</td><td>Cremoso e Brilhante</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>Queijo Ementhal:</strong> Temperatura ideal de ambientação: <strong>17,5°C</strong> · Blocos de 20 fatias em 20 fatias respeitando rotação PEPS · Após preparação das cubas, obrigatório lavar e sanitizar as mãos.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Procedimento — Tomate</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🍅</div><h2>Ambientação e Sanitização do Tomate</h2></div>
+        <div class="card-body">
+          <div class="grid-2" style="margin-bottom:12px">
+            <div class="stat-box"><div class="stat-label">Sanitização</div><div class="stat-value">15–30 min</div></div>
+            <div class="stat-box yellow"><div class="stat-label">Ambientação total</div><div class="stat-value">4h</div></div>
+            <div class="stat-box"><div class="stat-label">Controle pré-fatiamento</div><div class="stat-value">6h (chart)</div></div>
+            <div class="stat-box red"><div class="stat-label">Vida após fatiado</div><div class="stat-value">2h</div></div>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Separar no balde branco a quantidade conforme tabela Chart para <strong>6 horas</strong> de uso · Colocar data no relógio de controle.</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Encher o balde com sanitizante até cobrir todos os tomates · Deixar de molho de <strong>15 a 30 minutos</strong>.</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Após sanitizados, enxaguar um a um esfregando com as mãos em água corrente na área do Back Rom · Colocar na cuba branca com divisórias.</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Finalizar processo de ambientação de <strong>4 horas</strong> na cuba branca com divisórias.</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Fatiar conforme chart para as próximas <strong>2 horas</strong> · Posicionar o tomate com o olho para baixo e empurrar de uma só vez.</div></div>
+            <div class="step"><div class="step-num b">6</div><div class="step-text"><strong>Selecionar e descartar</strong> as fatias das pontas que não contêm sementes · Colocar as fatias na cuba com dreno na mesa de condimentação · Marcar tempo de vida de <strong>2h</strong>.</div></div>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>⚠️ Atenção:</strong> Não posicionar nenhum tomate sobre outro · Sempre que necessário utilizar a segunda cuba · Os tomates ambientados e fatiados não podem retornar à câmara de resfriados.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Cebola Reidratada — Procedimento Detalhado</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">💧</div><h2>Hidratação com Máquina de Suco</h2><div class="badge badge-red">INFOTRE Ed.01</div></div>
+        <div class="card-body">
+          <div class="bb-rule yellow">
+            <strong>Por que usar a máquina de suco?</strong> A água da máquina de suco tem temperatura de <strong>1°C a 4°C</strong>, garantindo as características padrão da cebola reidratada: <strong>branca e grande</strong>.
+          </div>
+          <div class="bb-section" style="margin-top:12px">1. Calibrar 3 Litros no Botão Jarra (Semanal)</div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Retire o suporte dos copos.</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Posicione o balde branco embaixo do bico dispensador.</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Aperte os botões <strong>copo pequeno e jarra simultaneamente</strong> até aparecer "REFIL" no canto direito.</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Pressione o botão jarra até encher o balde até a marca de <strong>3 litros</strong>.</div></div>
+            <div class="step"><div class="step-num b">5</div><div class="step-text">Para sair do programa, aperte o botão FLOW · Calibragem concluída. <em>(Ficha 39F SMP Digital)</em></div></div>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>⚠️ Importante:</strong> Utilizar o botão Jarra do lado oposto à torre de refrigerante para a cebola reidratada. A máquina de suco deve conter apenas os reservatórios em uso.
+          </div>
+          <div class="bb-section" style="margin-top:12px">2. Limpar Válvulas Dispensadoras (Diário)</div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Posicione o balde branco sob as válvulas dispensadoras.</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Abra a porta do gabinete, coloque a alavanca da bomba na posição <strong>FLUSH</strong> e feche a porta.</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Aperte a tecla FLOW até sair água limpa · Repetir para cada sabor. <em>(Ficha 39A SMP Digital)</em></div></div>
+          </div>
+          <div class="bb-section" style="margin-top:12px">3. Hidratação da Cebola</div>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Na área de preparação separar: <strong>1 pacote de cebola desidratada, tesoura sem ponta e cuba de preparo</strong>.</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Fazer um corte na parte superior do pacote e <strong>despejar todo o conteúdo</strong> na cuba.</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Levar a cuba até a Máquina de Suco · Retirar o suporte de copos e posicionar embaixo do bico (sem reservatório reserva dentro da máquina).</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Apertar o botão <strong>Jarra</strong> para extrair a água · Encher a cuba com <strong>3 litros</strong> até a marca.</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Tampar a cuba e colocar a etiqueta de data <strong>imediatamente</strong> (data inicial, data ambientação +1h, data vencimento +24h).</div></div>
+            <div class="step"><div class="step-num b">6</div><div class="step-text">Guardar na Câmara de Resfriados e deixar hidratar por <strong>no mínimo 1 hora</strong> (quanto mais tempo hidratando, melhor a qualidade).</div></div>
+          </div>
+          <div class="bb-section" style="margin-top:12px">4. Drenagem e Abastecimento</div>
+          <div class="steps">
+            <div class="step"><div class="step-num">7</div><div class="step-text">Após a hidratação, levar para área de 3 cubas · Colocar o dreno na cuba de lavagem (limpa) · Despejar toda a água com a cebola dentro do dreno.</div></div>
+            <div class="step"><div class="step-num">8</div><div class="step-text">Posicionar o dreno dentro da cuba de cebola e deixar escorrer por <strong>30 segundos</strong> no Refrigerador Portátil embaixo da mesa · Certificar que a cebola está <strong>totalmente seca</strong>.</div></div>
+            <div class="step"><div class="step-num b">9</div><div class="step-text">Estocar a quantidade necessária para <strong>2 horas</strong> em cuba rasa na mesa de condimentação. Cebola boa: <strong>pedaços grandes e brancos</strong>. Se ficou pequena e amarelada: refazer o processo.</div></div>
+          </div>
+          <div class="bb-rule" style="margin-top:10px">
+            <strong>⚠️ Após drenagem:</strong> Não retornar a cebola para a cuba de hidratação · Apenas <strong>1 pacote por vez</strong> · Não utilizar água do filtro — somente da Máquina de Suco.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ QUIZ ============ -->
+    <div class="tab-panel" id="panel-quiz">
+      <div class="section-label">Perguntas sobre Best Burger</div>
+      <div id="bb-quiz-container">
+        <div class="alert info">
+          <div class="alert-icon">🎯</div>
+          <div>Carregando perguntas de Best Burger do quiz principal...</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end page-content -->
+
+  <script src="../js/main.js" defer></script>
+  <script>
+  // ---- Load BB quiz questions from main quiz ----
+  document.addEventListener('DOMContentLoaded', function() {
+    // Dynamically fetch quiz.html and extract BB-related questions
+    fetch('../pages/quiz.html')
+      .then(r => r.text())
+      .then(html => {
+        const start = html.indexOf('const ALL_QUESTIONS = [');
+        if (start === -1) return;
+        const end = html.indexOf('];', start) + 1;
+        const ALL_QUESTIONS = (new Function('return ' + html.slice(start + 'const ALL_QUESTIONS = '.length, end)))();
+        const bbQ = ALL_QUESTIONS.filter(q =>
+          q.guide === 'best-burguer' ||
+          (q.category && q.category.toLowerCase().includes('best burger')) ||
+          (q.question && q.question.toLowerCase().includes('best burger'))
+        );
+        renderBBQuiz(bbQ.length ? bbQ : ALL_QUESTIONS.filter(q =>
+          q.category && (q.category.includes('BB') || q.category.includes('Best'))
+        ));
+      })
+      .catch(() => {
+        document.getElementById('bb-quiz-container').innerHTML =
+          '<p style="color:var(--muted);font-size:13px;padding:12px">Quiz não disponível offline.</p>';
+      });
+  });
+
+  function renderBBQuiz(questions) {
+    if (!questions.length) {
+      document.getElementById('bb-quiz-container').innerHTML =
+        '<div class="bb-rule"><strong>Nenhuma pergunta encontrada.</strong> Use o Quiz geral para praticar Best Burger.</div>';
+      return;
+    }
+    // Shuffle and take up to 10
+    const shuffled = questions.sort(() => Math.random() - 0.5).slice(0, 10);
+    let score = 0, answered = 0, html = '';
+    shuffled.forEach((q, i) => {
+      html += `<div class="card" id="bbq-${i}" style="margin-bottom:10px">
+        <div class="card-body">
+          <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${q.category || 'Best Burger'}</div>
+          <p style="font-size:13.5px;font-weight:700;margin:0 0 12px;line-height:1.4">${q.question}</p>
+          <div style="display:flex;flex-direction:column;gap:7px">`;
+      q.options.forEach((opt, oi) => {
+        html += `<button onclick="answerBB(${i},${oi},'${q.answer.replace(/'/g,"\\'")}',this)"
+          style="background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;
+          text-align:left;font-family:var(--font-body);font-size:13px;cursor:pointer;color:var(--text);transition:all 0.15s">
+          ${opt}</button>`;
+      });
+      html += `</div>
+          <div id="bbq-exp-${i}" style="display:none;margin-top:10px;padding:10px 12px;background:rgba(26,122,66,0.08);border:1px solid rgba(26,122,66,0.2);border-radius:8px;font-size:12.5px;color:var(--green)"></div>
+        </div></div>`;
+    });
+    html += `<div id="bb-score" style="text-align:center;padding:20px;display:none">
+      <div style="font-size:32px;font-weight:800;color:var(--red)" id="bb-score-val"></div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px">Quiz concluído!</div>
+      <button onclick="location.reload()" style="margin-top:14px;background:var(--red);color:white;border-radius:20px;padding:8px 20px;font-size:13px;font-weight:700;border:none;cursor:pointer">Tentar novamente</button>
+    </div>`;
+    document.getElementById('bb-quiz-container').innerHTML = html;
+
+    window._bbQ = shuffled;
+    window._bbScore = { score: 0, answered: 0, total: shuffled.length };
+  }
+
+  function answerBB(idx, optIdx, answer, btn) {
+    const q = window._bbQ[idx];
+    const selected = q.options[optIdx];
+    const card = document.getElementById('bbq-' + idx);
+    const exp = document.getElementById('bbq-exp-' + idx);
+    const btns = card.querySelectorAll('button');
+    btns.forEach(b => { b.disabled = true; b.style.cursor = 'default'; });
+    const isCorrect = selected === answer;
+    btns.forEach(b => {
+      if (b.textContent.trim() === answer) {
+        b.style.background = 'rgba(26,122,66,0.12)';
+        b.style.borderColor = 'var(--green)';
+        b.style.color = 'var(--green)';
+      }
+    });
+    if (!isCorrect) {
+      btn.style.background = 'rgba(218,41,28,0.1)';
+      btn.style.borderColor = 'var(--red)';
+      btn.style.color = 'var(--red)';
+    }
+    exp.style.display = 'block';
+    exp.style.background = isCorrect ? 'rgba(26,122,66,0.08)' : 'rgba(218,41,28,0.08)';
+    exp.style.borderColor = isCorrect ? 'rgba(26,122,66,0.2)' : 'rgba(218,41,28,0.2)';
+    exp.style.color = isCorrect ? 'var(--green)' : 'var(--red)';
+    exp.innerHTML = (isCorrect ? '✅ ' : '❌ ') + (q.explanation || ('Resposta correta: ' + answer));
+    window._bbScore.answered++;
+    if (isCorrect) window._bbScore.score++;
+    if (window._bbScore.answered === window._bbScore.total) {
+      setTimeout(() => {
+        const s = document.getElementById('bb-score');
+        s.style.display = 'block';
+        document.getElementById('bb-score-val').textContent = window._bbScore.score + '/' + window._bbScore.total;
+        s.scrollIntoView({ behavior: 'smooth' });
+      }, 600);
+    }
+  }
+  </script>
+
+</body>
+</html>
