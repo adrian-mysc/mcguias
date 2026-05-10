@@ -1,7 +1,7 @@
-// MC Guias — Service Worker v18
-// Correções: CACHE_NAME → CACHE no install; suporte a Push Notifications
+// MC Guias — Service Worker v19
+// Atualização: Best Burger quiz (26 perguntas), 5 conquistas, aba Materiais, correções de UI
 
-const CACHE = 'mc-guias-v28';
+const CACHE = 'mc-guias-v29';
 const offlineFallbackPage = '/mcguias/offline.html';
 
 // ---- Install: pré-cache da página offline ----

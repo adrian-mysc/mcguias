@@ -1,6 +1,35 @@
 {
   "versions": [
     {
+      "version": "v7",
+      "date": "2026-05-10",
+      "date_display": "10 Mai 2026",
+      "badge": "Best Burger · Quiz · Conquistas",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🏆",
+          "text": "**26 novas perguntas de Best Burger** no simulado geral — cobrindo chapa, UHC, tostadeira, queijo, cebola reidratada, pães, molhos, saleiros, procedimentos e kit de treinamento. Total de perguntas chegou a **697**.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🥇",
+          "text": "**5 novas conquistas de Best Burger** — Especialista BB, Mestre do Best Burger, Troféu Best Burger, Expert em Cebola e Padeiro BB. Desbloqueie dominando o guia Best Burger.",
+          "tag": "novo"
+        },
+        {
+          "icon": "📦",
+          "text": "**Nova aba Materiais no Guia Best Burger** — Kit de Treinamento completo com 10 itens e preços, Qualidosos 1/2/3, programação da tostadeira HEBT-5V, tabela Chart de ingredientes, procedimento detalhado do tomate e hidratação da cebola com máquina de suco.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🎨",
+          "text": "**Cards do Index corrigidos** — Best Burger e Assistente IA agora exibem título e descrição com texto preto e negrito, legível em modo claro e escuro.",
+          "tag": "bug"
+        }
+      ]
+    },
+    {
       "version": "v6",
       "date": "2026-05-08",
       "date_display": "08 Mai 2026",
