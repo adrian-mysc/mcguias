@@ -39,6 +39,12 @@
     // ── Tempo de estudo ───────────────────────────────────────
     { id: 'hora_de_estudo',     nome: '1 Hora de Estudo',     desc: 'Acumulou 60 minutos estudando no MC Guias',          icon: '⏱️', cat: 'persistencia', cor: '#f472b6' },
     { id: 'estudante_dedicado', nome: 'Dedicado',             desc: 'Acumulou 5 horas estudando no MC Guias',             icon: '🎓', cat: 'persistencia', cor: '#818cf8' },
+    // ── Best Burger ───────────────────────────────────────────
+    { id: 'especialista_bb',   nome: 'Especialista BB',      desc: 'Acertou 10 perguntas seguidas de Best Burger',       icon: '🏆', cat: 'estudo',     cor: '#DA291C' },
+    { id: 'mestre_bb',         nome: 'Mestre do Best Burger',desc: 'Atingiu 90%+ em um quiz exclusivo de Best Burger',   icon: '🍔', cat: 'estudo',     cor: '#f59e0b' },
+    { id: 'trofeu_bb',         nome: 'Troféu Best Burger',   desc: 'Completou 100% do checklist de Best Burger',         icon: '🥇', cat: 'trofeu',     cor: '#DA291C' },
+    { id: 'cebola_expert',     nome: 'Expert em Cebola',     desc: 'Acertou todas as perguntas de Cebola Reidratada',    icon: '🧅', cat: 'estudo',     cor: '#22c55e' },
+    { id: 'padeiro_bb',        nome: 'Padeiro BB',           desc: 'Acertou todas as perguntas de Pães Best Burger',     icon: '🍞', cat: 'estudo',     cor: '#f59e0b' },
   ];
 
   /* ============================================================
