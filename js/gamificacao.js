@@ -48,14 +48,73 @@
   ];
 
   /* ============================================================
-     DESAFIOS SEMANAIS
+     CALENDÁRIO DE TEMAS — 4 SEMANAS ROTATIVO
+     Epoch: 2025-01-06 (segunda-feira) = Semana 1
      ============================================================ */
+  var TEMAS_SEMANA = [
+    {
+      semana: 1,
+      nome: 'Foco Produção',
+      icon: '🔥',
+      cor: '#f59e0b',
+      desc: 'Chapa, McFritas e Condimentação',
+      guias: ['chapa', 'mcfritas', 'condimentacao', 'produtos-fritos'],
+    },
+    {
+      semana: 2,
+      nome: 'Foco Atendimento & Drive',
+      icon: '🚗',
+      cor: '#38bdf8',
+      desc: 'Drive-Thru, Influencer Vendedor e McDelivery',
+      guias: ['drive-thru', 'influencer', 'mcdelivery'],
+    },
+    {
+      semana: 3,
+      nome: 'Foco Limpeza & Fechamento',
+      icon: '🧹',
+      cor: '#22c55e',
+      desc: 'Limpeza, Sanitização e Procedimento de Fechamento',
+      guias: ['limpeza', 'fechamento'],
+    },
+    {
+      semana: 4,
+      nome: 'Foco Crescimento & Especialização',
+      icon: '🎓',
+      cor: '#a78bfa',
+      desc: 'Promoção Interna, Treinadores e Supervisores',
+      guias: ['promocao-interna', 'treinadores', 'supervisores'],
+    },
+  ];
+
+  /* ============================================================
+     DESAFIOS SEMANAIS
+     campo       → chave no progresso semanal
+     globalStat  → lê de estatisticas globais (sem campo no prog)
+     isArray     → conta .length em vez do valor direto
+     tema        → semana temática que destaca este desafio (1-4)
+     ============================================================ */
+
+  // Constantes de classificação de guias (usadas em onQuizComplete)
+  var GUIAS_PRODUCAO = ['chapa', 'mcfritas', 'condimentacao', 'produtos-fritos'];
+  var GUIAS_CRESC    = ['promocao-interna', 'treinadores', 'supervisores'];
+  var GUIAS_LIMPEZA  = ['limpeza', 'faxin'];
+
   var DESAFIOS = [
-    { id: 'guerreiro_chapa', nome: 'Guerreiro da Chapa', desc: 'Responda 30 perguntas da categoria Chapa', meta: 30,  emblema: '🔥', campo: 'perguntasChapa' },
-    { id: 'faxina_geral',    nome: 'Faxina Geral',       desc: 'Complete 3 quizzes de Limpeza',            meta: 3,   emblema: '✨', campo: 'quizzesLimpeza' },
-    { id: 'equilibrio',      nome: 'Equilíbrio',         desc: 'Estude 4 categorias diferentes',           meta: 4,   emblema: '🌈', campo: 'categoriasEstudadas', isArray: true },
-    { id: 'perfeccionista',  nome: 'Perfeccionista',     desc: 'Atingiu 90% de acerto em um quiz',         meta: 1,   emblema: '💎', campo: 'quizPerfeito' },
-    { id: 'maratonista',     nome: 'Maratonista',        desc: 'Complete 100 perguntas no total',          meta: 100, emblema: '🏅', campo: 'totalPerguntas' },
+    // ── Core (sempre disponíveis) ────────────────────────────
+    { id: 'guerreiro_chapa',    nome: 'Guerreiro da Chapa',          desc: 'Responda 30 perguntas da categoria Chapa',                        meta: 30,  emblema: '🔥', campo: 'perguntasChapa' },
+    { id: 'faxina_geral',       nome: 'Faxina Geral',                desc: 'Complete 3 quizzes de Limpeza',                                   meta: 3,   emblema: '✨', campo: 'quizzesLimpeza' },
+    { id: 'equilibrio',         nome: 'Equilíbrio',                  desc: 'Estude 5 categorias diferentes nesta semana',                     meta: 5,   emblema: '🌈', campo: 'categoriasEstudadas', isArray: true },
+    { id: 'perfeccionista',     nome: 'Perfeccionista',              desc: 'Atinja 90% de acerto em qualquer quiz',                           meta: 1,   emblema: '💎', campo: 'quizPerfeito' },
+    { id: 'maratonista',        nome: 'Maratonista',                 desc: 'Responda 100 perguntas no total',                                 meta: 100, emblema: '🏅', campo: 'totalPerguntas' },
+    { id: 'streak_imparavel',   nome: 'Streak Imparável',            desc: 'Mantenha 5 dias de estudo consecutivos',                         meta: 5,   emblema: '🔥', campo: 'diasStreak' },
+    { id: 'rei_flashcard',      nome: 'Rei do Flashcard',            desc: 'Revise 30 flashcards nesta semana',                              meta: 30,  emblema: '🔁', campo: 'flashcardsSemanais' },
+    { id: 'noturno',            nome: 'Noturno',                     desc: 'Complete 2 quizzes após as 22h nesta semana',                    meta: 2,   emblema: '🌙', campo: 'quizzesApos22hSem' },
+    { id: 'explorador',         nome: 'Explorador',                  desc: 'Explore 7 categorias diferentes nesta semana',                   meta: 7,   emblema: '🗺️', campo: 'categoriasEstudadas', isArray: true },
+    // ── Temáticos (destacados na semana correspondente) ──────
+    { id: 'mestre_producao',    nome: 'Mestre da Produção',          desc: 'Responda 50 perguntas de Chapa, Fritas ou Condimentação',         meta: 50,  emblema: '🍔', campo: 'perguntasProducao', tema: 1 },
+    { id: 'velocidade_drive',   nome: 'Velocidade no Drive',         desc: 'Complete 2 quizzes de Drive-Thru',                               meta: 2,   emblema: '🚗', campo: 'quizzesDrive', tema: 2 },
+    { id: 'zero_erros_limpeza', nome: 'Zero Erros em Limpeza',       desc: 'Atinja 90%+ em um quiz de Limpeza',                             meta: 1,   emblema: '🧹', campo: 'quizLimpezaPerfeito', tema: 3 },
+    { id: 'especialista_cresc', nome: 'Especialista em Crescimento', desc: 'Estude 2 guias da área de crescimento (Promoção / Treinadores / Supervisores)', meta: 2, emblema: '🎓', campo: 'guiasCrescimento', isArray: true, tema: 4 },
   ];
 
   /* ============================================================
@@ -76,7 +135,8 @@
       conquistas: [],
       desafiosSemanais: {
         semana: _mondayStr(),
-        progresso: { perguntasChapa: 0, quizzesLimpeza: 0, categoriasEstudadas: [], quizPerfeito: 0, totalPerguntas: 0 },
+        progresso: { perguntasChapa: 0, quizzesLimpeza: 0, categoriasEstudadas: [], quizPerfeito: 0, totalPerguntas: 0,
+                     flashcardsSemanais: 0, quizzesApos22hSem: 0, perguntasProducao: 0, quizzesDrive: 0, quizLimpezaPerfeito: 0, guiasCrescimento: [], diasStreak: 0 },
         concluidos: []
       },
       estatisticas: {
@@ -102,18 +162,26 @@
   function getData() {
     var d = loadData() || defaultData();
     var def = defaultData();
-    if (!d.conquistas)        d.conquistas        = [];
-    if (!d.desafiosSemanais)  d.desafiosSemanais  = def.desafiosSemanais;
-    if (!d.estatisticas)      d.estatisticas      = def.estatisticas;
+    if (!d.conquistas)       d.conquistas       = [];
+    if (!d.desafiosSemanais) d.desafiosSemanais = def.desafiosSemanais;
+    if (!d.estatisticas)     d.estatisticas     = def.estatisticas;
+    // Null-checks de estatísticas globais
     var s = d.estatisticas;
-    if (!s.totalFlashcards)   s.totalFlashcards   = 0;
-    if (!s.totalPerguntas)    s.totalPerguntas     = 0;
-    if (!s.minEstudo)         s.minEstudo          = 0;
-    if (!s.guiasConcluidos)   s.guiasConcluidos    = [];
-    if (!s.provasAprovadas)   s.provasAprovadas    = [];
-    if (!d.desafiosSemanais.progresso.categoriasEstudadas) {
-      d.desafiosSemanais.progresso.categoriasEstudadas = [];
-    }
+    if (!s.totalFlashcards)    s.totalFlashcards    = 0;
+    if (!s.totalPerguntas)     s.totalPerguntas     = 0;
+    if (!s.minEstudo)          s.minEstudo          = 0;
+    if (!s.guiasConcluidos)    s.guiasConcluidos    = [];
+    if (!s.provasAprovadas)    s.provasAprovadas    = [];
+    // Null-checks de progresso semanal (suporte a dados antigos do localStorage)
+    var p = d.desafiosSemanais.progresso;
+    if (!p.categoriasEstudadas)  p.categoriasEstudadas  = [];
+    if (!p.guiasCrescimento)     p.guiasCrescimento     = [];
+    if (p.flashcardsSemanais  == null) p.flashcardsSemanais  = 0;
+    if (p.quizzesApos22hSem   == null) p.quizzesApos22hSem   = 0;
+    if (p.perguntasProducao   == null) p.perguntasProducao   = 0;
+    if (p.quizzesDrive        == null) p.quizzesDrive        = 0;
+    if (p.quizLimpezaPerfeito == null) p.quizLimpezaPerfeito = 0;
+    if (p.diasStreak          == null) p.diasStreak          = 0;
     return d;
   }
 
@@ -134,10 +202,23 @@
     if (data.desafiosSemanais.semana !== currentMon) {
       data.desafiosSemanais = {
         semana: currentMon,
-        progresso: { perguntasChapa: 0, quizzesLimpeza: 0, categoriasEstudadas: [], quizPerfeito: 0, totalPerguntas: 0 },
+        progresso: { perguntasChapa: 0, quizzesLimpeza: 0, categoriasEstudadas: [], quizPerfeito: 0, totalPerguntas: 0,
+                     flashcardsSemanais: 0, quizzesApos22hSem: 0, perguntasProducao: 0, quizzesDrive: 0, quizLimpezaPerfeito: 0, guiasCrescimento: [], diasStreak: 0 },
         concluidos: []
       };
     }
+  }
+
+  /* ============================================================
+     WEEK THEME
+     ============================================================ */
+  function getTemaSemana(date) {
+    var epoch   = new Date('2025-01-06T00:00:00'); // Semana 1 (segunda-feira)
+    var now     = date ? new Date(date) : new Date();
+    var diffMs  = now - epoch;
+    var weekNum = Math.floor(diffMs / (7 * 24 * 60 * 60 * 1000));
+    var idx     = ((weekNum % 4) + 4) % 4;          // garante positivo
+    return TEMAS_SEMANA[idx];
   }
 
   /* ============================================================
@@ -311,9 +392,14 @@
     DESAFIOS.forEach(function (d) {
       if (concl.indexOf(d.id) !== -1) return; // already done
 
-      var valor = d.isArray
-        ? (prog[d.campo] ? prog[d.campo].length : 0)
-        : (prog[d.campo] || 0);
+      var valor;
+      if (d.globalStat) {
+        valor = data.estatisticas[d.globalStat] || 0;
+      } else {
+        valor = d.isArray
+          ? (prog[d.campo] ? prog[d.campo].length : 0)
+          : (prog[d.campo] || 0);
+      }
 
       if (valor >= d.meta) {
         concl.push(d.id);
@@ -365,13 +451,16 @@
     var guide = (opts.guide || '').toLowerCase();
     var pct   = opts.pct || 0;
 
+    // streak_imparavel — atualiza o pico de streak alcançado nesta semana
+    prog.diasStreak = Math.max(prog.diasStreak || 0, stats.diasConsecutivos || 0);
+
     // guerreiro_chapa — count questions if guide contains 'chapa'
     if (guide.indexOf('chapa') !== -1 || guide.indexOf('futuros') !== -1) {
       prog.perguntasChapa = (prog.perguntasChapa || 0) + (opts.total || 0);
     }
 
     // faxina_geral — quiz de limpeza
-    if (guide.indexOf('limpeza') !== -1 || guide.indexOf('faxin') !== -1) {
+    if (GUIAS_LIMPEZA.some(function(g){ return guide.indexOf(g) !== -1; })) {
       prog.quizzesLimpeza = (prog.quizzesLimpeza || 0) + 1;
     }
 
@@ -386,10 +475,36 @@
     // maratonista
     prog.totalPerguntas = (prog.totalPerguntas || 0) + (opts.total || 0);
 
+    // noturno — quizzes após 22h (semanal)
+    if ((opts.hour || 0) >= 22) {
+      prog.quizzesApos22hSem = (prog.quizzesApos22hSem || 0) + 1;
+    }
+
+    // mestre_producao — chapa, fritas, condimentacao
+    if (GUIAS_PRODUCAO.some(function(g){ return guide.indexOf(g) !== -1; })) {
+      prog.perguntasProducao = (prog.perguntasProducao || 0) + (opts.total || 0);
+    }
+
+    // velocidade_drive — Drive-Thru
+    if (guide.indexOf('drive') !== -1) {
+      prog.quizzesDrive = (prog.quizzesDrive || 0) + 1;
+    }
+
+    // zero_erros_limpeza — 90%+ em limpeza
+    if (GUIAS_LIMPEZA.some(function(g){ return guide.indexOf(g) !== -1; }) && pct >= 90) {
+      prog.quizLimpezaPerfeito = (prog.quizLimpezaPerfeito || 0) + 1;
+    }
+
+    // especialista_cresc — guias de crescimento (array único)
+    if (GUIAS_CRESC.some(function(g){ return guide.indexOf(g) !== -1; })) {
+      if (!prog.guiasCrescimento) prog.guiasCrescimento = [];
+      if (prog.guiasCrescimento.indexOf(guide) === -1) prog.guiasCrescimento.push(guide);
+    }
+
     // -- Extras for conquistas --
     var extras = {
       mestre_chapa:   guide.indexOf('chapa') !== -1 && pct >= 90,
-      jardineiro:     guide.indexOf('limpeza') !== -1 && pct >= 90,
+      jardineiro:     GUIAS_LIMPEZA.some(function(g){ return guide.indexOf(g) !== -1; }) && pct >= 90,
       limpezaCount:   prog.quizzesLimpeza,
       perfeccionista: pct >= 90,
     };
@@ -407,7 +522,11 @@
     checkWeekReset(data);
     updateStreak(data.estatisticas);
     data.estatisticas.totalFlashcards = (data.estatisticas.totalFlashcards || 0) + 1;
+    var prog = data.desafiosSemanais.progresso;
+    prog.flashcardsSemanais = (prog.flashcardsSemanais || 0) + 1;
+    prog.diasStreak = Math.max(prog.diasStreak || 0, data.estatisticas.diasConsecutivos || 0);
     verificarConquistas(data, {});
+    verificarDesafios(data);
     save(data);
   }
 
@@ -592,6 +711,7 @@
       estatisticas:     d.estatisticas,
       catalogo:         CONQUISTAS,
       desafiosCatalogo: DESAFIOS,
+      temaSemana:       getTemaSemana(),
     };
   }
 
@@ -612,9 +732,11 @@
     addStudyMinutes:             addStudyMinutes,
     requestNotificationReminder: requestNotificationReminder,
     getSnapshot:                 getSnapshot,
+    getTemaSemana:               getTemaSemana,
     resetAll:                    resetAll,
     CONQUISTAS:                  CONQUISTAS,
     DESAFIOS:                    DESAFIOS,
+    TEMAS_SEMANA:                TEMAS_SEMANA,
   };
 
 })();
