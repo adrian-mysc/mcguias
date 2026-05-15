@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendizado Inteligente — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function () { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') setTimeout(hideSplash, 180);
+      else window.addEventListener('load', function () { setTimeout(hideSplash, 180); });
+    })();
+  </script>
+
+  <style>
+    /* ── Layout ── */
+    .ap-tabs  { display:flex; gap:6px; overflow-x:auto; padding-bottom:2px; scrollbar-width:none; }
+    .ap-tab   { flex-shrink:0; padding:8px 16px; border-radius:20px; font-size:13px; font-weight:700;
+                border:2px solid var(--border); background:var(--card); color:var(--muted);
+                cursor:pointer; transition:all .15s; font-family:var(--font-body); }
+    .ap-tab.active { background:var(--red); border-color:var(--red); color:#fff; }
+    .ap-panel { display:none; }
+    .ap-panel.active { display:block; }
+
+    /* ── Stat pills ── */
+    .ap-stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .ap-stat { background:var(--card); border:1.5px solid var(--border); border-radius:12px;
+               padding:12px 8px; text-align:center; }
+    .ap-stat-val { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--red); line-height:1; }
+    .ap-stat-lbl { font-size:10.5px; color:var(--muted); margin-top:4px; line-height:1.3; }
+
+    /* ── Question card ── */
+    .ap-qcard { background:var(--card); border:1.5px solid var(--border); border-radius:16px;
+                padding:20px 16px; box-shadow:var(--shadow-md); }
+    .ap-qcard-top { display:flex; align-items:center; justify-content:space-between;
+                    margin-bottom:12px; gap:8px; }
+    .ap-qcat { font-size:11px; font-weight:700; color:var(--muted); }
+    .ap-diff-badge { font-size:10px; font-weight:800; padding:3px 10px; border-radius:20px;
+                     background:var(--bg); border:1.5px solid var(--border); color:var(--muted); }
+    .ap-question { font-family:var(--font-display); font-size:15.5px; font-weight:700;
+                   line-height:1.4; color:var(--text); margin-bottom:16px; }
+    .ap-options { display:flex; flex-direction:column; gap:8px; }
+    .ap-opt { padding:12px 14px; border-radius:12px; border:2px solid var(--border);
+              background:var(--card); font-size:13.5px; font-weight:500; color:var(--text);
+              cursor:pointer; transition:all .15s; text-align:left; font-family:var(--font-body); }
+    .ap-opt:hover:not([disabled]) { border-color:var(--red); }
+    .ap-opt.correct   { background:#dcfce7; border-color:#16a34a; color:#15803d; }
+    .ap-opt.wrong     { background:#fee2e2; border-color:#dc2626; color:#dc2626; }
+    .ap-opt.reveal    { border-color:#16a34a; }
+    .ap-opt[disabled] { cursor:default; opacity:.8; }
+
+    /* Explanation */
+    .ap-expl { margin-top:12px; padding:10px 14px; border-radius:10px;
+               background:var(--bg); font-size:13px; color:var(--muted); line-height:1.5; display:none; }
+    .ap-expl.show { display:block; }
+
+    /* Rating buttons */
+    .ap-rating { display:grid; grid-template-columns:repeat(2,1fr); gap:8px;
+                 margin-top:12px; display:none; }
+    .ap-rating.show { display:grid; }
+    .ap-rate-btn { padding:10px 6px; border-radius:10px; font-size:12px; font-weight:700;
+                   border:2px solid; cursor:pointer; transition:all .15s; font-family:var(--font-body); }
+    .ap-rate-btn.easy   { background:#dcfce7; border-color:#16a34a; color:#15803d; }
+    .ap-rate-btn.medium { background:#fef9c3; border-color:#ca8a04; color:#92400e; }
+    .ap-rate-btn.hard   { background:#ffedd5; border-color:#ea580c; color:#c2410c; }
+    .ap-rate-btn.fail   { background:#fee2e2; border-color:#dc2626; color:#dc2626; }
+
+    /* Progress bar */
+    .ap-progress-wrap { height:6px; background:var(--border); border-radius:3px; margin-bottom:12px; overflow:hidden; }
+    .ap-progress-fill { height:100%; background:var(--red); border-radius:3px; transition:width .3s; }
+
+    /* Timer bar */
+    .ap-timer-wrap { height:4px; background:var(--border); border-radius:2px; margin-bottom:16px; overflow:hidden; }
+    .ap-timer-fill { height:100%; background:var(--red); border-radius:2px; transition:width .1s linear; }
+
+    /* Skill indicator */
+    .ap-skill { display:flex; align-items:center; gap:10px; padding:12px 14px;
+                border-radius:12px; background:var(--card); border:1.5px solid var(--border); }
+    .ap-skill-icon { font-size:22px; flex-shrink:0; }
+    .ap-skill-label { font-size:11px; color:var(--muted); }
+    .ap-skill-name  { font-family:var(--font-display); font-size:15px; font-weight:800; }
+    .ap-skill-bar-wrap { flex:1; height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+    .ap-skill-bar-fill { height:100%; border-radius:3px; transition:width .5s; }
+
+    /* Weakness bars */
+    .ap-weak-item { margin-bottom:12px; }
+    .ap-weak-head { display:flex; justify-content:space-between; align-items:center;
+                    font-size:13px; font-weight:700; margin-bottom:5px; }
+    .ap-weak-rate { font-size:12px; font-weight:700; color:var(--red); }
+    .ap-weak-bar-wrap { height:10px; background:var(--border); border-radius:5px; overflow:hidden; }
+    .ap-weak-bar-fill { height:100%; border-radius:5px; transition:width .4s; }
+
+    /* Empty state */
+    .ap-empty { text-align:center; padding:32px 16px; color:var(--muted); }
+    .ap-empty-icon { font-size:40px; margin-bottom:8px; }
+    .ap-empty-text { font-size:14px; line-height:1.5; }
+
+    /* Result card */
+    .ap-result { text-align:center; padding:24px 16px; }
+    .ap-result-icon  { font-size:48px; margin-bottom:8px; }
+    .ap-result-pct   { font-family:var(--font-display); font-size:40px; font-weight:800;
+                       color:var(--red); line-height:1; }
+    .ap-result-sub   { font-size:13px; color:var(--muted); margin:6px 0 16px; }
+    .ap-result-grid  { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:16px; }
+    .ap-result-box   { background:var(--bg); border-radius:10px; padding:10px 6px; text-align:center; }
+    .ap-result-box b { display:block; font-size:16px; font-weight:800; color:var(--text); }
+    .ap-result-box small { font-size:10px; color:var(--muted); }
+
+    /* Dashboard heatmap */
+    .ap-heatmap { display:flex; gap:4px; flex-wrap:wrap; }
+    .ap-heat-day { width:28px; height:28px; border-radius:6px; background:var(--border);
+                   display:flex; align-items:center; justify-content:center;
+                   font-size:9px; font-weight:700; color:var(--muted); }
+    .ap-heat-day.level-1 { background:#fca5a5; color:#dc2626; }
+    .ap-heat-day.level-2 { background:#f87171; color:#fff; }
+    .ap-heat-day.level-3 { background:#ef4444; color:#fff; }
+    .ap-heat-day.level-4 { background:#dc2626; color:#fff; }
+
+    /* Alert callout */
+    .ap-callout { background:linear-gradient(135deg,#DA291C15,#FFC72C15);
+                  border:1.5px solid #DA291C30; border-radius:13px;
+                  padding:14px 16px; display:flex; align-items:flex-start; gap:10px; }
+    .ap-callout-icon { font-size:22px; flex-shrink:0; margin-top:1px; }
+    .ap-callout-text { font-size:13px; line-height:1.5; color:var(--text); }
+    .ap-callout-text strong { display:block; margin-bottom:2px; }
+
+    /* Focus tag pill */
+    .ap-focus-pill { display:inline-flex; align-items:center; gap:6px; padding:5px 12px;
+                     border-radius:20px; font-size:12px; font-weight:700;
+                     background:#FFC72C22; color:#92400e; border:1.5px solid #FFC72C55; }
+    [data-theme="dark"] .ap-focus-pill { background:#FFC72C18; color:#fbbf24; }
+
+    /* Done banner */
+    .ap-done-banner { background:linear-gradient(135deg,#22c55e18,#16a34a10);
+                      border:1.5px solid #16a34a40; border-radius:13px;
+                      padding:16px; text-align:center; }
+    .ap-done-banner .icon { font-size:32px; }
+    .ap-done-banner h3 { margin:6px 0 4px; font-size:15px; }
+    .ap-done-banner p  { font-size:13px; color:var(--muted); margin:0; }
+  </style>
+</head>
+<body data-page="aprendizado">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Aprendizado Inteligente</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Aprendizado Inteligente</h1>
+        <p>Repetição espaçada · Adaptativo · Fraquezas</p>
+      </div>
+      <div class="navbar-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Tema" title="Alternar tema">☀️</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-content" style="padding-top:80px;padding-bottom:32px;">
+    <div class="container" style="max-width:620px;">
+
+      <!-- Tab navigation -->
+      <div class="ap-tabs" id="apTabs" style="margin-bottom:16px;">
+        <button class="ap-tab active" data-tab="revisao">📅 Revisões</button>
+        <button class="ap-tab"        data-tab="adaptativo">🧠 Adaptativo</button>
+        <button class="ap-tab"        data-tab="fraquezas">🔥 Fraquezas</button>
+        <button class="ap-tab"        data-tab="painel">📊 Painel</button>
+      </div>
+
+      <!-- ══════════════════════════════════════════════
+           TAB 1 — REVISÕES (SRS)
+      ══════════════════════════════════════════════ -->
+      <div class="ap-panel active" id="panel-revisao">
+
+        <!-- Stats -->
+        <div class="ap-stats-row" style="margin-bottom:14px;" id="srsStats">
+          <div class="ap-stat">
+            <div class="ap-stat-val" id="statDue">—</div>
+            <div class="ap-stat-lbl">Para revisar hoje</div>
+          </div>
+          <div class="ap-stat">
+            <div class="ap-stat-val" id="statRetention">—</div>
+            <div class="ap-stat-lbl">Taxa de retenção</div>
+          </div>
+          <div class="ap-stat">
+            <div class="ap-stat-val" id="statDominated">—</div>
+            <div class="ap-stat-lbl">Dominadas</div>
+          </div>
+        </div>
+
+        <!-- Start screen -->
+        <div id="srsStart">
+          <div class="ap-callout" style="margin-bottom:14px;" id="srsCallout">
+            <div class="ap-callout-icon">📅</div>
+            <div class="ap-callout-text">
+              <strong id="srsCalloutTitle">Carregando revisões…</strong>
+              <span id="srsCalloutDesc"></span>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="btnStartSRS" style="width:100%;" disabled>
+            Iniciar revisão
+          </button>
+        </div>
+
+        <!-- Review session -->
+        <div id="srsSession" style="display:none;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <span id="srsProgress" style="font-size:12px;color:var(--muted);font-weight:700;">0/0</span>
+            <button onclick="stopSRS()" style="background:none;border:none;font-size:13px;color:var(--muted);cursor:pointer;">✕ Parar</button>
+          </div>
+          <div class="ap-progress-wrap">
+            <div class="ap-progress-fill" id="srsProgressBar" style="width:0%"></div>
+          </div>
+
+          <div class="ap-qcard" id="srsQCard">
+            <div class="ap-qcard-top">
+              <span class="ap-qcat" id="srsQCat"></span>
+              <span class="ap-diff-badge" id="srsQDiff"></span>
+            </div>
+            <div class="ap-question" id="srsQText"></div>
+            <div class="ap-options" id="srsOpts"></div>
+            <div class="ap-expl" id="srsExpl"></div>
+            <div class="ap-rating" id="srsRating">
+              <button class="ap-rate-btn easy"   onclick="rateSRS(3)">😄 Muito fácil</button>
+              <button class="ap-rate-btn medium"  onclick="rateSRS(2)">🙂 Médio</button>
+              <button class="ap-rate-btn hard"    onclick="rateSRS(1)">😓 Difícil</button>
+              <button class="ap-rate-btn fail"    onclick="rateSRS(0)">❌ Errei</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Done screen -->
+        <div id="srsDone" style="display:none;">
+          <div class="ap-done-banner">
+            <div class="icon">✅</div>
+            <h3>Revisão concluída!</h3>
+            <p id="srsDoneMsg"></p>
+          </div>
+          <button class="btn btn-primary" onclick="resetSRSUI()" style="width:100%;margin-top:12px;">
+            Voltar ao início
+          </button>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════
+           TAB 2 — ADAPTATIVO
+      ══════════════════════════════════════════════ -->
+      <div class="ap-panel" id="panel-adaptativo">
+
+        <!-- Skill indicator -->
+        <div class="ap-skill" style="margin-bottom:14px;" id="adaptSkill">
+          <div class="ap-skill-icon" id="adaptSkillIcon">🔰</div>
+          <div style="flex:1;">
+            <div class="ap-skill-label">Seu nível atual</div>
+            <div class="ap-skill-name" id="adaptSkillName">Iniciante</div>
+          </div>
+          <div style="width:80px;">
+            <div class="ap-skill-bar-wrap">
+              <div class="ap-skill-bar-fill" id="adaptSkillBar" style="width:0%;background:#94a3b8;"></div>
+            </div>
+            <div style="font-size:10px;color:var(--muted);text-align:right;margin-top:3px;" id="adaptSkillScore">0 pts</div>
+          </div>
+        </div>
+
+        <!-- Start screen -->
+        <div id="adaptStart">
+          <div class="ap-callout" style="margin-bottom:14px;">
+            <div class="ap-callout-icon">🧠</div>
+            <div class="ap-callout-text">
+              <strong>Quiz Adaptativo</strong>
+              O sistema seleciona perguntas com dificuldade ajustada ao seu nível em tempo real. Acertos rápidos aumentam a dificuldade; erros reduzem.
+            </div>
+          </div>
+          <button class="btn btn-primary" id="btnStartAdapt" style="width:100%;">
+            Começar quiz adaptativo (15 perguntas)
+          </button>
+        </div>
+
+        <!-- Session -->
+        <div id="adaptSession" style="display:none;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+            <span id="adaptProgress" style="font-size:12px;color:var(--muted);font-weight:700;">0/15</span>
+            <span id="adaptDiffLabel" style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--bg);color:var(--muted);border:1.5px solid var(--border);">●●○○</span>
+            <button onclick="stopAdapt()" style="background:none;border:none;font-size:13px;color:var(--muted);cursor:pointer;">✕</button>
+          </div>
+          <div class="ap-progress-wrap">
+            <div class="ap-progress-fill" id="adaptProgressBar" style="width:0%"></div>
+          </div>
+          <div class="ap-timer-wrap">
+            <div class="ap-timer-fill" id="adaptTimer" style="width:100%"></div>
+          </div>
+
+          <div class="ap-qcard" id="adaptQCard">
+            <div class="ap-qcard-top">
+              <span class="ap-qcat" id="adaptQCat"></span>
+              <span class="ap-diff-badge" id="adaptQDiff"></span>
+            </div>
+            <div class="ap-question" id="adaptQText"></div>
+            <div class="ap-options" id="adaptOpts"></div>
+            <div class="ap-expl" id="adaptExpl"></div>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="adaptResult" style="display:none;">
+          <div class="ap-result">
+            <div class="ap-result-icon" id="adaptResultIcon">🎉</div>
+            <div class="ap-result-pct" id="adaptResultPct">0%</div>
+            <div class="ap-result-sub" id="adaptResultSub"></div>
+            <div class="ap-result-grid">
+              <div class="ap-result-box"><b id="adaptResCorrect">0</b><small>Acertos</small></div>
+              <div class="ap-result-box"><b id="adaptResTime">0s</b><small>Tempo médio</small></div>
+              <div class="ap-result-box"><b id="adaptResSkill">0</b><small>Skill pts</small></div>
+            </div>
+            <button class="btn btn-primary" onclick="resetAdaptUI()" style="width:100%;">
+              Jogar novamente
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════
+           TAB 3 — FRAQUEZAS
+      ══════════════════════════════════════════════ -->
+      <div class="ap-panel" id="panel-fraquezas">
+
+        <!-- Report -->
+        <div id="weakReport" style="margin-bottom:16px;"></div>
+
+        <!-- Chart -->
+        <div style="background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:16px;" id="weakChart">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;color:var(--text);">Taxa de erro por área</div>
+          <div id="weakBars">
+            <div class="ap-empty">
+              <div class="ap-empty-icon">📊</div>
+              <div class="ap-empty-text">Responda algumas perguntas<br>para ver o mapa de fraquezas.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Focused drill -->
+        <div id="weakDrill" style="display:none;margin-top:14px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <span style="font-size:13px;font-weight:700;">Treino focado</span>
+            <button onclick="stopDrill()" style="background:none;border:none;font-size:13px;color:var(--muted);cursor:pointer;">✕ Parar</button>
+          </div>
+          <div id="weakDrillFocus" style="margin-bottom:10px;"></div>
+          <div class="ap-progress-wrap">
+            <div class="ap-progress-fill" id="drillProgressBar" style="width:0%"></div>
+          </div>
+          <div class="ap-qcard" id="drillQCard">
+            <div class="ap-question" id="drillQText"></div>
+            <div class="ap-options" id="drillOpts"></div>
+            <div class="ap-expl" id="drillExpl"></div>
+            <div class="ap-rating" id="drillRating">
+              <button class="ap-rate-btn easy"  onclick="rateDrill(3)">😄 Muito fácil</button>
+              <button class="ap-rate-btn medium" onclick="rateDrill(2)">🙂 Médio</button>
+              <button class="ap-rate-btn hard"   onclick="rateDrill(1)">😓 Difícil</button>
+              <button class="ap-rate-btn fail"   onclick="rateDrill(0)">❌ Errei</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════
+           TAB 4 — PAINEL
+      ══════════════════════════════════════════════ -->
+      <div class="ap-panel" id="panel-painel">
+
+        <!-- Summary stats -->
+        <div class="ap-stats-row" style="margin-bottom:14px;" id="dashStats">
+          <div class="ap-stat">
+            <div class="ap-stat-val" id="dashTotal">0</div>
+            <div class="ap-stat-lbl">Perguntas<br>revisadas</div>
+          </div>
+          <div class="ap-stat">
+            <div class="ap-stat-val" id="dashRetention">—</div>
+            <div class="ap-stat-lbl">Taxa de<br>retenção</div>
+          </div>
+          <div class="ap-stat">
+            <div class="ap-stat-val" id="dashDominated">0</div>
+            <div class="ap-stat-lbl">Perguntas<br>dominadas</div>
+          </div>
+        </div>
+
+        <!-- Activity (7 days) -->
+        <div style="background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;">
+          <div style="font-size:13px;font-weight:700;margin-bottom:10px;">Atividade — últimos 14 dias</div>
+          <div class="ap-heatmap" id="dashHeatmap"></div>
+          <div style="display:flex;gap:8px;margin-top:8px;font-size:10px;color:var(--muted);">
+            <span>Sem revisão</span>
+            <span>●</span>
+            <span style="color:#ef4444;">Com revisão</span>
+          </div>
+        </div>
+
+        <!-- Per-guide domínio -->
+        <div style="background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;">Domínio por categoria</div>
+          <div id="dashGuides"></div>
+        </div>
+
+        <!-- Reset -->
+        <button onclick="confirmReset()" style="width:100%;padding:10px;border:1.5px solid var(--border);background:none;border-radius:10px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--font-body);">
+          🗑️ Resetar dados de aprendizado
+        </button>
+      </div>
+
+    </div><!-- /container -->
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/learning/spacedRepetition.js"></script>
+  <script src="../js/learning/weaknessMap.js"></script>
+  <script src="../js/learning/adaptiveQuiz.js"></script>
+  <script src="../js/gamificacao.js"></script>
+
+  <script>
+  /* ================================================================
+     BANCO DE PERGUNTAS — tagged + difficulty
+  ================================================================ */
+  var QUESTIONS = [
+    // ── CHAPA ──────────────────────────────────────────────────────
+    { id:'ch01', guide:'chapa', category:'🌡️ Chapa · Temperaturas', tags:['temperatura','seguranca'],     dificuldade:2, question:'Qual é a temperatura mínima de cozimento interno das carnes?',                                                                        options:['60°C','65°C','70°C','77°C'],                                             answer:'70°C',       explanation:'A temperatura de cozimento interno deve ser entre 70°C e 77°C (158°F a 170°F).' },
+    { id:'ch02', guide:'chapa', category:'🌡️ Chapa · Temperaturas', tags:['temperatura','carne','tempo'], dificuldade:3, question:'Qual é o ponto de partida de cocção para carnes 10:1 (exceto Taylor NG)?',                                                           options:['30 segundos','35 segundos','39 segundos','45 segundos'],                  answer:'39 segundos', explanation:'Ponto de partida (exceto Taylor NG): 10:1 = 39 segundos.' },
+    { id:'ch03', guide:'chapa', category:'🌡️ Chapa · Temperaturas', tags:['temperatura','carne','tempo'], dificuldade:4, question:'Qual é o ponto de partida para carnes 4:1 na Taylor Next Generation?',                                                               options:['100 segundos','110 segundos','120 segundos','126 segundos'],              answer:'126 segundos',explanation:'Taylor Next Generation: 4:1 = 126 segundos.' },
+    { id:'ch04', guide:'chapa', category:'🥩 Chapa · Carnes',       tags:['carne','uhc'],                dificuldade:1, question:'Como devem ser removidas as carnes 10:1 para a UHC?',                                                                                options:['Uma a uma','De 2 em 2','De 3 em 3','Todas ao mesmo tempo'],               answer:'De 3 em 3',  explanation:'Carnes 10:1 são removidas de 3 em 3, com máximo de 12 na gaveta.' },
+    { id:'ch05', guide:'chapa', category:'🥩 Chapa · Carnes',       tags:['carne','uhc'],                dificuldade:2, question:'Qual é o limite máximo de carnes 10:1 na gaveta UHC?',                                                                                options:['6 carnes','8 carnes','10 carnes','12 carnes'],                            answer:'12 carnes',  explanation:'A gaveta UHC suporta no máximo 12 carnes 10:1.' },
+    { id:'ch06', guide:'chapa', category:'🥩 Chapa · Carnes',       tags:['carne','uhc'],                dificuldade:2, question:'Qual é o limite máximo de carnes 4:1 na gaveta UHC?',                                                                                options:['4 carnes','6 carnes','8 carnes','10 carnes'],                             answer:'4 carnes',   explanation:'O limite máximo de produção para carnes 4:1 é de 4 carnes, removidas uma a uma.' },
+    { id:'ch07', guide:'chapa', category:'🥩 Chapa · Carnes',       tags:['carne','tempo'],              dificuldade:3, question:'Em quanto tempo devem ser removidas todas as carnes da chapa?',                                                                       options:['10 segundos','15 segundos','18 segundos','25 segundos'],                  answer:'18 segundos', explanation:'Todas as carnes devem ser removidas em 18 segundos.' },
+    { id:'ch08', guide:'chapa', category:'🧹 Chapa · Limpeza',      tags:['limpeza','angulo'],           dificuldade:3, question:'A que ângulo deve estar a lâmina do raspador em relação à superfície da chapa?',                                                     options:['5°','10°','15°','30°'],                                                   answer:'15°',        explanation:'A lâmina do raspador deve estar a 15° em relação à superfície da chapa.' },
+    { id:'ch09', guide:'chapa', category:'🧹 Chapa · Limpeza',      tags:['limpeza'],                    dificuldade:2, question:'Com quantas raspagens o raspador deve cobrir toda a superfície da chapa?',                                                            options:['1 a 2','2 a 3','3 a 4','5 a 6'],                                         answer:'3 a 4',      explanation:'Raspar da frente para trás com 3 a 4 raspagens cobrindo toda a superfície.' },
+    { id:'ch10', guide:'chapa', category:'🧹 Chapa · Limpeza',      tags:['limpeza','teflon'],           dificuldade:2, question:'Com que frequência deve ser reforçada a limpeza do Teflon da chapa?',                                                                options:['A cada 5 min','A cada 10 min','A cada 15 min','A cada 30 min'],           answer:'A cada 15 min',explanation:'A cada 15 minutos, reforçar a limpeza passando 2-3 vezes com pano e rodinho.' },
+    { id:'ch11', guide:'chapa', category:'🧹 Chapa · Limpeza',      tags:['limpeza','panos'],            dificuldade:3, question:'Quantos panos limpos devem estar disponíveis para a chapa?',                                                                         options:['2 panos','3 panos','4 panos','6 panos'],                                 answer:'4 panos',    explanation:'Manter 4 panos: 2 para utensílios, 1 para áreas gordurosas e 1 para áreas não gordurosas.' },
+    { id:'ch12', guide:'chapa', category:'🥓 Chapa · Bacon',        tags:['bacon','tempo','gap'],        dificuldade:4, question:'Qual o GAP programado para o bacon na chapa?',                                                                                       options:['060','075','090','120'],                                                  answer:'090',        explanation:'O bacon deve estar com tempo de 40 segundos e GAP de 090 programado.' },
+    { id:'ch13', guide:'chapa', category:'🥩 Chapa · Carnes',       tags:['carne','sal'],                dificuldade:2, question:'Em que sentido deve ser feita a salga das carnes?',                                                                                  options:['Esq → dir, frente → fundo','Dir → esq, frente → fundo','Frente → fundo, esq → dir','Em qualquer sentido'], answer:'Dir → esq, frente → fundo', explanation:'A salga deve ser feita da direita para esquerda, da frente para o fundo, em forma de S.' },
+    { id:'ch14', guide:'chapa', category:'🌡️ Chapa · Temperaturas', tags:['temperatura','ovo'],          dificuldade:3, question:'Qual é a temperatura da chapa para preparação dos ovos no Café da Manhã?',                                                           options:['100°C','115°C','135°C','150°C'],                                          answer:'135°C',      explanation:'O platen dedicado para ovos no Café da Manhã deve estar a 135°C.' },
+
+    // ── LOPE ───────────────────────────────────────────────────────
+    { id:'lp01', guide:'lope',  category:'🔄 LOPE · Rota',          tags:['rota','tempo'],               dificuldade:1, question:'A cada quantos minutos o LOPE deve seguir a rota de operação?',                                                                     options:['5 min','10 min','15 min','30 min'],                                       answer:'15 min',     explanation:'O LOPE deve seguir a rota de operação a cada 15 minutos durante todo o turno.' },
+    { id:'lp02', guide:'lope',  category:'🍅 LOPE · Tomate',        tags:['tomate','corte'],             dificuldade:2, question:'Qual é a espessura correta do tomate fatiado?',                                                                                     options:['3mm a 4mm','5mm a 6mm','7mm a 8mm','10mm'],                               answer:'5mm a 6mm',  explanation:'O tomate deve ser fatiado com 5mm a 6mm de espessura.' },
+    { id:'lp03', guide:'lope',  category:'🍅 LOPE · Tomate',        tags:['tomate','validade'],          dificuldade:1, question:'Tomate ambientado e fatiado pode retornar para a câmara de resfriados?',                                                            options:['Sim, até 2h','Sim, se no prazo','Não, nunca','Sim, se embalado'],         answer:'Não, nunca', explanation:'Tomates após ambientados e fatiados NÃO podem retornar para câmara de resfriados.' },
+    { id:'lp04', guide:'lope',  category:'🧀 LOPE · Queijo',        tags:['queijo','temperatura'],       dificuldade:2, question:'Qual é a temperatura ideal do queijo para uso?',                                                                                    options:['10°C','13°C','17,5°C','22°C'],                                            answer:'17,5°C',     explanation:'A temperatura ideal do queijo é 17,5°C (entre 15°C e 18°C).' },
+    { id:'lp05', guide:'lope',  category:'🧅 LOPE · Cebola',        tags:['cebola','temperatura'],       dificuldade:3, question:'Em que temperatura deve estar a água para reidratação da cebola?',                                                                  options:['0°C a 2°C','1°C a 4°C','5°C a 8°C','10°C a 15°C'],                      answer:'1°C a 4°C',  explanation:'A água para reidratação deve estar entre 1°C e 4°C (água fria da máquina de suco).' },
+    { id:'lp06', guide:'lope',  category:'🧅 LOPE · Cebola',        tags:['cebola','tempo'],             dificuldade:1, question:'Qual é o tempo mínimo de reidratação da cebola?',                                                                                   options:['30 min','1 hora','2 horas','4 horas'],                                    answer:'1 hora',     explanation:'A cebola deve ser reidratada por no mínimo 1 hora. Quanto mais tempo, melhor.' },
+    { id:'lp07', guide:'lope',  category:'🧅 LOPE · Cebola',        tags:['cebola','validade'],          dificuldade:2, question:'Qual é a validade da cebola reidratada?',                                                                                           options:['6 horas','12 horas','24 horas','48 horas'],                               answer:'24 horas',   explanation:'A cebola reidratada tem validade de 24 horas.' },
+    { id:'lp08', guide:'lope',  category:'🍅 LOPE · Tomate',        tags:['tomate','higiene','sanitizacao'], dificuldade:2, question:'Qual produto é usado para sanitizar os tomates?',                                                                               options:['Água com sal','CHLORINE SANITIZER BB5L','Álcool 70%','Água quente'],      answer:'CHLORINE SANITIZER BB5L', explanation:'Os tomates devem ser sanitizados com CHLORINE SANITIZER BB5L por 15 a 30 minutos.' },
+    { id:'lp09', guide:'lope',  category:'🍅 LOPE · Tomate',        tags:['tomate','tempo'],             dificuldade:2, question:'Por quanto tempo o tomate deve ser ambientado antes de ser fatiado?',                                                               options:['30 min','1 hora','2 horas','4 horas'],                                    answer:'2 horas',    explanation:'O tomate precisa de no mínimo 2 horas de ambientação antes de ser fatiado.' },
+    { id:'lp10', guide:'lope',  category:'🥬 LOPE · Alface',        tags:['alface','porcoes'],           dificuldade:2, question:'Quantas cubas rasas rende 1 pacote de alface?',                                                                                    options:['4 cubas','6 cubas','8 cubas','10 cubas'],                                 answer:'8 cubas',    explanation:'1 pacote de alface rende 8 cubas rasas (250g) ou 4 cubas médias (500g).' },
+
+    // ── MC FRITAS ──────────────────────────────────────────────────
+    { id:'fr01', guide:'fritas', category:'🍟 Fritas · Óleo',       tags:['temperatura','oleo','fritas'],dificuldade:2, question:'Qual é a temperatura do óleo para fritar as McFritas regulares?',                                                                   options:['155°C','168°C','178°C','190°C'],                                          answer:'168°C',      explanation:'A temperatura padrão do óleo para McFritas é de 168°C.' },
+    { id:'fr02', guide:'fritas', category:'🍟 Fritas · Validade',   tags:['validade','fritas'],          dificuldade:1, question:'Qual é o tempo de vida das McFritas na quentadora após fritar?',                                                                    options:['3 minutos','5 minutos','7 minutos','10 minutos'],                         answer:'7 minutos',  explanation:'As McFritas têm tempo de vida de 7 minutos na quentadora.' },
+    { id:'fr03', guide:'fritas', category:'🍟 Fritas · Produção',   tags:['fritas','tempo'],             dificuldade:2, question:'Qual é o tempo de cozimento das McFritas (ciclo padrão)?',                                                                         options:['2:10','2:40','3:00','3:30'],                                              answer:'2:40',       explanation:'O ciclo padrão de cozimento das McFritas é de 2 minutos e 40 segundos.' },
+    { id:'fr04', guide:'fritas', category:'🍟 Fritas · Qualidade',  tags:['fritas','sal'],               dificuldade:3, question:'Em que momento deve ser aplicado o sal nas McFritas?',                                                                              options:['Antes de fritar','Assim que saem do óleo','Após 1 min na quentadora','No momento de servir'], answer:'Assim que saem do óleo', explanation:'O sal deve ser aplicado imediatamente após a fritura, antes de qualquer outra etapa.' },
+    { id:'fr05', guide:'fritas', category:'🍟 Fritas · Óleo',       tags:['oleo','filtro'],              dificuldade:3, question:'Com que frequência deve ser feita a filtragem do óleo das fritas?',                                                                 options:['A cada turno','2x por dia','1x por semana','Somente quando escurecer'],   answer:'2x por dia', explanation:'A filtragem do óleo deve ser realizada duas vezes por dia para manter a qualidade.' },
+    { id:'fr06', guide:'fritas', category:'🍟 Fritas · Produção',   tags:['fritas','quantidade'],        dificuldade:2, question:'Qual o peso correto da porção de McFritas média?',                                                                                 options:['80g','100g','114g','130g'],                                               answer:'114g',       explanation:'A porção média de McFritas deve ter 114g (4 oz).' },
+
+    // ── LIMPEZA ────────────────────────────────────────────────────
+    { id:'lm01', guide:'limpeza', category:'🧹 Limpeza · Esfregão', tags:['limpeza','cores','esfregao'], dificuldade:2, question:'Qual é a cor do esfregão utilizado na cozinha?',                                                                                   options:['Azul','Verde','Vermelho','Amarelo'],                                      answer:'Vermelho',   explanation:'Na cozinha o esfregão utiliza ponteira e garra VERMELHA.' },
+    { id:'lm02', guide:'limpeza', category:'🧹 Limpeza · Esfregão', tags:['limpeza','cores','esfregao'], dificuldade:2, question:'Qual é a cor do esfregão para área de balcão e salão?',                                                                            options:['Vermelho','Verde','Azul','Amarelo'],                                      answer:'Azul',       explanation:'Para área de balcão e salão: Ponteira e garra AZUL + lã BRANCA.' },
+    { id:'lm03', guide:'limpeza', category:'🧹 Limpeza · Sanitização', tags:['limpeza','sanitizacao','panos'], dificuldade:2, question:'A solução sanitizante dos panos deve ser trocada a cada?',                                                                   options:['30 min','1 hora','2 horas','4 horas'],                                   answer:'2 horas',    explanation:'A solução sanitizante dos panos deve ser trocada a cada 2 horas.' },
+    { id:'lm04', guide:'limpeza', category:'🧹 Limpeza · Sanitização', tags:['limpeza','sanitizacao','temperatura'], dificuldade:3, question:'Qual deve ser a temperatura da solução sanitizante para panos e utensílios?',                                         options:['Fria — abaixo de 10°C','Morna — 30°C a 40°C','Quente — 55°C a 65°C','Qualquer temperatura'], answer:'Quente — 55°C a 65°C', explanation:'A solução para panos e utensílios deve estar entre 55°C e 65°C para garantir eficácia.' },
+    { id:'lm05', guide:'limpeza', category:'🧹 Limpeza · Banheiro',   tags:['limpeza','cores'],          dificuldade:2, question:'Qual a cor do esfregão para banheiros?',                                                                                           options:['Azul','Vermelho','Verde','Laranja'],                                      answer:'Verde',      explanation:'Para banheiros: Ponteira e garra VERDE + lã VERDE.' },
+    { id:'lm06', guide:'limpeza', category:'🧹 Limpeza · Panos',      tags:['limpeza','panos'],          dificuldade:3, question:'Qual o número correto de panos por posição (LOPE2)?',                                                                               options:['2 panos','3 panos','4 panos','6 panos'],                                 answer:'6 panos',    explanation:'Linha de produção: 6 panos para cada lado (2 iniciador, 2 condimentação, 2 finalizador).' },
+
+    // ── DRIVE-THRU ─────────────────────────────────────────────────
+    { id:'dr01', guide:'drive-thru', category:'🚗 Drive · Tempos',   tags:['drive','oepe','tempo'],       dificuldade:3, question:'Qual é a meta de OEPE (tempo de serviço) no Drive-Thru?',                                                                          options:['90 segundos','100 segundos','120 segundos','150 segundos'],               answer:'120 segundos', explanation:'A meta de OEPE no Drive-Thru é de 120 segundos (2 minutos).' },
+    { id:'dr02', guide:'drive-thru', category:'🚗 Drive · PPF',      tags:['drive','atendimento'],        dificuldade:2, question:'O que significa a sigla PPF no Drive-Thru?',                                                                                       options:['Pedido-Preparo-Final','Pedido-Pagamento-Fila','Pedido-Pagamento-Fritura','Ponto-Preparo-Finalização'], answer:'Pedido-Pagamento-Fila', explanation:'PPF = Pedido, Pagamento, Fila — as 3 etapas-chave do fluxo Drive-Thru.' },
+    { id:'dr03', guide:'drive-thru', category:'🚗 Drive · Serviço',  tags:['drive','atendimento'],        dificuldade:2, question:'Qual é a primeira etapa do atendimento no Drive-Thru pelo Influencer?',                                                            options:['Cobrar o cliente','Saudar e sugerir produto','Entregar o pedido','Digitar o pedido'], answer:'Saudar e sugerir produto', explanation:'O Influencer deve saudar o cliente e sugerir produto imediatamente ao chegar no ponto de pedido.' },
+    { id:'dr04', guide:'drive-thru', category:'🚗 Drive · Qualidade',tags:['drive','qualidade'],          dificuldade:3, question:'Em que posição deve estar o funcionário ao receber o dinheiro do cliente no Drive?',                                               options:['Sentado','De frente ao cliente com contato visual','Inclinado para fora','De lado'], answer:'De frente ao cliente com contato visual', explanation:'Ao cobrar, o colaborador deve manter contato visual e de frente ao cliente, transmitindo atenção.' },
+
+    // ── SEGURANÇA DO ALIMENTO ──────────────────────────────────────
+    { id:'sg01', guide:'seguranca-alimento', category:'🛡️ Segurança · Temperatura', tags:['temperatura','seguranca','zona-perigo'], dificuldade:2, question:'Qual é a faixa de temperatura da "zona de perigo" para alimentos?',                                    options:['0°C a 10°C','4°C a 60°C','10°C a 55°C','0°C a 30°C'],                   answer:'4°C a 60°C', explanation:'A zona de perigo onde bactérias se multiplicam rapidamente é entre 4°C e 60°C.' },
+    { id:'sg02', guide:'seguranca-alimento', category:'🛡️ Segurança · Refrigeração', tags:['temperatura','seguranca','refrigeracao'], dificuldade:1, question:'Qual é a temperatura máxima para armazenamento de carnes na câmara de resfriados?',                options:['1°C','4°C','7°C','10°C'],                                                 answer:'4°C',        explanation:'Carnes e produtos perecíveis devem ser mantidos a no máximo 4°C na câmara de resfriados.' },
+    { id:'sg03', guide:'seguranca-alimento', category:'🛡️ Segurança · PEPS',        tags:['estoque','peps'],                        dificuldade:1, question:'O que significa PEPS na estocagem?',                                                                  options:['Primeiro a Entrar, Primeiro a Sair','Padrão de Estocagem Por Setor','Produto Em Perfeito Estado Sanitário','Procedimento de Estoque Padronizado'], answer:'Primeiro a Entrar, Primeiro a Sair', explanation:'PEPS = Primeiro a Entrar, Primeiro a Sair. Produtos mais antigos devem ser usados antes.' },
+    { id:'sg04', guide:'seguranca-alimento', category:'🛡️ Segurança · Higiene',      tags:['higiene','maos'],                       dificuldade:2, question:'Por quantos segundos devem ser esfregadas as mãos durante a lavagem correta?',                         options:['10 segundos','15 segundos','20 segundos','30 segundos'],                  answer:'20 segundos', explanation:'A higienização das mãos deve incluir 20 segundos de esfregação com sabão antes do enxague.' },
+    { id:'sg05', guide:'seguranca-alimento', category:'🛡️ Segurança · Validades',    tags:['validade','bacon'],                     dificuldade:2, question:'Qual a validade do bacon pronto (após preparação na chapa)?',                                          options:['2 horas','4 horas','6 horas','8 horas'],                                 answer:'6 horas',    explanation:'O bacon pronto tem validade de 6 horas a contar da preparação.' },
+    { id:'sg06', guide:'seguranca-alimento', category:'🛡️ Segurança · Contaminação', tags:['contaminacao','higiene'],               dificuldade:3, question:'Qual é o principal tipo de contaminação cruzada no ambiente de fast food?',                            options:['Física','Química','Microbiológica','Radioativa'],                         answer:'Microbiológica', explanation:'A contaminação cruzada microbiológica (bactérias) é a mais crítica no ambiente de fast food.' },
+
+    // ── VALIDADES ──────────────────────────────────────────────────
+    { id:'vl01', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','queijo'],          dificuldade:2, question:'Qual a validade do molho cheddar (incluindo ambientação)?',                                                                        options:['4 horas','6 horas','8 horas','12 horas'],                                answer:'8 horas',    explanation:'Molho cheddar: 8 horas de validade incluindo as 2 horas de ambientação.' },
+    { id:'vl02', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','suco'],            dificuldade:2, question:'Qual o tempo de vida da bag de suco após aberta?',                                                                                 options:['3 dias','5 dias','7 dias','10 dias'],                                     answer:'7 dias',     explanation:'Após abrir a bag de suco, anotar o tempo de vida secundário de 7 dias.' },
+    { id:'vl03', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','cebola','bb'],     dificuldade:3, question:'Qual o tempo de vida do ceboleiro Best Burger na área da chapa?',                                                                  options:['1 hora','2 horas','3 horas','4 horas'],                                  answer:'4 horas',    explanation:'O ceboleiro Best Burger tem vida útil de 4 horas na área da chapa.' },
+    { id:'vl04', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','tomate'],          dificuldade:1, question:'Qual o tempo de vida útil do tomate fatiado na mesa de condimentação?',                                                            options:['1 hora','2 horas','4 horas','6 horas'],                                  answer:'2 horas',    explanation:'O tomate fatiado tem vida útil de 2 horas na mesa de condimentação.' },
+    { id:'vl05', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','bacon'],           dificuldade:3, question:'Qual o tempo de vida secundário do bacon ao retirar da câmara de resfriados?',                                                    options:['2 dias','3 dias','5 dias','7 dias'],                                      answer:'5 dias',     explanation:'Ao retirar o pacote de bacon da câmara, anotar o tempo de vida secundário de 5 dias.' },
+    { id:'vl06', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','cebola-cheddar'],  dificuldade:3, question:'Qual a validade da embalagem aberta de cebola cheddar após refrigerada?',                                                          options:['12 horas','24 horas','48 horas','72 horas'],                             answer:'48 horas',   explanation:'Fechar a embalagem aberta de cebola cheddar com clipe e anotar 48 horas de validade.' },
+  ];
+
+  /* ---- Build ID lookup ---- */
+  var Q_MAP = {};
+  QUESTIONS.forEach(function (q) { Q_MAP[q.id] = q; });
+
+  /* ---- All IDs ---- */
+  var ALL_IDS = QUESTIONS.map(function (q) { return q.id; });
+
+  /* ================================================================
+     UTILITIES
+  ================================================================ */
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function diffLabel(d) {
+    return ['','●○○○','●●○○','●●●○','●●●●','●●●●'][d] || '●○○○';
+  }
+
+  function barColor(pct) {
+    if (pct < 30) return '#22c55e';
+    if (pct < 60) return '#f59e0b';
+    return '#ef4444';
+  }
+
+  /* ================================================================
+     SRS SESSION
+  ================================================================ */
+  var srsQueue = [], srsIdx = 0, srsAnswered = 0;
+  var srsStartTime = 0, srsAccCorrect = 0;
+
+  function updateSRSStats() {
+    var cards  = window.SRS ? SRS.getAllCards() : {};
+    var retSt  = SRS.getRetentionStats(ALL_IDS);
+    document.getElementById('statDue').textContent       = retSt.dueToday;
+    document.getElementById('statRetention').textContent = retSt.retentionRate + '%';
+    document.getElementById('statDominated').textContent = retSt.dominated + '/' + retSt.reviewed;
+  }
+
+  function initSRSStart() {
+    var due = SRS.getDueQuestions(ALL_IDS);
+    var title = document.getElementById('srsCalloutTitle');
+    var desc  = document.getElementById('srsCalloutDesc');
+    var btn   = document.getElementById('btnStartSRS');
+
+    if (due.length === 0) {
+      title.textContent = '✅ Nenhuma revisão pendente!';
+      desc.textContent  = 'Você está em dia com todas as perguntas. Volte amanhã.';
+      btn.disabled      = true;
+      btn.textContent   = 'Sem revisões hoje';
+    } else {
+      title.textContent = 'Você possui ' + due.length + ' revisão(ões) pendente(s) hoje.';
+      desc.textContent  = 'As perguntas mais atrasadas serão apresentadas primeiro.';
+      btn.disabled      = false;
+      btn.textContent   = 'Iniciar revisão (' + Math.min(due.length, 20) + ' perguntas)';
+    }
+    updateSRSStats();
+  }
+
+  function startSRS() {
+    var due    = SRS.getDueQuestions(ALL_IDS);
+    srsQueue   = due.slice(0, 20).map(function (id) { return Q_MAP[id]; }).filter(Boolean);
+    if (srsQueue.length === 0) return;
+    srsIdx     = 0;
+    srsAccCorrect = 0;
+    srsStartTime  = Date.now();
+
+    document.getElementById('srsStart').style.display   = 'none';
+    document.getElementById('srsSession').style.display = 'block';
+    document.getElementById('srsDone').style.display    = 'none';
+    renderSRSQuestion();
+  }
+
+  function renderSRSQuestion() {
+    var q = srsQueue[srsIdx];
+    if (!q) { finishSRS(); return; }
+
+    document.getElementById('srsProgress').textContent = (srsIdx + 1) + '/' + srsQueue.length;
+    document.getElementById('srsProgressBar').style.width = Math.round(srsIdx / srsQueue.length * 100) + '%';
+    document.getElementById('srsQCat').textContent  = q.category;
+    document.getElementById('srsQDiff').textContent = diffLabel(q.dificuldade);
+    document.getElementById('srsQText').textContent = q.question;
+    document.getElementById('srsExpl').classList.remove('show');
+    document.getElementById('srsExpl').textContent  = q.explanation;
+    document.getElementById('srsRating').classList.remove('show');
+
+    var opts = shuffle(q.options);
+    document.getElementById('srsOpts').innerHTML = opts.map(function (o) {
+      return '<button class="ap-opt" onclick="selectSRSOpt(this,\'' + q.id + '\',\'' + o.replace(/'/g, '&#39;') + '\')">' + o + '</button>';
+    }).join('');
+
+    window._srsQStart = Date.now();
+  }
+
+  window.selectSRSOpt = function (btn, qid, opt) {
+    var q       = Q_MAP[qid];
+    var correct = opt === q.answer;
+    if (correct) srsAccCorrect++;
+
+    // Disable all options + color
+    var allOpts = document.querySelectorAll('#srsOpts .ap-opt');
+    allOpts.forEach(function (b) {
+      b.disabled = true;
+      if (b.textContent === q.answer) b.classList.add('correct');
+    });
+    if (!correct) btn.classList.add('wrong');
+
+    document.getElementById('srsExpl').classList.add('show');
+    document.getElementById('srsRating').classList.add('show');
+
+    // Pre-fill rating if obviously correct or wrong
+    window._srsLastCorrect = correct;
+    window._srsLastTime    = Date.now() - (window._srsQStart || Date.now());
+  };
+
+  window.rateSRS = function (rating) {
+    var q    = srsQueue[srsIdx];
+    var time = window._srsLastTime || 10000;
+    SRS.updateCard(q.id, rating, time);
+    srsIdx++;
+    renderSRSQuestion();
+  };
+
+  function finishSRS() {
+    var elapsed = Math.round((Date.now() - srsStartTime) / 1000);
+    document.getElementById('srsSession').style.display = 'none';
+    document.getElementById('srsDone').style.display    = 'block';
+    document.getElementById('srsDoneMsg').textContent   =
+      srsAccCorrect + ' de ' + srsQueue.length + ' acertos em ' + elapsed + 's';
+
+    updateSRSStats();
+
+    if (window.Gamificacao) {
+      Gamificacao.onQuizComplete('aprendizado-srs', {
+        pct: Math.round(srsAccCorrect / srsQueue.length * 100),
+        total: srsQueue.length,
+        hour: new Date().getHours(),
+      });
+    }
+  }
+
+  window.stopSRS = function () { resetSRSUI(); };
+  window.resetSRSUI = function () {
+    document.getElementById('srsStart').style.display   = 'block';
+    document.getElementById('srsSession').style.display = 'none';
+    document.getElementById('srsDone').style.display    = 'none';
+    initSRSStart();
+  };
+
+  document.getElementById('btnStartSRS').addEventListener('click', startSRS);
+
+  /* ================================================================
+     ADAPTIVE SESSION
+  ================================================================ */
+  var adaptSess = null;
+  var adaptTimerInterval = null;
+  var adaptQStart = 0;
+
+  function updateAdaptSkill() {
+    var cards = SRS.getAllCards();
+    var score = AdaptiveQuiz.calculateSkillLevel(cards);
+    var info  = AdaptiveQuiz.getSkillLabel(score);
+    document.getElementById('adaptSkillIcon').textContent     = info.icon;
+    document.getElementById('adaptSkillName').textContent     = info.label;
+    document.getElementById('adaptSkillScore').textContent    = score + ' pts';
+    document.getElementById('adaptSkillBar').style.width      = score + '%';
+    document.getElementById('adaptSkillBar').style.background = info.cor;
+    return score;
+  }
+
+  function startAdapt() {
+    var cards  = SRS.getAllCards();
+    var skill  = AdaptiveQuiz.calculateSkillLevel(cards);
+    adaptSess  = AdaptiveQuiz.createSession(15);
+    adaptSess.skillScore = skill;
+
+    document.getElementById('adaptStart').style.display   = 'none';
+    document.getElementById('adaptSession').style.display = 'block';
+    document.getElementById('adaptResult').style.display  = 'none';
+    renderAdaptQuestion();
+  }
+
+  function renderAdaptQuestion() {
+    if (!adaptSess || adaptSess.answered.length >= adaptSess.maxQuestions) {
+      finishAdapt(); return;
+    }
+    var cards = SRS.getAllCards();
+    var q     = AdaptiveQuiz.selectAdaptiveQuestion(QUESTIONS, adaptSess.skillScore, adaptSess.answered, cards);
+    if (!q) { finishAdapt(); return; }
+
+    adaptSess._currentQ = q;
+    adaptQStart = Date.now();
+
+    var done  = adaptSess.answered.length;
+    var total = adaptSess.maxQuestions;
+    document.getElementById('adaptProgress').textContent = done + '/' + total;
+    document.getElementById('adaptProgressBar').style.width = Math.round(done / total * 100) + '%';
+    document.getElementById('adaptDiffLabel').textContent = diffLabel(q.dificuldade);
+    document.getElementById('adaptQCat').textContent  = q.category;
+    document.getElementById('adaptQDiff').textContent = diffLabel(q.dificuldade);
+    document.getElementById('adaptQText').textContent = q.question;
+    document.getElementById('adaptExpl').classList.remove('show');
+    document.getElementById('adaptExpl').textContent  = q.explanation;
+
+    var opts = shuffle(q.options);
+    document.getElementById('adaptOpts').innerHTML = opts.map(function (o) {
+      return '<button class="ap-opt" onclick="selectAdaptOpt(this,\'' + o.replace(/'/g, '&#39;') + '\')">' + o + '</button>';
+    }).join('');
+
+    // Timer bar — 20s max
+    clearInterval(adaptTimerInterval);
+    var timerFill = document.getElementById('adaptTimer');
+    timerFill.style.width = '100%';
+    var maxTime = 20000;
+    adaptTimerInterval = setInterval(function () {
+      var elapsed = Date.now() - adaptQStart;
+      var pct     = Math.max(0, 100 - Math.round(elapsed / maxTime * 100));
+      timerFill.style.width = pct + '%';
+      timerFill.style.background = pct > 40 ? '#DA291C' : pct > 20 ? '#f59e0b' : '#ef4444';
+      if (pct === 0) clearInterval(adaptTimerInterval);
+    }, 100);
+  }
+
+  window.selectAdaptOpt = function (btn, opt) {
+    clearInterval(adaptTimerInterval);
+    var q       = adaptSess._currentQ;
+    var correct = opt === q.answer;
+    var time    = Date.now() - adaptQStart;
+
+    var allOpts = document.querySelectorAll('#adaptOpts .ap-opt');
+    allOpts.forEach(function (b) {
+      b.disabled = true;
+      if (b.textContent === q.answer) b.classList.add('correct');
+    });
+    if (!correct) btn.classList.add('wrong');
+
+    document.getElementById('adaptExpl').classList.add('show');
+
+    // Record in both adaptive + SRS
+    AdaptiveQuiz.recordAnswer(adaptSess, q.id, correct, time);
+    SRS.updateCard(q.id, correct ? (time < 8000 ? 3 : 2) : 0, time);
+
+    setTimeout(renderAdaptQuestion, 1200);
+  };
+
+  function finishAdapt() {
+    clearInterval(adaptTimerInterval);
+    document.getElementById('adaptSession').style.display = 'none';
+    document.getElementById('adaptResult').style.display  = 'block';
+
+    var stats = AdaptiveQuiz.getSessionStats(adaptSess);
+    if (!stats) return;
+    var icons = ['😔','😐','🙂','😄','🎉'];
+    var iconI = Math.min(4, Math.floor(stats.pct / 25));
+
+    document.getElementById('adaptResultIcon').textContent  = icons[iconI];
+    document.getElementById('adaptResultPct').textContent   = stats.pct + '%';
+    document.getElementById('adaptResultSub').textContent   = stats.correct + ' de ' + stats.total + ' acertos · ' + stats.skillInfo.label;
+    document.getElementById('adaptResCorrect').textContent  = stats.correct + '/' + stats.total;
+    document.getElementById('adaptResTime').textContent     = (stats.avgTime / 1000).toFixed(1) + 's';
+    document.getElementById('adaptResSkill').textContent    = stats.skillScore;
+
+    updateAdaptSkill();
+    updateSRSStats();
+
+    if (window.Gamificacao) {
+      Gamificacao.onQuizComplete('aprendizado-adaptativo', {
+        pct: stats.pct, total: stats.total, hour: new Date().getHours(),
+      });
+    }
+  }
+
+  window.stopAdapt = function () {
+    clearInterval(adaptTimerInterval);
+    resetAdaptUI();
+  };
+  window.resetAdaptUI = function () {
+    adaptSess = null;
+    document.getElementById('adaptStart').style.display   = 'block';
+    document.getElementById('adaptSession').style.display = 'none';
+    document.getElementById('adaptResult').style.display  = 'none';
+    updateAdaptSkill();
+  };
+
+  document.getElementById('btnStartAdapt').addEventListener('click', startAdapt);
+
+  /* ================================================================
+     WEAKNESS MAP
+  ================================================================ */
+  var drillQueue = [], drillIdx = 0, drillTag = null;
+
+  function renderWeakness() {
+    var cards  = SRS.getAllCards();
+    var report = WeaknessMap.generateWeaknessReport(QUESTIONS, cards);
+    var map    = WeaknessMap.calculateWeaknessMap(QUESTIONS, cards);
+
+    // Callout report
+    var rptEl = document.getElementById('weakReport');
+    if (report && report.lines.length > 0) {
+      rptEl.innerHTML = '<div class="ap-callout" style="margin-bottom:14px;">'
+        + '<div class="ap-callout-icon">🔥</div>'
+        + '<div class="ap-callout-text"><strong>Áreas que precisam de atenção:</strong>'
+        + report.lines.map(function (l) {
+            return '<div style="margin-top:6px;display:flex;align-items:center;justify-content:space-between;">'
+              + '<span>' + l.label + '</span>'
+              + '<button onclick="startDrill(\'' + l.tag + '\',\'' + l.label + '\')" '
+              + 'style="font-size:11px;padding:3px 10px;border-radius:20px;border:1.5px solid var(--red);background:none;color:var(--red);cursor:pointer;font-weight:700;">Treinar</button>'
+              + '</div>';
+          }).join('')
+        + '</div></div>';
+    } else {
+      rptEl.innerHTML = '';
+    }
+
+    // Bars
+    var barsEl = document.getElementById('weakBars');
+    if (map.length === 0) {
+      barsEl.innerHTML = '<div class="ap-empty"><div class="ap-empty-icon">📊</div>'
+        + '<div class="ap-empty-text">Responda algumas perguntas<br>para ver o mapa de fraquezas.</div></div>';
+      return;
+    }
+
+    var GUIDE_LABELS = {
+      chapa:'Chapa', lope:'LOPE', fritas:'McFritas', limpeza:'Limpeza',
+      'drive-thru':'Drive-Thru', 'seguranca-alimento':'Seg. Alimento', lope2:'LOPE2',
+      temperatura:'Temperaturas', validade:'Validades', carne:'Carnes',
+      limpeza:'Limpeza', oleo:'Óleo', tempo:'Tempos', cebola:'Cebola',
+      tomate:'Tomate', queijo:'Queijo', bacon:'Bacon', fritas:'McFritas',
+      sanitizacao:'Sanitização', panos:'Panos', higiene:'Higiene',
+    };
+
+    barsEl.innerHTML = map.slice(0, 8).map(function (m) {
+      var label = GUIDE_LABELS[m.tag] || m.tag;
+      var color = barColor(m.taxaErro);
+      return '<div class="ap-weak-item">'
+        + '<div class="ap-weak-head"><span>' + label + '</span>'
+        + '<span class="ap-weak-rate">' + m.taxaErro + '% erro</span></div>'
+        + '<div class="ap-weak-bar-wrap">'
+        + '<div class="ap-weak-bar-fill" style="width:' + m.taxaErro + '%;background:' + color + ';"></div>'
+        + '</div></div>';
+    }).join('');
+  }
+
+  window.startDrill = function (tag, label) {
+    var cards = SRS.getAllCards();
+    var pool  = WeaknessMap.generateFocusedReview(tag, QUESTIONS, cards);
+    if (pool.length === 0) {
+      alert('Nenhuma pergunta disponível para treino focado nesta categoria.');
+      return;
+    }
+    drillQueue = shuffle(pool).slice(0, 10);
+    drillIdx   = 0;
+    drillTag   = tag;
+
+    document.getElementById('weakDrill').style.display = 'block';
+    document.getElementById('weakDrillFocus').innerHTML =
+      '<div class="ap-focus-pill">🎯 Foco: ' + label + '</div>';
+    renderDrillQuestion();
+  };
+
+  function renderDrillQuestion() {
+    if (drillIdx >= drillQueue.length) {
+      stopDrill(); return;
+    }
+    var q = drillQueue[drillIdx];
+    document.getElementById('drillProgressBar').style.width = Math.round(drillIdx / drillQueue.length * 100) + '%';
+    document.getElementById('drillQText').textContent = q.question;
+    document.getElementById('drillExpl').classList.remove('show');
+    document.getElementById('drillExpl').textContent  = q.explanation;
+    document.getElementById('drillRating').classList.remove('show');
+
+    var opts = shuffle(q.options);
+    document.getElementById('drillOpts').innerHTML = opts.map(function (o) {
+      return '<button class="ap-opt" onclick="selectDrillOpt(this,\'' + q.id + '\',\'' + o.replace(/'/g, '&#39;') + '\')">' + o + '</button>';
+    }).join('');
+    window._drillQStart = Date.now();
+  }
+
+  window.selectDrillOpt = function (btn, qid, opt) {
+    var q = Q_MAP[qid];
+    var correct = opt === q.answer;
+    document.querySelectorAll('#drillOpts .ap-opt').forEach(function (b) {
+      b.disabled = true;
+      if (b.textContent === q.answer) b.classList.add('correct');
+    });
+    if (!correct) btn.classList.add('wrong');
+    document.getElementById('drillExpl').classList.add('show');
+    document.getElementById('drillRating').classList.add('show');
+    window._drillLastCorrect = correct;
+    window._drillLastTime    = Date.now() - (window._drillQStart || Date.now());
+  };
+
+  window.rateDrill = function (rating) {
+    var q    = drillQueue[drillIdx];
+    var time = window._drillLastTime || 10000;
+    SRS.updateCard(q.id, rating, time);
+    drillIdx++;
+    renderDrillQuestion();
+  };
+
+  window.stopDrill = function () {
+    document.getElementById('weakDrill').style.display = 'none';
+    renderWeakness();
+    updateSRSStats();
+  };
+
+  /* ================================================================
+     DASHBOARD
+  ================================================================ */
+  function renderDashboard() {
+    var cards = SRS.getAllCards();
+    var ret   = SRS.getRetentionStats(ALL_IDS);
+
+    document.getElementById('dashTotal').textContent     = ret.reviewed;
+    document.getElementById('dashRetention').textContent = ret.retentionRate + '%';
+    document.getElementById('dashDominated').textContent = ret.dominated;
+
+    // Heatmap — last 14 days
+    var heatEl = document.getElementById('dashHeatmap');
+    var today  = new Date();
+    today.setHours(0,0,0,0);
+    var days   = [];
+    for (var i = 13; i >= 0; i--) {
+      var d = new Date(today.getTime() - i * 86400000);
+      days.push(d);
+    }
+
+    var actByDay = {};
+    Object.keys(cards).forEach(function (id) {
+      var c = cards[id];
+      if (!c.ultimaRevisao) return;
+      var d = new Date(c.ultimaRevisao);
+      d.setHours(0,0,0,0);
+      var k = d.getTime();
+      actByDay[k] = (actByDay[k] || 0) + 1;
+    });
+
+    heatEl.innerHTML = days.map(function (d) {
+      var k   = d.getTime();
+      var cnt = actByDay[k] || 0;
+      var lvl = cnt === 0 ? 0 : cnt < 5 ? 1 : cnt < 10 ? 2 : cnt < 20 ? 3 : 4;
+      var lbl = d.getDate() + '/' + (d.getMonth() + 1);
+      return '<div class="ap-heat-day level-' + lvl + '" title="' + lbl + ': ' + cnt + ' revisões">'
+        + d.getDate() + '</div>';
+    }).join('');
+
+    // Per-guide domínio
+    var guides = ['chapa','lope','fritas','limpeza','drive-thru','seguranca-alimento','lope2'];
+    var gLabels = {
+      chapa:'🍔 Chapa', lope:'🥬 LOPE', fritas:'🍟 McFritas', limpeza:'🧹 Limpeza',
+      'drive-thru':'🚗 Drive-Thru', 'seguranca-alimento':'🛡️ Seg. Alimento', lope2:'⏱️ Validades',
+    };
+
+    var guideEl = document.getElementById('dashGuides');
+    guideEl.innerHTML = guides.map(function (g) {
+      var qs      = QUESTIONS.filter(function (q) { return q.guide === g; });
+      var domSum  = 0, count = 0;
+      qs.forEach(function (q) {
+        var c = cards[q.id];
+        if (c && (c.acertos + c.erros) > 0) { domSum += c.nivelDominio; count++; }
+      });
+      var avg = count > 0 ? Math.round(domSum / count / 5 * 100) : 0;
+      return '<div style="margin-bottom:10px;">'
+        + '<div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:4px;">'
+        + '<span>' + gLabels[g] + '</span>'
+        + '<span style="color:var(--muted);">' + avg + '%</span>'
+        + '</div>'
+        + '<div class="ap-weak-bar-wrap">'
+        + '<div class="ap-weak-bar-fill" style="width:' + avg + '%;background:' + (avg >= 70 ? '#22c55e' : avg >= 40 ? '#f59e0b' : '#ef4444') + ';"></div>'
+        + '</div></div>';
+    }).join('');
+  }
+
+  /* ================================================================
+     RESET
+  ================================================================ */
+  window.confirmReset = function () {
+    if (confirm('Resetar TODOS os dados de aprendizado? Essa ação não pode ser desfeita.')) {
+      SRS.resetAll();
+      AdaptiveQuiz.clearSession();
+      initSRSStart();
+      updateAdaptSkill();
+      renderWeakness();
+      renderDashboard();
+    }
+  };
+
+  /* ================================================================
+     TAB SWITCHING
+  ================================================================ */
+  document.getElementById('apTabs').addEventListener('click', function (e) {
+    var btn = e.target.closest('.ap-tab');
+    if (!btn) return;
+    var tab = btn.dataset.tab;
+    document.querySelectorAll('.ap-tab').forEach(function (b) { b.classList.remove('active'); });
+    document.querySelectorAll('.ap-panel').forEach(function (p) { p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+
+    if (tab === 'fraquezas') renderWeakness();
+    if (tab === 'painel')    renderDashboard();
+    if (tab === 'adaptativo') updateAdaptSkill();
+  });
+
+  /* ================================================================
+     INIT
+  ================================================================ */
+  function init() {
+    if (!window.SRS || !window.AdaptiveQuiz || !window.WeaknessMap) {
+      setTimeout(init, 50); return;
+    }
+    initSRSStart();
+    updateAdaptSkill();
+  }
+  init();
+  </script>
+</body>
+</html>
