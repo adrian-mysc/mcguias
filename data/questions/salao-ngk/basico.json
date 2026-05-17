@@ -1,0 +1,1954 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "salao-ngk",
+  "nivel": "basico",
+  "migratedFrom": "salao-ngk.html",
+  "questions": [
+    {
+      "id": "salao_ngk_001",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧼 Higiene",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "higiene",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo deve-se lavar as mãos com sabonete bactericida?",
+      "alternativas": [
+        "10 segundos",
+        "15 segundos",
+        "20 segundos",
+        "30 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Lave as mãos e antebraços com sabonete bactericida por 20 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_002",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧼 Higiene",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "frequencia",
+        "limpeza",
+        "panos",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Com qual frequência devem ser trocados os panos de limpeza?",
+      "alternativas": [
+        "A cada 30 minutos",
+        "A cada 1 hora",
+        "A cada 2 horas",
+        "A cada 4 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A troca de panos deve ocorrer a cada 2 horas, ou sempre que necessário.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_003",
+      "categoria": "salao-ngk",
+      "subcategoria": "🗑️ Lixo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "temperatura"
+      ],
+      "pergunta": "Qual cor de saco de lixo é usada para resíduos recicláveis?",
+      "alternativas": [
+        "Preto",
+        "Azul",
+        "Verde",
+        "Amarelo"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Saco verde = resíduos recicláveis (papel e plástico). Saco preto = resíduos orgânicos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_004",
+      "categoria": "salao-ngk",
+      "subcategoria": "🗑️ Lixo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quando deve ser trocado o saco de lixo dentro das lixeiras?",
+      "alternativas": [
+        "Quando estiver cheio",
+        "Quando estiver 1/2 cheio",
+        "Quando estiver 3/4 cheio",
+        "A cada 1 hora"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Compactar o lixo e trocar o saco quando estiver 3/4 cheio.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_005",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Chão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "frequencia",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Em qual formato deve ser feito o movimento do esfregão no chão?",
+      "alternativas": [
+        "Linha reta",
+        "Círculos",
+        "Forma de ∞ (infinito)",
+        "Zigue-zague"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O esfregão deve ser usado em forma de '∞' — 1 metro vira e 1 metro lava, a cada 2m².",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_006",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual é o objetivo do procedimento NGK?",
+      "alternativas": [
+        "Apenas registrar pedidos",
+        "Incentivar o cliente a usar o totem e auxiliar no manuseio",
+        "Substituir o atendimento no balcão",
+        "Apenas verificar se os totens estão ligados"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O procedimento NGK inclui abordar o cliente, incentivar o uso do totem, auxiliar no manuseio e falar sobre produtos e campanhas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_007",
+      "categoria": "salao-ngk",
+      "subcategoria": "📦 Método de Preparação",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que significa 'IN' no método de preparação?",
+      "alternativas": [
+        "Pedido para viagem",
+        "Cliente comendo no salão",
+        "Delivery",
+        "Pedido pelo celular"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "IN significa que o cliente está comendo no salão. OUT significa pedido para viagem.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_008",
+      "categoria": "salao-ngk",
+      "subcategoria": "📦 Método de Preparação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Como um pedido Curbside aparece na OAT?",
+      "alternativas": [
+        "Com o nome do cliente",
+        "Com o número da mesa",
+        "Com 'Curb + número da vaga'",
+        "Como 'Armazenado'"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Pedidos Curbside aparecem na OAT com o nome 'Curb + número da vaga', ex: CURB 01.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_009",
+      "categoria": "salao-ngk",
+      "subcategoria": "📦 Método de Preparação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Como um pedido MOP (por celular) aparece na OAT?",
+      "alternativas": [
+        "Com ícone especial de celular",
+        "Com a palavra 'MOP' em destaque",
+        "Igual a um pedido de balcão, mas como 'Armazenado'",
+        "Com o nome do aplicativo"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para MOP não há ícone. O pedido aparece na OAT igual ao de balcão, mas com status 'Armazenado' para que o crew faça o recall.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_010",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "porcao",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser feito ao ver uma família com crianças pequenas chegando ao salão?",
+      "alternativas": [
+        "Aguardar eles se acomodarem sozinhos",
+        "Oferecer/levar cadeirão, higienizando antes da criança sentar",
+        "Apenas indicar uma mesa",
+        "Perguntar se precisam de ajuda apenas se solicitarem"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ofereça ou leve cadeirões para pais com crianças pequenas, sempre higienizando antes da criança sentar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_011",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Atendimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "O que fazer ao identificar uma pessoa com deficiência ou idoso chegando?",
+      "alternativas": [
+        "Aguardar ser chamado",
+        "Oferecer ajuda proativamente para se acomodar e carregar a bandeja",
+        "Apenas indicar uma mesa livre",
+        "Chamar o gerente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ajudar pessoas idosas, mães com crianças ou pessoas com dificuldades, oferecendo-se para levar a bandeja e acomodá-las.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_012",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Salão · Mesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "panos",
+        "sanitizacao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos panos são necessários para limpeza de mesas e bancos?",
+      "alternativas": [
+        "1 pano para tudo",
+        "2 panos (1 úmido + 1 seco) para mesas e 2 para bancos",
+        "3 panos",
+        "4 panos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Mesas: 1 pano úmido sanitizado + 1 pano seco. Bancos: mesma combinação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_013",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Salão · Chão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "frequencia",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a área coberta a cada passagem do esfregão no chão?",
+      "alternativas": [
+        "1 metro quadrado",
+        "2 metros quadrados",
+        "3 metros quadrados",
+        "4 metros quadrados"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O esfregão cobre 2m² a cada passagem em movimento de infinito (∞).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_014",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Salão · Chão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "frequencia",
+        "higiene",
+        "temperatura"
+      ],
+      "pergunta": "A quantos metros deve ser invertido o lado do esfregão?",
+      "alternativas": [
+        "A cada 50cm",
+        "A cada metro",
+        "A cada 2 metros",
+        "A cada 3 metros"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O esfregão deve ter o lado invertido a cada metro de lavagem.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_015",
+      "categoria": "salao-ngk",
+      "subcategoria": "🗑️ Salão · Lixeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tempo"
+      ],
+      "pergunta": "Quantos sacos de lixo devem ser mantidos nas lixeiras para troca rápida?",
+      "alternativas": [
+        "2 a 3 sacos",
+        "3 a 5 sacos",
+        "5 a 7 sacos",
+        "8 a 10 sacos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Manter de 5 a 7 sacos de lixo nas lixeiras para troca rápida, especialmente em hora pico.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_016",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ Salão · NGK",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "O que verificar nos totens antes de assumir a função NGK?",
+      "alternativas": [
+        "Apenas se estão ligados",
+        "Se estão ligados e se a comunicação está de acordo com a campanha em vigor",
+        "Apenas a campanha vigente",
+        "Se há clientes usando"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Verificar se os Totens estão ligados e se a comunicação está de acordo com a campanha em vigor.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_017",
+      "categoria": "salao-ngk",
+      "subcategoria": "📦 Salão · Método Preparo",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que significa 'OUT' no método de preparação?",
+      "alternativas": [
+        "Cliente no salão",
+        "Pedido para viagem",
+        "Serviço na mesa",
+        "Delivery"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "OUT significa que o pedido é para viagem. IN = cliente comendo no salão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_018",
+      "categoria": "salao-ngk",
+      "subcategoria": "📦 Salão · OAT",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Onde fica indicado o número de vaga para pedidos Curbside?",
+      "alternativas": [
+        "Na barra superior do pedido",
+        "Na barra inferior do pedido",
+        "No número de registro",
+        "No nome do cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Pedidos Curbside: levar até o número de vaga indicado na barra inferior da OAT.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_019",
+      "categoria": "salao-ngk",
+      "subcategoria": "📦 Salão · OAT",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf"
+      ],
+      "pergunta": "Como é mostrado o local da mesa nos pedidos de Entrega na Mesa?",
+      "alternativas": [
+        "No lugar do número de registro",
+        "No lugar do nome 'Bandeja' na barra superior",
+        "Na barra inferior",
+        "No número do pedido"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Pedidos de Entrega na Mesa: o número da mesa aparece no lugar de 'Bandeja' na barra superior.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_020",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Salão · Separação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
+      "pergunta": "Como deve ser explicada a separação de resíduos ao cliente?",
+      "alternativas": [
+        "Não é necessário explicar",
+        "Mostrar as lixeiras e orientar sobre orgânico, papel/plástico e líquido",
+        "Apenas apontar para as lixeiras",
+        "Só orientar se o cliente perguntar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Explicar a correta separação (orgânicos / papel e plástico / líquido) ao cliente quando for descartar o lixo da bandeja.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_021",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Atendimento",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "corte",
+        "sal",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Como deve ser a despedida ao cliente no salão?",
+      "alternativas": [
+        "Formal e protocolar",
+        "Rápida, cortês, com contato visual, solicitando o retorno",
+        "Apenas acenar com a mão",
+        "Somente se o cliente se despedir primeiro"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Agradecer e despedir-se de forma rápida e cortês, mantendo sempre contato visual.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_022",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧼 Salão · Higiene",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "higiene",
+        "limpeza",
+        "sanitizacao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quando deve ser usado o gel sanitizante nas mãos?",
+      "alternativas": [
+        "Apenas ao chegar",
+        "Antes de assumir a função e após atividade de limpeza",
+        "Apenas após usar o banheiro",
+        "A cada hora"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usar gel sanitizante antes de assumir a função e após ter realizado qualquer atividade de limpeza.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_023",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ Salão · NGK",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "influencer",
+        "ppf",
+        "taylor-ng",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Qual a principal técnica de vendas no NGK?",
+      "alternativas": [
+        "Empurrar produtos mais caros",
+        "Fazer venda sugestiva e auxiliar no manuseio das telas",
+        "Apenas registrar pedidos",
+        "Orientar o cliente a ir ao balcão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No NGK: abordar o cliente, incentivar o uso do totem, auxiliar no manuseio e fazer venda sugestiva sobre produtos e campanhas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_024",
+      "categoria": "salao-ngk",
+      "subcategoria": "🗑️ Salão · Lixeiras",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "temperatura"
+      ],
+      "pergunta": "Qual EPI deve ser usado na limpeza das lixeiras?",
+      "alternativas": [
+        "Apenas luvas",
+        "Jaleco e luvas de látex",
+        "Máscara e avental",
+        "Luvas e óculos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Utilizar sempre o EPI completo: jaleco e luvas de látex para limpeza das lixeiras.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_025",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Salão · Mesas",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "frequencia",
+        "limpeza",
+        "panos",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que fazer com o pano úmido após limpar a mesa?",
+      "alternativas": [
+        "Deixar sobre a mesa para próximo uso",
+        "Usar o mesmo pano para o próximo cliente",
+        "Trocar a cada 2 horas ou quando necessário",
+        "Jogar no lixo imediatamente após cada mesa"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os panos devem ser trocados a cada 2 horas ou sempre que necessário durante o turno.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_026",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Atendimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer quando um cliente parece ter dificuldades com o totem?",
+      "alternativas": [
+        "Ignorar, o cliente deve aprender",
+        "Abordar proativamente e oferecer assistência",
+        "Chamar o gerente",
+        "Pedir para ir ao balcão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Abordar proativamente o cliente com dificuldades, auxiliar sem assumir o controle do pedido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_027",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Meu Méqui",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "taylor-ng",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Como o cliente vincula o Meu Méqui no NGK?",
+      "alternativas": [
+        "Não é possível no NGK",
+        "Digitando CPF ou escaneando QR code no início do pedido",
+        "Apenas no balcão",
+        "Informando ao atendente do NGK"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No NGK, o cliente vincula o Meu Méqui digitando CPF ou escaneando o QR code na tela inicial.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_028",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Limpeza",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "frequencia",
+        "limpeza",
+        "rota",
+        "sal",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Com que frequência deve ser feita a rota de limpeza do salão?",
+      "alternativas": [
+        "Apenas antes de abrir e fechar",
+        "A cada 15-30 minutos durante a operação",
+        "Uma vez por hora",
+        "Apenas quando sujar visivelmente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A rota de limpeza do salão deve ser feita a cada 15 a 30 minutos durante a operação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_029",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Organização",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "limpeza",
+        "panos",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer ao encontrar uma mesa suja após o cliente sair?",
+      "alternativas": [
+        "Aguardar o próximo cliente reclama",
+        "Limpar imediatamente com pano e solução multiuso",
+        "Apenas jogar fora o lixo da mesa",
+        "Avisar outro funcionário para limpar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Limpar imediatamente mesa e cadeiras com pano e solução multiuso após o cliente sair.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_030",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Curbside",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "drive",
+        "ppf",
+        "remocao",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que é o serviço Curbside?",
+      "alternativas": [
+        "Entrega na mesa do salão",
+        "Cliente faz pedido no app e recebe no carro sem sair",
+        "Delivery para casa",
+        "Retirada no balcão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Curbside: cliente faz o pedido pelo app e recebe diretamente no carro estacionado na vaga indicada.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_031",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Problema",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que fazer se o totem travar ou apresentar erro?",
+      "alternativas": [
+        "Desligar e religar imediatamente",
+        "Notificar o gerente e sinalizar o totem como indisponível",
+        "Ignorar e continuar no totem ao lado",
+        "Pedir ao cliente para tentar novamente várias vezes"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Em caso de erro no totem, notificar o gerente e sinalizar o totem como temporariamente indisponível.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_032",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Banheiro",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "frequencia",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Com que frequência deve ser inspecionado o banheiro?",
+      "alternativas": [
+        "Uma vez ao dia",
+        "A cada hora ou sempre que for utilizado intensamente",
+        "Apenas no fechamento",
+        "A cada 30 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Inspecionar o banheiro a cada hora ou com maior frequência nos horários de pico.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_033",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Venda",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "influencer",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Como o NGK ajuda na venda sugestiva?",
+      "alternativas": [
+        "Não há venda sugestiva no NGK",
+        "O sistema sugere automaticamente complementos e upgrades",
+        "O atendente sugere verbalmente",
+        "Apenas com panfletos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O NGK sugere automaticamente complementos e upgrades na tela, facilitando a venda sugestiva.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_034",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Playground",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "rota",
+        "sal",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que verificar no playground durante a rota de salão?",
+      "alternativas": [
+        "Apenas a limpeza visual",
+        "Limpeza, segurança estrutural e ausência de objetos cortantes",
+        "Apenas se as crianças estão bem",
+        "Somente limpeza do piso"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No playground: verificar limpeza, integridade estrutural e ausência de objetos que possam causar acidentes.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_035",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "taylor-ng",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "O cliente pode pagar no totem com qualquer forma de pagamento?",
+      "alternativas": [
+        "Apenas cartão de crédito",
+        "Débito, crédito e Meu Méqui (pontos)",
+        "Apenas dinheiro",
+        "Qualquer forma incluindo dinheiro"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No NGK, são aceitos: cartão de débito, crédito e pagamento com pontos Meu Méqui.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_036",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Cortesia",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "corte",
+        "limpeza",
+        "rota",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que é a rota de cortesia no salão?",
+      "alternativas": [
+        "Limpeza das mesas",
+        "Verificar a satisfação dos clientes e oferecer auxílio",
+        "Repor napkineiras e condimentos",
+        "Limpar o chão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Rota de cortesia: percorrer o salão verificando a satisfação dos clientes e oferecendo auxílio quando necessário.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_037",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Cupom",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer quando o totem não imprime o cupom do cliente?",
+      "alternativas": [
+        "Dizer ao cliente que não tem solução",
+        "Verificar o papel, se necessário imprimir manualmente ou orientar o cliente",
+        "Ignorar o problema",
+        "Pedir ao cliente para refazer o pedido"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sem impressão: verificar papel primeiro; se necessário, imprimir via POS ou orientar o cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_038",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Napkineira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "rota",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que verificar nas napkineiras durante a rota de salão?",
+      "alternativas": [
+        "Apenas se estão no lugar",
+        "Limpeza, quantidade de guardanapos e sachês de sal/pimenta",
+        "Apenas a limpeza externa",
+        "Nada, o LOPE cuida disso"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Verificar limpeza das napkineiras e se estão abastecidas com guardanapos e sachês.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_039",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Acessibilidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Como auxiliar clientes com necessidades especiais no NGK?",
+      "alternativas": [
+        "Encaminhar ao balcão",
+        "Oferecer assistência pessoal e usar os recursos de acessibilidade do totem",
+        "Pedir para outro cliente ajudar",
+        "Não há suporte para isso"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Oferecer assistência personalizada e ativar os recursos de acessibilidade do totem (fonte maior, contraste).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
