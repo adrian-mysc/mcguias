@@ -1,0 +1,857 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "estoque-recebimento",
+  "nivel": "basico",
+  "migratedFrom": "estoque-recebimento.html",
+  "questions": [
+    {
+      "id": "estoque_recebimento_001",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "📦 PEPS · Conceito",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "peps",
+        "seguranca_alimentar",
+        "taylor-ng",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "O que significa PEPS?",
+      "alternativas": [
+        "Produto Em Prazo de Segurança",
+        "Primeiro a Entrar, Primeiro a Sair",
+        "Padrão de Estoque e Produto Seguro",
+        "Protocolo de Embalagem Por Setor"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "PEPS (FIFO em inglês) significa Primeiro a Entrar, Primeiro a Sair — o produto mais antigo é sempre usado primeiro.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_002",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "📦 PEPS · Aplicação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ovo",
+        "peps",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Ao guardar produtos novos na câmara, onde devem ficar os mais antigos?",
+      "alternativas": [
+        "Atrás dos novos",
+        "Na frente dos novos",
+        "Na mesma posição",
+        "No nível de baixo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os produtos mais antigos ficam na frente e são usados primeiro. Os novos vão atrás — assim garante-se o PEPS.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_003",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "📦 PEPS · Validade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "peps",
+        "refrigeracao",
+        "taylor-ng",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "O que fazer com produto próximo da validade?",
+      "alternativas": [
+        "Descartar imediatamente",
+        "Guardar no fundo da câmara",
+        "Separar e usar com prioridade",
+        "Congelar para estender a validade"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Produtos próximos do vencimento devem ser separados e marcados para uso prioritário, seguindo o PEPS.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_004",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "🚛 Recebimento · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "limite",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura máxima aceitável para receber carnes refrigeradas?",
+      "alternativas": [
+        "0°C",
+        "4°C",
+        "7°C",
+        "10°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Produtos refrigerados devem chegar a no máximo 4°C. Acima disso, o produto deve ser recusado.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_005",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "🚛 Recebimento · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ambientacao",
+        "angulo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura máxima aceitável para receber produtos congelados?",
+      "alternativas": [
+        "-10°C",
+        "-15°C",
+        "-18°C",
+        "-12°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Produtos congelados devem estar a -18°C ou abaixo na entrega. Acima disso indica descongelamento parcial e o produto deve ser recusado.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_006",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "🚛 Recebimento · Rejeição",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigeracao",
+        "temperatura",
+        "validade"
+      ],
+      "pergunta": "Qual destes produtos deve ser recusado no recebimento?",
+      "alternativas": [
+        "Produto refrigerado a 3°C",
+        "Produto com embalagem levemente amassada",
+        "Produto com embalagem rasgada e temperatura alterada",
+        "Produto com validade para o próximo mês"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Embalagem rasgada combinada com temperatura fora do padrão são motivos obrigatórios de recusa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_007",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "❄️ Câmaras · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura correta das câmaras de refrigeração?",
+      "alternativas": [
+        "0°C a 2°C",
+        "1°C a 4°C",
+        "4°C a 8°C",
+        "5°C a 10°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As câmaras de refrigeração devem ser mantidas entre 1°C e 4°C para conservação adequada dos produtos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_008",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "❄️ Câmaras · Organização",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "contaminacao",
+        "refrigeracao",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Como carnes cruas devem ser posicionadas em relação a produtos prontos na câmara?",
+      "alternativas": [
+        "Acima dos prontos",
+        "Abaixo dos prontos",
+        "No mesmo nível",
+        "Separadas em câmara diferente sempre"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Carnes cruas ficam abaixo de produtos prontos para evitar contaminação cruzada por gotejamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_009",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "🏷️ Etiquetagem · Obrigação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "O que toda embalagem aberta deve ter obrigatoriamente?",
+      "alternativas": [
+        "Apenas o nome do produto",
+        "Data de abertura, hora e validade",
+        "Apenas a data de validade do fabricante",
+        "Etiqueta de preço"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Toda embalagem aberta deve ter etiqueta com: nome do produto, data e hora de abertura, e data/hora de validade/descarte.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_010",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "🏷️ Etiquetagem · Validade",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "taylor-ng",
+        "temperatura",
+        "validade"
+      ],
+      "pergunta": "Se a validade secundária de um produto é 7 dias mas o fabricante indica 5 dias, qual usar?",
+      "alternativas": [
+        "7 dias (mais longa)",
+        "5 dias (do fabricante, menor)",
+        "A média: 6 dias",
+        "Depende do produto"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sempre usar o menor prazo. Nunca estender a validade além do que o fabricante indica na embalagem original.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_011",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "⏱️ Validades · Secundárias",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "queijo",
+        "refrigeracao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual a validade do tubo de cheddar após aberto e refrigerado?",
+      "alternativas": [
+        "24 horas",
+        "48 horas",
+        "5 dias",
+        "7 dias"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tubo de cheddar após aberto deve ser refrigerado com validade secundária de 48 horas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_012",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "⏱️ Validades · Secundárias",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cebola",
+        "refrigeracao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual a validade da cebola reidratada na câmara (1–4°C)?",
+      "alternativas": [
+        "4 horas",
+        "12 horas",
+        "24 horas",
+        "48 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A cebola reidratada tem validade de 24 horas quando armazenada na câmara a 1–4°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_013",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "⏱️ Validades · Secundárias",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "refrigeracao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual a validade do molho Ranch após abertura e refrigerado?",
+      "alternativas": [
+        "24 horas",
+        "3 dias",
+        "5 dias",
+        "7 dias"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O molho Ranch após aberto deve ser refrigerado com validade de 7 dias.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_014",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "⏱️ Validades · Secundárias",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual a validade da bag de suco após aberta?",
+      "alternativas": [
+        "24 horas",
+        "3 dias",
+        "7 dias",
+        "14 dias"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A bag de suco tem validade secundária de 7 dias após a abertura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_015",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "⏱️ Validades · Descarte",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Produto vencido com aparência normal pode ser servido?",
+      "alternativas": [
+        "Sim, se o cheiro estiver bom",
+        "Sim, se foi mantido na temperatura correta",
+        "Não — deve ser descartado",
+        "Sim, apenas para funcionários"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Produto vencido nunca deve ser servido, independentemente da aparência ou odor. Descartar imediatamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_016",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "🚛 Recebimento · Prioridade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual produto deve ser armazenado primeiro ao receber uma entrega?",
+      "alternativas": [
+        "Embalagens secas",
+        "Produtos congelados",
+        "Bebidas",
+        "Material de limpeza"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Produtos congelados devem ser armazenados imediatamente por serem os mais sensíveis à variação de temperatura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_017",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "📦 PEPS · Embalagem aberta",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ovo",
+        "peps",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Ao receber produto novo, o que fazer com a embalagem já aberta do mesmo item?",
+      "alternativas": [
+        "Guardar a nova primeiro",
+        "Usar a aberta primeiro, antes de abrir a nova",
+        "Descartar a antiga",
+        "Misturar tudo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Seguindo o PEPS, a embalagem já aberta é usada primeiro. A nova embalagem só é aberta quando a anterior acabar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
