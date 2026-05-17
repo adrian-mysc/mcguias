@@ -1,0 +1,1061 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "fechamento",
+  "nivel": "basico",
+  "migratedFrom": "fechamento.html",
+  "questions": [
+    {
+      "id": "fechamento_001",
+      "categoria": "fechamento",
+      "subcategoria": "🛢️ Fechamento · Fritadeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "fritas",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Quantas vezes por dia o óleo deve ser filtrado em lojas Best Burger?",
+      "alternativas": [
+        "1 vez",
+        "2 vezes",
+        "3 vezes",
+        "A cada turno"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Em lojas Best Burger, o óleo das fritadeiras deve ser filtrado 2 vezes ao dia.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_002",
+      "categoria": "fechamento",
+      "subcategoria": "🛢️ Fechamento · Fritadeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "filtro",
+        "frequencia",
+        "oleo",
+        "taylor-ng",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "A cada quantas horas de uso contínuo o óleo deve ser filtrado?",
+      "alternativas": [
+        "2 horas",
+        "4 horas",
+        "6 horas",
+        "8 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Filtrar o óleo a cada 4 horas de uso contínuo ou no pré-pico para prolongar a vida útil.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_003",
+      "categoria": "fechamento",
+      "subcategoria": "🛢️ Fechamento · Fritadeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limite",
+        "oleo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual o limite máximo de Compostos Polares no óleo antes do descarte?",
+      "alternativas": [
+        "18%",
+        "20%",
+        "24%",
+        "30%"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O óleo deve ser descartado quando os Compostos Polares atingirem 24% — medido com o Testo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_004",
+      "categoria": "fechamento",
+      "subcategoria": "🛢️ Fechamento · Fritadeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "filtro",
+        "oleo",
+        "ovo",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer com óleo que tem Compostos Polares acima de 24%?",
+      "alternativas": [
+        "Filtrar e continuar",
+        "Adicionar óleo novo para diluir",
+        "Descartar completamente",
+        "Aguardar esfriar e verificar novamente"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Óleo com Compostos Polares acima de 24% deve ser descartado imediatamente. Não diluir com óleo novo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_005",
+      "categoria": "fechamento",
+      "subcategoria": "🛢️ Fechamento · Fritadeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "porcao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Em qual linha da cuba deve ser mantido o nível do óleo?",
+      "alternativas": [
+        "Primeira linha",
+        "Segunda linha",
+        "Terceira linha",
+        "Borda da cuba"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O nível do óleo deve respeitar a segunda linha na cuba. Repor se necessário, comunicando o gerente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_006",
+      "categoria": "fechamento",
+      "subcategoria": "🔥 Fechamento · Chapa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "temperatura"
+      ],
+      "pergunta": "Qual modo deve ser acionado para a limpeza diária da chapa?",
+      "alternativas": [
+        "RECOVERY",
+        "CLEAN MODE",
+        "STANDBY",
+        "READY TO COOK"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Acionar o Clean Mode e aguardar o sinal READY TO CLEAN antes de iniciar a limpeza.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_007",
+      "categoria": "fechamento",
+      "subcategoria": "🔥 Fechamento · Chapa",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "raspador",
+        "taylor-ng",
+        "teflon",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "A que ângulo deve estar a lâmina do raspador em relação à superfície da chapa?",
+      "alternativas": [
+        "5°",
+        "10°",
+        "15°",
+        "45°"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A lâmina do raspador deve estar a 15° em relação à superfície da chapa durante a raspagem.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_008",
+      "categoria": "fechamento",
+      "subcategoria": "🔥 Fechamento · Chapa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "Quantas raspagens são necessárias para cobrir toda a superfície da chapa?",
+      "alternativas": [
+        "1 a 2",
+        "2 a 3",
+        "3 a 4",
+        "5 a 6"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Realizar 3 a 4 raspagens cobrindo toda a superfície da chapa durante a limpeza.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_009",
+      "categoria": "fechamento",
+      "subcategoria": "🔥 Fechamento · Chapa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "Qual a cor do Teflon utilizado nos dias ímpares?",
+      "alternativas": [
+        "Verde",
+        "Azul",
+        "Vermelho",
+        "Amarelo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Teflon azul nos dias ímpares, Teflon verde nos dias pares — alternância para desgaste uniforme.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_010",
+      "categoria": "fechamento",
+      "subcategoria": "🔥 Fechamento · Chapa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos ml do produto QSR devem ser usados na limpeza da chapa?",
+      "alternativas": [
+        "30ml",
+        "60ml",
+        "90ml",
+        "120ml"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Colocar 90ml do produto QSR Limpador para Chapas no recipiente para a limpeza diária.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_011",
+      "categoria": "fechamento",
+      "subcategoria": "🍞 Fechamento · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "limpeza",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser feito antes de limpar a tostadeira?",
+      "alternativas": [
+        "Ligar no nível máximo",
+        "Desligar o equipamento",
+        "Aplicar água fria",
+        "Remover as correias"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A tostadeira deve ser desligada antes de qualquer limpeza — risco de queimadura e dano ao equipamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_012",
+      "categoria": "fechamento",
+      "subcategoria": "🍞 Fechamento · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "temperatura"
+      ],
+      "pergunta": "Quantos ml (pumps) do limpador devem ser usados na limpeza da tostadeira?",
+      "alternativas": [
+        "30ml (1 pump)",
+        "60ml (2 pumps)",
+        "90ml (3 pumps)",
+        "120ml (4 pumps)"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usar 60ml (2 pumps) do KAY QSR Limpador para Chapas e Tostadeiras na limpeza diária.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_013",
+      "categoria": "fechamento",
+      "subcategoria": "🫙 Fechamento · Utensílios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo os utensílios devem ficar na solução de detergente (Cuba 1)?",
+      "alternativas": [
+        "1 minuto",
+        "3 minutos",
+        "5 minutos",
+        "10 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Na Cuba 1, os utensílios devem ficar de molho por 5 minutos na solução de detergente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_014",
+      "categoria": "fechamento",
+      "subcategoria": "🫙 Fechamento · Utensílios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "porcao",
+        "sanitizacao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo os utensílios devem ficar na solução sanitizante (Cuba 3)?",
+      "alternativas": [
+        "30 segundos",
+        "1 minuto",
+        "3 minutos",
+        "5 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Na Cuba 3, deixar na solução sanitizante por 1 minuto. Não enxaguar depois.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_015",
+      "categoria": "fechamento",
+      "subcategoria": "🫙 Fechamento · Utensílios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "limpeza",
+        "panos",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Com que frequência os panos de limpeza devem ser trocados?",
+      "alternativas": [
+        "A cada 1 hora",
+        "A cada 2 horas",
+        "A cada turno",
+        "Uma vez ao dia"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os panos de limpeza devem ser trocados a cada 2 horas durante a operação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_016",
+      "categoria": "fechamento",
+      "subcategoria": "🪑 Fechamento · Salão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "esfregao",
+        "limpeza",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo a Solução FC deve agir no piso na limpeza profunda?",
+      "alternativas": [
+        "30 segundos",
+        "1 minuto",
+        "2 minutos",
+        "5 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Aplicar a Solução FC e deixar agir por 2 minutos antes de esfregar com o esfregão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_017",
+      "categoria": "fechamento",
+      "subcategoria": "🪑 Fechamento · Salão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "temperatura"
+      ],
+      "pergunta": "Quantos sacos de lixo devem ser mantidos dobrados em cada lixeira?",
+      "alternativas": [
+        "2 a 3 sacos",
+        "3 a 5 sacos",
+        "5 a 7 sacos",
+        "10 sacos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Manter 5 a 7 sacos de lixo dobrados (verdes e pretos) em cada lixeira para facilitar a troca.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_018",
+      "categoria": "fechamento",
+      "subcategoria": "🪑 Fechamento · Salão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "sanitizacao",
+        "tempo"
+      ],
+      "pergunta": "Quantos pumps do limpador de banheiro devem ser usados no vaso?",
+      "alternativas": [
+        "1 pump",
+        "2 pumps",
+        "3 pumps",
+        "4 pumps"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Aplicar 2 pumps do limpador desinfetante no vaso e deixar agir por 2 minutos antes de esfregar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_019",
+      "categoria": "fechamento",
+      "subcategoria": "📦 Fechamento · Estoque",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "peps",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que significa PEPS na estocagem?",
+      "alternativas": [
+        "Padrão Especial de Produto Seguro",
+        "Primeiro a Entrar, Primeiro a Sair",
+        "Procedimento de Estoque por Produto e Shelf",
+        "Protocolo de Embalagem Para Segurança"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "PEPS: produtos mais antigos ficam na frente e são usados primeiro para evitar vencimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_020",
+      "categoria": "fechamento",
+      "subcategoria": "📦 Fechamento · Estoque",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ambientacao",
+        "pao",
+        "remocao",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quanto tempo total tem o pão Brioche após ser retirado do congelador?",
+      "alternativas": [
+        "24 horas",
+        "36 horas",
+        "48 horas",
+        "72 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Pão Brioche: 12h de descongelamento + 36h de uso = 48 horas total. Retirar no fechamento para o dia seguinte.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_021",
+      "categoria": "fechamento",
+      "subcategoria": "📦 Fechamento · Estoque",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "seguranca_alimentar",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura mínima para manter produtos congelados?",
+      "alternativas": [
+        "-10°C",
+        "-15°C",
+        "-18°C",
+        "-20°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Produtos congelados devem ser mantidos a -18°C ou abaixo para garantir a segurança do alimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
