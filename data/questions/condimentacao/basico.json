@@ -1,0 +1,1999 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "condimentacao",
+  "nivel": "basico",
+  "migratedFrom": "condimentacao.html",
+  "questions": [
+    {
+      "id": "condimentacao_001",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cebola",
+        "molho",
+        "temperatura"
+      ],
+      "pergunta": "Qual a quantidade de cebola reidratada em cada andar do Big Mac?",
+      "alternativas": [
+        "2g",
+        "3,5g",
+        "5g",
+        "7g"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Cada andar do Big Mac leva cebola reidratada 3,5g.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_002",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "molho",
+        "temperatura"
+      ],
+      "pergunta": "Qual a quantidade de alface em cada andar do Big Mac?",
+      "alternativas": [
+        "8g",
+        "10g",
+        "12g",
+        "15g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Alface em tiras 12g em cada andar do Big Mac.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_003",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Qual o molho e quantidade usados no Big Mac?",
+      "alternativas": [
+        "Maionese 1/3oz",
+        "Molho Big Mac 1/3oz",
+        "Ketchup 1/2oz",
+        "Molho Ranch 2/3oz"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Big Mac usa Molho Big Mac 1/3oz em cada andar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_004",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "carne",
+        "molho",
+        "queijo",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "No Big Mac, o queijo Cheddar fica em qual andar?",
+      "alternativas": [
+        "Andar superior (clube)",
+        "Andar inferior (base)",
+        "Nos dois andares",
+        "Não tem queijo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O queijo Cheddar fica no andar inferior, entre a segunda carne e a alface.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_005",
+      "categoria": "condimentacao",
+      "subcategoria": "🔥 Big Tasty",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "queijo",
+        "temperatura"
+      ],
+      "pergunta": "Qual queijo é usado no Big Tasty?",
+      "alternativas": [
+        "Queijo Cheddar",
+        "Queijo Emmental",
+        "Queijo Prato",
+        "Queijo Mussarela"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Big Tasty usa Queijo Emental — 2 fatias em cima e 1 fatia embaixo das carnes.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_006",
+      "categoria": "condimentacao",
+      "subcategoria": "🔥 Big Tasty",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "4:1",
+        "carne",
+        "temperatura"
+      ],
+      "pergunta": "Quantas carnes leva o Big Tasty padrão?",
+      "alternativas": [
+        "1 carne 4:1",
+        "2 carnes 4:1",
+        "1 carne 10:1",
+        "2 carnes 10:1"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Big Tasty padrão leva 1 carne 4:1. Com mais de 1 carne: acrescentar 2 ou 3 carnes 4:1.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_007",
+      "categoria": "condimentacao",
+      "subcategoria": "🥓 McNífico Bacon",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bacon",
+        "temperatura"
+      ],
+      "pergunta": "Qual a quantidade de bacon no McNífico Bacon?",
+      "alternativas": [
+        "1 fatia",
+        "2 fatias",
+        "3 fatias",
+        "4 fatias"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O McNífico Bacon leva 2 fatias de bacon.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_008",
+      "categoria": "condimentacao",
+      "subcategoria": "🥓 McNífico Bacon",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bacon",
+        "fritas",
+        "molho",
+        "pao"
+      ],
+      "pergunta": "Qual o pão do McNífico Bacon?",
+      "alternativas": [
+        "Pão de Batata",
+        "Pão Big Mac",
+        "Pão Quarterão",
+        "Pão Brioche"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McNífico Bacon é servido no Pão Quarterão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_009",
+      "categoria": "condimentacao",
+      "subcategoria": "🐔 Chicken Deluxe",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Qual o molho do Chicken Deluxe 1?",
+      "alternativas": [
+        "Molho Ranch 2/3oz",
+        "Molho CBO 1oz",
+        "Maionese 2/3oz",
+        "Molho Big Mac 1/3oz"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Chicken Deluxe 1 leva Maionese 2/3oz.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_010",
+      "categoria": "condimentacao",
+      "subcategoria": "🥓 Chicken Bacon Ranch",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bacon",
+        "fritas",
+        "molho",
+        "pao",
+        "temperatura"
+      ],
+      "pergunta": "Qual o pão do Chicken Bacon Ranch 3?",
+      "alternativas": [
+        "Pão de Batata",
+        "Pão Big Mac",
+        "Pão de Batata",
+        "Pão Brioche"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Chicken Bacon Ranch 3 é servido no Pão de Batata.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_011",
+      "categoria": "condimentacao",
+      "subcategoria": "🥓 Chicken Bacon Ranch",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bacon",
+        "temperatura"
+      ],
+      "pergunta": "Quantas fatias de bacon tem o Chicken Bacon Ranch 3?",
+      "alternativas": [
+        "1 fatia",
+        "2 fatias",
+        "3 fatias",
+        "4 fatias"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Chicken Bacon Ranch 3 leva 3 fatias de bacon.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_012",
+      "categoria": "condimentacao",
+      "subcategoria": "⭐ Brabíssimo Beef",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Qual o molho do Brabíssimo Beef 1?",
+      "alternativas": [
+        "Molho Big Mac",
+        "Molho Ranch",
+        "Molho CBO 1oz",
+        "Molho Tasty"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Brabíssimo Beef 1 leva Molho CBO 1oz (em cima e embaixo).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_013",
+      "categoria": "condimentacao",
+      "subcategoria": "⭐ Brabíssimo Beef",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "cebola",
+        "temperatura"
+      ],
+      "pergunta": "Qual o tipo de cebola do Brabíssimo Beef 1?",
+      "alternativas": [
+        "Cebola reidratada",
+        "Cebola fresca",
+        "Cebola Crispy 10g",
+        "Cebola shoyu"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Brabíssimo Beef 1 leva Cebola Crispy 10g.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_014",
+      "categoria": "condimentacao",
+      "subcategoria": "🏆 Brabíssimo Clubhouse",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cebola",
+        "temperatura"
+      ],
+      "pergunta": "Qual o tipo de cebola do Brabíssimo Clubhouse?",
+      "alternativas": [
+        "Cebola reidratada",
+        "Cebola fresca",
+        "Cebola Crispy",
+        "Cebola shoyu 15g"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O Brabíssimo Clubhouse leva Cebola shoyu 15g.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_015",
+      "categoria": "condimentacao",
+      "subcategoria": "🥗 Side Salad",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "sal",
+        "tomate"
+      ],
+      "pergunta": "Quantas unidades de Tomate Grape tem o Side Salad?",
+      "alternativas": [
+        "1 unidade",
+        "2 unidades",
+        "3 unidades",
+        "4 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Side Salad leva Alface 85g e Tomate Grape 2 unidades no Pote Genérico.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_016",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Cond · Princípios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "remocao",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que é condimentação por camadas?",
+      "alternativas": [
+        "Adicionar todos os ingredientes de uma vez",
+        "Montar o sanduíche seguindo a sequência exata de ingredientes de baixo para cima",
+        "Colocar os ingredientes em qualquer ordem",
+        "Colocar os ingredientes separados"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A condimentação por camadas garante que cada sanduíche seja montado na sequência correta para o sabor e apresentação ideais.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_017",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Cond · Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "carne",
+        "cebola",
+        "molho",
+        "queijo",
+        "temperatura"
+      ],
+      "pergunta": "Quantos andares tem o Big Mac?",
+      "alternativas": [
+        "1 andar",
+        "2 andares",
+        "3 andares",
+        "4 andares"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Big Mac tem 2 andares (base e clube), cada um com carne, queijo, alface, cebola e molho.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_018",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Cond · Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "carne",
+        "molho",
+        "queijo",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual queijo é usado no Big Mac?",
+      "alternativas": [
+        "Queijo Emmental",
+        "Queijo Prato",
+        "Queijo Cheddar",
+        "Queijo Mussarela"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Big Mac usa Queijo Cheddar no andar inferior (base), entre a segunda carne e a alface.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_019",
+      "categoria": "condimentacao",
+      "subcategoria": "🔥 Cond · Big Tasty",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "queijo",
+        "temperatura"
+      ],
+      "pergunta": "Quantas fatias de queijo Emmental leva o Big Tasty?",
+      "alternativas": [
+        "1 fatia",
+        "2 fatias",
+        "3 fatias (2 em cima + 1 embaixo)",
+        "4 fatias"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Big Tasty usa 3 fatias de Queijo Emmental: 2 em cima e 1 embaixo das carnes.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_020",
+      "categoria": "condimentacao",
+      "subcategoria": "🔥 Cond · Big Tasty",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "4:1",
+        "carne",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "O Big Tasty usa qual tipo de carne?",
+      "alternativas": [
+        "10:1",
+        "4:1",
+        "3:1",
+        "Frango"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Big Tasty padrão leva 1 carne 4:1.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_021",
+      "categoria": "condimentacao",
+      "subcategoria": "🥓 Cond · McNífico",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "molho",
+        "pao"
+      ],
+      "pergunta": "Qual o pão usado no McNífico?",
+      "alternativas": [
+        "Pão Big Mac",
+        "Pão Brioche",
+        "Pão de Batata",
+        "Pão de Batata"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O McNífico é servido no Pão Brioche.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_022",
+      "categoria": "condimentacao",
+      "subcategoria": "🐔 Cond · Chicken",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "molho",
+        "pao",
+        "porcao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a diferença entre Chicken Deluxe 1 e 2?",
+      "alternativas": [
+        "Tamanho do frango",
+        "O molho utilizado",
+        "A quantidade de alface",
+        "O tipo de pão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Chicken Deluxe 1 = Maionese 2/3oz. Chicken Deluxe 2 tem molho diferente. O pão e demais ingredientes variam.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_023",
+      "categoria": "condimentacao",
+      "subcategoria": "🥗 Cond · Side Salad",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "porcao",
+        "sal",
+        "tomate"
+      ],
+      "pergunta": "Qual o peso da alface no Side Salad?",
+      "alternativas": [
+        "50g",
+        "65g",
+        "85g",
+        "100g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Side Salad leva Alface 85g e Tomate Grape 2 unidades.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_024",
+      "categoria": "condimentacao",
+      "subcategoria": "🔥 Cond · Princípios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser verificado antes de montar qualquer sanduíche?",
+      "alternativas": [
+        "Apenas se há ingredientes suficientes",
+        "Qualidade, quantidade, temperatura e aparência dos produtos",
+        "Apenas a temperatura dos pães",
+        "Apenas se o pão está tostado"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Antes de montar, verificar qualidade, quantidade, temperatura e aparência de todos os ingredientes.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_025",
+      "categoria": "condimentacao",
+      "subcategoria": "🥓 Cond · McNífico Bacon",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bacon",
+        "temperatura"
+      ],
+      "pergunta": "Quantas fatias de bacon leva o McNífico Bacon?",
+      "alternativas": [
+        "1 fatia",
+        "2 fatias",
+        "3 fatias",
+        "4 fatias"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O McNífico Bacon leva 2 fatias de bacon.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_026",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "carne",
+        "cebola",
+        "molho",
+        "queijo",
+        "temperatura"
+      ],
+      "pergunta": "Qual a ordem correta de montagem do Big Mac (de baixo para cima)?",
+      "alternativas": [
+        "Base, carne, queijo, alface, Big Mac, carne, cebola, picles, molho, coroa",
+        "Base, molho, alface, cebola, picles, carne, queijo, Big Mac, carne, molho, coroa",
+        "Base, Big Mac, carne, queijo, molho, alface, cebola, picles, carne, coroa",
+        "Base, carne, Big Mac, carne, queijo, alface, molho, picles, cebola, coroa"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Montagem Big Mac: Base → molho → alface → cebola → picles → carne → queijo → meio (Big Mac) → carne → molho → coroa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_027",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Filet-O-Fish",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quanto molho tártaro leva o Filet-O-Fish?",
+      "alternativas": [
+        "0,5oz",
+        "1oz",
+        "1,5oz",
+        "2oz"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Filet-O-Fish leva 1oz de molho tártaro.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_028",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · QPC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantas gramas de carne tem o Quarter Pounder?",
+      "alternativas": [
+        "113g",
+        "128g",
+        "142g",
+        "170g"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Quarter Pounder tem 113g (4oz) de carne cru.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_029",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos tiros de molho Big Mac leva cada nível do sanduíche?",
+      "alternativas": [
+        "0,5oz em cada",
+        "1oz na base e 0,5oz no meio",
+        "0,75oz em cada nível",
+        "1oz na base, 0,5oz no meio"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O molho Big Mac leva 0,75oz (3 tiros) em cada nível.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_030",
+      "categoria": "condimentacao",
+      "subcategoria": "🧀 Condimentação · Queijo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "queijo",
+        "temperatura"
+      ],
+      "pergunta": "Como deve ser posicionado o queijo sobre a carne?",
+      "alternativas": [
+        "Centralizado e sobrepondo totalmente a carne",
+        "Nas bordas da carne",
+        "Centralizado com as bordas dobradas para cima",
+        "Cobrindo apenas metade da carne"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O queijo deve ser centralizado sobre a carne, cobrindo-a totalmente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_031",
+      "categoria": "condimentacao",
+      "subcategoria": "🥗 Condimentação · Saladas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "sal",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "A que temperatura devem ser mantidas as saladas?",
+      "alternativas": [
+        "Abaixo de 2°C",
+        "Abaixo de 4°C",
+        "Abaixo de 7°C",
+        "Abaixo de 10°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As saladas devem ser mantidas abaixo de 4°C para garantir a segurança alimentar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_032",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Pão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "O que fazer quando o pão sai da tostadeira?",
+      "alternativas": [
+        "Estocar na bandeja e tostar quando precisar",
+        "Usar imediatamente ou dentro do tempo de vida",
+        "Guardar na estufa",
+        "Pode ser tostado novamente se esfriar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usar o pão imediatamente após sair da tostadeira ou respeitar o tempo de vida.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_033",
+      "categoria": "condimentacao",
+      "subcategoria": "🥒 Condimentação · Picles",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "picles",
+        "mcdouble",
+        "porcao",
+        "montagem"
+      ],
+      "pergunta": "Quantos picles leva o McDouble?",
+      "alternativas": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O McDouble leva 2 picles.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_034",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Chicken",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "pao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "O que diferencia o McChicken do Chicken Select?",
+      "alternativas": [
+        "Tamanho do pão",
+        "Tipo de frango: McChicken é prensado, Chicken Select é filezinho",
+        "Molho diferente",
+        "Ambos são iguais"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McChicken usa frango prensado redondo. Chicken Select usa filé de frango crocante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_035",
+      "categoria": "condimentacao",
+      "subcategoria": "🧂 Condimentação · Temperos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "remocao",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Em que momento se aplica sal e pimenta na carne?",
+      "alternativas": [
+        "Antes de colocar na chapa",
+        "Imediatamente após virar a carne na chapa",
+        "Ao retirar da chapa",
+        "Na mesa de condimentação"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sal e pimenta são aplicados imediatamente após virar a carne na chapa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_036",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Embrulho",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Em que direção se dobra o papel de embrulho no final?",
+      "alternativas": [
+        "Para a frente, cobrindo o topo",
+        "Para baixo, cobrindo o fundo",
+        "Para a esquerda",
+        "Para a direita"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A última dobra do embrulho é para frente, cobrindo o topo do sanduíche.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_037",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Best Burger",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "raspador",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "No Best Burger, qual é o máximo de sanduíches por lâmina?",
+      "alternativas": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "No Best Burger, cada lâmina comporta 1 sanduíche para garantir o padrão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_038",
+      "categoria": "condimentacao",
+      "subcategoria": "🧄 Condimentação · Molhos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho"
+      ],
+      "pergunta": "Qual molho é usado no McArabia?",
+      "alternativas": [
+        "Barbecue",
+        "Big Mac",
+        "Tahine",
+        "Ranch"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McArabia leva molho tahine.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_039",
+      "categoria": "condimentacao",
+      "subcategoria": "🥗 Condimentação · Saladas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "sal",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida de uma salada montada na área de entrega?",
+      "alternativas": [
+        "15 minutos",
+        "30 minutos",
+        "1 hora",
+        "2 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Uma salada montada tem validade de 30 minutos na área de entrega.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_040",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Sequência",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "molho",
+        "queijo",
+        "taylor-ng",
+        "temperatura",
+        "tomate"
+      ],
+      "pergunta": "Qual é a regra geral para a ordem de montagem dos sanduíches?",
+      "alternativas": [
+        "Molho sempre em cima",
+        "Frescos embaixo, quentes em cima",
+        "Tudo na base primeiro",
+        "Queijo sempre na base"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Regra geral: ingredientes frescos (alface, tomate) ficam embaixo, ingredientes quentes em cima.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
