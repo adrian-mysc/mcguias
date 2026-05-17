@@ -1,0 +1,1669 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "mcfritas",
+  "nivel": "basico",
+  "migratedFrom": "mcfritas.html",
+  "questions": [
+    {
+      "id": "mcfritas_001",
+      "categoria": "mcfritas",
+      "subcategoria": "🌡️ Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da fritadeira de McFritas?",
+      "alternativas": [
+        "155°C",
+        "160°C",
+        "168°C",
+        "180°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A fritadeira de McFritas opera a 168°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_002",
+      "categoria": "mcfritas",
+      "subcategoria": "⏱️ Tempo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura das McFritas?",
+      "alternativas": [
+        "2min30s",
+        "3min00s",
+        "3min10s",
+        "4min00s"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de fritura das McFritas é 3 minutos e 10 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_003",
+      "categoria": "mcfritas",
+      "subcategoria": "📦 Tamanhos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "porcao"
+      ],
+      "pergunta": "Qual o peso da McFritas tamanho Médio?",
+      "alternativas": [
+        "73g",
+        "95g",
+        "102g",
+        "146g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McFritas P = 73g · M = 102g · G = 146g.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_004",
+      "categoria": "mcfritas",
+      "subcategoria": "📦 Tamanhos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "porcao"
+      ],
+      "pergunta": "Qual o peso da McFritas tamanho Grande?",
+      "alternativas": [
+        "73g",
+        "102g",
+        "120g",
+        "146g"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McFritas P = 73g · M = 102g · G = 146g.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_005",
+      "categoria": "mcfritas",
+      "subcategoria": "📦 Tamanhos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "porcao"
+      ],
+      "pergunta": "Qual o peso da McFritas tamanho Pequeno?",
+      "alternativas": [
+        "50g",
+        "65g",
+        "73g",
+        "85g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McFritas P = 73g · M = 102g · G = 146g.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_006",
+      "categoria": "mcfritas",
+      "subcategoria": "🛢️ Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limite",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Qual o limite máximo de Compostos Polares no óleo?",
+      "alternativas": [
+        "18%",
+        "20%",
+        "24%",
+        "30%"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os Compostos Polares devem ser iguais ou abaixo de 24%.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_007",
+      "categoria": "mcfritas",
+      "subcategoria": "🛢️ Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "porcao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Em qual linha da cuba deve ser mantido o nível de óleo?",
+      "alternativas": [
+        "Primeira linha",
+        "Segunda linha",
+        "Terceira linha",
+        "Linha máxima"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O nível de óleo deve respeitar a segunda linha na cuba.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_008",
+      "categoria": "mcfritas",
+      "subcategoria": "⏱️ Validade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "taylor-ng",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual a validade dos sacos de McFritas no congelador portátil?",
+      "alternativas": [
+        "6 horas",
+        "12 horas",
+        "24 horas",
+        "48 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os sacos de McFritas no congelador portátil têm validade de 24 horas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_009",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura das fritadeiras de frango e tortas?",
+      "alternativas": [
+        "168°C",
+        "175°C",
+        "180°C",
+        "190°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Frango e tortas fritam a 180°C. McFritas = 168°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_010",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "oleo",
+        "remocao",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Como deve ser feito o movimento das fritas durante o chacoalhar?",
+      "alternativas": [
+        "Chacoalhar para frente e para trás",
+        "Chacoalhar lateralmente",
+        "Virar completamente o cesto",
+        "Não chacoalhar"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Ao retirar, chacoalhar o cesto para frente e para trás para escorrer o excesso de óleo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_011",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "fritas",
+        "limite",
+        "oleo",
+        "sal",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo máximo de salga das McFritas após sair do óleo?",
+      "alternativas": [
+        "5 segundos",
+        "10 segundos",
+        "15 segundos",
+        "30 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A salga deve ser feita em até 10 segundos após a fritura para aderir corretamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_012",
+      "categoria": "mcfritas",
+      "subcategoria": "⏱️ McFritas · Validade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual a validade das McFritas prontas na área de manutenção de calor?",
+      "alternativas": [
+        "2 minutos",
+        "5 minutos",
+        "7 minutos",
+        "10 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As McFritas têm validade de 7 minutos na área de manutenção de calor.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_013",
+      "categoria": "mcfritas",
+      "subcategoria": "🛢️ McFritas · Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "fritas",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Quantas vezes por dia o óleo deve ser filtrado?",
+      "alternativas": [
+        "1 vez",
+        "2 vezes",
+        "3 vezes",
+        "4 vezes"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O óleo das fritadeiras deve ser filtrado 2 vezes ao dia.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_014",
+      "categoria": "mcfritas",
+      "subcategoria": "📦 McFritas · Estocagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "organizacao",
+        "producao",
+        "raspador",
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Os sacos de batata devem ser encestados de qual forma?",
+      "alternativas": [
+        "Soltos na batata",
+        "Sem encestamento prévio",
+        "Com o cesto já posicionado",
+        "Encestados com a lâmina"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "As batatas devem ser encestadas usando a lâmina de produção para organizar as porções no cesto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_015",
+      "categoria": "mcfritas",
+      "subcategoria": "🌡️ McFritas · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura interna mínima para as McFritas prontas?",
+      "alternativas": [
+        "60°C",
+        "70°C",
+        "74°C",
+        "80°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura interna mínima das McFritas prontas é de 74°C (165°F).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_016",
+      "categoria": "mcfritas",
+      "subcategoria": "🛢️ McFritas · Óleo",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "cores",
+        "frequencia",
+        "limite",
+        "oleo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Quando o óleo deve ser descartado mesmo abaixo do limite de 24%?",
+      "alternativas": [
+        "Nunca, apenas quando atingir 24%",
+        "A cada 3 dias independente do percentual",
+        "Quando apresentar cor escura, fumaça excessiva ou odor",
+        "Apenas quando o cliente reclamar"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O óleo deve ser descartado quando apresentar sinais visuais como cor escura, fumaça excessiva ou odor estranho, mesmo abaixo do limite.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_017",
+      "categoria": "mcfritas",
+      "subcategoria": "⚙️ McFritas · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ambientacao",
+        "fritas",
+        "organizacao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser feito com os sacos de batata no congelador portátil?",
+      "alternativas": [
+        "Empilhar sem organização",
+        "Manter na posição vertical para encestamento fácil",
+        "Descongelar antes de usar",
+        "Armazenar abertos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os sacos no congelador portátil devem estar na posição que facilite o encestamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_018",
+      "categoria": "mcfritas",
+      "subcategoria": "📦 McFritas · Tamanhos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Quantas McFritas P cabem em um cesto de fritura?",
+      "alternativas": [
+        "2 porções",
+        "3 porções",
+        "4 porções",
+        "6 porções"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Em um cesto de McFritas P cabem 6 porções por rodada.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_019",
+      "categoria": "mcfritas",
+      "subcategoria": "🛢️ McFritas · Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Com qual instrumento é medido o percentual de compostos polares do óleo?",
+      "alternativas": [
+        "Termômetro",
+        "Balança digital",
+        "Testo ou medidor de compostos polares",
+        "Refratômetro"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O percentual de compostos polares é medido com o Testo ou medidor específico de compostos polares.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_020",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Qualidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "pao",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Quais são as características visuais de McFritas de qualidade?",
+      "alternativas": [
+        "Escuras e com sal abundante",
+        "Douradas, crocantes por fora e macias por dentro",
+        "Brancas e sem sal",
+        "Douradas e bem salgadas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McFritas de qualidade: douradas, crocantes por fora, macias por dentro, bem salgadas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_021",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Sal",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "fritas",
+        "oleo",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Quando deve ser aplicado o sal nas McFritas?",
+      "alternativas": [
+        "Antes de fritar",
+        "Imediatamente após sair da fritadeira, ainda quentes",
+        "Antes de entregar ao cliente",
+        "A qualquer momento"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O sal deve ser aplicado imediatamente após sair da fritadeira enquanto as batatas ainda estão quentes.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_022",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Sal",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "fritas",
+        "sal",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Como aplicar o sal corretamente nas McFritas?",
+      "alternativas": [
+        "Jogar todo o sal de uma vez no centro",
+        "Distribuir uniformemente com movimentos de vai e vem",
+        "Aplicar apenas nas pontas",
+        "Deixar o cliente salgar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Aplicar o sal com movimentos de vai e vem para distribuir uniformemente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_023",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Estocagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "limite",
+        "taylor-ng",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Como devem ser posicionados os sacos de batata no congelador portátil?",
+      "alternativas": [
+        "Deitados horizontalmente",
+        "Em pé verticalmente",
+        "De qualquer forma",
+        "Empilhados no máximo 3"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os sacos de batata devem ficar em pé verticalmente no congelador portátil.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_024",
+      "categoria": "mcfritas",
+      "subcategoria": "🌡️ McFritas · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura das fritadeiras de McFritas?",
+      "alternativas": [
+        "160°C",
+        "165°C",
+        "168°C",
+        "175°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura das fritadeiras de McFritas é 168°C (335°F).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_025",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Porções",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "fritas",
+        "temperatura"
+      ],
+      "pergunta": "Qual o equipamento usado para porcionar as McFritas corretamente?",
+      "alternativas": [
+        "Colher",
+        "Concha",
+        "Copo Medidor de Fritas específico",
+        "Qualquer recipiente"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Usar o Copo Medidor de Fritas específico para cada tamanho (P, M, G, GG).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_026",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Porções",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "porcao",
+        "remocao",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Como garantir a porção correta ao encher o copo de McFritas?",
+      "alternativas": [
+        "Encher pela lateral de cima direto",
+        "Encher pelo fundo do copo com o cesto",
+        "Usar colher para colocar",
+        "Estimar visualmente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usar a técnica de encher o copo pelo fundo (método cesto) para garantir a porção correta.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_027",
+      "categoria": "mcfritas",
+      "subcategoria": "🛢️ McFritas · Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "filtro",
+        "fritas",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Quais são os sinais de que o óleo precisa ser filtrado?",
+      "alternativas": [
+        "Cor levemente amarelada",
+        "Espuma excessiva, cor escura ou cheiro forte",
+        "Temperatura acima do normal",
+        "Batatas grudando no cesto"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sinais para filtrar: espuma excessiva, cor escura, cheiro forte ou fumaça.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_028",
+      "categoria": "mcfritas",
+      "subcategoria": "⏱️ McFritas · Validade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "sal",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual a validade das McFritas saladas na área de manutenção de calor?",
+      "alternativas": [
+        "2 minutos",
+        "5 minutos",
+        "7 minutos",
+        "10 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McFritas saladas têm 7 minutos de validade na área de manutenção de calor.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_029",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Descarte",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "ovo",
+        "producao",
+        "sal",
+        "taylor-ng",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "O que fazer com McFritas que passaram do tempo de validade?",
+      "alternativas": [
+        "Reutilizar se ainda estiverem quentes",
+        "Descartar imediatamente e preparar novo lote",
+        "Salgar mais para melhorar",
+        "Devolver ao congelador"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McFritas fora do tempo de validade devem ser descartadas imediatamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_030",
+      "categoria": "mcfritas",
+      "subcategoria": "🌡️ McFritas · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura mínima de serviço das McFritas?",
+      "alternativas": [
+        "52°C",
+        "57°C",
+        "63°C",
+        "70°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura mínima de serviço das McFritas é 63°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_031",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Pré-pico",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "limite",
+        "oleo",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer no pré-pico para garantir McFritas sempre prontas?",
+      "alternativas": [
+        "Fritar o máximo possível",
+        "Calcular a demanda e fritar lotes menores e frequentes",
+        "Estocar batatas já fritas sem sal",
+        "Não há procedimento especial"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No pré-pico, calcular demanda e fritar lotes menores e frequentes para manter qualidade.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_032",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Batata",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "taylor-ng",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Por quanto tempo os sacos de batata podem ficar no congelador portátil após abertura?",
+      "alternativas": [
+        "1 hora",
+        "4 horas",
+        "8 horas",
+        "Até o final do turno"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Após abertura, os sacos de batata têm validade de 8 horas no congelador portátil.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_033",
+      "categoria": "mcfritas",
+      "subcategoria": "⚙️ McFritas · Equipamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "filtro",
+        "fritas",
+        "limpeza",
+        "oleo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "O que verificar na fritadeira antes de iniciar a operação?",
+      "alternativas": [
+        "Apenas o nível de óleo",
+        "Nível de óleo, temperatura, filtro limpo e funcionamento do cesto",
+        "Apenas a temperatura",
+        "Nada, o gerente verifica"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Verificar: nível de óleo, temperatura atingida, filtro limpo e funcionamento correto do cesto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
