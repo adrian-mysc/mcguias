@@ -1,0 +1,1747 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "bebidas-sobremesas",
+  "nivel": "basico",
+  "migratedFrom": "bebidas-sobremesas.html",
+  "questions": [
+    {
+      "id": "bebidas_sobremesas_001",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Sobremesas · Casquinha",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Quantas voltas de bebida láctea completa a Casquinha?",
+      "alternativas": [
+        "2 voltas e meia",
+        "3 voltas",
+        "3 voltas e meia",
+        "4 voltas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A Casquinha leva 3,5 voltas de bebida láctea (105,63ml).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_002",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Sobremesas · McColosso",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantas voltas de bebida láctea leva o McColosso?",
+      "alternativas": [
+        "1 volta e meia",
+        "2 voltas",
+        "2 voltas e meia",
+        "3 voltas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McColosso leva 2,5 voltas de bebida láctea (74,23ml) mais 1/2oz de cobertura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_003",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Sobremesas · Sundae",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantas gramas de amendoim leva o Sundae?",
+      "alternativas": [
+        "5 gramas",
+        "7 gramas",
+        "10 gramas",
+        "15 gramas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Sundae leva 7 gramas de amendoim, após as 4,5 voltas de bebida láctea e 1oz de cobertura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_004",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 McShake",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quantos segundos deve ser batido o McShake?",
+      "alternativas": [
+        "10 segundos",
+        "15 segundos",
+        "18 segundos",
+        "25 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McShake é batido por 18 segundos, fazendo leves movimentos circulares para ficar uniforme.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_005",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 McShake",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser feito com a tampa do McShake após o batimento?",
+      "alternativas": [
+        "Mantê-la para servir ao cliente",
+        "Descartá-la",
+        "Trocá-la por outra tampa",
+        "Guardá-la para o próximo shake"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Após o preparo do McShake, a tampa deve ser descartada. Nunca sirva com a tampa de batimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_006",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 McShake",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Quantas voltas de bebida láctea leva o McShake?",
+      "alternativas": [
+        "5 voltas",
+        "6 voltas",
+        "7 voltas",
+        "8 voltas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McShake leva 7 voltas de bebida láctea (284ml), dispensadas em toda a lateral do copo deixando um espaço no meio.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_007",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🧃 Bebidas · Gelo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual é a quantidade correta de gelo para o copo médio?",
+      "alternativas": [
+        "½ pá de gelo",
+        "1 pá cheia de gelo",
+        "1 pá e ½ de gelo",
+        "2 pás de gelo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Copo pequeno: ½ pá / Copo médio: 1 pá cheia / Copo grande: 1 pá e ½.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_008",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🧃 Bebidas · Identificação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "cozimento",
+        "temperatura"
+      ],
+      "pergunta": "Qual letra é usada para identificar manualmente a Coca-Cola Zero no copo?",
+      "alternativas": [
+        "C",
+        "X",
+        "Z",
+        "0"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para Coca-Cola Zero e Sprite Zero, identifica-se com a letra 'Z' dentro do círculo vermelho com caneta hidrográfica.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_009",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🌡️ Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual é a temperatura correta da massa de sorvete?",
+      "alternativas": [
+        "-5°C a -3°C",
+        "-9°C a -8°C",
+        "-12°C a -10°C",
+        "0°C a 2°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A temperatura da massa de sorvete deve ser entre -9°C e -8°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_010",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🌡️ Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a temperatura correta da cobertura?",
+      "alternativas": [
+        "30°C a 40°C",
+        "46°C a 52°C",
+        "57°C a 63°C",
+        "65°C a 70°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A temperatura da cobertura deve ser entre 46°C e 52°C. O banho Maria fica entre 57°C e 63°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_011",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🏪 Dessert Center",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "O que a Pessoa da Condimentação NÃO deve fazer na casquinha?",
+      "alternativas": [
+        "Adicionar cobertura",
+        "Adicionar colher e enrolar com guardanapo",
+        "Enviar apenas um guardanapo junto com o cone",
+        "Receber do extrator"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Em casquinha: NÃO adicionar colher e NÃO enrolar. Enviar somente um guardanapo junto com o cone.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_012",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🏪 Dessert Center",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "A entrega do cupom fiscal é obrigatória para quais formas de pagamento?",
+      "alternativas": [
+        "Apenas pagamento em dinheiro",
+        "Apenas pagamento com cartão",
+        "Apenas pagamento por aproximação",
+        "Todas as formas de pagamento"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A entrega do cupom fiscal ao cliente é obrigatória para TODAS as formas de pagamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_013",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · Top Sundae",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantas voltas de bebida láctea leva o Top Sundae?",
+      "alternativas": [
+        "4 voltas",
+        "4,5 voltas",
+        "5 voltas",
+        "6 voltas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Top Sundae leva 6 voltas de bebida láctea (218,53ml) mais 1oz de cobertura total.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_014",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · Sundae",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantas voltas de bebida láctea leva o Sundae?",
+      "alternativas": [
+        "3,5 voltas",
+        "4 voltas",
+        "4,5 voltas",
+        "5 voltas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Sundae leva 4,5 voltas de bebida láctea (136,69ml) mais 1oz de cobertura e 7g de amendoim.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_015",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · McColosso",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Qual a quantidade de cobertura no McColosso?",
+      "alternativas": [
+        "1/4oz",
+        "1/2oz",
+        "1oz",
+        "2oz"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McColosso: 2,5 voltas de bebida láctea + 1/2oz de cobertura (15ml).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_016",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · McFlurry",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Como deve ser feita a extração de bebida láctea no McFlurry?",
+      "alternativas": [
+        "Com o bico, em movimento circular",
+        "Sem o bico, girando o copo para preencher toda lateral",
+        "Com o bico, preenchendo o centro",
+        "Sem girar o copo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McFlurry: sem o bico, girando cuidadosamente o copo para preencher toda lateral com 5 voltas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_017",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · Top Sundae",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cozimento",
+        "ovo",
+        "temperatura"
+      ],
+      "pergunta": "Qual o complemento adicionado no Top Sundae?",
+      "alternativas": [
+        "Amendoim",
+        "Ovomaltine",
+        "Rocks",
+        "Paçoca"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Top Sundae: cobertura (base) + 6 voltas + cobertura (topo) + paçoca + 2 bijus + colher.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_018",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 Bebidas · McShake",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual o volume de leite adicionado antes da extração no McShake?",
+      "alternativas": [
+        "5ml",
+        "10ml",
+        "15ml",
+        "20ml"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Pegue o copo de McShake e coloque 15ml de leite no copo até a marcação antes de extrair a bebida láctea.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_019",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 Bebidas · McShake",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "producao",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "Onde o McShake deve ser colocado após o batimento?",
+      "alternativas": [
+        "Diretamente para o cliente",
+        "Na área de espera de bebidas (BLZ)",
+        "Na mesa de condimentação",
+        "No balcão de entrega"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Após o preparo, colocar o copo de McShake na área de espera de bebidas (BLZ) e servir pelo bump bar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_020",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🧃 Bebidas · Refrigerante",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "temperatura"
+      ],
+      "pergunta": "Como identificar manualmente a Água gaseificada no copo?",
+      "alternativas": [
+        "Letra G",
+        "Letra A",
+        "Letra Z",
+        "Nenhuma identificação"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Para Água gaseificada: identificar com a letra 'A' dentro do círculo vermelho com caneta hidrográfica. Zero = 'Z'.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_021",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🧃 Bebidas · Refrigerante",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer após transferir a bebida para a mesa BLZ?",
+      "alternativas": [
+        "Aguardar o cliente pegar",
+        "Servir no Bumbar",
+        "Chamar o expedidor",
+        "Colocar a tampa"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Após transferir a bebida para a mesa BLZ, servir no Bumbar para registrar a entrega no sistema.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_022",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🧃 Bebidas · Suco",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "peps",
+        "temperatura"
+      ],
+      "pergunta": "Qual botão deve ser pressionado para testar o suco após estocagem?",
+      "alternativas": [
+        "POWER",
+        "RESET",
+        "FLOW",
+        "TEST"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Após estocagem do reservatório na máquina, limpar a borda e gaxeta e apertar a tecla FLOW para testar o produto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_023",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🌡️ Bebidas · Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura do banho Maria do equipamento de sorvete?",
+      "alternativas": [
+        "40°C a 50°C",
+        "46°C a 52°C",
+        "57°C a 63°C",
+        "70°C a 75°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Temperatura do banho Maria: 57°C a 63°C. Cobertura: 46°C a 52°C. Reservatório: 1°C a 4°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_024",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🏪 Bebidas · Dessert Center",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "Como a Pessoa da Extração inicia o preparo de cada produto?",
+      "alternativas": [
+        "Espera o pedido do cliente diretamente",
+        "Pega o copo/cone pela tela, coloca a massa e transfere para a Condimentação",
+        "Finaliza o produto completo",
+        "Entrega diretamente ao cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A Extração inicia pegando o copo/cone conforme a tela, coloca a massa (e cobertura se necessário) e transfere para a Condimentação finalizar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_025",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🏪 Bebidas · Dessert Center",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "organizacao",
+        "temperatura"
+      ],
+      "pergunta": "Qual o papel da Pessoa da Entrega no Dessert Center?",
+      "alternativas": [
+        "Extrair a massa",
+        "Adicionar coberturas e complementos",
+        "Organizar clientes em espera, receber produto pronto e entregar conferindo na tela",
+        "Operar o caixa"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A Pessoa da Entrega organiza clientes, recebe o produto pronto da Condimentação, confere na tela, entrega e usa o bump bar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_026",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🏪 Bebidas · Dessert Center",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é a velocidade de extração correta do equipamento de sorvete?",
+      "alternativas": [
+        "2 a 3oz em 10 segundos",
+        "3 a 5oz em 10 segundos",
+        "5 a 7,5oz em 10 segundos",
+        "8 a 10oz em 10 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A velocidade de extração correta é de 5 a 7,5oz em 10 segundos. Verificar com o Gerente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_027",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 Bebidas · BDAP",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "No BDAP com 2 pessoas, qual é a Função 2?",
+      "alternativas": [
+        "Produz bebidas frias e posiciona na BLZ",
+        "Produz bebidas quentes e sobremesas posicionando na BLZ",
+        "Atende o caixa",
+        "Faz a entrega ao cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Com 2 pessoas no BDAP: Função 1 = bebidas frias na BLZ. Função 2 = bebidas quentes e sobremesas na BLZ.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_028",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · McColosso",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantas voltas leva o McColosso?",
+      "alternativas": [
+        "1,5 voltas",
+        "2 voltas",
+        "2,5 voltas",
+        "3 voltas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McColosso: 2,5 voltas de bebida láctea + 1/2oz de cobertura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_029",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · McFlurry",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Como deve ser a extração de bebida láctea no McFlurry?",
+      "alternativas": [
+        "Com o bico, circular",
+        "Sem o bico, girando o copo",
+        "Com o bico, preenchendo o centro",
+        "Sem girar o copo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McFlurry: sem o bico, girando cuidadosamente o copo para preencher toda lateral com 5 voltas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_030",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🌡️ Bebidas · Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura do reservatório de bebida láctea?",
+      "alternativas": [
+        "0-2°C",
+        "1-4°C",
+        "5-8°C",
+        "10-12°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O reservatório de bebida láctea deve estar entre 1°C e 4°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_031",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🏪 Bebidas · Dessert Center",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a velocidade de extração correta do equipamento de sorvete?",
+      "alternativas": [
+        "2-3oz em 10s",
+        "3-5oz em 10s",
+        "5-7,5oz em 10s",
+        "8-10oz em 10s"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A velocidade de extração correta é de 5 a 7,5oz em 10 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_032",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🏪 Bebidas · Dessert Center",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "Qual é o papel da pessoa da Extração no Dessert Center?",
+      "alternativas": [
+        "Finalizar e entregar ao cliente",
+        "Pegar copo/cone, colocar a massa e transferir para Condimentação",
+        "Apenas operar o caixa",
+        "Atender o cliente diretamente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A Extração pega o copo/cone conforme a tela, coloca a massa e transfere para a Condimentação finalizar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_033",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🧃 Bebidas · Suco",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "peps",
+        "temperatura"
+      ],
+      "pergunta": "Qual botão pressionar para testar o suco após estocagem?",
+      "alternativas": [
+        "POWER",
+        "RESET",
+        "FLOW",
+        "TEST"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Após estocagem do reservatório, limpar a borda e gaxeta e apertar a tecla FLOW para testar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_034",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 Bebidas · BDAP",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
+      "pergunta": "No BDAP com 2 pessoas, qual é a Função 1?",
+      "alternativas": [
+        "Bebidas quentes e sobremesas",
+        "Bebidas frias na BLZ",
+        "Entregar ao cliente",
+        "Operar o caixa"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Com 2 pessoas no BDAP: Função 1 = bebidas frias na BLZ. Função 2 = bebidas quentes e sobremesas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_035",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · Casquinha",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Quantas voltas leva a Casquinha?",
+      "alternativas": [
+        "1 volta",
+        "1,5 volta",
+        "2 voltas",
+        "2,5 voltas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A Casquinha leva 1 volta de bebida láctea.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_036",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🏪 Bebidas · Dessert Center",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a cobertura de temperatura do reservatório de cobertura?",
+      "alternativas": [
+        "40-46°C",
+        "46-52°C",
+        "52-58°C",
+        "57-63°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A cobertura deve estar entre 46°C e 52°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
