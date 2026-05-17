@@ -1,0 +1,1891 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "fritos",
+  "nivel": "basico",
+  "migratedFrom": "fritos.html",
+  "questions": [
+    {
+      "id": "fritos_001",
+      "categoria": "fritos",
+      "subcategoria": "🌡️ Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da fritadeira para produtos de frango e tortas?",
+      "alternativas": [
+        "168°C",
+        "175°C",
+        "180°C",
+        "190°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A fritadeira para frango e tortas opera a 180°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_002",
+      "categoria": "fritos",
+      "subcategoria": "🌡️ Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Qual a temperatura da UHC para carnes brancas?",
+      "alternativas": [
+        "72°C",
+        "79°C",
+        "85°C",
+        "90°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A UHC para carnes brancas opera a 85°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_003",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Tempo de Fritura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura de Nuggets, McChicken e Junior?",
+      "alternativas": [
+        "2min30s",
+        "3min00s",
+        "3min15s",
+        "4min00s"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Nuggets, Chicken e Junior têm tempo de fritura de 3 minutos e 15 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_004",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Tempo de Fritura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura do McCrispy?",
+      "alternativas": [
+        "3min15s",
+        "4min00s",
+        "5min00s",
+        "6min"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McCrispy e Tortas: 6 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_005",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida do McCrispy na UHC?",
+      "alternativas": [
+        "20 minutos",
+        "30 minutos",
+        "45 minutos",
+        "60 minutos"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McCrispy: 60 min · McChicken: 30 min · McNuggets/McJunior: 20 min.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_006",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida do McChicken na UHC?",
+      "alternativas": [
+        "10 minutos",
+        "20 minutos",
+        "30 minutos",
+        "60 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McChicken: 30 minutos na UHC.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_007",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida dos McNuggets e McJunior na UHC?",
+      "alternativas": [
+        "10 minutos",
+        "20 minutos",
+        "30 minutos",
+        "60 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McNuggets e McJunior: 20 minutos na UHC.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_008",
+      "categoria": "fritos",
+      "subcategoria": "📦 Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a capacidade máxima de McNuggets no cesto?",
+      "alternativas": [
+        "12 unidades",
+        "16 unidades",
+        "20 unidades",
+        "24 unidades"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McNuggets: 24 unid. · McChicken: 6 · Chicken Jr: 6 · Crispy: 4 · Tortas: 16.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_009",
+      "categoria": "fritos",
+      "subcategoria": "📦 Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a capacidade máxima de tortas no cesto?",
+      "alternativas": [
+        "8 unidades",
+        "12 unidades",
+        "16 unidades",
+        "20 unidades"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A capacidade máxima do cesto de tortas é de 16 unidades.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_010",
+      "categoria": "fritos",
+      "subcategoria": "🥧 Tortas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "refrigeracao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo total de validade das tortas após a fritura?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "3 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As tortas têm 2 horas de validade total, incluindo os 20 minutos de resfriamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_011",
+      "categoria": "fritos",
+      "subcategoria": "🥧 Tortas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Com qual lado voltado para cima as tortas devem ser colocadas na bandeja de resfriamento?",
+      "alternativas": [
+        "Costura para cima",
+        "Lado liso para cima",
+        "\"Barriga\" (bolhas) para cima",
+        "Qualquer lado"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As tortas devem ser colocadas com a 'barriga' (bolhas) voltada para cima durante o resfriamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_012",
+      "categoria": "fritos",
+      "subcategoria": "🌡️ Fritos · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da fritadeira para McFritas?",
+      "alternativas": [
+        "155°C",
+        "160°C",
+        "168°C",
+        "180°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McFritas = 168°C. Frango e tortas = 180°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_013",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Fritos · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura das tortas?",
+      "alternativas": [
+        "3min15s",
+        "4min00s",
+        "5min00s",
+        "6min"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McCrispy e tortas têm tempo de fritura de 6 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_014",
+      "categoria": "fritos",
+      "subcategoria": "📦 Fritos · Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Quantos McChicken cabem em um cesto?",
+      "alternativas": [
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "10 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McChicken: 6 por cesto. McNuggets: 24. Chicken Jr: 6. Crispy: 4. Tortas: 16.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_015",
+      "categoria": "fritos",
+      "subcategoria": "📦 Fritos · Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Quantos McCrispy cabem em um cesto?",
+      "alternativas": [
+        "2 unidades",
+        "4 unidades",
+        "6 unidades",
+        "8 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McCrispy: 4 por cesto de fritura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_016",
+      "categoria": "fritos",
+      "subcategoria": "🥧 Fritos · Tortas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Em que posição as tortas devem ser colocadas na bandeja de resfriamento?",
+      "alternativas": [
+        "Costura para cima",
+        "Lado liso para cima",
+        "Barriga (bolhas) para cima",
+        "Qualquer lado"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As tortas devem ser colocadas com a barriga (bolhas) para cima durante o resfriamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_017",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Fritos · UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "refrigeracao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida útil total das tortas após a fritura?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "3 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As tortas têm 2 horas de validade total (incluindo os 20 min de resfriamento).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_018",
+      "categoria": "fritos",
+      "subcategoria": "⚙️ Fritos · Procedimento",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "filtro",
+        "fritas",
+        "oleo",
+        "ovo",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que deve ser feito com o óleo antes de fritar novos produtos?",
+      "alternativas": [
+        "Nada, pode fritar diretamente",
+        "Verificar a temperatura correta",
+        "Filtrar o óleo",
+        "Aguardar 5 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sempre verificar se o óleo atingiu a temperatura correta antes de iniciar nova rodada de fritura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_019",
+      "categoria": "fritos",
+      "subcategoria": "🌡️ Fritos · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura mínima interna do frango após a fritura?",
+      "alternativas": [
+        "70°C",
+        "74°C",
+        "77°C",
+        "85°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A temperatura interna mínima dos produtos de frango após a fritura deve ser de 74°C (165°F).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_020",
+      "categoria": "fritos",
+      "subcategoria": "📦 Fritos · Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Quantos Chicken Jr. cabem em um cesto?",
+      "alternativas": [
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "10 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Chicken Jr.: 6 por cesto, mesmo quantidade que o McChicken.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_021",
+      "categoria": "fritos",
+      "subcategoria": "⚙️ Fritos · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "filtro",
+        "oleo",
+        "ovo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual o procedimento correto ao notar que o óleo está escuro ou com mau cheiro?",
+      "alternativas": [
+        "Continuar usando até atingir 24% de compostos polares",
+        "Descartar imediatamente e trocar",
+        "Filtrar mais vezes",
+        "Adicionar óleo novo para diluir"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Óleo com cor escura, fumaça excessiva ou odor estranho deve ser descartado imediatamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_022",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura das fritadeiras de frango e tortas?",
+      "alternativas": [
+        "160°C",
+        "168°C",
+        "170°C",
+        "175°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A temperatura das fritadeiras de frango e tortas é 168°C (335°F).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_023",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Qualidade do Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "fritas",
+        "limite",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "O que indica que o óleo precisa ser descartado além dos Compostos Polares?",
+      "alternativas": [
+        "Cor dourada clara",
+        "Odor desagradável, cor escura ou espuma excessiva",
+        "Temperatura abaixo do normal",
+        "Consumo excessivo de batatas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Descartar quando: odor desagradável, cor escura, espuma excessiva ou Compostos Polares acima do limite.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_024",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Fritos · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura do McNuggets de 6 unidades?",
+      "alternativas": [
+        "45 segundos",
+        "60 segundos",
+        "75 segundos",
+        "90 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McNuggets leva 75 segundos de fritura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_025",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · McNuggets",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Como devem ser posicionados os McNuggets no cesto?",
+      "alternativas": [
+        "Todos na vertical",
+        "Espalhados em camada única",
+        "Empilhados no máximo 3",
+        "Em qualquer posição"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os McNuggets devem ser espalhados em camada única no cesto para fritura uniforme.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_026",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Frango",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura do McChicken (frango prensado)?",
+      "alternativas": [
+        "2min30s",
+        "3min",
+        "3min30s",
+        "4min"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McChicken (frango prensado) leva 3min30s de fritura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_027",
+      "categoria": "fritos",
+      "subcategoria": "🛢️ Fritos · Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o intervalo de verificação dos Compostos Polares do óleo?",
+      "alternativas": [
+        "A cada turno",
+        "A cada 2 horas durante o pico",
+        "Diariamente uma vez",
+        "Semanalmente"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os Compostos Polares devem ser verificados a cada turno de operação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_028",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Frango",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura interna mínima do frango após a fritura?",
+      "alternativas": [
+        "65°C",
+        "70°C",
+        "74°C",
+        "80°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura interna mínima do frango após fritura deve ser 74°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_029",
+      "categoria": "fritos",
+      "subcategoria": "🛢️ Fritos · Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "filtro",
+        "frequencia",
+        "oleo",
+        "taylor-ng",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Quando deve ser feita a filtragem do óleo?",
+      "alternativas": [
+        "Apenas uma vez por semana",
+        "A cada 4 horas de uso ou no pré-pico",
+        "Somente quando o óleo estiver escuro",
+        "Uma vez por turno"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Filtrar o óleo a cada 4 horas de uso ou no pré-pico para prolongar a vida útil.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_030",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Fritos · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura das tortas de maçã e frango?",
+      "alternativas": [
+        "3min",
+        "4min",
+        "5min",
+        "6min"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As tortas (frango e maçã) levam 5 minutos de fritura a 168°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_031",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "temperatura",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Como identificar os produtos na UHC para controle de validade?",
+      "alternativas": [
+        "Por cor do cesto",
+        "Pelo timer do equipamento ou etiqueta de tempo",
+        "Apenas pela memória",
+        "Pelo cheiro"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usar o timer da UHC ou etiqueta de tempo para controlar a validade de cada produto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_032",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Segurança",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer se o óleo pegar fogo?",
+      "alternativas": [
+        "Jogar água no óleo",
+        "Usar extintor de CO2 ou abafar com tampa",
+        "Deixar apagar sozinho",
+        "Ligar o exaustor"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Em caso de fogo no óleo: NUNCA jogar água. Usar extintor de CO2 ou abafar com a tampa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_033",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · McNuggets",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos McNuggets cabem por porção de cada tamanho?",
+      "alternativas": [
+        "4, 6 e 10",
+        "4, 6 e 8",
+        "6, 9 e 12",
+        "6, 10 e 15"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "As porções de McNuggets são: 4 unidades, 6 unidades e 10 unidades.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_034",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Fritos · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura do Chicken Select (filé)?",
+      "alternativas": [
+        "3min",
+        "3min30s",
+        "4min",
+        "4min30s"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Chicken Select (filé crocante) leva 4 minutos de fritura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_035",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "oleo",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura do McChicken (frango prensado)?",
+      "alternativas": [
+        "2min30s",
+        "3min",
+        "3min30s",
+        "4min"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McChicken (frango prensado) leva 3 minutos e 30 segundos de fritura a 168°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_036",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura do Chicken Select (filé crocante)?",
+      "alternativas": [
+        "3min",
+        "3min30s",
+        "4min",
+        "4min30s"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Chicken Select (filé crocante) leva 4 minutos de fritura a 168°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_037",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Qualidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura interna mínima do frango após fritura?",
+      "alternativas": [
+        "65°C",
+        "70°C",
+        "74°C",
+        "80°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura interna mínima do frango após a fritura deve ser 74°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_038",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · McNuggets",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limite",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Qual o número máximo de McNuggets por cesto de fritura?",
+      "alternativas": [
+        "12 unidades",
+        "18 unidades",
+        "24 unidades",
+        "30 unidades"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O cesto comporta no máximo 24 unidades de McNuggets por rodada de fritura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
