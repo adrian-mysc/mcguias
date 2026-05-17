@@ -1,0 +1,1936 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "montagem-entrega",
+  "nivel": "basico",
+  "migratedFrom": "montagem-entrega.html",
+  "questions": [
+    {
+      "id": "montagem_entrega_001",
+      "categoria": "montagem-entrega",
+      "subcategoria": "⏱️ R2P",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "tempo"
+      ],
+      "pergunta": "Qual é o tempo máximo do R2P (Receipt to Present)?",
+      "alternativas": [
+        "60 segundos",
+        "75 segundos",
+        "90 segundos",
+        "120 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo R2P máximo é de 90 segundos, do PREPARANDO ao PRONTO.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_002",
+      "categoria": "montagem-entrega",
+      "subcategoria": "⏱️ R2P",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quando o tempo R2P começa a ser contado?",
+      "alternativas": [
+        "Quando o cliente faz o pedido",
+        "Quando o pedido entra em modo PREPARANDO",
+        "Quando o Pick List é impresso",
+        "Quando o pedido é entregue ao cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo R2P inicia quando o pedido entra em modo PREPARANDO e finaliza ao passar para PRONTO.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_003",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🥤 Montagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Quando deve ser iniciada a montagem do pedido?",
+      "alternativas": [
+        "Assim que o pedido aparecer na OAT",
+        "Quando o pedido estiver com status PAGO e todos os itens prontos",
+        "Quando o cliente se aproximar do balcão",
+        "Após imprimir o Pick List"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A montagem começa somente quando o status é PAGO e todos os itens estiverem prontos. Então reúne-se os produtos, imprime o Pick List e aperta-se Servido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_004",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🍽️ Layout da Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Onde ficam as bebidas e sobremesas na bandeja?",
+      "alternativas": [
+        "Centro",
+        "Lado direito",
+        "Lado esquerdo",
+        "Atrás das entradas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Lado esquerdo = bebidas e sobremesas (Café, refrigerante, Shakes). Centro = entradas. Lado direito = McFritas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_005",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🍽️ Layout da Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Onde ficam as entradas (sanduíches) na bandeja?",
+      "alternativas": [
+        "Lado direito",
+        "Lado esquerdo",
+        "Centro",
+        "Qualquer posição"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As entradas são os heróis da refeição e ficam no centro da bandeja.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_006",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Como o entregador deve localizar o cliente na área de entrega?",
+      "alternativas": [
+        "Gritando o número do pedido",
+        "Levantando o Pick List com o número do pedido na altura dos olhos",
+        "Usando o monitor ORB",
+        "Pedindo ao cliente que se identifique"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O entregador deve levantar o Pick List com o número do pedido na altura dos olhos para localizar o cliente — sem gritar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_007",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer com o Bump Bar ao finalizar a conferência do pedido?",
+      "alternativas": [
+        "Usá-lo para imprimir o Pick List",
+        "Apagar o pedido do monitor de Apresentação, enviando o número ao ORB",
+        "Confirmar o pagamento do pedido",
+        "Chamar o gerente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Bump Bar apaga o pedido do monitor de Apresentação e envia o número do pedido ao Monitor ORB.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_008",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Após entregar o pedido, o que deve ser feito antes de ir para o próximo?",
+      "alternativas": [
+        "Imprimir o próximo Pick List imediatamente",
+        "Esperar o cliente se virar e sair da área de entrega",
+        "Retornar à mesa OAT imediatamente",
+        "Chamar o próximo cliente pelo número"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Espere o cliente se virar e sair da área de entrega antes de continuar com o próximo pedido — indicando que está totalmente disponível para o cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_009",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🧹 Organização",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "panos",
+        "sanitizacao",
+        "taylor-ng",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Onde deve ficar o pano descartável da OAT e da área de entrega?",
+      "alternativas": [
+        "Em cima da OAT para fácil acesso",
+        "Sanitizado e dobrado, longe da visão do cliente",
+        "Na gaveta abaixo da OAT",
+        "Junto com os suprimentos no balcão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O pano descartável deve ser mantido sanitizado e dobrado, longe da visão do cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_010",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🥤 Montagem",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "organizacao",
+        "ppf",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Como devem ser organizados os itens no saco para viagem?",
+      "alternativas": [
+        "Todos juntos sem ordem específica",
+        "Itens frios dos quentes separados, seguindo a sequência correta",
+        "Bebidas sempre no fundo do saco",
+        "Só os itens quentes no saco"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Nos pedidos para viagem, siga a sequência de montagem correta e separe os itens frios dos quentes.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_011",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🥤 Montagem · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Onde devem ficar os sacos e caixinhas de McLanche Feliz?",
+      "alternativas": [
+        "No balcão principal",
+        "No carrinho da OAT (Mesa de Ordem de Pedido)",
+        "Na mesa de condimentação",
+        "No depósito"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sacos, caixinhas de McLanche Feliz e suprimentos devem ficar no carrinho da OAT.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_012",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🥤 Montagem · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "raspador",
+        "refrigeracao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Onde ficam as bandejas e lâminas estocadas?",
+      "alternativas": [
+        "No balcão principal",
+        "Na área de entrega",
+        "No carrinho de bandejas Dual Point próximo à OAT",
+        "Na geladeira"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Bandejas e lâminas estocadas ficam no carrinho de bandejas Dual Point próximo à OAT.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_013",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🥤 Montagem · Procedimento",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
+      "pergunta": "Onde devem ser posicionadas as bebidas no saco para viagem?",
+      "alternativas": [
+        "No fundo do saco",
+        "Separadas em saco menor",
+        "Usando porta-copos, sempre tampadas",
+        "Abertas para o cliente ver"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Com 2 ou mais bebidas, usar o porta-copos e garantir que estejam tampadas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_014",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🍽️ Montagem · Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura"
+      ],
+      "pergunta": "O que vai no lado direito da bandeja?",
+      "alternativas": [
+        "Entradas",
+        "Bebidas e sobremesas",
+        "McFritas e acompanhamentos",
+        "Condimentos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Lado direito = McFritas inclinadas em relação às entradas. Centro = entradas. Esquerda = bebidas e sobremesas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_015",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🍽️ Montagem · Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura"
+      ],
+      "pergunta": "Como devem ser posicionadas as McFritas na bandeja?",
+      "alternativas": [
+        "Em pé, ao centro",
+        "Inclinadas em relação às entradas, no lado direito",
+        "Deitadas ao lado da bebida",
+        "Em qualquer posição"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McFritas ficam inclinadas em relação às entradas para melhor acomodação, no lado direito da bandeja.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_016",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Montagem · Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Como conferir o pedido antes de servir?",
+      "alternativas": [
+        "Não é necessário conferir",
+        "Comparar itens da bandeja com o monitor de Apresentação",
+        "Apenas verificar o número do pedido",
+        "Perguntar ao cliente o que pediu"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Fazer a conferência comparando os itens da bandeja com os listados no monitor de Apresentação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_017",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Montagem · Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
+      "pergunta": "Onde deve ser posicionada a bandeja após usar o Bump Bar?",
+      "alternativas": [
+        "Na mesa de condimentação",
+        "No canto oposto aos monitores",
+        "Em cima do ORB",
+        "Na área de espera do cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Após usar o Bump Bar, suba a bandeja e posicione-a no canto oposto aos monitores.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_018",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Montagem · Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "porcao",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Como chamar o cliente na área de entrega?",
+      "alternativas": [
+        "Gritando o número do pedido em voz alta",
+        "Levantando o Pick List na altura dos olhos sem gritar",
+        "Usando o sistema de som do restaurante",
+        "Esperando o cliente vir até o balcão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Levantar o Pick List com o número do pedido na altura dos olhos para localizar o cliente — sem gritar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_019",
+      "categoria": "montagem-entrega",
+      "subcategoria": "⏱️ Montagem · R2P",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que o R2P mede exatamente?",
+      "alternativas": [
+        "Tempo do pedido ao cliente",
+        "Tempo do PREPARANDO ao PRONTO",
+        "Tempo de montagem da bandeja",
+        "Tempo de espera na fila"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "R2P = Receipt to Present. Mede o tempo do momento que o pedido entra em PREPARANDO até sair para PRONTO.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_020",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Montagem · Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "molho",
+        "ppf",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer com itens adicionais como molhos de nuggets e canudos?",
+      "alternativas": [
+        "Só incluir se o cliente pedir",
+        "Colocar no pedido ao conferir com o monitor de Apresentação",
+        "Deixar na estação de suprimentos",
+        "Perguntar ao expedidor"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Colocar itens adicionais (molhos, canudos, açúcares, adoçantes) no pedido ao conferir com o monitor de Apresentação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_021",
+      "categoria": "montagem-entrega",
+      "subcategoria": "☕ Montagem · Café da Manhã",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "cafe-da-manha",
+        "temperatura"
+      ],
+      "pergunta": "O que perguntar ao cliente no Café da Manhã sobre a bebida quente?",
+      "alternativas": [
+        "Se quer leite",
+        "Se aceita açúcar ou adoçante, servindo com mexedor, guardanapo e tampa",
+        "Se quer cappuccino",
+        "Se quer a bebida quentinha"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No Café da Manhã, verificar condimentos no monitor de Apresentação e perguntar se o cliente aceita açúcar ou adoçante. Servir com mexedor, guardanapos e tampa da bebida.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_022",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🥤 Montagem · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cafe-da-manha",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Qual é o nível correto de preenchimento das bebidas?",
+      "alternativas": [
+        "Até a borda do copo",
+        "Até a tarja de volume indicada",
+        "3/4 do copo",
+        "Até onde o gelo permitir"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Servir somente bebidas com nível correto de refrigerante, suco, bebidas do Café da Manhã e McShake — até a tarja de volume.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_023",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🥤 Montagem · Sobremesas",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "Quem deve preparar as sobremesas durante a montagem?",
+      "alternativas": [
+        "Sempre o expedidor",
+        "Quem não estiver com bebidas, ou somente Casquinha e McColosso se houver pessoa de bebidas",
+        "A pessoa de bebidas sempre",
+        "O gerente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Prepare as sobremesas. Se estiver trabalhando com a pessoa de bebidas, faça somente Casquinha e McColosso.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_024",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Montagem · Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Para onde direcionar o cliente após receber o pedido?",
+      "alternativas": [
+        "Para a fila novamente",
+        "Para a estação de suprimentos para resolver qualquer solicitação posterior",
+        "Para o gerente",
+        "Para a saída"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Direcionar o cliente para a estação de suprimentos e resolver qualquer solicitação posterior relacionada ao pedido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_025",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🥤 Montagem · Saladas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "porcao",
+        "remocao",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que deve acompanhar uma salada na bandeja?",
+      "alternativas": [
+        "Apenas o molho",
+        "Talher, molhos e porção específica",
+        "Só guardanapos",
+        "Molho e copo de água"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No caso de saladas, já colocar talher e molhos na bandeja.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_026",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Conferência",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser verificado na dupla conferência do pedido?",
+      "alternativas": [
+        "Apenas os lanches",
+        "Itens, tamanhos, personalizações, bebidas e acompanhamentos",
+        "Apenas bebidas e sobremesas",
+        "Apenas itens fora do padrão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A dupla conferência verifica: itens corretos, tamanhos, personalizações, bebidas e acompanhamentos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_027",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "fritas",
+        "organizacao",
+        "temperatura"
+      ],
+      "pergunta": "Como deve ser montada a bandeja de um combo padrão?",
+      "alternativas": [
+        "Lanche na frente, bebida atrás, fritas no lado",
+        "Qualquer organização",
+        "Bebida no centro, lanche e fritas em lados opostos",
+        "Fritas primeiro, depois o restante"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Bandeja padrão: lanche na frente do cliente, bebida atrás, fritas ao lado.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_028",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Lâmina",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "organizacao",
+        "peps",
+        "raspador",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Como organizar as lâminas na área de montagem?",
+      "alternativas": [
+        "Empilhadas sem ordem",
+        "Por segmento e em ordem de chegada (PEPS)",
+        "Por tamanho de sanduíche",
+        "Qualquer organização"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Lâminas organizadas por segmento e em PEPS (primeiro a entrar, primeiro a sair).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_029",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Salada",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que deve acompanhar obrigatoriamente uma salada na bandeja?",
+      "alternativas": [
+        "Apenas o garfo",
+        "Garfo, faca, guardanapo e molho para salada",
+        "Apenas guardanapo",
+        "Garfo e guardanapo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Salada: acompanhar com garfo, faca, guardanapo e molho para salada (à parte).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_030",
+      "categoria": "montagem-entrega",
+      "subcategoria": "⏱️ Montagem · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo meta de entrega ao cliente após o pedido ser totalizado?",
+      "alternativas": [
+        "60 segundos",
+        "90 segundos",
+        "2 minutos",
+        "3 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo meta de entrega ao cliente após totalização do pedido é de 90 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_031",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Embrulho",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "porcao",
+        "ppf",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a função do Bump Bar no processo de entrega?",
+      "alternativas": [
+        "Registrar o pedido",
+        "Confirmar que o pedido foi entregue e liberar a tela do KVS",
+        "Controlar o tempo de fritura",
+        "Comunicar com a cozinha"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Bump Bar confirma a entrega do pedido e limpa o item do monitor KVS.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_032",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Postura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer se o cliente reclamar de um pedido errado?",
+      "alternativas": [
+        "Ignorar e chamar o próximo",
+        "Pedir desculpas, corrigir imediatamente e informar o gerente",
+        "Dizer que o cliente errou",
+        "Cobrar a diferença"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Pedido errado: pedir desculpas imediatamente, corrigir o pedido e comunicar o gerente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_033",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Saco",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Em que situação o pedido deve ser entregue em saco em vez de bandeja?",
+      "alternativas": [
+        "Sempre no saco",
+        "Apenas para pedidos de 1 item",
+        "Para viagem, delivery ou a pedido do cliente",
+        "Apenas para combos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Usar saco para pedidos para viagem, delivery ou quando o cliente solicitar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_034",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Bebidas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
+      "pergunta": "Onde devem ser posicionadas as bebidas na bandeja em relação ao cliente?",
+      "alternativas": [
+        "Na frente do cliente",
+        "No lado esquerdo",
+        "Atrás do lanche, no canto",
+        "Em qualquer posição"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Bebidas ficam atrás do lanche, facilitando o acesso sem derrubar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_035",
+      "categoria": "montagem-entrega",
+      "subcategoria": "⏱️ Montagem · KVS",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "cores",
+        "ppf",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer quando o KVS mostra um item em atraso (vermelho)?",
+      "alternativas": [
+        "Ignorar e continuar na ordem",
+        "Priorizar o item e comunicar a linha",
+        "Cancelar o pedido",
+        "Chamar o cliente para aguardar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Item em vermelho no KVS = prioridade máxima. Comunicar a linha e preparar imediatamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_036",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Condimentos",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "fritas",
+        "molho",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Quando oferecer molhos extras ao cliente?",
+      "alternativas": [
+        "Nunca, apenas se pedir",
+        "Sempre na entrega de qualquer pedido",
+        "Em pedidos com fritas ou nuggets",
+        "Apenas em combos grandes"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Oferecer molhos extras ao entregar pedidos com McFritas ou McNuggets.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_037",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · McLanche",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "higiene",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "O brinquedo do McLanche Feliz vai na bandeja ou no saco?",
+      "alternativas": [
+        "Na bandeja ao lado da fritas",
+        "No saco junto com o lanche",
+        "Em sacola separada",
+        "Entregue separado das mãos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O brinquedo do McLanche Feliz é embalado no saco junto com o pedido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_038",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Higiene",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "raspador",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quando deve ser trocada a lâmina de montagem?",
+      "alternativas": [
+        "Apenas no final do turno",
+        "Após cada uso ou quando sujar",
+        "Após 1 hora de uso",
+        "Apenas quando o gerente solicitar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A lâmina deve ser substituída após cada uso para garantir higiene.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_039",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Canudo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "atendimento",
+        "frequencia",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Qual o tamanho de canudo correto para cada bebida?",
+      "alternativas": [
+        "Um tamanho único para todos",
+        "Canudo pequeno para bebidas P e M, largo para shakes",
+        "Apenas canudos largos",
+        "O cliente escolhe"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Canudo regular para refrigerantes P e M; canudo largo para McShakes e bebidas espessas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
