@@ -1,0 +1,1884 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "embaixador-experiencia",
+  "nivel": "basico",
+  "migratedFrom": "linha.html",
+  "questions": [
+    {
+      "id": "embaixador_experiencia_html_001",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🍞 Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura das placas A e B da tostadeira?",
+      "alternativas": [
+        "254°C",
+        "265°C",
+        "271°C",
+        "280°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Placas A e B = 271°C. Placa C = 254°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_002",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🍞 Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de caramelização na tostadeira?",
+      "alternativas": [
+        "15 segundos",
+        "18 segundos",
+        "22 segundos",
+        "30 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de caramelização é de 22 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_003",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🌡️ UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Qual a temperatura da UHC para carnes vermelhas?",
+      "alternativas": [
+        "72°C",
+        "75°C",
+        "79°C",
+        "85°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "UHC: carnes vermelhas = 79°C e carnes brancas = 85°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_004",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🌡️ UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "carne",
+        "temperatura",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida do McCrispy na UHC?",
+      "alternativas": [
+        "20 minutos",
+        "30 minutos",
+        "45 minutos",
+        "60 minutos"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McCrispy: 60 min · McChicken: 30 min · McNuggets/McJunior: 20 min · Carnes vermelhas: 10 min.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_005",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🌡️ UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "carne",
+        "temperatura",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida de carnes vermelhas na UHC?",
+      "alternativas": [
+        "5 minutos",
+        "10 minutos",
+        "15 minutos",
+        "20 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Carnes vermelhas têm vida útil de 10 minutos na UHC.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_006",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🧂 Mesa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a faixa de temperatura da mesa de condimentação?",
+      "alternativas": [
+        "35°C a 45°C",
+        "42°C a 55°C",
+        "49°C a 57°C",
+        "55°C a 65°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A mesa de condimentação opera entre 49°C e 57°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_007",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🧂 Mesa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Para calibrar o Ketchup Regular, quantos tiros devem ser dados?",
+      "alternativas": [
+        "4 tiros",
+        "6 tiros",
+        "8 tiros",
+        "47 tiros"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ketchup Regular: 6 tiros = 2 OZ / 60 ML.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_008",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo"
+      ],
+      "pergunta": "Qual é o tempo de linha estabelecido?",
+      "alternativas": [
+        "15 a 25 segundos",
+        "25 a 35 segundos",
+        "35 a 50 segundos",
+        "50 a 60 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de linha deve ser de 35 a 50 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_009",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tempo"
+      ],
+      "pergunta": "Em quantos segundos o iniciador deve reagir para ativar os pães?",
+      "alternativas": [
+        "1 a 2 segundos",
+        "3 a 5 segundos",
+        "5 a 8 segundos",
+        "10 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo de reação para ativar os pães é de 3 a 5 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_010",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🏪 Best Burger",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "4:1",
+        "carne",
+        "cebola",
+        "cores",
+        "temperatura"
+      ],
+      "pergunta": "No Best Burger, qual pegador é usado para carnes sem cebola?",
+      "alternativas": [
+        "Pegador vermelho",
+        "Pegador verde",
+        "Pegador azul",
+        "Pegador preto"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_011",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🍞 Linha · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da placa C da tostadeira?",
+      "alternativas": [
+        "220°C",
+        "240°C",
+        "254°C",
+        "271°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Placa C = 254°C. Placas A e B = 271°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_012",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🍞 Linha · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tempo"
+      ],
+      "pergunta": "Quantos segundos o iniciador tem para reagir e ativar os pães?",
+      "alternativas": [
+        "1 a 2 segundos",
+        "3 a 5 segundos",
+        "5 a 8 segundos",
+        "10 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo de reação para ativar os pães é de 3 a 5 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_013",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🌡️ Linha · UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Qual a temperatura da UHC para carnes brancas?",
+      "alternativas": [
+        "72°C",
+        "79°C",
+        "85°C",
+        "90°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "UHC: carnes brancas = 85°C. Carnes vermelhas = 79°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_014",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha · UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida do McChicken na UHC?",
+      "alternativas": [
+        "10 minutos",
+        "20 minutos",
+        "30 minutos",
+        "60 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McChicken: 30 minutos na UHC.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_015",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha · UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida dos McNuggets e McJunior na UHC?",
+      "alternativas": [
+        "10 minutos",
+        "20 minutos",
+        "30 minutos",
+        "60 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McNuggets e McJunior têm 20 minutos de vida útil na UHC.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_016",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🧂 Linha · Mesa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da mesa de condimentação?",
+      "alternativas": [
+        "35°C a 45°C",
+        "42°C a 55°C",
+        "49°C a 57°C",
+        "55°C a 65°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A mesa de condimentação opera entre 49°C e 57°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_017",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha · Tempo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de linha estabelecido?",
+      "alternativas": [
+        "15 a 25 segundos",
+        "25 a 35 segundos",
+        "35 a 50 segundos",
+        "50 a 60 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de linha deve ser de 35 a 50 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_018",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🧂 Linha · Calibração",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "molho",
+        "porcao"
+      ],
+      "pergunta": "Quantos tiros de Ketchup Regular equivalem a 2 OZ?",
+      "alternativas": [
+        "4 tiros",
+        "6 tiros",
+        "8 tiros",
+        "10 tiros"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ketchup Regular: 6 tiros = 2 OZ / 60 ML.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_019",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🏪 Linha · Best Burger",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "4:1",
+        "carne",
+        "cebola",
+        "cores",
+        "temperatura"
+      ],
+      "pergunta": "Qual pegador é usado para carnes sem cebola no Best Burger?",
+      "alternativas": [
+        "Vermelho",
+        "Verde",
+        "Azul",
+        "Preto"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_020",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🍞 Linha · Tostadeira",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "remocao",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Em que sentido o iniciador deve colocar os pães na tostadeira?",
+      "alternativas": [
+        "Qualquer sentido",
+        "Com a face cortada para cima",
+        "Com a face cortada voltada para as placas",
+        "Alternando os lados"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os pães devem ser posicionados com a face cortada voltada para as placas quentes da tostadeira.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_021",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⚙️ Linha · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que o finalizador deve fazer ao receber a base do sanduíche?",
+      "alternativas": [
+        "Aguardar o condimentador terminar",
+        "Verificar qualidade, montar e fechar o sanduíche",
+        "Chamar o iniciador para conferência",
+        "Apenas embalar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O finalizador recebe a base, verifica qualidade, monta e fecha o sanduíche.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_022",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⚙️ Linha · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "producao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual função monitora o PLS e determina quantas carnes produzir?",
+      "alternativas": [
+        "Iniciador",
+        "Condimentador",
+        "Chapeiro",
+        "Finalizador"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O chapeiro observa o monitor PLS para determinar a quantidade correta de carnes a produzir.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_023",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🧂 Linha · Mesa",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida dos produtos na mesa de condimentação?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "3 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os produtos na mesa de condimentação têm vida útil de 2 horas, controlado pela placa de tempo secundário.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_024",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo"
+      ],
+      "pergunta": "Quantos segundos o iniciador tem para reagir ao sinal e ativar os pães?",
+      "alternativas": [
+        "5 segundos",
+        "8 segundos",
+        "10 segundos",
+        "15 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O iniciador deve reagir em 8 segundos ao sinal e ativar os pães na tostadeira.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_025",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "pao",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida do pão após sair da tostadeira?",
+      "alternativas": [
+        "5 minutos",
+        "10 minutos",
+        "15 minutos",
+        "30 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O pão tostado tem vida útil de 15 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_026",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🥩 Linha · Pré-pico",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "limite",
+        "peps",
+        "temperatura"
+      ],
+      "pergunta": "Qual a quantidade máxima de carnes em estoque no pré-pico?",
+      "alternativas": [
+        "2 rodadas",
+        "3 rodadas",
+        "4 rodadas",
+        "5 rodadas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No pré-pico, o estoque máximo é de 3 rodadas de carnes para garantir frescor.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_027",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🍞 Linha · Pão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "carne",
+        "molho",
+        "pao",
+        "temperatura"
+      ],
+      "pergunta": "Qual pão é usado no Big Mac?",
+      "alternativas": [
+        "Pão regular",
+        "Pão especial (com gergelim e camadas)",
+        "Pão brioche",
+        "Pão de hambúrguer simples"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Big Mac usa o pão especial com 3 camadas (coroa, meio e base) com gergelim.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_028",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⚙️ Linha · Comunicação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Como o iniciador avisa o finalizador sobre um sanduíche sem acompanhamento padrão?",
+      "alternativas": [
+        "Por escrito no papel",
+        "Verbalmente e com sinal no produto",
+        "Pelo KVS automaticamente",
+        "Não precisa avisar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O iniciador comunica verbalmente e usa sinalização no produto para avisar o finalizador.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_029",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🍞 Linha · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pao",
+        "temperatura"
+      ],
+      "pergunta": "Em que posição deve entrar o pão na tostadeira?",
+      "alternativas": [
+        "Lado cortado para baixo",
+        "Lado cortado para cima",
+        "Qualquer posição",
+        "Depende do pão"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O pão deve entrar na tostadeira com o lado cortado para baixo (face de tostagem).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_030",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⚙️ Linha · KVS",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que significa quando um item fica vermelho no KVS?",
+      "alternativas": [
+        "Item cancelado",
+        "Item em espera há muito tempo — prioridade máxima",
+        "Item pronto para entregar",
+        "Falta de ingrediente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Item em vermelho no KVS indica que está esperando há muito tempo e deve ser priorizado.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_031",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🥩 Linha · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "pao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que o iniciador deve checar antes de acionar os pães?",
+      "alternativas": [
+        "Apenas o tipo do lanche",
+        "Se há carne disponível e o tempo correto na chapa",
+        "Apenas a quantidade de pão disponível",
+        "Nada, apenas acionar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Verificar se há carne no tempo correto na chapa antes de acionar os pães.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_032",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⚙️ Linha · Posições",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "carne",
+        "producao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a principal responsabilidade do finalizador?",
+      "alternativas": [
+        "Preparar as carnes",
+        "Tostar os pães",
+        "Montar e condimentar os sanduíches",
+        "Entregar ao cliente"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O finalizador é responsável por montar os sanduíches com os ingredientes corretos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_033",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🍞 Linha · Best Burger",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "pao",
+        "producao",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que diferencia a montagem Best Burger da montagem convencional?",
+      "alternativas": [
+        "Ingredientes diferentes",
+        "Montagem manual com carne plana e sem prensa",
+        "Tempo de preparo menor",
+        "Pão diferente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No Best Burger, a montagem é manual, com carne plana, sem prensa e com foco na apresentação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_034",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limite",
+        "producao",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo máximo entre o preparo e a entrega do sanduíche?",
+      "alternativas": [
+        "5 minutos",
+        "10 minutos",
+        "15 minutos",
+        "20 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O sanduíche deve ser entregue em até 10 minutos após o preparo para garantir qualidade.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_035",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⚙️ Linha · Expedidor",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "peps",
+        "ppf",
+        "producao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a função do expedidor na linha?",
+      "alternativas": [
+        "Preparar carnes",
+        "Coordenar a montagem e garantir que pedidos saiam completos e no tempo",
+        "Operar a tostadeira",
+        "Controlar o estoque"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O expedidor coordena a linha, garante que os pedidos saiam corretos e no tempo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_036",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🥩 Linha · Carnes Best Burger",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "cebola",
+        "cores",
+        "temperatura"
+      ],
+      "pergunta": "Qual pegador usar para carnes com cebola no Best Burger?",
+      "alternativas": [
+        "Pegador vermelho",
+        "Pegador azul",
+        "Pegador amarelo",
+        "Nenhum pegador específico"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "No Best Burger, pegador vermelho para carnes com cebola e pegador azul para carnes sem cebola.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_037",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⏱️ Linha · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "ppf",
+        "producao",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo máximo de preparo do pedido para o segmento balcão?",
+      "alternativas": [
+        "60 segundos",
+        "90 segundos",
+        "2 minutos",
+        "3 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo meta para preparação de pedido no balcão é de 90 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "embaixador_experiencia_html_038",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "⚙️ Linha · Comunicação",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "producao"
+      ],
+      "pergunta": "O que significa a sigla SOS na linha de produção?",
+      "alternativas": [
+        "Sistema de Operação do Sanduíche",
+        "Speed of Service — velocidade de atendimento",
+        "Serviço de Orientação ao Sanduíche",
+        "Sinalização de Operação de Sucesso"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "SOS = Speed of Service, indicador de velocidade de atendimento monitorado no restaurante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
