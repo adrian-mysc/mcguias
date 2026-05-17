@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-15",
+  "categories": [
+    {
+      "id": "chapa",
+      "nome": "Chapa",
+      "icone": "🍔",
+      "cor": "#f59e0b",
+      "descricao": "Carnes, temperaturas, limpeza da chapa e produção",
+      "niveis": ["basico", "avancado"],
+      "totalQuestoes": 16,
+      "tags": ["carne", "temperatura", "limpeza", "bacon", "ovo", "4:1", "10:1"]
+    },
+    {
+      "id": "lope",
+      "nome": "LOPE",
+      "icone": "🥬",
+      "cor": "#22c55e",
+      "descricao": "Linha de operação — tomate, cebola, queijo, alface e rota",
+      "niveis": ["basico"],
+      "totalQuestoes": 10,
+      "tags": ["tomate", "cebola", "queijo", "alface", "rota", "validade"]
+    },
+    {
+      "id": "fritas",
+      "nome": "McFritas",
+      "icone": "🍟",
+      "cor": "#eab308",
+      "descricao": "Produção, temperatura do óleo, porção e qualidade das fritas",
+      "niveis": ["basico"],
+      "totalQuestoes": 6,
+      "tags": ["oleo", "temperatura", "validade", "sal", "porcao"]
+    },
+    {
+      "id": "limpeza",
+      "nome": "Limpeza",
+      "icone": "🧹",
+      "cor": "#38bdf8",
+      "descricao": "Esfregões, cores, sanitização, panos e frequência",
+      "niveis": ["basico"],
+      "totalQuestoes": 6,
+      "tags": ["esfregao", "cores", "sanitizacao", "panos", "frequencia"]
+    },
+    {
+      "id": "drive-thru",
+      "nome": "Drive-Thru",
+      "icone": "🚗",
+      "cor": "#8b5cf6",
+      "descricao": "Atendimento, PPF, OEPE e fluxo do Drive-Thru",
+      "niveis": ["basico"],
+      "totalQuestoes": 4,
+      "tags": ["oepe", "ppf", "atendimento", "tempo", "influencer"]
+    },
+    {
+      "id": "seguranca",
+      "nome": "Segurança do Alimento",
+      "icone": "🛡️",
+      "cor": "#ef4444",
+      "descricao": "Zona de perigo, PEPS, higiene, refrigeração e contaminação",
+      "niveis": ["basico"],
+      "totalQuestoes": 6,
+      "tags": ["temperatura", "peps", "higiene", "refrigeracao", "contaminacao"]
+    },
+    {
+      "id": "validades",
+      "nome": "Validades",
+      "icone": "⏱️",
+      "cor": "#ec4899",
+      "descricao": "Tempos de vida secundários dos principais produtos",
+      "niveis": ["basico"],
+      "totalQuestoes": 6,
+      "tags": ["validade", "queijo", "suco", "cebola", "tomate", "bacon"]
+    }
+  ]
+}
