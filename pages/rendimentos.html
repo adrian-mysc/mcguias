@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rendimentos e Empilhamento — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg, #f5f2ec);
+      color: var(--text, #1c1a17);
+      min-height: 100vh;
+      padding-bottom: 90px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #DA291C 0%, #8B1A11 100%);
+      color: #fff;
+      padding: 22px 16px 24px;
+      text-align: center;
+    }
+    .hero-icon { font-size: 44px; margin-bottom: 8px; }
+    .hero h1 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.3px;
+    }
+    .hero p { font-size: 13px; opacity: .88; margin-top: 5px; }
+
+    /* ── SEARCH ── */
+    .search-wrap { padding: 14px 14px 4px; }
+    .search-box {
+      width: 100%;
+      padding: 11px 14px 11px 38px;
+      border: 1.5px solid #e0dbd3;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23999' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 12px center;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .search-box:focus { border-color: #DA291C; }
+
+    /* ── TABS ── */
+    .tabs-wrap {
+      display: flex;
+      gap: 8px;
+      padding: 10px 14px 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs-wrap::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      border: 2px solid #e0dbd3;
+      background: #fff;
+      color: #6b6660;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all .15s;
+      flex-shrink: 0;
+    }
+    .tab-btn.active { background: #DA291C; border-color: #DA291C; color: #fff; }
+    .tab-btn:hover:not(.active) { border-color: #DA291C; color: #DA291C; }
+
+    /* ── RESULTS COUNT ── */
+    .results-info {
+      font-size: 12px;
+      color: #6b6660;
+      padding: 4px 14px 10px;
+      font-weight: 500;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 14px 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: #DA291C;
+      letter-spacing: -.2px;
+      border-bottom: 2px solid #f0ebe4;
+      margin: 10px 14px 0;
+    }
+    .section-head-icon {
+      width: 32px; height: 32px;
+      background: #DA291C;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+    }
+
+    /* ── CARD LIST ── */
+    .card-list { padding: 0 14px; }
+
+    .item-card {
+      background: #fff;
+      border: 1.5px solid #e8e3db;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+      transition: box-shadow .15s;
+    }
+    .item-card:hover { box-shadow: 0 2px 10px rgba(218,41,28,.12); border-color: #DA291C; }
+
+    .item-emoji {
+      font-size: 26px;
+      flex-shrink: 0;
+      width: 40px;
+      text-align: center;
+    }
+    .item-body { flex: 1; min-width: 0; }
+    .item-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #1c1a17;
+      margin-bottom: 2px;
+    }
+    .item-sub {
+      font-size: 12px;
+      color: #6b6660;
+    }
+    .item-value {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .item-value .num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: #DA291C;
+      display: block;
+    }
+    .item-value .unit {
+      font-size: 11px;
+      color: #6b6660;
+      display: block;
+    }
+
+    /* empilhamento badge */
+    .stack-badge {
+      background: #FFC72C;
+      color: #5d3a00;
+      font-size: 13px;
+      font-weight: 800;
+      font-family: 'DM Sans', sans-serif;
+      padding: 5px 12px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #6b6660;
+    }
+    .empty-state .e-icon { font-size: 40px; margin-bottom: 8px; }
+    .empty-state p { font-size: 14px; }
+
+    /* ── ALERT ── */
+    .alert-box {
+      background: #fff8e1;
+      border-left: 4px solid #FFC72C;
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 13px;
+      color: #5d4037;
+      margin: 12px 14px 0;
+      line-height: 1.5;
+    }
+    .alert-box strong { color: #DA291C; }
+
+    /* ── NO RESULTS ── */
+    #no-results { display: none; }
+  </style>
+
+  <script>
+    var t = localStorage.getItem('mc_theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  </script>
+</head>
+<body data-page="rendimentos">
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="navbar-logo" href="../index.html">M</a>
+    <div class="navbar-brand">
+      <h1>Rendimentos e Empilhamento</h1>
+      <p>Referência rápida de estoque</p>
+    </div>
+    <a href="../index.html" class="navbar-back">← Início</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">📊</div>
+  <h1>Rendimentos e Empilhamento</h1>
+  <p>Consulte quantos sanduíches por kg, rendimento de bebidas e limite de empilhamento por produto</p>
+</div>
+
+<div class="alert-box">
+  <strong>⚠️ Referência operacional:</strong> Os rendimentos são valores médios por kg/litro/unidade. O empilhamento máximo deve ser respeitado para segurança e qualidade dos produtos.
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <input class="search-box" type="search" id="searchInput" placeholder="Buscar produto..." autocomplete="off" />
+</div>
+
+<!-- TABS -->
+<div class="tabs-wrap">
+  <button class="tab-btn active" data-tab="todos">Todos</button>
+  <button class="tab-btn" data-tab="rendimento">📏 Rendimento</button>
+  <button class="tab-btn" data-tab="empilhamento">📦 Empilhamento</button>
+</div>
+
+<div class="results-info" id="resultsInfo"></div>
+
+<div id="lista-container"></div>
+
+<div id="no-results" class="empty-state">
+  <div class="e-icon">🔍</div>
+  <p>Nenhum produto encontrado.<br>Tente outra busca.</p>
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav" aria-label="Navegação principal">
+  <a class="bottom-nav-item" href="/mcguias/index.html" data-nav="home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+    <span>Início</span>
+  </a>
+  <a class="bottom-nav-item" href="/mcguias/pages/quiz.html" data-nav="quiz">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+    <span>Quiz</span>
+  </a>
+  <a class="bottom-nav-item" href="/mcguias/pages/treinadores.html" data-nav="treinadores">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <span>Treinadores</span>
+  </a>
+  <a class="bottom-nav-item" href="/mcguias/pages/condimentacao.html" data-nav="condimentacao">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+    <span>Cardápio</span>
+  </a>
+</nav>
+
+<a class="fab-quiz" href="/mcguias/pages/quiz.html" aria-label="Ir para o Quiz" title="Quiz">🎯</a>
+
+<script>
+// ── DADOS DE RENDIMENTO ────────────────────────────────────────────────────
+const RENDIMENTOS = [
+  { nome: "Alface",              emoji: "🥬", valor: "45,40",  unidade: "sanduíches por kg",       sub: "Alface americana" },
+  { nome: "Batata",              emoji: "🥔", valor: "9,11",   unidade: "batatas pequenas por kg", sub: "Batata in natura" },
+  { nome: "Bacon cru",           emoji: "🥓", valor: "6",      unidade: "pacotes de 120 un. (720 total)", sub: "Por bloco/caixa" },
+  { nome: "Cebola cheddar",      emoji: "🧅", valor: "70,42",  unidade: "sanduíches por kg",       sub: "Cebola ao molho shoyu" },
+  { nome: "Cebola crispy",       emoji: "🧅", valor: "285",    unidade: "sanduíches por kg",       sub: "Cebola empanada frita" },
+  { nome: "Cebola desidratada",  emoji: "🧅", valor: "1.057",  unidade: "sanduíches por kg",       sub: "Antes de reidratação" },
+  { nome: "Cebola fresca",       emoji: "🧅", valor: "143",    unidade: "sanduíches por kg",       sub: "Cebola in natura fatiada" },
+  { nome: "Ketchup pouch",       emoji: "🍅", valor: "77–79",  unidade: "sanduíches por kg",       sub: "Pouch (média)" },
+  { nome: "Leite desnatado",     emoji: "🥛", valor: "67",     unidade: "milk shakes por litro",   sub: "Mix de sorvete" },
+  { nome: "Mostarda pouch",      emoji: "🟡", valor: "1.235",  unidade: "sanduíches por kg",       sub: "Pouch" },
+  { nome: "Picles",              emoji: "🥒", valor: "255",    unidade: "sanduíches por kg",       sub: "Fatias/rodelas" },
+  { nome: "Queijo cheddar / emmenthal", emoji: "🧀", valor: "8 blocos × 160 un.", unidade: "por caixa", sub: "Total: 1.280 unidades" },
+  { nome: "Xarope refrigerante", emoji: "🥤", valor: "21,22",  unidade: "copos pequenos por litro",sub: "Copos 300ml aprox." },
+  { nome: "Xarope suco",         emoji: "🧃", valor: "33",     unidade: "copos pequenos por bolsa",sub: "Bolsa de suco concentrado" },
+  { nome: "Molho Tasty",         emoji: "🍔", valor: "33",     unidade: "sanduíches por kg",       sub: "Pouch" },
+  { nome: "Molho Big Mac",       emoji: "🍔", valor: "49",     unidade: "sanduíches por kg",       sub: "Pouch" },
+  { nome: "Molho Cheddar",       emoji: "🧀", valor: "33",     unidade: "sanduíches por kg",       sub: "Pouch/tubo" },
+  { nome: "Molho Maionese",      emoji: "🍶", valor: "49",     unidade: "sanduíches por kg",       sub: "Pouch" },
+  { nome: "Mix sundae",          emoji: "🍦", valor: "9,75",   unidade: "sundaes por litro",       sub: "Bebida láctea UHT" },
+  { nome: "Coberturas (geral)",  emoji: "🍫", valor: "25,80",  unidade: "sundaes por pouch",       sub: "Média geral" },
+  { nome: "Cobertura chocolate", emoji: "🍫", valor: "33,33",  unidade: "sundaes por litro",       sub: "Dohler" },
+  { nome: "Cobertura caramelo",  emoji: "🍮", valor: "32,25",  unidade: "sundaes por litro",       sub: "Dohler" },
+  { nome: "Cobertura morango",   emoji: "🍓", valor: "24,69",  unidade: "sundaes por litro",       sub: "Dohler / Cellier" },
+];
+
+// ── DADOS DE EMPILHAMENTO ──────────────────────────────────────────────────
+const EMPILHAMENTO = [
+  { nome: "Carnes regular (10:1)",  emoji: "🥩", valor: "8",  unidade: "caixas" },
+  { nome: "Carnes quarteirão (4:1)",emoji: "🥩", valor: "8",  unidade: "caixas" },
+  { nome: "Carnes Tasty (3:1)",     emoji: "🥩", valor: "8",  unidade: "caixas" },
+  { nome: "Alface",                 emoji: "🥬", valor: "8",  unidade: "caixas" },
+  { nome: "Mix sundae",             emoji: "🍦", valor: "4",  unidade: "caixas" },
+  { nome: "Pães Big Mac",           emoji: "🍞", valor: "26", unidade: "bandejas" },
+  { nome: "Pães (geral)",           emoji: "🍞", valor: "20", unidade: "bandejas" },
+  { nome: "Batata",                 emoji: "🥔", valor: "6",  unidade: "caixas" },
+  { nome: "Queijo cheddar",         emoji: "🧀", valor: "8",  unidade: "caixas" },
+  { nome: "Cebola",                 emoji: "🧅", valor: "8",  unidade: "caixas" },
+  { nome: "Molho cheddar",          emoji: "🧀", valor: "8",  unidade: "caixas" },
+  { nome: "Mc Chicken",             emoji: "🍗", valor: "6",  unidade: "caixas" },
+  { nome: "Júnior",                 emoji: "🍗", valor: "6",  unidade: "caixas" },
+  { nome: "Crispy",                 emoji: "🍗", valor: "6",  unidade: "caixas" },
+  { nome: "Nuggets",                emoji: "🍗", valor: "5",  unidade: "caixas" },
+  { nome: "Queijo emmenthal",       emoji: "🧀", valor: "6",  unidade: "caixas" },
+  { nome: "Cebola crispy",          emoji: "🧅", valor: "6",  unidade: "caixas" },
+  { nome: "Cebola cheddar",         emoji: "🧅", valor: "6",  unidade: "caixas" },
+  { nome: "Cebola reidratada",      emoji: "🧅", valor: "6",  unidade: "caixas" },
+  { nome: "Cebola caramelizada",    emoji: "🧅", valor: "10", unidade: "caixas" },
+  { nome: "Picles",                 emoji: "🥒", valor: "6",  unidade: "caixas" },
+  { nome: "Tomate",                 emoji: "🍅", valor: "7",  unidade: "caixas" },
+  { nome: "Mostarda sachet",        emoji: "🟡", valor: "5",  unidade: "caixas" },
+  { nome: "Ketchup sachet",         emoji: "🍅", valor: "5",  unidade: "caixas" },
+  { nome: "Óleo vegetal",           emoji: "🫙", valor: "10", unidade: "caixas" },
+  { nome: "Sal com pimenta",        emoji: "🧂", valor: "5",  unidade: "caixas" },
+  { nome: "Água mineral",           emoji: "💧", valor: "5",  unidade: "caixas" },
+  { nome: "Sucos",                  emoji: "🧃", valor: "5",  unidade: "caixas" },
+  { nome: "Coca-Cola zero",         emoji: "🥤", valor: "4",  unidade: "caixas" },
+  { nome: "Coca-Cola",              emoji: "🥤", valor: "4",  unidade: "caixas" },
+  { nome: "Fanta laranja",          emoji: "🍊", valor: "4",  unidade: "caixas" },
+  { nome: "Fanta guaraná",          emoji: "🟢", valor: "4",  unidade: "caixas" },
+  { nome: "Sal cisne (batata)",     emoji: "🧂", valor: "5",  unidade: "caixas" },
+];
+
+// ── STATE ─────────────────────────────────────────────────────────────────
+let activeTab = "todos";
+let searchQ   = "";
+
+// ── RENDER ────────────────────────────────────────────────────────────────
+function render() {
+  const q = searchQ.toLowerCase().trim();
+  const container = document.getElementById("lista-container");
+
+  let showRend = (activeTab === "todos" || activeTab === "rendimento");
+  let showEmp  = (activeTab === "todos" || activeTab === "empilhamento");
+
+  const filtRend = RENDIMENTOS.filter(i => !q || i.nome.toLowerCase().includes(q) || i.sub.toLowerCase().includes(q));
+  const filtEmp  = EMPILHAMENTO.filter(i => !q || i.nome.toLowerCase().includes(q));
+
+  const total = (showRend ? filtRend.length : 0) + (showEmp ? filtEmp.length : 0);
+  document.getElementById("resultsInfo").textContent =
+    total + " produto" + (total !== 1 ? "s" : "") + " encontrado" + (total !== 1 ? "s" : "");
+
+  document.getElementById("no-results").style.display = total === 0 ? "block" : "none";
+
+  let html = "";
+
+  if (showRend && filtRend.length > 0) {
+    html += `
+      <div class="section-head">
+        <div class="section-head-icon">📏</div>
+        Rendimentos por Produto
+      </div>
+      <div class="card-list">`;
+    filtRend.forEach(item => {
+      html += `
+        <div class="item-card">
+          <div class="item-emoji">${item.emoji}</div>
+          <div class="item-body">
+            <div class="item-name">${item.nome}</div>
+            <div class="item-sub">${item.sub}</div>
+          </div>
+          <div class="item-value">
+            <span class="num">${item.valor}</span>
+            <span class="unit">${item.unidade}</span>
+          </div>
+        </div>`;
+    });
+    html += `</div>`;
+  }
+
+  if (showEmp && filtEmp.length > 0) {
+    html += `
+      <div class="section-head" style="margin-top:16px;">
+        <div class="section-head-icon">📦</div>
+        Empilhamento Máximo
+      </div>
+      <div class="card-list">`;
+    filtEmp.forEach(item => {
+      html += `
+        <div class="item-card">
+          <div class="item-emoji">${item.emoji}</div>
+          <div class="item-body">
+            <div class="item-name">${item.nome}</div>
+            <div class="item-sub">Máximo permitido no estoque</div>
+          </div>
+          <div class="stack-badge">${item.valor} ${item.unidade}</div>
+        </div>`;
+    });
+    html += `</div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+// ── EVENTS ────────────────────────────────────────────────────────────────
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeTab = btn.dataset.tab;
+    render();
+  });
+});
+
+document.getElementById("searchInput").addEventListener("input", e => {
+  searchQ = e.target.value;
+  render();
+});
+
+// ── INIT ─────────────────────────────────────────────────────────────────
+render();
+
+// Bottom Nav highlight
+(function() {
+  var path = window.location.pathname;
+  document.querySelectorAll('.bottom-nav-item').forEach(function(item) {
+    var nav = item.getAttribute('data-nav');
+    if (nav === 'home' && (path.endsWith('index.html') || path.endsWith('/mcguias/') || path === '/mcguias')) {
+      item.classList.add('active');
+    } else if (nav && path.includes(nav)) {
+      item.classList.add('active');
+    }
+  });
+})();
+</script>
+</body>
+</html>
