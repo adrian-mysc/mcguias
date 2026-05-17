@@ -1,0 +1,1852 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-16",
+  "categoria": "influencer-pagamento",
+  "nivel": "basico",
+  "migratedFrom": "influencer-pagamento.html",
+  "questions": [
+    {
+      "id": "influencer_pagamento_001",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer Vendedor",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ovo",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Qual frase deve ser usada quando não entendeu todo o pedido do cliente?",
+      "alternativas": [
+        "\"Pode repetir tudo de novo?\"",
+        "\"Eu deixei de registrar alguma coisa?\"",
+        "\"Confirme seu pedido por favor.\"",
+        "\"O que mais vai querer?\""
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Repita apenas os itens já registrados e pergunte: \"Eu deixei de registrar alguma coisa?\"",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_002",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer Vendedor",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "fritas",
+        "molho",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Quais são os 4 grupos da refeição completa para os saltos de venda?",
+      "alternativas": [
+        "Sanduíches, fritas, molhos e bebidas",
+        "Sanduíches, bebidas, acompanhamentos e sobremesas",
+        "Entrada, prato principal, sobremesa e bebida",
+        "Hambúrguer, batata, sorvete e suco"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os 4 grupos são: Sanduíches, Bebidas, Acompanhamentos e Sobremesas. Sugira as 3 primeiras antes de oferecer sobremesa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_003",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer Vendedor",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Em pedidos diferenciados, como deve ser digitado o pedido?",
+      "alternativas": [
+        "Todos os itens de uma vez",
+        "Um produto por vez",
+        "Começando pelas bebidas",
+        "Após confirmar o total"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No caso de pedidos diferenciados, digite um produto por vez para evitar erros.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_004",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "porcao",
+        "ppf",
+        "remocao",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Como deve ser tratada a cédula ao receber pagamento em dinheiro?",
+      "alternativas": [
+        "Guardar imediatamente na gaveta",
+        "Manter horizontalmente sobre o balcão até devolver o troco em voz alta",
+        "Mostrar ao gerente primeiro",
+        "Colocar na máquina de conferência"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A cédula deve ficar horizontalmente sobre o balcão enquanto o troco é contado em voz alta ao cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_005",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "remocao",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Como direcionar o cliente após o pagamento?",
+      "alternativas": [
+        "Apenas informar o número do pedido verbalmente",
+        "De forma verbal e gestual — número do pedido + movimento do braço indicando a área de entrega",
+        "Apontar para o monitor ORB sem falar nada",
+        "Pedir que aguarde no balcão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Direcionar de forma verbal E gestual: informar o número do pedido e sinalizar com o braço o local de retirada.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_006",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que fazer quando um segundo cliente está esperando?",
+      "alternativas": [
+        "Ignorar e focar no cliente atual",
+        "Informar que logo irá atendê-lo, de forma a dar-lhe atenção",
+        "Pedir para o colega atender",
+        "Chamar o gerente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Pense no segundo cliente, informando que logo irá atendê-lo — demonstrando atenção a ele também.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_007",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "⭐ Meu Méqui",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
+      "pergunta": "Para quem deve ser perguntado sobre o Meu Méqui?",
+      "alternativas": [
+        "Apenas clientes que pedirem",
+        "Clientes com o app aberto",
+        "Todos os clientes",
+        "Apenas clientes frequentes"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Perguntar para TODOS OS CLIENTES: 'Você participa do Meu Méqui?' para que possam acumular pontos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_008",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "⭐ Meu Méqui",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "drive",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Onde o cliente NÃO pode acumular pontos do Meu Méqui?",
+      "alternativas": [
+        "No balcão",
+        "No NGK (totem)",
+        "Nos aplicativos de Delivery terceiros",
+        "No Drive-Thru"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O cliente pode acumular pontos em todos os segmentos do restaurante, EXCETO nos aplicativos de Delivery terceiros.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_009",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "⚙️ Preparação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer quando o Gerente fizer retirada do troco?",
+      "alternativas": [
+        "Apenas observar",
+        "Acompanhá-lo e assinar novamente o cupom confirmando a retirada",
+        "Registrar no POS",
+        "Chamar outro crew como testemunha"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ao Gerente fazer retirada do troco, acompanhá-lo e assinar novamente o cupom confirmando a retirada.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_010",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer Vendedor",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "sal",
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a ordem correta dos saltos de venda?",
+      "alternativas": [
+        "Sobremesa primeiro, depois bebida",
+        "Completar as 3 primeiras categorias (sanduíche, bebida, acompanhamento) antes de oferecer sobremesa",
+        "Oferecer todos os grupos ao mesmo tempo",
+        "Apenas oferecer o que o cliente pediu"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sugira sempre de forma a completar as 3 primeiras categorias antes de oferecer sobremesa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_011",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer · Atendimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que é o 'MOMENTO DO CLIENTE' no atendimento?",
+      "alternativas": [
+        "O momento em que o cliente chega",
+        "O perfil e estado emocional do cliente que define a abordagem",
+        "O tempo de espera do cliente",
+        "O pedido do cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O MOMENTO DO CLIENTE define a forma de cumprimentar e criar vínculo — cada cliente pode exigir uma abordagem diferente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_012",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer · Atendimento",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Qual a postura correta ao receber o cliente no balcão?",
+      "alternativas": [
+        "Aguardar o cliente falar primeiro",
+        "Sorriso espontâneo, contato visual e cumprimento de acordo com o momento do cliente",
+        "Apenas perguntar o pedido",
+        "Acenos com a cabeça"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Recepcionar sempre com sorriso espontâneo, contato visual e trabalhar vários tipos de cumprimento de acordo com o MOMENTO DO CLIENTE.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_013",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer · Vendas",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a ordem correta para completar os grupos da refeição?",
+      "alternativas": [
+        "Sobremesa, bebida, acompanhamento, sanduíche",
+        "Sanduíche, bebida e acompanhamento antes de oferecer sobremesa",
+        "Oferecer todos ao mesmo tempo",
+        "Apenas o que o cliente pedir"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sugira sempre de forma a completar as 3 primeiras categorias (sanduíche, bebida, acompanhamento) antes de oferecer sobremesa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_014",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer · Vendas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer em pedidos diferenciados ao digitar no POS?",
+      "alternativas": [
+        "Digitar todos de uma vez",
+        "Digitar um produto por vez",
+        "Pedir para o cliente repetir tudo no final",
+        "Aguardar o cliente listar tudo antes de digitar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No caso de pedidos diferenciados, digitar um produto por vez para evitar erros.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_015",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "porcao",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer ao devolver o troco em dinheiro?",
+      "alternativas": [
+        "Colocar direto na mão do cliente",
+        "Contar o troco em voz alta ao devolvê-lo junto com o cupom fiscal",
+        "Apenas colocar sobre o balcão",
+        "Pedir para o cliente conferir sozinho"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Contar em voz alta corretamente o troco ao ser devolvido para o cliente, junto com o cupom fiscal.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_016",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "remocao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quando deve ser assinado novamente o cupom financeiro?",
+      "alternativas": [
+        "Apenas na abertura do turno",
+        "Apenas no fechamento",
+        "Na abertura e quando o Gerente fizer retirada do troco",
+        "A cada hora"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Assinar o cupom financeiro na abertura do turno e novamente quando o Gerente fizer retirada do troco.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_017",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "frequencia",
+        "ppf",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "O que perguntar a cada cliente antes de finalizar o pedido?",
+      "alternativas": [
+        "Se quer repetir o pedido",
+        "Se quer adicionar mais alguma coisa e a forma de pagamento preferida",
+        "Apenas a forma de pagamento",
+        "Se tem cupom de desconto"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Totalizar o pedido e perguntar a forma de pagamento já com a opção de maior saída do restaurante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_018",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "remocao",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Qual a direção correta para direcionar o cliente após o pagamento?",
+      "alternativas": [
+        "Para a saída",
+        "Verbal e gestualmente para a área de entrega com movimento do braço",
+        "Para o gerente",
+        "Para a fila novamente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Direcionar verbal e gestualmente: mostrar o número do pedido e sinalizar com o braço o local de retirada.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_019",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "⚙️ Influencer · Preparação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "remocao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Quem deve acompanhar o Gerente na retirada do troco?",
+      "alternativas": [
+        "Ninguém, é responsabilidade do Gerente",
+        "O atendente deve acompanhar e assinar o cupom confirmando a retirada",
+        "O supervisor de turno",
+        "Outro Gerente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Quando o Gerente fizer a retirada do troco, acompanhá-lo e assinar novamente o cupom confirmando a retirada.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_020",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "⚙️ Influencer · Preparação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "limpeza",
+        "panos",
+        "sanitizacao",
+        "taylor-ng",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Onde deve ficar o pano descartável no caixa?",
+      "alternativas": [
+        "Em cima da gaveta",
+        "Longe da visão do cliente, no caixa registrador",
+        "Na frente do balcão",
+        "Na mesa de condimentação"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "1 pano descartável limpo, sanitizado e dobrado deve ficar no caixa registrador, longe da visão do cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_021",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "⭐ Influencer · Meu Méqui",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a frase recomendada para oferecer o Meu Méqui?",
+      "alternativas": [
+        "Você tem cadastro?",
+        "Você participa do Meu Méqui?",
+        "Quer acumular pontos?",
+        "Tem o app?"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Perguntar para TODOS OS CLIENTES: 'Você participa do Meu Méqui?' para que possam acumular pontos no momento da compra.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_022",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer · Vendas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "sal",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que fazer ao esclarecer tamanhos e sabores?",
+      "alternativas": [
+        "Só esclarecer se o cliente perguntar",
+        "Esclarecer ao término do pedido e após os saltos de venda",
+        "Esclarecer antes de registrar qualquer item",
+        "Não é necessário esclarecer"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Esclarecer tamanhos e sabores ao término do pedido e após ter feito os saltos de venda, caso não tenha ficado claro.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_023",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Qual a ordem de recebimento de formas de pagamento?",
+      "alternativas": [
+        "Débito, crédito, dinheiro, voucher",
+        "Voucher, dinheiro, débito, crédito",
+        "Dinheiro, voucher, débito, crédito",
+        "Crédito, débito, voucher, dinheiro"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ordem: voucher → dinheiro → débito → crédito.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_024",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "sal",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer se o cliente quiser pagar com duas formas de pagamento?",
+      "alternativas": [
+        "Aceitar apenas uma forma por pedido",
+        "Registrar o valor pago de cada e saldar o restante",
+        "Cancelar e refazer o pedido",
+        "Aceitar apenas se um for dinheiro"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Aceitar múltiplas formas: registrar cada valor no POS e saldar o restante com a outra forma.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_025",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🎯 Influencer · Venda",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "influencer",
+        "ppf",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "Qual a técnica de venda sugestiva para aumentar o ticket?",
+      "alternativas": [
+        "Oferecer desconto",
+        "Sugerir combo, tamanho maior ou item complementar",
+        "Acelerar o atendimento",
+        "Não sugerir para não irritar o cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Venda sugestiva: oferecer combo, upgrade de tamanho ou item complementar ao pedido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_026",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Meu Méqui",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Em que momento perguntar sobre o Meu Méqui ao cliente?",
+      "alternativas": [
+        "Após o pagamento",
+        "No início do atendimento, antes de registrar o pedido",
+        "Apenas se o cliente perguntar",
+        "Ao entregar o pedido"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Perguntar sobre o Meu Méqui no início do atendimento para vincular pontos ao pedido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_027",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Troco",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Onde deve ficar o dinheiro do cliente durante o processo de troco?",
+      "alternativas": [
+        "Na gaveta do caixa",
+        "Na mão do funcionário",
+        "Visível sobre o caixa até concluir o troco",
+        "Devolvido imediatamente"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Manter o dinheiro visível sobre o caixa até concluir o troco para evitar erros.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_028",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🎯 Influencer · Atendimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Qual a ordem correta dos passos do atendimento?",
+      "alternativas": [
+        "Registrar, saudar, sugerir, totalizar, receber, agradecer",
+        "Saudar, registrar, sugerir, totalizar, receber, agradecer",
+        "Saudar, sugerir, registrar, totalizar, receber, agradecer",
+        "Registrar, totalizar, receber, saudar, agradecer"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ordem: saudar → registrar o pedido → sugerir → totalizar → receber pagamento → agradecer.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_029",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Cartão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que deve ser conferido ao receber pagamento em cartão?",
+      "alternativas": [
+        "Apenas passar o cartão",
+        "Conferir o valor no terminal antes de o cliente confirmar",
+        "Não é necessário confirmar nada",
+        "Guardar o comprovante sem mostrar ao cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Conferir o valor correto no terminal antes de o cliente digitar a senha ou aproximar o cartão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_030",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🎯 Influencer · Personalização",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "cebola",
+        "porcao",
+        "ppf",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "Como registrar um pedido com personalização (sem cebola, etc.)?",
+      "alternativas": [
+        "Anotar num papel separado",
+        "Usar a função de modificadores no POS e avisar a produção",
+        "Deixar o cliente falar direto com a cozinha",
+        "Não é possível personalizar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usar os modificadores no POS para registrar personalizações e garantir que a produção seja avisada.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_031",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Cancelamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quem pode autorizar o cancelamento de um item já registrado?",
+      "alternativas": [
+        "O próprio atendente",
+        "Apenas o gerente",
+        "Qualquer funcionário",
+        "O cliente autoriza sozinho"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Cancelamentos de itens já registrados no POS precisam de autorização do gerente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_032",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🎯 Influencer · McLanche Feliz",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "O que perguntar ao registrar um McLanche Feliz?",
+      "alternativas": [
+        "Apenas confirmar o lanche",
+        "Confirmar lanche, bebida, tamanho e brinquedo (menino/menina)",
+        "Apenas perguntar o brinquedo",
+        "Nada, deixar o padrão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McLanche Feliz: confirmar lanche, bebida, tamanho e tipo de brinquedo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_033",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Fechamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "O que fazer com o fundo de caixa ao final do turno?",
+      "alternativas": [
+        "Guardar na gaveta",
+        "Contar e entregar ao gerente com o relatório",
+        "Levar para casa e devolver amanhã",
+        "Misturar com o próximo turno"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ao final do turno, contar o fundo de caixa e entregar ao gerente junto com o relatório.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_034",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🎯 Influencer · Sugestão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "influencer",
+        "ppf",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a frase correta para sugestão de venda de sobremesa?",
+      "alternativas": [
+        "Quer alguma coisa mais?",
+        "Que tal uma sobremesa para complementar seu pedido?",
+        "Temos sobremesas.",
+        "Sobremesa não vai?"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usar linguagem positiva e específica na sugestão: 'Que tal uma sobremesa para complementar seu pedido?'",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_035",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · PIX",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "producao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Após receber pagamento via PIX, o que confirmar antes de liberar o pedido?",
+      "alternativas": [
+        "Nada, o sistema confirma automaticamente",
+        "Confirmar a aprovação do pagamento no terminal",
+        "Perguntar ao cliente se pagou",
+        "Aguardar 5 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Aguardar a confirmação do PIX no terminal antes de liberar o pedido para produção.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_036",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🎯 Influencer · Abertura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "influencer",
+        "temperatura"
+      ],
+      "pergunta": "O que o influencer deve verificar antes de abrir o caixa?",
+      "alternativas": [
+        "Apenas ligar o monitor",
+        "Fundo de caixa, suprimentos de embalagem e funcionamento do POS",
+        "Apenas contar o dinheiro",
+        "Nada, o gerente verifica"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Antes de abrir: verificar fundo de caixa, embalagens disponíveis e funcionamento do POS.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_037",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Cupom",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer quando o cliente apresenta cupom digital pelo app?",
+      "alternativas": [
+        "Não aceitar cupons digitais",
+        "Fazer a leitura do QR Code ou inserir o código no POS",
+        "Digitar o valor manualmente",
+        "Chamar o gerente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Cupons digitais: escanear o QR Code ou inserir o código manualmente no POS.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
