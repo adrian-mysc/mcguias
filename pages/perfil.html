@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Guias — Meu Perfil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      background: var(--bg, #f5f2ec);
+      color: var(--text, #1c1a17);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ── Navbar (igual ao index) ──────────────────── */
+    .navbar {
+      background: var(--red, #DA291C);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(218,41,28,0.25);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .navbar-logo {
+      background: var(--yellow, #FFC72C);
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display, 'DM Sans', sans-serif);
+      font-size: 22px; font-weight: 800;
+      color: var(--red, #DA291C);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .navbar-brand { flex: 1; }
+    .navbar-brand h1 { font-size: 16px; color: white; line-height: 1; }
+    .navbar-brand p {
+      font-size: 10px;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 2px;
+    }
+
+    .navbar-back {
+      color: rgba(255,255,255,0.80);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .navbar-back:hover { background: rgba(255,255,255,0.12); color: white; }
+
+    /* ── Layout ───────────────────────────────────── */
+    .page-content {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeUp 0.35s ease both;
+    }
+
+    /* ── Avatar card ──────────────────────────────── */
+    .avatar-card {
+      background: var(--red, #DA291C);
+      border-radius: 16px;
+      padding: 28px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 100% 80% at 110% 110%, rgba(255,199,44,0.20) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at -10% -10%, rgba(0,0,0,0.20) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--yellow, #FFC72C);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display, 'DM Sans', sans-serif);
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--red, #DA291C);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.20);
+      flex-shrink: 0;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .avatar-name {
+      font-family: var(--font-display, 'DM Sans', sans-serif);
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar-email {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      position: relative;
+      z-index: 1;
+      margin-top: -6px;
+    }
+
+    .avatar-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.90);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Seção genérica ───────────────────────────── */
+    .section-card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1.5px solid var(--border, #e3ddd2);
+      overflow: hidden;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted, #6b6660);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid var(--border, #e3ddd2);
+    }
+
+    /* ── Editar perfil ────────────────────────────── */
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 14px 16px 0;
+    }
+
+    .field:last-of-type { padding-bottom: 16px; }
+
+    .field label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted, #6b6660);
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .field-wrap { position: relative; }
+
+    .field-wrap svg {
+      position: absolute;
+      left: 11px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted, #6b6660);
+      pointer-events: none;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 11px 11px 11px 36px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border, #e3ddd2);
+      background: var(--bg, #f5f2ec);
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 14px;
+      color: var(--text, #1c1a17);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .field input:focus {
+      border-color: var(--red, #DA291C);
+      box-shadow: 0 0 0 3px rgba(218,41,28,0.10);
+    }
+
+    .field input:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .btn-save {
+      display: block;
+      width: calc(100% - 32px);
+      margin: 0 16px 16px;
+      padding: 12px;
+      border-radius: 10px;
+      background: var(--red, #DA291C);
+      color: #fff;
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      box-shadow: 0 2px 10px rgba(218,41,28,0.28);
+    }
+
+    .btn-save:hover { background: #b01f14; }
+    .btn-save:active { transform: scale(0.98); }
+    .btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-save.loading { opacity: 0.7; cursor: not-allowed; }
+
+    /* ── Mensagem inline ──────────────────────────── */
+    .inline-msg {
+      display: none;
+      margin: 0 16px 14px;
+      padding: 10px 13px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .inline-msg.success {
+      display: flex;
+      background: rgba(26,122,66,0.08);
+      border: 1px solid rgba(26,122,66,0.20);
+      color: #1a7a42;
+    }
+
+    .inline-msg.error {
+      display: flex;
+      background: rgba(218,41,28,0.08);
+      border: 1px solid rgba(218,41,28,0.20);
+      color: #b01f14;
+    }
+
+    /* ── Lista de ações ───────────────────────────── */
+    .action-list { list-style: none; }
+
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border, #e3ddd2);
+      cursor: pointer;
+      transition: background 0.15s;
+      text-decoration: none;
+      color: var(--text, #1c1a17);
+    }
+
+    .action-item:last-child { border-bottom: none; }
+    .action-item:hover { background: var(--bg, #f5f2ec); }
+
+    .action-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .action-icon.red    { background: rgba(218,41,28,0.10); color: var(--red, #DA291C); }
+    .action-icon.yellow { background: rgba(255,199,44,0.18); color: #b07800; }
+    .action-icon.gray   { background: rgba(107,102,96,0.10); color: var(--muted, #6b6660); }
+
+    .action-text { flex: 1; }
+    .action-label { font-size: 14px; font-weight: 600; }
+    .action-desc  { font-size: 12px; color: var(--muted, #6b6660); margin-top: 1px; }
+
+    .action-chevron { color: var(--muted, #6b6660); }
+
+    /* ── Botão logout ─────────────────────────────── */
+    .btn-logout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(218,41,28,0.08);
+      border: 1.5px solid rgba(218,41,28,0.20);
+      color: var(--red, #DA291C);
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .btn-logout:hover { background: rgba(218,41,28,0.14); }
+    .btn-logout:active { transform: scale(0.98); }
+
+    /* ── Versão ───────────────────────────────────── */
+    .version-info {
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted, #6b6660);
+      padding-top: 4px;
+    }
+
+    /* ── Skeleton loader ──────────────────────────── */
+    .skeleton {
+      background: linear-gradient(90deg, #e8e3db 25%, #f0ebe3 50%, #e8e3db 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.2s infinite;
+      border-radius: 8px;
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="navbar-logo" href="../index.html">M</a>
+    <div class="navbar-brand">
+      <h1>MC Guias</h1>
+      <p>Meu Perfil</p>
+    </div>
+    <a class="navbar-back" href="../index.html">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Início
+    </a>
+  </div>
+</nav>
+
+<!-- Conteúdo -->
+<div class="page-content">
+
+  <!-- Avatar card -->
+  <div class="avatar-card">
+    <div class="avatar" id="avatar-el">
+      <span id="avatar-initial">?</span>
+    </div>
+    <div class="avatar-name" id="avatar-name">Carregando…</div>
+    <div class="avatar-email" id="avatar-email"></div>
+    <div class="avatar-badge" id="avatar-provider">Email</div>
+  </div>
+
+  <!-- Editar perfil -->
+  <div class="section-card">
+    <div class="section-title">Editar perfil</div>
+
+    <div class="field">
+      <label for="edit-username">Nome de usuário</label>
+      <div class="field-wrap">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
+        </svg>
+        <input type="text" id="edit-username" placeholder="Seu nome">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="edit-email">E-mail</label>
+      <div class="field-wrap">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+        </svg>
+        <input type="email" id="edit-email" placeholder="seu@email.com" disabled>
+      </div>
+    </div>
+
+    <div class="inline-msg" id="profile-msg"></div>
+
+    <button class="btn-save" id="btn-save" onclick="saveProfile()">
+      Salvar alterações
+    </button>
+  </div>
+
+  <!-- Ações -->
+  <div class="section-card">
+    <div class="section-title">Conta</div>
+    <ul class="action-list">
+      <li>
+        <a class="action-item" href="../index.html">
+          <div class="action-icon red">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 12h18M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Ir para o início</div>
+            <div class="action-desc">Voltar para os guias</div>
+          </div>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </li>
+      <li>
+        <div class="action-item" onclick="sendResetEmail()">
+          <div class="action-icon yellow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Alterar senha</div>
+            <div class="action-desc">Enviar link por e-mail</div>
+          </div>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Logout -->
+  <button class="btn-logout" onclick="handleLogout()">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+      <polyline points="16 17 21 12 16 7"/>
+      <line x1="21" y1="12" x2="9" y2="12"/>
+    </svg>
+    Sair da conta
+  </button>
+
+  <div class="version-info">MC Guias · Desenvolvido por Adrian E. Silva</div>
+
+</div>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+  const SUPABASE_URL      = 'https://iizzeeceqysdfhnkosrc.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: { persistSession: true, autoRefreshToken: true }
+  });
+
+  // ── Proteção de rota ─────────────────────────────
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) {
+    window.location.replace('login.html');
+  }
+
+  const user = session.user;
+
+  // ── Carregar dados do perfil ─────────────────────
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('username')
+    .eq('id', user.id)
+    .single();
+
+  const username = profile?.username
+    || user.user_metadata?.full_name
+    || user.email?.split('@')[0]
+    || 'Usuário';
+
+  const email    = user.email || '';
+  const provider = user.app_metadata?.provider || 'email';
+  const avatar   = user.user_metadata?.avatar_url || null;
+
+  // ── Preencher UI ─────────────────────────────────
+  document.getElementById('avatar-name').textContent  = username;
+  document.getElementById('avatar-email').textContent = email;
+  document.getElementById('edit-username').value      = username;
+  document.getElementById('edit-email').value         = email;
+  document.getElementById('avatar-provider').textContent =
+    provider === 'google' ? '🔵 Google' : '✉️ Email';
+
+  const avatarEl = document.getElementById('avatar-el');
+  if (avatar) {
+    avatarEl.innerHTML = `<img src="${avatar}" alt="Avatar">`;
+  } else {
+    document.getElementById('avatar-initial').textContent = username[0].toUpperCase();
+  }
+
+  // ── Salvar perfil ────────────────────────────────
+  async function saveProfile() {
+    const btn      = document.getElementById('btn-save');
+    const newName  = document.getElementById('edit-username').value.trim();
+    const msgEl    = document.getElementById('profile-msg');
+
+    if (!newName) {
+      showMsg('profile-msg', 'O nome não pode estar vazio.', 'error');
+      return;
+    }
+
+    btn.textContent = 'Salvando…';
+    btn.disabled = true;
+
+    const { error } = await supabase
+      .from('profiles')
+      .upsert({ id: user.id, username: newName });
+
+    btn.textContent = 'Salvar alterações';
+    btn.disabled = false;
+
+    if (error) {
+      showMsg('profile-msg', 'Erro ao salvar. Tente novamente.', 'error');
+    } else {
+      document.getElementById('avatar-name').textContent = newName;
+      document.getElementById('avatar-initial').textContent = newName[0].toUpperCase();
+      showMsg('profile-msg', 'Perfil atualizado com sucesso!', 'success');
+    }
+  }
+
+  // ── Alterar senha ────────────────────────────────
+  async function sendResetEmail() {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + '/pages/reset-senha.html'
+    });
+    if (error) {
+      showMsg('profile-msg', 'Erro ao enviar e-mail.', 'error');
+    } else {
+      showMsg('profile-msg', 'Link enviado para ' + email, 'success');
+    }
+  }
+
+  // ── Logout ───────────────────────────────────────
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    window.location.replace('login.html');
+  }
+
+  // ── Mensagem inline ──────────────────────────────
+  function showMsg(id, text, type) {
+    const el = document.getElementById(id);
+    el.className = 'inline-msg ' + type;
+    el.textContent = text;
+    setTimeout(() => { el.className = 'inline-msg'; }, 4000);
+  }
+
+  // ── Expor ao escopo global ───────────────────────
+  window.saveProfile    = saveProfile;
+  window.sendResetEmail = sendResetEmail;
+  window.handleLogout   = handleLogout;
+</script>
+
+</body>
+</html>
