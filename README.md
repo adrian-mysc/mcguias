@@ -6,7 +6,7 @@
 [![PWA](https://img.shields.io/badge/PWA-Instalável-blue)](https://adrian-mysc.github.io/guiaoperacional)
 
 **Site de estudo pessoal** baseado nos guias rápidos operacionais de um fast-food fictício (estilo McDonald's).  
-Feito por **Adrian E. Silva** para facilitar o treinamento e a memorização de procedimentos.
+Para facilitar o treinamento e a memorização de procedimentos.
 
 
 ### ✨ Funcionalidades
