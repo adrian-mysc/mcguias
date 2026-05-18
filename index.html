@@ -328,7 +328,7 @@
   <script type="module">
   import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-  const SUPABASE_URL = 'https://iizzeeceqysdfhnkosrc.supabase.co/';
+  const SUPABASE_URL = 'https://iizzeeceqysdfhnkosrc.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
@@ -338,6 +338,31 @@
   const { data } = await supabase.auth.getSession();
   if (!data.session) {
     window.location.replace('pages/login.html');
+  } else {
+    const user = data.session.user;
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('username')
+      .eq('id', user.id)
+      .single();
+
+    const name = profile?.username
+      || user.user_metadata?.full_name
+      || user.email?.split('@')[0]
+      || 'Perfil';
+
+    const avatarUrl = user.user_metadata?.avatar_url;
+    const avatarEl   = document.getElementById('navbar-avatar');
+    const usernameEl = document.getElementById('navbar-username');
+
+    if (usernameEl) usernameEl.textContent = name.split(' ')[0];
+    if (avatarEl) {
+      if (avatarUrl) {
+        avatarEl.innerHTML = `<img src="${avatarUrl}" style="width:22px;height:22px;border-radius:50%;object-fit:cover;">`;
+      } else {
+        avatarEl.textContent = name[0].toUpperCase();
+      }
+    }
   }
 </script>
 
@@ -463,10 +488,20 @@
         <h1>MC Guias</h1>
         <p>Desenvolvido por Adrian E. Silva</p>
       </div>
-      <div style="display:flex;gap:6px;flex-shrink:0;">
+      <div style="display:flex;gap:6px;flex-shrink:0;align-items:center;">
         <button class="changelog-btn" id="changelogBtn" title="Ver alterações recentes">📋 Novidades</button>
         <button class="changelog-btn" id="roadmapBtn" title="Atualizações futuras" style="background:rgba(255,199,44,0.18);border-color:rgba(255,199,44,0.35);">🚀 Em breve</button>
         <button class="changelog-btn" id="updateBtnNav" title="Verificar atualização" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);">🔄</button>
+        <a href="pages/perfil.html" id="navbar-user-btn" title="Meu perfil"
+          style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:18px;padding:5px 10px;text-decoration:none;color:white;font-family:var(--font-body);font-size:11.5px;font-weight:600;transition:background 0.15s;cursor:pointer;"
+          onmouseover="this.style.background='rgba(255,255,255,0.20)'"
+          onmouseout="this.style.background='rgba(255,255,255,0.10)'"
+        >
+          <span id="navbar-avatar"
+            style="width:22px;height:22px;border-radius:50%;background:var(--yellow);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;font-family:var(--font-display);"
+          >?</span>
+          <span id="navbar-username">Perfil</span>
+        </a>
       </div>
     </div>
   </nav>
