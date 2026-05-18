@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="ligth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MC Guias - Entrar</title> 
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+  <!-- Supabase via CDN (sem ES modules) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:        #DA291C;
+      --red-dark:   #b01f14;
+      --red-deeper: #8a1710;
+      --yellow:     #FFC72C;
+      --gold:       #e6a800;
+      --bg:         #f5f2ec;
+      --card:       #ffffff;
+      --text:       #1c1a17;
+      --muted:      #6b6660;
+      --border:     #e3ddd2;
+      --green:      #1a7a42;
+
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.14);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      --font-display: 'DM Sans', sans-serif;
+      --font-body:    'Plus Jakarta Sans', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ─────────────────────────────────── */
+    .login-page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+    /* ── Hero faixa vermelha ─────────────────────── */
+    .login-hero {
+      background: var(--red);
+      padding: 40px 24px 56px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .login-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 120% 80% at 110% 120%, rgba(255,199,44,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 60% at -10% -20%, rgba(0,0,0,0.25) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Arcos decorativos */
+    .login-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 36px;
+      background: var(--bg);
+      border-radius: 36px 36px 0 0;
+    }
+
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: var(--yellow);
+      border-radius: 18px;
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--red);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.20), 0 0 0 4px rgba(255,199,44,0.25);
+      animation: logoIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 14px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.45s 0.1s ease both;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.45s 0.18s ease both;
+    }
+
+    /* ── Card de login ───────────────────────────── */
+    .login-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px 48px;
+    }
+
+    .login-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-md);
+      width: 100%;
+      max-width: 400px;
+      margin-top: -20px;
+      overflow: hidden;
+      animation: cardIn 0.5s 0.2s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    /* ── Tabs: Entrar / Criar conta ──────────────── */
+    .auth-tabs {
+      display: flex;
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    .auth-tab {
+      flex: 1;
+      padding: 14px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 2.5px solid transparent;
+      margin-bottom: -1.5px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .auth-tab.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
+
+    /* ── Conteúdo dos painéis ────────────────────── */
+    .auth-panel {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px 20px;
+      animation: fadeUp 0.2s ease both;
+    }
+
+    .auth-panel.active {
+      display: flex;
+    }
+
+    /* ── Botão Google ────────────────────────────── */
+    .btn-google {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+    }
+
+    .btn-google:hover {
+      background: var(--bg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-google:active { transform: scale(0.98); }
+
+    .btn-google svg {
+      flex-shrink: 0;
+    }
+
+    /* ── Divisor ─────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Campos do formulário ────────────────────── */
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+    }
+
+    .field-wrap {
+      position: relative;
+    }
+
+    .field-wrap svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 12px 12px 12px 38px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .field input:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(218,41,28,0.10);
+    }
+
+    .field input.error {
+      border-color: var(--red);
+    }
+
+    /* Toggle senha */
+    .toggle-pass {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 4px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* ── Esqueci a senha ─────────────────────────── */
+    .forgot-link {
+      align-self: flex-end;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--red);
+      text-decoration: none;
+      margin-top: -8px;
+      transition: opacity 0.15s;
+    }
+
+    .forgot-link:hover { opacity: 0.7; }
+
+    /* ── Botão principal ─────────────────────────── */
+    .btn-primary {
+      width: 100%;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 12px rgba(218,41,28,0.30);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover { background: var(--red-dark); box-shadow: 0 4px 20px rgba(218,41,28,0.38); }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    /* Loading spinner no botão */
+    .btn-primary .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255,255,255,0.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto;
+    }
+
+    .btn-primary.loading .btn-label { display: none; }
+    .btn-primary.loading .spinner { display: block; }
+
+    /* ── Mensagem de erro/sucesso ─────────────────── */
+    .msg-box {
+      display: none;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      animation: fadeUp 0.2s ease;
+    }
+
+    .msg-box.error {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(218,41,28,0.08);
+      border: 1px solid rgba(218,41,28,0.20);
+      color: var(--red-dark);
+    }
+
+    .msg-box.success {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(26,122,66,0.08);
+      border: 1px solid rgba(26,122,66,0.20);
+      color: var(--green);
+    }
+
+    /* ── Rodapé do card ──────────────────────────── */
+    .card-footer {
+      padding: 14px 20px;
+      border-top: 1.5px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--bg);
+    }
+
+    .card-footer a {
+      color: var(--red);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ── Animações ───────────────────────────────── */
+    @keyframes logoIn {
+      from { opacity: 0; transform: scale(0.6) translateY(10px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ── Responsivo ──────────────────────────────── */
+    @media (min-width: 480px) {
+      .login-hero { padding: 52px 24px 64px; }
+      .hero-logo { width: 72px; height: 72px; font-size: 40px; }
+      .hero-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-page">
+
+  <!-- Hero -->
+  <div class="login-hero">
+    <div class="hero-logo">M</div>
+    <h1 class="hero-title">MC Guias</h1>
+    <p class="hero-subtitle">Sua plataforma de treinamento</p>
+  </div>
+
+  <!-- Body -->
+  <div class="login-body">
+    <div class="login-card">
+
+      <!-- Tabs -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login" onclick="switchTab('login')">Entrar</button>
+        <button class="auth-tab" data-tab="signup" onclick="switchTab('signup')">Criar conta</button>
+      </div>
+
+      <!-- Painel: Entrar -->
+      <div class="auth-panel active" id="panel-login">
+
+        <!-- Google -->
+        <button class="btn-google" onclick="signInGoogle()">
+          <svg width="18" height="18" viewBox="0 0 48 48">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            <path fill="none" d="M0 0h48v48H0z"/>
+          </svg>
+          Continuar com Google
+        </button>
+
+        <div class="divider">ou</div>
+
+        <!-- Email -->
+        <div class="field">
+          <label for="login-email">E-mail</label>
+          <div class="field-wrap">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+            </svg>
+            <input type="email" id="login-email" placeholder="seu@email.com" autocomplete="email">
+          </div>
+        </div>
+
+        <!-- Senha -->
+        <div class="field">
+          <label for="login-password">Senha</label>
+          <div class="field-wrap">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password">
+            <button class="toggle-pass" onclick="togglePass('login-password', this)" type="button" aria-label="Mostrar senha">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="icon-eye">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <a href="#" class="forgot-link" onclick="handleForgot(event)">Esqueci minha senha</a>
+
+        <div class="msg-box" id="login-msg"></div>
+
+        <button class="btn-primary" id="btn-login" onclick="handleLogin()">
+          <span class="btn-label">Entrar</span>
+          <div class="spinner"></div>
+        </button>
+      </div>
+
+      <!-- Painel: Criar conta -->
+      <div class="auth-panel" id="panel-signup">
+
+        <button class="btn-google" onclick="signInGoogle()">
+          <svg width="18" height="18" viewBox="0 0 48 48">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            <path fill="none" d="M0 0h48v48H0z"/>
+          </svg>
+          Criar conta com Google
+        </button>
+
+        <div class="divider">ou</div>
+
+        <div class="field">
+          <label for="signup-name">Nome de usuário</label>
+          <div class="field-wrap">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
+            </svg>
+            <input type="text" id="signup-name" placeholder="seu nome" autocomplete="username">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="signup-email">E-mail</label>
+          <div class="field-wrap">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+            </svg>
+            <input type="email" id="signup-email" placeholder="seu@email.com" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="signup-password">Senha</label>
+          <div class="field-wrap">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <input type="password" id="signup-password" placeholder="mínimo 6 caracteres" autocomplete="new-password">
+            <button class="toggle-pass" onclick="togglePass('signup-password', this)" type="button" aria-label="Mostrar senha">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="icon-eye">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="msg-box" id="signup-msg"></div>
+
+        <button class="btn-primary" id="btn-signup" onclick="handleSignup()">
+          <span class="btn-label">Criar conta</span>
+          <div class="spinner"></div>
+        </button>
+      </div>
+
+      <!-- Footer -->
+      <div class="card-footer">
+        MC Guias &mdash; Plataforma interna de treinamento
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Configuração Supabase ────────────────────────────────────
+  // ⚠️ Substitua pela URL real do seu projeto Supabase
+  const SUPABASE_URL     = 'https://iizzeeceysdqfhnkosrc.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+
+  const supabase = supabase_js.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: { persistSession: true, autoRefreshToken: true }
+  });
+
+  // ── Redirecionar se já logado ────────────────────────────────
+  (async () => {
+    const { data } = await supabase.auth.getSession();
+    if (data.session) window.location.href = 'index.html';
+  })();
+
+  // ── Tabs ─────────────────────────────────────────────────────
+  function switchTab(tab) {
+    document.querySelectorAll('.auth-tab').forEach(t =>
+      t.classList.toggle('active', t.dataset.tab === tab)
+    );
+    document.querySelectorAll('.auth-panel').forEach(p =>
+      p.classList.toggle('active', p.id === 'panel-' + tab)
+    );
+  }
+
+  // ── Toggle senha ─────────────────────────────────────────────
+  function togglePass(inputId, btn) {
+    const input = document.getElementById(inputId);
+    const showing = input.type === 'text';
+    input.type = showing ? 'password' : 'text';
+    btn.querySelector('svg').style.opacity = showing ? '1' : '0.4';
+  }
+
+  // ── Mostrar mensagem ─────────────────────────────────────────
+  function showMsg(id, text, type) {
+    const el = document.getElementById(id);
+    el.className = 'msg-box ' + type;
+    const icon = type === 'error'
+      ? '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>'
+      : '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>';
+    el.innerHTML = icon + text;
+  }
+
+  // ── Traduzir erros do Supabase ────────────────────────────────
+  function traduzirErro(msg) {
+    if (!msg) return 'Erro inesperado. Tente novamente.';
+    if (msg.includes('Invalid login')) return 'E-mail ou senha incorretos.';
+    if (msg.includes('Email not confirmed')) return 'Confirme seu e-mail antes de entrar.';
+    if (msg.includes('User already registered')) return 'Esse e-mail já está cadastrado.';
+    if (msg.includes('Password should be')) return 'A senha deve ter pelo menos 6 caracteres.';
+    if (msg.includes('Unable to validate')) return 'E-mail inválido.';
+    if (msg.includes('rate limit')) return 'Muitas tentativas. Aguarde um momento.';
+    return msg;
+  }
+
+  // ── Login com e-mail/senha ───────────────────────────────────
+  async function handleLogin() {
+    const email    = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+    const btn      = document.getElementById('btn-login');
+
+    if (!email || !password) {
+      showMsg('login-msg', 'Preencha todos os campos.', 'error');
+      return;
+    }
+
+    btn.classList.add('loading');
+    btn.disabled = true;
+
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+    btn.classList.remove('loading');
+    btn.disabled = false;
+
+    if (error) {
+      showMsg('login-msg', traduzirErro(error.message), 'error');
+    } else {
+      showMsg('login-msg', 'Entrando…', 'success');
+      setTimeout(() => window.location.href = 'index.html', 800);
+    }
+  }
+
+  // ── Criar conta ──────────────────────────────────────────────
+  async function handleSignup() {
+    const username = document.getElementById('signup-name').value.trim();
+    const email    = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+    const btn      = document.getElementById('btn-signup');
+
+    if (!username || !email || !password) {
+      showMsg('signup-msg', 'Preencha todos os campos.', 'error');
+      return;
+    }
+    if (password.length < 6) {
+      showMsg('signup-msg', 'A senha deve ter pelo menos 6 caracteres.', 'error');
+      return;
+    }
+
+    btn.classList.add('loading');
+    btn.disabled = true;
+
+    const { data, error } = await supabase.auth.signUp({ email, password });
+
+    if (error) {
+      btn.classList.remove('loading');
+      btn.disabled = false;
+      showMsg('signup-msg', traduzirErro(error.message), 'error');
+      return;
+    }
+
+    // Criar perfil na tabela profiles
+    if (data.user) {
+      await supabase.from('profiles').upsert({
+        id: data.user.id,
+        username: username
+      });
+    }
+
+    btn.classList.remove('loading');
+    btn.disabled = false;
+    showMsg('signup-msg', 'Conta criada! Verifique seu e-mail para confirmar.', 'success');
+  }
+
+  // ── Login com Google ─────────────────────────────────────────
+  async function signInGoogle() {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.origin + '/index.html'
+      }
+    });
+    if (error) alert('Erro ao conectar com Google: ' + error.message);
+  }
+
+  // ── Esqueci a senha ──────────────────────────────────────────
+  async function handleForgot(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    if (!email) {
+      showMsg('login-msg', 'Digite seu e-mail acima para redefinir a senha.', 'error');
+      return;
+    }
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + '/pages/reset-senha.html'
+    });
+    if (error) {
+      showMsg('login-msg', traduzirErro(error.message), 'error');
+    } else {
+      showMsg('login-msg', 'Link de redefinição enviado para ' + email, 'success');
+    }
+  }
+
+  // ── Enter para submeter ──────────────────────────────────────
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    const activePanel = document.querySelector('.auth-panel.active').id;
+    if (activePanel === 'panel-login') handleLogin();
+    else handleSignup();
+  });
+</script>
+
+</body>
+</html>
