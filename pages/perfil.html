@@ -974,6 +974,143 @@
     </ul>
   </div>
 
+  <!-- ── Dados & Armazenamento ─────────────────────────── -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-title">Dados &amp; Armazenamento</div>
+      <span id="storage-used" style="font-size:11px;font-weight:700;color:var(--muted)">—</span>
+    </div>
+
+    <!-- Barra de uso -->
+    <div style="padding:12px 16px 4px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
+        <span style="font-size:12px;font-weight:600;color:var(--text)">Uso estimado do armazenamento local</span>
+      </div>
+      <div style="height:6px;background:var(--border);border-radius:20px;overflow:hidden">
+        <div id="storage-bar" style="height:100%;border-radius:20px;background:linear-gradient(90deg,#2563eb,#60a5fa);width:0%;transition:width .7s cubic-bezier(.22,1,.36,1)"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:5px;font-size:10.5px;color:var(--muted);font-weight:600">
+        <span id="storage-label-used">0 KB usados</span>
+        <span style="opacity:.7">máx ~5 MB</span>
+      </div>
+    </div>
+
+    <!-- Itens de limpeza -->
+    <ul class="action-list" style="margin-top:6px">
+
+      <li>
+        <div class="action-item" onclick="clearCache('foto')">
+          <div class="action-icon gray">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Foto de perfil</div>
+            <div class="action-desc" id="desc-foto">Imagem salva localmente</div>
+          </div>
+          <span id="size-foto" style="font-size:11px;font-weight:700;color:var(--muted);margin-right:4px">—</span>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </li>
+
+      <li>
+        <div class="action-item" onclick="clearCache('historico')">
+          <div class="action-icon red">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Histórico de quizzes</div>
+            <div class="action-desc" id="desc-historico">Resultados e desempenho por sessão</div>
+          </div>
+          <span id="size-historico" style="font-size:11px;font-weight:700;color:var(--muted);margin-right:4px">—</span>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </li>
+
+      <li>
+        <div class="action-item" onclick="clearCache('revisao')">
+          <div class="action-icon yellow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Dados de revisão espaçada</div>
+            <div class="action-desc" id="desc-revisao">Progresso do aprendizado inteligente</div>
+          </div>
+          <span id="size-revisao" style="font-size:11px;font-weight:700;color:var(--muted);margin-right:4px">—</span>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </li>
+
+      <li>
+        <div class="action-item" onclick="clearCache('gamificacao')">
+          <div class="action-icon yellow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">XP, conquistas e streaks</div>
+            <div class="action-desc" id="desc-gamificacao">Progresso de gamificação</div>
+          </div>
+          <span id="size-gamificacao" style="font-size:11px;font-weight:700;color:var(--muted);margin-right:4px">—</span>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </li>
+
+      <li>
+        <div class="action-item" onclick="clearCache('perfil')">
+          <div class="action-icon gray">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Dados do perfil</div>
+            <div class="action-desc" id="desc-perfil">Nome, sigla, cargo e dados pessoais</div>
+          </div>
+          <span id="size-perfil" style="font-size:11px;font-weight:700;color:var(--muted);margin-right:4px">—</span>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </li>
+
+      <li>
+        <div class="action-item" onclick="clearCache('tudo')" style="border-bottom:none">
+          <div class="action-icon red">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label" style="color:var(--red)">Apagar tudo</div>
+            <div class="action-desc">Remove todos os dados locais do app</div>
+          </div>
+          <span id="size-tudo" style="font-size:11px;font-weight:700;color:var(--red);margin-right:4px">—</span>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Modal de confirmação -->
+  <div id="confirm-modal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);align-items:flex-end;justify-content:center">
+    <div style="background:var(--card);width:100%;max-width:520px;border-radius:20px 20px 0 0;padding:24px 20px 32px;box-shadow:0 -8px 40px rgba(0,0,0,0.2)">
+      <div style="font-size:28px;margin-bottom:10px" id="modal-icon">🗑️</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:18px;font-weight:900;color:var(--text);margin-bottom:6px" id="modal-title">Apagar dados?</div>
+      <div style="font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:20px" id="modal-desc">Esta ação não pode ser desfeita.</div>
+      <div style="display:flex;gap:10px">
+        <button onclick="closeModal()" style="flex:1;padding:13px;border-radius:12px;border:1.5px solid var(--border);background:transparent;font-family:inherit;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer">Cancelar</button>
+        <button id="modal-confirm-btn" style="flex:2;padding:13px;border-radius:12px;background:var(--red);color:white;font-family:inherit;font-size:14px;font-weight:700;border:none;cursor:pointer;box-shadow:0 2px 12px rgba(218,41,28,0.3)">Apagar</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Logout -->
   <button class="btn-logout" onclick="handleLogout()">
     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -1339,6 +1476,150 @@
     window.location.replace('login.html');
   }
   window.handleLogout = handleLogout;
+
+  // ── Armazenamento ─────────────────────────────────────
+  const STORAGE_MAP = {
+    foto:        { keys: [AVATAR_KEY],              label: 'Foto de perfil',             icon: '📸' },
+    historico:   { keys: ['mc_quiz_history'],        label: 'Histórico de quizzes',       icon: '📊' },
+    revisao:     { keys: ['mc_sr_data'],             label: 'Revisão espaçada',           icon: '🧠' },
+    gamificacao: { keys: ['gamificacao'],            label: 'XP e conquistas',            icon: '🏆' },
+    perfil:      { keys: [LOCAL_KEY],               label: 'Dados do perfil',            icon: '👤' },
+    tudo: {
+      keys: [AVATAR_KEY, 'mc_quiz_history', 'mc_sr_data', 'gamificacao', LOCAL_KEY,
+             'mc_onboarding_done', 'mc_sound_off', 'mc_sw_version'],
+      label: 'Todos os dados locais',
+      icon: '🗑️'
+    }
+  };
+
+  function byteSize(str) { return new Blob([str]).size; }
+
+  function fmtBytes(bytes) {
+    if (bytes === 0) return '0 B';
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+  }
+
+  function calcStorageUsage() {
+    let total = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      const v = localStorage.getItem(k) || '';
+      total += byteSize(k) + byteSize(v);
+    }
+    return total;
+  }
+
+  function sizeOfKeys(keys) {
+    return keys.reduce((sum, k) => {
+      const v = localStorage.getItem(k) || '';
+      return sum + (v ? byteSize(v) : 0);
+    }, 0);
+  }
+
+  function updateStorageUI() {
+    const total = calcStorageUsage();
+    const MAX   = 5 * 1024 * 1024;
+    const pct   = Math.min(100, (total / MAX) * 100);
+
+    document.getElementById('storage-used').textContent   = fmtBytes(total) + ' usados';
+    document.getElementById('storage-label-used').textContent = fmtBytes(total) + ' usados';
+    document.getElementById('storage-bar').style.width   = pct + '%';
+
+    // Cor da barra por uso
+    const bar = document.getElementById('storage-bar');
+    if (pct > 80) bar.style.background = 'linear-gradient(90deg,#dc2626,#f87171)';
+    else if (pct > 50) bar.style.background = 'linear-gradient(90deg,#d97706,#fbbf24)';
+    else bar.style.background = 'linear-gradient(90deg,#2563eb,#60a5fa)';
+
+    // Tamanho por item
+    Object.entries(STORAGE_MAP).forEach(([id, cfg]) => {
+      const sz = sizeOfKeys(cfg.keys);
+      const el = document.getElementById('size-' + id);
+      if (el) el.textContent = sz > 0 ? fmtBytes(sz) : '0 B';
+
+      // Update desc for historico
+      if (id === 'historico') {
+        try {
+          const h = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+          const desc = document.getElementById('desc-historico');
+          if (desc) desc.textContent = h.length > 0 ? `${h.length} sessões salvas` : 'Nenhum quiz realizado';
+        } catch(e) {}
+      }
+      if (id === 'gamificacao') {
+        try {
+          const g = JSON.parse(localStorage.getItem('gamificacao') || 'null');
+          const desc = document.getElementById('desc-gamificacao');
+          if (desc && g) desc.textContent = `${g.conquistas?.length || 0} conquistas · ${g.estatisticas?.diasConsecutivos || 0} dias streak`;
+        } catch(e) {}
+      }
+      if (id === 'revisao') {
+        try {
+          const sr = JSON.parse(localStorage.getItem('mc_sr_data') || '{}');
+          const total = Object.keys(sr).length;
+          const desc = document.getElementById('desc-revisao');
+          if (desc) desc.textContent = total > 0 ? `${total} cards em revisão` : 'Nenhuma revisão iniciada';
+        } catch(e) {}
+      }
+    });
+
+    // Total no item "tudo"
+    const sizeTudo = document.getElementById('size-tudo');
+    if (sizeTudo) sizeTudo.textContent = fmtBytes(total);
+  }
+
+  // Chama ao iniciar
+  setTimeout(updateStorageUI, 300);
+
+  // ── Modal de confirmação ──────────────────────────────
+  let pendingClearTarget = null;
+
+  function clearCache(target) {
+    const cfg = STORAGE_MAP[target];
+    if (!cfg) return;
+    pendingClearTarget = target;
+
+    document.getElementById('modal-icon').textContent  = cfg.icon;
+    document.getElementById('modal-title').textContent = `Apagar ${cfg.label}?`;
+
+    const sz = target === 'tudo' ? calcStorageUsage() : sizeOfKeys(cfg.keys);
+    document.getElementById('modal-desc').textContent  =
+      (sz > 0 ? `Serão removidos ${fmtBytes(sz)} de dados. ` : '') +
+      (target === 'tudo'
+        ? 'Todo o progresso local será perdido. Esta ação não pode ser desfeita.'
+        : 'Esta ação não pode ser desfeita.');
+
+    const modal = document.getElementById('confirm-modal');
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => modal.querySelector('div').style.transform = 'translateY(0)');
+  }
+  window.clearCache = clearCache;
+
+  function closeModal() {
+    document.getElementById('confirm-modal').style.display = 'none';
+    pendingClearTarget = null;
+  }
+  window.closeModal = closeModal;
+
+  document.getElementById('modal-confirm-btn').addEventListener('click', () => {
+    if (!pendingClearTarget) return;
+    const cfg = STORAGE_MAP[pendingClearTarget];
+    cfg.keys.forEach(k => localStorage.removeItem(k));
+    closeModal();
+    updateStorageUI();
+    renderAll();
+    showToast(`${cfg.icon} ${cfg.label} apagado.`);
+    // Se limpou tudo, redireciona para onboarding
+    if (pendingClearTarget === 'tudo') {
+      setTimeout(() => window.location.replace('../index.html'), 1500);
+    }
+  });
+
+  // Fecha modal ao clicar no fundo
+  document.getElementById('confirm-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
 
   // ── Toast ─────────────────────────────────────────────
   function showToast(msg) {
