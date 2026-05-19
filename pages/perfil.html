@@ -9,6 +9,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#DA291C">
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') setTimeout(hideSplash, 180);
+      else window.addEventListener('load', function() { setTimeout(hideSplash, 180); });
+    })();
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +40,7 @@
       min-height: 100vh;
     }
 
-    /* ── Navbar (igual ao index) ──────────────────── */
+    /* ── Navbar ─────────────────────────────────────── */
     .navbar {
       background: var(--red, #DA291C);
       position: sticky;
@@ -29,7 +48,6 @@
       z-index: 100;
       box-shadow: 0 2px 12px rgba(218,41,28,0.25);
     }
-
     .navbar-inner {
       display: flex;
       align-items: center;
@@ -38,7 +56,6 @@
       max-width: 780px;
       margin: 0 auto;
     }
-
     .navbar-logo {
       background: var(--yellow, #FFC72C);
       width: 38px; height: 38px;
@@ -50,7 +67,6 @@
       flex-shrink: 0;
       text-decoration: none;
     }
-
     .navbar-brand { flex: 1; }
     .navbar-brand h1 { font-size: 16px; color: white; line-height: 1; }
     .navbar-brand p {
@@ -60,7 +76,6 @@
       letter-spacing: 1.5px;
       margin-top: 2px;
     }
-
     .navbar-back {
       color: rgba(255,255,255,0.80);
       font-size: 13px;
@@ -75,253 +90,496 @@
     }
     .navbar-back:hover { background: rgba(255,255,255,0.12); color: white; }
 
-    /* ── Layout ───────────────────────────────────── */
+    /* ── Layout ──────────────────────────────────────── */
     .page-content {
       max-width: 520px;
       margin: 0 auto;
-      padding: 24px 16px 60px;
+      padding: 24px 16px 80px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      animation: fadeUp 0.35s ease both;
+      gap: 14px;
     }
 
-    /* ── Avatar card ──────────────────────────────── */
-    .avatar-card {
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .page-content > * {
+      animation: fadeUp 0.32s cubic-bezier(0.22,1,.36,1) both;
+    }
+    .page-content > *:nth-child(1) { animation-delay: 0.00s; }
+    .page-content > *:nth-child(2) { animation-delay: 0.06s; }
+    .page-content > *:nth-child(3) { animation-delay: 0.10s; }
+    .page-content > *:nth-child(4) { animation-delay: 0.14s; }
+    .page-content > *:nth-child(5) { animation-delay: 0.18s; }
+    .page-content > *:nth-child(6) { animation-delay: 0.22s; }
+
+    /* ── Hero card ───────────────────────────────────── */
+    .hero-card {
       background: var(--red, #DA291C);
-      border-radius: 16px;
+      border-radius: 20px;
       padding: 28px 20px 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       position: relative;
       overflow: hidden;
     }
-
-    .avatar-card::before {
+    .hero-card::before {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0; pointer-events: none;
       background:
-        radial-gradient(ellipse 100% 80% at 110% 110%, rgba(255,199,44,0.20) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 50% at -10% -10%, rgba(0,0,0,0.20) 0%, transparent 50%);
-      pointer-events: none;
+        radial-gradient(ellipse 100% 80% at 110% 110%, rgba(255,199,44,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at -10% -10%, rgba(0,0,0,0.22) 0%, transparent 50%);
+    }
+    .hero-card::after {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E");
     }
 
+    /* ── Avatar ──────────────────────────────────────── */
+    .avatar-wrap {
+      position: relative;
+      z-index: 1;
+    }
     .avatar {
-      width: 80px;
-      height: 80px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       background: var(--yellow, #FFC72C);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-display, 'DM Sans', sans-serif);
-      font-size: 34px;
+      font-size: 36px;
       font-weight: 900;
       color: var(--red, #DA291C);
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.20);
-      flex-shrink: 0;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.18s;
+      border: 3px solid rgba(255,255,255,0.3);
     }
-
+    .avatar:hover { transform: scale(1.04); }
     .avatar img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
+      width: 100%; height: 100%;
       object-fit: cover;
+      border-radius: 50%;
     }
+    .avatar-edit-btn {
+      position: absolute;
+      bottom: 2px; right: 2px;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--red, #DA291C);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: transform 0.15s;
+      z-index: 2;
+    }
+    .avatar-edit-btn:hover { transform: scale(1.1); }
+    .avatar-edit-btn svg { color: var(--red, #DA291C); }
 
-    .avatar-name {
+    #avatar-file-input { display: none; }
+
+    .hero-name {
       font-family: var(--font-display, 'DM Sans', sans-serif);
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 900;
       color: #fff;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
+      text-align: center;
+      line-height: 1.1;
     }
-
-    .avatar-email {
-      font-size: 13px;
-      color: rgba(255,255,255,0.65);
-      position: relative;
-      z-index: 1;
-      margin-top: -6px;
+    .hero-role {
+      font-size: 12px;
+      color: rgba(255,255,255,0.70);
+      position: relative; z-index: 1;
+      margin-top: -4px;
+      text-align: center;
     }
-
-    .avatar-badge {
+    .hero-badges {
+      display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
+      position: relative; z-index: 1;
+      margin-top: 4px;
+    }
+    .hero-badge {
       background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.22);
       border-radius: 20px;
-      padding: 4px 12px;
+      padding: 4px 11px;
       font-size: 11px;
       font-weight: 700;
-      color: rgba(255,255,255,0.90);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 1;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: 0.3px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .hero-badge.yellow {
+      background: rgba(255,199,44,0.22);
+      border-color: rgba(255,199,44,0.4);
+      color: #FFC72C;
     }
 
-    /* ── Seção genérica ───────────────────────────── */
+    /* ── Seção genérica ──────────────────────────────── */
     .section-card {
-      background: #fff;
-      border-radius: 14px;
+      background: var(--card, #fff);
+      border-radius: 16px;
       border: 1.5px solid var(--border, #e3ddd2);
       overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
+    [data-theme="dark"] .section-card { background: #1e1d1b; border-color: #2e2c28; }
 
-    .section-title {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--muted, #6b6660);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 14px 16px 10px;
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 16px 10px;
       border-bottom: 1px solid var(--border, #e3ddd2);
     }
-
-    /* ── Editar perfil ────────────────────────────── */
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      padding: 14px 16px 0;
-    }
-
-    .field:last-of-type { padding-bottom: 16px; }
-
-    .field label {
-      font-size: 11px;
-      font-weight: 700;
+    [data-theme="dark"] .section-header { border-color: #2e2c28; }
+    .section-title {
+      font-size: 10.5px;
+      font-weight: 800;
       color: var(--muted, #6b6660);
-      letter-spacing: 0.3px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
     }
+    .section-edit-btn {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--red, #DA291C);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      transition: background 0.15s;
+    }
+    .section-edit-btn:hover { background: rgba(218,41,28,0.08); }
 
+    /* ── Dados pessoais — view ──────────────────────── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .data-item {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border, #e3ddd2);
+      border-right: 1px solid var(--border, #e3ddd2);
+    }
+    [data-theme="dark"] .data-item { border-color: #2e2c28; }
+    .data-item:nth-child(even) { border-right: none; }
+    .data-item:nth-last-child(-n+2) { border-bottom: none; }
+    /* odd last child when total is odd */
+    .data-item:last-child:nth-child(odd) { border-bottom: none; grid-column: span 2; }
+    .data-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted, #6b6660);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .data-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text, #1c1a17);
+      line-height: 1.3;
+    }
+    .data-value.empty { color: var(--muted); font-style: italic; font-weight: 400; }
+
+    /* ── Dados pessoais — edit form ──────────────────── */
+    .edit-form { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 12px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field.full { grid-column: span 2; }
+    .field label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--muted, #6b6660);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
     .field-wrap { position: relative; }
-
     .field-wrap svg {
       position: absolute;
-      left: 11px;
-      top: 50%;
+      left: 10px; top: 50%;
       transform: translateY(-50%);
       color: var(--muted, #6b6660);
       pointer-events: none;
     }
-
-    .field input {
+    .field input, .field select {
       width: 100%;
-      padding: 11px 11px 11px 36px;
+      padding: 10px 10px 10px 34px;
       border-radius: 10px;
       border: 1.5px solid var(--border, #e3ddd2);
       background: var(--bg, #f5f2ec);
       font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--text, #1c1a17);
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
     }
-
-    .field input:focus {
+    [data-theme="dark"] .field input,
+    [data-theme="dark"] .field select { background: #121110; border-color: #2e2c28; color: var(--text); }
+    .field input:focus, .field select:focus {
       border-color: var(--red, #DA291C);
       box-shadow: 0 0 0 3px rgba(218,41,28,0.10);
     }
+    .field input[type="date"] { padding-left: 10px; }
 
-    .field input:disabled {
-      opacity: 0.55;
-      cursor: not-allowed;
+    .form-actions { display: flex; gap: 8px; }
+    .btn-cancel {
+      flex: 1;
+      padding: 11px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.15s;
     }
-
+    .btn-cancel:hover { background: var(--bg); }
     .btn-save {
-      display: block;
-      width: calc(100% - 32px);
-      margin: 0 16px 16px;
-      padding: 12px;
+      flex: 2;
+      padding: 11px;
       border-radius: 10px;
       background: var(--red, #DA291C);
       color: #fff;
-      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
-      font-size: 14px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
       font-weight: 700;
       border: none;
       cursor: pointer;
       transition: background 0.15s, transform 0.1s;
       box-shadow: 0 2px 10px rgba(218,41,28,0.28);
     }
-
     .btn-save:hover { background: #b01f14; }
     .btn-save:active { transform: scale(0.98); }
-    .btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
-    .btn-save.loading { opacity: 0.7; cursor: not-allowed; }
 
-    /* ── Mensagem inline ──────────────────────────── */
-    .inline-msg {
-      display: none;
-      margin: 0 16px 14px;
-      padding: 10px 13px;
-      border-radius: 8px;
+    /* ── Toast ───────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 24px; left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #1c1a17;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 12px;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
+      z-index: 999;
+      transition: transform 0.3s cubic-bezier(0.22,1,.36,1), opacity 0.3s;
+      opacity: 0;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ── Stats grid ──────────────────────────────────── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .stat-cell {
+      padding: 14px 10px;
+      text-align: center;
+      border-right: 1px solid var(--border, #e3ddd2);
+      border-bottom: 1px solid var(--border, #e3ddd2);
+    }
+    [data-theme="dark"] .stat-cell { border-color: #2e2c28; }
+    .stat-cell:nth-child(3n) { border-right: none; }
+    .stat-cell:nth-last-child(-n+3) { border-bottom: none; }
+    .stat-val {
+      font-family: var(--font-display, 'DM Sans', sans-serif);
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--red, #DA291C);
+      line-height: 1;
+      letter-spacing: -0.5px;
+    }
+    .stat-val.green { color: #16a34a; }
+    .stat-val.blue  { color: #2563eb; }
+    .stat-val.gold  { color: #d97706; }
+    .stat-lbl {
+      font-size: 10px;
+      color: var(--muted, #6b6660);
+      margin-top: 4px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    /* ── XP / Nível bar ──────────────────────────────── */
+    .level-wrap { padding: 14px 16px; }
+    .level-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .level-label {
+      font-size: 13px; font-weight: 700; color: var(--text);
+    }
+    .level-xp {
+      font-size: 11px; color: var(--muted); font-weight: 600;
+    }
+    .level-bar-bg {
+      width: 100%; height: 8px;
+      background: var(--border, #e3ddd2);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    [data-theme="dark"] .level-bar-bg { background: #2e2c28; }
+    .level-bar-fill {
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(90deg, var(--red, #DA291C), #ff6b5b);
+      transition: width 0.8s cubic-bezier(0.22,1,.36,1);
+    }
+    .level-sub {
+      display: flex; justify-content: space-between;
+      margin-top: 6px;
+      font-size: 10.5px; color: var(--muted); font-weight: 600;
+    }
+
+    /* ── Desempenho por guia ─────────────────────────── */
+    .guide-perf { padding: 4px 0 12px; }
+    .guide-row {
+      display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      padding: 8px 16px;
+    }
+    .guide-row-icon { font-size: 15px; flex-shrink: 0; width: 20px; text-align: center; }
+    .guide-row-name {
+      flex: 1;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .guide-row-bar-wrap {
+      width: 80px;
+      height: 6px;
+      background: var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .guide-row-bar-wrap { background: #2e2c28; }
+    .guide-row-bar {
+      height: 100%;
+      border-radius: 10px;
+      background: var(--red);
+      transition: width 0.7s cubic-bezier(0.22,1,.36,1);
+    }
+    .guide-row-bar.good { background: #16a34a; }
+    .guide-row-bar.ok   { background: #d97706; }
+    .guide-row-pct {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text);
+      width: 34px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .guide-empty {
+      padding: 16px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    .inline-msg.success {
+    /* ── Conquistas recentes ─────────────────────────── */
+    .conquistas-row {
       display: flex;
-      background: rgba(26,122,66,0.08);
-      border: 1px solid rgba(26,122,66,0.20);
-      color: #1a7a42;
+      gap: 10px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
-
-    .inline-msg.error {
+    .conquistas-row::-webkit-scrollbar { display: none; }
+    .conq-badge {
       display: flex;
-      background: rgba(218,41,28,0.08);
-      border: 1px solid rgba(218,41,28,0.20);
-      color: #b01f14;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+      width: 64px;
+    }
+    .conq-icon-wrap {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      background: var(--bg, #f5f2ec);
+      border: 2px solid var(--border);
+      transition: transform 0.15s;
+    }
+    .conq-icon-wrap:hover { transform: scale(1.1); }
+    .conq-icon-wrap.locked { filter: grayscale(1); opacity: 0.4; }
+    .conq-name {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.25;
+    }
+    .conq-empty {
+      padding: 16px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      width: 100%;
     }
 
-    /* ── Lista de ações ───────────────────────────── */
+    /* ── Ações da conta ──────────────────────────────── */
     .action-list { list-style: none; }
-
     .action-item {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 14px 16px;
+      padding: 13px 16px;
       border-bottom: 1px solid var(--border, #e3ddd2);
       cursor: pointer;
       transition: background 0.15s;
       text-decoration: none;
       color: var(--text, #1c1a17);
     }
-
+    [data-theme="dark"] .action-item { border-color: #2e2c28; }
     .action-item:last-child { border-bottom: none; }
     .action-item:hover { background: var(--bg, #f5f2ec); }
-
     .action-icon {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-
     .action-icon.red    { background: rgba(218,41,28,0.10); color: var(--red, #DA291C); }
     .action-icon.yellow { background: rgba(255,199,44,0.18); color: #b07800; }
     .action-icon.gray   { background: rgba(107,102,96,0.10); color: var(--muted, #6b6660); }
-
     .action-text { flex: 1; }
     .action-label { font-size: 14px; font-weight: 600; }
     .action-desc  { font-size: 12px; color: var(--muted, #6b6660); margin-top: 1px; }
+    .action-chevron { color: var(--muted); }
 
-    .action-chevron { color: var(--muted, #6b6660); }
-
-    /* ── Botão logout ─────────────────────────────── */
+    /* ── Logout ──────────────────────────────────────── */
     .btn-logout {
       display: flex;
       align-items: center;
@@ -333,44 +591,67 @@
       background: rgba(218,41,28,0.08);
       border: 1.5px solid rgba(218,41,28,0.20);
       color: var(--red, #DA291C);
-      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-family: var(--font-body);
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
       transition: background 0.15s, transform 0.1s;
     }
-
     .btn-logout:hover { background: rgba(218,41,28,0.14); }
     .btn-logout:active { transform: scale(0.98); }
 
-    /* ── Versão ───────────────────────────────────── */
     .version-info {
       text-align: center;
       font-size: 11px;
-      color: var(--muted, #6b6660);
+      color: var(--muted);
       padding-top: 4px;
     }
 
-    /* ── Skeleton loader ──────────────────────────── */
-    .skeleton {
-      background: linear-gradient(90deg, #e8e3db 25%, #f0ebe3 50%, #e8e3db 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.2s infinite;
+    /* ── Inline msg ──────────────────────────────────── */
+    .inline-msg {
+      display: none;
+      margin: 0 0 2px;
+      padding: 9px 13px;
       border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      align-items: center;
+      gap: 8px;
+    }
+    .inline-msg.success {
+      display: flex;
+      background: rgba(26,122,66,0.08);
+      border: 1px solid rgba(26,122,66,0.20);
+      color: #1a7a42;
+    }
+    .inline-msg.error {
+      display: flex;
+      background: rgba(218,41,28,0.08);
+      border: 1px solid rgba(218,41,28,0.20);
+      color: #b01f14;
     }
 
-    @keyframes shimmer {
-      0%   { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
+    /* ── Streak pill on hero ─────────────────────────── */
+    .streak-wrap {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,199,44,0.18);
+      border: 1px solid rgba(255,199,44,0.35);
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #FFC72C;
     }
   </style>
 </head>
 <body>
+
+<!-- Splash -->
+<div id="splash" style="position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .4s;">
+  <div style="font-family:'DM Sans',sans-serif;font-size:32px;font-weight:900;color:var(--red)">M</div>
+</div>
+<style>#splash.hide{opacity:0;pointer-events:none}</style>
 
 <!-- Navbar -->
 <nav class="navbar">
@@ -392,65 +673,247 @@
 <!-- Conteúdo -->
 <div class="page-content">
 
-  <!-- Avatar card -->
-  <div class="avatar-card">
-    <div class="avatar" id="avatar-el">
-      <span id="avatar-initial">?</span>
+  <!-- ── Hero card ──────────────────────────────────── -->
+  <div class="hero-card">
+    <div class="avatar-wrap">
+      <div class="avatar" id="avatar-el" onclick="document.getElementById('avatar-file-input').click()">
+        <span id="avatar-initial">?</span>
+      </div>
+      <div class="avatar-edit-btn" onclick="document.getElementById('avatar-file-input').click()" title="Trocar foto">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+          <circle cx="12" cy="13" r="4"/>
+        </svg>
+      </div>
+      <input type="file" id="avatar-file-input" accept="image/*">
     </div>
-    <div class="avatar-name" id="avatar-name">Carregando…</div>
-    <div class="avatar-email" id="avatar-email"></div>
-    <div class="avatar-badge" id="avatar-provider">Email</div>
+
+    <div class="hero-name" id="hero-name">Carregando…</div>
+    <div class="hero-role" id="hero-role">—</div>
+
+    <div class="hero-badges">
+      <div class="hero-badge" id="hero-provider">✉️ Email</div>
+      <div class="hero-badge yellow" id="hero-nivel">Nível 1</div>
+    </div>
+
+    <div class="streak-wrap" id="streak-display">
+      🔥 <span id="streak-num">0</span> dias consecutivos
+    </div>
   </div>
 
-  <!-- Editar perfil -->
-  <div class="section-card">
-    <div class="section-title">Editar perfil</div>
+  <!-- ── Dados pessoais ─────────────────────────────── -->
+  <div class="section-card" id="dados-card">
+    <div class="section-header">
+      <div class="section-title">Dados pessoais</div>
+      <button class="section-edit-btn" id="dados-edit-btn" onclick="toggleDadosEdit()">Editar</button>
+    </div>
 
-    <div class="field">
-      <label for="edit-username">Nome de usuário</label>
-      <div class="field-wrap">
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
-        </svg>
-        <input type="text" id="edit-username" placeholder="Seu nome">
+    <!-- View mode -->
+    <div id="dados-view">
+      <div class="data-grid">
+        <div class="data-item">
+          <div class="data-label">Nome</div>
+          <div class="data-value" id="view-nome">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Apelido</div>
+          <div class="data-value" id="view-apelido">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Sigla (no avatar)</div>
+          <div class="data-value" id="view-sigla">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Cargo</div>
+          <div class="data-value" id="view-cargo">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Loja / Restaurante</div>
+          <div class="data-value" id="view-loja">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Turno</div>
+          <div class="data-value" id="view-turno">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Data de admissão</div>
+          <div class="data-value" id="view-admissao">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">E-mail</div>
+          <div class="data-value" id="view-email" style="font-size:12.5px">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Telefone</div>
+          <div class="data-value" id="view-telefone">—</div>
+        </div>
       </div>
     </div>
 
-    <div class="field">
-      <label for="edit-email">E-mail</label>
-      <div class="field-wrap">
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
-        </svg>
-        <input type="email" id="edit-email" placeholder="seu@email.com" disabled>
+    <!-- Edit mode (hidden by default) -->
+    <div id="dados-edit" style="display:none">
+      <div class="edit-form">
+        <div class="field-row">
+          <div class="field full">
+            <label>Nome completo</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
+              <input type="text" id="edit-nome" placeholder="Seu nome completo">
+            </div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Apelido</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="edit-apelido" placeholder="Ex: Kadu" maxlength="30">
+            </div>
+          </div>
+          <div class="field">
+            <label>Sigla (avatar)</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg>
+              <input type="text" id="edit-sigla" placeholder="Ex: KS" maxlength="4" style="text-transform:uppercase;letter-spacing:2px;font-weight:700">
+            </div>
+          </div>
+        </div>
+          <div class="field">
+            <label>Telefone</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.1 12 19.79 19.79 0 0 1 1 3.18 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16l.92.92z"/></svg>
+              <input type="tel" id="edit-telefone" placeholder="(11) 99999-9999">
+            </div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Cargo</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              <select id="edit-cargo">
+                <option value="">Selecionar…</option>
+                <option value="Crew">Crew</option>
+                <option value="Crew Sênior">Crew Sênior</option>
+                <option value="Treinador">Treinador</option>
+                <option value="Gerente de Turno">Gerente de Turno</option>
+                <option value="Gerente de Plantão">Gerente de Plantão</option>
+                <option value="Gerente de Restaurante">Gerente de Restaurante</option>
+                <option value="Supervisor">Supervisor</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Turno</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <select id="edit-turno">
+                <option value="">Selecionar…</option>
+                <option value="Abertura">Abertura</option>
+                <option value="Intermediário">Intermediário</option>
+                <option value="Fechamento">Fechamento</option>
+                <option value="Escala variada">Escala variada</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Loja / Restaurante</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <input type="text" id="edit-loja" placeholder="Ex: Loja 1234">
+            </div>
+          </div>
+          <div class="field">
+            <label>Data de admissão</label>
+            <input type="date" id="edit-admissao">
+          </div>
+        </div>
+        <div class="inline-msg" id="dados-msg"></div>
+        <div class="form-actions">
+          <button class="btn-cancel" onclick="toggleDadosEdit(false)">Cancelar</button>
+          <button class="btn-save" onclick="saveDados()">💾 Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Estatísticas gerais ────────────────────────── -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-title">Estatísticas</div>
+    </div>
+
+    <!-- XP / Nível -->
+    <div class="level-wrap">
+      <div class="level-top">
+        <span class="level-label" id="level-name">Novato</span>
+        <span class="level-xp" id="level-xp-label">0 XP</span>
+      </div>
+      <div class="level-bar-bg">
+        <div class="level-bar-fill" id="level-bar" style="width:0%"></div>
+      </div>
+      <div class="level-sub">
+        <span id="level-current-xp">0 XP</span>
+        <span id="level-next-xp">próximo nível: 200 XP</span>
       </div>
     </div>
 
-    <div class="inline-msg" id="profile-msg"></div>
-
-    <button class="btn-save" id="btn-save" onclick="saveProfile()">
-      Salvar alterações
-    </button>
+    <!-- Stats grid -->
+    <div class="stats-grid" style="border-top:1px solid var(--border)">
+      <div class="stat-cell">
+        <div class="stat-val" id="stat-quizzes">0</div>
+        <div class="stat-lbl">Quizzes<br>completos</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val green" id="stat-acertos">0%</div>
+        <div class="stat-lbl">Taxa de<br>acerto</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val gold" id="stat-conquistas">0</div>
+        <div class="stat-lbl">Conquistas<br>desbloq.</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val blue" id="stat-perguntas">0</div>
+        <div class="stat-lbl">Total de<br>perguntas</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val" id="stat-streak">0</div>
+        <div class="stat-lbl">Maior<br>sequência</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val green" id="stat-tempo">0h</div>
+        <div class="stat-lbl">Tempo de<br>estudo</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Ações -->
+  <!-- ── Desempenho por guia ────────────────────────── -->
   <div class="section-card">
-    <div class="section-title">Conta</div>
+    <div class="section-header">
+      <div class="section-title">Desempenho por guia</div>
+    </div>
+    <div class="guide-perf" id="guide-perf">
+      <div class="guide-empty">Nenhum simulado realizado ainda.</div>
+    </div>
+  </div>
+
+  <!-- ── Conquistas recentes ────────────────────────── -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-title">Conquistas recentes</div>
+      <a href="conquistas.html" style="font-size:12px;font-weight:700;color:var(--red);text-decoration:none;">Ver todas →</a>
+    </div>
+    <div class="conquistas-row" id="conquistas-row">
+      <div class="conq-empty">Nenhuma conquista ainda.</div>
+    </div>
+  </div>
+
+  <!-- ── Conta ──────────────────────────────────────── -->
+  <div class="section-card">
+    <div class="section-title" style="padding:13px 16px 10px;border-bottom:1px solid var(--border)">Conta</div>
     <ul class="action-list">
-      <li>
-        <a class="action-item" href="../index.html">
-          <div class="action-icon red">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M3 12h18M12 5l7 7-7 7"/>
-            </svg>
-          </div>
-          <div class="action-text">
-            <div class="action-label">Ir para o início</div>
-            <div class="action-desc">Voltar para os guias</div>
-          </div>
-          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-        </a>
-      </li>
       <li>
         <div class="action-item" onclick="sendResetEmail()">
           <div class="action-icon yellow">
@@ -461,6 +924,49 @@
           <div class="action-text">
             <div class="action-label">Alterar senha</div>
             <div class="action-desc">Enviar link por e-mail</div>
+          </div>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </li>
+      <li>
+        <a class="action-item" href="dashboard.html">
+          <div class="action-icon red">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Dashboard completo</div>
+            <div class="action-desc">Gráficos e histórico detalhado</div>
+          </div>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="action-item" href="conquistas.html">
+          <div class="action-icon yellow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Conquistas e desafios</div>
+            <div class="action-desc">Ver progresso e troféus</div>
+          </div>
+          <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </li>
+      <li>
+        <div class="action-item" onclick="clearLocalPhoto()">
+          <div class="action-icon gray">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <div class="action-text">
+            <div class="action-label">Remover foto</div>
+            <div class="action-desc">Voltar à sigla padrão</div>
           </div>
           <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
         </div>
@@ -478,9 +984,12 @@
     Sair da conta
   </button>
 
-  <div class="version-info">MC Guias · Desenvolvido por Adrian E. Silva</div>
+  <div class="version-info">MC Guias v6 · Desenvolvido por Adrian E. Silva</div>
 
 </div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
 
 <script type="module">
   import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
@@ -492,105 +1001,360 @@
     auth: { persistSession: true, autoRefreshToken: true }
   });
 
-  // ── Proteção de rota ─────────────────────────────
+  // ── Rota ─────────────────────────────────────────────
   const { data: { session } } = await supabase.auth.getSession();
-  if (!session) {
-    window.location.replace('login.html');
-  }
+  if (!session) { window.location.replace('login.html'); }
 
   const user = session.user;
 
-  // ── Carregar dados do perfil ─────────────────────
+  // ── Dados locais extras (localStorage) ───────────────
+  const LOCAL_KEY = 'mc_perfil_dados';
+
+  function loadLocalDados() {
+    try { return JSON.parse(localStorage.getItem(LOCAL_KEY) || '{}'); } catch(e) { return {}; }
+  }
+  function saveLocalDados(obj) {
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(obj));
+  }
+
+  // ── Supabase profile ──────────────────────────────────
   const { data: profile } = await supabase
     .from('profiles')
     .select('username')
     .eq('id', user.id)
     .single();
 
-  const username = profile?.username
+  const supabaseUsername = profile?.username
     || user.user_metadata?.full_name
     || user.email?.split('@')[0]
     || 'Usuário';
 
   const email    = user.email || '';
   const provider = user.app_metadata?.provider || 'email';
-  const avatar   = user.user_metadata?.avatar_url || null;
 
-  // ── Preencher UI ─────────────────────────────────
-  document.getElementById('avatar-name').textContent  = username;
-  document.getElementById('avatar-email').textContent = email;
-  document.getElementById('edit-username').value      = username;
-  document.getElementById('edit-email').value         = email;
-  document.getElementById('avatar-provider').textContent =
-    provider === 'google' ? '🔵 Google' : '✉️ Email';
+  // ── Stats from localStorage ───────────────────────────
+  function calcStats() {
+    const hist    = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+    const gami    = JSON.parse(localStorage.getItem('gamificacao') || 'null');
+    const srData  = JSON.parse(localStorage.getItem('mc_sr_data') || '{}');
 
-  const avatarEl = document.getElementById('avatar-el');
-  if (avatar) {
-    avatarEl.innerHTML = `<img src="${avatar}" alt="Avatar">`;
-  } else {
-    document.getElementById('avatar-initial').textContent = username[0].toUpperCase();
+    const quizzesTotal  = hist.length;
+    const perguntasTotal = hist.reduce((s, h) => s + (h.total || 0), 0);
+    const acertosTotal   = hist.reduce((s, h) => s + (h.score || 0), 0);
+    const taxaAcerto     = perguntasTotal > 0 ? Math.round((acertosTotal / perguntasTotal) * 100) : 0;
+
+    const diasConsec  = gami?.estatisticas?.diasConsecutivos || 0;
+    const minEstudo   = gami?.estatisticas?.minEstudo || 0;
+    const conquistas  = gami?.conquistas || [];
+
+    // XP calculado: 10 por pergunta certa + bônus por quiz
+    const xpTotal = acertosTotal * 10 + quizzesTotal * 20;
+
+    // Nível
+    const NIVEIS = [
+      { nome: 'Novato',          min: 0,    max: 200  },
+      { nome: 'Aprendiz',        min: 200,  max: 500  },
+      { nome: 'Treinando',       min: 500,  max: 1000 },
+      { nome: 'Competente',      min: 1000, max: 2000 },
+      { nome: 'Habilidoso',      min: 2000, max: 3500 },
+      { nome: 'Especialista',    min: 3500, max: 5500 },
+      { nome: 'Mestre',          min: 5500, max: 8000 },
+      { nome: 'Mestre Sênior',   min: 8000, max: 11000},
+      { nome: 'Lenda',           min: 11000,max: 15000},
+      { nome: 'Lenda Suprema',   min: 15000,max: Infinity},
+    ];
+    let nivel = NIVEIS[0];
+    for (let n of NIVEIS) {
+      if (xpTotal >= n.min) nivel = n;
+    }
+
+    // Desempenho por guia (pior primeiro)
+    const byGuia = {};
+    hist.forEach(h => {
+      if (!h.guia) return;
+      if (!byGuia[h.guia]) byGuia[h.guia] = { score: 0, total: 0 };
+      byGuia[h.guia].score += h.score || 0;
+      byGuia[h.guia].total += h.total || 0;
+    });
+    const guiaPerf = Object.entries(byGuia)
+      .map(([guia, d]) => ({ guia, pct: Math.round((d.score / d.total) * 100) }))
+      .sort((a, b) => b.pct - a.pct)
+      .slice(0, 8);
+
+    return { quizzesTotal, perguntasTotal, taxaAcerto, diasConsec, minEstudo, conquistas, xpTotal, nivel, NIVEIS, guiaPerf };
   }
 
-  // ── Salvar perfil ────────────────────────────────
-  async function saveProfile() {
-    const btn      = document.getElementById('btn-save');
-    const newName  = document.getElementById('edit-username').value.trim();
-    const msgEl    = document.getElementById('profile-msg');
+  // ── Avatar helpers ────────────────────────────────────
+  const AVATAR_KEY = 'mc_perfil_foto';
 
-    if (!newName) {
-      showMsg('profile-msg', 'O nome não pode estar vazio.', 'error');
+  function renderAvatar(apelido, photoDataUrl) {
+    const el = document.getElementById('avatar-el');
+    if (photoDataUrl) {
+      el.innerHTML = `<img src="${photoDataUrl}" alt="Foto de perfil">`;
+    } else {
+      const sigla = (apelido || '?').slice(0, 3).toUpperCase();
+      el.innerHTML = `<span id="avatar-initial" style="font-size:${sigla.length > 2 ? '22px' : '36px'}">${sigla}</span>`;
+    }
+  }
+
+  // ── Render UI ─────────────────────────────────────────
+  function renderAll() {
+    const local  = loadLocalDados();
+    const nome   = local.nome || supabaseUsername;
+    const apelido = local.apelido || '';
+    const sigla  = local.sigla || '';
+    const cargo  = local.cargo || '';
+    const loja   = local.loja || '';
+    const turno  = local.turno || '';
+    const admissao = local.admissao || '';
+    const telefone = local.telefone || '';
+    const photo  = localStorage.getItem(AVATAR_KEY) || '';
+
+    const stats = calcStats();
+
+    // Hero
+    const displayName = apelido || nome;
+    document.getElementById('hero-name').textContent = displayName;
+    document.getElementById('hero-role').textContent = cargo && loja ? `${cargo} · ${loja}` : (cargo || loja || email);
+    document.getElementById('hero-provider').textContent = provider === 'google' ? '🔵 Google' : '✉️ Email';
+    document.getElementById('hero-nivel').textContent = `⭐ ${stats.nivel.nome}`;
+    document.getElementById('streak-num').textContent = stats.diasConsec;
+
+    // Avatar — usa sigla definida pelo usuário, ou inicial do apelido/nome
+    const siglaAvatar = sigla || (apelido ? apelido[0] : (nome ? nome[0] : '?'));
+    renderAvatar(siglaAvatar, photo);
+
+    // View dados
+    function setVal(id, val, fallback) {
+      const el = document.getElementById(id);
+      if (val) {
+        el.textContent = val;
+        el.classList.remove('empty');
+      } else {
+        el.textContent = fallback || '—';
+        el.classList.add('empty');
+      }
+    }
+    setVal('view-nome',     nome);
+    setVal('view-apelido',  apelido, 'Não definido');
+    setVal('view-sigla',    sigla,   'Não definida');
+    setVal('view-cargo',    cargo,   'Não definido');
+    setVal('view-loja',     loja,    'Não definido');
+    setVal('view-turno',    turno,   'Não definido');
+    setVal('view-email',    email);
+    setVal('view-telefone', telefone,'Não definido');
+    if (admissao) {
+      const [y, m, d] = admissao.split('-');
+      setVal('view-admissao', `${d}/${m}/${y}`);
+    } else {
+      setVal('view-admissao', '', 'Não definida');
+    }
+
+    // Edit form pre-fill
+    document.getElementById('edit-nome').value     = nome;
+    document.getElementById('edit-apelido').value  = apelido;
+    document.getElementById('edit-sigla').value    = sigla;
+    document.getElementById('edit-cargo').value    = cargo;
+    document.getElementById('edit-loja').value     = loja;
+    document.getElementById('edit-turno').value    = turno;
+    document.getElementById('edit-admissao').value = admissao;
+    document.getElementById('edit-telefone').value = telefone;
+
+    // Stats
+    document.getElementById('stat-quizzes').textContent  = stats.quizzesTotal;
+    document.getElementById('stat-acertos').textContent  = stats.taxaAcerto + '%';
+    document.getElementById('stat-conquistas').textContent = stats.conquistas.length;
+    document.getElementById('stat-perguntas').textContent = stats.perguntasTotal;
+    document.getElementById('stat-streak').textContent   = stats.diasConsec;
+
+    const horas = Math.floor(stats.minEstudo / 60);
+    const mins  = stats.minEstudo % 60;
+    document.getElementById('stat-tempo').textContent = horas > 0 ? `${horas}h${mins > 0 ? mins+'m':''}` : `${mins}m`;
+
+    // XP / Nível bar
+    const n = stats.nivel;
+    const NIVEIS = stats.NIVEIS;
+    const nextNivel = NIVEIS[NIVEIS.indexOf(n) + 1];
+    const xpNaFaixa = stats.xpTotal - n.min;
+    const xpFaixa   = nextNivel ? (n.max - n.min) : 1;
+    const pct        = nextNivel ? Math.min(100, Math.round((xpNaFaixa / xpFaixa) * 100)) : 100;
+
+    document.getElementById('level-name').textContent       = `Nível: ${n.nome}`;
+    document.getElementById('level-xp-label').textContent   = `${stats.xpTotal} XP total`;
+    document.getElementById('level-current-xp').textContent = `${stats.xpTotal} XP`;
+    document.getElementById('level-next-xp').textContent    = nextNivel ? `próximo: ${n.max} XP` : 'Nível máximo!';
+    setTimeout(() => {
+      document.getElementById('level-bar').style.width = pct + '%';
+    }, 200);
+
+    // Desempenho por guia
+    const GUIA_ICONS = {
+      chapa: '🔥', lope: '🥬', lope2: '🧺', linha: '📋',
+      mcfritas: '🍟', fritas: '🍟', 'fritos': '🍗', condimentacao: '🧂',
+      'salao-ngk': '🪑', 'montagem-entrega': '🛎️', 'influencer-pagamento': '🗣️',
+      'drive-thru': '🚗', 'bebidas-sobremesas': '🥤', mcdelivery: '📦',
+      mccafe: '☕', limpeza: '🧹', fechamento: '🔒', 'seguranca': '🦺',
+      'best-burguer': '🏆', 'embaixador-experiencia': '🎯',
+      'estoque-recebimento': '📦', 'seguranca-alimento': '🍽️',
+    };
+    const guiaPerfEl = document.getElementById('guide-perf');
+    if (stats.guiaPerf.length === 0) {
+      guiaPerfEl.innerHTML = '<div class="guide-empty">Nenhum simulado realizado ainda.</div>';
+    } else {
+      guiaPerfEl.innerHTML = stats.guiaPerf.map(g => {
+        const icon = GUIA_ICONS[g.guia] || '📖';
+        const barClass = g.pct >= 80 ? 'good' : g.pct >= 60 ? 'ok' : '';
+        const nome = g.guia.replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase());
+        return `
+          <div class="guide-row">
+            <div class="guide-row-icon">${icon}</div>
+            <div class="guide-row-name">${nome}</div>
+            <div class="guide-row-bar-wrap">
+              <div class="guide-row-bar ${barClass}" style="width:${g.pct}%"></div>
+            </div>
+            <div class="guide-row-pct">${g.pct}%</div>
+          </div>`;
+      }).join('');
+    }
+
+    // Conquistas recentes
+    const CONQUISTA_ICONS = {
+      novato:'🔰', mestre_chapa:'🍔', jardineiro:'🧹', faxineiro:'✨',
+      precisao_cirurgica:'🎯', relampago:'⚡', estudioso:'📚', coruja:'🌙',
+      sequencia_fogo:'🔥', colecionador:'🏆', montador:'🎮', rei_revisao:'🔁',
+      maratonista_estudo:'🏅', perfeccionista_all:'💎', hora_de_estudo:'⏱️',
+      estudante_dedicado:'🎓', especialista_bb:'🏆', mestre_bb:'🍔', cebola_expert:'🧅',
+    };
+    const conquRow = document.getElementById('conquistas-row');
+    const recentes = stats.conquistas.slice(-6).reverse();
+    if (recentes.length === 0) {
+      conquRow.innerHTML = '<div class="conq-empty">Nenhuma conquista ainda.<br>Complete um quiz! 🎯</div>';
+    } else {
+      conquRow.innerHTML = recentes.map(c => {
+        const icon = CONQUISTA_ICONS[c] || '🥇';
+        const nomeFmt = c.replace(/_/g, ' ').replace(/\b\w/g, x => x.toUpperCase());
+        return `
+          <div class="conq-badge">
+            <div class="conq-icon-wrap" title="${nomeFmt}">${icon}</div>
+            <div class="conq-name">${nomeFmt}</div>
+          </div>`;
+      }).join('');
+    }
+  }
+
+  renderAll();
+
+  // ── Toggle edit mode ──────────────────────────────────
+  let editOpen = false;
+  function toggleDadosEdit(force) {
+    editOpen = (force !== undefined) ? force : !editOpen;
+    document.getElementById('dados-view').style.display  = editOpen ? 'none' : '';
+    document.getElementById('dados-edit').style.display  = editOpen ? '' : 'none';
+    document.getElementById('dados-edit-btn').textContent = editOpen ? 'Cancelar' : 'Editar';
+  }
+  window.toggleDadosEdit = toggleDadosEdit;
+
+  // ── Salvar dados pessoais ─────────────────────────────
+  async function saveDados() {
+    const nome     = document.getElementById('edit-nome').value.trim();
+    const apelido  = document.getElementById('edit-apelido').value.trim();
+    const sigla    = document.getElementById('edit-sigla').value.trim().toUpperCase().slice(0, 4);
+    const cargo    = document.getElementById('edit-cargo').value;
+    const loja     = document.getElementById('edit-loja').value.trim();
+    const turno    = document.getElementById('edit-turno').value;
+    const admissao = document.getElementById('edit-admissao').value;
+    const telefone = document.getElementById('edit-telefone').value.trim();
+
+    if (!nome) {
+      showMsg('dados-msg', 'O nome não pode estar vazio.', 'error');
       return;
     }
 
-    btn.textContent = 'Salvando…';
-    btn.disabled = true;
+    // Save locally
+    saveLocalDados({ nome, apelido, sigla, cargo, loja, turno, admissao, telefone });
 
-    const { error } = await supabase
-      .from('profiles')
-      .upsert({ id: user.id, username: newName });
+    // Save username to supabase
+    await supabase.from('profiles').upsert({ id: user.id, username: nome });
 
-    btn.textContent = 'Salvar alterações';
-    btn.disabled = false;
-
-    if (error) {
-      showMsg('profile-msg', 'Erro ao salvar. Tente novamente.', 'error');
-    } else {
-      document.getElementById('avatar-name').textContent = newName;
-      document.getElementById('avatar-initial').textContent = newName[0].toUpperCase();
-      showMsg('profile-msg', 'Perfil atualizado com sucesso!', 'success');
-    }
+    toggleDadosEdit(false);
+    renderAll();
+    showToast('✅ Perfil salvo!');
   }
+  window.saveDados = saveDados;
 
-  // ── Alterar senha ────────────────────────────────
+  // ── Photo upload ──────────────────────────────────────
+  document.getElementById('avatar-file-input').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (file.size > 3 * 1024 * 1024) {
+      showToast('⚠️ Imagem muito grande. Máx 3MB.');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      // Resize to ~300px
+      const img = new Image();
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        const size = 300;
+        canvas.width = size; canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        const scale = Math.max(size / img.width, size / img.height);
+        const w = img.width * scale, h = img.height * scale;
+        ctx.drawImage(img, (size - w) / 2, (size - h) / 2, w, h);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+        localStorage.setItem(AVATAR_KEY, dataUrl);
+        const ld = loadLocalDados();
+        const sig = ld.sigla || (ld.apelido ? ld.apelido[0] : (ld.nome || supabaseUsername)[0] || '?');
+        renderAvatar(sig, dataUrl);
+        showToast('📸 Foto atualizada!');
+      };
+      img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+    this.value = '';
+  });
+
+  function clearLocalPhoto() {
+    if (!localStorage.getItem(AVATAR_KEY)) { showToast('Nenhuma foto para remover.'); return; }
+    localStorage.removeItem(AVATAR_KEY);
+    renderAll();
+    showToast('🗑️ Foto removida.');
+  }
+  window.clearLocalPhoto = clearLocalPhoto;
+
+  // ── Reset password ────────────────────────────────────
   async function sendResetEmail() {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: window.location.origin + '/pages/reset-senha.html'
     });
-    if (error) {
-      showMsg('profile-msg', 'Erro ao enviar e-mail.', 'error');
-    } else {
-      showMsg('profile-msg', 'Link enviado para ' + email, 'success');
-    }
+    if (error) { showToast('❌ Erro ao enviar e-mail.'); }
+    else        { showToast('📧 Link enviado para ' + email); }
   }
+  window.sendResetEmail = sendResetEmail;
 
-  // ── Logout ───────────────────────────────────────
+  // ── Logout ────────────────────────────────────────────
   async function handleLogout() {
     await supabase.auth.signOut();
     window.location.replace('login.html');
   }
+  window.handleLogout = handleLogout;
 
-  // ── Mensagem inline ──────────────────────────────
+  // ── Toast ─────────────────────────────────────────────
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  // ── Msg inline ────────────────────────────────────────
   function showMsg(id, text, type) {
     const el = document.getElementById(id);
     el.className = 'inline-msg ' + type;
     el.textContent = text;
     setTimeout(() => { el.className = 'inline-msg'; }, 4000);
   }
-
-  // ── Expor ao escopo global ───────────────────────
-  window.saveProfile    = saveProfile;
-  window.sendResetEmail = sendResetEmail;
-  window.handleLogout   = handleLogout;
 </script>
 
 </body>
