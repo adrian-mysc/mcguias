@@ -1,6 +1,45 @@
 {
   "versions": [
     {
+      "version": "v8",
+      "date": "2026-05-20",
+      "date_display": "20 Mai 2026",
+      "badge": "Analytics · Conquistas · Qualidade",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🗄️",
+          "text": "**McStorage** — nova camada de armazenamento com tratamento de `QuotaExceededError`. Todos os módulos migrados, eliminando perda silenciosa de dados em dispositivos com pouco espaço.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "📈",
+          "text": "**Analytics por questão** — cada resposta agora registra tentativas, acertos, erros e tempo. Dados acessíveis no Dashboard com taxa de acerto global, tempo médio e top 5 questões mais difíceis.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🔁",
+          "text": "**Modo \"Revisar só os erros\"** — botão na tela de resultado filtra o quiz para questões com histórico de erro, ordenadas da mais difícil para a mais fácil.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🏆",
+          "text": "**22 novas conquistas** — total chegou a 66. Novidades: Madrugador (estudo antes das 6h), Noturno (estudo após 22h), Jogo Perfeito, Mestre do Drive-Thru, Mestre de McFritas, Mestre de Condimentação, Centurião 200/500 questões e mais.",
+          "tag": "novo"
+        },
+        {
+          "icon": "⚡",
+          "text": "**Service Worker aprimorado** — 7 assets críticos pré-cacheados na instalação para garantia offline mais robusta. Cache bumped para `mc-guias-v30`.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🛠️",
+          "text": "**CI/CD + ESLint** — validação automática dos JSONs de questões via GitHub Actions em cada push. Linting com regras `no-undef` e `no-unused-vars`.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
       "version": "v7",
       "date": "2026-05-10",
       "date_display": "10 Mai 2026",

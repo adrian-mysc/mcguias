@@ -1,5 +1,35 @@
 # Changelog — MC Guias
 
+## [v8] — 2026-05-20
+
+### Adicionado
+- **McStorage** — abstração de `localStorage` com tratamento de `QuotaExceededError`. Todos os módulos (`main.js`, `gamificacao.js`) migrados para essa camada, eliminando erros silenciosos em dispositivos com pouco armazenamento.
+- **Analytics por questão** (`mc_analytics`) — `trackAnswer()` registra tentativas, acertos, erros e tempo de resposta por questão nos modos múltipla escolha, flashcard e lacunas.
+- **Dashboard — Seção Análise** — nova seção em `pages/dashboard.html` exibe: total de questões respondidas, taxa de acerto global, tempo médio de resposta e top 5 questões mais difíceis com barra de erro visual.
+- **Modo "Revisar só os erros"** — botão na tela de resultado filtra o quiz automaticamente para questões com histórico de erro, ordenadas por taxa de erro (maior → menor).
+- **Service Worker — Precaching** — 7 assets críticos pré-cacheados no evento `install` via `PRECACHE_ASSETS`. Cache bumped para `mc-guias-v30`.
+- **GitHub Actions CI** (`.github/workflows/validate.yml`) — validação automática dos JSONs de questões em cada push.
+- **ESLint** (`.eslintrc.json`) — linting configurado com regras `no-undef` e `no-unused-vars`, globals `McStorage` e `Gamificacao` mapeadas.
+- **22 novas conquistas** — total passou de 44 para 66 conquistas: estações do dia (Madrugador, Noturno), jogo perfeito, mestre por guia (Drive-Thru, McFritas, Condimentação), 100% do simulado, milhas (200/500 questões) e mais.
+
+### Alterado
+- **Jogo Monte o Sanduíche** — rastreamento de partidas atualizado: `jogosTotais` incrementa em toda partida, `jogosPerfeitos` somente em acerto perfeito. `onJogoComplete` agora recebe `{perfeito, allPlayed}`.
+- **README.md** — reescrito com tabelas de tecnologias, badge de CI, estrutura do projeto e instruções de contribuição.
+
+---
+
+## [v7] — 2026-05-10
+
+### Adicionado
+- **26 novas perguntas de Best Burger** no simulado geral — cobrindo chapa, UHC, tostadeira, queijo, cebola reidratada, pães, molhos, saleiros, procedimentos e kit de treinamento. Total de perguntas chegou a **697**.
+- **5 novas conquistas de Best Burger** — Especialista BB, Mestre do Best Burger, Troféu Best Burger, Expert em Cebola e Padeiro BB.
+- **Nova aba Materiais no Guia Best Burger** — Kit de Treinamento completo com 10 itens e preços, Qualidosos 1/2/3, programação da tostadeira HEBT-5V, tabela Chart de ingredientes, procedimento detalhado do tomate e hidratação da cebola com máquina de suco.
+
+### Corrigido
+- **Cards do Index** — Best Burger e Assistente IA agora exibem título e descrição legíveis em modo claro e escuro.
+
+---
+
 ## [v6] — 2026-05-08
 
 ### Adicionado
