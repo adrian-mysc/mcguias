@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Guias — Bem-vindo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:        #DA291C;
+      --red-dark:   #b01f14;
+      --yellow:     #FFC72C;
+      --bg:         #f5f2ec;
+      --card:       #ffffff;
+      --text:       #1c1a17;
+      --muted:      #6b6660;
+      --border:     #e3ddd2;
+      --green:      #1a7a42;
+
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      --font-display: 'DM Sans', sans-serif;
+      --font-body:    'Plus Jakarta Sans', sans-serif;
+    }
+
+    html, body {
+      min-height: 100%;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Page layout ─────────────────────────────── */
+    .welcome-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px 48px;
+    }
+
+    /* ── Hero ────────────────────────────────────── */
+    .hero {
+      width: 100%;
+      background: var(--red);
+      padding: 48px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 120% 80% at 110% 120%, rgba(255,199,44,0.20) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 60% at -10% -20%, rgba(0,0,0,0.22) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 40px;
+      background: var(--bg);
+      border-radius: 40px 40px 0 0;
+    }
+
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px; height: 72px;
+      background: var(--yellow);
+      border-radius: 20px;
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--red);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.22), 0 0 0 5px rgba(255,199,44,0.28);
+      animation: popIn 0.55s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.4s 0.15s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 900;
+      color: #fff;
+      margin-top: 6px;
+      line-height: 1.15;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.4s 0.22s ease both;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      margin-top: 8px;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.55;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.4s 0.30s ease both;
+    }
+
+    /* ── Content area ────────────────────────────── */
+    .content {
+      width: 100%;
+      max-width: 420px;
+      margin-top: -28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* ── Feature cards ───────────────────────────── */
+    .features-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      animation: slideUp 0.5s 0.35s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    .features-card-header {
+      padding: 16px 18px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .features-card-header h2 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .features-card-header p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 6px 0;
+    }
+
+    .feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 11px 18px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .feat:last-child { border-bottom: none; }
+
+    .feat-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    .feat-body { flex: 1; min-width: 0; }
+
+    .feat-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .feat-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.45;
+    }
+
+    /* ── CTA card ────────────────────────────────── */
+    .cta-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      animation: slideUp 0.5s 0.45s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    .btn-start {
+      width: 100%;
+      padding: 15px;
+      border-radius: var(--radius-md);
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 14px rgba(218,41,28,0.32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-start:hover { background: var(--red-dark, #b01f14); box-shadow: 0 4px 20px rgba(218,41,28,0.40); }
+    .btn-start:active { transform: scale(0.98); }
+
+    .cta-hint {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ── Progress dots ───────────────────────────── */
+    .progress-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 4px 0 2px;
+    }
+
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    .dot.active {
+      background: var(--red);
+      width: 18px;
+      border-radius: 3px;
+    }
+
+    /* ── Animations ──────────────────────────────── */
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.6) translateY(8px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="welcome-page">
+
+  <div class="hero">
+    <div class="hero-logo">M</div>
+    <p class="hero-eyebrow">Bem-vindo ao</p>
+    <h1 class="hero-title">MC Guias<br><em>Tudo que você precisa saber</em></h1>
+    <p class="hero-sub">Sua plataforma de treinamento operacional — estude em qualquer lugar, mesmo sem internet.</p>
+  </div>
+
+  <div class="content">
+
+    <div class="features-card">
+      <div class="features-card-header">
+        <h2>O que você encontra aqui</h2>
+        <p>Guias completos, quizzes e muito mais</p>
+      </div>
+      <ul class="features-list">
+        <li class="feat">
+          <span class="feat-icon">📚</span>
+          <div class="feat-body">
+            <div class="feat-title">20+ Guias Operacionais</div>
+            <div class="feat-desc">Chapa, LOPE, Drive-Thru, McCafé, Fritas e muito mais — com checklists interativos.</div>
+          </div>
+        </li>
+        <li class="feat">
+          <span class="feat-icon">🧠</span>
+          <div class="feat-body">
+            <div class="feat-title">Simulado com 700+ perguntas</div>
+            <div class="feat-desc">Múltipla escolha, flashcard e lacunas. Repetição espaçada para fixar o que você erra.</div>
+          </div>
+        </li>
+        <li class="feat">
+          <span class="feat-icon">🏆</span>
+          <div class="feat-body">
+            <div class="feat-title">66 Conquistas</div>
+            <div class="feat-desc">Desbloqueie medalhas estudando, completando guias e mantendo seu streak diário.</div>
+          </div>
+        </li>
+        <li class="feat">
+          <span class="feat-icon">🍔</span>
+          <div class="feat-body">
+            <div class="feat-title">Jogo Monte o Sanduíche</div>
+            <div class="feat-desc">Treine condimentação dos 9 sanduíches reais do cardápio de forma interativa.</div>
+          </div>
+        </li>
+        <li class="feat">
+          <span class="feat-icon">📱</span>
+          <div class="feat-body">
+            <div class="feat-title">100% Offline</div>
+            <div class="feat-desc">Instale como app no celular e estude sem internet no vestiário, no transporte ou em casa.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cta-card">
+      <div class="progress-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <button class="btn-start" onclick="começar()">
+        Começar a estudar →
+      </button>
+      <p class="cta-hint">Seu progresso é salvo automaticamente.<br>Você pode acessar todos os guias offline após a primeira visita.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Se já fez onboarding, redirecionar direto
+  if (localStorage.getItem('mc_onboarded')) {
+    window.location.replace('../index.html');
+  }
+
+  function começar() {
+    localStorage.setItem('mc_onboarded', '1');
+    window.location.href = '../index.html';
+  }
+</script>
+
+</body>
+</html>
