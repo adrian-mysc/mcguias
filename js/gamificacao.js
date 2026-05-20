@@ -45,6 +45,35 @@
     { id: 'trofeu_bb',         nome: 'Troféu Best Burger',   desc: 'Completou 100% do checklist de Best Burger',         icon: '🥇', cat: 'trofeu',     cor: '#DA291C' },
     { id: 'cebola_expert',     nome: 'Expert em Cebola',     desc: 'Acertou todas as perguntas de Cebola Reidratada',    icon: '🧅', cat: 'estudo',     cor: '#22c55e' },
     { id: 'padeiro_bb',        nome: 'Padeiro BB',           desc: 'Acertou todas as perguntas de Pães Best Burger',     icon: '🍞', cat: 'estudo',     cor: '#f59e0b' },
+    // ── Marcos de volume ─────────────────────────────────────
+    { id: 'veterano',          nome: 'Veterano',             desc: 'Completou 10 quizzes',                               icon: '🎖️', cat: 'estudo',     cor: '#3b82f6' },
+    { id: 'centuriao',         nome: 'Centurião',            desc: 'Respondeu 500 perguntas no total',                   icon: '🛡️', cat: 'estudo',     cor: '#8b5cf6' },
+    { id: 'mestre_geral',      nome: 'Mestre Geral',         desc: 'Respondeu 1000 perguntas no total',                  icon: '👑', cat: 'estudo',     cor: '#f59e0b' },
+    // ── Mestres por guia ─────────────────────────────────────
+    { id: 'mestre_drive',      nome: 'Mestre do Drive',      desc: 'Atingiu 90%+ em um quiz de Drive-Thru',              icon: '🚗', cat: 'estudo',     cor: '#38bdf8' },
+    { id: 'mestre_fritas',     nome: 'Mestre das Fritas',    desc: 'Atingiu 90%+ em um quiz de McFritas',                icon: '🍟', cat: 'estudo',     cor: '#f59e0b' },
+    { id: 'mestre_cond',       nome: 'Mestre da Cond.',      desc: 'Atingiu 90%+ em um quiz de Condimentação',           icon: '🧂', cat: 'estudo',     cor: '#22c55e' },
+    // ── Precisão extra ───────────────────────────────────────
+    { id: 'cem_porcento',      nome: '100%',                 desc: 'Acertou todas as perguntas em um quiz',              icon: '💯', cat: 'precisao',   cor: '#22c55e' },
+    { id: 'invicto',           nome: 'Invicto',              desc: 'Acertou 30 perguntas seguidas',                      icon: '⚔️', cat: 'precisao',   cor: '#ef4444' },
+    // ── Persistência extra ───────────────────────────────────
+    { id: 'quinzena',          nome: 'Quinzena',             desc: 'Estudou 14 dias consecutivos',                       icon: '📅', cat: 'persistencia', cor: '#10b981' },
+    { id: 'imparavel',         nome: 'Imparável',            desc: 'Estudou 30 dias consecutivos',                       icon: '🌟', cat: 'persistencia', cor: '#f59e0b' },
+    { id: 'madrugador',        nome: 'Madrugador',           desc: 'Completou um quiz antes das 6h da manhã',            icon: '🌅', cat: 'persistencia', cor: '#fb923c' },
+    { id: 'dez_horas',         nome: '10 Horas de Estudo',   desc: 'Acumulou 10 horas estudando no MC Guias',            icon: '⌚', cat: 'persistencia', cor: '#a78bfa' },
+    { id: 'flashcardista',     nome: 'Flashcardista',        desc: 'Revisou 100 flashcards no total',                    icon: '🃏', cat: 'estudo',     cor: '#6366f1' },
+    // ── Jogo extra ───────────────────────────────────────────
+    { id: 'chef',              nome: 'Chef',                 desc: 'Jogou todos os 9 sanduíches em uma sessão',          icon: '👨‍🍳', cat: 'jogo',       cor: '#34d399' },
+    { id: 'montador_perfeito', nome: 'Montador Perfeito',    desc: 'Acertou perfeito em 5 partidas do jogo',             icon: '⭐', cat: 'jogo',       cor: '#fbbf24' },
+    { id: 'viciado_sanduiche', nome: 'Viciado em Sanduíche', desc: 'Jogou o Monte o Sanduíche 20 vezes',                 icon: '🕹️', cat: 'jogo',       cor: '#f43f5e' },
+    // ── Troféus adicionais ───────────────────────────────────
+    { id: 'trofeu_lope',       nome: 'Troféu LOPE',          desc: 'Completou 100% do checklist de LOPE',                icon: '🥇', cat: 'trofeu',     cor: '#22c55e' },
+    { id: 'trofeu_cond',       nome: 'Troféu Condimentação', desc: 'Completou 100% do checklist de Condimentação',       icon: '🥇', cat: 'trofeu',     cor: '#f59e0b' },
+    { id: 'trofeu_bebidas',    nome: 'Troféu Bebidas',       desc: 'Completou 100% do checklist de Bebidas e Sobremesas',icon: '🥇', cat: 'trofeu',     cor: '#38bdf8' },
+    { id: 'trofeu_salao',      nome: 'Troféu Salão',         desc: 'Completou 100% do checklist de Salão e NGK',         icon: '🥇', cat: 'trofeu',     cor: '#a78bfa' },
+    // ── Especial extra ───────────────────────────────────────
+    { id: 'colecionador_mestre', nome: 'Colecionador Mestre', desc: 'Desbloqueou 20 conquistas diferentes',              icon: '🏅', cat: 'especial',   cor: '#f59e0b' },
+    { id: 'lendario',          nome: 'Lendário',             desc: 'Desbloqueou 40 conquistas',                          icon: '🌈', cat: 'especial',   cor: '#818cf8' },
   ];
 
   /* ============================================================
@@ -145,10 +174,13 @@
         respostasRapidas: 0,
         diasConsecutivos: 0,
         quizzesApos22h: 0,
+        quizzesAntes6h: 0,
         totalFlashcards: 0,
         ultimaAtividade: null,
         totalPerguntas: 0,
         minEstudo: 0,
+        jogosTotais: 0,
+        jogosPerfeitos: 0,
         guiasConcluidos: [],
         provasAprovadas: []
       }
@@ -170,6 +202,9 @@
     if (!s.totalFlashcards)    s.totalFlashcards    = 0;
     if (!s.totalPerguntas)     s.totalPerguntas     = 0;
     if (!s.minEstudo)          s.minEstudo          = 0;
+    if (!s.quizzesAntes6h)     s.quizzesAntes6h     = 0;
+    if (!s.jogosTotais)        s.jogosTotais        = 0;
+    if (!s.jogosPerfeitos)     s.jogosPerfeitos     = 0;
     if (!s.guiasConcluidos)    s.guiasConcluidos    = [];
     if (!s.provasAprovadas)    s.provasAprovadas    = [];
     // Null-checks de progresso semanal (suporte a dados antigos do localStorage)
@@ -364,6 +399,35 @@
     // Tempo de estudo
     check('hora_de_estudo',    (stats.minEstudo || 0) >= 60);
     check('estudante_dedicado',(stats.minEstudo || 0) >= 300);
+    // Marcos de volume
+    check('veterano',          stats.quizzesCompletos >= 10);
+    check('centuriao',         (stats.totalPerguntas || 0) >= 500);
+    check('mestre_geral',      (stats.totalPerguntas || 0) >= 1000);
+    // Mestres por guia
+    check('mestre_drive',      !!extras.mestre_drive);
+    check('mestre_fritas',     !!extras.mestre_fritas);
+    check('mestre_cond',       !!extras.mestre_cond);
+    // Precisão extra
+    check('cem_porcento',      !!extras.cem_porcento);
+    check('invicto',           stats.perguntasSeguidasCertas >= 30);
+    // Persistência extra
+    check('quinzena',          stats.diasConsecutivos >= 14);
+    check('imparavel',         stats.diasConsecutivos >= 30);
+    check('madrugador',        (stats.quizzesAntes6h || 0) >= 1);
+    check('dez_horas',         (stats.minEstudo || 0) >= 600);
+    check('flashcardista',     stats.totalFlashcards >= 100);
+    // Jogo extra
+    check('chef',              !!extras.allPlayed);
+    check('montador_perfeito', (stats.jogosPerfeitos || 0) >= 5);
+    check('viciado_sanduiche', (stats.jogosTotais || 0) >= 20);
+    // Troféus adicionais
+    check('trofeu_lope',       gc.indexOf('lope') !== -1);
+    check('trofeu_cond',       gc.indexOf('condimentacao') !== -1);
+    check('trofeu_bebidas',    gc.indexOf('bebidas-sobremesas') !== -1);
+    check('trofeu_salao',      gc.indexOf('salao-ngk') !== -1);
+    // Especial extra
+    check('colecionador_mestre', unlocked.length >= 20);
+    check('lendario',          unlocked.length >= 40);
 
     // Show toasts and push notifications for new unlocks (staggered)
     newOnes.forEach(function (id, i) {
@@ -440,7 +504,8 @@
     // -- Statistics --
     stats.quizzesCompletos++;
     stats.totalPerguntas = (stats.totalPerguntas || 0) + (opts.total || 0);
-    if ((opts.hour || 0) >= 22)    stats.quizzesApos22h++;
+    if ((opts.hour || 0) >= 22)   stats.quizzesApos22h++;
+    if ((opts.hour || 0) < 6)    stats.quizzesAntes6h = (stats.quizzesAntes6h || 0) + 1;
     if ((opts.maxStreak || 0) > stats.perguntasSeguidasCertas) {
       stats.perguntasSeguidasCertas = opts.maxStreak;
     }
@@ -507,6 +572,10 @@
       jardineiro:     GUIAS_LIMPEZA.some(function(g){ return guide.indexOf(g) !== -1; }) && pct >= 90,
       limpezaCount:   prog.quizzesLimpeza,
       perfeccionista: pct >= 90,
+      mestre_drive:   guide.indexOf('drive') !== -1 && pct >= 90,
+      mestre_fritas:  (guide.indexOf('fritas') !== -1 || guide.indexOf('mcfritas') !== -1) && pct >= 90,
+      mestre_cond:    guide.indexOf('condimentacao') !== -1 && pct >= 90,
+      cem_porcento:   (opts.pct || 0) === 100,
     };
 
     // -- Check & notify --
@@ -531,11 +600,14 @@
   }
 
   /** Call when jogo sanduíche is completed. */
-  function onJogoComplete() {
+  function onJogoComplete(opts) {
+    opts = opts || {};
     var data = getData();
     checkWeekReset(data);
     updateStreak(data.estatisticas);
-    verificarConquistas(data, { jogoCompleto: true });
+    data.estatisticas.jogosTotais = (data.estatisticas.jogosTotais || 0) + 1;
+    if (opts.perfeito) data.estatisticas.jogosPerfeitos = (data.estatisticas.jogosPerfeitos || 0) + 1;
+    verificarConquistas(data, { jogoCompleto: true, allPlayed: !!opts.allPlayed });
     save(data);
   }
 
