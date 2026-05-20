@@ -2,126 +2,149 @@
 
 [![GitHub Pages](https://img.shields.io/badge/Site%20Online-Visit-brightgreen?style=flat&logo=github)](https://adrian-mysc.github.io/guiaoperacional)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![HTML](https://img.shields.io/badge/HTML-94.5%25-orange)](https://github.com/adrian-mysc/guiaoperacional)
 [![PWA](https://img.shields.io/badge/PWA-Instalável-blue)](https://adrian-mysc.github.io/guiaoperacional)
+[![CI](https://img.shields.io/github/actions/workflow/status/adrian-mysc/mcguias/validate.yml?label=CI)](https://github.com/adrian-mysc/mcguias/actions)
 
-**Site de estudo pessoal** baseado nos guias rápidos operacionais de um fast-food fictício (estilo McDonald's).  
-Para facilitar o treinamento e a memorização de procedimentos.
-
-
-### ✨ Funcionalidades
-
-- ✅ Navegação por abas com persistência (`sessionStorage`)
-- ✅ Checklists interativos salvos no navegador (`localStorage`)
-- ✅ Simulado Geral com **590+ perguntas** (múltipla escolha, flashcard e lacunas)
-- ✅ Timer configurável (10s a 30s)
-- ✅ Revisão de erros + repetição espaçada
-- ✅ Histórico de simulados e compartilhamento de resultados
-- ✅ Jogo “Monte o Sanduíche” (9 sanduíches)
-- ✅ Totalmente responsivo (celular e desktop)
-- ✅ **PWA instalável** — funciona 100% offline
-
-### 🗂️ Guias Disponíveis
-
-| Guia                        | Abas | Foco Principal                     |
-|-----------------------------|------|------------------------------------|
-| Chapa                       | 5    | Temperaturas, carnes, limpeza     |
-| LOPE / LOPE 2               | 9+7  | Apoio e preparação                 |
-| Linha                       | 4    | Qualidade e procedimento           |
-| McFritas & Produtos Fritos  | 5+4  | Preparação e fritos                |
-| Condimentação               | 5    | Clássicos, Chicken, Brabíssimo     |
-| Salão e NGK                 | 6    | Atendimento e limpeza              |
-| Montagem e Entrega          | 5    | R2P e entrega                      |
-| Drive-Thru                  | 6    | COD, tablet, Meu Méqui             |
-| McCafé                      | 6    | Equipamentos e bebidas             |
-| Limpeza e Sanitização       | 7    | Todos os equipamentos              |
-| Fechamento                  | 8    | Procedimentos de final de turno    |
-| ... e mais 8 guias          | —    | Treinadores, Supervisores, etc.    |
-
-**Simulado Geral** com filtro por guia + **Jogo Monte o Sanduíche**
-
-### 🚀 Como usar
-
-1. Acesse: https://adrian-mysc.github.io/guiaoperacional
-2. Instale como app no celular (ícone “Adicionar à tela inicial”)
-3. Estude offline sem problemas
-
-### 🛠️ Como adicionar um novo guia (para contribuidores)
-
-1. Copie `pages/chapa.html` → `pages/novo-guia.html`
-2. Adicione o card na `index.html`
-3. Inclua as perguntas no array `ALL_QUESTIONS` em `pages/quiz.html`
-4. Adicione o botão de filtro no quiz
-5. Registre o novo arquivo no `sw.js` (cache)
-
-### Tecnologias
-
-- HTML5, CSS3, Vanilla JavaScript
-- PWA (Manifest + Service Worker)
-- localStorage / sessionStorage
-- Totalmente estático (GitHub Pages)
-
-### Licença
-
-Este projeto está sob a licença **MIT** — sinta-se à vontade para estudar, modificar e usar como base.
-
-*Material de estudo pessoal. Não é oficial e não substitui treinamentos da empresa.*
+**Plataforma de estudo operacional** baseada nos guias rápidos de um fast-food (estilo McDonald's).  
+Feita para facilitar o treinamento e a memorização de procedimentos — funciona 100% offline como PWA instalável.
 
 ---
 
+## ✨ Funcionalidades
 
-## 📖 Guias Disponíveis
+### Quiz e Aprendizado
+- **Simulado Geral** com 590+ perguntas e filtro por guia
+- **3 modos de estudo**: múltipla escolha, flashcard e lacunas (fill-in-the-blank)
+- **Timer configurável** por pergunta: 10s, 15s, 20s ou 30s
+- **Repetição espaçada** (SM-2): questões com mais erros aparecem com prioridade
+- **Revisão de erros**: botão "Revisar só os erros" na tela de resultado, ordenado por taxa de erro
+- **Validação fuzzy** nas lacunas: "10:30" = "10min30s", com feedback mostrando a normalização aplicada
+- **Auto-avançar** após acerto com barra de progresso visual
+- **Streak de acertos** com toasts animados (3, 5, 10, 15, 20 seguidas)
+- **Histórico de simulados** com pontuação, data e compartilhamento
+
+### Dashboard e Analytics
+- **Dashboard unificado** com resumo geral, acertos vs. erros e desempenho por guia
+- **Análise por questão**: top 5 questões mais difíceis com taxa de erro e tempo médio de resposta
+- Rastreamento de analytics por questão (`mc_analytics`): tentativas, acertos, erros e tempo médio
+- Backup e restauração completa dos dados (inclui analytics)
+
+### Gamificação
+- **35+ conquistas** desbloqueáveis por categoria
+- **Desafios semanais** com calendário temático rotativo (4 semanas)
+- **Sistema de XP** e pontuação por questão
+- **Jogo "Monte o Sanduíche"** com 9 sanduíches e ingredientes reais
+
+### Guias Operacionais
+- **20+ guias** com navegação por abas e persistência via `sessionStorage`
+- **Checklists interativos** com progresso visual e persistência via `localStorage`
+- Guias: Chapa, LOPE, Linha, McFritas, Condimentação, Drive-Thru, McCafé, Limpeza, Fechamento e mais
+
+### PWA e Performance
+- **100% offline** via Service Worker com precaching de assets críticos (HTML, CSS, JS, manifest)
+- **Instalável** como app no celular e desktop
+- **Push notifications** com lembrete diário de estudo
+- Página offline exibe guias disponíveis em cache
+
+---
+
+## 🗂️ Guias Disponíveis
 
 | Guia | Conteúdo | Abas |
 |------|----------|------|
 | 🔥 Chapa | Temperaturas, carnes, bacon, limpeza | 5 |
-| 🥬 LOPE | Pré-pico, cebola, tomate, queijo, alface, bacon, rota ¼h | 9 |
-| 🧺 LOPE 2 — Apoio | Panos, bacon, cebola cheddar, suco/gelo, lixeiras | 7 |
+| 🥬 LOPE / LOPE 2 | Pré-pico, cebola, tomate, queijo, rota | 9 / 7 |
 | 📋 Linha | Visão geral, qualidade, procedimento | 4 |
-| 🍟 McFritas | Visão geral, preparação | 3 |
-| 🍟 McFritas & Fritos | McFritas, fritos, tortas | 5 |
-| 🍗 Produtos Fritos | Frango, tortas | 4 |
-| 🧂 Condimentação | Clássicos, Chicken, Brabíssimo, Outros | 5 |
-| 🪑 Salão e NGK | NGK, salão, limpeza, método preparo | 6 |
+| 🍟 McFritas & Fritos | McFritas, frango, tortas | 5 / 4 |
+| 🧂 Condimentação | Clássicos, Chicken, Brabíssimo | 5 |
+| 🪑 Salão e NGK | NGK, salão, limpeza | 6 |
 | 🛎️ Montagem e Entrega | Montagem, entrega, R2P | 5 |
-| 🗣️ Influencer Vendedor | Influencer, pagamento, Meu Méqui | 5 |
 | 🚗 Drive-Thru | COD, tablet, caixa, Meu Méqui | 6 |
-| 🥤 Bebidas e Sobremesas | Sobremesas, McShake, bebidas, Dessert Center | 7 |
-| 📦 McDelivery | Carrinho, procedimento | 4 |
-| ☕ McCafé | Café, bebidas, salgados/doces, equipamentos | 6 |
-| 🧹 Limpeza e Sanitização | Chapa, tostadeira, salão, pista drive, produtos | 7 |
-| 🔒 Fechamento | Fritadeiras, chapa, tostadeira, utensílios, estoque | 8 |
-| 🏅 Promoção Interna | — | 7 |
-| 🎓 Treinadores | Conteúdo para treinadores | 8 |
-| 📊 Supervisores | Conteúdo para supervisores | 6 |
-| 🎯 Simulado Geral | 590 perguntas com filtro por guia | — |
-| 🍔 Monte o Sanduíche | Jogo de condimentação com 9 sanduíches | — |
-
-## ✨ Funcionalidades
-
-- **Navegação por abas** em cada guia com persistência via `sessionStorage`
-- **Checklists interativos** com marcação persistente via `localStorage`
-- **Quiz — Múltipla escolha** com perguntas embaralhadas, feedback e explicações
-- **Quiz — Flashcard** com revelação por toque e embaralhamento
-- **Quiz — Lacunas** (fill-in-the-blank) para respostas numéricas
-- **Timer configurável** por pergunta: 10s, 15s, 20s ou 30s
-- **Revisão de erros** ao final do simulado, com resposta correta e explicação
-- **Repetição espaçada** (spaced repetition): questões com mais erros aparecem primeiro
-- **Histórico de simulados** com pontuação e data
-- **Compartilhamento de resultado** via Web Share API ou clipboard
-- **Jogo Monte o Sanduíche** com 9 sanduíches da condimentação
-- **Simulado Geral** com 590 perguntas e filtro por guia
-- **Design responsivo** para celular e desktop
-- **PWA instalável** — funciona offline via Service Worker
-
-## 🔧 Adicionando um Novo Guia
-
-1. Crie `pages/nome-guia.html` copiando a estrutura de `chapa.html` ou `lope.html`
-2. Adicione o card na grade de guias em `index.html`
-3. Adicione as perguntas do novo guia em `pages/quiz.html` no array `ALL_QUESTIONS`
-4. Adicione o botão de filtro correspondente em `pages/quiz.html`
-5. Registre o novo arquivo no cache do `sw.js`
+| 🥤 Bebidas e Sobremesas | McShake, bebidas, Dessert Center | 7 |
+| ☕ McCafé | Café, bebidas, equipamentos | 6 |
+| 🧹 Limpeza e Sanitização | Chapa, tostadeira, salão, drive | 7 |
+| 🔒 Fechamento | Fritadeiras, chapa, estoque | 8 |
+| 🏅 Promoção Interna | Crescimento e especialização | 7 |
+| 🎓 Treinadores / Supervisores | Conteúdo avançado | 8 / 6 |
+| … e mais 6 guias | Segurança, Estoque, Validades, etc. | — |
 
 ---
 
-*Material de estudo pessoal. Não oficial.*
+## 🛠️ Tecnologias
+
+### Frontend
+| Tecnologia | Uso |
+|-----------|-----|
+| HTML5 + CSS3 | 42 páginas, design system com variáveis CSS, dark mode |
+| Vanilla JavaScript (ES6) | Sem framework, sem bundler |
+| Web Audio API | Sons de feedback gerados em tempo real (sem arquivos externos) |
+| Web Share API | Compartilhamento de resultados com fallback para clipboard |
+
+### Armazenamento
+| Tecnologia | Uso |
+|-----------|-----|
+| `McStorage` (wrapper interno) | Abstração do `localStorage` com tratamento de `QuotaExceededError` |
+| `localStorage` | Histórico de quizzes, SR data, analytics, checklists, preferências |
+| `sessionStorage` | Estado de abas por página |
+
+### PWA
+| Tecnologia | Uso |
+|-----------|-----|
+| Service Worker | Cache network-first, precaching de assets críticos, push notifications |
+| Web App Manifest | Instalação como app standalone |
+| Cache API | Estratégia offline-first com fallback |
+
+### Qualidade e CI
+| Tecnologia | Uso |
+|-----------|-----|
+| GitHub Actions | Validação automática dos JSONs de questões em cada push |
+| ESLint | Linting com regras mínimas (`no-undef`, `no-unused-vars`) |
+| `js/tools/validateQuestions.js` | Script de validação local dos dados |
+
+---
+
+## 🚀 Como usar
+
+1. Acesse: **https://adrian-mysc.github.io/guiaoperacional**
+2. No celular: Chrome → Menu ⋮ → **"Adicionar à tela inicial"** para instalar como app
+3. Estude offline sem problemas — o conteúdo fica em cache automaticamente
+
+---
+
+## 🔧 Adicionando um Novo Guia
+
+1. Crie `pages/nome-guia.html` copiando a estrutura de `chapa.html`
+2. Adicione o card na grade de guias em `index.html`
+3. Crie `data/questions/nome-guia/basico.json` com as perguntas no formato padrão
+4. Adicione o botão de filtro correspondente em `pages/quiz.html`
+5. Execute `node js/tools/validateQuestions.js` para validar os dados
+
+---
+
+## 📦 Estrutura do Projeto
+
+```
+mcguias/
+├── index.html              # Página inicial
+├── pages/                  # 42 guias e páginas auxiliares
+├── js/
+│   ├── main.js             # Core: quiz, flashcard, lacunas, SR, analytics
+│   ├── gamificacao.js      # Conquistas, desafios e XP
+│   ├── game.js             # Jogo Monte o Sanduíche
+│   ├── learning/           # Módulos: adaptiveQuiz, spacedRepetition, weaknessMap
+│   ├── supabase/           # Integração backend (auth, sync, ranking)
+│   └── tools/              # validateQuestions, generateIndexes, autoTag
+├── data/questions/         # JSONs de questões por guia e nível
+├── css/styles.css          # Design system
+├── sw.js                   # Service Worker
+├── manifest.json           # PWA manifest
+└── .github/workflows/      # CI: validação de questões
+```
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT** — sinta-se à vontade para estudar, modificar e usar como base.
+
+*Material de estudo pessoal. Não é oficial e não substitui treinamentos da empresa.*
