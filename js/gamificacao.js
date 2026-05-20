@@ -124,8 +124,8 @@
 
   function loadData() {
     try {
-      var raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
+      var raw = McStorage.get(STORAGE_KEY, null);
+      if (raw) return raw;
     } catch (e) {}
     return null;
   }
@@ -156,7 +156,7 @@
   }
 
   function save(data) {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+    try { McStorage.set(STORAGE_KEY, data); } catch (e) {}
   }
 
   function getData() {
@@ -643,7 +643,7 @@
   function _scheduleReminderCheck() {
     var today   = new Date().toISOString().slice(0, 10);
     var lastKey = 'mc_last_notif';
-    if (localStorage.getItem(lastKey) === today) return;
+    if (McStorage.get(lastKey, null) === today) return;
 
     var data         = getData();
     var lastActivity = data.estatisticas.ultimaAtividade;
@@ -656,7 +656,7 @@
           ? 'Não perca seu streak de ' + streak + ' dia' + (streak !== 1 ? 's' : '') + '! Estude pelo menos 1 quiz hoje.'
           : 'Que tal estudar hoje? Abra um guia e complete um quiz rápido!';
         _showLocalNotification('MC Guias 📚', msg, 'mc-daily-reminder');
-        localStorage.setItem(lastKey, today);
+        McStorage.set(lastKey, today);
       }, 3000);
     }
   }
@@ -671,8 +671,8 @@
    */
   function _setupPushReminder() {
     var REMINDER_KEY = 'mc_push_reminder_set';
-    if (localStorage.getItem(REMINDER_KEY) === '1') return;
-    localStorage.setItem(REMINDER_KEY, '1');
+    if (McStorage.get(REMINDER_KEY, null) === '1') return;
+    McStorage.set(REMINDER_KEY, '1');
 
     function scheduleNext() {
       var now    = new Date();
@@ -717,7 +717,7 @@
 
   /** Reset all data (for debug). */
   function resetAll() {
-    localStorage.removeItem(STORAGE_KEY);
+    McStorage.set(STORAGE_KEY, null);
   }
 
   /* ============================================================

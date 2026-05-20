@@ -1,3 +1,5 @@
+"use strict";
+
 function applyUpdate(reg) {
   const r = reg || window._swRegistration;
   if (r && r.waiting) {
@@ -11,7 +13,39 @@ function applyUpdate(reg) {
    MC GUIAS — Shared JavaScript
    Versão: 2.2 — estatísticas · som · transição de perguntas
    ============================================================ */
-"use strict";
+
+var McStorage = (function() {
+  function get(key, fallback) {
+    try {
+      var raw = localStorage.getItem(key);
+      if (raw === null) return (fallback !== undefined) ? fallback : null;
+      try { return JSON.parse(raw); } catch(e) { return raw; }
+    } catch(e) { return (fallback !== undefined) ? fallback : null; }
+  }
+  function set(key, value) {
+    try {
+      localStorage.setItem(key, (typeof value === 'string') ? value : JSON.stringify(value));
+      return true;
+    } catch(e) {
+      if (e && e.name === 'QuotaExceededError') {
+        console.warn('[MC Guias] localStorage cheio. Dado não salvo:', key);
+      }
+      return false;
+    }
+  }
+  function remove(key) { try { localStorage.removeItem(key); } catch(e) {} }
+  return { get: get, set: set, remove: remove };
+})();
+
+function trackAnswer(qId, isCorrect, elapsedMs) {
+  if (!qId) return;
+  var data = McStorage.get('mc_analytics', {});
+  if (!data[qId]) data[qId] = { answered: 0, correct: 0, wrong: 0, totalMs: 0 };
+  data[qId].answered++;
+  if (isCorrect) data[qId].correct++; else data[qId].wrong++;
+  data[qId].totalMs += (elapsedMs || 0);
+  McStorage.set('mc_analytics', data);
+}
 
 // ── Sound Engine (Web Audio API — no external files) ──────────
 var _audioCtx = null;
@@ -20,7 +54,7 @@ function _getAudioCtx() {
   return _audioCtx;
 }
 function mcPlaySound(type) {
-  if (localStorage.getItem('mc_sound_off') === '1') return;
+  if (McStorage.get('mc_sound_off', null) === '1') return;
   try {
     var ctx = _getAudioCtx();
     var osc = ctx.createOscillator();
@@ -65,8 +99,8 @@ function renderStats(containerId) {
   var el = document.getElementById(containerId);
   if (!el) return;
 
-  var hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
-  var srData = JSON.parse(localStorage.getItem('mc_sr_data') || '{}');
+  var hist = McStorage.get('mc_quiz_history', []);
+  var srData = McStorage.get('mc_sr_data', {});
 
   if (!hist.length) {
     el.innerHTML = '<p style="color:var(--muted);font-size:13px;padding:16px 0;text-align:center;">Nenhum simulado realizado ainda.</p>';
@@ -187,7 +221,7 @@ function initTabs() {
 function initChecklist() {
   const pageId = document.body.dataset.page;
   const key    = pageId ? `mc_checks_${pageId}` : null;
-  const saved  = key ? JSON.parse(localStorage.getItem(key) || '{}') : {};
+  const saved  = key ? McStorage.get(key, {}) : {};
 
   function updateCheckProgress(card) {
     var all  = card.querySelectorAll('.check-item input[type=checkbox]');
@@ -239,7 +273,7 @@ function initChecklist() {
   var checkState = Object.assign({}, saved);
   var _saveTimer = null;
   function flushCheckState() {
-    if (key) localStorage.setItem(key, JSON.stringify(checkState));
+    if (key) McStorage.set(key, checkState);
   }
 
   document.querySelectorAll(".check-item input[type=checkbox]").forEach((cb, i) => {
@@ -261,17 +295,17 @@ function initChecklist() {
 }
 
 function saveQuizResult(guia, score, total) {
-  const hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+  const hist = McStorage.get('mc_quiz_history', []);
   const date = new Date().toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
   hist.unshift({ guia, score, total, date });
   if (hist.length > 20) hist.splice(20);
-  localStorage.setItem('mc_quiz_history', JSON.stringify(hist));
+  McStorage.set('mc_quiz_history', hist);
 }
 
 function renderHistory(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return;
-  const hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+  const hist = McStorage.get('mc_quiz_history', []);
   if (!hist.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px;padding:8px 0;">Nenhum simulado realizado ainda.</p>'; return; }
   el.innerHTML = hist.map(h => {
     const pct   = Math.round((h.score / h.total) * 100);
@@ -295,7 +329,7 @@ function getQuestionHash(q) {
 }
 
 function getSRData() {
-  return JSON.parse(localStorage.getItem('mc_sr_data') || '{}');
+  return McStorage.get('mc_sr_data', {});
 }
 
 function updateSRData(hash, correct) {
@@ -312,7 +346,7 @@ function updateSRData(hash, correct) {
   }
   entry.nextReview = Date.now() + entry.interval * 24 * 60 * 60 * 1000;
   data[hash] = entry;
-  localStorage.setItem('mc_sr_data', JSON.stringify(data));
+  McStorage.set('mc_sr_data', data);
 }
 
 function prioritizeQuestions(questions) {
@@ -500,14 +534,14 @@ function initQuiz(questions, guiaName) {
     function syncSoundBtn() {
       var btn = document.getElementById('btnSound');
       if (!btn) return;
-      var off = localStorage.getItem('mc_sound_off') === '1';
+      var off = McStorage.get('mc_sound_off', null) === '1';
       btn.textContent = off ? '🔇' : '🔊';
       btn.style.opacity = off ? '0.5' : '1';
     }
     syncSoundBtn();
     document.getElementById('btnSound').addEventListener('click', function() {
-      var off = localStorage.getItem('mc_sound_off') === '1';
-      localStorage.setItem('mc_sound_off', off ? '0' : '1');
+      var off = McStorage.get('mc_sound_off', null) === '1';
+      McStorage.set('mc_sound_off', off ? '0' : '1');
       syncSoundBtn();
       if (off) mcPlaySound('correct'); // preview
     });
@@ -580,7 +614,7 @@ function initQuiz(questions, guiaName) {
             }).join('')
       +   '</div>'
       + '</div>'
-      + '<div class="quiz-feedback" id="quiz-feedback"></div>'
+      + '<div class="quiz-feedback" id="quiz-feedback" aria-live="polite" role="status"></div>'
       + '<div class="quiz-nav">'
       +   '<button class="btn-secondary" onclick="if(window.setActiveMode)window.setActiveMode(\'multiple\');initQuiz(window._quizData,window._quizGuia)">🔀 Reiniciar</button>'
       +   '<button class="btn-primary" id="btn-next" style="display:none;" onclick="nextQuestion()">'
@@ -720,7 +754,9 @@ function initQuiz(questions, guiaName) {
     if (answered) return;
     if (window._quizTimerInterval) { clearInterval(window._quizTimerInterval); window._quizTimerInterval = null; }
     answered = true;
+    var elapsed = Date.now() - _qStart;
     var isCorrect = btn.dataset.correct === "true";
+    trackAnswer(q.id || getQuestionHash(q), isCorrect, elapsed);
     if (isCorrect) {
       score++;
       streak++;
@@ -859,8 +895,41 @@ function initQuiz(questions, guiaName) {
       if (arr) arr.textContent = open ? '▼' : '▲';
     };
 
+    var _srForReview = getSRData();
+    var _errorPool = pool.filter(function(q) {
+      var h = getQuestionHash(q);
+      var d = _srForReview[h];
+      return d && d.wrong > 0;
+    });
+    if (_errorPool.length > 0) {
+      var reviewBtn = document.createElement('button');
+      reviewBtn.className = 'btn-secondary';
+      reviewBtn.style.cssText = 'margin-top:10px;width:100%;';
+      reviewBtn.innerHTML = '❌ Revisar só os erros (' + _errorPool.length + ' questão' + (_errorPool.length > 1 ? 'ões' : '') + ')';
+      reviewBtn.onclick = function() { window.initReviewErrors(); };
+      var resultCard = app.querySelector('.quiz-result-card');
+      if (resultCard) resultCard.appendChild(reviewBtn);
+    }
     renderHistory('hist-inline');
   }
+
+  window.initReviewErrors = function() {
+    var srData = getSRData();
+    var errorPool = (window._quizData || []).filter(function(q) {
+      var h = getQuestionHash(q);
+      var d = srData[h];
+      return d && d.wrong > 0;
+    }).sort(function(a, b) {
+      var ha = getQuestionHash(a), hb = getQuestionHash(b);
+      var da = srData[ha] || {}, db = srData[hb] || {};
+      var ra = (da.wrong || 0) / ((da.correct || 0) + (da.wrong || 0) + 1);
+      var rb = (db.wrong || 0) / ((db.correct || 0) + (db.wrong || 0) + 1);
+      return rb - ra;
+    });
+    if (!errorPool.length) { mcShowToast('Nenhum erro registrado ainda!', false); return; }
+    if (window.setActiveMode) window.setActiveMode('multiple');
+    initQuiz(errorPool, (window._quizGuia || 'Simulado') + ' — Revisão de Erros');
+  };
 
   render();
 }
@@ -872,8 +941,10 @@ function initFlashcard(questions, guiaName) {
   let current = 0;
   let knew = 0;
   let didntKnow = 0;
+  let _qStart = Date.now();
 
   function render() {
+    _qStart = Date.now();
     if (current >= pool.length) {
       const isRoot = window.location.pathname.includes('/pages/') ? '../index.html' : 'index.html';
       const pct = pool.length > 0 ? Math.round((knew / pool.length) * 100) : 0;
@@ -918,8 +989,11 @@ function initFlashcard(questions, guiaName) {
     if (window.Gamificacao) window.Gamificacao.onFlashcard();
   };
   window.rateCard = (didKnow) => {
+    var elapsed = Date.now() - _qStart;
     if (didKnow) knew++; else didntKnow++;
-    updateSRData(getQuestionHash(pool[current]), didKnow);
+    var q = pool[current];
+    trackAnswer(q.id || getQuestionHash(q), didKnow, elapsed);
+    updateSRData(getQuestionHash(q), didKnow);
     current++;
     render();
   };
@@ -1091,8 +1165,10 @@ function initLacuna(questions, guiaName) {
   var scoreHalf  = 0; // correct after hint
   var answered   = false;
   var hintUsed   = false;
+  var _qStart    = Date.now();
 
   function render() {
+    _qStart = Date.now();
     if (current >= pool.length) { showLacunaResult(); return; }
     var q    = pool[current];
     var hint = makeHint(q.answer);
@@ -1119,7 +1195,7 @@ function initLacuna(questions, guiaName) {
       +       ' style="width:100%;box-sizing:border-box;padding:12px 14px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:16px;font-family:var(--font-body);color:var(--text);background:var(--card);outline:none;">'
       +   '</div>'
       + '</div>'
-      + '<div class="quiz-feedback" id="quiz-feedback"></div>'
+      + '<div class="quiz-feedback" id="quiz-feedback" aria-live="polite" role="status"></div>'
       + '<div style="display:flex;gap:8px;">'
       +   '<button class="btn-secondary" id="btn-lacuna-hint" onclick="useLacunaHint()" style="flex:1;">💡 Dica</button>'
       +   '<button class="btn-primary" id="btn-lacuna-confirm" onclick="checkLacuna()" style="flex:2;">✓ Confirmar</button>'
@@ -1188,12 +1264,17 @@ function initLacuna(questions, guiaName) {
       else score++;
     }
 
+    trackAnswer(q.id || getQuestionHash(q), isCorrect, Date.now() - _qStart);
     updateSRData(getQuestionHash(q), isCorrect);
 
     var fb = document.getElementById('quiz-feedback');
     fb.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'wrong');
+    var normalizedUser = normalizeAnswer(userVal);
+    var fuzzyMatch = isCorrect && normalizedUser !== userVal.toLowerCase().trim();
     if (isCorrect) {
-      fb.innerHTML = (hintUsed ? '⚠️' : '✅') + ' <strong>' + (hintUsed ? 'Correto com dica!' : 'Correto!') + '</strong> ' + q.answer + (q.explanation ? ' — ' + q.explanation : '');
+      fb.innerHTML = (hintUsed ? '⚠️' : '✅') + ' <strong>' + (hintUsed ? 'Correto com dica!' : 'Correto!') + '</strong> ' + q.answer
+        + (fuzzyMatch ? '<br><span style="font-size:11px;opacity:.75;">Você digitou "<em>' + userVal + '</em>" → interpretado como <em>' + normalizedUser + '</em></span>' : '')
+        + (q.explanation ? ' — ' + q.explanation : '');
     } else {
       fb.innerHTML = '❌ <strong>Resposta:</strong> ' + q.answer + (q.explanation ? ' — ' + q.explanation : '');
     }
@@ -1250,7 +1331,7 @@ function initOnboarding() {
   if (!overlay) return;
 
   // Only show on first ever visit (localStorage, not sessionStorage)
-  if (localStorage.getItem('mc_onboarding_done')) return;
+  if (McStorage.get('mc_onboarding_done', null)) return;
 
   overlay.style.display = 'flex';
 
@@ -1275,7 +1356,7 @@ function initOnboarding() {
     overlay.style.opacity = '0';
     overlay.style.transition = 'opacity .25s';
     setTimeout(() => { overlay.style.display = 'none'; }, 250);
-    localStorage.setItem('mc_onboarding_done', '1');
+    McStorage.set('mc_onboarding_done', '1');
   }
 
   if (nextBtn) nextBtn.addEventListener('click', () => {
@@ -1312,12 +1393,12 @@ if ('serviceWorker' in navigator) {
     }
 
     if (event.data && event.data.type === 'SW_VERSION') {
-      var lastVer = localStorage.getItem('mc_sw_version');
+      var lastVer = McStorage.get('mc_sw_version', null);
       var curVer  = event.data.version;
       if (lastVer && lastVer !== curVer) {
         mcShowUpdateToast();
       }
-      localStorage.setItem('mc_sw_version', curVer);
+      McStorage.set('mc_sw_version', curVer);
     }
   });
 

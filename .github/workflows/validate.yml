@@ -1,0 +1,22 @@
+name: Validate Questions
+
+on:
+  push:
+    paths:
+      - 'data/questions/**'
+      - 'js/tools/validateQuestions.js'
+  pull_request:
+    paths:
+      - 'data/questions/**'
+      - 'js/tools/validateQuestions.js'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate question files
+        run: node js/tools/validateQuestions.js

@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "McStorage": "readonly",
+    "Gamificacao": "readonly"
+  },
+  "rules": {
+    "no-undef": "warn",
+    "no-unused-vars": ["warn", { "args": "none" }],
+    "no-console": "off"
+  }
+}

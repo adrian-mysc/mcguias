@@ -4,12 +4,23 @@
 const CACHE = 'mc-guias-v30';
 const offlineFallbackPage = '/mcguias/offline.html';
 
-// ---- Install: pré-cache da página offline ----
+const PRECACHE_ASSETS = [
+  '/mcguias/offline.html',
+  '/mcguias/',
+  '/mcguias/index.html',
+  '/mcguias/css/styles.css',
+  '/mcguias/js/main.js',
+  '/mcguias/js/gamificacao.js',
+  '/mcguias/manifest.json',
+];
+
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE).then((cache) => {
-      return cache.add(offlineFallbackPage).catch(() => {});
+      return Promise.allSettled(
+        PRECACHE_ASSETS.map((url) => cache.add(url).catch(() => {}))
+      );
     })
   );
 });
