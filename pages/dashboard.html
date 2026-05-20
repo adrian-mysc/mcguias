@@ -181,6 +181,77 @@
     }
     .cq-mini.locked { opacity: 0.3; filter: grayscale(1); }
 
+    /* ── Analytics ── */
+    .analytics-stat-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .analytics-mini-card {
+      flex: 1;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .analytics-mini-num {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1;
+    }
+    .analytics-mini-label {
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+    .hard-q-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .hard-q-row:last-child { border-bottom: none; }
+    .hard-q-text {
+      flex: 1;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .hard-q-stats {
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .hard-q-rate {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--red);
+    }
+    .hard-q-sub {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+    .hard-q-bar {
+      width: 56px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 4px;
+      margin-left: auto;
+    }
+    .hard-q-bar-fill { height: 100%; background: var(--red); border-radius: 2px; }
+
     /* ── Empty state ── */
     .dash-empty {
       text-align: center;
@@ -231,6 +302,16 @@
           <span id="srWrong">❌ 0 erradas</span>
         </div>
         <div style="margin-top:10px;font-size:12px;color:var(--muted);text-align:center;" id="srTaxaAcerto"></div>
+      </div>
+    </div>
+
+    <!-- ── Analytics de questões ── -->
+    <div class="dash-section" id="analyticsSection" style="display:none;">
+      <div class="dash-section-title">Análise por questão</div>
+      <div class="card" style="padding:14px 16px;">
+        <div class="analytics-stat-row" id="analyticsStatRow"></div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Questões mais difíceis</div>
+        <div id="hardQList"></div>
       </div>
     </div>
 
@@ -295,6 +376,9 @@
     }
     function getGamData() {
       try { return JSON.parse(localStorage.getItem('gamificacao') || 'null'); } catch(e) { return null; }
+    }
+    function getAnalytics() {
+      try { return JSON.parse(localStorage.getItem('mc_analytics') || '{}'); } catch(e) { return {}; }
     }
     function pct(score, total) {
       return total > 0 ? Math.round((score / total) * 100) : 0;
@@ -409,6 +493,51 @@
       }).join('');
     }
 
+    // ── Renderiza analytics de questões ─────────────────────
+    function renderAnalytics(analytics) {
+      var entries = Object.values(analytics).filter(function(d) { return d.answered >= 2; });
+      if (!entries.length) return;
+
+      el('analyticsSection').style.display = '';
+
+      var totalAnswered = entries.reduce(function(s, d) { return s + d.answered; }, 0);
+      var totalMs       = entries.reduce(function(s, d) { return s + (d.totalMs || 0); }, 0);
+      var avgSec        = totalAnswered > 0 ? Math.round(totalMs / totalAnswered / 1000) : 0;
+      var totalWrong    = entries.reduce(function(s, d) { return s + d.wrong; }, 0);
+      var globalRate    = totalAnswered > 0 ? Math.round(((totalAnswered - totalWrong) / totalAnswered) * 100) : 0;
+
+      el('analyticsStatRow').innerHTML =
+        '<div class="analytics-mini-card"><div class="analytics-mini-num">' + totalAnswered + '</div><div class="analytics-mini-label">Respondidas</div></div>' +
+        '<div class="analytics-mini-card"><div class="analytics-mini-num" style="color:#22c55e;">' + globalRate + '%</div><div class="analytics-mini-label">Acerto global</div></div>' +
+        '<div class="analytics-mini-card"><div class="analytics-mini-num" style="color:#3b82f6;">' + avgSec + 's</div><div class="analytics-mini-label">Tempo médio</div></div>';
+
+      var hardest = Object.entries(analytics)
+        .filter(function(e) { return e[1].answered >= 2 && e[1].wrong > 0; })
+        .map(function(e) {
+          var d = e[1];
+          var wrongRate = Math.round((d.wrong / d.answered) * 100);
+          return { text: d.text || e[0], wrong: d.wrong, answered: d.answered, wrongRate: wrongRate };
+        })
+        .sort(function(a, b) { return b.wrongRate - a.wrongRate; })
+        .slice(0, 5);
+
+      if (!hardest.length) {
+        el('hardQList').innerHTML = '<div style="font-size:12px;color:var(--muted);text-align:center;padding:8px 0;">Nenhuma questão com erros suficientes ainda.</div>';
+        return;
+      }
+
+      el('hardQList').innerHTML = hardest.map(function(q) {
+        return '<div class="hard-q-row">' +
+          '<div class="hard-q-text">' + q.text + '</div>' +
+          '<div class="hard-q-stats">' +
+            '<div class="hard-q-rate">' + q.wrongRate + '%</div>' +
+            '<div class="hard-q-sub">' + q.wrong + '/' + q.answered + ' erros</div>' +
+            '<div class="hard-q-bar"><div class="hard-q-bar-fill" style="width:' + q.wrongRate + '%;"></div></div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
     // ── Backup / Restore ─────────────────────────────────────
     window.exportarBackup = function() {
       var data = {
@@ -417,6 +546,7 @@
         quizHistory: localStorage.getItem('mc_quiz_history'),
         srData:      localStorage.getItem('mc_sr_data'),
         gamificacao: localStorage.getItem('gamificacao'),
+        analytics:   localStorage.getItem('mc_analytics'),
       };
       // Adicionar checklists
       var checks = {};
@@ -449,6 +579,7 @@
             if (data.quizHistory)  localStorage.setItem('mc_quiz_history', data.quizHistory);
             if (data.srData)       localStorage.setItem('mc_sr_data',      data.srData);
             if (data.gamificacao)  localStorage.setItem('gamificacao',     data.gamificacao);
+            if (data.analytics)    localStorage.setItem('mc_analytics',    data.analytics);
             if (data.checklists) {
               Object.entries(data.checklists).forEach(function(p) {
                 localStorage.setItem(p[0], p[1]);
@@ -467,7 +598,7 @@
 
     window.confirmarReset = function() {
       if (confirm('⚠️ Resetar TODOS os dados?\n\nIsso apagará seu histórico de quizzes, conquistas, desafios e estatísticas.\n\nEsta ação não pode ser desfeita.')) {
-        ['mc_quiz_history','mc_sr_data','gamificacao','mc_last_notif','mc_push_reminder_set'].forEach(function(k) {
+        ['mc_quiz_history','mc_sr_data','gamificacao','mc_analytics','mc_last_notif','mc_push_reminder_set'].forEach(function(k) {
           localStorage.removeItem(k);
         });
         // Remove checklists
@@ -498,12 +629,14 @@
 
     // ── Bootstrap ────────────────────────────────────────────
     function init() {
-      var hist    = getQuizHistory();
-      var srData  = getSRData();
-      var gamData = getGamData();
+      var hist      = getQuizHistory();
+      var srData    = getSRData();
+      var gamData   = getGamData();
+      var analytics = getAnalytics();
 
       renderStats(hist, srData, gamData);
       renderSR(srData);
+      renderAnalytics(analytics);
       renderGuias(hist);
       renderHist(hist);
       renderConquistas(gamData);

@@ -37,13 +37,14 @@ var McStorage = (function() {
   return { get: get, set: set, remove: remove };
 })();
 
-function trackAnswer(qId, isCorrect, elapsedMs) {
+function trackAnswer(qId, isCorrect, elapsedMs, qText) {
   if (!qId) return;
   var data = McStorage.get('mc_analytics', {});
-  if (!data[qId]) data[qId] = { answered: 0, correct: 0, wrong: 0, totalMs: 0 };
+  if (!data[qId]) data[qId] = { answered: 0, correct: 0, wrong: 0, totalMs: 0, text: '' };
   data[qId].answered++;
   if (isCorrect) data[qId].correct++; else data[qId].wrong++;
   data[qId].totalMs += (elapsedMs || 0);
+  if (qText && !data[qId].text) data[qId].text = qText;
   McStorage.set('mc_analytics', data);
 }
 
@@ -756,7 +757,7 @@ function initQuiz(questions, guiaName) {
     answered = true;
     var elapsed = Date.now() - _qStart;
     var isCorrect = btn.dataset.correct === "true";
-    trackAnswer(q.id || getQuestionHash(q), isCorrect, elapsed);
+    trackAnswer(q.id || getQuestionHash(q), isCorrect, elapsed, q.question);
     if (isCorrect) {
       score++;
       streak++;
@@ -992,7 +993,7 @@ function initFlashcard(questions, guiaName) {
     var elapsed = Date.now() - _qStart;
     if (didKnow) knew++; else didntKnow++;
     var q = pool[current];
-    trackAnswer(q.id || getQuestionHash(q), didKnow, elapsed);
+    trackAnswer(q.id || getQuestionHash(q), didKnow, elapsed, q.question);
     updateSRData(getQuestionHash(q), didKnow);
     current++;
     render();
@@ -1264,7 +1265,7 @@ function initLacuna(questions, guiaName) {
       else score++;
     }
 
-    trackAnswer(q.id || getQuestionHash(q), isCorrect, Date.now() - _qStart);
+    trackAnswer(q.id || getQuestionHash(q), isCorrect, Date.now() - _qStart, q.answer ? q.question : null);
     updateSRData(getQuestionHash(q), isCorrect);
 
     var fb = document.getElementById('quiz-feedback');
