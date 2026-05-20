@@ -598,7 +598,7 @@ function initQuiz(questions, guiaName) {
 
     app.innerHTML = '<div style="display:flex;flex-direction:column;gap:14px;">' + timerSVG
       + '<div>'
-      +   '<div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:' + pct + '%"></div></div>'
+      +   '<div class="quiz-progress-bar"><div class="quiz-progress-fill" style="transform:scaleX(' + (pct/100) + ')"></div></div>'
       +   '<div style="display:flex;justify-content:space-between;margin-top:4px;">'
       +     '<span class="quiz-counter">Pergunta ' + (current + 1) + ' de ' + pool.length + '</span>'
       +     '<span class="quiz-counter">✅ ' + score + ' corretas' + (streak >= 3 ? ' &nbsp;' + (streak >= 10 ? '🏆' : streak >= 5 ? '⚡' : '🔥') + ' ' + streak : '') + '</span>'
@@ -966,7 +966,7 @@ function initFlashcard(questions, guiaName) {
     const pct = Math.round((current / pool.length) * 100);
     app.innerHTML = `<div style="display:flex;flex-direction:column;gap:14px;">
       <div>
-        <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="transform:scaleX(${pct/100})"></div></div>
         <div style="display:flex;justify-content:space-between;margin-top:4px;">
           <span class="quiz-counter">Cartão ${current + 1} de ${pool.length}</span>
           <span class="quiz-counter">✅ ${knew} sabia · ❌ ${didntKnow} não</span>
@@ -1180,7 +1180,7 @@ function initLacuna(questions, guiaName) {
     app.innerHTML =
       '<div style="display:flex;flex-direction:column;gap:14px;">'
       + '<div>'
-      +   '<div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:' + pct + '%"></div></div>'
+      +   '<div class="quiz-progress-bar"><div class="quiz-progress-fill" style="transform:scaleX(' + (pct/100) + ')"></div></div>'
       +   '<div style="display:flex;justify-content:space-between;margin-top:4px;">'
       +     '<span class="quiz-counter">Pergunta ' + (current + 1) + ' de ' + pool.length + '</span>'
       +     '<span class="quiz-counter">✅ ' + score + (scoreHalf ? ' +' + scoreHalf + '⚠️' : '') + '</span>'

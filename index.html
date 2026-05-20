@@ -1027,22 +1027,26 @@
     const allCards = document.querySelectorAll('.guide-card:not(.locked), .quiz-cta');
     const allCats  = document.querySelectorAll('.category-section');
 
+    let _searchTimer;
     searchInput.addEventListener('input', () => {
-      const q = searchInput.value.trim().toLowerCase();
-      let any = false;
-      allCards.forEach(card => {
-        const text = (card.dataset.keywords || '') + ' ' + card.innerText.toLowerCase();
-        const show = !q || text.includes(q);
-        card.style.display = show ? '' : 'none';
-        if (show) any = true;
-      });
-      allCats.forEach(cat => {
-        const vis = [...cat.querySelectorAll('.guide-card:not(.locked)')].filter(c => c.style.display !== 'none');
-        cat.style.display = vis.length ? '' : 'none';
-      });
-      const nr = document.getElementById('noResults');
-      nr.style.display = (!any && q) ? 'block' : 'none';
-      document.getElementById('noResultsTerm').textContent = q;
+      clearTimeout(_searchTimer);
+      _searchTimer = setTimeout(() => {
+        const q = searchInput.value.trim().toLowerCase();
+        let any = false;
+        allCards.forEach(card => {
+          const text = (card.dataset.keywords || '') + ' ' + card.innerText.toLowerCase();
+          const show = !q || text.includes(q);
+          card.style.display = show ? '' : 'none';
+          if (show) any = true;
+        });
+        allCats.forEach(cat => {
+          const vis = [...cat.querySelectorAll('.guide-card:not(.locked)')].filter(c => c.style.display !== 'none');
+          cat.style.display = vis.length ? '' : 'none';
+        });
+        const nr = document.getElementById('noResults');
+        nr.style.display = (!any && q) ? 'block' : 'none';
+        document.getElementById('noResultsTerm').textContent = q;
+      }, 180);
     });
 
     function renderHistStrip() {
@@ -1268,11 +1272,17 @@
     }
 
     if (audio) {
+      let _rafPending = false;
       audio.addEventListener('timeupdate', () => {
-        if (audio.duration) {
-          progressBar.style.width = (audio.currentTime / audio.duration * 100) + '%';
-          timeEl.textContent = fmtTime(audio.currentTime) + ' / ' + fmtTime(audio.duration);
-        }
+        if (_rafPending) return;
+        _rafPending = true;
+        requestAnimationFrame(() => {
+          _rafPending = false;
+          if (audio.duration) {
+            progressBar.style.width = (audio.currentTime / audio.duration * 100) + '%';
+            timeEl.textContent = fmtTime(audio.currentTime) + ' / ' + fmtTime(audio.duration);
+          }
+        });
       });
       audio.addEventListener('ended', () => {
         playBtn.classList.remove('playing');
@@ -1371,22 +1381,26 @@
     const allCards = document.querySelectorAll('.guide-card:not(.locked), .quiz-cta');
     const allCats  = document.querySelectorAll('.category-section');
 
+    let _searchTimer;
     searchInput.addEventListener('input', () => {
-      const q = searchInput.value.trim().toLowerCase();
-      let any = false;
-      allCards.forEach(card => {
-        const text = (card.dataset.keywords || '') + ' ' + card.innerText.toLowerCase();
-        const show = !q || text.includes(q);
-        card.style.display = show ? '' : 'none';
-        if (show) any = true;
-      });
-      allCats.forEach(cat => {
-        const vis = [...cat.querySelectorAll('.guide-card:not(.locked)')].filter(c => c.style.display !== 'none');
-        cat.style.display = vis.length ? '' : 'none';
-      });
-      const nr = document.getElementById('noResults');
-      nr.style.display = (!any && q) ? 'block' : 'none';
-      document.getElementById('noResultsTerm').textContent = q;
+      clearTimeout(_searchTimer);
+      _searchTimer = setTimeout(() => {
+        const q = searchInput.value.trim().toLowerCase();
+        let any = false;
+        allCards.forEach(card => {
+          const text = (card.dataset.keywords || '') + ' ' + card.innerText.toLowerCase();
+          const show = !q || text.includes(q);
+          card.style.display = show ? '' : 'none';
+          if (show) any = true;
+        });
+        allCats.forEach(cat => {
+          const vis = [...cat.querySelectorAll('.guide-card:not(.locked)')].filter(c => c.style.display !== 'none');
+          cat.style.display = vis.length ? '' : 'none';
+        });
+        const nr = document.getElementById('noResults');
+        nr.style.display = (!any && q) ? 'block' : 'none';
+        document.getElementById('noResultsTerm').textContent = q;
+      }, 180);
     });
 
     function renderHistStrip() {
@@ -1618,11 +1632,17 @@
     }
 
     if (audio) {
+      let _rafPending = false;
       audio.addEventListener('timeupdate', () => {
-        if (audio.duration) {
-          progressBar.style.width = (audio.currentTime / audio.duration * 100) + '%';
-          timeEl.textContent = fmtTime(audio.currentTime) + ' / ' + fmtTime(audio.duration);
-        }
+        if (_rafPending) return;
+        _rafPending = true;
+        requestAnimationFrame(() => {
+          _rafPending = false;
+          if (audio.duration) {
+            progressBar.style.width = (audio.currentTime / audio.duration * 100) + '%';
+            timeEl.textContent = fmtTime(audio.currentTime) + ' / ' + fmtTime(audio.duration);
+          }
+        });
       });
       audio.addEventListener('ended', () => {
         playBtn.classList.remove('playing');
