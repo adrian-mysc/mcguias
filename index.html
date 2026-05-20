@@ -1173,10 +1173,10 @@
       if (!sw) { location.reload(); return; }
       setUpdateUI('⚡', 'Instalando...', 'Aplicando a atualização. A página será recarregada.', '');
       sw.postMessage({ type: 'SKIP_WAITING' });
-      // Reload after SW takes over
+      // Reload after SW takes over (once: true evita acumular listeners)
       navigator.serviceWorker.addEventListener('controllerchange', function() {
         location.reload();
-      });
+      }, { once: true });
     };
 
     if (updateClose) {

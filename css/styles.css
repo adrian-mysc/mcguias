@@ -1031,8 +1031,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .ob-btn-start:hover { background: var(--red-dark, #b71c1c); }
 #ob-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; }
 #ob-dots { display: flex; gap: 6px; }
-.ob-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: background .2s, transform .2s; }
-.ob-dot.active { background: var(--red); transform: scaleX(2.5); border-radius: 4px; }
+.ob-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: background .2s, width .2s; }
+.ob-dot.active { background: var(--red); width: 20px; border-radius: 4px; }
 .ob-btn-skip { background: none; border: none; font-size: 13px; color: var(--muted); cursor: pointer; padding: 8px 4px; font-family: var(--font-body); }
 .ob-btn-next { background: var(--red); color: #fff; border: none; border-radius: var(--radius-md); padding: 10px 20px; font-family: var(--font-display); font-size: 13px; font-weight: 800; cursor: pointer; transition: background .15s; }
 .ob-btn-next:hover { background: var(--red-dark, #b71c1c); }
