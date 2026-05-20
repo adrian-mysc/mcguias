@@ -1,7 +1,7 @@
 // MC Guias — Service Worker v19
 // Atualização: Best Burger quiz (26 perguntas), 5 conquistas, aba Materiais, correções de UI
 
-const CACHE = 'mc-guias-v30';
+const CACHE = 'mc-guias-v31';
 const offlineFallbackPage = '/mcguias/offline.html';
 
 const PRECACHE_ASSETS = [
@@ -15,7 +15,6 @@ const PRECACHE_ASSETS = [
 ];
 
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE).then((cache) => {
       return Promise.allSettled(
