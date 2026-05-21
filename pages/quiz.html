@@ -95,28 +95,28 @@
       <div class="card">
         <div class="card-head"><div class="card-head-icon">📚</div><h2>Selecionar Guias</h2></div>
         <div class="card-body">
-          <div class="filter-row" id="filter-row">
-            <button class="filter-btn active" data-guide="all">🎯 Todos</button>
-            <button class="filter-btn" data-guide="chapa">🔥 Chapa</button>
-            <button class="filter-btn" data-guide="lope">🥬 LOPE</button>
-            <button class="filter-btn" data-guide="linha">🍔 Linha</button>
-            <button class="filter-btn" data-guide="mcfritas">🍟 McFritas</button>
-            <button class="filter-btn" data-guide="fritos">🍗 Fritos</button>
-            <button class="filter-btn" data-guide="condimentacao">🧂 Condimentação</button>
-            <button class="filter-btn" data-guide="salao">🪑 Salão e NGK</button>
-            <button class="filter-btn" data-guide="montagem">🛎️ Montagem</button>
-            <button class="filter-btn" data-guide="mcdelivery">🛵 McDelivery</button>
-            <button class="filter-btn" data-guide="influencer">🗣️ Influencer</button>
-            <button class="filter-btn" data-guide="drive">🚗 Drive-Thru</button>
-            <button class="filter-btn" data-guide="bebidas">🍦 Bebidas/Sobremesas</button>
-            <button class="filter-btn" data-guide="mccafe">☕ McCafé</button>
-            <button class="filter-btn" data-guide="limpeza">🧹 Limpeza</button>
-            <button class="filter-btn" data-guide="provas">📋 Provas</button>
-            <button class="filter-btn" data-guide="futuros-treinadores">🎓 Futuros Treinadores</button>
-            <button class="filter-btn" data-guide="embaixador">🌟 Embaixador da Experiência</button>
-            <button class="filter-btn" data-guide="temperaturas">🌡️ Temperaturas</button>
-            <button class="filter-btn" data-guide="rendimentos">📏 Rendimentos</button>
-            <button class="filter-btn" data-guide="empilhamento">📦 Empilhamento</button>
+          <div class="filter-row" id="filter-row" role="group" aria-label="Filtrar por guia">
+            <button class="filter-btn active" data-guide="all" aria-pressed="true">🎯 Todos</button>
+            <button class="filter-btn" data-guide="chapa" aria-pressed="false">🔥 Chapa</button>
+            <button class="filter-btn" data-guide="lope" aria-pressed="false">🥬 LOPE</button>
+            <button class="filter-btn" data-guide="linha" aria-pressed="false">🍔 Linha</button>
+            <button class="filter-btn" data-guide="mcfritas" aria-pressed="false">🍟 McFritas</button>
+            <button class="filter-btn" data-guide="fritos" aria-pressed="false">🍗 Fritos</button>
+            <button class="filter-btn" data-guide="condimentacao" aria-pressed="false">🧂 Condimentação</button>
+            <button class="filter-btn" data-guide="salao" aria-pressed="false">🪑 Salão e NGK</button>
+            <button class="filter-btn" data-guide="montagem" aria-pressed="false">🛎️ Montagem</button>
+            <button class="filter-btn" data-guide="mcdelivery" aria-pressed="false">🛵 McDelivery</button>
+            <button class="filter-btn" data-guide="influencer" aria-pressed="false">🗣️ Influencer</button>
+            <button class="filter-btn" data-guide="drive" aria-pressed="false">🚗 Drive-Thru</button>
+            <button class="filter-btn" data-guide="bebidas" aria-pressed="false">🍦 Bebidas/Sobremesas</button>
+            <button class="filter-btn" data-guide="mccafe" aria-pressed="false">☕ McCafé</button>
+            <button class="filter-btn" data-guide="limpeza" aria-pressed="false">🧹 Limpeza</button>
+            <button class="filter-btn" data-guide="provas" aria-pressed="false">📋 Provas</button>
+            <button class="filter-btn" data-guide="futuros-treinadores" aria-pressed="false">🎓 Futuros Treinadores</button>
+            <button class="filter-btn" data-guide="embaixador" aria-pressed="false">🌟 Embaixador da Experiência</button>
+            <button class="filter-btn" data-guide="temperaturas" aria-pressed="false">🌡️ Temperaturas</button>
+            <button class="filter-btn" data-guide="rendimentos" aria-pressed="false">📏 Rendimentos</button>
+            <button class="filter-btn" data-guide="empilhamento" aria-pressed="false">📦 Empilhamento</button>
           </div>
         </div>
       </div>
@@ -626,8 +626,12 @@
     // Filter buttons
     document.querySelectorAll(".filter-btn").forEach(btn => {
       btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".filter-btn").forEach(b => {
+          b.classList.remove("active");
+          b.setAttribute("aria-pressed", "false");
+        });
         btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
         selectedGuide = btn.dataset.guide;
       });
     });
@@ -645,9 +649,9 @@
 
     async function startQuiz() {
       const btn = document.querySelector('[onclick="startQuiz()"]');
-      if (btn) { btn.disabled = true; btn.textContent = 'Carregando...'; }
+      if (btn) { btn.disabled = true; btn.classList.add('btn-loading'); btn.setAttribute('aria-busy', 'true'); }
       await ensureLoaded();
-      if (btn) { btn.disabled = false; btn.textContent = btn.getAttribute('data-label') || 'Iniciar Quiz'; }
+      if (btn) { btn.disabled = false; btn.classList.remove('btn-loading'); btn.removeAttribute('aria-busy'); }
 
       const pool = selectedGuide === "all"
         ? ALL_QUESTIONS
