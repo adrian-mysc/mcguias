@@ -504,12 +504,12 @@
     { id:'sg06', guide:'seguranca-alimento', category:'🛡️ Segurança · Contaminação', tags:['contaminacao','higiene'],               dificuldade:3, question:'Qual é o principal tipo de contaminação cruzada no ambiente de fast food?',                            options:['Física','Química','Microbiológica','Radioativa'],                         answer:'Microbiológica', explanation:'A contaminação cruzada microbiológica (bactérias) é a mais crítica no ambiente de fast food.' },
 
     // ── VALIDADES ──────────────────────────────────────────────────
-    { id:'vl01', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','queijo'],          dificuldade:2, question:'Qual a validade do molho cheddar (incluindo ambientação)?',                                                                        options:['4 horas','6 horas','8 horas','12 horas'],                                answer:'8 horas',    explanation:'Molho cheddar: 8 horas de validade incluindo as 2 horas de ambientação.' },
-    { id:'vl02', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','suco'],            dificuldade:2, question:'Qual o tempo de vida da bag de suco após aberta?',                                                                                 options:['3 dias','5 dias','7 dias','10 dias'],                                     answer:'7 dias',     explanation:'Após abrir a bag de suco, anotar o tempo de vida secundário de 7 dias.' },
-    { id:'vl03', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','cebola','bb'],     dificuldade:3, question:'Qual o tempo de vida do ceboleiro Best Burger na área da chapa?',                                                                  options:['1 hora','2 horas','3 horas','4 horas'],                                  answer:'4 horas',    explanation:'O ceboleiro Best Burger tem vida útil de 4 horas na área da chapa.' },
-    { id:'vl04', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','tomate'],          dificuldade:1, question:'Qual o tempo de vida útil do tomate fatiado na mesa de condimentação?',                                                            options:['1 hora','2 horas','4 horas','6 horas'],                                  answer:'2 horas',    explanation:'O tomate fatiado tem vida útil de 2 horas na mesa de condimentação.' },
-    { id:'vl05', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','bacon'],           dificuldade:3, question:'Qual o tempo de vida secundário do bacon ao retirar da câmara de resfriados?',                                                    options:['2 dias','3 dias','5 dias','7 dias'],                                      answer:'5 dias',     explanation:'Ao retirar o pacote de bacon da câmara, anotar o tempo de vida secundário de 5 dias.' },
-    { id:'vl06', guide:'lope2',  category:'⏱️ Validades',            tags:['validade','cebola-cheddar'],  dificuldade:3, question:'Qual a validade da embalagem aberta de cebola cheddar após refrigerada?',                                                          options:['12 horas','24 horas','48 horas','72 horas'],                             answer:'48 horas',   explanation:'Fechar a embalagem aberta de cebola cheddar com clipe e anotar 48 horas de validade.' },
+    { id:'vl01', guide:'lope',  category:'⏱️ Validades',            tags:['validade','queijo'],          dificuldade:2, question:'Qual a validade do molho cheddar (incluindo ambientação)?',                                                                        options:['4 horas','6 horas','8 horas','12 horas'],                                answer:'8 horas',    explanation:'Molho cheddar: 8 horas de validade incluindo as 2 horas de ambientação.' },
+    { id:'vl02', guide:'lope',  category:'⏱️ Validades',            tags:['validade','suco'],            dificuldade:2, question:'Qual o tempo de vida da bag de suco após aberta?',                                                                                 options:['3 dias','5 dias','7 dias','10 dias'],                                     answer:'7 dias',     explanation:'Após abrir a bag de suco, anotar o tempo de vida secundário de 7 dias.' },
+    { id:'vl03', guide:'lope',  category:'⏱️ Validades',            tags:['validade','cebola','bb'],     dificuldade:3, question:'Qual o tempo de vida do ceboleiro Best Burger na área da chapa?',                                                                  options:['1 hora','2 horas','3 horas','4 horas'],                                  answer:'4 horas',    explanation:'O ceboleiro Best Burger tem vida útil de 4 horas na área da chapa.' },
+    { id:'vl04', guide:'lope',  category:'⏱️ Validades',            tags:['validade','tomate'],          dificuldade:1, question:'Qual o tempo de vida útil do tomate fatiado na mesa de condimentação?',                                                            options:['1 hora','2 horas','4 horas','6 horas'],                                  answer:'2 horas',    explanation:'O tomate fatiado tem vida útil de 2 horas na mesa de condimentação.' },
+    { id:'vl05', guide:'lope',  category:'⏱️ Validades',            tags:['validade','bacon'],           dificuldade:3, question:'Qual o tempo de vida secundário do bacon ao retirar da câmara de resfriados?',                                                    options:['2 dias','3 dias','5 dias','7 dias'],                                      answer:'5 dias',     explanation:'Ao retirar o pacote de bacon da câmara, anotar o tempo de vida secundário de 5 dias.' },
+    { id:'vl06', guide:'lope',  category:'⏱️ Validades',            tags:['validade','cebola-cheddar'],  dificuldade:3, question:'Qual a validade da embalagem aberta de cebola cheddar após refrigerada?',                                                          options:['12 horas','24 horas','48 horas','72 horas'],                             answer:'48 horas',   explanation:'Fechar a embalagem aberta de cebola cheddar com clipe e anotar 48 horas de validade.' },
   ];
 
   /* ---- Build ID lookup ---- */
@@ -840,7 +840,7 @@
 
     var GUIDE_LABELS = {
       chapa:'Chapa', lope:'LOPE', fritas:'McFritas', limpeza:'Limpeza',
-      'drive-thru':'Drive-Thru', 'seguranca-alimento':'Seg. Alimento', lope2:'LOPE2',
+      'drive-thru':'Drive-Thru', 'seguranca-alimento':'Seg. Alimento',
       temperatura:'Temperaturas', validade:'Validades', carne:'Carnes',
       limpeza:'Limpeza', oleo:'Óleo', tempo:'Tempos', cebola:'Cebola',
       tomate:'Tomate', queijo:'Queijo', bacon:'Bacon', fritas:'McFritas',
@@ -963,10 +963,10 @@
     }).join('');
 
     // Per-guide domínio
-    var guides = ['chapa','lope','fritas','limpeza','drive-thru','seguranca-alimento','lope2'];
+    var guides = ['chapa','lope','fritas','limpeza','drive-thru','seguranca-alimento'];
     var gLabels = {
       chapa:'🍔 Chapa', lope:'🥬 LOPE', fritas:'🍟 McFritas', limpeza:'🧹 Limpeza',
-      'drive-thru':'🚗 Drive-Thru', 'seguranca-alimento':'🛡️ Seg. Alimento', lope2:'⏱️ Validades',
+      'drive-thru':'🚗 Drive-Thru', 'seguranca-alimento':'🛡️ Seg. Alimento',
     };
 
     var guideEl = document.getElementById('dashGuides');

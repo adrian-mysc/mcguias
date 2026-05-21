@@ -8,11 +8,16 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
 });
 
 (async () => {
-  const { data } = await supabase.auth.getSession();
-  if (!data.session) {
-    const inPages = window.location.pathname.includes('/pages/');
-    window.location.replace(inPages ? 'login.html' : 'pages/login.html');
-  } else {
+  try {
+    const { data } = await supabase.auth.getSession();
+    if (!data.session) {
+      const inPages = window.location.pathname.includes('/pages/');
+      window.location.replace(inPages ? 'login.html' : 'pages/login.html');
+    } else {
+      document.documentElement.style.visibility = '';
+    }
+  } catch (e) {
+    // Supabase indisponível (offline, CDN bloqueado, etc.) — não trava a página
     document.documentElement.style.visibility = '';
   }
 })();
