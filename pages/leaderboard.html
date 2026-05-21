@@ -100,11 +100,25 @@
       flex-shrink: 0;
     }
     .lb-me .lb-avatar { background: #f59e0b; color: #1c1a17; }
-    .lb-name {
+    .lb-name-wrap {
       flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .lb-name {
       font-size: 14px;
       font-weight: 700;
       color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lb-loja {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -167,14 +181,6 @@
     }
     .lb-empty p { font-size: 13px; line-height: 1.5; }
 
-    /* ── Nota de sincronização ── */
-    .lb-sync-note {
-      text-align: center;
-      font-size: 11px;
-      color: var(--muted);
-      padding: 4px 0 0;
-    }
-
     @media (max-width: 400px) {
       .stat-grid { grid-template-columns: repeat(3, 1fr); }
       .stat-card-num { font-size: 20px; }
@@ -206,12 +212,12 @@
           <div class="stat-card-label">Sua posição</div>
         </div>
         <div class="stat-card">
-          <div class="stat-card-num skeleton" id="myPoints" aria-label="Questões respondidas">—</div>
-          <div class="stat-card-label">Questões respondidas</div>
+          <div class="stat-card-num skeleton" id="myPoints" aria-label="Questões corretas">—</div>
+          <div class="stat-card-label">Questões corretas</div>
         </div>
         <div class="stat-card">
-          <div class="stat-card-num green skeleton" id="myXp" aria-label="Quizzes completos">—</div>
-          <div class="stat-card-label">Quizzes completos</div>
+          <div class="stat-card-num green skeleton" id="myXp" aria-label="Quizzes feitos">—</div>
+          <div class="stat-card-label">Quizzes feitos</div>
         </div>
       </div>
     </div>
@@ -226,9 +232,6 @@
         <div class="lb-row-skeleton skeleton"></div>
         <div class="lb-row-skeleton skeleton"></div>
       </div>
-      <p class="lb-sync-note" id="syncNote" style="display:none;">
-        Pontuação atualizada com base nos seus simulados locais.
-      </p>
     </div>
 
   </div>
@@ -238,8 +241,7 @@
   </footer>
 
   <script type="module">
-    import { getUserRank, getTopPlayers } from '../js/supabase/leaderboard.js';
-    import { syncToCloud } from '../js/supabase/sync.js';
+    import { getOnlineLeaderboard, getOnlineUserRank } from '../js/supabase/leaderboard.js';
 
     function el(id) { return document.getElementById(id); }
 
@@ -252,25 +254,30 @@
         return;
       }
       el('myRank').textContent   = '#' + rank.rank;
-      el('myPoints').textContent = rank.points;
-      el('myXp').textContent     = rank.total_xp;
+      el('myPoints').textContent = rank.pontos;
+      el('myXp').textContent     = rank.quizzes;
     }
 
-    function avatar(username) {
-      return (username || '?').charAt(0).toUpperCase();
+    function avatarText(p) {
+      // Usa sigla pessoal se disponível, senão inicial do username
+      return (p.sigla || p.username || '?').charAt(0).toUpperCase();
     }
 
     function rowHTML(pos, p, isMe) {
-      const medal = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : null;
+      const medal  = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : null;
       const rankEl = medal
         ? `<div class="lb-rank top">${medal}</div>`
         : `<div class="lb-rank">#${pos}</div>`;
-      const youTag = isMe ? '<span class="lb-you-tag">Você</span>' : '';
+      const youTag  = isMe ? '<span class="lb-you-tag">Você</span>' : '';
+      const lojaTag = p.loja ? `<div class="lb-loja">${p.loja}</div>` : '';
       return `<div class="lb-row${isMe ? ' lb-me' : ''}">
         ${rankEl}
-        <div class="lb-avatar">${avatar(p.username)}</div>
-        <div class="lb-name">${p.username || 'Jogador'}${youTag}</div>
-        <div class="lb-points">${p.points}<span>pts</span></div>
+        <div class="lb-avatar">${avatarText(p)}</div>
+        <div class="lb-name-wrap">
+          <div class="lb-name">${p.username || 'Jogador'}${youTag}</div>
+          ${lojaTag}
+        </div>
+        <div class="lb-points">${p.pontos}<span>pts</span></div>
       </div>`;
     }
 
@@ -286,30 +293,31 @@
         return;
       }
 
-      const myUsername = rank?.username || null;
+      // players vem do Supabase com: { user_id, username, loja, sigla, pontos, quizzes }
       const top10 = players.slice(0, 10);
-      const userInTop10 = top10.some(p => p.username === myUsername);
 
-      let html = top10.map((p, i) => rowHTML(i + 1, p, p.username === myUsername)).join('');
+      // Identifica o usuário atual pela posição no rank (rank.pontos == p.pontos e rank.quizzes == p.quizzes)
+      // Como não temos user_id exposto, usamos pontos+quizzes como chave de identidade
+      function isCurrentUser(p) {
+        return rank && p.pontos === rank.pontos && p.quizzes === rank.quizzes;
+      }
 
-      if (rank && rank.rank > 10 && myUsername) {
+      let html = top10.map((p, i) => rowHTML(i + 1, p, isCurrentUser(p))).join('');
+
+      if (rank && rank.rank > 10) {
         html += `<div class="lb-gap">···</div>`;
-        html += rowHTML(rank.rank, { username: myUsername, points: rank.points }, true);
+        html += rowHTML(rank.rank, { username: '—', loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes }, true);
       }
 
       list.innerHTML = html;
     }
 
     async function init() {
-      // Sincroniza em background (não bloqueia carregamento do ranking)
-      syncToCloud()
-        .then(() => { el('syncNote').style.display = 'block'; })
-        .catch(() => {});
-
       try {
+        // 100% online: busca direto do Supabase, sem sync local
         const [rank, players] = await Promise.all([
-          getUserRank(),
-          getTopPlayers(20)
+          getOnlineUserRank(),
+          getOnlineLeaderboard(20)
         ]);
         renderMyStats(rank);
         renderList(players, rank);

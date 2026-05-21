@@ -1161,7 +1161,7 @@
   // ── Supabase profile ──────────────────────────────────
   const { data: profile } = await supabase
     .from('profiles')
-    .select('username')
+    .select('username, loja, sigla')
     .eq('id', user.id)
     .single();
 
@@ -1243,9 +1243,9 @@
     const local  = loadLocalDados();
     const nome   = local.nome || supabaseUsername;
     const apelido = local.apelido || '';
-    const sigla  = local.sigla || '';
+    const sigla  = local.sigla || profile?.sigla || '';
     const cargo  = local.cargo || '';
-    const loja   = local.loja || '';
+    const loja   = local.loja  || profile?.loja  || '';
     const turno  = local.turno || '';
     const admissao = local.admissao || '';
     const telefone = local.telefone || '';
@@ -1414,8 +1414,8 @@
     // Save locally
     saveLocalDados({ nome, apelido, sigla, cargo, loja, turno, admissao, telefone });
 
-    // Save username to supabase
-    await supabase.from('profiles').upsert({ id: user.id, username: nome });
+    // Save username, loja e sigla to supabase
+    await supabase.from('profiles').upsert({ id: user.id, username: nome, loja, sigla });
 
     toggleDadosEdit(false);
     renderAll();

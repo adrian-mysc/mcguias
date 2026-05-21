@@ -60,6 +60,29 @@ async function syncLeaderboard(userId, estatisticas) {
   await submitScore(points, username, totalXp);
 }
 
+// Sync de uma única sessão — chamado imediatamente após cada quiz
+export async function syncOneSession({ guia, score, total }) {
+  const user = await getCurrentUser();
+  if (!user) return;
+
+  const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
+  const { error } = await supabase.from('quiz_sessions').insert({
+    user_id: user.id,
+    guide:   guia || 'desconhecido',
+    score:   score  || 0,
+    total:   total  || 0,
+    percentage,
+  });
+
+  if (error) throw error;
+
+  // Avança o contador para que syncQuizSessions não re-sincronize esta sessão
+  const prev = (() => {
+    try { return JSON.parse(localStorage.getItem('mc_sessions_synced') || '0'); } catch { return 0; }
+  })();
+  localStorage.setItem('mc_sessions_synced', JSON.stringify(prev + 1));
+}
+
 export async function syncToCloud() {
   const user = await getCurrentUser();
   if (!user) return;
@@ -76,6 +99,11 @@ export async function syncToCloud() {
     }
   }
 }
+
+// Sync imediato após cada quiz (disparado por main.js via CustomEvent)
+window.addEventListener('mc:quizComplete', (e) => {
+  syncOneSession(e.detail).catch(console.error);
+});
 
 // Sincroniza automaticamente ao recuperar conexão
 window.addEventListener('online', () => {

@@ -301,6 +301,8 @@ function saveQuizResult(guia, score, total) {
   hist.unshift({ guia, score, total, date });
   if (hist.length > 20) hist.splice(20);
   McStorage.set('mc_quiz_history', hist);
+  // Sync imediato para quiz_sessions — o sync.js escuta este evento
+  window.dispatchEvent(new CustomEvent('mc:quizComplete', { detail: { guia, score, total } }));
 }
 
 function renderHistory(containerId) {
