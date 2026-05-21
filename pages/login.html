@@ -729,10 +729,14 @@
 
   // ── Login com Google ─────────────────────────────────────────
   async function signInGoogle() {
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const base = isLocal
+      ? window.location.origin
+      : 'https://adrian-mysc.github.io/guiaoperacional';
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: window.location.href.replace('login.html', 'welcome.html')
+        redirectTo: base + '/pages/welcome.html'
       }
     });
     if (error) alert('Erro ao conectar com Google: ' + error.message);
