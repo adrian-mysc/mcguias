@@ -5,8 +5,8 @@
 [![PWA](https://img.shields.io/badge/PWA-Instalável-blue)](https://adrian-mysc.github.io/guiaoperacional)
 [![CI](https://img.shields.io/github/actions/workflow/status/adrian-mysc/mcguias/validate.yml?label=CI)](https://github.com/adrian-mysc/mcguias/actions)
 
-**Plataforma de estudo operacional** baseada nos guias rápidos de um fast-food (estilo McDonald's).  
-Feita para facilitar o treinamento e a memorização de procedimentos — funciona 100% offline como PWA instalável.
+**Plataforma de estudos sem fins lucrativos** baseada nos guias rápidos de um fast-food.  
+Feita para facilitar o estudo e a memorização de procedimentos — funciona 100% offline como PWA instalável.
 
 ---
 
