@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <script type="module" src="../js/auth-guard.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .lb-page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px 14px 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── Stat cards (mesmo padrão do dashboard) ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .stat-card-num {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+    }
+    .stat-card-num.yellow { color: #f59e0b; }
+    .stat-card-num.green  { color: #22c55e; }
+    .stat-card-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ── Lista do ranking ── */
+    .lb-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .lb-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      transition: box-shadow .15s;
+    }
+    .lb-row.lb-me {
+      border-color: #f59e0b;
+      background: linear-gradient(135deg, rgba(245,158,11,0.06) 0%, transparent 100%);
+      box-shadow: 0 0 0 2px rgba(245,158,11,0.25);
+    }
+    .lb-rank {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      min-width: 32px;
+      text-align: center;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .lb-rank.top { color: var(--text); font-size: 20px; }
+    .lb-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .lb-me .lb-avatar { background: #f59e0b; color: #1c1a17; }
+    .lb-name {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lb-you-tag {
+      font-size: 9px;
+      font-weight: 800;
+      background: #f59e0b;
+      color: #1c1a17;
+      padding: 2px 6px;
+      border-radius: 20px;
+      margin-left: 6px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      vertical-align: middle;
+    }
+    .lb-points {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--red);
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .lb-points span {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-left: 2px;
+    }
+
+    /* ── Separador quando usuário está fora do top 10 ── */
+    .lb-gap {
+      text-align: center;
+      color: var(--muted);
+      font-size: 18px;
+      letter-spacing: 4px;
+      padding: 4px 0;
+    }
+
+    /* ── Skeleton rows ── */
+    .lb-row-skeleton {
+      height: 62px;
+      border-radius: var(--radius-md);
+    }
+
+    /* ── Estado vazio ── */
+    .lb-empty {
+      text-align: center;
+      padding: 40px 16px;
+      color: var(--muted);
+    }
+    .lb-empty-icon { font-size: 44px; margin-bottom: 10px; }
+    .lb-empty h3 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .lb-empty p { font-size: 13px; line-height: 1.5; }
+
+    /* ── Nota de sincronização ── */
+    .lb-sync-note {
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted);
+      padding: 4px 0 0;
+    }
+
+    @media (max-width: 400px) {
+      .stat-grid { grid-template-columns: repeat(3, 1fr); }
+      .stat-card-num { font-size: 20px; }
+    }
+  </style>
+</head>
+
+<body data-page="leaderboard">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Ranking</h1>
+        <p>Os melhores estudantes</p>
+      </div>
+      <a href="../index.html" class="navbar-back" aria-label="Voltar para o início">← Início</a>
+    </div>
+  </nav>
+
+  <div class="lb-page">
+
+    <!-- ── Seu desempenho ── -->
+    <div>
+      <div class="section-label">Seu desempenho</div>
+      <div class="stat-grid" aria-live="polite">
+        <div class="stat-card">
+          <div class="stat-card-num yellow skeleton" id="myRank" aria-label="Sua posição no ranking">—</div>
+          <div class="stat-card-label">Sua posição</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num skeleton" id="myPoints" aria-label="Questões respondidas">—</div>
+          <div class="stat-card-label">Questões respondidas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-num green skeleton" id="myXp" aria-label="Quizzes completos">—</div>
+          <div class="stat-card-label">Quizzes completos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Top 10 ── -->
+    <div>
+      <div class="section-label">Top 10 — Melhores estudantes</div>
+      <div class="lb-list" id="lbList">
+        <div class="lb-row-skeleton skeleton"></div>
+        <div class="lb-row-skeleton skeleton"></div>
+        <div class="lb-row-skeleton skeleton"></div>
+        <div class="lb-row-skeleton skeleton"></div>
+        <div class="lb-row-skeleton skeleton"></div>
+      </div>
+      <p class="lb-sync-note" id="syncNote" style="display:none;">
+        Pontuação atualizada com base nos seus simulados locais.
+      </p>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Ranking Global · Desenvolvido por Adrian E. Silva
+  </footer>
+
+  <script type="module">
+    import { getUserRank, getTopPlayers } from '../js/supabase/leaderboard.js';
+    import { syncToCloud } from '../js/supabase/sync.js';
+
+    function el(id) { return document.getElementById(id); }
+
+    function renderMyStats(rank) {
+      ['myRank', 'myPoints', 'myXp'].forEach(id => el(id).classList.remove('skeleton'));
+      if (!rank) {
+        el('myRank').textContent   = '—';
+        el('myPoints').textContent = '—';
+        el('myXp').textContent     = '—';
+        return;
+      }
+      el('myRank').textContent   = '#' + rank.rank;
+      el('myPoints').textContent = rank.points;
+      el('myXp').textContent     = rank.total_xp;
+    }
+
+    function avatar(username) {
+      return (username || '?').charAt(0).toUpperCase();
+    }
+
+    function rowHTML(pos, p, isMe) {
+      const medal = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : null;
+      const rankEl = medal
+        ? `<div class="lb-rank top">${medal}</div>`
+        : `<div class="lb-rank">#${pos}</div>`;
+      const youTag = isMe ? '<span class="lb-you-tag">Você</span>' : '';
+      return `<div class="lb-row${isMe ? ' lb-me' : ''}">
+        ${rankEl}
+        <div class="lb-avatar">${avatar(p.username)}</div>
+        <div class="lb-name">${p.username || 'Jogador'}${youTag}</div>
+        <div class="lb-points">${p.points}<span>pts</span></div>
+      </div>`;
+    }
+
+    function renderList(players, rank) {
+      const list = el('lbList');
+
+      if (!players || players.length === 0) {
+        list.innerHTML = `<div class="lb-empty">
+          <div class="lb-empty-icon">🏁</div>
+          <h3>Nenhum jogador ainda</h3>
+          <p>Complete simulados para aparecer<br>no ranking global!</p>
+        </div>`;
+        return;
+      }
+
+      const myUsername = rank?.username || null;
+      const top10 = players.slice(0, 10);
+      const userInTop10 = top10.some(p => p.username === myUsername);
+
+      let html = top10.map((p, i) => rowHTML(i + 1, p, p.username === myUsername)).join('');
+
+      if (rank && rank.rank > 10 && myUsername) {
+        html += `<div class="lb-gap">···</div>`;
+        html += rowHTML(rank.rank, { username: myUsername, points: rank.points }, true);
+      }
+
+      list.innerHTML = html;
+    }
+
+    async function init() {
+      // Sincroniza em background (não bloqueia carregamento do ranking)
+      syncToCloud()
+        .then(() => { el('syncNote').style.display = 'block'; })
+        .catch(() => {});
+
+      try {
+        const [rank, players] = await Promise.all([
+          getUserRank(),
+          getTopPlayers(20)
+        ]);
+        renderMyStats(rank);
+        renderList(players, rank);
+      } catch (err) {
+        console.error('Leaderboard:', err);
+        ['myRank', 'myPoints', 'myXp'].forEach(id => {
+          el(id).classList.remove('skeleton');
+          el(id).textContent = '—';
+        });
+        el('lbList').innerHTML = `<div class="lb-empty">
+          <div class="lb-empty-icon">⚠️</div>
+          <h3>Erro ao carregar</h3>
+          <p>Verifique sua conexão e tente novamente.</p>
+        </div>`;
+      }
+    }
+
+    init();
+  </script>
+
+</body>
+</html>
