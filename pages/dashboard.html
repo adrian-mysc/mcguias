@@ -285,13 +285,13 @@
     <!-- ── Estatísticas gerais ── -->
     <div class="dash-section">
       <div class="dash-section-title">Resumo geral</div>
-      <div class="stat-grid" id="statGrid">
-        <div class="stat-card"><div class="stat-card-num" id="sSimulados">—</div><div class="stat-card-label">Simulados feitos</div></div>
-        <div class="stat-card"><div class="stat-card-num green" id="sMedia">—</div><div class="stat-card-label">Média geral</div></div>
-        <div class="stat-card"><div class="stat-card-num yellow" id="sMelhor">—</div><div class="stat-card-label">Melhor resultado</div></div>
-        <div class="stat-card"><div class="stat-card-num blue"  id="sStreak">—</div><div class="stat-card-label">Dias consecutivos</div></div>
-        <div class="stat-card"><div class="stat-card-num" id="sPerguntas">—</div><div class="stat-card-label">Perguntas respondidas</div></div>
-        <div class="stat-card"><div class="stat-card-num green" id="sConquistas">—</div><div class="stat-card-label">Conquistas</div></div>
+      <div class="stat-grid" id="statGrid" aria-live="polite" aria-label="Resumo geral do progresso">
+        <div class="stat-card"><div class="stat-card-num skeleton" id="sSimulados" aria-label="Simulados feitos">—</div><div class="stat-card-label">Simulados feitos</div></div>
+        <div class="stat-card"><div class="stat-card-num green skeleton" id="sMedia" aria-label="Média geral">—</div><div class="stat-card-label">Média geral</div></div>
+        <div class="stat-card"><div class="stat-card-num yellow skeleton" id="sMelhor" aria-label="Melhor resultado">—</div><div class="stat-card-label">Melhor resultado</div></div>
+        <div class="stat-card"><div class="stat-card-num blue skeleton"  id="sStreak" aria-label="Dias consecutivos">—</div><div class="stat-card-label">Dias consecutivos</div></div>
+        <div class="stat-card"><div class="stat-card-num skeleton" id="sPerguntas" aria-label="Perguntas respondidas">—</div><div class="stat-card-label">Perguntas respondidas</div></div>
+        <div class="stat-card"><div class="stat-card-num green skeleton" id="sConquistas" aria-label="Conquistas desbloqueadas">—</div><div class="stat-card-label">Conquistas</div></div>
       </div>
     </div>
 
@@ -401,6 +401,9 @@
       var totalQ    = gamData ? (gamData.estatisticas.totalPerguntas || 0)  : hist.reduce(function(s,h){return s+h.total;},0);
       var cqCount   = gamData ? gamData.conquistas.length : 0;
 
+      ['sSimulados','sMedia','sMelhor','sStreak','sPerguntas','sConquistas'].forEach(function(id) {
+        el(id).classList.remove('skeleton');
+      });
       el('sSimulados').textContent  = total;
       el('sMedia').textContent      = total > 0 ? avg + '%'  : '—';
       el('sMelhor').textContent     = total > 0 ? best + '%' : '—';

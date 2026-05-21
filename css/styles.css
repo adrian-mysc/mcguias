@@ -759,15 +759,79 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .site-footer strong { color: rgba(255,255,255,0.65); }
 
 /* ---- Responsive ------------------------------------------ */
+@media (min-width: 768px) {
+  .guide-grid { grid-template-columns: repeat(3, 1fr); }
+  .stat-grid  { grid-template-columns: repeat(3, 1fr); }
+  .navbar-inner { padding: 14px 24px; }
+  .page-content { padding: 24px; }
+}
 @media (max-width: 500px) {
   .grid-2 { grid-template-columns: 1fr 1fr; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .two-col { grid-template-columns: 1fr; }
   .guide-grid { grid-template-columns: 1fr 1fr; }
   .quiz-score { font-size: 52px; }
+  input, select, textarea { font-size: 16px !important; }
+  .navbar-inner { gap: 8px; padding: 10px 12px; }
+  .changelog-btn .btn-label { display: none; }
 }
 @media (max-width: 360px) {
   .guide-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Loading / Skeleton ---------------------------------- */
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 25%, var(--bg) 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--radius-sm);
+  color: transparent !important;
+  pointer-events: none;
+  user-select: none;
+}
+.skeleton * { visibility: hidden; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 18px; height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ---- Focus Visible --------------------------------------- */
+.quiz-option:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+.filter-btn:focus-visible,
+.tab-btn:focus-visible,
+.changelog-btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+.bottom-nav-item:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
 }
 
 /* ============================================================
