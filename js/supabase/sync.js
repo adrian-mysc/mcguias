@@ -1,24 +1,83 @@
 
-import { saveProgress } from './progress.js';
+import { supabase } from './config.js';
+import { getCurrentUser } from './auth.js';
+import { submitScore } from './leaderboard.js';
+import { unlockAchievement } from './achievements.js';
 
-export async function syncLocalProgress() {
-  const local = JSON.parse(
-    localStorage.getItem('mcguias_progress') || '[]'
-  );
+function mcGet(key, def) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (raw === null) return def;
+    return JSON.parse(raw);
+  } catch {
+    return def;
+  }
+}
 
-  for (const item of local) {
-    try {
-      await saveProgress(
-        item.module,
-        item.score,
-        item.completed
-      );
-    } catch (err) {
-      console.error('Sync failed:', err);
+async function syncQuizSessions(userId) {
+  const history = mcGet('mc_quiz_history', []);
+  if (!history.length) return;
+
+  const alreadySynced = mcGet('mc_sessions_synced', 0);
+  const newCount = Math.max(0, history.length - alreadySynced);
+  if (!newCount) return;
+
+  // history é ordenado do mais novo (índice 0) para o mais antigo
+  // os "novos" são os primeiros `newCount` itens
+  const toSync = history.slice(0, newCount);
+
+  const rows = toSync.map(h => ({
+    user_id:    userId,
+    guide:      h.guia || 'desconhecido',
+    score:      h.score  || 0,
+    total:      h.total  || 0,
+    percentage: h.total > 0 ? Math.round((h.score / h.total) * 100) : 0,
+  }));
+
+  const { error } = await supabase.from('quiz_sessions').insert(rows);
+  if (error) {
+    console.error('sync quiz_sessions:', error);
+    return;
+  }
+
+  localStorage.setItem('mc_sessions_synced', JSON.stringify(history.length));
+}
+
+async function syncAchievements(conquistas) {
+  for (const key of conquistas) {
+    await unlockAchievement(key);
+  }
+}
+
+async function syncLeaderboard(userId, estatisticas) {
+  const username = mcGet('mc_username', null)
+    || mcGet('mc_user_data', {}).username
+    || 'Jogador';
+
+  const points  = estatisticas.totalPerguntas  || 0;
+  const totalXp = estatisticas.quizzesCompletos || 0;
+
+  await submitScore(points, username, totalXp);
+}
+
+export async function syncToCloud() {
+  const user = await getCurrentUser();
+  if (!user) return;
+
+  await syncQuizSessions(user.id);
+
+  const gamData = mcGet('gamificacao', null);
+  if (gamData) {
+    if (Array.isArray(gamData.conquistas) && gamData.conquistas.length) {
+      await syncAchievements(gamData.conquistas);
+    }
+    if (gamData.estatisticas) {
+      await syncLeaderboard(user.id, gamData.estatisticas).catch(console.error);
     }
   }
 }
 
+// Sincroniza automaticamente ao recuperar conexão
 window.addEventListener('online', () => {
-  syncLocalProgress();
+  syncToCloud().catch(console.error);
 });
