@@ -197,57 +197,6 @@
     .empty-state h3 { font-family: var(--font-display); font-size: 16px; color: var(--text); margin-bottom: 6px; }
     .empty-state p  { font-size: 13px; line-height: 1.5; }
 
-    /* ── Lock screen ─────────────────────────────────────────── */
-    #lock-screen {
-      position: fixed; inset: 0; z-index: 9999;
-      background: var(--bg);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 32px 24px;
-    }
-    #lock-screen.unlocked { display: none; }
-    .lock-icon { font-size: 52px; margin-bottom: 12px; }
-    .lock-title {
-      font-family: var(--font-display); font-size: 22px; font-weight: 900;
-      color: var(--text); margin-bottom: 4px; text-align: center;
-    }
-    .lock-sub {
-      font-size: 13px; color: var(--muted); margin-bottom: 28px; text-align: center;
-    }
-    .lock-input-wrap {
-      display: flex; gap: 10px; width: 100%; max-width: 300px;
-    }
-    .lock-input {
-      flex: 1; padding: 12px 14px; border-radius: var(--radius-md);
-      border: 1.5px solid var(--border); background: var(--card);
-      font-size: 20px; font-family: var(--font-display); font-weight: 800;
-      color: var(--text); letter-spacing: 6px; text-align: center;
-      outline: none; transition: border-color .15s;
-    }
-    .lock-input:focus { border-color: var(--red); }
-    .lock-input.shake {
-      animation: lock-shake .35s ease;
-      border-color: var(--red);
-    }
-    .lock-btn {
-      padding: 12px 18px; border-radius: var(--radius-md);
-      background: var(--red); color: #fff; border: none;
-      font-family: var(--font-display); font-weight: 800; font-size: 15px;
-      cursor: pointer; transition: opacity .15s;
-    }
-    .lock-btn:hover { opacity: .85; }
-    .lock-error {
-      margin-top: 12px; font-size: 12px; color: var(--red);
-      font-weight: 700; min-height: 18px; text-align: center;
-    }
-    @keyframes lock-shake {
-      0%,100% { transform: translateX(0); }
-      20%      { transform: translateX(-8px); }
-      40%      { transform: translateX(8px); }
-      60%      { transform: translateX(-6px); }
-      80%      { transform: translateX(6px); }
-    }
-
     .prova-tag {
       display: inline-flex; align-items: center; gap: 4px;
       padding: 3px 9px; border-radius: 20px;
@@ -259,21 +208,6 @@
 </head>
 
 <body data-page="provas-testes">
-
-  <!-- Lock screen -->
-  <div id="lock-screen">
-    <div class="lock-icon">🔒</div>
-    <div class="lock-title">Provas e Testes</div>
-    <div class="lock-sub">Digite a senha para acessar</div>
-    <div class="lock-input-wrap">
-      <input id="lock-input" class="lock-input" type="password"
-             inputmode="numeric" maxlength="10"
-             placeholder="••••"
-             onkeydown="if(event.key==='Enter') checkLock()">
-      <button class="lock-btn" onclick="checkLock()">→</button>
-    </div>
-    <div class="lock-error" id="lock-error"></div>
-  </div>
 
   <div id="splash">
     <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
@@ -342,31 +276,6 @@
 
   <script src="../js/main.js" defer></script>
   <script>
-    /* ── Lock screen ────────────────────────────────────────── */
-    (function() {
-      var SENHA = '3009';
-      var KEY   = 'mc_provas_unlock';
-      if (localStorage.getItem(KEY) === '1') {
-        document.getElementById('lock-screen').classList.add('unlocked');
-      }
-    })();
-
-    function checkLock() {
-      var input = document.getElementById('lock-input');
-      var error = document.getElementById('lock-error');
-      if (input.value === '3009') {
-        localStorage.setItem('mc_provas_unlock', '1');
-        document.getElementById('lock-screen').classList.add('unlocked');
-      } else {
-        input.classList.remove('shake');
-        void input.offsetWidth; // reflow para reiniciar animação
-        input.classList.add('shake');
-        error.textContent = 'Senha incorreta. Tente novamente.';
-        input.value = '';
-        setTimeout(function() { error.textContent = ''; }, 2500);
-      }
-    }
-
     /* ── Dados das provas ────────────────────────────────────────── */
     // Cada prova tem: id, titulo, descricao, icon, perguntas[]
     // Cada pergunta: texto, opcoes[], correta (index 0-based), explicacao

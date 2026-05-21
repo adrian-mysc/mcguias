@@ -1312,6 +1312,7 @@ function initLacuna(questions, guiaName) {
         mode:       'lacuna',
       });
     }
+    app.innerHTML =
       '<div style="text-align:center;padding:16px 0;">'
       + '<div style="font-size:48px;margin-bottom:8px;">' + medal + '</div>'
       + '<div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--text);margin-bottom:4px;">' + halfPct + '%</div>'
