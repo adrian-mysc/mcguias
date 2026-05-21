@@ -36,6 +36,22 @@ export async function getUserRank() {
   return { rank: (count ?? 0) + 1, ...myRow };
 }
 
+// ── 100% online: dados diretos do Supabase ──────────────────────────────────
+
+export async function getOnlineLeaderboard(limit = 20) {
+  const { data, error } = await supabase.rpc('get_leaderboard', { lim: limit });
+  if (error) throw error;
+  return data ?? [];
+}
+
+export async function getOnlineUserRank() {
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return null;
+  const { data, error } = await supabase.rpc('get_user_rank', { uid: user.id });
+  if (error) throw error;
+  return data?.[0] ?? null;
+}
+
 export async function getTopPlayers(limit = 10) {
   const { data, error } = await supabase
     .from('leaderboard')
