@@ -37,6 +37,25 @@ var McStorage = (function() {
   return { get: get, set: set, remove: remove };
 })();
 
+/* ── Migração única: mc_sr_data + mcg_srs_v1 → mc_sr_v2 ── */
+(function migrateSRKeys() {
+  try {
+    var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
+    var changed = false;
+    var old1 = localStorage.getItem('mc_sr_data');
+    if (old1 && !sr2.hashData) {
+      try { sr2.hashData = JSON.parse(old1); changed = true; } catch(e) {}
+      localStorage.removeItem('mc_sr_data');
+    }
+    var old2 = localStorage.getItem('mcg_srs_v1');
+    if (old2 && !sr2.cardData) {
+      try { sr2.cardData = JSON.parse(old2); changed = true; } catch(e) {}
+      localStorage.removeItem('mcg_srs_v1');
+    }
+    if (changed) localStorage.setItem('mc_sr_v2', JSON.stringify(sr2));
+  } catch(e) {}
+})();
+
 function trackAnswer(qId, isCorrect, elapsedMs, qText) {
   if (!qId) return;
   var data = McStorage.get('mc_analytics', {});
@@ -332,7 +351,10 @@ function getQuestionHash(q) {
 }
 
 function getSRData() {
-  return McStorage.get('mc_sr_data', {});
+  try {
+    var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
+    return sr2.hashData || {};
+  } catch(e) { return {}; }
 }
 
 function updateSRData(hash, correct) {
@@ -349,7 +371,11 @@ function updateSRData(hash, correct) {
   }
   entry.nextReview = Date.now() + entry.interval * 24 * 60 * 60 * 1000;
   data[hash] = entry;
-  McStorage.set('mc_sr_data', data);
+  try {
+    var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
+    sr2.hashData = data;
+    localStorage.setItem('mc_sr_v2', JSON.stringify(sr2));
+  } catch(e) {}
 }
 
 function prioritizeQuestions(questions) {

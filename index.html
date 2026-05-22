@@ -326,6 +326,12 @@
 
     /* ---- Navbar refinement ---- */
     .navbar { box-shadow:0 2px 12px rgba(218,41,28,0.25); }
+
+    /* ---- Progress bar por guia ---- */
+    .guide-card-prog { padding:0 12px 8px; display:flex; align-items:center; gap:8px; }
+    .guide-card-prog-bar { flex:1; height:3px; background:rgba(0,0,0,0.08); border-radius:2px; overflow:hidden; }
+    .guide-card-prog-fill { height:100%; border-radius:2px; transition:width .5s ease; }
+    .guide-card-prog-text { font-size:9.5px; font-weight:700; color:var(--muted); white-space:nowrap; }
   </style>
   
   <script type="module">
@@ -1592,5 +1598,52 @@
   </script>
 
   <script src="js/changelog.js" defer></script>
+
+  <script>
+    /* ── Mini progress bars nos cards de guia ── */
+    (function() {
+      try {
+        var hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+        if (!hist.length) return;
+        var SLUG = {
+          'chapa':'Chapa','lope':'LOPE','linha':'Linha','mcfritas':'McFritas',
+          'fritos':'Fritos','condimentacao':'Condimentação','salao-ngk':'Salão e NGK',
+          'embaixador-experiencia':'Embaixador da Experiência',
+          'montagem-entrega':'Montagem e Entrega',
+          'influencer-pagamento':'Influencer Vendedor',
+          'drive-thru':'Drive-Thru','bebidas-sobremesas':'Bebidas e Sobremesas',
+          'mccafe':'McCafé','limpeza':'Limpeza e Sanitização',
+          'manutencao-preventivas':'Manutenção Preventiva',
+          'best-burguer':'Best Burguer',
+          'estoque-recebimento':'Estoque e Recebimento',
+          'fechamento':'Fechamento','fritas':'Fritas',
+          'seguranca-alimento':'Segurança do Alimento',
+        };
+        var best = {};
+        hist.forEach(function(h) {
+          if (!h.guia || !h.total) return;
+          var pct = Math.round((h.score / h.total) * 100);
+          var k = h.guia.toLowerCase();
+          if (best[k] === undefined || pct > best[k]) best[k] = pct;
+        });
+        document.querySelectorAll('a.guide-card').forEach(function(card) {
+          var href = card.getAttribute('href') || '';
+          var m = href.match(/\/([^\/]+)\.html$/);
+          if (!m) m = href.match(/([^\/]+)\.html$/);
+          var slug = m ? m[1] : '';
+          var guia = SLUG[slug];
+          if (!guia) return;
+          var pct = best[guia.toLowerCase()];
+          if (pct === undefined) return;
+          var color = pct >= 80 ? '#22c55e' : pct >= 60 ? '#f59e0b' : '#da291c';
+          var prog = document.createElement('div');
+          prog.className = 'guide-card-prog';
+          prog.innerHTML = '<div class="guide-card-prog-bar"><div class="guide-card-prog-fill" style="width:' + pct + '%;background:' + color + '"></div></div><div class="guide-card-prog-text">' + pct + '%</div>';
+          var top = card.querySelector('.guide-card-top');
+          if (top) top.after(prog);
+        });
+      } catch(e) {}
+    })();
+  </script>
 </body>
 </html>
