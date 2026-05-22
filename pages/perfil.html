@@ -1265,7 +1265,7 @@
     const nome   = local.nome || supabaseUsername;
     const apelido = local.apelido || '';
     const sigla  = local.sigla || profile?.sigla || '';
-    const cargo  = local.cargo || '';
+    const cargo  = local.cargo || profile?.cargo || '';
     const loja   = local.loja  || profile?.loja  || '';
     const turno  = local.turno || '';
     const admissao = local.admissao || '';
@@ -1408,6 +1408,7 @@
     }
   }
 
+  buildEmojiGrid();
   renderAll();
 
   // ── Toggle edit mode ──────────────────────────────────
@@ -1697,7 +1698,6 @@
       `<button type="button" class="emoji-opt" data-emoji="${e}" onclick="selectEmoji('${e}')" title="${e}">${e}</button>`
     ).join('');
   }
-  buildEmojiGrid();
 
   // ── Link de perfil público ──────────────────────────────
   const pubLink = document.getElementById('pubProfileLink');
