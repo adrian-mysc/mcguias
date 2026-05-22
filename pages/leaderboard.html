@@ -241,9 +241,21 @@
   </footer>
 
   <script type="module">
-    import { getOnlineLeaderboard, getOnlineUserRank } from '../js/supabase/leaderboard.js';
+    import { getOnlineLeaderboard, getOnlineUserRank, getUserRank, getTopPlayers } from '../js/supabase/leaderboard.js';
 
     function el(id) { return document.getElementById(id); }
+
+    function timeout(ms) {
+      return new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms));
+    }
+
+    function localStats() {
+      try {
+        const history = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+        const pontos  = history.reduce((s, r) => s + (r.correct || 0), 0);
+        return { rank: null, pontos, quizzes: history.length };
+      } catch { return null; }
+    }
 
     function renderMyStats(rank) {
       ['myRank', 'myPoints', 'myXp'].forEach(id => el(id).classList.remove('skeleton'));
@@ -253,9 +265,9 @@
         el('myXp').textContent     = '—';
         return;
       }
-      el('myRank').textContent   = '#' + rank.rank;
-      el('myPoints').textContent = rank.pontos;
-      el('myXp').textContent     = rank.quizzes;
+      el('myRank').textContent   = rank.rank ? '#' + rank.rank : '—';
+      el('myPoints').textContent = rank.pontos ?? '—';
+      el('myXp').textContent     = rank.quizzes ?? '—';
     }
 
     function avatarText(p) {
@@ -313,26 +325,41 @@
     }
 
     async function init() {
+      // tentativa 1: RPCs online
       try {
-        // 100% online: busca direto do Supabase, sem sync local
-        const [rank, players] = await Promise.all([
-          getOnlineUserRank(),
-          getOnlineLeaderboard(20)
+        const [rank, players] = await Promise.race([
+          Promise.all([getOnlineUserRank(), getOnlineLeaderboard(20)]),
+          timeout(8000)
         ]);
         renderMyStats(rank);
         renderList(players, rank);
-      } catch (err) {
-        console.error('Leaderboard:', err);
-        ['myRank', 'myPoints', 'myXp'].forEach(id => {
-          el(id).classList.remove('skeleton');
-          el(id).textContent = '—';
-        });
-        el('lbList').innerHTML = `<div class="lb-empty">
-          <div class="lb-empty-icon">⚠️</div>
-          <h3>Erro ao carregar</h3>
-          <p>Verifique sua conexão e tente novamente.</p>
-        </div>`;
+        return;
+      } catch (e) {
+        console.warn('Leaderboard RPC falhou, tentando consulta direta:', e.message);
       }
+
+      // tentativa 2: consulta direta à tabela (sem RPC)
+      try {
+        const [rank, players] = await Promise.race([
+          Promise.all([getUserRank(), getTopPlayers(20)]),
+          timeout(6000)
+        ]);
+        const adaptedRank = rank ? { rank: rank.rank, pontos: rank.points, quizzes: rank.total_xp } : null;
+        const adaptedPlayers = (players || []).map(p => ({ ...p, pontos: p.points, quizzes: p.total_xp }));
+        renderMyStats(adaptedRank);
+        renderList(adaptedPlayers, adaptedRank);
+        return;
+      } catch (e) {
+        console.warn('Consulta direta falhou:', e.message);
+      }
+
+      // fallback local: mostra stats do localStorage
+      renderMyStats(localStats());
+      el('lbList').innerHTML = `<div class="lb-empty">
+        <div class="lb-empty-icon">📡</div>
+        <h3>Ranking online indisponível</h3>
+        <p>Não foi possível conectar ao servidor.<br>Continue estudando — seu progresso é salvo localmente!</p>
+      </div>`;
     }
 
     init();
