@@ -1163,6 +1163,10 @@
     auth: { persistSession: true, autoRefreshToken: true }
   });
 
+  // ── Emoji picker — declarado aqui para evitar TDZ ──────
+  const EMOJIS = ['😊','😎','🤩','🥳','💪','🔥','⭐','🏆','🍔','🍟','☕','🧁','👑','🎯','🚀','💡','🌟','🦁','🐯','🦊','🎮','📚','💼','🛡️','⚡'];
+  let _selectedEmoji = '😊';
+
   // ── Rota ─────────────────────────────────────────────
   const { data: { session } } = await supabase.auth.getSession();
   if (!session) { window.location.replace('login.html'); }
@@ -1678,8 +1682,6 @@
   }
 
   // ── Emoji picker ──────────────────────────────────────
-  const EMOJIS = ['😊','😎','🤩','🥳','💪','🔥','⭐','🏆','🍔','🍟','☕','🧁','👑','🎯','🚀','💡','🌟','🦁','🐯','🦊','🎮','📚','💼','🛡️','⚡'];
-  let _selectedEmoji = '😊';
 
   function selectEmoji(emoji) {
     _selectedEmoji = emoji;
