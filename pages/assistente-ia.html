@@ -255,6 +255,45 @@
     }
     .ai-clear-btn:hover { color: var(--red); }
 
+    /* ---- API key setup ---- */
+    .ai-setup {
+      margin: 12px 14px 0;
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 14px 16px;
+      box-shadow: var(--shadow-sm); flex-shrink: 0;
+    }
+    [data-theme="dark"] .ai-setup { background: #1e1d1b; border-color: #2e2c28; }
+    .ai-setup h3 { font-size: 13.5px; margin: 0 0 5px; }
+    .ai-setup p  { font-size: 12px; color: var(--muted); margin: 0 0 10px; line-height: 1.5; }
+    .ai-setup-row { display: flex; gap: 8px; }
+    .ai-setup input {
+      flex: 1; border: 1.5px solid var(--border); border-radius: var(--radius-md);
+      padding: 9px 12px; font-family: var(--font-body); font-size: 13px;
+      background: var(--bg); color: var(--text); outline: none; min-width: 0;
+    }
+    .ai-setup input:focus { border-color: var(--red); }
+    [data-theme="dark"] .ai-setup input { background: #121110; border-color: #2e2c28; }
+    .ai-setup-save {
+      background: var(--red); color: white; border-radius: var(--radius-md);
+      padding: 9px 16px; font-size: 13px; font-weight: 700; border: none;
+      cursor: pointer; white-space: nowrap; font-family: var(--font-body);
+    }
+    .ai-setup-save:hover { background: var(--red-dark); }
+    .ai-setup-note { font-size: 10.5px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+    .ai-setup-note a { color: var(--red); }
+    .ai-key-status {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 12px; padding: 8px 14px;
+      background: rgba(26,122,66,0.08); border-bottom: 1px solid rgba(26,122,66,0.2);
+      color: var(--green); font-weight: 600; flex-shrink: 0;
+    }
+    [data-theme="dark"] .ai-key-status { background: rgba(26,122,66,0.12); }
+    .ai-key-remove {
+      margin-left: auto; font-size: 11px; color: var(--muted);
+      cursor: pointer; text-decoration: underline; background: none; border: none;
+      font-family: var(--font-body);
+    }
+
     /* Scrollbar */
     .ai-messages::-webkit-scrollbar { width: 4px; }
     .ai-messages::-webkit-scrollbar-track { background: transparent; }
@@ -301,10 +340,22 @@
       <div class="ai-kb-label" id="kbLabel">Carregando base de conhecimento…</div>
     </div>
 
-    <!-- Offline / not configured banner -->
-    <div class="ai-offline" id="aiOffline" style="display:none;">
-      <strong>⚠️ Assistente temporariamente indisponível</strong>
-      O assistente IA está em manutenção. Tente novamente em breve.
+    <!-- API key setup -->
+    <div class="ai-setup" id="aiSetup">
+      <h3>🔑 Configure sua chave de API</h3>
+      <p>Para usar o assistente, você precisa de uma chave da Anthropic (Claude). A chave fica salva apenas no seu dispositivo.</p>
+      <div class="ai-setup-row">
+        <input type="password" id="apiKeyInput" placeholder="sk-ant-..." autocomplete="off">
+        <button class="ai-setup-save" onclick="saveApiKey()">Salvar</button>
+      </div>
+      <div class="ai-setup-note">
+        Obtenha sua chave em <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a>.
+        A chave nunca é enviada para servidores do MC Guias.
+      </div>
+    </div>
+    <div class="ai-key-status" id="keyStatus" style="display:none;">
+      ✅ Chave configurada — Assistente pronto para uso.
+      <button class="ai-key-remove" onclick="removeApiKey()">Remover</button>
     </div>
 
     <!-- Suggestions -->
@@ -361,10 +412,34 @@
   //  Claude API · Base de conhecimento dos guias JSON
   // ================================================================
 
-  // Chave Claude API (configurada pelo administrador)
-  // ATENÇÃO: chave visível no fonte — use apenas em ambientes controlados
-  const CLAUDE_API_KEY = '';   // <- preencha com sua chave sk-ant-...
-  const CLAUDE_MODEL   = 'claude-haiku-4-5-20251001';
+  const CLAUDE_MODEL = 'claude-haiku-4-5-20251001';
+
+  // ---- Gerenciamento da chave de API ----
+  function getApiKey()    { return localStorage.getItem('mcguias_claude_key') || ''; }
+  function saveApiKey() {
+    const key = document.getElementById('apiKeyInput').value.trim();
+    if (!key.startsWith('sk-ant-')) {
+      alert('Chave inválida. A chave Claude deve começar com sk-ant-');
+      return;
+    }
+    localStorage.setItem('mcguias_claude_key', key);
+    document.getElementById('apiKeyInput').value = '';
+    updateKeyUI(true);
+  }
+  function removeApiKey() {
+    if (!confirm('Remover chave de API?')) return;
+    localStorage.removeItem('mcguias_claude_key');
+    updateKeyUI(false);
+  }
+  function updateKeyUI(hasKey) {
+    document.getElementById('aiSetup').style.display     = hasKey ? 'none' : '';
+    document.getElementById('keyStatus').style.display   = hasKey ? 'flex' : 'none';
+    document.getElementById('aiSendBtn').disabled        = !hasKey;
+    document.getElementById('aiInput').disabled          = !hasKey;
+    document.getElementById('aiInput').placeholder       = hasKey
+      ? 'Faça uma pergunta sobre operações…'
+      : 'Configure sua chave de API acima para começar…';
+  }
 
   const GUIDE_SLUGS = [
     'bebidas-sobremesas', 'best-burguer', 'chapa', 'condimentacao',
@@ -399,7 +474,6 @@
 
   let KB = [];
   let conversationHistory = [];
-  let kbReady = false;
 
   // ---- Carregamento da base de conhecimento ----
   async function loadKnowledgeBase() {
@@ -443,13 +517,9 @@
       document.getElementById('kbBar').style.display = 'none';
     }, 1800);
 
-    const hasKey = !!CLAUDE_API_KEY;
-    document.getElementById('aiOffline').style.display = hasKey ? 'none' : '';
-    document.getElementById('aiSendBtn').disabled = !hasKey;
-    document.getElementById('aiInput').disabled   = !hasKey;
-    document.getElementById('aiHint').textContent = hasKey
-      ? `${KB.length} questões de ${loaded} guias · Powered by Claude`
-      : 'Assistente indisponível no momento';
+    document.getElementById('aiHint').textContent =
+      `${KB.length} questões de ${loaded} guias · Powered by Claude`;
+    updateKeyUI(!!getApiKey());
   }
 
   // ---- Busca semântica no KB ----
@@ -516,7 +586,8 @@ Regras:
   async function sendMessage() {
     const input = document.getElementById('aiInput');
     const text  = input.value.trim();
-    if (!text || !CLAUDE_API_KEY) return;
+    const apiKey = getApiKey();
+    if (!text || !apiKey) return;
 
     addMessage('user', escapeHtml(text));
     conversationHistory.push({ role: 'user', content: text });
@@ -536,7 +607,7 @@ Regras:
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': CLAUDE_API_KEY,
+          'x-api-key': apiKey,
           'anthropic-version': '2023-06-01',
           'anthropic-dangerous-direct-browser-access': 'true'
         },
@@ -666,6 +737,7 @@ Regras:
   }
 
   // ---- Init ----
+  updateKeyUI(!!getApiKey());
   loadKnowledgeBase();
   </script>
 </body>
