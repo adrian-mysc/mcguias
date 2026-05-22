@@ -525,15 +525,15 @@
 
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-num">30+</div>
+          <div class="hero-stat-num" data-count="30" data-suffix="+">30+</div>
           <div class="hero-stat-label">Guias</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">680+</div>
+          <div class="hero-stat-num" data-count="680" data-suffix="+">680+</div>
           <div class="hero-stat-label">Questões</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">39</div>
+          <div class="hero-stat-num" data-count="39" data-suffix="">39</div>
           <div class="hero-stat-label">Fichas SMPD</div>
         </div>
       </div>
@@ -1216,6 +1216,29 @@
     document.querySelectorAll('.guide-card:not(.locked)').forEach((card, i) => {
       card.style.setProperty('--card-i', i);
     });
+
+    // ---- Hero stats count-up animation ----
+    (function() {
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+      function animateCount(el) {
+        const target   = parseInt(el.dataset.count, 10);
+        const suffix   = el.dataset.suffix || '';
+        const duration = target >= 100 ? 1400 : 900;
+        const start    = performance.now();
+        function tick(now) {
+          const elapsed  = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          el.textContent = Math.round(easeOutCubic(progress) * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        el.textContent = '0' + suffix;
+        requestAnimationFrame(tick);
+      }
+      // Trigger after the hero CSS slide-in animation finishes (~0.65s)
+      setTimeout(function() {
+        document.querySelectorAll('.hero-stat-num[data-count]').forEach(animateCount);
+      }, 650);
+    })();
 
     // ---- Scroll-reveal via IntersectionObserver ----
     const srObserver = new IntersectionObserver((entries) => {
