@@ -286,7 +286,7 @@
         ${rankEl}
         <div class="lb-avatar">${avatarText(p)}</div>
         <div class="lb-name-wrap">
-          <div class="lb-name">${p.username || 'Jogador'}${youTag}</div>
+          <div class="lb-name"><a href="perfil-publico.html?u=${encodeURIComponent(p.username || '')}" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">${p.username || 'Jogador'}</a>${youTag}</div>
           ${lojaTag}
         </div>
         <div class="lb-points">${p.pontos}<span>pts</span></div>

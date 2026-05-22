@@ -68,3 +68,7 @@ create policy "leaderboard_owner"
 on leaderboard
 for all
 using (auth.uid() = user_id);
+
+-- Adicionado: avatar público e cargo no perfil
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS avatar_emoji text DEFAULT '😊';
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS cargo text;

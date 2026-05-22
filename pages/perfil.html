@@ -646,6 +646,18 @@
       font-weight: 800;
       color: #FFC72C;
     }
+    /* ── Emoji picker ── */
+    .emoji-pick-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .emoji-current { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .emoji-current-val { font-size: 28px; line-height: 1; }
+    .emoji-current-hint { font-size: 11px; color: var(--muted); }
+    .emoji-grid-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+    .emoji-opt { width: 36px; height: 36px; font-size: 20px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1.5px solid var(--border); background: var(--bg); cursor: pointer; transition: all 0.12s; }
+    .emoji-opt:hover { border-color: var(--red); transform: scale(1.12); }
+    .emoji-opt.selected { border-color: var(--red); background: rgba(218,41,28,0.08); }
+    /* ── Link perfil público ── */
+    .pub-profile-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.8); text-decoration: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 12px; transition: background 0.15s; }
+    .pub-profile-link:hover { background: rgba(255,255,255,0.15); color: white; }
   </style>
 </head>
 <body>
@@ -702,6 +714,7 @@
     <div class="streak-wrap" id="streak-display">
       🔥 <span id="streak-num">0</span> dias consecutivos
     </div>
+    <a class="pub-profile-link" id="pubProfileLink" href="#" target="_blank">👁️ Ver meu perfil público</a>
   </div>
 
   <!-- ── Dados pessoais ─────────────────────────────── -->
@@ -780,6 +793,14 @@
               <input type="text" id="edit-sigla" placeholder="Ex: KS" maxlength="4" style="text-transform:uppercase;letter-spacing:2px;font-weight:700">
             </div>
           </div>
+        </div>
+        <div class="field full">
+          <div class="emoji-pick-label">Avatar público (emoji)</div>
+          <div class="emoji-current">
+            <span class="emoji-current-val" id="emojiCurrentVal">😊</span>
+            <span class="emoji-current-hint">Aparece no seu perfil público</span>
+          </div>
+          <div class="emoji-grid-wrap" id="emojiGrid"></div>
         </div>
           <div class="field">
             <label>Telefone</label>
@@ -1161,7 +1182,7 @@
   // ── Supabase profile ──────────────────────────────────
   const { data: profile } = await supabase
     .from('profiles')
-    .select('username, loja, sigla')
+    .select('username, loja, sigla, avatar_emoji, cargo')
     .eq('id', user.id)
     .single();
 
@@ -1301,6 +1322,10 @@
     document.getElementById('edit-admissao').value = admissao;
     document.getElementById('edit-telefone').value = telefone;
 
+    // Emoji picker
+    const savedEmoji = local.avatar_emoji || profile?.avatar_emoji || '😊';
+    selectEmoji(savedEmoji);
+
     // Stats
     document.getElementById('stat-quizzes').textContent  = stats.quizzesTotal;
     document.getElementById('stat-acertos').textContent  = stats.taxaAcerto + '%';
@@ -1411,11 +1436,21 @@
       return;
     }
 
+    const avatarEmoji = document.getElementById('emojiCurrentVal').textContent || '😊';
+
     // Save locally
-    saveLocalDados({ nome, apelido, sigla, cargo, loja, turno, admissao, telefone });
+    saveLocalDados({ nome, apelido, sigla, cargo, loja, turno, admissao, telefone, avatar_emoji: avatarEmoji });
 
     // Save username, loja e sigla to supabase
-    await supabase.from('profiles').upsert({ id: user.id, username: nome, loja, sigla });
+    await supabase.from('profiles').upsert({
+      id: user.id,
+      username: nome,
+      display_name: nome,
+      loja,
+      sigla,
+      cargo,
+      avatar_emoji: avatarEmoji
+    });
 
     toggleDadosEdit(false);
     renderAll();
@@ -1639,6 +1674,35 @@
     el.className = 'inline-msg ' + type;
     el.textContent = text;
     setTimeout(() => { el.className = 'inline-msg'; }, 4000);
+  }
+
+  // ── Emoji picker ──────────────────────────────────────
+  const EMOJIS = ['😊','😎','🤩','🥳','💪','🔥','⭐','🏆','🍔','🍟','☕','🧁','👑','🎯','🚀','💡','🌟','🦁','🐯','🦊','🎮','📚','💼','🛡️','⚡'];
+  let _selectedEmoji = '😊';
+
+  function selectEmoji(emoji) {
+    _selectedEmoji = emoji;
+    const cur = document.getElementById('emojiCurrentVal');
+    if (cur) cur.textContent = emoji;
+    document.querySelectorAll('.emoji-opt').forEach(el => {
+      el.classList.toggle('selected', el.dataset.emoji === emoji);
+    });
+  }
+  window.selectEmoji = selectEmoji;
+
+  function buildEmojiGrid() {
+    const grid = document.getElementById('emojiGrid');
+    if (!grid) return;
+    grid.innerHTML = EMOJIS.map(e =>
+      `<button type="button" class="emoji-opt" data-emoji="${e}" onclick="selectEmoji('${e}')" title="${e}">${e}</button>`
+    ).join('');
+  }
+  buildEmojiGrid();
+
+  // ── Link de perfil público ──────────────────────────────
+  const pubLink = document.getElementById('pubProfileLink');
+  if (pubLink && profile?.username) {
+    pubLink.href = `perfil-publico.html?u=${encodeURIComponent(profile.username)}`;
   }
 </script>
 
