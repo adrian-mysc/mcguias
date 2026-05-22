@@ -6,16 +6,21 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'mcg_srs_v1';
+  var STORAGE_KEY = 'mc_sr_v2';
 
   /* ---- Storage ---- */
   function loadAll() {
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
-    catch (e) { return {}; }
+    try {
+      var sr2 = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      return sr2.cardData || {};
+    } catch (e) { return {}; }
   }
   function saveAll(data) {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
-    catch (e) {}
+    try {
+      var sr2 = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      sr2.cardData = data;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(sr2));
+    } catch (e) {}
   }
 
   /* ---- SM-2 core ----
