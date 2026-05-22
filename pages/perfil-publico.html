@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <script type="module" src="../js/auth-guard.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#DA291C">
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') setTimeout(hideSplash, 180);
+      else window.addEventListener('load', function() { setTimeout(hideSplash, 180); });
+    })();
+  </script>
+  <style>
+    .pub-page { max-width: 480px; margin: 0 auto; padding: 20px 16px 80px; display: flex; flex-direction: column; gap: 14px; }
+
+    /* ── Hero card ── */
+    .pub-hero {
+      background: var(--red);
+      border-radius: var(--radius-lg);
+      padding: 28px 20px 22px;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      color: white; text-align: center; position: relative; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(218,41,28,0.28);
+    }
+    .pub-hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 60% at 85% 10%, rgba(255,199,44,0.2) 0%, transparent 60%);
+    }
+    .pub-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: rgba(255,255,255,0.18); border: 2px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px; position: relative; z-index: 1;
+    }
+    .pub-name { font-family: var(--font-display); font-size: 22px; font-weight: 800; position: relative; z-index: 1; }
+    .pub-role-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
+    .pub-badge {
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px; padding: 3px 11px; font-size: 11.5px; font-weight: 600;
+    }
+    .pub-badge.yellow { background: rgba(255,199,44,0.22); border-color: rgba(255,199,44,0.4); color: #FFC72C; }
+
+    /* ── Stats grid ── */
+    .pub-stats {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .pub-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .pub-stat {
+      padding: 14px 10px; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .pub-stat:last-child { border-right: none; }
+    [data-theme="dark"] .pub-stat { border-color: #2e2c28; }
+    .pub-stat-num { font-family: var(--font-display); font-size: 22px; font-weight: 900; color: var(--red); line-height: 1; }
+    .pub-stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* ── Info card ── */
+    .pub-info {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .pub-info-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .pub-info-row { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+    [data-theme="dark"] .pub-info-row { border-color: #2e2c28; }
+    .pub-info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .pub-info-icon { font-size: 16px; width: 22px; text-align: center; flex-shrink: 0; }
+    .pub-info-label { font-size: 11px; color: var(--muted); font-weight: 600; min-width: 80px; }
+    .pub-info-val { font-size: 13px; font-weight: 700; color: var(--text); }
+
+    /* ── Not found ── */
+    .pub-not-found { text-align: center; padding: 40px 20px; color: var(--muted); }
+    .pub-not-found-icon { font-size: 48px; margin-bottom: 12px; }
+    .pub-not-found h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+
+    /* ── Skeleton ── */
+    .skeleton { background: var(--border); border-radius: 6px; animation: shimmer 1.4s infinite linear; }
+    @keyframes shimmer { 0%,100%{opacity:0.6} 50%{opacity:1} }
+  </style>
+</head>
+<body data-page="perfil-publico">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1 id="navTitle">Perfil</h1>
+        <p>MC Guias</p>
+      </div>
+      <a href="leaderboard.html" class="navbar-back">← Ranking</a>
+    </div>
+  </nav>
+
+  <div class="pub-page" id="pubPage">
+    <!-- carregando -->
+    <div class="pub-hero">
+      <div class="pub-avatar skeleton" style="width:72px;height:72px;"></div>
+      <div class="skeleton" style="width:140px;height:24px;margin-top:4px;"></div>
+      <div class="skeleton" style="width:100px;height:18px;"></div>
+    </div>
+    <div class="pub-stats skeleton" style="height:72px;"></div>
+  </div>
+
+  <script src="../js/main.js" defer></script>
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const SUPABASE_URL      = 'https://iizzeeceqysdfhnkosrc.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const params   = new URLSearchParams(window.location.search);
+    const username = params.get('u') || '';
+
+    async function load() {
+      const page = document.getElementById('pubPage');
+
+      if (!username) {
+        page.innerHTML = notFoundHTML('Nenhum usuário especificado.');
+        return;
+      }
+
+      // Busca profile
+      const { data: profile, error } = await supabase
+        .from('profiles')
+        .select('id, username, display_name, avatar_emoji, cargo, loja, created_at')
+        .eq('username', username)
+        .single();
+
+      if (error || !profile) {
+        page.innerHTML = notFoundHTML(`Usuário "${username}" não encontrado.`);
+        return;
+      }
+
+      // Busca pontos no leaderboard
+      const { data: lb } = await supabase
+        .from('leaderboard')
+        .select('points, total_xp')
+        .eq('user_id', profile.id)
+        .single();
+
+      // Conta conquistas
+      const { count: achCount } = await supabase
+        .from('achievements')
+        .select('*', { count: 'exact', head: true })
+        .eq('user_id', profile.id);
+
+      // Rank
+      let rank = null;
+      if (lb?.points !== undefined) {
+        const { count: above } = await supabase
+          .from('leaderboard')
+          .select('*', { count: 'exact', head: true })
+          .gt('points', lb.points);
+        rank = (above ?? 0) + 1;
+      }
+
+      const displayName = profile.display_name || profile.username || username;
+      const emoji       = profile.avatar_emoji  || '😊';
+      const cargo       = profile.cargo         || null;
+      const loja        = profile.loja          || null;
+      const points      = lb?.points            ?? 0;
+      const conquistas  = achCount              ?? 0;
+
+      document.getElementById('navTitle').textContent = displayName;
+      document.title = `${displayName} — MC Guias`;
+
+      const rankStr = rank ? `#${rank}` : '—';
+
+      page.innerHTML = `
+        <div class="pub-hero">
+          <div class="pub-avatar">${emoji}</div>
+          <div class="pub-name">${esc(displayName)}</div>
+          <div class="pub-role-row">
+            ${cargo ? `<span class="pub-badge">${esc(cargo)}</span>` : ''}
+            ${loja  ? `<span class="pub-badge">${esc(loja)}</span>`  : ''}
+            ${rank  ? `<span class="pub-badge yellow">${rankStr} no ranking</span>` : ''}
+          </div>
+        </div>
+
+        <div class="pub-stats">
+          <div class="pub-stats-grid">
+            <div class="pub-stat">
+              <div class="pub-stat-num">${points.toLocaleString('pt-BR')}</div>
+              <div class="pub-stat-lbl">Pontos</div>
+            </div>
+            <div class="pub-stat">
+              <div class="pub-stat-num">${conquistas}</div>
+              <div class="pub-stat-lbl">Conquistas</div>
+            </div>
+            <div class="pub-stat">
+              <div class="pub-stat-num">${rankStr}</div>
+              <div class="pub-stat-lbl">Ranking</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-info">
+          <div class="pub-info-title">Informações</div>
+          ${cargo ? `<div class="pub-info-row"><span class="pub-info-icon">💼</span><span class="pub-info-label">Cargo</span><span class="pub-info-val">${esc(cargo)}</span></div>` : ''}
+          ${loja  ? `<div class="pub-info-row"><span class="pub-info-icon">🏪</span><span class="pub-info-label">Restaurante</span><span class="pub-info-val">${esc(loja)}</span></div>` : ''}
+          <div class="pub-info-row">
+            <span class="pub-info-icon">📅</span>
+            <span class="pub-info-label">Membro desde</span>
+            <span class="pub-info-val">${fmtDate(profile.created_at)}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function notFoundHTML(msg) {
+      return `<div class="pub-not-found">
+        <div class="pub-not-found-icon">🔍</div>
+        <h3>Perfil não encontrado</h3>
+        <p>${esc(msg)}</p>
+      </div>`;
+    }
+
+    function esc(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function fmtDate(iso) {
+      if (!iso) return '—';
+      return new Date(iso).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+    }
+
+    load();
+  </script>
+</body>
+</html>
