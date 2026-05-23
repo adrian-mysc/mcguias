@@ -257,6 +257,7 @@
       jogo:        '🎮 Jogo',
       trofeu:      '🥇 Troféus',
       prova:       '📋 Provas',
+      batalha:     '⚔️ Batalha',
     };
 
     function _mondayLabel(str) {
@@ -416,9 +417,34 @@
       }).join('');
     }
 
-    function render() {
+    async function render() {
       if (!window.Gamificacao) { setTimeout(render, 100); return; }
       var snap = window.Gamificacao.getSnapshot();
+
+      // Merge conquistas de batalha do Supabase (armazenadas remotamente)
+      try {
+        var { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+        var _sb = createClient(
+          'https://iizzeeceqysdfhnkosrc.supabase.co',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho'
+        );
+        var { data: { session } } = await _sb.auth.getSession();
+        if (session) {
+          var BATTLE_KEYS = ['battle_primeiro_sangue','battle_veterano','battle_dominador',
+            'battle_lenda','battle_guerreiro','battle_centuriao',
+            'battle_em_chamas','battle_imparavel','battle_perfeito','battle_elite'];
+          var { data: rows } = await _sb.from('achievements')
+            .select('achievement_key').eq('user_id', session.user.id)
+            .in('achievement_key', BATTLE_KEYS);
+          if (rows && rows.length) {
+            rows.forEach(function(r){
+              if (snap.conquistas.indexOf(r.achievement_key) === -1)
+                snap.conquistas.push(r.achievement_key);
+            });
+          }
+        }
+      } catch(e) { /* offline — mostra só conquistas locais */ }
+
       window._cqSnap = snap;
       renderStats(snap);
       renderTheme(snap);

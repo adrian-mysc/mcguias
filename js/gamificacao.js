@@ -76,6 +76,17 @@
     // ── Especial extra ───────────────────────────────────────
     { id: 'colecionador_mestre', nome: 'Colecionador Mestre', desc: 'Desbloqueou 20 conquistas diferentes',              icon: '🏅', cat: 'especial',   cor: '#f59e0b' },
     { id: 'lendario',          nome: 'Lendário',             desc: 'Desbloqueou 40 conquistas',                          icon: '🌈', cat: 'especial',   cor: '#818cf8' },
+    // ── Batalha ──────────────────────────────────────────
+    { id: 'battle_primeiro_sangue', nome: 'Primeiro Sangue',     desc: 'Venceu sua primeira batalha ao vivo',            icon: '⚔️', cat: 'batalha',    cor: '#ef4444' },
+    { id: 'battle_veterano',        nome: 'Veterano',            desc: '5 vitórias em batalha',                          icon: '🛡️', cat: 'batalha',    cor: '#3b82f6' },
+    { id: 'battle_dominador',       nome: 'Dominador',           desc: '10 vitórias em batalha',                         icon: '🏆', cat: 'batalha',    cor: '#f59e0b' },
+    { id: 'battle_lenda',           nome: 'Lenda da Batalha',    desc: '25 vitórias em batalha',                         icon: '👑', cat: 'batalha',    cor: '#a855f7' },
+    { id: 'battle_guerreiro',       nome: 'Guerreiro',           desc: 'Disputou 10 batalhas',                           icon: '⚡', cat: 'batalha',    cor: '#22c55e' },
+    { id: 'battle_centuriao',       nome: 'Centurião de Batalha',desc: 'Disputou 50 batalhas',                           icon: '🌟', cat: 'batalha',    cor: '#fbbf24' },
+    { id: 'battle_em_chamas',       nome: 'Em Chamas',           desc: '3 vitórias consecutivas em batalha',             icon: '🔥', cat: 'batalha',    cor: '#f97316' },
+    { id: 'battle_imparavel',       nome: 'Imparável',           desc: '5 vitórias consecutivas em batalha',             icon: '💥', cat: 'batalha',    cor: '#ef4444' },
+    { id: 'battle_perfeito',        nome: 'Placar Perfeito',     desc: 'Venceu uma batalha com 10 × 0',                  icon: '💎', cat: 'batalha',    cor: '#38bdf8' },
+    { id: 'battle_elite',           nome: 'Elite',               desc: '80%+ de vitórias com 10+ batalhas disputadas',   icon: '🎯', cat: 'batalha',    cor: '#22c55e' },
   ];
 
   /* ============================================================

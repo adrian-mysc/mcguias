@@ -992,16 +992,34 @@
       lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
 
       // Salva stats de batalha (fire-and-forget)
-      updateBattleStats(isWin, myScore === oppFinal).catch(() => {});
+      updateBattleStats(isWin, myScore === oppFinal, myScore, oppFinal).catch(() => {});
     }
 
-    async function updateBattleStats(won, drew) {
+    const BATTLE_ACHIEVEMENTS = [
+      { key: 'battle_primeiro_sangue', icon: '⚔️', nome: 'Primeiro Sangue',     desc: 'Venceu sua primeira batalha!',           cond: (s)    => s.wins >= 1 },
+      { key: 'battle_veterano',        icon: '🛡️', nome: 'Veterano',            desc: '5 vitórias em batalha!',                 cond: (s)    => s.wins >= 5 },
+      { key: 'battle_dominador',       icon: '🏆', nome: 'Dominador',            desc: '10 vitórias em batalha!',                cond: (s)    => s.wins >= 10 },
+      { key: 'battle_lenda',           icon: '👑', nome: 'Lenda da Batalha',     desc: '25 vitórias em batalha!',                cond: (s)    => s.wins >= 25 },
+      { key: 'battle_guerreiro',       icon: '⚡', nome: 'Guerreiro',            desc: '10 batalhas disputadas!',                cond: (s)    => s.total_battles >= 10 },
+      { key: 'battle_centuriao',       icon: '🌟', nome: 'Centurião',            desc: '50 batalhas disputadas!',                cond: (s)    => s.total_battles >= 50 },
+      { key: 'battle_em_chamas',       icon: '🔥', nome: 'Em Chamas',            desc: '3 vitórias seguidas!',                   cond: (s, e) => e.won && s.win_streak >= 3 },
+      { key: 'battle_imparavel',       icon: '💥', nome: 'Imparável',            desc: '5 vitórias seguidas!',                   cond: (s, e) => e.won && s.win_streak >= 5 },
+      { key: 'battle_perfeito',        icon: '💎', nome: 'Placar Perfeito',      desc: 'Ganhou com 10 × 0!',                     cond: (s, e) => e.won && e.myScore === 10 && e.oppScore === 0 },
+      { key: 'battle_elite',           icon: '🎯', nome: 'Elite',                desc: '80%+ de vitórias!',                      cond: (s)    => s.total_battles >= 10 && Math.round(s.wins * 100 / s.total_battles) >= 80 },
+    ];
+
+    async function updateBattleStats(won, drew, myFinalScore, oppFinalScore) {
       const { data: cur } = await supabase
         .from('battle_stats')
-        .select('wins, losses, draws, total_battles')
+        .select('wins, losses, draws, total_battles, win_streak, best_streak')
         .eq('user_id', me.id)
         .maybeSingle();
-      await supabase.from('battle_stats').upsert({
+
+      const prevStreak = cur?.win_streak || 0;
+      const newStreak  = won ? prevStreak + 1 : 0;
+      const bestStreak = Math.max(cur?.best_streak || 0, newStreak);
+
+      const newStats = {
         user_id:       me.id,
         username:      me.username,
         avatar:        me.avatar || null,
@@ -1009,8 +1027,38 @@
         losses:        (cur?.losses || 0) + (!won && !drew ? 1 : 0),
         draws:         (cur?.draws  || 0) + (drew ? 1 : 0),
         total_battles: (cur?.total_battles || 0) + 1,
+        win_streak:    newStreak,
+        best_streak:   bestStreak,
         updated_at:    new Date().toISOString(),
-      }, { onConflict: 'user_id' });
+      };
+
+      await supabase.from('battle_stats').upsert(newStats, { onConflict: 'user_id' });
+      await checkBattleAchievements(newStats, { won, myScore: myFinalScore, oppScore: oppFinalScore });
+    }
+
+    async function checkBattleAchievements(stats, extras) {
+      const keys = BATTLE_ACHIEVEMENTS.map(a => a.key);
+      const { data: existing } = await supabase
+        .from('achievements').select('achievement_key')
+        .eq('user_id', me.id).in('achievement_key', keys);
+      const have = new Set((existing || []).map(r => r.achievement_key));
+      const toUnlock = BATTLE_ACHIEVEMENTS.filter(a => !have.has(a.key) && a.cond(stats, extras));
+      if (!toUnlock.length) return;
+      await supabase.from('achievements').upsert(
+        toUnlock.map(a => ({ user_id: me.id, achievement_key: a.key })),
+        { onConflict: 'user_id,achievement_key', ignoreDuplicates: true }
+      );
+      toUnlock.forEach((a, i) => {
+        setTimeout(() => achievementToast(a.icon, a.nome, a.desc), i * 3800);
+      });
+    }
+
+    function achievementToast(icon, nome, desc) {
+      const t = document.createElement('div');
+      t.style.cssText = 'position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1c1a17,#2a2622);color:#fff;padding:12px 18px;border-radius:16px;font-size:13px;font-weight:700;z-index:900;box-shadow:0 4px 20px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;max-width:92vw;border:1.5px solid rgba(255,199,44,.35);';
+      t.innerHTML = `<span style="font-size:24px;flex-shrink:0">${icon}</span><div><div style="color:#FFC72C;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px">Conquista desbloqueada!</div><div style="font-size:14px">${nome}</div><div style="font-size:11px;opacity:.75;margin-top:1px">${desc}</div></div>`;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 5000);
     }
 
     window.goLobby = function() {
