@@ -100,6 +100,7 @@
       flex-shrink: 0;
     }
     .lb-me .lb-avatar { background: #f59e0b; color: #1c1a17; }
+    .lb-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
     .lb-name-wrap {
       flex: 1;
       min-width: 0;
@@ -293,7 +294,7 @@
   </footer>
 
   <script type="module">
-    import { getOnlineLeaderboard, getOnlineUserRank, getUserRank, getTopPlayers } from '../js/supabase/leaderboard.js';
+    import { getOnlineLeaderboard, getOnlineUserRank, getUserRank, getTopPlayers, getAvatarsByUserIds } from '../js/supabase/leaderboard.js';
 
     function el(id) { return document.getElementById(id); }
 
@@ -339,9 +340,12 @@
       const youTag  = isMe ? '<span class="lb-you-tag">Você</span>' : '';
       const lojaTag = p.loja ? `<div class="lb-loja">${esc(p.loja)}</div>` : '';
       const displayName = esc(p.username || 'Jogador');
+      const avatarInner = p.avatar
+        ? `<img src="${esc(p.avatar)}" alt="${displayName}" loading="lazy">`
+        : avatarText(p);
       return `<div class="lb-row${isMe ? ' lb-me' : ''}">
         ${rankEl}
-        <div class="lb-avatar">${avatarText(p)}</div>
+        <div class="lb-avatar">${avatarInner}</div>
         <div class="lb-name-wrap">
           <div class="lb-name"><a href="perfil-publico.html?u=${encodeURIComponent(p.username || '')}" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">${displayName}</a>${youTag}</div>
           ${lojaTag}
@@ -387,7 +391,7 @@
     async function init() {
       // tentativa 1: RPCs online
       try {
-        const [rawRank, players] = await Promise.race([
+        const [rawRank, rawPlayers] = await Promise.race([
           Promise.all([getOnlineUserRank(), getOnlineLeaderboard(20)]),
           timeout(8000)
         ]);
@@ -398,6 +402,13 @@
           quizzes:  rawRank.quizzes  ?? rawRank.total_xp,
           username: rawRank.username ?? rawRank.user,
         } : null;
+        // Enriquece com avatares se os players tiverem user_id
+        let players = rawPlayers || [];
+        const ids0 = players.map(p => p.user_id).filter(Boolean);
+        if (ids0.length) {
+          const avatarMap0 = await getAvatarsByUserIds(ids0).catch(() => ({}));
+          players = players.map(p => ({ ...p, avatar: avatarMap0[p.user_id] || null }));
+        }
         renderMyStats(rank);
         renderList(players, rank);
         return;
@@ -412,7 +423,11 @@
           timeout(6000)
         ]);
         const adaptedRank = rank ? { rank: rank.rank, pontos: rank.points, quizzes: rank.total_xp, username: rank.username } : null;
-        const adaptedPlayers = (players || []).map(p => ({ ...p, pontos: p.points, quizzes: p.total_xp }));
+        let adaptedPlayers = (players || []).map(p => ({ ...p, pontos: p.points, quizzes: p.total_xp }));
+        // Enriquece com avatares
+        const ids = adaptedPlayers.map(p => p.user_id).filter(Boolean);
+        const avatarMap = ids.length ? await getAvatarsByUserIds(ids).catch(() => ({})) : {};
+        adaptedPlayers = adaptedPlayers.map(p => ({ ...p, avatar: avatarMap[p.user_id] || null }));
         renderMyStats(adaptedRank);
         renderList(adaptedPlayers, adaptedRank);
         return;

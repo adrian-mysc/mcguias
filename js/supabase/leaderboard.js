@@ -55,10 +55,23 @@ export async function getOnlineUserRank() {
 export async function getTopPlayers(limit = 10) {
   const { data, error } = await supabase
     .from('leaderboard')
-    .select('username, points, total_xp, loja, sigla, updated_at')
+    .select('user_id, username, points, total_xp, loja, sigla, updated_at')
     .order('points', { ascending: false })
     .limit(limit);
 
   if (error) throw error;
   return data;
+}
+
+export async function getAvatarsByUserIds(userIds) {
+  if (!userIds.length) return {};
+  const { data } = await supabase
+    .from('profiles')
+    .select('id, avatar')
+    .in('id', userIds);
+  const map = {};
+  for (const row of (data ?? [])) {
+    if (row.avatar) map[row.id] = row.avatar;
+  }
+  return map;
 }
