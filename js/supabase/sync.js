@@ -53,18 +53,35 @@ async function syncAchievements(conquistas) {
 }
 
 async function syncLeaderboard(estatisticas) {
+  const user = await getCurrentUser();
+  if (!user) return;
+
   const perfilDados = mcGet('mc_perfil_dados', {});
   const username = mcGet('mc_username', null)
     || mcGet('mc_user_data', {}).username
     || perfilDados.apelido
     || perfilDados.nome
     || 'Jogador';
+  const loja  = perfilDados.loja  || null;
+  const sigla = perfilDados.sigla || null;
 
-  const history = mcGet('mc_quiz_history', []);
-  const points  = history.reduce((s, h) => s + (h.score || 0), 0);
-  const totalXp = estatisticas.quizzesCompletos || 0;
-  const loja    = perfilDados.loja  || null;
-  const sigla   = perfilDados.sigla || null;
+  // Fonte autoritativa: quiz_sessions no servidor (acumula entre dispositivos)
+  const { data: sessions } = await supabase
+    .from('quiz_sessions')
+    .select('score')
+    .eq('user_id', user.id);
+
+  const serverPoints = (sessions || []).reduce((s, r) => s + (r.score || 0), 0);
+  const serverXp     = sessions?.length ?? 0;
+
+  // Fallback local — cobre sessões ainda não sincronizadas neste dispositivo
+  const history     = mcGet('mc_quiz_history', []);
+  const localPoints = history.reduce((s, h) => s + (h.score || 0), 0);
+  const localXp     = estatisticas.quizzesCompletos || 0;
+
+  // Usa sempre o maior valor: nunca perde pontos por troca de dispositivo
+  const points  = Math.max(serverPoints, localPoints);
+  const totalXp = Math.max(serverXp, localXp);
 
   await submitScore(points, username, totalXp, loja, sigla);
 }
