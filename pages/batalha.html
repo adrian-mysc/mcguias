@@ -990,6 +990,27 @@
 
       // Return to available
       lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
+
+      // Salva stats de batalha (fire-and-forget)
+      updateBattleStats(isWin, myScore === oppFinal).catch(() => {});
+    }
+
+    async function updateBattleStats(won, drew) {
+      const { data: cur } = await supabase
+        .from('battle_stats')
+        .select('wins, losses, draws, total_battles')
+        .eq('user_id', me.id)
+        .maybeSingle();
+      await supabase.from('battle_stats').upsert({
+        user_id:       me.id,
+        username:      me.username,
+        avatar:        me.avatar || null,
+        wins:          (cur?.wins   || 0) + (won ? 1 : 0),
+        losses:        (cur?.losses || 0) + (!won && !drew ? 1 : 0),
+        draws:         (cur?.draws  || 0) + (drew ? 1 : 0),
+        total_battles: (cur?.total_battles || 0) + 1,
+        updated_at:    new Date().toISOString(),
+      }, { onConflict: 'user_id' });
     }
 
     window.goLobby = function() {

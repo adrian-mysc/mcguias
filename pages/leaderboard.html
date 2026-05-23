@@ -227,6 +227,30 @@
     }
     [data-theme="dark"] .lb-no-rank-cta { color: #fbbf24; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.06); }
 
+    /* ── Tabs ── */
+    .lb-tabs {
+      display: flex; gap: 6px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: var(--radius-md); padding: 4px;
+    }
+    .lb-tab {
+      flex: 1; padding: 9px 12px; border-radius: calc(var(--radius-md) - 2px);
+      border: none; background: none; font-size: 13px; font-weight: 700;
+      color: var(--muted); cursor: pointer; transition: background .15s, color .15s;
+      font-family: var(--font-body);
+    }
+    .lb-tab.active { background: var(--card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+
+    /* ── Battle rank row extras ── */
+    .lb-win-badge {
+      font-size: 11px; font-weight: 700;
+      background: rgba(34,197,94,.12); color: #15803d;
+      border-radius: 20px; padding: 2px 8px;
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .lb-win-badge { background: rgba(34,197,94,.18); color: #4ade80; }
+    .lb-points.wins { color: #22c55e; }
+
     @media (max-width: 400px) {
       .stat-grid { grid-template-columns: repeat(3, 1fr); }
       .stat-card-num { font-size: 20px; }
@@ -249,42 +273,94 @@
 
   <div class="lb-page">
 
-    <!-- ── Seu desempenho ── -->
-    <div>
-      <div class="section-label">Seu desempenho</div>
-      <div class="stat-grid" aria-live="polite">
-        <div class="stat-card">
-          <div class="stat-card-num yellow skeleton" id="myRank" aria-label="Sua posição no ranking">—</div>
-          <div class="stat-card-label">Sua posição</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-num skeleton" id="myPoints" aria-label="Questões corretas">—</div>
-          <div class="stat-card-label">Questões corretas</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-num green skeleton" id="myXp" aria-label="Quizzes feitos">—</div>
-          <div class="stat-card-label">Quizzes feitos</div>
-        </div>
-      </div>
+    <!-- ── Tabs ── -->
+    <div class="lb-tabs" role="tablist">
+      <button class="lb-tab active" id="tabStudy"  onclick="switchTab('study')"  role="tab">📚 Estudos</button>
+      <button class="lb-tab"        id="tabBattle" onclick="switchTab('battle')" role="tab">⚔️ Batalha</button>
     </div>
 
-    <!-- ── Top 10 ── -->
-    <div>
-      <div class="lb-list-header">
-        <div class="section-label" style="margin:0">Top 10 — Melhores estudantes</div>
-        <button class="lb-refresh-btn" id="refreshBtn" onclick="refresh()" aria-label="Atualizar ranking">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-          Atualizar
-        </button>
+    <!-- ══════════ ESTUDOS ══════════ -->
+    <div id="panelStudy">
+
+      <!-- ── Seu desempenho ── -->
+      <div>
+        <div class="section-label">Seu desempenho</div>
+        <div class="stat-grid" aria-live="polite">
+          <div class="stat-card">
+            <div class="stat-card-num yellow skeleton" id="myRank" aria-label="Sua posição no ranking">—</div>
+            <div class="stat-card-label">Sua posição</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-num skeleton" id="myPoints" aria-label="Questões corretas">—</div>
+            <div class="stat-card-label">Questões corretas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-num green skeleton" id="myXp" aria-label="Quizzes feitos">—</div>
+            <div class="stat-card-label">Quizzes feitos</div>
+          </div>
+        </div>
       </div>
-      <div class="lb-last-updated" id="lastUpdated" style="margin-bottom:8px"></div>
-      <div class="lb-list" id="lbList">
-        <div class="lb-row-skeleton skeleton"></div>
-        <div class="lb-row-skeleton skeleton"></div>
-        <div class="lb-row-skeleton skeleton"></div>
-        <div class="lb-row-skeleton skeleton"></div>
-        <div class="lb-row-skeleton skeleton"></div>
+
+      <!-- ── Top 10 ── -->
+      <div>
+        <div class="lb-list-header">
+          <div class="section-label" style="margin:0">Top 10 — Melhores estudantes</div>
+          <button class="lb-refresh-btn" id="refreshBtn" onclick="refresh()" aria-label="Atualizar ranking">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            Atualizar
+          </button>
+        </div>
+        <div class="lb-last-updated" id="lastUpdated" style="margin-bottom:8px"></div>
+        <div class="lb-list" id="lbList">
+          <div class="lb-row-skeleton skeleton"></div>
+          <div class="lb-row-skeleton skeleton"></div>
+          <div class="lb-row-skeleton skeleton"></div>
+          <div class="lb-row-skeleton skeleton"></div>
+          <div class="lb-row-skeleton skeleton"></div>
+        </div>
       </div>
+
+    </div>
+
+    <!-- ══════════ BATALHA ══════════ -->
+    <div id="panelBattle" style="display:none">
+
+      <!-- ── Suas batalhas ── -->
+      <div>
+        <div class="section-label">Suas batalhas</div>
+        <div class="stat-grid" aria-live="polite">
+          <div class="stat-card">
+            <div class="stat-card-num green skeleton" id="myBWins">—</div>
+            <div class="stat-card-label">Vitórias</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-num skeleton" id="myBLosses">—</div>
+            <div class="stat-card-label">Derrotas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-num yellow skeleton" id="myBRate">—</div>
+            <div class="stat-card-label">Taxa de vitória</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Top batalhas ── -->
+      <div>
+        <div class="lb-list-header">
+          <div class="section-label" style="margin:0">Top Batalhas — Mais vitórias</div>
+          <button class="lb-refresh-btn" id="refreshBattleBtn" onclick="refreshBattle()" aria-label="Atualizar ranking de batalha">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            Atualizar
+          </button>
+        </div>
+        <div class="lb-last-updated" id="lastUpdatedBattle" style="margin-bottom:8px"></div>
+        <div class="lb-list" id="battleList">
+          <div class="lb-row-skeleton skeleton"></div>
+          <div class="lb-row-skeleton skeleton"></div>
+          <div class="lb-row-skeleton skeleton"></div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -295,6 +371,7 @@
 
   <script type="module">
     import { getOnlineLeaderboard, getOnlineUserRank, getUserRank, getTopPlayers, getAvatarsByUserIds } from '../js/supabase/leaderboard.js';
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
     function el(id) { return document.getElementById(id); }
 
@@ -477,6 +554,108 @@
         }
       }
     });
+
+    // ── Tab switcher ───────────────────────────────────
+    let battleLoaded = false;
+    window.switchTab = function(tab) {
+      el('panelStudy').style.display  = tab === 'study'  ? '' : 'none';
+      el('panelBattle').style.display = tab === 'battle' ? '' : 'none';
+      el('tabStudy').classList.toggle('active',  tab === 'study');
+      el('tabBattle').classList.toggle('active', tab === 'battle');
+      if (tab === 'battle' && !battleLoaded) {
+        loadBattleRanking();
+        battleLoaded = true;
+      }
+    };
+
+    // ── Battle ranking ─────────────────────────────────
+    const SURL = 'https://iizzeeceqysdfhnkosrc.supabase.co';
+    const SKEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+    const sb = createClient(SURL, SKEY, { auth: { persistSession: true, autoRefreshToken: true } });
+
+    let currentUserId = null;
+    (async () => {
+      const { data: { session } } = await sb.auth.getSession();
+      currentUserId = session?.user?.id || null;
+    })();
+
+    function battleRowHTML(pos, p, isMe) {
+      const medal  = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : null;
+      const rankEl = medal ? `<div class="lb-rank top">${medal}</div>` : `<div class="lb-rank">#${pos}</div>`;
+      const youTag = isMe ? '<span class="lb-you-tag">Você</span>' : '';
+      const rate   = p.total_battles > 0 ? Math.round(p.wins * 100 / p.total_battles) : 0;
+      const name   = esc(p.username || 'Jogador');
+      const avatarInner = p.avatar
+        ? `<img src="${esc(p.avatar)}" alt="${name}" loading="lazy">`
+        : (p.username || '?').charAt(0).toUpperCase();
+      return `<div class="lb-row${isMe ? ' lb-me' : ''}">
+        ${rankEl}
+        <div class="lb-avatar">${avatarInner}</div>
+        <div class="lb-name-wrap">
+          <div class="lb-name">${name}${youTag}</div>
+          <div class="lb-loja">${p.total_battles} batalha${p.total_battles !== 1 ? 's' : ''} · ${p.losses} derrota${p.losses !== 1 ? 's' : ''}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0">
+          <div class="lb-points wins">${p.wins}<span>vitórias</span></div>
+          <div class="lb-win-badge">${rate}% win</div>
+        </div>
+      </div>`;
+    }
+
+    async function loadBattleRanking() {
+      const list = el('battleList');
+
+      // My stats
+      if (currentUserId) {
+        const { data: my } = await sb.from('battle_stats')
+          .select('wins, losses, draws, total_battles')
+          .eq('user_id', currentUserId).maybeSingle();
+        ['myBWins','myBLosses','myBRate'].forEach(id => el(id).classList.remove('skeleton'));
+        if (my) {
+          el('myBWins').textContent    = my.wins;
+          el('myBLosses').textContent  = my.losses;
+          const rate = my.total_battles > 0 ? Math.round(my.wins * 100 / my.total_battles) : 0;
+          el('myBRate').textContent    = rate + '%';
+        } else {
+          el('myBWins').textContent = el('myBLosses').textContent = '0';
+          el('myBRate').textContent = '—';
+        }
+      }
+
+      // Top list
+      const { data: players, error } = await sb.from('battle_stats')
+        .select('user_id, username, avatar, wins, losses, draws, total_battles')
+        .order('wins', { ascending: false })
+        .order('total_battles', { ascending: false })
+        .limit(20);
+
+      if (error || !players || players.length === 0) {
+        list.innerHTML = `<div class="lb-empty">
+          <div class="lb-empty-icon">⚔️</div>
+          <h3>Nenhuma batalha ainda</h3>
+          <p>Dispute duelos na página de Batalha<br>para aparecer aqui!</p>
+        </div>`;
+        return;
+      }
+
+      list.innerHTML = players.map((p, i) =>
+        battleRowHTML(i + 1, p, p.user_id === currentUserId)
+      ).join('');
+
+      const lu = el('lastUpdatedBattle');
+      if (lu) lu.textContent = `Atualizado às ${new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`;
+    }
+
+    window.refreshBattle = async function() {
+      const btn = el('refreshBattleBtn');
+      if (btn) btn.classList.add('spinning');
+      el('battleList').innerHTML = Array(3).fill('<div class="lb-row-skeleton skeleton"></div>').join('');
+      ['myBWins','myBLosses','myBRate'].forEach(id => {
+        const e = el(id); if (e) { e.classList.add('skeleton'); e.textContent = '—'; }
+      });
+      await loadBattleRanking();
+      if (btn) btn.classList.remove('spinning');
+    };
   </script>
 
 </body>
