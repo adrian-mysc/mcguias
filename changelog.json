@@ -1,6 +1,45 @@
 {
   "versions": [
     {
+      "version": "v9",
+      "date": "2026-05-23",
+      "date_display": "23 Mai 2026",
+      "badge": "Batalha · Ranking · McCafé",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "⚔️",
+          "text": "**Batalha ao vivo** — sistema de duelo em tempo real entre dois jogadores. Matchmaking via lobby de presença, contagem regressiva, placar ao vivo, timer por questão e tela de resultado com revanche.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🎉",
+          "text": "**Efeitos de batalha** — bolha de reação animada após cada resposta (frases contextuais comparando os dois jogadores), confetti colorido na vitória, animação bounce no troféu e card motivacional na derrota.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "📸",
+          "text": "**Foto de perfil** — upload de imagem para o Supabase Storage. Foto exibida no lobby de batalha, perfil público e ranking online.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "👤",
+          "text": "**Perfil público aprimorado** — exibe conquistas desbloqueadas, total de questões respondidas e estatísticas por guia. Acessível pelo link direto do perfil.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🏅",
+          "text": "**Ranking online** — card de posição no perfil com acertos, quizzes feitos e badge de nível. Botão de refresh com timestamp «Atualizado às HH:MM» e CTA para entrar no ranking.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "☕",
+          "text": "**16 novas questões no McCafé** — Cookie de Chocolate (ingredientes, temperatura, procedimento) e Café da Manhã/Ovos (tipos, tempos, validades, procedimentos).",
+          "tag": "quiz"
+        }
+      ]
+    },
+    {
       "version": "v8",
       "date": "2026-05-20",
       "date_display": "20 Mai 2026",
