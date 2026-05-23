@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "updatedAt": "2026-05-22",
+  "updatedAt": "2026-05-23",
   "categories": [
     {
       "id": "chapa",
@@ -19,7 +19,7 @@
       "cor": "#22c55e",
       "descricao": "Linha de operação — tomate, cebola, queijo, alface e rota",
       "niveis": ["basico"],
-      "totalQuestoes": 75,
+      "totalQuestoes": 80,
       "tags": ["tomate", "cebola", "queijo", "alface", "rota", "validade", "peps"]
     },
     {
@@ -189,8 +189,8 @@
       "cor": "#92400e",
       "descricao": "Café, Foamino, forno, ovos, receitas e equipamentos do McCafé",
       "niveis": ["basico"],
-      "totalQuestoes": 30,
-      "tags": ["temperatura", "tempo", "cafe", "forno", "leite"]
+      "totalQuestoes": 46,
+      "tags": ["temperatura", "tempo", "cafe", "forno", "leite", "ovos", "cookie", "sanduiche", "manteiga"]
     }
   ]
 }
