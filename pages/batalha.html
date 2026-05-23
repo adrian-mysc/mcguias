@@ -171,6 +171,24 @@
     /* ── Opções de resposta ── */
     .bt-options { display: flex; flex-direction: column; gap: 9px; }
 
+    /* Animação de entrada */
+    @keyframes optIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Ripple */
+    @keyframes ripple {
+      to { transform: scale(4); opacity: 0; }
+    }
+    .bt-ripple {
+      position: absolute; border-radius: 50%;
+      width: 60px; height: 60px; margin: -30px 0 0 -30px;
+      background: var(--oc, #fff); opacity: .22;
+      animation: ripple .5s ease-out forwards;
+      pointer-events: none;
+    }
+
     /* Cor de acento por alternativa */
     .bt-opt[data-idx="0"] { --oc:#DA291C; --ob:rgba(218,41,28,.07); }
     .bt-opt[data-idx="1"] { --oc:#3b82f6; --ob:rgba(59,130,246,.07); }
@@ -186,7 +204,12 @@
       transition: transform .14s, box-shadow .14s, border-color .14s, background .14s;
       -webkit-tap-highlight-color: transparent;
       position: relative; overflow: hidden;
+      opacity: 0; animation: optIn .3s ease forwards;
     }
+    .bt-opt[data-idx="0"] { animation-delay: 0ms; }
+    .bt-opt[data-idx="1"] { animation-delay: 70ms; }
+    .bt-opt[data-idx="2"] { animation-delay: 140ms; }
+    .bt-opt[data-idx="3"] { animation-delay: 210ms; }
     /* Faixa lateral colorida */
     .bt-opt::before {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
@@ -901,6 +924,19 @@
            <span>${esc(alt)}</span>
          </button>`
       ).join('');
+
+      // Ripple effect ao clicar/tocar
+      optsEl.addEventListener('pointerdown', function onRipple(e) {
+        const btn = e.target.closest('.bt-opt');
+        if (!btn || btn.disabled) return;
+        const r = document.createElement('span');
+        r.className = 'bt-ripple';
+        const rect = btn.getBoundingClientRect();
+        r.style.left = (e.clientX - rect.left) + 'px';
+        r.style.top  = (e.clientY - rect.top)  + 'px';
+        btn.appendChild(r);
+        r.addEventListener('animationend', () => r.remove());
+      }, { passive: true });
 
       // Força o navegador a descartar qualquer hover "grudado" do toque anterior
       optsEl.style.pointerEvents = 'none';
