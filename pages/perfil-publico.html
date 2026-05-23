@@ -182,15 +182,17 @@
         return;
       }
 
-      // Busca em paralelo: leaderboard + conquistas + sessões de quiz
+      // Busca em paralelo: leaderboard + conquistas + sessões de quiz + batalha
       const [
         { data: lb },
         { data: achRows },
         { data: sessions },
+        { data: battleStats },
       ] = await Promise.all([
         supabase.from('leaderboard').select('points, total_xp').eq('user_id', profile.id).single(),
         supabase.from('achievements').select('achievement_key').eq('user_id', profile.id),
         supabase.from('quiz_sessions').select('score, total').eq('user_id', profile.id),
+        supabase.from('battle_stats').select('wins, losses, draws, total_battles, best_streak').eq('user_id', profile.id).maybeSingle(),
       ]);
 
       // Rank
@@ -236,6 +238,10 @@
         maratonista_estudo:'🏅', perfeccionista_all:'💎', hora_de_estudo:'⏱️',
         estudante_dedicado:'🎓', especialista_bb:'🏆', mestre_bb:'🍔', cebola_expert:'🧅',
         trofeu_bb:'🏆', padeiro_bb:'🍞', campeao_bb:'🏅', bb_perfeito:'💎',
+        // Batalha
+        battle_primeiro_sangue:'⚔️', battle_veterano:'🛡️', battle_dominador:'🏆',
+        battle_lenda:'👑', battle_guerreiro:'⚡', battle_centuriao:'🌟',
+        battle_em_chamas:'🔥', battle_imparavel:'💥', battle_perfeito:'💎', battle_elite:'🎯',
       };
       const CONQUISTA_NOME = {
         novato:'Novato', mestre_chapa:'Mestre Chapa', jardineiro:'Jardineiro', faxineiro:'Faxineiro',
@@ -244,6 +250,10 @@
         maratonista_estudo:'Maratonista', perfeccionista_all:'Perfeccionista', hora_de_estudo:'Hora Estudo',
         estudante_dedicado:'Dedicado', especialista_bb:'Especialista BB', mestre_bb:'Mestre BB', cebola_expert:'Expert Cebola',
         trofeu_bb:'Troféu BB', padeiro_bb:'Padeiro BB', campeao_bb:'Campeão BB', bb_perfeito:'BB Perfeito',
+        // Batalha
+        battle_primeiro_sangue:'1º Sangue', battle_veterano:'Veterano', battle_dominador:'Dominador',
+        battle_lenda:'Lenda', battle_guerreiro:'Guerreiro', battle_centuriao:'Centurião',
+        battle_em_chamas:'Em Chamas', battle_imparavel:'Imparável', battle_perfeito:'Perfeito', battle_elite:'Elite',
       };
 
       document.getElementById('navTitle').textContent = displayName;
@@ -299,12 +309,34 @@
           <div class="pub-conq-grid">${conquBadges}</div>
         </div>` : ''}
 
+        ${battleStats && battleStats.total_battles > 0 ? (() => {
+          const bWinRate = Math.round((battleStats.wins / battleStats.total_battles) * 100);
+          return `<div class="pub-stats">
+            <div class="pub-info-title" style="padding:12px 14px 4px">⚔️ Batalhas ao vivo</div>
+            <div class="pub-stats-grid">
+              <div class="pub-stat">
+                <div class="pub-stat-num" style="color:#22c55e">${battleStats.wins}</div>
+                <div class="pub-stat-lbl">Vitórias</div>
+              </div>
+              <div class="pub-stat">
+                <div class="pub-stat-num">${battleStats.total_battles}</div>
+                <div class="pub-stat-lbl">Batalhas</div>
+              </div>
+              <div class="pub-stat">
+                <div class="pub-stat-num" style="color:#f59e0b">${bWinRate}%</div>
+                <div class="pub-stat-lbl">Taxa vitória</div>
+              </div>
+            </div>
+          </div>`;
+        })() : ''}
+
         <div class="pub-info">
           <div class="pub-info-title">Informações</div>
           ${cargo ? `<div class="pub-info-row"><span class="pub-info-icon">💼</span><span class="pub-info-label">Cargo</span><span class="pub-info-val">${esc(cargo)}</span></div>` : ''}
           ${loja  ? `<div class="pub-info-row"><span class="pub-info-icon">🏪</span><span class="pub-info-label">Restaurante</span><span class="pub-info-val">${esc(loja)}</span></div>` : ''}
           ${rank  ? `<div class="pub-info-row"><span class="pub-info-icon">🏆</span><span class="pub-info-label">Posição</span><span class="pub-info-val">${rankStr} no ranking</span></div>` : ''}
           ${totalFeitas ? `<div class="pub-info-row"><span class="pub-info-icon">📝</span><span class="pub-info-label">Questões feitas</span><span class="pub-info-val">${totalFeitas.toLocaleString('pt-BR')}</span></div>` : ''}
+          ${battleStats && battleStats.best_streak > 1 ? `<div class="pub-info-row"><span class="pub-info-icon">🔥</span><span class="pub-info-label">Melhor sequência</span><span class="pub-info-val">${battleStats.best_streak} vitórias seguidas</span></div>` : ''}
           <div class="pub-info-row">
             <span class="pub-info-icon">📅</span>
             <span class="pub-info-label">Membro desde</span>
