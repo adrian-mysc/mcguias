@@ -252,7 +252,7 @@
     function localStats() {
       try {
         const history = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
-        const pontos  = history.reduce((s, r) => s + (r.correct || 0), 0);
+        const pontos  = history.reduce((s, r) => s + (r.score || 0), 0);
         return { rank: null, pontos, quizzes: history.length };
       } catch { return null; }
     }
@@ -275,18 +275,23 @@
       return (p.sigla || p.username || '?').charAt(0).toUpperCase();
     }
 
+    function esc(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
     function rowHTML(pos, p, isMe) {
       const medal  = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : null;
       const rankEl = medal
         ? `<div class="lb-rank top">${medal}</div>`
         : `<div class="lb-rank">#${pos}</div>`;
       const youTag  = isMe ? '<span class="lb-you-tag">Você</span>' : '';
-      const lojaTag = p.loja ? `<div class="lb-loja">${p.loja}</div>` : '';
+      const lojaTag = p.loja ? `<div class="lb-loja">${esc(p.loja)}</div>` : '';
+      const displayName = esc(p.username || 'Jogador');
       return `<div class="lb-row${isMe ? ' lb-me' : ''}">
         ${rankEl}
         <div class="lb-avatar">${avatarText(p)}</div>
         <div class="lb-name-wrap">
-          <div class="lb-name"><a href="perfil-publico.html?u=${encodeURIComponent(p.username || '')}" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">${p.username || 'Jogador'}</a>${youTag}</div>
+          <div class="lb-name"><a href="perfil-publico.html?u=${encodeURIComponent(p.username || '')}" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">${displayName}</a>${youTag}</div>
           ${lojaTag}
         </div>
         <div class="lb-points">${p.pontos}<span>pts</span></div>
@@ -308,17 +313,18 @@
       // players vem do Supabase com: { user_id, username, loja, sigla, pontos, quizzes }
       const top10 = players.slice(0, 10);
 
-      // Identifica o usuário atual pela posição no rank (rank.pontos == p.pontos e rank.quizzes == p.quizzes)
-      // Como não temos user_id exposto, usamos pontos+quizzes como chave de identidade
+      // Identifica o usuário atual por username (preferencial) ou points+quizzes como fallback
       function isCurrentUser(p) {
-        return rank && p.pontos === rank.pontos && p.quizzes === rank.quizzes;
+        if (!rank) return false;
+        if (rank.username && p.username) return p.username === rank.username;
+        return p.pontos === rank.pontos && p.quizzes === rank.quizzes;
       }
 
       let html = top10.map((p, i) => rowHTML(i + 1, p, isCurrentUser(p))).join('');
 
       if (rank && rank.rank > 10) {
         html += `<div class="lb-gap">···</div>`;
-        html += rowHTML(rank.rank, { username: '—', loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes }, true);
+        html += rowHTML(rank.rank, { username: rank.username || '—', loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes }, true);
       }
 
       list.innerHTML = html;
@@ -344,7 +350,7 @@
           Promise.all([getUserRank(), getTopPlayers(20)]),
           timeout(6000)
         ]);
-        const adaptedRank = rank ? { rank: rank.rank, pontos: rank.points, quizzes: rank.total_xp } : null;
+        const adaptedRank = rank ? { rank: rank.rank, pontos: rank.points, quizzes: rank.total_xp, username: rank.username } : null;
         const adaptedPlayers = (players || []).map(p => ({ ...p, pontos: p.points, quizzes: p.total_xp }));
         renderMyStats(adaptedRank);
         renderList(adaptedPlayers, adaptedRank);

@@ -1394,6 +1394,7 @@
       sequencia_fogo:'🔥', colecionador:'🏆', montador:'🎮', rei_revisao:'🔁',
       maratonista_estudo:'🏅', perfeccionista_all:'💎', hora_de_estudo:'⏱️',
       estudante_dedicado:'🎓', especialista_bb:'🏆', mestre_bb:'🍔', cebola_expert:'🧅',
+      trofeu_bb:'🏆', padeiro_bb:'🍞', campeao_bb:'🏅', bb_perfeito:'💎',
     };
     const conquRow = document.getElementById('conquistas-row');
     const recentes = stats.conquistas.slice(-6).reverse();
@@ -1446,10 +1447,19 @@
     // Save locally
     saveLocalDados({ nome, apelido, sigla, cargo, loja, turno, admissao, telefone, avatar_emoji: avatarEmoji });
 
+    // Derive a URL-safe username from apelido or nome (keep existing if not overridable)
+    const baseSlug = (apelido || nome)
+      .toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_+|_+$/g, '')
+      .slice(0, 32) || user.id.slice(0, 8);
+    const newUsername = profile?.username || baseSlug;
+
     // Save username, loja e sigla to supabase
     await supabase.from('profiles').upsert({
       id: user.id,
-      username: nome,
+      username: newUsername,
       display_name: nome,
       loja,
       sigla,
@@ -1648,14 +1658,14 @@
 
   document.getElementById('modal-confirm-btn').addEventListener('click', () => {
     if (!pendingClearTarget) return;
-    const cfg = STORAGE_MAP[pendingClearTarget];
+    const target = pendingClearTarget;
+    const cfg = STORAGE_MAP[target];
     cfg.keys.forEach(k => localStorage.removeItem(k));
     closeModal();
     updateStorageUI();
     renderAll();
     showToast(`${cfg.icon} ${cfg.label} apagado.`);
-    // Se limpou tudo, redireciona para onboarding
-    if (pendingClearTarget === 'tudo') {
+    if (target === 'tudo') {
       setTimeout(() => window.location.replace('../index.html'), 1500);
     }
   });
