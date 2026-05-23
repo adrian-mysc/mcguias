@@ -45,6 +45,8 @@
     { id: 'trofeu_bb',         nome: 'Troféu Best Burger',   desc: 'Completou 100% do checklist de Best Burger',         icon: '🥇', cat: 'trofeu',     cor: '#DA291C' },
     { id: 'cebola_expert',     nome: 'Expert em Cebola',     desc: 'Acertou todas as perguntas de Cebola Reidratada',    icon: '🧅', cat: 'estudo',     cor: '#22c55e' },
     { id: 'padeiro_bb',        nome: 'Padeiro BB',           desc: 'Acertou todas as perguntas de Pães Best Burger',     icon: '🍞', cat: 'estudo',     cor: '#f59e0b' },
+    { id: 'campeao_bb',        nome: 'Campeão Best Burger',  desc: 'Completou 3 quizzes de Best Burger',                 icon: '🏅', cat: 'estudo',     cor: '#DA291C' },
+    { id: 'bb_perfeito',       nome: 'BB Perfeito',          desc: 'Acertou 100% em um quiz exclusivo de Best Burger',   icon: '💎', cat: 'precisao',   cor: '#DA291C' },
     // ── Marcos de volume ─────────────────────────────────────
     { id: 'veterano',          nome: 'Veterano',             desc: 'Completou 10 quizzes',                               icon: '🎖️', cat: 'estudo',     cor: '#3b82f6' },
     { id: 'centuriao',         nome: 'Centurião',            desc: 'Respondeu 500 perguntas no total',                   icon: '🛡️', cat: 'estudo',     cor: '#8b5cf6' },
@@ -144,6 +146,7 @@
     { id: 'velocidade_drive',   nome: 'Velocidade no Drive',         desc: 'Complete 2 quizzes de Drive-Thru',                               meta: 2,   emblema: '🚗', campo: 'quizzesDrive', tema: 2 },
     { id: 'zero_erros_limpeza', nome: 'Zero Erros em Limpeza',       desc: 'Atinja 90%+ em um quiz de Limpeza',                             meta: 1,   emblema: '🧹', campo: 'quizLimpezaPerfeito', tema: 3 },
     { id: 'especialista_cresc', nome: 'Especialista em Crescimento', desc: 'Estude 2 guias da área de crescimento (Promoção / Treinadores / Supervisores)', meta: 2, emblema: '🎓', campo: 'guiasCrescimento', isArray: true, tema: 4 },
+    { id: 'dominio_bb',         nome: 'Domínio Best Burger',         desc: 'Complete 2 quizzes de Best Burger nesta semana',                                meta: 2, emblema: '🏆', campo: 'quizzesBBSem' },
   ];
 
   /* ============================================================
@@ -165,7 +168,7 @@
       desafiosSemanais: {
         semana: _mondayStr(),
         progresso: { perguntasChapa: 0, quizzesLimpeza: 0, categoriasEstudadas: [], quizPerfeito: 0, totalPerguntas: 0,
-                     flashcardsSemanais: 0, quizzesApos22hSem: 0, perguntasProducao: 0, quizzesDrive: 0, quizLimpezaPerfeito: 0, guiasCrescimento: [], diasStreak: 0 },
+                     flashcardsSemanais: 0, quizzesApos22hSem: 0, perguntasProducao: 0, quizzesDrive: 0, quizLimpezaPerfeito: 0, guiasCrescimento: [], diasStreak: 0, quizzesBBSem: 0 },
         concluidos: []
       },
       estatisticas: {
@@ -181,6 +184,7 @@
         minEstudo: 0,
         jogosTotais: 0,
         jogosPerfeitos: 0,
+        quizzesBB: 0,
         guiasConcluidos: [],
         provasAprovadas: []
       }
@@ -217,6 +221,8 @@
     if (p.quizzesDrive        == null) p.quizzesDrive        = 0;
     if (p.quizLimpezaPerfeito == null) p.quizLimpezaPerfeito = 0;
     if (p.diasStreak          == null) p.diasStreak          = 0;
+    if (p.quizzesBBSem        == null) p.quizzesBBSem        = 0;
+    if (!s.quizzesBB) s.quizzesBB = 0;
     return d;
   }
 
@@ -238,7 +244,7 @@
       data.desafiosSemanais = {
         semana: currentMon,
         progresso: { perguntasChapa: 0, quizzesLimpeza: 0, categoriasEstudadas: [], quizPerfeito: 0, totalPerguntas: 0,
-                     flashcardsSemanais: 0, quizzesApos22hSem: 0, perguntasProducao: 0, quizzesDrive: 0, quizLimpezaPerfeito: 0, guiasCrescimento: [], diasStreak: 0 },
+                     flashcardsSemanais: 0, quizzesApos22hSem: 0, perguntasProducao: 0, quizzesDrive: 0, quizLimpezaPerfeito: 0, guiasCrescimento: [], diasStreak: 0, quizzesBBSem: 0 },
         concluidos: []
       };
     }
@@ -425,6 +431,14 @@
     check('trofeu_cond',       gc.indexOf('condimentacao') !== -1);
     check('trofeu_bebidas',    gc.indexOf('bebidas-sobremesas') !== -1);
     check('trofeu_salao',      gc.indexOf('salao-ngk') !== -1);
+    // Best Burger conquistas
+    check('especialista_bb',   !!extras.especialista_bb);
+    check('mestre_bb',         !!extras.mestre_bb);
+    check('trofeu_bb',         gc.indexOf('best-burguer') !== -1);
+    check('cebola_expert',     !!extras.cebola_expert);
+    check('padeiro_bb',        !!extras.padeiro_bb);
+    check('campeao_bb',        (stats.quizzesBB || 0) >= 3);
+    check('bb_perfeito',       !!extras.bb_perfeito);
     // Especial extra
     check('colecionador_mestre', unlocked.length >= 20);
     check('lendario',          unlocked.length >= 40);
@@ -566,16 +580,27 @@
       if (prog.guiasCrescimento.indexOf(guide) === -1) prog.guiasCrescimento.push(guide);
     }
 
+    // best-burguer tracking
+    if (guide.indexOf('best-burguer') !== -1) {
+      stats.quizzesBB    = (stats.quizzesBB || 0) + 1;
+      prog.quizzesBBSem  = (prog.quizzesBBSem || 0) + 1;
+    }
+
     // -- Extras for conquistas --
     var extras = {
-      mestre_chapa:   guide.indexOf('chapa') !== -1 && pct >= 90,
-      jardineiro:     GUIAS_LIMPEZA.some(function(g){ return guide.indexOf(g) !== -1; }) && pct >= 90,
-      limpezaCount:   prog.quizzesLimpeza,
-      perfeccionista: pct >= 90,
-      mestre_drive:   guide.indexOf('drive') !== -1 && pct >= 90,
-      mestre_fritas:  (guide.indexOf('fritas') !== -1 || guide.indexOf('mcfritas') !== -1) && pct >= 90,
-      mestre_cond:    guide.indexOf('condimentacao') !== -1 && pct >= 90,
-      cem_porcento:   (opts.pct || 0) === 100,
+      mestre_chapa:    guide.indexOf('chapa') !== -1 && pct >= 90,
+      jardineiro:      GUIAS_LIMPEZA.some(function(g){ return guide.indexOf(g) !== -1; }) && pct >= 90,
+      limpezaCount:    prog.quizzesLimpeza,
+      perfeccionista:  pct >= 90,
+      mestre_drive:    guide.indexOf('drive') !== -1 && pct >= 90,
+      mestre_fritas:   (guide.indexOf('fritas') !== -1 || guide.indexOf('mcfritas') !== -1) && pct >= 90,
+      mestre_cond:     guide.indexOf('condimentacao') !== -1 && pct >= 90,
+      cem_porcento:    (opts.pct || 0) === 100,
+      especialista_bb: guide.indexOf('best-burguer') !== -1 && (opts.maxStreak || 0) >= 10,
+      mestre_bb:       guide.indexOf('best-burguer') !== -1 && pct >= 90,
+      cebola_expert:   guide.indexOf('best-burguer') !== -1 && (opts.pct || 0) === 100,
+      padeiro_bb:      guide.indexOf('best-burguer') !== -1 && pct >= 90 && (stats.quizzesBB || 0) >= 2,
+      bb_perfeito:     guide.indexOf('best-burguer') !== -1 && (opts.pct || 0) === 100,
     };
 
     // -- Check & notify --
