@@ -489,7 +489,12 @@
       "lope_072",
       "lope_073",
       "lope_074",
-      "lope_075"
+      "lope_075",
+      "lope_076",
+      "lope_077",
+      "lope_078",
+      "lope_079",
+      "lope_080"
     ],
     "mcfritas": [
       "mcfritas_001",
@@ -1265,7 +1270,9 @@
       "bb_014",
       "bb_035",
       "bb_038",
-      "bb_042"
+      "bb_042",
+      "lope_076",
+      "lope_078"
     ],
     "porcao": [
       "bebidas_sobremesas_002",
@@ -1330,7 +1337,8 @@
       "seguranca_alimento_006",
       "seguranca_alimento_013",
       "seguranca_alimento_014",
-      "seguranca_alimento_019"
+      "seguranca_alimento_019",
+      "lope_079"
     ],
     "angulo": [
       "bebidas_sobremesas_003",
@@ -1430,7 +1438,8 @@
       "seguranca_alimento_007",
       "seguranca_alimento_008",
       "seguranca_alimento_013",
-      "seguranca_alimento_015"
+      "seguranca_alimento_015",
+      "lope_078"
     ],
     "tecnica": [
       "bebidas_sobremesas_004",
@@ -2066,7 +2075,9 @@
       "lope_023",
       "lope_041",
       "lope_052",
-      "montagem_entrega_028"
+      "montagem_entrega_028",
+      "lope_077",
+      "lope_079"
     ],
     "organizacao": [
       "bebidas_sobremesas_025",
@@ -2540,7 +2551,10 @@
       "seguranca_alimento_011",
       "bb_012",
       "bb_016",
-      "bb_033"
+      "bb_033",
+      "lope_076",
+      "lope_077",
+      "lope_080"
     ],
     "esfregao": [
       "chapa_010",
@@ -2673,7 +2687,8 @@
       "seguranca_alimento_009",
       "seguranca_alimento_011",
       "seguranca_alimento_016",
-      "seguranca_alimento_020"
+      "seguranca_alimento_020",
+      "lope_080"
     ],
     "sanitizacao": [
       "chapa_017",
@@ -2838,7 +2853,12 @@
       "seguranca_alimento_015",
       "bb_013",
       "bb_014",
-      "bb_036"
+      "bb_036",
+      "lope_076",
+      "lope_077",
+      "lope_078",
+      "lope_079",
+      "lope_080"
     ],
     "fritas": [
       "condimentacao_008",
@@ -3020,7 +3040,8 @@
       "montagem_entrega_039",
       "seguranca_alimento_004",
       "seguranca_alimento_012",
-      "seguranca_alimento_018"
+      "seguranca_alimento_018",
+      "lope_077"
     ],
     "ambientacao": [
       "estoque_recebimento_005",
@@ -3035,7 +3056,10 @@
       "lope_075",
       "mcfritas_017",
       "seguranca_alimento_011",
-      "seguranca_alimento_018"
+      "seguranca_alimento_018",
+      "lope_076",
+      "lope_078",
+      "lope_080"
     ],
     "contaminacao": [
       "estoque_recebimento_008",
@@ -11135,7 +11159,67 @@
         "ingredientes"
       ],
       "ativo": true
+    },
+    "lope_076": {
+      "categoria": "lope",
+      "subcategoria": "🧀 LOPE · Queijo",
+      "dificuldade": 2,
+      "tags": [
+        "queijo",
+        "validade",
+        "ambientacao",
+        "temperatura"
+      ],
+      "ativo": true
+    },
+    "lope_077": {
+      "categoria": "lope",
+      "subcategoria": "🧀 LOPE · Queijo",
+      "dificuldade": 2,
+      "tags": [
+        "queijo",
+        "validade",
+        "refrigeracao",
+        "peps"
+      ],
+      "ativo": true
+    },
+    "lope_078": {
+      "categoria": "lope",
+      "subcategoria": "🧀 LOPE · Queijo",
+      "dificuldade": 2,
+      "tags": [
+        "queijo",
+        "angulo",
+        "ambientacao",
+        "temperatura"
+      ],
+      "ativo": true
+    },
+    "lope_079": {
+      "categoria": "lope",
+      "subcategoria": "🧀 LOPE · Queijo",
+      "dificuldade": 2,
+      "tags": [
+        "queijo",
+        "peps",
+        "porcao",
+        "mesa-condimentacao"
+      ],
+      "ativo": true
+    },
+    "lope_080": {
+      "categoria": "lope",
+      "subcategoria": "🧀 LOPE · Queijo",
+      "dificuldade": 2,
+      "tags": [
+        "queijo",
+        "validade",
+        "higiene",
+        "ambientacao"
+      ],
+      "ativo": true
     }
   },
-  "totalQuestions": 593
+  "totalQuestions": 598
 }
