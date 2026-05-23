@@ -74,6 +74,9 @@
     .pub-stat-num { font-family: var(--font-display); font-size: 22px; font-weight: 900; color: var(--red); line-height: 1; }
     .pub-stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
+    /* ── Stats grid 4 cols ── */
+    .pub-stats-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); }
+
     /* ── Info card ── */
     .pub-info {
       background: var(--card); border: 1.5px solid var(--border);
@@ -87,6 +90,24 @@
     .pub-info-icon { font-size: 16px; width: 22px; text-align: center; flex-shrink: 0; }
     .pub-info-label { font-size: 11px; color: var(--muted); font-weight: 600; min-width: 80px; }
     .pub-info-val { font-size: 13px; font-weight: 700; color: var(--text); }
+
+    /* ── Conquistas ── */
+    .pub-conq {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .pub-conq-grid {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;
+    }
+    .pub-conq-badge {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 8px 10px; min-width: 60px;
+    }
+    .pub-conq-icon { font-size: 22px; line-height: 1; }
+    .pub-conq-name { font-size: 9px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; text-align: center; max-width: 64px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pub-conq-empty { font-size: 12px; color: var(--muted); padding: 8px 0; }
 
     /* ── Not found ── */
     .pub-not-found { text-align: center; padding: 40px 20px; color: var(--muted); }
@@ -159,22 +180,20 @@
         return;
       }
 
-      // Busca pontos no leaderboard
-      const { data: lb } = await supabase
-        .from('leaderboard')
-        .select('points, total_xp')
-        .eq('user_id', profile.id)
-        .single();
-
-      // Conta conquistas
-      const { count: achCount } = await supabase
-        .from('achievements')
-        .select('*', { count: 'exact', head: true })
-        .eq('user_id', profile.id);
+      // Busca em paralelo: leaderboard + conquistas + sessões de quiz
+      const [
+        { data: lb },
+        { data: achRows },
+        { data: sessions },
+      ] = await Promise.all([
+        supabase.from('leaderboard').select('points, total_xp').eq('user_id', profile.id).single(),
+        supabase.from('achievements').select('achievement_key').eq('user_id', profile.id),
+        supabase.from('quiz_sessions').select('score, total').eq('user_id', profile.id),
+      ]);
 
       // Rank
       let rank = null;
-      if (lb?.points !== undefined) {
+      if (lb?.points != null) {
         const { count: above } = await supabase
           .from('leaderboard')
           .select('*', { count: 'exact', head: true })
@@ -182,16 +201,21 @@
         rank = (above ?? 0) + 1;
       }
 
-      const displayName = profile.display_name || profile.username || username;
-      const emoji       = profile.avatar_emoji  || '😊';
-      const cargo       = profile.cargo         || null;
-      const loja        = profile.loja          || null;
-      const points      = lb?.points            ?? 0;
-      const quizzes     = lb?.total_xp          ?? 0;
-      const conquistas  = achCount              ?? 0;
+      const displayName  = profile.display_name || profile.username || username;
+      const emoji        = profile.avatar_emoji  || '😊';
+      const cargo        = profile.cargo         || null;
+      const loja         = profile.loja          || null;
+      const points       = lb?.points            ?? 0;
+      const quizzes      = lb?.total_xp          ?? 0;
+      const achList      = achRows               ?? [];
+      const totalFeitas  = (sessions ?? []).reduce((s, r) => s + (r.total || 0), 0);
+      const totalAcertos = (sessions ?? []).reduce((s, r) => s + (r.score || 0), 0);
 
-      // Derive level from XP (10 pts per correct answer + 20 per quiz ≈ rough estimate from points)
-      const xpEst = points * 10;
+      // Usa acertos de quiz_sessions se disponível (mais preciso), senão leaderboard.points
+      const acertos = totalAcertos || points;
+
+      // Nível calculado por XP estimado
+      const xpEst = acertos * 10 + quizzes * 20;
       const NIVEIS = [
         { nome: 'Novato', min: 0 }, { nome: 'Aprendiz', min: 200 }, { nome: 'Treinando', min: 500 },
         { nome: 'Competente', min: 1000 }, { nome: 'Habilidoso', min: 2000 }, { nome: 'Especialista', min: 3500 },
@@ -201,10 +225,38 @@
       let nivel = NIVEIS[0];
       for (const n of NIVEIS) { if (xpEst >= n.min) nivel = n; }
 
+      // Mapeamento de conquistas
+      const CONQUISTA_ICONS = {
+        novato:'🔰', mestre_chapa:'🍔', jardineiro:'🧹', faxineiro:'✨',
+        precisao_cirurgica:'🎯', relampago:'⚡', estudioso:'📚', coruja:'🌙',
+        sequencia_fogo:'🔥', colecionador:'🏆', montador:'🎮', rei_revisao:'🔁',
+        maratonista_estudo:'🏅', perfeccionista_all:'💎', hora_de_estudo:'⏱️',
+        estudante_dedicado:'🎓', especialista_bb:'🏆', mestre_bb:'🍔', cebola_expert:'🧅',
+        trofeu_bb:'🏆', padeiro_bb:'🍞', campeao_bb:'🏅', bb_perfeito:'💎',
+      };
+      const CONQUISTA_NOME = {
+        novato:'Novato', mestre_chapa:'Mestre Chapa', jardineiro:'Jardineiro', faxineiro:'Faxineiro',
+        precisao_cirurgica:'Precisão', relampago:'Relâmpago', estudioso:'Estudioso', coruja:'Coruja',
+        sequencia_fogo:'Sequência', colecionador:'Colecionador', montador:'Montador', rei_revisao:'Rei Revisão',
+        maratonista_estudo:'Maratonista', perfeccionista_all:'Perfeccionista', hora_de_estudo:'Hora Estudo',
+        estudante_dedicado:'Dedicado', especialista_bb:'Especialista BB', mestre_bb:'Mestre BB', cebola_expert:'Expert Cebola',
+        trofeu_bb:'Troféu BB', padeiro_bb:'Padeiro BB', campeao_bb:'Campeão BB', bb_perfeito:'BB Perfeito',
+      };
+
       document.getElementById('navTitle').textContent = displayName;
       document.title = `${displayName} — MC Guias`;
 
       const rankStr = rank ? `#${rank}` : '—';
+
+      // Conquistas HTML
+      const conquBadges = achList.length === 0
+        ? `<div class="pub-conq-empty">Nenhuma conquista desbloqueada ainda.</div>`
+        : achList.map(a => {
+            const k    = a.achievement_key;
+            const icon = CONQUISTA_ICONS[k] || '🥇';
+            const nome = CONQUISTA_NOME[k]  || k.replace(/_/g,' ').replace(/\b\w/g, x => x.toUpperCase());
+            return `<div class="pub-conq-badge"><div class="pub-conq-icon">${icon}</div><div class="pub-conq-name">${esc(nome)}</div></div>`;
+          }).join('');
 
       page.innerHTML = `
         <div class="pub-hero">
@@ -219,27 +271,37 @@
         </div>
 
         <div class="pub-stats">
-          <div class="pub-stats-grid">
+          <div class="pub-stats-grid${totalFeitas ? '-4' : ''}">
             <div class="pub-stat">
-              <div class="pub-stat-num">${points.toLocaleString('pt-BR')}</div>
+              <div class="pub-stat-num">${acertos.toLocaleString('pt-BR')}</div>
               <div class="pub-stat-lbl">Acertos</div>
             </div>
+            ${totalFeitas ? `<div class="pub-stat">
+              <div class="pub-stat-num">${totalFeitas.toLocaleString('pt-BR')}</div>
+              <div class="pub-stat-lbl">Questões</div>
+            </div>` : ''}
             <div class="pub-stat">
-              <div class="pub-stat-num">${conquistas}</div>
-              <div class="pub-stat-lbl">Conquistas</div>
+              <div class="pub-stat-num">${quizzes.toLocaleString('pt-BR')}</div>
+              <div class="pub-stat-lbl">Quizzes</div>
             </div>
             <div class="pub-stat">
-              <div class="pub-stat-num">${quizzes || rankStr}</div>
-              <div class="pub-stat-lbl">${quizzes ? 'Quizzes' : 'Ranking'}</div>
+              <div class="pub-stat-num">${achList.length}</div>
+              <div class="pub-stat-lbl">Conquistas</div>
             </div>
           </div>
         </div>
+
+        ${achList.length > 0 ? `<div class="pub-conq">
+          <div class="pub-info-title">Conquistas</div>
+          <div class="pub-conq-grid">${conquBadges}</div>
+        </div>` : ''}
 
         <div class="pub-info">
           <div class="pub-info-title">Informações</div>
           ${cargo ? `<div class="pub-info-row"><span class="pub-info-icon">💼</span><span class="pub-info-label">Cargo</span><span class="pub-info-val">${esc(cargo)}</span></div>` : ''}
           ${loja  ? `<div class="pub-info-row"><span class="pub-info-icon">🏪</span><span class="pub-info-label">Restaurante</span><span class="pub-info-val">${esc(loja)}</span></div>` : ''}
           ${rank  ? `<div class="pub-info-row"><span class="pub-info-icon">🏆</span><span class="pub-info-label">Posição</span><span class="pub-info-val">${rankStr} no ranking</span></div>` : ''}
+          ${totalFeitas ? `<div class="pub-info-row"><span class="pub-info-icon">📝</span><span class="pub-info-label">Questões feitas</span><span class="pub-info-val">${totalFeitas.toLocaleString('pt-BR')}</span></div>` : ''}
           <div class="pub-info-row">
             <span class="pub-info-icon">📅</span>
             <span class="pub-info-label">Membro desde</span>
