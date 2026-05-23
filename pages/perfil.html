@@ -656,8 +656,36 @@
     .emoji-opt:hover { border-color: var(--red); transform: scale(1.12); }
     .emoji-opt.selected { border-color: var(--red); background: rgba(218,41,28,0.08); }
     /* ── Link perfil público ── */
-    .pub-profile-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.8); text-decoration: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 12px; transition: background 0.15s; }
+    .hero-username {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: relative; z-index: 1;
+      margin-top: -6px;
+    }
+    .hero-badge-rank { background: rgba(255,199,44,0.15); border-color: rgba(255,199,44,0.35); color: #FFC72C; }
+    .pub-profile-row {
+      display: flex; align-items: center; gap: 6px;
+      position: relative; z-index: 1;
+      margin-top: 10px;
+    }
+    .pub-profile-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.8); text-decoration: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 12px; transition: background 0.15s; }
     .pub-profile-link:hover { background: rgba(255,255,255,0.15); color: white; }
+    .pub-copy-btn { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 4px 10px; color: rgba(255,255,255,0.8); cursor: pointer; display: flex; align-items: center; transition: background 0.15s; }
+    .pub-copy-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+
+    /* ── Ranking online card ── */
+    .rank-stats-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+    .rank-stat { padding: 16px 10px; text-align: center; border-right: 1px solid var(--border); }
+    [data-theme="dark"] .rank-stat { border-color: #2e2c28; }
+    .rank-stat:last-child { border-right: none; }
+    .rank-stat-num { font-family: var(--font-display); font-size: 26px; font-weight: 900; color: var(--red); line-height: 1; min-height: 32px; border-radius: 6px; }
+    .rank-stat-num.yellow { color: #f59e0b; }
+    .rank-stat-num.green  { color: #22c55e; }
+    .rank-stat-lbl { font-size: 10px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
+    .rank-unranked { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--border); font-size: 12.5px; font-weight: 600; color: var(--muted); }
+    [data-theme="dark"] .rank-unranked { border-color: #2e2c28; }
   </style>
 </head>
 <body>
@@ -704,17 +732,50 @@
     </div>
 
     <div class="hero-name" id="hero-name">Carregando…</div>
+    <div class="hero-username" id="hero-username"></div>
     <div class="hero-role" id="hero-role">—</div>
 
     <div class="hero-badges">
       <div class="hero-badge" id="hero-provider">✉️ Email</div>
       <div class="hero-badge yellow" id="hero-nivel">Nível 1</div>
+      <div class="hero-badge hero-badge-rank" id="hero-rank-badge" style="display:none">🏆 —</div>
     </div>
 
     <div class="streak-wrap" id="streak-display">
       🔥 <span id="streak-num">0</span> dias consecutivos
     </div>
-    <a class="pub-profile-link" id="pubProfileLink" href="#" target="_blank">👁️ Ver meu perfil público</a>
+    <div class="pub-profile-row">
+      <a class="pub-profile-link" id="pubProfileLink" href="#" target="_blank">👁️ Ver perfil público</a>
+      <button class="pub-copy-btn" id="pubCopyBtn" title="Copiar link" style="display:none" onclick="copyProfileLink()">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Ranking online ─────────────────────────────── -->
+  <div class="section-card" id="rank-card">
+    <div class="section-header">
+      <div class="section-title">Ranking online</div>
+      <a href="leaderboard.html" style="font-size:12px;font-weight:700;color:var(--red);text-decoration:none;">Ver ranking →</a>
+    </div>
+    <div class="rank-stats-grid">
+      <div class="rank-stat">
+        <div class="rank-stat-num yellow skeleton" id="rs-rank">—</div>
+        <div class="rank-stat-lbl">Posição</div>
+      </div>
+      <div class="rank-stat">
+        <div class="rank-stat-num skeleton" id="rs-points">—</div>
+        <div class="rank-stat-lbl">Acertos</div>
+      </div>
+      <div class="rank-stat">
+        <div class="rank-stat-num green skeleton" id="rs-quizzes">—</div>
+        <div class="rank-stat-lbl">Quizzes</div>
+      </div>
+    </div>
+    <div class="rank-unranked" id="rank-unranked" style="display:none">
+      <span>🎯</span>
+      <span>Complete um simulado para entrar no ranking!</span>
+    </div>
   </div>
 
   <!-- ── Dados pessoais ─────────────────────────────── -->
@@ -1169,7 +1230,7 @@
 
   // ── Rota ─────────────────────────────────────────────
   const { data: { session } } = await supabase.auth.getSession();
-  if (!session) { window.location.replace('login.html'); }
+  if (!session) { window.location.replace('login.html'); throw new Error('unauthenticated'); }
 
   const user = session.user;
 
@@ -1243,6 +1304,7 @@
       byGuia[h.guia].total += h.total || 0;
     });
     const guiaPerf = Object.entries(byGuia)
+      .filter(([, d]) => d.total > 0)
       .map(([guia, d]) => ({ guia, pct: Math.round((d.score / d.total) * 100) }))
       .sort((a, b) => b.pct - a.pct)
       .slice(0, 8);
@@ -1281,6 +1343,8 @@
     // Hero
     const displayName = apelido || nome;
     document.getElementById('hero-name').textContent = displayName;
+    const usernameEl = document.getElementById('hero-username');
+    if (usernameEl) usernameEl.textContent = profile?.username ? `@${profile.username}` : '';
     document.getElementById('hero-role').textContent = cargo && loja ? `${cargo} · ${loja}` : (cargo || loja || email);
     document.getElementById('hero-provider').textContent = provider === 'google' ? '🔵 Google' : '✉️ Email';
     document.getElementById('hero-nivel').textContent = `⭐ ${stats.nivel.nome}`;
@@ -1416,6 +1480,68 @@
   buildEmojiGrid();
   renderAll();
 
+  // ── Ranking online card ───────────────────────────────
+  import('../js/supabase/leaderboard.js').then(async ({ getOnlineUserRank, getUserRank }) => {
+    const rsRank    = document.getElementById('rs-rank');
+    const rsPoints  = document.getElementById('rs-points');
+    const rsQuizzes = document.getElementById('rs-quizzes');
+    const rankBadge = document.getElementById('hero-rank-badge');
+    const unranked  = document.getElementById('rank-unranked');
+
+    function applyRank(r) {
+      [rsRank, rsPoints, rsQuizzes].forEach(el => el?.classList.remove('skeleton'));
+      if (!r || (!r.pontos && !r.points)) {
+        rsRank.textContent    = '—';
+        rsPoints.textContent  = '—';
+        rsQuizzes.textContent = '—';
+        if (unranked) unranked.style.display = 'flex';
+        return;
+      }
+      const pos     = r.rank ?? r.posicao;
+      const pontos  = r.pontos  ?? r.points  ?? 0;
+      const quizzes = r.quizzes ?? r.total_xp ?? 0;
+      rsRank.textContent    = pos ? `#${pos}` : '—';
+      rsPoints.textContent  = pontos.toLocaleString('pt-BR');
+      rsQuizzes.textContent = quizzes;
+      if (pos && rankBadge) {
+        rankBadge.textContent = `🏆 #${pos}`;
+        rankBadge.style.display = '';
+      }
+    }
+
+    try {
+      const raw = await Promise.race([
+        getOnlineUserRank(),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 6000))
+      ]);
+      const r = raw ? {
+        rank:    raw.rank    ?? raw.posicao,
+        pontos:  raw.pontos  ?? raw.points,
+        quizzes: raw.quizzes ?? raw.total_xp,
+      } : null;
+      applyRank(r);
+    } catch {
+      try {
+        const r = await getUserRank();
+        applyRank(r ? { rank: r.rank, pontos: r.points, quizzes: r.total_xp } : null);
+      } catch {
+        applyRank(null);
+      }
+    }
+  }).catch(() => {});
+
+  // ── Copiar link do perfil ─────────────────────────────
+  function copyProfileLink() {
+    const pubLink = document.getElementById('pubProfileLink');
+    if (!pubLink || pubLink.href === '#' || !pubLink.href) return;
+    navigator.clipboard?.writeText(pubLink.href).then(() => {
+      showToast('🔗 Link copiado!');
+    }).catch(() => {
+      showToast('❌ Não foi possível copiar o link.');
+    });
+  }
+  window.copyProfileLink = copyProfileLink;
+
   // ── Toggle edit mode ──────────────────────────────────
   let editOpen = false;
   function toggleDadosEdit(force) {
@@ -1457,7 +1583,7 @@
     const newUsername = profile?.username || baseSlug;
 
     // Save username, loja e sigla to supabase
-    await supabase.from('profiles').upsert({
+    const { error: upsertErr } = await supabase.from('profiles').upsert({
       id: user.id,
       username: newUsername,
       display_name: nome,
@@ -1466,6 +1592,11 @@
       cargo,
       avatar_emoji: avatarEmoji
     });
+
+    if (upsertErr) {
+      showToast('❌ Erro ao salvar perfil online: ' + upsertErr.message);
+      return;
+    }
 
     toggleDadosEdit(false);
     renderAll();
@@ -1712,9 +1843,16 @@
   }
 
   // ── Link de perfil público ──────────────────────────────
-  const pubLink = document.getElementById('pubProfileLink');
-  if (pubLink && profile?.username) {
-    pubLink.href = `perfil-publico.html?u=${encodeURIComponent(profile.username)}`;
+  const pubLink    = document.getElementById('pubProfileLink');
+  const pubCopyBtn = document.getElementById('pubCopyBtn');
+  if (pubLink) {
+    if (profile?.username) {
+      const pubUrl = `perfil-publico.html?u=${encodeURIComponent(profile.username)}`;
+      pubLink.href = pubUrl;
+      if (pubCopyBtn) pubCopyBtn.style.display = '';
+    } else {
+      pubLink.style.display = 'none';
+    }
   }
 </script>
 

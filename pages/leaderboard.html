@@ -181,6 +181,51 @@
     }
     .lb-empty p { font-size: 13px; line-height: 1.5; }
 
+    /* ── Barra de controle da lista ── */
+    .lb-list-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .lb-refresh-btn {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--red);
+      background: none;
+      border: 1.5px solid var(--red);
+      border-radius: 20px;
+      padding: 4px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: background 0.15s;
+      font-family: var(--font-body);
+    }
+    .lb-refresh-btn:hover { background: rgba(218,41,28,0.08); }
+    .lb-refresh-btn.spinning svg { animation: spin 0.7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .lb-last-updated {
+      font-size: 10.5px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    /* ── CTA sem ranking ── */
+    .lb-no-rank-cta {
+      background: rgba(245,158,11,0.07);
+      border: 1.5px dashed rgba(245,158,11,0.4);
+      border-radius: var(--radius-md);
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #92400e;
+    }
+    [data-theme="dark"] .lb-no-rank-cta { color: #fbbf24; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.06); }
+
     @media (max-width: 400px) {
       .stat-grid { grid-template-columns: repeat(3, 1fr); }
       .stat-card-num { font-size: 20px; }
@@ -224,7 +269,14 @@
 
     <!-- ── Top 10 ── -->
     <div>
-      <div class="section-label">Top 10 — Melhores estudantes</div>
+      <div class="lb-list-header">
+        <div class="section-label" style="margin:0">Top 10 — Melhores estudantes</div>
+        <button class="lb-refresh-btn" id="refreshBtn" onclick="refresh()" aria-label="Atualizar ranking">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Atualizar
+        </button>
+      </div>
+      <div class="lb-last-updated" id="lastUpdated" style="margin-bottom:8px"></div>
       <div class="lb-list" id="lbList">
         <div class="lb-row-skeleton skeleton"></div>
         <div class="lb-row-skeleton skeleton"></div>
@@ -317,7 +369,9 @@
       function isCurrentUser(p) {
         if (!rank) return false;
         if (rank.username && p.username) return p.username === rank.username;
-        return p.pontos === rank.pontos && p.quizzes === rank.quizzes;
+        // Fallback: only match when both values are defined and non-zero to avoid false positives
+        if (rank.pontos == null || rank.quizzes == null) return false;
+        return p.pontos === rank.pontos && p.quizzes === rank.quizzes && rank.pontos > 0;
       }
 
       let html = top10.map((p, i) => rowHTML(i + 1, p, isCurrentUser(p))).join('');
@@ -333,10 +387,17 @@
     async function init() {
       // tentativa 1: RPCs online
       try {
-        const [rank, players] = await Promise.race([
+        const [rawRank, players] = await Promise.race([
           Promise.all([getOnlineUserRank(), getOnlineLeaderboard(20)]),
           timeout(8000)
         ]);
+        // Normalise field names regardless of whether the RPC uses pontos/quizzes or points/total_xp
+        const rank = rawRank ? {
+          rank:     rawRank.rank     ?? rawRank.posicao,
+          pontos:   rawRank.pontos   ?? rawRank.points,
+          quizzes:  rawRank.quizzes  ?? rawRank.total_xp,
+          username: rawRank.username ?? rawRank.user,
+        } : null;
         renderMyStats(rank);
         renderList(players, rank);
         return;
@@ -368,7 +429,39 @@
       </div>`;
     }
 
-    init();
+    function setLastUpdated() {
+      const lu = el('lastUpdated');
+      if (lu) lu.textContent = `Atualizado às ${new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`;
+    }
+
+    async function refresh() {
+      const btn = el('refreshBtn');
+      if (btn) btn.classList.add('spinning');
+      // Reset skeletons
+      ['myRank','myPoints','myXp'].forEach(id => {
+        const e = el(id); if (e) { e.classList.add('skeleton'); e.textContent = '—'; }
+      });
+      el('lbList').innerHTML = Array(5).fill('<div class="lb-row-skeleton skeleton"></div>').join('');
+      await init();
+      setLastUpdated();
+      if (btn) btn.classList.remove('spinning');
+    }
+    window.refresh = refresh;
+
+    init().then(() => {
+      setLastUpdated();
+      // Show CTA if user hasn't appeared in the ranking yet
+      const rankTxt = el('myRank')?.textContent;
+      if (!rankTxt || rankTxt === '—') {
+        const local = localStats();
+        if (!local || local.pontos === 0) {
+          const cta = document.createElement('div');
+          cta.className = 'lb-no-rank-cta';
+          cta.innerHTML = '🎯 <span>Complete um simulado para entrar no ranking global!</span>';
+          el('lbList').after(cta);
+        }
+      }
+    });
   </script>
 
 </body>

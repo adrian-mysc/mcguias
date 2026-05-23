@@ -2,14 +2,14 @@
 import { supabase } from './config.js';
 import { getCurrentUser } from './auth.js';
 
-export async function submitScore(points, username, totalXp = 0) {
+export async function submitScore(points, username, totalXp = 0, loja = null, sigla = null) {
   const user = await getCurrentUser();
   if (!user) return;
 
   const { error } = await supabase
     .from('leaderboard')
     .upsert(
-      { user_id: user.id, username, points, total_xp: totalXp },
+      { user_id: user.id, username, points, total_xp: totalXp, loja, sigla },
       { onConflict: 'user_id' }
     );
 
