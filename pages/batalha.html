@@ -221,6 +221,38 @@
     .bt-countdown-sub { font-size: 18px; font-weight: 700; margin-top: 8px; opacity: .85; }
     .bt-pop { animation: pop .35s cubic-bezier(.22,1,.36,1); }
     @keyframes pop { from{transform:scale(.3);opacity:0} to{transform:scale(1);opacity:1} }
+
+    /* ── Reaction bubble ── */
+    .bt-reaction {
+      position: fixed; top: 110px; left: 50%;
+      transform: translateX(-50%) translateY(0) scale(1);
+      background: rgba(20,18,16,.88); color: #fff;
+      padding: 9px 22px; border-radius: 24px;
+      font-size: 15px; font-weight: 700;
+      z-index: 800; pointer-events: none;
+      white-space: nowrap;
+      animation: rxIn .3s cubic-bezier(.22,1,.36,1) forwards;
+    }
+    .bt-reaction.rx-out { animation: rxOut .3s ease forwards; }
+    @keyframes rxIn  { from{transform:translateX(-50%) translateY(-12px) scale(.8);opacity:0} to{transform:translateX(-50%) translateY(0) scale(1);opacity:1} }
+    @keyframes rxOut { from{opacity:1;transform:translateX(-50%) translateY(0)} to{opacity:0;transform:translateX(-50%) translateY(-10px)} }
+
+    /* ── Confetti ── */
+    .bt-confetti { position:fixed; border-radius:2px; pointer-events:none; z-index:750; animation:cFall var(--cd,2s) ease-in var(--delay,0s) forwards; }
+    @keyframes cFall { 0%{transform:translateY(-30px) rotate(0deg);opacity:1} 100%{transform:translateY(105vh) rotate(720deg);opacity:0} }
+
+    /* ── Victory crown animation ── */
+    .bt-result-crown.win-bounce { animation: crownBounce .65s cubic-bezier(.22,1,.36,1) forwards; }
+    @keyframes crownBounce { 0%{transform:scale(.3) rotate(-20deg);opacity:0} 60%{transform:scale(1.25) rotate(6deg);opacity:1} 100%{transform:scale(1) rotate(0deg)} }
+
+    /* ── Motivational card (defeat) ── */
+    .bt-motivational {
+      background: rgba(218,41,28,.06); border: 1.5px solid rgba(218,41,28,.18);
+      border-radius: var(--radius-lg); padding: 18px 20px;
+      text-align: center; width: 100%;
+    }
+    .bt-motivational-icon { font-size: 34px; margin-bottom: 6px; }
+    .bt-motivational-text { font-size: 13px; font-weight: 600; color: var(--muted); line-height: 1.55; }
   </style>
 </head>
 <body data-page="batalha">
@@ -341,6 +373,10 @@
           </div>
         </div>
         <div class="bt-result-sub" id="resSub"></div>
+        <div class="bt-motivational" id="motivationalCard" style="display:none">
+          <div class="bt-motivational-icon" id="motivationalIcon">💪</div>
+          <div class="bt-motivational-text" id="motivationalText"></div>
+        </div>
         <div class="bt-result-btns">
           <button class="btn-secondary" onclick="goLobby()">← Lobby</button>
           <button class="btn-primary" id="rematchBtn">Revanche 🔄</button>
@@ -410,6 +446,54 @@
       t.textContent = msg;
       document.body.appendChild(t);
       setTimeout(() => t.remove(), 3000);
+    }
+
+    // ── Reaction phrases ───────────────────────────────
+    const RX = {
+      myOk:   ['🔥 Correto!', '✅ Isso mesmo!', '⚡ Na mosca!', '🎯 Mandou bem!', '💪 Excelente!'],
+      myNo:   ['❌ Errou...', '😬 Não foi dessa vez', '📚 Continua!', '💡 Quase lá!', '🤔 Ops...'],
+      oppOkMeNo:  ['😤 Ele acertou!', '⚠️ Oponente pontuou!', '🏃 Ele tá subindo!'],
+      oppNoMeOk:  ['😄 Ele errou!', '🎉 Você tá na frente!', '🔥 Mantém o ritmo!'],
+      bothOk:     ['⚡ Ambos acertaram!', '🤝 Empatados!', '💥 Duelo acirrado!'],
+      bothNo:     ['😅 Ninguém acertou...', '🤷 Questão difícil!', '📖 Ponto empatado!'],
+    };
+    const WIN_TITLES  = ['🏆 Você venceu!', '🥇 Campeão!', '👑 Dominante!', '🎯 Imbatível!'];
+    const WIN_SUBS    = ['🎉 Parabéns! Continue assim!', '⭐ Você conhece o guia de trás pra frente!', '🔥 Que domínio incrível!', '🚀 Nível elite! Impressionante!'];
+    const LOSE_SUBS   = ['💪 Quase lá! Volte mais forte!', '📚 Cada derrota é uma lição!', '🔥 A revanche é sua chance!', '🌟 O campeão de amanhã treina hoje!', '💡 Identifique o que errou e repita!'];
+    const MOTIVATIONS = [
+      { icon: '📖', text: 'Revise o guia e treine mais — a revanche vai ser diferente!' },
+      { icon: '🏋️', text: 'Só acerta quem treina. Mais um quiz e você vai dominar!' },
+      { icon: '💡', text: 'Cada erro mostra o que estudar. Isso é progresso!' },
+      { icon: '🔄', text: 'Os campeões perdem antes de vencer. Tenta de novo!' },
+      { icon: '🚀', text: 'Você chegou até aqui — isso já é incrível. Segue em frente!' },
+    ];
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    let _rxTimeout = null;
+    function showReaction(text) {
+      document.querySelectorAll('.bt-reaction').forEach(r => r.remove());
+      if (_rxTimeout) clearTimeout(_rxTimeout);
+      const div = document.createElement('div');
+      div.className = 'bt-reaction';
+      div.textContent = text;
+      document.body.appendChild(div);
+      _rxTimeout = setTimeout(() => {
+        div.classList.add('rx-out');
+        setTimeout(() => div.remove(), 300);
+      }, 2000);
+    }
+
+    function spawnConfetti() {
+      const colors = ['#DA291C','#FFC72C','#22c55e','#3b82f6','#a855f7','#f97316','#ec4899'];
+      for (let i = 0; i < 50; i++) {
+        const p = document.createElement('div');
+        p.className = 'bt-confetti';
+        const size = 6 + Math.random() * 9;
+        p.style.cssText = `left:${Math.random()*100}vw;background:${colors[i%colors.length]};width:${size}px;height:${size}px;--cd:${1.4+Math.random()*1.4}s;--delay:${Math.random()*0.7}s`;
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 3500);
+      }
     }
 
     // ── Guide sheet ────────────────────────────────────
@@ -662,9 +746,21 @@
       battleChannel = supabase.channel(`bt:${b.id}`)
         .on('broadcast', { event: 'answer' }, ({ payload }) => {
           if (payload.by !== me.id) {
+            const qIdx = oppProgress.length;
             oppProgress.push(payload.correct);
             renderDots('oppDots', oppProgress);
             el('oppScore').textContent = oppProgress.filter(Boolean).length;
+
+            // Contextual reaction comparing both players on the same question
+            const myAns = myProgress[qIdx];
+            if (myAns !== undefined) {
+              if (payload.correct && myAns)       showReaction(pick(RX.bothOk));
+              else if (!payload.correct && !myAns) showReaction(pick(RX.bothNo));
+              else if (payload.correct && !myAns)  showReaction(pick(RX.oppOkMeNo));
+              else                                  showReaction(pick(RX.oppNoMeOk));
+            } else {
+              showReaction(payload.correct ? '⚡ Oponente acertou!' : '💡 Oponente errou!');
+            }
           }
         })
         .on('broadcast', { event: 'finish' }, ({ payload }) => {
@@ -788,6 +884,7 @@
 
       if (correct) myScore++;
       myProgress.push(correct);
+      showReaction(correct ? pick(RX.myOk) : pick(RX.myNo));
 
       battleChannel.send({ type: 'broadcast', event: 'answer', payload: { by: me.id, correct } });
       qIndex++;
@@ -856,14 +953,32 @@
       el('resMyScore').textContent  = myScore;
       el('resOppScore').textContent = oppFinal;
 
-      let crown, title, sub;
-      if      (myScore > oppFinal) { crown = '🏆'; title = 'Você venceu!';  sub = '🎉 Parabéns pela vitória!'; }
-      else if (myScore < oppFinal) { crown = '💪'; title = 'Você perdeu!';  sub = 'Boa tentativa! Que tal uma revanche?'; }
-      else                          { crown = '🤝'; title = 'Empate!';      sub = 'Nenhum dos dois cedeu!'; }
+      let crown, title, sub, isWin = false;
+      if (myScore > oppFinal) {
+        isWin = true;
+        crown = '🏆'; title = pick(WIN_TITLES); sub = pick(WIN_SUBS);
+      } else if (myScore < oppFinal) {
+        crown = '💪'; title = 'Você perdeu!'; sub = pick(LOSE_SUBS);
+      } else {
+        crown = '🤝'; title = 'Empate!'; sub = 'Nenhum dos dois cedeu! Tão igual...';
+      }
 
-      el('resCrown').textContent = crown;
+      const crownEl = el('resCrown');
+      crownEl.textContent = crown;
+      crownEl.className = 'bt-result-crown' + (isWin ? ' win-bounce' : '');
       el('resTitle').textContent = title;
       el('resSub').textContent   = sub;
+
+      // Motivational card for defeat
+      const motCard = el('motivationalCard');
+      if (myScore < oppFinal) {
+        const mot = pick(MOTIVATIONS);
+        el('motivationalIcon').textContent = mot.icon;
+        el('motivationalText').textContent = mot.text;
+        motCard.style.display = '';
+      } else {
+        motCard.style.display = 'none';
+      }
 
       const oppId    = isP1 ? currentBattle.player2_id       : currentBattle.player1_id;
       const oppUname = isP1 ? currentBattle.player2_username  : currentBattle.player1_username;
@@ -871,6 +986,7 @@
       el('rematchBtn').onclick = () => openSheet({ user_id: oppId, username: oppUname, avatar: oppAv, avatar_emoji: '😊' });
 
       showView('view-result');
+      if (isWin) spawnConfetti();
 
       // Return to available
       lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
