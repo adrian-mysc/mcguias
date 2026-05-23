@@ -1,197 +1,245 @@
 #!/usr/bin/env python3
-"""
-Extrai perguntas de provas-testes.html e salva em JSONs temáticos para o sistema de batalha.
-"""
+"""Extract PROVAS questions from provas-testes.html and convert to battle JSON format."""
 
 import re
 import json
 import os
-import sys
 
-# ── Caminhos ──────────────────────────────────────────────────────────────────
-HTML_FILE = "/home/user/mcguias/pages/provas-testes.html"
-OUT_BASE  = "/home/user/mcguias/data/questions"
+# ── Read the HTML file ─────────────────────────────────────────────────────────
+with open('/home/user/mcguias/pages/provas-testes.html', 'r', encoding='utf-8') as f:
+    content = f.read()
 
-# ── Agrupamentos temáticos ────────────────────────────────────────────────────
-GRUPOS = {
-    "treinador": ["pre-prova-treinador", "avaliacao-treinador-2018",
-                  "avaliacao-treinador-ga", "teste-treinador-coach"],
-    "gerencia":  ["gerente-de-turno", "gerente-de-plantao"],
-    "lideranca": ["recrutamento-interno", "prova-supervisor"],
-}
+# ── Extract the PROVAS array text ──────────────────────────────────────────────
+lines = content.split('\n')
+start_line = None
+end_line = None
 
-# ── Subcategorias por ID de prova ─────────────────────────────────────────────
-SUBCATEGORIAS = {
-    "pre-prova-treinador":      "🎓 PDT · Treinador",
-    "avaliacao-treinador-2018": "📋 Avaliação · Treinador 2018",
-    "avaliacao-treinador-ga":   "📊 Avaliação · Treinador GA",
-    "teste-treinador-coach":    "🏆 Teste · Coach",
-    "gerente-de-turno":         "⏱️ Gerente de Turno",
-    "gerente-de-plantao":       "🌙 Gerente de Plantão",
-    "recrutamento-interno":     "🔍 Recrutamento Interno",
-    "prova-supervisor":         "👔 Supervisor",
-}
+for i, line in enumerate(lines):
+    if 'const PROVAS = [' in line and start_line is None:
+        start_line = i
+    if start_line is not None and i > start_line and line.strip() == '];':
+        end_line = i
+        break
 
-# ── Leitura do arquivo ─────────────────────────────────────────────────────────
-with open(HTML_FILE, encoding="utf-8") as f:
-    html = f.read()
+print(f"PROVAS block: lines {start_line+1} to {end_line+1}")
 
-# ── Extração do bloco JS: const PROVAS = [ ... ]; (antes de QUIZ_PROVAS) ──────
-# Encontra início do array
-start_marker = "const PROVAS = ["
-start_idx = html.index(start_marker) + len(start_marker) - 1  # posição do '['
+raw = '\n'.join(lines[start_line:end_line+1])
+bracket_start = raw.index('[')
+arr = raw[bracket_start:]   # starts with `[`, ends with `]`
+print(f"Extracted {len(arr)} chars")
 
-# Encontra o ']' correspondente contando brackets
-depth = 0
-end_idx = None
-for i in range(start_idx, len(html)):
-    c = html[i]
-    if c == '[':
-        depth += 1
-    elif c == ']':
-        depth -= 1
-        if depth == 0:
-            end_idx = i
-            break
 
-if end_idx is None:
-    print("ERRO: não encontrou o fim do array PROVAS", file=sys.stderr)
-    sys.exit(1)
+def split_top_level_objects(text):
+    """
+    Split a JS array text (starting with `[`) into its top-level `{}` objects.
+    Correctly handles nested braces and strings.
+    """
+    objects = []
+    depth = 1   # we start inside the `[`
+    start = None
+    i = 1       # skip the opening `[`
+    in_string = False
+    string_char = None
 
-js_block = html[start_idx:end_idx + 1]
-print(f"Bloco JS extraído: {len(js_block)} caracteres")
-
-# ── Parse via json5 / fix-up ──────────────────────────────────────────────────
-# O JS é quase JSON – precisa de alguns ajustes:
-# 1. Remover comentários JS  // ...
-# 2. Remover trailing commas antes de } ou ]
-
-def js_to_json(s):
-    # Remove comentários de linha // ... (fora de strings)
-    # Estratégia simples: percorre char a char rastreando strings
-    result = []
-    i = 0
-    in_str = False
-    str_char = None
-    while i < len(s):
-        c = s[i]
-        if in_str:
+    while i < len(text):
+        c = text[i]
+        if in_string:
             if c == '\\':
-                result.append(c)
-                result.append(s[i+1])
                 i += 2
                 continue
-            if c == str_char:
-                in_str = False
-            result.append(c)
-            i += 1
+            elif c == string_char:
+                in_string = False
         else:
             if c in ('"', "'"):
-                in_str = True
-                str_char = c
-                result.append(c)
-                i += 1
-            elif c == '/' and i + 1 < len(s) and s[i+1] == '/':
-                # skip till end of line
-                while i < len(s) and s[i] != '\n':
-                    i += 1
-            else:
-                result.append(c)
-                i += 1
-    cleaned = ''.join(result)
+                in_string = True
+                string_char = c
+            elif c == '{':
+                if depth == 1:
+                    start = i
+                depth += 1
+            elif c == '}':
+                depth -= 1
+                if depth == 1 and start is not None:
+                    objects.append(text[start:i+1])
+                    start = None
+        i += 1
+    return objects
 
-    # Convert single-quoted strings to double-quoted
-    # Only safe to do outside of double-quoted strings
-    # We'll do a careful pass
-    out = []
-    i = 0
-    in_dstr = False
-    while i < len(cleaned):
-        c = cleaned[i]
-        if in_dstr:
+
+def get_array_slice(text, key):
+    """
+    Given a JS object text, find `key: [...]` and return the full `[...]` substring.
+    """
+    pat = rf'\b{key}:\s*\['
+    m = re.search(pat, text)
+    if not m:
+        return None
+    bracket_pos = m.end() - 1
+    depth = 0
+    i = bracket_pos
+    in_string = False
+    string_char = None
+    while i < len(text):
+        c = text[i]
+        if in_string:
             if c == '\\':
-                out.append(c)
-                out.append(cleaned[i+1])
                 i += 2
                 continue
-            if c == '"':
-                in_dstr = False
-            out.append(c)
-            i += 1
+            elif c == string_char:
+                in_string = False
         else:
-            if c == '"':
-                in_dstr = True
-                out.append(c)
-                i += 1
-            elif c == "'":
-                # single-quoted string: convert to double
-                out.append('"')
-                i += 1
-                while i < len(cleaned):
-                    cc = cleaned[i]
-                    if cc == '\\':
-                        nxt = cleaned[i+1]
-                        if nxt == "'":
-                            # escaped single quote -> just single quote
-                            out.append("'")
-                            i += 2
-                        else:
-                            out.append(cc)
-                            out.append(nxt)
-                            i += 2
-                        continue
-                    if cc == "'":
-                        out.append('"')
-                        i += 1
-                        break
-                    if cc == '"':
-                        out.append('\\"')
-                        i += 1
+            if c in ('"', "'"):
+                in_string = True
+                string_char = c
+            elif c == '[':
+                depth += 1
+            elif c == ']':
+                depth -= 1
+                if depth == 0:
+                    return text[bracket_pos:i+1]
+        i += 1
+    return None
+
+
+def extract_str(text, key):
+    """Extract first quoted string value for a JS key."""
+    patterns = [
+        rf'\b{key}:\s*"((?:[^"\\]|\\.)*)"',
+        rf'\b{key}:\s*\'((?:[^\'\\]|\\.)*)\''
+    ]
+    for pat in patterns:
+        m = re.search(pat, text, re.DOTALL)
+        if m:
+            v = m.group(1)
+            v = v.replace('\\"', '"').replace("\\'", "'").replace('\\n', '\n').replace('\\t', '\t')
+            return v
+    return None
+
+
+def extract_int(text, key):
+    m = re.search(rf'\b{key}:\s*(\d+)', text)
+    return int(m.group(1)) if m else 0
+
+
+def extract_strings_from_array_text(arr_text):
+    """Parse a JS array string like `["a", "b", "c"]` into a Python list."""
+    # arr_text starts with `[` and ends with `]`
+    inner = arr_text[1:-1]
+    items = []
+    i = 0
+    while i < len(inner):
+        c = inner[i]
+        if c in ('"', "'"):
+            quote = c
+            j = i + 1
+            val = []
+            while j < len(inner):
+                if inner[j] == '\\' and j + 1 < len(inner):
+                    nc = inner[j+1]
+                    if nc == 'n':
+                        val.append('\n')
+                    elif nc == 't':
+                        val.append('\t')
+                    elif nc in ('"', "'", '\\'):
+                        val.append(nc)
                     else:
-                        out.append(cc)
-                        i += 1
-            else:
-                out.append(c)
-                i += 1
-    cleaned = ''.join(out)
+                        val.append('\\')
+                        val.append(nc)
+                    j += 2
+                elif inner[j] == quote:
+                    break
+                else:
+                    val.append(inner[j])
+                    j += 1
+            items.append(''.join(val))
+            i = j + 1
+        else:
+            i += 1
+    return items
 
-    # Remove trailing commas: ,\s*} or ,\s*]
-    cleaned = re.sub(r',(\s*[}\]])', r'\1', cleaned)
 
-    # Unquoted keys: word: -> "word":
-    cleaned = re.sub(r'(?<!["\w])(\b[a-zA-Z_][a-zA-Z0-9_]*\b)\s*:', r'"\1":', cleaned)
+# ── Split PROVAS array into 8 prova objects ────────────────────────────────────
+prova_chunks = split_top_level_objects(arr)
+print(f"Found {len(prova_chunks)} prova objects")
 
-    return cleaned
+# ── Parse each prova ───────────────────────────────────────────────────────────
+all_provas = []
+for chunk in prova_chunks:
+    prova_id = extract_str(chunk, 'id')
+    titulo = extract_str(chunk, 'titulo')
 
-json_str = js_to_json(js_block)
+    perguntas_arr_text = get_array_slice(chunk, 'perguntas')
+    perguntas = []
+    if perguntas_arr_text:
+        q_chunks = split_top_level_objects(perguntas_arr_text)
+        for qc in q_chunks:
+            texto = extract_str(qc, 'texto')
+            opcoes_text = get_array_slice(qc, 'opcoes')
+            opcoes = extract_strings_from_array_text(opcoes_text) if opcoes_text else []
+            correta = extract_int(qc, 'correta')
+            explicacao = extract_str(qc, 'explicacao') or ''
+            perguntas.append({'texto': texto, 'opcoes': opcoes, 'correta': correta, 'explicacao': explicacao})
 
-try:
-    provas = json.loads(json_str)
-    print(f"Parse JSON OK — {len(provas)} provas encontradas")
-except json.JSONDecodeError as e:
-    print(f"ERRO no parse JSON: {e}", file=sys.stderr)
-    # Show context around error
-    pos = e.pos
-    print(f"Contexto: ...{repr(json_str[max(0,pos-100):pos+100])}...", file=sys.stderr)
-    sys.exit(1)
+    prova = {'id': prova_id, 'titulo': titulo, 'perguntas': perguntas}
+    all_provas.append(prova)
+    print(f"  '{prova_id}': {len(perguntas)} questions")
 
-# ── Resumo das provas ──────────────────────────────────────────────────────────
-for p in provas:
-    print(f"  {p['id']}: {len(p['perguntas'])} perguntas")
+total_q = sum(len(p['perguntas']) for p in all_provas)
+print(f"\nTotal questions: {total_q}")
 
-# ── Conversão para schema de batalha ──────────────────────────────────────────
-def make_question(prova_id, categoria, seq_num, q):
+# ── Validate parsing ───────────────────────────────────────────────────────────
+print("\n── Parsing validation ──────────────────────────────────────────────────")
+errors = 0
+for prova in all_provas:
+    for i, q in enumerate(prova['perguntas']):
+        if not q['texto']:
+            print(f"  WARNING: Missing texto in '{prova['id']}' q{i+1}")
+            errors += 1
+        if not q['opcoes']:
+            print(f"  WARNING: Missing opcoes in '{prova['id']}' q{i+1}")
+            errors += 1
+        if q['correta'] >= len(q['opcoes']):
+            print(f"  WARNING: correta={q['correta']} out of range in '{prova['id']}' q{i+1} (opcoes={len(q['opcoes'])})")
+            errors += 1
+if errors == 0:
+    print("  All questions parsed cleanly ✓")
+
+# ── Grouping / mapping config ──────────────────────────────────────────────────
+GRUPOS = {
+    'treinador': ['pre-prova-treinador', 'avaliacao-treinador-2018', 'avaliacao-treinador-ga', 'teste-treinador-coach'],
+    'gerencia':  ['gerente-de-turno', 'gerente-de-plantao'],
+    'lideranca': ['recrutamento-interno', 'prova-supervisor'],
+}
+
+PREFIX_MAP = {'treinador': 'tr', 'gerencia': 'ge', 'lideranca': 'li'}
+
+SUBCATEGORIAS = {
+    'pre-prova-treinador':      '🎓 PDT · Treinador',
+    'avaliacao-treinador-2018': '📋 Avaliação · Treinador 2018',
+    'avaliacao-treinador-ga':   '📊 Avaliação · Treinador GA',
+    'teste-treinador-coach':    '🏆 Teste · Coach',
+    'gerente-de-turno':         '⏱️ Gerente de Turno',
+    'gerente-de-plantao':       '🌙 Gerente de Plantão',
+    'recrutamento-interno':     '🔍 Recrutamento Interno',
+    'prova-supervisor':         '👔 Supervisor',
+}
+
+provas_by_id = {p['id']: p for p in all_provas}
+
+
+def make_question(prova_id, categoria, q, num):
+    prefix = PREFIX_MAP[categoria]
     return {
-        "id": f"{categoria}_{seq_num:03d}",
+        "id": f"{prefix}_{num:03d}",
         "categoria": categoria,
         "subcategoria": SUBCATEGORIAS.get(prova_id, prova_id),
         "dificuldade": 2,
         "tipo": "multipla_escolha",
         "tags": [],
-        "pergunta": q["texto"],
-        "alternativas": q["opcoes"],
-        "respostaCorreta": q["correta"],
-        "explicacao": q.get("explicacao", ""),
+        "pergunta": q['texto'],
+        "alternativas": q['opcoes'],
+        "respostaCorreta": q['correta'],
+        "explicacao": q['explicacao'],
         "dica": "",
         "tempoEstimado": 15,
         "xp": 10,
@@ -208,76 +256,88 @@ def make_question(prova_id, categoria, seq_num, q):
             "proximaRevisao": None,
             "nivelDominio": 0
         },
-        "errorStats": {
-            "timesWrong": 0,
-            "timesCorrect": 0,
-            "weaknessScore": 0
-        },
-        "analytics": {
-            "globalAccuracy": 0,
-            "averageTime": 0,
-            "dropRate": 0
-        },
+        "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+        "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
         "contextHints": [],
         "relatedQuestions": []
     }
 
-# Indexa provas por id
-provas_by_id = {p["id"]: p for p in provas}
 
-# ── Gera e salva os 3 arquivos ─────────────────────────────────────────────────
-total_questions = 0
-all_ids = []
-
+# ── Build question lists ───────────────────────────────────────────────────────
+results = {}
 for categoria, prova_ids in GRUPOS.items():
     questions = []
-    seq = 1
-    for pid in prova_ids:
-        if pid not in provas_by_id:
-            print(f"  AVISO: prova '{pid}' não encontrada no HTML")
+    num = 1
+    for prova_id in prova_ids:
+        if prova_id not in provas_by_id:
+            print(f"  WARNING: Prova '{prova_id}' not found in parsed data!")
             continue
-        prova = provas_by_id[pid]
-        for q in prova["perguntas"]:
-            questions.append(make_question(pid, categoria, seq, q))
-            seq += 1
+        prova = provas_by_id[prova_id]
+        for q in prova['perguntas']:
+            questions.append(make_question(prova_id, categoria, q, num))
+            num += 1
+    results[categoria] = questions
+    print(f"\nCategoria '{categoria}': {len(questions)} questions")
 
-    # Validação de IDs únicos dentro do grupo
-    ids = [q["id"] for q in questions]
-    duplicates = [id_ for id_ in ids if ids.count(id_) > 1]
-    if duplicates:
-        print(f"  ERRO: IDs duplicados em '{categoria}': {set(duplicates)}", file=sys.stderr)
-        sys.exit(1)
-
+# ── Validate IDs ───────────────────────────────────────────────────────────────
+print("\n── ID validation ───────────────────────────────────────────────────────")
+all_ids = []
+ok = True
+for categoria, questions in results.items():
+    ids = [q['id'] for q in questions]
+    seen, dupes = set(), set()
+    for id_ in ids:
+        if id_ in seen:
+            dupes.add(id_)
+        seen.add(id_)
+    if dupes:
+        print(f"  ERROR: Duplicate IDs in '{categoria}': {dupes}")
+        ok = False
+    else:
+        print(f"  {categoria}: {len(ids)} unique IDs ✓")
     all_ids.extend(ids)
 
-    output = {
+cross_seen, cross_dupes = set(), set()
+for id_ in all_ids:
+    if id_ in cross_seen:
+        cross_dupes.add(id_)
+    cross_seen.add(id_)
+if cross_dupes:
+    print(f"  ERROR: Cross-category duplicate IDs: {cross_dupes}")
+    ok = False
+else:
+    print("  No cross-category duplicates ✓")
+
+# ── Validate JSON ─────────────────────────────────────────────────────────────
+for categoria, questions in results.items():
+    try:
+        json.dumps(questions, ensure_ascii=False)
+        print(f"  {categoria}: valid JSON ✓")
+    except Exception as e:
+        print(f"  ERROR: {categoria} JSON invalid: {e}")
+        ok = False
+
+if not ok:
+    print("\nAborting due to validation errors!")
+    exit(1)
+
+# ── Save files ────────────────────────────────────────────────────────────────
+print("\n── Saving files ────────────────────────────────────────────────────────")
+base_dir = '/home/user/mcguias/data/questions'
+
+for categoria, questions in results.items():
+    dir_path = os.path.join(base_dir, categoria)
+    os.makedirs(dir_path, exist_ok=True)
+    file_path = os.path.join(dir_path, 'basico.json')
+    data = {
         "version": "1.0.0",
         "updatedAt": "2026-05-23",
         "categoria": categoria,
         "nivel": "basico",
         "questions": questions
     }
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"  Saved: {file_path} ({len(questions)} questions)")
 
-    # Cria diretório se necessário
-    out_dir = os.path.join(OUT_BASE, categoria)
-    os.makedirs(out_dir, exist_ok=True)
-
-    out_path = os.path.join(out_dir, "basico.json")
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-
-    total_questions += len(questions)
-    print(f"  Salvo: {out_path} ({len(questions)} perguntas)")
-
-    # Valida o JSON salvo
-    with open(out_path, encoding="utf-8") as f:
-        check = json.load(f)
-    assert len(check["questions"]) == len(questions), "Contagem incorreta após salvar!"
-    print(f"    Validado OK — {len(check['questions'])} perguntas, JSON válido")
-
-# Verificar IDs duplicados entre grupos
-global_dups = [id_ for id_ in all_ids if all_ids.count(id_) > 1]
-if global_dups:
-    print(f"AVISO: IDs duplicados entre grupos: {set(global_dups)}")
-else:
-    print(f"\nTotal: {total_questions} perguntas, sem IDs duplicados globais. Tudo OK!")
+print("\nAll done!")

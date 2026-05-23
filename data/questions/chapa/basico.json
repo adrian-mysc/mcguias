@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-05-23",
   "categoria": "chapa",
   "nivel": "basico",
   "migratedFrom": "chapa.html",
@@ -1687,6 +1687,2331 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "chapa_101",
+      "categoria": "chapa",
+      "subcategoria": "temperatura",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "angulo",
+        "carne",
+        "cozimento",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é o ponto de partida de cocção para carnes 10:1 (exceto Taylor NG)?",
+      "alternativas": [
+        "30 segundos",
+        "35 segundos",
+        "39 segundos",
+        "45 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Ponto de partida (exceto Taylor NG): 10:1 = 39 segundos.",
+      "dica": "Não é exatamente 40s — é um segundo antes.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.58,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.58,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "producao",
+        "tempo",
+        "temperatura"
+      ],
+      "relatedQuestions": [
+        "chapa_102",
+        "chapa_103"
+      ]
+    },
+    {
+      "id": "chapa_102",
+      "categoria": "chapa",
+      "subcategoria": "temperatura",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "4:1",
+        "carne",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é o ponto de partida para carnes 4:1 na Taylor Next Generation?",
+      "alternativas": [
+        "100 segundos",
+        "110 segundos",
+        "120 segundos",
+        "126 segundos"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Taylor Next Generation: 4:1 = 126 segundos de ponto de partida.",
+      "dica": "É o maior dos pontos de partida — carnes maiores precisam de mais tempo.",
+      "tempoEstimado": 20,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.45,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.45,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "producao",
+        "tempo",
+        "taylor-ng"
+      ],
+      "relatedQuestions": [
+        "chapa_101",
+        "chapa_103"
+      ]
+    },
+    {
+      "id": "chapa_103",
+      "categoria": "chapa",
+      "subcategoria": "limpeza",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limpeza",
+        "raspador",
+        "remocao",
+        "taylor-ng",
+        "tecnica",
+        "teflon",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "A que ângulo deve estar a lâmina do raspador em relação à superfície da chapa?",
+      "alternativas": [
+        "5°",
+        "10°",
+        "15°",
+        "30°"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A lâmina do raspador deve estar a 15° em relação à superfície da chapa para remover resíduos sem danificá-la.",
+      "dica": "É metade de um ângulo reto dividido por 3.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.54,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.54,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "limpeza",
+        "tecnica"
+      ],
+      "relatedQuestions": [
+        "chapa_005",
+        "chapa_006"
+      ]
+    },
+    {
+      "id": "chapa_104",
+      "categoria": "chapa",
+      "subcategoria": "limpeza",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "raspador",
+        "raspagem",
+        "tecnica",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "Com quantas raspagens o raspador deve cobrir toda a superfície da chapa?",
+      "alternativas": [
+        "1 a 2",
+        "2 a 3",
+        "3 a 4",
+        "5 a 6"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Raspar da frente para trás com 3 a 4 raspagens cobrindo toda a superfície.",
+      "dica": "Eficiente sem exageros — são necessárias poucas passadas se feitas corretamente.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.6,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.6,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "limpeza",
+        "tecnica"
+      ],
+      "relatedQuestions": [
+        "chapa_103",
+        "chapa_005"
+      ]
+    },
+    {
+      "id": "chapa_105",
+      "categoria": "chapa",
+      "subcategoria": "carnes",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "atendimento",
+        "carne",
+        "limite",
+        "remocao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Em quanto tempo devem ser removidas todas as carnes da chapa?",
+      "alternativas": [
+        "10 segundos",
+        "15 segundos",
+        "18 segundos",
+        "25 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Todas as carnes devem ser removidas em no máximo 18 segundos.",
+      "dica": "Menos de 20 segundos — pense em velocidade de atendimento.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.62,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.62,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "producao",
+        "velocidade",
+        "tempo"
+      ],
+      "relatedQuestions": [
+        "chapa_001",
+        "chapa_002"
+      ]
+    },
+    {
+      "id": "chapa_106",
+      "categoria": "chapa",
+      "subcategoria": "bacon",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bacon",
+        "gap",
+        "porcao",
+        "programacao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o GAP programado para o bacon na chapa?",
+      "alternativas": [
+        "060",
+        "075",
+        "090",
+        "120"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O bacon deve estar com tempo de 40 segundos e GAP de 090 programado na chapa.",
+      "dica": "É um número redondo entre 075 e 120.",
+      "tempoEstimado": 20,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.42,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.42,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "producao",
+        "bacon",
+        "programacao"
+      ],
+      "relatedQuestions": []
+    },
+    {
+      "id": "chapa_107",
+      "categoria": "chapa",
+      "subcategoria": "temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "cafe-da-manha",
+        "carne",
+        "ovo",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a temperatura do platen dedicado para ovos no Café da Manhã?",
+      "alternativas": [
+        "100°C",
+        "115°C",
+        "135°C",
+        "150°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O platen dedicado para ovos no Café da Manhã deve estar a 135°C.",
+      "dica": "Temperatura moderada — ovos não precisam de tanto calor quanto carnes.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.55,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.55,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "temperatura",
+        "cafe-da-manha"
+      ],
+      "relatedQuestions": [
+        "chapa_004"
+      ]
+    },
+    {
+      "id": "chapa_108",
+      "categoria": "chapa",
+      "subcategoria": "temperatura",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "4:1",
+        "angulo",
+        "carne",
+        "exceto-taylor-ng",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é o ponto de partida para carnes 4:1 na chapa convencional (exceto Taylor NG)?",
+      "alternativas": [
+        "85 segundos",
+        "95 segundos",
+        "105 segundos",
+        "115 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Na chapa convencional (exceto Taylor NG), carnes 4:1 têm ponto de partida de 95 segundos.",
+      "dica": "Entre os valores — 95 fica entre 85 e 105.",
+      "tempoEstimado": 25,
+      "xp": 25,
+      "peso": 1.8,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.35,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.35,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "producao",
+        "tempo",
+        "especialista"
+      ],
+      "relatedQuestions": [
+        "chapa_101",
+        "chapa_102"
+      ]
+    },
+    {
+      "id": "chapa_109",
+      "categoria": "chapa",
+      "subcategoria": "🔧 manutenção preventiva",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "manutencao",
+        "preventiva",
+        "frequencia",
+        "taylor",
+        "chapa"
+      ],
+      "pergunta": "Com qual frequência deve ser realizada a manutenção preventiva completa da chapa Taylor CG14/CG18?",
+      "alternativas": [
+        "Diariamente",
+        "Semanalmente",
+        "Mensalmente",
+        "A cada 6 meses"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A manutenção preventiva completa da chapa Taylor CG14/CG18 deve ser realizada mensalmente, incluindo verificação de aquecedores, sensores e partes móveis.",
+      "dica": "Não é tão frequente quanto a limpeza diária, mas é mais do que semestral.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.52,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.52,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "manutencao",
+        "frequencia"
+      ],
+      "relatedQuestions": [
+        "chapa_110",
+        "chapa_115"
+      ]
+    },
+    {
+      "id": "chapa_110",
+      "categoria": "chapa",
+      "subcategoria": "🔧 manutenção preventiva",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "manutencao",
+        "preventiva",
+        "procedimento",
+        "chapa",
+        "seguranca"
+      ],
+      "pergunta": "Qual é o primeiro passo obrigatório antes de iniciar qualquer procedimento de manutenção na chapa?",
+      "alternativas": [
+        "Aumentar a temperatura para queimar resíduos",
+        "Desligar o equipamento e aguardar esfriar completamente",
+        "Aplicar produto químico de limpeza",
+        "Chamar o técnico de manutenção"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O primeiro passo é sempre desligar o equipamento e aguardar que a superfície esfrie completamente antes de qualquer manutenção, garantindo a segurança do operador.",
+      "dica": "Segurança em primeiro lugar — nunca trabalhe em equipamento quente.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.68,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.68,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "manutencao",
+        "seguranca"
+      ],
+      "relatedQuestions": [
+        "chapa_109"
+      ]
+    },
+    {
+      "id": "chapa_111",
+      "categoria": "chapa",
+      "subcategoria": "🌡️ calibração de temperatura",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "calibracao",
+        "temperatura",
+        "termometro",
+        "tolerancia",
+        "verificacao"
+      ],
+      "pergunta": "Qual é a tolerância máxima aceitável entre a temperatura programada e a temperatura real medida na superfície da chapa?",
+      "alternativas": [
+        "±2°C",
+        "±5°C",
+        "±10°C",
+        "±15°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A tolerância máxima aceitável é de ±5°C entre a temperatura programada e a temperatura real medida na superfície da chapa com termômetro de infravermelho.",
+      "dica": "Uma variação pequena mas não mínima — considere o impacto no cozimento.",
+      "tempoEstimado": 20,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.48,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.48,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "calibracao",
+        "temperatura",
+        "qualidade"
+      ],
+      "relatedQuestions": [
+        "chapa_112",
+        "chapa_126"
+      ]
+    },
+    {
+      "id": "chapa_112",
+      "categoria": "chapa",
+      "subcategoria": "🌡️ calibração de temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "termometro",
+        "infravermelho",
+        "temperatura",
+        "verificacao",
+        "calibracao"
+      ],
+      "pergunta": "Como deve ser posicionado o termômetro de infravermelho ao verificar a temperatura da chapa?",
+      "alternativas": [
+        "Encostado diretamente na superfície",
+        "A 5 cm da superfície, perpendicularmente",
+        "A 30 cm de distância em ângulo de 45°",
+        "No centro do platen, tocando levemente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O termômetro de infravermelho deve ser posicionado a 5 cm da superfície, perpendicularmente, para uma leitura precisa da temperatura da chapa.",
+      "dica": "Distância curta e ângulo reto garantem leitura precisa.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.55,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.55,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "calibracao",
+        "temperatura"
+      ],
+      "relatedQuestions": [
+        "chapa_111"
+      ]
+    },
+    {
+      "id": "chapa_113",
+      "categoria": "chapa",
+      "subcategoria": "🧹 limpeza profunda",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "profunda",
+        "semanal",
+        "diaria",
+        "diferenca",
+        "procedimento"
+      ],
+      "pergunta": "Qual procedimento diferencia a limpeza semanal profunda da limpeza diária da chapa?",
+      "alternativas": [
+        "O uso de raspador metálico em vez de plástico",
+        "A desmontagem parcial para limpeza de calhas e coletor de gordura",
+        "A aplicação de temperatura mais alta para queimar resíduos",
+        "A limpeza com água fria em vez de quente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A limpeza semanal profunda inclui a desmontagem parcial para limpeza das calhas coletoras de gordura e do reservatório, algo não feito na limpeza diária.",
+      "dica": "A diferença está no que é desmontado e acessado.",
+      "tempoEstimado": 20,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.5,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.5,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "limpeza",
+        "semanal",
+        "procedimento"
+      ],
+      "relatedQuestions": [
+        "chapa_103",
+        "chapa_104",
+        "chapa_121"
+      ]
+    },
+    {
+      "id": "chapa_114",
+      "categoria": "chapa",
+      "subcategoria": "🧴 produto QSR Multiuso",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "qsr",
+        "multiuso",
+        "concentracao",
+        "produto",
+        "limpeza",
+        "quimico"
+      ],
+      "pergunta": "Qual é a concentração correta do produto QSR Multiuso para limpeza da chapa?",
+      "alternativas": [
+        "1:10 (1 parte produto para 10 partes de água)",
+        "1:32 (1 parte produto para 32 partes de água)",
+        "1:64 (1 parte produto para 64 partes de água)",
+        "Puro, sem diluição"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O produto QSR Multiuso deve ser diluído na proporção 1:32 (1 parte de produto para 32 partes de água) para uso em superfícies de cozinha, incluindo a chapa.",
+      "dica": "É uma diluição moderada — nem muito concentrado, nem muito fraco.",
+      "tempoEstimado": 20,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.44,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.44,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "limpeza",
+        "produto",
+        "quimico"
+      ],
+      "relatedQuestions": [
+        "chapa_113"
+      ]
+    },
+    {
+      "id": "chapa_115",
+      "categoria": "chapa",
+      "subcategoria": "⚙️ teflon e revestimento",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "teflon",
+        "vida-util",
+        "desgaste",
+        "revestimento",
+        "substituicao"
+      ],
+      "pergunta": "Qual é o principal sinal visual de que o revestimento de teflon da chapa precisa ser substituído?",
+      "alternativas": [
+        "Coloração mais escura que o normal",
+        "Arranhões profundos com exposição do metal base",
+        "Leve perda de brilho na superfície",
+        "Acúmulo de gordura nas bordas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Arranhões profundos com exposição do metal base indicam que o revestimento de teflon está comprometido e precisa ser substituído, pois pode contaminar os alimentos.",
+      "dica": "O problema é quando o metal fica exposto — não apenas arranhado superficialmente.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.57,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.57,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "teflon",
+        "manutencao",
+        "qualidade"
+      ],
+      "relatedQuestions": [
+        "chapa_109",
+        "chapa_103"
+      ]
+    },
+    {
+      "id": "chapa_116",
+      "categoria": "chapa",
+      "subcategoria": "🏭 modelos Taylor",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "taylor",
+        "cg14",
+        "cg18",
+        "capacidade",
+        "modelos",
+        "diferenca"
+      ],
+      "pergunta": "Qual é a principal diferença de capacidade entre a Taylor CG14 e a CG18?",
+      "alternativas": [
+        "A CG18 possui platen maior e suporta mais carnes simultâneas",
+        "A CG14 tem temperatura máxima mais alta",
+        "A CG18 é mais antiga e tem menos funcionalidades digitais",
+        "Não há diferença de capacidade, apenas estética"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A Taylor CG18 possui platen maior do que a CG14, permitindo cozinhar mais carnes simultaneamente, sendo indicada para restaurantes de maior movimento.",
+      "dica": "O número no nome indica o tamanho — maior número, maior capacidade.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.6,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.6,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "taylor",
+        "equipamento",
+        "capacidade"
+      ],
+      "relatedQuestions": [
+        "chapa_101",
+        "chapa_102"
+      ]
+    },
+    {
+      "id": "chapa_117",
+      "categoria": "chapa",
+      "subcategoria": "🥩 temperatura interna",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "interna",
+        "carne",
+        "seguranca",
+        "74graus",
+        "boas-praticas"
+      ],
+      "pergunta": "Qual é a temperatura interna mínima que toda carne deve atingir para ser considerada segura para consumo?",
+      "alternativas": [
+        "65°C",
+        "70°C",
+        "74°C",
+        "80°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura interna mínima de 74°C é o padrão de segurança alimentar do McDonald's, garantindo a eliminação de patógenos como Salmonella e E. coli.",
+      "dica": "É o padrão McDonald's — um número específico, não redondo.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.65,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.65,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "seguranca-alimentar",
+        "temperatura",
+        "qualidade"
+      ],
+      "relatedQuestions": [
+        "chapa_118",
+        "chapa_127"
+      ]
+    },
+    {
+      "id": "chapa_118",
+      "categoria": "chapa",
+      "subcategoria": "🥩 temperatura interna",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "mal-cozida",
+        "visual",
+        "indicadores",
+        "seguranca",
+        "qualidade"
+      ],
+      "pergunta": "Qual é o principal indicador visual de que uma carne não atingiu a temperatura interna adequada?",
+      "alternativas": [
+        "Coloração marrom uniforme em toda a superfície",
+        "Presença de líquido rosado ou vermelho ao cortar",
+        "Superfície com textura granulada",
+        "Bordas levemente endurecidas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A presença de líquido rosado ou vermelho ao cortar a carne indica que ela não atingiu a temperatura interna mínima de 74°C e não deve ser servida.",
+      "dica": "A cor do líquido interno é o sinal mais claro — vermelho ou rosado significa perigo.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.4,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.72,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.72,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "seguranca-alimentar",
+        "qualidade",
+        "visual"
+      ],
+      "relatedQuestions": [
+        "chapa_117"
+      ]
+    },
+    {
+      "id": "chapa_119",
+      "categoria": "chapa",
+      "subcategoria": "📋 SMAC",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "smac",
+        "sistema",
+        "monitoramento",
+        "automatico",
+        "chapa",
+        "controle"
+      ],
+      "pergunta": "O que significa a sigla SMAC no contexto da operação da chapa McDonald's?",
+      "alternativas": [
+        "Sistema de Monitoramento Automático de Carne",
+        "Serviço de Manutenção e Avaliação de Cozimento",
+        "Sistema de Medição e Análise de Conformidade",
+        "Suporte de Manuseio e Automação de Cozinha"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "SMAC significa Sistema de Monitoramento Automático de Carne — sistema integrado à chapa que monitora e registra as condições de cozimento automaticamente.",
+      "dica": "Cada letra corresponde a uma palavra da função principal do sistema.",
+      "tempoEstimado": 20,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.4,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.4,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "smac",
+        "sistema",
+        "monitoramento"
+      ],
+      "relatedQuestions": [
+        "chapa_120"
+      ]
+    },
+    {
+      "id": "chapa_120",
+      "categoria": "chapa",
+      "subcategoria": "📋 SMAC",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "smac",
+        "quando-usar",
+        "operacao",
+        "monitoramento",
+        "registro"
+      ],
+      "pergunta": "Em qual situação o SMAC deve ser acionado pelo operador?",
+      "alternativas": [
+        "Apenas durante inspeções da vigilância sanitária",
+        "Somente quando há suspeita de problema no cozimento",
+        "Continuamente durante toda a operação de cozimento",
+        "Apenas no início e fim de cada turno"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O SMAC deve estar ativo continuamente durante toda a operação de cozimento, registrando e monitorando automaticamente as condições de cada ciclo.",
+      "dica": "Monitoramento contínuo é a função principal — não é pontual.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.53,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.53,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "smac",
+        "operacao"
+      ],
+      "relatedQuestions": [
+        "chapa_119"
+      ]
+    },
+    {
+      "id": "chapa_121",
+      "categoria": "chapa",
+      "subcategoria": "⏸️ modo standby",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "standby",
+        "espera",
+        "temperatura",
+        "energia",
+        "modo"
+      ],
+      "pergunta": "Qual é a temperatura da chapa no modo de espera (standby)?",
+      "alternativas": [
+        "100°C",
+        "135°C",
+        "150°C",
+        "175°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "No modo de espera (standby), a chapa mantém temperatura de 150°C, suficiente para retomar rapidamente a operação sem o tempo de aquecimento completo.",
+      "dica": "É uma temperatura intermediária — quente o suficiente para retomar rápido, mas sem desperdício de energia.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.47,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.47,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "standby",
+        "temperatura",
+        "energia"
+      ],
+      "relatedQuestions": [
+        "chapa_122"
+      ]
+    },
+    {
+      "id": "chapa_122",
+      "categoria": "chapa",
+      "subcategoria": "⏸️ modo standby",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "standby",
+        "espera",
+        "quando-ativar",
+        "intervalo",
+        "operacao"
+      ],
+      "pergunta": "Quando deve ser ativado o modo de espera (standby) na chapa?",
+      "alternativas": [
+        "Sempre que não houver pedidos por mais de 5 minutos",
+        "Somente durante o fechamento do restaurante",
+        "Durante intervalos prolongados sem produção, como entre turnos",
+        "Apenas quando a chapa apresentar superaquecimento"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O modo standby deve ser ativado durante intervalos prolongados sem produção, como entre turnos ou períodos de baixo movimento, economizando energia e preservando o equipamento.",
+      "dica": "É para intervalos prolongados, não pausas curtas de 5 minutos.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.58,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.58,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "standby",
+        "operacao",
+        "energia"
+      ],
+      "relatedQuestions": [
+        "chapa_121"
+      ]
+    },
+    {
+      "id": "chapa_123",
+      "categoria": "chapa",
+      "subcategoria": "🔄 recovery mode",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "recovery",
+        "modo",
+        "temperatura",
+        "quando",
+        "automatico",
+        "taylor"
+      ],
+      "pergunta": "Quando o Recovery Mode é acionado automaticamente na chapa Taylor?",
+      "alternativas": [
+        "Quando a temperatura cai abaixo do nível mínimo após colocar muitas carnes frias",
+        "Quando o operador pressiona o botão de reinicialização",
+        "Apenas após uma queda de energia",
+        "Quando a temperatura supera 250°C por segurança"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Recovery Mode é acionado automaticamente quando a temperatura da chapa cai abaixo do nível mínimo operacional, geralmente após colocar muitas carnes frias simultaneamente, aumentando o calor para recuperar a temperatura de operação.",
+      "dica": "É uma resposta automática à queda de temperatura — o equipamento se auto-regula.",
+      "tempoEstimado": 22,
+      "xp": 20,
+      "peso": 1.6,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.38,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.38,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "recovery",
+        "temperatura",
+        "automatico"
+      ],
+      "relatedQuestions": [
+        "chapa_121",
+        "chapa_111"
+      ]
+    },
+    {
+      "id": "chapa_124",
+      "categoria": "chapa",
+      "subcategoria": "🔄 recovery mode",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "recovery",
+        "modo",
+        "operador",
+        "acao",
+        "pico",
+        "producao"
+      ],
+      "pergunta": "O que o operador deve fazer enquanto a chapa está em Recovery Mode durante o pico?",
+      "alternativas": [
+        "Adicionar mais carnes para aproveitar o calor extra",
+        "Aguardar a temperatura se estabilizar antes de colocar novas carnes",
+        "Desligar e religar o equipamento para acelerar a recuperação",
+        "Reduzir o GAP para compensar o tempo perdido"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Durante o Recovery Mode, o operador deve aguardar a temperatura se estabilizar antes de colocar novas carnes, pois adicionar mais carnes frias agravaria a queda de temperatura e comprometeria o cozimento.",
+      "dica": "Paciência é a resposta — não force o equipamento ainda mais.",
+      "tempoEstimado": 22,
+      "xp": 20,
+      "peso": 1.6,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.41,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.41,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "recovery",
+        "pico",
+        "operacao"
+      ],
+      "relatedQuestions": [
+        "chapa_123"
+      ]
+    },
+    {
+      "id": "chapa_125",
+      "categoria": "chapa",
+      "subcategoria": "⚖️ peso das carnes",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "peso",
+        "carne",
+        "cru",
+        "cozido",
+        "encolhimento",
+        "10:1"
+      ],
+      "pergunta": "Qual é o peso aproximado de uma carne 10:1 após o cozimento completo?",
+      "alternativas": [
+        "45 g",
+        "40 g",
+        "35 g",
+        "30 g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Uma carne 10:1 pesa aproximadamente 45 g crua e perde cerca de 22% do peso durante o cozimento, resultando em aproximadamente 35 g após cozida.",
+      "dica": "Há perda de peso no cozimento por evaporação de líquidos — em torno de 20%.",
+      "tempoEstimado": 20,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.46,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.46,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "peso",
+        "carne",
+        "qualidade"
+      ],
+      "relatedQuestions": [
+        "chapa_101"
+      ]
+    },
+    {
+      "id": "chapa_126",
+      "categoria": "chapa",
+      "subcategoria": "🌡️ calibração de temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "registro",
+        "temperatura",
+        "frequencia",
+        "log",
+        "conformidade"
+      ],
+      "pergunta": "Com qual frequência deve ser registrada a temperatura da chapa durante a operação?",
+      "alternativas": [
+        "Uma vez por turno",
+        "A cada hora",
+        "A cada 30 minutos",
+        "Apenas quando houver suspeita de problema"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A temperatura da chapa deve ser registrada a cada hora durante a operação, garantindo rastreabilidade e conformidade com os padrões de segurança alimentar.",
+      "dica": "É uma frequência horária — frequente o suficiente para detectar problemas, viável na operação.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.56,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.56,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "registro",
+        "temperatura",
+        "conformidade"
+      ],
+      "relatedQuestions": [
+        "chapa_111",
+        "chapa_112"
+      ]
+    },
+    {
+      "id": "chapa_127",
+      "categoria": "chapa",
+      "subcategoria": "🥩 temperatura interna",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "uhc",
+        "manutencao",
+        "temperatura",
+        "validade",
+        "carne-cozida"
+      ],
+      "pergunta": "Qual é a temperatura mínima que a carne deve ser mantida no UHC (Ultralow Holding Cabinet) após o cozimento?",
+      "alternativas": [
+        "55°C",
+        "60°C",
+        "65°C",
+        "74°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A carne cozida deve ser mantida no UHC a no mínimo 65°C para impedir a multiplicação de microrganismos e garantir a segurança alimentar durante o período de espera.",
+      "dica": "É abaixo da temperatura mínima de cozimento, mas acima da zona de perigo (acima de 60°C).",
+      "tempoEstimado": 20,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.49,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.49,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "uhc",
+        "temperatura",
+        "seguranca-alimentar"
+      ],
+      "relatedQuestions": [
+        "chapa_117",
+        "chapa_118"
+      ]
+    },
+    {
+      "id": "chapa_128",
+      "categoria": "chapa",
+      "subcategoria": "🥩 temperatura interna",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "uhc",
+        "validade",
+        "tempo",
+        "carne-cozida",
+        "descarte"
+      ],
+      "pergunta": "Qual é o tempo máximo de permanência da carne no UHC antes de ser descartada?",
+      "alternativas": [
+        "10 minutos",
+        "20 minutos",
+        "30 minutos",
+        "45 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A carne cozida deve ser descartada após 20 minutos no UHC, garantindo que apenas produtos frescos e de qualidade sejam servidos aos clientes.",
+      "dica": "É um tempo curto — menos de meia hora para garantir frescor.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.63,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.63,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "uhc",
+        "validade",
+        "qualidade"
+      ],
+      "relatedQuestions": [
+        "chapa_127"
+      ]
+    },
+    {
+      "id": "chapa_129",
+      "categoria": "chapa",
+      "subcategoria": "🚨 alarmes e erros",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alarme",
+        "erro",
+        "display",
+        "taylor",
+        "falha",
+        "temperatura"
+      ],
+      "pergunta": "O que indica o alarme de erro E-01 no display da chapa Taylor?",
+      "alternativas": [
+        "Falha no sensor de temperatura da superfície superior",
+        "Falha no sistema de comunicação com o controlador",
+        "Superaquecimento — temperatura acima do limite de segurança",
+        "Erro de calibração — necessário recalibrar o equipamento"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O erro E-01 na chapa Taylor indica falha no sensor de temperatura da superfície superior (platen), exigindo avaliação técnica imediata para não comprometer a operação.",
+      "dica": "E-01 é o primeiro e mais crítico — relacionado ao sensor principal.",
+      "tempoEstimado": 22,
+      "xp": 25,
+      "peso": 1.8,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.32,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.32,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "alarme",
+        "manutencao",
+        "tecnico"
+      ],
+      "relatedQuestions": [
+        "chapa_123"
+      ]
+    },
+    {
+      "id": "chapa_130",
+      "categoria": "chapa",
+      "subcategoria": "🚨 alarmes e erros",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alarme",
+        "erro",
+        "procedimento",
+        "acao",
+        "taylor",
+        "seguranca"
+      ],
+      "pergunta": "Qual é o procedimento correto quando a chapa emite um alarme sonoro contínuo durante a operação?",
+      "alternativas": [
+        "Ignorar e continuar a operação normalmente",
+        "Aumentar a temperatura para compensar",
+        "Parar a operação, anotar o código de erro e acionar o suporte técnico",
+        "Reiniciar o equipamento pressionando o botão de reset"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Diante de alarme sonoro contínuo, o correto é parar a operação, anotar o código de erro exibido no display e acionar o suporte técnico, pois operar com alarme ativo pode comprometer a segurança alimentar.",
+      "dica": "Nunca ignore um alarme — documente e comunique.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.4,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.66,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.66,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "alarme",
+        "procedimento",
+        "seguranca"
+      ],
+      "relatedQuestions": [
+        "chapa_129"
+      ]
+    },
+    {
+      "id": "chapa_131",
+      "categoria": "chapa",
+      "subcategoria": "🧹 calhas e gordura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "calha",
+        "gordura",
+        "limpeza",
+        "frequencia",
+        "residuo"
+      ],
+      "pergunta": "Com qual frequência mínima devem ser limpas as calhas coletoras de gordura da chapa?",
+      "alternativas": [
+        "A cada hora durante picos de produção",
+        "Uma vez ao dia, ao final do turno",
+        "A cada turno ou sempre que estiverem cheias",
+        "Semanalmente na limpeza profunda"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As calhas coletoras de gordura devem ser limpas a cada turno ou sempre que estiverem cheias, evitando transbordamento e risco de incêndio pelo acúmulo de gordura.",
+      "dica": "A frequência mínima é por turno, mas o bom senso manda limpar quando necessário.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.61,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.61,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "calha",
+        "limpeza",
+        "seguranca"
+      ],
+      "relatedQuestions": [
+        "chapa_113",
+        "chapa_132"
+      ]
+    },
+    {
+      "id": "chapa_132",
+      "categoria": "chapa",
+      "subcategoria": "🧹 calhas e gordura",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "gordura",
+        "descarte",
+        "ambiental",
+        "coleta",
+        "residuo"
+      ],
+      "pergunta": "Como deve ser descartada corretamente a gordura coletada das calhas da chapa?",
+      "alternativas": [
+        "Diretamente na pia do restaurante",
+        "No lixo orgânico comum",
+        "Em recipiente fechado para coleta de óleo de descarte",
+        "Diluída em água quente no ralo do piso"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A gordura coletada deve ser armazenada em recipiente fechado e encaminhada para coleta de óleo de descarte, conforme legislação ambiental vigente e padrões do McDonald's.",
+      "dica": "Respeito ao meio ambiente — gordura tem destinação específica.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.7,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.7,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "descarte",
+        "ambiental",
+        "gordura"
+      ],
+      "relatedQuestions": [
+        "chapa_131"
+      ]
+    },
+    {
+      "id": "chapa_133",
+      "categoria": "chapa",
+      "subcategoria": "🛢️ óleo anti-aderente",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "anti-aderente",
+        "anti-stick",
+        "aplicacao",
+        "protecao",
+        "teflon"
+      ],
+      "pergunta": "Quando e como deve ser aplicado o óleo de proteção anti-aderente na chapa?",
+      "alternativas": [
+        "A cada hora, espalhado com toalha de papel por toda a superfície",
+        "Apenas ao ligar o equipamento, em grande quantidade",
+        "No início de cada turno e após limpeza, em fina camada com pano limpo",
+        "Somente quando a carne começar a grudar na superfície"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O óleo anti-aderente deve ser aplicado no início de cada turno e após cada limpeza, em fina camada uniforme com pano limpo, protegendo o revestimento e facilitando o cozimento.",
+      "dica": "Aplicação fina e regular é mais eficaz do que abundante e eventual.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.54,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.54,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "oleo",
+        "anti-aderente",
+        "manutencao"
+      ],
+      "relatedQuestions": [
+        "chapa_115"
+      ]
+    },
+    {
+      "id": "chapa_134",
+      "categoria": "chapa",
+      "subcategoria": "🍔 ordem de cozimento",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pico",
+        "prioridade",
+        "ordem",
+        "cozimento",
+        "producao",
+        "organizacao"
+      ],
+      "pergunta": "Durante o pico de produção, qual deve ser a prioridade de cozimento na chapa?",
+      "alternativas": [
+        "Carnes de produtos premium primeiro por serem mais caros",
+        "Carnes 10:1 primeiro por serem mais rápidas de cozinhar",
+        "Carnes 4:1 primeiro por terem maior tempo de cozimento",
+        "A ordem de chegada dos pedidos, independentemente do produto"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Durante o pico, as carnes 4:1 devem ser iniciadas primeiro por terem maior tempo de cozimento (até 126s), garantindo que todos os produtos fiquem prontos no tempo correto.",
+      "dica": "O que leva mais tempo deve começar primeiro para tudo ficar pronto junto.",
+      "tempoEstimado": 20,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.5,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.5,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "pico",
+        "producao",
+        "organizacao"
+      ],
+      "relatedQuestions": [
+        "chapa_101",
+        "chapa_102",
+        "chapa_105"
+      ]
+    },
+    {
+      "id": "chapa_135",
+      "categoria": "chapa",
+      "subcategoria": "🍔 ordem de cozimento",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "big-mac",
+        "duplo",
+        "tempo",
+        "cozimento",
+        "carne",
+        "4:1"
+      ],
+      "pergunta": "Qual é o tempo de cozimento programado para a carne do Big Mac (4:1) na chapa convencional?",
+      "alternativas": [
+        "75 segundos",
+        "85 segundos",
+        "95 segundos",
+        "105 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O ponto de partida para carnes 4:1 (utilizadas no Big Mac, entre outros) na chapa convencional é de 95 segundos, ajustável conforme o equipamento e as condições.",
+      "dica": "Mesmo valor do ponto de partida 4:1 convencional — é o padrão para essas carnes.",
+      "tempoEstimado": 20,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.51,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.51,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "big-mac",
+        "tempo",
+        "producao"
+      ],
+      "relatedQuestions": [
+        "chapa_108",
+        "chapa_134"
+      ]
+    },
+    {
+      "id": "chapa_136",
+      "categoria": "chapa",
+      "subcategoria": "🧲 espátula e raspagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "espatula",
+        "angulo",
+        "pressao",
+        "manuseio",
+        "tecnica",
+        "remocao"
+      ],
+      "pergunta": "Qual é a pressão correta a ser aplicada ao remover a carne da chapa com a espátula?",
+      "alternativas": [
+        "Pressão firme e rápida com movimento de raspagem",
+        "Pressão mínima, apenas deslizando a espátula sob a carne",
+        "Pressão forte para garantir a separação completa",
+        "Sem pressão — usar apenas movimentos laterais"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ao remover a carne, deve-se usar pressão mínima, deslizando a espátula suavemente sob a carne, evitando danificar o revestimento da chapa e garantindo a integridade do produto.",
+      "dica": "Menos é mais — suavidade protege a chapa e o produto.",
+      "tempoEstimado": 18,
+      "xp": 15,
+      "peso": 1.2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.64,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.64,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "espatula",
+        "tecnica",
+        "teflon"
+      ],
+      "relatedQuestions": [
+        "chapa_103",
+        "chapa_104"
+      ]
+    },
+    {
+      "id": "chapa_137",
+      "categoria": "chapa",
+      "subcategoria": "🧲 espátula e raspagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "espatula",
+        "higiene",
+        "contaminacao",
+        "limpeza",
+        "intervalo"
+      ],
+      "pergunta": "Com qual frequência a espátula da chapa deve ser limpa e higienizada durante a operação?",
+      "alternativas": [
+        "Apenas ao final do turno",
+        "A cada uso entre produtos diferentes ou a cada 30 minutos",
+        "Uma vez por hora",
+        "Somente quando visivelmente suja"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A espátula deve ser limpa e higienizada a cada uso entre produtos diferentes (especialmente entre carnes cruas e cozidas) ou a cada 30 minutos, prevenindo contaminação cruzada.",
+      "dica": "A contaminação cruzada é o maior risco — trocar entre produtos é mais importante que o intervalo de tempo.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.59,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.59,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "higiene",
+        "contaminacao",
+        "espatula"
+      ],
+      "relatedQuestions": [
+        "chapa_138",
+        "chapa_139"
+      ]
+    },
+    {
+      "id": "chapa_138",
+      "categoria": "chapa",
+      "subcategoria": "🦠 contaminação cruzada",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "contaminacao",
+        "cruzada",
+        "carne-crua",
+        "higiene",
+        "zona-de-perigo",
+        "seguranca"
+      ],
+      "pergunta": "Qual é a principal medida para evitar contaminação cruzada ao manusear carne crua na chapa?",
+      "alternativas": [
+        "Lavar as mãos somente quando trocar de produto",
+        "Usar a mesma espátula para carnes cruas e cozidas, limpando entre usos",
+        "Utilizar utensílios e luvas exclusivos para carne crua, nunca contato com produtos prontos",
+        "Manter a carne crua na chapa por mais tempo para eliminar bactérias"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para evitar contaminação cruzada, é essencial usar utensílios e luvas exclusivos para o manuseio de carne crua, garantindo que nunca haja contato direto ou indireto com produtos prontos.",
+      "dica": "Separação total é a regra — utensílios exclusivos, sem exceção.",
+      "tempoEstimado": 18,
+      "xp": 20,
+      "peso": 1.5,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.73,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.73,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "contaminacao",
+        "seguranca-alimentar",
+        "higiene"
+      ],
+      "relatedQuestions": [
+        "chapa_137",
+        "chapa_139"
+      ]
+    },
+    {
+      "id": "chapa_139",
+      "categoria": "chapa",
+      "subcategoria": "🦠 contaminação cruzada",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "zona-de-perigo",
+        "temperatura",
+        "bacterias",
+        "seguranca",
+        "faixa"
+      ],
+      "pergunta": "Qual é a faixa de temperatura conhecida como 'Zona de Perigo' para multiplicação de bactérias nos alimentos?",
+      "alternativas": [
+        "0°C a 20°C",
+        "5°C a 60°C",
+        "10°C a 50°C",
+        "15°C a 65°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A Zona de Perigo é a faixa entre 5°C e 60°C, onde bactérias se multiplicam rapidamente. Alimentos devem ser mantidos fora dessa faixa para garantir a segurança alimentar.",
+      "dica": "A faixa de perigo começa quase no frio — desde 5°C, não só temperatura ambiente.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.3,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.67,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.67,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "zona-de-perigo",
+        "temperatura",
+        "seguranca-alimentar"
+      ],
+      "relatedQuestions": [
+        "chapa_138",
+        "chapa_117"
+      ]
+    },
+    {
+      "id": "chapa_140",
+      "categoria": "chapa",
+      "subcategoria": "🧼 higiene pessoal",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "pessoal",
+        "maos",
+        "lavagem",
+        "operador",
+        "boas-praticas"
+      ],
+      "pergunta": "Em quais momentos o operador da chapa DEVE lavar as mãos obrigatoriamente?",
+      "alternativas": [
+        "Apenas ao início do turno",
+        "Somente ao trocar de função na cozinha",
+        "Após tocar em carne crua, usar o banheiro, tossir/espirrar e antes de iniciar o turno",
+        "Uma vez por hora, independentemente do que estiver fazendo"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A lavagem das mãos é obrigatória após tocar carne crua, usar o banheiro, tossir ou espirrar, e antes de iniciar o turno — são os momentos críticos para prevenção de contaminação.",
+      "dica": "Os momentos críticos são situações de potencial contaminação — não é periódico.",
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 1.2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0.75,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0.75,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [
+        "higiene",
+        "pessoal",
+        "seguranca-alimentar"
+      ],
+      "relatedQuestions": [
+        "chapa_138",
+        "chapa_139"
+      ]
     }
   ]
 }
