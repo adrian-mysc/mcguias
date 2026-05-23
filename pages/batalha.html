@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <script type="module" src="../js/auth-guard.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batalha — MC Guias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#DA291C">
+  <style>
+    .bt-page { max-width: 480px; margin: 0 auto; padding: 16px 16px 80px; }
+
+    /* ── Views ── */
+    .view { display: none; flex-direction: column; }
+    .view.active { display: flex; }
+
+    /* ── Lobby ── */
+    .bt-online-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .bt-online-badge { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: #22c55e; }
+    .bt-online-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    .bt-player-card {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-md); padding: 12px 14px; margin-bottom: 8px;
+    }
+    .bt-player-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--red); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0; overflow: hidden;
+    }
+    .bt-player-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .bt-player-info { flex: 1; min-width: 0; }
+    .bt-player-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bt-player-sub { font-size: 11px; color: #22c55e; font-weight: 600; margin-top: 2px; }
+    .bt-challenge-btn {
+      background: var(--red); color: white; border: none;
+      border-radius: 20px; padding: 7px 16px; font-size: 12px; font-weight: 700;
+      cursor: pointer; font-family: var(--font-body); flex-shrink: 0;
+      transition: opacity .15s;
+    }
+    .bt-challenge-btn:hover { opacity: .85; }
+    .bt-empty { text-align: center; padding: 48px 20px; color: var(--muted); }
+    .bt-empty-icon { font-size: 52px; margin-bottom: 12px; }
+    .bt-empty h3 { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+
+    /* ── Guide modal ── */
+    .bt-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,.45); z-index: 500; align-items: flex-end; justify-content: center;
+    }
+    .bt-overlay.open { display: flex; }
+    .bt-sheet {
+      background: var(--card); border-radius: 20px 20px 0 0;
+      padding: 20px 16px calc(env(safe-area-inset-bottom) + 28px);
+      width: 100%; max-width: 480px; animation: slideUp .22s ease;
+    }
+    @keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+    .bt-sheet-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+    .bt-sheet-sub { font-size: 12px; color: var(--muted); margin-bottom: 14px; font-weight: 600; }
+    .bt-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+    .bt-guide-btn {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 10px; padding: 10px 12px; cursor: pointer;
+      font-size: 13px; font-weight: 600; color: var(--text);
+      transition: border-color .15s, background .15s; font-family: var(--font-body);
+    }
+    .bt-guide-btn.sel { border-color: var(--red); background: rgba(218,41,28,.07); }
+    .bt-guide-btn span:first-child { font-size: 18px; }
+
+    /* ── Waiting ── */
+    .bt-center {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; gap: 16px; padding: 48px 20px; min-height: 60vh;
+    }
+    .bt-spinner {
+      width: 52px; height: 52px; border: 4px solid var(--border);
+      border-top-color: var(--red); border-radius: 50%; animation: spin 0.75s linear infinite;
+    }
+    @keyframes spin { to{transform:rotate(360deg)} }
+    .bt-center-title { font-family: var(--font-display); font-size: 20px; font-weight: 800; }
+    .bt-center-sub { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ── Incoming challenge ── */
+    .bt-challenge-card {
+      background: var(--card); border: 2px solid var(--red);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 0 0 4px rgba(218,41,28,.12);
+      padding: 28px 20px; text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
+      animation: pulseIn .4s cubic-bezier(.22,1,.36,1);
+    }
+    @keyframes pulseIn { from{transform:scale(.9);opacity:0} to{transform:scale(1);opacity:1} }
+    .bt-chall-avatar {
+      width: 80px; height: 80px; border-radius: 50%; overflow: hidden;
+      background: var(--red); color: white; font-size: 38px;
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid rgba(218,41,28,.25);
+    }
+    .bt-chall-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .bt-chall-name { font-family: var(--font-display); font-size: 22px; font-weight: 800; }
+    .bt-chall-guide {
+      background: rgba(218,41,28,.08); border: 1px solid rgba(218,41,28,.25);
+      border-radius: 20px; padding: 4px 14px;
+      font-size: 13px; font-weight: 700; color: var(--red);
+    }
+    .bt-chall-sub { font-size: 13px; color: var(--muted); font-weight: 600; }
+    .bt-btn-row { display: flex; gap: 10px; width: 100%; }
+    .bt-btn-row button { flex: 1; padding: 13px; border-radius: var(--radius-md); border: none; font-size: 14px; font-weight: 700; cursor: pointer; font-family: var(--font-body); transition: opacity .15s; }
+    .bt-btn-accept { background: #22c55e; color: white; }
+    .bt-btn-accept:hover { opacity: .88; }
+    .bt-btn-decline { background: var(--bg); color: var(--muted); border: 1.5px solid var(--border) !important; }
+
+    /* ── Battle ── */
+    .bt-header {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 12px 14px;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; margin-bottom: 10px; gap: 8px;
+    }
+    .bt-col { display: flex; flex-direction: column; gap: 4px; }
+    .bt-col.me { align-items: flex-start; }
+    .bt-col.opp { align-items: flex-end; }
+    .bt-score { font-family: var(--font-display); font-size: 32px; font-weight: 900; color: var(--red); line-height: 1; }
+    .bt-pname { font-size: 11px; font-weight: 700; color: var(--muted); max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bt-dots { display: flex; flex-wrap: wrap; gap: 3px; }
+    .bt-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border); transition: background .2s; }
+    .bt-dot.ok  { background: #22c55e; }
+    .bt-dot.no  { background: #ef4444; }
+    .bt-vs { font-family: var(--font-display); font-size: 14px; font-weight: 800; color: var(--muted); }
+
+    .bt-timer-wrap { height: 5px; background: var(--border); border-radius: 3px; margin-bottom: 10px; overflow: hidden; }
+    .bt-timer-bar  { height: 100%; background: var(--red); border-radius: 3px; transition: width 1s linear; }
+    .bt-timer-bar.urgent { background: #ef4444; }
+
+    .bt-q-card {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 16px;
+      margin-bottom: 10px;
+    }
+    .bt-q-num { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .bt-q-text { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.45; }
+
+    .bt-options { display: flex; flex-direction: column; gap: 8px; }
+    .bt-opt {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-md); padding: 11px 14px;
+      font-size: 13px; font-weight: 600; color: var(--text);
+      text-align: left; cursor: pointer; transition: all .12s;
+      font-family: var(--font-body); display: flex; align-items: flex-start; gap: 8px;
+    }
+    .bt-opt:hover:not(:disabled) { border-color: var(--red); background: rgba(218,41,28,.04); }
+    .bt-opt.ok { background: #f0fdf4 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .bt-opt.no { background: #fef2f2 !important; border-color: #ef4444 !important; color: #dc2626 !important; }
+    [data-theme="dark"] .bt-opt.ok { background: rgba(34,197,94,.12) !important; color: #4ade80 !important; }
+    [data-theme="dark"] .bt-opt.no { background: rgba(239,68,68,.12) !important; color: #f87171 !important; }
+    .bt-opt:disabled { cursor: default; }
+    .bt-opt-letter { font-weight: 800; color: var(--muted); flex-shrink: 0; min-width: 18px; }
+
+    .bt-opp-status { font-size: 12px; color: var(--muted); text-align: center; padding: 8px 0; font-weight: 600; }
+
+    /* ── Result ── */
+    .bt-result-wrap {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: 16px; padding: 32px 20px; flex: 1;
+    }
+    .bt-result-crown { font-size: 72px; line-height: 1; }
+    .bt-result-title { font-family: var(--font-display); font-size: 26px; font-weight: 800; }
+    .bt-result-scores {
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 18px 28px; width: 100%;
+    }
+    .bt-res-player { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .bt-res-score { font-family: var(--font-display); font-size: 44px; font-weight: 900; color: var(--red); line-height: 1; }
+    .bt-res-label { font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; max-width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bt-res-div { font-size: 22px; color: var(--muted); }
+    .bt-result-sub { font-size: 14px; color: var(--muted); font-weight: 600; }
+    .bt-result-btns { display: flex; gap: 10px; width: 100%; margin-top: 4px; }
+    .bt-result-btns button { flex: 1; }
+
+    /* ── Countdown overlay ── */
+    .bt-countdown {
+      position: fixed; inset: 0; background: var(--red); z-index: 700;
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      color: white; text-align: center;
+    }
+    .bt-countdown-num {
+      font-family: var(--font-display); font-size: 120px; font-weight: 900; line-height: 1;
+    }
+    .bt-countdown-sub { font-size: 18px; font-weight: 700; margin-top: 8px; opacity: .85; }
+    .bt-pop { animation: pop .35s cubic-bezier(.22,1,.36,1); }
+    @keyframes pop { from{transform:scale(.3);opacity:0} to{transform:scale(1);opacity:1} }
+  </style>
+</head>
+<body data-page="batalha">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1 id="navTitle">Batalha</h1>
+        <p>MC Guias</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <!-- Guide picker bottom sheet -->
+  <div id="guideOverlay" class="bt-overlay" onclick="if(event.target===this)closeSheet()">
+    <div class="bt-sheet">
+      <div class="bt-sheet-title">Escolher tema</div>
+      <div class="bt-sheet-sub" id="sheetSub">Selecione o assunto da batalha</div>
+      <div class="bt-guide-grid" id="guideGrid"></div>
+      <button class="btn-primary" style="width:100%" id="confirmBtn" disabled onclick="confirmGuide()">
+        Enviar desafio ⚡
+      </button>
+    </div>
+  </div>
+
+  <!-- Countdown overlay -->
+  <div id="countdown" class="bt-countdown">
+    <div class="bt-countdown-num" id="cdNum">3</div>
+    <div class="bt-countdown-sub" id="cdSub"></div>
+  </div>
+
+  <div class="bt-page">
+
+    <!-- VIEW: LOBBY -->
+    <div id="view-lobby" class="view active">
+      <div class="section-label" style="margin-bottom:10px">Batalha ao vivo</div>
+      <div class="bt-online-bar">
+        <div class="bt-online-badge">
+          <div class="bt-online-dot"></div>
+          <span id="onlineCount">Verificando...</span>
+        </div>
+      </div>
+      <div id="lobbyList"></div>
+    </div>
+
+    <!-- VIEW: WAITING -->
+    <div id="view-waiting" class="view">
+      <div class="bt-center">
+        <div class="bt-spinner"></div>
+        <div class="bt-center-title" id="waitName">Aguardando...</div>
+        <div class="bt-center-sub" id="waitSub">Aguardando o aceite do desafio</div>
+        <button class="btn-secondary" onclick="cancelChallenge()">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- VIEW: INCOMING CHALLENGE -->
+    <div id="view-incoming" class="view" style="padding-top:12px">
+      <div class="bt-challenge-card" id="challengeCard">
+        <div class="bt-chall-sub" style="font-size:11px;letter-spacing:1px;text-transform:uppercase">⚔️ Desafio recebido</div>
+        <div class="bt-chall-avatar" id="challAvatar">😊</div>
+        <div class="bt-chall-name" id="challName">...</div>
+        <div class="bt-chall-guide" id="challGuide">...</div>
+        <div class="bt-chall-sub">quer te desafiar!</div>
+        <div class="bt-btn-row">
+          <button class="bt-btn-accept" onclick="acceptChallenge()">✅ Aceitar</button>
+          <button class="bt-btn-decline" onclick="declineChallenge()">✕ Recusar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: BATTLE -->
+    <div id="view-battle" class="view" style="gap:0;padding-bottom:20px">
+      <div class="bt-header">
+        <div class="bt-col me">
+          <div class="bt-score" id="myScore">0</div>
+          <div class="bt-dots" id="myDots"></div>
+          <div class="bt-pname" id="myName">Você</div>
+        </div>
+        <div class="bt-vs">VS</div>
+        <div class="bt-col opp">
+          <div class="bt-score" id="oppScore">0</div>
+          <div class="bt-dots" id="oppDots"></div>
+          <div class="bt-pname" id="oppName">Oponente</div>
+        </div>
+      </div>
+      <div class="bt-timer-wrap"><div class="bt-timer-bar" id="timerBar" style="width:100%"></div></div>
+      <div class="bt-q-card" style="margin-top:8px">
+        <div class="bt-q-num" id="qNum">Questão 1/10</div>
+        <div class="bt-q-text" id="qText"></div>
+      </div>
+      <div class="bt-options" id="options"></div>
+      <div class="bt-opp-status" id="oppStatus"></div>
+    </div>
+
+    <!-- VIEW: RESULT -->
+    <div id="view-result" class="view">
+      <div class="bt-result-wrap">
+        <div class="bt-result-crown" id="resCrown">🏆</div>
+        <div class="bt-result-title" id="resTitle">Fim!</div>
+        <div class="bt-result-scores">
+          <div class="bt-res-player">
+            <div class="bt-res-score" id="resMyScore">0</div>
+            <div class="bt-res-label" id="resMyName">Você</div>
+          </div>
+          <div class="bt-res-div">×</div>
+          <div class="bt-res-player">
+            <div class="bt-res-score" id="resOppScore">0</div>
+            <div class="bt-res-label" id="resOppName">Oponente</div>
+          </div>
+        </div>
+        <div class="bt-result-sub" id="resSub"></div>
+        <div class="bt-result-btns">
+          <button class="btn-secondary" onclick="goLobby()">← Lobby</button>
+          <button class="btn-primary" id="rematchBtn">Revanche 🔄</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/main.js" defer></script>
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const SURL = 'https://iizzeeceqysdfhnkosrc.supabase.co';
+    const SKEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+    const supabase = createClient(SURL, SKEY, { auth: { persistSession: true, autoRefreshToken: true } });
+
+    const BATTLE_QS   = 10;
+    const Q_TIME      = 20; // seconds per question
+
+    const GUIAS = [
+      { id: 'best-burguer',      nome: 'Best Burger',    emoji: '🍔' },
+      { id: 'mccafe',            nome: 'McCafé',         emoji: '☕' },
+      { id: 'lope',              nome: 'LOPE',           emoji: '📋' },
+      { id: 'chapa',             nome: 'Chapa',          emoji: '🔥' },
+      { id: 'condimentacao',     nome: 'Condimentação',  emoji: '🥄' },
+      { id: 'fritas',            nome: 'Fritas',         emoji: '🍟' },
+      { id: 'drive-thru',        nome: 'Drive-Thru',     emoji: '🚗' },
+      { id: 'bebidas-sobremesas',nome: 'Bebidas',        emoji: '🥤' },
+      { id: 'linha',             nome: 'Linha',          emoji: '🏭' },
+      { id: 'montagem-entrega',  nome: 'Montagem',       emoji: '🥪' },
+    ];
+
+    // ── State ──────────────────────────────────────────
+    let me = null;
+    let lobbyChannel = null;
+    let battleChannel = null;
+    let battleWatcher = null;
+    let currentBattle = null;
+    let questions = [];
+    let qIndex = 0;
+    let myScore = 0;
+    let myProgress = []; // boolean[]
+    let oppProgress = [];
+    let oppDone = false;
+    let timer = null;
+    let pendingBattle = null; // incoming challenge
+    let waitingId = null;     // battle id we created
+    let pendingTarget = null; // player to challenge
+    let selectedGuia = null;
+    const _lobbyMap = new Map();
+
+    // ── Helpers ────────────────────────────────────────
+    const el = id => document.getElementById(id);
+    function esc(s) {
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+    function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+    function showView(id) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      el(id).classList.add('active');
+    }
+    function toast(msg) {
+      const t = document.createElement('div');
+      t.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1c1a17;color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;font-weight:600;z-index:900;box-shadow:0 4px 16px rgba(0,0,0,.3);white-space:nowrap;max-width:90vw;text-overflow:ellipsis;overflow:hidden';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 3000);
+    }
+
+    // ── Guide sheet ────────────────────────────────────
+    el('guideGrid').innerHTML = GUIAS.map(g =>
+      `<button class="bt-guide-btn" id="gb-${g.id}" onclick="pickGuia('${g.id}')">
+         <span>${g.emoji}</span><span>${g.nome}</span>
+       </button>`
+    ).join('');
+
+    window.pickGuia = function(id) {
+      selectedGuia = id;
+      document.querySelectorAll('.bt-guide-btn').forEach(b => b.classList.remove('sel'));
+      el('gb-' + id)?.classList.add('sel');
+      el('confirmBtn').disabled = false;
+    };
+
+    function openSheet(target) {
+      pendingTarget = target;
+      selectedGuia = null;
+      document.querySelectorAll('.bt-guide-btn').forEach(b => b.classList.remove('sel'));
+      el('confirmBtn').disabled = true;
+      el('sheetSub').textContent = `Desafiar: ${target.username}`;
+      el('guideOverlay').classList.add('open');
+    }
+    window.closeSheet = function() { el('guideOverlay').classList.remove('open'); };
+    window.confirmGuide = async function() {
+      if (!selectedGuia || !pendingTarget) return;
+      window.closeSheet();
+      await createBattle(selectedGuia, pendingTarget);
+    };
+
+    // ── Init ───────────────────────────────────────────
+    async function init() {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) return;
+      const user = session.user;
+
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('username, display_name, avatar_emoji, avatar')
+        .eq('id', user.id)
+        .single();
+
+      me = {
+        id:          user.id,
+        username:    profile?.display_name || profile?.username || user.email?.split('@')[0] || 'Jogador',
+        avatar_emoji:profile?.avatar_emoji || '😊',
+        avatar:      profile?.avatar || null,
+      };
+
+      el('navTitle').textContent = me.username;
+
+      // Clean stale pending battles from previous sessions (>5min old)
+      const cutoff = new Date(Date.now() - 5 * 60000).toISOString();
+      supabase.from('battles').update({ status: 'cancelled' })
+        .eq('player1_id', me.id).eq('status', 'pending').lt('created_at', cutoff)
+        .then(() => {});
+
+      setupLobby();
+      setupIncomingListener(user.id);
+    }
+
+    // ── Lobby ──────────────────────────────────────────
+    function setupLobby() {
+      lobbyChannel = supabase.channel('mc-batalha-lobby', {
+        config: { presence: { key: me.id } }
+      });
+
+      lobbyChannel
+        .on('presence', { event: 'sync' }, () => renderLobby(lobbyChannel.presenceState()))
+        .subscribe(async (status) => {
+          if (status === 'SUBSCRIBED') {
+            await lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
+          }
+        });
+    }
+
+    function renderLobby(state) {
+      _lobbyMap.clear();
+      const players = Object.values(state).flat()
+        .filter(p => p.user_id !== me.id && p.status === 'available');
+      players.forEach(p => _lobbyMap.set(p.user_id, p));
+
+      const n = players.length;
+      el('onlineCount').textContent = n === 0 ? 'Nenhum disponível' : `${n} disponível${n > 1 ? 'is' : ''}`;
+
+      const list = el('lobbyList');
+      if (n === 0) {
+        list.innerHTML = `<div class="bt-empty">
+          <div class="bt-empty-icon">⚔️</div>
+          <h3>Nenhum jogador disponível</h3>
+          <p>Convide um colega para entrar na<br>página de Batalha no MC Guias!</p>
+        </div>`;
+        return;
+      }
+
+      list.innerHTML = players.map(p => {
+        const av = p.avatar
+          ? `<img src="${esc(p.avatar)}" alt="${esc(p.username)}">`
+          : esc(p.avatar_emoji || '😊');
+        return `<div class="bt-player-card">
+          <div class="bt-player-avatar">${av}</div>
+          <div class="bt-player-info">
+            <div class="bt-player-name">${esc(p.username)}</div>
+            <div class="bt-player-sub">✅ Disponível</div>
+          </div>
+          <button class="bt-challenge-btn" onclick="challenge('${esc(p.user_id)}')">Desafiar</button>
+        </div>`;
+      }).join('');
+    }
+
+    window.challenge = function(uid) {
+      const target = _lobbyMap.get(uid);
+      if (target) openSheet(target);
+    };
+
+    // ── Create battle ──────────────────────────────────
+    async function createBattle(guia, target) {
+      let allQ;
+      try {
+        const r = await fetch(`../data/questions/${guia}/basico.json`);
+        const d = await r.json();
+        allQ = Array.isArray(d) ? d : (d.questions || d.questoes || []);
+      } catch {
+        toast('❌ Erro ao carregar questões. Tente outro tema.');
+        return;
+      }
+
+      const shuffled = [...allQ].sort(() => Math.random() - 0.5);
+      const ids = shuffled.slice(0, Math.min(BATTLE_QS, shuffled.length)).map(q => q.id);
+      const guiaObj = GUIAS.find(g => g.id === guia);
+
+      const { data: battle, error } = await supabase.from('battles').insert({
+        player1_id:       me.id,
+        player2_id:       target.user_id,
+        player1_username: me.username,
+        player2_username: target.username,
+        player1_avatar:   me.avatar,
+        player2_avatar:   target.avatar || null,
+        guide:            guia,
+        guide_nome:       guiaObj?.nome || guia,
+        question_ids:     ids,
+        status:           'pending',
+      }).select().single();
+
+      if (error || !battle) {
+        toast('❌ Erro ao criar desafio.');
+        return;
+      }
+
+      waitingId = battle.id;
+      el('waitName').textContent = `Desafiando ${target.username}`;
+      el('waitSub').textContent  = `Tema: ${guiaObj?.nome || guia}`;
+      showView('view-waiting');
+
+      // Mark as busy
+      lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'in_battle' });
+
+      // Watch for acceptance/decline
+      battleWatcher = supabase.channel(`bw-${battle.id}`)
+        .on('postgres_changes', {
+          event: 'UPDATE', schema: 'public', table: 'battles',
+          filter: `id=eq.${battle.id}`,
+        }, ({ new: b }) => {
+          if (b.status === 'active') {
+            supabase.removeChannel(battleWatcher); battleWatcher = null;
+            currentBattle = b;
+            startBattle(b, 'player1');
+          } else if (b.status === 'declined' || b.status === 'cancelled') {
+            supabase.removeChannel(battleWatcher); battleWatcher = null;
+            waitingId = null;
+            lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
+            showView('view-lobby');
+            toast(b.status === 'declined' ? '❌ Desafio recusado.' : '⚠️ Desafio cancelado.');
+          }
+        })
+        .subscribe();
+    }
+
+    window.cancelChallenge = async function() {
+      if (waitingId) {
+        await supabase.from('battles').update({ status: 'cancelled' }).eq('id', waitingId);
+        waitingId = null;
+      }
+      if (battleWatcher) { supabase.removeChannel(battleWatcher); battleWatcher = null; }
+      lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
+      showView('view-lobby');
+    };
+
+    // ── Incoming challenge listener ─────────────────────
+    function setupIncomingListener(uid) {
+      supabase.channel(`inc-${uid}`)
+        .on('postgres_changes', {
+          event: 'INSERT', schema: 'public', table: 'battles',
+          filter: `player2_id=eq.${uid}`,
+        }, ({ new: b }) => {
+          if (b.status === 'pending') showIncoming(b);
+        })
+        .subscribe();
+    }
+
+    function showIncoming(b) {
+      pendingBattle = b;
+      const av = el('challAvatar');
+      if (b.player1_avatar) {
+        av.innerHTML = `<img src="${esc(b.player1_avatar)}" alt="${esc(b.player1_username)}">`;
+      } else {
+        av.textContent = '😊';
+      }
+      el('challName').textContent  = b.player1_username;
+      el('challGuide').textContent = b.guide_nome;
+      showView('view-incoming');
+    }
+
+    window.acceptChallenge = async function() {
+      if (!pendingBattle) return;
+      const { data: b, error } = await supabase
+        .from('battles')
+        .update({ status: 'active', started_at: new Date().toISOString() })
+        .eq('id', pendingBattle.id)
+        .select().single();
+      if (error || !b) { toast('❌ Erro ao aceitar.'); return; }
+      currentBattle = b;
+      lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'in_battle' });
+      startBattle(b, 'player2');
+    };
+
+    window.declineChallenge = async function() {
+      if (!pendingBattle) return;
+      await supabase.from('battles').update({ status: 'declined' }).eq('id', pendingBattle.id);
+      pendingBattle = null;
+      showView('view-lobby');
+    };
+
+    // ── Battle start ───────────────────────────────────
+    async function startBattle(b, role) {
+      currentBattle = b;
+      qIndex = 0; myScore = 0; myProgress = []; oppProgress = []; oppDone = false;
+
+      const isP1   = role === 'player1';
+      const myName = isP1 ? b.player1_username : b.player2_username;
+      const opName = isP1 ? b.player2_username : b.player1_username;
+
+      el('myName').textContent   = myName;
+      el('oppName').textContent  = opName;
+      el('resMyName').textContent = myName;
+      el('resOppName').textContent = opName;
+
+      // Subscribe to battle broadcast channel
+      battleChannel = supabase.channel(`bt:${b.id}`)
+        .on('broadcast', { event: 'answer' }, ({ payload }) => {
+          if (payload.by !== me.id) {
+            oppProgress.push(payload.correct);
+            renderDots('oppDots', oppProgress);
+            el('oppScore').textContent = oppProgress.filter(Boolean).length;
+          }
+        })
+        .on('broadcast', { event: 'finish' }, ({ payload }) => {
+          if (payload.by !== me.id) {
+            oppDone = true;
+            el('oppStatus').textContent = '';
+            if (qIndex >= questions.length) showResults();
+          }
+        })
+        .subscribe();
+
+      // Load questions from local JSON in the order stored in DB
+      try {
+        const r = await fetch(`../data/questions/${b.guide}/basico.json`);
+        const d = await r.json();
+        const all = Array.isArray(d) ? d : (d.questions || d.questoes || []);
+        const map = Object.fromEntries(all.map(q => [q.id, q]));
+        questions = b.question_ids.map(id => map[id]).filter(Boolean);
+      } catch {
+        toast('❌ Erro ao carregar questões.');
+        return;
+      }
+      if (!questions.length) { toast('❌ Questões não encontradas.'); return; }
+
+      initDots();
+      await runCountdown();
+
+      showView('view-battle');
+      showQuestion();
+    }
+
+    function initDots() {
+      const n = questions.length || BATTLE_QS;
+      ['myDots','oppDots'].forEach(id => {
+        el(id).innerHTML = Array(n).fill('<div class="bt-dot"></div>').join('');
+      });
+    }
+
+    function renderDots(id, progress) {
+      const dots = el(id).querySelectorAll('.bt-dot');
+      dots.forEach((d, i) => {
+        d.className = 'bt-dot' + (i < progress.length ? (progress[i] ? ' ok' : ' no') : '');
+      });
+    }
+
+    // ── Countdown ──────────────────────────────────────
+    async function runCountdown() {
+      const wrap = el('countdown');
+      const num  = el('cdNum');
+      const sub  = el('cdSub');
+      wrap.style.display = 'flex';
+
+      const steps = [
+        { n: '3', s: '🍔 Prepare-se!' },
+        { n: '2', s: '⚡ Já vai...'   },
+        { n: '1', s: '🔥 Concentre!'  },
+        { n: '🏁', s: 'VAI!'          },
+      ];
+
+      for (const step of steps) {
+        num.textContent = step.n;
+        sub.textContent = step.s;
+        num.className   = 'bt-countdown-num bt-pop';
+        await sleep(700);
+      }
+      await sleep(300);
+      wrap.style.display = 'none';
+    }
+
+    // ── Question ───────────────────────────────────────
+    function showQuestion() {
+      if (qIndex >= questions.length) { finishBattle(); return; }
+
+      const q = questions[qIndex];
+      el('qNum').textContent  = `Questão ${qIndex + 1}/${questions.length}`;
+      el('qText').textContent = q.pergunta;
+      el('myScore').textContent = myScore;
+      renderDots('myDots', myProgress);
+      el('oppStatus').textContent = '';
+
+      const letters = ['A','B','C','D'];
+      el('options').innerHTML = (q.alternativas || []).map((alt, i) =>
+        `<button class="bt-opt" id="op-${i}" onclick="answer(${i})">
+           <span class="bt-opt-letter">${letters[i]}.</span>
+           <span>${esc(alt)}</span>
+         </button>`
+      ).join('');
+
+      startTimer();
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      let t = Q_TIME;
+      const bar = el('timerBar');
+      bar.style.width = '100%';
+      bar.classList.remove('urgent');
+
+      timer = setInterval(() => {
+        t--;
+        bar.style.width = (t / Q_TIME * 100) + '%';
+        if (t <= 5) bar.classList.add('urgent');
+        if (t <= 0) { clearInterval(timer); answer(-1); }
+      }, 1000);
+    }
+
+    window.answer = function(idx) {
+      clearInterval(timer);
+      const q = questions[qIndex];
+      const correct = idx >= 0 && idx === q.respostaCorreta;
+
+      document.querySelectorAll('.bt-opt').forEach(b => b.disabled = true);
+      if (idx >= 0) el('op-' + idx)?.classList.add(correct ? 'ok' : 'no');
+      if (!correct) el('op-' + q.respostaCorreta)?.classList.add('ok');
+
+      if (correct) myScore++;
+      myProgress.push(correct);
+
+      battleChannel.send({ type: 'broadcast', event: 'answer', payload: { by: me.id, correct } });
+      qIndex++;
+
+      setTimeout(() => {
+        if (qIndex >= questions.length) finishBattle();
+        else showQuestion();
+      }, 1300);
+    };
+
+    // ── Finish ─────────────────────────────────────────
+    async function finishBattle() {
+      clearInterval(timer);
+      el('timerBar').style.width = '0%';
+
+      // Broadcast finish
+      battleChannel.send({ type: 'broadcast', event: 'finish', payload: { by: me.id, score: myScore } });
+
+      // Update DB with own score
+      const isP1 = currentBattle.player1_id === me.id;
+      const patch = isP1
+        ? { player1_score: myScore, player1_finished: true }
+        : { player2_score: myScore, player2_finished: true };
+
+      const { data: updated } = await supabase.from('battles').update(patch)
+        .eq('id', currentBattle.id).select().single();
+      if (updated) currentBattle = updated;
+
+      if (oppDone) {
+        showResults();
+      } else {
+        // Show waiting state within battle view
+        el('qText').textContent = 'Você terminou! Aguardando oponente...';
+        el('options').innerHTML = '';
+        el('oppStatus').textContent = '⏳ Oponente ainda está respondendo...';
+
+        // Watch DB for both finished
+        const w = supabase.channel(`bfin-${currentBattle.id}`)
+          .on('postgres_changes', {
+            event: 'UPDATE', schema: 'public', table: 'battles',
+            filter: `id=eq.${currentBattle.id}`,
+          }, ({ new: b }) => {
+            currentBattle = b;
+            if (b.player1_finished && b.player2_finished) {
+              supabase.removeChannel(w);
+              showResults();
+            }
+          })
+          .subscribe();
+
+        // Timeout after 90s
+        setTimeout(() => { supabase.removeChannel(w); showResults(); }, 90000);
+      }
+    }
+
+    // ── Results ────────────────────────────────────────
+    function showResults() {
+      clearInterval(timer);
+      if (battleChannel) { supabase.removeChannel(battleChannel); battleChannel = null; }
+
+      const isP1 = currentBattle.player1_id === me.id;
+      const oppFinal = isP1 ? (currentBattle.player2_score ?? 0) : (currentBattle.player1_score ?? 0);
+
+      el('resMyScore').textContent  = myScore;
+      el('resOppScore').textContent = oppFinal;
+
+      let crown, title, sub;
+      if      (myScore > oppFinal) { crown = '🏆'; title = 'Você venceu!';  sub = '🎉 Parabéns pela vitória!'; }
+      else if (myScore < oppFinal) { crown = '💪'; title = 'Você perdeu!';  sub = 'Boa tentativa! Que tal uma revanche?'; }
+      else                          { crown = '🤝'; title = 'Empate!';      sub = 'Nenhum dos dois cedeu!'; }
+
+      el('resCrown').textContent = crown;
+      el('resTitle').textContent = title;
+      el('resSub').textContent   = sub;
+
+      const oppId    = isP1 ? currentBattle.player2_id       : currentBattle.player1_id;
+      const oppUname = isP1 ? currentBattle.player2_username  : currentBattle.player1_username;
+      const oppAv    = isP1 ? currentBattle.player2_avatar    : currentBattle.player1_avatar;
+      el('rematchBtn').onclick = () => openSheet({ user_id: oppId, username: oppUname, avatar: oppAv, avatar_emoji: '😊' });
+
+      showView('view-result');
+
+      // Return to available
+      lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
+    }
+
+    window.goLobby = function() {
+      if (battleChannel)  { supabase.removeChannel(battleChannel);  battleChannel  = null; }
+      if (battleWatcher)  { supabase.removeChannel(battleWatcher);  battleWatcher  = null; }
+      currentBattle = null; questions = []; myProgress = []; oppProgress = [];
+      lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
+      showView('view-lobby');
+    };
+
+    init();
+  </script>
+</body>
+</html>
