@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-05-23",
   "categoria": "seguranca-alimento",
   "nivel": "basico",
   "migratedFrom": "seguranca-alimento.html",
@@ -1048,6 +1048,951 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Perigo químico inclui resíduos de produtos de limpeza, pesticidas e aditivos em excesso. O enxágue correto de utensílios é a principal prevenção.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_022",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "⚠️ Alergênicos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alergenicos",
+        "seguranca_alimentar",
+        "contaminacao"
+      ],
+      "pergunta": "Quais são exemplos de alergênicos presentes nos produtos do McDonald's?",
+      "alternativas": [
+        "Sal, açúcar, pimenta e orégano",
+        "Trigo, leite, amendoim, ovo e soja",
+        "Azeite, manteiga, farinha e mel",
+        "Corantes, conservantes, antioxidantes e acidulantes"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os principais alergênicos presentes nos produtos do McDonald's incluem trigo (glúten), leite (lactose), amendoim, ovo e soja. O funcionário deve conhecê-los para informar os clientes corretamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_023",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "⚠️ Alergênicos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alergenicos",
+        "atendimento",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "O que fazer imediatamente quando um cliente informa que tem alergia alimentar?",
+      "alternativas": [
+        "Orientar o cliente a verificar o rótulo da embalagem por conta própria",
+        "Informar os ingredientes e alergênicos do produto e acionar o gerente",
+        "Pedir que o cliente assine um termo de responsabilidade",
+        "Ignorar a informação e entregar o pedido normalmente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ao receber informação de alergia, informe os ingredientes e alergênicos do produto solicitado e acione imediatamente o gerente, que irá orientar o procedimento correto e garantir a segurança do cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_024",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🩹 Higiene · Ferimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "ferimento",
+        "luvas",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "O que o funcionário deve fazer se tiver um ferimento na mão durante a produção?",
+      "alternativas": [
+        "Continuar trabalhando normalmente após lavar a ferida",
+        "Cobrir com curativo colorido e usar luva descartável por cima",
+        "Apenas aplicar álcool gel e seguir o trabalho",
+        "Parar de trabalhar e ir para casa imediatamente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ferimentos nas mãos devem ser cobertos com curativo colorido (detectável) e, sobre ele, luva descartável. O curativo colorido facilita a identificação caso caia no alimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_025",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🤒 Higiene · Funcionário Doente",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "saude",
+        "producao",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "O que deve ocorrer se um funcionário apresentar vômito, diarreia ou febre durante o turno?",
+      "alternativas": [
+        "Pode permanecer na cozinha usando máscara",
+        "Deve ser afastado da manipulação de alimentos imediatamente",
+        "Pode continuar se lavar as mãos com mais frequência",
+        "Deve trabalhar apenas no caixa, longe da cozinha"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Funcionários com sintomas de doenças transmissíveis (vômito, diarreia, febre, feridas infectadas) devem ser afastados imediatamente da manipulação de alimentos para evitar contaminação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_026",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🚚 Recebimento · Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "recebimento",
+        "temperatura",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "Qual a temperatura máxima aceitável para recebimento de produtos refrigerados?",
+      "alternativas": [
+        "0°C",
+        "4°C",
+        "8°C",
+        "10°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Produtos refrigerados devem ser recebidos a no máximo 4°C. Acima disso indica quebra da cadeia de frio durante o transporte.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_027",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🚚 Recebimento · Não Conformidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "recebimento",
+        "temperatura",
+        "seguranca_alimentar",
+        "descarte"
+      ],
+      "pergunta": "O que fazer quando um produto chega fora da temperatura exigida no recebimento?",
+      "alternativas": [
+        "Aceitar e armazenar rapidamente para recuperar a temperatura",
+        "Rejeitar o produto e notificar o gerente e o fornecedor",
+        "Aceitar somente se a aparência estiver normal",
+        "Colocar imediatamente no freezer e verificar depois"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Produto fora da temperatura de recebimento deve ser recusado. O gerente deve ser notificado e o ocorrido registrado. Aceitar produto fora de temperatura coloca em risco a segurança alimentar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_028",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🏷️ Etiqueta · Validade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "validade",
+        "etiqueta",
+        "seguranca_alimentar",
+        "producao"
+      ],
+      "pergunta": "O que deve constar obrigatoriamente na etiqueta de validade de um produto preparado?",
+      "alternativas": [
+        "Nome do produto, data de fabricação e assinatura do funcionário",
+        "Nome do produto, data e hora de preparo, e data e hora de vencimento",
+        "Apenas a data de vencimento e o nome do produto",
+        "Código do produto, peso e temperatura de armazenamento"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A etiqueta de validade deve conter: nome do produto, data e hora de preparo e data e hora de vencimento. Esses dados garantem o controle do PEPS e a segurança do alimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_029",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "📦 PEPS · Estocagem",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "peps",
+        "estoque",
+        "seguranca_alimentar",
+        "validade"
+      ],
+      "pergunta": "Ao aplicar o PEPS, onde deve ser colocado o produto novo recebido?",
+      "alternativas": [
+        "Na frente, para ser usado primeiro",
+        "No meio da prateleira",
+        "Atrás ou embaixo dos produtos mais antigos",
+        "Na posição mais acessível para o operador"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "No sistema PEPS (Primeiro a Entrar, Primeiro a Sair), o produto novo entra por trás ou por baixo. Assim, os produtos mais antigos ficam na frente e são consumidos primeiro, evitando vencimentos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_030",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🦠 Perigos · Físico",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "contaminacao",
+        "perigo_fisico",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "Qual das opções abaixo é um exemplo de perigo físico no alimento?",
+      "alternativas": [
+        "Salmonella",
+        "Resíduo de detergente",
+        "Fragmento de osso, vidro ou cabelo",
+        "Toxina de fungo"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Perigos físicos são objetos estranhos que podem causar dano ao consumidor, como fragmentos de osso, vidro, metal, cabelo ou qualquer material não comestível presente no alimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_031",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🌡️ Temperatura · Cozimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "temperatura",
+        "seguranca_alimentar",
+        "cozimento"
+      ],
+      "pergunta": "Qual a temperatura interna mínima de segurança para carne bovina (hambúrguer)?",
+      "alternativas": [
+        "60°C",
+        "65°C",
+        "71°C",
+        "74°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura interna mínima para carne bovina moída (hambúrguer) é 71°C, garantindo a eliminação de patógenos como E. coli.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_032",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🌡️ Temperatura · Monitoramento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "temperatura",
+        "monitoramento",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "Com que frequência deve ser realizado o monitoramento de temperatura dos equipamentos de frio?",
+      "alternativas": [
+        "A cada 30 minutos",
+        "A cada 1 hora",
+        "A cada 2 horas",
+        "Uma vez por turno"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O monitoramento de temperatura de câmaras e equipamentos de frio deve ser realizado a cada 2 horas e registrado no formulário de controle de temperatura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_033",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "💍 Higiene · Adornos",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "adornos",
+        "producao",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "Por que é proibido usar anéis, brincos e pulseiras durante a manipulação de alimentos?",
+      "alternativas": [
+        "Por questões estéticas e de apresentação da equipe",
+        "Porque podem cair no alimento (perigo físico) e acumular sujeira e bactérias",
+        "Apenas por norma da empresa, sem risco real",
+        "Por causa do risco de dano ao equipamento"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Adornos (anéis, brincos, pulseiras, relógios) são proibidos na produção pois podem cair nos alimentos (perigo físico) e acumulam sujeira e microrganismos nas junções, causando contaminação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_034",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🧪 Sanitização · Concentração",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "sanitizacao",
+        "concentracao",
+        "cloro",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "Qual é a concentração correta do sanitizante clorado para superfícies e utensílios?",
+      "alternativas": [
+        "50 ppm",
+        "100 ppm",
+        "200 ppm",
+        "500 ppm"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A concentração do sanitizante clorado para superfícies de contato com alimentos deve ser de 200 ppm (partes por milhão). Concentrações abaixo não sanitizam; acima podem ser tóxicas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_035",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🔪 Tábua de Corte · Cores",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tabua_corte",
+        "cores",
+        "contaminacao",
+        "seguranca_alimentar"
+      ],
+      "pergunta": "Por que tábuas de corte de diferentes cores são usadas para diferentes alimentos?",
+      "alternativas": [
+        "Para facilitar a organização visual da cozinha",
+        "Para evitar contaminação cruzada entre alimentos de diferentes grupos",
+        "Por exigência estética do padrão McDonald's",
+        "Porque cada cor tem resistência térmica diferente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A separação de tábuas de corte por cor evita contaminação cruzada: por exemplo, tábua vermelha para carnes cruas, amarela para aves, verde para vegetais. Nunca usar a mesma tábua para alimentos diferentes sem higienização.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_036",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🧼 Higiene · Quando Lavar as Mãos",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "maos",
+        "seguranca_alimentar",
+        "producao"
+      ],
+      "pergunta": "Em qual das situações abaixo é OBRIGATÓRIO lavar as mãos?",
+      "alternativas": [
+        "Apenas ao entrar na área de produção no início do turno",
+        "Somente após ir ao banheiro",
+        "Após tocar em lixo, embalagens, o rosto ou após usar o banheiro, e sempre ao trocar de tarefa",
+        "Somente quando as mãos estiverem visivelmente sujas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As mãos devem ser lavadas em diversas situações: ao entrar na produção, após usar o banheiro, após tocar lixo ou embalagens, após assoar o nariz, após tossir ou espirrar, ao trocar de tarefa e após manusear alimentos crus.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_037",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🦠 Contaminação · Aparência",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "contaminacao",
+        "aparencia",
+        "seguranca_alimentar",
+        "biologico"
+      ],
+      "pergunta": "Um alimento com aparência normal e sem cheiro forte pode estar contaminado?",
+      "alternativas": [
+        "Não, alimentos contaminados sempre têm aparência ou cheiro alterados",
+        "Sim, pois microrganismos patogênicos geralmente não alteram aparência, cheiro ou sabor",
+        "Não, se passou no controle visual está seguro",
+        "Sim, mas apenas em alimentos crus"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sim. A maioria dos microrganismos patogênicos (Salmonella, E. coli, Listeria etc.) não altera aparência, cheiro nem sabor do alimento. Apenas seguir os controles de tempo e temperatura garante a segurança.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_038",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🐀 Pragas · Controle",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pragas",
+        "seguranca_alimentar",
+        "gerente"
+      ],
+      "pergunta": "O que fazer ao notar sinais de praga (fezes, roedura, insetos) no restaurante?",
+      "alternativas": [
+        "Usar inseticida doméstico imediatamente para resolver o problema",
+        "Ignorar se for apenas um sinal isolado",
+        "Comunicar imediatamente ao gerente e registrar o ocorrido",
+        "Limpar o local e aguardar para ver se reincide"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Qualquer sinal de praga deve ser comunicado imediatamente ao gerente. A empresa contratada de controle de pragas deve ser acionada. Nunca usar produtos não aprovados no restaurante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_039",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🌡️ Temperatura · Manutenção Quente",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "manutencao",
+        "seguranca_alimentar",
+        "quente"
+      ],
+      "pergunta": "Qual a temperatura mínima para manter alimentos quentes em segurança durante a distribuição?",
+      "alternativas": [
+        "45°C",
+        "55°C",
+        "60°C",
+        "74°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Alimentos quentes devem ser mantidos a no mínimo 60°C durante toda a distribuição. Abaixo disso, entram na zona de perigo e o crescimento bacteriano se acelera.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_040",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "📋 Rastreabilidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "rastreabilidade",
+        "seguranca_alimentar",
+        "validade",
+        "registro"
+      ],
+      "pergunta": "O que é rastreabilidade de alimentos e para que serve?",
+      "alternativas": [
+        "É o processo de verificar visualmente a qualidade do alimento antes de servir",
+        "É a capacidade de identificar a origem, processamento e destino de um alimento para investigar e controlar problemas de segurança",
+        "É o controle do número de porções vendidas por turno",
+        "É a verificação de conformidade de embalagens dos fornecedores"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Rastreabilidade é a capacidade de identificar a origem, processamento e destino de um alimento em qualquer etapa da cadeia. Serve para investigar surtos alimentares, realizar recalls e comprovar que os procedimentos de segurança foram seguidos.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

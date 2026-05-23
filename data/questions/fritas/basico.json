@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-05-23",
   "categoria": "fritas",
   "nivel": "basico",
   "migratedFrom": "fritas.html",
@@ -1181,6 +1181,803 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Os sacos de batata devem ficar em pé verticalmente no congelador portátil.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_025",
+      "categoria": "fritas",
+      "subcategoria": "🍟 McFritas · Porção GG",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "porcao",
+        "peso"
+      ],
+      "pergunta": "Qual o peso da McFritas tamanho GG?",
+      "alternativas": [
+        "102g",
+        "120g",
+        "134g",
+        "146g"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McFritas GG = 146g. Para referência: P = 73g, M = 102g, G = 146g (mesmo peso que o GG no padrão atual).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_026",
+      "categoria": "fritas",
+      "subcategoria": "🍟 McFritas · Cesto",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "cesto",
+        "tecnica",
+        "producao"
+      ],
+      "pergunta": "Até qual nível o cesto de fritas deve ser preenchido com batatas cruas?",
+      "alternativas": [
+        "Completamente cheio",
+        "Metade do cesto",
+        "No máximo 3/4 (três quartos) do cesto",
+        "Apenas 1/4 do cesto"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O cesto de fritas deve ser preenchido no máximo até 3/4 da capacidade. Encher demais reduz a qualidade da fritura e representa risco de derramamento de óleo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_027",
+      "categoria": "fritas",
+      "subcategoria": "🥧 Tortas · Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tortas",
+        "cesto",
+        "capacidade",
+        "producao"
+      ],
+      "pergunta": "Qual a capacidade máxima de Tortas no cesto da fritadeira?",
+      "alternativas": [
+        "8 unidades",
+        "12 unidades",
+        "16 unidades",
+        "20 unidades"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O cesto comporta no máximo 16 tortas. Respeitar a capacidade garante fritura uniforme e qualidade do produto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_028",
+      "categoria": "fritas",
+      "subcategoria": "🍗 Fritos · Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcchicken",
+        "cesto",
+        "capacidade",
+        "producao"
+      ],
+      "pergunta": "Qual a capacidade máxima de McChicken no cesto da fritadeira?",
+      "alternativas": [
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "10 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O cesto comporta no máximo 6 unidades de McChicken. Exceder a capacidade compromete a fritura uniforme e a qualidade.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_029",
+      "categoria": "fritas",
+      "subcategoria": "🍗 Fritos · Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "chicken_jr",
+        "cesto",
+        "capacidade",
+        "producao"
+      ],
+      "pergunta": "Qual a capacidade máxima de Chicken Jr no cesto da fritadeira?",
+      "alternativas": [
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "12 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O cesto comporta no máximo 6 unidades de Chicken Jr. Respeitar a capacidade garante cozimento uniforme e qualidade.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_030",
+      "categoria": "fritas",
+      "subcategoria": "🍗 Fritos · Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mccrispy",
+        "cesto",
+        "capacidade",
+        "producao"
+      ],
+      "pergunta": "Qual a capacidade máxima de McCrispy no cesto da fritadeira?",
+      "alternativas": [
+        "2 unidades",
+        "4 unidades",
+        "6 unidades",
+        "8 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O cesto comporta no máximo 4 unidades de McCrispy. Por ser um produto maior, a capacidade é menor para garantir fritura uniforme.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_031",
+      "categoria": "fritas",
+      "subcategoria": "🌡️ Fritas · Manutenção de Calor",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura",
+        "manutencao",
+        "lampada"
+      ],
+      "pergunta": "Para que serve a lâmpada aquecedora na área de manutenção de fritas?",
+      "alternativas": [
+        "Para iluminar a área de trabalho",
+        "Para manter as McFritas quentes e crocantes durante o período de validade",
+        "Para indicar que as fritas estão prontas para servir",
+        "Para desinfectar as fritas antes da entrega"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A lâmpada aquecedora na área de manutenção mantém as McFritas na temperatura adequada (acima de 60°C) durante os 7 minutos de validade após o preparo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_032",
+      "categoria": "fritas",
+      "subcategoria": "🛢️ Fritas · Qualidade do Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "qualidade",
+        "visual",
+        "producao"
+      ],
+      "pergunta": "Quais sinais visuais indicam que o óleo pode estar deteriorado?",
+      "alternativas": [
+        "Cor levemente amarelada e transparente",
+        "Cor escura, espuma excessiva e cheiro forte de queimado",
+        "Cor dourada clara e pouca fumaça",
+        "Viscosidade ligeiramente maior que o normal"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Óleo deteriorado apresenta cor escura (marrom/preta), espuma excessiva que não desaparece após a fritura e odor forte de queimado. Esses sinais indicam necessidade de descarte, mesmo que os compostos polares não tenham sido medidos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_033",
+      "categoria": "fritas",
+      "subcategoria": "🛢️ Fritas · Descarte de Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "descarte",
+        "seguranca",
+        "producao"
+      ],
+      "pergunta": "Quando o óleo está muito escuro e com compostos polares acima do limite, o que deve ser feito?",
+      "alternativas": [
+        "Filtrar mais uma vez e verificar novamente",
+        "Adicionar óleo novo para clarear e continuar usando",
+        "Descartar o óleo completamente — não filtrar",
+        "Aguardar esfriar e verificar se a cor melhora"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Óleo muito escuro ou com compostos polares acima de 24% deve ser descartado completamente. Não adianta filtrar óleo nesse estado — a filtragem não reverte a degradação química.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_034",
+      "categoria": "fritas",
+      "subcategoria": "🍟 Fritas · Abertura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritadeira",
+        "abertura",
+        "preaquecimento",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser feito antes de começar a fritar no início do turno?",
+      "alternativas": [
+        "Colocar as batatas já no óleo frio e ligar a fritadeira",
+        "Verificar o nível do óleo, ligar a fritadeira e aguardar atingir a temperatura de operação",
+        "Apenas ligar a fritadeira e começar imediatamente",
+        "Trocar o óleo sempre antes de ligar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Antes de iniciar a fritura, verificar o nível do óleo (segunda linha da cuba), ligar a fritadeira e aguardar ela atingir a temperatura de operação correta. Fritar em óleo frio compromete a qualidade e o tempo do produto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_035",
+      "categoria": "fritas",
+      "subcategoria": "🛢️ Fritas · Descarte de Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "descarte",
+        "seguranca",
+        "meio_ambiente"
+      ],
+      "pergunta": "Como deve ser descartado o óleo usado das fritadeiras?",
+      "alternativas": [
+        "Jogar pela pia ou ralo",
+        "Despejar no lixo comum em sacos plásticos",
+        "Transferir para recipiente adequado e destinar à coleta de óleo residual",
+        "Despejar no esgoto após diluir com água"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O óleo usado deve ser transferido para recipiente adequado (galões específicos) e destinado à empresa de coleta de óleo residual. Descartar pelo ralo é crime ambiental e causa entupimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_036",
+      "categoria": "fritas",
+      "subcategoria": "🍟 Fritas · Técnica de Salga",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "sal",
+        "tecnica",
+        "fritas",
+        "qualidade"
+      ],
+      "pergunta": "Qual a técnica correta para salgar as McFritas?",
+      "alternativas": [
+        "Despejar grande quantidade de sal de uma só vez no centro",
+        "Balançar o cesto com sal antes de servir",
+        "Aplicar sal em quantidade leve, em movimentos suaves e distribuídos, logo após a fritura",
+        "Adicionar o sal durante a fritura para fixar melhor"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O sal deve ser aplicado em quantidade leve, com movimentos suaves e distribuídos, imediatamente após a fritura. Excesso de sal prejudica o sabor e é desperdício; sal mal distribuído gera experiência inconsistente para o cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_037",
+      "categoria": "fritas",
+      "subcategoria": "🍟 McFritas · Porção P",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "porcao",
+        "peso"
+      ],
+      "pergunta": "Qual o peso da McFritas tamanho Pequeno (P)?",
+      "alternativas": [
+        "50g",
+        "65g",
+        "73g",
+        "85g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McFritas P = 73g. O copo medidor correto para o tamanho P garante essa porção padrão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_038",
+      "categoria": "fritas",
+      "subcategoria": "🌡️ Fritas · UHC McFritas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "temperatura",
+        "manutencao",
+        "uhc"
+      ],
+      "pergunta": "Qual é o propósito do balcão de manutenção de calor (heat station) para as McFritas?",
+      "alternativas": [
+        "Cozinhar as batatas uma segunda vez para garantir crocância",
+        "Manter as fritas acima de 60°C durante o período de validade de 7 minutos",
+        "Resfriar as fritas antes de servir para evitar queimaduras no cliente",
+        "Armazenar as fritas por até 30 minutos sem perda de qualidade"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O balcão de manutenção de calor (heat station) mantém as McFritas acima de 60°C durante os 7 minutos de validade. Após esse tempo, devem ser descartadas independentemente da aparência.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_039",
+      "categoria": "fritas",
+      "subcategoria": "🍟 McFritas · Porção G",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "porcao",
+        "peso"
+      ],
+      "pergunta": "Qual o peso da McFritas tamanho Grande (G)?",
+      "alternativas": [
+        "102g",
+        "120g",
+        "134g",
+        "146g"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McFritas G = 146g. Sempre usar o copo medidor correto para garantir a porção padrão de cada tamanho.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritas_040",
+      "categoria": "fritas",
+      "subcategoria": "🛢️ Fritas · Nível do Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "nivel",
+        "fritadeira",
+        "seguranca"
+      ],
+      "pergunta": "O que pode acontecer se a fritadeira for ligada com nível de óleo abaixo da linha mínima?",
+      "alternativas": [
+        "As fritas ficam mais crocantes",
+        "O tempo de fritura diminui automaticamente",
+        "Os resistores podem queimar e há risco de superaquecimento e fogo",
+        "Nenhum problema, o equipamento se adapta ao nível"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Nível de óleo abaixo do mínimo expõe os resistores elétricos, podendo causar queima do equipamento, superaquecimento do óleo e risco de incêndio. Verificar e completar o nível antes de ligar é obrigatório.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
