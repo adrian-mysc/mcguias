@@ -84,7 +84,7 @@
     @keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
     .bt-sheet-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; margin-bottom: 4px; }
     .bt-sheet-sub { font-size: 12px; color: var(--muted); margin-bottom: 14px; font-weight: 600; }
-    .bt-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+    .bt-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; max-height: 42vh; overflow-y: auto; }
     .bt-guide-btn {
       display: flex; align-items: center; gap: 8px;
       background: var(--bg); border: 1.5px solid var(--border);
@@ -94,6 +94,15 @@
     }
     .bt-guide-btn.sel { border-color: var(--red); background: rgba(218,41,28,.07); }
     .bt-guide-btn span:first-child { font-size: 18px; }
+    /* Quantity picker */
+    .bt-qs-label { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .6px; text-transform: uppercase; margin: 12px 0 8px; }
+    .bt-qs-row { display: flex; gap: 8px; margin-bottom: 14px; }
+    .bt-qs-pill {
+      flex: 1; padding: 8px 0; border-radius: 20px; border: 1.5px solid var(--border);
+      background: var(--bg); font-size: 13px; font-weight: 700; color: var(--muted);
+      cursor: pointer; font-family: var(--font-body); transition: border-color .15s, color .15s, background .15s;
+    }
+    .bt-qs-pill.sel { border-color: var(--red); background: rgba(218,41,28,.07); color: var(--red); }
 
     /* ── Waiting ── */
     .bt-center {
@@ -355,6 +364,13 @@
       <div class="bt-sheet-title">Escolher tema</div>
       <div class="bt-sheet-sub" id="sheetSub">Selecione o assunto da batalha</div>
       <div class="bt-guide-grid" id="guideGrid"></div>
+      <div class="bt-qs-label">Quantidade de questões</div>
+      <div class="bt-qs-row" id="qsPills">
+        <button class="bt-qs-pill" onclick="pickQs(5)">5</button>
+        <button class="bt-qs-pill sel" onclick="pickQs(10)">10</button>
+        <button class="bt-qs-pill" onclick="pickQs(15)">15</button>
+        <button class="bt-qs-pill" onclick="pickQs(20)">20</button>
+      </div>
       <button class="btn-primary" style="width:100%" id="confirmBtn" disabled onclick="confirmGuide()">
         Enviar desafio ⚡
       </button>
@@ -468,20 +484,28 @@
     const SKEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
     const supabase = createClient(SURL, SKEY, { auth: { persistSession: true, autoRefreshToken: true } });
 
-    const BATTLE_QS   = 10;
     const Q_TIME      = 20; // seconds per question
 
     const GUIAS = [
-      { id: 'best-burguer',      nome: 'Best Burger',    emoji: '🍔' },
-      { id: 'mccafe',            nome: 'McCafé',         emoji: '☕' },
-      { id: 'lope',              nome: 'LOPE',           emoji: '📋' },
-      { id: 'chapa',             nome: 'Chapa',          emoji: '🔥' },
-      { id: 'condimentacao',     nome: 'Condimentação',  emoji: '🥄' },
-      { id: 'fritas',            nome: 'Fritas',         emoji: '🍟' },
-      { id: 'drive-thru',        nome: 'Drive-Thru',     emoji: '🚗' },
-      { id: 'bebidas-sobremesas',nome: 'Bebidas',        emoji: '🥤' },
-      { id: 'linha',             nome: 'Linha',          emoji: '🏭' },
-      { id: 'montagem-entrega',  nome: 'Montagem',       emoji: '🥪' },
+      { id: 'best-burguer',          nome: 'Best Burger',          emoji: '🍔' },
+      { id: 'mccafe',                nome: 'McCafé',               emoji: '☕' },
+      { id: 'lope',                  nome: 'LOPE',                 emoji: '📋' },
+      { id: 'chapa',                 nome: 'Chapa',                emoji: '🔥' },
+      { id: 'condimentacao',         nome: 'Condimentação',        emoji: '🥄' },
+      { id: 'fritas',                nome: 'McFritas',             emoji: '🍟' },
+      { id: 'mcfritas',              nome: 'Fritas (operação)',     emoji: '🍟' },
+      { id: 'drive-thru',            nome: 'Drive-Thru',           emoji: '🚗' },
+      { id: 'bebidas-sobremesas',    nome: 'Bebidas e Sobremesas', emoji: '🥤' },
+      { id: 'linha',                 nome: 'Linha',                emoji: '🏭' },
+      { id: 'montagem-entrega',      nome: 'Montagem e Entrega',   emoji: '🥪' },
+      { id: 'fritos',                nome: 'Fritos',               emoji: '🥘' },
+      { id: 'salao-ngk',             nome: 'Salão NGK',            emoji: '🪑' },
+      { id: 'embaixador-experiencia',nome: 'Embaixador',           emoji: '🌟' },
+      { id: 'influencer-pagamento',  nome: 'Influencer/Pagamento', emoji: '💳' },
+      { id: 'estoque-recebimento',   nome: 'Estoque',              emoji: '📦' },
+      { id: 'fechamento',            nome: 'Fechamento',           emoji: '🔒' },
+      { id: 'manutencao-preventivas',nome: 'Manutenção',           emoji: '🔧' },
+      { id: 'seguranca-alimento',    nome: 'Seg. Alimentos',       emoji: '🛡️' },
     ];
 
     // ── State ──────────────────────────────────────────
@@ -502,6 +526,7 @@
     let waitingId = null;     // battle id we created
     let pendingTarget = null; // player to challenge
     let selectedGuia = null;
+    let selectedQs   = 10;
     const _lobbyMap = new Map();
 
     // ── Helpers ────────────────────────────────────────
@@ -584,10 +609,21 @@
       el('confirmBtn').disabled = false;
     };
 
+    window.pickQs = function(n) {
+      selectedQs = n;
+      document.querySelectorAll('.bt-qs-pill').forEach(b => {
+        b.classList.toggle('sel', parseInt(b.textContent) === n);
+      });
+    };
+
     function openSheet(target) {
       pendingTarget = target;
       selectedGuia = null;
+      selectedQs   = 10;
       document.querySelectorAll('.bt-guide-btn').forEach(b => b.classList.remove('sel'));
+      document.querySelectorAll('.bt-qs-pill').forEach(b => {
+        b.classList.toggle('sel', b.textContent === '10');
+      });
       el('confirmBtn').disabled = true;
       el('sheetSub').textContent = `Desafiar: ${target.username}`;
       el('guideOverlay').classList.add('open');
@@ -596,7 +632,7 @@
     window.confirmGuide = async function() {
       if (!selectedGuia || !pendingTarget) return;
       window.closeSheet();
-      await createBattle(selectedGuia, pendingTarget);
+      await createBattle(selectedGuia, pendingTarget, selectedQs);
     };
 
     // ── Init ───────────────────────────────────────────
@@ -685,7 +721,7 @@
     };
 
     // ── Create battle ──────────────────────────────────
-    async function createBattle(guia, target) {
+    async function createBattle(guia, target, nQs = 10) {
       let allQ;
       try {
         const r = await fetch(`../data/questions/${guia}/basico.json`);
@@ -697,7 +733,7 @@
       }
 
       const shuffled = [...allQ].sort(() => Math.random() - 0.5);
-      const ids = shuffled.slice(0, Math.min(BATTLE_QS, shuffled.length)).map(q => q.id);
+      const ids = shuffled.slice(0, Math.min(nQs, shuffled.length)).map(q => q.id);
       const guiaObj = GUIAS.find(g => g.id === guia);
 
       const { data: battle, error } = await supabase.from('battles').insert({
@@ -720,7 +756,7 @@
 
       waitingId = battle.id;
       el('waitName').textContent = `Desafiando ${target.username}`;
-      el('waitSub').textContent  = `Tema: ${guiaObj?.nome || guia}`;
+      el('waitSub').textContent  = `Tema: ${guiaObj?.nome || guia} · ${ids.length} questões`;
       showView('view-waiting');
 
       // Mark as busy
@@ -778,7 +814,8 @@
         av.textContent = '😊';
       }
       el('challName').textContent  = b.player1_username;
-      el('challGuide').textContent = b.guide_nome;
+      const nQ = b.question_ids?.length || 10;
+      el('challGuide').textContent = `${b.guide_nome} · ${nQ} questões`;
       showView('view-incoming');
     }
 
