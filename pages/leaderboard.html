@@ -459,7 +459,7 @@
 
       if (rank && rank.rank > 10) {
         html += `<div class="lb-gap">···</div>`;
-        html += rowHTML(rank.rank, { username: rank.username || '—', loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes }, true);
+        html += rowHTML(rank.rank, { username: rank.username || '—', loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes, avatar: rank.avatar }, true);
       }
 
       list.innerHTML = html;
@@ -478,10 +478,11 @@
           pontos:   rawRank.pontos   ?? rawRank.points,
           quizzes:  rawRank.quizzes  ?? rawRank.total_xp,
           username: rawRank.username ?? rawRank.user,
+          avatar:   rawRank.avatar   ?? null,
         } : null;
-        // Enriquece com avatares se os players tiverem user_id
+        // RPC já inclui avatar; fallback: busca por user_id caso algum player não tenha
         let players = rawPlayers || [];
-        const ids0 = players.map(p => p.user_id).filter(Boolean);
+        const ids0 = players.filter(p => p.user_id && !p.avatar).map(p => p.user_id);
         if (ids0.length) {
           const avatarMap0 = await getAvatarsByUserIds(ids0).catch(() => ({}));
           players = players.map(p => ({ ...p, avatar: avatarMap0[p.user_id] || null }));
@@ -499,7 +500,7 @@
           Promise.all([getUserRank(), getTopPlayers(20)]),
           timeout(6000)
         ]);
-        const adaptedRank = rank ? { rank: rank.rank, pontos: rank.points, quizzes: rank.total_xp, username: rank.username } : null;
+        const adaptedRank = rank ? { rank: rank.rank, pontos: rank.points, quizzes: rank.total_xp, username: rank.username, avatar: rank.avatar ?? null } : null;
         let adaptedPlayers = (players || []).map(p => ({ ...p, pontos: p.points, quizzes: p.total_xp }));
         // Enriquece com avatares
         const ids = adaptedPlayers.map(p => p.user_id).filter(Boolean);
@@ -637,6 +638,14 @@
         </div>`;
         return;
       }
+
+      // Enriquece com avatares frescos do profiles (battle_stats.avatar pode estar desatualizado)
+      try {
+        const uids = players.map(p => p.user_id).filter(Boolean);
+        const { data: pRows } = await sb.from('profiles').select('id, avatar').in('id', uids);
+        const avMap = Object.fromEntries((pRows || []).map(r => [r.id, r.avatar]));
+        players = players.map(p => ({ ...p, avatar: avMap[p.user_id] ?? p.avatar ?? null }));
+      } catch (_) {}
 
       list.innerHTML = players.map((p, i) =>
         battleRowHTML(i + 1, p, p.user_id === currentUserId)

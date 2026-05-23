@@ -168,24 +168,75 @@
     .bt-q-num { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
     .bt-q-text { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.45; }
 
+    /* ── Opções de resposta ── */
+    .bt-options { display: flex; flex-direction: column; gap: 9px; }
+
+    /* Cor de acento por alternativa */
+    .bt-opt[data-idx="0"] { --oc:#DA291C; --ob:rgba(218,41,28,.07); }
+    .bt-opt[data-idx="1"] { --oc:#3b82f6; --ob:rgba(59,130,246,.07); }
+    .bt-opt[data-idx="2"] { --oc:#f59e0b; --ob:rgba(245,158,11,.07); }
+    .bt-opt[data-idx="3"] { --oc:#8b5cf6; --ob:rgba(139,92,246,.07); }
+
     .bt-opt {
       background: var(--card); border: 1.5px solid var(--border);
-      border-radius: var(--radius-md); padding: 11px 14px;
-      font-size: 13px; font-weight: 600; color: var(--text);
-      text-align: left; cursor: pointer;
-      font-family: var(--font-body); display: flex; align-items: flex-start; gap: 8px;
-      transition: background .12s, border-color .12s;
+      border-radius: var(--radius-md); padding: 13px 14px 13px 18px;
+      font-size: 13.5px; font-weight: 600; color: var(--text);
+      text-align: left; cursor: pointer; width: 100%;
+      font-family: var(--font-body); display: flex; align-items: center; gap: 11px;
+      transition: transform .14s, box-shadow .14s, border-color .14s, background .14s;
       -webkit-tap-highlight-color: transparent;
+      position: relative; overflow: hidden;
+    }
+    /* Faixa lateral colorida */
+    .bt-opt::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+      background: var(--oc, var(--border));
+      border-radius: 4px 0 0 4px;
+      transition: opacity .14s;
     }
     @media (hover: hover) {
-      .bt-opt:hover:not(:disabled) { border-color: var(--red); background: rgba(218,41,28,.04); }
+      .bt-opt:hover:not(:disabled) {
+        background: var(--ob, rgba(0,0,0,.04));
+        border-color: var(--oc, var(--border));
+        transform: translateX(4px);
+        box-shadow: -4px 0 0 var(--oc, var(--border));
+      }
     }
-    .bt-opt.ok { background: #f0fdf4 !important; border-color: #22c55e !important; color: #15803d !important; }
-    .bt-opt.no { background: #fef2f2 !important; border-color: #ef4444 !important; color: #dc2626 !important; }
-    [data-theme="dark"] .bt-opt.ok { background: rgba(34,197,94,.12) !important; color: #4ade80 !important; }
-    [data-theme="dark"] .bt-opt.no { background: rgba(239,68,68,.12) !important; color: #f87171 !important; }
+    .bt-opt:active:not(:disabled) { transform: scale(.98) translateX(2px); }
+
+    /* Badge da letra */
+    .bt-opt-letter {
+      width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+      background: var(--ob, var(--bg));
+      color: var(--oc, var(--muted));
+      border: 1.5px solid var(--oc, var(--border));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 900;
+      font-family: var(--font-display);
+      transition: background .14s, color .14s;
+    }
+
+    /* Estado correto */
+    .bt-opt.ok {
+      background: #f0fdf4 !important; border-color: #22c55e !important;
+      color: #15803d !important; transform: none !important; box-shadow: none !important;
+    }
+    .bt-opt.ok::before { background: #22c55e; }
+    .bt-opt.ok .bt-opt-letter { background: rgba(34,197,94,.18) !important; color: #15803d !important; border-color: #22c55e !important; }
+
+    /* Estado errado */
+    .bt-opt.no {
+      background: #fef2f2 !important; border-color: #ef4444 !important;
+      color: #dc2626 !important; transform: none !important; box-shadow: none !important;
+    }
+    .bt-opt.no::before { background: #ef4444; }
+    .bt-opt.no .bt-opt-letter { background: rgba(239,68,68,.18) !important; color: #dc2626 !important; border-color: #ef4444 !important; }
+
+    [data-theme="dark"] .bt-opt.ok { background: rgba(34,197,94,.1) !important; color: #4ade80 !important; }
+    [data-theme="dark"] .bt-opt.ok .bt-opt-letter { color: #4ade80 !important; }
+    [data-theme="dark"] .bt-opt.no { background: rgba(239,68,68,.1) !important; color: #f87171 !important; }
+    [data-theme="dark"] .bt-opt.no .bt-opt-letter { color: #f87171 !important; }
     .bt-opt:disabled { cursor: default; }
-    .bt-opt-letter { font-weight: 800; color: var(--muted); flex-shrink: 0; min-width: 18px; }
 
     .bt-opp-status { font-size: 12px; color: var(--muted); text-align: center; padding: 8px 0; font-weight: 600; }
 
@@ -845,7 +896,7 @@
       const letters = ['A','B','C','D'];
       const optsEl = el('options');
       optsEl.innerHTML = (q.alternativas || []).map((alt, i) =>
-        `<button class="bt-opt" id="op-${i}" onclick="answer(${i})">
+        `<button class="bt-opt" id="op-${i}" data-idx="${i}" onclick="answer(${i})">
            <span class="bt-opt-letter">${letters[i]}.</span>
            <span>${esc(alt)}</span>
          </button>`
