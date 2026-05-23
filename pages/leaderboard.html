@@ -317,7 +317,9 @@
       function isCurrentUser(p) {
         if (!rank) return false;
         if (rank.username && p.username) return p.username === rank.username;
-        return p.pontos === rank.pontos && p.quizzes === rank.quizzes;
+        // Fallback: only match when both values are defined and non-zero to avoid false positives
+        if (rank.pontos == null || rank.quizzes == null) return false;
+        return p.pontos === rank.pontos && p.quizzes === rank.quizzes && rank.pontos > 0;
       }
 
       let html = top10.map((p, i) => rowHTML(i + 1, p, isCurrentUser(p))).join('');
@@ -333,10 +335,17 @@
     async function init() {
       // tentativa 1: RPCs online
       try {
-        const [rank, players] = await Promise.race([
+        const [rawRank, players] = await Promise.race([
           Promise.all([getOnlineUserRank(), getOnlineLeaderboard(20)]),
           timeout(8000)
         ]);
+        // Normalise field names regardless of whether the RPC uses pontos/quizzes or points/total_xp
+        const rank = rawRank ? {
+          rank:     rawRank.rank     ?? rawRank.posicao,
+          pontos:   rawRank.pontos   ?? rawRank.points,
+          quizzes:  rawRank.quizzes  ?? rawRank.total_xp,
+          username: rawRank.username ?? rawRank.user,
+        } : null;
         renderMyStats(rank);
         renderList(players, rank);
         return;

@@ -54,10 +54,16 @@ async function syncLeaderboard(userId, estatisticas) {
     || mcGet('mc_user_data', {}).username
     || 'Jogador';
 
-  const points  = estatisticas.totalPerguntas  || 0;
+  // Points = total correct answers (h.score), not total questions attempted
+  const history = mcGet('mc_quiz_history', []);
+  const points  = history.reduce((s, h) => s + (h.score || 0), 0);
   const totalXp = estatisticas.quizzesCompletos || 0;
 
-  await submitScore(points, username, totalXp);
+  const perfilDados = mcGet('mc_perfil_dados', {});
+  const loja  = perfilDados.loja  || null;
+  const sigla = perfilDados.sigla || null;
+
+  await submitScore(points, username, totalXp, loja, sigla);
 }
 
 // Sync de uma única sessão — chamado imediatamente após cada quiz

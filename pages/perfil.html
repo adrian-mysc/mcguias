@@ -1169,7 +1169,7 @@
 
   // ── Rota ─────────────────────────────────────────────
   const { data: { session } } = await supabase.auth.getSession();
-  if (!session) { window.location.replace('login.html'); }
+  if (!session) { window.location.replace('login.html'); throw new Error('unauthenticated'); }
 
   const user = session.user;
 
@@ -1243,6 +1243,7 @@
       byGuia[h.guia].total += h.total || 0;
     });
     const guiaPerf = Object.entries(byGuia)
+      .filter(([, d]) => d.total > 0)
       .map(([guia, d]) => ({ guia, pct: Math.round((d.score / d.total) * 100) }))
       .sort((a, b) => b.pct - a.pct)
       .slice(0, 8);
@@ -1457,7 +1458,7 @@
     const newUsername = profile?.username || baseSlug;
 
     // Save username, loja e sigla to supabase
-    await supabase.from('profiles').upsert({
+    const { error: upsertErr } = await supabase.from('profiles').upsert({
       id: user.id,
       username: newUsername,
       display_name: nome,
@@ -1466,6 +1467,11 @@
       cargo,
       avatar_emoji: avatarEmoji
     });
+
+    if (upsertErr) {
+      showToast('❌ Erro ao salvar perfil online: ' + upsertErr.message);
+      return;
+    }
 
     toggleDadosEdit(false);
     renderAll();
@@ -1713,8 +1719,12 @@
 
   // ── Link de perfil público ──────────────────────────────
   const pubLink = document.getElementById('pubProfileLink');
-  if (pubLink && profile?.username) {
-    pubLink.href = `perfil-publico.html?u=${encodeURIComponent(profile.username)}`;
+  if (pubLink) {
+    if (profile?.username) {
+      pubLink.href = `perfil-publico.html?u=${encodeURIComponent(profile.username)}`;
+    } else {
+      pubLink.style.display = 'none';
+    }
   }
 </script>
 
