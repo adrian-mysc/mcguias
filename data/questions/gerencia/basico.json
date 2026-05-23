@@ -1,0 +1,3923 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-23",
+  "categoria": "gerencia",
+  "nivel": "basico",
+  "questions": [
+    {
+      "id": "ge_001",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais dos básicos abaixo faz parte do PLANEJAMENTO no plantão?",
+      "alternativas": [
+        "Plano de chão",
+        "Experimentação",
+        "Pós Plantão",
+        "Pré Plantão"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Plano de Chão faz parte do planejamento. É realizado com 48h de antecedência para revisar a projeção de Vendas e GCs.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_002",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quem é o responsável pela garantia do check list de carnes?",
+      "alternativas": [
+        "O Gerente de restaurante",
+        "O Gerente de Vendas",
+        "O Gerente de Plantão",
+        "O Gerente de qualidade"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Gerente de Plantão é responsável pela garantia do check list de carnes.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_003",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual alternativa NÃO está dentro da zona de perigo?",
+      "alternativas": [
+        "3 ou menos fritas na estufa",
+        "3 ou menos pedidos na tela do MFY",
+        "3 ou mais carros na área de espera",
+        "3 ou mais clientes na fila esperando por produtos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "3 ou MENOS pedidos na tela do MFY NÃO é zona de perigo. As zonas de perigo são: poucas fritas, muitos carros na espera e muitos clientes na fila.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_004",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Com quanto tempo de antecedência devemos fazer o plano de chão?",
+      "alternativas": [
+        "24 horas antes",
+        "48 horas antes",
+        "08 horas antes",
+        "02 horas antes"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O plano de chão deve ser feito com 48 horas de antecedência — revisando a projeção de Vendas e GCs.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_005",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quem é o responsável pela realização de caixa surpresa no plantão?",
+      "alternativas": [
+        "O Gerente de Operações",
+        "O Gerente de restaurante",
+        "A Assistente Administrativa",
+        "O Gerente de Plantão"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O Gerente de Plantão é responsável pela realização de caixa surpresa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_006",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual dos itens abaixo NÃO faz parte dos básicos de um plantão?",
+      "alternativas": [
+        "Check list",
+        "Experimentação",
+        "Rota de inspeção",
+        "Plano paralelo"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Plano paralelo não é um básico de plantão. Os básicos são: Check list, Experimentação, Rota de inspeção, Pré e Pós plantão, e Plano de chão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_007",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quando experimentamos os refrigerantes, qual é o ÚLTIMO sabor que devemos experimentar?",
+      "alternativas": [
+        "Fanta",
+        "Guaraná",
+        "Coca-cola",
+        "Não há sequência de experimentação"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O último refrigerante a ser experimentado é a Fanta.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_008",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual ferramenta nos garante uma estocagem precisa para o consumo daquele período?",
+      "alternativas": [
+        "Tabela 24X2",
+        "Maverick",
+        "Plano de chão",
+        "Nenhuma das anteriores"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A Tabela 24X2 é a ferramenta que garante estocagem precisa para o consumo do período.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_009",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são os básicos do plantão?",
+      "alternativas": [
+        "Plano de chão, rota de inspeção",
+        "Check list, pré plantão, pós plantão",
+        "Posicionamento, experimentação",
+        "Todas as alternativas estão corretas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Todos os itens citados fazem parte dos básicos de plantão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_010",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "De quanto em quanto tempo os funcionários devem lavar as mãos?",
+      "alternativas": [
+        "De 1 em 1 hora",
+        "De 2 em 2 horas",
+        "De 3 em 3 horas",
+        "De 4 em 4 horas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os funcionários devem lavar as mãos a cada 1 hora.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_011",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais dos padrões abaixo NÃO garantem hospitalidade?",
+      "alternativas": [
+        "Boas vindas e agradecimentos sinceros",
+        "Pedidos entregues",
+        "Exatidão nos pedidos",
+        "Criar momentos mágicos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Apenas 'pedidos entregues' não garante hospitalidade por si só — a hospitalidade vai além da entrega física.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_012",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais dos itens abaixo NÃO fazem parte dos passos de serviço?",
+      "alternativas": [
+        "Entregar a nota fiscal e pedir para o cliente aguardar ao lado",
+        "Montar e apresentar o pedido",
+        "Cumprimentar o cliente fazendo Sugestão de venda",
+        "Agradecer o cliente e pedir seu retorno"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Entregar nota fiscal e pedir para aguardar ao lado não faz parte dos passos de serviço.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_013",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é o tempo médio do serviço no balcão?",
+      "alternativas": [
+        "60 segundos de montagem e 3 min e 30 seg de experiência",
+        "60 segundos de montagem e 3 min e 15 seg de experiência",
+        "80 segundos de montagem e 3 min e 20 seg de experiência",
+        "40 segundos de montagem e 3 min e 30 seg de experiência"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O tempo médio do balcão é: 60 segundos de montagem e 3 min e 30 seg de experiência total.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_014",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é a sequência de lavagem das mãos para a área de serviço?",
+      "alternativas": [
+        "Pessoa das bebidas, caixa e apoio",
+        "Caixa, apoio e bebidas",
+        "Caixa, bebidas e apoio",
+        "Apoio, bebidas e caixa"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A sequência de lavagem das mãos no serviço é: bebidas → caixa → apoio.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_015",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é a sequência de lavagem das mãos para a área de drive?",
+      "alternativas": [
+        "Cabine 1, cabine 2 e cabine 3",
+        "Cabine 2, cabine 3 e cabine 1",
+        "Cabine 2, cabine 1 e cabine 3",
+        "Cabine 3, cabine 2 e cabine 1"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "No Drive, a sequência de lavagem das mãos é: cabine 3 → cabine 2 → cabine 1.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_016",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual o tempo de vida da gordura?",
+      "alternativas": [
+        "90 dias",
+        "120 dias",
+        "180 dias",
+        "365 dias"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O tempo de vida da gordura é de 365 dias (em embalagem fechada).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_017",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual o tempo máximo de remoção das carnes 10:1?",
+      "alternativas": [
+        "22 segundos",
+        "15 segundos",
+        "24 segundos",
+        "18 segundos"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O tempo máximo de remoção das carnes 10:1 é de 18 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_018",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual a calibragem do dispensador de mostarda?",
+      "alternativas": [
+        "6 tiros = 2oz",
+        "60 a 80 tiros = 1oz",
+        "35 a 60 tiros = 1oz",
+        "5 tiros = 5oz"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A calibragem correta do dispensador de mostarda é de 35 a 60 tiros = 1oz.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_019",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "No plano de chão, os treinamentos INICIAIS devem estar programados em que horário?",
+      "alternativas": [
+        "No pico",
+        "No pré pico",
+        "No pós pico",
+        "No pré e no pós pico"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Os treinamentos iniciais devem ser programados tanto no pré quanto no pós pico.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_020",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "No plano de chão, os treinamentos CONTÍNUOS devem estar programados em que horário?",
+      "alternativas": [
+        "No pico",
+        "No pré pico",
+        "No pós pico",
+        "No pré e no pós pico"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os treinamentos contínuos devem ser programados no horário de pico.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_021",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "No plano de chão, quem é o responsável pela aplicação do treinamento contínuo?",
+      "alternativas": [
+        "O instrutor",
+        "O gerente de restaurante",
+        "O gerente de plantão",
+        "Qualquer membro da equipe gerencial"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Qualquer membro da equipe gerencial é responsável pela aplicação do treinamento contínuo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_022",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são as 3 primeiras ferramentas diagnóstico do balcão?",
+      "alternativas": [
+        "McFritas, Troco, Bebidas",
+        "Bebidas, Posicionamento e McFritas",
+        "McFritas, Bebidas e Falta de lanches",
+        "McFritas, Falta de lanches e bebidas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "As 3 primeiras ferramentas diagnóstico do balcão são: McFritas, Troco e Bebidas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_023",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é o tempo de fritura do McChicken?",
+      "alternativas": [
+        "3'25\"",
+        "3'10\"",
+        "3'15\"",
+        "3'45\""
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McChicken é frito em 3'15\".",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_024",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual a importância de se realizar uma experimentação de produtos?",
+      "alternativas": [
+        "Uniformizar padrão e checar se há oportunidades em algum produto",
+        "Uniformizar padrão e verificar se não há produto vencido",
+        "Verificar se há produto vencido",
+        "Nenhuma das anteriores"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A experimentação serve para uniformizar o padrão e identificar oportunidades de melhoria nos produtos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_025",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é o básico de plantão que GARANTIRÁ a qualidade do produto final ao cliente?",
+      "alternativas": [
+        "Experimentação",
+        "Rota de inspeção",
+        "Pré plantão",
+        "Check list"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A Experimentação é o básico de plantão que garante a qualidade do produto final entregue ao cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_026",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é o básico de plantão que nos garante ter todos os produtos, pessoas e equipamentos disponíveis?",
+      "alternativas": [
+        "Experimentação",
+        "Pré plantão",
+        "Check list",
+        "Pós plantão"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Check list é o básico de plantão que garante ter todos os produtos, pessoas e equipamentos disponíveis.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_027",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quem em seu plantão garante que os clientes se sintam bem-vindos e atrai as crianças com brincadeiras?",
+      "alternativas": [
+        "Anfitriã",
+        "Canário",
+        "Pessoa do salão",
+        "Pessoa do caixa"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A Anfitriã é responsável por receber os clientes e criar um ambiente acolhedor, especialmente para crianças.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_028",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O ar condicionado não está funcionando. Qual atributo abaixo segue na valorização dos clientes?",
+      "alternativas": [
+        "Ambiente",
+        "Cortesia",
+        "Bebida",
+        "Nenhuma das anteriores"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Mesmo sem ar condicionado, o atributo Ambiente ainda deve ser valorizado — o gerente deve tomar ações para minimizar o impacto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_029",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são os tipos de perfis de clientes que podemos atender?",
+      "alternativas": [
+        "Perfeccionista e comunicador",
+        "Socializador e executor",
+        "Perfeccionista e Comprador",
+        "Somente as alternativas A e B estão corretas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Os perfis de clientes incluem: Perfeccionista, Comunicador, Socializador e Executor.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_030",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que é feedback apreciativo e construtivo?",
+      "alternativas": [
+        "É reforçar os pontos negativos e elogiar",
+        "É reforçar os pontos positivos e também os pontos de oportunidades direcionando",
+        "É reforçar os pontos positivos e elogiar",
+        "É reforçar os pontos de oportunidade"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Feedback apreciativo e construtivo: reforça os positivos E aponta oportunidades com direcionamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_031",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que significa ter mentalidade aberta ao Feedback?",
+      "alternativas": [
+        "Manter o foco somente no resultado",
+        "Evitar julgamento sobre personalidade",
+        "Prestar atenção e não deixar o funcionário falar",
+        "Receber feedback somente quando estiver disponível"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Mentalidade aberta ao feedback significa evitar julgamento sobre personalidade e focar em comportamentos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_032",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que significa ter Responsabilidade Pessoal?",
+      "alternativas": [
+        "Assumir a responsabilidade por tudo",
+        "Ter dividido as responsabilidades dentro do restaurante, na qual você tem a sua",
+        "Sentir-se auto capacitado",
+        "Ter responsabilidade geral do restaurante"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Responsabilidade Pessoal significa ter as responsabilidades divididas dentro do restaurante, na qual você é responsável pela sua parte.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_033",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Criatividade é:",
+      "alternativas": [
+        "A capacidade de pensar de forma igual gerando novas ideias",
+        "A capacidade de pensar de forma diferente a fim de gerar várias abordagens e soluções",
+        "A capacidade de agir de forma diferente gerando novas soluções",
+        "A capacidade de agir de forma igual gerando novas ideias"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Criatividade é a capacidade de pensar de forma diferente a fim de gerar várias abordagens e soluções.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_034",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são os itens que devemos garantir na reunião de pós plantão?",
+      "alternativas": [
+        "Se todos os objetivos do plantão foram cumpridos",
+        "Pontos a melhorar para o próximo plantão",
+        "Nenhuma das alternativas estão corretas",
+        "As alternativas A e B estão corretas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "No pós plantão: verificar cumprimento dos objetivos E identificar pontos de melhoria para o próximo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_035",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são as funções que devemos trabalhar na área de salão?",
+      "alternativas": [
+        "Função",
+        "Território",
+        "Localidade",
+        "As alternativas A e B estão corretas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "No salão, os funcionários trabalham por Função e por Território.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_036",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que é liderar por exemplo?",
+      "alternativas": [
+        "É demonstrar a forma correta, ensinando e direcionando os seus liderados",
+        "É demonstrar a forma que não deve ser feita e deixando as pessoas descobrirem o erro",
+        "É demonstrar dizer 'faça o que eu digo, mas não faça o que eu faço'",
+        "Nenhuma das anteriores"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Liderar por exemplo significa demonstrar a forma correta, ensinando e direcionando os seus liderados.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_037",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual das ferramentas abaixo faz parte do kit para avaliar o desempenho de um funcionário?",
+      "alternativas": [
+        "Descrição de cargo",
+        "Avaliação de desempenho passada",
+        "Dicionário de competências",
+        "Todas as anteriores"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O kit de avaliação de desempenho inclui: descrição de cargo, avaliação de desempenho passada e dicionário de competências — todas as alternativas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_038",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é o momento em que garantimos que os funcionários estão seguindo o plano de chão?",
+      "alternativas": [
+        "Na Rota de inspeção",
+        "No posicionamento",
+        "Na Pré Plantão",
+        "No pós Plantão"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A Rota de inspeção é o momento em que verificamos se o plano de chão está sendo seguido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_039",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é a ferramenta ideal que mede o clima dentro do restaurante?",
+      "alternativas": [
+        "Sessão de participação",
+        "Dia da comunicação",
+        "Pesquisa de satisfação do público interno",
+        "Todas as anteriores"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A Pesquisa de satisfação do público interno é a ferramenta ideal que mede o clima dentro do restaurante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_040",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é a PRIMEIRA ferramenta diagnóstico da área de serviço?",
+      "alternativas": [
+        "Bebidas",
+        "Posicionamento",
+        "Troco",
+        "McFritas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A primeira ferramenta diagnóstico da área de serviço são as McFritas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_041",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Que cuidados devemos ter ao dar um feedback?",
+      "alternativas": [
+        "Declarar o propósito",
+        "Descrever o seu ponto de vista",
+        "Discutir o ocorrido e fechar uma conclusão",
+        "Nenhuma das anteriores"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Ao dar um feedback, o primeiro cuidado é declarar o propósito — deixando claro o objetivo da conversa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_042",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual dos exemplos abaixo NÃO faz parte de um bom comportamento de líder?",
+      "alternativas": [
+        "Explicar os porquês e direcionar as ações",
+        "Tomar a frente nas situações difíceis",
+        "Aguardar as iniciativas da equipe em uma situação de crise",
+        "Escutar as diversas opiniões do grupo e expor suas ideias"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Aguardar passivamente as iniciativas da equipe em uma crise NÃO é um bom comportamento de liderança. O líder deve agir proativamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_043",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "A carne saiu crua. O que pode ser diagnosticado nessa questão?",
+      "alternativas": [
+        "Tempo",
+        "Temperatura",
+        "Produto",
+        "Todas as anteriores"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Carne crua pode ser resultado de problema de Tempo, Temperatura ou qualidade do Produto — todos devem ser investigados.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_044",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual o tempo de preparo das carnes grill?",
+      "alternativas": [
+        "3'45\"",
+        "6'45\"",
+        "3'30\"",
+        "1'50\""
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O tempo de preparo das carnes grill é de 3'45\".",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_045",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Em uma sessão de aconselhamento é importante:",
+      "alternativas": [
+        "Ouvir",
+        "Fechar um compromisso",
+        "Expor o problema",
+        "Todas as anteriores"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Em uma sessão de aconselhamento, todas as ações são importantes: ouvir, fechar um compromisso e expor o problema.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_046",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são os 6 passos para recuperação do cliente?",
+      "alternativas": [
+        "Apresentar-se / Oferecer uma resposta / Direcionar para SAC / Solucionar / Superar as expectativas / Estabelecer relacionamento",
+        "Apresentar-se / Oferecer uma resposta sincera / Direcionar para Publicom / Solucionar / Superar as expectativas / Estabelecer relacionamento",
+        "Apresentar-se / Oferecer uma resposta sincera / Corrigir / Solucionar / Superar as expectativas / Estabelecer relacionamento",
+        "Apresentar-se / Oferecer uma resposta sincera / Corrigir / Solucionar / Anotar para a equipe / Dar feedback ao cliente"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os 6 passos são: 1-Apresentar-se, 2-Oferecer uma resposta sincera, 3-Corrigir, 4-Solucionar o problema, 5-Superar as expectativas, 6-Estabelecer relacionamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_047",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é o tempo de vida primário das carnes 10:1?",
+      "alternativas": [
+        "60 dias",
+        "90 dias",
+        "120 dias",
+        "180 dias"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo de vida primário das carnes 10:1 é de 90 dias.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_048",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que o certifica um Gerente de Turno para exercer a sua função?",
+      "alternativas": [
+        "Ter concluído o PDG1 com excelência e ter feito o curso CGP",
+        "Ter concluído o PDG1 com excelência e ter gerenciado pelo menos 2 plantões sem 'sombra'",
+        "Ter concluído o PDG1",
+        "Nenhuma das anteriores"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Para ser certificado como Gerente de Turno: concluir o PDG1 com excelência e ter feito o curso CGP.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_049",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual a temperatura da estufa de tortas?",
+      "alternativas": [
+        "66 a 82°C",
+        "60 a 66°C",
+        "93°C",
+        "82 a 88°C"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A estufa de tortas opera entre 66°C e 82°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_050",
+      "categoria": "gerencia",
+      "subcategoria": "⏱️ Gerente de Turno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Coaching significa:",
+      "alternativas": [
+        "Ensinar o que precisa ser feito",
+        "Conduzir um grupo para algo ou atingimento de um objetivo",
+        "Liderar uma equipe",
+        "Auxiliar / direcionar um grupo para algo ou atingimento de um objetivo"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Coaching significa auxiliar e direcionar um grupo para algo ou para o atingimento de um objetivo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_051",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "É correto afirmar que as zonas de perigo são:",
+      "alternativas": [
+        "Apenas zonas de temperatura",
+        "Apenas zonas de serviço",
+        "Apenas zonas de limpeza",
+        "Todas as alternativas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "As zonas de perigo englobam situações de risco em diferentes aspectos: temperatura, segurança, conforto e conveniência — todas as alternativas estão corretas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_052",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é a importância do ciclo PACE no gerenciamento dos plantões?",
+      "alternativas": [
+        "O ciclo PACE é fundamental para impulsionar a melhoria contínua da excelência operacional e entender como você dá apoio ao restaurante Administrando Grandes Plantões todos os dias.",
+        "O PACE é usado apenas para auditorias anuais.",
+        "O PACE define o posicionamento dos funcionários.",
+        "O PACE é uma ferramenta de estoque."
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O ciclo PACE é fundamental para impulsionar a melhoria contínua da excelência operacional e entender como você dá apoio ao restaurante Administrando Grandes Plantões todos os dias.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_053",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Como devemos priorizar as zonas de Perigo encontradas no plantão?",
+      "alternativas": [
+        "Aleatoriamente conforme disponibilidade",
+        "Conveniência, Conforto, QSL, Segurança",
+        "Segurança/proteção, QSL, Conforto e Conveniência",
+        "Apenas Segurança e QSL"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Devemos priorizar as zonas de perigo seguindo a ordem: 1-Segurança/proteção, 2-QSL, 3-Conforto e 4-Conveniência.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_054",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Como é conduzido o ciclo PACE?",
+      "alternativas": [
+        "O PACE é conduzido mensalmente pelo gerente de área.",
+        "O PACE é conduzido semestralmente com auditorias externas.",
+        "O PACE é conduzido anualmente. São realizadas visitas anuais para garantir que cada restaurante esteja alinhado com os padrões da empresa. Os restaurantes também têm a oportunidade de agendar suporte adicional, se necessário.",
+        "O PACE é conduzido diariamente pelo gerente de plantão."
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O PACE é conduzido anualmente. São realizadas visitas anuais para garantir que cada restaurante esteja alinhado com os padrões da empresa. Os restaurantes também têm a oportunidade de agendar suporte adicional, se necessário.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_055",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Cite 4 comportamentos de hospitalidade e saudações que devemos utilizar com os clientes e equipe do restaurante:",
+      "alternativas": [
+        "1-Boas-Vindas, 2-Conexão, 3-Entrega, 4-Despedidas",
+        "1-Boas-Vindas, 2-Metas, 3-Entrega, 4-Despedidas",
+        "1-Sorriso, 2-Conexão, 3-Entrega, 4-Feedback",
+        "1-Boas-Vindas, 2-Pedido, 3-Pagamento, 4-Despedidas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os 4 comportamentos são: 1-Boas-Vindas, 2-Conexão, 3-Entrega, 4-Despedidas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_056",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que significa ter Inteligência emocional?",
+      "alternativas": [
+        "Significa controlar apenas as próprias emoções.",
+        "Inteligência emocional significa ter uma forte consciência de suas próprias emoções e entender como administrá-las. Também significa ser capaz de identificar corretamente as emoções alheias e demonstrar empatia ao responder a essas emoções.",
+        "Significa ignorar as emoções no ambiente de trabalho.",
+        "Significa demonstrar suas emoções livremente com a equipe."
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Inteligência emocional significa ter uma forte consciência de suas próprias emoções e entender como administrá-las. Também significa ser capaz de identificar corretamente as emoções alheias e demonstrar empatia ao responder a essas emoções.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_057",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quando é necessário ter uma conversa difícil com algum membro da equipe?",
+      "alternativas": [
+        "Apenas quando o gerente geral solicitar.",
+        "Ter uma conversa difícil é necessário quando o coaching não é apropriado para o momento ou quando o coaching já foi fornecido e não funcionou.",
+        "Apenas no pós-plantão.",
+        "Nunca — deve-se evitar conversas difíceis."
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ter uma conversa difícil é necessário quando o coaching não é apropriado para o momento ou quando o coaching já foi fornecido e não funcionou.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_058",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é a diferença entre feedback e coaching?",
+      "alternativas": [
+        "São a mesma coisa com nomes diferentes.",
+        "Feedback é dado apenas no pós-plantão; coaching apenas no pré-plantão.",
+        "Ao fornecer feedback, você fornece informações para ajudar alguém a desenvolver uma habilidade na qual já foi treinado. Ao fornecer coaching, você está presente para ajudar a outra pessoa enquanto ela trabalha usando seus conhecimentos apoiados e aprimorados por sua experiência.",
+        "Coaching é aplicado apenas para novos funcionários."
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Ao fornecer feedback, você fornece informações para ajudar alguém a desenvolver uma habilidade na qual já foi treinado. Ao fornecer coaching, você está presente para ajudar a outra pessoa enquanto ela trabalha usando seus conhecimentos apoiados e aprimorados por sua experiência.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_059",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Cite 3 princípios orientadores que podem auxiliar nas interações com os clientes e com a sua equipe:",
+      "alternativas": [
+        "1-Ouvir, 2-Conectar-se, 3-Solucionar",
+        "1-Planejar, 2-Executar, 3-Avaliar",
+        "1-Observar, 2-Agir, 3-Registrar",
+        "1-Treinar, 2-Posicionar, 3-Controlar"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os 3 princípios orientadores são: 1-Ouvir, 2-Conectar-se, 3-Solucionar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_060",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Por que é importante identificar rapidamente as zonas de perigo durante o plantão e como podemos detectá-las?",
+      "alternativas": [
+        "Para registrar no relatório do fim do dia.",
+        "É importante identificar rapidamente as zonas de perigo para garantir que um plantão ocorra sem problemas. Os Gerentes de Plantão podem detectá-las a partir de sua Zona de Observação ou durante a rota gerencial.",
+        "Apenas para informar ao gerente de área.",
+        "Para aplicar punições à equipe responsável."
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "É importante identificar rapidamente as zonas de perigo para garantir que um plantão ocorra sem problemas. Os Gerentes de Plantão podem detectá-las a partir de sua Zona de Observação ou durante a rota gerencial.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_061",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são os básicos do Gerenciamento de Plantão?",
+      "alternativas": [
+        "Apenas Pré-plantão e Pós-plantão",
+        "Check list e Experimentação",
+        "Plano de chão, Posicionamento, Pré-plantão, Check list, Experimentação, Rota de Inspeção, Pós-plantão",
+        "Apenas Rota de Inspeção e Posicionamento"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os básicos do Gerenciamento de Plantão são: Plano de chão, Posicionamento, Pré-plantão, Check list, Experimentação, Rota de Inspeção, Pós-plantão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_062",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são as etapas do feedback?",
+      "alternativas": [
+        "1-Observar, 2-Dar e receber feedback, 3-Demonstrar o jeito certo, 4-Chegar a um acordo sobre a mudança e 5-Acompanhar",
+        "1-Acompanhar, 2-Dar e receber feedback, 3-Demonstrar o jeito certo, 4-Chegar a um acordo e 5-Observar",
+        "1-Planejar, 2-Executar, 3-Avaliar, 4-Corrigir e 5-Registrar",
+        "1-Treinar, 2-Posicionar, 3-Observar, 4-Corrigir e 5-Avaliar"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "As etapas são: 1-Observar, 2-Dar e receber feedback, 3-Demonstrar o jeito certo, 4-Chegar a um acordo sobre a mudança e 5-Acompanhar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_063",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é o período que o Gerente de Plantão deve realizar a rota gerencial?",
+      "alternativas": [
+        "A cada 15 minutos",
+        "A cada 20 minutos",
+        "A cada 30 minutos",
+        "A cada 45 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A rota gerencial deve ser realizada a cada 30 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_064",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Cite 3 princípios que devem ser seguidos para resolver problemas sobre a qualidade dos alimentos:",
+      "alternativas": [
+        "1-Verifique a qualidade e o armazenamento dos produtos crus, 2-Verifique se os equipamentos estão calibrados corretamente e funcionando adequadamente, 3-Verifique se a equipe realiza os procedimentos corretos",
+        "1-Descarte o produto, 2-Retreine a equipe, 3-Registre a ocorrência",
+        "1-Chame a manutenção, 2-Verifique a temperatura, 3-Informe o gerente",
+        "1-Verifique o estoque, 2-Faça a contagem, 3-Reponha os itens"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "1-Verifique a qualidade e o armazenamento dos produtos crus, 2-Verifique se os equipamentos estão calibrados corretamente e funcionando adequadamente, 3-Verifique se a equipe realiza os procedimentos corretos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_065",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Ética é:",
+      "alternativas": [
+        "Seguir apenas as regras do seu restaurante.",
+        "Agir conforme a conveniência do momento.",
+        "É o conjunto de regras e valores que todos devemos seguir para convivermos bem uns com os outros, com harmonia e confiança.",
+        "Definido individualmente por cada funcionário."
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Ética é o conjunto de regras e valores que todos devemos seguir para convivermos bem uns com os outros, com harmonia e confiança.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_066",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são os itens que identificam a necessidade de uma mudança no posicionamento das pessoas no plantão?",
+      "alternativas": [
+        "Apenas a quantidade de GCs por hora",
+        "Quantidade de sanduíches vendidos, Quantidade de itens por pedido, Quantidade de McFritas vendidas e Quantidade de GC's/GRD's",
+        "Apenas o tempo de atendimento no drive",
+        "Somente a quantidade de reclamações de clientes"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os itens que identificam necessidade de mudança de posicionamento são: Quantidade de sanduíches vendidos, Quantidade de itens por pedido, Quantidade de McFritas vendidas e Quantidade de GC's/GRD's.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_067",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Existem quatro áreas principais da Inteligência Emocional que ajudarão a proporcionar uma melhor experiência à sua equipe e aos clientes. Cite quais são elas:",
+      "alternativas": [
+        "1-Autogestão, 2-Gestão do Relacionamento, 3-Consciência de si mesmo, 4-Consciência dos demais",
+        "1-Liderança, 2-Comunicação, 3-Motivação, 4-Resolução de conflitos",
+        "1-Empatia, 2-Autocontrole, 3-Motivação, 4-Habilidade social",
+        "1-Planejamento, 2-Execução, 3-Avaliação, 4-Melhoria contínua"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "As quatro áreas são: 1-Autogestão, 2-Gestão do Relacionamento, 3-Consciência de si mesmo, 4-Consciência dos demais.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_068",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que é uma zona de observação?",
+      "alternativas": [
+        "Uma área exclusiva para o gerente descansar.",
+        "O local onde os pedidos são registrados.",
+        "A zona de observação é um ponto central em seu restaurante, onde você pode procurar zonas de perigo, observar o fluxo de Clientes e verificar como sua equipe está saindo.",
+        "O espaço destinado à câmara fria."
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A zona de observação é um ponto central em seu restaurante, onde você pode procurar zonas de perigo, observar o fluxo de Clientes e verificar como sua equipe está saindo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_069",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Sobre a CIPA — Comissão Interna de Prevenção de Acidentes — é correto afirmar que:",
+      "alternativas": [
+        "A CIPA é apenas para grandes empresas com mais de 500 funcionários.",
+        "Os funcionários que integram a CIPA devem realizar inspeções nos ambientes de trabalho, apresentando sugestões de melhorias ao Gerente de Unidade de Restaurante.",
+        "A CIPA substitui o seguro de saúde dos funcionários.",
+        "A participação na CIPA é obrigatória apenas para gerentes."
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os funcionários que integram a CIPA devem realizar inspeções nos ambientes de trabalho, apresentando sugestões de melhorias ao Gerente de Unidade de Restaurante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_070",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Além dos processos financeiros, o Plantonista tem outras responsabilidades durante a operação de venda da loja relacionadas à segurança patrimonial. Assinale a opção que melhor representa os procedimentos a serem adotados pelo plantonista:",
+      "alternativas": [
+        "Durante o plantão, ter atenção constante em portas e janelas, principalmente Drive orientando o funcionário a abrir a janela somente quando o cliente estiver na frente dela.",
+        "Deixar todas as janelas abertas para facilitar o atendimento.",
+        "Apenas o gerente de restaurante é responsável pela segurança patrimonial.",
+        "Repassar a responsabilidade para o turno seguinte."
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Durante o plantão, ter atenção constante em portas e janelas, principalmente Drive orientando o funcionário a abrir a janela somente quando o cliente estiver na frente dela.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_071",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que é contaminação cruzada?",
+      "alternativas": [
+        "É quando dois produtos são montados ao mesmo tempo.",
+        "É a transferência de bactérias dos produtos crus para os produtos cozidos ou prontos para consumo através das mãos, utensílios ou superfícies e equipamentos.",
+        "É o contato entre produtos de fornecedores diferentes.",
+        "É a mistura de produtos com datas de validade diferentes."
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "É a transferência de bactérias dos produtos crus para os produtos cozidos ou prontos para consumo através das mãos, utensílios ou superfícies e equipamentos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_072",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O conjunto térmico de EPI's completo é composto por:",
+      "alternativas": [
+        "Apenas luvas e avental",
+        "Apenas touca e bota",
+        "Calça Térmica, Casaco Térmico, Touca Térmica, Bota Térmica e Luva Térmica",
+        "Óculos, máscara e luvas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O conjunto térmico de EPI's completo é composto por: Calça Térmica, Casaco Térmico, Touca Térmica, Bota Térmica e Luva Térmica.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_073",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Por que devemos utilizar o Checklist de Segurança do Alimento?",
+      "alternativas": [
+        "Apenas para cumprir exigências da vigilância sanitária.",
+        "Porque é uma ferramenta para verificar e certificar que seu restaurante cumpra com as temperaturas, padrões e os procedimentos mais importantes de Segurança do Alimento e com os requisitos da Vigilância Sanitária.",
+        "Para registrar apenas as não conformidades graves.",
+        "Apenas no início do turno da manhã."
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Porque é uma ferramenta para verificar e certificar que seu restaurante cumpra com as temperaturas, padrões e os procedimentos mais importantes de Segurança do Alimento e com os requisitos da Vigilância Sanitária.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_074",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O mangote utilizado na operação de Chapas e Fritadeiras tem a função de:",
+      "alternativas": [
+        "Facilitar a limpeza dos equipamentos",
+        "Proteger o funcionário contra possíveis queimaduras por contato com partes quentes do equipamento ou respingos de óleo",
+        "Manter os alimentos aquecidos",
+        "Organizar os utensílios de cozinha"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O mangote protege o funcionário contra possíveis queimaduras por contato com partes quentes do equipamento ou respingos de óleo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_075",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "O que as ações e boas práticas de Saúde, Segurança do Trabalho e Meio Ambiente trazem de positivo para o seu restaurante?",
+      "alternativas": [
+        "Apenas redução de custos com manutenção",
+        "Apenas melhora na imagem da empresa",
+        "Apenas aumento na produtividade",
+        "Todas as alternativas anteriores"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "As ações e boas práticas de SST e Meio Ambiente trazem todos esses benefícios: redução de custos, melhora da imagem e aumento de produtividade.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_076",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Por que é importante calibrar o pirômetro?",
+      "alternativas": [
+        "Para reduzir o tempo de cozimento",
+        "Um pirômetro mal calibrado pode dar uma medição errada de temperatura, fazendo com que o usuário acredite que os produtos foram cozidos corretamente, quando na verdade não terminaram o cozimento.",
+        "Para economizar energia do equipamento",
+        "Para facilitar a limpeza do equipamento"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Um pirômetro mal calibrado pode dar uma medição errada de temperatura, fazendo com que o usuário acredite que os produtos foram cozidos corretamente, quando na verdade não terminaram o cozimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_077",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Os Equipamentos de Proteção Individual são definidos pela área de Segurança do Trabalho. Sobre os EPI's, é correto afirmar que:",
+      "alternativas": [
+        "São opcionais para funcionários com mais de 5 anos de empresa",
+        "É responsabilidade do Gerente garantir que no restaurante todos os Equipamentos de Proteção disponíveis para uso estejam disponíveis",
+        "Apenas o setor de cozinha é obrigado a usar EPI's",
+        "Os EPI's são fornecidos apenas mediante solicitação"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "É responsabilidade do Gerente garantir que no restaurante todos os Equipamentos de Proteção estejam disponíveis para uso.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_078",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Más práticas de Segurança do Alimento têm consequências como:",
+      "alternativas": [
+        "Apenas multas da vigilância sanitária",
+        "Apenas queda nas vendas",
+        "Apenas insatisfação dos clientes",
+        "Todas as alternativas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Más práticas de Segurança do Alimento têm múltiplas consequências: multas, queda nas vendas, insatisfação dos clientes, danos à reputação, entre outros — todas as alternativas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_079",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "É correto afirmar que as zonas de perigo são:",
+      "alternativas": [
+        "Apenas situações de risco de temperatura",
+        "Apenas situações de fila no balcão",
+        "Apenas situações relacionadas ao drive-thru",
+        "Todas as alternativas (todas as situações de risco operacional)"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "As zonas de perigo abrangem todas as situações de risco operacional — temperatura, serviço, segurança, qualidade — todas as alternativas estão corretas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_080",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Sobre as câmaras frias é correto afirmar que:",
+      "alternativas": [
+        "Qualquer funcionário pode acessar a qualquer momento",
+        "O acesso é permitido apenas para funcionários maiores de idade, a fechadura e a trava de segurança devem estar em perfeitas condições de uso, e as chaves em poder do gerente de plantão",
+        "As câmaras devem permanecer abertas durante o pico",
+        "Não há restrições de acesso às câmaras frias"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O acesso é permitido apenas para funcionários maiores de idade, a fechadura e a trava de segurança devem estar em perfeitas condições de uso, e as chaves em poder do gerente de plantão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_081",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Qual é a rota de inspeção do Gerente de Plantão?",
+      "alternativas": [
+        "Apenas cozinha e balcão",
+        "Apenas drive e salão",
+        "Apenas áreas externas e internas",
+        "Cozinha, balcão, salão, drive/áreas externas e internas e armazenamento"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A rota de inspeção do Gerente de Plantão cobre: Cozinha, balcão, salão, drive/áreas externas e internas e armazenamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_082",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quando e quantas vezes deve ser realizado o Checklist de Integridade das carnes?",
+      "alternativas": [
+        "1 vez ao dia, apenas na abertura",
+        "3 vezes ao dia, nos picos",
+        "2 vezes sendo: antes da abertura do restaurante e antes do pico do jantar",
+        "Apenas quando solicitado pelo gerente de área"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Checklist de Integridade das carnes deve ser realizado 2 vezes sendo: antes da abertura do restaurante e antes do pico do jantar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_083",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Com relação aos produtos químicos é correto afirmar que:",
+      "alternativas": [
+        "Qualquer produto de limpeza pode ser utilizado no restaurante",
+        "Apenas os produtos homologados pela Arcos Dourados podem ser utilizados e devem ser diluídos para serem utilizados",
+        "Os produtos químicos podem ser armazenados junto com os alimentos",
+        "A diluição dos produtos é opcional conforme a necessidade"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Apenas os produtos homologados pela Arcos Dourados podem ser utilizados e devem ser diluídos para serem utilizados.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_084",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Assinale a alternativa que é exemplo de Cooltura de Serviço no restaurante:",
+      "alternativas": [
+        "Apenas sorrir para os clientes",
+        "Apenas entregar os pedidos rapidamente",
+        "Apenas manter o salão limpo",
+        "Todas as alternativas estão corretas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A Cooltura de Serviço abrange todas as formas de proporcionar uma experiência excepcional ao cliente — todas as alternativas estão corretas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_085",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Em caso de acidente sofrido pelo funcionário no interior do restaurante enquanto executava uma atividade de filtragem de óleo, é correto afirmar que:",
+      "alternativas": [
+        "O funcionário deve continuar trabalhando até o fim do turno",
+        "Após prestar os primeiros socorros, o funcionário precisa ser encaminhado para atendimento médico e a área de Saúde e Segurança do Trabalho deverá ser comunicada imediatamente",
+        "O gerente deve registrar o acidente apenas no final do dia",
+        "O acidente deve ser comunicado somente ao gerente de área"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Após prestar os primeiros socorros, o funcionário precisa ser encaminhado para atendimento médico e a área de Saúde e Segurança do Trabalho deverá ser comunicada imediatamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_086",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Todos os funcionários da empresa devem garantir sua frequência (4 vezes ao dia) registrada diariamente de forma eletrônica. Essa afirmativa refere-se ao:",
+      "alternativas": [
+        "Checklist de segurança",
+        "Controle de temperatura",
+        "Registro de ponto",
+        "Relatório de produtividade"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O registro de frequência diária eletrônica (4 vezes ao dia) refere-se ao Registro de ponto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "ge_087",
+      "categoria": "gerencia",
+      "subcategoria": "🌙 Gerente de Plantão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [],
+      "pergunta": "Quais são os três estágios principais que devem ser cumpridos para liderar o plantão?",
+      "alternativas": [
+        "Planejamento, Execução e Avaliação",
+        "Abertura, Pico e Fechamento",
+        "Pré-Plantão, Liderar o Plantão e Pós-Plantão",
+        "Posicionamento, Rota e Feedback"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os três estágios principais para liderar o plantão são: Pré-Plantão, Liderar o Plantão e Pós-Plantão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    }
+  ]
+}
