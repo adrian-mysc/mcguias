@@ -383,6 +383,7 @@
     let myProgress = []; // boolean[]
     let oppProgress = [];
     let oppDone = false;
+    let oppBroadcastScore = null; // score recebido via broadcast (mais confiável que o DB)
     let timer = null;
     let pendingBattle = null; // incoming challenge
     let waitingId = null;     // battle id we created
@@ -643,7 +644,7 @@
     // ── Battle start ───────────────────────────────────
     async function startBattle(b, role) {
       currentBattle = b;
-      qIndex = 0; myScore = 0; myProgress = []; oppProgress = []; oppDone = false;
+      qIndex = 0; myScore = 0; myProgress = []; oppProgress = []; oppDone = false; oppBroadcastScore = null;
 
       const isP1   = role === 'player1';
       const myName = isP1 ? b.player1_username : b.player2_username;
@@ -666,6 +667,7 @@
         .on('broadcast', { event: 'finish' }, ({ payload }) => {
           if (payload.by !== me.id) {
             oppDone = true;
+            oppBroadcastScore = payload.score ?? 0;
             el('oppStatus').textContent = '';
             if (qIndex >= questions.length) showResults();
           }
@@ -839,7 +841,9 @@
       if (battleChannel) { supabase.removeChannel(battleChannel); battleChannel = null; }
 
       const isP1 = currentBattle.player1_id === me.id;
-      const oppFinal = isP1 ? (currentBattle.player2_score ?? 0) : (currentBattle.player1_score ?? 0);
+      // Preferir o score recebido via broadcast (chega antes do DB ser atualizado pelo oponente)
+      const dbOppScore = isP1 ? currentBattle.player2_score : currentBattle.player1_score;
+      const oppFinal = oppBroadcastScore !== null ? oppBroadcastScore : (dbOppScore ?? 0);
 
       el('resMyScore').textContent  = myScore;
       el('resOppScore').textContent = oppFinal;
@@ -867,7 +871,7 @@
     window.goLobby = function() {
       if (battleChannel)  { supabase.removeChannel(battleChannel);  battleChannel  = null; }
       if (battleWatcher)  { supabase.removeChannel(battleWatcher);  battleWatcher  = null; }
-      currentBattle = null; questions = []; myProgress = []; oppProgress = [];
+      currentBattle = null; questions = []; myProgress = []; oppProgress = []; oppBroadcastScore = null;
       lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
       showView('view-lobby');
     };
