@@ -55,7 +55,7 @@ export async function getOnlineUserRank() {
 export async function getTopPlayers(limit = 10) {
   const { data, error } = await supabase
     .from('leaderboard')
-    .select('username, points, total_xp, updated_at')
+    .select('username, points, total_xp, loja, sigla, updated_at')
     .order('points', { ascending: false })
     .limit(limit);
 
