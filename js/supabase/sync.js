@@ -2,7 +2,6 @@
 import { supabase } from './config.js';
 import { getCurrentUser } from './auth.js';
 import { submitScore } from './leaderboard.js';
-import { unlockAchievement } from './achievements.js';
 
 function mcGet(key, def) {
   try {
@@ -22,8 +21,6 @@ async function syncQuizSessions(userId) {
   const newCount = Math.max(0, history.length - alreadySynced);
   if (!newCount) return;
 
-  // history é ordenado do mais novo (índice 0) para o mais antigo
-  // os "novos" são os primeiros `newCount` itens
   const toSync = history.slice(0, newCount);
 
   const rows = toSync.map(h => ({
@@ -43,25 +40,31 @@ async function syncQuizSessions(userId) {
   localStorage.setItem('mc_sessions_synced', JSON.stringify(history.length));
 }
 
+// Batch upsert — 1 request instead of N sequential calls
 async function syncAchievements(conquistas) {
-  for (const key of conquistas) {
-    await unlockAchievement(key);
-  }
+  if (!conquistas.length) return;
+  const user = await getCurrentUser();
+  if (!user) return;
+  const rows = conquistas.map(key => ({ user_id: user.id, achievement_key: key }));
+  const { error } = await supabase
+    .from('achievements')
+    .upsert(rows, { onConflict: 'user_id,achievement_key', ignoreDuplicates: true });
+  if (error) console.error('sync achievements:', error);
 }
 
-async function syncLeaderboard(userId, estatisticas) {
+async function syncLeaderboard(estatisticas) {
+  const perfilDados = mcGet('mc_perfil_dados', {});
   const username = mcGet('mc_username', null)
     || mcGet('mc_user_data', {}).username
+    || perfilDados.apelido
+    || perfilDados.nome
     || 'Jogador';
 
-  // Points = total correct answers (h.score), not total questions attempted
   const history = mcGet('mc_quiz_history', []);
   const points  = history.reduce((s, h) => s + (h.score || 0), 0);
   const totalXp = estatisticas.quizzesCompletos || 0;
-
-  const perfilDados = mcGet('mc_perfil_dados', {});
-  const loja  = perfilDados.loja  || null;
-  const sigla = perfilDados.sigla || null;
+  const loja    = perfilDados.loja  || null;
+  const sigla   = perfilDados.sigla || null;
 
   await submitScore(points, username, totalXp, loja, sigla);
 }
@@ -82,7 +85,6 @@ export async function syncOneSession({ guia, score, total }) {
 
   if (error) throw error;
 
-  // Avança o contador para que syncQuizSessions não re-sincronize esta sessão
   const prev = (() => {
     try { return JSON.parse(localStorage.getItem('mc_sessions_synced') || '0'); } catch { return 0; }
   })();
@@ -101,14 +103,18 @@ export async function syncToCloud() {
       await syncAchievements(gamData.conquistas);
     }
     if (gamData.estatisticas) {
-      await syncLeaderboard(user.id, gamData.estatisticas).catch(console.error);
+      await syncLeaderboard(gamData.estatisticas).catch(console.error);
     }
   }
 }
 
-// Sync imediato após cada quiz (disparado por main.js via CustomEvent)
+// Sync completo após cada quiz: sessão + leaderboard + conquistas em paralelo
 window.addEventListener('mc:quizComplete', (e) => {
-  syncOneSession(e.detail).catch(console.error);
+  const gamData = mcGet('gamificacao', null);
+  const tasks = [syncOneSession(e.detail).catch(console.error)];
+  if (gamData?.estatisticas) tasks.push(syncLeaderboard(gamData.estatisticas).catch(console.error));
+  if (gamData?.conquistas?.length) tasks.push(syncAchievements(gamData.conquistas).catch(console.error));
+  Promise.all(tasks);
 });
 
 // Sincroniza automaticamente ao recuperar conexão

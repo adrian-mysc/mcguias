@@ -187,7 +187,19 @@
       const cargo       = profile.cargo         || null;
       const loja        = profile.loja          || null;
       const points      = lb?.points            ?? 0;
+      const quizzes     = lb?.total_xp          ?? 0;
       const conquistas  = achCount              ?? 0;
+
+      // Derive level from XP (10 pts per correct answer + 20 per quiz ≈ rough estimate from points)
+      const xpEst = points * 10;
+      const NIVEIS = [
+        { nome: 'Novato', min: 0 }, { nome: 'Aprendiz', min: 200 }, { nome: 'Treinando', min: 500 },
+        { nome: 'Competente', min: 1000 }, { nome: 'Habilidoso', min: 2000 }, { nome: 'Especialista', min: 3500 },
+        { nome: 'Mestre', min: 5500 }, { nome: 'Mestre Sênior', min: 8000 }, { nome: 'Lenda', min: 11000 },
+        { nome: 'Lenda Suprema', min: 15000 },
+      ];
+      let nivel = NIVEIS[0];
+      for (const n of NIVEIS) { if (xpEst >= n.min) nivel = n; }
 
       document.getElementById('navTitle').textContent = displayName;
       document.title = `${displayName} — MC Guias`;
@@ -201,6 +213,7 @@
           <div class="pub-role-row">
             ${cargo ? `<span class="pub-badge">${esc(cargo)}</span>` : ''}
             ${loja  ? `<span class="pub-badge">${esc(loja)}</span>`  : ''}
+            <span class="pub-badge">⭐ ${esc(nivel.nome)}</span>
             ${rank  ? `<span class="pub-badge yellow">${rankStr} no ranking</span>` : ''}
           </div>
         </div>
@@ -209,15 +222,15 @@
           <div class="pub-stats-grid">
             <div class="pub-stat">
               <div class="pub-stat-num">${points.toLocaleString('pt-BR')}</div>
-              <div class="pub-stat-lbl">Pontos</div>
+              <div class="pub-stat-lbl">Acertos</div>
             </div>
             <div class="pub-stat">
               <div class="pub-stat-num">${conquistas}</div>
               <div class="pub-stat-lbl">Conquistas</div>
             </div>
             <div class="pub-stat">
-              <div class="pub-stat-num">${rankStr}</div>
-              <div class="pub-stat-lbl">Ranking</div>
+              <div class="pub-stat-num">${quizzes || rankStr}</div>
+              <div class="pub-stat-lbl">${quizzes ? 'Quizzes' : 'Ranking'}</div>
             </div>
           </div>
         </div>
@@ -226,6 +239,7 @@
           <div class="pub-info-title">Informações</div>
           ${cargo ? `<div class="pub-info-row"><span class="pub-info-icon">💼</span><span class="pub-info-label">Cargo</span><span class="pub-info-val">${esc(cargo)}</span></div>` : ''}
           ${loja  ? `<div class="pub-info-row"><span class="pub-info-icon">🏪</span><span class="pub-info-label">Restaurante</span><span class="pub-info-val">${esc(loja)}</span></div>` : ''}
+          ${rank  ? `<div class="pub-info-row"><span class="pub-info-icon">🏆</span><span class="pub-info-label">Posição</span><span class="pub-info-val">${rankStr} no ranking</span></div>` : ''}
           <div class="pub-info-row">
             <span class="pub-info-icon">📅</span>
             <span class="pub-info-label">Membro desde</span>
