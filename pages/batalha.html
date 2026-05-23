@@ -292,6 +292,36 @@
     .bt-result-btns { display: flex; gap: 10px; width: 100%; margin-top: 4px; }
     .bt-result-btns button { flex: 1; }
 
+    /* ── Revisão pós-batalha ── */
+    .bt-review-btn {
+      width: 100%; padding: 10px; border-radius: var(--radius-md);
+      border: 1.5px solid var(--border); background: var(--bg);
+      font-size: 13px; font-weight: 700; color: var(--muted); cursor: pointer;
+      font-family: var(--font-body); transition: border-color .15s, color .15s;
+    }
+    .bt-review-btn:hover { border-color: var(--red); color: var(--red); }
+    .bt-review-section { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+    .bt-rv-item {
+      background: var(--card); border: 1.5px solid var(--border);
+      border-radius: var(--radius-md); padding: 12px 14px; text-align: left;
+    }
+    .bt-rv-q { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
+    .bt-rv-opt {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 8px; border-radius: 8px; font-size: 12px; font-weight: 600;
+      color: var(--muted); margin-bottom: 3px;
+    }
+    .bt-rv-opt.correct { background: #f0fdf4; color: #15803d; }
+    .bt-rv-opt.wrong   { background: #fef2f2; color: #dc2626; }
+    [data-theme="dark"] .bt-rv-opt.correct { background: rgba(34,197,94,.1); color: #4ade80; }
+    [data-theme="dark"] .bt-rv-opt.wrong   { background: rgba(239,68,68,.1);  color: #f87171; }
+    .bt-rv-letter { width: 20px; height: 20px; border-radius: 5px; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; flex-shrink: 0; }
+    .bt-rv-tag { margin-left: auto; font-size: 10px; font-weight: 800; letter-spacing: .4px; flex-shrink: 0; }
+    .bt-rv-footer { display: flex; gap: 10px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+    .bt-rv-ok { font-size: 11px; font-weight: 700; color: #22c55e; }
+    .bt-rv-no { font-size: 11px; font-weight: 700; color: #ef4444; }
+    .bt-rv-exp { font-size: 11px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+
     /* ── Countdown overlay ── */
     .bt-countdown {
       position: fixed; inset: 0; background: var(--red); z-index: 700;
@@ -471,6 +501,8 @@
           <button class="btn-secondary" onclick="goLobby()">← Lobby</button>
           <button class="btn-primary" id="rematchBtn">Revanche 🔄</button>
         </div>
+        <button class="bt-review-btn" id="reviewToggle" onclick="toggleReview()" style="display:none">📋 Ver revisão das questões</button>
+        <div class="bt-review-section" id="reviewSection" style="display:none"></div>
       </div>
     </div>
 
@@ -487,6 +519,7 @@
     const Q_TIME      = 20; // seconds per question
 
     const GUIAS = [
+      { id: 'misto',                 nome: 'Aleatório',            emoji: '🎲' },
       { id: 'best-burguer',          nome: 'Best Burger',          emoji: '🍔' },
       { id: 'mccafe',                nome: 'McCafé',               emoji: '☕' },
       { id: 'lope',                  nome: 'LOPE',                 emoji: '📋' },
@@ -518,13 +551,16 @@
     let qIndex = 0;
     let myScore = 0;
     let myProgress = []; // boolean[]
+    let myAnswers  = []; // actual answer indices (-1 = timeout)
     let oppProgress = [];
     let oppDone = false;
-    let oppBroadcastScore = null; // score recebido via broadcast (mais confiável que o DB)
+    let oppBroadcastScore = null;
+    let oppLastActivity = 0;
+    let oppWoInterval = null;
     let timer = null;
-    let pendingBattle = null; // incoming challenge
-    let waitingId = null;     // battle id we created
-    let pendingTarget = null; // player to challenge
+    let pendingBattle = null;
+    let waitingId = null;
+    let pendingTarget = null;
     let selectedGuia = null;
     let selectedQs   = 10;
     const _lobbyMap = new Map();
@@ -664,6 +700,11 @@
 
       setupLobby();
       setupIncomingListener(user.id);
+
+      // Pede permissão de notificação para alertar sobre desafios recebidos
+      if ('Notification' in window && Notification.permission === 'default') {
+        Notification.requestPermission();
+      }
     }
 
     // ── Lobby ──────────────────────────────────────────
@@ -722,18 +763,29 @@
 
     // ── Create battle ──────────────────────────────────
     async function createBattle(guia, target, nQs = 10) {
-      let allQ;
+      let ids;
       try {
-        const r = await fetch(`../data/questions/${guia}/basico.json`);
-        const d = await r.json();
-        allQ = Array.isArray(d) ? d : (d.questions || d.questoes || []);
+        if (guia === 'misto') {
+          const pool = GUIAS.filter(g => g.id !== 'misto');
+          const picks = [...pool].sort(() => Math.random() - 0.5).slice(0, 3);
+          const combined = [];
+          await Promise.all(picks.map(async g => {
+            const r = await fetch(`../data/questions/${g.id}/basico.json`);
+            const d = await r.json();
+            const qs = Array.isArray(d) ? d : (d.questions || d.questoes || []);
+            qs.forEach(q => combined.push(`${g.id}::${q.id}`));
+          }));
+          ids = combined.sort(() => Math.random() - 0.5).slice(0, Math.min(nQs, combined.length));
+        } else {
+          const r = await fetch(`../data/questions/${guia}/basico.json`);
+          const d = await r.json();
+          const allQ = Array.isArray(d) ? d : (d.questions || d.questoes || []);
+          ids = allQ.sort(() => Math.random() - 0.5).slice(0, Math.min(nQs, allQ.length)).map(q => q.id);
+        }
       } catch {
         toast('❌ Erro ao carregar questões. Tente outro tema.');
         return;
       }
-
-      const shuffled = [...allQ].sort(() => Math.random() - 0.5);
-      const ids = shuffled.slice(0, Math.min(nQs, shuffled.length)).map(q => q.id);
       const guiaObj = GUIAS.find(g => g.id === guia);
 
       const { data: battle, error } = await supabase.from('battles').insert({
@@ -807,6 +859,15 @@
 
     function showIncoming(b) {
       pendingBattle = b;
+
+      // Notificação push se a aba não estiver em foco
+      if ('Notification' in window && Notification.permission === 'granted' && document.hidden) {
+        new Notification('⚔️ Desafio recebido!', {
+          body: `${b.player1_username} quer te desafiar em ${b.guide_nome}`,
+          icon: '../icons/splash-icon.png',
+        });
+      }
+
       const av = el('challAvatar');
       if (b.player1_avatar) {
         av.innerHTML = `<img src="${esc(b.player1_avatar)}" alt="${esc(b.player1_username)}">`;
@@ -842,7 +903,8 @@
     // ── Battle start ───────────────────────────────────
     async function startBattle(b, role) {
       currentBattle = b;
-      qIndex = 0; myScore = 0; myProgress = []; oppProgress = []; oppDone = false; oppBroadcastScore = null;
+      qIndex = 0; myScore = 0; myProgress = []; myAnswers = []; oppProgress = []; oppDone = false; oppBroadcastScore = null; oppLastActivity = Date.now();
+      if (oppWoInterval) { clearInterval(oppWoInterval); oppWoInterval = null; }
 
       const isP1   = role === 'player1';
       const myName = isP1 ? b.player1_username : b.player2_username;
@@ -857,6 +919,7 @@
       battleChannel = supabase.channel(`bt:${b.id}`)
         .on('broadcast', { event: 'answer' }, ({ payload }) => {
           if (payload.by !== me.id) {
+            oppLastActivity = Date.now();
             const qIdx = oppProgress.length;
             oppProgress.push(payload.correct);
             renderDots('oppDots', oppProgress);
@@ -876,6 +939,7 @@
         })
         .on('broadcast', { event: 'finish' }, ({ payload }) => {
           if (payload.by !== me.id) {
+            oppLastActivity = Date.now();
             oppDone = true;
             oppBroadcastScore = payload.score ?? 0;
             el('oppStatus').textContent = '';
@@ -884,13 +948,43 @@
         })
         .subscribe();
 
+      // WO automático: se oponente ficar 60s sem responder durante a batalha
+      oppWoInterval = setInterval(() => {
+        if (qIndex > 0 && !oppDone && Date.now() - oppLastActivity > 60000) {
+          clearInterval(oppWoInterval); oppWoInterval = null;
+          oppDone = true;
+          oppBroadcastScore = oppProgress.filter(Boolean).length;
+          toast('⚠️ Oponente inativo — W.O. automático');
+          if (qIndex >= questions.length) showResults();
+        }
+      }, 8000);
+
       // Load questions from local JSON in the order stored in DB
       try {
-        const r = await fetch(`../data/questions/${b.guide}/basico.json`);
-        const d = await r.json();
-        const all = Array.isArray(d) ? d : (d.questions || d.questoes || []);
-        const map = Object.fromEntries(all.map(q => [q.id, q]));
-        questions = b.question_ids.map(id => map[id]).filter(Boolean);
+        const isMixed = b.question_ids.some(id => id.includes('::'));
+        if (isMixed) {
+          const byGuide = {};
+          b.question_ids.forEach(compId => {
+            const sep   = compId.indexOf('::');
+            const guide = compId.slice(0, sep);
+            const id    = compId.slice(sep + 2);
+            (byGuide[guide] = byGuide[guide] || []).push(id);
+          });
+          const map = {};
+          await Promise.all(Object.keys(byGuide).map(async guide => {
+            const r = await fetch(`../data/questions/${guide}/basico.json`);
+            const d = await r.json();
+            const all = Array.isArray(d) ? d : (d.questions || d.questoes || []);
+            all.forEach(q => { map[`${guide}::${q.id}`] = q; });
+          }));
+          questions = b.question_ids.map(id => map[id]).filter(Boolean);
+        } else {
+          const r = await fetch(`../data/questions/${b.guide}/basico.json`);
+          const d = await r.json();
+          const all = Array.isArray(d) ? d : (d.questions || d.questoes || []);
+          const map = Object.fromEntries(all.map(q => [q.id, q]));
+          questions = b.question_ids.map(id => map[id]).filter(Boolean);
+        }
       } catch {
         toast('❌ Erro ao carregar questões.');
         return;
@@ -1008,6 +1102,7 @@
 
       if (correct) myScore++;
       myProgress.push(correct);
+      myAnswers.push(idx);
       showReaction(correct ? pick(RX.myOk) : pick(RX.myNo));
 
       battleChannel.send({ type: 'broadcast', event: 'answer', payload: { by: me.id, correct } });
@@ -1067,6 +1162,7 @@
     // ── Results ────────────────────────────────────────
     function showResults() {
       clearInterval(timer);
+      if (oppWoInterval) { clearInterval(oppWoInterval); oppWoInterval = null; }
       if (battleChannel) { supabase.removeChannel(battleChannel); battleChannel = null; }
 
       const isP1 = currentBattle.player1_id === me.id;
@@ -1108,6 +1204,10 @@
       const oppUname = isP1 ? currentBattle.player2_username  : currentBattle.player1_username;
       const oppAv    = isP1 ? currentBattle.player2_avatar    : currentBattle.player1_avatar;
       el('rematchBtn').onclick = () => openSheet({ user_id: oppId, username: oppUname, avatar: oppAv, avatar_emoji: '😊' });
+
+      el('reviewToggle').style.display = '';
+      el('reviewToggle').textContent = '📋 Ver revisão das questões';
+      el('reviewSection').style.display = 'none';
 
       showView('view-result');
       if (isWin) spawnConfetti();
@@ -1186,12 +1286,56 @@
     }
 
     window.goLobby = function() {
+      if (oppWoInterval)  { clearInterval(oppWoInterval); oppWoInterval = null; }
       if (battleChannel)  { supabase.removeChannel(battleChannel);  battleChannel  = null; }
       if (battleWatcher)  { supabase.removeChannel(battleWatcher);  battleWatcher  = null; }
-      currentBattle = null; questions = []; myProgress = []; oppProgress = []; oppBroadcastScore = null;
+      currentBattle = null; questions = []; myProgress = []; myAnswers = []; oppProgress = []; oppBroadcastScore = null;
+      el('reviewToggle').style.display = 'none';
+      el('reviewSection').style.display = 'none';
       lobbyChannel.track({ user_id: me.id, username: me.username, avatar_emoji: me.avatar_emoji, avatar: me.avatar, status: 'available' });
       showView('view-lobby');
     };
+
+    window.toggleReview = function() {
+      const sec = el('reviewSection');
+      const btn = el('reviewToggle');
+      if (sec.style.display === 'none') {
+        renderReview();
+        sec.style.display = '';
+        btn.textContent = '▲ Fechar revisão';
+      } else {
+        sec.style.display = 'none';
+        btn.textContent = '📋 Ver revisão das questões';
+      }
+    };
+
+    function renderReview() {
+      const LETTERS = ['A','B','C','D'];
+      el('reviewSection').innerHTML = questions.map((q, i) => {
+        const myIdx = myAnswers[i] ?? -1;
+        const myOk  = myProgress[i];
+        const oppOk = oppProgress[i];
+        const opts  = (q.alternativas || []).map((alt, j) => {
+          const isCorrect = j === q.respostaCorreta;
+          const isMyWrong = j === myIdx && !myOk;
+          let cls = 'bt-rv-opt';
+          if (isCorrect) cls += ' correct';
+          else if (isMyWrong) cls += ' wrong';
+          return `<div class="${cls}">
+            <span class="bt-rv-letter">${LETTERS[j]}</span>
+            <span>${esc(alt)}</span>
+            ${isCorrect  ? '<span class="bt-rv-tag">✓ correto</span>' : ''}
+            ${isMyWrong  ? '<span class="bt-rv-tag">✗ sua resposta</span>' : ''}
+          </div>`;
+        }).join('');
+        const footer = `<div class="bt-rv-footer">
+          <span class="${myOk ? 'bt-rv-ok' : 'bt-rv-no'}">${myOk ? '✓ Você acertou' : myIdx < 0 ? '⏱ Tempo esgotado' : '✗ Você errou'}</span>
+          ${oppOk !== undefined ? `<span class="${oppOk ? 'bt-rv-ok' : 'bt-rv-no'}">${oppOk ? '✓ Oponente acertou' : '✗ Oponente errou'}</span>` : ''}
+        </div>`;
+        const exp = q.explicacao ? `<div class="bt-rv-exp">${esc(q.explicacao)}</div>` : '';
+        return `<div class="bt-rv-item"><div class="bt-rv-q">${i+1}. ${esc(q.pergunta)}</div>${opts}${footer}${exp}</div>`;
+      }).join('');
+    }
 
     init();
   </script>
