@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-05-23",
   "categoria": "fechamento",
   "nivel": "basico",
   "migratedFrom": "fechamento.html",
@@ -1069,11 +1069,19 @@
       "respostaCorreta": 2,
       "explicacao": "Panos com ponteira/garra verde são destinados exclusivamente aos banheiros e sala de lixo. Nunca devem ser usados em áreas de alimentos.",
       "dica": "Verde = banheiro/lixo. Nunca misturar com alimentos!",
-      "tempoEstimado": 15, "xp": 15, "peso": 2, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "fechamento_023",
@@ -1087,11 +1095,19 @@
       "respostaCorreta": 3,
       "explicacao": "Panos com ponteira/garra azul (lã branca) são usados no balcão e salão. O código de cores garante que panos de áreas contaminadas não sejam usados em alimentos.",
       "dica": "Azul = balcão e salão. Verde = banheiro.",
-      "tempoEstimado": 15, "xp": 15, "peso": 2, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "fechamento_024",
@@ -1105,11 +1121,19 @@
       "respostaCorreta": 2,
       "explicacao": "Panos com ponteira/garra vermelha (lã vermelha) são usados na área de cozinha. As cores garantem que os panos não sejam trocados entre áreas de diferentes riscos.",
       "dica": "Vermelho = cozinha. Azul = balcão. Verde = banheiro.",
-      "tempoEstimado": 15, "xp": 15, "peso": 2, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "fechamento_025",
@@ -1123,11 +1147,19 @@
       "respostaCorreta": 2,
       "explicacao": "Os panos devem ser trocados a cada 2 horas, mantidos separados por área de uso, e descartados ao final do turno.",
       "dica": "Troca a cada 2 horas — independente da aparência.",
-      "tempoEstimado": 15, "xp": 10, "peso": 1, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "fechamento_026",
@@ -1141,11 +1173,19 @@
       "respostaCorreta": 1,
       "explicacao": "NUNCA limpar a tostadeira com ela ligada — risco de queimadura grave e dano ao equipamento. Desligar é obrigatório antes de qualquer limpeza.",
       "dica": "Regra de ouro: DESLIGAR antes de limpar a tostadeira.",
-      "tempoEstimado": 15, "xp": 10, "peso": 1, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "fechamento_027",
@@ -1159,11 +1199,19 @@
       "respostaCorreta": 1,
       "explicacao": "Na limpeza diária da tostadeira, usar 60ml (2 pumps) do KAY QSR Limpador para Chapas e Tostadeiras.",
       "dica": "2 pumps = 60ml para a tostadeira.",
-      "tempoEstimado": 20, "xp": 15, "peso": 2, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 20,
+      "xp": 15,
+      "peso": 2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "fechamento_028",
@@ -1177,11 +1225,19 @@
       "respostaCorreta": 1,
       "explicacao": "Nunca remover as correias da tostadeira vertical durante a limpeza. Isso pode danificar o equipamento e comprometer seu funcionamento.",
       "dica": "Correias da tostadeira vertical = NUNCA remover.",
-      "tempoEstimado": 15, "xp": 15, "peso": 2, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "fechamento_029",
@@ -1195,11 +1251,19 @@
       "respostaCorreta": 1,
       "explicacao": "As jarras de café são sanitizadas com Kay Coffee Pot Cleaner: encher a jarra com água quente e adicionar 1 dose do produto.",
       "dica": "Kay Coffee Pot Cleaner = produto específico para jarras de café.",
-      "tempoEstimado": 20, "xp": 15, "peso": 2, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 20,
+      "xp": 15,
+      "peso": 2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "fechamento_030",
@@ -1213,11 +1277,520 @@
       "respostaCorreta": 2,
       "explicacao": "A limpeza da chapa requer 4 panos: 2 para utensílios, 1 para áreas gordurosas e 1 para áreas não-gordurosas.",
       "dica": "4 panos para a chapa: 2 utensílios + 1 gorduroso + 1 não-gorduroso.",
-      "tempoEstimado": 15, "xp": 15, "peso": 2, "frequenciaErro": 0, "taxaAcertoGlobal": 0, "timesAnswered": 0, "mediaTempoResposta": 0, "ativo": true,
+      "tempoEstimado": 15,
+      "xp": 15,
+      "peso": 2,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
       "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
-      "contextHints": [], "relatedQuestions": []
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_031",
+      "categoria": "fechamento",
+      "subcategoria": "🔒 Fechamento · Sequência",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fechamento",
+        "sequencia",
+        "equipamentos",
+        "procedimento"
+      ],
+      "pergunta": "O que deve ser feito primeiro na sequência de fechamento do restaurante?",
+      "alternativas": [
+        "Limpar os banheiros e o salão",
+        "Desligar gradualmente os equipamentos e registrar as temperaturas finais",
+        "Contar o caixa e fechar o sistema",
+        "Jogar fora todos os produtos com validade próxima ao vencimento"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A sequência de fechamento começa pelo desligamento gradual dos equipamentos (fritadeiras, chapa, UHC) e pelo registro das temperaturas finais de câmaras e equipamentos, garantindo conformidade antes de liberar a limpeza.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_032",
+      "categoria": "fechamento",
+      "subcategoria": "🌡️ Fechamento · Câmara Refrigerada",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "camara",
+        "refrigeracao",
+        "fechamento"
+      ],
+      "pergunta": "Qual a temperatura que deve ser verificada e registrada na câmara de refrigeração no fechamento?",
+      "alternativas": [
+        "Qualquer temperatura abaixo de 10°C está aceitável",
+        "Entre 1°C e 4°C",
+        "Entre 0°C e 8°C",
+        "Abaixo de 0°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A câmara de refrigeração deve estar entre 1°C e 4°C ao ser verificada e registrada no fechamento. Temperatura fora dessa faixa deve ser comunicada ao gerente imediatamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_033",
+      "categoria": "fechamento",
+      "subcategoria": "☕ McCafé · Fechamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mccafe",
+        "cafe",
+        "filtro",
+        "limpeza",
+        "fechamento"
+      ],
+      "pergunta": "O que deve ser feito com o filtro do café no McCafé durante o fechamento?",
+      "alternativas": [
+        "Deixar o filtro com café para o próximo turno usar",
+        "Retirar o filtro e o pó de café usado, limpar o porta-filtro e deixar tudo pronto para o próximo dia",
+        "Apenas desligar a máquina sem necessidade de limpar o filtro",
+        "Trocar o filtro apenas quando a qualidade do café piorar visivelmente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No fechamento do McCafé, o filtro e o pó de café usados devem ser removidos e descartados, o porta-filtro deve ser limpo com o produto adequado, e o equipamento deve ser preparado para o próximo dia de operação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_034",
+      "categoria": "fechamento",
+      "subcategoria": "🛢️ Fechamento · Fritadeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritadeira",
+        "oleo",
+        "nivel",
+        "fechamento"
+      ],
+      "pergunta": "Qual cuidado é necessário com o nível de óleo antes de desligar a fritadeira no fechamento?",
+      "alternativas": [
+        "Esvaziar completamente a cuba antes de desligar",
+        "Verificar se o óleo está na segunda linha da cuba e completar se necessário antes de desligar",
+        "Adicionar óleo novo sempre, independentemente do nível",
+        "Nível de óleo não importa ao desligar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Antes de desligar a fritadeira no fechamento, verificar se o óleo está no nível correto (segunda linha da cuba). Se necessário, completar com óleo novo para garantir o funcionamento correto na abertura do próximo dia.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_035",
+      "categoria": "fechamento",
+      "subcategoria": "📋 Fechamento · Documentação",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "documentacao",
+        "temperatura",
+        "registro",
+        "fechamento"
+      ],
+      "pergunta": "Por que é obrigatório registrar as temperaturas no fechamento?",
+      "alternativas": [
+        "É apenas uma formalidade burocrática sem impacto real",
+        "Para comprovar conformidade, rastrear problemas e garantir a segurança alimentar durante o período fechado",
+        "Para calcular o custo de energia dos equipamentos",
+        "Apenas para auditorias externas do McDonald's"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O registro de temperaturas no fechamento é obrigatório para comprovar que os equipamentos estavam em conformidade, rastrear qualquer não conformidade durante a madrugada e garantir a segurança alimentar dos produtos armazenados.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_036",
+      "categoria": "fechamento",
+      "subcategoria": "🔒 Fechamento · Segurança",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "seguranca",
+        "portas",
+        "fechamento",
+        "procedimento"
+      ],
+      "pergunta": "O que deve ser verificado em relação às portas e janelas no fechamento do restaurante?",
+      "alternativas": [
+        "Apenas a porta principal precisa ser verificada",
+        "Verificar e garantir que todas as portas e janelas estejam devidamente trancadas e alarmes ativados",
+        "Deixar uma janela entreaberta para ventilação durante a madrugada",
+        "Verificação de portas é responsabilidade exclusiva do gerente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No fechamento, todas as portas de acesso, janelas e saídas devem ser verificadas e trancadas. Os sistemas de alarme devem ser ativados conforme o procedimento. Essa verificação previne invasões e garante a segurança do patrimônio e dos produtos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_037",
+      "categoria": "fechamento",
+      "subcategoria": "🔥 Fechamento · Chapa Semanal",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "chapa",
+        "limpeza_profunda",
+        "frequencia",
+        "semanal"
+      ],
+      "pergunta": "Com que frequência deve ser realizada a limpeza profunda semanal da chapa?",
+      "alternativas": [
+        "Todos os dias no fechamento",
+        "Uma vez por semana, no fechamento",
+        "Uma vez por mês",
+        "Apenas quando a chapa estiver muito suja"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A limpeza profunda da chapa deve ser realizada uma vez por semana, geralmente no fechamento de um dia específico definido pela gestão. Ela é mais completa que a limpeza diária, incluindo remoção de carvão acumulado e limpeza dos drenos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_038",
+      "categoria": "fechamento",
+      "subcategoria": "🛢️ Fechamento · Descarte de Óleo",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "descarte",
+        "meio_ambiente",
+        "fechamento"
+      ],
+      "pergunta": "Como deve ser descartado corretamente o óleo usado das fritadeiras no fechamento?",
+      "alternativas": [
+        "Despejar pelo ralo após diluir com água quente",
+        "Colocar em sacos plásticos no lixo comum",
+        "Transferir para galão ou recipiente específico e destinar à coleta de óleo residual",
+        "Despejar no esgoto externo do restaurante"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O óleo residual deve ser transferido para galões específicos e destinado à empresa de coleta de óleo residual. Descartar no ralo ou esgoto é crime ambiental e está totalmente proibido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_039",
+      "categoria": "fechamento",
+      "subcategoria": "❄️ Fechamento · Câmara de Congelamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "congelamento",
+        "camara",
+        "fechamento"
+      ],
+      "pergunta": "Qual temperatura deve ser verificada e registrada na câmara de congelamento no fechamento?",
+      "alternativas": [
+        "Abaixo de -10°C",
+        "-15°C ou abaixo",
+        "-18°C ou abaixo",
+        "Qualquer temperatura negativa é aceitável"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A câmara de congelamento deve estar a -18°C ou abaixo no fechamento. Temperatura acima disso indica problema no equipamento e deve ser comunicada ao gerente imediatamente para ação corretiva.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fechamento_040",
+      "categoria": "fechamento",
+      "subcategoria": "🚚 Fechamento · Recebimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "recebimento",
+        "temperatura",
+        "refrigeracao",
+        "fechamento"
+      ],
+      "pergunta": "Qual é a temperatura máxima de recebimento para produtos refrigerados?",
+      "alternativas": [
+        "0°C",
+        "4°C",
+        "8°C",
+        "10°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Produtos refrigerados devem ser recebidos a no máximo 4°C. Se o produto chegar com temperatura superior, deve ser recusado e o fornecedor notificado. Esse controle se aplica também a entregas realizadas no fechamento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }
