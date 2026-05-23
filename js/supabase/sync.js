@@ -65,14 +65,15 @@ async function syncLeaderboard(estatisticas) {
   const loja  = perfilDados.loja  || null;
   const sigla = perfilDados.sigla || null;
 
-  // Fonte autoritativa: quiz_sessions no servidor (acumula entre dispositivos)
-  const { data: sessions } = await supabase
-    .from('quiz_sessions')
-    .select('score')
-    .eq('user_id', user.id);
+  // Fonte autoritativa: cached_points no leaderboard (mantido por trigger server-side)
+  const { data: cached } = await supabase
+    .from('leaderboard')
+    .select('cached_points, total_xp')
+    .eq('user_id', user.id)
+    .single();
 
-  const serverPoints = (sessions || []).reduce((s, r) => s + (r.score || 0), 0);
-  const serverXp     = sessions?.length ?? 0;
+  const serverPoints = cached?.cached_points ?? 0;
+  const serverXp     = cached?.total_xp ?? 0;
 
   // Fallback local — cobre sessões ainda não sincronizadas neste dispositivo
   const history     = mcGet('mc_quiz_history', []);
