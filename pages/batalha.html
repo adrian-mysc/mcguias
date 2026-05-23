@@ -560,6 +560,7 @@
     let oppBroadcastScore = null;
     let oppLastActivity = 0;
     let oppWoInterval = null;
+    let finishWatcher = null;
     let timer = null;
     let pendingBattle = null;
     let waitingId = null;
@@ -661,7 +662,7 @@
       selectedQs   = 10;
       document.querySelectorAll('.bt-guide-btn').forEach(b => b.classList.remove('sel'));
       document.querySelectorAll('.bt-qs-pill').forEach(b => {
-        b.classList.toggle('sel', b.textContent === '10');
+        b.classList.toggle('sel', parseInt(b.textContent) === 10);
       });
       el('confirmBtn').disabled = true;
       el('sheetSub').textContent = `Desafiar: ${target.username}`;
@@ -875,7 +876,7 @@
       if (b.player1_avatar) {
         av.innerHTML = `<img src="${esc(b.player1_avatar)}" alt="${esc(b.player1_username)}">`;
       } else {
-        av.textContent = '😊';
+        av.textContent = b.player1_avatar_emoji || '😊';
       }
       el('challName').textContent  = b.player1_username;
       const nQ = b.question_ids?.length || 10;
@@ -1002,7 +1003,7 @@
     }
 
     function initDots() {
-      const n = questions.length || BATTLE_QS;
+      const n = questions.length || 10;
       ['myDots','oppDots'].forEach(id => {
         el(id).innerHTML = Array(n).fill('<div class="bt-dot"></div>').join('');
       });
@@ -1059,18 +1060,21 @@
          </button>`
       ).join('');
 
-      // Ripple effect ao clicar/tocar
-      optsEl.addEventListener('pointerdown', function onRipple(e) {
-        const btn = e.target.closest('.bt-opt');
-        if (!btn || btn.disabled) return;
-        const r = document.createElement('span');
-        r.className = 'bt-ripple';
-        const rect = btn.getBoundingClientRect();
-        r.style.left = (e.clientX - rect.left) + 'px';
-        r.style.top  = (e.clientY - rect.top)  + 'px';
-        btn.appendChild(r);
-        r.addEventListener('animationend', () => r.remove());
-      }, { passive: true });
+      // Ripple effect — attach once; innerHTML reset keeps buttons fresh but optsEl persists
+      if (!optsEl._rippleReady) {
+        optsEl._rippleReady = true;
+        optsEl.addEventListener('pointerdown', function(e) {
+          const btn = e.target.closest('.bt-opt');
+          if (!btn || btn.disabled) return;
+          const r = document.createElement('span');
+          r.className = 'bt-ripple';
+          const rect = btn.getBoundingClientRect();
+          r.style.left = (e.clientX - rect.left) + 'px';
+          r.style.top  = (e.clientY - rect.top)  + 'px';
+          btn.appendChild(r);
+          r.addEventListener('animationend', () => r.remove());
+        }, { passive: true });
+      }
 
       // Força o navegador a descartar qualquer hover "grudado" do toque anterior
       optsEl.style.pointerEvents = 'none';
@@ -1144,21 +1148,24 @@
         el('oppStatus').textContent = '⏳ Oponente ainda está respondendo...';
 
         // Watch DB for both finished
-        const w = supabase.channel(`bfin-${currentBattle.id}`)
+        finishWatcher = supabase.channel(`bfin-${currentBattle.id}`)
           .on('postgres_changes', {
             event: 'UPDATE', schema: 'public', table: 'battles',
             filter: `id=eq.${currentBattle.id}`,
           }, ({ new: b }) => {
             currentBattle = b;
             if (b.player1_finished && b.player2_finished) {
-              supabase.removeChannel(w);
+              if (finishWatcher) { supabase.removeChannel(finishWatcher); finishWatcher = null; }
               showResults();
             }
           })
           .subscribe();
 
         // Timeout after 90s
-        setTimeout(() => { supabase.removeChannel(w); showResults(); }, 90000);
+        setTimeout(() => {
+          if (finishWatcher) { supabase.removeChannel(finishWatcher); finishWatcher = null; }
+          showResults();
+        }, 90000);
       }
     }
 
@@ -1292,6 +1299,7 @@
       if (oppWoInterval)  { clearInterval(oppWoInterval); oppWoInterval = null; }
       if (battleChannel)  { supabase.removeChannel(battleChannel);  battleChannel  = null; }
       if (battleWatcher)  { supabase.removeChannel(battleWatcher);  battleWatcher  = null; }
+      if (finishWatcher)  { supabase.removeChannel(finishWatcher);  finishWatcher  = null; }
       currentBattle = null; questions = []; myProgress = []; myAnswers = []; oppProgress = []; oppBroadcastScore = null;
       el('reviewToggle').style.display = 'none';
       el('reviewSection').style.display = 'none';

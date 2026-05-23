@@ -538,7 +538,7 @@
 
     // -- Weekly challenges --
     var prog  = data.desafiosSemanais.progresso;
-    var guide = (opts.guide || '').toLowerCase();
+    var guide = (opts.guide || opts.guia || '').toLowerCase();
     var pct   = opts.pct || 0;
 
     // streak_imparavel — atualiza o pico de streak alcançado nesta semana

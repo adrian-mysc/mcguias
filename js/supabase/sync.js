@@ -127,12 +127,12 @@ export async function syncToCloud() {
 }
 
 // Sync completo após cada quiz: sessão + leaderboard + conquistas em paralelo
-window.addEventListener('mc:quizComplete', (e) => {
+window.addEventListener('mc:quizComplete', async (e) => {
   const gamData = mcGet('gamificacao', null);
   const tasks = [syncOneSession(e.detail).catch(console.error)];
   if (gamData?.estatisticas) tasks.push(syncLeaderboard(gamData.estatisticas).catch(console.error));
   if (gamData?.conquistas?.length) tasks.push(syncAchievements(gamData.conquistas).catch(console.error));
-  Promise.all(tasks);
+  await Promise.all(tasks);
 });
 
 // Sincroniza automaticamente ao recuperar conexão
