@@ -59,6 +59,12 @@ on achievements
 for all
 using (auth.uid() = user_id);
 
+-- Leitura pública para exibir no perfil público de outros usuários
+create policy "achievements_select"
+on achievements
+for select
+using (true);
+
 create policy "leaderboard_public"
 on leaderboard
 for select
@@ -80,3 +86,28 @@ ALTER TABLE profiles ADD COLUMN IF NOT EXISTS display_name text;
 ALTER TABLE leaderboard ADD COLUMN IF NOT EXISTS total_xp integer DEFAULT 0;
 ALTER TABLE leaderboard ADD COLUMN IF NOT EXISTS loja text;
 ALTER TABLE leaderboard ADD COLUMN IF NOT EXISTS sigla text;
+
+-- quiz_sessions: tabela de sessões individuais de quiz
+CREATE TABLE IF NOT EXISTS quiz_sessions (
+  id uuid primary key default uuid_generate_v4(),
+  user_id uuid references auth.users(id) on delete cascade,
+  guide text not null,
+  score integer not null default 0,
+  total integer not null default 0,
+  percentage integer not null default 0,
+  mode text not null default 'multipla_escolha',
+  played_at timestamptz not null default now()
+);
+
+alter table quiz_sessions enable row level security;
+
+create policy "quiz_sessions_owner"
+on quiz_sessions
+for all
+using (auth.uid() = user_id);
+
+-- Leitura pública para exibir estatísticas no perfil público
+create policy "quiz_sessions_select"
+on quiz_sessions
+for select
+using (true);
