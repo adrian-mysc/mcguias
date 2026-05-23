@@ -87,6 +87,35 @@ ALTER TABLE leaderboard ADD COLUMN IF NOT EXISTS total_xp integer DEFAULT 0;
 ALTER TABLE leaderboard ADD COLUMN IF NOT EXISTS loja text;
 ALTER TABLE leaderboard ADD COLUMN IF NOT EXISTS sigla text;
 
+-- Batalha ao vivo: duelos em tempo real
+CREATE TABLE IF NOT EXISTS battles (
+  id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+  player1_id uuid REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  player2_id uuid REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  player1_username text NOT NULL,
+  player2_username text NOT NULL,
+  player1_avatar text,
+  player2_avatar text,
+  guide text NOT NULL,
+  guide_nome text NOT NULL,
+  question_ids text[] NOT NULL,
+  status text NOT NULL DEFAULT 'pending', -- pending | active | finished | declined | cancelled
+  player1_score integer NOT NULL DEFAULT 0,
+  player2_score integer NOT NULL DEFAULT 0,
+  player1_finished boolean NOT NULL DEFAULT false,
+  player2_finished boolean NOT NULL DEFAULT false,
+  winner_id uuid,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  started_at timestamptz,
+  finished_at timestamptz
+);
+ALTER TABLE battles ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "battles_select" ON battles FOR SELECT  USING (player1_id = auth.uid() OR player2_id = auth.uid());
+CREATE POLICY "battles_insert" ON battles FOR INSERT  WITH CHECK (player1_id = auth.uid());
+CREATE POLICY "battles_update" ON battles FOR UPDATE  USING (player1_id = auth.uid() OR player2_id = auth.uid());
+CREATE POLICY "battles_delete" ON battles FOR DELETE  USING (player1_id = auth.uid() OR player2_id = auth.uid());
+ALTER PUBLICATION supabase_realtime ADD TABLE battles;
+
 -- Storage: bucket público para fotos de perfil
 INSERT INTO storage.buckets (id, name, public)
 VALUES ('avatars', 'avatars', true)
