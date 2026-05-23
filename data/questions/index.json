@@ -744,7 +744,23 @@
       "mccafe_027",
       "mccafe_028",
       "mccafe_029",
-      "mccafe_030"
+      "mccafe_030",
+      "mccafe_031",
+      "mccafe_032",
+      "mccafe_033",
+      "mccafe_034",
+      "mccafe_035",
+      "mccafe_036",
+      "mccafe_037",
+      "mccafe_038",
+      "mccafe_039",
+      "mccafe_040",
+      "mccafe_041",
+      "mccafe_042",
+      "mccafe_043",
+      "mccafe_044",
+      "mccafe_045",
+      "mccafe_046"
     ]
   },
   "byTag": {
@@ -1272,7 +1288,9 @@
       "bb_038",
       "bb_042",
       "lope_076",
-      "lope_078"
+      "lope_078",
+      "mccafe_036",
+      "mccafe_038"
     ],
     "porcao": [
       "bebidas_sobremesas_002",
@@ -1338,7 +1356,8 @@
       "seguranca_alimento_013",
       "seguranca_alimento_014",
       "seguranca_alimento_019",
-      "lope_079"
+      "lope_079",
+      "mccafe_032"
     ],
     "angulo": [
       "bebidas_sobremesas_003",
@@ -1475,7 +1494,8 @@
       "salao_ngk_021",
       "salao_ngk_023",
       "salao_ngk_027",
-      "salao_ngk_035"
+      "salao_ngk_035",
+      "mccafe_039"
     ],
     "tempo": [
       "bebidas_sobremesas_004",
@@ -1725,7 +1745,8 @@
       "bb_016",
       "bb_022",
       "bb_028",
-      "bb_034"
+      "bb_034",
+      "mccafe_034"
     ],
     "atendimento": [
       "bebidas_sobremesas_005",
@@ -2217,7 +2238,8 @@
       "bb_035",
       "bb_039",
       "bb_040",
-      "bb_041"
+      "bb_041",
+      "mccafe_046"
     ],
     "taylor-ng": [
       "chapa_101",
@@ -2470,7 +2492,10 @@
       "linha_014",
       "linha_015",
       "lope_023",
-      "montagem_entrega_009"
+      "montagem_entrega_009",
+      "mccafe_036",
+      "mccafe_037",
+      "mccafe_043"
     ],
     "validade": [
       "chapa_003",
@@ -2554,7 +2579,11 @@
       "bb_033",
       "lope_076",
       "lope_077",
-      "lope_080"
+      "lope_080",
+      "mccafe_034",
+      "mccafe_037",
+      "mccafe_041",
+      "mccafe_042"
     ],
     "esfregao": [
       "chapa_010",
@@ -2688,7 +2717,8 @@
       "seguranca_alimento_011",
       "seguranca_alimento_016",
       "seguranca_alimento_020",
-      "lope_080"
+      "lope_080",
+      "mccafe_033"
     ],
     "sanitizacao": [
       "chapa_017",
@@ -3001,7 +3031,8 @@
       "condimentacao_033"
     ],
     "montagem": [
-      "condimentacao_033"
+      "condimentacao_033",
+      "mccafe_044"
     ],
     "refrigeracao": [
       "estoque_recebimento_002",
@@ -3041,7 +3072,8 @@
       "seguranca_alimento_004",
       "seguranca_alimento_012",
       "seguranca_alimento_018",
-      "lope_077"
+      "lope_077",
+      "mccafe_041"
     ],
     "ambientacao": [
       "estoque_recebimento_005",
@@ -3160,7 +3192,8 @@
       "lope_058",
       "salao_ngk_021",
       "salao_ngk_036",
-      "seguranca_alimento_015"
+      "seguranca_alimento_015",
+      "mccafe_032"
     ],
     "rota": [
       "lope_012",
@@ -3227,6 +3260,97 @@
       "bb_023",
       "bb_030",
       "bb_031"
+    ],
+    "cookie": [
+      "mccafe_031",
+      "mccafe_032",
+      "mccafe_033",
+      "mccafe_034",
+      "mccafe_035"
+    ],
+    "bebidas": [
+      "mccafe_031"
+    ],
+    "acompanhamento": [
+      "mccafe_031"
+    ],
+    "mccafe": [
+      "mccafe_031",
+      "mccafe_032",
+      "mccafe_033",
+      "mccafe_034",
+      "mccafe_035",
+      "mccafe_036",
+      "mccafe_037",
+      "mccafe_038",
+      "mccafe_039",
+      "mccafe_040",
+      "mccafe_041",
+      "mccafe_042",
+      "mccafe_043",
+      "mccafe_044",
+      "mccafe_045",
+      "mccafe_046"
+    ],
+    "tabua": [
+      "mccafe_033"
+    ],
+    "armazenamento": [
+      "mccafe_035"
+    ],
+    "hermetico": [
+      "mccafe_035"
+    ],
+    "ovos": [
+      "mccafe_036",
+      "mccafe_037",
+      "mccafe_038",
+      "mccafe_039",
+      "mccafe_040",
+      "mccafe_043"
+    ],
+    "seguranca-alimento": [
+      "mccafe_038"
+    ],
+    "hutzler": [
+      "mccafe_039"
+    ],
+    "pegador": [
+      "mccafe_040"
+    ],
+    "utensilio": [
+      "mccafe_040"
+    ],
+    "manteiga": [
+      "mccafe_041",
+      "mccafe_042"
+    ],
+    "fifo": [
+      "mccafe_042"
+    ],
+    "bisnaga": [
+      "mccafe_042"
+    ],
+    "gaveta": [
+      "mccafe_043"
+    ],
+    "egg-cheese-bacon": [
+      "mccafe_044"
+    ],
+    "sanduiche": [
+      "mccafe_044",
+      "mccafe_045",
+      "mccafe_046"
+    ],
+    "duplo-egg-cheese-bacon": [
+      "mccafe_045"
+    ],
+    "selos": [
+      "mccafe_045",
+      "mccafe_046"
+    ],
+    "egg-burger": [
+      "mccafe_046"
     ]
   },
   "byDifficulty": {
@@ -11219,7 +11343,201 @@
         "ambientacao"
       ],
       "ativo": true
+    },
+    "mccafe_031": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "cookie",
+        "bebidas",
+        "acompanhamento",
+        "mccafe"
+      ],
+      "subcategoria": "🍪 Cookie de Chocolate"
+    },
+    "mccafe_032": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 1,
+      "tags": [
+        "cookie",
+        "porcao",
+        "corte",
+        "mccafe"
+      ],
+      "subcategoria": "🍪 Cookie de Chocolate"
+    },
+    "mccafe_033": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "cookie",
+        "higiene",
+        "tabua",
+        "mccafe"
+      ],
+      "subcategoria": "🍪 Cookie de Chocolate"
+    },
+    "mccafe_034": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "cookie",
+        "validade",
+        "tempo",
+        "mccafe"
+      ],
+      "subcategoria": "🍪 Cookie de Chocolate"
+    },
+    "mccafe_035": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 1,
+      "tags": [
+        "cookie",
+        "armazenamento",
+        "hermetico",
+        "mccafe"
+      ],
+      "subcategoria": "🍪 Cookie de Chocolate"
+    },
+    "mccafe_036": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "ovos",
+        "uhc",
+        "temperatura",
+        "mccafe"
+      ],
+      "subcategoria": "🍳 Ovos — UHC"
+    },
+    "mccafe_037": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "ovos",
+        "uhc",
+        "validade",
+        "mccafe"
+      ],
+      "subcategoria": "🍳 Ovos — UHC"
+    },
+    "mccafe_038": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "ovos",
+        "temperatura",
+        "seguranca-alimento",
+        "mccafe"
+      ],
+      "subcategoria": "🍳 Ovos — Temperatura Interna"
+    },
+    "mccafe_039": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 3,
+      "tags": [
+        "ovos",
+        "hutzler",
+        "tecnica",
+        "mccafe"
+      ],
+      "subcategoria": "🍳 Ovos — Técnica Hutzler"
+    },
+    "mccafe_040": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "ovos",
+        "pegador",
+        "utensilio",
+        "mccafe"
+      ],
+      "subcategoria": "🍳 Ovos — Utensílios"
+    },
+    "mccafe_041": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "manteiga",
+        "validade",
+        "refrigeracao",
+        "mccafe"
+      ],
+      "subcategoria": "🧈 Manteiga — Validade"
+    },
+    "mccafe_042": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "manteiga",
+        "fifo",
+        "bisnaga",
+        "validade",
+        "mccafe"
+      ],
+      "subcategoria": "🧈 Manteiga — FIFO"
+    },
+    "mccafe_043": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "ovos",
+        "uhc",
+        "gaveta",
+        "mccafe"
+      ],
+      "subcategoria": "🍳 Ovos — UHC"
+    },
+    "mccafe_044": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "egg-cheese-bacon",
+        "montagem",
+        "sanduiche",
+        "mccafe"
+      ],
+      "subcategoria": "🥪 Sanduíches — Montagem"
+    },
+    "mccafe_045": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "duplo-egg-cheese-bacon",
+        "selos",
+        "sanduiche",
+        "mccafe"
+      ],
+      "subcategoria": "🥪 Sanduíches — Montagem"
+    },
+    "mccafe_046": {
+      "categoria": "mccafe",
+      "nivel": "basico",
+      "dificuldade": 2,
+      "tags": [
+        "egg-burger",
+        "carne",
+        "selos",
+        "sanduiche",
+        "mccafe"
+      ],
+      "subcategoria": "🥪 Sanduíches — Montagem"
     }
   },
-  "totalQuestions": 598
+  "totalQuestions": 614
 }
