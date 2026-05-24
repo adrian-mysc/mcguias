@@ -1,5 +1,30 @@
 # Changelog — MC Guias
 
+## [v10] — 2026-05-24
+
+### Performance
+- **SR data em memória** — `getSRData()` passa a cachear o objeto de repetição espaçada em `_srCache`. `updateSRData()` marca dirty e agenda flush via `setTimeout(2000)`. `saveQuizResult()` força flush síncrono ao final do quiz. Elimina N leituras + N escritas de `JSON.parse`/`JSON.stringify` durante o quiz.
+- **DOM refs cacheados** — `btnTimer` e `timer-dropdown` capturados uma vez após criação do barra de modos; `.timer-opt-btn` armazenado em NodeList local. Elimina 6+ `getElementById` por clique.
+- **`renderHistory` diferido** — chamada envolta em `requestIdleCallback` (fallback `setTimeout 200ms`) para não bloquear a primeira pintura da tela de resultado.
+- **Preload de questões** — `QuestionLoader.preloadGuide(guia)` chamado via `requestIdleCallback` após a primeira questão ser renderizada.
+- **Guards `_initialized`** — `initTabs()` e `initChecklist()` protegidas por flag de módulo; previne listeners duplicados em re-inicializações.
+
+### Adicionado
+- **Dark Mode global** (`js/theme.js`) — detecção de `prefers-color-scheme`, toggle ☀️/🌙 injetado em todas as 44 páginas.
+- **Desafios semanais com backend** — tabela `weekly_challenges` no Supabase; 14 desafios sincronizados após cada quiz; merge `Math.max(local, server)` na tela de Conquistas.
+- **Certificado de conclusão** — canvas 900×620 px retina, moldura dourada, badge colorido por aproveitamento (≥90% verde, ≥70% azul, <70% âmbar), download automático em PNG.
+- **Refatoração modular de `main.js`** — 10 módulos-fonte em `js/src/`; script `build/concat.sh` produz o bundle final `js/main.js` sem alterar nenhum HTML.
+
+### Corrigido
+- **Batalha modo misto** — cap por guia (`ceil(n/numGuias)`) evita dominância de guias com banco grande.
+- **Guard `_rippleReady`** em batalha — previne acumulação de listeners `pointerdown`.
+- **`finishWatcher` leak** — canal Realtime rastreado e limpo corretamente em `goLobby()`.
+- **Comparação `parseInt`** no placar de batalha (`parseInt(b.textContent) === 10`).
+- **Chave `opts.guia` vs `opts.guide`** em gamificação — aceita ambas.
+- Cache SW bumped: `mc-guias-v32` → `mc-guias-v33`.
+
+---
+
 ## [v8] — 2026-05-20
 
 ### Adicionado
