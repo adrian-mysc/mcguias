@@ -421,7 +421,7 @@
       if (!window.Gamificacao) { setTimeout(render, 100); return; }
       var snap = window.Gamificacao.getSnapshot();
 
-      // Merge conquistas de batalha do Supabase (armazenadas remotamente)
+      // Merge dados do Supabase (conquistas de batalha + desafios semanais)
       try {
         var { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
         var _sb = createClient(
@@ -430,20 +430,59 @@
         );
         var { data: { session } } = await _sb.auth.getSession();
         if (session) {
+          // 1. Conquistas de batalha
           var BATTLE_KEYS = ['battle_primeiro_sangue','battle_veterano','battle_dominador',
             'battle_lenda','battle_guerreiro','battle_centuriao',
             'battle_em_chamas','battle_imparavel','battle_perfeito','battle_elite'];
-          var { data: rows } = await _sb.from('achievements')
+          var { data: achRows } = await _sb.from('achievements')
             .select('achievement_key').eq('user_id', session.user.id)
             .in('achievement_key', BATTLE_KEYS);
-          if (rows && rows.length) {
-            rows.forEach(function(r){
+          if (achRows && achRows.length) {
+            achRows.forEach(function(r){
               if (snap.conquistas.indexOf(r.achievement_key) === -1)
                 snap.conquistas.push(r.achievement_key);
             });
           }
+
+          // 2. Desafios semanais — merge progresso servidor com local (usa o maior)
+          var CAMPOS_MAP = {
+            guerreiro_chapa:    { campo: 'perguntasChapa',      isArray: false },
+            faxina_geral:       { campo: 'quizzesLimpeza',      isArray: false },
+            equilibrio:         { campo: 'categoriasEstudadas', isArray: true  },
+            perfeccionista:     { campo: 'quizPerfeito',        isArray: false },
+            maratonista:        { campo: 'totalPerguntas',      isArray: false },
+            streak_imparavel:   { campo: 'diasStreak',          isArray: false },
+            rei_flashcard:      { campo: 'flashcardsSemanais',  isArray: false },
+            noturno:            { campo: 'quizzesApos22hSem',   isArray: false },
+            explorador:         { campo: 'categoriasEstudadas', isArray: true  },
+            mestre_producao:    { campo: 'perguntasProducao',   isArray: false },
+            velocidade_drive:   { campo: 'quizzesDrive',        isArray: false },
+            zero_erros_limpeza: { campo: 'quizLimpezaPerfeito', isArray: false },
+            especialista_cresc: { campo: 'guiasCrescimento',    isArray: true  },
+            dominio_bb:         { campo: 'quizzesBBSem',        isArray: false },
+          };
+          var currentWeek = snap.desafiosSemanais.semana;
+          var { data: wRows } = await _sb.from('weekly_challenges')
+            .select('challenge_key, progress, completed')
+            .eq('user_id', session.user.id)
+            .eq('week_start', currentWeek);
+          if (wRows && wRows.length) {
+            var prog   = snap.desafiosSemanais.progresso;
+            var concl  = snap.desafiosSemanais.concluidos;
+            wRows.forEach(function(r) {
+              var def = CAMPOS_MAP[r.challenge_key];
+              if (def && !def.isArray) {
+                // Numérico: usa o maior entre local e servidor
+                prog[def.campo] = Math.max(prog[def.campo] || 0, r.progress);
+              }
+              // Desafio concluído no servidor mas não localmente
+              if (r.completed && concl.indexOf(r.challenge_key) === -1) {
+                concl.push(r.challenge_key);
+              }
+            });
+          }
         }
-      } catch(e) { /* offline — mostra só conquistas locais */ }
+      } catch(e) { /* offline — mostra só dados locais */ }
 
       window._cqSnap = snap;
       renderStats(snap);

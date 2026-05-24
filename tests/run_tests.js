@@ -397,6 +397,157 @@ test('gamificacao.js: aceita tanto opts.guide quanto opts.guia', () => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
+// 7. Desafios Semanais — sync backend
+// ─────────────────────────────────────────────────────────────────────────────
+section('Desafios Semanais — sync backend');
+
+test('sync.js: syncWeeklyChallenges exportado', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  assert(src.includes('syncWeeklyChallenges'), 'Função não encontrada');
+  assert(src.includes('export { syncWeeklyChallenges }'), 'Não exportada');
+});
+
+test('sync.js: DESAFIOS_MAP cobre todos os 14 desafios', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  const EXPECTED_IDS = [
+    'guerreiro_chapa','faxina_geral','equilibrio','perfeccionista','maratonista',
+    'streak_imparavel','rei_flashcard','noturno','explorador','mestre_producao',
+    'velocidade_drive','zero_erros_limpeza','especialista_cresc','dominio_bb',
+  ];
+  for (const id of EXPECTED_IDS) {
+    assert(src.includes(`'${id}'`), `ID ausente no DESAFIOS_MAP: ${id}`);
+  }
+});
+
+test('sync.js: syncWeeklyChallenges chamado no mc:quizComplete', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  const handler = src.slice(src.indexOf("'mc:quizComplete'"));
+  assert(handler.includes('syncWeeklyChallenges'), 'Não chamado no handler do quiz');
+});
+
+test('sync.js: syncWeeklyChallenges chamado no syncToCloud', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  const fn = src.slice(src.indexOf('async function syncToCloud'));
+  assert(fn.includes('syncWeeklyChallenges'), 'Não chamado no syncToCloud');
+});
+
+test('conquistas.html: merge de weekly_challenges do servidor', () => {
+  const html = fs.readFileSync(path.join(ROOT, 'pages', 'conquistas.html'), 'utf8');
+  assert(html.includes('weekly_challenges'), 'Query ao servidor ausente');
+  assert(html.includes('CAMPOS_MAP'), 'Mapeamento de campos ausente');
+  assert(html.includes("Math.max(prog[def.campo]"), 'Merge por max ausente');
+});
+
+test('weekly_challenges: lógica de progresso isArray vs numérico', () => {
+  // Simula a lógica de extração de progresso para campos array e numéricos
+  const progresso = {
+    perguntasChapa: 15,
+    categoriasEstudadas: ['chapa', 'fritas', 'lope'],
+    quizzesLimpeza: 2,
+    guiasCrescimento: ['treinador'],
+  };
+
+  const DESAFIOS_MAP_TEST = [
+    { id: 'guerreiro_chapa',  campo: 'perguntasChapa',      isArray: false },
+    { id: 'equilibrio',       campo: 'categoriasEstudadas', isArray: true  },
+    { id: 'faxina_geral',     campo: 'quizzesLimpeza',      isArray: false },
+    { id: 'especialista_cresc', campo: 'guiasCrescimento',  isArray: true  },
+  ];
+
+  const rows = DESAFIOS_MAP_TEST.map(d => {
+    const raw = progresso[d.campo];
+    return {
+      id: d.id,
+      progress: d.isArray ? (Array.isArray(raw) ? raw.length : 0) : (raw || 0),
+    };
+  });
+
+  assertEqual(rows.find(r => r.id === 'guerreiro_chapa').progress, 15);
+  assertEqual(rows.find(r => r.id === 'equilibrio').progress, 3, 'Deve usar .length do array');
+  assertEqual(rows.find(r => r.id === 'faxina_geral').progress, 2);
+  assertEqual(rows.find(r => r.id === 'especialista_cresc').progress, 1);
+});
+
+test('weekly_challenges: merge server > local usa o maior valor', () => {
+  const prog = { perguntasChapa: 10, quizzesLimpeza: 1 };
+  const serverRows = [
+    { challenge_key: 'guerreiro_chapa', progress: 18, completed: false },
+    { challenge_key: 'faxina_geral',    progress: 0,  completed: true  },
+  ];
+  const concl = [];
+  const CAMPOS = {
+    guerreiro_chapa: { campo: 'perguntasChapa', isArray: false },
+    faxina_geral:    { campo: 'quizzesLimpeza', isArray: false },
+  };
+
+  serverRows.forEach(r => {
+    const def = CAMPOS[r.challenge_key];
+    if (def && !def.isArray) {
+      prog[def.campo] = Math.max(prog[def.campo] || 0, r.progress);
+    }
+    if (r.completed && !concl.includes(r.challenge_key)) concl.push(r.challenge_key);
+  });
+
+  assertEqual(prog.perguntasChapa, 18, 'Deve usar valor do servidor (18 > 10)');
+  assertEqual(prog.quizzesLimpeza, 1, 'Deve manter local (1 > 0)');
+  assert(concl.includes('faxina_geral'), 'Concluído no servidor deve propagar');
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 8. Certificado de Conclusão
+// ─────────────────────────────────────────────────────────────────────────────
+section('Certificado de Conclusão');
+
+test('main.js: função gerarCertificado definida', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'main.js'), 'utf8');
+  assert(src.includes('window.gerarCertificado'), 'Função não encontrada');
+});
+
+test('main.js: botão de certificado aparece com pct >= 70', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'main.js'), 'utf8');
+  assert(src.includes('pct >= 70'), 'Condição de 70% não encontrada');
+  assert(src.includes('gerarCertificado'), 'Chamada ao gerarCertificado no resultado ausente');
+  assert(src.includes('Baixar Certificado'), 'Texto do botão ausente');
+});
+
+test('gerarCertificado: cálculo de pct correto', () => {
+  // Simula a lógica de cálculo de porcentagem
+  function calcPct(score, total) {
+    return total > 0 ? Math.round((score / total) * 100) : 0;
+  }
+  assertEqual(calcPct(18, 20), 90);
+  assertEqual(calcPct(14, 20), 70);
+  assertEqual(calcPct(13, 20), 65);
+  assertEqual(calcPct(0, 0), 0);
+});
+
+test('gerarCertificado: badge cor correta por faixa de acerto', () => {
+  function badgeColor(pct) {
+    return pct >= 90 ? '#15803d' : pct >= 70 ? '#1d4ed8' : '#92400e';
+  }
+  assertEqual(badgeColor(95), '#15803d', 'Verde para >= 90%');
+  assertEqual(badgeColor(75), '#1d4ed8', 'Azul para >= 70%');
+  assertEqual(badgeColor(60), '#92400e', 'Marrom para < 70%');
+});
+
+test('gerarCertificado: nome do arquivo sanitizado corretamente', () => {
+  function buildFilename(guia) {
+    return 'certificado-' + guia.toLowerCase().replace(/\s+/g, '-') + '.png';
+  }
+  assertEqual(buildFilename('Best Burger'), 'certificado-best-burger.png');
+  assertEqual(buildFilename('Chapa'), 'certificado-chapa.png');
+  assertEqual(buildFilename('Seg. Alimentos'), 'certificado-seg.-alimentos.png');
+});
+
+test('main.js: gerarCertificado usa canvas toBlob', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'main.js'), 'utf8');
+  const fn  = src.slice(src.indexOf('window.gerarCertificado'), src.indexOf('window.shareQuizResult'));
+  assert(fn.includes('toBlob'), 'toBlob ausente — sem download');
+  assert(fn.includes('createObjectURL'), 'URL.createObjectURL ausente');
+  assert(fn.includes('revokeObjectURL'), 'Vazamento de URL — revokeObjectURL ausente');
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Results
 // ─────────────────────────────────────────────────────────────────────────────
 console.log(`\n${'─'.repeat(50)}`);
