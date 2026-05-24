@@ -212,7 +212,10 @@ window.switchMode = function(mode) {
   initQuiz(window._quizData, window._quizGuia);
 };
 
+var _tabsInitialized = false;
 function initTabs() {
+  if (_tabsInitialized) return;
+  _tabsInitialized = true;
   const tabBtns   = document.querySelectorAll(".tab-btn");
   const tabPanels = document.querySelectorAll(".tab-panel");
   tabBtns.forEach((btn) => {
@@ -238,7 +241,10 @@ function initTabs() {
   }
 }
 
+var _checklistInitialized = false;
 function initChecklist() {
+  if (_checklistInitialized) return;
+  _checklistInitialized = true;
   const pageId = document.body.dataset.page;
   const key    = pageId ? `mc_checks_${pageId}` : null;
   const saved  = key ? McStorage.get(key, {}) : {};
@@ -315,6 +321,7 @@ function initChecklist() {
 }
 
 function saveQuizResult(guia, score, total) {
+  _flushSRData(); // ensure SR writes are committed before quiz end
   const hist = McStorage.get('mc_quiz_history', []);
   const date = new Date().toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
   hist.unshift({ guia, score, total, date });
@@ -350,11 +357,28 @@ function getQuestionHash(q) {
   }
 }
 
+// SR data cached in memory — avoids repeated JSON.parse/stringify per answer
+var _srCache = null;
+var _srDirty = false;
+var _srFlushTimer = null;
+
 function getSRData() {
+  if (_srCache !== null) return _srCache;
   try {
     var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
-    return sr2.hashData || {};
-  } catch(e) { return {}; }
+    _srCache = sr2.hashData || {};
+  } catch(e) { _srCache = {}; }
+  return _srCache;
+}
+
+function _flushSRData() {
+  if (!_srDirty || _srCache === null) return;
+  try {
+    var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
+    sr2.hashData = _srCache;
+    localStorage.setItem('mc_sr_v2', JSON.stringify(sr2));
+    _srDirty = false;
+  } catch(e) {}
 }
 
 function updateSRData(hash, correct) {
@@ -370,12 +394,9 @@ function updateSRData(hash, correct) {
     entry.interval = 1;
   }
   entry.nextReview = Date.now() + entry.interval * 24 * 60 * 60 * 1000;
-  data[hash] = entry;
-  try {
-    var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
-    sr2.hashData = data;
-    localStorage.setItem('mc_sr_v2', JSON.stringify(sr2));
-  } catch(e) {}
+  _srDirty = true;
+  clearTimeout(_srFlushTimer);
+  _srFlushTimer = setTimeout(_flushSRData, 2000);
 }
 
 function prioritizeQuestions(questions) {
@@ -484,6 +505,11 @@ function initQuiz(questions, guiaName) {
                   + timerDropdownHTML;
     app.parentNode.insertBefore(bar, app);
 
+    // Cache refs — elements just inserted above
+    var _btnTimerEl  = document.getElementById('btnTimer');
+    var _timerDdEl   = document.getElementById('timer-dropdown');
+    var _timerOptBtns = document.querySelectorAll('.timer-opt-btn');
+
     window._quizActiveMode = 'multiple';
 
     document.getElementById('btnMultiple').addEventListener('click', function() {
@@ -499,12 +525,11 @@ function initQuiz(questions, guiaName) {
       initLacuna(window._quizData, window._quizGuia);
     });
 
-    document.getElementById('btnTimer').addEventListener('click', function(e) {
+    _btnTimerEl.addEventListener('click', function(e) {
       e.stopPropagation();
-      var dd = document.getElementById('timer-dropdown');
-      dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+      _timerDdEl.style.display = _timerDdEl.style.display === 'none' ? 'block' : 'none';
 
-      document.querySelectorAll('.timer-opt-btn').forEach(function(b) {
+      _timerOptBtns.forEach(function(b) {
         var s = parseInt(b.dataset.secs, 10);
         b.style.background = (window._quizTimerEnabled && s === window._quizTimerSecs) || (!window._quizTimerEnabled && s === 0)
           ? 'var(--bg)' : '';
@@ -513,27 +538,26 @@ function initQuiz(questions, guiaName) {
       });
     });
 
-    document.querySelectorAll('.timer-opt-btn').forEach(function(b) {
+    _timerOptBtns.forEach(function(b) {
       b.addEventListener('click', function(e) {
         e.stopPropagation();
         var secs = parseInt(b.dataset.secs, 10);
         if (secs === 0) {
           window._quizTimerEnabled = false;
-          document.getElementById('btnTimer').className   = 'btn-secondary';
-          document.getElementById('btnTimer').textContent = '⏱️';
+          _btnTimerEl.className   = 'btn-secondary';
+          _btnTimerEl.textContent = '⏱️';
         } else {
           window._quizTimerEnabled = true;
           window._quizTimerSecs    = secs;
-          document.getElementById('btnTimer').className   = 'btn-primary';
-          document.getElementById('btnTimer').textContent = '⏱️ ' + secs + 's';
+          _btnTimerEl.className   = 'btn-primary';
+          _btnTimerEl.textContent = '⏱️ ' + secs + 's';
         }
-        document.getElementById('timer-dropdown').style.display = 'none';
+        _timerDdEl.style.display = 'none';
       });
     });
 
     document.addEventListener('click', function() {
-      var dd = document.getElementById('timer-dropdown');
-      if (dd) dd.style.display = 'none';
+      _timerDdEl.style.display = 'none';
     });
 
     // Auto-advance toggle
@@ -666,6 +690,12 @@ function initQuiz(questions, guiaName) {
     }, 10);
 
     window._currentQ = q;
+
+    // Preload remaining question JSON packs during idle on first question
+    if (current === 0 && guiaName && typeof QuestionLoader !== 'undefined' && QuestionLoader.preloadGuide) {
+      var _ric2 = typeof requestIdleCallback !== 'undefined' ? requestIdleCallback : function(fn) { setTimeout(fn, 300); };
+      _ric2(function() { QuestionLoader.preloadGuide(guiaName); });
+    }
 
     if (window._quizTimerEnabled) {
       if (window._quizTimerInterval) clearInterval(window._quizTimerInterval);
@@ -942,7 +972,9 @@ function initQuiz(questions, guiaName) {
       var resultCard = app.querySelector('.quiz-result-card');
       if (resultCard) resultCard.appendChild(reviewBtn);
     }
-    renderHistory('hist-inline');
+    // Defer history render — not needed for first paint
+    var _ric = typeof requestIdleCallback !== 'undefined' ? requestIdleCallback : function(fn) { setTimeout(fn, 200); };
+    _ric(function() { renderHistory('hist-inline'); });
   }
 
   window.initReviewErrors = function() {
