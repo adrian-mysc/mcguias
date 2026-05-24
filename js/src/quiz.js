@@ -307,7 +307,7 @@ function initQuiz(questions, guiaName) {
             fb.innerHTML = '⏱️ <strong>Tempo esgotado!</strong> ' + (q.explanation || '');
             answered = true;
             _wrongAnswers.push({ question: q.question, answer: q.answer, userAnswer: null, explanation: q.explanation, category: q.category });
-            updateSRData(getQuestionHash(q), false);
+            updateSRData(getQuestionHash(q), false, 1);
             var nb = document.getElementById('btn-next');
             if (nb) nb.style.display = 'inline-flex';
           }
@@ -400,7 +400,13 @@ function initQuiz(questions, guiaName) {
       _wrongAnswers.push({ question: q.question, answer: q.answer, userAnswer: btn.textContent, explanation: q.explanation, category: q.category });
     }
 
-    updateSRData(getQuestionHash(q), isCorrect);
+    var _timerSecs = window._quizTimerEnabled ? window._quizTimerSecs : null;
+    var _srQuality;
+    if (!isCorrect) _srQuality = 1;
+    else if (_timerSecs && elapsed < _timerSecs * 300) _srQuality = 5;
+    else if (_timerSecs && elapsed < _timerSecs * 700) _srQuality = 4;
+    else _srQuality = 3;
+    updateSRData(getQuestionHash(q), isCorrect, _srQuality);
     mcPlaySound(isCorrect ? 'correct' : 'wrong');
     document.querySelectorAll(".quiz-option").forEach(function(b) {
       b.disabled = true;

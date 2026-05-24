@@ -33,18 +33,26 @@ function _flushSRData() {
   } catch(e) {}
 }
 
-function updateSRData(hash, correct) {
+// quality: 5=perfeito, 4=bom, 3=hesitante, 1=errado (SM-2)
+function updateSRData(hash, correct, quality) {
   if (!hash || hash === 'unknown') return;
+  if (quality === undefined) quality = correct ? 4 : 1;
   const data = getSRData();
-  if (!data[hash]) data[hash] = { correct: 0, wrong: 0, interval: 1 };
+  if (!data[hash]) data[hash] = { correct: 0, wrong: 0, interval: 1, ease: 2.5 };
   const entry = data[hash];
-  if (correct) {
+  if (!entry.ease) entry.ease = 2.5; // migra entradas antigas
+
+  if (quality >= 3) {
     entry.correct++;
-    entry.interval = Math.min(entry.interval * 2, 30);
+    if (entry.interval <= 1)      entry.interval = 3;
+    else if (entry.interval <= 3) entry.interval = 7;
+    else entry.interval = Math.min(Math.ceil(entry.interval * entry.ease), 90);
   } else {
     entry.wrong++;
-    entry.interval = 1;
+    entry.interval = Math.max(1, Math.ceil(entry.interval / 2));
   }
+  // Fórmula SM-2: EF = EF + 0.1 - (5-q)*(0.08+(5-q)*0.02)
+  entry.ease = Math.max(1.3, entry.ease + 0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
   entry.nextReview = Date.now() + entry.interval * 24 * 60 * 60 * 1000;
   _srDirty = true;
   clearTimeout(_srFlushTimer);

@@ -119,10 +119,14 @@ function renderStats(containerId) {
   if (!el) return;
 
   var hist = McStorage.get('mc_quiz_history', []);
-  var srData = McStorage.get('mc_sr_data', {});
+  var sr2 = McStorage.get('mc_sr_v2', {});
+  var srData = sr2.hashData || {};
 
   if (!hist.length) {
-    el.innerHTML = '<p style="color:var(--muted);font-size:13px;padding:16px 0;text-align:center;">Nenhum simulado realizado ainda.</p>';
+    el.innerHTML = '<div style="text-align:center;padding:16px 0;">'
+      + '<p style="color:var(--muted);font-size:13px;margin-bottom:12px;">Nenhum simulado realizado ainda.</p>'
+      + '<a href="pages/quiz.html" class="btn-primary" style="display:inline-block;padding:10px 20px;text-decoration:none;">Começar agora →</a>'
+      + '</div>';
     return;
   }
 
@@ -324,7 +328,7 @@ function saveQuizResult(guia, score, total) {
   const hist = McStorage.get('mc_quiz_history', []);
   const date = new Date().toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
   hist.unshift({ guia, score, total, date });
-  if (hist.length > 20) hist.splice(20);
+  if (hist.length > 180) hist.splice(180);
   McStorage.set('mc_quiz_history', hist);
   // Sync imediato para quiz_sessions — o sync.js escuta este evento
   window.dispatchEvent(new CustomEvent('mc:quizComplete', { detail: { guia, score, total } }));
@@ -334,7 +338,13 @@ function renderHistory(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return;
   const hist = McStorage.get('mc_quiz_history', []);
-  if (!hist.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px;padding:8px 0;">Nenhum simulado realizado ainda.</p>'; return; }
+  if (!hist.length) {
+    el.innerHTML = '<div style="text-align:center;padding:8px 0;">'
+      + '<p style="color:var(--muted);font-size:13px;margin-bottom:10px;">Nenhum simulado realizado ainda.</p>'
+      + '<a href="pages/quiz.html" class="btn-primary" style="display:inline-block;padding:9px 18px;text-decoration:none;font-size:13px;">Começar agora →</a>'
+      + '</div>';
+    return;
+  }
   el.innerHTML = hist.map(h => {
     const pct   = Math.round((h.score / h.total) * 100);
     const cls   = pct >= 80 ? 'good' : pct >= 60 ? 'ok' : '';
@@ -383,18 +393,26 @@ function _flushSRData() {
   } catch(e) {}
 }
 
-function updateSRData(hash, correct) {
+// quality: 5=perfeito, 4=bom, 3=hesitante, 1=errado (SM-2)
+function updateSRData(hash, correct, quality) {
   if (!hash || hash === 'unknown') return;
+  if (quality === undefined) quality = correct ? 4 : 1;
   const data = getSRData();
-  if (!data[hash]) data[hash] = { correct: 0, wrong: 0, interval: 1 };
+  if (!data[hash]) data[hash] = { correct: 0, wrong: 0, interval: 1, ease: 2.5 };
   const entry = data[hash];
-  if (correct) {
+  if (!entry.ease) entry.ease = 2.5; // migra entradas antigas
+
+  if (quality >= 3) {
     entry.correct++;
-    entry.interval = Math.min(entry.interval * 2, 30);
+    if (entry.interval <= 1)      entry.interval = 3;
+    else if (entry.interval <= 3) entry.interval = 7;
+    else entry.interval = Math.min(Math.ceil(entry.interval * entry.ease), 90);
   } else {
     entry.wrong++;
-    entry.interval = 1;
+    entry.interval = Math.max(1, Math.ceil(entry.interval / 2));
   }
+  // Fórmula SM-2: EF = EF + 0.1 - (5-q)*(0.08+(5-q)*0.02)
+  entry.ease = Math.max(1.3, entry.ease + 0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
   entry.nextReview = Date.now() + entry.interval * 24 * 60 * 60 * 1000;
   _srDirty = true;
   clearTimeout(_srFlushTimer);
@@ -737,7 +755,7 @@ function initQuiz(questions, guiaName) {
             fb.innerHTML = '⏱️ <strong>Tempo esgotado!</strong> ' + (q.explanation || '');
             answered = true;
             _wrongAnswers.push({ question: q.question, answer: q.answer, userAnswer: null, explanation: q.explanation, category: q.category });
-            updateSRData(getQuestionHash(q), false);
+            updateSRData(getQuestionHash(q), false, 1);
             var nb = document.getElementById('btn-next');
             if (nb) nb.style.display = 'inline-flex';
           }
@@ -830,7 +848,13 @@ function initQuiz(questions, guiaName) {
       _wrongAnswers.push({ question: q.question, answer: q.answer, userAnswer: btn.textContent, explanation: q.explanation, category: q.category });
     }
 
-    updateSRData(getQuestionHash(q), isCorrect);
+    var _timerSecs = window._quizTimerEnabled ? window._quizTimerSecs : null;
+    var _srQuality;
+    if (!isCorrect) _srQuality = 1;
+    else if (_timerSecs && elapsed < _timerSecs * 300) _srQuality = 5;
+    else if (_timerSecs && elapsed < _timerSecs * 700) _srQuality = 4;
+    else _srQuality = 3;
+    updateSRData(getQuestionHash(q), isCorrect, _srQuality);
     mcPlaySound(isCorrect ? 'correct' : 'wrong');
     document.querySelectorAll(".quiz-option").forEach(function(b) {
       b.disabled = true;
@@ -1017,6 +1041,10 @@ function shuffle(arr) {
 function initFlashcard(questions, guiaName) {
   const app = document.getElementById("quiz-app");
   if (!app) return;
+  if (!Array.isArray(questions) || questions.length === 0) {
+    app.innerHTML = '<p style="padding:24px;text-align:center;color:var(--muted);">Nenhuma questão disponível.</p>';
+    return;
+  }
   const pool = shuffle([...questions]);
   let current = 0;
   let knew = 0;
@@ -1073,7 +1101,8 @@ function initFlashcard(questions, guiaName) {
     if (didKnow) knew++; else didntKnow++;
     var q = pool[current];
     trackAnswer(q.id || getQuestionHash(q), didKnow, elapsed, q.question);
-    updateSRData(getQuestionHash(q), didKnow);
+    var fcQuality = !didKnow ? 1 : elapsed < 5000 ? 5 : elapsed < 15000 ? 4 : 3;
+    updateSRData(getQuestionHash(q), didKnow, fcQuality);
     current++;
     render();
   };
@@ -1461,8 +1490,10 @@ function initLacuna(questions, guiaName) {
       else score++;
     }
 
-    trackAnswer(q.id || getQuestionHash(q), isCorrect, Date.now() - _qStart, q.answer ? q.question : null);
-    updateSRData(getQuestionHash(q), isCorrect);
+    var _lacunaElapsed = Date.now() - _qStart;
+    trackAnswer(q.id || getQuestionHash(q), isCorrect, _lacunaElapsed, q.answer ? q.question : null);
+    var lacunaQuality = !isCorrect ? 1 : hintUsed ? 3 : 4;
+    updateSRData(getQuestionHash(q), isCorrect, lacunaQuality);
 
     var fb = document.getElementById('quiz-feedback');
     fb.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'wrong');
@@ -1495,7 +1526,7 @@ function initLacuna(questions, guiaName) {
     var halfPct  = Math.round(((score + scoreHalf * 0.5) / total) * 100);
     var medal    = halfPct >= 80 ? '🏆' : halfPct >= 60 ? '👍' : '📖';
 
-    saveQuizResult((guiaName || 'Lacunas') + ' ✏️', score + Math.round(scoreHalf * 0.5), total);
+    saveQuizResult((guiaName || 'Lacunas') + ' ✏️', score + scoreHalf * 0.5, total);
     if (window.Gamificacao) {
       window.Gamificacao.onQuizComplete({
         guide:      (guiaName || window._quizGuia || 'lacunas').toLowerCase(),

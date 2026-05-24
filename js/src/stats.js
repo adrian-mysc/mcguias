@@ -5,10 +5,14 @@ function renderStats(containerId) {
   if (!el) return;
 
   var hist = McStorage.get('mc_quiz_history', []);
-  var srData = McStorage.get('mc_sr_data', {});
+  var sr2 = McStorage.get('mc_sr_v2', {});
+  var srData = sr2.hashData || {};
 
   if (!hist.length) {
-    el.innerHTML = '<p style="color:var(--muted);font-size:13px;padding:16px 0;text-align:center;">Nenhum simulado realizado ainda.</p>';
+    el.innerHTML = '<div style="text-align:center;padding:16px 0;">'
+      + '<p style="color:var(--muted);font-size:13px;margin-bottom:12px;">Nenhum simulado realizado ainda.</p>'
+      + '<a href="pages/quiz.html" class="btn-primary" style="display:inline-block;padding:10px 20px;text-decoration:none;">Começar agora →</a>'
+      + '</div>';
     return;
   }
 
@@ -210,7 +214,7 @@ function saveQuizResult(guia, score, total) {
   const hist = McStorage.get('mc_quiz_history', []);
   const date = new Date().toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
   hist.unshift({ guia, score, total, date });
-  if (hist.length > 20) hist.splice(20);
+  if (hist.length > 180) hist.splice(180);
   McStorage.set('mc_quiz_history', hist);
   // Sync imediato para quiz_sessions — o sync.js escuta este evento
   window.dispatchEvent(new CustomEvent('mc:quizComplete', { detail: { guia, score, total } }));
@@ -220,7 +224,13 @@ function renderHistory(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return;
   const hist = McStorage.get('mc_quiz_history', []);
-  if (!hist.length) { el.innerHTML = '<p style="color:var(--muted);font-size:13px;padding:8px 0;">Nenhum simulado realizado ainda.</p>'; return; }
+  if (!hist.length) {
+    el.innerHTML = '<div style="text-align:center;padding:8px 0;">'
+      + '<p style="color:var(--muted);font-size:13px;margin-bottom:10px;">Nenhum simulado realizado ainda.</p>'
+      + '<a href="pages/quiz.html" class="btn-primary" style="display:inline-block;padding:9px 18px;text-decoration:none;font-size:13px;">Começar agora →</a>'
+      + '</div>';
+    return;
+  }
   el.innerHTML = hist.map(h => {
     const pct   = Math.round((h.score / h.total) * 100);
     const cls   = pct >= 80 ? 'good' : pct >= 60 ? 'ok' : '';
