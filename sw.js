@@ -1,7 +1,7 @@
-// MC Guias — Service Worker v19
-// Atualização: Best Burger quiz (26 perguntas), 5 conquistas, aba Materiais, correções de UI
+// MC Guias — Service Worker v20
+// Atualização: refatoração modular main.js, dark mode, desafios semanais, certificado
 
-const CACHE = 'mc-guias-v32';
+const CACHE = 'mc-guias-v33';
 const offlineFallbackPage = '/mcguias/offline.html';
 
 const PRECACHE_ASSETS = [

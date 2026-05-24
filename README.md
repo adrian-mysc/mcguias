@@ -31,9 +31,10 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 
 ### Gamificação
 - **35+ conquistas** desbloqueáveis por categoria
-- **Desafios semanais** com calendário temático rotativo (4 semanas)
+- **Desafios semanais com backend** — 14 desafios sincronizados no Supabase
 - **Sistema de XP** e pontuação por questão
 - **Jogo "Monte o Sanduíche"** com 9 sanduíches e ingredientes reais
+- **Certificado de conclusão** em PNG para quizzes com ≥ 70% de acerto
 
 ### Guias Operacionais
 - **20+ guias** com navegação por abas e persistência via `sessionStorage`
@@ -45,6 +46,12 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 - **Instalável** como app no celular e desktop
 - **Push notifications** com lembrete diário de estudo
 - Página offline exibe guias disponíveis em cache
+- **Dark Mode** com detecção automática de `prefers-color-scheme` e toggle persistido
+
+### Performance (v10)
+- SR data em cache de memória — sem JSON.parse/stringify a cada resposta
+- DOM refs cacheados no loop do quiz — sem `getElementById` repetido
+- `renderHistory` e preload de questões diferidos via `requestIdleCallback`
 
 ---
 
@@ -75,8 +82,8 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 ### Frontend
 | Tecnologia | Uso |
 |-----------|-----|
-| HTML5 + CSS3 | 42 páginas, design system com variáveis CSS, dark mode |
-| Vanilla JavaScript (ES6) | Sem framework, sem bundler |
+| HTML5 + CSS3 | 44 páginas, design system com variáveis CSS, dark mode via `[data-theme]` |
+| Vanilla JavaScript (ES6) | Sem framework — bundle gerado por `build/concat.sh` a partir de `js/src/` |
 | Web Audio API | Sons de feedback gerados em tempo real (sem arquivos externos) |
 | Web Share API | Compartilhamento de resultados com fallback para clipboard |
 
@@ -111,6 +118,29 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 
 ---
 
+## 🛠️ Desenvolvimento do JavaScript
+
+O arquivo `js/main.js` é **gerado** — nunca edite diretamente. Edite os módulos em `js/src/` e regenere:
+
+```bash
+bash build/concat.sh
+```
+
+| Módulo | Responsabilidade |
+|--------|-----------------|
+| `storage.js` | McStorage, migrations, trackAnswer |
+| `audio.js` | Web Audio sound engine |
+| `stats.js` | renderStats, initTabs, initChecklist, saveQuizResult |
+| `srs.js` | Spaced Repetition: getSRData, updateSRData, prioritizeQuestions |
+| `quiz.js` | initQuiz (múltipla escolha completo) |
+| `flashcard.js` | initFlashcard + shuffle |
+| `utils.js` | Certificado, compartilhar, clipboard, toast |
+| `lacunas.js` | initLacuna + normalizeAnswer + answersMatch |
+| `onboarding.js` | initOnboarding (carousel de boas-vindas) |
+| `sw-init.js` | applyUpdate, DOMContentLoaded, Service Worker |
+
+---
+
 ## 🔧 Adicionando um Novo Guia
 
 1. Crie `pages/nome-guia.html` copiando a estrutura de `chapa.html`
@@ -128,12 +158,26 @@ mcguias/
 ├── index.html              # Página inicial
 ├── pages/                  # 42 guias e páginas auxiliares
 ├── js/
-│   ├── main.js             # Core: quiz, flashcard, lacunas, SR, analytics
+│   ├── main.js             # Bundle gerado — NÃO editar diretamente
+│   ├── src/                # Módulos-fonte (edite aqui, rode build/concat.sh)
+│   │   ├── storage.js      #   McStorage, migrations, trackAnswer
+│   │   ├── audio.js        #   Web Audio sound engine
+│   │   ├── stats.js        #   renderStats, initTabs, initChecklist, saveQuizResult
+│   │   ├── srs.js          #   Spaced Repetition (getSRData, updateSRData)
+│   │   ├── quiz.js         #   initQuiz (múltipla escolha)
+│   │   ├── flashcard.js    #   initFlashcard + shuffle
+│   │   ├── utils.js        #   Certificado, compartilhar, clipboard, toast
+│   │   ├── lacunas.js      #   initLacuna + normalizeAnswer
+│   │   ├── onboarding.js   #   initOnboarding
+│   │   └── sw-init.js      #   applyUpdate, DOMContentLoaded, SW registration
+│   ├── theme.js            # Dark mode toggle global
 │   ├── gamificacao.js      # Conquistas, desafios e XP
 │   ├── game.js             # Jogo Monte o Sanduíche
 │   ├── learning/           # Módulos: adaptiveQuiz, spacedRepetition, weaknessMap
 │   ├── supabase/           # Integração backend (auth, sync, ranking)
 │   └── tools/              # validateQuestions, generateIndexes, autoTag
+├── build/
+│   └── concat.sh           # Gera js/main.js a partir de js/src/
 ├── data/questions/         # JSONs de questões por guia e nível
 ├── css/styles.css          # Design system
 ├── sw.js                   # Service Worker

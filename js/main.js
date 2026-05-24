@@ -1,18 +1,14 @@
 "use strict";
 
-function applyUpdate(reg) {
-  const r = reg || window._swRegistration;
-  if (r && r.waiting) {
-    r.waiting.postMessage({ type: 'SKIP_WAITING' });
-  } else {
-    window.location.reload();
-  }
-}
-
 /* ============================================================
    MC GUIAS — Shared JavaScript
-   Versão: 2.2 — estatísticas · som · transição de perguntas
+   Versão: 3.0 — refatoração modular + otimizações de performance
+   Gerado por: build/concat.sh — NÃO EDITE ESTE ARQUIVO DIRETAMENTE
+   Edite os arquivos em js/src/ e execute: bash build/concat.sh
    ============================================================ */
+
+/* ── storage.js ── */
+// ── Storage — McStorage · migrations · analytics ──────────────
 
 var McStorage = (function() {
   function get(key, fallback) {
@@ -67,6 +63,7 @@ function trackAnswer(qId, isCorrect, elapsedMs, qText) {
   McStorage.set('mc_analytics', data);
 }
 
+/* ── audio.js ── */
 // ── Sound Engine (Web Audio API — no external files) ──────────
 var _audioCtx = null;
 function _getAudioCtx() {
@@ -114,7 +111,9 @@ function mcPlaySound(type) {
   } catch(e) {}
 }
 
-// ── Statistics ────────────────────────────────────────────────
+/* ── stats.js ── */
+// ── Statistics · Tabs · Checklist · Quiz History ──────────────
+
 function renderStats(containerId) {
   var el = document.getElementById(containerId);
   if (!el) return;
@@ -348,6 +347,9 @@ function renderHistory(containerId) {
   }).join('');
 }
 
+/* ── srs.js ── */
+// ── Spaced Repetition System ──────────────────────────────────
+
 function getQuestionHash(q) {
   if (!q || !q.question) return 'unknown';
   try {
@@ -424,6 +426,9 @@ function prioritizeQuestions(questions) {
     return bRatio - aRatio;
   });
 }
+
+/* ── quiz.js ── */
+// ── Multiple-Choice Quiz ──────────────────────────────────────
 
 function initQuiz(questions, guiaName) {
   const app = document.getElementById("quiz-app");
@@ -998,6 +1003,17 @@ function initQuiz(questions, guiaName) {
   render();
 }
 
+/* ── flashcard.js ── */
+// ── Flashcard Mode · shuffle ──────────────────────────────────
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 function initFlashcard(questions, guiaName) {
   const app = document.getElementById("quiz-app");
   if (!app) return;
@@ -1066,13 +1082,8 @@ function initFlashcard(questions, guiaName) {
   render();
 }
 
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
+/* ── utils.js ── */
+// ── Certificado · Compartilhar · Clipboard · Toast ────────────
 
 // ── Certificado de Conclusão ────────────────────────────────────────────────
 window.gerarCertificado = function(score, total, guia) {
@@ -1228,7 +1239,6 @@ window.shareQuizResult = function(score, total, guia) {
 };
 
 function mcCopyToClipboard(text) {
-
   if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text)
       .then(function() { mcShowToast('✅ Resultado copiado!', false); })
@@ -1239,7 +1249,6 @@ function mcCopyToClipboard(text) {
 }
 
 function mcExecCopy(text) {
-
   try {
     var ta = document.createElement('textarea');
     ta.value = text;
@@ -1256,7 +1265,6 @@ function mcExecCopy(text) {
 }
 
 function mcShowToast(msg, isWarn) {
-
   var old = document.getElementById('mc-toast');
   if (old) old.remove();
   var toast = document.createElement('div');
@@ -1269,6 +1277,9 @@ function mcShowToast(msg, isWarn) {
   document.body.appendChild(toast);
   setTimeout(function() { if (toast.parentNode) toast.remove(); }, 2800);
 }
+
+/* ── lacunas.js ── */
+// ── Lacunas (fill-in-blank) · answer normalization ────────────
 
 function normalizeAnswer(text) {
   var t = text.toLowerCase().trim();
@@ -1315,7 +1326,6 @@ function answersMatch(userInput, correctAnswer) {
 }
 
 function makeHint(answer) {
-
   var hint = answer.replace(/(\d+[,\.]?\d*)/g, function(n) {
     return '_'.repeat(Math.max(n.length, 1));
   });
@@ -1514,6 +1524,9 @@ function initLacuna(questions, guiaName) {
   render();
 }
 
+/* ── onboarding.js ── */
+// ── Onboarding (first-visit carousel) ────────────────────────
+
 function initOnboarding() {
   const overlay = document.getElementById('onboarding-overlay');
   if (!overlay) return;
@@ -1559,6 +1572,18 @@ function initOnboarding() {
   goTo(0);
 }
 
+/* ── sw-init.js ── */
+// ── Service Worker · DOMContentLoaded · Update Toast ─────────
+
+function applyUpdate(reg) {
+  const r = reg || window._swRegistration;
+  if (r && r.waiting) {
+    r.waiting.postMessage({ type: 'SKIP_WAITING' });
+  } else {
+    window.location.reload();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initTabs();
   initChecklist();
@@ -1598,7 +1623,6 @@ if ('serviceWorker' in navigator) {
 }
 
 function mcShowUpdateToast() {
-
   if (document.getElementById('mc-update-toast')) return;
   var toast = document.createElement('div');
   toast.id = 'mc-update-toast';
@@ -1610,5 +1634,7 @@ function mcShowUpdateToast() {
     + '<button onclick="this.parentNode.remove()" style="background:rgba(255,255,255,0.2);color:#fff;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:14px;line-height:1;flex-shrink:0;">×</button>';
   document.body.appendChild(toast);
 }
+
 // Checar atualizações a cada 60s
 setInterval(() => { if (window._swRegistration) window._swRegistration.update(); }, 60000);
+

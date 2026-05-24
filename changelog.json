@@ -1,6 +1,45 @@
 {
   "versions": [
     {
+      "version": "v10",
+      "date": "2026-05-24",
+      "date_display": "24 Mai 2026",
+      "badge": "Performance · Dark Mode · Desafios",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "⚡",
+          "text": "**Performance do quiz melhorada** — dados de repetição espaçada (SR) agora mantidos em memória durante a sessão com escrita no `localStorage` debounced a 2 s e flush garantido ao final. Eliminadas leituras e escritas de JSON a cada resposta.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🌙",
+          "text": "**Dark Mode global** — tema escuro/claro com detecção automática de `prefers-color-scheme`, persistência em `localStorage` e botão FAB ☀️/🌙 injetado em todas as 44 páginas via `js/theme.js`.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "📅",
+          "text": "**Desafios semanais com backend** — 14 desafios temáticos rotativos salvos no Supabase (`weekly_challenges`). Progresso sincronizado após cada simulado e mesclado com dados locais na tela de Conquistas.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🎓",
+          "text": "**Certificado de conclusão** — botão \"Baixar Certificado\" aparece ao atingir ≥ 70% em qualquer simulado. Certificado em PNG 900×620 px (retina 2×) com moldura dourada, badge de aproveitamento colorido e download automático.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "⚔️",
+          "text": "**Batalha: distribuição mista mais justa** — modo misto agora sorteia de múltiplos guias com teto por guia (`ceil(n/numGuias)`), evitando que guias grandes dominem toda a sessão.",
+          "tag": "bug"
+        },
+        {
+          "icon": "🔧",
+          "text": "**Refatoração modular de main.js** — código dividido em 10 módulos-fonte em `js/src/` (storage, audio, stats, srs, quiz, flashcard, utils, lacunas, onboarding, sw-init). Script `build/concat.sh` regenera o bundle. Cache SW bumped para `mc-guias-v33`.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
       "version": "v9",
       "date": "2026-05-23",
       "date_display": "23 Mai 2026",
