@@ -87,6 +87,61 @@ async function syncLeaderboard(estatisticas) {
   await submitScore(points, username, totalXp, loja, sigla);
 }
 
+// ─── Desafios Semanais ────────────────────────────────────────────────────────
+
+// Mapeamento campo localStorage → challenge_key (espelha DESAFIOS em gamificacao.js)
+const DESAFIOS_MAP = [
+  { id: 'guerreiro_chapa',    campo: 'perguntasChapa',      isArray: false },
+  { id: 'faxina_geral',       campo: 'quizzesLimpeza',      isArray: false },
+  { id: 'equilibrio',         campo: 'categoriasEstudadas', isArray: true  },
+  { id: 'perfeccionista',     campo: 'quizPerfeito',        isArray: false },
+  { id: 'maratonista',        campo: 'totalPerguntas',      isArray: false },
+  { id: 'streak_imparavel',   campo: 'diasStreak',          isArray: false },
+  { id: 'rei_flashcard',      campo: 'flashcardsSemanais',  isArray: false },
+  { id: 'noturno',            campo: 'quizzesApos22hSem',   isArray: false },
+  { id: 'explorador',         campo: 'categoriasEstudadas', isArray: true  },
+  { id: 'mestre_producao',    campo: 'perguntasProducao',   isArray: false },
+  { id: 'velocidade_drive',   campo: 'quizzesDrive',        isArray: false },
+  { id: 'zero_erros_limpeza', campo: 'quizLimpezaPerfeito', isArray: false },
+  { id: 'especialista_cresc', campo: 'guiasCrescimento',    isArray: true  },
+  { id: 'dominio_bb',         campo: 'quizzesBBSem',        isArray: false },
+];
+
+async function syncWeeklyChallenges() {
+  const user = await getCurrentUser();
+  if (!user) return;
+
+  const gamData = mcGet('gamificacao', null);
+  if (!gamData?.desafiosSemanais) return;
+
+  const { semana: weekStart, progresso: prog, concluidos = [] } = gamData.desafiosSemanais;
+  if (!weekStart) return;
+
+  const rows = DESAFIOS_MAP.map(d => {
+    const raw  = prog[d.campo];
+    const progress = d.isArray ? (Array.isArray(raw) ? raw.length : 0) : (raw || 0);
+    const completed = concluidos.includes(d.id);
+    return {
+      user_id:       user.id,
+      week_start:    weekStart,
+      challenge_key: d.id,
+      progress,
+      completed,
+      ...(completed ? { completed_at: new Date().toISOString() } : {}),
+    };
+  });
+
+  const { error } = await supabase
+    .from('weekly_challenges')
+    .upsert(rows, { onConflict: 'user_id,week_start,challenge_key' });
+
+  if (error) console.error('sync weekly_challenges:', error);
+}
+
+export { syncWeeklyChallenges };
+
+// ─── Sessão única ─────────────────────────────────────────────────────────────
+
 // Sync de uma única sessão — chamado imediatamente após cada quiz
 export async function syncOneSession({ guia, score, total }) {
   const user = await getCurrentUser();
@@ -123,15 +178,17 @@ export async function syncToCloud() {
     if (gamData.estatisticas) {
       await syncLeaderboard(gamData.estatisticas).catch(console.error);
     }
+    await syncWeeklyChallenges().catch(console.error);
   }
 }
 
-// Sync completo após cada quiz: sessão + leaderboard + conquistas em paralelo
+// Sync completo após cada quiz: sessão + leaderboard + conquistas + desafios em paralelo
 window.addEventListener('mc:quizComplete', async (e) => {
   const gamData = mcGet('gamificacao', null);
   const tasks = [syncOneSession(e.detail).catch(console.error)];
   if (gamData?.estatisticas) tasks.push(syncLeaderboard(gamData.estatisticas).catch(console.error));
   if (gamData?.conquistas?.length) tasks.push(syncAchievements(gamData.conquistas).catch(console.error));
+  tasks.push(syncWeeklyChallenges().catch(console.error));
   await Promise.all(tasks);
 });
 

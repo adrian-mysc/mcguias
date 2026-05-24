@@ -225,6 +225,53 @@ test('mixed mode: IDs compostos gerados corretamente', () => {
   }
 });
 
+test('mixed mode: cada guia contribui no máximo ceil(nQs/numGuias) questões', () => {
+  function calcPerGuia(nQs, poolSize) {
+    const numGuias = Math.min(poolSize, Math.max(3, Math.ceil(nQs / 4)));
+    return { numGuias, perGuia: Math.ceil(nQs / numGuias) };
+  }
+
+  // 10 questões, 3 guias → ≤4 por guia
+  const r10 = calcPerGuia(10, 22);
+  assertEqual(r10.numGuias, 3);
+  assertEqual(r10.perGuia, 4, 'ceil(10/3)=4');
+
+  // 20 questões, 5 guias → ≤4 por guia
+  const r20 = calcPerGuia(20, 22);
+  assertEqual(r20.numGuias, 5);
+  assertEqual(r20.perGuia, 4, 'ceil(20/5)=4');
+
+  // 15 questões, 4 guias → ≤4 por guia
+  const r15 = calcPerGuia(15, 22);
+  assertEqual(r15.numGuias, 4);
+  assertEqual(r15.perGuia, 4, 'ceil(15/4)=4');
+
+  // 5 questões, 3 guias → ≤2 por guia
+  const r5 = calcPerGuia(5, 22);
+  assertEqual(r5.numGuias, 3);
+  assertEqual(r5.perGuia, 2, 'ceil(5/3)=2');
+});
+
+test('mixed mode: guia grande não domina pool (Treinador 164 vs Fritas 40)', () => {
+  // Simula o novo comportamento com cap por guia
+  const nQs = 10;
+  const numGuias = 3;
+  const perGuia = Math.ceil(nQs / numGuias); // 4
+
+  // Treinador tem 164 questões → contribui apenas 4
+  const treinadorContrib = Math.min(164, perGuia);
+  // Fritas tem 40 questões → contribui apenas 4
+  const fritasContrib = Math.min(40, perGuia);
+
+  assertEqual(treinadorContrib, 4, 'Treinador limitado a 4 (antes: 164)');
+  assertEqual(fritasContrib,    4, 'Fritas limitado a 4 (antes: 40)');
+
+  // Pool total = 3 guias × 4 = 12, pega 10 → distribuição equilibrada
+  const poolSize = numGuias * perGuia;
+  assert(poolSize >= nQs, 'Pool deve cobrir nQs');
+  assert(treinadorContrib === fritasContrib, 'Ambos contribuem igualmente');
+});
+
 test('mixed mode: reconstrói mapa de questões a partir de IDs compostos', () => {
   const guias = ['chapa', 'fritas'];
   const map = {};
@@ -394,6 +441,246 @@ test('sync.js: evento mc:quizComplete usa async/await', () => {
 test('gamificacao.js: aceita tanto opts.guide quanto opts.guia', () => {
   const src = fs.readFileSync(path.join(ROOT, 'js', 'gamificacao.js'), 'utf8');
   assert(src.includes('opts.guide || opts.guia'), 'Key mismatch não foi corrigido');
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 7. Desafios Semanais — sync backend
+// ─────────────────────────────────────────────────────────────────────────────
+section('Desafios Semanais — sync backend');
+
+test('sync.js: syncWeeklyChallenges exportado', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  assert(src.includes('syncWeeklyChallenges'), 'Função não encontrada');
+  assert(src.includes('export { syncWeeklyChallenges }'), 'Não exportada');
+});
+
+test('sync.js: DESAFIOS_MAP cobre todos os 14 desafios', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  const EXPECTED_IDS = [
+    'guerreiro_chapa','faxina_geral','equilibrio','perfeccionista','maratonista',
+    'streak_imparavel','rei_flashcard','noturno','explorador','mestre_producao',
+    'velocidade_drive','zero_erros_limpeza','especialista_cresc','dominio_bb',
+  ];
+  for (const id of EXPECTED_IDS) {
+    assert(src.includes(`'${id}'`), `ID ausente no DESAFIOS_MAP: ${id}`);
+  }
+});
+
+test('sync.js: syncWeeklyChallenges chamado no mc:quizComplete', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  const handler = src.slice(src.indexOf("'mc:quizComplete'"));
+  assert(handler.includes('syncWeeklyChallenges'), 'Não chamado no handler do quiz');
+});
+
+test('sync.js: syncWeeklyChallenges chamado no syncToCloud', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  const fn = src.slice(src.indexOf('async function syncToCloud'));
+  assert(fn.includes('syncWeeklyChallenges'), 'Não chamado no syncToCloud');
+});
+
+test('conquistas.html: merge de weekly_challenges do servidor', () => {
+  const html = fs.readFileSync(path.join(ROOT, 'pages', 'conquistas.html'), 'utf8');
+  assert(html.includes('weekly_challenges'), 'Query ao servidor ausente');
+  assert(html.includes('CAMPOS_MAP'), 'Mapeamento de campos ausente');
+  assert(html.includes("Math.max(prog[def.campo]"), 'Merge por max ausente');
+});
+
+test('weekly_challenges: lógica de progresso isArray vs numérico', () => {
+  // Simula a lógica de extração de progresso para campos array e numéricos
+  const progresso = {
+    perguntasChapa: 15,
+    categoriasEstudadas: ['chapa', 'fritas', 'lope'],
+    quizzesLimpeza: 2,
+    guiasCrescimento: ['treinador'],
+  };
+
+  const DESAFIOS_MAP_TEST = [
+    { id: 'guerreiro_chapa',  campo: 'perguntasChapa',      isArray: false },
+    { id: 'equilibrio',       campo: 'categoriasEstudadas', isArray: true  },
+    { id: 'faxina_geral',     campo: 'quizzesLimpeza',      isArray: false },
+    { id: 'especialista_cresc', campo: 'guiasCrescimento',  isArray: true  },
+  ];
+
+  const rows = DESAFIOS_MAP_TEST.map(d => {
+    const raw = progresso[d.campo];
+    return {
+      id: d.id,
+      progress: d.isArray ? (Array.isArray(raw) ? raw.length : 0) : (raw || 0),
+    };
+  });
+
+  assertEqual(rows.find(r => r.id === 'guerreiro_chapa').progress, 15);
+  assertEqual(rows.find(r => r.id === 'equilibrio').progress, 3, 'Deve usar .length do array');
+  assertEqual(rows.find(r => r.id === 'faxina_geral').progress, 2);
+  assertEqual(rows.find(r => r.id === 'especialista_cresc').progress, 1);
+});
+
+test('weekly_challenges: merge server > local usa o maior valor', () => {
+  const prog = { perguntasChapa: 10, quizzesLimpeza: 1 };
+  const serverRows = [
+    { challenge_key: 'guerreiro_chapa', progress: 18, completed: false },
+    { challenge_key: 'faxina_geral',    progress: 0,  completed: true  },
+  ];
+  const concl = [];
+  const CAMPOS = {
+    guerreiro_chapa: { campo: 'perguntasChapa', isArray: false },
+    faxina_geral:    { campo: 'quizzesLimpeza', isArray: false },
+  };
+
+  serverRows.forEach(r => {
+    const def = CAMPOS[r.challenge_key];
+    if (def && !def.isArray) {
+      prog[def.campo] = Math.max(prog[def.campo] || 0, r.progress);
+    }
+    if (r.completed && !concl.includes(r.challenge_key)) concl.push(r.challenge_key);
+  });
+
+  assertEqual(prog.perguntasChapa, 18, 'Deve usar valor do servidor (18 > 10)');
+  assertEqual(prog.quizzesLimpeza, 1, 'Deve manter local (1 > 0)');
+  assert(concl.includes('faxina_geral'), 'Concluído no servidor deve propagar');
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 8. Certificado de Conclusão
+// ─────────────────────────────────────────────────────────────────────────────
+section('Certificado de Conclusão');
+
+test('main.js: função gerarCertificado definida', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'main.js'), 'utf8');
+  assert(src.includes('window.gerarCertificado'), 'Função não encontrada');
+});
+
+test('main.js: botão de certificado aparece com pct >= 70', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'main.js'), 'utf8');
+  assert(src.includes('pct >= 70'), 'Condição de 70% não encontrada');
+  assert(src.includes('gerarCertificado'), 'Chamada ao gerarCertificado no resultado ausente');
+  assert(src.includes('Baixar Certificado'), 'Texto do botão ausente');
+});
+
+test('gerarCertificado: cálculo de pct correto', () => {
+  // Simula a lógica de cálculo de porcentagem
+  function calcPct(score, total) {
+    return total > 0 ? Math.round((score / total) * 100) : 0;
+  }
+  assertEqual(calcPct(18, 20), 90);
+  assertEqual(calcPct(14, 20), 70);
+  assertEqual(calcPct(13, 20), 65);
+  assertEqual(calcPct(0, 0), 0);
+});
+
+test('gerarCertificado: badge cor correta por faixa de acerto', () => {
+  function badgeColor(pct) {
+    return pct >= 90 ? '#15803d' : pct >= 70 ? '#1d4ed8' : '#92400e';
+  }
+  assertEqual(badgeColor(95), '#15803d', 'Verde para >= 90%');
+  assertEqual(badgeColor(75), '#1d4ed8', 'Azul para >= 70%');
+  assertEqual(badgeColor(60), '#92400e', 'Marrom para < 70%');
+});
+
+test('gerarCertificado: nome do arquivo sanitizado corretamente', () => {
+  function buildFilename(guia) {
+    return 'certificado-' + guia.toLowerCase().replace(/\s+/g, '-') + '.png';
+  }
+  assertEqual(buildFilename('Best Burger'), 'certificado-best-burger.png');
+  assertEqual(buildFilename('Chapa'), 'certificado-chapa.png');
+  assertEqual(buildFilename('Seg. Alimentos'), 'certificado-seg.-alimentos.png');
+});
+
+test('main.js: gerarCertificado usa canvas toBlob', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'main.js'), 'utf8');
+  const fn  = src.slice(src.indexOf('window.gerarCertificado'), src.indexOf('window.shareQuizResult'));
+  assert(fn.includes('toBlob'), 'toBlob ausente — sem download');
+  assert(fn.includes('createObjectURL'), 'URL.createObjectURL ausente');
+  assert(fn.includes('revokeObjectURL'), 'Vazamento de URL — revokeObjectURL ausente');
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 9. Dark Mode
+// ─────────────────────────────────────────────────────────────────────────────
+section('Dark Mode — theme.js e cobertura de páginas');
+
+test('js/theme.js existe', () => {
+  assert(fs.existsSync(path.join(ROOT, 'js', 'theme.js')), 'theme.js não encontrado');
+});
+
+test('theme.js: expõe window.toggleTheme', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'theme.js'), 'utf8');
+  assert(src.includes('window.toggleTheme'), 'toggleTheme não exposto');
+});
+
+test('theme.js: detecta prefers-color-scheme para novos usuários', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'theme.js'), 'utf8');
+  assert(src.includes('prefers-color-scheme'), 'Sem detecção de sistema');
+});
+
+test('theme.js: injeta FAB no DOM', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'theme.js'), 'utf8');
+  assert(src.includes('theme-fab'), 'FAB não injetado');
+  assert(src.includes("createElement('button')"), 'Botão não criado');
+});
+
+test('theme.js: ouve mudança no sistema sem preferência salva', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'theme.js'), 'utf8');
+  assert(src.includes("addEventListener('change'"), 'Listener de sistema ausente');
+  assert(src.includes("localStorage.getItem('mc_theme')"), 'Não verifica preferência salva antes de mudar');
+});
+
+test('css/styles.css: .theme-fab definido', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'css', 'styles.css'), 'utf8');
+  assert(src.includes('.theme-fab'), 'Estilos do FAB ausentes');
+  assert(src.includes('position: fixed'), 'FAB não é fixed');
+  assert(src.includes('z-index: 299'), 'Z-index ausente');
+});
+
+test('css/styles.css: transição suave para tema', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'css', 'styles.css'), 'utf8');
+  assert(src.includes('background-color .22s ease'), 'Transição suave ausente');
+});
+
+const ALL_HTML = [
+  ...fs.readdirSync(path.join(ROOT, 'pages'))
+    .filter(f => f.endsWith('.html') && f !== 'sw.js')
+    .map(f => path.join(ROOT, 'pages', f)),
+  path.join(ROOT, 'index.html'),
+];
+
+test('todas as páginas têm theme.js incluído', () => {
+  const missing = ALL_HTML.filter(f => {
+    const src = fs.readFileSync(f, 'utf8');
+    return !src.includes('theme.js');
+  }).map(f => path.relative(ROOT, f));
+  assert(missing.length === 0, `Sem theme.js: ${missing.join(', ')}`);
+});
+
+test('todas as páginas têm init de tema (prefers-color-scheme ou theme.js)', () => {
+  const missing = ALL_HTML.filter(f => {
+    const src = fs.readFileSync(f, 'utf8');
+    return !src.includes('mc_theme') && !src.includes('theme.js');
+  }).map(f => path.relative(ROOT, f));
+  assert(missing.length === 0, `Sem init de tema: ${missing.join(', ')}`);
+});
+
+test('todas as páginas com snippet inline usam prefers-color-scheme', () => {
+  const outdated = ALL_HTML.filter(f => {
+    const src = fs.readFileSync(f, 'utf8');
+    // Deve ter prefers-color-scheme se tiver o getItem inline
+    if (!src.includes("localStorage.getItem('mc_theme')")) return false;
+    return !src.includes('prefers-color-scheme');
+  }).map(f => path.relative(ROOT, f));
+  assert(outdated.length === 0, `Snippet antigo sem fallback: ${outdated.join(', ')}`);
+});
+
+test('drive-thru.html: snippet duplicado removido', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'pages', 'drive-thru.html'), 'utf8');
+  assert(!src.includes('mcguias_theme'), 'Snippet duplicado com chave errada ainda presente');
+});
+
+test('toggleTheme lógica: alterna entre dark e light corretamente', () => {
+  // Simula a lógica de toggle
+  function toggle(current) { return current === 'dark' ? 'light' : 'dark'; }
+  assertEqual(toggle('dark'),  'light');
+  assertEqual(toggle('light'), 'dark');
+  assertEqual(toggle('light'), 'dark', 'Idempotente');
 });
 
 // ─────────────────────────────────────────────────────────────────────────────

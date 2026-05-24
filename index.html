@@ -13,6 +13,7 @@
   <title>MC Guias — Início</title>
 
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
   <style>
     html { scroll-behavior: smooth; }
     body { overscroll-behavior-y: contain; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -379,8 +380,8 @@
   <script>
     // Splash — dismiss after fonts + content ready
     (function() {
-      var t = localStorage.getItem('mc_theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
       function hideSplash() {
         var s = document.getElementById('splash');
         if (!s) return;

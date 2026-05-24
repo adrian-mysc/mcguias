@@ -10,14 +10,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Batalha — MC Guias</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
   <link rel="manifest" href="/mcguias/manifest.json">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#DA291C">
   <script>
     (function() {
-      var t = localStorage.getItem('mc_theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
       function hideSplash() {
         var s = document.getElementById('splash');
         if (!s) return;
@@ -770,14 +771,18 @@
       let ids;
       try {
         if (guia === 'misto') {
-          const pool = GUIAS.filter(g => g.id !== 'misto');
-          const picks = [...pool].sort(() => Math.random() - 0.5).slice(0, 3);
+          const pool     = GUIAS.filter(g => g.id !== 'misto');
+          const numGuias = Math.min(pool.length, Math.max(3, Math.ceil(nQs / 4)));
+          const picks    = [...pool].sort(() => Math.random() - 0.5).slice(0, numGuias);
+          const perGuia  = Math.ceil(nQs / numGuias); // teto por guia — evita dominância
           const combined = [];
           await Promise.all(picks.map(async g => {
             const r = await fetch(`../data/questions/${g.id}/basico.json`);
             const d = await r.json();
             const qs = Array.isArray(d) ? d : (d.questions || d.questoes || []);
-            qs.forEach(q => combined.push(`${g.id}::${q.id}`));
+            // Embaralha individualmente e pega só o necessário antes de juntar
+            const sample = [...qs].sort(() => Math.random() - 0.5).slice(0, perGuia);
+            sample.forEach(q => combined.push(`${g.id}::${q.id}`));
           }));
           ids = combined.sort(() => Math.random() - 0.5).slice(0, Math.min(nQs, combined.length));
         } else {

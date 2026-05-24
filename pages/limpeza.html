@@ -12,12 +12,13 @@
   <title>Limpeza e Sanitização — MC Guias</title>
 
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
 
   <script>
     // Splash — dismiss after fonts + content ready
     (function() {
-      var t = localStorage.getItem('mc_theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
       function hideSplash() {
         var s = document.getElementById('splash');
         if (!s) return;

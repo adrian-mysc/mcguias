@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="">
+<html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <script>document.documentElement.style.visibility="hidden"</script>
@@ -11,6 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../css/styles.css" />
+    <script>
+    (function(){
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <script src="../js/theme.js"></script>
 </head>
 <body>
 
@@ -922,11 +929,7 @@
       if (btn) btn.click();
     })();
 
-    // Theme sync with rest of the app
-    (function () {
-      const t = localStorage.getItem('mcguias_theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
-    })();
+    // Theme sync handled by js/theme.js (loaded in <head>)
   </script>
 </body>
 </html>
