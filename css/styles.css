@@ -895,6 +895,44 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 [data-theme="dark"] .data-table tr:nth-child(even) td { background:#1a1917; }
 [data-theme="dark"] .data-table td { border-color:#2e2c28; color:var(--text); }
 
+/* ============================================================
+   THEME FAB — botão flutuante de alternância
+   ============================================================ */
+.theme-fab {
+  position: fixed;
+  bottom: 76px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,.20);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 299;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  touch-action: manipulation;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease, border-color .2s ease;
+}
+.theme-fab:hover  { transform: scale(1.10); box-shadow: 0 4px 20px rgba(0,0,0,.28); }
+.theme-fab:active { transform: scale(0.91); }
+
+/* Transição suave ao trocar de tema */
+body,
+.card, .guide-card, .guide-card-foot,
+.bottom-nav, .bottom-nav-item,
+input, select, textarea,
+.quiz-option, .quiz-question-card, .quiz-result-card,
+.check-item, .info-block, .stat-box, .pill,
+.bt-opt, .bt-guide-btn, .bt-qs-pill {
+  transition: background-color .22s ease, border-color .22s ease, color .22s ease;
+}
+
 /* ---- Aviso de acesso ------------------------------------ */
 
 /* ---- Busca ------------------------------------------ */

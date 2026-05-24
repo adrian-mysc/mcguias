@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conquistas — MC Guias</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
   <style>
     .cq-page { max-width:700px; margin:0 auto; padding:16px 14px 90px; display:flex; flex-direction:column; gap:22px; }
 
@@ -150,8 +151,8 @@
 
   <script>
     (function() {
-      var t = localStorage.getItem('mc_theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
       function hideSplash() { var s=document.getElementById('splash'); if(!s)return; s.classList.add('hide'); setTimeout(function(){s.style.display='none'},420); }
       if(document.readyState==='complete') setTimeout(hideSplash,200);
       else window.addEventListener('load',function(){setTimeout(hideSplash,200);});

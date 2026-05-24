@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assistente IA — MC Guias</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
   <link rel="manifest" href="/mcguias/manifest.json">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,8 +22,8 @@
 
   <script>
     (function() {
-      var t = localStorage.getItem('mc_theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
       function hideSplash() {
         var s = document.getElementById('splash');
         if (!s) return;

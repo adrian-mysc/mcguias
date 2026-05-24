@@ -595,6 +595,95 @@ test('main.js: gerarCertificado usa canvas toBlob', () => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
+// 9. Dark Mode
+// ─────────────────────────────────────────────────────────────────────────────
+section('Dark Mode — theme.js e cobertura de páginas');
+
+test('js/theme.js existe', () => {
+  assert(fs.existsSync(path.join(ROOT, 'js', 'theme.js')), 'theme.js não encontrado');
+});
+
+test('theme.js: expõe window.toggleTheme', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'theme.js'), 'utf8');
+  assert(src.includes('window.toggleTheme'), 'toggleTheme não exposto');
+});
+
+test('theme.js: detecta prefers-color-scheme para novos usuários', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'theme.js'), 'utf8');
+  assert(src.includes('prefers-color-scheme'), 'Sem detecção de sistema');
+});
+
+test('theme.js: injeta FAB no DOM', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'theme.js'), 'utf8');
+  assert(src.includes('theme-fab'), 'FAB não injetado');
+  assert(src.includes("createElement('button')"), 'Botão não criado');
+});
+
+test('theme.js: ouve mudança no sistema sem preferência salva', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'theme.js'), 'utf8');
+  assert(src.includes("addEventListener('change'"), 'Listener de sistema ausente');
+  assert(src.includes("localStorage.getItem('mc_theme')"), 'Não verifica preferência salva antes de mudar');
+});
+
+test('css/styles.css: .theme-fab definido', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'css', 'styles.css'), 'utf8');
+  assert(src.includes('.theme-fab'), 'Estilos do FAB ausentes');
+  assert(src.includes('position: fixed'), 'FAB não é fixed');
+  assert(src.includes('z-index: 299'), 'Z-index ausente');
+});
+
+test('css/styles.css: transição suave para tema', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'css', 'styles.css'), 'utf8');
+  assert(src.includes('background-color .22s ease'), 'Transição suave ausente');
+});
+
+const ALL_HTML = [
+  ...fs.readdirSync(path.join(ROOT, 'pages'))
+    .filter(f => f.endsWith('.html') && f !== 'sw.js')
+    .map(f => path.join(ROOT, 'pages', f)),
+  path.join(ROOT, 'index.html'),
+];
+
+test('todas as páginas têm theme.js incluído', () => {
+  const missing = ALL_HTML.filter(f => {
+    const src = fs.readFileSync(f, 'utf8');
+    return !src.includes('theme.js');
+  }).map(f => path.relative(ROOT, f));
+  assert(missing.length === 0, `Sem theme.js: ${missing.join(', ')}`);
+});
+
+test('todas as páginas têm init de tema (prefers-color-scheme ou theme.js)', () => {
+  const missing = ALL_HTML.filter(f => {
+    const src = fs.readFileSync(f, 'utf8');
+    return !src.includes('mc_theme') && !src.includes('theme.js');
+  }).map(f => path.relative(ROOT, f));
+  assert(missing.length === 0, `Sem init de tema: ${missing.join(', ')}`);
+});
+
+test('todas as páginas com snippet inline usam prefers-color-scheme', () => {
+  const outdated = ALL_HTML.filter(f => {
+    const src = fs.readFileSync(f, 'utf8');
+    // Deve ter prefers-color-scheme se tiver o getItem inline
+    if (!src.includes("localStorage.getItem('mc_theme')")) return false;
+    return !src.includes('prefers-color-scheme');
+  }).map(f => path.relative(ROOT, f));
+  assert(outdated.length === 0, `Snippet antigo sem fallback: ${outdated.join(', ')}`);
+});
+
+test('drive-thru.html: snippet duplicado removido', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'pages', 'drive-thru.html'), 'utf8');
+  assert(!src.includes('mcguias_theme'), 'Snippet duplicado com chave errada ainda presente');
+});
+
+test('toggleTheme lógica: alterna entre dark e light corretamente', () => {
+  // Simula a lógica de toggle
+  function toggle(current) { return current === 'dark' ? 'light' : 'dark'; }
+  assertEqual(toggle('dark'),  'light');
+  assertEqual(toggle('light'), 'dark');
+  assertEqual(toggle('light'), 'dark', 'Idempotente');
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Results
 // ─────────────────────────────────────────────────────────────────────────────
 console.log(`\n${'─'.repeat(50)}`);

@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="0;url=lope.html">
   <title>Redirecionando…</title>
+    <script>
+    (function(){
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <script src="../js/theme.js"></script>
 </head>
 <body>
   <script>window.location.replace('lope.html');</script>
