@@ -180,8 +180,10 @@ function initLacuna(questions, guiaName) {
       else score++;
     }
 
-    trackAnswer(q.id || getQuestionHash(q), isCorrect, Date.now() - _qStart, q.answer ? q.question : null);
-    updateSRData(getQuestionHash(q), isCorrect);
+    var _lacunaElapsed = Date.now() - _qStart;
+    trackAnswer(q.id || getQuestionHash(q), isCorrect, _lacunaElapsed, q.answer ? q.question : null);
+    var lacunaQuality = !isCorrect ? 1 : hintUsed ? 3 : 4;
+    updateSRData(getQuestionHash(q), isCorrect, lacunaQuality);
 
     var fb = document.getElementById('quiz-feedback');
     fb.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'wrong');
@@ -214,7 +216,7 @@ function initLacuna(questions, guiaName) {
     var halfPct  = Math.round(((score + scoreHalf * 0.5) / total) * 100);
     var medal    = halfPct >= 80 ? '🏆' : halfPct >= 60 ? '👍' : '📖';
 
-    saveQuizResult((guiaName || 'Lacunas') + ' ✏️', score + Math.round(scoreHalf * 0.5), total);
+    saveQuizResult((guiaName || 'Lacunas') + ' ✏️', score + scoreHalf * 0.5, total);
     if (window.Gamificacao) {
       window.Gamificacao.onQuizComplete({
         guide:      (guiaName || window._quizGuia || 'lacunas').toLowerCase(),

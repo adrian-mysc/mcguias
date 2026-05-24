@@ -11,6 +11,10 @@ function shuffle(arr) {
 function initFlashcard(questions, guiaName) {
   const app = document.getElementById("quiz-app");
   if (!app) return;
+  if (!Array.isArray(questions) || questions.length === 0) {
+    app.innerHTML = '<p style="padding:24px;text-align:center;color:var(--muted);">Nenhuma questão disponível.</p>';
+    return;
+  }
   const pool = shuffle([...questions]);
   let current = 0;
   let knew = 0;
@@ -67,7 +71,8 @@ function initFlashcard(questions, guiaName) {
     if (didKnow) knew++; else didntKnow++;
     var q = pool[current];
     trackAnswer(q.id || getQuestionHash(q), didKnow, elapsed, q.question);
-    updateSRData(getQuestionHash(q), didKnow);
+    var fcQuality = !didKnow ? 1 : elapsed < 5000 ? 5 : elapsed < 15000 ? 4 : 3;
+    updateSRData(getQuestionHash(q), didKnow, fcQuality);
     current++;
     render();
   };
