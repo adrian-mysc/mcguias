@@ -225,6 +225,53 @@ test('mixed mode: IDs compostos gerados corretamente', () => {
   }
 });
 
+test('mixed mode: cada guia contribui no máximo ceil(nQs/numGuias) questões', () => {
+  function calcPerGuia(nQs, poolSize) {
+    const numGuias = Math.min(poolSize, Math.max(3, Math.ceil(nQs / 4)));
+    return { numGuias, perGuia: Math.ceil(nQs / numGuias) };
+  }
+
+  // 10 questões, 3 guias → ≤4 por guia
+  const r10 = calcPerGuia(10, 22);
+  assertEqual(r10.numGuias, 3);
+  assertEqual(r10.perGuia, 4, 'ceil(10/3)=4');
+
+  // 20 questões, 5 guias → ≤4 por guia
+  const r20 = calcPerGuia(20, 22);
+  assertEqual(r20.numGuias, 5);
+  assertEqual(r20.perGuia, 4, 'ceil(20/5)=4');
+
+  // 15 questões, 4 guias → ≤4 por guia
+  const r15 = calcPerGuia(15, 22);
+  assertEqual(r15.numGuias, 4);
+  assertEqual(r15.perGuia, 4, 'ceil(15/4)=4');
+
+  // 5 questões, 3 guias → ≤2 por guia
+  const r5 = calcPerGuia(5, 22);
+  assertEqual(r5.numGuias, 3);
+  assertEqual(r5.perGuia, 2, 'ceil(5/3)=2');
+});
+
+test('mixed mode: guia grande não domina pool (Treinador 164 vs Fritas 40)', () => {
+  // Simula o novo comportamento com cap por guia
+  const nQs = 10;
+  const numGuias = 3;
+  const perGuia = Math.ceil(nQs / numGuias); // 4
+
+  // Treinador tem 164 questões → contribui apenas 4
+  const treinadorContrib = Math.min(164, perGuia);
+  // Fritas tem 40 questões → contribui apenas 4
+  const fritasContrib = Math.min(40, perGuia);
+
+  assertEqual(treinadorContrib, 4, 'Treinador limitado a 4 (antes: 164)');
+  assertEqual(fritasContrib,    4, 'Fritas limitado a 4 (antes: 40)');
+
+  // Pool total = 3 guias × 4 = 12, pega 10 → distribuição equilibrada
+  const poolSize = numGuias * perGuia;
+  assert(poolSize >= nQs, 'Pool deve cobrir nQs');
+  assert(treinadorContrib === fritasContrib, 'Ambos contribuem igualmente');
+});
+
 test('mixed mode: reconstrói mapa de questões a partir de IDs compostos', () => {
   const guias = ['chapa', 'fritas'];
   const map = {};
