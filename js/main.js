@@ -947,6 +947,42 @@ function initQuiz(questions, guiaName) {
       + '</svg>'
       + '<div class="quiz-result-ring-num" style="color:' + ringColor + ';">' + pct + '%</div>'
       + '</div>';
+
+    // ── Próximo Passo: SR due + weakest guide ──────────────────
+    var nextStepHTML = '';
+    try {
+      var _sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
+      var _dueCount = Object.values(_sr2.hashData || {}).filter(function(e) {
+        return e.nextReview && e.nextReview <= Date.now();
+      }).length;
+      var _hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+      var _guideMap = {};
+      _hist.forEach(function(h) {
+        if (!h.guia) return;
+        var k = h.guia.replace(' ✏️','');
+        if (!_guideMap[k]) _guideMap[k] = { total: 0, sum: 0 };
+        _guideMap[k].total += h.total || 0;
+        _guideMap[k].sum   += h.score || 0;
+      });
+      var _weakest = null, _weakestPct = 101;
+      Object.keys(_guideMap).forEach(function(k) {
+        var g = _guideMap[k];
+        if (g.total >= 5) {
+          var p = Math.round((g.sum / g.total) * 100);
+          if (p < _weakestPct) { _weakestPct = p; _weakest = k; }
+        }
+      });
+      var _tips = [];
+      if (_dueCount > 0) _tips.push('📅 <strong>' + _dueCount + ' questão' + (_dueCount !== 1 ? 'ões' : '') + '</strong> de revisão espaçada pronta' + (_dueCount !== 1 ? 's' : '') + ' para hoje.');
+      if (_weakest) _tips.push('📉 Seu ponto mais fraco: <strong>' + esc(_weakest) + '</strong> (' + _weakestPct + '%) — pratique mais este guia.');
+      if (_tips.length > 0) {
+        nextStepHTML = '<div style="margin-top:16px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:12px 14px;text-align:left;">'
+          + '<div style="font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">🎯 Próximo passo</div>'
+          + _tips.map(function(t) { return '<div style="font-size:13px;color:var(--text);line-height:1.5;margin-bottom:4px;">' + t + '</div>'; }).join('')
+          + '</div>';
+      }
+    } catch(e) {}
+
     app.innerHTML = '<div class="quiz-result-card">'
       + ringHTML
       + '<div class="quiz-score">' + score + '/' + pool.length + '</div>'
@@ -963,6 +999,7 @@ function initQuiz(questions, guiaName) {
       + '<button class="btn-share" onclick="shareQuizResult(' + score + ',' + pool.length + ',window._quizGuia)">📤 Compartilhar resultado</button>'
       + (pct >= 70 ? '<button class="btn-share" onclick="gerarCertificado(' + score + ',' + pool.length + ',window._quizGuia)" style="background:linear-gradient(135deg,#FFC72C,#e6a800);color:#1a1a1a;border-color:#FFC72C;">🎓 Baixar Certificado</button>' : '')
       + '</div>'
+      + nextStepHTML
       + errorsHTML
       + '<div id="hist-inline" style="margin-top:20px;display:flex;flex-direction:column;gap:8px;text-align:left;"></div>'
       + '</div>';
