@@ -932,12 +932,12 @@
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
         if (quizPanel.classList.contains("active")) {
-          initQuiz(QUIZ_LOPE_FULL);
+          initQuiz(QUIZ_LOPE_FULL, 'LOPE');
           observer.disconnect();
         }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_LOPE_FULL);
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_LOPE_FULL, 'LOPE');
     });
   </script>
 

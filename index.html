@@ -1635,45 +1635,60 @@
   <script src="js/changelog.js" defer></script>
 
   <script>
-    /* ── Mini progress bars nos cards de guia ── */
+    /* ── Domínio por guia nos cards ── */
     (function() {
       try {
         var hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
         if (!hist.length) return;
         var SLUG = {
-          'chapa':'Chapa','lope':'LOPE','linha':'Linha','mcfritas':'McFritas',
-          'fritos':'Fritos','condimentacao':'Condimentação','salao-ngk':'Salão e NGK',
-          'embaixador-experiencia':'Embaixador da Experiência',
-          'montagem-entrega':'Montagem e Entrega',
-          'influencer-pagamento':'Influencer Vendedor',
-          'drive-thru':'Drive-Thru','bebidas-sobremesas':'Bebidas e Sobremesas',
-          'mccafe':'McCafé','limpeza':'Limpeza e Sanitização',
-          'manutencao-preventivas':'Manutenção Preventiva',
-          'best-burguer':'Best Burguer',
-          'estoque-recebimento':'Estoque e Recebimento',
-          'fechamento':'Fechamento','fritas':'Fritas',
-          'seguranca-alimento':'Segurança do Alimento',
+          'chapa':                    'Chapa',
+          'lope':                     'LOPE',
+          'linha':                    'Linha',
+          'mcfritas':                 'McFritas',
+          'fritos':                   'Fritos',
+          'condimentacao':            'Condimentação',
+          'salao-ngk':                'Salão e NGK',
+          'embaixador-experiencia':   'Embaixador da Experiência',
+          'montagem-entrega':         'Montagem e Entrega',
+          'influencer-pagamento':     'Influencer Vendedor',
+          'drive-thru':               'Drive-Thru',
+          'bebidas-sobremesas':       'Bebidas e Sobremesas',
+          'mcdelivery':               'McDelivery',
+          'mccafe':                   'McCafé',
+          'limpeza':                  'Limpeza e Sanitização',
+          'manutencao-preventivas':   'Manutenção e Preventivas',
+          'best-burguer':             'Best Burger',
+          'estoque-recebimento':      'Estoque e Recebimento',
+          'fechamento':               'Procedimento de Fechamento',
+          'seguranca-alimento':       'Segurança do Alimento',
+          'provas-testes':            'Provas Oficiais',
         };
-        var best = {};
+        var stats = {};
         hist.forEach(function(h) {
           if (!h.guia || !h.total) return;
-          var pct = Math.round((h.score / h.total) * 100);
           var k = h.guia.toLowerCase();
-          if (best[k] === undefined || pct > best[k]) best[k] = pct;
+          if (!stats[k]) stats[k] = { sum: 0, total: 0, sessions: 0 };
+          stats[k].sum += h.score;
+          stats[k].total += h.total;
+          stats[k].sessions++;
         });
         document.querySelectorAll('a.guide-card').forEach(function(card) {
           var href = card.getAttribute('href') || '';
-          var m = href.match(/\/([^\/]+)\.html$/);
-          if (!m) m = href.match(/([^\/]+)\.html$/);
+          var m = href.match(/\/([^\/]+)\.html$/) || href.match(/([^\/]+)\.html$/);
           var slug = m ? m[1] : '';
           var guia = SLUG[slug];
           if (!guia) return;
-          var pct = best[guia.toLowerCase()];
-          if (pct === undefined) return;
+          var s = stats[guia.toLowerCase()];
+          if (!s || !s.sessions) return;
+          var pct = Math.round((s.sum / s.total) * 100);
           var color = pct >= 80 ? '#22c55e' : pct >= 60 ? '#f59e0b' : '#da291c';
+          var tier  = pct >= 80 ? '🏆 Dominado' : pct >= 60 ? '📈 Em progresso' : '📖 Estudar mais';
           var prog = document.createElement('div');
           prog.className = 'guide-card-prog';
-          prog.innerHTML = '<div class="guide-card-prog-bar"><div class="guide-card-prog-fill" style="width:' + pct + '%;background:' + color + '"></div></div><div class="guide-card-prog-text">' + pct + '%</div>';
+          prog.innerHTML =
+            '<div class="guide-card-prog-bar"><div class="guide-card-prog-fill" style="width:' + pct + '%;background:' + color + '"></div></div>' +
+            '<div class="guide-card-prog-text" style="color:' + color + ';">' + pct + '%</div>';
+          prog.title = tier + ' · ' + s.sessions + ' sessão' + (s.sessions !== 1 ? 'ões' : '');
           var top = card.querySelector('.guide-card-top');
           if (top) top.after(prog);
         });

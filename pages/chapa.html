@@ -535,14 +535,14 @@
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
         if (quizPanel.classList.contains("active")) {
-          initQuiz(QUIZ_CHAPA);
+          initQuiz(QUIZ_CHAPA, 'Chapa');
           observer.disconnect();
         }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
 
       // Se já estiver ativo no carregamento
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_CHAPA);
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_CHAPA, 'Chapa');
     });
   </script>
 

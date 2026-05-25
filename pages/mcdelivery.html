@@ -551,13 +551,13 @@
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
         if (quizPanel.classList.contains("active")) {
-          initQuiz(QUIZ_DELIVERY);
+          initQuiz(QUIZ_DELIVERY, 'McDelivery');
           observer.disconnect();
         }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
 
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_DELIVERY);
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_DELIVERY, 'McDelivery');
     });
   </script>
 
