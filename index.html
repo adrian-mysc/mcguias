@@ -608,6 +608,12 @@
       <div class="quiz-cta-arrow">›</div>
     </a>
 
+    <a href="pages/quiz.html?mode=sr" id="sr-cta" class="quiz-cta" style="display:none;background:linear-gradient(135deg,#1e1b4b 0%,#0f0a35 100%);box-shadow:0 4px 20px rgba(67,56,202,0.35);animation:revealUp .45s .42s cubic-bezier(0.22,1,.36,1) both;" data-keywords="revisão espaçada sr repetição anki flashcard devidas pendentes">
+      <div class="quiz-cta-icon">🔁</div>
+      <div><h3>Revisão Espaçada</h3><p id="sr-cta-desc">Questões pendentes de revisão</p></div>
+      <div class="quiz-cta-arrow" style="color:#a5b4fc;">›</div>
+    </a>
+
     <a href="pages/quiz-tempos-validades.html" class="quiz-cta" style="background:linear-gradient(135deg,#1a5fa8 0%,#0d3a6e 100%);box-shadow:0 4px 20px rgba(26,95,168,0.30);" data-keywords="tempos validades uhc temperatura quiz prazo descarte">
       <div class="quiz-cta-icon">⏱️</div>
       <div><h3>Quiz — Tempos e Validades</h3><p>Tempos de UHC, validades secundárias e temperaturas</p></div>
@@ -1692,6 +1698,24 @@
           var top = card.querySelector('.guide-card-top');
           if (top) top.after(prog);
         });
+      } catch(e) {}
+    })();
+  </script>
+
+  <script>
+    /* ── Revisão SR: mostrar CTA com contagem de questões pendentes ── */
+    (function() {
+      try {
+        var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
+        var due = Object.values(sr2.hashData || {}).filter(function(e) {
+          return e.nextReview && e.nextReview <= Date.now();
+        }).length;
+        if (due > 0) {
+          var cta = document.getElementById('sr-cta');
+          var desc = document.getElementById('sr-cta-desc');
+          if (cta) cta.style.display = '';
+          if (desc) desc.textContent = due + ' questão' + (due !== 1 ? 'ões' : '') + ' para revisar hoje';
+        }
       } catch(e) {}
     })();
   </script>
