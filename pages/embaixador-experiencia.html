@@ -210,6 +210,30 @@
     .smg-step-icon { font-size: 1.3rem; flex-shrink: 0; }
     .smg-step-text { font-size: 0.83rem; line-height: 1.5; color: var(--text-1, #1a1a1a); }
     .smg-step-text strong { display: block; font-weight: 700; margin-bottom: 2px; }
+
+    .cl-progress-bar { background:var(--surface-2,#f0f0f0); border-radius:8px; height:8px; margin-bottom:8px; overflow:hidden; }
+    .cl-progress-fill { height:100%; background:linear-gradient(90deg,#27ae60,#2ecc71); border-radius:8px; transition:width .3s ease; }
+    .cl-progress-text { text-align:center; font-size:.82rem; font-weight:600; color:var(--text-2,#888); margin-bottom:14px; }
+    .cl-area-card { background:var(--surface,#fff); border-radius:14px; margin-bottom:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+    .cl-area-header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; cursor:pointer; }
+    .cl-area-title { font-weight:700; font-size:.88rem; color:var(--text-1,#1a1a1a); }
+    .cl-area-badge { font-size:.72rem; font-weight:600; color:var(--text-2,#888); background:var(--surface-2,#f5f5f5); border-radius:10px; padding:2px 8px; }
+    .cl-area-body { padding:2px 12px 12px; }
+    .cl-item { display:flex; align-items:flex-start; gap:10px; padding:8px 6px; border-radius:8px; cursor:pointer; margin-bottom:2px; -webkit-tap-highlight-color:transparent; }
+    .cl-item-check { min-width:26px; height:26px; border-radius:6px; border:2px solid var(--border,#ddd); display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:700; flex-shrink:0; transition:all .15s; }
+    .cl-item[data-state="sim"] .cl-item-check { background:#27ae60; border-color:#27ae60; color:#fff; }
+    .cl-item[data-state="nao"] .cl-item-check { background:#e74c3c; border-color:#e74c3c; color:#fff; }
+    .cl-item[data-state="na"]  .cl-item-check { background:#95a5a6; border-color:#95a5a6; color:#fff; }
+    .cl-item-text { flex:1; font-size:.79rem; line-height:1.45; color:var(--text-1,#1a1a1a); }
+    .cl-item[data-state="sim"] .cl-item-text { color:#1e8449; }
+    .cl-item[data-state="nao"] .cl-item-text { color:#c0392b; }
+    .cl-item[data-state="na"]  .cl-item-text { color:#95a5a6; text-decoration:line-through; }
+    .lsm-badge { display:inline-block; font-size:.62rem; font-weight:600; border-radius:4px; padding:1px 5px; margin-top:3px; }
+    .lsm-qsl    { background:#e3f2fd; color:#1565c0; }
+    .lsm-exec   { background:#fff3e0; color:#e65100; }
+    .lsm-vendas { background:#e8f5e9; color:#2e7d32; }
+    .lsm-vis    { background:#f3e5f5; color:#7b1fa2; }
+    .cl-reset-btn { display:block; width:100%; text-align:center; padding:11px; background:var(--surface-2,#f5f5f5); border-radius:10px; font-size:.83rem; font-weight:600; color:var(--text-2,#888); cursor:pointer; margin-top:12px; border:none; }
   </style>
 </head>
 <body data-page="embaixador-experiencia">
@@ -238,6 +262,7 @@
       <button class="tab-btn" data-tab="atividades">📋 Atividades</button>
       <button class="tab-btn" data-tab="smg">📊 McExperiência</button>
       <button class="tab-btn" data-tab="baloes">🎈 Balões</button>
+      <button class="tab-btn" data-tab="checklist">✅ Checklist</button>
       <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
     </div>
   </div>
@@ -669,6 +694,204 @@
 
     </div>
 
+    <!-- ========== ABA: CHECKLIST ========== -->
+    <div class="tab-panel" id="panel-checklist">
+
+      <div class="section-label">Check List Diário · Embaixador + RDM</div>
+      <div class="cl-progress-bar"><div class="cl-progress-fill" style="width:0%"></div></div>
+      <div class="cl-progress-text">0 / 67 itens verificados (0%)</div>
+
+      <!-- ÁREA EXTERNA -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">🏢 Área Externa</div>
+          <div class="cl-area-badge">4 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Área externa do restaurante limpa e jardim conservado.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Direcionais e luminosos em perfeitas condições de limpeza e funcionamento.<br><span class="lsm-badge lsm-vis">Visibilidade e Acesso</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Materiais de Comunicação/LSM em boas condições, conforme estratégia de execução.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Bandeiras em bom estado e adequadamente expostas.<br><span class="lsm-badge lsm-vis">Visibilidade e Acesso</span></div></div>
+        </div>
+      </div>
+
+      <!-- DRIVE-THRU -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">🚗 Drive-Thru</div>
+          <div class="cl-area-badge">7 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Pórtico/Luminoso de entrada da pista em bom estado e posicionado conforme estratégia de sinalização.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Materiais POP (estandartes, display de COD, displays de caixa) em bom estado e conforme estratégia.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Menu em bom estado de conservação, limpeza e iluminação.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Translites dos Menus em bom estado, preços corretos, conforme estratégia e horário do dia.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cabines identificadas ("Peça Aqui", "Pague Aqui" e "Pegue Aqui") conforme estratégia.<br><span class="lsm-badge lsm-vis">Visibilidade e Acesso</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cardápios de Mão (menu regular, brinquedos e sobremesas) atualizados com preços corretos.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Produtos Esgotados sinalizados corretamente em todos os materiais de comunicação.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+        </div>
+      </div>
+
+      <!-- TOTENS NGK -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">🖥️ Totens NGK</div>
+          <div class="cl-area-badge">6 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">TOTENS NGK em bom estado de conservação, limpeza e funcionando normalmente.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Materiais de PDV (impressos, adesivos) aplicados conforme estratégias EOTF.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Banners, Vídeos e Telas de Descanso atualizados conforme estratégias de execução.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cardápios, Descrição, Sequência e Preços dos Totens atualizados conforme estratégia.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Produtos Esgotados e Indisponíveis sinalizados corretamente nos TOTENS NGK.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Máquina de Cartões, Impressora e Leitor de Código de Barras dos Totens funcionando normalmente.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+        </div>
+      </div>
+
+      <!-- MENU BALCÃO -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">📺 Menu Balcão</div>
+          <div class="cl-area-badge">3 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">MENU E MENU DIGITAL em bom estado de conservação, limpeza e funcionando normalmente.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Banners, translites, Vídeos e Telas de Descanso atualizados conforme estratégias.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Produtos Esgotados sinalizados no MENU e desabilitados no MENU DIGITAL.<br><span class="lsm-badge lsm-vendas">Aumentar Vendas Locais</span></div></div>
+        </div>
+      </div>
+
+      <!-- BALCÃO -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">🏪 Balcão EOTF</div>
+          <div class="cl-area-badge">4 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cardápios de Mão EOTF (menu regular, brinquedos e sobremesas) atualizados com preços corretos.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Materiais POP (estandartes, faixas de estufa, displays de caixa e digitais) em bom estado.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Monitor (ORB) da área de Retirada de Pedidos em bom estado e funcionando normalmente.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Estufa de Tortas, Máquina de Suco e Gabinetes Refrigerados com translites adequados.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+        </div>
+      </div>
+
+      <!-- CRIANÇA E FAMÍLIA -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">🧒 Criança e Família</div>
+          <div class="cl-area-badge">5 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">PDP disponível em local adequado para entrega às crianças.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Happy Place em boas condições de manutenção, incluindo placas de sinalização próprias.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Vitrine em boas condições expondo adequadamente a campanha de McLanche Feliz vigente.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Carrinhos estocados e rotulados.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">HMB da campanha ou genérica sendo entregues de maneira correta nas bandejas.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+        </div>
+      </div>
+
+      <!-- SALÕES -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">🪑 Salões</div>
+          <div class="cl-area-badge">7 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Ambiente agradável: limpo, organizado, com som ambiente e ar condicionado.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">WiFi funcionando.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Banheiros limpos, organizados e estocados.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cadeirões para bebês disponíveis e em bom estado.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Material POP exposto para apoio à pós-venda.<br><span class="lsm-badge lsm-vendas">Aumentar Vendas Locais</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Pós-venda, degustação de novos produtos e bebidas quentes acontece de forma sistemática.<br><span class="lsm-badge lsm-vendas">Aumentar Vendas Locais</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Comunicações legais e informações sobre produtos do cardápio atualizados e em área visível.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+        </div>
+      </div>
+
+      <!-- TABLETS DE MESA -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">📱 Tablets de Mesa</div>
+          <div class="cl-area-badge">5 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Entrega à mesa (Antenas/Calibradores, TAG/Prismas, Painel localizador) funcionando normalmente.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Localizadores de entrega à mesa posicionados estrategicamente (MGK, EOTF) e funcionando.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">TABLETS DE MESAS em bom estado de conservação, limpeza, segurança e funcionando normalmente.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Banners, Tela de Descanso e Vídeos das Campanhas ativas nos Tablets atualizados conforme estratégia.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Sites, Aplicativos, Conteúdos e Jogos dos Tablets atualizados e funcionando normalmente.<br><span class="lsm-badge lsm-vendas">Aumentar Vendas Locais</span></div></div>
+        </div>
+      </div>
+
+      <!-- DESSERT CENTER -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">🍦 Dessert Center Interno</div>
+          <div class="cl-area-badge">7 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Ambiente limpo, organizado, estocado e ofertando todos os produtos.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">MENU em bom estado de conservação, limpeza e funcionando normalmente.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Banners, Vídeos e Telas de Descanso atualizados conforme estratégias de execução.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cardápios, Descrição, Sequência e Preços atualizados conforme estratégia de execução.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Produtos Esgotados e Indisponíveis sinalizados corretamente.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Materiais de Comunicação/LSM em boas condições, conforme estratégia de execução.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Translites de água para gabinetes refrigerados e/ou display de acrílico em bom estado.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+        </div>
+      </div>
+
+      <!-- COLD KIOSK -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">🥤 Cold Kiosk</div>
+          <div class="cl-area-badge">7 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Ambiente limpo, organizado, estocado e ofertando todos os produtos.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">MENU em bom estado de conservação, limpeza e funcionando normalmente.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Banners, Vídeos e Telas de Descanso atualizados conforme estratégias de execução.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cardápios, Descrição, Sequência e Preços atualizados conforme estratégia de execução.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Produtos Esgotados e Indisponíveis sinalizados corretamente.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Materiais de Comunicação/LSM em boas condições, conforme estratégia de execução.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Translites de água para gabinetes refrigerados e/ou display de acrílico em bom estado.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+        </div>
+      </div>
+
+      <!-- McCAFÉ -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">☕ McCafé</div>
+          <div class="cl-area-badge">9 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Ambiente agradável: limpo, organizado, com som ambiente e ar condicionado.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Letreiros, luminosos e painéis em perfeitas condições de limpeza e funcionamento.<br><span class="lsm-badge lsm-vis">Visibilidade e Acesso</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Painéis MENU em bom estado de conservação, limpeza e funcionando normalmente.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Banners, Vídeos e Telas de Descanso do MENU DIGITAL atualizados conforme estratégias.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cardápios, Descrição, Sequência e Preços do MENU atualizados conforme estratégia.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Produtos Esgotados e Indisponíveis sinalizados corretamente.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Materiais POP (estandartes, translites, displays de caixa, de mesa e painéis) padronizados conforme estratégia.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Vitrine segue layout padrão com placas e preços atualizados.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Cardápios de mão atualizados em todos os caixas e com preços corretos.<br><span class="lsm-badge lsm-exec">Exec. de Promoções</span></div></div>
+        </div>
+      </div>
+
+      <!-- COMUNICAÇÃO INTERNA -->
+      <div class="cl-area-card">
+        <div class="cl-area-header">
+          <div class="cl-area-title">📣 Comunicação Interna</div>
+          <div class="cl-area-badge">3 itens</div>
+        </div>
+        <div class="cl-area-body">
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Processo consistente de comunicação e envolvimento dos funcionários nas campanhas de vendas.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Informativos de Marketing em local de fácil acesso para consulta de toda equipe gerencial.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+          <div class="cl-item" data-state=""><div class="cl-item-check"></div><div class="cl-item-text">Gerente informa os funcionários sobre objetivos do plantão e dá feedback.<br><span class="lsm-badge lsm-qsl">QSL&amp;V</span></div></div>
+        </div>
+      </div>
+
+      <button class="cl-reset-btn" onclick="resetChecklist()">🔄 Resetar Checklist</button>
+
+    </div><!-- /panel-checklist -->
+
     <!-- ========== ABA: QUIZ ========== -->
     <div class="tab-panel" id="panel-quiz">
       <div class="section-label">Quiz Rápido</div>
@@ -695,6 +918,40 @@
 
   <script src="../js/main.js" defer></script>
   <script>
+    function initChecklist() {
+      document.querySelectorAll('.cl-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+          var states = ['', 'sim', 'nao', 'na'];
+          var labels = {'sim':'✓', 'nao':'✗', 'na':'—', '':''};
+          var cur = this.getAttribute('data-state') || '';
+          var next = states[(states.indexOf(cur) + 1) % states.length];
+          this.setAttribute('data-state', next);
+          this.querySelector('.cl-item-check').textContent = labels[next];
+          updateProgress();
+        });
+      });
+    }
+
+    function resetChecklist() {
+      document.querySelectorAll('.cl-item').forEach(function(item) {
+        item.setAttribute('data-state', '');
+        item.querySelector('.cl-item-check').textContent = '';
+      });
+      updateProgress();
+    }
+
+    function updateProgress() {
+      var total = document.querySelectorAll('.cl-item').length;
+      var done  = document.querySelectorAll('.cl-item[data-state="sim"],.cl-item[data-state="nao"],.cl-item[data-state="na"]').length;
+      var pct   = total > 0 ? Math.round((done / total) * 100) : 0;
+      var fill  = document.querySelector('.cl-progress-fill');
+      var text  = document.querySelector('.cl-progress-text');
+      if (fill) fill.style.width = pct + '%';
+      if (text) text.textContent = done + ' / ' + total + ' itens verificados (' + pct + '%)';
+    }
+
+    initChecklist();
+
     // FAQ accordion
     document.querySelectorAll('.smg-faq-item').forEach(function(item) {
       item.querySelector('.smg-faq-q').addEventListener('click', function() {
