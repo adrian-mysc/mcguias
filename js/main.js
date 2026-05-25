@@ -680,12 +680,12 @@ function initQuiz(questions, guiaName) {
       +   '</div>'
       + '</div>'
       + '<div class="quiz-question-card">'
-      +   '<div class="quiz-category">' + (q.category || '') + '</div>'
-      +   '<div class="quiz-question">' + q.question + '</div>'
+      +   '<div class="quiz-category">' + esc(q.category || '') + '</div>'
+      +   '<div class="quiz-question">' + esc(q.question) + '</div>'
       +   '<div class="quiz-options" id="quiz-options">'
       +     opts.map(function(o, oi) {
               return '<button class="quiz-option" onclick="handleQuizOption('+oi+')" data-correct="'+(o===q.answer)+'" data-idx="'+oi+'">'
-                + '<span class="quiz-opt-key">' + String.fromCharCode(65+oi) + '</span> ' + o
+                + '<span class="quiz-opt-key">' + String.fromCharCode(65+oi) + '</span> ' + esc(o)
                 + '</button>';
             }).join('')
       +   '</div>'
@@ -752,7 +752,7 @@ function initQuiz(questions, guiaName) {
             });
             var fb = document.getElementById('quiz-feedback');
             fb.className = 'quiz-feedback show wrong';
-            fb.innerHTML = '⏱️ <strong>Tempo esgotado!</strong> ' + (q.explanation || '');
+            fb.innerHTML = '⏱️ <strong>Tempo esgotado!</strong> ' + esc(q.explanation || '');
             answered = true;
             _wrongAnswers.push({ question: q.question, answer: q.answer, userAnswer: null, explanation: q.explanation, category: q.category });
             updateSRData(getQuestionHash(q), false, 1);
@@ -870,8 +870,8 @@ function initQuiz(questions, guiaName) {
       : '';
 
     fb.innerHTML = isCorrect
-      ? "✅ <strong>Correto!</strong>" + streakBadge + "<br><span style='font-size:13px;opacity:.9;'>" + (explanation || "") + "</span>"
-      : "❌ <strong>Incorreto.</strong> A resposta certa é: <strong>" + correct + "</strong>.<br><span style='font-size:13px;opacity:.9;'>" + (explanation || "") + "</span>";
+      ? "✅ <strong>Correto!</strong>" + streakBadge + "<br><span style='font-size:13px;opacity:.9;'>" + esc(explanation || "") + "</span>"
+      : "❌ <strong>Incorreto.</strong> A resposta certa é: <strong>" + esc(correct) + "</strong>.<br><span style='font-size:13px;opacity:.9;'>" + esc(explanation || "") + "</span>";
 
     var nb = document.getElementById("btn-next");
     if (nb) nb.style.display = "inline-flex";
@@ -930,7 +930,7 @@ function initQuiz(questions, guiaName) {
     var errorsHTML = '';
     if (_wrongAnswers.length > 0) {
       var errorItems = _wrongAnswers.map(function(w) {
-        return '<div style="background:var(--bg);border:1.5px solid #fecaca;border-radius:var(--radius-md);padding:11px 13px;">'          + '<div style="font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.5px;margin-bottom:4px;text-transform:uppercase;">' + (w.category || '') + '</div>'          + '<div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.4;">' + w.question + '</div>'          + '<div style="display:flex;flex-direction:column;gap:4px;">'          + '<div style="font-size:12px;padding:6px 10px;border-radius:8px;background:#ffebee;color:#c62828;">'          + '❌ Sua resposta: <strong>' + (w.userAnswer || 'Tempo esgotado') + '</strong></div>'          + '<div style="font-size:12px;padding:6px 10px;border-radius:8px;background:#e8f5e9;color:#2e7d32;">'          + '✅ Correto: <strong>' + w.answer + '</strong></div>'          + (w.explanation ? '<div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4;">' + w.explanation + '</div>' : '')          + '</div></div>';
+        return '<div style="background:var(--bg);border:1.5px solid #fecaca;border-radius:var(--radius-md);padding:11px 13px;">'          + '<div style="font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.5px;margin-bottom:4px;text-transform:uppercase;">' + esc(w.category || '') + '</div>'          + '<div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.4;">' + esc(w.question) + '</div>'          + '<div style="display:flex;flex-direction:column;gap:4px;">'          + '<div style="font-size:12px;padding:6px 10px;border-radius:8px;background:#ffebee;color:#c62828;">'          + '❌ Sua resposta: <strong>' + esc(w.userAnswer || 'Tempo esgotado') + '</strong></div>'          + '<div style="font-size:12px;padding:6px 10px;border-radius:8px;background:#e8f5e9;color:#2e7d32;">'          + '✅ Correto: <strong>' + esc(w.answer) + '</strong></div>'          + (w.explanation ? '<div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4;">' + esc(w.explanation) + '</div>' : '')          + '</div></div>';
       }).join('');
       errorsHTML = '<div style="margin-top:16px;text-align:left;">'        + '<button id="err-toggle-btn" onclick="toggleErrorReview()" style="width:100%;padding:11px 14px;background:var(--bg);border:1.5px solid #fecaca;border-radius:var(--radius-md);font-family:var(--font-display);font-size:13px;font-weight:800;color:#c62828;cursor:pointer;display:flex;align-items:center;justify-content:space-between;">'        + '<span>❌ Revisar ' + _wrongAnswers.length + ' erro' + (_wrongAnswers.length > 1 ? 's' : '') + '</span><span id="err-arrow">▼</span></button>'        + '<div id="error-review" style="display:none;margin-top:8px;flex-direction:column;gap:8px;">'        + errorItems        + '</div></div>';
     }
@@ -1081,14 +1081,14 @@ function initFlashcard(questions, guiaName) {
       </div>
       <div class="flashcard" id="fc" onclick="revealCard()">
         <div class="flashcard-hint">PERGUNTA — toque para ver a resposta</div>
-        <div class="flashcard-q">${q.question}</div>
-        <div class="flashcard-a">✅ ${q.answer}${q.explanation ? '<br><span style="font-size:12px;color:var(--muted);margin-top:6px;display:block;">' + q.explanation + '</span>' : ''}</div>
+        <div class="flashcard-q">${esc(q.question)}</div>
+        <div class="flashcard-a">✅ ${esc(q.answer)}${q.explanation ? '<br><span style="font-size:12px;color:var(--muted);margin-top:6px;display:block;">' + esc(q.explanation) + '</span>' : ''}</div>
       </div>
       <div class="flashcard-nav" id="fc-nav" style="display:none;">
         <button class="btn-wrong" onclick="rateCard(false)" style="flex:1;padding:12px;font-size:14px;font-weight:800;background:#ffebee;color:#c62828;border:1.5px solid #fecaca;border-radius:var(--radius-md);cursor:pointer;">❌ Não sabia</button>
         <button class="btn-correct" onclick="rateCard(true)" style="flex:1;padding:12px;font-size:14px;font-weight:800;background:#e8f5e9;color:#2e7d32;border:1.5px solid #b2dfca;border-radius:var(--radius-md);cursor:pointer;">✅ Sabia!</button>
       </div>
-      <p style="text-align:center;font-size:11px;color:var(--muted);">Categoria: ${q.category}</p>
+      <p style="text-align:center;font-size:11px;color:var(--muted);">Categoria: ${esc(q.category)}</p>
     </div>`;
   }
   window.revealCard = () => {
@@ -1113,6 +1113,15 @@ function initFlashcard(questions, guiaName) {
 
 /* ── utils.js ── */
 // ── Certificado · Compartilhar · Clipboard · Toast ────────────
+
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
 
 // ── Certificado de Conclusão ────────────────────────────────────────────────
 window.gerarCertificado = function(score, total, guia) {
@@ -1412,8 +1421,8 @@ function initLacuna(questions, guiaName) {
       +   '</div>'
       + '</div>'
       + '<div class="quiz-question-card">'
-      +   '<div class="quiz-category">' + (q.category || '') + '</div>'
-      +   '<div class="quiz-question">' + q.question + '</div>'
+      +   '<div class="quiz-category">' + esc(q.category || '') + '</div>'
+      +   '<div class="quiz-question">' + esc(q.question) + '</div>'
       +   '<div style="margin-top:12px;">'
       +     '<div id="lacuna-hint-text" style="font-size:13px;color:var(--muted);margin-bottom:6px;letter-spacing:2px;">' + hint + '</div>'
       +     '<input id="lacuna-input" type="text" autocomplete="off" autocorrect="off" spellcheck="false"'
@@ -1500,11 +1509,11 @@ function initLacuna(questions, guiaName) {
     var normalizedUser = normalizeAnswer(userVal);
     var fuzzyMatch = isCorrect && normalizedUser !== userVal.toLowerCase().trim();
     if (isCorrect) {
-      fb.innerHTML = (hintUsed ? '⚠️' : '✅') + ' <strong>' + (hintUsed ? 'Correto com dica!' : 'Correto!') + '</strong> ' + q.answer
-        + (fuzzyMatch ? '<br><span style="font-size:11px;opacity:.75;">Você digitou "<em>' + userVal + '</em>" → interpretado como <em>' + normalizedUser + '</em></span>' : '')
-        + (q.explanation ? ' — ' + q.explanation : '');
+      fb.innerHTML = (hintUsed ? '⚠️' : '✅') + ' <strong>' + (hintUsed ? 'Correto com dica!' : 'Correto!') + '</strong> ' + esc(q.answer)
+        + (fuzzyMatch ? '<br><span style="font-size:11px;opacity:.75;">Você digitou "<em>' + esc(userVal) + '</em>" → interpretado como <em>' + esc(normalizedUser) + '</em></span>' : '')
+        + (q.explanation ? ' — ' + esc(q.explanation) : '');
     } else {
-      fb.innerHTML = '❌ <strong>Resposta:</strong> ' + q.answer + (q.explanation ? ' — ' + q.explanation : '');
+      fb.innerHTML = '❌ <strong>Resposta:</strong> ' + esc(q.answer) + (q.explanation ? ' — ' + esc(q.explanation) : '');
     }
 
     var nb = document.getElementById('btn-next');

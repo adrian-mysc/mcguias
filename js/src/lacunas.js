@@ -102,8 +102,8 @@ function initLacuna(questions, guiaName) {
       +   '</div>'
       + '</div>'
       + '<div class="quiz-question-card">'
-      +   '<div class="quiz-category">' + (q.category || '') + '</div>'
-      +   '<div class="quiz-question">' + q.question + '</div>'
+      +   '<div class="quiz-category">' + esc(q.category || '') + '</div>'
+      +   '<div class="quiz-question">' + esc(q.question) + '</div>'
       +   '<div style="margin-top:12px;">'
       +     '<div id="lacuna-hint-text" style="font-size:13px;color:var(--muted);margin-bottom:6px;letter-spacing:2px;">' + hint + '</div>'
       +     '<input id="lacuna-input" type="text" autocomplete="off" autocorrect="off" spellcheck="false"'
@@ -190,11 +190,11 @@ function initLacuna(questions, guiaName) {
     var normalizedUser = normalizeAnswer(userVal);
     var fuzzyMatch = isCorrect && normalizedUser !== userVal.toLowerCase().trim();
     if (isCorrect) {
-      fb.innerHTML = (hintUsed ? '⚠️' : '✅') + ' <strong>' + (hintUsed ? 'Correto com dica!' : 'Correto!') + '</strong> ' + q.answer
-        + (fuzzyMatch ? '<br><span style="font-size:11px;opacity:.75;">Você digitou "<em>' + userVal + '</em>" → interpretado como <em>' + normalizedUser + '</em></span>' : '')
-        + (q.explanation ? ' — ' + q.explanation : '');
+      fb.innerHTML = (hintUsed ? '⚠️' : '✅') + ' <strong>' + (hintUsed ? 'Correto com dica!' : 'Correto!') + '</strong> ' + esc(q.answer)
+        + (fuzzyMatch ? '<br><span style="font-size:11px;opacity:.75;">Você digitou "<em>' + esc(userVal) + '</em>" → interpretado como <em>' + esc(normalizedUser) + '</em></span>' : '')
+        + (q.explanation ? ' — ' + esc(q.explanation) : '');
     } else {
-      fb.innerHTML = '❌ <strong>Resposta:</strong> ' + q.answer + (q.explanation ? ' — ' + q.explanation : '');
+      fb.innerHTML = '❌ <strong>Resposta:</strong> ' + esc(q.answer) + (q.explanation ? ' — ' + esc(q.explanation) : '');
     }
 
     var nb = document.getElementById('btn-next');
