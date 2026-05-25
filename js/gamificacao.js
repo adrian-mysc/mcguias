@@ -760,9 +760,14 @@
     if (lastActivity !== today) {
       setTimeout(function() {
         if (Notification.permission !== 'granted') return;
+        var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
+        var dueCount = Object.values(sr2.hashData || {}).filter(function(e) {
+          return e.nextReview && e.nextReview <= Date.now();
+        }).length;
+        var dueStr = dueCount > 0 ? ' Você tem ' + dueCount + ' questão' + (dueCount !== 1 ? 'ões' : '') + ' para revisar hoje.' : '';
         var msg = streak > 0
-          ? 'Não perca seu streak de ' + streak + ' dia' + (streak !== 1 ? 's' : '') + '! Estude pelo menos 1 quiz hoje.'
-          : 'Que tal estudar hoje? Abra um guia e complete um quiz rápido!';
+          ? 'Não perca seu streak de ' + streak + ' dia' + (streak !== 1 ? 's' : '') + '! Estude pelo menos 1 quiz hoje.' + dueStr
+          : 'Que tal estudar hoje? Abra um guia e complete um quiz rápido!' + dueStr;
         _showLocalNotification('MC Guias 📚', msg, 'mc-daily-reminder');
         McStorage.set(lastKey, today);
       }, 3000);

@@ -296,6 +296,12 @@
       </div>
     </div>
 
+    <!-- ── Próximo Passo (recomendação personalizada) ── -->
+    <div class="dash-section" id="nextStepSection" style="display:none;">
+      <div class="dash-section-title">🎯 Próximo passo</div>
+      <div class="card" style="padding:14px 16px;display:flex;flex-direction:column;gap:8px;" id="nextStepContent"></div>
+    </div>
+
     <!-- ── Acertos vs Erros (SR) ── -->
     <div class="dash-section" id="srSection" style="display:none;">
       <div class="dash-section-title">Acertos vs Erros (Repetição Espaçada)</div>
@@ -548,6 +554,46 @@
       }).join('');
     }
 
+    // ── Renderiza recomendação personalizada ─────────────────
+    function renderNextStep(hist, srData) {
+      var tips = [];
+
+      var dueCount = Object.values(srData).filter(function(e) {
+        return e.nextReview && e.nextReview <= Date.now();
+      }).length;
+      if (dueCount > 0) {
+        tips.push('📅 <strong>' + dueCount + ' questão' + (dueCount !== 1 ? 'ões' : '') + '</strong> de revisão espaçada pronta' + (dueCount !== 1 ? 's' : '') + ' — use o modo Flashcard para revisar.');
+      }
+
+      var guideMap = {};
+      hist.forEach(function(h) {
+        if (!h.guia) return;
+        var k = h.guia.replace(' ✏️','');
+        if (!guideMap[k]) guideMap[k] = { total: 0, sum: 0 };
+        guideMap[k].total += h.total || 0;
+        guideMap[k].sum   += h.score || 0;
+      });
+      var weakest = null, weakestPct = 101;
+      Object.keys(guideMap).forEach(function(k) {
+        var g = guideMap[k];
+        if (g.total >= 5) {
+          var p = Math.round((g.sum / g.total) * 100);
+          if (p < weakestPct) { weakestPct = p; weakest = k; }
+        }
+      });
+      if (weakest) {
+        tips.push('📉 Seu ponto mais fraco: <strong>' + esc(weakest) + '</strong> (' + weakestPct + '%) — dedique mais tempo a este guia.');
+      }
+
+      if (!tips.length) return;
+      var section = el('nextStepSection');
+      var content = el('nextStepContent');
+      section.style.display = '';
+      content.innerHTML = tips.map(function(t) {
+        return '<div style="font-size:13px;color:var(--text);line-height:1.6;">' + t + '</div>';
+      }).join('');
+    }
+
     // ── Backup / Restore ─────────────────────────────────────
     window.exportarBackup = function() {
       var data = {
@@ -645,6 +691,7 @@
       var analytics = getAnalytics();
 
       renderStats(hist, srData, gamData);
+      renderNextStep(hist, srData);
       renderSR(srData);
       renderAnalytics(analytics);
       renderGuias(hist);
