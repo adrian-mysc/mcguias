@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <script type="module" src="../js/auth-guard.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desempenho de Sustentabilidade — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 200);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 200); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="desempenho-sustentabilidade">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Desempenho de Sustentabilidade</h1>
+        <p>Indicadores e Práticas · Meio Ambiente</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">🌱 Visão Geral</button>
+      <button class="tab-btn" data-tab="residuos">♻️ Resíduos</button>
+      <button class="tab-btn" data-tab="energia">⚡ Energia</button>
+      <button class="tab-btn" data-tab="agua">💧 Água</button>
+      <button class="tab-btn" data-tab="checklist">✅ Checklist</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- VISÃO GERAL -->
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">Sustentabilidade no Restaurante</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🌍</div>
+          <h2>Por que a Sustentabilidade Importa?</h2>
+        </div>
+        <div class="card-body">
+          <p style="line-height:1.6;margin-bottom:12px;">O McDonald's possui metas globais de sustentabilidade que impactam diretamente a operação diária do restaurante. Cada funcionário tem um papel fundamental na redução do impacto ambiental.</p>
+          <div class="alert info">
+            <div class="alert-icon">🎯</div>
+            <div>O desempenho de sustentabilidade é acompanhado por métricas de <strong>resíduos, energia e consumo de água</strong>. Esses indicadores fazem parte das auditorias operacionais.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📊</div>
+          <h2>Pilares de Sustentabilidade</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box green">
+              <div class="stat-label">♻️ Resíduos</div>
+              <div class="stat-value" style="font-size:20px;">Separação</div>
+              <div class="stat-sub">Coleta seletiva e descarte correto</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">⚡ Energia</div>
+              <div class="stat-value" style="font-size:20px;">Eficiência</div>
+              <div class="stat-sub">Redução do consumo elétrico</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">💧 Água</div>
+              <div class="stat-value" style="font-size:20px;">Reutilização</div>
+              <div class="stat-sub">Consumo consciente</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">📦 Embalagens</div>
+              <div class="stat-value" style="font-size:20px;">Redução</div>
+              <div class="stat-sub">Materiais sustentáveis</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>Compromissos Globais McDonald's</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text"><strong>Embalagens sustentáveis:</strong> 100% das embalagens de consumidor de fontes renováveis, recicladas ou certificadas</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text"><strong>Redução de resíduos:</strong> Meta de enviar zero resíduos para aterros sanitários em todos os restaurantes</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Energia renovável:</strong> Uso crescente de energia limpa nos restaurantes e na cadeia de fornecimento</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text"><strong>Redução de emissões:</strong> Meta de reduzir emissões de gases de efeito estufa em 36% até 2030</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESÍDUOS -->
+    <div class="tab-panel" id="panel-residuos">
+      <div class="section-label">Gestão de Resíduos</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🗑️</div>
+          <h2>Separação de Resíduos</h2>
+          <div class="badge badge-green">Obrigatório</div>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="green">♻️ Recicláveis</h3>
+              <ul>
+                <li>Embalagens de papel e papelão (secas)</li>
+                <li>Plásticos (garrafas, sacolas)</li>
+                <li>Metais (latas de alumínio)</li>
+                <li>Vidros</li>
+                <li>Caixas e bandejas secas</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">🍂 Orgânicos</h3>
+              <ul>
+                <li>Restos de alimentos</li>
+                <li>Embalagens contaminadas com alimento</li>
+                <li>Guardanapos usados</li>
+                <li>Descarte de produtos vencidos</li>
+              </ul>
+            </div>
+          </div>
+          <div class="alert warn" style="margin-top:12px;">
+            <div class="alert-icon">⚠️</div>
+            <div><strong>Óleo de fritura:</strong> Deve ser armazenado em bombonas e destinado a empresas de reciclagem. Nunca descartar na pia ou ralo.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛢️</div>
+          <h2>Descarte de Óleo Vegetal</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Filtrar o óleo após cada turno de uso conforme o procedimento de filtragem</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Quando o óleo atingir o ponto de descarte (cor escura, fumaça ou odor forte), realizar a troca</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Armazenar o óleo usado em <strong>bombonas específicas</strong> identificadas e fechadas</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Registrar o volume descartado e acionar a empresa coletora conforme cronograma do restaurante</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📦</div>
+          <h2>Embalagens Sustentáveis</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill green">Caixas de papelão reciclado</div>
+            <div class="pill blue">Canudos de papel</div>
+            <div class="pill green">Bandejas reutilizáveis</div>
+            <div class="pill yellow">Guardanapos certificados FSC</div>
+          </div>
+          <div class="alert info" style="margin-top:12px;">
+            <div class="alert-icon">💡</div>
+            <div>As embalagens do McDonald's Brasil contêm informações sobre sua origem e reciclabilidade impressas. Utilize essa informação para orientar os clientes sobre o descarte correto.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENERGIA -->
+    <div class="tab-panel" id="panel-energia">
+      <div class="section-label">Eficiência Energética</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">💡</div>
+          <h2>Boas Práticas de Energia</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Iluminação</h3>
+              <ul>
+                <li>Apagar luzes em áreas não utilizadas</li>
+                <li>Usar iluminação LED (menor consumo)</li>
+                <li>Aproveitar a luz natural quando possível</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Equipamentos</h3>
+              <ul>
+                <li>Desligar equipamentos no fechamento</li>
+                <li>Não abrir refrigeradores desnecessariamente</li>
+                <li>Manter portas fechadas (câmara fria)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🌡️</div>
+          <h2>Equipamentos e Consumo</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box green">
+              <div class="stat-label">Fritadeiras</div>
+              <div class="stat-value" style="font-size:16px;">Filtrar</div>
+              <div class="stat-sub">Prolonga vida útil e reduz consumo</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Câmara Fria</div>
+              <div class="stat-value" style="font-size:16px;">Vedação</div>
+              <div class="stat-sub">Verificar borrachas de vedação</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Ar Condicionado</div>
+              <div class="stat-value" style="font-size:16px;">18–22°C</div>
+              <div class="stat-sub">Temperatura ideal de operação</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">UHC / Aquecedores</div>
+              <div class="stat-value" style="font-size:16px;">Ligar certo</div>
+              <div class="stat-sub">Apenas quando necessário</div>
+            </div>
+          </div>
+          <div class="alert info" style="margin-top:12px;">
+            <div class="alert-icon">📌</div>
+            <div>Equipamentos em bom estado de manutenção consomem até <strong>30% menos energia</strong>. Reporte imediatamente qualquer falha ao gerente.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÁGUA -->
+    <div class="tab-panel" id="panel-agua">
+      <div class="section-label">Uso Consciente da Água</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">💧</div>
+          <h2>Onde Água é Mais Utilizada</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box">
+              <div class="stat-label">Higienização de mãos</div>
+              <div class="stat-value" style="font-size:16px;">20 seg</div>
+              <div class="stat-sub">Tempo correto de lavagem</div>
+            </div>
+            <div class="stat-box yellow">
+              <div class="stat-label">Lavagem de utensílios</div>
+              <div class="stat-value" style="font-size:16px;">3 cubas</div>
+              <div class="stat-sub">Lavar, enxaguar, sanitizar</div>
+            </div>
+            <div class="stat-box green">
+              <div class="stat-label">Limpeza do salão</div>
+              <div class="stat-value" style="font-size:16px;">Dosagem</div>
+              <div class="stat-sub">Produtos diluídos corretamente</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Bebidas</div>
+              <div class="stat-value" style="font-size:16px;">Sistema</div>
+              <div class="stat-sub">Verificar vazamentos na máquina</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🚿</div>
+          <h2>Redução no Consumo de Água</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Fechar torneiras completamente após o uso — um vazamento pode desperdiçar <strong>até 1.000 litros por mês</strong></div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Pré-enxaguar utensílios antes da lavagem nas 3 cubas para usar menos água</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Reportar imediatamente qualquer vazamento ou torneira com mau funcionamento</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Usar a quantidade correta de água na diluição de produtos de limpeza — seguir o procedimento padrão</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="tab-panel" id="panel-checklist">
+      <div class="section-label">Checklist de Sustentabilidade</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <h2>Verificação Diária</h2>
+          <div class="badge badge-green">Por turno</div>
+        </div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Lixeiras de recicláveis e orgânicos identificadas e no lugar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Óleo de fritura filtrado e registrado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Nenhuma torneira com vazamento identificado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Câmara fria com borrachas de vedação íntegras</label></div>
+          <div class="check-item"><input type="checkbox"><label>Luzes apagadas em áreas sem uso</label></div>
+          <div class="check-item"><input type="checkbox"><label>Equipamentos desligados que não estão em uso</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">📋</div>
+          <h2>Verificação Semanal</h2>
+          <div class="badge badge-yellow">Gestor</div>
+        </div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Volume de óleo descartado registrado no controle</label></div>
+          <div class="check-item"><input type="checkbox"><label>Empresa coletora de óleo acionada conforme cronograma</label></div>
+          <div class="check-item"><input type="checkbox"><label>Consumo de energia verificado no medidor</label></div>
+          <div class="check-item"><input type="checkbox"><label>Coleta de recicláveis realizada</label></div>
+          <div class="check-item"><input type="checkbox"><label>Registro de desperdício de alimentos atualizado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Equipe treinada sobre práticas sustentáveis do turno</label></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Desempenho de Sustentabilidade · Desenvolvido por Adrian E. Silva
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
