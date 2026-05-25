@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <script type="module" src="../js/auth-guard.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLU's — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 200);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 200); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="preload" href="../js/main.js" as="script">
+
+  <style>
+    .plu-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .plu-table th { background:var(--card-border); color:var(--text-secondary); font-weight:600; padding:8px 10px; text-align:left; font-size:11px; letter-spacing:.05em; text-transform:uppercase; }
+    .plu-table td { padding:8px 10px; border-bottom:1px solid var(--card-border); vertical-align:middle; }
+    .plu-table tr:last-child td { border-bottom:none; }
+    .plu-table tr:hover td { background:var(--card-border); }
+    .plu-code { font-family:monospace; font-weight:700; color:var(--accent); font-size:14px; }
+    .plu-short { font-family:monospace; font-size:12px; color:var(--text-secondary); }
+    .plu-search { width:100%; padding:10px 14px; border:1.5px solid var(--card-border); border-radius:10px; background:var(--bg); color:var(--text); font-size:14px; margin-bottom:14px; outline:none; }
+    .plu-search:focus { border-color:var(--accent); }
+    .plu-section-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--text-secondary); padding:10px 10px 4px; background:var(--card-border); }
+    .hidden-row { display:none; }
+  </style>
+</head>
+<body data-page="plus">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>PLU's</h1>
+        <p>Códigos de Produtos · Referência</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="lanches">🍔 Lanches</button>
+      <button class="tab-btn" data-tab="bebidas">🥤 Bebidas</button>
+      <button class="tab-btn" data-tab="batatas">🍟 Batatas</button>
+      <button class="tab-btn" data-tab="sobremesas">🍦 Sobremesas</button>
+      <button class="tab-btn" data-tab="extras">🧂 Extras</button>
+      <button class="tab-btn" data-tab="busca">🔍 Busca</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- VISÃO GERAL -->
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">O que é PLU?</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔢</div>
+          <h2>Price Look-Up</h2>
+        </div>
+        <div class="card-body">
+          <p style="margin-bottom:12px;line-height:1.6;">O <strong>PLU (Price Look-Up)</strong> é o código numérico que identifica cada produto no sistema do restaurante. Cada produto pode ter múltiplos PLUs para diferentes contextos de venda.</p>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Cada restaurante tem seus próprios PLUs vinculados ao sistema. Os códigos variam por franqueador, modalidade de venda (balcão, drive, delivery) e promoção.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🏷️</div>
+          <h2>Sufixos Comuns nos PLUs</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Canais de Venda</h3>
+              <ul>
+                <li><strong>PrCP</strong> — Ponto de Caixa (balcão)</li>
+                <li><strong>DLV / PrDLV</strong> — Delivery</li>
+                <li><strong>MOP</strong> — Mobile Order & Pay</li>
+                <li><strong>FLZ</strong> — Franqueador específico</li>
+                <li><strong>CF / PrCF</strong> — Caixa Fixo</li>
+                <li><strong>ALC</strong> — À La Carte</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Tamanhos</h3>
+              <ul>
+                <li><strong>P / Peq</strong> — Pequeno</li>
+                <li><strong>M / Med</strong> — Médio</li>
+                <li><strong>G / Gr</strong> — Grande</li>
+                <li><strong>Mega</strong> — Mega/Extra-grande</li>
+                <li><strong>Kids / K</strong> — Kids/Infantil</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📂</div>
+          <h2>Categorias Disponíveis</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill red">🍔 Lanches</div>
+            <div class="pill blue">🥤 Bebidas</div>
+            <div class="pill yellow">🍟 Batatas</div>
+            <div class="pill green">🍦 Sobremesas</div>
+            <div class="pill red">🧂 Extras & Molhos</div>
+            <div class="pill blue">☕ McCafé</div>
+          </div>
+          <div class="alert warn" style="margin-top:12px;">
+            <div class="alert-icon">⚠️</div>
+            <div>Os PLUs listados neste guia são <strong>códigos de referência</strong>. Consulte sempre o sistema do seu restaurante para os códigos ativos.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANCHES -->
+    <div class="tab-panel" id="panel-lanches">
+      <div class="section-label">Sanduíches e Hambúrgueres</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍔</div>
+          <h2>Big Mac</h2>
+          <div class="badge badge-red">BIG MAC</div>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">55</td><td>Big Mac ALC</td><td class="plu-short">BIG MAC</td></tr>
+              <tr><td class="plu-code">600071</td><td>Big Mac M Pr</td><td class="plu-short">BIG MAC</td></tr>
+              <tr><td class="plu-code">600088</td><td>Big Mac G Pr</td><td class="plu-short">BIG MAC</td></tr>
+              <tr><td class="plu-code">600720</td><td>Big Mac PrPD</td><td class="plu-short">BIG MAC</td></tr>
+              <tr><td class="plu-code">53167</td><td>BigMac ALC FLZ</td><td class="plu-short">BIG MAC</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🥩</div>
+          <h2>Big Tasty</h2>
+          <div class="badge badge-yellow">BIG TASTY</div>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">81921</td><td>Big Tasty ALC</td><td class="plu-short">BIG TASTY</td></tr>
+              <tr><td class="plu-code">600525</td><td>Big Tasty G Pr</td><td class="plu-short">BIG TASTY</td></tr>
+              <tr><td class="plu-code">600526</td><td>Big Tasty M Pr</td><td class="plu-short">BIG TASTY</td></tr>
+              <tr><td class="plu-code">74494</td><td>Big Tasty PrF</td><td class="plu-short">BIG TASTY</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🍗</div>
+          <h2>McChicken</h2>
+          <div class="badge badge-red">MCCHICKEN</div>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">74581</td><td>Chicken PrPD</td><td class="plu-short">MCCHICKEN</td></tr>
+              <tr><td class="plu-code">68131</td><td>Chicken PrF</td><td class="plu-short">MCCHICKEN</td></tr>
+              <tr><td class="plu-code">94772</td><td>ChickenALC CP</td><td class="plu-short">MCCHICKEN</td></tr>
+              <tr><td class="plu-code">600327</td><td>ChickenG PrCDD</td><td class="plu-short">MCCHICKEN</td></tr>
+              <tr><td class="plu-code">600328</td><td>ChickenM PrCDD</td><td class="plu-short">MCCHICKEN</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🍔</div>
+          <h2>Hambúrguer (HB)</h2>
+          <div class="badge badge-yellow">HB</div>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">17</td><td>Hamburguer ALC</td><td class="plu-short">HB</td></tr>
+              <tr><td class="plu-code">600880</td><td>HB PrKit</td><td class="plu-short">HB</td></tr>
+              <tr><td class="plu-code">65692</td><td>HB PrCP</td><td class="plu-short">HB</td></tr>
+              <tr><td class="plu-code">64913</td><td>HB Pr DLV</td><td class="plu-short">HB</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🧀</div>
+          <h2>Chicken Burguer (CB)</h2>
+          <div class="badge badge-red">CB</div>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">65971</td><td>CB BOG</td><td class="plu-short">CB</td></tr>
+              <tr><td class="plu-code">97019</td><td>CB M PrCP</td><td class="plu-short">CB</td></tr>
+              <tr><td class="plu-code">78331</td><td>CB P PrCP</td><td class="plu-short">CB</td></tr>
+              <tr><td class="plu-code">71114</td><td>CB Pr DLV</td><td class="plu-short">CB</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🥩</div>
+          <h2>Duplos e Triplos</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Duplo Bacon</td></tr>
+              <tr><td class="plu-code">67474</td><td>Du Burger ALC</td><td class="plu-short">DU BACON</td></tr>
+              <tr><td class="plu-code">600336</td><td>Du Burger G Pr</td><td class="plu-short">DU BACON</td></tr>
+              <tr><td class="plu-code">600337</td><td>Du Burger M Pr</td><td class="plu-short">DU BACON</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Duplo Cheddar</td></tr>
+              <tr><td class="plu-code">89354</td><td>Duplo Cheddar</td><td class="plu-short">DUP CHEDD</td></tr>
+              <tr><td class="plu-code">600198</td><td>DuCheddar M Pr</td><td class="plu-short">DUP CHEDD</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Duplo Quarterão</td></tr>
+              <tr><td class="plu-code">92371</td><td>Duplo Quarterao</td><td class="plu-short">DUP QUART</td></tr>
+              <tr><td class="plu-code">624190</td><td>DU Quarter M Pr</td><td class="plu-short">DUP QUART</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Triplo CB</td></tr>
+              <tr><td class="plu-code">91084</td><td>Triplo CB ALC</td><td class="plu-short">TRIPLO CB</td></tr>
+              <tr><td class="plu-code">623988</td><td>Triplo CB M Pr</td><td class="plu-short">TRIPLO CB</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEBIDAS -->
+    <div class="tab-panel" id="panel-bebidas">
+      <div class="section-label">Refrigerantes, Sucos e Água</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🥤</div>
+          <h2>Coca-Cola / Refrigerantes</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Guaraná</td></tr>
+              <tr><td class="plu-code">2783</td><td>Fanta Gua M Pr</td><td class="plu-short">GUARANA M</td></tr>
+              <tr><td class="plu-code">3469</td><td>Fanta Gua M ALC</td><td class="plu-short">GUARANA M</td></tr>
+              <tr><td class="plu-code">91411</td><td>FantGua G Pr</td><td class="plu-short">GUARANA G</td></tr>
+              <tr><td class="plu-code">91299</td><td>FantGua G ALC</td><td class="plu-short">GUARANA G</td></tr>
+              <tr><td class="plu-code">91374</td><td>FantGua P Pr</td><td class="plu-short">GUARANA P</td></tr>
+              <tr><td class="plu-code">91251</td><td>FantGua P ALC</td><td class="plu-short">GUARANA P</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Fanta</td></tr>
+              <tr><td class="plu-code">2783</td><td>Fanta M Pr</td><td class="plu-short">FANTA M</td></tr>
+              <tr><td class="plu-code">3469</td><td>Fanta M ALC</td><td class="plu-short">FANTA M</td></tr>
+              <tr><td class="plu-code">3476</td><td>Fanta G ALC</td><td class="plu-short">FANTA G</td></tr>
+              <tr><td class="plu-code">2790</td><td>Fanta G Pr</td><td class="plu-short">FANTA G</td></tr>
+              <tr><td class="plu-code">40143</td><td>Fanta P ALC</td><td class="plu-short">FANTA P</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Guaraná Zero</td></tr>
+              <tr><td class="plu-code">91428</td><td>FantGua Z G Pr</td><td class="plu-short">F GUA Z G</td></tr>
+              <tr><td class="plu-code">91305</td><td>FantGua Z G ALC</td><td class="plu-short">F GUA Z G</td></tr>
+              <tr><td class="plu-code">91404</td><td>FantGua Z M Pr</td><td class="plu-short">F GUA Z M</td></tr>
+              <tr><td class="plu-code">91282</td><td>FantGua Z M ALC</td><td class="plu-short">F GUA Z M</td></tr>
+              <tr><td class="plu-code">91381</td><td>FantGua Z P Pr</td><td class="plu-short">F GUA Z P</td></tr>
+              <tr><td class="plu-code">91268</td><td>FantGua Z P ALC</td><td class="plu-short">F GUA Z P</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🍊</div>
+          <h2>Sucos</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Suco de Laranja</td></tr>
+              <tr><td class="plu-code">185</td><td>Suco Laranja M ALC</td><td class="plu-short">LARANJA M</td></tr>
+              <tr><td class="plu-code">1182</td><td>Suco Laranja M Pr</td><td class="plu-short">LARANJA M</td></tr>
+              <tr><td class="plu-code">178</td><td>Suco Laranja P ALC</td><td class="plu-short">LARANJA P</td></tr>
+              <tr><td class="plu-code">1175</td><td>Suco Laranja P Pr</td><td class="plu-short">LARANJA P</td></tr>
+              <tr><td class="plu-code">613460</td><td>Suco Laranja G Pr</td><td class="plu-short">LARANJA G</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Suco de Uva</td></tr>
+              <tr><td class="plu-code">12300</td><td>Suco Uva M ALC</td><td class="plu-short">UVA M</td></tr>
+              <tr><td class="plu-code">12423</td><td>Suco Uva M Pr</td><td class="plu-short">UVA M</td></tr>
+              <tr><td class="plu-code">12294</td><td>Suco Uva P ALC</td><td class="plu-short">UVA P</td></tr>
+              <tr><td class="plu-code">12416</td><td>Suco Uva P Pr</td><td class="plu-short">UVA P</td></tr>
+              <tr><td class="plu-code">613484</td><td>Suco Uva G Pr</td><td class="plu-short">UVA G</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">💧</div>
+          <h2>Água</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">307</td><td>Agua Copo ALC</td><td class="plu-short">AGUA COPO</td></tr>
+              <tr><td class="plu-code">1267</td><td>Agua Copo Pr</td><td class="plu-short">AGUA COPO</td></tr>
+              <tr><td class="plu-code">86042</td><td>Agua Garrafa Of</td><td class="plu-short">AgGARRAFA</td></tr>
+              <tr><td class="plu-code">86604</td><td>Agua Garrafa ALC</td><td class="plu-short">AgGARRAFA</td></tr>
+              <tr><td class="plu-code">66704</td><td>AguaGar350ml</td><td class="plu-short">AGUA 350</td></tr>
+              <tr><td class="plu-code">94521</td><td>Agua500 DLV</td><td class="plu-short">AGUA 500</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">☕</div>
+          <h2>McCafé</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">628</td><td>Cafe Espresso</td><td class="plu-short">CAFE ESPR</td></tr>
+              <tr><td class="plu-code">608206</td><td>Cafe Espresso Promo</td><td class="plu-short">CAFE ESPR</td></tr>
+              <tr><td class="plu-code">659</td><td>Cappuccino</td><td class="plu-short">CAPPUCI</td></tr>
+              <tr><td class="plu-code">14458</td><td>Cafe Chantilly</td><td class="plu-short">CAFECHANT</td></tr>
+              <tr><td class="plu-code">2554</td><td>Machiatto</td><td class="plu-short">MACHIATO</td></tr>
+              <tr><td class="plu-code">37211</td><td>CafePre200ml</td><td class="plu-short">CAFE 200</td></tr>
+              <tr><td class="plu-code">37242</td><td>CafPr Pr200ml</td><td class="plu-short">CAFE 200</td></tr>
+              <tr><td class="plu-code">33916</td><td>Cafe Pre300ml</td><td class="plu-short">CAFE 300</td></tr>
+              <tr><td class="plu-code">20671</td><td>Frappe de Cafe</td><td class="plu-short">FRAP CAFE</td></tr>
+              <tr><td class="plu-code">20664</td><td>Frappe Frutas Vermelhas</td><td class="plu-short">FRFRUVERM</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🥛</div>
+          <h2>McShake</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Shake Baunilha</td></tr>
+              <tr><td class="plu-code">63023</td><td>Cas Bau BL CP</td><td class="plu-short">SHAKE BAU</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Shake Chocolate</td></tr>
+              <tr><td class="plu-code">87361</td><td>Cas Cho BL CP</td><td class="plu-short">SHAKE CHO</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Shake Morango</td></tr>
+              <tr><td class="plu-code">77709</td><td>Cas Mis BL CP</td><td class="plu-short">SHAKE MOR</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BATATAS -->
+    <div class="tab-panel" id="panel-batatas">
+      <div class="section-label">McFritas e Acompanhamentos</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍟</div>
+          <h2>McFritas por Tamanho</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Batata Pequena</td></tr>
+              <tr><td class="plu-code">624282</td><td>Bat P PrKit</td><td class="plu-short">BATATA P</td></tr>
+              <tr><td class="plu-code">88951</td><td>Batata P PrCF</td><td class="plu-short">BATATA P</td></tr>
+              <tr><td class="plu-code">600002</td><td>Batata P Pr MLF</td><td class="plu-short">BATATA P</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Batata Média</td></tr>
+              <tr><td class="plu-code">123</td><td>Batata Media ALC</td><td class="plu-short">BATATA M</td></tr>
+              <tr><td class="plu-code">600019</td><td>Batata Media Pr</td><td class="plu-short">BATATA M</td></tr>
+              <tr><td class="plu-code">627115</td><td>Batata M PrPD</td><td class="plu-short">BATATA M</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Batata Grande</td></tr>
+              <tr><td class="plu-code">130</td><td>Batata Grande ALC</td><td class="plu-short">BATATA G</td></tr>
+              <tr><td class="plu-code">600026</td><td>Batata Grande Pr</td><td class="plu-short">BATATA G</td></tr>
+              <tr><td class="plu-code">615990</td><td>Batata Grande Pr AD</td><td class="plu-short">BATATA G</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Batata Kids</td></tr>
+              <tr><td class="plu-code">53495</td><td>Batata Kids ALC</td><td class="plu-short">BATATA K</td></tr>
+              <tr><td class="plu-code">614290</td><td>Batata Kids McL CP</td><td class="plu-short">BATATA K</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🧀</div>
+          <h2>Batata Cheddar e Mega</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Batata Cheddar</td></tr>
+              <tr><td class="plu-code">92869</td><td>BT Cheddar</td><td class="plu-short">BAT CHED</td></tr>
+              <tr><td class="plu-code">624749</td><td>BT Ched G Pr</td><td class="plu-short">BAT CHED</td></tr>
+              <tr><td class="plu-code">64780</td><td>BT CHED G PrA</td><td class="plu-short">BAT CHED</td></tr>
+              <tr><td class="plu-code">85176</td><td>Bat Ched PrPD</td><td class="plu-short">BAT CHED</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Mega Batata</td></tr>
+              <tr><td class="plu-code">81091</td><td>Mega Batata</td><td class="plu-short">BAT MEGA</td></tr>
+              <tr><td class="plu-code">601096</td><td>Bat Mega Pr</td><td class="plu-short">BAT MEGA</td></tr>
+              <tr><td class="plu-code">95551</td><td>Bat Mega PrA</td><td class="plu-short">BAT MEGA</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🧅</div>
+          <h2>McRings e Side Salada</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">McRings</td></tr>
+              <tr><td class="plu-code">68096</td><td>McRings ALC</td><td class="plu-short">MC RINGS</td></tr>
+              <tr><td class="plu-code">95653</td><td>McRings Pr</td><td class="plu-short">MC RINGS</td></tr>
+              <tr><td class="plu-code">70610</td><td>McRingsPr FLZ</td><td class="plu-short">MC RINGS</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Side Salada</td></tr>
+              <tr><td class="plu-code">53501</td><td>Side Salada ALC</td><td class="plu-short">SIDE</td></tr>
+              <tr><td class="plu-code">606561</td><td>Side Salada Pr</td><td class="plu-short">SIDE</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOBREMESAS -->
+    <div class="tab-panel" id="panel-sobremesas">
+      <div class="section-label">Sobremesas e Guloseimas</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍦</div>
+          <h2>Casquinha</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Casquinha Baunilha</td></tr>
+              <tr><td class="plu-code">2936</td><td>Casquinha Creme BL</td><td class="plu-short">CASQ BAU</td></tr>
+              <tr><td class="plu-code">91553</td><td>Casq Bau BL</td><td class="plu-short">CASQ BAU</td></tr>
+              <tr><td class="plu-code">3193</td><td>Casquinha BAUN PrAg BL</td><td class="plu-short">CASQ BAU</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Casquinha Chocolate</td></tr>
+              <tr><td class="plu-code">2929</td><td>Casquinha Chocolate BL</td><td class="plu-short">CASQ CHO</td></tr>
+              <tr><td class="plu-code">77413</td><td>Casq Cho BL</td><td class="plu-short">CASQ CHO</td></tr>
+              <tr><td class="plu-code">3186</td><td>Casquinha CHO PrAg BL</td><td class="plu-short">CASQ CHO</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Casquinha Mista</td></tr>
+              <tr><td class="plu-code">2943</td><td>Casquinha Mista BL</td><td class="plu-short">CASQ MIS</td></tr>
+              <tr><td class="plu-code">98082</td><td>Casq Mis BL</td><td class="plu-short">CASQ MIS</td></tr>
+              <tr><td class="plu-code">3209</td><td>Casquinha MIST PrAg BL</td><td class="plu-short">CASQ MIS</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🍨</div>
+          <h2>Sundae</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Sundae Caramelo</td></tr>
+              <tr><td class="plu-code">2967</td><td>Sundae Caramelo BL</td><td class="plu-short">SUNDAE CA</td></tr>
+              <tr><td class="plu-code">93114</td><td>Sund Ca BL</td><td class="plu-short">SUNDAE CA</td></tr>
+              <tr><td class="plu-code">72427</td><td>Sundae CAR PrAg BL</td><td class="plu-short">SUNDAE CA</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Sundae Chocolate</td></tr>
+              <tr><td class="plu-code">2950</td><td>Sundae Chocolate BL</td><td class="plu-short">SUNDAE CH</td></tr>
+              <tr><td class="plu-code">63475</td><td>Sund Ch BL</td><td class="plu-short">SUNDAE CH</td></tr>
+              <tr><td class="plu-code">3216</td><td>Sunade CHOC PrAg BL</td><td class="plu-short">SUNDAE CH</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Sundae Morango</td></tr>
+              <tr><td class="plu-code">2974</td><td>Sundae Morango BL</td><td class="plu-short">SUNDAE MO</td></tr>
+              <tr><td class="plu-code">95392</td><td>Sund Mo BL</td><td class="plu-short">SUNDAE MO</td></tr>
+              <tr><td class="plu-code">3230</td><td>Sundae MOR PrAg BL</td><td class="plu-short">SUNDAE MO</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🍧</div>
+          <h2>McFlurry</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">McFlurry Ovomaltine</td></tr>
+              <tr><td class="plu-code">98724</td><td>FL Ovo BL</td><td class="plu-short">FL OVO</td></tr>
+              <tr><td class="plu-code">600805</td><td>FL Ovo CA BL</td><td class="plu-short">FL OVO CA</td></tr>
+              <tr><td class="plu-code">600802</td><td>FL Ovo CH BL</td><td class="plu-short">FL OVO CH</td></tr>
+              <tr><td class="plu-code">600803</td><td>FL Ovo MO BL</td><td class="plu-short">FL OVO MO</td></tr>
+              <tr><td colspan="3" class="plu-section-title">McFlurry M&Ms</td></tr>
+              <tr><td class="plu-code">60065</td><td>FL MMs BL</td><td class="plu-short">FL MMS</td></tr>
+              <tr><td colspan="3" class="plu-section-title">McFlurry Prestígio</td></tr>
+              <tr><td class="plu-code">71519</td><td>FL Prestig BL</td><td class="plu-short">FL PREST</td></tr>
+              <tr><td colspan="3" class="plu-section-title">McFlurry Brasil BL</td></tr>
+              <tr><td class="plu-code">95008</td><td>FL Brasil BL</td><td class="plu-short">FL BRASIL</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🥧</div>
+          <h2>Tortas e Bolos</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3" class="plu-section-title">Torta de Banana</td></tr>
+              <tr><td class="plu-code">208</td><td>Torta de Banana</td><td class="plu-short">TORTA BAN</td></tr>
+              <tr><td class="plu-code">55581</td><td>Torta Banana Pr</td><td class="plu-short">TORTA BAN</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Torta de Maçã</td></tr>
+              <tr><td class="plu-code">192</td><td>Torta de Maca</td><td class="plu-short">TORTA MAC</td></tr>
+              <tr><td class="plu-code">55574</td><td>Torta Maca Pr</td><td class="plu-short">TORTA MAC</td></tr>
+              <tr><td colspan="3" class="plu-section-title">Bolos</td></tr>
+              <tr><td class="plu-code">22484</td><td>Bolo Chocolate</td><td class="plu-short">BOLO CHO</td></tr>
+              <tr><td class="plu-code">22477</td><td>Bolo Morango</td><td class="plu-short">BOLO MOR</td></tr>
+              <tr><td class="plu-code">70912</td><td>BoloBanana MC</td><td class="plu-short">BOLO BANA</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTRAS -->
+    <div class="tab-panel" id="panel-extras">
+      <div class="section-label">Add-Ons, Molhos e Carnes Avulsas</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">➕</div>
+          <h2>Add-Ons (Adicionais)</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">93642</td><td>Add Alface</td><td class="plu-short">ALFACE</td></tr>
+              <tr><td class="plu-code">110594</td><td>ADD Ceb Fresca</td><td class="plu-short">ADDCEBOLA</td></tr>
+              <tr><td class="plu-code">110617</td><td>Add Ceb Reidra</td><td class="plu-short">ADDCEBO R</td></tr>
+              <tr><td class="plu-code">64019</td><td>Bacon</td><td class="plu-short">BACON</td></tr>
+              <tr><td class="plu-code">79908</td><td>ADD Bacon Cri</td><td class="plu-short">BACON CR</td></tr>
+              <tr><td class="plu-code">99295</td><td>AddCebolaCaram</td><td class="plu-short">ADD CECAR</td></tr>
+              <tr><td class="plu-code">64204</td><td>AD Emp Queijo</td><td class="plu-short">AD EMP QJ</td></tr>
+              <tr><td class="plu-code">92326</td><td>ADD Carne 5:1</td><td class="plu-short">ADD 5:1</td></tr>
+              <tr><td class="plu-code">96383</td><td>Biju 2uni PrCP</td><td class="plu-short">ADD BIJU</td></tr>
+              <tr><td class="plu-code">76951</td><td>Biju 2 unid</td><td class="plu-short">BIJU</td></tr>
+              <tr><td class="plu-code">87353</td><td>Extra Gotas</td><td class="plu-short">ADD GOTAS</td></tr>
+              <tr><td class="plu-code">81768</td><td>AddOn MMs</td><td class="plu-short">ADD MMS</td></tr>
+              <tr><td class="plu-code">77229</td><td>AddOn Prestig</td><td class="plu-short">ADD PREST</td></tr>
+              <tr><td class="plu-code">63807</td><td>Tomate</td><td class="plu-short">TOMATE</td></tr>
+              <tr><td class="plu-code">89520</td><td>Add Tomate</td><td class="plu-short">TOMATE</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🧂</div>
+          <h2>Molhos Avulsos</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">3049</td><td>Molho Agridoce ALC</td><td class="plu-short">M AGRIDOC</td></tr>
+              <tr><td class="plu-code">3032</td><td>Molho Barbecue ALC</td><td class="plu-short">M BARBECU</td></tr>
+              <tr><td class="plu-code">3025</td><td>Molho Caipira ALC</td><td class="plu-short">M CAIPIRA</td></tr>
+              <tr><td class="plu-code">59572</td><td>Molho Ranch ALC</td><td class="plu-short">M RANCH</td></tr>
+              <tr><td class="plu-code">64071</td><td>Molho Cheddar</td><td class="plu-short">M CHEDDAR</td></tr>
+              <tr><td class="plu-code">73684</td><td>Molho Vinagre ALC</td><td class="plu-short">VINAGRE</td></tr>
+              <tr><td class="plu-code">54768</td><td>Molho Caesar ALC</td><td class="plu-short">M CAESAR</td></tr>
+              <tr><td class="plu-code">73677</td><td>Molho Azeite ALC</td><td class="plu-short">AZEITE</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🥩</div>
+          <h2>Carnes Avulsas (Break)</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">89852</td><td>Hamburguer 10:1</td><td class="plu-short">CAR 10:1</td></tr>
+              <tr><td class="plu-code">89869</td><td>Hamburguer 4:1</td><td class="plu-short">CAR 4.1</td></tr>
+              <tr><td class="plu-code">89876</td><td>Hamburguer 3:1</td><td class="plu-short">CAR 3.1</td></tr>
+              <tr><td class="plu-code">623704</td><td>Carne Chick Pr</td><td class="plu-short">CAR CHICK</td></tr>
+              <tr><td class="plu-code">90902</td><td>AD Carne Junior</td><td class="plu-short">CAR JR</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">⏰</div>
+          <h2>Breaks (Intervalos)</h2>
+        </div>
+        <div class="card-body">
+          <table class="plu-table">
+            <thead><tr><th>PLU</th><th>Nome Longo</th><th>Cód. Curto</th></tr></thead>
+            <tbody>
+              <tr><td class="plu-code">57042</td><td>Break Segunda</td><td class="plu-short">BREAK SEG</td></tr>
+              <tr><td class="plu-code">57066</td><td>Break Quarta 1</td><td class="plu-short">BREAK QUA</td></tr>
+              <tr><td class="plu-code">57073</td><td>Break Quarta 2</td><td class="plu-short">BREAK QUA</td></tr>
+              <tr><td class="plu-code">57097</td><td>Break Sexta</td><td class="plu-short">BREAK SEX</td></tr>
+              <tr><td class="plu-code">57103</td><td>Break Sabado 1</td><td class="plu-short">BREAK SAB</td></tr>
+              <tr><td class="plu-code">57127</td><td>Break Domingo 1</td><td class="plu-short">BREAK DOM</td></tr>
+              <tr><td class="plu-code">57134</td><td>Break Domingo 2</td><td class="plu-short">BREAK DOM</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUSCA -->
+    <div class="tab-panel" id="panel-busca">
+      <div class="section-label">Pesquisa de PLU</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔍</div>
+          <h2>Buscar PLU por Nome ou Código</h2>
+        </div>
+        <div class="card-body">
+          <input type="text" class="plu-search" id="pluSearchInput" placeholder="Digite o nome do produto ou código PLU..." oninput="filterPLU(this.value)">
+          <div id="pluSearchCount" style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;"></div>
+          <table class="plu-table" id="pluSearchTable">
+            <thead><tr><th>PLU</th><th>Nome do Produto</th><th>Categoria</th></tr></thead>
+            <tbody id="pluSearchBody">
+              <tr><td class="plu-code">55</td><td>Big Mac ALC</td><td class="plu-short">BIG MAC</td></tr>
+              <tr><td class="plu-code">600071</td><td>Big Mac M Pr</td><td class="plu-short">BIG MAC</td></tr>
+              <tr><td class="plu-code">600088</td><td>Big Mac G Pr</td><td class="plu-short">BIG MAC</td></tr>
+              <tr><td class="plu-code">81921</td><td>Big Tasty ALC</td><td class="plu-short">BIG TASTY</td></tr>
+              <tr><td class="plu-code">600525</td><td>Big Tasty G Pr</td><td class="plu-short">BIG TASTY</td></tr>
+              <tr><td class="plu-code">600526</td><td>Big Tasty M Pr</td><td class="plu-short">BIG TASTY</td></tr>
+              <tr><td class="plu-code">74581</td><td>Chicken PrPD</td><td class="plu-short">MCCHICKEN</td></tr>
+              <tr><td class="plu-code">94772</td><td>ChickenALC CP</td><td class="plu-short">MCCHICKEN</td></tr>
+              <tr><td class="plu-code">17</td><td>Hamburguer ALC</td><td class="plu-short">HB</td></tr>
+              <tr><td class="plu-code">65692</td><td>HB PrCP</td><td class="plu-short">HB</td></tr>
+              <tr><td class="plu-code">65971</td><td>CB BOG</td><td class="plu-short">CB</td></tr>
+              <tr><td class="plu-code">97019</td><td>CB M PrCP</td><td class="plu-short">CB</td></tr>
+              <tr><td class="plu-code">89354</td><td>Duplo Cheddar</td><td class="plu-short">DUP CHEDD</td></tr>
+              <tr><td class="plu-code">92371</td><td>Duplo Quarterao</td><td class="plu-short">DUP QUART</td></tr>
+              <tr><td class="plu-code">67474</td><td>Du Burger ALC</td><td class="plu-short">DU BACON</td></tr>
+              <tr><td class="plu-code">91084</td><td>Triplo CB ALC</td><td class="plu-short">TRIPLO CB</td></tr>
+              <tr><td class="plu-code">123</td><td>Batata Media ALC</td><td class="plu-short">BATATA M</td></tr>
+              <tr><td class="plu-code">130</td><td>Batata Grande ALC</td><td class="plu-short">BATATA G</td></tr>
+              <tr><td class="plu-code">81091</td><td>Mega Batata</td><td class="plu-short">BAT MEGA</td></tr>
+              <tr><td class="plu-code">92869</td><td>BT Cheddar</td><td class="plu-short">BAT CHED</td></tr>
+              <tr><td class="plu-code">53495</td><td>Batata Kids ALC</td><td class="plu-short">BATATA K</td></tr>
+              <tr><td class="plu-code">68096</td><td>McRings ALC</td><td class="plu-short">MC RINGS</td></tr>
+              <tr><td class="plu-code">53501</td><td>Side Salada ALC</td><td class="plu-short">SIDE</td></tr>
+              <tr><td class="plu-code">307</td><td>Agua Copo ALC</td><td class="plu-short">AGUA COPO</td></tr>
+              <tr><td class="plu-code">86604</td><td>Agua Garrafa ALC</td><td class="plu-short">AgGARRAFA</td></tr>
+              <tr><td class="plu-code">2783</td><td>Fanta M Pr / Guaraná M Pr</td><td class="plu-short">FANTA M / GUARANA M</td></tr>
+              <tr><td class="plu-code">3469</td><td>Fanta M ALC / Guaraná M ALC</td><td class="plu-short">FANTA M / GUARANA M</td></tr>
+              <tr><td class="plu-code">185</td><td>Suco Laranja M ALC</td><td class="plu-short">LARANJA M</td></tr>
+              <tr><td class="plu-code">1182</td><td>Suco Laranja M Pr</td><td class="plu-short">LARANJA M</td></tr>
+              <tr><td class="plu-code">12300</td><td>Suco Uva M ALC</td><td class="plu-short">UVA M</td></tr>
+              <tr><td class="plu-code">628</td><td>Cafe Espresso</td><td class="plu-short">CAFE ESPR</td></tr>
+              <tr><td class="plu-code">659</td><td>Cappuccino</td><td class="plu-short">CAPPUCI</td></tr>
+              <tr><td class="plu-code">2936</td><td>Casquinha Creme BL (Baunilha)</td><td class="plu-short">CASQ BAU</td></tr>
+              <tr><td class="plu-code">2929</td><td>Casquinha Chocolate BL</td><td class="plu-short">CASQ CHO</td></tr>
+              <tr><td class="plu-code">2943</td><td>Casquinha Mista BL</td><td class="plu-short">CASQ MIS</td></tr>
+              <tr><td class="plu-code">2967</td><td>Sundae Caramelo BL</td><td class="plu-short">SUNDAE CA</td></tr>
+              <tr><td class="plu-code">2950</td><td>Sundae Chocolate BL</td><td class="plu-short">SUNDAE CH</td></tr>
+              <tr><td class="plu-code">2974</td><td>Sundae Morango BL</td><td class="plu-short">SUNDAE MO</td></tr>
+              <tr><td class="plu-code">98724</td><td>FL Ovo BL (McFlurry Ovomaltine)</td><td class="plu-short">FL OVO</td></tr>
+              <tr><td class="plu-code">60065</td><td>FL MMs BL (McFlurry M&Ms)</td><td class="plu-short">FL MMS</td></tr>
+              <tr><td class="plu-code">208</td><td>Torta de Banana</td><td class="plu-short">TORTA BAN</td></tr>
+              <tr><td class="plu-code">192</td><td>Torta de Maca</td><td class="plu-short">TORTA MAC</td></tr>
+              <tr><td class="plu-code">22484</td><td>Bolo Chocolate</td><td class="plu-short">BOLO CHO</td></tr>
+              <tr><td class="plu-code">64019</td><td>Bacon</td><td class="plu-short">BACON</td></tr>
+              <tr><td class="plu-code">3049</td><td>Molho Agridoce ALC</td><td class="plu-short">M AGRIDOC</td></tr>
+              <tr><td class="plu-code">3032</td><td>Molho Barbecue ALC</td><td class="plu-short">M BARBECU</td></tr>
+              <tr><td class="plu-code">3025</td><td>Molho Caipira ALC</td><td class="plu-short">M CAIPIRA</td></tr>
+              <tr><td class="plu-code">59572</td><td>Molho Ranch ALC</td><td class="plu-short">M RANCH</td></tr>
+              <tr><td class="plu-code">64071</td><td>Molho Cheddar</td><td class="plu-short">M CHEDDAR</td></tr>
+              <tr><td class="plu-code">89852</td><td>Hamburguer 10:1 (Break)</td><td class="plu-short">CAR 10:1</td></tr>
+              <tr><td class="plu-code">89869</td><td>Hamburguer 4:1 (Break)</td><td class="plu-short">CAR 4.1</td></tr>
+              <tr><td class="plu-code">57042</td><td>Break Segunda</td><td class="plu-short">BREAK SEG</td></tr>
+              <tr><td class="plu-code">57097</td><td>Break Sexta</td><td class="plu-short">BREAK SEX</td></tr>
+              <tr><td class="plu-code">57127</td><td>Break Domingo 1</td><td class="plu-short">BREAK DOM</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · PLU's · Desenvolvido por Adrian E. Silva
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+  <script>
+    function filterPLU(query) {
+      const q = query.toLowerCase().trim();
+      const rows = document.querySelectorAll('#pluSearchBody tr');
+      let visible = 0;
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        if (!q || text.includes(q)) {
+          row.classList.remove('hidden-row');
+          visible++;
+        } else {
+          row.classList.add('hidden-row');
+        }
+      });
+      const countEl = document.getElementById('pluSearchCount');
+      if (q) {
+        countEl.textContent = visible + ' resultado' + (visible !== 1 ? 's' : '') + ' encontrado' + (visible !== 1 ? 's' : '');
+      } else {
+        countEl.textContent = '';
+      }
+    }
+  </script>
+</body>
+</html>

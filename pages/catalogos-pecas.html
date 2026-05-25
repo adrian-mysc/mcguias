@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <script type="module" src="../js/auth-guard.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogos de Peças — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 200);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 200); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="catalogos-pecas">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Catálogos de Peças</h1>
+        <p>Equipamentos · Peças de Reposição</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="chapa">🔥 Chapa</button>
+      <button class="tab-btn" data-tab="fritadeiras">🍟 Fritadeiras</button>
+      <button class="tab-btn" data-tab="bebidas">🥤 Bebidas</button>
+      <button class="tab-btn" data-tab="outros">🔧 Outros</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- VISÃO GERAL -->
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">Catálogo de Equipamentos</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔧</div>
+          <h2>Para que serve o Catálogo de Peças?</h2>
+        </div>
+        <div class="card-body">
+          <p style="line-height:1.6;margin-bottom:12px;">O <strong>Catálogo de Peças</strong> é o material de referência para identificação e solicitação de peças de reposição dos equipamentos do restaurante. Auxilia no processo de manutenção preventiva e corretiva.</p>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Para solicitar peças, utilize o número do modelo do equipamento e o código da peça no catálogo do fabricante. Acione sempre o fornecedor homologado pelo McDonald's.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📂</div>
+          <h2>Equipamentos Catalogados</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill red">🔥 Chapas</div>
+            <div class="pill yellow">🍟 Fritadeiras</div>
+            <div class="pill blue">🥤 Máq. de Bebidas</div>
+            <div class="pill green">🍦 Máq. de Sorvete</div>
+            <div class="pill red">☕ McCafé</div>
+            <div class="pill blue">🌡️ UHC / Aquecedores</div>
+            <div class="pill yellow">❄️ Câmaras Frias</div>
+            <div class="pill green">🚿 Limpeza</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⚠️</div>
+          <h2>Importante — Manutenção</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text"><strong>Não tente reparar</strong> equipamentos elétricos sem treinamento adequado — risco de choque elétrico e invalidação da garantia</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Sempre <strong>desligar e travar</strong> o equipamento antes de qualquer intervenção (Lock Out / Tag Out)</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Registrar a falha no <strong>livro de ocorrências</strong> com data, hora e descrição do problema</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Acionar o <strong>técnico autorizado</strong> ou a assistência técnica do fornecedor para reparos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPA -->
+    <div class="tab-panel" id="panel-chapa">
+      <div class="section-label">Chapa Clovis / Taylor</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔥</div>
+          <h2>Peças de Reposição — Chapa</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Peças Frequentes</h3>
+              <ul>
+                <li>Teflon / lâmina antiaderente</li>
+                <li>Raspadeira de chapa</li>
+                <li>Rodinho de borracha (platen)</li>
+                <li>Termostato</li>
+                <li>Resistência elétrica</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Acessórios</h3>
+              <ul>
+                <li>Guia de colocação de carnes</li>
+                <li>Espátulas (simples e angulada)</li>
+                <li>Dispensador de cebola</li>
+                <li>Dispensador de sal e pimenta</li>
+                <li>Calha de gordura</li>
+              </ul>
+            </div>
+          </div>
+          <div class="alert warn" style="margin-top:12px;">
+            <div class="alert-icon">⚠️</div>
+            <div>Teflon: substituir conforme o cronograma — pares em dias pares, ímpares em dias ímpares. Teflon danificado compromete o produto e pode ser ingerido pelo cliente.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📋</div>
+          <h2>Vida Útil dos Componentes</h2>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="stat-box yellow">
+              <div class="stat-label">Teflon</div>
+              <div class="stat-value">Diário</div>
+              <div class="stat-sub">Alternância par/ímpar</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Raspadeira</div>
+              <div class="stat-value">Mensal</div>
+              <div class="stat-sub">Ou quando desgastada</div>
+            </div>
+            <div class="stat-box green">
+              <div class="stat-label">Rodinho borracha</div>
+              <div class="stat-value">Semanal</div>
+              <div class="stat-sub">Verificar desgaste</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Termostato</div>
+              <div class="stat-value">Conforme</div>
+              <div class="stat-sub">Calibrar regularmente</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRITADEIRAS -->
+    <div class="tab-panel" id="panel-fritadeiras">
+      <div class="section-label">Fritadeiras</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍟</div>
+          <h2>Peças de Reposição — Fritadeira</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Peças Internas</h3>
+              <ul>
+                <li>Elemento aquecedor (resistência)</li>
+                <li>Termostato de controle</li>
+                <li>Termostato de segurança (fuse)</li>
+                <li>Filtro de óleo</li>
+                <li>Mangueira de filtragem</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Acessórios Externos</h3>
+              <ul>
+                <li>Cesto (basket) de imersão</li>
+                <li>Tampa da fritadeira</li>
+                <li>Cuba de fritadeira</li>
+                <li>Knob de temperatura</li>
+                <li>Painel de controle</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛢️</div>
+          <h2>Filtro de Óleo — Manutenção</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Filtrar o óleo após cada período de uso conforme ficha SMPD</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Verificar a integridade do filtro — trocar quando rasgado ou entupido</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Limpar a carcaça do filtro com produto desengordurante aprovado</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text">Registrar a troca do filtro na ficha de manutenção preventiva</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEBIDAS -->
+    <div class="tab-panel" id="panel-bebidas">
+      <div class="section-label">Máquinas de Bebidas e Sorvete</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🥤</div>
+          <h2>Máquina de Refrigerantes</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Peças Comuns</h3>
+              <ul>
+                <li>Bicos dosadores (nozzles)</li>
+                <li>Difusores de bebida</li>
+                <li>Válvulas solenóides</li>
+                <li>Filtro de água</li>
+                <li>Mangueiras de CO₂</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Limpeza e Higiene</h3>
+              <ul>
+                <li>Limpar bicos diariamente</li>
+                <li>Sanitizar tubulações semanalmente</li>
+                <li>Trocar filtro de água conforme prazo</li>
+                <li>Verificar pressão do gás CO₂</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🍦</div>
+          <h2>Máquina de Sorvete (Soft-Serve)</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Peças e Componentes</h3>
+              <ul>
+                <li>Bicos dosadores (nozzles)</li>
+                <li>O-rings (vedações de borracha)</li>
+                <li>Raspadeira interna (scraper blade)</li>
+                <li>Motorredutor do barril</li>
+                <li>Compressor de refrigeração</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Procedimento de Limpeza</h3>
+              <ul>
+                <li>Desmontagem diária para limpeza</li>
+                <li>Sanitizar todas as peças em contato com produto</li>
+                <li>Trocar O-rings ao sinal de desgaste</li>
+                <li>Heat Treatment automático (consultar manual)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTROS -->
+    <div class="tab-panel" id="panel-outros">
+      <div class="section-label">Outros Equipamentos</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🌡️</div>
+          <h2>UHC e Aquecedores</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Peças UHC</h3>
+              <ul>
+                <li>Gavetas e lâminas de produto</li>
+                <li>Ventilador interno</li>
+                <li>Resistência de aquecimento</li>
+                <li>Termostato digital</li>
+                <li>Porta deslizante</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Manutenção Preventiva</h3>
+              <ul>
+                <li>Limpar gavetas com sanitizante diariamente</li>
+                <li>Verificar temperatura a cada turno</li>
+                <li>Calibrar termostato mensalmente</li>
+                <li>Limpar ventoínha mensalmente</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">❄️</div>
+          <h2>Câmaras Frias e Refrigeradores</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Componentes</h3>
+              <ul>
+                <li>Gaxeta de vedação da porta</li>
+                <li>Evaporador</li>
+                <li>Condensador</li>
+                <li>Termostato</li>
+                <li>Sistema de drenagem</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Sinais de Alerta</h3>
+              <ul>
+                <li class="red">Temperatura acima do limite</li>
+                <li class="red">Gaxeta rasgada ou solta</li>
+                <li class="red">Acúmulo excessivo de gelo</li>
+                <li class="red">Barulho incomum no motor</li>
+                <li class="red">Excesso de umidade interna</li>
+              </ul>
+            </div>
+          </div>
+          <div class="alert warn" style="margin-top:12px;">
+            <div class="alert-icon">⚠️</div>
+            <div>Ao identificar qualquer anomalia em câmaras ou refrigeradores, <strong>comunique imediatamente ao gerente</strong>. A segurança alimentar dos produtos depende do funcionamento correto.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">☕</div>
+          <h2>McCafé — Equipamentos</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Máquina de Espresso</h3>
+              <ul>
+                <li>Filtro porta-cápsula</li>
+                <li>Bico de vapor</li>
+                <li>Termostato de caldeira</li>
+                <li>Bomba de pressão</li>
+                <li>Descalcificação periódica</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Manutenção Diária</h3>
+              <ul>
+                <li>Purgar o bico de vapor</li>
+                <li>Limpar o porta-filtro</li>
+                <li>Higienizar a bandeja coletora</li>
+                <li>Registrar descalcificação</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Catálogos de Peças · Desenvolvido por Adrian E. Silva
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

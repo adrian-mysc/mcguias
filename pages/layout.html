@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <script type="module" src="../js/auth-guard.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 200);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 200); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="preload" href="../js/main.js" as="script">
+</head>
+<body data-page="layout">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Layout</h1>
+        <p>Book de Layout · Organização do Restaurante</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
+      <button class="tab-btn" data-tab="mcdelivery">🛵 McDelivery</button>
+      <button class="tab-btn" data-tab="checklist">✅ Checklist</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- VISÃO GERAL -->
+    <div class="tab-panel active" id="panel-visao">
+      <div class="section-label">Book de Layout</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📐</div>
+          <h2>O que é o Book de Layout?</h2>
+          <div class="badge badge-red">MCD-075</div>
+        </div>
+        <div class="card-body">
+          <p style="line-height:1.6;margin-bottom:12px;">O <strong>Book de Layout</strong> (MCD-075) é o manual oficial de organização do restaurante McDonald's. Define o posicionamento correto de equipamentos, utensílios e insumos em cada área operacional.</p>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div><strong>Objetivo principal:</strong> Melhorar a organização para facilitar o trabalho dos funcionários, priorizando <strong>tempos, movimentos e ergonomia</strong>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🏗️</div>
+          <h2>Princípios do Layout</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text"><strong>Tempos:</strong> Reduzir o tempo de deslocamento e busca por itens durante o serviço</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text"><strong>Movimentos:</strong> Minimizar movimentos desnecessários — cada item deve estar onde é usado</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Ergonomia:</strong> Posicionar itens de forma que evitem esforço excessivo ou posturas inadequadas</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">4</div>
+              <div class="step-text"><strong>Adaptação:</strong> Quando a estrutura do restaurante não permitir o layout exato, seguir o mais próximo possível dos layouts propostos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📂</div>
+          <h2>Áreas Cobertas pelo Book</h2>
+        </div>
+        <div class="card-body">
+          <div class="pill-row">
+            <div class="pill red">🛵 McDelivery</div>
+            <div class="pill blue">🍔 Área de Produção</div>
+            <div class="pill yellow">🪑 Salão</div>
+            <div class="pill green">🚗 Drive-Thru</div>
+            <div class="pill red">☕ McCafé</div>
+            <div class="pill blue">📦 Estoque</div>
+          </div>
+          <div class="alert warn" style="margin-top:12px;">
+            <div class="alert-icon">⚠️</div>
+            <div>Os layouts são referências. Ao implementar, sempre priorize a realidade estrutural do seu restaurante e consulte a DOP (Departamento de Desenvolvimento de Operações).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MCDELIVERY -->
+    <div class="tab-panel" id="panel-mcdelivery">
+      <div class="section-label">Capítulo 11 — McDelivery</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📱</div>
+          <h2>Posicionamento do Tablet / POS</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Posicione o <strong>tablet ao lado do POS</strong> que é utilizado para registro de McDelivery</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Coloque o tablet no <strong>suporte com cadeado</strong> e com o <strong>carregador original</strong> conectado</div>
+            </div>
+          </div>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>O tablet deve estar sempre carregado e acessível para registro rápido dos pedidos de delivery.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📦</div>
+          <h2>Área de Entrega M1</h2>
+          <div class="badge badge-red">Layout Padrão</div>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin:-8px -16px 12px;padding:8px 16px;font-size:11px;">Itens e Posições</div>
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Itens de Embalagem</h3>
+              <ul>
+                <li><strong>1.</strong> Lacre Inviolável e Plástico Filme</li>
+                <li><strong>2.</strong> Saco D+</li>
+                <li><strong>3.</strong> Sacola C</li>
+                <li><strong>8.</strong> Insufilme</li>
+                <li><strong>9.</strong> Saco D</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Suportes e Acessórios</h3>
+              <ul>
+                <li><strong>2.</strong> Guardanapo</li>
+                <li><strong>3.</strong> Canudo para McShake</li>
+                <li><strong>Suporte</strong> de Brinquedos</li>
+                <li><strong>Suporte</strong> de Bebidas</li>
+                <li><strong>Suporte</strong> de Lacre</li>
+              </ul>
+            </div>
+          </div>
+          <div class="two-col" style="margin-top:12px;">
+            <div class="info-block">
+              <h3 class="blue">Molhos (posições 4–7)</h3>
+              <ul>
+                <li><strong>4.</strong> Molhos Caipira e Barbecue</li>
+                <li><strong>5.</strong> Molhos Ranch e Agridoce</li>
+                <li><strong>6.</strong> Sachet de Ketchup</li>
+                <li><strong>7.</strong> Sachet de Mostarda</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Bebidas e Complementos</h3>
+              <ul>
+                <li><strong>10.</strong> Suporte de Bebidas</li>
+                <li><strong>11.</strong> Suporte de Brinquedos</li>
+                <li>Molhos e Colheres</li>
+                <li>Ketchup e Mostarda</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛒</div>
+          <h2>Carrinho Aramado Simples</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">Porta Comanda</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">Suporte de Lacres</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">Cardápio de Brinde + Ketchup e Mostarda</div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">Canudos</div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-text">Guardanapos</div>
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              <div class="step-text">Molhos e Colheres</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">7</div>
+              <div class="step-text">Suporte de Brinquedos</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">8</div>
+              <div class="step-text">Insufilme</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">9</div>
+              <div class="step-text">Saco D</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">10</div>
+              <div class="step-text">Suporte de Bebidas</div>
+            </div>
+            <div class="step">
+              <div class="step-num y">11</div>
+              <div class="step-text">Suporte de Brinquedos (2ª posição)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛒</div>
+          <h2>Carrinho Aramado Completo com POS M1</h2>
+          <div class="badge badge-yellow">Versão Completa</div>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Itens 1–8</h3>
+              <ul>
+                <li><strong>1.</strong> Sacos preparados com lacre</li>
+                <li><strong>2.</strong> Bobinas e Lacres reserva</li>
+                <li><strong>3.</strong> Lacre</li>
+                <li><strong>4.</strong> Colheres para sorvete</li>
+                <li><strong>5.</strong> Molhos para McNuggets</li>
+                <li><strong>6.</strong> Ketchup</li>
+                <li><strong>7.</strong> Mostarda</li>
+                <li><strong>8.</strong> Canudo para McShake</li>
+              </ul>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Itens 9–16</h3>
+              <ul>
+                <li><strong>9.</strong> Guardanapos</li>
+                <li><strong>10.</strong> Porta Comanda</li>
+                <li><strong>11.</strong> POS</li>
+                <li><strong>12.</strong> Tablet</li>
+                <li><strong>13.</strong> Sacos D+</li>
+                <li><strong>14.</strong> Sacos C</li>
+                <li><strong>15.</strong> Suporte de Bebidas</li>
+                <li><strong>16.</strong> Suporte de Brinquedos</li>
+              </ul>
+            </div>
+          </div>
+          <div class="alert info" style="margin-top:12px;">
+            <div class="alert-icon">📌</div>
+            <div>No carrinho completo, o <strong>POS e Tablet</strong> ficam integrados ao carrinho, permitindo registro e montagem no mesmo ponto de trabalho.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">✅</div>
+          <h2>Conclusão do Book de Layout</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert info">
+            <div class="alert-icon">📋</div>
+            <div>
+              <p style="margin-bottom:8px;">Como vimos, existem várias opções para melhorar a organização e facilitar o trabalho dos funcionários no restaurante.</p>
+              <p style="margin-bottom:8px;">Os itens listados servem como <strong>referência</strong>. Em casos onde a estrutura do seu restaurante não possibilite a mesma organização apresentada, procure seguir o mais próximo possível dos layouts propostos.</p>
+              <p><strong>Organize sempre priorizando tempos, movimentos e ergonomia.</strong></p>
+            </div>
+          </div>
+          <div class="pill-row" style="margin-top:12px;">
+            <div class="pill green">Impacto na precisão</div>
+            <div class="pill blue">Impacto na rapidez</div>
+            <div class="pill red">Melhor atendimento ao cliente</div>
+          </div>
+          <p style="font-size:11px;color:var(--text-secondary);margin-top:12px;text-align:right;">Fonte: Departamento de Desenvolvimento de Operações — Divisão Brasil</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="tab-panel" id="panel-checklist">
+      <div class="section-label">Checklist de Layout</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛵</div>
+          <h2>Área McDelivery</h2>
+          <div class="badge badge-red">Verificação Diária</div>
+        </div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Tablet posicionado ao lado do POS de delivery</label></div>
+          <div class="check-item"><input type="checkbox"><label>Tablet no suporte com cadeado e carregador conectado</label></div>
+          <div class="check-item"><input type="checkbox"><label>Lacres invioláveis e plástico filme abastecidos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Sacos D+ e Sacolas C disponíveis no suporte</label></div>
+          <div class="check-item"><input type="checkbox"><label>Suporte de bebidas e brinquedos posicionados</label></div>
+          <div class="check-item"><input type="checkbox"><label>Guardanapos e canudos para McShake abastecidos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Molhos (Caipira, Barbecue, Ranch, Agridoce) no lugar</label></div>
+          <div class="check-item"><input type="checkbox"><label>Sachets de Ketchup e Mostarda abastecidos</label></div>
+          <div class="check-item"><input type="checkbox"><label>Colheres para sorvete disponíveis</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🛒</div>
+          <h2>Carrinho Aramado</h2>
+          <div class="badge badge-yellow">Verificação por Turno</div>
+        </div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Porta comanda no lugar correto (posição 1)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Suporte de lacres abastecido (posição 2)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Canudos e guardanapos no lugar (posições 4 e 5)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Molhos e colheres organizados (posição 6)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Suporte de brinquedos posicionado (posição 7)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Insufilme disponível (posição 8)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Sacos D em quantidade suficiente (posição 9)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Suporte de bebidas montado (posição 10)</label></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">📐</div>
+          <h2>Princípios de Organização</h2>
+        </div>
+        <div class="card-body">
+          <div class="check-item"><input type="checkbox"><label>Itens mais usados posicionados mais próximos ao operador</label></div>
+          <div class="check-item"><input type="checkbox"><label>Organização favorece movimentos em linha reta (menos giro)</label></div>
+          <div class="check-item"><input type="checkbox"><label>Altura dos itens adequada para evitar esforço ergonômico</label></div>
+          <div class="check-item"><input type="checkbox"><label>Reposição realizada antes de atingir o nível mínimo</label></div>
+          <div class="check-item"><input type="checkbox"><label>Layout respeitado mesmo com substituto na função</label></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Layout · Desenvolvido por Adrian E. Silva
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
