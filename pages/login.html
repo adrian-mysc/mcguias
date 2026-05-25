@@ -124,6 +124,53 @@
       animation: fadeUp 0.45s 0.18s ease both;
     }
 
+    /* ── Frase motivacional ─────────────────────── */
+    .hero-phrase {
+      margin-top: 18px;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-phrase-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.82);
+      font-style: italic;
+      text-align: center;
+      max-width: 280px;
+      line-height: 1.5;
+      padding: 0 8px;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .hero-phrase-text.fade-out {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+
+    /* ── Aviso manutenção Google ─────────────────── */
+    .google-maintenance {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: var(--radius-sm, 8px);
+      padding: 9px 12px;
+      font-size: 12px;
+      color: #b91c1c;
+      margin-top: -4px;
+    }
+    [data-theme="dark"] .google-maintenance {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.30);
+      color: #fca5a5;
+    }
+    .google-maintenance svg { flex-shrink: 0; }
+
     /* ── Card de login ───────────────────────────── */
     .login-body {
       display: flex;
@@ -486,6 +533,9 @@
     <div class="hero-logo">M</div>
     <h1 class="hero-title">MC Guias</h1>
     <p class="hero-subtitle">Sua plataforma de estudos</p>
+    <div class="hero-phrase">
+      <span class="hero-phrase-text" id="hero-phrase"></span>
+    </div>
   </div>
 
   <!-- Body -->
@@ -502,7 +552,7 @@
       <div class="auth-panel active" id="panel-login">
 
         <!-- Google -->
-        <button class="btn-google" onclick="signInGoogle()">
+        <button class="btn-google" disabled>
           <svg width="18" height="18" viewBox="0 0 48 48">
             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
             <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -512,6 +562,12 @@
           </svg>
           Continuar com Google
         </button>
+        <div class="google-maintenance">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Login com Google em manutenção — use e-mail e senha por enquanto.
+        </div>
 
         <div class="divider">ou</div>
 
@@ -555,7 +611,7 @@
       <!-- Painel: Criar conta -->
       <div class="auth-panel" id="panel-signup">
 
-        <button class="btn-google" onclick="signInGoogle()">
+        <button class="btn-google" disabled>
           <svg width="18" height="18" viewBox="0 0 48 48">
             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
             <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -565,6 +621,12 @@
           </svg>
           Criar conta com Google
         </button>
+        <div class="google-maintenance">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Cadastro com Google em manutenção — crie sua conta com e-mail.
+        </div>
 
         <div class="divider">ou</div>
 
@@ -801,6 +863,36 @@
     if (activePanel === 'panel-login') handleLogin();
     else handleSignup();
   });
+
+  // ── Frases motivacionais ───────────────────────────────────────
+  (function() {
+    var frases = [
+      '"Conhecimento é o ingrediente mais importante."',
+      '"Quem treina hoje brilha no rush de amanhã."',
+      '"Cada acerto te aproxima da excelência."',
+      '"Consistência constrói os melhores colaboradores."',
+      '"Aprender é o primeiro passo para liderar."',
+      '"O preparo de hoje é o desempenho de amanhã."',
+      '"Estude com foco. Trabalhe com confiança."',
+      '"Quem se prepara não é pego de surpresa."',
+      '"Pequenas revisões, grandes resultados."',
+      '"Seu esforço no estudo aparece na produção."',
+    ];
+    var idx = Math.floor(Math.random() * frases.length);
+    var el  = document.getElementById('hero-phrase');
+    if (!el) return;
+
+    el.textContent = frases[idx];
+
+    setInterval(function() {
+      el.classList.add('fade-out');
+      setTimeout(function() {
+        idx = (idx + 1) % frases.length;
+        el.textContent = frases[idx];
+        el.classList.remove('fade-out');
+      }, 500);
+    }, 5000);
+  })();
 </script>
 
 <script>
