@@ -11,6 +11,7 @@ function applyUpdate(reg) {
 
 document.addEventListener("DOMContentLoaded", () => {
   initTabs();
+  initSwipeNav();
   initChecklist();
   initOnboarding();
 });
