@@ -102,6 +102,8 @@ window.switchMode = function(mode) {
 };
 
 var _tabsInitialized = false;
+var _swipeDir = null; // 'left' | 'right' — set by initSwipeNav before programmatic click
+
 function initTabs() {
   if (_tabsInitialized) return;
   _tabsInitialized = true;
@@ -111,10 +113,21 @@ function initTabs() {
     btn.addEventListener("click", () => {
       const target = btn.dataset.tab;
       tabBtns.forEach((b)  => b.classList.remove("active"));
-      tabPanels.forEach((p) => p.classList.remove("active"));
+      tabPanels.forEach((p) => {
+        p.classList.remove("active", "slide-from-right", "slide-from-left");
+      });
       btn.classList.add("active");
       const panel = document.getElementById("panel-" + target);
-      if (panel) panel.classList.add("active");
+      if (panel) {
+        panel.classList.add("active");
+        if (_swipeDir) {
+          panel.classList.add(_swipeDir === 'left' ? 'slide-from-right' : 'slide-from-left');
+          panel.addEventListener('animationend', function() {
+            panel.classList.remove('slide-from-right', 'slide-from-left');
+          }, { once: true });
+          _swipeDir = null;
+        }
+      }
       btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
       const pageId = document.body.dataset.page;
       if (pageId) sessionStorage.setItem("tab-" + pageId, target);
@@ -128,6 +141,55 @@ function initTabs() {
       if (savedBtn) savedBtn.click();
     }
   }
+}
+
+function initSwipeNav() {
+  var tabBtns = document.querySelectorAll(".tab-btn");
+  if (tabBtns.length < 2) return;
+
+  var startX, startY, startTime;
+  var SWIPE_MIN_X  = 50;  // px mínimo horizontal
+  var SWIPE_MAX_Y  = 80;  // px máximo vertical (previne scroll)
+  var SWIPE_MAX_MS = 450; // ms máximo de duração
+
+  var target = document.querySelector('main') || document.body;
+
+  target.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    startTime = Date.now();
+  }, { passive: true });
+
+  target.addEventListener('touchend', function(e) {
+    if (startX === undefined) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    var dy = e.changedTouches[0].clientY - startY;
+    var dt = Date.now() - startTime;
+
+    // Ignorar: muito curto, muito vertical, muito lento
+    if (Math.abs(dx) < SWIPE_MIN_X)                  return;
+    if (Math.abs(dy) > SWIPE_MAX_Y)                   return;
+    if (dt > SWIPE_MAX_MS)                             return;
+    if (Math.abs(dy) > Math.abs(dx) * 0.7)            return;
+
+    var btns = Array.from(document.querySelectorAll('.tab-btn'));
+    var activeIdx = btns.findIndex(function(b) { return b.classList.contains('active'); });
+    if (activeIdx === -1) return;
+
+    var nextIdx;
+    if (dx < 0) {
+      // deslize esquerda → próxima aba
+      nextIdx = Math.min(activeIdx + 1, btns.length - 1);
+      _swipeDir = 'left';
+    } else {
+      // deslize direita → aba anterior
+      nextIdx = Math.max(activeIdx - 1, 0);
+      _swipeDir = 'right';
+    }
+
+    if (nextIdx === activeIdx) { _swipeDir = null; return; }
+    btns[nextIdx].click();
+  }, { passive: true });
 }
 
 var _checklistInitialized = false;
