@@ -1,1884 +1,688 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-05-25",
   "categoria": "drive-thru",
   "nivel": "basico",
-  "migratedFrom": "linha.html",
   "questions": [
     {
-      "id": "drive_trhu_html_001",
-      "categoria": "drive-thru",
-      "subcategoria": "🍞 Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura das placas A e B da tostadeira?",
+      "id": "drive001",
+      "categoria": "Drive-Thru",
+      "subcategoria": "👥 Posições · Tomador de Pedidos",
+      "pergunta": "Qual é a principal responsabilidade do Tomador de Pedidos no Drive-Thru?",
       "alternativas": [
-        "254°C",
-        "265°C",
-        "271°C",
-        "280°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "Placas A e B = 271°C. Placa C = 254°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_002",
-      "categoria": "drive-thru",
-      "subcategoria": "🍞 Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo de caramelização na tostadeira?",
-      "alternativas": [
-        "15 segundos",
-        "18 segundos",
-        "22 segundos",
-        "30 segundos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O tempo de caramelização é de 22 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_003",
-      "categoria": "drive-thru",
-      "subcategoria": "🌡️ UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "temperatura",
-        "uhc"
-      ],
-      "pergunta": "Qual a temperatura da UHC para carnes vermelhas?",
-      "alternativas": [
-        "72°C",
-        "75°C",
-        "79°C",
-        "85°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "UHC: carnes vermelhas = 79°C e carnes brancas = 85°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_004",
-      "categoria": "drive-thru",
-      "subcategoria": "🌡️ UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "carne",
-        "temperatura",
-        "tempo",
-        "uhc",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida do McCrispy na UHC?",
-      "alternativas": [
-        "20 minutos",
-        "30 minutos",
-        "45 minutos",
-        "60 minutos"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "McCrispy: 60 min · McChicken: 30 min · McNuggets/McJunior: 20 min · Carnes vermelhas: 10 min.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_005",
-      "categoria": "drive-thru",
-      "subcategoria": "🌡️ UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "carne",
-        "temperatura",
-        "tempo",
-        "uhc",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida de carnes vermelhas na UHC?",
-      "alternativas": [
-        "5 minutos",
-        "10 minutos",
-        "15 minutos",
-        "20 minutos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Carnes vermelhas têm vida útil de 10 minutos na UHC.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_006",
-      "categoria": "drive-thru",
-      "subcategoria": "🧂 Mesa",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a faixa de temperatura da mesa de condimentação?",
-      "alternativas": [
-        "35°C a 45°C",
-        "42°C a 55°C",
-        "49°C a 57°C",
-        "55°C a 65°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "A mesa de condimentação opera entre 49°C e 57°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_007",
-      "categoria": "drive-thru",
-      "subcategoria": "🧂 Mesa",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "molho",
-        "porcao",
-        "temperatura"
-      ],
-      "pergunta": "Para calibrar o Ketchup Regular, quantos tiros devem ser dados?",
-      "alternativas": [
-        "4 tiros",
-        "6 tiros",
-        "8 tiros",
-        "47 tiros"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Ketchup Regular: 6 tiros = 2 OZ / 60 ML.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_008",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo"
-      ],
-      "pergunta": "Qual é o tempo de linha estabelecido?",
-      "alternativas": [
-        "15 a 25 segundos",
-        "25 a 35 segundos",
-        "35 a 50 segundos",
-        "50 a 60 segundos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O tempo de linha deve ser de 35 a 50 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_009",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "tempo"
-      ],
-      "pergunta": "Em quantos segundos o iniciador deve reagir para ativar os pães?",
-      "alternativas": [
-        "1 a 2 segundos",
-        "3 a 5 segundos",
-        "5 a 8 segundos",
-        "10 segundos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O tempo de reação para ativar os pães é de 3 a 5 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_010",
-      "categoria": "drive-thru",
-      "subcategoria": "🏪 Best Burger",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "4:1",
-        "carne",
-        "cebola",
-        "cores",
-        "temperatura"
-      ],
-      "pergunta": "No Best Burger, qual pegador é usado para carnes sem cebola?",
-      "alternativas": [
-        "Pegador vermelho",
-        "Pegador verde",
-        "Pegador azul",
-        "Pegador preto"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_011",
-      "categoria": "drive-thru",
-      "subcategoria": "🍞 Linha · Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura da placa C da tostadeira?",
-      "alternativas": [
-        "220°C",
-        "240°C",
-        "254°C",
-        "271°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "Placa C = 254°C. Placas A e B = 271°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_012",
-      "categoria": "drive-thru",
-      "subcategoria": "🍞 Linha · Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "tempo"
-      ],
-      "pergunta": "Quantos segundos o iniciador tem para reagir e ativar os pães?",
-      "alternativas": [
-        "1 a 2 segundos",
-        "3 a 5 segundos",
-        "5 a 8 segundos",
-        "10 segundos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O tempo de reação para ativar os pães é de 3 a 5 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_013",
-      "categoria": "drive-thru",
-      "subcategoria": "🌡️ Linha · UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "temperatura",
-        "uhc"
-      ],
-      "pergunta": "Qual a temperatura da UHC para carnes brancas?",
-      "alternativas": [
-        "72°C",
-        "79°C",
-        "85°C",
-        "90°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "UHC: carnes brancas = 85°C. Carnes vermelhas = 79°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_014",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha · UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo",
-        "uhc",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida do McChicken na UHC?",
-      "alternativas": [
-        "10 minutos",
-        "20 minutos",
-        "30 minutos",
-        "60 minutos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "McChicken: 30 minutos na UHC.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_015",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha · UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo",
-        "uhc",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida dos McNuggets e McJunior na UHC?",
-      "alternativas": [
-        "10 minutos",
-        "20 minutos",
-        "30 minutos",
-        "60 minutos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "McNuggets e McJunior têm 20 minutos de vida útil na UHC.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_016",
-      "categoria": "drive-thru",
-      "subcategoria": "🧂 Linha · Mesa",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura da mesa de condimentação?",
-      "alternativas": [
-        "35°C a 45°C",
-        "42°C a 55°C",
-        "49°C a 57°C",
-        "55°C a 65°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "A mesa de condimentação opera entre 49°C e 57°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_017",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha · Tempo",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo de linha estabelecido?",
-      "alternativas": [
-        "15 a 25 segundos",
-        "25 a 35 segundos",
-        "35 a 50 segundos",
-        "50 a 60 segundos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O tempo de linha deve ser de 35 a 50 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_018",
-      "categoria": "drive-thru",
-      "subcategoria": "🧂 Linha · Calibração",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "molho",
-        "porcao"
-      ],
-      "pergunta": "Quantos tiros de Ketchup Regular equivalem a 2 OZ?",
-      "alternativas": [
-        "4 tiros",
-        "6 tiros",
-        "8 tiros",
-        "10 tiros"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Ketchup Regular: 6 tiros = 2 OZ / 60 ML.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_019",
-      "categoria": "drive-thru",
-      "subcategoria": "🏪 Linha · Best Burger",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "4:1",
-        "carne",
-        "cebola",
-        "cores",
-        "temperatura"
-      ],
-      "pergunta": "Qual pegador é usado para carnes sem cebola no Best Burger?",
-      "alternativas": [
-        "Vermelho",
-        "Verde",
-        "Azul",
-        "Preto"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_020",
-      "categoria": "drive-thru",
-      "subcategoria": "🍞 Linha · Tostadeira",
-      "dificuldade": 3,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "remocao",
-        "tecnica",
-        "temperatura"
-      ],
-      "pergunta": "Em que sentido o iniciador deve colocar os pães na tostadeira?",
-      "alternativas": [
-        "Qualquer sentido",
-        "Com a face cortada para cima",
-        "Com a face cortada voltada para as placas",
-        "Alternando os lados"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "Os pães devem ser posicionados com a face cortada voltada para as placas quentes da tostadeira.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_021",
-      "categoria": "drive-thru",
-      "subcategoria": "⚙️ Linha · Procedimento",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que o finalizador deve fazer ao receber a base do sanduíche?",
-      "alternativas": [
-        "Aguardar o condimentador terminar",
-        "Verificar qualidade, montar e fechar o sanduíche",
-        "Chamar o iniciador para conferência",
-        "Apenas embalar"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O finalizador recebe a base, verifica qualidade, monta e fecha o sanduíche.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_022",
-      "categoria": "drive-thru",
-      "subcategoria": "⚙️ Linha · Procedimento",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "producao",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual função monitora o PLS e determina quantas carnes produzir?",
-      "alternativas": [
-        "Iniciador",
-        "Condimentador",
-        "Chapeiro",
-        "Finalizador"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O chapeiro observa o monitor PLS para determinar a quantidade correta de carnes a produzir.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_023",
-      "categoria": "drive-thru",
-      "subcategoria": "🧂 Linha · Mesa",
-      "dificuldade": 4,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida dos produtos na mesa de condimentação?",
-      "alternativas": [
-        "1 hora",
-        "2 horas",
-        "3 horas",
-        "4 horas"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Os produtos na mesa de condimentação têm vida útil de 2 horas, controlado pela placa de tempo secundário.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_024",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo"
-      ],
-      "pergunta": "Quantos segundos o iniciador tem para reagir ao sinal e ativar os pães?",
-      "alternativas": [
-        "5 segundos",
-        "8 segundos",
-        "10 segundos",
-        "15 segundos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O iniciador deve reagir em 8 segundos ao sinal e ativar os pães na tostadeira.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_025",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "pao",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida do pão após sair da tostadeira?",
-      "alternativas": [
-        "5 minutos",
-        "10 minutos",
-        "15 minutos",
-        "30 minutos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O pão tostado tem vida útil de 15 minutos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_026",
-      "categoria": "drive-thru",
-      "subcategoria": "🥩 Linha · Pré-pico",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "limite",
-        "peps",
-        "temperatura"
-      ],
-      "pergunta": "Qual a quantidade máxima de carnes em estoque no pré-pico?",
-      "alternativas": [
-        "2 rodadas",
-        "3 rodadas",
-        "4 rodadas",
-        "5 rodadas"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "No pré-pico, o estoque máximo é de 3 rodadas de carnes para garantir frescor.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_027",
-      "categoria": "drive-thru",
-      "subcategoria": "🍞 Linha · Pão",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "carne",
-        "molho",
-        "pao",
-        "temperatura"
-      ],
-      "pergunta": "Qual pão é usado no Big Mac?",
-      "alternativas": [
-        "Pão regular",
-        "Pão especial (com gergelim e camadas)",
-        "Pão brioche",
-        "Pão de hambúrguer simples"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O Big Mac usa o pão especial com 3 camadas (coroa, meio e base) com gergelim.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_028",
-      "categoria": "drive-thru",
-      "subcategoria": "⚙️ Linha · Comunicação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Como o iniciador avisa o finalizador sobre um sanduíche sem acompanhamento padrão?",
-      "alternativas": [
-        "Por escrito no papel",
-        "Verbalmente e com sinal no produto",
-        "Pelo KVS automaticamente",
-        "Não precisa avisar"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O iniciador comunica verbalmente e usa sinalização no produto para avisar o finalizador.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_029",
-      "categoria": "drive-thru",
-      "subcategoria": "🍞 Linha · Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "pao",
-        "temperatura"
-      ],
-      "pergunta": "Em que posição deve entrar o pão na tostadeira?",
-      "alternativas": [
-        "Lado cortado para baixo",
-        "Lado cortado para cima",
-        "Qualquer posição",
-        "Depende do pão"
+        "Receber o pedido via headset, lançar no sistema e confirmar com o cliente antes de finalizar",
+        "Entregar o pedido na janela e cobrar o pagamento",
+        "Organizar os pedidos prontos na bancada de montagem",
+        "Controlar o tempo de permanência dos carros na pista"
       ],
       "respostaCorreta": 0,
-      "explicacao": "O pão deve entrar na tostadeira com o lado cortado para baixo (face de tostagem).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
+      "explicacao": "O Tomador de Pedidos usa o headset para se comunicar com o cliente no totem de pedidos, lança os itens no sistema e confirma o pedido antes de encerrar o atendimento. A confirmação evita erros e garante a satisfação do cliente.",
+      "dificuldade": "basico",
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "tags": ["drive-thru", "posições", "tomador-de-pedidos"]
     },
     {
-      "id": "drive_trhu_html_030",
-      "categoria": "drive-thru",
-      "subcategoria": "⚙️ Linha · KVS",
-      "dificuldade": 1,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "cores",
-        "taylor-ng",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que significa quando um item fica vermelho no KVS?",
+      "id": "drive002",
+      "categoria": "Drive-Thru",
+      "subcategoria": "👥 Posições · Apresentador",
+      "pergunta": "Qual é a função do Apresentador no Drive-Thru?",
       "alternativas": [
-        "Item cancelado",
-        "Item em espera há muito tempo — prioridade máxima",
-        "Item pronto para entregar",
-        "Falta de ingrediente"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Item em vermelho no KVS indica que está esperando há muito tempo e deve ser priorizado.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_031",
-      "categoria": "drive-thru",
-      "subcategoria": "🥩 Linha · Carnes",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "pao",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que o iniciador deve checar antes de acionar os pães?",
-      "alternativas": [
-        "Apenas o tipo do lanche",
-        "Se há carne disponível e o tempo correto na chapa",
-        "Apenas a quantidade de pão disponível",
-        "Nada, apenas acionar"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Verificar se há carne no tempo correto na chapa antes de acionar os pães.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_032",
-      "categoria": "drive-thru",
-      "subcategoria": "⚙️ Linha · Posições",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "carne",
-        "producao",
-        "taylor-ng",
-        "temperatura"
-      ],
-      "pergunta": "Qual a principal responsabilidade do finalizador?",
-      "alternativas": [
-        "Preparar as carnes",
-        "Tostar os pães",
-        "Montar e condimentar os sanduíches",
-        "Entregar ao cliente"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O finalizador é responsável por montar os sanduíches com os ingredientes corretos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_033",
-      "categoria": "drive-thru",
-      "subcategoria": "🍞 Linha · Best Burger",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "pao",
-        "producao",
-        "taylor-ng",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que diferencia a montagem Best Burger da montagem convencional?",
-      "alternativas": [
-        "Ingredientes diferentes",
-        "Montagem manual com carne plana e sem prensa",
-        "Tempo de preparo menor",
-        "Pão diferente"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "No Best Burger, a montagem é manual, com carne plana, sem prensa e com foco na apresentação.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_034",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "limite",
-        "producao",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo máximo entre o preparo e a entrega do sanduíche?",
-      "alternativas": [
-        "5 minutos",
-        "10 minutos",
-        "15 minutos",
-        "20 minutos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O sanduíche deve ser entregue em até 10 minutos após o preparo para garantir qualidade.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_035",
-      "categoria": "drive-thru",
-      "subcategoria": "⚙️ Linha · Expedidor",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "peps",
-        "ppf",
-        "producao",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual a função do expedidor na linha?",
-      "alternativas": [
-        "Preparar carnes",
-        "Coordenar a montagem e garantir que pedidos saiam completos e no tempo",
-        "Operar a tostadeira",
-        "Controlar o estoque"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O expedidor coordena a linha, garante que os pedidos saiam corretos e no tempo.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "drive_trhu_html_036",
-      "categoria": "drive-thru",
-      "subcategoria": "🥩 Linha · Carnes Best Burger",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "cebola",
-        "cores",
-        "temperatura"
-      ],
-      "pergunta": "Qual pegador usar para carnes com cebola no Best Burger?",
-      "alternativas": [
-        "Pegador vermelho",
-        "Pegador azul",
-        "Pegador amarelo",
-        "Nenhum pegador específico"
+        "Entregar o pedido ao cliente na janela de forma cortês, verificando se está completo",
+        "Tomar o pedido pelo headset no totem de menu",
+        "Realizar o pagamento e dar o troco ao cliente",
+        "Controlar o fluxo de carros na pista com o timer"
       ],
       "respostaCorreta": 0,
-      "explicacao": "No Best Burger, pegador vermelho para carnes com cebola e pegador azul para carnes sem cebola.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
+      "explicacao": "O Apresentador é responsável por conferir o pedido, entregar ao cliente na janela com simpatia e eficiência, e garantir que nada fique faltando — como canudos, guardanapos e embalagens corretas.",
+      "dificuldade": "basico",
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "tags": ["drive-thru", "posições", "apresentador"]
     },
     {
-      "id": "drive_trhu_html_037",
-      "categoria": "drive-thru",
-      "subcategoria": "⏱️ Linha · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "limite",
-        "ppf",
-        "producao",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo máximo de preparo do pedido para o segmento balcão?",
+      "id": "drive003",
+      "categoria": "Drive-Thru",
+      "subcategoria": "👥 Posições · Equipe",
+      "pergunta": "Qual é o número mínimo de pessoas para operar o Drive-Thru?",
       "alternativas": [
-        "60 segundos",
-        "90 segundos",
-        "2 minutos",
-        "3 minutos"
+        "2 pessoas — Tomador de Pedidos e Apresentador",
+        "1 pessoa — um único atendente faz tudo",
+        "3 pessoas — Tomador, Caixa e Apresentador obrigatoriamente",
+        "4 pessoas — pois toda posição precisa ser coberta"
       ],
-      "respostaCorreta": 1,
-      "explicacao": "O tempo meta para preparação de pedido no balcão é de 90 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
+      "respostaCorreta": 0,
+      "explicacao": "Com 2 pessoas é possível operar o Drive-Thru: uma toma o pedido e outra entrega. Em volumes maiores, adiciona-se o Operador de Caixa e o Expedidor para manter a velocidade de serviço.",
+      "dificuldade": "basico",
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "tags": ["drive-thru", "posições", "equipe"]
     },
     {
-      "id": "drive_trhu_html_038",
-      "categoria": "drive-thru",
-      "subcategoria": "⚙️ Linha · Comunicação",
-      "dificuldade": 1,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "producao"
-      ],
-      "pergunta": "O que significa a sigla SOS na linha de produção?",
+      "id": "drive004",
+      "categoria": "Drive-Thru",
+      "subcategoria": "👥 Posições · Operador de Caixa",
+      "pergunta": "O que o Operador de Caixa deve fazer ANTES de receber o pagamento do cliente?",
       "alternativas": [
-        "Sistema de Operação do Sanduíche",
-        "Speed of Service — velocidade de atendimento",
-        "Serviço de Orientação ao Sanduíche",
-        "Sinalização de Operação de Sucesso"
+        "Confirmar os itens do pedido no display e informar o valor total",
+        "Pedir ao cliente que avance para a próxima janela",
+        "Verificar se o pedido já está pronto na bancada",
+        "Solicitar ao tomador de pedidos para repetir o pedido"
       ],
-      "respostaCorreta": 1,
-      "explicacao": "SOS = Speed of Service, indicador de velocidade de atendimento monitorado no restaurante.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
+      "respostaCorreta": 0,
+      "explicacao": "O Operador de Caixa deve sempre confirmar os itens com o cliente e informar o total antes de processar o pagamento, garantindo precisão e evitando contestações.",
+      "dificuldade": "basico",
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "tags": ["drive-thru", "posições", "caixa", "pagamento"]
+    },
+    {
+      "id": "drive005",
+      "categoria": "Drive-Thru",
+      "subcategoria": "👥 Posições · Expedidor",
+      "pergunta": "Qual é o papel do Expedidor no Drive-Thru em horários de pico?",
+      "alternativas": [
+        "Organizar os pedidos prontos na bancada e garantir que sejam entregues na ordem correta",
+        "Tomar pedidos simultaneamente com o Tomador de Pedidos",
+        "Controlar o caixa e processar pagamentos em duplicidade",
+        "Gerenciar a fila de carros na pista externamente"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Expedidor garante que os pedidos sejam montados e organizados corretamente na sequência dos carros, evitando erros de entrega quando o volume de pedidos aumenta.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "posições", "expedidor", "pico"]
+    },
+    {
+      "id": "drive006",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🎙️ Headset · Comunicação",
+      "pergunta": "Qual é a saudação padrão ao receber um cliente no totem do Drive-Thru?",
+      "alternativas": [
+        "\"Bem-vindo ao McDonald's, pode fazer seu pedido!\"",
+        "\"Olá, o que vai querer?\"",
+        "\"McDonald's, pois não?\"",
+        "\"Bom dia, qual será o número do seu pedido?\""
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A saudação padrão é \"Bem-vindo ao McDonald's, pode fazer seu pedido!\". Ela deve ser dita de forma clara, simpática e sem pressa, transmitindo hospitalidade ao cliente.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "headset", "saudação", "comunicação"]
+    },
+    {
+      "id": "drive007",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🎙️ Headset · Comunicação",
+      "pergunta": "Para que serve o headset no Drive-Thru?",
+      "alternativas": [
+        "Comunicar-se com o cliente no totem e manter comunicação interna entre a equipe",
+        "Apenas receber pedidos do cliente no totem de menu",
+        "Somente para comunicação interna entre os funcionários",
+        "Controlar o sistema de timer e alertas de OEPE"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O headset tem dupla função: permite ao Tomador de Pedidos se comunicar com o cliente no totem e também facilita a comunicação interna entre todos os membros da equipe do Drive-Thru.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "headset", "comunicação"]
+    },
+    {
+      "id": "drive008",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🎙️ Headset · Comunicação",
+      "pergunta": "Quando o tomador de pedidos está atendendo um cliente no headset, o que os demais membros da equipe devem fazer?",
+      "alternativas": [
+        "Evitar conversar pelo headset para não interromper o atendimento ao cliente",
+        "Usar o headset normalmente para coordenar o serviço interno",
+        "Desligar o headset até o atendimento terminar",
+        "Falar em voz alta para não usar o headset"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Durante o atendimento ao cliente no totem, a equipe deve manter o headset livre de conversas desnecessárias para que o cliente ouça claramente e o tomador possa se concentrar no pedido.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "headset", "comunicação", "boas-práticas"]
+    },
+    {
+      "id": "drive009",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⏱️ OEPE · Conceito",
+      "pergunta": "O que significa a sigla OEPE?",
+      "alternativas": [
+        "Overall Exterior Performance — sistema que mede o desempenho externo do Drive-Thru",
+        "Operação Eficiente de Pedidos e Entrega",
+        "Organização e Eficiência da Pista Externa",
+        "Objetivo de Entrega e Performance da Equipe"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "OEPE (Overall Exterior Performance) é o sistema de medição do desempenho do Drive-Thru. Ele registra o tempo que cada carro leva desde a detecção no totem até a saída da janela, permitindo monitorar e melhorar a velocidade de serviço.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "oepe", "métricas", "performance"]
+    },
+    {
+      "id": "drive010",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⏱️ OEPE · Medição",
+      "pergunta": "A partir de qual momento o OEPE começa a medir o tempo de serviço do Drive-Thru?",
+      "alternativas": [
+        "Quando o carro é detectado pelo sensor no totem de pedidos",
+        "Quando o cliente inicia a fala pelo headset",
+        "Quando o pedido é lançado no sistema pelo tomador de pedidos",
+        "Quando o cliente chega à janela de pagamento"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O OEPE começa a contar assim que o sensor detecta o carro no totem de pedidos. Por isso, é importante que o Tomador de Pedidos faça a saudação imediatamente após a detecção, para não perder tempo.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "oepe", "timer", "sensor"]
+    },
+    {
+      "id": "drive011",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⏱️ OEPE · Objetivos",
+      "pergunta": "Por que é importante monitorar o tempo de serviço do Drive-Thru diariamente?",
+      "alternativas": [
+        "Para identificar gargalos, treinar a equipe e garantir que o cliente seja atendido com velocidade",
+        "Apenas para relatórios enviados à área de operações da McDonald's",
+        "Para calcular o salário variável dos funcionários da pista",
+        "Porque é exigido pela vigilância sanitária"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O monitoramento diário permite ao gerente identificar onde o tempo está sendo perdido (totem, caixa ou janela), treinar a equipe nos pontos fracos e melhorar continuamente a experiência do cliente.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "oepe", "gestão", "melhoria-contínua"]
+    },
+    {
+      "id": "drive012",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⏱️ OEPE · Objetivos",
+      "pergunta": "O que representa o tempo total de serviço no Drive-Thru (do totem à saída)?",
+      "alternativas": [
+        "O tempo que o cliente passa dentro da pista, da chegada ao totem até receber o pedido e sair",
+        "Apenas o tempo de espera na fila antes do totem",
+        "O tempo de preparo dos produtos na cozinha",
+        "O tempo de comunicação pelo headset entre tomador e cliente"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O tempo total de serviço abrange toda a experiência do cliente na pista: chegada ao totem, realização do pedido, pagamento, espera e recebimento do pedido na janela. Reduzir esse tempo melhora a satisfação e aumenta a capacidade de atendimento.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "oepe", "tempo-total", "experiência"]
+    },
+    {
+      "id": "drive013",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⚙️ Procedimentos · Pull Forward",
+      "pergunta": "O que é o \"Pull Forward\" (ou \"avançar para esperar\") no Drive-Thru?",
+      "alternativas": [
+        "Solicitar que o cliente avance para uma área de espera quando o pedido não está pronto, liberando a janela",
+        "Pedir que o cliente retorne ao totem para refazer o pedido",
+        "Procedimento de fechar a pista temporariamente em caso de fila grande",
+        "Método de confirmação do pedido no display antes do pagamento"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Pull Forward libera a janela para o próximo carro quando um pedido precisa de mais tempo de preparo. O cliente avança para um espaço de espera e um funcionário leva o pedido até o carro quando estiver pronto, mantendo o fluxo da pista.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "pull-forward", "fluxo", "procedimento"]
+    },
+    {
+      "id": "drive014",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⚙️ Procedimentos · Pull Forward",
+      "pergunta": "Quando é adequado usar o Pull Forward no Drive-Thru?",
+      "alternativas": [
+        "Quando o pedido exige preparo especial ou está demorando mais que o tempo esperado",
+        "Sempre que houver mais de 3 carros na fila",
+        "Quando o cliente pede desconto ou tem cupom especial",
+        "Quando o pagamento é feito com Meu Méqui ou aplicativo"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Pull Forward é usado quando um pedido específico está atrasando o fluxo — por exemplo, um produto que exige preparo especial ou que não está disponível imediatamente. Não deve ser usado indiscriminadamente.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "pull-forward", "gestão-de-fila"]
+    },
+    {
+      "id": "drive015",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⚙️ Procedimentos · Atendimento",
+      "pergunta": "Qual é a sequência correta de atendimento no Drive-Thru?",
+      "alternativas": [
+        "Saudação → Pedido → Confirmação → Pagamento → Entrega → Despedida",
+        "Pedido → Pagamento → Entrega → Saudação → Despedida",
+        "Saudação → Pagamento → Pedido → Confirmação → Entrega",
+        "Entrega → Pedido → Pagamento → Saudação → Despedida"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A sequência padrão garante uma experiência consistente: o cliente é saudado, faz o pedido, o pedido é confirmado (evitando erros), o pagamento é processado, o pedido é entregue completo e o cliente é despedido com simpatia.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "sequência", "atendimento", "padrão"]
+    },
+    {
+      "id": "drive016",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⚙️ Procedimentos · Confirmação",
+      "pergunta": "Por que é obrigatório confirmar o pedido com o cliente antes de finalizar no sistema?",
+      "alternativas": [
+        "Para evitar erros, garantir que todos os itens foram registrados corretamente e aumentar a satisfação",
+        "Apenas por exigência do sistema de caixa, que bloqueia sem a confirmação",
+        "Para dar tempo ao cliente de adicionar mais itens e aumentar o ticket médio",
+        "Porque a McDonald's exige que todos os pedidos sejam repetidos duas vezes"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A confirmação é uma etapa crítica: erros de pedido causam retrabalho, desperdício de embalagens e insatisfação do cliente. Uma confirmação rápida e clara previne a maioria dos erros antes que o pedido entre em preparo.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "confirmação", "qualidade", "erros"]
+    },
+    {
+      "id": "drive017",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⚙️ Procedimentos · Entrega",
+      "pergunta": "O Apresentador deve verificar o pedido antes de entregar ao cliente. O que ele deve conferir?",
+      "alternativas": [
+        "Todos os itens estão na sacola, bebidas corretas, acompanhamentos, canudo e guardanapos",
+        "Apenas o número do pedido no saco e se o hambúrguer está embrulhado",
+        "Somente se o valor pago foi o mesmo do display",
+        "Se o cliente tem o cupom do Meu Méqui em mãos"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Apresentador é a última linha de defesa antes da entrega. Ele deve conferir: sacola completa com todos os itens, bebidas corretas (tamanho e tipo), acompanhamentos, canudo na sacola e guardanapos. Uma entrega incompleta gera insatisfação e retrabalho.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "entrega", "conferência", "qualidade"]
+    },
+    {
+      "id": "drive018",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⚙️ Procedimentos · Entrega",
+      "pergunta": "Qual é a postura correta do Apresentador ao entregar o pedido ao cliente?",
+      "alternativas": [
+        "Sorriso, olhar para o cliente, saudar pelo nome (se disponível), entregar com segurança e se despedir",
+        "Entregar rapidamente sem interação para não atrasar o tempo de serviço",
+        "Apenas passar a sacola pela janela e aguardar o próximo carro",
+        "Verificar o pedido em voz alta para o cliente antes de entregar"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Mesmo no Drive-Thru, a hospitalidade é fundamental. O Apresentador deve ser simpático, fazer contato visual e garantir que o cliente sinta que foi bem atendido. Velocidade e hospitalidade devem andar juntas.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "hospitalidade", "entrega", "postura"]
+    },
+    {
+      "id": "drive019",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⚙️ Procedimentos · Erro de Pedido",
+      "pergunta": "O cliente recebeu o pedido e percebe que há um erro ainda na janela. Como o Apresentador deve agir?",
+      "alternativas": [
+        "Pedir desculpas, recolher o item errado e providenciar o correto sem fazer o cliente esperar muito",
+        "Solicitar que o cliente retorne ao caixa para registrar a reclamação formalmente",
+        "Informar que o cliente deve ter pedido errado e não há como trocar",
+        "Pedir que o cliente ligue para o SAC da McDonald's para resolver"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Erros acontecem, mas a resposta faz toda a diferença. O Apresentador deve assumir a responsabilidade, pedir desculpas sinceras e resolver imediatamente, sem questionar o cliente ou burocratizar. A recuperação rápida pode transformar uma experiência ruim em boa.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "reclamação", "erro-de-pedido", "recuperação"]
+    },
+    {
+      "id": "drive020",
+      "categoria": "Drive-Thru",
+      "subcategoria": "📱 Meu Méqui · Drive-Thru",
+      "pergunta": "Como o cliente com pedido realizado pelo app Meu Méqui deve ser atendido no Drive-Thru?",
+      "alternativas": [
+        "O cliente informa que tem pedido no app e apresenta o QR code na janela de pagamento para o operador escanear",
+        "O cliente refaz o pedido no totem e o desconto é aplicado automaticamente",
+        "O pedido pelo app não é aceito no Drive-Thru, apenas no salão",
+        "O cliente entra no app durante a fila e informa o número do pedido ao tomador pelo headset"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Para pedidos Meu Méqui no Drive-Thru, o cliente avisa ao tomador de pedidos que possui um pedido no app. Na janela de pagamento, apresenta o QR code para o operador escanear e vincular o pedido, aplicando os benefícios do programa.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "meu-méqui", "app", "qr-code"]
+    },
+    {
+      "id": "drive021",
+      "categoria": "Drive-Thru",
+      "subcategoria": "📱 Meu Méqui · Drive-Thru",
+      "pergunta": "O que o Tomador de Pedidos deve fazer quando o cliente menciona que tem um pedido pelo Meu Méqui?",
+      "alternativas": [
+        "Orientar o cliente a ter o QR code pronto para a janela de pagamento e continuar o atendimento normalmente",
+        "Pedir ao cliente que saia da fila e entre novamente pela entrada do salão",
+        "Negar o atendimento pois o sistema do Drive-Thru não integra com o Meu Méqui",
+        "Solicitar que o cliente ligue para a central de atendimento para confirmar o pedido"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Tomador de Pedidos deve orientar o cliente sobre o processo (QR code na janela de pagamento) e prosseguir com fluidez. Conhecer a integração do Meu Méqui evita confusão e atrasos desnecessários.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "meu-méqui", "app", "procedimento"]
+    },
+    {
+      "id": "drive022",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🖥️ Equipamentos · COD",
+      "pergunta": "O que é o COD (Customer Order Display / Confirmação de Display) no Drive-Thru?",
+      "alternativas": [
+        "Uma tela voltada para o cliente que mostra os itens do pedido em tempo real durante a tomada de pedido",
+        "O monitor interno usado pelo tomador de pedidos para ver as ordens",
+        "O sistema de timer que mede o tempo de cada carro na pista",
+        "O display de preços no totem de menu"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O COD é uma tela virada para o cliente posicionada próxima ao totem de pedido. À medida que o tomador lança os itens, o cliente vê seu pedido sendo registrado, podendo confirmar ou corrigir em tempo real — reduzindo erros.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "cod", "display", "equipamentos"]
+    },
+    {
+      "id": "drive023",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🖥️ Equipamentos · Timer",
+      "pergunta": "Para que serve o sistema de timer/sensor do Drive-Thru?",
+      "alternativas": [
+        "Detectar automaticamente quando um carro chega à pista e medir o tempo de cada etapa do atendimento",
+        "Controlar o acesso de veículos à pista, bloqueando quando há fila excessiva",
+        "Alertar a equipe quando o pedido está pronto na bancada",
+        "Calcular a quantidade de produtos a serem preparados conforme o volume de carros"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os sensores de loop magnético ou outros detectores identificam automaticamente a presença de carros em cada ponto da pista. O timer registra o tempo de cada etapa, gerando dados de desempenho que alimentam o sistema GPRS e o OEPE.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "timer", "sensor", "equipamentos"]
+    },
+    {
+      "id": "drive024",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🖥️ Equipamentos · Timer",
+      "pergunta": "Quando o timer do Drive-Thru exibe um alerta (geralmente em vermelho), o que isso indica?",
+      "alternativas": [
+        "O carro em determinada posição ultrapassou o tempo objetivo de atendimento",
+        "O sistema de timer está com problema técnico e precisa ser reiniciado",
+        "Um novo carro acabou de entrar na pista e foi detectado pelo sensor",
+        "O caixa fechou a transação e o pedido foi enviado para preparo"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A mudança de cor para vermelho no timer é um alerta visual de que o carro está demorando mais do que o tempo objetivo naquela posição. Isso sinaliza à equipe que é necessário agir para não comprometer o OEPE do restaurante.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "timer", "alerta", "oepe"]
+    },
+    {
+      "id": "drive025",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🔧 GPRS · Conceito",
+      "pergunta": "O que é o GPRS no contexto do Drive-Thru McDonald's?",
+      "alternativas": [
+        "Um sistema de monitoramento e relatórios de performance do Drive-Thru que analisa tempos por hora e turno",
+        "O sistema de GPS usado para rastrear entregas do McDelivery",
+        "O equipamento de comunicação via rádio entre a cozinha e a pista",
+        "O protocolo de segurança da rede Wi-Fi interna do restaurante"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O GPRS (Global Point of Reference System ou similar) coleta os dados do timer e gera relatórios detalhados sobre o desempenho do Drive-Thru — por hora, turno e posição. Permite ao gerente identificar padrões e oportunidades de melhoria.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "gprs", "relatórios", "performance"]
+    },
+    {
+      "id": "drive026",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🔧 GPRS · Gestão",
+      "pergunta": "Com que frequência o gerente deve analisar os relatórios de OEPE/GPRS do Drive-Thru?",
+      "alternativas": [
+        "Diariamente, ao menos uma vez por turno, para identificar tendências e agir rapidamente",
+        "Apenas semanalmente, pois os dados diários isolados não têm significância",
+        "Somente quando o restaurante recebe uma visita de auditoria",
+        "Uma vez por mês, junto com os relatórios financeiros do período"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A análise diária permite intervenção imediata. Identificar que determinado horário ou turno tem tempos altos possibilita treinar a equipe, ajustar o staffing ou revisar procedimentos antes que o problema se agrave.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "gprs", "gestão", "análise"]
+    },
+    {
+      "id": "drive027",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🛣️ Configurações · Pista Simples",
+      "pergunta": "O que caracteriza a configuração de pista simples no Drive-Thru?",
+      "alternativas": [
+        "Um único lane de entrada com um totem de pedidos e uma janela de atendimento",
+        "Duas filas paralelas que se fundem antes da janela de entrega",
+        "Um sistema com dois totens de pedido operando simultaneamente",
+        "Uma pista com entrada dupla mas saída única para pedestres e carros"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A pista simples é a configuração mais comum: um carro entra por vez, faz o pedido em um totem, passa pelo caixa (se houver janela separada) e recebe na janela de entrega. É eficiente para volumes moderados.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "pista-simples", "configuração"]
+    },
+    {
+      "id": "drive028",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🛣️ Configurações · Dupla Abordagem",
+      "pergunta": "O que é a Dupla Abordagem (Dual Lane) no Drive-Thru?",
+      "alternativas": [
+        "Dois lanes separados com dois totens de pedido, ambos convergindo para as janelas de pagamento e entrega",
+        "Um sistema onde dois funcionários tomam o pedido ao mesmo tempo no mesmo totem",
+        "Uma configuração onde o cliente pode escolher entre pedir no Drive-Thru ou no salão",
+        "O uso de dois headsets simultâneos para atender um único cliente"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Na Dupla Abordagem, dois carros podem fazer pedido simultaneamente em totens separados. As duas filas convergem para uma ou duas janelas de pagamento/entrega, aumentando significativamente a capacidade de atendimento em horários de pico.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "dupla-abordagem", "dual-lane", "configuração"]
+    },
+    {
+      "id": "drive029",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🛣️ Configurações · Dupla Abordagem",
+      "pergunta": "Qual é a principal vantagem da Dupla Abordagem em horários de pico?",
+      "alternativas": [
+        "Dobra a capacidade de tomada de pedidos, reduzindo o tempo de espera na fila",
+        "Permite que dois gerentes trabalhem no Drive-Thru ao mesmo tempo",
+        "Elimina a necessidade do sistema OEPE pois os tempos são gerenciados manualmente",
+        "Garante que todos os clientes recebam o pedido em menos de 1 minuto"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Com dois totens funcionando simultaneamente, o restaurante consegue processar o dobro de pedidos no mesmo intervalo de tempo, reduzindo o tamanho da fila e o tempo de espera dos clientes durante os horários de maior movimento.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "dupla-abordagem", "capacidade", "pico"]
+    },
+    {
+      "id": "drive030",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🛣️ Configurações · Simulcast",
+      "pergunta": "O que é o Simulcast no Drive-Thru?",
+      "alternativas": [
+        "Função do headset que permite ao tomador de pedidos atender dois totens ao mesmo tempo",
+        "Sistema de transmissão das câmeras de segurança para o gerente monitorar a pista",
+        "Modo de treinamento onde dois atendentes compartilham o mesmo headset",
+        "Tecnologia que sincroniza os tempos do OEPE entre dois restaurantes da mesma rede"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Simulcast permite que um único tomador de pedidos gerencie dois totens de pedido simultaneamente. Quando um cliente está fazendo o pedido em um totem, o atendente pode saudar ou receber o pedido do outro totem, otimizando o uso de recursos.",
+      "dificuldade": "avancado",
+      "ativo": true,
+      "tags": ["drive-thru", "simulcast", "headset", "dupla-abordagem"]
+    },
+    {
+      "id": "drive031",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⏱️ SOS · Conceito",
+      "pergunta": "O que significa SOS no contexto do Drive-Thru McDonald's?",
+      "alternativas": [
+        "Speed of Service — velocidade de atendimento, métrica que mede a eficiência do Drive-Thru",
+        "Sistema Operacional de Segurança — protocolo de emergência da pista",
+        "Serviço de Operação Simplificado — modo de funcionamento com equipe reduzida",
+        "Sinal de Oferta Sazonal — alerta de promoções no menu do Drive-Thru"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "SOS (Speed of Service) é a métrica de velocidade de atendimento do Drive-Thru. Ela complementa o OEPE medindo o desempenho da equipe na entrega, sendo um dos principais indicadores de qualidade de serviço no Drive-Thru.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "sos", "speed-of-service", "métricas"]
+    },
+    {
+      "id": "drive032",
+      "categoria": "Drive-Thru",
+      "subcategoria": "⏱️ SOS · Objetivos",
+      "pergunta": "Qual é o objetivo principal de ter metas de tempo no Drive-Thru?",
+      "alternativas": [
+        "Garantir que os clientes sejam atendidos com rapidez, aumentando a satisfação e a capacidade de atendimento",
+        "Reduzir os custos de folha de pagamento com menos funcionários na pista",
+        "Cumprir exigências da vigilância sanitária sobre tempo máximo de exposição dos alimentos",
+        "Evitar que os carros bloqueiem a entrada do estacionamento"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Metas de tempo no Drive-Thru existem para garantir a satisfação do cliente. Clientes atendidos rapidamente têm maior probabilidade de retornar, e um Drive-Thru eficiente consegue atender mais carros por hora, aumentando as vendas do restaurante.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "metas", "satisfação", "vendas"]
+    },
+    {
+      "id": "drive033",
+      "categoria": "Drive-Thru",
+      "subcategoria": "💳 Pagamento · Drive-Thru",
+      "pergunta": "Quais formas de pagamento geralmente são aceitas no Drive-Thru McDonald's?",
+      "alternativas": [
+        "Dinheiro, cartão de crédito/débito, PIX e pagamento pelo app Meu Méqui",
+        "Apenas dinheiro e cartão de débito por questões de velocidade",
+        "Somente pagamento digital (PIX e app) para agilizar o atendimento",
+        "Dinheiro e cartão, exceto PIX que não é aceito no Drive-Thru"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Drive-Thru aceita as mesmas formas de pagamento do salão: dinheiro, cartão de crédito/débito, PIX e o app Meu Méqui. O operador de caixa deve estar preparado para processar qualquer uma dessas formas rapidamente.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "pagamento", "pix", "cartão", "meu-méqui"]
+    },
+    {
+      "id": "drive034",
+      "categoria": "Drive-Thru",
+      "subcategoria": "💳 Pagamento · Troco",
+      "pergunta": "Qual é o procedimento correto ao dar o troco ao cliente no Drive-Thru?",
+      "alternativas": [
+        "Contar o troco em voz alta na frente do cliente e colocar as notas e moedas na mão do cliente",
+        "Deixar o troco em uma bandeja e empurrar pela janela rapidamente",
+        "Informar o valor do troco e colocá-lo diretamente na sacola do pedido",
+        "Perguntar se o cliente quer o troco ou prefere doá-lo para o Ronald McDonald"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Contar o troco em voz alta em frente ao cliente demonstra transparência e evita desentendimentos. Colocar o dinheiro diretamente na mão do cliente é mais higiênico e profissional do que usar bandejas.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "troco", "pagamento", "procedimento"]
+    },
+    {
+      "id": "drive035",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🚗 Fila · Gestão",
+      "pergunta": "O que o gerente deve fazer quando a fila do Drive-Thru está muito longa e o tempo de espera está alto?",
+      "alternativas": [
+        "Acionar mais posições (tomador/caixa/apresentador), ajustar staffing e verificar gargalos na produção",
+        "Fechar temporariamente a entrada da pista para zerar a fila",
+        "Remover itens do menu temporariamente para agilizar os pedidos",
+        "Solicitar que os clientes com pedidos grandes vão ao salão"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A gestão ativa da fila envolve: adicionar pessoas nas posições críticas, verificar se a cozinha está com gargalos de produção e usar estratégias como Pull Forward quando necessário. O gerente deve agir proativamente antes que a fila impacte a experiência do cliente.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "gestão", "fila", "staffing"]
+    },
+    {
+      "id": "drive036",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🚗 Fila · Gestão",
+      "pergunta": "Durante horários de pico no Drive-Thru, qual prática ajuda a manter o fluxo de carros?",
+      "alternativas": [
+        "Pré-preparar produtos de alta demanda (como batatas fritas) para reduzir o tempo de espera na janela",
+        "Limitar os pedidos a no máximo 3 itens por carro para agilizar o atendimento",
+        "Desativar o sistema OEPE para a equipe não ficar preocupada com os tempos",
+        "Atender apenas pedidos simples e direcionar pedidos complexos para o salão"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O pré-preparo estratégico de itens de alta demanda, alinhado com as previsões de movimento, é fundamental para manter o fluxo. Ter os produtos prontos quando o cliente chega à janela é o que garante a velocidade do serviço.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "pico", "pré-preparo", "fluxo"]
+    },
+    {
+      "id": "drive037",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🌙 Drive-Thru · Madrugada",
+      "pergunta": "Quais cuidados especiais de segurança devem ser observados durante o funcionamento do Drive-Thru à noite ou de madrugada?",
+      "alternativas": [
+        "Manter a janela fechada até identificar o cliente, usar o intercomunicador e seguir protocolos de segurança do restaurante",
+        "Fechar o Drive-Thru após as 22h por questões de segurança",
+        "Aceitar apenas pagamentos digitais à noite para evitar manuseio de dinheiro",
+        "Reduzir o número de funcionários na pista para minimizar riscos"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Durante a madrugada, os protocolos de segurança são reforçados: usar o intercomunicador para identificar o cliente antes de abrir a janela, seguir as diretrizes de segurança do restaurante e manter a equipe alerta são práticas essenciais.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "segurança", "madrugada", "protocolo"]
+    },
+    {
+      "id": "drive038",
+      "categoria": "Drive-Thru",
+      "subcategoria": "📊 Performance · Análise",
+      "pergunta": "O gerente percebe que o tempo na posição de entrega (janela) está muito alto comparado ao totem de pedidos. O que isso indica?",
+      "alternativas": [
+        "Gargalo na cozinha — os produtos não estão prontos quando o carro chega à janela de entrega",
+        "O Tomador de Pedidos está demorando muito para confirmar os pedidos",
+        "O sistema de timer está com defeito e registrando tempos incorretos",
+        "Os clientes estão fazendo pedidos mais complexos do que o usual"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Quando o tempo na janela de entrega é desproporcional, o gargalo geralmente está na produção. Isso pode indicar falta de staffing na cozinha, falha no pré-preparo ou produtos que estão sendo preparados após o carro chegar — em vez de antes.",
+      "dificuldade": "avancado",
+      "ativo": true,
+      "tags": ["drive-thru", "análise", "gargalo", "cozinha", "performance"]
+    },
+    {
+      "id": "drive039",
+      "categoria": "Drive-Thru",
+      "subcategoria": "📊 Performance · Análise",
+      "pergunta": "Qual das seguintes ações contribui MAIS para melhorar o OEPE do Drive-Thru?",
+      "alternativas": [
+        "Treinar a equipe em cada posição com foco em velocidade sem perder qualidade de atendimento",
+        "Reduzir o cardápio do Drive-Thru para apenas 10 opções",
+        "Comprar equipamentos de timer mais modernos",
+        "Aumentar o preço dos produtos para reduzir o número de clientes"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A variável mais impactante no OEPE é sempre o fator humano. Uma equipe bem treinada, que conhece os procedimentos, se comunica bem e trabalha em sintonia, é o que mais contribui para reduzir os tempos e melhorar a experiência do cliente.",
+      "dificuldade": "intermediario",
+      "ativo": true,
+      "tags": ["drive-thru", "oepe", "treinamento", "melhoria"]
+    },
+    {
+      "id": "drive040",
+      "categoria": "Drive-Thru",
+      "subcategoria": "🏆 Drive-Thru · Importância",
+      "pergunta": "Por que o Drive-Thru é considerado um dos principais canais de atendimento do McDonald's?",
+      "alternativas": [
+        "Representa grande parte das vendas totais do restaurante e é uma vantagem competitiva estratégica",
+        "Porque é o canal com menor custo operacional de todos",
+        "Por ser o único canal que aceita todos os tipos de pagamento",
+        "Porque os clientes do Drive-Thru gastam menos e atendem mais rápido"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Drive-Thru é um dos maiores geradores de receita do McDonald's, representando uma parcela significativa das vendas. Sua conveniência — sem necessidade de estacionar ou sair do carro — é um diferencial competitivo importante, especialmente em áreas urbanas e durante horários de pico.",
+      "dificuldade": "basico",
+      "ativo": true,
+      "tags": ["drive-thru", "estratégia", "vendas", "importância"]
     }
   ]
 }
