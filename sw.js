@@ -1,7 +1,7 @@
-// MC Guias — Service Worker v20
-// Atualização: refatoração modular main.js, dark mode, desafios semanais, certificado
+// MC Guias — Service Worker v21
+// Atualização: pre-cache de todos os JSON de questões para suporte offline completo
 
-const CACHE = 'mc-guias-v33';
+const CACHE = 'mc-guias-v34';
 const offlineFallbackPage = '/mcguias/offline.html';
 
 const PRECACHE_ASSETS = [
@@ -13,6 +13,30 @@ const PRECACHE_ASSETS = [
   '/mcguias/js/gamificacao.js',
   '/mcguias/js/auth-guard.js',
   '/mcguias/manifest.json',
+  // Questões — garantem funcionamento 100% offline desde a instalação do PWA
+  '/mcguias/data/questions/chapa/basico.json',
+  '/mcguias/data/questions/lope/basico.json',
+  '/mcguias/data/questions/linha/basico.json',
+  '/mcguias/data/questions/mcfritas/basico.json',
+  '/mcguias/data/questions/fritas/basico.json',
+  '/mcguias/data/questions/fritos/basico.json',
+  '/mcguias/data/questions/condimentacao/basico.json',
+  '/mcguias/data/questions/salao-ngk/basico.json',
+  '/mcguias/data/questions/montagem-entrega/basico.json',
+  '/mcguias/data/questions/influencer-pagamento/basico.json',
+  '/mcguias/data/questions/drive-thru/basico.json',
+  '/mcguias/data/questions/bebidas-sobremesas/basico.json',
+  '/mcguias/data/questions/embaixador-experiencia/basico.json',
+  '/mcguias/data/questions/seguranca-alimento/basico.json',
+  '/mcguias/data/questions/estoque-recebimento/basico.json',
+  '/mcguias/data/questions/fechamento/basico.json',
+  '/mcguias/data/questions/mccafe/basico.json',
+  '/mcguias/data/questions/manutencao-preventivas/basico.json',
+  '/mcguias/data/questions/best-burguer/basico.json',
+  '/mcguias/data/questions/mcdelivery/basico.json',
+  '/mcguias/data/questions/gerencia/basico.json',
+  '/mcguias/data/questions/lideranca/basico.json',
+  '/mcguias/data/questions/treinador/basico.json',
 ];
 
 self.addEventListener('install', (event) => {

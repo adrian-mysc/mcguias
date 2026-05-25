@@ -30,6 +30,11 @@
     }
     .filter-btn.active { background: var(--red); border-color: var(--red); color: white; }
     .filter-btn:hover:not(.active) { border-color: var(--red); color: var(--red); }
+    .filter-btn[data-guide="sr"] { background: #1e1b4b; border-color: #3730a3; color: #a5b4fc; }
+    .filter-btn[data-guide="sr"].active { background: #4338ca; border-color: #4338ca; color: white; }
+    .filter-btn[data-guide="sr"]:hover:not(.active) { border-color: #6366f1; color: #c7d2fe; }
+    #subcat-row { display:none; flex-wrap:wrap; gap:6px; padding-top:8px; border-top:1px solid var(--border); margin-top:8px; }
+    .subcat-btn { font-size:11px !important; padding:6px 12px !important; min-height:36px !important; }
     .start-card {
       background: var(--card);
       border-radius: var(--radius-lg);
@@ -98,6 +103,7 @@
         <div class="card-head"><div class="card-head-icon">📚</div><h2>Selecionar Guias</h2></div>
         <div class="card-body">
           <div class="filter-row" id="filter-row" role="group" aria-label="Filtrar por guia">
+            <button class="filter-btn" data-guide="sr" aria-pressed="false">🔁 Revisão SR</button>
             <button class="filter-btn active" data-guide="all" aria-pressed="true">🎯 Todos</button>
             <button class="filter-btn" data-guide="chapa" aria-pressed="false">🔥 Chapa</button>
             <button class="filter-btn" data-guide="lope" aria-pressed="false">🥬 LOPE</button>
@@ -120,6 +126,7 @@
             <button class="filter-btn" data-guide="rendimentos" aria-pressed="false">📏 Rendimentos</button>
             <button class="filter-btn" data-guide="empilhamento" aria-pressed="false">📦 Empilhamento</button>
           </div>
+          <div id="subcat-row" role="group" aria-label="Filtrar por subcategoria"></div>
         </div>
       </div>
 
@@ -624,21 +631,52 @@
     }
 
     let selectedGuide = "all";
+    let selectedSubcat = "all";
 
-    // Filter buttons
-    document.querySelectorAll(".filter-btn").forEach(btn => {
+    function updateSubcatRow() {
+      var subRow = document.getElementById('subcat-row');
+      if (!subRow) return;
+      if (selectedGuide === 'all' || selectedGuide === 'sr') {
+        subRow.style.display = 'none';
+        selectedSubcat = 'all';
+        return;
+      }
+      var guideQs = ALL_QUESTIONS.filter(function(q) { return q.guide === selectedGuide; });
+      var catSet = {}, cats = [];
+      guideQs.forEach(function(q) { if (q.category && !catSet[q.category]) { catSet[q.category] = true; cats.push(q.category); } });
+      if (cats.length <= 1) { subRow.style.display = 'none'; return; }
+      selectedSubcat = 'all';
+      subRow.style.display = 'flex';
+      subRow.innerHTML = '<button class="filter-btn subcat-btn active" data-subcat="all" aria-pressed="true">📋 Todas</button>'
+        + cats.map(function(c) {
+          return '<button class="filter-btn subcat-btn" data-subcat="' + c.replace(/"/g,'&quot;') + '" aria-pressed="false">' + c + '</button>';
+        }).join('');
+      subRow.querySelectorAll('.subcat-btn').forEach(function(b) {
+        b.addEventListener('click', function() {
+          subRow.querySelectorAll('.subcat-btn').forEach(function(x) { x.classList.remove('active'); x.setAttribute('aria-pressed','false'); });
+          b.classList.add('active'); b.setAttribute('aria-pressed','true');
+          selectedSubcat = b.dataset.subcat;
+        });
+      });
+    }
+
+    // Guide filter buttons
+    document.querySelectorAll(".filter-btn:not(.subcat-btn)").forEach(btn => {
       btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => {
+        document.querySelectorAll(".filter-btn:not(.subcat-btn)").forEach(b => {
           b.classList.remove("active");
           b.setAttribute("aria-pressed", "false");
         });
         btn.classList.add("active");
         btn.setAttribute("aria-pressed", "true");
         selectedGuide = btn.dataset.guide;
+        selectedSubcat = 'all';
+        _loadPromise.then(updateSubcatRow);
       });
     });
 
     const GUIDE_NAMES = {
+      sr:"Revisão Espaçada",
       all:"Simulado Geral", chapa:"Chapa", lope:"LOPE", linha:"Linha",
       mcfritas:"McFritas", fritos:"Fritos", condimentacao:"Condimentação",
       salao:"Salão e NGK", montagem:"Montagem e Entrega", mcdelivery:"McDelivery",
@@ -655,9 +693,39 @@
       await ensureLoaded();
       if (btn) { btn.disabled = false; btn.classList.remove('btn-loading'); btn.removeAttribute('aria-busy'); }
 
-      const pool = selectedGuide === "all"
-        ? ALL_QUESTIONS
-        : ALL_QUESTIONS.filter(q => q.guide === selectedGuide);
+      let pool;
+      if (selectedGuide === 'sr') {
+        try {
+          const sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}');
+          const hashData = sr2.hashData || {};
+          const now = Date.now();
+          pool = ALL_QUESTIONS.filter(q => {
+            const h = typeof getQuestionHash === 'function' ? getQuestionHash(q) : 0;
+            const d = hashData[h];
+            return d && d.nextReview && d.nextReview <= now;
+          });
+        } catch(e) { pool = []; }
+        if (!pool.length) {
+          if (btn) { btn.disabled = false; btn.classList.remove('btn-loading'); btn.removeAttribute('aria-busy'); }
+          document.getElementById("quiz-setup").style.display = "none";
+          const app = document.getElementById("quiz-app");
+          app.style.display = "block";
+          app.innerHTML = '<div style="text-align:center;padding:40px 16px;">' +
+            '<div style="font-size:56px;margin-bottom:12px;">🎉</div>' +
+            '<h3 style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px;">Tudo em dia!</h3>' +
+            '<p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:20px;">Nenhuma questão de revisão espaçada está pendente.<br>Continue praticando para criar mais cartões de SR.</p>' +
+            '<button class="btn-secondary" onclick="document.getElementById(\'quiz-setup\').style.display=\'\';document.getElementById(\'quiz-app\').style.display=\'none\';">← Voltar</button>' +
+            '</div>';
+          return;
+        }
+      } else {
+        pool = selectedGuide === "all"
+          ? ALL_QUESTIONS
+          : ALL_QUESTIONS.filter(q => q.guide === selectedGuide);
+        if (selectedSubcat && selectedSubcat !== 'all') {
+          pool = pool.filter(q => q.category === selectedSubcat);
+        }
+      }
 
       if (!pool.length) return;
 
@@ -672,6 +740,14 @@
 
       initQuiz(pool, nome);
     }
+
+    // Auto-select SR mode if arrived from home shortcut
+    (function() {
+      if (new URLSearchParams(window.location.search).get('mode') === 'sr') {
+        var srBtn = document.querySelector('[data-guide="sr"]');
+        if (srBtn) srBtn.click();
+      }
+    })();
   </script>
 
   <!-- Bottom Navigation -->
