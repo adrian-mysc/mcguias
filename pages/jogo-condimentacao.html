@@ -15,7 +15,6 @@
   <script src="../js/theme.js"></script>
 
   <script>
-    // Splash — dismiss after fonts + content ready
     (function() {
       var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', t);
@@ -50,7 +49,8 @@
     <div class="splash-sub">Estudo Operacional</div>
     <div class="splash-bar"><div class="splash-bar-fill"></div></div>
   </div>
-<nav class="navbar">
+
+  <nav class="navbar">
     <div class="navbar-inner">
       <a class="navbar-logo" href="../index.html">M</a>
       <div class="navbar-brand">
@@ -61,16 +61,7 @@
     </div>
   </nav>
 
-  <div class="page-content" style="max-width:520px;">
-
-    <div style="background:#fff8e1;border:1.5px solid #ffe082;border-radius:12px;padding:12px 14px;margin-bottom:4px;display:flex;gap:10px;align-items:flex-start;">
-      <span style="font-size:20px;line-height:1.3;">🧪</span>
-      <div>
-        <div style="font-family:var(--font-display);font-size:13px;font-weight:800;color:#5d4037;margin-bottom:3px;">Fase de Testes</div>
-        <div style="font-size:12px;color:#6d4c41;line-height:1.6;">Este jogo está em desenvolvimento. Pode haver erros nos ingredientes ou no comportamento. Em breve: <strong>modelos animados</strong> dos ingredientes e dos sanduíches montados em camadas. Encontrou algo errado? <a href="https://wa.me/5581997656174" target="_blank" rel="noopener" style="color:#2e7d32;font-weight:700;text-decoration:none;">🇧🇷 📲 Fale com o Adrian no WhatsApp</a></div>
-      </div>
-    </div>
-
+  <div class="page-content" style="max-width:560px;">
     <div id="game-root"></div>
   </div>
 
@@ -84,11 +75,10 @@
 /* ============================================================
    MONTE O SANDUÍCHE — Treino de Condimentação
    Selecione QUAIS ingredientes compõem o sanduíche.
-   Ordem não importa. Acerte todos sem selecionar errados.
+   Cada clique adiciona/remove uma camada animada ao visual.
    ============================================================ */
 
 /* ---------- Dados dos sanduíches ---------- */
-// Fonte: condimentacao.html — ingredientes únicos por sanduíche (sem duplicatas de camada)
 const SANDWICHES = [
   {
     id: 'bigmac',
@@ -305,7 +295,6 @@ const SANDWICHES = [
 ];
 
 /* ---------- Pool global de ingredientes ---------- */
-// Todos os ingredientes únicos do sistema (corretos + distratores realistas)
 const ALL_INGREDIENTS = [
   // Pães
   'Pão Big Mac (3 partes)', 'Pão Tasty', 'Pão Quarterão', 'Pão Crispy', 'Pão de Batata', 'Pão Brioche',
@@ -328,23 +317,148 @@ const ALL_INGREDIENTS = [
   'Molho Espanha (1oz)', 'Molho Argentina (1oz — coroa e base)', 'Molho Mostarda Preta (1oz)',
   'Molho Jalapeño (1oz)', 'Molho Barbecue (1oz)', 'Molho Itália (1oz)',
   'Molho Ranch (2/3oz — base)', 'Maionese (2/3oz — base)',
-  // Distratores que nunca aparecem nesses sanduíches
+  // Distratores
   'Molho tártaro', 'Cebola reidratada', 'Queijo Prato', 'Pepino em conserva',
   'Molho Habanero', 'Carne 4:1 (3x)', 'Queijo Cheddar (3 fatias)',
 ];
 
+/* ---------- Mapa de imagens por ingrediente ---------- */
+// Coloque os PNGs em /mcguias/images/ingredientes/ com estes nomes exatos.
+// Se o arquivo não existir, o sistema usa uma barra colorida como fallback.
+const INGREDIENT_IMG = {
+  'Pão Big Mac (3 partes)':                  'pao-big-mac.png',
+  'Carne 10:1 (2x)':                         'carne-10-1.png',
+  'Queijo Cheddar (1 fatia)':                'queijo-cheddar.png',
+  'Queijo Cheddar (2 fatias)':               'queijo-cheddar.png',
+  'Queijo Cheddar (3 fatias)':               'queijo-cheddar.png',
+  'Picles (2 fatias)':                       'picles.png',
+  'Picles (3 unid)':                         'picles.png',
+  'Alface':                                  'alface.png',
+  'Alface (28g)':                            'alface.png',
+  'Molho Big Mac':                           'molho-big-mac.png',
+  'Pão Tasty':                               'pao-tasty.png',
+  'Carne 4:1':                               'carne-4-1.png',
+  'Carne 4:1 (2x)':                          'carne-4-1.png',
+  'Queijo Emental (3 fatias)':               'queijo-emental.png',
+  'Queijo Emental (2 fatias)':               'queijo-emental.png',
+  'Queijo Emental (2 fatias — coroa)':       'queijo-emental.png',
+  'Queijo Emmental (2 fatias)':              'queijo-emental.png',
+  'Tomate (1 fatia)':                        'tomate.png',
+  'Tomate (2 fatias)':                       'tomate.png',
+  'Cebola fresca':                           'cebola-fresca.png',
+  'Cebola fresca (10g)':                     'cebola-fresca.png',
+  'Molho Tasty':                             'molho-tasty.png',
+  'Pão Quarterão':                           'pao-quarterao.png',
+  'Bacon (2 fatias)':                        'bacon.png',
+  'Bacon (3 fatias)':                        'bacon.png',
+  'Maionese':                                'maionese.png',
+  'Maionese (2/3oz — base)':                 'maionese.png',
+  'Ketchup':                                 'ketchup.png',
+  'Mostarda':                                'mostarda.png',
+  'Pão Crispy':                              'pao-crispy.png',
+  'Carne Crispy':                            'carne-crispy.png',
+  'Cebola Crispy':                           'cebola-crispy.png',
+  'Cebola Crispy (10g)':                     'cebola-crispy.png',
+  'Molho CBO':                               'molho-cbo.png',
+  'Pão de Batata':                           'pao-batata.png',
+  'Filé de McCrispy':                        'file-mccrispy.png',
+  'Molho Ranch':                             'molho-ranch.png',
+  'Molho Ranch (2/3oz — base)':              'molho-ranch.png',
+  'Pão Brioche':                             'pao-brioche.png',
+  'Carne Chicken (2x)':                      'carne-chicken.png',
+  'Cebola shoyu':                            'cebola-shoyu.png',
+  'Molho Méquinese':                         'molho-mequinese.png',
+  'Copa Fatiada (3 unid)':                   'copa-fatiada.png',
+  'Molho Espanha (1oz)':                     'molho-espanha.png',
+  'Molho Argentina (1oz — coroa e base)':    'molho-argentina.png',
+  'Molho Mostarda Preta (1oz)':              'molho-mostarda-preta.png',
+  'Molho Jalapeño (1oz)':                    'molho-jalapeno.png',
+  'Crispy Nacho (1 unid)':                   'crispy-nacho.png',
+  'Molho Barbecue (1oz)':                    'molho-barbecue.png',
+  'Polpetone (1 unid)':                      'polpetone.png',
+  'Molho Itália (1oz)':                      'molho-italia.png',
+};
+const IMG_BASE = '/mcguias/images/ingredientes/';
+
+/* ---------- Classificar tipo de ingrediente (cor do fallback) ---------- */
+function classifyIng(name) {
+  var n = name.toLowerCase();
+  if (n.includes('pão') || n.includes('pao'))                                           return 'bread';
+  if (n.includes('carne') || n.includes('filé') || n.includes('file') ||
+      n.includes('polpetone') || n.includes('copa') || n.includes('nacho'))             return 'meat';
+  if (n.includes('queijo'))                                                             return 'cheese';
+  if (n.includes('alface'))                                                             return 'lettuce';
+  if (n.includes('tomate'))                                                             return 'tomato';
+  if (n.includes('bacon'))                                                              return 'bacon';
+  if (n.includes('picles'))                                                             return 'pickle';
+  if (n.includes('cebola'))                                                             return 'onion';
+  if (n.includes('crispy'))                                                             return 'crispy';
+  return 'sauce';
+}
+
+/* ---------- Adicionar / remover camadas visuais ---------- */
+function addLayer(ing, isMissed) {
+  var stack = document.getElementById('sandwich-stack');
+  var hint  = document.getElementById('stack-hint');
+  if (!stack) return;
+
+  var div = document.createElement('div');
+  div.className = 'sw-layer' + (isMissed ? ' layer-missed' : '');
+  div.dataset.ing = ing;
+
+  var imgFile = INGREDIENT_IMG[ing];
+  if (imgFile) {
+    var img = new Image();
+    img.src = IMG_BASE + imgFile;
+    img.alt = ing;
+    img.className = 'sw-layer-img';
+    img.onerror = function() {
+      img.style.display = 'none';
+      div.appendChild(makeFallback(ing));
+    };
+    div.appendChild(img);
+  } else {
+    div.appendChild(makeFallback(ing));
+  }
+
+  stack.appendChild(div);
+  if (hint) hint.style.display = 'none';
+}
+
+function makeFallback(ing) {
+  var el = document.createElement('div');
+  el.className = 'sw-layer-fb sw-layer--' + classifyIng(ing);
+  el.textContent = ing;
+  return el;
+}
+
+function removeLayer(ing) {
+  var layers = document.querySelectorAll('#sandwich-stack .sw-layer');
+  var target = null;
+  layers.forEach(function(l) { if (l.dataset.ing === ing) target = l; });
+  if (!target) return;
+  target.classList.add('sw-removing');
+  setTimeout(function() {
+    if (target.parentNode) target.parentNode.removeChild(target);
+    var remaining = document.querySelectorAll('#sandwich-stack .sw-layer').length;
+    if (!remaining) {
+      var hint = document.getElementById('stack-hint');
+      if (hint) hint.style.display = '';
+    }
+  }, 160);
+}
+
 /* ---------- Estado ---------- */
-let state = {
-  phase: 'menu',        // 'menu' | 'playing' | 'done'
-  sandwich: null,
-  selected: new Set(),  // ingredientes clicados pelo jogador
-  submitted: false,     // após clicar em "Confirmar"
-  session: [],          // [{ id, perfect }]
-  score: { perfect: 0, played: 0 },
+var state = {
+  phase:     'menu',
+  sandwich:  null,
+  selected:  new Set(),
+  submitted: false,
+  session:   [],
+  score:     { perfect: 0, played: 0 },
 };
 
-/* ---------- Root ---------- */
-const root = document.getElementById('game-root');
+var root = document.getElementById('game-root');
 
 function render() {
   if (state.phase === 'menu')    renderMenu();
@@ -353,129 +467,119 @@ function render() {
 
 /* ============ MENU ============ */
 function renderMenu() {
-  const hasSession = state.session.length > 0;
-  const scoreHtml = hasSession
-    ? `<div class="jg-score-bar">Sessão: <strong>${state.score.perfect}</strong> perfeito(s) de <strong>${state.score.played}</strong> jogado(s)</div>`
+  var hasSession = state.session.length > 0;
+  var scoreHtml = hasSession
+    ? '<div class="jg-score-bar">Sessão: <strong>' + state.score.perfect + '</strong> perfeito(s) de <strong>' + state.score.played + '</strong> jogado(s)</div>'
     : '';
 
-  root.innerHTML = `
-    <div class="jg-header">
-      <div class="jg-header-icon">🍔</div>
-      <h2 class="jg-title">Monte o Sanduíche</h2>
-      <p class="jg-sub">Selecione todos os ingredientes do sanduíche — sem adicionar nenhum errado</p>
-    </div>
-    ${scoreHtml}
-    <div class="jg-grid">
-      ${SANDWICHES.map(s => {
-        const entry = state.session.find(e => e.id === s.id);
-        const badge = !entry ? ''
+  root.innerHTML =
+    '<div class="jg-header">' +
+      '<div class="jg-header-icon">🍔</div>' +
+      '<h2 class="jg-title">Monte o Sanduíche</h2>' +
+      '<p class="jg-sub">Selecione todos os ingredientes do sanduíche — sem adicionar nenhum errado</p>' +
+    '</div>' +
+    scoreHtml +
+    '<div class="jg-grid">' +
+      SANDWICHES.map(function(s) {
+        var entry = state.session.find(function(e) { return e.id === s.id; });
+        var badge = !entry ? ''
           : entry.perfect
             ? '<span class="jg-badge green">⭐ Perfeito</span>'
             : '<span class="jg-badge yellow">✓ Feito</span>';
-        return `<button class="jg-card" onclick="startGame('${s.id}')">
-          <span class="jg-card-emoji">${s.emoji}</span>
-          <span class="jg-card-name">${s.name}</span>
-          ${badge}
-        </button>`;
-      }).join('')}
-    </div>
-    <button class="jg-btn-random" onclick="startRandom()">🎲 Aleatório</button>
-  `;
+        return '<button class="jg-card" data-id="' + s.id + '">' +
+          '<span class="jg-card-emoji">' + s.emoji + '</span>' +
+          '<span class="jg-card-name">' + s.name + '</span>' +
+          badge +
+        '</button>';
+      }).join('') +
+    '</div>' +
+    '<button class="jg-btn-random" id="jg-random-btn">🎲 Aleatório</button>';
+
+  root.querySelectorAll('.jg-card').forEach(function(btn) {
+    btn.addEventListener('click', function() { startGame(btn.dataset.id); });
+  });
+  document.getElementById('jg-random-btn').addEventListener('click', startRandom);
 }
 
 /* ============ GAME ============ */
 function buildPool(sandwich) {
-  const correct = new Set(sandwich.correct);
-  // Pick distractors: wrong ingredients not in this sandwich
-  const wrongs = ALL_INGREDIENTS.filter(i => !correct.has(i));
-  // Always include 4–6 distractors
-  const shuffledWrongs = wrongs.sort(() => Math.random() - 0.5).slice(0, 5);
-  // Combine + shuffle
-  return [...sandwich.correct, ...shuffledWrongs].sort(() => Math.random() - 0.5);
+  var correct = new Set(sandwich.correct);
+  var wrongs  = ALL_INGREDIENTS.filter(function(i) { return !correct.has(i); });
+  var shuffledWrongs = wrongs.sort(function() { return Math.random() - 0.5; }).slice(0, 5);
+  return [...sandwich.correct, ...shuffledWrongs].sort(function() { return Math.random() - 0.5; });
 }
 
 function renderGame() {
-  const sw = state.sandwich;
-  const pool = state._pool;
-  const correct = new Set(sw.correct);
-  const submitted = state.submitted;
+  var sw   = state.sandwich;
+  var pool = state._pool;
 
-  const total = sw.correct.length;
-  const chosen = state.selected.size;
+  root.innerHTML =
+    '<div class="jg-game-top">' +
+      '<button class="jg-back" id="jg-back-btn">← Voltar</button>' +
+      '<span class="jg-game-name">' + sw.emoji + ' ' + sw.name + '</span>' +
+    '</div>' +
 
-  // Status message when submitted
-  let feedback = '';
-  if (submitted) {
-    const missed   = sw.correct.filter(i => !state.selected.has(i));
-    const wrong    = [...state.selected].filter(i => !correct.has(i));
-    const perfect  = missed.length === 0 && wrong.length === 0;
-    if (perfect) {
-      feedback = `<div class="jg-feedback perfect"><span class="jg-fb-icon">⭐</span><strong>Perfeito!</strong> Todos os ingredientes corretos.</div>`;
-    } else {
-      const parts = [];
-      if (wrong.length)  parts.push(`<span class="jg-err">❌ ${wrong.length} errado(s)</span>`);
-      if (missed.length) parts.push(`<span class="jg-miss">⚠️ ${missed.length} faltando</span>`);
-      feedback = `<div class="jg-feedback wrong">${parts.join(' · ')}</div>`;
-    }
-  }
+    '<div class="jg-game-layout">' +
 
-  const btnHtml = pool.map(ing => {
-    const isSelected = state.selected.has(ing);
-    const isCorrect  = correct.has(ing);
+      /* ── Visual do sanduíche ── */
+      '<div id="sandwich-visual">' +
+        '<div class="sw-header">🥪 Montando</div>' +
+        '<div id="sandwich-stack"></div>' +
+        '<div id="stack-hint" class="sw-hint">← Selecione ingredientes</div>' +
+      '</div>' +
 
-    let cls = 'jg-ing';
-    let extra = '';
-    if (submitted) {
-      if (isCorrect && isSelected)  { cls += ' correct';  extra = '<span class="jg-check">✓</span>'; }
-      if (isCorrect && !isSelected) { cls += ' missed';   extra = '<span class="jg-check">!</span>'; }
-      if (!isCorrect && isSelected) { cls += ' wrong-sel';extra = '<span class="jg-check">✗</span>'; }
-    } else {
-      if (isSelected) cls += ' selected';
-    }
+      /* ── Painel de ingredientes ── */
+      '<div class="jg-right-panel">' +
+        '<div class="jg-instruction">Toque em <strong>todos</strong> os ingredientes deste sanduíche</div>' +
+        '<div id="jg-ings-wrap" class="jg-ings-wrap">' +
+          pool.map(function(ing) {
+            return '<button class="jg-ing" data-ing="' + ing.replace(/&/g,'&amp;').replace(/"/g,'&quot;') + '">' + ing + '</button>';
+          }).join('') +
+        '</div>' +
+        '<div id="jg-controls">' +
+          '<button id="jg-confirm-btn" class="jg-btn-confirm disabled" disabled>' +
+            'Confirmar seleção (0 selecionados)' +
+          '</button>' +
+        '</div>' +
+      '</div>' +
 
-    const disabled = submitted ? 'disabled' : '';
-    return `<button class="${cls}" onclick="toggleIng('${ing.replace(/'/g,"\'")}')" ${disabled}>
-      ${ing}${extra}
-    </button>`;
-  }).join('');
+    '</div>';
 
-  const confirmBtn = !submitted
-    ? `<button class="jg-btn-confirm ${chosen === 0 ? 'disabled' : ''}" onclick="confirmSelection()" ${chosen === 0 ? 'disabled' : ''}>
-        Confirmar seleção (${chosen} selecionado${chosen !== 1 ? 's' : ''})
-      </button>`
-    : `<div class="jg-after-btns">
-        <button class="jg-btn-next" onclick="nextSandwich()">Próximo →</button>
-        <button class="jg-btn-replay" onclick="startGame('${sw.id}')">🔄 Repetir</button>
-        <button class="jg-btn-menu" onclick="goMenu()">🏠 Menu</button>
-      </div>`;
-
-  root.innerHTML = `
-    <div class="jg-game-top">
-      <button class="jg-back" onclick="goMenu()">← Voltar</button>
-      <span class="jg-game-name">${sw.emoji} ${sw.name}</span>
-    </div>
-
-    <div class="jg-instruction">
-      Toque em <strong>todos</strong> os ingredientes deste sanduíche
-    </div>
-
-    <div class="jg-ings-wrap">
-      ${btnHtml}
-    </div>
-
-    ${feedback}
-    ${confirmBtn}
-
-    ${submitted ? `<div class="jg-recipe-box">
-      <div class="jg-recipe-title">📋 Composição oficial</div>
-      <div class="jg-recipe-list">${sw.correct.map(i => `<span class="jg-recipe-item">✓ ${i}</span>`).join('')}</div>
-    </div>` : ''}
-  `;
+  /* Event listeners (sem inline onclick para evitar problemas com caracteres especiais) */
+  document.getElementById('jg-back-btn').addEventListener('click', goMenu);
+  document.getElementById('jg-confirm-btn').addEventListener('click', confirmSelection);
+  document.getElementById('jg-ings-wrap').addEventListener('click', function(e) {
+    var btn = e.target.closest('.jg-ing');
+    if (btn && !btn.disabled) toggleIng(btn);
+  });
 }
 
 /* ---------- Interações ---------- */
+function toggleIng(btn) {
+  if (state.submitted) return;
+  var ing = btn.dataset.ing;
+
+  if (state.selected.has(ing)) {
+    state.selected.delete(ing);
+    btn.classList.remove('selected');
+    removeLayer(ing);
+  } else {
+    state.selected.add(ing);
+    btn.classList.add('selected');
+    addLayer(ing, false);
+  }
+
+  var count = state.selected.size;
+  var confirmBtn = document.getElementById('jg-confirm-btn');
+  if (confirmBtn) {
+    confirmBtn.textContent = 'Confirmar seleção (' + count + ' selecionado' + (count !== 1 ? 's' : '') + ')';
+    confirmBtn.disabled = count === 0;
+    confirmBtn.classList.toggle('disabled', count === 0);
+  }
+}
+
 window.startGame = function(id) {
-  const sw = SANDWICHES.find(s => s.id === id);
+  var sw = SANDWICHES.find(function(s) { return s.id === id; });
   state.sandwich  = sw;
   state.selected  = new Set();
   state.submitted = false;
@@ -484,97 +588,295 @@ window.startGame = function(id) {
   render();
 };
 
-window.startRandom = function() {
-  const unplayed = SANDWICHES.filter(s => !state.session.find(e => e.id === s.id));
-  const pool = unplayed.length ? unplayed : SANDWICHES;
-  const sw = pool[Math.floor(Math.random() * pool.length)];
+window.startRandom = function startRandom() {
+  var unplayed = SANDWICHES.filter(function(s) { return !state.session.find(function(e) { return e.id === s.id; }); });
+  var pool = unplayed.length ? unplayed : SANDWICHES;
+  var sw = pool[Math.floor(Math.random() * pool.length)];
   startGame(sw.id);
 };
 
-window.toggleIng = function(ing) {
-  if (state.submitted) return;
-  if (state.selected.has(ing)) state.selected.delete(ing);
-  else state.selected.add(ing);
-  render();
-};
+window.confirmSelection = function confirmSelection() {
+  if (state.selected.size === 0 || state.submitted) return;
 
-window.confirmSelection = function() {
-  if (state.selected.size === 0) return;
-  const sw = state.sandwich;
-  const correct = new Set(sw.correct);
-  const missed  = sw.correct.filter(i => !state.selected.has(i));
-  const wrong   = [...state.selected].filter(i => !correct.has(i));
-  const perfect = missed.length === 0 && wrong.length === 0;
+  var sw       = state.sandwich;
+  var correct  = new Set(sw.correct);
+  var missed   = sw.correct.filter(function(i) { return !state.selected.has(i); });
+  var wrongSel = Array.from(state.selected).filter(function(i) { return !correct.has(i); });
+  var perfect  = missed.length === 0 && wrongSel.length === 0;
 
   state.submitted = true;
-  // Update session
-  const existing = state.session.find(e => e.id === sw.id);
+
+  /* Atualizar sessão */
+  var existing = state.session.find(function(e) { return e.id === sw.id; });
   if (!existing) {
-    state.session.push({ id: sw.id, perfect });
+    state.session.push({ id: sw.id, perfect: perfect });
     state.score.played++;
     if (perfect) state.score.perfect++;
   } else if (perfect && !existing.perfect) {
     existing.perfect = true;
     state.score.perfect++;
   }
-  render();
+
+  /* 1. Estilizar botões de ingredientes */
+  document.querySelectorAll('#jg-ings-wrap .jg-ing').forEach(function(btn) {
+    var ing = btn.dataset.ing;
+    btn.disabled = true;
+    btn.classList.remove('selected');
+    if (correct.has(ing) && state.selected.has(ing)) {
+      btn.classList.add('correct');
+      btn.innerHTML = ing + '<span class="jg-check">✓</span>';
+    } else if (correct.has(ing) && !state.selected.has(ing)) {
+      btn.classList.add('missed');
+      btn.innerHTML = ing + '<span class="jg-check">!</span>';
+    } else if (!correct.has(ing) && state.selected.has(ing)) {
+      btn.classList.add('wrong-sel');
+      btn.innerHTML = ing + '<span class="jg-check">✗</span>';
+    }
+  });
+
+  /* 2. Feedback nas camadas visuais já existentes */
+  document.querySelectorAll('#sandwich-stack .sw-layer').forEach(function(el) {
+    el.classList.add(correct.has(el.dataset.ing) ? 'layer-correct' : 'layer-wrong');
+  });
+
+  /* 3. Adicionar camadas fantasma para ingredientes faltando */
+  missed.forEach(function(ing) { addLayer(ing, true); });
+
+  /* 4. Substituir botão confirmar por feedback + ações */
+  var parts = [];
+  if (wrongSel.length) parts.push('<span class="jg-err">❌ ' + wrongSel.length + ' errado(s)</span>');
+  if (missed.length)   parts.push('<span class="jg-miss">⚠️ ' + missed.length + ' faltando</span>');
+
+  var feedbackHtml = perfect
+    ? '<div class="jg-feedback perfect"><span class="jg-fb-icon">⭐</span><strong>Perfeito!</strong> Todos os ingredientes corretos.</div>'
+    : '<div class="jg-feedback wrong">' + parts.join(' · ') + '</div>';
+
+  var recipeHtml =
+    '<div class="jg-recipe-box">' +
+      '<div class="jg-recipe-title">📋 Composição oficial</div>' +
+      '<div class="jg-recipe-list">' +
+        sw.correct.map(function(i) { return '<span class="jg-recipe-item">✓ ' + i + '</span>'; }).join('') +
+      '</div>' +
+    '</div>';
+
+  document.getElementById('jg-controls').innerHTML =
+    feedbackHtml +
+    '<div class="jg-after-btns">' +
+      '<button class="jg-btn-next" id="jg-next-btn">Próximo →</button>' +
+      '<button class="jg-btn-replay" id="jg-replay-btn">🔄 Repetir</button>' +
+      '<button class="jg-btn-menu" id="jg-menu-btn">🏠 Menu</button>' +
+    '</div>' +
+    recipeHtml;
+
+  document.getElementById('jg-next-btn').addEventListener('click', nextSandwich);
+  document.getElementById('jg-replay-btn').addEventListener('click', function() { startGame(sw.id); });
+  document.getElementById('jg-menu-btn').addEventListener('click', goMenu);
+
+  /* Gamificação */
+  try {
+    if (window.Gamificacao) {
+      window.Gamificacao.onJogoComplete({
+        jogoId: 'monte-sanduiche', sandwichId: sw.id,
+        perfect: perfect, session: state.session, score: state.score,
+      });
+    }
+  } catch(e) {}
 };
 
-window.nextSandwich = function() {
-  const idx = SANDWICHES.findIndex(s => s.id === state.sandwich.id);
-  const next = SANDWICHES[(idx + 1) % SANDWICHES.length];
+window.nextSandwich = function nextSandwich() {
+  var idx  = SANDWICHES.findIndex(function(s) { return s.id === state.sandwich.id; });
+  var next = SANDWICHES[(idx + 1) % SANDWICHES.length];
   startGame(next.id);
 };
 
-window.goMenu = function() {
+window.goMenu = function goMenu() {
   state.phase = 'menu';
   render();
 };
 
 /* ---------- CSS ---------- */
-const style = document.createElement('style');
+var style = document.createElement('style');
 style.textContent = `
-/* Header */
+/* ── Header ─────────────────────────────────────── */
 .jg-header { text-align:center; padding:18px 0 10px; }
 .jg-header-icon { font-size:44px; margin-bottom:6px; }
 .jg-title { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--text); margin:0 0 4px; }
 .jg-sub { font-size:13px; color:var(--muted); margin:0; line-height:1.5; }
 
-/* Score bar */
+/* ── Score bar ───────────────────────────────────── */
 .jg-score-bar { background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:10px 14px; font-size:13px; color:var(--muted); text-align:center; margin-bottom:12px; }
 
-/* Menu grid */
+/* ── Menu grid ───────────────────────────────────── */
 .jg-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; }
-.jg-card { background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-lg); padding:14px 10px; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; position:relative; transition:border-color .15s, transform .1s; }
+.jg-card { background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-lg); padding:14px 10px; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; position:relative; transition:border-color .15s,transform .1s; }
 .jg-card:active { transform:scale(.97); border-color:var(--red); }
 .jg-card-emoji { font-size:30px; }
 .jg-card-name { font-family:var(--font-display); font-size:11px; font-weight:700; color:var(--text); text-align:center; line-height:1.3; }
 .jg-badge { position:absolute; top:7px; right:7px; font-size:10px; font-weight:700; padding:2px 7px; border-radius:20px; }
-.jg-badge.green { background:#e8f5e9; color:#2e7d32; }
+.jg-badge.green  { background:#e8f5e9; color:#2e7d32; }
 .jg-badge.yellow { background:#fff8e1; color:#f57f17; }
 .jg-btn-random { width:100%; padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-md); font-family:var(--font-display); font-size:15px; font-weight:800; cursor:pointer; }
 .jg-btn-random:active { opacity:.85; }
 
-/* Game top bar */
-.jg-game-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+/* ── Game top bar ────────────────────────────────── */
+.jg-game-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
 .jg-back { background:none; border:1.5px solid var(--border); border-radius:var(--radius-md); padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted); cursor:pointer; }
 .jg-game-name { font-family:var(--font-display); font-size:15px; font-weight:800; color:var(--text); }
 
-/* Instruction */
-.jg-instruction { background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:10px 14px; font-size:13px; color:var(--muted); margin-bottom:12px; text-align:center; }
+/* ── Game layout: duas colunas ───────────────────── */
+.jg-game-layout {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-bottom:8px;
+}
+@media (min-width:480px) {
+  .jg-game-layout {
+    flex-direction:row;
+    align-items:flex-start;
+    gap:14px;
+  }
+}
 
-/* Ingredient buttons */
-.jg-ings-wrap { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
-.jg-ing { background:var(--card); border:2px solid var(--border); border-radius:var(--radius-md); padding:9px 14px; font-size:13px; font-weight:600; color:var(--text); cursor:pointer; transition:border-color .12s, background .12s, transform .1s; position:relative; display:flex; align-items:center; gap:6px; }
+/* ── Painel visual do sanduíche ──────────────────── */
+#sandwich-visual {
+  background:var(--card);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:12px 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:120px;
+  overflow:hidden;
+}
+@media (max-width:479px) {
+  #sandwich-visual { max-height:200px; overflow-y:auto; }
+}
+@media (min-width:480px) {
+  #sandwich-visual {
+    width:160px;
+    flex-shrink:0;
+    position:sticky;
+    top:68px;
+    max-height:calc(100vh - 80px);
+    overflow-y:auto;
+  }
+}
+
+.sw-header {
+  font-family:var(--font-display);
+  font-size:10px;
+  font-weight:800;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  margin-bottom:10px;
+  text-align:center;
+}
+
+#sandwich-stack {
+  width:100%;
+  display:flex;
+  flex-direction:column-reverse; /* último adicionado fica no topo visual */
+  align-items:center;
+  gap:1px;
+  flex:1;
+}
+
+.sw-hint {
+  font-size:11px;
+  color:var(--muted);
+  text-align:center;
+  margin-top:10px;
+  opacity:.65;
+  line-height:1.5;
+}
+
+/* ── Animação: nova camada cai de cima ───────────── */
+@keyframes layerDrop {
+  from { opacity:0; transform:translateY(-16px) scaleX(.82); }
+  to   { opacity:1; transform:translateY(0)     scaleX(1); }
+}
+
+.sw-layer {
+  width:90%;
+  max-width:140px;
+  animation:layerDrop .22s cubic-bezier(.34,1.3,.64,1);
+  display:flex;
+  justify-content:center;
+}
+
+/* Remoção suave */
+.sw-removing {
+  transition:opacity .15s ease, transform .15s ease !important;
+  animation:none !important;
+  opacity:0 !important;
+  transform:translateY(-12px) scaleX(.85) !important;
+}
+
+/* Imagem real do ingrediente */
+.sw-layer-img {
+  width:100%;
+  height:auto;
+  display:block;
+  user-select:none;
+  pointer-events:none;
+  border-radius:2px;
+}
+
+/* Barra colorida de fallback (quando não há PNG) */
+.sw-layer-fb {
+  width:100%;
+  border-radius:3px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:8px;
+  font-weight:700;
+  overflow:hidden;
+  white-space:nowrap;
+  padding:0 4px;
+  color:#fff;
+}
+.sw-layer--bread   { background:#c8925a; height:18px; border-radius:6px; }
+.sw-layer--meat    { background:#7b3f1f; height:13px; }
+.sw-layer--cheese  { background:#ffc72c; height:7px;  color:#5d4037; }
+.sw-layer--lettuce { background:#4ade80; height:9px;  color:#166534; }
+.sw-layer--tomato  { background:#ef4444; height:8px; }
+.sw-layer--bacon   { background:#c2440f; height:8px; }
+.sw-layer--pickle  { background:#84cc16; height:7px;  color:#365314; }
+.sw-layer--onion   { background:#a78bfa; height:8px; }
+.sw-layer--crispy  { background:#f59e0b; height:9px;  color:#5d4037; }
+.sw-layer--sauce   { background:#fb923c; height:6px; }
+
+/* ── Feedback visual nas camadas pós-confirmação ─── */
+.layer-correct .sw-layer-img,
+.layer-correct .sw-layer-fb { outline:2px solid #22c55e; border-radius:3px; }
+.layer-wrong   .sw-layer-img,
+.layer-wrong   .sw-layer-fb { outline:2px solid #DA291C; filter:grayscale(.4); border-radius:3px; }
+.layer-missed              { opacity:.4; }
+.layer-missed .sw-layer-img,
+.layer-missed .sw-layer-fb { outline:2px dashed #f59e0b; border-radius:3px; }
+
+/* ── Painel direito ──────────────────────────────── */
+.jg-right-panel { flex:1; min-width:0; }
+
+/* Instruction */
+.jg-instruction { background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:9px 13px; font-size:13px; color:var(--muted); margin-bottom:12px; text-align:center; }
+
+/* ── Botões de ingredientes ──────────────────────── */
+.jg-ings-wrap { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.jg-ing { background:var(--card); border:2px solid var(--border); border-radius:var(--radius-md); padding:9px 13px; font-size:13px; font-weight:600; color:var(--text); cursor:pointer; transition:border-color .12s,background .12s,transform .1s; display:flex; align-items:center; gap:6px; }
 .jg-ing:active { transform:scale(.96); }
-.jg-ing.selected { border-color:var(--red); background:#fff5f5; color:var(--red); }
-.jg-ing.correct  { border-color:#43a047; background:#e8f5e9; color:#2e7d32; cursor:default; }
-.jg-ing.missed   { border-color:#f57f17; background:#fff8e1; color:#e65100; cursor:default; }
-.jg-ing.wrong-sel{ border-color:#e53935; background:#ffebee; color:#c62828; text-decoration:line-through; cursor:default; }
-.jg-ing:disabled { cursor:default; }
+.jg-ing.selected  { border-color:var(--red); background:#fff5f5; color:var(--red); }
+.jg-ing.correct   { border-color:#43a047; background:#e8f5e9; color:#2e7d32; cursor:default; }
+.jg-ing.missed    { border-color:#f57f17; background:#fff8e1; color:#e65100; cursor:default; }
+.jg-ing.wrong-sel { border-color:#e53935; background:#ffebee; color:#c62828; text-decoration:line-through; cursor:default; }
+.jg-ing:disabled  { cursor:default; }
 .jg-check { font-size:12px; font-weight:800; }
 
-/* Feedback banner */
+/* ── Feedback banner ─────────────────────────────── */
 .jg-feedback { border-radius:var(--radius-md); padding:12px 14px; font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px; margin-bottom:12px; }
 .jg-feedback.perfect { background:#e8f5e9; border:1.5px solid #a5d6a7; color:#2e7d32; }
 .jg-feedback.wrong   { background:#fff3e0; border:1.5px solid #ffcc80; color:#e65100; }
@@ -582,26 +884,26 @@ style.textContent = `
 .jg-err  { color:#c62828; }
 .jg-miss { color:#e65100; }
 
-/* Confirm button */
-.jg-btn-confirm { width:100%; padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-md); font-family:var(--font-display); font-size:15px; font-weight:800; cursor:pointer; margin-bottom:0; }
+/* ── Botão confirmar ─────────────────────────────── */
+.jg-btn-confirm { width:100%; padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-md); font-family:var(--font-display); font-size:15px; font-weight:800; cursor:pointer; }
 .jg-btn-confirm.disabled { background:#ccc; cursor:not-allowed; }
 .jg-btn-confirm:not(.disabled):active { opacity:.85; }
 
-/* After buttons */
+/* ── Após confirmação ────────────────────────────── */
 .jg-after-btns { display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
 .jg-btn-next   { padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-md); font-family:var(--font-display); font-size:15px; font-weight:800; cursor:pointer; }
 .jg-btn-replay,
 .jg-btn-menu   { padding:11px; background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-md); font-family:var(--font-display); font-size:14px; font-weight:700; color:var(--text); cursor:pointer; }
 
-/* Recipe box */
-.jg-recipe-box { background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:12px 14px; margin-top:4px; }
+/* ── Receita oficial ─────────────────────────────── */
+.jg-recipe-box   { background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:12px 14px; margin-top:4px; }
 .jg-recipe-title { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
-.jg-recipe-list { display:flex; flex-wrap:wrap; gap:6px; }
-.jg-recipe-item { background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:5px 10px; font-size:12px; font-weight:600; color:var(--text); }
+.jg-recipe-list  { display:flex; flex-wrap:wrap; gap:6px; }
+.jg-recipe-item  { background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:5px 10px; font-size:12px; font-weight:600; color:var(--text); }
 `;
 document.head.appendChild(style);
 
-document.addEventListener('DOMContentLoaded', () => { render(); });
+document.addEventListener('DOMContentLoaded', function() { render(); });
   </script>
 
   <!-- Bottom Navigation -->
@@ -624,11 +926,9 @@ document.addEventListener('DOMContentLoaded', () => { render(); });
     </a>
   </nav>
 
-  <!-- FAB Quiz -->
   <a class="fab-quiz" href="/mcguias/pages/quiz.html" aria-label="Ir para o Quiz" title="Quiz">🎯</a>
 
 <script>
-// Bottom Nav — highlight active item
 (function() {
   var path = window.location.pathname;
   document.querySelectorAll('.bottom-nav-item').forEach(function(item) {
