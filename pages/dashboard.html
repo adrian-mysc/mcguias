@@ -376,7 +376,7 @@
       try { return JSON.parse(localStorage.getItem('mc_quiz_history') || '[]'); } catch(e) { return []; }
     }
     function getSRData() {
-      try { return JSON.parse(localStorage.getItem('mc_sr_data') || '{}'); } catch(e) { return {}; }
+      try { var sr2 = JSON.parse(localStorage.getItem('mc_sr_v2') || '{}'); return sr2.hashData || {}; } catch(e) { return {}; }
     }
     function getGamData() {
       try { return JSON.parse(localStorage.getItem('gamificacao') || 'null'); } catch(e) { return null; }
@@ -551,7 +551,7 @@
         version:     'mc-guias-backup-v2',
         date:        new Date().toISOString(),
         quizHistory: localStorage.getItem('mc_quiz_history'),
-        srData:      localStorage.getItem('mc_sr_data'),
+        srData:      localStorage.getItem('mc_sr_v2'),
         gamificacao: localStorage.getItem('gamificacao'),
         analytics:   localStorage.getItem('mc_analytics'),
       };
@@ -584,7 +584,7 @@
           try {
             var data = JSON.parse(ev.target.result);
             if (data.quizHistory)  localStorage.setItem('mc_quiz_history', data.quizHistory);
-            if (data.srData)       localStorage.setItem('mc_sr_data',      data.srData);
+            if (data.srData)       localStorage.setItem('mc_sr_v2',         data.srData);
             if (data.gamificacao)  localStorage.setItem('gamificacao',     data.gamificacao);
             if (data.analytics)    localStorage.setItem('mc_analytics',    data.analytics);
             if (data.checklists) {
@@ -605,7 +605,7 @@
 
     window.confirmarReset = function() {
       if (confirm('⚠️ Resetar TODOS os dados?\n\nIsso apagará seu histórico de quizzes, conquistas, desafios e estatísticas.\n\nEsta ação não pode ser desfeita.')) {
-        ['mc_quiz_history','mc_sr_data','gamificacao','mc_analytics','mc_last_notif','mc_push_reminder_set'].forEach(function(k) {
+        ['mc_quiz_history','mc_sr_v2','gamificacao','mc_analytics','mc_last_notif','mc_push_reminder_set'].forEach(function(k) {
           localStorage.removeItem(k);
         });
         // Remove checklists

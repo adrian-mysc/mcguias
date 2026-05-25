@@ -496,7 +496,7 @@ function initQuiz(questions, guiaName) {
     var btnM = document.getElementById('btnMultiple');
     var btnF = document.getElementById('btnFlash');
     var btnL = document.getElementById('btnLacuna');
-    if (!btnM) return;
+    if (!btnM || !btnF || !btnL) return;
     btnM.className = mode === 'multiple' ? 'btn-primary' : 'btn-secondary';
     btnF.className = mode === 'flash'    ? 'btn-primary' : 'btn-secondary';
     btnL.className = mode === 'lacuna'   ? 'btn-primary' : 'btn-secondary';
