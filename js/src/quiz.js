@@ -48,7 +48,7 @@ function initQuiz(questions, guiaName) {
     var btnM = document.getElementById('btnMultiple');
     var btnF = document.getElementById('btnFlash');
     var btnL = document.getElementById('btnLacuna');
-    if (!btnM) return;
+    if (!btnM || !btnF || !btnL) return;
     btnM.className = mode === 'multiple' ? 'btn-primary' : 'btn-secondary';
     btnF.className = mode === 'flash'    ? 'btn-primary' : 'btn-secondary';
     btnL.className = mode === 'lacuna'   ? 'btn-primary' : 'btn-secondary';
@@ -232,12 +232,12 @@ function initQuiz(questions, guiaName) {
       +   '</div>'
       + '</div>'
       + '<div class="quiz-question-card">'
-      +   '<div class="quiz-category">' + (q.category || '') + '</div>'
-      +   '<div class="quiz-question">' + q.question + '</div>'
+      +   '<div class="quiz-category">' + esc(q.category || '') + '</div>'
+      +   '<div class="quiz-question">' + esc(q.question) + '</div>'
       +   '<div class="quiz-options" id="quiz-options">'
       +     opts.map(function(o, oi) {
               return '<button class="quiz-option" onclick="handleQuizOption('+oi+')" data-correct="'+(o===q.answer)+'" data-idx="'+oi+'">'
-                + '<span class="quiz-opt-key">' + String.fromCharCode(65+oi) + '</span> ' + o
+                + '<span class="quiz-opt-key">' + String.fromCharCode(65+oi) + '</span> ' + esc(o)
                 + '</button>';
             }).join('')
       +   '</div>'
@@ -304,7 +304,7 @@ function initQuiz(questions, guiaName) {
             });
             var fb = document.getElementById('quiz-feedback');
             fb.className = 'quiz-feedback show wrong';
-            fb.innerHTML = '⏱️ <strong>Tempo esgotado!</strong> ' + (q.explanation || '');
+            fb.innerHTML = '⏱️ <strong>Tempo esgotado!</strong> ' + esc(q.explanation || '');
             answered = true;
             _wrongAnswers.push({ question: q.question, answer: q.answer, userAnswer: null, explanation: q.explanation, category: q.category });
             updateSRData(getQuestionHash(q), false, 1);
@@ -422,8 +422,8 @@ function initQuiz(questions, guiaName) {
       : '';
 
     fb.innerHTML = isCorrect
-      ? "✅ <strong>Correto!</strong>" + streakBadge + "<br><span style='font-size:13px;opacity:.9;'>" + (explanation || "") + "</span>"
-      : "❌ <strong>Incorreto.</strong> A resposta certa é: <strong>" + correct + "</strong>.<br><span style='font-size:13px;opacity:.9;'>" + (explanation || "") + "</span>";
+      ? "✅ <strong>Correto!</strong>" + streakBadge + "<br><span style='font-size:13px;opacity:.9;'>" + esc(explanation || "") + "</span>"
+      : "❌ <strong>Incorreto.</strong> A resposta certa é: <strong>" + esc(correct) + "</strong>.<br><span style='font-size:13px;opacity:.9;'>" + esc(explanation || "") + "</span>";
 
     var nb = document.getElementById("btn-next");
     if (nb) nb.style.display = "inline-flex";
@@ -482,7 +482,7 @@ function initQuiz(questions, guiaName) {
     var errorsHTML = '';
     if (_wrongAnswers.length > 0) {
       var errorItems = _wrongAnswers.map(function(w) {
-        return '<div style="background:var(--bg);border:1.5px solid #fecaca;border-radius:var(--radius-md);padding:11px 13px;">'          + '<div style="font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.5px;margin-bottom:4px;text-transform:uppercase;">' + (w.category || '') + '</div>'          + '<div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.4;">' + w.question + '</div>'          + '<div style="display:flex;flex-direction:column;gap:4px;">'          + '<div style="font-size:12px;padding:6px 10px;border-radius:8px;background:#ffebee;color:#c62828;">'          + '❌ Sua resposta: <strong>' + (w.userAnswer || 'Tempo esgotado') + '</strong></div>'          + '<div style="font-size:12px;padding:6px 10px;border-radius:8px;background:#e8f5e9;color:#2e7d32;">'          + '✅ Correto: <strong>' + w.answer + '</strong></div>'          + (w.explanation ? '<div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4;">' + w.explanation + '</div>' : '')          + '</div></div>';
+        return '<div style="background:var(--bg);border:1.5px solid #fecaca;border-radius:var(--radius-md);padding:11px 13px;">'          + '<div style="font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.5px;margin-bottom:4px;text-transform:uppercase;">' + esc(w.category || '') + '</div>'          + '<div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.4;">' + esc(w.question) + '</div>'          + '<div style="display:flex;flex-direction:column;gap:4px;">'          + '<div style="font-size:12px;padding:6px 10px;border-radius:8px;background:#ffebee;color:#c62828;">'          + '❌ Sua resposta: <strong>' + esc(w.userAnswer || 'Tempo esgotado') + '</strong></div>'          + '<div style="font-size:12px;padding:6px 10px;border-radius:8px;background:#e8f5e9;color:#2e7d32;">'          + '✅ Correto: <strong>' + esc(w.answer) + '</strong></div>'          + (w.explanation ? '<div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4;">' + esc(w.explanation) + '</div>' : '')          + '</div></div>';
       }).join('');
       errorsHTML = '<div style="margin-top:16px;text-align:left;">'        + '<button id="err-toggle-btn" onclick="toggleErrorReview()" style="width:100%;padding:11px 14px;background:var(--bg);border:1.5px solid #fecaca;border-radius:var(--radius-md);font-family:var(--font-display);font-size:13px;font-weight:800;color:#c62828;cursor:pointer;display:flex;align-items:center;justify-content:space-between;">'        + '<span>❌ Revisar ' + _wrongAnswers.length + ' erro' + (_wrongAnswers.length > 1 ? 's' : '') + '</span><span id="err-arrow">▼</span></button>'        + '<div id="error-review" style="display:none;margin-top:8px;flex-direction:column;gap:8px;">'        + errorItems        + '</div></div>';
     }

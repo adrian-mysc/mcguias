@@ -51,14 +51,14 @@ function initFlashcard(questions, guiaName) {
       </div>
       <div class="flashcard" id="fc" onclick="revealCard()">
         <div class="flashcard-hint">PERGUNTA — toque para ver a resposta</div>
-        <div class="flashcard-q">${q.question}</div>
-        <div class="flashcard-a">✅ ${q.answer}${q.explanation ? '<br><span style="font-size:12px;color:var(--muted);margin-top:6px;display:block;">' + q.explanation + '</span>' : ''}</div>
+        <div class="flashcard-q">${esc(q.question)}</div>
+        <div class="flashcard-a">✅ ${esc(q.answer)}${q.explanation ? '<br><span style="font-size:12px;color:var(--muted);margin-top:6px;display:block;">' + esc(q.explanation) + '</span>' : ''}</div>
       </div>
       <div class="flashcard-nav" id="fc-nav" style="display:none;">
         <button class="btn-wrong" onclick="rateCard(false)" style="flex:1;padding:12px;font-size:14px;font-weight:800;background:#ffebee;color:#c62828;border:1.5px solid #fecaca;border-radius:var(--radius-md);cursor:pointer;">❌ Não sabia</button>
         <button class="btn-correct" onclick="rateCard(true)" style="flex:1;padding:12px;font-size:14px;font-weight:800;background:#e8f5e9;color:#2e7d32;border:1.5px solid #b2dfca;border-radius:var(--radius-md);cursor:pointer;">✅ Sabia!</button>
       </div>
-      <p style="text-align:center;font-size:11px;color:var(--muted);">Categoria: ${q.category}</p>
+      <p style="text-align:center;font-size:11px;color:var(--muted);">Categoria: ${esc(q.category)}</p>
     </div>`;
   }
   window.revealCard = () => {

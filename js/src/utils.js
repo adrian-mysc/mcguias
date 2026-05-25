@@ -1,5 +1,14 @@
 // ── Certificado · Compartilhar · Clipboard · Toast ────────────
 
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
 // ── Certificado de Conclusão ────────────────────────────────────────────────
 window.gerarCertificado = function(score, total, guia) {
   var pct  = total > 0 ? Math.round((score / total) * 100) : 0;
