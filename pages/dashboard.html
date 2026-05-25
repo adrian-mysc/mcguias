@@ -461,12 +461,15 @@
         })
         .sort(function(a,b) { return a.avg - b.avg; }); // piores primeiro
 
-      var emoji = function(p) { return p>=80?'🏆':p>=60?'👍':'📖'; };
+      var tier = function(p) { return p>=80?'🏆 Dominado':p>=60?'📈 Em progresso':'📖 Estudar mais'; };
 
       container.innerHTML = rows.map(function(r) {
         var c = colorFor(r.avg);
         return '<div class="guia-row">' +
-          '<div class="guia-row-name">' + emoji(r.avg) + ' ' + esc(r.name) + '</div>' +
+          '<div style="flex:1;min-width:0;">' +
+            '<div class="guia-row-name" style="margin-bottom:2px;">' + esc(r.name) + '</div>' +
+            '<div style="font-size:10px;color:' + c + ';font-weight:700;">' + tier(r.avg) + '</div>' +
+          '</div>' +
           '<div class="guia-row-count">' + r.count + 'x</div>' +
           '<div class="guia-bar-wrap"><div class="guia-bar-fill" style="width:' + r.avg + '%;background:' + c + ';"></div></div>' +
           '<div class="guia-row-pct" style="color:' + c + ';">' + r.avg + '%</div>' +

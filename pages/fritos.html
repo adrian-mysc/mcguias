@@ -344,10 +344,10 @@
     document.addEventListener("DOMContentLoaded", () => {
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
-        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_FRITOS); observer.disconnect(); }
+        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_FRITOS, 'Fritos'); observer.disconnect(); }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_FRITOS);
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_FRITOS, 'Fritos');
     });
   </script>
 
