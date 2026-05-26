@@ -1715,18 +1715,14 @@
       .slice(0, 32) || user.id.slice(0, 8);
     const newUsername = profile?.username || baseSlug;
 
-    // Save username, loja e sigla to supabase
-    const { error: upsertErr } = await supabase.from('profiles').upsert({
-      id: user.id,
-      username: newUsername,
-      display_name: nome,
-      loja,
-      sigla,
-      cargo,
-      estado,
-      cidade,
-      avatar_emoji: avatarEmoji
-    });
+    // Save to supabase — tenta com estado/cidade; faz fallback sem eles se a coluna ainda não existe
+    const basePayload = { id: user.id, username: newUsername, display_name: nome, loja, sigla, cargo, avatar_emoji: avatarEmoji };
+    let { error: upsertErr } = await supabase.from('profiles').upsert({ ...basePayload, estado, cidade });
+
+    if (upsertErr && upsertErr.message && upsertErr.message.toLowerCase().includes('estado')) {
+      // Migração ainda não aplicada — salva sem os novos campos
+      ({ error: upsertErr } = await supabase.from('profiles').upsert(basePayload));
+    }
 
     if (upsertErr) {
       showToast('❌ Erro ao salvar perfil online: ' + upsertErr.message);

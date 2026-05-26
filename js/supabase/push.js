@@ -12,7 +12,7 @@ import { supabase } from './config.js';
 
 // Chave pública VAPID gerada para este projeto
 const VAPID_PUBLIC_KEY =
-  'BDez0HOlLUiF3FeWbGr_cgtUByjDefoQyyqYA6zvUoiV-rlihPTX5hNHcU3vIPOtIV4X4aD7gjwIR0Rtd8dOGcE';
+  'BFPlYaAd_5kTjnheQxy47Raiey7jlCuuzdokHlp2OraxHbxr-LAfMY_iVPGaoMz6pbDQj-bBw7Py02OQejVKLq4';
 
 function urlBase64ToUint8Array(base64String) {
   const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
