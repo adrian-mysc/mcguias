@@ -909,8 +909,12 @@
             <label>Loja / Restaurante</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              <input type="text" id="edit-loja" placeholder="Ex: Loja 1234">
+              <input type="text" id="edit-loja" placeholder="Ex: RUI · HGG · GBN"
+                style="text-transform:uppercase;letter-spacing:1px;font-weight:700"
+                oninput="this.value=this.value.replace(/[^A-Za-zÀ-ÿ\s\-]/g,'').toUpperCase()"
+                maxlength="20">
             </div>
+            <div style="font-size:10.5px;color:var(--muted);margin-top:3px;padding-left:2px">Somente letras (sigla do restaurante)</div>
           </div>
           <div class="field">
             <label>Data de admissão</label>
@@ -1575,7 +1579,7 @@
     const apelido  = document.getElementById('edit-apelido').value.trim();
     const sigla    = document.getElementById('edit-sigla').value.trim().toUpperCase().slice(0, 4);
     const cargo    = document.getElementById('edit-cargo').value;
-    const loja     = document.getElementById('edit-loja').value.trim();
+    const loja     = document.getElementById('edit-loja').value.trim().replace(/[^A-Za-zÀ-ÿ\s\-]/g, '').toUpperCase();
     const turno    = document.getElementById('edit-turno').value;
     const admissao = document.getElementById('edit-admissao').value;
     const telefone = document.getElementById('edit-telefone').value.trim();
