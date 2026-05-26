@@ -101,6 +101,15 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 | Web App Manifest | Instalação como app standalone |
 | Cache API | Estratégia offline-first com fallback |
 
+### Backend (Supabase)
+| Tecnologia | Uso |
+|-----------|-----|
+| Supabase Auth | Login por e-mail/senha e Google OAuth |
+| Supabase Database (PostgreSQL) | Perfis, ranking, batalhas, conquistas, desafios semanais, push subscriptions |
+| Supabase Storage | Upload de fotos de avatar (`bucket: avatars`) |
+| Supabase Edge Functions | Envio de Web Push notifications |
+| Row Level Security (RLS) | Cada usuário só acessa e edita os próprios dados |
+
 ### Qualidade e CI
 | Tecnologia | Uso |
 |-----------|-----|
@@ -192,3 +201,18 @@ mcguias/
 Este projeto está sob a licença **MIT** — sinta-se à vontade para estudar, modificar e usar como base.
 
 *Material de estudo pessoal. Não é oficial e não substitui treinamentos da empresa.*
+
+---
+
+## ⚠️ Notas para Contribuidores
+
+### Supabase — upsert de perfil exige `onConflict: 'id'`
+
+A tabela `profiles` tem `username UNIQUE NOT NULL`. Sem especificar o campo de conflito, o PostgREST pode tentar resolver o conflito pela constraint do username em vez da chave primária, quebrando o save silenciosamente:
+
+```javascript
+// Sempre use { onConflict: 'id' }
+supabase.from('profiles').upsert(payload, { onConflict: 'id' })
+```
+
+Veja `CLAUDE.md` para mais detalhes sobre armadilhas do projeto.
