@@ -3,6 +3,20 @@
   
 <head>
   <meta charset="UTF-8">
+  <script>
+    // Intercepta callbacks do Supabase Auth que caem na raiz (Site URL)
+    (function() {
+      var h = window.location.hash.slice(1);
+      var q = window.location.search;
+      var hp = new URLSearchParams(h);
+      var qp = new URLSearchParams(q);
+      if (hp.get('access_token') || hp.get('error')) {
+        window.location.replace('pages/confirmar-email.html#' + h);
+      } else if (qp.get('code') || qp.get('error')) {
+        window.location.replace('pages/confirmar-email.html' + q);
+      }
+    })();
+  </script>
   <script>document.documentElement.style.visibility="hidden"</script>
   <script type="module" src="js/auth-guard.js"></script>
 
