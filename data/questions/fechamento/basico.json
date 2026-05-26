@@ -309,58 +309,6 @@
       "relatedQuestions": []
     },
     {
-      "id": "fechamento_007",
-      "categoria": "fechamento",
-      "subcategoria": "🔥 Fechamento · Chapa",
-      "dificuldade": 3,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "raspador",
-        "taylor-ng",
-        "teflon",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "A que ângulo deve estar a lâmina do raspador em relação à superfície da chapa?",
-      "alternativas": [
-        "5°",
-        "10°",
-        "15°",
-        "45°"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "A lâmina do raspador deve estar a 15° em relação à superfície da chapa durante a raspagem.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
       "id": "fechamento_008",
       "categoria": "fechamento",
       "subcategoria": "🔥 Fechamento · Chapa",
@@ -1063,9 +1011,19 @@
       "subcategoria": "🧺 Panos · Código de Cores",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["panos", "cores", "limpeza", "higiene"],
+      "tags": [
+        "panos",
+        "cores",
+        "limpeza",
+        "higiene"
+      ],
       "pergunta": "Qual a cor do pano (ponteira/garra) usado na área de banheiros e sala de lixo?",
-      "alternativas": ["Azul", "Vermelho", "Verde", "Amarelo"],
+      "alternativas": [
+        "Azul",
+        "Vermelho",
+        "Verde",
+        "Amarelo"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Panos com ponteira/garra verde são destinados exclusivamente aos banheiros e sala de lixo. Nunca devem ser usados em áreas de alimentos.",
       "dica": "Verde = banheiro/lixo. Nunca misturar com alimentos!",
@@ -1077,9 +1035,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1089,9 +1061,18 @@
       "subcategoria": "🧺 Panos · Código de Cores",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["panos", "cores", "limpeza"],
+      "tags": [
+        "panos",
+        "cores",
+        "limpeza"
+      ],
       "pergunta": "Qual a cor do pano (ponteira/garra) usado no balcão e salão?",
-      "alternativas": ["Verde", "Vermelho", "Amarelo", "Azul"],
+      "alternativas": [
+        "Verde",
+        "Vermelho",
+        "Amarelo",
+        "Azul"
+      ],
       "respostaCorreta": 3,
       "explicacao": "Panos com ponteira/garra azul (lã branca) são usados no balcão e salão. O código de cores garante que panos de áreas contaminadas não sejam usados em alimentos.",
       "dica": "Azul = balcão e salão. Verde = banheiro.",
@@ -1103,9 +1084,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1115,9 +1110,19 @@
       "subcategoria": "🧺 Panos · Código de Cores",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["panos", "cores", "cozinha", "limpeza"],
+      "tags": [
+        "panos",
+        "cores",
+        "cozinha",
+        "limpeza"
+      ],
       "pergunta": "Qual a cor do pano (ponteira/garra) destinado à área de cozinha?",
-      "alternativas": ["Azul", "Verde", "Vermelho", "Branco"],
+      "alternativas": [
+        "Azul",
+        "Verde",
+        "Vermelho",
+        "Branco"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Panos com ponteira/garra vermelha (lã vermelha) são usados na área de cozinha. As cores garantem que os panos não sejam trocados entre áreas de diferentes riscos.",
       "dica": "Vermelho = cozinha. Azul = balcão. Verde = banheiro.",
@@ -1129,9 +1134,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1141,9 +1160,19 @@
       "subcategoria": "🧺 Panos · Frequência",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["panos", "frequencia", "limpeza", "higiene"],
+      "tags": [
+        "panos",
+        "frequencia",
+        "limpeza",
+        "higiene"
+      ],
       "pergunta": "Com que frequência os panos de limpeza devem ser trocados durante o turno?",
-      "alternativas": ["A cada 30 minutos", "A cada hora", "A cada 2 horas", "Apenas quando estiverem visivelmente sujos"],
+      "alternativas": [
+        "A cada 30 minutos",
+        "A cada hora",
+        "A cada 2 horas",
+        "Apenas quando estiverem visivelmente sujos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Os panos devem ser trocados a cada 2 horas, mantidos separados por área de uso, e descartados ao final do turno.",
       "dica": "Troca a cada 2 horas — independente da aparência.",
@@ -1155,9 +1184,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1167,9 +1210,18 @@
       "subcategoria": "🍞 Tostadeira · Segurança",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["tostadeira", "seguranca", "limpeza"],
+      "tags": [
+        "tostadeira",
+        "seguranca",
+        "limpeza"
+      ],
       "pergunta": "Qual a regra de segurança mais importante antes de limpar a tostadeira?",
-      "alternativas": ["Usar luvas de borracha resistentes ao calor", "Desligar a tostadeira completamente antes de iniciar a limpeza", "Colocar lenço úmido embaixo para capturar sujeira", "Abrir as janelas para ventilação"],
+      "alternativas": [
+        "Usar luvas de borracha resistentes ao calor",
+        "Desligar a tostadeira completamente antes de iniciar a limpeza",
+        "Colocar lenço úmido embaixo para capturar sujeira",
+        "Abrir as janelas para ventilação"
+      ],
       "respostaCorreta": 1,
       "explicacao": "NUNCA limpar a tostadeira com ela ligada — risco de queimadura grave e dano ao equipamento. Desligar é obrigatório antes de qualquer limpeza.",
       "dica": "Regra de ouro: DESLIGAR antes de limpar a tostadeira.",
@@ -1181,9 +1233,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1193,9 +1259,18 @@
       "subcategoria": "🍞 Tostadeira · Limpeza",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tostadeira", "limpeza", "kay-qsr"],
+      "tags": [
+        "tostadeira",
+        "limpeza",
+        "kay-qsr"
+      ],
       "pergunta": "Quantos ml (pumps) do KAY QSR Limpador são usados na limpeza diária da tostadeira?",
-      "alternativas": ["30ml (1 pump)", "60ml (2 pumps)", "100ml (3 pumps)", "120ml (4 pumps)"],
+      "alternativas": [
+        "30ml (1 pump)",
+        "60ml (2 pumps)",
+        "100ml (3 pumps)",
+        "120ml (4 pumps)"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Na limpeza diária da tostadeira, usar 60ml (2 pumps) do KAY QSR Limpador para Chapas e Tostadeiras.",
       "dica": "2 pumps = 60ml para a tostadeira.",
@@ -1207,9 +1282,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1219,9 +1308,18 @@
       "subcategoria": "🍞 Tostadeira · Cuidados",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tostadeira", "limpeza", "correia"],
+      "tags": [
+        "tostadeira",
+        "limpeza",
+        "correia"
+      ],
       "pergunta": "O que NUNCA deve ser feito durante a limpeza da tostadeira vertical?",
-      "alternativas": ["Usar pano úmido nas laterais", "Remover as correias da tostadeira", "Aplicar produto limpador", "Desligar o equipamento"],
+      "alternativas": [
+        "Usar pano úmido nas laterais",
+        "Remover as correias da tostadeira",
+        "Aplicar produto limpador",
+        "Desligar o equipamento"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Nunca remover as correias da tostadeira vertical durante a limpeza. Isso pode danificar o equipamento e comprometer seu funcionamento.",
       "dica": "Correias da tostadeira vertical = NUNCA remover.",
@@ -1233,9 +1331,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1245,9 +1357,19 @@
       "subcategoria": "☕ Jarras de Café · Limpeza",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["cafe", "jarra", "kay", "limpeza"],
+      "tags": [
+        "cafe",
+        "jarra",
+        "kay",
+        "limpeza"
+      ],
       "pergunta": "Qual produto é usado para sanitizar as jarras de café no fechamento?",
-      "alternativas": ["Detergente comum diluído em água", "Kay Coffee Pot Cleaner com água quente", "Água sanitária diluída a 1%", "Multiuso desengordurante"],
+      "alternativas": [
+        "Detergente comum diluído em água",
+        "Kay Coffee Pot Cleaner com água quente",
+        "Água sanitária diluída a 1%",
+        "Multiuso desengordurante"
+      ],
       "respostaCorreta": 1,
       "explicacao": "As jarras de café são sanitizadas com Kay Coffee Pot Cleaner: encher a jarra com água quente e adicionar 1 dose do produto.",
       "dica": "Kay Coffee Pot Cleaner = produto específico para jarras de café.",
@@ -1259,9 +1381,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1271,9 +1407,18 @@
       "subcategoria": "🔥 Fechamento · Chapa",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "limpeza", "panos"],
+      "tags": [
+        "chapa",
+        "limpeza",
+        "panos"
+      ],
       "pergunta": "Quantos panos são necessários para a limpeza completa da chapa?",
-      "alternativas": ["1 pano multiuso", "2 panos (1 para utensílios e 1 para chapa)", "4 panos: 2 para utensílios, 1 para área gordurosa e 1 para área não-gordurosa", "6 panos, um para cada parte da chapa"],
+      "alternativas": [
+        "1 pano multiuso",
+        "2 panos (1 para utensílios e 1 para chapa)",
+        "4 panos: 2 para utensílios, 1 para área gordurosa e 1 para área não-gordurosa",
+        "6 panos, um para cada parte da chapa"
+      ],
       "respostaCorreta": 2,
       "explicacao": "A limpeza da chapa requer 4 panos: 2 para utensílios, 1 para áreas gordurosas e 1 para áreas não-gordurosas.",
       "dica": "4 panos para a chapa: 2 utensílios + 1 gorduroso + 1 não-gorduroso.",
@@ -1285,9 +1430,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
-      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
-      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
