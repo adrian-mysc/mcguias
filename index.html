@@ -10,10 +10,12 @@
       var q = window.location.search;
       var hp = new URLSearchParams(h);
       var qp = new URLSearchParams(q);
+      var type = hp.get('type') || qp.get('type');
+      var dest = type === 'recovery' ? 'pages/reset-senha.html' : 'pages/confirmar-email.html';
       if (hp.get('access_token') || hp.get('error')) {
-        window.location.replace('pages/confirmar-email.html#' + h);
+        window.location.replace(dest + '#' + h);
       } else if (qp.get('code') || qp.get('error')) {
-        window.location.replace('pages/confirmar-email.html' + q);
+        window.location.replace(dest + q);
       }
     })();
   </script>

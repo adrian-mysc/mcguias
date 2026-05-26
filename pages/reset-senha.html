@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Guias — Redefinir Senha</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#DA291C">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:    #DA291C;
+      --yellow: #FFC72C;
+      --bg:     #f5f2ec;
+      --card:   #ffffff;
+      --text:   #1c1a17;
+      --muted:  #6b6660;
+      --border: #e3ddd2;
+      --green:  #1a7a42;
+      --radius: 18px;
+    }
+    [data-theme="dark"] {
+      --bg:     #1a1814;
+      --card:   #242018;
+      --text:   #f0ece3;
+      --muted:  #9b9187;
+      --border: #333027;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 48px 36px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: -0.5px;
+      margin-bottom: 32px;
+    }
+
+    .icon {
+      font-size: 56px;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--red);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .field {
+      text-align: left;
+      margin-bottom: 16px;
+    }
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+    .field input {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .field input:focus { border-color: var(--red); }
+
+    .hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary {
+      background: var(--red);
+      color: white;
+      width: 100%;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 10px 20px;
+    }
+    .btn-secondary:hover { color: var(--text); }
+
+    .msg {
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .msg-error   { background: #fef2f2; color: #c0392b; border: 1px solid #fca5a5; }
+    .msg-success { background: #f0fdf4; color: var(--green); border: 1px solid #86efac; }
+
+    #state-loading, #state-form, #state-success, #state-error { display: none; }
+    #state-loading.active, #state-form.active, #state-success.active, #state-error.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🍔 MC Guias</div>
+
+    <!-- Carregando -->
+    <div id="state-loading" class="active">
+      <div class="spinner"></div>
+      <div class="title">Verificando link…</div>
+      <div class="subtitle">Aguarde um instante.</div>
+    </div>
+
+    <!-- Formulário de nova senha -->
+    <div id="state-form">
+      <div class="icon">🔑</div>
+      <div class="title">Nova senha</div>
+      <div class="subtitle">Escolha uma senha com pelo menos 6 caracteres.</div>
+
+      <div id="form-msg" style="display:none"></div>
+
+      <div class="field">
+        <label for="nova-senha">Nova senha</label>
+        <input type="password" id="nova-senha" placeholder="••••••••" autocomplete="new-password">
+      </div>
+      <div class="field">
+        <label for="confirmar-senha">Confirmar senha</label>
+        <input type="password" id="confirmar-senha" placeholder="••••••••" autocomplete="new-password">
+        <div class="hint">As duas senhas devem ser iguais.</div>
+      </div>
+
+      <button class="btn btn-primary" id="btn-salvar" onclick="salvarSenha()">Salvar nova senha</button>
+    </div>
+
+    <!-- Sucesso -->
+    <div id="state-success">
+      <div class="icon">✅</div>
+      <div class="title">Senha alterada!</div>
+      <div class="subtitle">Sua senha foi atualizada com sucesso. Redirecionando para o login…</div>
+    </div>
+
+    <!-- Erro -->
+    <div id="state-error">
+      <div class="icon">❌</div>
+      <div class="title" id="error-title">Link inválido ou expirado</div>
+      <div class="subtitle" id="error-subtitle">
+        O link de redefinição pode ter expirado. Solicite um novo link na tela de login.
+      </div>
+      <a href="login.html" class="btn btn-primary">Voltar ao login</a>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const SUPABASE_URL      = 'https://iizzeeceqysdfhnkosrc.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: { persistSession: true, autoRefreshToken: true }
+    });
+
+    function show(state) {
+      ['loading', 'form', 'success', 'error'].forEach(s => {
+        document.getElementById('state-' + s).classList.toggle('active', s === state);
+      });
+    }
+
+    function showFormMsg(text, type) {
+      const el = document.getElementById('form-msg');
+      el.textContent = text;
+      el.className = 'msg msg-' + type;
+      el.style.display = 'block';
+    }
+
+    async function init() {
+      const params = new URLSearchParams(window.location.search);
+      const hash   = new URLSearchParams(window.location.hash.slice(1));
+      const code   = params.get('code');
+      const error  = params.get('error') || hash.get('error');
+      const errDesc = params.get('error_description') || hash.get('error_description');
+
+      if (error) {
+        document.getElementById('error-title').textContent = 'Link inválido ou expirado';
+        document.getElementById('error-subtitle').textContent =
+          errDesc || 'O link de redefinição pode ter expirado. Solicite um novo link.';
+        show('error');
+        return;
+      }
+
+      try {
+        let session = null;
+
+        if (code) {
+          const { data, error: err } = await supabase.auth.exchangeCodeForSession(code);
+          if (err) throw err;
+          session = data.session;
+        } else {
+          const { data, error: err } = await supabase.auth.getSession();
+          if (err) throw err;
+          session = data.session;
+        }
+
+        if (!session) {
+          show('error');
+          return;
+        }
+
+        show('form');
+      } catch (err) {
+        console.error('reset-senha init:', err);
+        document.getElementById('error-subtitle').textContent =
+          err.message?.includes('expired') || err.message?.includes('invalid')
+            ? 'O link de redefinição expirou ou já foi usado. Solicite um novo.'
+            : 'Ocorreu um erro inesperado. Tente novamente.';
+        show('error');
+      }
+    }
+
+    async function salvarSenha() {
+      const nova      = document.getElementById('nova-senha').value;
+      const confirmar = document.getElementById('confirmar-senha').value;
+      const btn       = document.getElementById('btn-salvar');
+
+      if (nova.length < 6) {
+        showFormMsg('A senha deve ter pelo menos 6 caracteres.', 'error');
+        return;
+      }
+      if (nova !== confirmar) {
+        showFormMsg('As senhas não coincidem.', 'error');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Salvando…';
+
+      const { error } = await supabase.auth.updateUser({ password: nova });
+
+      if (error) {
+        btn.disabled = false;
+        btn.textContent = 'Salvar nova senha';
+        showFormMsg('Erro ao salvar: ' + error.message, 'error');
+        return;
+      }
+
+      show('success');
+      setTimeout(() => window.location.replace('login.html'), 2500);
+    }
+
+    window.salvarSenha = salvarSenha;
+    init();
+  </script>
+</body>
+</html>
