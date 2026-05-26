@@ -600,7 +600,7 @@
         ${rankEl}
         <div class="lb-avatar">${avatarInner}</div>
         <div class="lb-name-wrap">
-          <div class="lb-name">${name}${youTag}</div>
+          <div class="lb-name"><a href="perfil-publico.html?u=${encodeURIComponent(p.username || '')}" style="color:inherit;text-decoration:none;">${name}</a>${youTag}</div>
           <div class="lb-loja">${p.total_battles} batalha${p.total_battles !== 1 ? 's' : ''} · ${p.losses} derrota${p.losses !== 1 ? 's' : ''}</div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0">
