@@ -174,7 +174,7 @@
       // Busca profile
       const { data: profile, error } = await supabase
         .from('profiles')
-        .select('id, username, display_name, avatar_emoji, avatar, cargo, loja, created_at')
+        .select('id, username, display_name, avatar_emoji, avatar, cargo, loja, estado, cidade, created_at')
         .eq('username', username)
         .single();
 
@@ -211,6 +211,8 @@
       const emoji        = profile.avatar_emoji  || '😊';
       const cargo        = profile.cargo         || null;
       const loja         = profile.loja          || null;
+      const estado       = profile.estado        || null;
+      const cidade       = profile.cidade        || null;
       const points       = lb?.points            ?? 0;
       const quizzes      = lb?.total_xp          ?? 0;
       const achList      = achRows               ?? [];
@@ -333,8 +335,9 @@
 
         <div class="pub-info">
           <div class="pub-info-title">Informações</div>
-          ${cargo ? `<div class="pub-info-row"><span class="pub-info-icon">💼</span><span class="pub-info-label">Cargo</span><span class="pub-info-val">${esc(cargo)}</span></div>` : ''}
-          ${loja  ? `<div class="pub-info-row"><span class="pub-info-icon">🏪</span><span class="pub-info-label">Restaurante</span><span class="pub-info-val">${esc(loja)}</span></div>` : ''}
+          ${cargo  ? `<div class="pub-info-row"><span class="pub-info-icon">💼</span><span class="pub-info-label">Cargo</span><span class="pub-info-val">${esc(cargo)}</span></div>` : ''}
+          ${loja   ? `<div class="pub-info-row"><span class="pub-info-icon">🏪</span><span class="pub-info-label">Restaurante</span><span class="pub-info-val">${esc(loja)}</span></div>` : ''}
+          ${cidade && estado ? `<div class="pub-info-row"><span class="pub-info-icon">📍</span><span class="pub-info-label">Localização</span><span class="pub-info-val">${esc(cidade)} · ${esc(estado)}</span></div>` : (estado ? `<div class="pub-info-row"><span class="pub-info-icon">📍</span><span class="pub-info-label">Estado</span><span class="pub-info-val">${esc(estado)}</span></div>` : '')}`
           ${rank  ? `<div class="pub-info-row"><span class="pub-info-icon">🏆</span><span class="pub-info-label">Posição</span><span class="pub-info-val">${rankStr} no ranking</span></div>` : ''}
           ${totalFeitas ? `<div class="pub-info-row"><span class="pub-info-icon">📝</span><span class="pub-info-label">Questões feitas</span><span class="pub-info-val">${totalFeitas.toLocaleString('pt-BR')}</span></div>` : ''}
           ${battleStats && battleStats.best_streak > 1 ? `<div class="pub-info-row"><span class="pub-info-icon">🔥</span><span class="pub-info-label">Melhor sequência</span><span class="pub-info-val">${battleStats.best_streak} vitórias seguidas</span></div>` : ''}

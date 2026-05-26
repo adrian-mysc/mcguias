@@ -810,6 +810,14 @@
           <div class="data-value" id="view-loja">—</div>
         </div>
         <div class="data-item">
+          <div class="data-label">Estado</div>
+          <div class="data-value" id="view-estado">—</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Cidade</div>
+          <div class="data-value" id="view-cidade">—</div>
+        </div>
+        <div class="data-item">
           <div class="data-label">Turno</div>
           <div class="data-value" id="view-turno">—</div>
         </div>
@@ -919,6 +927,53 @@
           <div class="field">
             <label>Data de admissão</label>
             <input type="date" id="edit-admissao">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Estado</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <select id="edit-estado" onchange="onEstadoChange()">
+                <option value="">Selecionar…</option>
+                <option value="AC">AC — Acre</option>
+                <option value="AL">AL — Alagoas</option>
+                <option value="AP">AP — Amapá</option>
+                <option value="AM">AM — Amazonas</option>
+                <option value="BA">BA — Bahia</option>
+                <option value="CE">CE — Ceará</option>
+                <option value="DF">DF — Distrito Federal</option>
+                <option value="ES">ES — Espírito Santo</option>
+                <option value="GO">GO — Goiás</option>
+                <option value="MA">MA — Maranhão</option>
+                <option value="MT">MT — Mato Grosso</option>
+                <option value="MS">MS — Mato Grosso do Sul</option>
+                <option value="MG">MG — Minas Gerais</option>
+                <option value="PA">PA — Pará</option>
+                <option value="PB">PB — Paraíba</option>
+                <option value="PR">PR — Paraná</option>
+                <option value="PE">PE — Pernambuco</option>
+                <option value="PI">PI — Piauí</option>
+                <option value="RJ">RJ — Rio de Janeiro</option>
+                <option value="RN">RN — Rio Grande do Norte</option>
+                <option value="RS">RS — Rio Grande do Sul</option>
+                <option value="RO">RO — Rondônia</option>
+                <option value="RR">RR — Roraima</option>
+                <option value="SC">SC — Santa Catarina</option>
+                <option value="SP">SP — São Paulo</option>
+                <option value="SE">SE — Sergipe</option>
+                <option value="TO">TO — Tocantins</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Cidade</label>
+            <div class="field-wrap">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18M15 3v18"/></svg>
+              <select id="edit-cidade" disabled>
+                <option value="">Selecione o estado primeiro</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="inline-msg" id="dados-msg"></div>
@@ -1252,7 +1307,7 @@
   // ── Supabase profile ──────────────────────────────────
   const { data: profile } = await supabase
     .from('profiles')
-    .select('username, loja, sigla, avatar_emoji, cargo, avatar')
+    .select('username, loja, sigla, avatar_emoji, cargo, avatar, estado, cidade')
     .eq('id', user.id)
     .single();
 
@@ -1357,6 +1412,8 @@
     const turno  = local.turno || '';
     const admissao = local.admissao || '';
     const telefone = local.telefone || '';
+    const estado = local.estado || profile?.estado || '';
+    const cidade = local.cidade || profile?.cidade || '';
     const photo  = localStorage.getItem(AVATAR_KEY) || '';
 
     const stats = calcStats();
@@ -1391,6 +1448,8 @@
     setVal('view-sigla',    sigla,   'Não definida');
     setVal('view-cargo',    cargo,   'Não definido');
     setVal('view-loja',     loja,    'Não definido');
+    setVal('view-estado',   estado,  'Não definido');
+    setVal('view-cidade',   cidade,  'Não definida');
     setVal('view-turno',    turno,   'Não definido');
     setVal('view-email',    email);
     setVal('view-telefone', telefone,'Não definido');
@@ -1410,6 +1469,11 @@
     document.getElementById('edit-turno').value    = turno;
     document.getElementById('edit-admissao').value = admissao;
     document.getElementById('edit-telefone').value = telefone;
+    // Estado e cidade (preenche select dependente)
+    const estadoEl = document.getElementById('edit-estado');
+    estadoEl.value = estado;
+    onEstadoChange();
+    document.getElementById('edit-cidade').value = cidade;
 
     // Emoji picker
     const savedEmoji = local.avatar_emoji || profile?.avatar_emoji || '😊';
@@ -1574,6 +1638,52 @@
   window.toggleDadosEdit = toggleDadosEdit;
 
   // ── Salvar dados pessoais ─────────────────────────────
+  const CIDADES_BR = {
+    AC: ['Rio Branco','Cruzeiro do Sul','Sena Madureira','Tarauacá'],
+    AL: ['Maceió','Arapiraca','Palmeira dos Índios','Rio Largo','Penedo'],
+    AP: ['Macapá','Santana','Laranjal do Jari','Oiapoque'],
+    AM: ['Manaus','Parintins','Itacoatiara','Manacapuru','Coari','Tefé'],
+    BA: ['Salvador','Feira de Santana','Vitória da Conquista','Camaçari','Itabuna','Ilhéus','Juazeiro','Lauro de Freitas','Barreiras','Jequié'],
+    CE: ['Fortaleza','Caucaia','Juazeiro do Norte','Maracanaú','Sobral','Crato','Itapipoca','Maranguape','Iguatu'],
+    DF: ['Brasília','Ceilândia','Taguatinga','Samambaia','Planaltina','Gama','Águas Claras','Guará','Sobradinho','Recanto das Emas'],
+    ES: ['Vitória','Serra','Vila Velha','Cariacica','Cachoeiro de Itapemirim','Linhares','São Mateus','Colatina'],
+    GO: ['Goiânia','Aparecida de Goiânia','Anápolis','Rio Verde','Luziânia','Águas Lindas de Goiás','Valparaíso de Goiás','Trindade','Formosa'],
+    MA: ['São Luís','Imperatriz','São José de Ribamar','Timon','Caxias','Codó','Paço do Lumiar','Açailândia'],
+    MT: ['Cuiabá','Várzea Grande','Rondonópolis','Sinop','Tangará da Serra','Cáceres','Sorriso','Lucas do Rio Verde'],
+    MS: ['Campo Grande','Dourados','Três Lagoas','Corumbá','Ponta Porã','Naviraí','Nova Andradina'],
+    MG: ['Belo Horizonte','Uberlândia','Contagem','Juiz de Fora','Betim','Montes Claros','Ribeirão das Neves','Uberaba','Governador Valadares','Ipatinga','Sete Lagoas','Divinópolis','Santa Luzia','Ibirité','Poços de Caldas','Patos de Minas','Pouso Alegre','Teófilo Otoni','Barbacena'],
+    PA: ['Belém','Ananindeua','Santarém','Marabá','Castanhal','Parauapebas','Altamira','Abaetetuba','Cametá'],
+    PB: ['João Pessoa','Campina Grande','Santa Rita','Patos','Bayeux','Sousa','Cajazeiras'],
+    PR: ['Curitiba','Londrina','Maringá','Ponta Grossa','Cascavel','São José dos Pinhais','Foz do Iguaçu','Colombo','Guarapuava','Paranaguá','Araucária','Toledo','Apucarana','Pinhais'],
+    PE: ['Recife','Caruaru','Olinda','Petrolina','Jaboatão dos Guararapes','Paulista','Caruaru','Ribeirão','Palmares','Garanhuns','Vitória de Santo Antão'],
+    PI: ['Teresina','Parnaíba','Picos','Floriano','Barras'],
+    RJ: ['Rio de Janeiro','São Gonçalo','Duque de Caxias','Nova Iguaçu','Niterói','Belford Roxo','São João de Meriti','Campos dos Goytacazes','Petrópolis','Volta Redonda','Magé','Itaboraí','Macaé','Mesquita','Nova Friburgo','Barra Mansa','Angra dos Reis','Teresópolis'],
+    RN: ['Natal','Mossoró','Parnamirim','São Gonçalo do Amarante','Caicó','Açu','Currais Novos'],
+    RS: ['Porto Alegre','Caxias do Sul','Pelotas','Canoas','Santa Maria','Gravataí','Viamão','Novo Hamburgo','São Leopoldo','Rio Grande','Alvorada','Passo Fundo','Sapucaia do Sul','Uruguaiana','Santa Cruz do Sul','Cachoeirinha','Bagé','Bento Gonçalves'],
+    RO: ['Porto Velho','Ji-Paraná','Ariquemes','Cacoal','Vilhena','Rolim de Moura'],
+    RR: ['Boa Vista','Caracaraí','Rorainópolis'],
+    SC: ['Florianópolis','Joinville','Blumenau','São José','Chapecó','Criciúma','Itajaí','Jaraguá do Sul','Lages','Palhoça','Balneário Camboriú','Brusque','Tubarão'],
+    SP: ['São Paulo','Guarulhos','Campinas','São Bernardo do Campo','Santo André','Osasco','São José dos Campos','Ribeirão Preto','Sorocaba','Mauá','Santos','Mogi das Cruzes','Diadema','Jundiaí','Carapicuíba','Piracicaba','Bauru','São José do Rio Preto','Franca','Limeira','Suzano','Taboão da Serra','Americana','Marília','Araraquara','São Vicente','Presidente Prudente','Praia Grande','Indaiatuba','Taubaté','Cotia','Barueri','Caçapava','São Carlos','Jacareí','Itaquaquecetuba','Hortolândia','Embu das Artes'],
+    SE: ['Aracaju','Nossa Senhora do Socorro','Lagarto','Itabaiana','Caruaru','São Cristóvão','Estância'],
+    TO: ['Palmas','Araguaína','Gurupi','Porto Nacional','Paraíso do Tocantins'],
+  };
+
+  function onEstadoChange() {
+    const estado = document.getElementById('edit-estado').value;
+    const cidadeEl = document.getElementById('edit-cidade');
+    cidadeEl.innerHTML = '';
+    if (!estado) {
+      cidadeEl.innerHTML = '<option value="">Selecione o estado primeiro</option>';
+      cidadeEl.disabled = true;
+      return;
+    }
+    const cidades = CIDADES_BR[estado] || [];
+    cidadeEl.innerHTML = '<option value="">Selecionar…</option>' +
+      cidades.map(c => `<option value="${c}">${c}</option>`).join('');
+    cidadeEl.disabled = false;
+  }
+  window.onEstadoChange = onEstadoChange;
+
   async function saveDados() {
     const nome     = document.getElementById('edit-nome').value.trim();
     const apelido  = document.getElementById('edit-apelido').value.trim();
@@ -1583,6 +1693,8 @@
     const turno    = document.getElementById('edit-turno').value;
     const admissao = document.getElementById('edit-admissao').value;
     const telefone = document.getElementById('edit-telefone').value.trim();
+    const estado   = document.getElementById('edit-estado').value;
+    const cidade   = document.getElementById('edit-cidade').value;
 
     if (!nome) {
       showMsg('dados-msg', 'O nome não pode estar vazio.', 'error');
@@ -1592,7 +1704,7 @@
     const avatarEmoji = document.getElementById('emojiCurrentVal').textContent || '😊';
 
     // Save locally
-    saveLocalDados({ nome, apelido, sigla, cargo, loja, turno, admissao, telefone, avatar_emoji: avatarEmoji });
+    saveLocalDados({ nome, apelido, sigla, cargo, loja, turno, admissao, telefone, estado, cidade, avatar_emoji: avatarEmoji });
 
     // Derive a URL-safe username from apelido or nome (keep existing if not overridable)
     const baseSlug = (apelido || nome)
@@ -1611,6 +1723,8 @@
       loja,
       sigla,
       cargo,
+      estado,
+      cidade,
       avatar_emoji: avatarEmoji
     });
 
