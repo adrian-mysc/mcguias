@@ -52,7 +52,7 @@ async function syncAchievements(conquistas) {
   if (error) console.error('sync achievements:', error);
 }
 
-async function syncLeaderboard(estatisticas) {
+async function syncLeaderboard() {
   const user = await getCurrentUser();
   if (!user) return;
 
@@ -65,20 +65,19 @@ async function syncLeaderboard(estatisticas) {
   const loja  = perfilDados.loja  || null;
   const sigla = perfilDados.sigla || null;
 
-  // Fonte autoritativa: cached_points no leaderboard (mantido por trigger server-side)
   const { data: cached } = await supabase
     .from('leaderboard')
-    .select('cached_points, total_xp')
+    .select('points, total_xp')
     .eq('user_id', user.id)
     .single();
 
-  const serverPoints = cached?.cached_points ?? 0;
+  const serverPoints = cached?.points ?? 0;
   const serverXp     = cached?.total_xp ?? 0;
 
-  // Fallback local — cobre sessões ainda não sincronizadas neste dispositivo
+  // Recalcula a partir do histórico local — sempre atual mesmo antes de gamificacao.onQuizComplete rodar
   const history     = mcGet('mc_quiz_history', []);
   const localPoints = history.reduce((s, h) => s + (h.score || 0), 0);
-  const localXp     = estatisticas.quizzesCompletos || 0;
+  const localXp     = history.length;
 
   // Usa sempre o maior valor: nunca perde pontos por troca de dispositivo
   const points  = Math.max(serverPoints, localPoints);
@@ -170,13 +169,12 @@ export async function syncToCloud() {
 
   await syncQuizSessions(user.id);
 
+  await syncLeaderboard().catch(console.error);
+
   const gamData = mcGet('gamificacao', null);
   if (gamData) {
     if (Array.isArray(gamData.conquistas) && gamData.conquistas.length) {
       await syncAchievements(gamData.conquistas);
-    }
-    if (gamData.estatisticas) {
-      await syncLeaderboard(gamData.estatisticas).catch(console.error);
     }
     await syncWeeklyChallenges().catch(console.error);
   }
@@ -185,10 +183,12 @@ export async function syncToCloud() {
 // Sync completo após cada quiz: sessão + leaderboard + conquistas + desafios em paralelo
 window.addEventListener('mc:quizComplete', async (e) => {
   const gamData = mcGet('gamificacao', null);
-  const tasks = [syncOneSession(e.detail).catch(console.error)];
-  if (gamData?.estatisticas) tasks.push(syncLeaderboard(gamData.estatisticas).catch(console.error));
+  const tasks = [
+    syncOneSession(e.detail).catch(console.error),
+    syncLeaderboard().catch(console.error),
+    syncWeeklyChallenges().catch(console.error),
+  ];
   if (gamData?.conquistas?.length) tasks.push(syncAchievements(gamData.conquistas).catch(console.error));
-  tasks.push(syncWeeklyChallenges().catch(console.error));
   await Promise.all(tasks);
 });
 
