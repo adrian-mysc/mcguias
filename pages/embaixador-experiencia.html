@@ -211,6 +211,98 @@
     .smg-step-text { font-size: 0.83rem; line-height: 1.5; color: var(--text-1, #1a1a1a); }
     .smg-step-text strong { display: block; font-weight: 700; margin-bottom: 2px; }
 
+    .princip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .princip-card {
+      background: var(--surface-2, #f5f5f5);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .princip-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .princip-card h4 { font-size: 0.84rem; font-weight: 700; margin: 0 0 5px; color: var(--text-1,#1a1a1a); }
+    .princip-card p  { font-size: 0.76rem; color: var(--text-2,#666); line-height: 1.45; margin: 0; }
+
+    .eixo-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 11px 12px;
+      background: var(--surface-2,#f5f5f5);
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+    .eixo-num {
+      min-width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--brand,#DA291C);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem; flex-shrink: 0;
+    }
+    .eixo-body { font-size: 0.83rem; line-height: 1.5; color: var(--text-1,#1a1a1a); }
+    .eixo-body strong { display: block; font-weight: 700; margin-bottom: 2px; }
+
+    .trajeto-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .trajeto-step {
+      background: var(--surface-2,#f0f0f0);
+      border-radius: 20px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-1,#1a1a1a);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .trajeto-step .arrow { color: var(--brand,#DA291C); font-weight: 900; }
+
+    .pilar-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .pilar-num {
+      min-width: 28px; height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg,#DA291C,#ff6b6b);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.82rem; flex-shrink: 0;
+    }
+    .pilar-body { font-size: 0.83rem; line-height: 1.5; color: var(--text-1,#1a1a1a); }
+    .pilar-body strong { font-weight: 700; color: var(--brand,#DA291C); }
+
+    .ouro-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 9px 12px;
+      border-radius: 10px;
+      background: linear-gradient(135deg,#fff8e1,#fff3cd);
+      border-left: 3px solid #ffc107;
+      margin-bottom: 7px;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--text-1,#1a1a1a);
+    }
+    .ouro-num {
+      min-width: 22px; height: 22px;
+      background: #ffc107;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 800; color: #212529; flex-shrink: 0;
+    }
+
     .cl-progress-bar { background:var(--surface-2,#f0f0f0); border-radius:8px; height:8px; margin-bottom:8px; overflow:hidden; }
     .cl-progress-fill { height:100%; background:linear-gradient(90deg,#27ae60,#2ecc71); border-radius:8px; transition:width .3s ease; }
     .cl-progress-text { text-align:center; font-size:.82rem; font-weight:600; color:var(--text-2,#888); margin-bottom:14px; }
@@ -259,6 +351,7 @@
   <div class="page-tabs">
     <div class="page-tabs-inner">
       <button class="tab-btn active" data-tab="cargo">🌟 O Cargo</button>
+      <button class="tab-btn" data-tab="manual">📖 Manual</button>
       <button class="tab-btn" data-tab="atividades">📋 Atividades</button>
       <button class="tab-btn" data-tab="smg">📊 McExperiência</button>
       <button class="tab-btn" data-tab="baloes">🎈 Balões</button>
@@ -328,6 +421,178 @@
       </div>
 
     </div>
+
+    <!-- ========== ABA: MANUAL ========== -->
+    <div class="tab-panel" id="panel-manual">
+
+      <div class="section-label">O Trajeto do Embaixador — Manual de Boas-Vindas</div>
+
+      <!-- COOLTURA DE SERVIÇO -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">✨</div>
+          <h2>Cooltura de Serviço</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:0.87rem;line-height:1.6;margin:0 0 12px;">
+            O McDonald's valoriza <strong>significado social</strong>, prefere <strong>experiências</strong> em lugar de transações e espera serviço com velocidade, conforto e confiabilidade. A Cooltura de Serviço é a resposta a isso.
+          </p>
+          <div class="highlight-box" style="margin-top:0;">
+            <strong>Propósito:</strong> Gerar bons momentos para as pessoas sendo você mesmo.<br>
+            <span style="font-size:0.8rem;margin-top:4px;display:block;">Por que "Cooltura"? Cool = legal, divertido, especial, com estilo. Uma <em>cultura</em> que visa gerar momentos cool.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 PRINCÍPIOS -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🎯</div>
+          <h2>4 Princípios da Experiência</h2>
+        </div>
+        <div class="card-body">
+          <div class="princip-grid">
+            <div class="princip-card">
+              <div class="princip-icon">🎭</div>
+              <h4>Autenticidade</h4>
+              <p>Ser você mesmo com segurança e honestidade. Imagem cuidada — sua melhor versão. Amigável, cordial e entusiasta.</p>
+            </div>
+            <div class="princip-card">
+              <div class="princip-icon">🤝</div>
+              <h4>Conexão</h4>
+              <p>Com sutileza e cordialidade, fazer o cliente sentir que estamos dispostos a ajudar. Adequar a comunicação ao perfil de cada pessoa.</p>
+            </div>
+            <div class="princip-card">
+              <div class="princip-icon">⭐</div>
+              <h4>Cliente como Prioridade</h4>
+              <p>O cliente deve sentir que é a prioridade. Estar ali para solucionar problemas. Mesmo quando não é possível atender, ele deve sair satisfeito com a explicação.</p>
+            </div>
+            <div class="princip-card">
+              <div class="princip-icon">🍔</div>
+              <h4>Comida Deliciosa</h4>
+              <p>A comida é o centro da experiência. Certificar qualidade e apresentação. Conhecer todo o cardápio: promoções, valores nutricionais, origem dos alimentos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAJETO DO CLIENTE -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🛤️</div>
+          <h2>O Trajeto do Cliente</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:0.85rem;line-height:1.5;margin:0 0 10px;">A experiência começa quando o cliente atravessa a porta e termina quando vai embora. Em cada fase, construímos uma experiência memorável:</p>
+          <div class="trajeto-steps">
+            <div class="trajeto-step">🚗 Chega ao restaurante</div>
+            <div class="trajeto-step"><span class="arrow">›</span></div>
+            <div class="trajeto-step">🚪 Entra no restaurante</div>
+            <div class="trajeto-step"><span class="arrow">›</span></div>
+            <div class="trajeto-step">⏳ Espera para fazer o pedido</div>
+            <div class="trajeto-step"><span class="arrow">›</span></div>
+            <div class="trajeto-step">💳 Paga e espera</div>
+            <div class="trajeto-step"><span class="arrow">›</span></div>
+            <div class="trajeto-step">🍔 Retira ou recebe na mesa</div>
+            <div class="trajeto-step"><span class="arrow">›</span></div>
+            <div class="trajeto-step">😋 Come</div>
+            <div class="trajeto-step"><span class="arrow">›</span></div>
+            <div class="trajeto-step">🪑 Relaxa e finaliza</div>
+            <div class="trajeto-step"><span class="arrow">›</span></div>
+            <div class="trajeto-step">👋 Sai do restaurante</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 EIXOS -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔄</div>
+          <h2>3 Eixos de Ação</h2>
+        </div>
+        <div class="card-body">
+          <div class="eixo-row">
+            <div class="eixo-num">1</div>
+            <div class="eixo-body">
+              <strong>Observar</strong>
+              Ficar atento e alerta. Identificar necessidades recorrentes. Reconhecer clientes que precisam de ajuda com dispositivos. Perceber momentos de frustração antes de serem verbalizados.
+            </div>
+          </div>
+          <div class="eixo-row">
+            <div class="eixo-num">2</div>
+            <div class="eixo-body">
+              <strong>Interagir</strong>
+              Cumprimentar e despedir com sinceridade, não por fórmulas. Direcionar clientes. Lembrar o nome de clientes regulares. Comunicar de forma oportuna, pertinente e personalizada.
+            </div>
+          </div>
+          <div class="eixo-row">
+            <div class="eixo-num">3</div>
+            <div class="eixo-body">
+              <strong>Intervir</strong>
+              Gerenciar soluções em conflitos. Agir quando há desconformidade — mesmo antes que o cliente expresse. Determinar quando levar ao Gerente de Plantão. Nas intervenções, evitar culpar outros membros.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 PILARES -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🏆</div>
+          <h2>3 Pilares da Missão</h2>
+        </div>
+        <div class="card-body">
+          <div class="pilar-row">
+            <div class="pilar-num">1</div>
+            <div class="pilar-body"><strong>Experiência da Viagem do Cliente</strong> — Aplicar os 3 eixos (Observar, Interagir, Intervir) em cada fase do trajeto para criar momentos personalizados e memoráveis.</div>
+          </div>
+          <div class="pilar-row">
+            <div class="pilar-num">2</div>
+            <div class="pilar-body"><strong>Experiência Familiar</strong> — Especializar-se em atender famílias com crianças: fácil para os pais, divertida para as crianças e especial/memorável para todos.</div>
+          </div>
+          <div class="pilar-row">
+            <div class="pilar-num">3</div>
+            <div class="pilar-body"><strong>Construção de Vendas</strong> — Incrementar o ticket médio através de oferecimentos de produtos nas mesas (sobremesas, bebidas, sugestões do cardápio). Também promover festas de aniversário.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 REGRAS DE OURO -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🥇</div>
+          <h2>5 Regras de Ouro para Famílias</h2>
+        </div>
+        <div class="card-body">
+          <div class="ouro-item"><div class="ouro-num">1</div>Ficar disponível, atento e disposto fundamentalmente nas horas do rush ou de alta frequência de famílias.</div>
+          <div class="ouro-item"><div class="ouro-num">2</div>Estar disposto para interagir com as crianças, aproximando-se e adequando seu estilo e registro.</div>
+          <div class="ouro-item"><div class="ouro-num">3</div>Melhorar de maneira constante a experiência das famílias no restaurante, desde que ingressam até que se despedem.</div>
+          <div class="ouro-item"><div class="ouro-num">4</div>Garantir que todas as crianças levem um presente, uma lembrança ou algum outro valor agregado.</div>
+          <div class="ouro-item"><div class="ouro-num">5</div>Saber que todo adulto com crianças valoriza a limpeza — procurá-la em todo momento.</div>
+        </div>
+      </div>
+
+      <!-- RESUMO GERAL -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">📌</div>
+          <h2>Resumo — Tudo em Um</h2>
+        </div>
+        <div class="card-body">
+          <table class="atividade-table">
+            <thead><tr><th>Dimensão</th><th>Itens</th></tr></thead>
+            <tbody>
+              <tr><td>4 Chaves da Boa Experiência</td><td>Ambiente agradável · Pedidos eficazes · Entrega à mesa · Espaço estimulante</td></tr>
+              <tr><td>4 Princípios</td><td>Autenticidade · Conexão · Cliente como prioridade · Comida deliciosa</td></tr>
+              <tr><td>3 Eixos de Ação</td><td>Observar · Interagir · Intervir</td></tr>
+              <tr><td>3 Pilares da Missão</td><td>Viagem do cliente · Experiência familiar · Construção de vendas</td></tr>
+              <tr><td>8 Competências do Perfil</td><td>Extroversão · Empatia · Proatividade · Exemplaridade · Cortesia · Segurança · Conhecimento · Comunicação</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div><!-- /panel-manual -->
 
     <!-- ========== ABA: ATIVIDADES ========== -->
     <div class="tab-panel" id="panel-atividades">
