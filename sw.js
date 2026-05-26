@@ -92,7 +92,7 @@ self.addEventListener('push', (event) => {
     body:     data.body,
     icon:     '/mcguias/icons/icon-192.png',
     badge:    '/mcguias/icons/icon-192.png',
-    tag:      'mc-daily-reminder',
+    tag:      data.tag || 'mc-daily-reminder',
     renotify: false,
     data:     { url: data.url || '/mcguias/' },
     actions:  [

@@ -1,4 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { initPush } from './supabase/push.js';
 
 const SUPABASE_URL      = 'https://iizzeeceqysdfhnkosrc.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
@@ -15,6 +16,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
       window.location.replace(inPages ? 'login.html' : 'pages/login.html');
     } else {
       document.documentElement.style.visibility = '';
+      // Inicializa push notifications em background — silencioso em caso de falha
+      initPush(data.session.user.id).catch(() => {});
     }
   } catch (e) {
     // Supabase indisponível (offline, CDN bloqueado, etc.) — não trava a página
