@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Guias — Confirmação de E-mail</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="theme-color" content="#DA291C">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:    #DA291C;
+      --yellow: #FFC72C;
+      --bg:     #f5f2ec;
+      --card:   #ffffff;
+      --text:   #1c1a17;
+      --muted:  #6b6660;
+      --border: #e3ddd2;
+      --green:  #1a7a42;
+      --radius: 18px;
+    }
+    [data-theme="dark"] {
+      --bg:     #1a1814;
+      --card:   #242018;
+      --text:   #f0ece3;
+      --muted:  #9b9187;
+      --border: #333027;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 48px 36px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: -0.5px;
+      margin-bottom: 32px;
+    }
+
+    .icon {
+      font-size: 56px;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--red);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary {
+      background: var(--red);
+      color: white;
+      width: 100%;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 10px 20px;
+    }
+    .btn-secondary:hover { color: var(--text); }
+
+    .progress-bar {
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-top: 24px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--red);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    #state-loading, #state-success, #state-error { display: none; }
+    #state-loading.active, #state-success.active, #state-error.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🍔 MC Guias</div>
+
+    <!-- Estado: carregando -->
+    <div id="state-loading" class="active">
+      <div class="spinner"></div>
+      <div class="title">Confirmando seu e-mail…</div>
+      <div class="subtitle">Aguarde um instante.</div>
+    </div>
+
+    <!-- Estado: sucesso -->
+    <div id="state-success">
+      <div class="icon">✅</div>
+      <div class="title">E-mail confirmado!</div>
+      <div class="subtitle">Sua conta está ativa. Redirecionando para o app…</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+    </div>
+
+    <!-- Estado: erro -->
+    <div id="state-error">
+      <div class="icon">❌</div>
+      <div class="title" id="error-title">Link inválido ou expirado</div>
+      <div class="subtitle" id="error-subtitle">
+        O link de confirmação pode ter expirado. Tente fazer login ou crie uma nova conta.
+      </div>
+      <a href="login.html" class="btn btn-primary">Ir para o login</a>
+      <br><br>
+      <button class="btn btn-secondary" onclick="reenviarEmail()">Reenviar e-mail de confirmação</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const SUPABASE_URL      = 'https://iizzeeceqysdfhnkosrc.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: { persistSession: true, autoRefreshToken: true }
+    });
+
+    function show(state) {
+      ['loading', 'success', 'error'].forEach(s => {
+        document.getElementById('state-' + s).classList.toggle('active', s === state);
+      });
+    }
+
+    function redirectTo(url, delayMs = 0) {
+      if (delayMs <= 0) { window.location.replace(url); return; }
+
+      const bar = document.getElementById('progress');
+      let elapsed = 0;
+      const interval = setInterval(() => {
+        elapsed += 50;
+        bar.style.width = Math.min(100, (elapsed / delayMs) * 100) + '%';
+        if (elapsed >= delayMs) {
+          clearInterval(interval);
+          window.location.replace(url);
+        }
+      }, 50);
+    }
+
+    function showError(title, subtitle) {
+      if (title)    document.getElementById('error-title').textContent    = title;
+      if (subtitle) document.getElementById('error-subtitle').textContent = subtitle;
+      show('error');
+    }
+
+    async function handleConfirmation() {
+      // Supabase pode enviar o token de duas formas dependendo do flow configurado:
+      // 1. PKCE: URL contém ?code=CODE (exchangeCodeForSession)
+      // 2. Implicit: URL fragment contém #access_token=TOKEN (getSession lê automaticamente)
+
+      const params     = new URLSearchParams(window.location.search);
+      const hash       = new URLSearchParams(window.location.hash.slice(1));
+      const code       = params.get('code');
+      const errorParam = params.get('error') || hash.get('error');
+      const errorDesc  = params.get('error_description') || hash.get('error_description');
+      const type       = params.get('type') || hash.get('type');
+
+      // Erro vindo do Supabase diretamente na URL
+      if (errorParam) {
+        if (errorParam === 'access_denied' && type === 'signup') {
+          showError('Link expirado', 'O link de confirmação expirou. Crie uma conta novamente ou solicite um novo link.');
+        } else {
+          showError('Erro na confirmação', errorDesc || errorParam);
+        }
+        return;
+      }
+
+      try {
+        let session = null;
+
+        if (code) {
+          // PKCE flow: troca o code por uma sessão
+          const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+          if (error) throw error;
+          session = data.session;
+        } else {
+          // Implicit flow: getSession lê o hash automaticamente
+          const { data, error } = await supabase.auth.getSession();
+          if (error) throw error;
+          session = data.session;
+        }
+
+        if (!session) {
+          showError('Link inválido ou expirado', 'Não foi possível confirmar sua conta. Tente criar uma nova conta.');
+          return;
+        }
+
+        // Confirmação bem-sucedida
+        show('success');
+        redirectTo('welcome.html', 2500);
+
+      } catch (err) {
+        console.error('Erro na confirmação de e-mail:', err);
+        showError(
+          'Erro na confirmação',
+          err.message?.includes('expired') || err.message?.includes('invalid')
+            ? 'O link de confirmação expirou ou já foi usado. Tente fazer login ou crie uma nova conta.'
+            : 'Ocorreu um erro inesperado. Tente novamente ou acesse o login.'
+        );
+      }
+    }
+
+    async function reenviarEmail() {
+      // Verifica se há sessão (usuário chegou mas não confirmou ainda)
+      const { data } = await supabase.auth.getSession();
+      const email = data?.session?.user?.email;
+      if (!email) {
+        window.location.replace('login.html');
+        return;
+      }
+      const { error } = await supabase.auth.resend({ type: 'signup', email });
+      if (error) {
+        alert('Não foi possível reenviar o e-mail. Tente criar uma nova conta.');
+      } else {
+        alert(`E-mail reenviado para ${email}. Verifique sua caixa de entrada.`);
+      }
+    }
+
+    window.reenviarEmail = reenviarEmail;
+
+    handleConfirmation();
+  </script>
+</body>
+</html>
