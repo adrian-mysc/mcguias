@@ -777,12 +777,12 @@
 
   // ── Criar conta ──────────────────────────────────────────────
   async function handleSignup() {
-    const username = document.getElementById('signup-name').value.trim();
+    const nome     = document.getElementById('signup-name').value.trim();
     const email    = document.getElementById('signup-email').value.trim();
     const password = document.getElementById('signup-password').value;
     const btn      = document.getElementById('btn-signup');
 
-    if (!username || !email || !password) {
+    if (!nome || !email || !password) {
       showMsg('signup-msg', 'Preencha todos os campos.', 'error');
       return;
     }
@@ -794,13 +794,7 @@
     btn.classList.add('loading');
     btn.disabled = true;
 
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: window.location.origin + '/pages/confirmar-email.html'
-      }
-    });
+    const { data, error } = await supabase.auth.signUp({ email, password });
 
     if (error) {
       btn.classList.remove('loading');
@@ -811,15 +805,29 @@
 
     // Criar perfil na tabela profiles
     if (data.user) {
+      const baseSlug = nome
+        .toLowerCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/[^a-z0-9]+/g, '_')
+        .replace(/^_+|_+$/g, '')
+        .slice(0, 26) || 'user';
+      const username = `${baseSlug}_${data.user.id.slice(0, 6)}`;
       await supabase.from('profiles').upsert({
         id: data.user.id,
-        username: username
-      });
+        username,
+        display_name: nome
+      }, { onConflict: 'id' });
     }
 
     btn.classList.remove('loading');
     btn.disabled = false;
-    showMsg('signup-msg', 'Conta criada! Verifique seu e-mail para confirmar.', 'success');
+
+    if (data.session) {
+      showMsg('signup-msg', 'Conta criada! Entrando…', 'success');
+      setTimeout(() => window.location.href = 'welcome.html', 800);
+    } else {
+      showMsg('signup-msg', 'Conta criada! Verifique seu e-mail para confirmar.', 'success');
+    }
   }
 
   // ── Login com Google ─────────────────────────────────────────
