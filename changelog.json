@@ -1,6 +1,45 @@
 {
   "versions": [
     {
+      "version": "v11",
+      "date": "2026-05-26",
+      "date_display": "26 Mai 2026",
+      "badge": "Embaixador · Perfil · Ranking",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🎯",
+          "text": "**Guia Embaixador da Experiência renovado** — 3 novas abas: ✅ Checklist diário com 67 itens interativos em 12 áreas (Drive-Thru, Totens, Salões, McCafé, Dessert Center e mais) e badges LSM por pilar; 📖 Manual com os 4 Princípios da Cooltura de Serviço, Trajeto do Cliente em 8 fases, 3 Eixos de atuação e 5 Regras de Ouro para Famílias.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🧠",
+          "text": "**35 novas questões do Embaixador** — banco totalmente reescrito com perguntas específicas do cargo: Perfil (extroversão, empatia, proatividade), Princípios (Cooltura, 4 princípios), Trajeto do Cliente, McExperiência/SMG, Atividades, Checklist e Equipe. Substituídas as questões de linha que estavam incorretas.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🏠",
+          "text": "**Tela de boas-vindas atualizada** — card escuro \"Participe do Ranking Global\" com benefícios de ranking e batalha. Botão amarelo \"Completar perfil agora\" encaminha novos usuários direto para o perfil antes de entrar no app.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🔤",
+          "text": "**Campo Restaurante — somente letras** — o campo Loja/Restaurante no perfil agora bloqueia números em tempo real e converte automaticamente para maiúsculas. Aceita apenas siglas de letras (ex: RUI, HGG, GBN).",
+          "tag": "sistema"
+        },
+        {
+          "icon": "📸",
+          "text": "**Fotos no ranking de batalha corrigidas** — bug silencioso (`const` sendo reatribuído dentro de `try/catch`) que impedia o enriquecimento de avatares do `profiles` no ranking de batalha foi corrigido.",
+          "tag": "bug"
+        },
+        {
+          "icon": "🛡️",
+          "text": "**Duplicação no ranking global corrigida** — clicar em \"Ver Resultado\" múltiplas vezes não gera mais pontuações duplicadas. Proteção em 3 camadas: flag de sessão, desabilitação do botão e deduplicação por tempo+chave em `saveQuizResult`.",
+          "tag": "bug"
+        }
+      ]
+    },
+    {
       "version": "v10",
       "date": "2026-05-24",
       "date_display": "24 Mai 2026",

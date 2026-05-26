@@ -631,7 +631,7 @@
       }
 
       // Top list
-      const { data: players, error } = await sb.from('battle_stats')
+      let { data: players, error } = await sb.from('battle_stats')
         .select('user_id, username, avatar, wins, losses, draws, total_battles')
         .order('wins', { ascending: false })
         .order('total_battles', { ascending: false })
