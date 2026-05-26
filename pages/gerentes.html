@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <script type="module" src="../js/auth-guard.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerentes — MC Guias</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/theme.js"></script>
+
+  <script>
+    (function() {
+      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+      function hideSplash() {
+        var s = document.getElementById('splash');
+        if (!s) return;
+        s.classList.add('hide');
+        setTimeout(function() { s.style.display = 'none'; }, 420);
+      }
+      if (document.readyState === 'complete') {
+        setTimeout(hideSplash, 200);
+      } else {
+        window.addEventListener('load', function() { setTimeout(hideSplash, 200); });
+      }
+    })();
+  </script>
+  <link rel="manifest" href="/mcguias/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MC Guias">
+  <meta name="theme-color" content="#DA291C">
+  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="preload" href="../js/main.js" as="script">
+
+  <style>
+    .danger-zone { background:linear-gradient(135deg,#fff0f0,#ffe5e5); border:2px solid #DA291C; border-radius:var(--radius-lg); padding:16px 18px; margin-bottom:14px; }
+    [data-theme="dark"] .danger-zone { background:linear-gradient(135deg,#2a1010,#3a1515); }
+    .danger-zone-title { font-family:var(--font-display); font-size:14px; font-weight:800; color:#DA291C; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .danger-items { display:flex; flex-direction:column; gap:6px; }
+    .danger-item { display:flex; align-items:flex-start; gap:10px; font-size:13px; }
+    .danger-num { background:#DA291C; color:#fff; border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:11px; flex-shrink:0; margin-top:1px; }
+    .rota-path { display:flex; flex-direction:column; gap:0; }
+    .rota-step { display:flex; align-items:flex-start; gap:12px; padding:12px 0; border-bottom:1px solid var(--card-border); }
+    .rota-step:last-child { border-bottom:none; }
+    .rota-step-num { width:36px; height:36px; background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:800; font-size:15px; flex-shrink:0; }
+    .rota-step-content h3 { font-size:14px; font-weight:700; margin-bottom:4px; }
+    .rota-step-content p { font-size:12.5px; color:var(--text-secondary); line-height:1.5; }
+    .dept-grid { display:grid; grid-template-columns:1fr; gap:12px; }
+    .dept-card { border-radius:var(--radius-md); padding:16px; border:1.5px solid var(--card-border); }
+    .dept-card.pessoas { border-color:#3b82f6; background:linear-gradient(135deg,#eff6ff,#dbeafe); }
+    .dept-card.producao { border-color:#f59e0b; background:linear-gradient(135deg,#fffbeb,#fef3c7); }
+    .dept-card.experiencia { border-color:#10b981; background:linear-gradient(135deg,#ecfdf5,#d1fae5); }
+    [data-theme="dark"] .dept-card.pessoas { background:linear-gradient(135deg,#1e2a3a,#1e3a5f); }
+    [data-theme="dark"] .dept-card.producao { background:linear-gradient(135deg,#2a2010,#3a2f10); }
+    [data-theme="dark"] .dept-card.experiencia { background:linear-gradient(135deg,#102a1e,#103a2a); }
+    .dept-card h3 { font-family:var(--font-display); font-size:16px; font-weight:800; margin-bottom:6px; }
+    .dept-card p { font-size:13px; color:var(--text-secondary); line-height:1.5; }
+    .role-section { margin-bottom:18px; }
+    .role-title { font-family:var(--font-display); font-size:15px; font-weight:800; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .checklist-grid { display:grid; grid-template-columns:1fr; gap:6px; }
+    .checklist-item { display:flex; align-items:flex-start; gap:9px; font-size:13px; line-height:1.5; padding:7px 10px; background:var(--card-border); border-radius:8px; }
+    .checklist-icon { color:var(--accent); flex-shrink:0; font-size:14px; margin-top:1px; }
+    .cc-step { display:flex; flex-direction:column; gap:0; }
+    .cc-item { display:flex; align-items:flex-start; gap:12px; padding:12px 14px; border-left:3px solid var(--card-border); margin-bottom:8px; background:var(--card); border-radius:0 var(--radius-md) var(--radius-md) 0; }
+    .cc-item.pedido { border-color:#3b82f6; }
+    .cc-item.recebimento { border-color:#f59e0b; }
+    .cc-item.armazenagem { border-color:#10b981; }
+    .cc-item.equipamento { border-color:#8b5cf6; }
+    .cc-item.procedimento { border-color:#ef4444; }
+    .cc-item.controle { border-color:#06b6d4; }
+    .cc-icon { font-size:22px; flex-shrink:0; }
+    .cc-content h4 { font-size:13px; font-weight:700; margin-bottom:4px; }
+    .cc-content p { font-size:12px; color:var(--text-secondary); line-height:1.55; }
+    .cert-bar { display:flex; align-items:center; gap:8px; font-size:13px; margin-bottom:6px; }
+    .cert-pct { font-weight:800; color:var(--accent); font-size:15px; min-width:38px; }
+    .cert-progress { flex:1; height:8px; background:var(--card-border); border-radius:4px; overflow:hidden; }
+    .cert-fill { height:100%; border-radius:4px; background:var(--accent); }
+    .kpi-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .kpi-table th { background:var(--card-border); color:var(--text-secondary); font-weight:600; padding:8px 10px; text-align:left; font-size:11px; letter-spacing:.05em; text-transform:uppercase; }
+    .kpi-table td { padding:8px 10px; border-bottom:1px solid var(--card-border); vertical-align:top; }
+    .kpi-table tr:last-child td { border-bottom:none; }
+    .kpi-meta { font-weight:700; color:var(--accent); font-size:14px; }
+    .tag-pill { display:inline-block; padding:2px 9px; border-radius:20px; font-size:11px; font-weight:700; }
+    .tag-producao { background:#fef3c7; color:#b45309; }
+    .tag-experiencia { background:#d1fae5; color:#065f46; }
+    .tag-pessoas { background:#dbeafe; color:#1d4ed8; }
+    [data-theme="dark"] .tag-producao { background:#3a2f10; color:#fcd34d; }
+    [data-theme="dark"] .tag-experiencia { background:#103a2a; color:#34d399; }
+    [data-theme="dark"] .tag-pessoas { background:#1e3a5f; color:#60a5fa; }
+  </style>
+</head>
+<body data-page="gerentes">
+
+  <div id="splash">
+    <img src="../icons/splash-icon.png" class="splash-logo-img" alt="MC Guias">
+    <div class="splash-title">MC Guias</div>
+    <div class="splash-sub">Estudo Operacional</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-logo" href="../index.html">M</a>
+      <div class="navbar-brand">
+        <h1>Gerentes</h1>
+        <p>RDM · Rota · Caminho Crítico</p>
+      </div>
+      <a href="../index.html" class="navbar-back">← Início</a>
+    </div>
+  </nav>
+
+  <div class="page-tabs">
+    <div class="page-tabs-inner">
+      <button class="tab-btn active" data-tab="rdm">🏢 RDM</button>
+      <button class="tab-btn" data-tab="rota">🗺️ Rota</button>
+      <button class="tab-btn" data-tab="papeis">👔 Papéis</button>
+      <button class="tab-btn" data-tab="caminho">🔍 Caminho Crítico</button>
+      <button class="tab-btn" data-tab="cert">✅ Certificações</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- RDM -->
+    <div class="tab-panel active" id="panel-rdm">
+      <div class="section-label">Restaurant Department Manager</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🏢</div>
+          <h2>O que é RDM?</h2>
+        </div>
+        <div class="card-body">
+          <p style="line-height:1.6;margin-bottom:12px;">O <strong>RDM (Restaurant Department Manager)</strong> é uma nova forma de gerir sistemas, estrutura e responsabilidades no restaurante — ou seja, <em>departamentalizar</em>.</p>
+          <div class="alert info">
+            <div class="alert-icon">💡</div>
+            <div>Cada gerente de departamento lidera uma equipe dedicada e é responsável por resultados medidos através de KPIs específicos.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Por que RDM?</div>
+      <div class="card">
+        <div class="card-body">
+          <div class="two-col">
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">📈</span><span>GCs, crescimento de vendas e crescimento na hora pico</span></div>
+              <div class="checklist-item"><span class="checklist-icon">⭐</span><span>Melhoria de QSL (Qualidade, Serviço e Limpeza)</span></div>
+              <div class="checklist-item"><span class="checklist-icon">👥</span><span>Melhora do engajamento dos funcionários e redução de turnover</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🎯</span><span>Melhora das habilidades de liderança da gerência</span></div>
+            </div>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">🔄</span><span>Delegar funções e responsabilidades</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🛠️</span><span>Simplificar tarefas administrativas</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📋</span><span>Padronizar rotinas e fornecer comunicação consistente</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🚀</span><span>Desenvolver capacidades e habilidades das pessoas</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Os 3 Departamentos</div>
+
+      <div class="dept-grid">
+        <div class="dept-card pessoas">
+          <h3>👥 Gestão de Pessoas</h3>
+          <p>Foca em <strong>recrutamento, treinamento e motivação</strong> das pessoas. Responsável pelo clima do restaurante, avaliações, aulas de orientação, escalas e redução de turnover.</p>
+          <div style="margin-top:10px;">
+            <span class="tag-pill tag-pessoas">KPI: Labor</span>
+            <span class="tag-pill tag-pessoas" style="margin-left:6px;">KPI: Turnover</span>
+            <span class="tag-pill tag-pessoas" style="margin-left:6px;">KPI: BSV Gente</span>
+          </div>
+        </div>
+        <div class="dept-card producao">
+          <h3>⚙️ Produção</h3>
+          <p>Lida com todos os processos envolvidos na <strong>fabricação dos produtos</strong>. Pedidos, recebimento, armazenagem, controle de inventário, manutenção e segurança alimentar.</p>
+          <div style="margin-top:10px;">
+            <span class="tag-pill tag-producao">KPI: Controláveis</span>
+            <span class="tag-pill tag-producao" style="margin-left:6px;">KPI: BSV Qualidade</span>
+            <span class="tag-pill tag-producao" style="margin-left:6px;">KPI: ROIP</span>
+          </div>
+        </div>
+        <div class="dept-card experiencia">
+          <h3>🌟 Experiência do Cliente</h3>
+          <p>Concentra-se em garantir que a <strong>experiência do cliente seja extraordinária</strong>. Vendas, GCs, pós-venda, LSM, controle de segmentos e Espaço Happy.</p>
+          <div style="margin-top:10px;">
+            <span class="tag-pill tag-experiencia">KPI: Vendas</span>
+            <span class="tag-pill tag-experiencia" style="margin-left:6px;">KPI: GC</span>
+            <span class="tag-pill tag-experiencia" style="margin-left:6px;">KPI: CSS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">KPIs por Departamento</div>
+
+      <div class="card">
+        <div class="card-body" style="overflow-x:auto;">
+          <table class="kpi-table">
+            <thead>
+              <tr><th>Departamento</th><th>Indicador</th><th>Meta</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="tag-pill tag-pessoas">Pessoas</span></td><td>CSS</td><td class="kpi-meta">Acima de 50 pesquisas</td></tr>
+              <tr><td><span class="tag-pill tag-pessoas">Pessoas</span></td><td>Custo Labor (MDO)</td><td class="kpi-meta">Atingir % projetado</td></tr>
+              <tr><td><span class="tag-pill tag-pessoas">Pessoas</span></td><td>Avaliação PBP</td><td class="kpi-meta">Nota A ou B — 95%</td></tr>
+              <tr><td><span class="tag-pill tag-pessoas">Pessoas</span></td><td>BSV Gente</td><td class="kpi-meta">≥ 80%</td></tr>
+              <tr><td><span class="tag-pill tag-pessoas">Pessoas</span></td><td>Avaliação TRE</td><td class="kpi-meta">Mínimo 90%</td></tr>
+              <tr><td><span class="tag-pill tag-producao">Produção</span></td><td>Controláveis (LP)</td><td class="kpi-meta">Atingir % projetado</td></tr>
+              <tr><td><span class="tag-pill tag-producao">Produção</span></td><td>Suprimentos (P&L)</td><td class="kpi-meta">Atingir % projetado</td></tr>
+              <tr><td><span class="tag-pill tag-producao">Produção</span></td><td>BSV Qualidade</td><td class="kpi-meta">≥ 80%</td></tr>
+              <tr><td><span class="tag-pill tag-producao">Produção</span></td><td>BSV Auditoria</td><td class="kpi-meta">≥ 80%</td></tr>
+              <tr><td><span class="tag-pill tag-experiencia">Experiência</span></td><td>Vendas</td><td class="kpi-meta">Atingir projetado</td></tr>
+              <tr><td><span class="tag-pill tag-experiencia">Experiência</span></td><td>GC (Guest Count)</td><td class="kpi-meta">Atingir projetado</td></tr>
+              <tr><td><span class="tag-pill tag-experiencia">Experiência</span></td><td>Pós-Venda</td><td class="kpi-meta">Atingir projetado</td></tr>
+              <tr><td><span class="tag-pill tag-experiencia">Experiência</span></td><td>BSV Serviço</td><td class="kpi-meta">≥ 80%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROTA -->
+    <div class="tab-panel" id="panel-rota">
+      <div class="section-label">Rota de Inspeção do Gerente</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🗺️</div>
+          <h2>Caminho da Rota</h2>
+          <div class="badge badge-red">80% do tempo</div>
+        </div>
+        <div class="card-body">
+          <div class="rota-path">
+            <div class="rota-step">
+              <div class="rota-step-num">1</div>
+              <div class="rota-step-content">
+                <h3>Cozinha</h3>
+                <p>Foco na UHC. Verifique níveis das gavetas, produção digital/Maverick e o sistema de garagem. Na hora pico, não deve haver gavetas viradas.</p>
+              </div>
+            </div>
+            <div class="rota-step">
+              <div class="rota-step-num">2</div>
+              <div class="rota-step-content">
+                <h3>Balcão</h3>
+                <p>Verifique os níveis de McFritas e tortas conforme produção digital. Observe o atendimento dos caixas e o fluxo de clientes.</p>
+              </div>
+            </div>
+            <div class="rota-step">
+              <div class="rota-step-num">3</div>
+              <div class="rota-step-content">
+                <h3>Drive-Thru (Área Interna)</h3>
+                <p>Verifique a linha de produção, sala de break, abertura do lado 2 a partir de 125 mesas/bancos ou 31 produtos por ¼ de hora.</p>
+              </div>
+            </div>
+            <div class="rota-step">
+              <div class="rota-step-num">4</div>
+              <div class="rota-step-content">
+                <h3>McDelivery</h3>
+                <p>Verifique disponibilidade da plataforma, itens inativos no POS e garanta posicionamento do funcionário RDM durante operação.</p>
+              </div>
+            </div>
+            <div class="rota-step">
+              <div class="rota-step-num">5</div>
+              <div class="rota-step-content">
+                <h3>Salão</h3>
+                <p>Limpeza de mesas e lixeiras (rota a cada 15'), banheiros limpos, NGK funcionando, Embaixador da Experiência ativo.</p>
+              </div>
+            </div>
+            <div class="rota-step">
+              <div class="rota-step-num">6</div>
+              <div class="rota-step-content">
+                <h3>Drive-Thru (Área Externa)</h3>
+                <p>Verifique barreiras que afetam a experiência do cliente, fluxo de veículos, cabines e atendimento em módulo rápido/vendedor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Zona de Perigo</div>
+
+      <div class="danger-zone">
+        <div class="danger-zone-title">⚠️ Regra dos 3 — Atue Imediatamente</div>
+        <div class="danger-items">
+          <div class="danger-item"><div class="danger-num">3+</div><span>Clientes na fila do balcão ou do Drive-Thru</span></div>
+          <div class="danger-item"><div class="danger-num">3+</div><span>Pedidos parados no Monitor de Expedição</span></div>
+          <div class="danger-item"><div class="danger-num">≤3</div><span>McFritas na estação de fritura final</span></div>
+          <div class="danger-item"><div class="danger-num">3+</div><span>Gavetas na garagem da mesma proteína (UHC)</span></div>
+          <div class="danger-item"><div class="danger-num">3+</div><span>Pedidos no KVS sem assumir</span></div>
+          <div class="danger-item"><div class="danger-num">3+</div><span>Veículos antes do COD ou na área de espera</span></div>
+          <div class="danger-item"><div class="danger-num">3+</div><span>Pedidos do McDelivery esperando registro no POS</span></div>
+          <div class="danger-item"><div class="danger-num">3+</div><span>Entregadores aguardando pedidos</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <div class="card-head">
+          <div class="card-head-icon">📺</div>
+          <h2>Balcão: Tela Vazia vs. KVS Cheio</h2>
+        </div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="red">Tela Vazia · KVS Cheio</h3>
+              <p style="font-size:13px;">= Atuação na <strong>Cozinha</strong>. Produção não está acompanhando os pedidos.</p>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Tela Cheia · KVS Vazio</h3>
+              <p style="font-size:13px;">= Atuação no <strong>Balcão</strong>. Os pedidos chegam mas não estão sendo inseridos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAPÉIS -->
+    <div class="tab-panel" id="panel-papeis">
+      <div class="section-label">Atuação Gerencial por Função</div>
+
+      <!-- GP -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⏱️</div>
+          <h2>Gerente de Plantão (GP)</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert warn" style="margin-bottom:14px;">
+            <div class="alert-icon">🎯</div>
+            <div><strong>Foco principal:</strong> Garantir a Máxima Capacidade de Vendas e Rentabilidade no turno.</div>
+          </div>
+          <div class="role-section">
+            <div class="role-title">📋 Básicos de Plantão</div>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">✅</span><span>Check list de abertura / fechamento</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🧪</span><span>Experimentação de produtos</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🗺️</span><span>Rota de inspeção</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📅</span><span>Pré e Pós plantão</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🏗️</span><span>Plano de chão</span></div>
+            </div>
+          </div>
+          <div class="role-section">
+            <div class="role-title">👀 Pontos de Atenção</div>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">👤</span><span>Melhores pessoas nas melhores funções</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📦</span><span>Layout adequado para atendimento rápido</span></div>
+              <div class="checklist-item"><span class="checklist-icon">⚙️</span><span>Equipamentos em perfeito estado com preventivas em dia</span></div>
+              <div class="checklist-item"><span class="checklist-icon">💻</span><span>POS e monitores funcionando (chamado aberto se não)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAS -->
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🪄</div>
+          <h2>Gerente de Área de Serviço (GAS)</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert info" style="margin-bottom:14px;">
+            <div class="alert-icon">🎯</div>
+            <div><strong>Foco:</strong> Observar e dar exemplos no atendimento para cada momento de compra do cliente. Ser embaixador da Cooltura de Serviço.</div>
+          </div>
+          <div class="role-section">
+            <div class="role-title">📋 Pontos de Checagem — Balcão</div>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">🗣️</span><span><strong>Influencer Vendedor:</strong> Use as 6 técnicas. Escute o cliente, use as duas mãos para registrar.</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🧺</span><span><strong>Apoio:</strong> Monte o pedido partindo da OAT. Memorize o nº do pedido (picklist). Aperte servido quando não há expedidor.</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📋</span><span><strong>Expedição:</strong> Mesa OAT estocada e limpa. Pedido da tela já montado. Sem sobras de produtos na estufa OAT.</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🛎️</span><span><strong>Entrega:</strong> Conclui e apresenta o pedido. Comanda picklist na altura dos olhos.</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🥤</span><span><strong>Bebidas:</strong> Bebida da tela pronta. Produtos estocados (tampa, copo). Bebidas separadas por sabores.</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🍟</span><span><strong>McFritas:</strong> Cesto no óleo ativando timer. Salga a 20cm em movimento lateral. Encaixa no estrado cuidadosamente.</span></div>
+            </div>
+          </div>
+          <div class="role-section" style="margin-top:12px;">
+            <div class="role-title">👁️ Foco no Cliente</div>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">1️⃣</span><span>Acompanhe o atendimento dos caixas</span></div>
+              <div class="checklist-item"><span class="checklist-icon">2️⃣</span><span>Saia do balcão para visualizar o fluxo de atendimento</span></div>
+              <div class="checklist-item"><span class="checklist-icon">3️⃣</span><span>Interaja com as pessoas</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GERENTE DE PRODUÇÃO -->
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">⚙️</div>
+          <h2>Gerente de Produção</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert info" style="margin-bottom:14px;">
+            <div class="alert-icon">🎯</div>
+            <div><strong>Foco:</strong> Iniciar e manter o ponto focal na UHC. Atuar nos 7 Conceitos da UHC.</div>
+          </div>
+          <div class="role-section">
+            <div class="role-title">7 Conceitos da UHC</div>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">1️⃣</span><span>Não compense um erro com outro</span></div>
+              <div class="checklist-item"><span class="checklist-icon">2️⃣</span><span>Ative pouco, porém sempre</span></div>
+              <div class="checklist-item"><span class="checklist-icon">3️⃣</span><span>Acelere e desacelere na mesma ativada</span></div>
+              <div class="checklist-item"><span class="checklist-icon">4️⃣</span><span>Conheça os tempos de preparo das carnes</span></div>
+              <div class="checklist-item"><span class="checklist-icon">5️⃣</span><span>Use o sistema de garagem corretamente</span></div>
+              <div class="checklist-item"><span class="checklist-icon">6️⃣</span><span>Siga os níveis da Produção Digital/Maverick</span></div>
+              <div class="checklist-item"><span class="checklist-icon">7️⃣</span><span><strong>UHC é o coração</strong> — tudo começa aqui</span></div>
+            </div>
+          </div>
+          <div class="role-section" style="margin-top:12px;">
+            <div class="role-title">📋 Posições Chave</div>
+            <div class="two-col">
+              <div>
+                <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--text-secondary);">INICIADOR</p>
+                <div class="checklist-grid">
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>100% posicionado, atento ao KVS</span></div>
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Ativa pães na tostadeira de 3" a 5"</span></div>
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Aperta "servido" após condimentação assumir</span></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--text-secondary);">FINALIZADOR</p>
+                <div class="checklist-grid">
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Assume produto da condimentação rapidamente</span></div>
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Gavetas zeradas na garagem ou empurradas</span></div>
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Embala garantindo qualidade e transfere à OAT</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRIVE-THRU -->
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🚗</div>
+          <h2>Gerente de Área Drive-Thru</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert info" style="margin-bottom:14px;">
+            <div class="alert-icon">🎯</div>
+            <div><strong>Ferramenta:</strong> Use sempre o Headset. Verifique o fluxo de vendas (Módulo Rápido e Módulo Vendedor).</div>
+          </div>
+          <div class="two-col">
+            <div>
+              <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--text-secondary);">PESSOA COD</p>
+              <div class="checklist-grid">
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Atende o cliente imediatamente</span></div>
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Módulo rápido e vendedor conforme fluxo</span></div>
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Leitura de QR Code de cupons no leitor do COD</span></div>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--text-secondary);">BEBIDAS/SOBREMESAS</p>
+              <div class="checklist-grid">
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Bebidas com níveis e sabores corretos</span></div>
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Produz somente o que está no monitor</span></div>
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Organiza bebidas na mesa na sequência correta</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="two-col" style="margin-top:10px;">
+            <div>
+              <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--text-secondary);">CONFERENTE</p>
+              <div class="checklist-grid">
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Dupla checagem comparando com KVS</span></div>
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Organiza pedidos/prisma na sequência para entrega</span></div>
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Lidera a operação informando barreiras ao gerente</span></div>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--text-secondary);">ENTREGA DRIVE</p>
+              <div class="checklist-grid">
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Não deixa veículo parado na janela</span></div>
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Entrega sacos primeiro para acomodação no veículo</span></div>
+                <div class="checklist-item"><span class="checklist-icon">✅</span><span>Confirma itens com o cliente de forma blocada</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MCDELIVERY -->
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div class="card-head-icon">🛵</div>
+          <h2>McDelivery</h2>
+        </div>
+        <div class="card-body">
+          <div class="role-section">
+            <div class="role-title">🎯 Foco no Cliente</div>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">📵</span><span>Verificar itens inativos no POS</span></div>
+              <div class="checklist-item"><span class="checklist-icon">👤</span><span>Posicionar sempre um funcionário RDM durante operação</span></div>
+              <div class="checklist-item"><span class="checklist-icon">💬</span><span>Realizar leitura de comentários do dia anterior</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📊</span><span>Semanalmente: plano de ação das avaliações</span></div>
+            </div>
+          </div>
+          <div class="role-section" style="margin-top:10px;">
+            <div class="role-title">📋 Posições Chave</div>
+            <div class="two-col">
+              <div>
+                <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--text-secondary);">CAIXA</p>
+                <div class="checklist-grid">
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Mantém tela do POS na lista de Recall</span></div>
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Verifica fila virtual no tablet Flex Delivery</span></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--text-secondary);">APRESENTADOR</p>
+                <div class="checklist-grid">
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Alerta entregador sobre pedidos com bebidas</span></div>
+                  <div class="checklist-item"><span class="checklist-icon">✅</span><span>Garante checkout do entregador em todos os pedidos</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMINHO CRÍTICO -->
+    <div class="tab-panel" id="panel-caminho">
+      <div class="section-label">Ferramenta de Verificação</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🔍</div>
+          <h2>O que é o Caminho Crítico?</h2>
+        </div>
+        <div class="card-body">
+          <p style="line-height:1.6;margin-bottom:12px;">O <strong>Caminho Crítico</strong> é uma ferramenta de verificações desenvolvida para <em>identificar oportunidades de melhorias e aumentar o desempenho nos resultados</em>.</p>
+          <div class="two-col">
+            <div class="info-block">
+              <h3 class="blue">Quem usa?</h3>
+              <p style="font-size:13px;">Gerente de Unidade de Negócios (GUN) e Consultor de Operações no trabalho de campo.</p>
+            </div>
+            <div class="info-block">
+              <h3 class="green">Como usar?</h3>
+              <p style="font-size:13px;">Siga a rota lógica. Ao encontrar o sinal de alerta, faça as verificações detalhadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Rota Lógica de Verificação</div>
+
+      <div class="cc-step">
+        <div class="cc-item pedido">
+          <div class="cc-icon">📦</div>
+          <div class="cc-content">
+            <h4>1. Pedido</h4>
+            <p>GP certificado como RDM de produção? Controle de pedidos do mês disponível? Incorporação de vendas atualizada? Tabela de níveis de fácil acesso?</p>
+          </div>
+        </div>
+        <div class="cc-item recebimento">
+          <div class="cc-icon">🚚</div>
+          <div class="cc-content">
+            <h4>2. Recebimento</h4>
+            <p>Equipe treinada para recebimento? Gerente dedicado escalado? Produtos conferidos junto à NF? Temperatura resfriados 1°C a 4°C e congelados -23°C a -18°C (crítica: -15°C)?</p>
+          </div>
+        </div>
+        <div class="cc-item armazenagem">
+          <div class="cc-icon">🏪</div>
+          <div class="cc-content">
+            <h4>3. Armazenagem</h4>
+            <p>Mercadorias em empilhamento máximo e distâncias corretas (5cm parede, 2,5cm entre caixas)? Etiquetas de giro e cor do mês? Câmaras com fechadura? Rotação PEPS respeitada?</p>
+          </div>
+        </div>
+        <div class="cc-item equipamento">
+          <div class="cc-icon">⚙️</div>
+          <div class="cc-content">
+            <h4>4. Equipamento</h4>
+            <p>SMP digital programado? Preventivas gerenciais e de manutenção realizadas? Todos os equipamentos em funcionamento? Kit de escova para máquina de sorvetes disponível?</p>
+          </div>
+        </div>
+        <div class="cc-item procedimento">
+          <div class="cc-icon">📋</div>
+          <div class="cc-content">
+            <h4>5. Procedimento e Estocagem</h4>
+            <p>Chart atualizado e de fácil acesso? Mercadorias abertas datadas e em recipiente fechado? Câmaras trancadas com chave na posse do Gerente de Turno? Produtos dentro do tempo de vida?</p>
+          </div>
+        </div>
+        <div class="cc-item controle">
+          <div class="cc-icon">📊</div>
+          <div class="cc-content">
+            <h4>6. Controle e Análises</h4>
+            <p>Lançamentos de break (completo e incompleto) verificados? NFs lançadas no dia do recebimento? Quadro de controláveis atualizado (diário, semanal, quinzenal e mensal)?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Padrão Ouro — Experimentação de Produtos</div>
+
+      <div class="card">
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr;gap:10px;">
+            <div class="info-block">
+              <h3 class="yellow">McFritas</h3>
+              <p style="font-size:13px;line-height:1.55;"><strong>Pesos:</strong> Kids 31g · P 73g · M 102g · G 146g<br><strong>Aparência:</strong> Clara, marrom-dourada por fora, branca e macia por dentro. Ligeira separação entre miolo e casca.</p>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Carnes — Tempo de Remoção na Chapa</h3>
+              <p style="font-size:13px;line-height:1.55;"><strong>10:1</strong> = 18 segundos · <strong>4:1 / 3:1 / Picanha</strong> = 15 segundos<br><strong>Padrão:</strong> Plana, redonda, diâmetro uniforme, cor rosa pálido.</p>
+            </div>
+            <div class="info-block">
+              <h3 class="green">Máquina de Sorvete (Overrun)</h3>
+              <p style="font-size:13px;line-height:1.55;"><strong>Velocidade de extração:</strong> 5,0 a 7,5 oz em 10 segundos<br><strong>Overrun:</strong> 55% a 65% (ideal 68% de ar)<br><strong>Temperatura do mix pronto:</strong> -9°C a -8°C</p>
+            </div>
+            <div class="info-block">
+              <h3 class="red">Refrigerantes — Brixagem</h3>
+              <p style="font-size:13px;line-height:1.55;"><strong>Coca-Cola:</strong> proporção 5,2 : 1oz (água : xarope)<br><strong>Suco de Laranja:</strong> proporção 3 : 15oz<br><strong>Gelo por copo:</strong> 300ml → 5 pedras · 400ml → 7 · 550ml → 10 · 770ml → 15</p>
+            </div>
+            <div class="info-block">
+              <h3 class="blue">Cobertura (Banho-Maria)</h3>
+              <p style="font-size:13px;line-height:1.55;"><strong>Banho-Maria:</strong> 57°C a 63°C · <strong>Cobertura:</strong> 46°C a 52°C<br>Cada bomba deve dispensar 1oz com os restritores.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICAÇÕES -->
+    <div class="tab-panel" id="panel-cert">
+      <div class="section-label">Certificação RDM</div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">🏅</div>
+          <h2>Como Funciona?</h2>
+        </div>
+        <div class="card-body">
+          <p style="font-size:13px;line-height:1.6;margin-bottom:12px;">A certificação é realizada pelo Consultor de Operações após <strong>30 dias do treinamento da equipe</strong>. O restaurante é avaliado nos critérios abaixo.</p>
+          <div class="alert success">
+            <div class="alert-icon">🏆</div>
+            <div><strong>Aprovação:</strong> Certificado acima de <strong>90%</strong> dos pontos possíveis em cada departamento.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Departamento de Produção</div>
+      <div class="card">
+        <div class="card-body">
+          <div class="cert-bar"><span class="cert-pct">32 pts</span><div class="cert-progress"><div class="cert-fill" style="width:100%"></div></div><span style="font-size:12px;color:var(--text-secondary)">Total disponível</span></div>
+          <div class="cert-bar"><span class="cert-pct" style="color:#16a34a">29+ pts</span><div class="cert-progress"><div class="cert-fill" style="width:90%;background:#16a34a"></div></div><span style="font-size:12px;color:var(--text-secondary)">Meta ≥ 90%</span></div>
+
+          <div style="margin-top:14px;">
+            <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-secondary);margin-bottom:8px;">Critérios Avaliados</p>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">📦</span><span>Controle de Inventário: tabelas de níveis, pedidos, rotatividade de câmaras</span></div>
+              <div class="checklist-item"><span class="checklist-icon">⚙️</span><span>Manutenção Programada: SMP, preventivas gerenciais, chamados corretos</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🦺</span><span>Segurança Alimentar: checklist de carnes, temperaturas, tempo de vida dos produtos</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📊</span><span>KPIs: CSS > 50 pesquisas, Controláveis e Suprimentos ≥ projetado, BSV ≥ 80%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Departamento de Experiência do Cliente</div>
+      <div class="card">
+        <div class="card-body">
+          <div class="cert-bar"><span class="cert-pct">32 pts</span><div class="cert-progress"><div class="cert-fill" style="width:100%"></div></div><span style="font-size:12px;color:var(--text-secondary)">Total disponível</span></div>
+          <div class="cert-bar"><span class="cert-pct" style="color:#16a34a">29+ pts</span><div class="cert-progress"><div class="cert-fill" style="width:90%;background:#16a34a"></div></div><span style="font-size:12px;color:var(--text-secondary)">Meta ≥ 90%</span></div>
+
+          <div style="margin-top:14px;">
+            <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-secondary);margin-bottom:8px;">Critérios Avaliados</p>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">🎡</span><span>Espaço Happy: conhece as ações e treina a equipe para executá-las</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🪧</span><span>Material POP: troca de preços e campanha nas datas corretas</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📈</span><span>Planilha de vendas e GCs: preenchida e acompanhada</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📊</span><span>KPIs: Vendas, GC, CSS, Pós-venda projetados · BSV Serviço ≥ 80%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Departamento de Pessoas</div>
+      <div class="card">
+        <div class="card-body">
+          <div class="cert-bar"><span class="cert-pct">32 pts</span><div class="cert-progress"><div class="cert-fill" style="width:100%"></div></div><span style="font-size:12px;color:var(--text-secondary)">Total disponível</span></div>
+          <div class="cert-bar"><span class="cert-pct" style="color:#16a34a">29+ pts</span><div class="cert-progress"><div class="cert-fill" style="width:90%;background:#16a34a"></div></div><span style="font-size:12px;color:var(--text-secondary)">Meta ≥ 90%</span></div>
+
+          <div style="margin-top:14px;">
+            <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-secondary);margin-bottom:8px;">Critérios Avaliados</p>
+            <div class="checklist-grid">
+              <div class="checklist-item"><span class="checklist-icon">🎓</span><span>Orientação informativa e motivadora para todos os funcionários</span></div>
+              <div class="checklist-item"><span class="checklist-icon">🦺</span><span>Equipamentos de segurança em quantidade correta e disponíveis</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📅</span><span>Calendário de motivação e Dia da Família realizados</span></div>
+              <div class="checklist-item"><span class="checklist-icon">📊</span><span>KPIs: Labor, Produtividade (IP), Turnover, PBP A ou B 95%, BSV Gente ≥ 80%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:16px;">Agenda Mensal do GUN</div>
+      <div class="card">
+        <div class="card-body">
+          <div class="two-col">
+            <div>
+              <p style="font-size:12px;font-weight:700;margin-bottom:8px;color:var(--text-secondary);">ATIVIDADES SEMANAIS</p>
+              <div class="checklist-grid">
+                <div class="checklist-item"><span class="checklist-icon">📦</span><span>Pedido de mercadorias (2h)</span></div>
+                <div class="checklist-item"><span class="checklist-icon">👥</span><span>Reunião de funcionários dia/noite (1h cada)</span></div>
+                <div class="checklist-item"><span class="checklist-icon">🗺️</span><span>Rota Gerencial (45min)</span></div>
+                <div class="checklist-item"><span class="checklist-icon">⚡</span><span>Trabalhar no Pico (2h)</span></div>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:12px;font-weight:700;margin-bottom:8px;color:var(--text-secondary);">ATIVIDADES QUINZENAIS</p>
+              <div class="checklist-grid">
+                <div class="checklist-item"><span class="checklist-icon">🔢</span><span>Contagem semanal + Fechamento de Número (2h)</span></div>
+                <div class="checklist-item"><span class="checklist-icon">📐</span><span>Pedido de suprimentos (1h)</span></div>
+                <div class="checklist-item"><span class="checklist-icon">🎮</span><span>Reunião Plano de Jogo (45min)</span></div>
+                <div class="checklist-item"><span class="checklist-icon">🧹</span><span>Checklist de Limpeza (1h)</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="alert warn" style="margin-top:12px;">
+            <div class="alert-icon">⚠️</div>
+            <div>Atividades emergenciais (ANVISA, Ministério do Trabalho, avaliações não programadas) têm prioridade máxima — realoque as demais atividades do dia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <strong>MC Guias</strong> · Gerentes · Desenvolvido por Adrian E. Silva
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
