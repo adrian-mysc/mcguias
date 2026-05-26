@@ -385,7 +385,16 @@ function initChecklist() {
   });
 }
 
+var _lastSaveTs = 0;
+var _lastSaveKey = '';
 function saveQuizResult(guia, score, total) {
+  // Guard: block duplicate submissions from the same session within 5 seconds
+  const key = guia + ':' + score + ':' + total;
+  const now = Date.now();
+  if (key === _lastSaveKey && now - _lastSaveTs < 5000) return;
+  _lastSaveKey = key;
+  _lastSaveTs  = now;
+
   _flushSRData(); // ensure SR writes are committed before quiz end
   const hist = McStorage.get('mc_quiz_history', []);
   const date = new Date().toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
@@ -720,6 +729,7 @@ function initQuiz(questions, guiaName) {
   var _wrongAnswers = [];
   var _sessionStart = Date.now();
   var _qStart       = Date.now();
+  var _resultShown  = false;
 
   function render() {
     if (current >= pool.length) { showResult(); return; }
@@ -949,6 +959,8 @@ function initQuiz(questions, guiaName) {
   }
 
   window.nextQuestion = function() {
+    var nb = document.getElementById('btn-next');
+    if (nb) { nb.disabled = true; nb.style.opacity = '0.5'; nb.style.pointerEvents = 'none'; }
     if (window._autoAdvanceTimer) { clearTimeout(window._autoAdvanceTimer); window._autoAdvanceTimer = null; }
     if (window._quizKeyHandler) { document.removeEventListener('keydown', window._quizKeyHandler); window._quizKeyHandler = null; }
     current++;
@@ -956,6 +968,8 @@ function initQuiz(questions, guiaName) {
   };
 
   function showResult() {
+    if (_resultShown) return;
+    _resultShown = true;
     var pct  = Math.round((score / pool.length) * 100);
     var msg  = pct >= 80 ? "🎉 Excelente!" : pct >= 60 ? "👍 Bom trabalho!" : "📚 Continue estudando!";
     var elapsed = Math.round((Date.now() - _sessionStart) / 1000);
@@ -1494,12 +1508,13 @@ function initLacuna(questions, guiaName) {
     return;
   }
 
-  var current    = 0;
-  var score      = 0;
-  var scoreHalf  = 0; // correct after hint
-  var answered   = false;
-  var hintUsed   = false;
-  var _qStart    = Date.now();
+  var current          = 0;
+  var score            = 0;
+  var scoreHalf        = 0; // correct after hint
+  var answered         = false;
+  var hintUsed         = false;
+  var _qStart          = Date.now();
+  var _lacunaResultShown = false;
 
   function render() {
     _qStart = Date.now();
@@ -1623,12 +1638,16 @@ function initLacuna(questions, guiaName) {
   };
 
   window.lacunaNext = function() {
+    var nb = document.getElementById('btn-next');
+    if (nb) { nb.disabled = true; nb.style.opacity = '0.5'; nb.style.pointerEvents = 'none'; }
     if (window._quizTimerInterval) { clearInterval(window._quizTimerInterval); window._quizTimerInterval = null; }
     current++;
     render();
   };
 
   function showLacunaResult() {
+    if (_lacunaResultShown) return;
+    _lacunaResultShown = true;
     var total    = pool.length;
     var fullPct  = Math.round((score / total) * 100);
     var halfPct  = Math.round(((score + scoreHalf * 0.5) / total) * 100);
