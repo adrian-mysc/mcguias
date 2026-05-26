@@ -210,6 +210,7 @@ function initQuiz(questions, guiaName) {
   var _wrongAnswers = [];
   var _sessionStart = Date.now();
   var _qStart       = Date.now();
+  var _resultShown  = false;
 
   function render() {
     if (current >= pool.length) { showResult(); return; }
@@ -439,6 +440,8 @@ function initQuiz(questions, guiaName) {
   }
 
   window.nextQuestion = function() {
+    var nb = document.getElementById('btn-next');
+    if (nb) { nb.disabled = true; nb.style.opacity = '0.5'; nb.style.pointerEvents = 'none'; }
     if (window._autoAdvanceTimer) { clearTimeout(window._autoAdvanceTimer); window._autoAdvanceTimer = null; }
     if (window._quizKeyHandler) { document.removeEventListener('keydown', window._quizKeyHandler); window._quizKeyHandler = null; }
     current++;
@@ -446,6 +449,8 @@ function initQuiz(questions, guiaName) {
   };
 
   function showResult() {
+    if (_resultShown) return;
+    _resultShown = true;
     var pct  = Math.round((score / pool.length) * 100);
     var msg  = pct >= 80 ? "🎉 Excelente!" : pct >= 60 ? "👍 Bom trabalho!" : "📚 Continue estudando!";
     var elapsed = Math.round((Date.now() - _sessionStart) / 1000);

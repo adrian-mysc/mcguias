@@ -1,28 +1,20 @@
 {
-  "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "version": "2.0.0",
+  "updatedAt": "2026-05-25",
   "categoria": "embaixador-experiencia",
   "nivel": "basico",
-  "migratedFrom": "linha.html",
   "questions": [
     {
-      "id": "embaixador_experiencia_html_001",
+      "id": "emb_001",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "🍞 Tostadeira",
+      "subcategoria": "🌟 Embaixador · Perfil",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura das placas A e B da tostadeira?",
-      "alternativas": [
-        "254°C",
-        "265°C",
-        "271°C",
-        "280°C"
-      ],
+      "tags": ["perfil", "competências"],
+      "pergunta": "Quantas competências compõem o perfil do Embaixador da Experiência?",
+      "alternativas": ["5 competências", "6 competências", "8 competências", "10 competências"],
       "respostaCorreta": 2,
-      "explicacao": "Placas A e B = 271°C. Placa C = 254°C.",
+      "explicacao": "O perfil é composto por 8 competências: Extroversão, Empatia, Proatividade, Exemplaridade, Cortesia, Segurança, Conhecimento e Comunicação.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -32,46 +24,49 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_002",
+      "id": "emb_002",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "🍞 Tostadeira",
-      "dificuldade": 2,
+      "subcategoria": "🌟 Embaixador · Perfil",
+      "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo de caramelização na tostadeira?",
-      "alternativas": [
-        "15 segundos",
-        "18 segundos",
-        "22 segundos",
-        "30 segundos"
-      ],
+      "tags": ["perfil", "extroversão"],
+      "pergunta": "Qual competência descreve a capacidade do Embaixador de iniciar conversas com entusiasmo e se conectar com os clientes em todo o restaurante?",
+      "alternativas": ["Empatia", "Extroversão", "Cortesia", "Comunicação"],
+      "respostaCorreta": 1,
+      "explicacao": "Extroversão: você pode iniciar conversas com entusiasmo e conectar-se com os clientes em todo o restaurante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_003",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🌟 Embaixador · Perfil",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": ["perfil", "empatia"],
+      "pergunta": "Qual competência do Embaixador significa sempre levar em conta o que é melhor para o cliente, colocando-se no lugar dele?",
+      "alternativas": ["Cortesia", "Segurança", "Empatia", "Proatividade"],
       "respostaCorreta": 2,
-      "explicacao": "O tempo de caramelização é de 22 segundos.",
+      "explicacao": "Empatia: sempre leve em conta o que é melhor para o cliente, colocando-se no lugar dele.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -81,46 +76,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_003",
+      "id": "emb_004",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "🌡️ UHC",
+      "subcategoria": "🌟 Embaixador · Perfil",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "temperatura",
-        "uhc"
-      ],
-      "pergunta": "Qual a temperatura da UHC para carnes vermelhas?",
-      "alternativas": [
-        "72°C",
-        "75°C",
-        "79°C",
-        "85°C"
-      ],
+      "tags": ["perfil", "proatividade"],
+      "pergunta": "Um Embaixador que age por iniciativa, garantindo que os clientes tenham guardanapos, talheres e canudinhos, demonstra qual competência?",
+      "alternativas": ["Extroversão", "Segurança", "Proatividade", "Cortesia"],
       "respostaCorreta": 2,
-      "explicacao": "UHC: carnes vermelhas = 79°C e carnes brancas = 85°C.",
+      "explicacao": "Proatividade: age com iniciativa e procura formas de alegrar o dia ao cliente, como se certificar de que eles tenham tudo que precisam.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -130,101 +102,28 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_004",
+      "id": "emb_005",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "🌡️ UHC",
+      "subcategoria": "🎯 Embaixador · Princípios",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "carne",
-        "temperatura",
-        "tempo",
-        "uhc",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida do McCrispy na UHC?",
+      "tags": ["princípios", "experiência"],
+      "pergunta": "Quais são os 4 princípios centrais da experiência do cliente no McDonald's?",
       "alternativas": [
-        "20 minutos",
-        "30 minutos",
-        "45 minutos",
-        "60 minutos"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "McCrispy: 60 min · McChicken: 30 min · McNuggets/McJunior: 20 min · Carnes vermelhas: 10 min.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_005",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🌡️ UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "carne",
-        "temperatura",
-        "tempo",
-        "uhc",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida de carnes vermelhas na UHC?",
-      "alternativas": [
-        "5 minutos",
-        "10 minutos",
-        "15 minutos",
-        "20 minutos"
+        "Rapidez, Qualidade, Serviço e Valor",
+        "Autenticidade, Conexão, Cliente como prioridade e Comida deliciosa",
+        "Observar, Interagir, Intervir e Avaliar",
+        "Hospitalidade, Venda, Diversão e Festas"
       ],
       "respostaCorreta": 1,
-      "explicacao": "Carnes vermelhas têm vida útil de 10 minutos na UHC.",
+      "explicacao": "Os 4 princípios são: Autenticidade, Conexão, Cliente como prioridade e Comida deliciosa.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -234,94 +133,28 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_006",
+      "id": "emb_006",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "🧂 Mesa",
+      "subcategoria": "🎯 Embaixador · Princípios",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a faixa de temperatura da mesa de condimentação?",
+      "tags": ["cooltura", "serviço"],
+      "pergunta": "O que é a Cooltura de Serviço?",
       "alternativas": [
-        "35°C a 45°C",
-        "42°C a 55°C",
-        "49°C a 57°C",
-        "55°C a 65°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "A mesa de condimentação opera entre 49°C e 57°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_007",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🧂 Mesa",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "molho",
-        "porcao",
-        "temperatura"
-      ],
-      "pergunta": "Para calibrar o Ketchup Regular, quantos tiros devem ser dados?",
-      "alternativas": [
-        "4 tiros",
-        "6 tiros",
-        "8 tiros",
-        "47 tiros"
+        "Um treinamento técnico obrigatório de operações",
+        "Um conjunto de crenças e hábitos que visa gerar momentos cool para as pessoas",
+        "Uma política de desconto para clientes fiéis",
+        "Um programa de recompensa para funcionários"
       ],
       "respostaCorreta": 1,
-      "explicacao": "Ketchup Regular: 6 tiros = 2 OZ / 60 ML.",
+      "explicacao": "Cooltura de Serviço é um conjunto de crenças, costumes e hábitos que visa gerar momentos cool — experiências cool — entre as pessoas. Por isso usa C de 'cultura' e 'cool'.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -331,45 +164,28 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_008",
+      "id": "emb_007",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha",
-      "dificuldade": 2,
+      "subcategoria": "🎯 Embaixador · Princípios",
+      "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo"
-      ],
-      "pergunta": "Qual é o tempo de linha estabelecido?",
+      "tags": ["cooltura", "propósito"],
+      "pergunta": "Qual é o propósito da Cooltura de Serviço?",
       "alternativas": [
-        "15 a 25 segundos",
-        "25 a 35 segundos",
-        "35 a 50 segundos",
-        "50 a 60 segundos"
+        "Aumentar as vendas do restaurante",
+        "Padronizar o atendimento em todos os restaurantes",
+        "Gerar bons momentos para as pessoas sendo você mesmo",
+        "Reduzir o tempo de espera dos clientes"
       ],
       "respostaCorreta": 2,
-      "explicacao": "O tempo de linha deve ser de 35 a 50 segundos.",
+      "explicacao": "O propósito da Cooltura de Serviço é gerar bons momentos para as pessoas sendo você mesmo.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -379,584 +195,28 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_009",
+      "id": "emb_008",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "tempo"
-      ],
-      "pergunta": "Em quantos segundos o iniciador deve reagir para ativar os pães?",
-      "alternativas": [
-        "1 a 2 segundos",
-        "3 a 5 segundos",
-        "5 a 8 segundos",
-        "10 segundos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O tempo de reação para ativar os pães é de 3 a 5 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_010",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🏪 Best Burger",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "4:1",
-        "carne",
-        "cebola",
-        "cores",
-        "temperatura"
-      ],
-      "pergunta": "No Best Burger, qual pegador é usado para carnes sem cebola?",
-      "alternativas": [
-        "Pegador vermelho",
-        "Pegador verde",
-        "Pegador azul",
-        "Pegador preto"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_011",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🍞 Linha · Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura da placa C da tostadeira?",
-      "alternativas": [
-        "220°C",
-        "240°C",
-        "254°C",
-        "271°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "Placa C = 254°C. Placas A e B = 271°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_012",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🍞 Linha · Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "tempo"
-      ],
-      "pergunta": "Quantos segundos o iniciador tem para reagir e ativar os pães?",
-      "alternativas": [
-        "1 a 2 segundos",
-        "3 a 5 segundos",
-        "5 a 8 segundos",
-        "10 segundos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O tempo de reação para ativar os pães é de 3 a 5 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_013",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🌡️ Linha · UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "temperatura",
-        "uhc"
-      ],
-      "pergunta": "Qual a temperatura da UHC para carnes brancas?",
-      "alternativas": [
-        "72°C",
-        "79°C",
-        "85°C",
-        "90°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "UHC: carnes brancas = 85°C. Carnes vermelhas = 79°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_014",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha · UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo",
-        "uhc",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida do McChicken na UHC?",
-      "alternativas": [
-        "10 minutos",
-        "20 minutos",
-        "30 minutos",
-        "60 minutos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "McChicken: 30 minutos na UHC.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_015",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha · UHC",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo",
-        "uhc",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida dos McNuggets e McJunior na UHC?",
-      "alternativas": [
-        "10 minutos",
-        "20 minutos",
-        "30 minutos",
-        "60 minutos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "McNuggets e McJunior têm 20 minutos de vida útil na UHC.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_016",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🧂 Linha · Mesa",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura da mesa de condimentação?",
-      "alternativas": [
-        "35°C a 45°C",
-        "42°C a 55°C",
-        "49°C a 57°C",
-        "55°C a 65°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "A mesa de condimentação opera entre 49°C e 57°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_017",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha · Tempo",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo de linha estabelecido?",
-      "alternativas": [
-        "15 a 25 segundos",
-        "25 a 35 segundos",
-        "35 a 50 segundos",
-        "50 a 60 segundos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O tempo de linha deve ser de 35 a 50 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_018",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🧂 Linha · Calibração",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "molho",
-        "porcao"
-      ],
-      "pergunta": "Quantos tiros de Ketchup Regular equivalem a 2 OZ?",
-      "alternativas": [
-        "4 tiros",
-        "6 tiros",
-        "8 tiros",
-        "10 tiros"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Ketchup Regular: 6 tiros = 2 OZ / 60 ML.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_019",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🏪 Linha · Best Burger",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "4:1",
-        "carne",
-        "cebola",
-        "cores",
-        "temperatura"
-      ],
-      "pergunta": "Qual pegador é usado para carnes sem cebola no Best Burger?",
-      "alternativas": [
-        "Vermelho",
-        "Verde",
-        "Azul",
-        "Preto"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_020",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🍞 Linha · Tostadeira",
+      "subcategoria": "🎯 Embaixador · Princípios",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": [
-        "remocao",
-        "tecnica",
-        "temperatura"
-      ],
-      "pergunta": "Em que sentido o iniciador deve colocar os pães na tostadeira?",
+      "tags": ["conexão", "princípios"],
+      "pergunta": "Em relação ao princípio 'Conexão', qual atitude NÃO o representa?",
       "alternativas": [
-        "Qualquer sentido",
-        "Com a face cortada para cima",
-        "Com a face cortada voltada para as placas",
-        "Alternando os lados"
+        "Fazer o cliente sentir que estamos dispostos a ajudá-lo",
+        "Iniciar conversa quando é oportuno e amigável",
+        "Interromper o cliente constantemente sem motivo",
+        "Adequar a comunicação ao perfil de cada cliente"
       ],
       "respostaCorreta": 2,
-      "explicacao": "Os pães devem ser posicionados com a face cortada voltada para as placas quentes da tostadeira.",
+      "explicacao": "Conectar não é interromper nem perseguir com o olhar. É, com sutileza e cordialidade, fazer o cliente sentir que estamos dispostos, ativos e amigáveis.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -966,45 +226,28 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_021",
+      "id": "emb_009",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "⚙️ Linha · Procedimento",
+      "subcategoria": "🛤️ Embaixador · Trajeto",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que o finalizador deve fazer ao receber a base do sanduíche?",
+      "tags": ["trajeto", "experiência"],
+      "pergunta": "Quando começa a experiência do cliente, segundo o Manual do Embaixador?",
       "alternativas": [
-        "Aguardar o condimentador terminar",
-        "Verificar qualidade, montar e fechar o sanduíche",
-        "Chamar o iniciador para conferência",
-        "Apenas embalar"
+        "Quando ele faz o pedido",
+        "Desde o momento em que atravessa a porta do restaurante",
+        "Quando recebe a comida na mesa",
+        "Quando o Embaixador o cumprimenta pela primeira vez"
       ],
       "respostaCorreta": 1,
-      "explicacao": "O finalizador recebe a base, verifica qualidade, monta e fecha o sanduíche.",
+      "explicacao": "A experiência começa desde o momento em que o cliente atravessa a porta e entra no restaurante — e só termina quando ele atravessa a porta para ir embora.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1014,440 +257,28 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_022",
+      "id": "emb_010",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "⚙️ Linha · Procedimento",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "producao",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual função monitora o PLS e determina quantas carnes produzir?",
-      "alternativas": [
-        "Iniciador",
-        "Condimentador",
-        "Chapeiro",
-        "Finalizador"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O chapeiro observa o monitor PLS para determinar a quantidade correta de carnes a produzir.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_023",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🧂 Linha · Mesa",
-      "dificuldade": 4,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida dos produtos na mesa de condimentação?",
-      "alternativas": [
-        "1 hora",
-        "2 horas",
-        "3 horas",
-        "4 horas"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Os produtos na mesa de condimentação têm vida útil de 2 horas, controlado pela placa de tempo secundário.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_024",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "tempo"
-      ],
-      "pergunta": "Quantos segundos o iniciador tem para reagir ao sinal e ativar os pães?",
-      "alternativas": [
-        "5 segundos",
-        "8 segundos",
-        "10 segundos",
-        "15 segundos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O iniciador deve reagir em 8 segundos ao sinal e ativar os pães na tostadeira.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_025",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "pao",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida do pão após sair da tostadeira?",
-      "alternativas": [
-        "5 minutos",
-        "10 minutos",
-        "15 minutos",
-        "30 minutos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O pão tostado tem vida útil de 15 minutos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_026",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🥩 Linha · Pré-pico",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "limite",
-        "peps",
-        "temperatura"
-      ],
-      "pergunta": "Qual a quantidade máxima de carnes em estoque no pré-pico?",
-      "alternativas": [
-        "2 rodadas",
-        "3 rodadas",
-        "4 rodadas",
-        "5 rodadas"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "No pré-pico, o estoque máximo é de 3 rodadas de carnes para garantir frescor.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_027",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🍞 Linha · Pão",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "carne",
-        "molho",
-        "pao",
-        "temperatura"
-      ],
-      "pergunta": "Qual pão é usado no Big Mac?",
-      "alternativas": [
-        "Pão regular",
-        "Pão especial (com gergelim e camadas)",
-        "Pão brioche",
-        "Pão de hambúrguer simples"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O Big Mac usa o pão especial com 3 camadas (coroa, meio e base) com gergelim.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_028",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⚙️ Linha · Comunicação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Como o iniciador avisa o finalizador sobre um sanduíche sem acompanhamento padrão?",
-      "alternativas": [
-        "Por escrito no papel",
-        "Verbalmente e com sinal no produto",
-        "Pelo KVS automaticamente",
-        "Não precisa avisar"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O iniciador comunica verbalmente e usa sinalização no produto para avisar o finalizador.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_029",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🍞 Linha · Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "pao",
-        "temperatura"
-      ],
-      "pergunta": "Em que posição deve entrar o pão na tostadeira?",
-      "alternativas": [
-        "Lado cortado para baixo",
-        "Lado cortado para cima",
-        "Qualquer posição",
-        "Depende do pão"
-      ],
-      "respostaCorreta": 0,
-      "explicacao": "O pão deve entrar na tostadeira com o lado cortado para baixo (face de tostagem).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_030",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⚙️ Linha · KVS",
+      "subcategoria": "🛤️ Embaixador · Trajeto",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": [
-        "cores",
-        "taylor-ng",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que significa quando um item fica vermelho no KVS?",
+      "tags": ["eixos", "ação"],
+      "pergunta": "Quais são os 3 grandes eixos de ação do Embaixador durante a viagem do cliente?",
       "alternativas": [
-        "Item cancelado",
-        "Item em espera há muito tempo — prioridade máxima",
-        "Item pronto para entregar",
-        "Falta de ingrediente"
+        "Planejar, Executar e Revisar",
+        "Observar, Interagir e Intervir",
+        "Cumprimentar, Vender e Despedir",
+        "Hospitalidade, Venda e Diversão"
       ],
       "respostaCorreta": 1,
-      "explicacao": "Item em vermelho no KVS indica que está esperando há muito tempo e deve ser priorizado.",
+      "explicacao": "Os 3 grandes eixos de ação são: Observar (ficar atento e alerta), Interagir (comunicar-se de forma oportuna) e Intervir (solucionar conflitos).",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1457,47 +288,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_031",
+      "id": "emb_011",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "🥩 Linha · Carnes",
+      "subcategoria": "🛤️ Embaixador · Trajeto",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "pao",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que o iniciador deve checar antes de acionar os pães?",
-      "alternativas": [
-        "Apenas o tipo do lanche",
-        "Se há carne disponível e o tempo correto na chapa",
-        "Apenas a quantidade de pão disponível",
-        "Nada, apenas acionar"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Verificar se há carne no tempo correto na chapa antes de acionar os pães.",
+      "tags": ["eixos", "intervir"],
+      "pergunta": "Qual eixo de ação inclui gerenciar soluções em conflitos e determinar quando acionar o Gerente de Plantão?",
+      "alternativas": ["Observar", "Interagir", "Intervir", "Comunicar"],
+      "respostaCorreta": 2,
+      "explicacao": "Intervir: gerencia soluções quando há problemas e determina quando deve levar um problema ao Gerente de Plantão.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1507,48 +314,147 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_032",
+      "id": "emb_012",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "⚙️ Linha · Posições",
+      "subcategoria": "🏆 Embaixador · Missão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "carne",
-        "producao",
-        "taylor-ng",
-        "temperatura"
-      ],
-      "pergunta": "Qual a principal responsabilidade do finalizador?",
+      "tags": ["missão", "pilares"],
+      "pergunta": "Quais são os 3 pilares da missão do Embaixador da Experiência?",
       "alternativas": [
-        "Preparar as carnes",
-        "Tostar os pães",
-        "Montar e condimentar os sanduíches",
-        "Entregar ao cliente"
+        "Atendimento, Vendas e Limpeza",
+        "Experiência da viagem do cliente, Experiência familiar e Construção de vendas",
+        "Hospitalidade, Diversão e Merchandising",
+        "Qualidade, Serviço e Valor"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os 3 pilares são: 1) Experiência da viagem do cliente, 2) Experiência familiar, 3) Construção de vendas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_013",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🏆 Embaixador · Missão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["vendas", "ticket", "pilares"],
+      "pergunta": "O que o pilar 'Construção de Vendas' visa principalmente?",
+      "alternativas": [
+        "Vender mais no balcão e caixa",
+        "Incrementar o ticket médio através de oferecimentos de produtos nas mesas",
+        "Aumentar o número de visitas ao restaurante",
+        "Reduzir o desperdício na cozinha"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Construção de vendas busca incrementar o ticket médio através de oferecimentos de produtos nas mesas — vendas além do balcão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_014",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "👨‍👩‍👧 Embaixador · Família",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["família", "crianças", "experiência"],
+      "pergunta": "Quais 3 características devem conjugar a experiência familiar ideal no restaurante?",
+      "alternativas": [
+        "Rápida, acessível e econômica",
+        "Fácil para os pais, divertida para as crianças e especial/memorável para todos",
+        "Organizada, limpa e segura",
+        "Personalizada, surpresa e exclusiva"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A experiência familiar ideal deve ser: Fácil para os pais, Divertida para as crianças e Especial/extraordinária/memorável para todos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_015",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "👨‍👩‍👧 Embaixador · Família",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": ["família", "regras de ouro"],
+      "pergunta": "Qual das 5 Regras de Ouro para famílias determina que o Embaixador deve estar disponível e disposto fundamentalmente nas horas de rush?",
+      "alternativas": ["Regra 1", "Regra 2", "Regra 3", "Regra 5"],
+      "respostaCorreta": 0,
+      "explicacao": "Regra 1: O Embaixador deve ficar disponível, atento e disposto fundamentalmente nas horas do rush ou de alta frequência de famílias.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_016",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "👨‍👩‍👧 Embaixador · Família",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["família", "regras de ouro", "crianças"],
+      "pergunta": "Segundo as 5 Regras de Ouro para famílias, o que o Embaixador deve garantir para TODAS as crianças?",
+      "alternativas": [
+        "Um balão de escultura",
+        "Desconto no pedido",
+        "Um presente, lembrança ou algum valor agregado",
+        "Mesa reservada prioritária"
       ],
       "respostaCorreta": 2,
-      "explicacao": "O finalizador é responsável por montar os sanduíches com os ingredientes corretos.",
+      "explicacao": "Regra 4: O Embaixador garante que todas as crianças levem um presente, uma lembrança ou algum outro valor agregado.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1558,49 +464,28 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_033",
+      "id": "emb_017",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "🍞 Linha · Best Burger",
+      "subcategoria": "📋 Embaixador · Atividades",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "pao",
-        "producao",
-        "taylor-ng",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que diferencia a montagem Best Burger da montagem convencional?",
+      "tags": ["pós-venda", "período"],
+      "pergunta": "Durante quais períodos o Embaixador realiza pós-venda de forma prioritária?",
       "alternativas": [
-        "Ingredientes diferentes",
-        "Montagem manual com carne plana e sem prensa",
-        "Tempo de preparo menor",
-        "Pão diferente"
+        "Somente pela manhã",
+        "No almoço e jantar (dias úteis), dia todo nos fins de semana",
+        "Apenas no café da manhã",
+        "Somente durante o rush de pico"
       ],
       "respostaCorreta": 1,
-      "explicacao": "No Best Burger, a montagem é manual, com carne plana, sem prensa e com foco na apresentação.",
+      "explicacao": "Hospitalidade: pós-venda no almoço e jantar nos dias úteis e dia todo nos fins de semana.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1610,247 +495,28 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     },
     {
-      "id": "embaixador_experiencia_html_034",
+      "id": "emb_018",
       "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "limite",
-        "producao",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo máximo entre o preparo e a entrega do sanduíche?",
-      "alternativas": [
-        "5 minutos",
-        "10 minutos",
-        "15 minutos",
-        "20 minutos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O sanduíche deve ser entregue em até 10 minutos após o preparo para garantir qualidade.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_035",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⚙️ Linha · Expedidor",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "peps",
-        "ppf",
-        "producao",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual a função do expedidor na linha?",
-      "alternativas": [
-        "Preparar carnes",
-        "Coordenar a montagem e garantir que pedidos saiam completos e no tempo",
-        "Operar a tostadeira",
-        "Controlar o estoque"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O expedidor coordena a linha, garante que os pedidos saiam corretos e no tempo.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_036",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "🥩 Linha · Carnes Best Burger",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "cebola",
-        "cores",
-        "temperatura"
-      ],
-      "pergunta": "Qual pegador usar para carnes com cebola no Best Burger?",
-      "alternativas": [
-        "Pegador vermelho",
-        "Pegador azul",
-        "Pegador amarelo",
-        "Nenhum pegador específico"
-      ],
-      "respostaCorreta": 0,
-      "explicacao": "No Best Burger, pegador vermelho para carnes com cebola e pegador azul para carnes sem cebola.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_037",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⏱️ Linha · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "limite",
-        "ppf",
-        "producao",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo máximo de preparo do pedido para o segmento balcão?",
-      "alternativas": [
-        "60 segundos",
-        "90 segundos",
-        "2 minutos",
-        "3 minutos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O tempo meta para preparação de pedido no balcão é de 90 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "embaixador_experiencia_html_038",
-      "categoria": "embaixador-experiencia",
-      "subcategoria": "⚙️ Linha · Comunicação",
+      "subcategoria": "📋 Embaixador · Atividades",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "producao"
-      ],
-      "pergunta": "O que significa a sigla SOS na linha de produção?",
+      "tags": ["não fazer", "atividades"],
+      "pergunta": "Qual das atividades a seguir o Embaixador NÃO deve realizar?",
       "alternativas": [
-        "Sistema de Operação do Sanduíche",
-        "Speed of Service — velocidade de atendimento",
-        "Serviço de Orientação ao Sanduíche",
-        "Sinalização de Operação de Sucesso"
+        "Realizar pós-venda no almoço e jantar",
+        "Limpar mesas, banheiros ou lixeiras",
+        "Vender sobremesas e bebidas nas mesas",
+        "Entregar PDPs às crianças"
       ],
       "respostaCorreta": 1,
-      "explicacao": "SOS = Speed of Service, indicador de velocidade de atendimento monitorado no restaurante.",
+      "explicacao": "Limpar mesas, banheiros ou lixeiras NÃO é função do Embaixador. Sua função é focada na experiência do cliente no salão.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1860,23 +526,486 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_019",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "📋 Embaixador · Atividades",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["funções", "atividades"],
+      "pergunta": "Quantas funções principais compõem as atividades do Embaixador da Experiência?",
+      "alternativas": ["3 funções", "4 funções", "5 funções", "7 funções"],
+      "respostaCorreta": 2,
+      "explicacao": "São 5 funções: 1) Hospitalidade, 2) Venda Além do Balcão, 3) Diversão das Crianças, 4) Festas de Aniversário, 5) Apoio ao Merchandising.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_020",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "📋 Embaixador · Atividades",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["merchandising", "comunicação"],
+      "pergunta": "A função de Apoio ao Merchandising é período chave em qual momento do dia?",
+      "alternativas": [
+        "Período chave: tarde",
+        "Período chave: manhã, antes do almoço",
+        "Período chave: fechamento",
+        "Período chave: qualquer horário"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Apoio ao Merchandising — período chave: manhã nos dias úteis, antes do almoço. Revisar e assegurar peças de comunicação limpas e em bom estado.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_021",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "📊 McExperiência · SMG",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["mcexperiência", "smg", "parceira"],
+      "pergunta": "Qual empresa é parceira do McDonald's no programa McExperiência?",
+      "alternativas": ["IEX", "Nielsen", "SMG — Service Management Group", "Gallup"],
+      "respostaCorreta": 2,
+      "explicacao": "A SMG (Service Management Group) é a provedora da pesquisa do McExperiência e ajuda a filtrar respostas de menor qualidade ou falsas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_022",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "📊 McExperiência · SMG",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["mcexperiência", "pontuação", "satisfação"],
+      "pergunta": "Qual é a única resposta que gera pontuação POSITIVA no McExperiência?",
+      "alternativas": ["Satisfeito", "Muito Satisfeito", "Indiferente", "Parcialmente Satisfeito"],
+      "respostaCorreta": 1,
+      "explicacao": "A única resposta considerada para pontuação positiva é 'Muito Satisfeito', aumentando a nota do restaurante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_023",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "📊 McExperiência · SMG",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["mcexperiência", "pesquisa", "tempo"],
+      "pergunta": "Uma pesquisa do McExperiência realizada em menos de quanto tempo é considerada inválida?",
+      "alternativas": ["30 segundos", "1 minuto", "2 minutos", "5 minutos"],
+      "respostaCorreta": 2,
+      "explicacao": "Pesquisas com tempo menor que 2 minutos são invalidadas pelo sistema SMG.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_024",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "📊 McExperiência · SMG",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["mcexperiência", "dispositivo", "limite"],
+      "pergunta": "Quantas vezes um mesmo dispositivo pode realizar a pesquisa do McExperiência dentro de 30 dias?",
+      "alternativas": ["1 vez", "2 vezes", "3 vezes", "Sem limite"],
+      "respostaCorreta": 1,
+      "explicacao": "O cliente pode realizar apenas 2 pesquisas dentro de 30 dias pelo mesmo dispositivo. Caso contrário, o sistema invalida.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_025",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "📊 McExperiência · SMG",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": ["mcexperiência", "cupom", "validade"],
+      "pergunta": "Por quanto tempo o cupom fiscal é válido para a pesquisa do McExperiência?",
+      "alternativas": ["3 dias", "5 dias", "7 dias", "15 dias"],
+      "respostaCorreta": 2,
+      "explicacao": "O cupom fiscal tem validade de 7 dias após a compra realizada.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_026",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "📊 McExperiência · SMG",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": ["mcexperiência", "celular", "restaurante"],
+      "pergunta": "O celular do restaurante pode ser usado para realizar a pesquisa do McExperiência?",
+      "alternativas": [
+        "Sim, sempre que necessário",
+        "Sim, com supervisão do gerente",
+        "Não — nunca deve ser usado para pesquisas",
+        "Somente em situações de emergência"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O celular do restaurante NÃO deve ser utilizado para realizar a pesquisa com o cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_027",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🎈 Embaixador · Balões",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": ["balões", "técnica"],
+      "pergunta": "Ao fazer esculturas de balão, qual é a recomendação correta sobre o enchimento?",
+      "alternativas": [
+        "Encher o balão completamente até o máximo",
+        "Deixar aproximadamente 5 cm sem ar na ponta",
+        "Encher apenas 3/4 do balão",
+        "O enchimento varia conforme cada escultura"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Não encher o balão até o final — deixar ~5 cm sem ar na ponta. O espaço sem ar varia conforme o número de dobraduras e nós necessários.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_028",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🎈 Embaixador · Balões",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": ["balões", "materiais"],
+      "pergunta": "Qual ferramenta é recomendada para encher os balões de escultura?",
+      "alternativas": ["Boca do Embaixador", "Compressor elétrico industrial", "Bomba de ar", "Qualquer método é válido"],
+      "respostaCorreta": 2,
+      "explicacao": "Usar sempre a bomba de ar — é mais rápido que soprar com a boca.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_029",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🤝 Embaixador · Equipe",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["equipe", "gerente", "comunicação"],
+      "pergunta": "Como o Embaixador deve se relacionar com o Gerente de Plantão?",
+      "alternativas": [
+        "Evitar interações desnecessárias durante o serviço",
+        "Reportar apenas problemas de grande impacto",
+        "Manter comunicação fluida, retroalimentação constante e trabalho colaborativo",
+        "Apenas seguir as ordens do gerente sem questionamentos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Embaixador deve manter com o Gerente de Plantão uma comunicação fluida de retroalimentação constante e trabalho colaborativo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_030",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🤝 Embaixador · Equipe",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["equipe", "chaves", "experiência"],
+      "pergunta": "Quais são as 4 chaves de uma boa experiência que o Embaixador deve dominar e transmitir à equipe?",
+      "alternativas": [
+        "Qualidade, Serviço, Limpeza e Valor",
+        "Ambiente agradável, Pedidos simples/eficazes, Experiência à mesa e Espaço estimulante",
+        "Hospitalidade, Venda, Diversão e Festas",
+        "Autenticidade, Conexão, Prioridade e Comida"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As 4 chaves: 1) Ambiente agradável e aconchegante, 2) Pedidos simples, eficazes e rápidos, 3) Experiência com entrega à mesa, 4) Espaço estimulante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_031",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "✅ Embaixador · Checklist",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["checklist", "LSM", "salões"],
+      "pergunta": "No Checklist Diário do Embaixador, WiFi funcionando, banheiros limpos e cadeirões disponíveis se enquadram em qual pilar da Pirâmide LSM?",
+      "alternativas": ["Exec. de Promoções", "Visibilidade e Acesso", "QSL&V", "Aumentar Vendas Locais"],
+      "respostaCorreta": 2,
+      "explicacao": "Itens de qualidade do ambiente nos Salões (WiFi, banheiros, cadeirões) pertencem ao pilar QSL&V (Qualidade, Serviço, Limpeza e Valor).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_032",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "✅ Embaixador · Checklist",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["checklist", "LSM", "totens NGK"],
+      "pergunta": "No Checklist Diário, itens como cardápios, preços e produtos esgotados nos Totens NGK se enquadram em qual pilar?",
+      "alternativas": ["QSL&V", "Exec. de Promoções", "Aumentar Vendas Locais", "Visibilidade e Acesso"],
+      "respostaCorreta": 1,
+      "explicacao": "Itens de comunicação, cardápios e promoções nos Totens NGK pertencem ao pilar Exec. de Promoções (Execução de Promoções).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_033",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "✅ Embaixador · Checklist",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["checklist", "áreas"],
+      "pergunta": "Quantas áreas são avaliadas ao total no Checklist Diário do Embaixador + RDM?",
+      "alternativas": ["8 áreas", "10 áreas", "12 áreas", "15 áreas"],
+      "respostaCorreta": 2,
+      "explicacao": "São 12 áreas: Área Externa, Drive-Thru, Totens NGK, Menu Balcão, Balcão EOTF, Criança e Família, Salões, Tablets de Mesa, Dessert Center, Cold Kiosk, McCafé e Comunicação Interna.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_034",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🌟 Embaixador · Perfil",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": ["autenticidade", "princípios", "imagem"],
+      "pergunta": "No princípio 'Autenticidade', como deve ser a presença do Embaixador?",
+      "alternativas": [
+        "Formal e distante para manter o profissionalismo",
+        "Informal ao ponto de ignorar os padrões de uniforme",
+        "Reflexo de tranquilidade e impecabilidade — com imagem cuidada, sua melhor versão",
+        "Relevante apenas nos momentos de alto movimento"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Autenticidade: sua presença deve refletir tranquilidade e impecabilidade — você tem sempre uma imagem cuidada e caprichada — sua melhor versão.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "emb_035",
+      "categoria": "embaixador-experiencia",
+      "subcategoria": "🛤️ Embaixador · Trajeto",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": ["tecnologia", "totens", "tablets"],
+      "pergunta": "O Embaixador pode auxiliar clientes com dificuldades em dispositivos tecnológicos como Totens NGK?",
+      "alternativas": [
+        "Não — isso é responsabilidade exclusiva da equipe de TI",
+        "Sim — reconhecendo clientes que precisam de ajuda e auxiliando-os",
+        "Apenas se solicitado pelo Gerente de Plantão",
+        "Somente para clientes da terceira idade"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Embaixador reconhece os clientes que podem precisar de ajuda com dispositivos tecnológicos para auxiliá-los — faz parte do eixo 'Observar'.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {"facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0},
+      "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
+      "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [],
       "relatedQuestions": []
     }

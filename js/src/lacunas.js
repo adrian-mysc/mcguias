@@ -76,12 +76,13 @@ function initLacuna(questions, guiaName) {
     return;
   }
 
-  var current    = 0;
-  var score      = 0;
-  var scoreHalf  = 0; // correct after hint
-  var answered   = false;
-  var hintUsed   = false;
-  var _qStart    = Date.now();
+  var current          = 0;
+  var score            = 0;
+  var scoreHalf        = 0; // correct after hint
+  var answered         = false;
+  var hintUsed         = false;
+  var _qStart          = Date.now();
+  var _lacunaResultShown = false;
 
   function render() {
     _qStart = Date.now();
@@ -205,12 +206,16 @@ function initLacuna(questions, guiaName) {
   };
 
   window.lacunaNext = function() {
+    var nb = document.getElementById('btn-next');
+    if (nb) { nb.disabled = true; nb.style.opacity = '0.5'; nb.style.pointerEvents = 'none'; }
     if (window._quizTimerInterval) { clearInterval(window._quizTimerInterval); window._quizTimerInterval = null; }
     current++;
     render();
   };
 
   function showLacunaResult() {
+    if (_lacunaResultShown) return;
+    _lacunaResultShown = true;
     var total    = pool.length;
     var fullPct  = Math.round((score / total) * 100);
     var halfPct  = Math.round(((score + scoreHalf * 0.5) / total) * 100);
