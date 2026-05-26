@@ -219,6 +219,41 @@
       color: var(--muted);
       font-weight: 500;
     }
+    /* ── Filtros ── */
+    .lb-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .lb-filter-bar select,
+    .lb-filter-bar input[type="text"] {
+      flex: 1;
+      min-width: 110px;
+      padding: 7px 10px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+    }
+    .lb-filter-bar select:focus,
+    .lb-filter-bar input[type="text"]:focus {
+      border-color: var(--red);
+    }
+    .lb-filter-active-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red);
+      padding: 3px 8px;
+      border-radius: 20px;
+      background: rgba(218,41,28,0.08);
+      align-self: center;
+    }
     /* ── CTA sem ranking ── */
     .lb-no-rank-cta {
       background: rgba(245,158,11,0.07);
@@ -318,6 +353,31 @@
           </button>
         </div>
         <div class="lb-last-updated" id="lastUpdated" style="margin-bottom:8px"></div>
+        <div class="lb-filter-bar">
+          <select id="filterEstado" onchange="applyFilters()">
+            <option value="">🗺️ Todos os estados</option>
+            <option value="AC">AC</option><option value="AL">AL</option>
+            <option value="AP">AP</option><option value="AM">AM</option>
+            <option value="BA">BA</option><option value="CE">CE</option>
+            <option value="DF">DF</option><option value="ES">ES</option>
+            <option value="GO">GO</option><option value="MA">MA</option>
+            <option value="MT">MT</option><option value="MS">MS</option>
+            <option value="MG">MG</option><option value="PA">PA</option>
+            <option value="PB">PB</option><option value="PR">PR</option>
+            <option value="PE">PE</option><option value="PI">PI</option>
+            <option value="RJ">RJ</option><option value="RN">RN</option>
+            <option value="RS">RS</option><option value="RO">RO</option>
+            <option value="RR">RR</option><option value="SC">SC</option>
+            <option value="SP">SP</option><option value="SE">SE</option>
+            <option value="TO">TO</option>
+          </select>
+          <input type="text" id="filterRestaurante" placeholder="🏪 Restaurante…" oninput="applyFilters()" maxlength="20">
+          <select id="filterSort" onchange="applyFilters()">
+            <option value="pontos">↓ Por pontos</option>
+            <option value="taxa">↓ Por % de acerto</option>
+            <option value="quizzes">↓ Por quizzes</option>
+          </select>
+        </div>
         <div class="lb-list" id="lbList">
           <div class="lb-row-skeleton skeleton"></div>
           <div class="lb-row-skeleton skeleton"></div>
@@ -412,9 +472,54 @@
       return (p.sigla || p.username || '?').charAt(0).toUpperCase();
     }
 
+    let allPlayers = [];
+    let currentRank = null;
+
     function esc(s) {
       return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
+
+    function applyFilters() {
+      const estado      = document.getElementById('filterEstado')?.value      || '';
+      const restaurante = (document.getElementById('filterRestaurante')?.value || '').trim().toUpperCase();
+      const sort        = document.getElementById('filterSort')?.value         || 'pontos';
+
+      let filtered = allPlayers.filter(p => {
+        if (estado && p.estado !== estado) return false;
+        if (restaurante && !(p.loja || '').toUpperCase().includes(restaurante)) return false;
+        return true;
+      });
+
+      if (sort === 'taxa') {
+        filtered = [...filtered].sort((a, b) => {
+          const ta = a.quizzes > 0 ? a.pontos / a.quizzes : 0;
+          const tb = b.quizzes > 0 ? b.pontos / b.quizzes : 0;
+          return tb - ta;
+        });
+      } else if (sort === 'quizzes') {
+        filtered = [...filtered].sort((a, b) => (b.quizzes || 0) - (a.quizzes || 0));
+      }
+
+      const list = el('lbList');
+      if (filtered.length === 0) {
+        list.innerHTML = `<div class="lb-empty">
+          <div class="lb-empty-icon">🔍</div>
+          <h3>Nenhum resultado</h3>
+          <p>Nenhum jogador encontrado para os filtros selecionados.</p>
+        </div>`;
+        return;
+      }
+
+      function isCurrentUser(p) {
+        if (!currentRank) return false;
+        if (currentRank.username && p.username) return p.username === currentRank.username;
+        if (currentRank.pontos == null || currentRank.quizzes == null) return false;
+        return p.pontos === currentRank.pontos && p.quizzes === currentRank.quizzes && currentRank.pontos > 0;
+      }
+
+      list.innerHTML = filtered.slice(0, 20).map((p, i) => rowHTML(i + 1, p, isCurrentUser(p))).join('');
+    }
+    window.applyFilters = applyFilters;
 
     function rowHTML(pos, p, isMe) {
       const medal  = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : null;
@@ -438,7 +543,23 @@
       </div>`;
     }
 
-    function renderList(players, rank) {
+    async function enrichWithProfiles(players) {
+      const uids = players.map(p => p.user_id).filter(Boolean);
+      if (!uids.length) return players;
+      try {
+        const SURL = 'https://iizzeeceqysdfhnkosrc.supabase.co';
+        const SKEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+        const res = await fetch(
+          `${SURL}/rest/v1/profiles?id=in.(${uids.join(',')})&select=id,estado,cidade`,
+          { headers: { apikey: SKEY, Authorization: `Bearer ${SKEY}` } }
+        );
+        const rows = res.ok ? await res.json() : [];
+        const map = Object.fromEntries(rows.map(r => [r.id, r]));
+        return players.map(p => ({ ...p, estado: map[p.user_id]?.estado || null, cidade: map[p.user_id]?.cidade || null }));
+      } catch { return players; }
+    }
+
+    async function renderList(players, rank) {
       const list = el('lbList');
 
       if (!players || players.length === 0) {
@@ -450,26 +571,18 @@
         return;
       }
 
-      // players vem do Supabase com: { user_id, username, loja, sigla, pontos, quizzes }
-      const top10 = players.slice(0, 10);
+      currentRank = rank;
 
-      // Identifica o usuário atual por username (preferencial) ou points+quizzes como fallback
-      function isCurrentUser(p) {
-        if (!rank) return false;
-        if (rank.username && p.username) return p.username === rank.username;
-        // Fallback: only match when both values are defined and non-zero to avoid false positives
-        if (rank.pontos == null || rank.quizzes == null) return false;
-        return p.pontos === rank.pontos && p.quizzes === rank.quizzes && rank.pontos > 0;
-      }
+      // Enriquece com estado/cidade dos perfis em background
+      const enriched = await enrichWithProfiles(players);
+      allPlayers = enriched;
 
-      let html = top10.map((p, i) => rowHTML(i + 1, p, isCurrentUser(p))).join('');
+      applyFilters();
 
       if (rank && rank.rank > 10) {
-        html += `<div class="lb-gap">···</div>`;
-        html += rowHTML(rank.rank, { username: rank.username || '—', loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes, avatar: rank.avatar }, true);
+        const myRow = rowHTML(rank.rank, { username: rank.username || '—', loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes, avatar: rank.avatar }, true);
+        list.innerHTML += `<div class="lb-gap">···</div>${myRow}`;
       }
-
-      list.innerHTML = html;
     }
 
     async function init() {
@@ -495,7 +608,7 @@
           players = players.map(p => ({ ...p, avatar: avatarMap0[p.user_id] || null }));
         }
         renderMyStats(rank);
-        renderList(players, rank);
+        await renderList(players, rank);
         return;
       } catch (e) {
         console.warn('Leaderboard RPC falhou, tentando consulta direta:', e.message);
@@ -514,7 +627,7 @@
         const avatarMap = ids.length ? await getAvatarsByUserIds(ids).catch(() => ({})) : {};
         adaptedPlayers = adaptedPlayers.map(p => ({ ...p, avatar: avatarMap[p.user_id] || null }));
         renderMyStats(adaptedRank);
-        renderList(adaptedPlayers, adaptedRank);
+        await renderList(adaptedPlayers, adaptedRank);
         return;
       } catch (e) {
         console.warn('Consulta direta falhou:', e.message);
@@ -541,6 +654,7 @@
       ['myRank','myPoints','myXp'].forEach(id => {
         const e = el(id); if (e) { e.classList.add('skeleton'); e.textContent = '—'; }
       });
+      allPlayers = [];
       el('lbList').innerHTML = Array(5).fill('<div class="lb-row-skeleton skeleton"></div>').join('');
       await init();
       setLastUpdated();
@@ -600,7 +714,7 @@
         ${rankEl}
         <div class="lb-avatar">${avatarInner}</div>
         <div class="lb-name-wrap">
-          <div class="lb-name">${name}${youTag}</div>
+          <div class="lb-name"><a href="perfil-publico.html?u=${encodeURIComponent(p.username || '')}" style="color:inherit;text-decoration:none;">${name}</a>${youTag}</div>
           <div class="lb-loja">${p.total_battles} batalha${p.total_battles !== 1 ? 's' : ''} · ${p.losses} derrota${p.losses !== 1 ? 's' : ''}</div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0">
