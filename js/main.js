@@ -140,7 +140,8 @@ function renderStats(containerId) {
   });
 
   // Overall stats
-  var allPcts = hist.map(function(h) { return Math.round((h.score / h.total) * 100); });
+  var allPcts = hist.filter(function(h) { return h.total > 0; }).map(function(h) { return Math.round((h.score / h.total) * 100); });
+  if (!allPcts.length) allPcts = [0];
   var avgAll = Math.round(allPcts.reduce(function(a, b) { return a + b; }, 0) / allPcts.length);
   var best = Math.max.apply(null, allPcts);
 
@@ -385,16 +386,7 @@ function initChecklist() {
   });
 }
 
-var _lastSaveTs = 0;
-var _lastSaveKey = '';
 function saveQuizResult(guia, score, total) {
-  // Guard: block duplicate submissions from the same session within 5 seconds
-  const key = guia + ':' + score + ':' + total;
-  const now = Date.now();
-  if (key === _lastSaveKey && now - _lastSaveTs < 5000) return;
-  _lastSaveKey = key;
-  _lastSaveTs  = now;
-
   _flushSRData(); // ensure SR writes are committed before quiz end
   const hist = McStorage.get('mc_quiz_history', []);
   const date = new Date().toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
@@ -510,8 +502,8 @@ function prioritizeQuestions(questions) {
     if (aDue && !bDue) return -1;
     if (!aDue && bDue) return 1;
 
-    const aRatio = da.wrong / (da.correct + da.wrong + 1);
-    const bRatio = db.wrong / (db.correct + db.wrong + 1);
+    const aRatio = da.wrong / Math.max(1, da.correct + da.wrong);
+    const bRatio = db.wrong / Math.max(1, db.correct + db.wrong);
     return bRatio - aRatio;
   });
 }

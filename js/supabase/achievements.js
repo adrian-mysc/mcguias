@@ -14,7 +14,7 @@ export async function unlockAchievement(key) {
       { onConflict: 'user_id,achievement_key', ignoreDuplicates: true }
     );
 
-  if (error) console.error('unlockAchievement:', error);
+  if (error) throw error;
 }
 
 export async function getAchievements() {

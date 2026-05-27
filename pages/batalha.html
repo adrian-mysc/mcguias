@@ -569,6 +569,8 @@
     let oppWoInterval = null;
     let finishWatcher = null;
     let timer = null;
+    let _answerSubmitted = false;
+    let _showResultsCalled = false;
     let pendingBattle = null;
     let waitingId = null;
     let pendingTarget = null;
@@ -1110,6 +1112,9 @@
     }
 
     window.answer = function(idx) {
+      if (_answerSubmitted) return; // evita double-submit (toque + timeout simultâneos)
+      _answerSubmitted = true;
+
       clearInterval(timer);
       const q = questions[qIndex];
       const correct = idx >= 0 && idx === q.respostaCorreta;
@@ -1127,6 +1132,7 @@
       qIndex++;
 
       setTimeout(() => {
+        _answerSubmitted = false;
         if (qIndex >= questions.length) finishBattle();
         else showQuestion();
       }, 1300);
@@ -1159,6 +1165,7 @@
         el('oppStatus').textContent = '⏳ Oponente ainda está respondendo...';
 
         // Watch DB for both finished
+        _showResultsCalled = false;
         finishWatcher = supabase.channel(`bfin-${currentBattle.id}`)
           .on('postgres_changes', {
             event: 'UPDATE', schema: 'public', table: 'battles',
@@ -1166,6 +1173,8 @@
           }, ({ new: b }) => {
             currentBattle = b;
             if (b.player1_finished && b.player2_finished) {
+              if (_showResultsCalled) return;
+              _showResultsCalled = true;
               if (finishWatcher) { supabase.removeChannel(finishWatcher); finishWatcher = null; }
               showResults();
             }
@@ -1174,6 +1183,8 @@
 
         // Timeout after 90s
         setTimeout(() => {
+          if (_showResultsCalled) return;
+          _showResultsCalled = true;
           if (finishWatcher) { supabase.removeChannel(finishWatcher); finishWatcher = null; }
           showResults();
         }, 90000);
@@ -1307,10 +1318,12 @@
     }
 
     window.goLobby = function() {
+      if (timer)          { clearInterval(timer);          timer          = null; }
       if (oppWoInterval)  { clearInterval(oppWoInterval); oppWoInterval = null; }
       if (battleChannel)  { supabase.removeChannel(battleChannel);  battleChannel  = null; }
       if (battleWatcher)  { supabase.removeChannel(battleWatcher);  battleWatcher  = null; }
       if (finishWatcher)  { supabase.removeChannel(finishWatcher);  finishWatcher  = null; }
+      _answerSubmitted = false; _showResultsCalled = false;
       currentBattle = null; questions = []; myProgress = []; myAnswers = []; oppProgress = []; oppBroadcastScore = null;
       el('reviewToggle').style.display = 'none';
       el('reviewSection').style.display = 'none';

@@ -79,8 +79,8 @@ function prioritizeQuestions(questions) {
     if (aDue && !bDue) return -1;
     if (!aDue && bDue) return 1;
 
-    const aRatio = da.wrong / (da.correct + da.wrong + 1);
-    const bRatio = db.wrong / (db.correct + db.wrong + 1);
+    const aRatio = da.wrong / Math.max(1, da.correct + da.wrong);
+    const bRatio = db.wrong / Math.max(1, db.correct + db.wrong);
     return bRatio - aRatio;
   });
 }

@@ -1709,7 +1709,12 @@
 
   // ── Logout ────────────────────────────────────────────
   function handleLogout() {
-    // scope:'local' evita requisição de rede — limpa sessão localmente e redireciona imediatamente
+    const userKeys = [
+      'mc_perfil_dados', 'mc_perfil_foto', 'mc_username', 'mc_user_data',
+      'mc_quiz_history', 'mc_sr_v2', 'mc_sessions_synced', 'mc_onboarded',
+      'gamificacao', 'mc_acompanhamento', 'mc_ocorrencias',
+    ];
+    userKeys.forEach(k => localStorage.removeItem(k));
     supabase.auth.signOut({ scope: 'local' }).catch(() => {});
     window.location.replace('login.html');
   }
