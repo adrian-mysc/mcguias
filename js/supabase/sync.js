@@ -21,7 +21,8 @@ async function syncQuizSessions(userId) {
   const newCount = Math.max(0, history.length - alreadySynced);
   if (!newCount) return;
 
-  const toSync = history.slice(0, newCount);
+  // history is newest-first (unshift), so the unsynced items are at the END
+  const toSync = history.slice(-newCount);
 
   const rows = toSync.map(h => ({
     user_id:    userId,
@@ -202,3 +203,10 @@ window.addEventListener('mc:quizComplete', async (e) => {
 window.addEventListener('online', () => {
   syncToCloud().catch(console.error);
 });
+
+// Sincroniza sessões pendentes no carregamento da página (garante sync de histórico antigo)
+if (typeof window !== 'undefined') {
+  window.addEventListener('DOMContentLoaded', () => {
+    if (navigator.onLine) syncToCloud().catch(console.error);
+  });
+}
