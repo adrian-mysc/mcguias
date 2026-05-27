@@ -110,12 +110,28 @@
     <div class="navbar-inner">
       <a class="navbar-logo" href="../index.html">M</a>
       <div class="navbar-brand">
-        <h1>Gerentes</h1>
-        <p>RDM · Rota · Caminho Crítico</p>
+        <h1>Conteúdo para Gerentes</h1>
+        <p>Área Restrita</p>
       </div>
       <a href="../index.html" class="navbar-back">← Início</a>
     </div>
   </nav>
+
+  <!-- Senha de Acesso -->
+  <div id="pw-wall" style="max-width:400px;margin:40px auto;padding:0 16px;">
+    <div style="background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow-md);">
+      <div style="font-size:40px;margin-bottom:12px;">🔐</div>
+      <h2 style="font-family:var(--font-display);font-size:20px;margin-bottom:6px;">Área Restrita</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:20px;">Conteúdo exclusivo para Gerentes</p>
+      <input type="password" id="pw-input" placeholder="Digite a senha..." autocomplete="current-password"
+        style="width:100%;box-sizing:border-box;padding:12px 14px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--bg);outline:none;margin-bottom:10px;">
+      <div id="pw-error" style="display:none;color:#c62828;font-size:12px;margin-bottom:10px;">❌ Senha incorreta. Tente novamente.</div>
+      <button onclick="checkPassword()" style="width:100%;padding:12px;background:var(--red);color:#fff;border:none;border-radius:var(--radius-md);font-family:var(--font-display);font-size:15px;font-weight:800;cursor:pointer;">Entrar</button>
+      <p style="font-size:11px;color:var(--muted);margin-top:14px;">Senha fornecida pela equipe de gestão</p>
+    </div>
+  </div>
+
+  <div id="pw-content" style="display:none;">
 
   <div class="page-tabs">
     <div class="page-tabs-inner">
@@ -733,11 +749,62 @@
 
   </div>
 
+  </div><!-- #pw-content -->
+
   <footer class="site-footer">
     <strong>MC Guias</strong> · Gerentes · Desenvolvido por Adrian E. Silva
   </footer>
 
   <script src="../js/main.js" defer></script>
   <script type="module" src="../js/supabase/sync.js"></script>
+  <script>
+    /* ===== SENHA DE ACESSO ===== */
+    var STORAGE_KEY = 'mc_gerente_auth';
+    var PW_HASH = '98ec4ee87e461aa980d5ef58d68042c4a5b9b1d957bd04eac40f8b2fc582816a'; // sha256('gerente')
+
+    function hashStr(str) {
+      return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
+        .then(function(buf) {
+          return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+        });
+    }
+
+    function unlock() {
+      var wall = document.getElementById('pw-wall');
+      var cont = document.getElementById('pw-content');
+      if (wall) wall.style.display = 'none';
+      if (cont) cont.style.display = 'block';
+    }
+
+    window.checkPassword = function() {
+      var val = document.getElementById('pw-input').value;
+      var err = document.getElementById('pw-error');
+      hashStr(val).then(function(hash) {
+        if (hash === PW_HASH) {
+          sessionStorage.setItem(STORAGE_KEY, '1');
+          if (err) err.style.display = 'none';
+          unlock();
+        } else {
+          if (err) err.style.display = 'block';
+          var inp = document.getElementById('pw-input');
+          if (inp) { inp.value = ''; inp.focus(); }
+        }
+      });
+    };
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && document.getElementById('pw-input') === document.activeElement) {
+        window.checkPassword();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+        unlock();
+      }
+      var input = document.getElementById('pw-input');
+      if (input) input.focus();
+    });
+  </script>
 </body>
 </html>
