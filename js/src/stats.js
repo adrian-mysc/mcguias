@@ -26,7 +26,8 @@ function renderStats(containerId) {
   });
 
   // Overall stats
-  var allPcts = hist.map(function(h) { return Math.round((h.score / h.total) * 100); });
+  var allPcts = hist.filter(function(h) { return h.total > 0; }).map(function(h) { return Math.round((h.score / h.total) * 100); });
+  if (!allPcts.length) allPcts = [0];
   var avgAll = Math.round(allPcts.reduce(function(a, b) { return a + b; }, 0) / allPcts.length);
   var best = Math.max.apply(null, allPcts);
 

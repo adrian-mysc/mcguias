@@ -609,7 +609,7 @@
       cem_porcento:    (opts.pct || 0) === 100,
       especialista_bb: guide.indexOf('best-burguer') !== -1 && (opts.maxStreak || 0) >= 10,
       mestre_bb:       guide.indexOf('best-burguer') !== -1 && pct >= 90,
-      cebola_expert:   guide.indexOf('best-burguer') !== -1 && (opts.pct || 0) === 100,
+      cebola_expert:   guide.indexOf('best-burguer') !== -1 && (opts.pct || 0) === 100 && (opts.total || 0) >= 20,
       padeiro_bb:      guide.indexOf('best-burguer') !== -1 && pct >= 90 && (stats.quizzesBB || 0) >= 2,
       bb_perfeito:     guide.indexOf('best-burguer') !== -1 && (opts.pct || 0) === 100,
     };

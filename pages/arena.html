@@ -1345,12 +1345,13 @@
         { emoji: '🥈', cls: 'p2', barCls: 'p2' },
         { emoji: '🥉', cls: 'p3', barCls: 'p3' },
       ];
-      const podiumOrder = list.length >= 2
-        ? (list.length >= 3 ? [list[1], list[0], list[2]] : [list[0], list[1]])
-        : [list[0]];
-      const podiumMedals = list.length >= 2
-        ? (list.length >= 3 ? [medals[1], medals[0], medals[2]] : [medals[0], medals[1]])
-        : [medals[0]];
+      // Ordem visual do pódio: 2º à esquerda, 1º no centro, 3º à direita
+      const podiumOrder = list.length >= 3
+        ? [list[1], list[0], list[2]]
+        : list.length === 2 ? [list[1], list[0]] : [list[0]];
+      const podiumMedals = list.length >= 3
+        ? [medals[1], medals[0], medals[2]]
+        : list.length === 2 ? [medals[1], medals[0]] : [medals[0]];
 
       el('resPodium').innerHTML = podiumOrder.map((p, i) => {
         if (!p) return '';
@@ -1408,7 +1409,7 @@
     };
 
     function cleanup() {
-      clearInterval(timer);
+      clearInterval(timer); timer = null;
       clearInterval(pollInterval); pollInterval = null;
       if (arenaChannel)       { supabase.removeChannel(arenaChannel);       arenaChannel       = null; }
       if (sessionWatcher)     { supabase.removeChannel(sessionWatcher);     sessionWatcher     = null; }

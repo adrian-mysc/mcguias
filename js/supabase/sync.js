@@ -34,10 +34,11 @@ async function syncQuizSessions(userId) {
   const { error } = await supabase.from('quiz_sessions').insert(rows);
   if (error) {
     console.error('sync quiz_sessions:', error);
-    return;
+    return; // não avança o ponteiro — próxima sync vai tentar de novo
   }
 
   localStorage.setItem('mc_sessions_synced', JSON.stringify(history.length));
+  // ^ só marcado após insert bem-sucedido
 }
 
 // Batch upsert — 1 request instead of N sequential calls
@@ -58,7 +59,6 @@ async function syncLeaderboard() {
 
   const perfilDados = mcGet('mc_perfil_dados', {});
   const username = mcGet('mc_username', null)
-    || mcGet('mc_user_data', {}).username
     || perfilDados.apelido
     || perfilDados.nome
     || 'Jogador';
@@ -179,15 +179,23 @@ export async function syncToCloud() {
 }
 
 // Sync completo após cada quiz: sessão + leaderboard + conquistas + desafios em paralelo
+// Lock evita race condition se dois quizzes terminarem em rápida sucessão
+let _syncInProgress = false;
 window.addEventListener('mc:quizComplete', async (e) => {
-  const gamData = mcGet('gamificacao', null);
-  const tasks = [
-    syncOneSession(e.detail).catch(console.error),
-    syncLeaderboard().catch(console.error),
-    syncWeeklyChallenges().catch(console.error),
-  ];
-  if (gamData?.conquistas?.length) tasks.push(syncAchievements(gamData.conquistas).catch(console.error));
-  await Promise.all(tasks);
+  if (_syncInProgress) return;
+  _syncInProgress = true;
+  try {
+    const gamData = mcGet('gamificacao', null);
+    const tasks = [
+      syncOneSession(e.detail).catch(console.error),
+      syncLeaderboard().catch(console.error),
+      syncWeeklyChallenges().catch(console.error),
+    ];
+    if (gamData?.conquistas?.length) tasks.push(syncAchievements(gamData.conquistas).catch(console.error));
+    await Promise.all(tasks);
+  } finally {
+    _syncInProgress = false;
+  }
 });
 
 // Sincroniza automaticamente ao recuperar conexão
