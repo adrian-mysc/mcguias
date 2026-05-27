@@ -163,6 +163,21 @@
     .hist-strip-body { padding:10px 12px; display:flex; flex-direction:column; gap:7px; }
     .hist-empty { font-size:13px; color:var(--muted); padding:4px 0; }
 
+    /* ---- Banner semanal ---- */
+    .weekly-banner-inner { padding:14px 16px; display:flex; align-items:flex-start; gap:12px; }
+    .weekly-banner-icon { font-size:30px; line-height:1; flex-shrink:0; margin-top:2px; }
+    .weekly-banner-body { flex:1; min-width:0; }
+    .weekly-banner-tag { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.7px; opacity:.75; margin-bottom:3px; }
+    .weekly-banner-title { font-size:15px; font-weight:800; line-height:1.2; margin-bottom:3px; }
+    .weekly-banner-desc { font-size:12px; opacity:.82; line-height:1.4; }
+    .weekly-banner-progress { margin-top:10px; }
+    .weekly-banner-bar-bg { height:5px; border-radius:3px; background:rgba(255,255,255,0.25); overflow:hidden; }
+    .weekly-banner-bar-fill { height:100%; border-radius:3px; background:rgba(255,255,255,0.85); transition:width .6s ease; }
+    .weekly-banner-prog-text { font-size:11px; font-weight:700; opacity:.8; margin-top:5px; }
+    .weekly-banner-close { font-size:16px; background:none; border:none; color:inherit; opacity:.6; cursor:pointer; padding:0 0 0 6px; flex-shrink:0; line-height:1; align-self:flex-start; }
+    .weekly-banner-close:hover { opacity:1; }
+    #weekly-banner { animation:revealUp .4s .68s cubic-bezier(0.22,1,.36,1) both; }
+
     /* ---- Section labels ---- */
     .category-section { display:flex; flex-direction:column; gap:13px; }
     .category-label { display:flex; align-items:center; gap:8px; }
@@ -670,6 +685,9 @@
       <div class="hist-strip-head">📊 Últimos simulados <a href="pages/quiz.html">Ver quiz →</a></div>
       <div class="hist-strip-body" id="histStripBody"><div class="hist-empty">Nenhum simulado realizado ainda.</div></div>
     </div>
+
+    <!-- Banner de desafio semanal -->
+    <div id="weekly-banner" style="display:none;border-radius:14px;overflow:hidden;margin-bottom:4px;"></div>
 
     <div class="no-results" id="noResults"><span>🔍</span>Nenhum guia encontrado para "<span id="noResultsTerm"></span>"</div>
 
@@ -1475,6 +1493,70 @@
           else if (perm === 'denied') { btn.style.display = 'none'; }
         });
       };
+    })();
+
+    /* ── Banner de desafio semanal ──────────────────────────── */
+    (function() {
+      function initWeeklyBanner() {
+        if (!window.Gamificacao) { setTimeout(initWeeklyBanner, 200); return; }
+
+        var tema = window.Gamificacao.getTemaSemana();
+        if (!tema) return;
+
+        var snap = window.Gamificacao.getSnapshot();
+        var semana = snap.desafiosSemanais && snap.desafiosSemanais.semana;
+
+        // Dismiss key — per week
+        var dismissKey = 'mc_banner_dismiss_' + (semana || tema.semana);
+        if (localStorage.getItem(dismissKey)) return;
+
+        var concluidos = (snap.desafiosSemanais && snap.desafiosSemanais.concluidos) || [];
+
+        // Themed challenges for this week (tema.semana)
+        var DESAFIOS = window.Gamificacao.DESAFIOS || [];
+        var tematicos = DESAFIOS.filter(function(d) { return d.tema === tema.semana; });
+        var concluidosTema = tematicos.filter(function(d) { return concluidos.indexOf(d.id) !== -1; }).length;
+        var totalTema = tematicos.length;
+
+        // General progress
+        var totalConcluidos = concluidos.length;
+        var totalDesafios = DESAFIOS.length;
+
+        var pct = totalDesafios > 0 ? Math.round((totalConcluidos / totalDesafios) * 100) : 0;
+
+        var banner = document.getElementById('weekly-banner');
+        if (!banner) return;
+
+        banner.innerHTML =
+          '<div class="weekly-banner-inner" style="background:linear-gradient(135deg,' + tema.cor + 'dd 0%,' + tema.cor + '99 100%);color:#fff;">'
+          + '<div class="weekly-banner-icon">' + tema.icon + '</div>'
+          + '<div class="weekly-banner-body">'
+          +   '<div class="weekly-banner-tag">Desafio da semana</div>'
+          +   '<div class="weekly-banner-title">' + tema.nome + '</div>'
+          +   '<div class="weekly-banner-desc">' + tema.desc + '</div>'
+          +   '<div class="weekly-banner-progress">'
+          +     '<div class="weekly-banner-bar-bg"><div class="weekly-banner-bar-fill" style="width:' + pct + '%"></div></div>'
+          +     '<div class="weekly-banner-prog-text">'
+          +       (totalTema > 0
+          +         ? concluidosTema + '/' + totalTema + ' desafios temáticos · '
+          +         : '')
+          +       totalConcluidos + '/' + totalDesafios + ' desafios totais'
+          +     '</div>'
+          +   '</div>'
+          + '</div>'
+          + '<button class="weekly-banner-close" onclick="dismissWeeklyBanner(\'' + dismissKey + '\')" aria-label="Fechar">✕</button>'
+          + '</div>';
+
+        banner.style.display = 'block';
+      }
+
+      window.dismissWeeklyBanner = function(key) {
+        localStorage.setItem(key, '1');
+        var banner = document.getElementById('weekly-banner');
+        if (banner) { banner.style.opacity = '0'; banner.style.transition = 'opacity .25s'; setTimeout(function() { banner.style.display = 'none'; }, 260); }
+      };
+
+      initWeeklyBanner();
     })();
 
     /* ── Study time session tracker ────────────────────────── */

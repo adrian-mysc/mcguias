@@ -990,6 +990,7 @@
   <div class="section-card">
     <div class="section-header">
       <div class="section-title">Estatísticas</div>
+      <button id="btn-sync-hist" onclick="syncHistorico()" style="font-size:12px;font-weight:700;color:var(--red);background:none;border:1.5px solid var(--red);border-radius:20px;padding:4px 12px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:opacity .2s;">🔄 Sincronizar</button>
     </div>
 
     <!-- XP / Nível -->
@@ -1714,6 +1715,29 @@
   }
   window.handleLogout = handleLogout;
 
+  // ── Sincronizar histórico ─────────────────────────────
+  window.syncHistorico = async function syncHistorico() {
+    const btn = document.getElementById('btn-sync-hist');
+    if (!btn || btn.disabled) return;
+    btn.disabled = true;
+    btn.textContent = '⏳ Sincronizando…';
+    try {
+      const { syncToCloud } = await import('../js/supabase/sync.js');
+      await syncToCloud();
+      btn.textContent = '✅ Sincronizado';
+      showToast('Histórico sincronizado com sucesso!');
+      setTimeout(() => renderAll(), 800);
+    } catch (e) {
+      console.error('sync error', e);
+      btn.textContent = '❌ Erro';
+      showToast('Erro ao sincronizar. Tente novamente.');
+    } finally {
+      setTimeout(() => {
+        btn.textContent = '🔄 Sincronizar';
+        btn.disabled = false;
+      }, 3000);
+    }
+  };
 
   // ── Toast ─────────────────────────────────────────────
   function showToast(msg) {
