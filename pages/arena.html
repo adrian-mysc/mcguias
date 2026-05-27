@@ -441,6 +441,12 @@
       <div id="waitPlayerList"></div>
       <div id="waitStartHint" class="ar-start-hint"></div>
 
+      <div style="display:flex;justify-content:center;margin-bottom:8px;">
+        <button class="btn-secondary" id="refreshPlayersBtn" onclick="refreshPlayers()" style="font-size:13px;padding:8px 18px;">
+          🔄 Atualizar jogadores
+        </button>
+      </div>
+
       <div id="hostStartWrap" style="display:none;display:flex;flex-direction:column;gap:8px">
         <button class="btn-primary" id="startBtn" style="width:100%" disabled onclick="hostStartBattle()">
           🏁 Iniciar batalha
@@ -572,6 +578,7 @@
     let sessionWatcher = null;
     let participantsWatcher = null;
     let timer = null;
+    let pollInterval = null;
     let finishedCount = 0;
     let totalPlayers = 0;
 
@@ -820,6 +827,8 @@
       showView('view-waiting');
       subscribeToSession();
       loadParticipants();
+      // Polling de fallback: recarrega participantes a cada 8s caso o realtime falhe
+      pollInterval = setInterval(loadParticipants, 8000);
     }
 
     async function loadParticipants() {
@@ -897,6 +906,16 @@
       });
     };
 
+    window.refreshPlayers = async function() {
+      const btn = document.getElementById('refreshPlayersBtn');
+      if (btn) { btn.disabled = true; btn.textContent = '⏳ Atualizando...'; }
+      await loadParticipants();
+      if (btn) {
+        btn.textContent = '✅ Atualizado!';
+        setTimeout(() => { btn.disabled = false; btn.textContent = '🔄 Atualizar jogadores'; }, 1500);
+      }
+    };
+
     // ── Session realtime subscription ─────────────────────
     function subscribeToSession() {
       // Watch session status changes
@@ -961,6 +980,7 @@
 
     // ── Battle start ───────────────────────────────────────
     async function startBattle() {
+      clearInterval(pollInterval); pollInterval = null;
       // Load questions from DB order
       try {
         const isMixed = session.question_ids.some(id => id.includes('::'));
@@ -1388,6 +1408,7 @@
 
     function cleanup() {
       clearInterval(timer);
+      clearInterval(pollInterval); pollInterval = null;
       if (arenaChannel)       { supabase.removeChannel(arenaChannel);       arenaChannel       = null; }
       if (sessionWatcher)     { supabase.removeChannel(sessionWatcher);     sessionWatcher     = null; }
       if (participantsWatcher){ supabase.removeChannel(participantsWatcher);participantsWatcher = null; }
