@@ -647,15 +647,6 @@
       font-weight: 800;
       color: #FFC72C;
     }
-    /* ── Emoji picker ── */
-    .emoji-pick-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-    .emoji-current { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-    .emoji-current-val { font-size: 28px; line-height: 1; }
-    .emoji-current-hint { font-size: 11px; color: var(--muted); }
-    .emoji-grid-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
-    .emoji-opt { width: 36px; height: 36px; font-size: 20px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 1.5px solid var(--border); background: var(--bg); cursor: pointer; transition: all 0.12s; }
-    .emoji-opt:hover { border-color: var(--red); transform: scale(1.12); }
-    .emoji-opt.selected { border-color: var(--red); background: rgba(218,41,28,0.08); }
     /* ── Link perfil público ── */
     .hero-username {
       font-size: 11.5px;
@@ -794,14 +785,6 @@
           <div class="data-value" id="view-nome">—</div>
         </div>
         <div class="data-item">
-          <div class="data-label">Apelido</div>
-          <div class="data-value" id="view-apelido">—</div>
-        </div>
-        <div class="data-item">
-          <div class="data-label">Sigla (no avatar)</div>
-          <div class="data-value" id="view-sigla">—</div>
-        </div>
-        <div class="data-item">
           <div class="data-label">Cargo</div>
           <div class="data-value" id="view-cargo">—</div>
         </div>
@@ -847,30 +830,6 @@
               <input type="text" id="edit-nome" placeholder="Seu nome completo">
             </div>
           </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label>Apelido</label>
-            <div class="field-wrap">
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <input type="text" id="edit-apelido" placeholder="Ex: Kadu" maxlength="30">
-            </div>
-          </div>
-          <div class="field">
-            <label>Sigla (avatar)</label>
-            <div class="field-wrap">
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg>
-              <input type="text" id="edit-sigla" placeholder="Ex: KS" maxlength="4" style="text-transform:uppercase;letter-spacing:2px;font-weight:700">
-            </div>
-          </div>
-        </div>
-        <div class="field full">
-          <div class="emoji-pick-label">Avatar público (emoji)</div>
-          <div class="emoji-current">
-            <span class="emoji-current-val" id="emojiCurrentVal">😊</span>
-            <span class="emoji-current-hint">Aparece no seu perfil público</span>
-          </div>
-          <div class="emoji-grid-wrap" id="emojiGrid"></div>
         </div>
         <div class="field-row">
           <div class="field full">
@@ -1114,7 +1073,7 @@
           </div>
           <div class="action-text">
             <div class="action-label">Remover foto</div>
-            <div class="action-desc">Voltar à sigla padrão</div>
+            <div class="action-desc">Voltar ao avatar padrão</div>
           </div>
           <svg class="action-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
         </div>
@@ -1151,8 +1110,6 @@
   });
 
   // ── Emoji picker — declarado aqui para evitar TDZ ──────
-  const EMOJIS = ['😊','😎','🤩','🥳','💪','🔥','⭐','🏆','🍔','🍟','☕','🧁','👑','🎯','🚀','💡','🌟','🦁','🐯','🦊','🎮','📚','💼','🛡️','⚡'];
-  let _selectedEmoji = '😊';
 
   // ── Rota ─────────────────────────────────────────────
   const { data: { session } } = await supabase.auth.getSession();
@@ -1173,7 +1130,7 @@
   // ── Supabase profile ──────────────────────────────────
   let { data: profile } = await supabase
     .from('profiles')
-    .select('username, loja, sigla, avatar_emoji, cargo, avatar, estado, cidade')
+    .select('username, display_name, loja, sigla, avatar_emoji, cargo, avatar, estado, cidade')
     .eq('id', user.id)
     .single();
 
@@ -1181,6 +1138,19 @@
     || user.user_metadata?.full_name
     || user.email?.split('@')[0]
     || 'Usuário';
+
+  // Sincroniza dados do Supabase → localStorage na entrada da página
+  // Garante persistência de nome/cidade/estado mesmo após limpeza do cache local
+  if (profile) {
+    const local = loadLocalDados();
+    const merged = { ...local };
+    if (profile.display_name && !local.nome) merged.nome   = profile.display_name;
+    if (profile.estado       && !local.estado) merged.estado = profile.estado;
+    if (profile.cidade       && !local.cidade) merged.cidade  = profile.cidade;
+    if (profile.loja         && !local.loja)   merged.loja    = profile.loja;
+    if (profile.cargo        && !local.cargo)  merged.cargo   = profile.cargo;
+    saveLocalDados(merged);
+  }
 
   // Se há foto na nuvem e não temos local, pré-carrega no localStorage
   if (profile?.avatar && !localStorage.getItem('mc_perfil_foto')) {
@@ -1275,25 +1245,23 @@
   // ── Avatar helpers ────────────────────────────────────
   const AVATAR_KEY = 'mc_perfil_foto';
 
-  function renderAvatar(apelido, photoDataUrl) {
+  function renderAvatar(initial, photoDataUrl) {
     const el = document.getElementById('avatar-el');
     if (photoDataUrl) {
       el.innerHTML = `<img src="${photoDataUrl}" alt="Foto de perfil">`;
     } else {
-      const sigla = (apelido || '?').slice(0, 3).toUpperCase();
-      el.innerHTML = `<span id="avatar-initial" style="font-size:${sigla.length > 2 ? '22px' : '36px'}">${sigla}</span>`;
+      const letter = (initial || '?')[0].toUpperCase();
+      el.innerHTML = `<span id="avatar-initial" style="font-size:36px">${letter}</span>`;
     }
   }
 
   // ── Render UI ─────────────────────────────────────────
   async function renderAll() {
     const local  = loadLocalDados();
-    const nome   = local.nome || supabaseUsername;
-    const apelido = local.apelido || '';
-    const sigla  = local.sigla || profile?.sigla || '';
-    const cargo  = local.cargo || profile?.cargo || '';
-    const loja   = local.loja  || profile?.loja  || '';
-    const turno  = local.turno || '';
+    const nome   = local.nome   || profile?.display_name || supabaseUsername;
+    const cargo  = local.cargo  || profile?.cargo  || '';
+    const loja   = local.loja   || profile?.loja   || '';
+    const turno  = local.turno  || '';
     const admissao = local.admissao || '';
     const telefone = local.telefone || '';
     const estado = local.estado || profile?.estado || '';
@@ -1303,8 +1271,7 @@
     const stats = await calcStats();
 
     // Hero
-    const displayName = apelido || nome;
-    document.getElementById('hero-name').textContent = displayName;
+    document.getElementById('hero-name').textContent = nome;
     const usernameEl = document.getElementById('hero-username');
     if (usernameEl) usernameEl.textContent = profile?.username ? `@${profile.username}` : '';
     document.getElementById('hero-role').textContent = cargo && loja ? `${cargo} · ${loja}` : (cargo || loja || email);
@@ -1312,9 +1279,8 @@
     document.getElementById('hero-nivel').textContent = `⭐ ${stats.nivel.nome}`;
     document.getElementById('streak-num').textContent = stats.diasConsec;
 
-    // Avatar — usa sigla definida pelo usuário, ou inicial do apelido/nome
-    const siglaAvatar = sigla || (apelido ? apelido[0] : (nome ? nome[0] : '?'));
-    renderAvatar(siglaAvatar, photo);
+    // Avatar — usa inicial do nome
+    renderAvatar(nome ? nome[0] : '?', photo);
 
     // View dados
     function setVal(id, val, fallback) {
@@ -1327,10 +1293,8 @@
         el.classList.add('empty');
       }
     }
-    setVal('view-nome',     nome);
-    setVal('view-apelido',  apelido, 'Não definido');
-    setVal('view-sigla',    sigla,   'Não definida');
-    setVal('view-cargo',    cargo,   'Não definido');
+    setVal('view-nome',  nome);
+    setVal('view-cargo', cargo, 'Não definido');
     setVal('view-loja',     loja,    'Não definido');
     setVal('view-estado',   estado,  'Não definido');
     setVal('view-cidade',   cidade,  'Não definida');
@@ -1345,10 +1309,8 @@
     }
 
     // Edit form pre-fill
-    document.getElementById('edit-nome').value     = nome;
-    document.getElementById('edit-apelido').value  = apelido;
-    document.getElementById('edit-sigla').value    = sigla;
-    document.getElementById('edit-cargo').value    = cargo;
+    document.getElementById('edit-nome').value  = nome;
+    document.getElementById('edit-cargo').value = cargo;
     document.getElementById('edit-loja').value     = loja;
     document.getElementById('edit-turno').value    = turno;
     document.getElementById('edit-admissao').value = admissao;
@@ -1358,10 +1320,6 @@
     estadoEl.value = estado;
     onEstadoChange();
     document.getElementById('edit-cidade').value = cidade;
-
-    // Emoji picker
-    const savedEmoji = local.avatar_emoji || profile?.avatar_emoji || '😊';
-    selectEmoji(savedEmoji);
 
     // Stats
     document.getElementById('stat-quizzes').textContent  = stats.quizzesTotal;
@@ -1447,7 +1405,12 @@
     }
   }
 
-  buildEmojiGrid(); await renderAll().catch(e => console.error('renderAll error:', e));
+  await renderAll().catch(e => console.error('renderAll error:', e));
+
+  // ── Auto-sync ao entrar no perfil ─────────────────────
+  import('../js/supabase/sync.js').then(({ syncToCloud }) => {
+    syncToCloud().catch(console.error);
+  }).catch(console.error);
 
   // ── Ranking online card ───────────────────────────────
   import('../js/supabase/leaderboard.js').then(async ({ getOnlineUserRank, getUserRank }) => {
@@ -1570,8 +1533,6 @@
 
   async function saveDados() {
     const nome     = document.getElementById('edit-nome').value.trim();
-    const apelido  = document.getElementById('edit-apelido').value.trim();
-    const sigla    = document.getElementById('edit-sigla').value.trim().toUpperCase().slice(0, 4);
     const cargo    = document.getElementById('edit-cargo').value;
     const loja     = document.getElementById('edit-loja').value.trim().replace(/[^A-Za-zÀ-ÿ\s\-]/g, '').toUpperCase();
     const turno    = document.getElementById('edit-turno').value;
@@ -1585,24 +1546,21 @@
       return;
     }
 
-    const avatarEmoji = document.getElementById('emojiCurrentVal').textContent || '😊';
-
     // Save locally
-    saveLocalDados({ nome, apelido, sigla, cargo, loja, turno, admissao, telefone, estado, cidade, avatar_emoji: avatarEmoji });
+    saveLocalDados({ nome, cargo, loja, turno, admissao, telefone, estado, cidade });
 
-    // Derive a URL-safe username from apelido or nome (keep existing if not overridable)
-    const baseSlug = (apelido || nome)
+    // Derive a URL-safe username from nome (keep existing if already set)
+    const baseSlug = nome
       .toLowerCase()
       .normalize('NFD').replace(/[̀-ͯ]/g, '')
       .replace(/[^a-z0-9]+/g, '_')
       .replace(/^_+|_+$/g, '')
       .slice(0, 26) || 'user';
-    // Garante unicidade do username usando sufixo do UUID do usuário
     const newUsername = profile?.username || `${baseSlug}_${user.id.slice(0, 6)}`;
 
     // Save to supabase — onConflict:'id' garante que o conflito seja resolvido
     // pela chave primária, não pela constraint UNIQUE do username
-    const basePayload = { id: user.id, username: newUsername, display_name: nome, loja, sigla, cargo, avatar_emoji: avatarEmoji };
+    const basePayload = { id: user.id, username: newUsername, display_name: nome, loja, cargo };
     let { error: upsertErr } = await supabase
       .from('profiles')
       .upsert({ ...basePayload, estado, cidade }, { onConflict: 'id' });
@@ -1624,7 +1582,7 @@
     }
 
     // Atualiza o perfil em memória para que saves subsequentes usem o username correto
-    profile = { ...(profile || {}), username: newUsername, display_name: nome, loja, sigla, cargo, avatar_emoji: avatarEmoji, estado, cidade };
+    profile = { ...(profile || {}), username: newUsername, display_name: nome, loja, cargo, estado, cidade };
 
     toggleDadosEdit(false);
     await renderAll();
@@ -1657,8 +1615,7 @@
         // Salva localmente para acesso offline
         localStorage.setItem(AVATAR_KEY, dataUrl);
         const ld = loadLocalDados();
-        const sig = ld.sigla || (ld.apelido ? ld.apelido[0] : (ld.nome || supabaseUsername)[0] || '?');
-        renderAvatar(sig, dataUrl);
+        renderAvatar((ld.nome || supabaseUsername)[0] || '?', dataUrl);
         showToast('📸 Foto atualizada!');
 
         // Upload para Supabase Storage em background
@@ -1759,26 +1716,6 @@
     el.className = 'inline-msg ' + type;
     el.textContent = text;
     setTimeout(() => { el.className = 'inline-msg'; }, 4000);
-  }
-
-  // ── Emoji picker ──────────────────────────────────────
-
-  function selectEmoji(emoji) {
-    _selectedEmoji = emoji;
-    const cur = document.getElementById('emojiCurrentVal');
-    if (cur) cur.textContent = emoji;
-    document.querySelectorAll('.emoji-opt').forEach(el => {
-      el.classList.toggle('selected', el.dataset.emoji === emoji);
-    });
-  }
-  window.selectEmoji = selectEmoji;
-
-  function buildEmojiGrid() {
-    const grid = document.getElementById('emojiGrid');
-    if (!grid) return;
-    grid.innerHTML = EMOJIS.map(e =>
-      `<button type="button" class="emoji-opt" data-emoji="${e}" onclick="selectEmoji('${e}')" title="${e}">${e}</button>`
-    ).join('');
   }
 
   // ── Link de perfil público ──────────────────────────────
