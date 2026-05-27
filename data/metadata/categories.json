@@ -8,9 +8,20 @@
       "icone": "🍔",
       "cor": "#f59e0b",
       "descricao": "Carnes, temperaturas, limpeza da chapa e produção",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 41,
-      "tags": ["carne", "temperatura", "limpeza", "bacon", "ovo", "4:1", "10:1", "taylor-ng"]
+      "tags": [
+        "carne",
+        "temperatura",
+        "limpeza",
+        "bacon",
+        "ovo",
+        "4:1",
+        "10:1",
+        "taylor-ng"
+      ]
     },
     {
       "id": "lope",
@@ -18,9 +29,19 @@
       "icone": "🥬",
       "cor": "#22c55e",
       "descricao": "Linha de operação — tomate, cebola, queijo, alface e rota",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 80,
-      "tags": ["tomate", "cebola", "queijo", "alface", "rota", "validade", "peps"]
+      "tags": [
+        "tomate",
+        "cebola",
+        "queijo",
+        "alface",
+        "rota",
+        "validade",
+        "peps"
+      ]
     },
     {
       "id": "mcfritas",
@@ -28,9 +49,18 @@
       "icone": "🍟",
       "cor": "#eab308",
       "descricao": "Produção, temperatura do óleo, porção e qualidade das McFritas",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 33,
-      "tags": ["oleo", "temperatura", "validade", "sal", "porcao", "taylor-ng"]
+      "tags": [
+        "oleo",
+        "temperatura",
+        "validade",
+        "sal",
+        "porcao",
+        "taylor-ng"
+      ]
     },
     {
       "id": "fritas",
@@ -38,9 +68,17 @@
       "icone": "🍟",
       "cor": "#ca8a04",
       "descricao": "Procedimentos de fritura, óleo e produção de fritas",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 24,
-      "tags": ["oleo", "temperatura", "validade", "sal", "porcao"]
+      "tags": [
+        "oleo",
+        "temperatura",
+        "validade",
+        "sal",
+        "porcao"
+      ]
     },
     {
       "id": "fritos",
@@ -48,9 +86,16 @@
       "icone": "🧅",
       "cor": "#d97706",
       "descricao": "Fritos, tempura, cebola frita e produtos empanados",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 38,
-      "tags": ["temperatura", "validade", "taylor-ng", "uhc"]
+      "tags": [
+        "temperatura",
+        "validade",
+        "taylor-ng",
+        "uhc"
+      ]
     },
     {
       "id": "condimentacao",
@@ -58,9 +103,18 @@
       "icone": "🧂",
       "cor": "#ef4444",
       "descricao": "Molhos, queijo, cebola e montagem de lanches",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 40,
-      "tags": ["carne", "queijo", "molho", "temperatura", "validade", "taylor-ng"]
+      "tags": [
+        "carne",
+        "queijo",
+        "molho",
+        "temperatura",
+        "validade",
+        "taylor-ng"
+      ]
     },
     {
       "id": "linha",
@@ -68,9 +122,18 @@
       "icone": "🏭",
       "cor": "#3b82f6",
       "descricao": "Fluxo da linha de produção e montagem",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 38,
-      "tags": ["ppf", "carne", "10:1", "4:1", "uhc", "validade"]
+      "tags": [
+        "ppf",
+        "carne",
+        "10:1",
+        "4:1",
+        "uhc",
+        "validade"
+      ]
     },
     {
       "id": "drive-thru",
@@ -78,9 +141,17 @@
       "icone": "🚗",
       "cor": "#8b5cf6",
       "descricao": "Atendimento, PPF, OEPE e fluxo do Drive-Thru",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 38,
-      "tags": ["oepe", "ppf", "atendimento", "tempo", "carne"]
+      "tags": [
+        "oepe",
+        "ppf",
+        "atendimento",
+        "tempo",
+        "carne"
+      ]
     },
     {
       "id": "embaixador-experiencia",
@@ -88,9 +159,16 @@
       "icone": "⭐",
       "cor": "#f97316",
       "descricao": "Padrões de experiência e atendimento ao cliente",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 38,
-      "tags": ["atendimento", "ppf", "tempo", "carne"]
+      "tags": [
+        "atendimento",
+        "ppf",
+        "tempo",
+        "carne"
+      ]
     },
     {
       "id": "influencer-pagamento",
@@ -98,9 +176,16 @@
       "icone": "💳",
       "cor": "#06b6d4",
       "descricao": "Formas de pagamento, influencer e operação de caixa",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 37,
-      "tags": ["ppf", "atendimento", "tecnica", "tempo"]
+      "tags": [
+        "ppf",
+        "atendimento",
+        "tecnica",
+        "tempo"
+      ]
     },
     {
       "id": "montagem-entrega",
@@ -108,9 +193,16 @@
       "icone": "📦",
       "cor": "#84cc16",
       "descricao": "Montagem de bandeja, pedidos e entrega ao cliente",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 39,
-      "tags": ["ppf", "atendimento", "organizacao", "tempo"]
+      "tags": [
+        "ppf",
+        "atendimento",
+        "organizacao",
+        "tempo"
+      ]
     },
     {
       "id": "salao-ngk",
@@ -118,9 +210,16 @@
       "icone": "🪑",
       "cor": "#14b8a6",
       "descricao": "Limpeza e organização do salão e Next Generation Kitchen",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 39,
-      "tags": ["limpeza", "frequencia", "panos", "atendimento"]
+      "tags": [
+        "limpeza",
+        "frequencia",
+        "panos",
+        "atendimento"
+      ]
     },
     {
       "id": "estoque-recebimento",
@@ -128,9 +227,16 @@
       "icone": "📦",
       "cor": "#64748b",
       "descricao": "Recebimento de mercadorias, PEPS e organização do estoque",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 30,
-      "tags": ["peps", "validade", "temperatura", "organizacao"]
+      "tags": [
+        "peps",
+        "validade",
+        "temperatura",
+        "organizacao"
+      ]
     },
     {
       "id": "fechamento",
@@ -138,9 +244,16 @@
       "icone": "🌙",
       "cor": "#475569",
       "descricao": "Procedimentos de fechamento da loja",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 30,
-      "tags": ["limpeza", "validade", "tempo", "taylor-ng"]
+      "tags": [
+        "limpeza",
+        "validade",
+        "tempo",
+        "taylor-ng"
+      ]
     },
     {
       "id": "seguranca-alimento",
@@ -148,9 +261,17 @@
       "icone": "🛡️",
       "cor": "#dc2626",
       "descricao": "Zona de perigo, PEPS, higiene, refrigeração e contaminação",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 21,
-      "tags": ["temperatura", "peps", "higiene", "refrigeracao", "contaminacao"]
+      "tags": [
+        "temperatura",
+        "peps",
+        "higiene",
+        "refrigeracao",
+        "contaminacao"
+      ]
     },
     {
       "id": "bebidas-sobremesas",
@@ -158,9 +279,16 @@
       "icone": "🥤",
       "cor": "#ec4899",
       "descricao": "McShake, McFlurry, Sundae, sucos e demais bebidas",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 36,
-      "tags": ["temperatura", "porcao", "angulo", "taylor-ng"]
+      "tags": [
+        "temperatura",
+        "porcao",
+        "angulo",
+        "taylor-ng"
+      ]
     },
     {
       "id": "manutencao-preventivas",
@@ -168,9 +296,17 @@
       "icone": "🔧",
       "cor": "#0ea5e9",
       "descricao": "SMPD, fichas de manutenção, calibragem e procedimentos diários",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 30,
-      "tags": ["smpd", "preventiva", "calibragem", "limpeza", "lubrificacao"]
+      "tags": [
+        "smpd",
+        "preventiva",
+        "calibragem",
+        "limpeza",
+        "lubrificacao"
+      ]
     },
     {
       "id": "best-burguer",
@@ -178,9 +314,20 @@
       "icone": "🍔",
       "cor": "#a855f7",
       "descricao": "Chapa Best Burguer, UHC, cebola, HEBT e procedimentos",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 44,
-      "tags": ["uhc", "carne", "temperatura", "validade", "hebt", "10:1", "4:1", "look-bump-cook"]
+      "tags": [
+        "uhc",
+        "carne",
+        "temperatura",
+        "validade",
+        "hebt",
+        "10:1",
+        "4:1",
+        "look-bump-cook"
+      ]
     },
     {
       "id": "mccafe",
@@ -188,9 +335,45 @@
       "icone": "☕",
       "cor": "#92400e",
       "descricao": "Café, Foamino, forno, ovos, receitas e equipamentos do McCafé",
-      "niveis": ["basico"],
+      "niveis": [
+        "basico"
+      ],
       "totalQuestoes": 46,
-      "tags": ["temperatura", "tempo", "cafe", "forno", "leite", "ovos", "cookie", "sanduiche", "manteiga"]
+      "tags": [
+        "temperatura",
+        "tempo",
+        "cafe",
+        "forno",
+        "leite",
+        "ovos",
+        "cookie",
+        "sanduiche",
+        "manteiga"
+      ]
+    },
+    {
+      "id": "olimpiada",
+      "nome": "Olimpíada de Básicos",
+      "icone": "🏆",
+      "cor": "#f59e0b",
+      "descricao": "462 perguntas e respostas da Olimpíada de Básicos — cobre todas as áreas do restaurante",
+      "niveis": [
+        "basico"
+      ],
+      "totalQuestoes": 577,
+      "tags": [
+        "olimpiada",
+        "chapa",
+        "fritas",
+        "fritos",
+        "bebidas",
+        "gerencia",
+        "drive",
+        "condimentacao",
+        "manutencao",
+        "estoque",
+        "seguranca"
+      ]
     }
   ]
 }
