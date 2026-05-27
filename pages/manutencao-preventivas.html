@@ -148,6 +148,7 @@
       <button class="tab-btn" data-tab="maquinas">⚙️ Máquinas</button>
       <button class="tab-btn" data-tab="leite">🥛 Leite</button>
       <button class="tab-btn" data-tab="sorvete">🍦 Sorvete</button>
+      <button class="tab-btn" data-tab="brixagem">🧪 Brixagem</button>
       <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
     </div>
   </div>
@@ -212,6 +213,7 @@
               <tr><td class="ficha-num">12I</td><td>Verificação da temperatura do banho-maria das coberturas</td><td>Máquina de sorvete (HT-C602/HT-C716)</td></tr>
               <tr><td class="ficha-num">12N</td><td>Limpeza e sanitização do dispensador de amendoim</td><td>Máquina de sorvete (HT-C602/HT-C716)</td></tr>
               <tr><td class="ficha-num">120</td><td>Calibragem da velocidade de extração do sorvete</td><td>Máquina de sorvete (HT-C602/HT-C716) — 2× ao dia</td></tr>
+              <tr><td class="ficha-num">11B</td><td>Calibração da brixagem (proporção água/xarope)</td><td>Dispensadores de bebidas (Bag in Box) — semanal ou quando necessário</td></tr>
             </tbody>
           </table>
         </div>
@@ -1303,6 +1305,64 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="tab-panel" id="panel-brixagem">
+      <div class="section-label">Ficha 11B — Brixagem</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧪</div><h2>Calibração da Brixagem — Proporção Água/Xarope</h2></div>
+        <div class="card-body">
+          <div class="ficha-badge">FICHA 11B</div>
+          <div class="period-tag">⏱ Semanal ou sempre que necessário</div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">A brixagem é o processo de calibração da proporção correta entre água e xarope nos dispensadores de bebidas Bag in Box. Garante o sabor padronizado do produto final.</p>
+
+          <div class="tools-list" style="margin-bottom:16px;">
+            <div class="tool-chip">🥤 Copo medidor brix</div>
+            <div class="tool-chip">🔧 Chave Philips</div>
+            <div class="tool-chip">🔧 Chave de fenda</div>
+            <div class="tool-chip">🔩 Bico separador</div>
+            <div class="tool-chip">🧻 Panos</div>
+          </div>
+
+          <div class="alert warn" style="margin-bottom:14px;">⚠️ Antes de iniciar: verificar se o regulador de pressão está ajustado em <strong>4 kg/cm²</strong> (Bag in Box).</div>
+
+          <div style="overflow-x:auto;margin-bottom:16px;">
+            <table class="data-table">
+              <thead><tr><th>Produto</th><th>Copo Medidor</th><th>Proporção</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Coca-Cola / Coca-Cola Zero</strong></td><td>5.2:1 oz</td><td>5,2 partes água : 1 parte xarope</td></tr>
+                <tr><td><strong>Fanta / Kuat / Kuat Zero</strong></td><td>4.2:1 oz</td><td>4,2 partes água : 1 parte xarope</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:10px;">Procedimento de Calibração</h3>
+          <ol style="margin:0;padding-left:18px;font-size:13px;line-height:1.8;color:var(--text);">
+            <li>Usar o copo medidor correto para o produto a ser calibrado.</li>
+            <li>Dispensar a bebida no copo até a marca de <strong>3 oz</strong>.</li>
+            <li>Verificar se água e xarope estão no <strong>mesmo nível</strong> (marca de 3 oz).</li>
+            <li>Se o xarope estiver abaixo da marca (bebida aguada): girar o parafuso regulador no sentido <strong>horário</strong> para aumentar o xarope.</li>
+            <li>Se o xarope estiver acima da marca (bebida doce demais): girar o parafuso regulador no sentido <strong>anti-horário</strong> para diminuir o xarope.</li>
+            <li>Repetir o processo até ambos os níveis estarem iguais na marca de 3 oz.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head"><div class="card-head-icon">📋</div><h2>Referência Rápida</h2></div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="stat-box"><div class="stat-label">Pressão regulador</div><div class="stat-value">4 kg/cm²</div></div>
+            <div class="stat-box"><div class="stat-label">Nível de leitura</div><div class="stat-value">3 oz</div></div>
+            <div class="stat-box"><div class="stat-label">Copo Coca / Zero</div><div class="stat-value">5.2:1 oz</div></div>
+            <div class="stat-box"><div class="stat-label">Copo Fanta/Kuat</div><div class="stat-value">4.2:1 oz</div></div>
+          </div>
+          <div style="margin-top:12px;font-size:13px;color:var(--muted);">
+            <strong>Horário (↻)</strong> = aumenta xarope &nbsp;|&nbsp; <strong>Anti-horário (↺)</strong> = diminui xarope
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="tab-panel" id="panel-quiz">
