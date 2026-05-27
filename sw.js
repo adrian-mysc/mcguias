@@ -1,7 +1,7 @@
-// MC Guias — Service Worker v35
-// Atualização: pre-cache de todos os JSON de questões para suporte offline completo
+// MC Guias — Service Worker v36
+// Atualização: bump de versão para forçar limpeza de caches antigos em todos os clientes
 
-const CACHE = 'mc-guias-v35';
+const CACHE = 'mc-guias-v36';
 const offlineFallbackPage = '/mcguias/offline.html';
 
 const PRECACHE_ASSETS = [
