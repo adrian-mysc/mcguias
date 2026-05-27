@@ -1,6 +1,35 @@
 {
   "versions": [
     {
+      "version": "v12",
+      "date": "2026-05-27",
+      "date_display": "27 Mai 2026",
+      "badge": "Olimpíada · 1500+ Questões",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "🏆",
+          "text": "**577 questões da Olimpíada de Básicos** — banco completo com perguntas e respostas oficiais cobrindo todas as áreas: Chapa, McFritas, Fritos, Bebidas e Sobremesas, Condimentação, Drive-Thru, Montagem e Entrega, Salão, Manutenção Preventiva, Estoque e Recebimento, Segurança do Alimento e Gerência. Disponível no simulado, batalha e arena.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "📖",
+          "text": "**Enriquecimento com PDF oficial** — 115 questões novas incorporadas do documento oficial da Olimpíada de Básicos, com detecção automática de conflitos e deduplicação. Todas as respostas múltipla escolha geradas com distratores do mesmo tipo semântico (temperatura, tempo, peso, medida).",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🔧",
+          "text": "**4 inconsistências corrigidas** — conflitos detectados e resolvidos entre as duas fontes: velocidade do Sundae no Taylor-NG, ferramentas de diagnóstico do Dessert Center, início da extração e benefícios do treinamento estruturado.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "📈",
+          "text": "**1500+ questões no simulado** — o banco total do MC Guias ultrapassa 1500 perguntas entre todas as categorias, guias e a nova Olimpíada de Básicos.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
       "version": "v11",
       "date": "2026-05-26",
       "date_display": "26 Mai 2026",

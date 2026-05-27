@@ -1,7 +1,7 @@
-// MC Guias — Service Worker v21
+// MC Guias — Service Worker v35
 // Atualização: pre-cache de todos os JSON de questões para suporte offline completo
 
-const CACHE = 'mc-guias-v34';
+const CACHE = 'mc-guias-v35';
 const offlineFallbackPage = '/mcguias/offline.html';
 
 const PRECACHE_ASSETS = [
@@ -37,6 +37,7 @@ const PRECACHE_ASSETS = [
   '/mcguias/data/questions/gerencia/basico.json',
   '/mcguias/data/questions/lideranca/basico.json',
   '/mcguias/data/questions/treinador/basico.json',
+  '/mcguias/data/questions/olimpiada/basico.json',
 ];
 
 self.addEventListener('install', (event) => {
