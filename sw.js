@@ -1,7 +1,7 @@
-// MC Guias — Service Worker v36
+// MC Guias — Service Worker v37
 // Atualização: bump de versão para forçar limpeza de caches antigos em todos os clientes
 
-const CACHE = 'mc-guias-v36';
+const CACHE = 'mc-guias-v37';
 const offlineFallbackPage = '/mcguias/offline.html';
 
 const PRECACHE_ASSETS = [
@@ -12,6 +12,9 @@ const PRECACHE_ASSETS = [
   '/mcguias/js/main.js',
   '/mcguias/js/gamificacao.js',
   '/mcguias/js/auth-guard.js',
+  '/mcguias/js/theme.js',
+  '/mcguias/js/questionLoader.js',
+  '/mcguias/js/changelog.js',
   '/mcguias/manifest.json',
   // Questões — garantem funcionamento 100% offline desde a instalação do PWA
   '/mcguias/data/questions/chapa/basico.json',
@@ -122,15 +125,20 @@ self.addEventListener('notificationclick', (event) => {
   );
 });
 
-// ---- Fetch: network-first com fallback de cache ----
+// Set de pathnames pré-cacheados para cache-first lookup rápido
+const PRECACHE_SET = new Set(PRECACHE_ASSETS);
+
+// ---- Fetch: estratégias por tipo de recurso ----
 self.addEventListener('fetch', (event) => {
   const url        = new URL(event.request.url);
   const isImage    = /\.(png|jpg|jpeg|svg|webp|ico)$/.test(url.pathname);
   const isNavigate = event.request.mode === 'navigate';
+  const isPrecached = PRECACHE_SET.has(url.pathname);
 
   // Ignora cross-origin (CDNs, Google Fonts, etc.)
   if (url.origin !== self.location.origin) return;
 
+  // Cache-first para imagens
   if (isImage) {
     event.respondWith(
       caches.match(event.request).then((cached) => {
@@ -144,10 +152,36 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Cache-first para assets pré-cacheados (JS, CSS, JSON de questões)
+  // Estes só mudam quando o CACHE é bumpeado — servir do cache é sempre seguro e mais rápido
+  if (isPrecached) {
+    event.respondWith((async () => {
+      const cache  = await caches.open(CACHE);
+      const cached = await cache.match(event.request);
+      if (cached) {
+        // Revalida em background sem bloquear a resposta
+        fetch(event.request).then((resp) => {
+          if (resp && resp.status === 200) cache.put(event.request, resp.clone());
+        }).catch(() => {});
+        return cached;
+      }
+      // Fallback: busca na rede se não estiver no cache ainda
+      const networkResp = await fetch(event.request);
+      if (networkResp && networkResp.status === 200) cache.put(event.request, networkResp.clone());
+      return networkResp;
+    })());
+    return;
+  }
+
+  // Network-first com timeout de 3s para navegação e outros requests
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
     try {
-      const networkResp = await fetch(event.request);
+      const timeoutPromise = isNavigate
+        ? new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000))
+        : null;
+      const fetchPromise  = fetch(event.request);
+      const networkResp   = await (timeoutPromise ? Promise.race([fetchPromise, timeoutPromise]) : fetchPromise);
       if (networkResp && networkResp.status === 200) {
         cache.put(event.request, networkResp.clone());
       }

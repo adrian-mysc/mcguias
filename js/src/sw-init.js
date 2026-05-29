@@ -20,7 +20,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/mcguias/sw.js')
       .then(function(reg) {
-
+        window._swRegistration = reg;
         setInterval(function() { reg.update(); }, 60 * 60 * 1000);
       })
       .catch(err => console.log('SW error:', err));
@@ -56,10 +56,8 @@ function mcShowUpdateToast() {
     + 'background:#1565c0;color:#fff;padding:12px 18px;border-radius:24px;'
     + 'font-size:13px;font-weight:700;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);'
     + 'display:flex;align-items:center;gap:10px;white-space:nowrap;max-width:90vw;';
-  toast.innerHTML = '🆕 Nova versão disponível! <button onclick="location.reload()" style="background:#fff;color:#1565c0;border:none;border-radius:16px;padding:4px 12px;font-size:12px;font-weight:800;cursor:pointer;margin-left:4px;">Atualizar</button>'
+  toast.innerHTML = '🆕 Nova versão disponível! <button onclick="applyUpdate()" style="background:#fff;color:#1565c0;border:none;border-radius:16px;padding:4px 12px;font-size:12px;font-weight:800;cursor:pointer;margin-left:4px;">Atualizar</button>'
     + '<button onclick="this.parentNode.remove()" style="background:rgba(255,255,255,0.2);color:#fff;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:14px;line-height:1;flex-shrink:0;">×</button>';
   document.body.appendChild(toast);
 }
 
-// Checar atualizações a cada 60s
-setInterval(() => { if (window._swRegistration) window._swRegistration.update(); }, 60000);
