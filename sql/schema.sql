@@ -1,3 +1,17 @@
+-- =============================================================================
+-- ⚠️  LEGADO / DESATUALIZADO — NÃO é a fonte de verdade do schema.
+-- =============================================================================
+-- Este arquivo NÃO reflete o estado real do banco de produção. Faltam tabelas
+-- (battle_stats, weekly_challenges, arena_sessions, arena_participants),
+-- colunas (leaderboard.cached_points, profiles.estado/cidade), funções e
+-- triggers. Além disso, partes aqui CONFLITAM com as migrations (ex.:
+-- achievements_select é criado nos dois lugares).
+--
+-- ➡️  A fonte de verdade é `supabase/migrations/` (ver README de lá).
+--     Para reconstruir o banco do zero, use `supabase db pull`.
+--
+-- Mantido apenas como referência histórica do schema inicial.
+-- =============================================================================
 
 create extension if not exists "uuid-ossp";
 

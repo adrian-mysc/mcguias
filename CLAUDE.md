@@ -134,6 +134,39 @@ Campos salvos **apenas em localStorage** (não no banco): `turno`, `admissao`, `
 
 ---
 
+## Migrations do Banco (fonte de verdade)
+
+**A fonte de verdade do schema é `supabase/migrations/`, NÃO `sql/schema.sql`.**
+O `sql/schema.sql` é legado/incompleto e conflita com as migrations. Para
+reconstruir o banco use `supabase db pull`. Toda mudança de schema deve virar
+uma migration nova (`supabase migration new ...`).
+
+### Convenções de RLS
+
+- Em policies, **sempre** use `(select auth.uid())` em vez de `auth.uid()` puro
+  (evita reavaliação por linha — lint `auth_rls_initplan`).
+- **Não** use `FOR ALL` quando já existe uma policy `FOR SELECT` pública na
+  mesma tabela: separe em INSERT/UPDATE/DELETE (evita `multiple_permissive_policies`).
+- Funções devem ter `SET search_path` fixo (`public` se o corpo referencia
+  tabelas sem schema-qualificação).
+
+### Idempotência de `quiz_sessions`
+
+Cada sessão de quiz recebe um `csid` (UUID estável, gerado em `saveQuizResult`
+no `js/src/stats.js`) que vai no evento `mc:quizComplete` e é enviado como
+`client_session_id`. O `sync.js` faz **upsert com `onConflict:
+'user_id,client_session_id'` + `ignoreDuplicates`** — assim, se o ponteiro de
+sync (`mc_sessions_synced`) dessincronizar, a sessão não é duplicada (o que
+inflaria a pontuação, já que `get_leaderboard` faz `SUM(score)`).
+
+### Modelo de pontos (atenção)
+
+Há 3 fontes: `SUM(quiz_sessions.score)`, `leaderboard.points` e
+`leaderboard.cached_points` (mantido por trigger). `get_leaderboard` usa
+`GREATEST(SUM, points)`. Ainda não unificado — cuidado ao alterar rankings.
+
+---
+
 ## Padrões de Código
 
 - **Sem frameworks**: tudo Vanilla JS. Não introduza React, Vue, etc.

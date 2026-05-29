@@ -25,14 +25,19 @@ async function syncQuizSessions(userId) {
   const toSync = history.slice(-newCount);
 
   const rows = toSync.map(h => ({
-    user_id:    userId,
-    guide:      h.guia || 'desconhecido',
-    score:      h.score  || 0,
-    total:      h.total  || 0,
-    percentage: h.total > 0 ? Math.round((h.score / h.total) * 100) : 0,
+    user_id:           userId,
+    guide:             h.guia || 'desconhecido',
+    score:             h.score  || 0,
+    total:             h.total  || 0,
+    percentage:        h.total > 0 ? Math.round((h.score / h.total) * 100) : 0,
+    client_session_id: h.csid || null,
   }));
 
-  const { error } = await supabase.from('quiz_sessions').insert(rows);
+  // upsert idempotente: se o ponteiro dessincronizar, sessões com o mesmo
+  // client_session_id não são duplicadas (evita inflar a pontuação)
+  const { error } = await supabase
+    .from('quiz_sessions')
+    .upsert(rows, { onConflict: 'user_id,client_session_id', ignoreDuplicates: true });
   if (error) {
     console.error('sync quiz_sessions:', error);
     return; // não avança o ponteiro — próxima sync vai tentar de novo
@@ -141,18 +146,21 @@ export { syncWeeklyChallenges };
 // ─── Sessão única ─────────────────────────────────────────────────────────────
 
 // Sync de uma única sessão — chamado imediatamente após cada quiz
-export async function syncOneSession({ guia, score, total }) {
+export async function syncOneSession({ guia, score, total, csid }) {
   const user = await getCurrentUser();
   if (!user) return;
 
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
-  const { error } = await supabase.from('quiz_sessions').insert({
-    user_id: user.id,
-    guide:   guia || 'desconhecido',
-    score:   score  || 0,
-    total:   total  || 0,
+  // upsert idempotente por client_session_id — evita duplicar a sessão se o
+  // mesmo evento for processado mais de uma vez (ex.: backfill + sync imediato)
+  const { error } = await supabase.from('quiz_sessions').upsert({
+    user_id:           user.id,
+    guide:             guia || 'desconhecido',
+    score:             score  || 0,
+    total:             total  || 0,
     percentage,
-  });
+    client_session_id: csid || null,
+  }, { onConflict: 'user_id,client_session_id', ignoreDuplicates: true });
 
   if (error) throw error;
 
