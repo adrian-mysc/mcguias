@@ -1,6 +1,11 @@
-
-import { supabase } from './config.js';
-import { getCurrentUser } from './auth.js';
+/* ============================================================
+   sync.js — sincronização de quiz/leaderboard/conquistas/desafios
+   ------------------------------------------------------------
+   Usa REST direto (rest.js), SEM o SDK (esm.sh). Esse era o ponto
+   de falha que impedia a maioria dos usuários de sincronizar.
+   Best-effort: erros são logados, nunca quebram a página.
+   ============================================================ */
+import { db } from './rest.js';
 import { submitScore } from './leaderboard.js';
 
 function mcGet(key, def) {
@@ -33,35 +38,31 @@ async function syncQuizSessions(userId) {
     client_session_id: h.csid || null,
   }));
 
-  // upsert idempotente: se o ponteiro dessincronizar, sessões com o mesmo
-  // client_session_id não são duplicadas (evita inflar a pontuação)
-  const { error } = await supabase
-    .from('quiz_sessions')
-    .upsert(rows, { onConflict: 'user_id,client_session_id', ignoreDuplicates: true });
-  if (error) {
+  try {
+    // upsert idempotente: se o ponteiro dessincronizar, sessões com o mesmo
+    // client_session_id não são duplicadas (evita inflar a pontuação)
+    await db.upsert('quiz_sessions', rows, { onConflict: 'user_id,client_session_id', ignoreDuplicates: true });
+    localStorage.setItem('mc_sessions_synced', JSON.stringify(history.length));
+  } catch (error) {
     console.error('sync quiz_sessions:', error);
-    return; // não avança o ponteiro — próxima sync vai tentar de novo
+    // não avança o ponteiro — próxima sync tenta de novo
   }
-
-  localStorage.setItem('mc_sessions_synced', JSON.stringify(history.length));
-  // ^ só marcado após insert bem-sucedido
 }
 
 // Batch upsert — 1 request instead of N sequential calls
 async function syncAchievements(conquistas) {
   if (!conquistas.length) return;
-  const user = await getCurrentUser();
-  if (!user) return;
-  const rows = conquistas.map(key => ({ user_id: user.id, achievement_key: key }));
-  const { error } = await supabase
-    .from('achievements')
-    .upsert(rows, { onConflict: 'user_id,achievement_key', ignoreDuplicates: true });
-  if (error) console.error('sync achievements:', error);
+  const userId = await db.getUserId();
+  if (!userId) return;
+  const rows = conquistas.map(key => ({ user_id: userId, achievement_key: key }));
+  try {
+    await db.upsert('achievements', rows, { onConflict: 'user_id,achievement_key', ignoreDuplicates: true });
+  } catch (error) { console.error('sync achievements:', error); }
 }
 
 async function syncLeaderboard() {
-  const user = await getCurrentUser();
-  if (!user) return;
+  const userId = await db.getUserId();
+  if (!userId) return;
 
   const perfilDados = mcGet('mc_perfil_dados', {});
   const username = mcGet('mc_username', null)
@@ -71,8 +72,8 @@ async function syncLeaderboard() {
   const loja  = perfilDados.loja  || null;
   const sigla = perfilDados.sigla || null;
 
-  // Fonte única de verdade: quiz_sessions. points e total_xp são derivados
-  // pelo trigger do banco. Aqui só mantemos os dados de identidade do jogador.
+  // points/total_xp são derivados de quiz_sessions pelo trigger do banco.
+  // Aqui só mantemos os dados de identidade do jogador no ranking.
   await submitScore(username, loja, sigla);
 }
 
@@ -97,8 +98,8 @@ const DESAFIOS_MAP = [
 ];
 
 async function syncWeeklyChallenges() {
-  const user = await getCurrentUser();
-  if (!user) return;
+  const userId = await db.getUserId();
+  if (!userId) return;
 
   const gamData = mcGet('gamificacao', null);
   if (!gamData?.desafiosSemanais) return;
@@ -111,7 +112,7 @@ async function syncWeeklyChallenges() {
     const progress = d.isArray ? (Array.isArray(raw) ? raw.length : 0) : (raw || 0);
     const completed = concluidos.includes(d.id);
     return {
-      user_id:       user.id,
+      user_id:       userId,
       week_start:    weekStart,
       challenge_key: d.id,
       progress,
@@ -120,11 +121,9 @@ async function syncWeeklyChallenges() {
     };
   });
 
-  const { error } = await supabase
-    .from('weekly_challenges')
-    .upsert(rows, { onConflict: 'user_id,week_start,challenge_key' });
-
-  if (error) console.error('sync weekly_challenges:', error);
+  try {
+    await db.upsert('weekly_challenges', rows, { onConflict: 'user_id,week_start,challenge_key' });
+  } catch (error) { console.error('sync weekly_challenges:', error); }
 }
 
 export { syncWeeklyChallenges };
@@ -133,22 +132,19 @@ export { syncWeeklyChallenges };
 
 // Sync de uma única sessão — chamado imediatamente após cada quiz
 export async function syncOneSession({ guia, score, total, csid }) {
-  const user = await getCurrentUser();
-  if (!user) return;
+  const userId = await db.getUserId();
+  if (!userId) return;
 
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
-  // upsert idempotente por client_session_id — evita duplicar a sessão se o
-  // mesmo evento for processado mais de uma vez (ex.: backfill + sync imediato)
-  const { error } = await supabase.from('quiz_sessions').upsert({
-    user_id:           user.id,
+  // upsert idempotente por client_session_id — evita duplicar a sessão
+  await db.upsert('quiz_sessions', {
+    user_id:           userId,
     guide:             guia || 'desconhecido',
     score:             score  || 0,
     total:             total  || 0,
     percentage,
     client_session_id: csid || null,
   }, { onConflict: 'user_id,client_session_id', ignoreDuplicates: true });
-
-  if (error) throw error;
 
   const prev = (() => {
     try { return JSON.parse(localStorage.getItem('mc_sessions_synced') || '0'); } catch { return 0; }
@@ -157,10 +153,10 @@ export async function syncOneSession({ guia, score, total, csid }) {
 }
 
 export async function syncToCloud() {
-  const user = await getCurrentUser();
-  if (!user) return;
+  const userId = await db.getUserId();
+  if (!userId) return;
 
-  await syncQuizSessions(user.id);
+  await syncQuizSessions(userId);
 
   await syncLeaderboard().catch(console.error);
 

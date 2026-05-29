@@ -182,10 +182,29 @@ hora, mas o front no GitHub Pages só atualiza no merge. NUNCA aplique uma
 migration que quebre o código atualmente deployado (ex.: `DROP COLUMN` usada
 pelo cliente). Mantenha compatibilidade retroativa até o front novo subir.
 
+### Cliente REST sem SDK (`js/supabase/rest.js`) — caminho crítico
+
+⚠️ **O caminho crítico NÃO depende do SDK (`esm.sh`).** O import do
+`@supabase/supabase-js` via CDN era o ponto de falha que deixava ~72/85
+usuários sem sync (e a página em branco quando o `auth-guard` não carregava).
+
+- `js/supabase/rest.js`: cliente REST puro (fetch ao PostgREST `/rest/v1` e ao
+  GoTrue `/auth/v1`). Lê a sessão do `localStorage` (`sb-<ref>-auth-token`,
+  gravada pelo supabase-js) e **renova o token via REST** quando expira.
+  Expõe `db` com `select/count/insert/upsert/rpc/getUserId/getValidSession`.
+- `auth-guard.js`, `sync.js` e `leaderboard.js` usam **só** o `rest.js` — não
+  importam `config.js` (SDK). Assim a página carrega e o quiz sincroniza mesmo
+  se o `esm.sh` estiver lento/bloqueado.
+- O **SDK (`config.js`) só fica** para features de realtime (batalha/arena,
+  inline nas páginas) e push (`push.js`, carregado de forma não-bloqueante).
+- `login.html` ainda usa SDK inline (login é o 1º acesso; quando falha, o
+  usuário simplesmente não entra — não fica preso em tela branca).
+- Teste: bloquear `**/esm.sh/**` no Playwright e validar que auth-guard +
+  `mc:quizComplete` → `POST /rest/v1/quiz_sessions` continuam funcionando.
+
 ### Telemetria (`js/telemetry.js`)
 
-Telemetria leve, **sem SDK** (fetch direto ao PostgREST — não depende do
-`esm.sh`, que é o ponto de falha do sync para muitos usuários). Eventos:
+Telemetria leve, **sem SDK** (fetch direto ao PostgREST). Eventos:
 `app_open`, `quiz_started`, `quiz_finished` → tabela `app_events`.
 Use `window.mcTrack('evento', {meta})`. É best-effort: nunca lança/bloqueia.
 Carregada como `<script defer>` clássico nas páginas (roda mesmo se o SDK
