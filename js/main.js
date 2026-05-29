@@ -397,6 +397,8 @@ function saveQuizResult(guia, score, total) {
   hist.unshift({ guia, score, total, date, csid });
   if (hist.length > 180) hist.splice(180);
   McStorage.set('mc_quiz_history', hist);
+  // Telemetria leve (best-effort): quiz finalizado — independe do sync de quiz_sessions
+  if (window.mcTrack) window.mcTrack('quiz_finished', { guia: guia, score: score, total: total, csid: csid });
   // Sync imediato para quiz_sessions — o sync.js escuta este evento
   window.dispatchEvent(new CustomEvent('mc:quizComplete', { detail: { guia, score, total, csid } }));
 }
@@ -552,6 +554,9 @@ function initQuiz(questions, guiaName) {
 
   window._quizData = questions;
   window._quizGuia = guiaName || 'Simulado';
+
+  // Telemetria leve (best-effort): quiz iniciado
+  if (window.mcTrack) window.mcTrack('quiz_started', { guia: window._quizGuia, total: questions.length });
 
   var oldBar = document.getElementById('quiz-mode-bar');
   // Only remove bar if it was created dynamically by JS (not hardcoded in HTML)

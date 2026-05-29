@@ -159,21 +159,38 @@ no `js/src/stats.js`) que vai no evento `mc:quizComplete` e é enviado como
 sync (`mc_sessions_synced`) dessincronizar, a sessão não é duplicada (o que
 inflaria a pontuação, já que `get_leaderboard` faz `SUM(score)`).
 
-### Modelo de pontos (UNIFICADO)
+### Modelo de pontos
 
-**Fonte única de verdade: `quiz_sessions`.** A tabela `leaderboard` é um
-**cache derivado**, mantido pelo trigger `update_leaderboard_cached_points`
-(nome legado) em cada INSERT de `quiz_sessions`:
-- `leaderboard.points`  = `SUM(quiz_sessions.score)`
-- `leaderboard.total_xp` = `COUNT(quiz_sessions)`
+**Fonte de verdade: `quiz_sessions`.** A tabela `leaderboard` é um **cache
+derivado**, mantido pelo trigger `update_leaderboard_cached_points` (nome
+legado) em cada INSERT de `quiz_sessions`: `points = SUM(score)`,
+`total_xp = COUNT(*)`.
 
 Regras:
-- **NÃO** escreva `points`/`total_xp` pelo cliente. `submitScore(username,
-  loja, sigla)` só mantém dados de identidade no ranking.
-- As RPCs `get_leaderboard`/`get_user_rank` leem `leaderboard` direto (sem
-  `GREATEST`, sem reagregar `quiz_sessions`) — rápidas e consistentes com o
-  fallback `getUserRank()` (que também lê `leaderboard.points`).
-- A coluna `cached_points` foi **removida** (era redundante com `points`).
+- O cliente NOVO (`js/supabase/leaderboard.js`) só faz `submitScore(username,
+  loja, sigla)` — não escreve points/total_xp (o trigger é o dono).
+- As RPCs `get_leaderboard`/`get_user_rank` usam `GREATEST(SUM(quiz_sessions),
+  leaderboard.points)`. Esse "GREATEST" é uma **rede de segurança** porque o
+  cliente ANTIGO (ainda em produção no GitHub Pages) escreve `points` direto —
+  assim o ranking fica correto com ambos os clientes. Quando o novo cliente
+  estiver 100% deployado, dá para simplificar para leitura direta do cache.
+- `cached_points` é uma **coluna gerada** (`= points`) só para compatibilidade
+  com o código antigo que ainda faz `.select('cached_points')`.
+
+⚠️ **Lição (deploy lag):** migrations no banco de produção entram em vigor na
+hora, mas o front no GitHub Pages só atualiza no merge. NUNCA aplique uma
+migration que quebre o código atualmente deployado (ex.: `DROP COLUMN` usada
+pelo cliente). Mantenha compatibilidade retroativa até o front novo subir.
+
+### Telemetria (`js/telemetry.js`)
+
+Telemetria leve, **sem SDK** (fetch direto ao PostgREST — não depende do
+`esm.sh`, que é o ponto de falha do sync para muitos usuários). Eventos:
+`app_open`, `quiz_started`, `quiz_finished` → tabela `app_events`.
+Use `window.mcTrack('evento', {meta})`. É best-effort: nunca lança/bloqueia.
+Carregada como `<script defer>` clássico nas páginas (roda mesmo se o SDK
+falhar). Diagnóstico que motivou: ~85 usuários, mas só 4 com `quiz_sessions` —
+o sync via SDK estava falhando para a maioria.
 
 ---
 

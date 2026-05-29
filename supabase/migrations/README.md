@@ -29,6 +29,9 @@ Fonte de verdade do schema do banco (projeto `iizzeeceqysdfhnkosrc`).
 | **20260529081441** | **optimize_rls_initplan_and_permissive** (lints 0003/0006) |
 | **20260529081452** | **quiz_sessions_idempotency** (client_session_id) |
 | **20260529082446** | **unify_points_model** (fonte única = quiz_sessions) |
+| **20260529084912** | **readd_cached_points_backward_compat** (coluna gerada p/ código antigo) |
+| **20260529085048** | **restore_greatest_rpc_backward_compat** (GREATEST nas RPCs) |
+| **20260529085150** | **create_app_events_telemetry** (telemetria leve) |
 
 As 18 primeiras estão consolidadas em `20260521015617_baseline_remote_history.sql`
 (cópia verbatim do `supabase_migrations.schema_migrations`). As 4 de `20260529*`
