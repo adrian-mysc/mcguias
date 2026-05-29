@@ -107,8 +107,14 @@ function validateFile(filePath) {
   if (!pack.categoria)  warn(rel, null, 'Campo categoria ausente');
 
   var questions = pack.questions;
-  if (!Array.isArray(questions) || questions.length === 0) {
-    err(rel, null, 'Array questions ausente ou vazio');
+  if (!Array.isArray(questions)) {
+    err(rel, null, 'Array questions ausente ou malformado');
+    return;
+  }
+  // Pacote de nível deliberadamente vazio (ex.: questões removidas por
+  // duplicidade) é um estado válido — o loader trata como []. Apenas avisa.
+  if (questions.length === 0) {
+    warn(rel, null, 'Pacote sem questões (vazio)');
     return;
   }
 

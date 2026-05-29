@@ -8,6 +8,13 @@
       "id": "drive001",
       "categoria": "drive-thru",
       "subcategoria": "👥 Posições · Tomador de Pedidos",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "posições",
+        "tomador-de-pedidos"
+      ],
       "pergunta": "Qual é a principal responsabilidade do Tomador de Pedidos no Drive-Thru?",
       "alternativas": [
         "Receber o pedido via headset, lançar no sistema e confirmar com o cliente antes de finalizar",
@@ -17,18 +24,19 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Tomador de Pedidos usa o headset para se comunicar com o cliente no totem de pedidos, lança os itens no sistema e confirma o pedido antes de encerrar o atendimento. A confirmação evita erros e garante a satisfação do cliente.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "posições",
-        "tomador-de-pedidos"
-      ]
+      "ativo": true
     },
     {
       "id": "drive002",
       "categoria": "drive-thru",
       "subcategoria": "👥 Posições · Apresentador",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "posições",
+        "apresentador"
+      ],
       "pergunta": "Qual é a função do Apresentador no Drive-Thru?",
       "alternativas": [
         "Entregar o pedido ao cliente na janela de forma cortês, verificando se está completo",
@@ -38,18 +46,19 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Apresentador é responsável por conferir o pedido, entregar ao cliente na janela com simpatia e eficiência, e garantir que nada fique faltando — como canudos, guardanapos e embalagens corretas.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "posições",
-        "apresentador"
-      ]
+      "ativo": true
     },
     {
       "id": "drive003",
       "categoria": "drive-thru",
       "subcategoria": "👥 Posições · Equipe",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "posições",
+        "equipe"
+      ],
       "pergunta": "Qual é o número mínimo de pessoas para operar o Drive-Thru?",
       "alternativas": [
         "2 pessoas — Tomador de Pedidos e Apresentador",
@@ -59,18 +68,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Com 2 pessoas é possível operar o Drive-Thru: uma toma o pedido e outra entrega. Em volumes maiores, adiciona-se o Operador de Caixa e o Expedidor para manter a velocidade de serviço.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "posições",
-        "equipe"
-      ]
+      "ativo": true
     },
     {
       "id": "drive004",
       "categoria": "drive-thru",
       "subcategoria": "👥 Posições · Operador de Caixa",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "posições",
+        "caixa",
+        "pagamento"
+      ],
       "pergunta": "O que o Operador de Caixa deve fazer ANTES de receber o pagamento do cliente?",
       "alternativas": [
         "Confirmar os itens do pedido no display e informar o valor total",
@@ -80,19 +91,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Operador de Caixa deve sempre confirmar os itens com o cliente e informar o total antes de processar o pagamento, garantindo precisão e evitando contestações.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "posições",
-        "caixa",
-        "pagamento"
-      ]
+      "ativo": true
     },
     {
       "id": "drive005",
       "categoria": "drive-thru",
       "subcategoria": "👥 Posições · Expedidor",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "posições",
+        "expedidor",
+        "pico"
+      ],
       "pergunta": "Qual é o papel do Expedidor no Drive-Thru em horários de pico?",
       "alternativas": [
         "Organizar os pedidos prontos na bancada e garantir que sejam entregues na ordem correta",
@@ -102,19 +114,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Expedidor garante que os pedidos sejam montados e organizados corretamente na sequência dos carros, evitando erros de entrega quando o volume de pedidos aumenta.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "posições",
-        "expedidor",
-        "pico"
-      ]
+      "ativo": true
     },
     {
       "id": "drive006",
       "categoria": "drive-thru",
       "subcategoria": "🎙️ Headset · Comunicação",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "headset",
+        "saudação",
+        "comunicação"
+      ],
       "pergunta": "Qual é a saudação padrão ao receber um cliente no totem do Drive-Thru?",
       "alternativas": [
         "\"Bem-vindo ao McDonald's, pode fazer seu pedido!\"",
@@ -124,19 +137,19 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A saudação padrão é \"Bem-vindo ao McDonald's, pode fazer seu pedido!\". Ela deve ser dita de forma clara, simpática e sem pressa, transmitindo hospitalidade ao cliente.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "headset",
-        "saudação",
-        "comunicação"
-      ]
+      "ativo": true
     },
     {
       "id": "drive007",
       "categoria": "drive-thru",
       "subcategoria": "🎙️ Headset · Comunicação",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "headset",
+        "comunicação"
+      ],
       "pergunta": "Para que serve o headset no Drive-Thru?",
       "alternativas": [
         "Comunicar-se com o cliente no totem e manter comunicação interna entre a equipe",
@@ -146,18 +159,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O headset tem dupla função: permite ao Tomador de Pedidos se comunicar com o cliente no totem e também facilita a comunicação interna entre todos os membros da equipe do Drive-Thru.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "headset",
-        "comunicação"
-      ]
+      "ativo": true
     },
     {
       "id": "drive008",
       "categoria": "drive-thru",
       "subcategoria": "🎙️ Headset · Comunicação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "headset",
+        "comunicação",
+        "boas-práticas"
+      ],
       "pergunta": "Quando o tomador de pedidos está atendendo um cliente no headset, o que os demais membros da equipe devem fazer?",
       "alternativas": [
         "Evitar conversar pelo headset para não interromper o atendimento ao cliente",
@@ -167,19 +182,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Durante o atendimento ao cliente no totem, a equipe deve manter o headset livre de conversas desnecessárias para que o cliente ouça claramente e o tomador possa se concentrar no pedido.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "headset",
-        "comunicação",
-        "boas-práticas"
-      ]
+      "ativo": true
     },
     {
       "id": "drive009",
       "categoria": "drive-thru",
       "subcategoria": "⏱️ OEPE · Conceito",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "oepe",
+        "métricas",
+        "performance"
+      ],
       "pergunta": "O que significa a sigla OEPE?",
       "alternativas": [
         "Overall Exterior Performance — sistema que mede o desempenho externo do Drive-Thru",
@@ -189,19 +205,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "OEPE (Overall Exterior Performance) é o sistema de medição do desempenho do Drive-Thru. Ele registra o tempo que cada carro leva desde a detecção no totem até a saída da janela, permitindo monitorar e melhorar a velocidade de serviço.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "oepe",
-        "métricas",
-        "performance"
-      ]
+      "ativo": true
     },
     {
       "id": "drive010",
       "categoria": "drive-thru",
       "subcategoria": "⏱️ OEPE · Medição",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "oepe",
+        "timer",
+        "sensor"
+      ],
       "pergunta": "A partir de qual momento o OEPE começa a medir o tempo de serviço do Drive-Thru?",
       "alternativas": [
         "Quando o carro é detectado pelo sensor no totem de pedidos",
@@ -211,19 +228,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O OEPE começa a contar assim que o sensor detecta o carro no totem de pedidos. Por isso, é importante que o Tomador de Pedidos faça a saudação imediatamente após a detecção, para não perder tempo.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "oepe",
-        "timer",
-        "sensor"
-      ]
+      "ativo": true
     },
     {
       "id": "drive011",
       "categoria": "drive-thru",
       "subcategoria": "⏱️ OEPE · Objetivos",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "oepe",
+        "gestão",
+        "melhoria-contínua"
+      ],
       "pergunta": "Por que é importante monitorar o tempo de serviço do Drive-Thru diariamente?",
       "alternativas": [
         "Para identificar gargalos, treinar a equipe e garantir que o cliente seja atendido com velocidade",
@@ -233,19 +251,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O monitoramento diário permite ao gerente identificar onde o tempo está sendo perdido (totem, caixa ou janela), treinar a equipe nos pontos fracos e melhorar continuamente a experiência do cliente.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "oepe",
-        "gestão",
-        "melhoria-contínua"
-      ]
+      "ativo": true
     },
     {
       "id": "drive012",
       "categoria": "drive-thru",
       "subcategoria": "⏱️ OEPE · Objetivos",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "oepe",
+        "tempo-total",
+        "experiência"
+      ],
       "pergunta": "O que representa o tempo total de serviço no Drive-Thru (do totem à saída)?",
       "alternativas": [
         "O tempo que o cliente passa dentro da pista, da chegada ao totem até receber o pedido e sair",
@@ -255,19 +274,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O tempo total de serviço abrange toda a experiência do cliente na pista: chegada ao totem, realização do pedido, pagamento, espera e recebimento do pedido na janela. Reduzir esse tempo melhora a satisfação e aumenta a capacidade de atendimento.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "oepe",
-        "tempo-total",
-        "experiência"
-      ]
+      "ativo": true
     },
     {
       "id": "drive013",
       "categoria": "drive-thru",
       "subcategoria": "⚙️ Procedimentos · Pull Forward",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "pull-forward",
+        "fluxo",
+        "procedimento"
+      ],
       "pergunta": "O que é o \"Pull Forward\" (ou \"avançar para esperar\") no Drive-Thru?",
       "alternativas": [
         "Solicitar que o cliente avance para uma área de espera quando o pedido não está pronto, liberando a janela",
@@ -277,19 +297,19 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Pull Forward libera a janela para o próximo carro quando um pedido precisa de mais tempo de preparo. O cliente avança para um espaço de espera e um funcionário leva o pedido até o carro quando estiver pronto, mantendo o fluxo da pista.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "pull-forward",
-        "fluxo",
-        "procedimento"
-      ]
+      "ativo": true
     },
     {
       "id": "drive014",
       "categoria": "drive-thru",
       "subcategoria": "⚙️ Procedimentos · Pull Forward",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "pull-forward",
+        "gestão-de-fila"
+      ],
       "pergunta": "Quando é adequado usar o Pull Forward no Drive-Thru?",
       "alternativas": [
         "Quando o pedido exige preparo especial ou está demorando mais que o tempo esperado",
@@ -299,18 +319,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Pull Forward é usado quando um pedido específico está atrasando o fluxo — por exemplo, um produto que exige preparo especial ou que não está disponível imediatamente. Não deve ser usado indiscriminadamente.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "pull-forward",
-        "gestão-de-fila"
-      ]
+      "ativo": true
     },
     {
       "id": "drive015",
       "categoria": "drive-thru",
       "subcategoria": "⚙️ Procedimentos · Atendimento",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "sequência",
+        "atendimento",
+        "padrão"
+      ],
       "pergunta": "Qual é a sequência correta de atendimento no Drive-Thru?",
       "alternativas": [
         "Saudação → Pedido → Confirmação → Pagamento → Entrega → Despedida",
@@ -320,19 +342,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A sequência padrão garante uma experiência consistente: o cliente é saudado, faz o pedido, o pedido é confirmado (evitando erros), o pagamento é processado, o pedido é entregue completo e o cliente é despedido com simpatia.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "sequência",
-        "atendimento",
-        "padrão"
-      ]
+      "ativo": true
     },
     {
       "id": "drive016",
       "categoria": "drive-thru",
       "subcategoria": "⚙️ Procedimentos · Confirmação",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "confirmação",
+        "qualidade",
+        "erros"
+      ],
       "pergunta": "Por que é obrigatório confirmar o pedido com o cliente antes de finalizar no sistema?",
       "alternativas": [
         "Para evitar erros, garantir que todos os itens foram registrados corretamente e aumentar a satisfação",
@@ -342,19 +365,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A confirmação é uma etapa crítica: erros de pedido causam retrabalho, desperdício de embalagens e insatisfação do cliente. Uma confirmação rápida e clara previne a maioria dos erros antes que o pedido entre em preparo.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "confirmação",
-        "qualidade",
-        "erros"
-      ]
+      "ativo": true
     },
     {
       "id": "drive017",
       "categoria": "drive-thru",
       "subcategoria": "⚙️ Procedimentos · Entrega",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "entrega",
+        "conferência",
+        "qualidade"
+      ],
       "pergunta": "O Apresentador deve verificar o pedido antes de entregar ao cliente. O que ele deve conferir?",
       "alternativas": [
         "Todos os itens estão na sacola, bebidas corretas, acompanhamentos, canudo e guardanapos",
@@ -364,19 +388,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Apresentador é a última linha de defesa antes da entrega. Ele deve conferir: sacola completa com todos os itens, bebidas corretas (tamanho e tipo), acompanhamentos, canudo na sacola e guardanapos. Uma entrega incompleta gera insatisfação e retrabalho.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "entrega",
-        "conferência",
-        "qualidade"
-      ]
+      "ativo": true
     },
     {
       "id": "drive018",
       "categoria": "drive-thru",
       "subcategoria": "⚙️ Procedimentos · Entrega",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "hospitalidade",
+        "entrega",
+        "postura"
+      ],
       "pergunta": "Qual é a postura correta do Apresentador ao entregar o pedido ao cliente?",
       "alternativas": [
         "Sorriso, olhar para o cliente, saudar pelo nome (se disponível), entregar com segurança e se despedir",
@@ -386,19 +411,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Mesmo no Drive-Thru, a hospitalidade é fundamental. O Apresentador deve ser simpático, fazer contato visual e garantir que o cliente sinta que foi bem atendido. Velocidade e hospitalidade devem andar juntas.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "hospitalidade",
-        "entrega",
-        "postura"
-      ]
+      "ativo": true
     },
     {
       "id": "drive019",
       "categoria": "drive-thru",
       "subcategoria": "⚙️ Procedimentos · Erro de Pedido",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "reclamação",
+        "erro-de-pedido",
+        "recuperação"
+      ],
       "pergunta": "O cliente recebeu o pedido e percebe que há um erro ainda na janela. Como o Apresentador deve agir?",
       "alternativas": [
         "Pedir desculpas, recolher o item errado e providenciar o correto sem fazer o cliente esperar muito",
@@ -408,19 +434,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Erros acontecem, mas a resposta faz toda a diferença. O Apresentador deve assumir a responsabilidade, pedir desculpas sinceras e resolver imediatamente, sem questionar o cliente ou burocratizar. A recuperação rápida pode transformar uma experiência ruim em boa.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "reclamação",
-        "erro-de-pedido",
-        "recuperação"
-      ]
+      "ativo": true
     },
     {
       "id": "drive020",
       "categoria": "drive-thru",
       "subcategoria": "📱 Meu Méqui · Drive-Thru",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "meu-méqui",
+        "app",
+        "qr-code"
+      ],
       "pergunta": "Como o cliente com pedido realizado pelo app Meu Méqui deve ser atendido no Drive-Thru?",
       "alternativas": [
         "O cliente informa que tem pedido no app e apresenta o QR code na janela de pagamento para o operador escanear",
@@ -430,19 +457,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Para pedidos Meu Méqui no Drive-Thru, o cliente avisa ao tomador de pedidos que possui um pedido no app. Na janela de pagamento, apresenta o QR code para o operador escanear e vincular o pedido, aplicando os benefícios do programa.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "meu-méqui",
-        "app",
-        "qr-code"
-      ]
+      "ativo": true
     },
     {
       "id": "drive021",
       "categoria": "drive-thru",
       "subcategoria": "📱 Meu Méqui · Drive-Thru",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "meu-méqui",
+        "app",
+        "procedimento"
+      ],
       "pergunta": "O que o Tomador de Pedidos deve fazer quando o cliente menciona que tem um pedido pelo Meu Méqui?",
       "alternativas": [
         "Orientar o cliente a ter o QR code pronto para a janela de pagamento e continuar o atendimento normalmente",
@@ -452,19 +480,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Tomador de Pedidos deve orientar o cliente sobre o processo (QR code na janela de pagamento) e prosseguir com fluidez. Conhecer a integração do Meu Méqui evita confusão e atrasos desnecessários.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "meu-méqui",
-        "app",
-        "procedimento"
-      ]
+      "ativo": true
     },
     {
       "id": "drive022",
       "categoria": "drive-thru",
       "subcategoria": "🖥️ Equipamentos · COD",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "cod",
+        "display",
+        "equipamentos"
+      ],
       "pergunta": "O que é o COD (Customer Order Display / Confirmação de Display) no Drive-Thru?",
       "alternativas": [
         "Uma tela voltada para o cliente que mostra os itens do pedido em tempo real durante a tomada de pedido",
@@ -474,19 +503,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O COD é uma tela virada para o cliente posicionada próxima ao totem de pedido. À medida que o tomador lança os itens, o cliente vê seu pedido sendo registrado, podendo confirmar ou corrigir em tempo real — reduzindo erros.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "cod",
-        "display",
-        "equipamentos"
-      ]
+      "ativo": true
     },
     {
       "id": "drive023",
       "categoria": "drive-thru",
       "subcategoria": "🖥️ Equipamentos · Timer",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "timer",
+        "sensor",
+        "equipamentos"
+      ],
       "pergunta": "Para que serve o sistema de timer/sensor do Drive-Thru?",
       "alternativas": [
         "Detectar automaticamente quando um carro chega à pista e medir o tempo de cada etapa do atendimento",
@@ -496,19 +526,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Os sensores de loop magnético ou outros detectores identificam automaticamente a presença de carros em cada ponto da pista. O timer registra o tempo de cada etapa, gerando dados de desempenho que alimentam o sistema GPRS e o OEPE.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "timer",
-        "sensor",
-        "equipamentos"
-      ]
+      "ativo": true
     },
     {
       "id": "drive024",
       "categoria": "drive-thru",
       "subcategoria": "🖥️ Equipamentos · Timer",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "timer",
+        "alerta",
+        "oepe"
+      ],
       "pergunta": "Quando o timer do Drive-Thru exibe um alerta (geralmente em vermelho), o que isso indica?",
       "alternativas": [
         "O carro em determinada posição ultrapassou o tempo objetivo de atendimento",
@@ -518,19 +549,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A mudança de cor para vermelho no timer é um alerta visual de que o carro está demorando mais do que o tempo objetivo naquela posição. Isso sinaliza à equipe que é necessário agir para não comprometer o OEPE do restaurante.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "timer",
-        "alerta",
-        "oepe"
-      ]
+      "ativo": true
     },
     {
       "id": "drive025",
       "categoria": "drive-thru",
       "subcategoria": "🔧 GPRS · Conceito",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "gprs",
+        "relatórios",
+        "performance"
+      ],
       "pergunta": "O que é o GPRS no contexto do Drive-Thru McDonald's?",
       "alternativas": [
         "Um sistema de monitoramento e relatórios de performance do Drive-Thru que analisa tempos por hora e turno",
@@ -540,19 +572,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O GPRS (Global Point of Reference System ou similar) coleta os dados do timer e gera relatórios detalhados sobre o desempenho do Drive-Thru — por hora, turno e posição. Permite ao gerente identificar padrões e oportunidades de melhoria.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "gprs",
-        "relatórios",
-        "performance"
-      ]
+      "ativo": true
     },
     {
       "id": "drive026",
       "categoria": "drive-thru",
       "subcategoria": "🔧 GPRS · Gestão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "gprs",
+        "gestão",
+        "análise"
+      ],
       "pergunta": "Com que frequência o gerente deve analisar os relatórios de OEPE/GPRS do Drive-Thru?",
       "alternativas": [
         "Diariamente, ao menos uma vez por turno, para identificar tendências e agir rapidamente",
@@ -562,19 +595,19 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A análise diária permite intervenção imediata. Identificar que determinado horário ou turno tem tempos altos possibilita treinar a equipe, ajustar o staffing ou revisar procedimentos antes que o problema se agrave.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "gprs",
-        "gestão",
-        "análise"
-      ]
+      "ativo": true
     },
     {
       "id": "drive027",
       "categoria": "drive-thru",
       "subcategoria": "🛣️ Configurações · Pista Simples",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "pista-simples",
+        "configuração"
+      ],
       "pergunta": "O que caracteriza a configuração de pista simples no Drive-Thru?",
       "alternativas": [
         "Um único lane de entrada com um totem de pedidos e uma janela de atendimento",
@@ -584,18 +617,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A pista simples é a configuração mais comum: um carro entra por vez, faz o pedido em um totem, passa pelo caixa (se houver janela separada) e recebe na janela de entrega. É eficiente para volumes moderados.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "pista-simples",
-        "configuração"
-      ]
+      "ativo": true
     },
     {
       "id": "drive028",
       "categoria": "drive-thru",
       "subcategoria": "🛣️ Configurações · Dupla Abordagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "dupla-abordagem",
+        "dual-lane",
+        "configuração"
+      ],
       "pergunta": "O que é a Dupla Abordagem (Dual Lane) no Drive-Thru?",
       "alternativas": [
         "Dois lanes separados com dois totens de pedido, ambos convergindo para as janelas de pagamento e entrega",
@@ -605,19 +640,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Na Dupla Abordagem, dois carros podem fazer pedido simultaneamente em totens separados. As duas filas convergem para uma ou duas janelas de pagamento/entrega, aumentando significativamente a capacidade de atendimento em horários de pico.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "dupla-abordagem",
-        "dual-lane",
-        "configuração"
-      ]
+      "ativo": true
     },
     {
       "id": "drive029",
       "categoria": "drive-thru",
       "subcategoria": "🛣️ Configurações · Dupla Abordagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "dupla-abordagem",
+        "capacidade",
+        "pico"
+      ],
       "pergunta": "Qual é a principal vantagem da Dupla Abordagem em horários de pico?",
       "alternativas": [
         "Dobra a capacidade de tomada de pedidos, reduzindo o tempo de espera na fila",
@@ -627,19 +663,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Com dois totens funcionando simultaneamente, o restaurante consegue processar o dobro de pedidos no mesmo intervalo de tempo, reduzindo o tamanho da fila e o tempo de espera dos clientes durante os horários de maior movimento.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "dupla-abordagem",
-        "capacidade",
-        "pico"
-      ]
+      "ativo": true
     },
     {
       "id": "drive030",
       "categoria": "drive-thru",
       "subcategoria": "🛣️ Configurações · Simulcast",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "simulcast",
+        "headset",
+        "dupla-abordagem"
+      ],
       "pergunta": "O que é o Simulcast no Drive-Thru?",
       "alternativas": [
         "Função do headset que permite ao tomador de pedidos atender dois totens ao mesmo tempo",
@@ -649,19 +686,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Simulcast permite que um único tomador de pedidos gerencie dois totens de pedido simultaneamente. Quando um cliente está fazendo o pedido em um totem, o atendente pode saudar ou receber o pedido do outro totem, otimizando o uso de recursos.",
-      "dificuldade": "avancado",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "simulcast",
-        "headset",
-        "dupla-abordagem"
-      ]
+      "ativo": true
     },
     {
       "id": "drive031",
       "categoria": "drive-thru",
       "subcategoria": "⏱️ SOS · Conceito",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "sos",
+        "speed-of-service",
+        "métricas"
+      ],
       "pergunta": "O que significa SOS no contexto do Drive-Thru McDonald's?",
       "alternativas": [
         "Speed of Service — velocidade de atendimento, métrica que mede a eficiência do Drive-Thru",
@@ -671,19 +709,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "SOS (Speed of Service) é a métrica de velocidade de atendimento do Drive-Thru. Ela complementa o OEPE medindo o desempenho da equipe na entrega, sendo um dos principais indicadores de qualidade de serviço no Drive-Thru.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "sos",
-        "speed-of-service",
-        "métricas"
-      ]
+      "ativo": true
     },
     {
       "id": "drive032",
       "categoria": "drive-thru",
       "subcategoria": "⏱️ SOS · Objetivos",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "metas",
+        "satisfação",
+        "vendas"
+      ],
       "pergunta": "Qual é o objetivo principal de ter metas de tempo no Drive-Thru?",
       "alternativas": [
         "Garantir que os clientes sejam atendidos com rapidez, aumentando a satisfação e a capacidade de atendimento",
@@ -693,19 +732,21 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Metas de tempo no Drive-Thru existem para garantir a satisfação do cliente. Clientes atendidos rapidamente têm maior probabilidade de retornar, e um Drive-Thru eficiente consegue atender mais carros por hora, aumentando as vendas do restaurante.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "metas",
-        "satisfação",
-        "vendas"
-      ]
+      "ativo": true
     },
     {
       "id": "drive033",
       "categoria": "drive-thru",
       "subcategoria": "💳 Pagamento · Drive-Thru",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "pagamento",
+        "pix",
+        "cartão",
+        "meu-méqui"
+      ],
       "pergunta": "Quais formas de pagamento geralmente são aceitas no Drive-Thru McDonald's?",
       "alternativas": [
         "Dinheiro, cartão de crédito/débito, PIX e pagamento pelo app Meu Méqui",
@@ -715,20 +756,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Drive-Thru aceita as mesmas formas de pagamento do salão: dinheiro, cartão de crédito/débito, PIX e o app Meu Méqui. O operador de caixa deve estar preparado para processar qualquer uma dessas formas rapidamente.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "pagamento",
-        "pix",
-        "cartão",
-        "meu-méqui"
-      ]
+      "ativo": true
     },
     {
       "id": "drive034",
       "categoria": "drive-thru",
       "subcategoria": "💳 Pagamento · Troco",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "troco",
+        "pagamento",
+        "procedimento"
+      ],
       "pergunta": "Qual é o procedimento correto ao dar o troco ao cliente no Drive-Thru?",
       "alternativas": [
         "Contar o troco em voz alta na frente do cliente e colocar as notas e moedas na mão do cliente",
@@ -738,19 +779,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Contar o troco em voz alta em frente ao cliente demonstra transparência e evita desentendimentos. Colocar o dinheiro diretamente na mão do cliente é mais higiênico e profissional do que usar bandejas.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "troco",
-        "pagamento",
-        "procedimento"
-      ]
+      "ativo": true
     },
     {
       "id": "drive035",
       "categoria": "drive-thru",
       "subcategoria": "🚗 Fila · Gestão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "gestão",
+        "fila",
+        "staffing"
+      ],
       "pergunta": "O que o gerente deve fazer quando a fila do Drive-Thru está muito longa e o tempo de espera está alto?",
       "alternativas": [
         "Acionar mais posições (tomador/caixa/apresentador), ajustar staffing e verificar gargalos na produção",
@@ -760,19 +802,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A gestão ativa da fila envolve: adicionar pessoas nas posições críticas, verificar se a cozinha está com gargalos de produção e usar estratégias como Pull Forward quando necessário. O gerente deve agir proativamente antes que a fila impacte a experiência do cliente.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "gestão",
-        "fila",
-        "staffing"
-      ]
+      "ativo": true
     },
     {
       "id": "drive036",
       "categoria": "drive-thru",
       "subcategoria": "🚗 Fila · Gestão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "pico",
+        "pré-preparo",
+        "fluxo"
+      ],
       "pergunta": "Durante horários de pico no Drive-Thru, qual prática ajuda a manter o fluxo de carros?",
       "alternativas": [
         "Pré-preparar produtos de alta demanda (como batatas fritas) para reduzir o tempo de espera na janela",
@@ -782,19 +825,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O pré-preparo estratégico de itens de alta demanda, alinhado com as previsões de movimento, é fundamental para manter o fluxo. Ter os produtos prontos quando o cliente chega à janela é o que garante a velocidade do serviço.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "pico",
-        "pré-preparo",
-        "fluxo"
-      ]
+      "ativo": true
     },
     {
       "id": "drive037",
       "categoria": "drive-thru",
       "subcategoria": "🌙 Drive-Thru · Madrugada",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "segurança",
+        "madrugada",
+        "protocolo"
+      ],
       "pergunta": "Quais cuidados especiais de segurança devem ser observados durante o funcionamento do Drive-Thru à noite ou de madrugada?",
       "alternativas": [
         "Manter a janela fechada até identificar o cliente, usar o intercomunicador e seguir protocolos de segurança do restaurante",
@@ -804,19 +848,21 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Durante a madrugada, os protocolos de segurança são reforçados: usar o intercomunicador para identificar o cliente antes de abrir a janela, seguir as diretrizes de segurança do restaurante e manter a equipe alerta são práticas essenciais.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "segurança",
-        "madrugada",
-        "protocolo"
-      ]
+      "ativo": true
     },
     {
       "id": "drive038",
       "categoria": "drive-thru",
       "subcategoria": "📊 Performance · Análise",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "análise",
+        "gargalo",
+        "cozinha",
+        "performance"
+      ],
       "pergunta": "O gerente percebe que o tempo na posição de entrega (janela) está muito alto comparado ao totem de pedidos. O que isso indica?",
       "alternativas": [
         "Gargalo na cozinha — os produtos não estão prontos quando o carro chega à janela de entrega",
@@ -826,20 +872,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Quando o tempo na janela de entrega é desproporcional, o gargalo geralmente está na produção. Isso pode indicar falta de staffing na cozinha, falha no pré-preparo ou produtos que estão sendo preparados após o carro chegar — em vez de antes.",
-      "dificuldade": "avancado",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "análise",
-        "gargalo",
-        "cozinha",
-        "performance"
-      ]
+      "ativo": true
     },
     {
       "id": "drive039",
       "categoria": "drive-thru",
       "subcategoria": "📊 Performance · Análise",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "oepe",
+        "treinamento",
+        "melhoria"
+      ],
       "pergunta": "Qual das seguintes ações contribui MAIS para melhorar o OEPE do Drive-Thru?",
       "alternativas": [
         "Treinar a equipe em cada posição com foco em velocidade sem perder qualidade de atendimento",
@@ -849,19 +895,20 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A variável mais impactante no OEPE é sempre o fator humano. Uma equipe bem treinada, que conhece os procedimentos, se comunica bem e trabalha em sintonia, é o que mais contribui para reduzir os tempos e melhorar a experiência do cliente.",
-      "dificuldade": "intermediario",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "oepe",
-        "treinamento",
-        "melhoria"
-      ]
+      "ativo": true
     },
     {
       "id": "drive040",
       "categoria": "drive-thru",
       "subcategoria": "🏆 Drive-Thru · Importância",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "estratégia",
+        "vendas",
+        "importância"
+      ],
       "pergunta": "Por que o Drive-Thru é considerado um dos principais canais de atendimento do McDonald's?",
       "alternativas": [
         "Representa grande parte das vendas totais do restaurante e é uma vantagem competitiva estratégica",
@@ -871,14 +918,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Drive-Thru é um dos maiores geradores de receita do McDonald's, representando uma parcela significativa das vendas. Sua conveniência — sem necessidade de estacionar ou sair do carro — é um diferencial competitivo importante, especialmente em áreas urbanas e durante horários de pico.",
-      "dificuldade": "basico",
-      "ativo": true,
-      "tags": [
-        "drive-thru",
-        "estratégia",
-        "vendas",
-        "importância"
-      ]
+      "ativo": true
     }
   ]
 }
