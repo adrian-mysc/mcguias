@@ -1,77 +1,52 @@
+/* leaderboard.js — operações de ranking via REST puro (sem SDK/esm.sh). */
+import { db } from './rest.js';
 
-import { supabase } from './config.js';
-import { getCurrentUser } from './auth.js';
-
-// points e total_xp são derivados de quiz_sessions pelo trigger do banco
-// (fonte única de verdade). Aqui só mantemos os dados de identidade do
-// jogador no ranking — NÃO escreva points/total_xp daqui.
+// Apenas identidade — points/total_xp são derivados de quiz_sessions pelo
+// trigger do banco. NÃO escreva points/total_xp daqui.
 export async function submitScore(username, loja = null, sigla = null) {
-  const user = await getCurrentUser();
-  if (!user) return;
-
-  const { error } = await supabase
-    .from('leaderboard')
-    .upsert(
-      { user_id: user.id, username, loja, sigla },
-      { onConflict: 'user_id' }
-    );
-
-  if (error) throw error;
+  const userId = await db.getUserId();
+  if (!userId) return;
+  await db.upsert('leaderboard',
+    { user_id: userId, username, loja, sigla },
+    { onConflict: 'user_id' });
 }
 
+// Fallback (lê leaderboard direto). Usado quando a RPC falha.
 export async function getUserRank() {
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return null;
+  const userId = await db.getUserId();
+  if (!userId) return null;
 
-  const { data: myRow } = await supabase
-    .from('leaderboard')
-    .select('points, username, total_xp')
-    .eq('user_id', user.id)
-    .single();
-
+  const myRow = await db.select('leaderboard', {
+    columns: 'points, username, total_xp', match: { user_id: userId }, single: true
+  }).catch(() => null);
   if (!myRow) return null;
 
-  const { count } = await supabase
-    .from('leaderboard')
-    .select('*', { count: 'exact', head: true })
-    .gt('points', myRow.points);
-
-  return { rank: (count ?? 0) + 1, ...myRow };
+  const ahead = await db.count('leaderboard', { gt: { points: myRow.points } }).catch(() => 0);
+  return { rank: ahead + 1, ...myRow };
 }
 
-// ── 100% online: dados diretos do Supabase ──────────────────────────────────
-
+// ── 100% online: dados via RPC ──────────────────────────────────────────────
 export async function getOnlineLeaderboard(limit = 20) {
-  const { data, error } = await supabase.rpc('get_leaderboard', { lim: limit });
-  if (error) throw error;
-  return data ?? [];
+  return (await db.rpc('get_leaderboard', { lim: limit })) ?? [];
 }
 
 export async function getOnlineUserRank() {
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return null;
-  const { data, error } = await supabase.rpc('get_user_rank', { uid: user.id });
-  if (error) throw error;
-  return data?.[0] ?? null;
+  const userId = await db.getUserId();
+  if (!userId) return null;
+  const data = await db.rpc('get_user_rank', { uid: userId });
+  return (data && data[0]) ?? null;
 }
 
 export async function getTopPlayers(limit = 10) {
-  const { data, error } = await supabase
-    .from('leaderboard')
-    .select('user_id, username, points, total_xp, loja, sigla, updated_at')
-    .order('points', { ascending: false })
-    .limit(limit);
-
-  if (error) throw error;
-  return data;
+  return await db.select('leaderboard', {
+    columns: 'user_id, username, points, total_xp, loja, sigla, updated_at',
+    order: 'points.desc', limit
+  });
 }
 
 export async function getAvatarsByUserIds(userIds) {
   if (!userIds.length) return {};
-  const { data } = await supabase
-    .from('profiles')
-    .select('id, avatar')
-    .in('id', userIds);
+  const data = await db.select('profiles', { columns: 'id, avatar', in: { id: userIds } });
   const map = {};
   for (const row of (data ?? [])) {
     if (row.avatar) map[row.id] = row.avatar;

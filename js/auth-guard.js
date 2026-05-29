@@ -1,26 +1,32 @@
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { initPush } from './supabase/push.js';
+/* ============================================================
+   auth-guard — protege as páginas SEM depender do SDK (esm.sh).
+   Lê/renova a sessão via REST (rest.js). Se o SDK não carregar
+   (CDN lenta/bloqueada), a página AINDA funciona — antes ela
+   ficava em branco (visibility:hidden) porque o import do SDK
+   falhava e nunca restaurava a visibilidade.
+   ============================================================ */
+import { db } from './supabase/rest.js';
 
-const SUPABASE_URL      = 'https://iizzeeceqysdfhnkosrc.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-  auth: { persistSession: true, autoRefreshToken: true }
-});
+function reveal() {
+  document.documentElement.style.visibility = '';
+}
 
 (async () => {
   try {
-    const { data } = await supabase.auth.getSession();
-    if (!data.session) {
+    const sess = await db.getValidSession();
+    if (!sess) {
       const inPages = window.location.pathname.includes('/pages/');
       window.location.replace(inPages ? 'login.html' : 'pages/login.html');
-    } else {
-      document.documentElement.style.visibility = '';
-      // Inicializa push notifications em background — silencioso em caso de falha
-      initPush(data.session.user.id).catch(() => {});
+      return;
     }
+    reveal();
+    // Push notifications: best-effort e NÃO-bloqueante. Usa o SDK (push.js),
+    // mas se o SDK não carregar, apenas ignora — não afeta a página.
+    import('./supabase/push.js')
+      .then(m => m.initPush(sess.user && sess.user.id))
+      .catch(() => {});
   } catch (e) {
-    // Supabase indisponível (offline, CDN bloqueado, etc.) — não trava a página
-    document.documentElement.style.visibility = '';
+    // Qualquer erro: nunca prende o usuário numa tela em branco.
+    reveal();
   }
 })();
