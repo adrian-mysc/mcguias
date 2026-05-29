@@ -18,3 +18,7 @@ dist/
 
 # PWA / cache gerado
 sw.js.map
+
+# Relatórios gerados (auditoria, etc.)
+audit_report.json
+*.report.json

@@ -4,10 +4,16 @@ on:
   push:
     paths:
       - 'data/questions/**'
+      - 'js/**'
+      - 'tests/**'
+      - '.eslintrc.json'
       - 'js/tools/validateQuestions.js'
   pull_request:
     paths:
       - 'data/questions/**'
+      - 'js/**'
+      - 'tests/**'
+      - '.eslintrc.json'
       - 'js/tools/validateQuestions.js'
 
 jobs:
@@ -20,3 +26,7 @@ jobs:
           node-version: '20'
       - name: Validate question files
         run: node js/tools/validateQuestions.js
+      - name: Run test suite
+        run: node tests/run_tests.js
+      - name: Lint JavaScript
+        run: npx --yes eslint@8 js/src js/gamificacao.js js/game.js js/learning

@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Batalha — MC Guias</title>
+  <meta name="description" content="Batalha de quiz ao vivo no MC Guias. Enfrente seu adversário em rodadas de perguntas, responda mais rápido e conquiste a vitória para subir no ranking.">
+  <meta property="og:title" content="Batalha — MC Guias">
+  <meta property="og:description" content="Batalha de quiz ao vivo no MC Guias. Enfrente seu adversário em rodadas de perguntas e conquiste a vitória.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="../css/styles.css">
   <script src="../js/theme.js"></script>
   <link rel="manifest" href="/mcguias/manifest.json">
@@ -582,7 +587,7 @@
     // ── Helpers ────────────────────────────────────────
     const el = id => document.getElementById(id);
     function esc(s) {
-      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
     }
     function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
     function showView(id) {

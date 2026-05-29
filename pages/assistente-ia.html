@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assistente IA — MC Guias</title>
+  <meta name="description" content="Assistente de IA do MC Guias. Tire dúvidas, receba explicações e estude com ajuda inteligente para dominar os conteúdos e se preparar para os quizzes.">
+  <meta property="og:title" content="Assistente IA — MC Guias">
+  <meta property="og:description" content="Assistente de IA do MC Guias. Tire dúvidas e estude com ajuda inteligente para dominar os conteúdos.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="../css/styles.css">
   <script src="../js/theme.js"></script>
   <link rel="manifest" href="/mcguias/manifest.json">
@@ -731,7 +736,7 @@ Regras:
     if (el) el.remove();
   }
   function escapeHtml(s) {
-    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
   }
   function formatResponse(text) {
     return text

@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ranking — MC Guias</title>
+  <meta name="description" content="Ranking dos estudantes do MC Guias. Veja a classificação por pontos, quizzes concluídos e vitórias nas batalhas, e acompanhe sua posição entre os melhores.">
+  <meta property="og:title" content="Ranking — MC Guias">
+  <meta property="og:description" content="Ranking dos estudantes do MC Guias. Veja a classificação por pontos, quizzes concluídos e vitórias nas batalhas.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="../css/styles.css">
     <script>
     (function(){
@@ -476,8 +481,9 @@
     let currentRank = null;
 
     function esc(s) {
-      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
     }
+    function safeUrl(u){u=String(u||'');return /^https?:\/\//i.test(u)?u:'';}
 
     function applyFilters() {
       const estado      = document.getElementById('filterEstado')?.value      || '';
@@ -529,8 +535,9 @@
       const youTag  = isMe ? '<span class="lb-you-tag">Você</span>' : '';
       const lojaTag = p.loja ? `<div class="lb-loja">${esc(p.loja)}</div>` : '';
       const displayName = esc(p.username || 'Jogador');
-      const avatarInner = p.avatar
-        ? `<img src="${esc(p.avatar)}" alt="${displayName}" loading="lazy">`
+      const avatarUrl = safeUrl(p.avatar);
+      const avatarInner = avatarUrl
+        ? `<img src="${esc(avatarUrl)}" alt="${displayName}" loading="lazy">`
         : avatarText(p);
       return `<div class="lb-row${isMe ? ' lb-me' : ''}">
         ${rankEl}
@@ -707,8 +714,9 @@
       const youTag = isMe ? '<span class="lb-you-tag">Você</span>' : '';
       const rate   = p.total_battles > 0 ? Math.round(p.wins * 100 / p.total_battles) : 0;
       const name   = esc(p.username || 'Jogador');
-      const avatarInner = p.avatar
-        ? `<img src="${esc(p.avatar)}" alt="${name}" loading="lazy">`
+      const avatarUrl = safeUrl(p.avatar);
+      const avatarInner = avatarUrl
+        ? `<img src="${esc(avatarUrl)}" alt="${name}" loading="lazy">`
         : (p.username || '?').charAt(0).toUpperCase();
       return `<div class="lb-row${isMe ? ' lb-me' : ''}">
         ${rankEl}
