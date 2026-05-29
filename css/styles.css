@@ -1268,3 +1268,35 @@ input, select, textarea,
 body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
 [data-page="home"] body,
 body[data-page="home"] { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+
+/* ============================================================
+   Responsividade global — adapta a qualquer resolução de tela
+   ============================================================ */
+html { -webkit-text-size-adjust: 100%; }
+/* Nunca rolar lateralmente (clip preserva position:sticky, ao contrário de hidden) */
+html { overflow-x: clip; }
+/* Quebra palavras/URLs longas em vez de estourar a largura */
+body { overflow-wrap: break-word; }
+/* Mídia e tabelas nunca excedem o container */
+img, svg, video, canvas, iframe, table { max-width: 100%; }
+
+/* Safe-area para celulares com notch / barra do sistema */
+.navbar { padding-top: env(safe-area-inset-top, 0px); }
+.navbar-inner {
+  padding-left:  max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+/* Navbar: a marca nunca força a largura — trunca com reticências */
+.navbar-brand { min-width: 0; }
+.navbar-brand h1, .navbar-brand p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Grupo de ações da navbar pode encolher (corrige overflow horizontal ≤360px) */
+.navbar-actions { display: flex; align-items: center; gap: 6px; min-width: 0; flex-shrink: 1; }
+
+@media (max-width: 380px) {
+  #navbar-username { display: none; }   /* pílula de perfil vira só avatar */
+  #updateBtnNav    { display: none; }    /* botão "verificar atualização" oculto */
+  .navbar-inner    { gap: 8px; }
+  .navbar-inner    { padding-left: max(12px, env(safe-area-inset-left)); padding-right: max(12px, env(safe-area-inset-right)); }
+}
