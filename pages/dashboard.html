@@ -7,6 +7,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard — MC Guias</title>
+  <meta name="description" content="Painel do estudante no MC Guias. Acompanhe seu progresso, pontuação, histórico de quizzes, conquistas e estatísticas de aprendizado em um só lugar.">
+  <meta property="og:title" content="Dashboard — MC Guias">
+  <meta property="og:description" content="Painel do estudante no MC Guias. Acompanhe seu progresso, pontuação, histórico de quizzes e conquistas.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
@@ -379,7 +384,7 @@
 
     // ── Helpers ──────────────────────────────────────────────
     function esc(s) {
-      return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
     }
     function getQuizHistory() {
       try { return JSON.parse(localStorage.getItem('mc_quiz_history') || '[]'); } catch(e) { return []; }
