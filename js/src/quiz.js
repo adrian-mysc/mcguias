@@ -38,6 +38,9 @@ function initQuiz(questions, guiaName) {
   window._quizData = questions;
   window._quizGuia = guiaName || 'Simulado';
 
+  // Telemetria leve (best-effort): quiz iniciado
+  if (window.mcTrack) window.mcTrack('quiz_started', { guia: window._quizGuia, total: questions.length });
+
   var oldBar = document.getElementById('quiz-mode-bar');
   // Only remove bar if it was created dynamically by JS (not hardcoded in HTML)
   // We detect this by checking if it has our data attribute
