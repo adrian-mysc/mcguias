@@ -452,7 +452,7 @@
         </button>
       </div>
 
-      <div id="hostStartWrap" style="display:none;display:flex;flex-direction:column;gap:8px">
+      <div id="hostStartWrap" style="display:none;flex-direction:column;gap:8px">
         <button class="btn-primary" id="startBtn" style="width:100%" disabled onclick="hostStartBattle()">
           🏁 Iniciar batalha
         </button>
@@ -848,6 +848,24 @@
         participants = {};
         data.forEach(p => { participants[p.user_id] = p; });
         renderWaitingPlayers();
+      }
+      // Fallback: verifica se a sessão mudou de status caso o Realtime tenha falhado
+      const { data: sess } = await supabase
+        .from('arena_sessions')
+        .select('status')
+        .eq('id', session.id)
+        .single();
+      if (!sess) return;
+      if (sess.status === 'active' && pollInterval) {
+        clearInterval(pollInterval); pollInterval = null;
+        if (sessionWatcher) { supabase.removeChannel(sessionWatcher); sessionWatcher = null; }
+        if (participantsWatcher) { supabase.removeChannel(participantsWatcher); participantsWatcher = null; }
+        startBattle();
+      } else if (sess.status === 'cancelled' && pollInterval) {
+        clearInterval(pollInterval); pollInterval = null;
+        cleanup();
+        toast('⚠️ O host cancelou a sala.');
+        showView('view-home');
       }
     }
 
@@ -1255,7 +1273,7 @@
       // Update own participant record
       await supabase.from('arena_participants').update({
         score: myScore,
-        answers: JSON.stringify(myAnswers),
+        answers: myAnswers,
         finished: true,
         finished_at: new Date().toISOString(),
       }).eq('session_id', session.id).eq('user_id', me.id);
