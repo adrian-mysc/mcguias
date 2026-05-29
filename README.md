@@ -13,24 +13,34 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 ## ✨ Funcionalidades
 
 ### Quiz e Aprendizado
-- **Simulado Geral** com 590+ perguntas e filtro por guia
+- **Simulado Geral** com **1600+ perguntas** (23 categorias) e filtro por guia
+- **Olimpíada de Básicos** — banco com 577 questões oficiais cobrindo todas as áreas
 - **3 modos de estudo**: múltipla escolha, flashcard e lacunas (fill-in-the-blank)
 - **Timer configurável** por pergunta: 10s, 15s, 20s ou 30s
+- **Quiz adaptativo**: ajusta a dificuldade em tempo real conforme o desempenho
 - **Repetição espaçada** (SM-2): questões com mais erros aparecem com prioridade
+- **Mapa de fraquezas**: identifica os tópicos/tags com pior desempenho
 - **Revisão de erros**: botão "Revisar só os erros" na tela de resultado, ordenado por taxa de erro
 - **Validação fuzzy** nas lacunas: "10:30" = "10min30s", com feedback mostrando a normalização aplicada
 - **Auto-avançar** após acerto com barra de progresso visual
 - **Streak de acertos** com toasts animados (3, 5, 10, 15, 20 seguidas)
 - **Histórico de simulados** com pontuação, data e compartilhamento
 
+### Multiplayer e Social
+- **Batalha 1v1** — duelo de quiz em tempo real contra outro usuário (Supabase Realtime)
+- **Arena 2v2** — partidas em equipe com sala de espera e matchmaking
+- **Ranking global** — leaderboard por pontuação, com posição do usuário e filtro por loja
+- Pontuação derivada de `quiz_sessions` no servidor (idempotente — sem inflar score em re-sync)
+
 ### Dashboard e Analytics
 - **Dashboard unificado** com resumo geral, acertos vs. erros e desempenho por guia
 - **Análise por questão**: top 5 questões mais difíceis com taxa de erro e tempo médio de resposta
 - Rastreamento de analytics por questão (`mc_analytics`): tentativas, acertos, erros e tempo médio
+- **Telemetria leve** (sem SDK): eventos `app_open` / `quiz_started` / `quiz_finished` para diagnóstico de uso
 - Backup e restauração completa dos dados (inclui analytics)
 
 ### Gamificação
-- **35+ conquistas** desbloqueáveis por categoria
+- **65 conquistas** desbloqueáveis por categoria
 - **Desafios semanais com backend** — 14 desafios sincronizados no Supabase
 - **Sistema de XP** e pontuação por questão
 - **Jogo "Monte o Sanduíche"** com 9 sanduíches e ingredientes reais
@@ -48,7 +58,9 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 - Página offline exibe guias disponíveis em cache
 - **Dark Mode** com detecção automática de `prefers-color-scheme` e toggle persistido
 
-### Performance (v10)
+### Performance e Resiliência (Service Worker v37)
+- **Caminho crítico sem dependência de CDN**: auth, sync e ranking usam um cliente REST puro (`js/supabase/rest.js`) que fala direto com o PostgREST/GoTrue — a página carrega e o quiz sincroniza mesmo se o `esm.sh` (SDK) estiver lento ou bloqueado
+- Service Worker **cache-first** com timeout de navegação e limpeza automática de caches antigos
 - SR data em cache de memória — sem JSON.parse/stringify a cada resposta
 - DOM refs cacheados no loop do quiz — sem `getElementById` repetido
 - `renderHistory` e preload de questões diferidos via `requestIdleCallback`
@@ -82,7 +94,7 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 ### Frontend
 | Tecnologia | Uso |
 |-----------|-----|
-| HTML5 + CSS3 | 44 páginas, design system com variáveis CSS, dark mode via `[data-theme]` |
+| HTML5 + CSS3 | 50+ páginas, design system com variáveis CSS, dark mode via `[data-theme]` |
 | Vanilla JavaScript (ES6) | Sem framework — bundle gerado por `build/concat.sh` a partir de `js/src/` |
 | Web Audio API | Sons de feedback gerados em tempo real (sem arquivos externos) |
 | Web Share API | Compartilhamento de resultados com fallback para clipboard |
@@ -104,11 +116,14 @@ Feita para facilitar o estudo e a memorização de procedimentos — funciona 10
 ### Backend (Supabase)
 | Tecnologia | Uso |
 |-----------|-----|
+| Cliente REST próprio (`rest.js`) | Acesso ao PostgREST/GoTrue **sem o SDK** — caminho crítico (auth, sync, ranking) resiliente a falha de CDN; renova o token via REST |
 | Supabase Auth | Login por e-mail/senha e Google OAuth |
-| Supabase Database (PostgreSQL) | Perfis, ranking, batalhas, conquistas, desafios semanais, push subscriptions |
+| Supabase Database (PostgreSQL) | Perfis, ranking, batalhas, conquistas, desafios semanais, sessões de quiz, telemetria, push subscriptions |
+| Supabase Realtime | Batalha 1v1 e Arena 2v2 em tempo real |
 | Supabase Storage | Upload de fotos de avatar (`bucket: avatars`) |
 | Supabase Edge Functions | Envio de Web Push notifications |
-| Row Level Security (RLS) | Cada usuário só acessa e edita os próprios dados |
+| RPCs (`get_leaderboard`, `get_user_rank`) | Ranking calculado no servidor a partir de `quiz_sessions` |
+| Triggers + Row Level Security (RLS) | Cache de pontos derivado por trigger; cada usuário só acessa/edita os próprios dados |
 
 ### Qualidade e CI
 | Tecnologia | Uso |
@@ -165,7 +180,7 @@ bash build/concat.sh
 ```
 mcguias/
 ├── index.html              # Página inicial
-├── pages/                  # 42 guias e páginas auxiliares
+├── pages/                  # 50+ guias e páginas (quiz, batalha, arena, ranking, perfil…)
 ├── js/
 │   ├── main.js             # Bundle gerado — NÃO editar diretamente
 │   ├── src/                # Módulos-fonte (edite aqui, rode build/concat.sh)
@@ -182,8 +197,9 @@ mcguias/
 │   ├── theme.js            # Dark mode toggle global
 │   ├── gamificacao.js      # Conquistas, desafios e XP
 │   ├── game.js             # Jogo Monte o Sanduíche
-│   ├── learning/           # Módulos: adaptiveQuiz, spacedRepetition, weaknessMap
-│   ├── supabase/           # Integração backend (auth, sync, ranking)
+│   ├── telemetry.js        # Telemetria leve sem SDK (app_events)
+│   ├── learning/           # adaptiveQuiz, spacedRepetition, weaknessMap
+│   ├── supabase/           # Backend: rest.js (cliente REST), auth, sync, leaderboard, push…
 │   └── tools/              # validateQuestions, generateIndexes, autoTag
 ├── build/
 │   └── concat.sh           # Gera js/main.js a partir de js/src/
