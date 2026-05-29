@@ -390,11 +390,15 @@ function saveQuizResult(guia, score, total) {
   _flushSRData(); // ensure SR writes are committed before quiz end
   const hist = McStorage.get('mc_quiz_history', []);
   const date = new Date().toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
-  hist.unshift({ guia, score, total, date });
+  // csid: id estável por sessão para idempotência no Supabase (evita duplicatas)
+  const csid = (window.crypto && crypto.randomUUID)
+    ? crypto.randomUUID()
+    : (Date.now() + '-' + Math.random().toString(36).slice(2));
+  hist.unshift({ guia, score, total, date, csid });
   if (hist.length > 180) hist.splice(180);
   McStorage.set('mc_quiz_history', hist);
   // Sync imediato para quiz_sessions — o sync.js escuta este evento
-  window.dispatchEvent(new CustomEvent('mc:quizComplete', { detail: { guia, score, total } }));
+  window.dispatchEvent(new CustomEvent('mc:quizComplete', { detail: { guia, score, total, csid } }));
 }
 
 function renderHistory(containerId) {

@@ -290,16 +290,24 @@ test('mixed mode: reconstrói mapa de questões a partir de IDs compostos', () =
   assert(reconstructed[0].pergunta, 'Questão deve ter pergunta');
 });
 
-test('syncLeaderboard: Math.max evita perda de pontos', () => {
-  const serverPoints = 80;
-  const localPoints  = 60; // stale local
-  const points = Math.max(serverPoints, localPoints);
-  assertEqual(points, 80, 'Deve usar server points quando maior');
+test('modelo de pontos unificado: cliente não escreve points/total_xp', () => {
+  // Fonte única de verdade = quiz_sessions; points/total_xp são derivados
+  // pelo trigger do banco. submitScore só mantém dados de identidade.
+  const lb = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'leaderboard.js'), 'utf8');
+  const submit = lb.slice(lb.indexOf('export async function submitScore'), lb.indexOf('export async function getUserRank'));
+  assert(!/\bpoints\b/.test(submit), 'submitScore não deve escrever points (trigger é dono)');
+  assert(!/total_xp/.test(submit), 'submitScore não deve escrever total_xp (trigger é dono)');
 
-  const serverPoints2 = 30;
-  const localPoints2  = 55; // local has unsynced sessions
-  const points2 = Math.max(serverPoints2, localPoints2);
-  assertEqual(points2, 55, 'Deve usar local quando maior (sessões não sincronizadas)');
+  const sync = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  assert(!/cached_points/.test(sync), 'sync.js não deve mais ler cached_points (coluna removida)');
+});
+
+test('idempotência: quiz_sessions sincroniza com client_session_id', () => {
+  const sync = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  assert(/client_session_id/.test(sync), 'sync deve enviar client_session_id');
+  assert(/ignoreDuplicates/.test(sync), 'sync deve usar upsert ignoreDuplicates');
+  const stats = fs.readFileSync(path.join(ROOT, 'js', 'src', 'stats.js'), 'utf8');
+  assert(/csid/.test(stats), 'stats deve gerar csid por sessão');
 });
 
 test('syncQuizSessions: slice correto — não re-sincroniza sessões antigas', () => {

@@ -2,14 +2,17 @@
 import { supabase } from './config.js';
 import { getCurrentUser } from './auth.js';
 
-export async function submitScore(points, username, totalXp = 0, loja = null, sigla = null) {
+// points e total_xp são derivados de quiz_sessions pelo trigger do banco
+// (fonte única de verdade). Aqui só mantemos os dados de identidade do
+// jogador no ranking — NÃO escreva points/total_xp daqui.
+export async function submitScore(username, loja = null, sigla = null) {
   const user = await getCurrentUser();
   if (!user) return;
 
   const { error } = await supabase
     .from('leaderboard')
     .upsert(
-      { user_id: user.id, username, points, total_xp: totalXp, loja, sigla },
+      { user_id: user.id, username, loja, sigla },
       { onConflict: 'user_id' }
     );
 

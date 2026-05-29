@@ -134,6 +134,49 @@ Campos salvos **apenas em localStorage** (não no banco): `turno`, `admissao`, `
 
 ---
 
+## Migrations do Banco (fonte de verdade)
+
+**A fonte de verdade do schema é `supabase/migrations/`, NÃO `sql/schema.sql`.**
+O `sql/schema.sql` é legado/incompleto e conflita com as migrations. Para
+reconstruir o banco use `supabase db pull`. Toda mudança de schema deve virar
+uma migration nova (`supabase migration new ...`).
+
+### Convenções de RLS
+
+- Em policies, **sempre** use `(select auth.uid())` em vez de `auth.uid()` puro
+  (evita reavaliação por linha — lint `auth_rls_initplan`).
+- **Não** use `FOR ALL` quando já existe uma policy `FOR SELECT` pública na
+  mesma tabela: separe em INSERT/UPDATE/DELETE (evita `multiple_permissive_policies`).
+- Funções devem ter `SET search_path` fixo (`public` se o corpo referencia
+  tabelas sem schema-qualificação).
+
+### Idempotência de `quiz_sessions`
+
+Cada sessão de quiz recebe um `csid` (UUID estável, gerado em `saveQuizResult`
+no `js/src/stats.js`) que vai no evento `mc:quizComplete` e é enviado como
+`client_session_id`. O `sync.js` faz **upsert com `onConflict:
+'user_id,client_session_id'` + `ignoreDuplicates`** — assim, se o ponteiro de
+sync (`mc_sessions_synced`) dessincronizar, a sessão não é duplicada (o que
+inflaria a pontuação, já que `get_leaderboard` faz `SUM(score)`).
+
+### Modelo de pontos (UNIFICADO)
+
+**Fonte única de verdade: `quiz_sessions`.** A tabela `leaderboard` é um
+**cache derivado**, mantido pelo trigger `update_leaderboard_cached_points`
+(nome legado) em cada INSERT de `quiz_sessions`:
+- `leaderboard.points`  = `SUM(quiz_sessions.score)`
+- `leaderboard.total_xp` = `COUNT(quiz_sessions)`
+
+Regras:
+- **NÃO** escreva `points`/`total_xp` pelo cliente. `submitScore(username,
+  loja, sigla)` só mantém dados de identidade no ranking.
+- As RPCs `get_leaderboard`/`get_user_rank` leem `leaderboard` direto (sem
+  `GREATEST`, sem reagregar `quiz_sessions`) — rápidas e consistentes com o
+  fallback `getUserRank()` (que também lê `leaderboard.points`).
+- A coluna `cached_points` foi **removida** (era redundante com `points`).
+
+---
+
 ## Padrões de Código
 
 - **Sem frameworks**: tudo Vanilla JS. Não introduza React, Vue, etc.
