@@ -159,11 +159,21 @@ no `js/src/stats.js`) que vai no evento `mc:quizComplete` e é enviado como
 sync (`mc_sessions_synced`) dessincronizar, a sessão não é duplicada (o que
 inflaria a pontuação, já que `get_leaderboard` faz `SUM(score)`).
 
-### Modelo de pontos (atenção)
+### Modelo de pontos (UNIFICADO)
 
-Há 3 fontes: `SUM(quiz_sessions.score)`, `leaderboard.points` e
-`leaderboard.cached_points` (mantido por trigger). `get_leaderboard` usa
-`GREATEST(SUM, points)`. Ainda não unificado — cuidado ao alterar rankings.
+**Fonte única de verdade: `quiz_sessions`.** A tabela `leaderboard` é um
+**cache derivado**, mantido pelo trigger `update_leaderboard_cached_points`
+(nome legado) em cada INSERT de `quiz_sessions`:
+- `leaderboard.points`  = `SUM(quiz_sessions.score)`
+- `leaderboard.total_xp` = `COUNT(quiz_sessions)`
+
+Regras:
+- **NÃO** escreva `points`/`total_xp` pelo cliente. `submitScore(username,
+  loja, sigla)` só mantém dados de identidade no ranking.
+- As RPCs `get_leaderboard`/`get_user_rank` leem `leaderboard` direto (sem
+  `GREATEST`, sem reagregar `quiz_sessions`) — rápidas e consistentes com o
+  fallback `getUserRank()` (que também lê `leaderboard.points`).
+- A coluna `cached_points` foi **removida** (era redundante com `points`).
 
 ---
 

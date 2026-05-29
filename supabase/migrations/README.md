@@ -28,6 +28,7 @@ Fonte de verdade do schema do banco (projeto `iizzeeceqysdfhnkosrc`).
 | **20260529081414** | **security_search_path_revoke_bucket** (lints 0011/0025/0028) |
 | **20260529081441** | **optimize_rls_initplan_and_permissive** (lints 0003/0006) |
 | **20260529081452** | **quiz_sessions_idempotency** (client_session_id) |
+| **20260529082446** | **unify_points_model** (fonte única = quiz_sessions) |
 
 As 18 primeiras estão consolidadas em `20260521015617_baseline_remote_history.sql`
 (cópia verbatim do `supabase_migrations.schema_migrations`). As 4 de `20260529*`
@@ -52,6 +53,6 @@ supabase db push
 - **get_leaderboard / get_user_rank** são `SECURITY DEFINER` executáveis por
   `anon` — **intencional** (ranking público). Os lints 0028/0029 permanecem
   por design.
-- **Modelo de pontos** tem 3 fontes (`SUM(quiz_sessions.score)`,
-  `leaderboard.points`, `leaderboard.cached_points`). `get_leaderboard` usa
-  `GREATEST(SUM, points)`. Considerar unificar numa única fonte no futuro.
+- **Modelo de pontos**: ✅ unificado em `20260529082446`. Fonte única =
+  `quiz_sessions`; `leaderboard` é cache derivado pelo trigger; `cached_points`
+  removida. Ver detalhes no `CLAUDE.md`.

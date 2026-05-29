@@ -71,23 +71,9 @@ async function syncLeaderboard() {
   const loja  = perfilDados.loja  || null;
   const sigla = perfilDados.sigla || null;
 
-  // cached_points é mantido pelo trigger do banco (SUM real de quiz_sessions)
-  // total_xp vem da contagem de sessões no servidor
-  const { data: cached } = await supabase
-    .from('leaderboard')
-    .select('cached_points, total_xp')
-    .eq('user_id', user.id)
-    .single();
-
-  // Fonte de verdade: cached_points (trigger) e contagem de sessões do servidor
-  // Fallback para histórico local apenas se ainda não há linha no banco
-  const history    = mcGet('mc_quiz_history', []);
-  const localXp    = history.length;
-
-  const points  = cached?.cached_points ?? history.reduce((s, h) => s + (h.score || 0), 0);
-  const totalXp = Math.max(cached?.total_xp ?? 0, localXp);
-
-  await submitScore(points, username, totalXp, loja, sigla);
+  // Fonte única de verdade: quiz_sessions. points e total_xp são derivados
+  // pelo trigger do banco. Aqui só mantemos os dados de identidade do jogador.
+  await submitScore(username, loja, sigla);
 }
 
 // ─── Desafios Semanais ────────────────────────────────────────────────────────
