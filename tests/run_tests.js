@@ -692,6 +692,39 @@ test('toggleTheme lógica: alterna entre dark e light corretamente', () => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
+section('Build — partials de página (navbar)');
+
+const navConfig = JSON.parse(fs.readFileSync(path.join(ROOT, 'build', 'pages.config.json'), 'utf8'));
+const navTpl = fs.readFileSync(path.join(ROOT, 'build', 'partials', 'navbar.html'), 'utf8');
+
+function expectedNavBlock(meta) {
+  const nav = navTpl.replace('{{TITLE}}', meta.navTitle).replace('{{SUBTITLE}}', meta.navSubtitle).replace(/\n$/, '');
+  const start = '  <!-- mc:navbar:start (gerado por build/build-pages.mjs — edite build/partials/navbar.html + build/pages.config.json) -->';
+  return start + '\n' + nav + '\n  <!-- mc:navbar:end -->';
+}
+
+test('navbar gerada está sincronizada com os partials (sem drift)', () => {
+  const drift = [];
+  for (const [file, meta] of Object.entries(navConfig)) {
+    const src = fs.readFileSync(path.join(ROOT, 'pages', file), 'utf8');
+    if (!src.includes(expectedNavBlock(meta))) drift.push(file);
+  }
+  assert(drift.length === 0,
+    `Navbar fora de sincronia (rode \`node build/build-pages.mjs\`): ${drift.join(', ')}`);
+});
+
+test('toda página gerenciada tem marcadores mc:navbar balanceados', () => {
+  const bad = [];
+  for (const file of Object.keys(navConfig)) {
+    const src = fs.readFileSync(path.join(ROOT, 'pages', file), 'utf8');
+    const s = (src.match(/mc:navbar:start/g) || []).length;
+    const e = (src.match(/mc:navbar:end/g) || []).length;
+    if (s !== 1 || e !== 1) bad.push(`${file}(s=${s},e=${e})`);
+  }
+  assert(bad.length === 0, `Marcadores inconsistentes: ${bad.join(', ')}`);
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Results
 // ─────────────────────────────────────────────────────────────────────────────
 console.log(`\n${'─'.repeat(50)}`);
