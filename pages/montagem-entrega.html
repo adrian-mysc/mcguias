@@ -77,13 +77,13 @@
     .r2p-label { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
   </style>
 
-  <link rel="manifest" href="/mcguias/manifest.json">
+  <link rel="manifest" href="../manifest.json">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="MC Guias">
   <meta name="theme-color" content="#DA291C">
-  <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
 
   <link rel="preload" href="../js/main.js" as="script">
 </head>
@@ -616,26 +616,26 @@
 
   <!-- Bottom Navigation -->
   <nav class="bottom-nav" aria-label="Navegação principal">
-    <a class="bottom-nav-item" href="/mcguias/index.html" data-nav="home">
+    <a class="bottom-nav-item" href="../index.html" data-nav="home">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
       <span>Início</span>
     </a>
-    <a class="bottom-nav-item" href="/mcguias/pages/quiz.html" data-nav="quiz">
+    <a class="bottom-nav-item" href="../pages/quiz.html" data-nav="quiz">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
       <span>Quiz</span>
     </a>
-    <a class="bottom-nav-item" href="/mcguias/pages/treinadores.html" data-nav="treinadores">
+    <a class="bottom-nav-item" href="../pages/treinadores.html" data-nav="treinadores">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
       <span>Treinadores</span>
     </a>
-    <a class="bottom-nav-item" href="/mcguias/pages/condimentacao.html" data-nav="condimentacao">
+    <a class="bottom-nav-item" href="../pages/condimentacao.html" data-nav="condimentacao">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
       <span>Cardápio</span>
     </a>
   </nav>
 
   <!-- FAB Quiz -->
-  <a class="fab-quiz" href="/mcguias/pages/quiz.html" aria-label="Ir para o Quiz" title="Quiz">🎯</a>
+  <a class="fab-quiz" href="../pages/quiz.html" aria-label="Ir para o Quiz" title="Quiz">🎯</a>
 
 <script>
 // Bottom Nav — highlight active item
@@ -643,7 +643,7 @@
   var path = window.location.pathname;
   document.querySelectorAll('.bottom-nav-item').forEach(function(item) {
     var nav = item.getAttribute('data-nav');
-    if (nav === 'home' && (path.endsWith('index.html') || path.endsWith('/mcguias/') || path === '/mcguias')) {
+    if (nav === 'home' && (path.endsWith('index.html') || path.endsWith('/'))) {
       item.classList.add('active');
     } else if (nav && path.includes(nav)) {
       item.classList.add('active');

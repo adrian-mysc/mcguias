@@ -1,47 +1,57 @@
-// MC Guias — Service Worker v37
-// Atualização: bump de versão para forçar limpeza de caches antigos em todos os clientes
+// MC Guias — Service Worker v38
+// Atualização: base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
+// (GitHub Pages) quanto em / (Vercel/domínio próprio), sem caminho fixo.
 
-const CACHE = 'mc-guias-v37';
-const offlineFallbackPage = '/mcguias/offline.html';
+const CACHE = 'mc-guias-v38';
 
-const PRECACHE_ASSETS = [
-  '/mcguias/offline.html',
-  '/mcguias/',
-  '/mcguias/index.html',
-  '/mcguias/css/styles.css',
-  '/mcguias/js/main.js',
-  '/mcguias/js/gamificacao.js',
-  '/mcguias/js/auth-guard.js',
-  '/mcguias/js/theme.js',
-  '/mcguias/js/questionLoader.js',
-  '/mcguias/js/changelog.js',
-  '/mcguias/manifest.json',
+// Raiz da aplicação, derivada da própria URL do SW:
+//   GitHub Pages → '/mcguias/sw.js'  ⇒ BASE = '/mcguias/'
+//   Vercel/raiz  → '/sw.js'          ⇒ BASE = '/'
+const BASE = self.location.pathname.replace(/sw\.js$/, '');
+
+const offlineFallbackPage = BASE + 'offline.html';
+
+// Caminhos relativos à raiz; prefixados com BASE em runtime.
+const PRECACHE_PATHS = [
+  'offline.html',
+  '',
+  'index.html',
+  'css/styles.css',
+  'js/main.js',
+  'js/gamificacao.js',
+  'js/auth-guard.js',
+  'js/theme.js',
+  'js/questionLoader.js',
+  'js/changelog.js',
+  'manifest.json',
   // Questões — garantem funcionamento 100% offline desde a instalação do PWA
-  '/mcguias/data/questions/chapa/basico.json',
-  '/mcguias/data/questions/lope/basico.json',
-  '/mcguias/data/questions/linha/basico.json',
-  '/mcguias/data/questions/mcfritas/basico.json',
-  '/mcguias/data/questions/fritas/basico.json',
-  '/mcguias/data/questions/fritos/basico.json',
-  '/mcguias/data/questions/condimentacao/basico.json',
-  '/mcguias/data/questions/salao-ngk/basico.json',
-  '/mcguias/data/questions/montagem-entrega/basico.json',
-  '/mcguias/data/questions/influencer-pagamento/basico.json',
-  '/mcguias/data/questions/drive-thru/basico.json',
-  '/mcguias/data/questions/bebidas-sobremesas/basico.json',
-  '/mcguias/data/questions/embaixador-experiencia/basico.json',
-  '/mcguias/data/questions/seguranca-alimento/basico.json',
-  '/mcguias/data/questions/estoque-recebimento/basico.json',
-  '/mcguias/data/questions/fechamento/basico.json',
-  '/mcguias/data/questions/mccafe/basico.json',
-  '/mcguias/data/questions/manutencao-preventivas/basico.json',
-  '/mcguias/data/questions/best-burguer/basico.json',
-  '/mcguias/data/questions/mcdelivery/basico.json',
-  '/mcguias/data/questions/gerencia/basico.json',
-  '/mcguias/data/questions/lideranca/basico.json',
-  '/mcguias/data/questions/treinador/basico.json',
-  '/mcguias/data/questions/olimpiada/basico.json',
+  'data/questions/chapa/basico.json',
+  'data/questions/lope/basico.json',
+  'data/questions/linha/basico.json',
+  'data/questions/mcfritas/basico.json',
+  'data/questions/fritas/basico.json',
+  'data/questions/fritos/basico.json',
+  'data/questions/condimentacao/basico.json',
+  'data/questions/salao-ngk/basico.json',
+  'data/questions/montagem-entrega/basico.json',
+  'data/questions/influencer-pagamento/basico.json',
+  'data/questions/drive-thru/basico.json',
+  'data/questions/bebidas-sobremesas/basico.json',
+  'data/questions/embaixador-experiencia/basico.json',
+  'data/questions/seguranca-alimento/basico.json',
+  'data/questions/estoque-recebimento/basico.json',
+  'data/questions/fechamento/basico.json',
+  'data/questions/mccafe/basico.json',
+  'data/questions/manutencao-preventivas/basico.json',
+  'data/questions/best-burguer/basico.json',
+  'data/questions/mcdelivery/basico.json',
+  'data/questions/gerencia/basico.json',
+  'data/questions/lideranca/basico.json',
+  'data/questions/treinador/basico.json',
+  'data/questions/olimpiada/basico.json',
 ];
+
+const PRECACHE_ASSETS = PRECACHE_PATHS.map((p) => BASE + p);
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -88,17 +98,17 @@ self.addEventListener('message', (event) => {
 
 // ---- Push Notifications ----
 self.addEventListener('push', (event) => {
-  let data = { title: 'MC Guias 📚', body: 'Hora de estudar! Mantenha seu streak.', url: '/mcguias/' };
+  let data = { title: 'MC Guias 📚', body: 'Hora de estudar! Mantenha seu streak.', url: BASE };
   if (event.data) {
     try { data = Object.assign(data, event.data.json()); } catch (e) {}
   }
   const options = {
     body:     data.body,
-    icon:     '/mcguias/icons/icon-192.png',
-    badge:    '/mcguias/icons/icon-192.png',
+    icon:     BASE + 'icons/icon-192.png',
+    badge:    BASE + 'icons/icon-192.png',
     tag:      data.tag || 'mc-daily-reminder',
     renotify: false,
-    data:     { url: data.url || '/mcguias/' },
+    data:     { url: data.url || BASE },
     actions:  [
       { action: 'open',    title: '📖 Estudar agora' },
       { action: 'dismiss', title: '✕ Fechar'         },
@@ -112,11 +122,11 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   if (event.action === 'dismiss') return;
   const targetUrl = (event.notification.data && event.notification.data.url)
-    ? event.notification.data.url : '/mcguias/';
+    ? event.notification.data.url : BASE;
   event.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
       for (var i = 0; i < clients.length; i++) {
-        if (clients[i].url.indexOf('/mcguias') !== -1 && 'focus' in clients[i]) {
+        if (clients[i].url.indexOf(self.location.origin + BASE) !== -1 && 'focus' in clients[i]) {
           return clients[i].focus();
         }
       }

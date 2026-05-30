@@ -6,8 +6,10 @@
 (function () {
   'use strict';
 
-  var BASE_PATH   = '/mcguias/data/questions';
-  var META_PATH   = '/mcguias/data/metadata';
+  // Raiz da app: '/mcguias/' no GitHub Pages, '/' na Vercel/domínio próprio.
+  var APP_ROOT    = location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/');
+  var BASE_PATH   = APP_ROOT + 'data/questions';
+  var META_PATH   = APP_ROOT + 'data/metadata';
   var CACHE_KEY   = 'mcg_qpack_v1';
   var PROG_KEY    = 'mcg_qprog_v1';
 
