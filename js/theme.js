@@ -46,6 +46,21 @@
     document.addEventListener('DOMContentLoaded', _inject);
   }
 
+  // Splash — esconde o overlay de carregamento após o load completo.
+  // Centralizado aqui (antes era um <script> inline duplicado em cada página).
+  // Se a página não tem #splash, é no-op.
+  function _hideSplash() {
+    var s = document.getElementById('splash');
+    if (!s) return;
+    s.classList.add('hide');
+    setTimeout(function () { s.style.display = 'none'; }, 420);
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(_hideSplash, 200);
+  } else {
+    window.addEventListener('load', function () { setTimeout(_hideSplash, 200); });
+  }
+
   // Segue o sistema quando o usuário não definiu preferência
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
     if (localStorage.getItem('mc_theme')) return;

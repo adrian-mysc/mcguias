@@ -414,24 +414,6 @@
 </script>
 
 
-  <script>
-    // Splash — dismiss after fonts + content ready
-    (function() {
-      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', t);
-      function hideSplash() {
-        var s = document.getElementById('splash');
-        if (!s) return;
-        s.classList.add('hide');
-        setTimeout(function() { s.style.display = 'none'; }, 420);
-      }
-      if (document.readyState === 'complete') {
-        setTimeout(hideSplash, 200);
-      } else {
-        window.addEventListener('load', function() { setTimeout(hideSplash, 200); });
-      }
-    })();
-  </script>
   <link rel="manifest" href="/mcguias/manifest.json">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -616,7 +598,7 @@
   </div>
 
   <div class="search-wrap">
-    <input class="search-input" id="searchInput" type="text" placeholder="Buscar guia... (ex: temperatura, bacon, salão)" autocomplete="off">
+    <input class="search-input" id="searchInput" type="text" placeholder="Buscar guia... (ex: temperatura, bacon, salão)" autocomplete="off" aria-label="Buscar guia">
   </div>
 
   <div class="home-content">

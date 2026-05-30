@@ -11,15 +11,21 @@
    insert, upsert, update, remove, rpc.
    ============================================================ */
 
-const SUPABASE_URL = 'https://iizzeeceqysdfhnkosrc.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './credentials.js';
 
 const REST = SUPABASE_URL + '/rest/v1';
 const AUTH = SUPABASE_URL + '/auth/v1';
 
+// Chave esperada do storage do supabase-js: sb-<ref>-auth-token (derivada da URL).
+const PROJECT_REF = SUPABASE_URL.replace(/^https?:\/\//, '').split('.')[0];
+const AUTH_STORAGE_KEY = 'sb-' + PROJECT_REF + '-auth-token';
+
 // ── Sessão (lida do storage do supabase-js) ─────────────────────────────────
 function _findAuthKey() {
   try {
+    // Caminho rápido: a chave conhecida do projeto. Evita varrer todo o storage.
+    if (localStorage.getItem(AUTH_STORAGE_KEY) !== null) return AUTH_STORAGE_KEY;
+    // Fallback: localiza por sufixo (cobre variações de versão do SDK).
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
       if (k && k.indexOf('-auth-token') !== -1) return k;
@@ -40,7 +46,7 @@ function getSession() {
 
 function _saveSession(sess) {
   try {
-    const k = _findAuthKey() || ('sb-iizzeeceqysdfhnkosrc-auth-token');
+    const k = _findAuthKey() || AUTH_STORAGE_KEY;
     localStorage.setItem(k, JSON.stringify(sess));
   } catch (e) {}
 }

@@ -17,20 +17,6 @@
   <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="../css/styles.css">
   <script src="../js/theme.js"></script>
-  <script>
-    (function() {
-      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', t);
-      function hideSplash() {
-        var s = document.getElementById('splash');
-        if (!s) return;
-        s.classList.add('hide');
-        setTimeout(function() { s.style.display = 'none'; }, 420);
-      }
-      if (document.readyState === 'complete') setTimeout(hideSplash, 200);
-      else window.addEventListener('load', function() { setTimeout(hideSplash, 200); });
-    })();
-  </script>
   <link rel="manifest" href="/mcguias/manifest.json">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
