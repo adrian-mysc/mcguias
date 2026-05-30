@@ -13,6 +13,34 @@ Este arquivo documenta decisões de arquitetura, armadilhas conhecidas e liçõe
 
 ---
 
+## PWA — Base de caminho dinâmica (dois deploys)
+
+O app roda em **dois lugares com raízes diferentes**:
+- **GitHub Pages**: `adrian-mysc.github.io/mcguias/` → raiz `/mcguias/`.
+- **Vercel / domínio próprio**: `mcguias.vercel.app` → raiz `/`.
+
+Por isso o PWA **não pode** ter caminho fixo `/mcguias/` (quebra na Vercel:
+manifest/SW dão 404, o app não instala e não funciona offline). A base é
+resolvida em runtime:
+
+- **`manifest.json`**: URLs **relativas** (`start_url`/`scope` = `"./"`, ícones
+  `icons/icon-192.png`). Resolvem relativo à URL do próprio manifest.
+- **`<link rel="manifest">` e `apple-touch-icon`**: relativos — `manifest.json`
+  / `icons/...` nas páginas da raiz; `../manifest.json` / `../icons/...` nas de
+  `pages/`. **Nunca** use `/mcguias/...` absoluto aqui.
+- **Registro do SW** (`js/src/sw-init.js`): a base vem de
+  `location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/')` → `register(base + 'sw.js')`.
+  Depois rode `bash build/concat.sh`.
+- **`sw.js`**: `const BASE = self.location.pathname.replace(/sw\.js$/, '')`.
+  Todo asset (precache, offline fallback, ícones de push) é prefixado com `BASE`.
+
+⚠️ Outros caminhos absolutos `/mcguias/...` ainda existem fora do PWA (ex.:
+`bottom-nav`, `fab`, e `const base = '/mcguias/data/questions/'` em algumas
+páginas) — esses quebram navegação/carregamento na Vercel e ainda precisam do
+mesmo tratamento relativo/dinâmico.
+
+---
+
 ## Supabase — Armadilhas Críticas
 
 ### 1. Sempre use `{ onConflict: 'id' }` no upsert de perfis

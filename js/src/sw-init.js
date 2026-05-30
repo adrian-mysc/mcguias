@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/mcguias/sw.js')
+    // Raiz da app: '/mcguias/' no GitHub Pages, '/' na Vercel/domínio próprio.
+    var swBase = location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/');
+    navigator.serviceWorker.register(swBase + 'sw.js')
       .then(function(reg) {
         window._swRegistration = reg;
         setInterval(function() { reg.update(); }, 60 * 60 * 1000);
