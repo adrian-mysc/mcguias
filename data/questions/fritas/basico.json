@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-23",
+  "updatedAt": "2026-05-30",
   "categoria": "fritas",
   "nivel": "basico",
   "migratedFrom": "fritas.html",
@@ -1213,7 +1213,7 @@
     {
       "id": "fritas_025",
       "categoria": "fritas",
-      "subcategoria": "🍟 McFritas · Porção GG",
+      "subcategoria": "🍟 McFritas · Porção MEGA",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
@@ -1221,15 +1221,15 @@
         "porcao",
         "peso"
       ],
-      "pergunta": "Qual o peso da McFritas tamanho GG?",
+      "pergunta": "Qual o peso da McFritas tamanho MEGA?",
       "alternativas": [
-        "102g",
-        "120g",
-        "134g",
-        "146g"
+        "146g",
+        "170g",
+        "200g",
+        "220g"
       ],
-      "respostaCorreta": 3,
-      "explicacao": "McFritas GG = 146g. Para referência: P = 73g, M = 102g, G = 146g (mesmo peso que o GG no padrão atual).",
+      "respostaCorreta": 2,
+      "explicacao": "McFritas tamanho MEGA = 200g. Para referência: P = 73g, M = 102g, G = 146g.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
