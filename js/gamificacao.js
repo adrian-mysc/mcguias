@@ -721,15 +721,18 @@
    */
   function _showLocalNotification(title, body, tag) {
     tag = tag || 'mc-reminder';
+    // Raiz da app: '/mcguias/' no GitHub Pages, '/' na Vercel/domínio próprio.
+    var _root = location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/');
+    var _icon = _root + 'icons/icon-192.png';
     if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
       navigator.serviceWorker.ready.then(function(reg) {
         reg.showNotification(title, {
           body:     body,
-          icon:     '/mcguias/icons/icon-192.png',
-          badge:    '/mcguias/icons/icon-192.png',
+          icon:     _icon,
+          badge:    _icon,
           tag:      tag,
           renotify: false,
-          data:     { url: '/mcguias/' },
+          data:     { url: _root },
           actions:  [
             { action: 'open',    title: '📖 Estudar agora' },
             { action: 'dismiss', title: '✕ Fechar' },
@@ -738,12 +741,12 @@
       }).catch(function() {
         // Fallback para Notification API direta
         try {
-          new Notification(title, { body: body, icon: '/mcguias/icons/icon-192.png', tag: tag });
+          new Notification(title, { body: body, icon: _icon, tag: tag });
         } catch(e) {}
       });
     } else {
       try {
-        new Notification(title, { body: body, icon: '/mcguias/icons/icon-192.png', tag: tag });
+        new Notification(title, { body: body, icon: _icon, tag: tag });
       } catch(e) {}
     }
   }
