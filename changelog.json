@@ -1,6 +1,35 @@
 {
   "versions": [
     {
+      "version": "v13",
+      "date": "2026-05-30",
+      "date_display": "30 Mai 2026",
+      "badge": "Olimpíada revisada · Ranking",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "📖",
+          "text": "**Olimpíada conferida com os Guias Rápidos Operacionais** — as respostas das 577 questões foram validadas contra os guias oficiais (McFritas, Dessert, LOPE, Linha, Montagem e Entrega). Correções aplicadas: vida das McFritas na estufa (**7 minutos**), sal por movimento de salgamento (**4 g**), higienização do tomate (**10 a 15 minutos**) e temperatura da UHC por tipo de carne (**79 °C** vermelhas / **85 °C** brancas).",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🔁",
+          "text": "**Olimpíada alinhada aos quizzes temáticos** — 36 questões que também aparecem nos guias (Treinador, Liderança, Gerência e outros) tiveram resposta e formatação padronizadas pela fonte oficial. Exemplos corrigidos: altura da Casquinha (**8,5 cm**), vida do queijo muçarela (**45 dias**) e extração do McShake (**−5,0 a −3,6 °C**).",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🎲",
+          "text": "**Alternativas mais coerentes** — distratores da Olimpíada que eram respostas aleatórias de outros temas foram substituídos por opções do mesmo assunto, deixando as questões mais justas e o estudo mais realista.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🏅",
+          "text": "**Ranking mostra seu nome** — o ranking global e o de batalhas passam a exibir o **nome e sobrenome** do perfil em vez do usuário interno (ex.: \"joao_silva_a1b2c3\"). Quem ainda não preencheu o nome continua aparecendo pelo usuário.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
       "version": "v12",
       "date": "2026-05-27",
       "date_display": "27 Mai 2026",
