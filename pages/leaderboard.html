@@ -534,7 +534,7 @@
         : `<div class="lb-rank">#${pos}</div>`;
       const youTag  = isMe ? '<span class="lb-you-tag">Você</span>' : '';
       const lojaTag = p.loja ? `<div class="lb-loja">${esc(p.loja)}</div>` : '';
-      const displayName = esc(p.username || 'Jogador');
+      const displayName = esc(p.display_name || p.username || 'Jogador');
       const avatarUrl = safeUrl(p.avatar);
       const avatarInner = avatarUrl
         ? `<img src="${esc(avatarUrl)}" alt="${displayName}" loading="lazy">`
@@ -557,12 +557,12 @@
         const SURL = 'https://iizzeeceqysdfhnkosrc.supabase.co';
         const SKEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
         const res = await fetch(
-          `${SURL}/rest/v1/profiles?id=in.(${uids.join(',')})&select=id,estado,cidade`,
+          `${SURL}/rest/v1/profiles?id=in.(${uids.join(',')})&select=id,estado,cidade,display_name`,
           { headers: { apikey: SKEY, Authorization: `Bearer ${SKEY}` } }
         );
         const rows = res.ok ? await res.json() : [];
         const map = Object.fromEntries(rows.map(r => [r.id, r]));
-        return players.map(p => ({ ...p, estado: map[p.user_id]?.estado || null, cidade: map[p.user_id]?.cidade || null }));
+        return players.map(p => ({ ...p, estado: map[p.user_id]?.estado || null, cidade: map[p.user_id]?.cidade || null, display_name: p.display_name || map[p.user_id]?.display_name || null }));
       } catch { return players; }
     }
 
@@ -587,7 +587,7 @@
       applyFilters();
 
       if (rank && rank.rank > 10) {
-        const myRow = rowHTML(rank.rank, { username: rank.username || '—', loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes, avatar: rank.avatar }, true);
+        const myRow = rowHTML(rank.rank, { username: rank.username || '—', display_name: rank.display_name || null, loja: '', sigla: '', pontos: rank.pontos, quizzes: rank.quizzes, avatar: rank.avatar }, true);
         list.innerHTML += `<div class="lb-gap">···</div>${myRow}`;
       }
     }
@@ -605,6 +605,7 @@
           pontos:   rawRank.pontos   ?? rawRank.points,
           quizzes:  rawRank.quizzes  ?? rawRank.total_xp,
           username: rawRank.username ?? rawRank.user,
+          display_name: rawRank.display_name ?? null,
           avatar:   rawRank.avatar   ?? null,
         } : null;
         // RPC já inclui avatar; fallback: busca por user_id caso algum player não tenha
@@ -713,11 +714,11 @@
       const rankEl = medal ? `<div class="lb-rank top">${medal}</div>` : `<div class="lb-rank">#${pos}</div>`;
       const youTag = isMe ? '<span class="lb-you-tag">Você</span>' : '';
       const rate   = p.total_battles > 0 ? Math.round(p.wins * 100 / p.total_battles) : 0;
-      const name   = esc(p.username || 'Jogador');
+      const name   = esc(p.display_name || p.username || 'Jogador');
       const avatarUrl = safeUrl(p.avatar);
       const avatarInner = avatarUrl
         ? `<img src="${esc(avatarUrl)}" alt="${name}" loading="lazy">`
-        : (p.username || '?').charAt(0).toUpperCase();
+        : (p.display_name || p.username || '?').charAt(0).toUpperCase();
       return `<div class="lb-row${isMe ? ' lb-me' : ''}">
         ${rankEl}
         <div class="lb-avatar">${avatarInner}</div>
@@ -772,9 +773,9 @@
       // Enriquece com avatares frescos do profiles (battle_stats.avatar pode estar desatualizado)
       try {
         const uids = players.map(p => p.user_id).filter(Boolean);
-        const { data: pRows } = await sb.from('profiles').select('id, avatar').in('id', uids);
-        const avMap = Object.fromEntries((pRows || []).map(r => [r.id, r.avatar]));
-        players = players.map(p => ({ ...p, avatar: avMap[p.user_id] ?? p.avatar ?? null }));
+        const { data: pRows } = await sb.from('profiles').select('id, avatar, display_name').in('id', uids);
+        const avMap = Object.fromEntries((pRows || []).map(r => [r.id, r]));
+        players = players.map(p => ({ ...p, avatar: avMap[p.user_id]?.avatar ?? p.avatar ?? null, display_name: p.display_name || avMap[p.user_id]?.display_name || null }));
       } catch (_) {}
 
       list.innerHTML = players.map((p, i) =>
