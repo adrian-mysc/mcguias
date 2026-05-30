@@ -486,6 +486,27 @@ test('sync.js: syncWeeklyChallenges chamado no syncToCloud', () => {
   assert(fn.includes('syncWeeklyChallenges'), 'Não chamado no syncToCloud');
 });
 
+test('sync.js: weekly_challenges não usa spread condicional de completed_at (evita 400 PGRST102)', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  const fn = src.slice(src.indexOf('async function syncWeeklyChallenges'),
+                       src.indexOf('export { syncWeeklyChallenges }'));
+  // O bulk upsert exige que todos os objetos do array tenham as MESMAS chaves.
+  assert(!/\.\.\.\(completed \?/.test(fn),
+    'spread condicional de completed_at quebra o upsert em massa (chaves diferentes)');
+  assert(/completed_at:\s*completed \?/.test(fn),
+    'completed_at deve estar sempre presente (null quando não concluído)');
+});
+
+test('sync.js: syncQuizSessions reenvia o histórico com csid (não fatia pelo ponteiro)', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js', 'supabase', 'sync.js'), 'utf8');
+  const fn = src.slice(src.indexOf('async function syncQuizSessions'),
+                       src.indexOf('async function syncAchievements'));
+  // slice(-newCount) pegava as sessões mais ANTIGAS (já na nuvem) e perdia as
+  // novas, que o unshift coloca no início do array.
+  assert(!/slice\(-newCount\)/.test(fn), 'slice(-newCount) perde as sessões novas (início do array)');
+  assert(/\.filter\(h => h\.csid\)/.test(fn), 'deve reenviar só sessões com csid (idempotente, sem duplicar)');
+});
+
 test('conquistas.html: merge de weekly_challenges do servidor', () => {
   const html = fs.readFileSync(path.join(ROOT, 'pages', 'conquistas.html'), 'utf8');
   assert(html.includes('weekly_challenges'), 'Query ao servidor ausente');
