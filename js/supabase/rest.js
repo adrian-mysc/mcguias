@@ -46,7 +46,9 @@ function _saveSession(sess) {
 }
 
 function _expired(sess) {
-  if (!sess || !sess.expires_at) return false;
+  if (!sess) return false;
+  // sessão sem expires_at: trata como expirada p/ forçar renovação (mais seguro que usar token desconhecido)
+  if (!sess.expires_at) return true;
   // expires_at em segundos; renova 60s antes
   return (sess.expires_at * 1000) <= (Date.now() + 60000);
 }
