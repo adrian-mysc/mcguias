@@ -1660,7 +1660,12 @@
             .upload(path, blob, { contentType: 'image/jpeg', upsert: true });
           if (upErr) throw upErr;
           const { data: { publicUrl } } = supabase.storage.from('avatars').getPublicUrl(path);
-          await supabase.from('profiles').update({ avatar: publicUrl }).eq('id', user.id);
+          // upsert com onConflict:'id' — UPDATE simples não cria linha para usuário novo (falso sucesso)
+          const safeUsername = profile?.username || `u_${user.id.replace(/-/g, '').slice(0, 16)}`;
+          const { error: dbErr } = await supabase.from('profiles')
+            .upsert({ id: user.id, username: safeUsername, avatar: publicUrl }, { onConflict: 'id' });
+          if (dbErr) throw dbErr;
+          profile = { ...(profile || {}), username: safeUsername, avatar: publicUrl };
         } catch (err) {
           console.warn('Erro ao enviar foto para a nuvem:', err.message);
           showToast('⚠️ Foto salva só localmente — sem conexão com a nuvem.');
@@ -1680,7 +1685,12 @@
     let cloudOk = true;
     try {
       await supabase.storage.from('avatars').remove([`${user.id}/avatar.jpg`]);
-      await supabase.from('profiles').update({ avatar: null }).eq('id', user.id);
+      // upsert com onConflict:'id' — UPDATE simples não cria linha para usuário novo (falso sucesso)
+      const safeUsername = profile?.username || `u_${user.id.replace(/-/g, '').slice(0, 16)}`;
+      const { error: dbErr } = await supabase.from('profiles')
+        .upsert({ id: user.id, username: safeUsername, avatar: null }, { onConflict: 'id' });
+      if (dbErr) throw dbErr;
+      profile = { ...(profile || {}), username: safeUsername, avatar: null };
     } catch (err) {
       console.warn('Erro ao remover foto da nuvem:', err.message);
       cloudOk = false;

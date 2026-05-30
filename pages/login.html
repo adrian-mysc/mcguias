@@ -815,11 +815,18 @@
         .replace(/^_+|_+$/g, '')
         .slice(0, 26) || 'user';
       const username = `${baseSlug}_${data.user.id.slice(0, 6)}`;
-      await supabase.from('profiles').upsert({
+      const { error: profileErr } = await supabase.from('profiles').upsert({
         id: data.user.id,
         username,
         display_name: nome
       }, { onConflict: 'id' });
+      if (profileErr) {
+        console.error('Erro ao criar perfil:', profileErr);
+        btn.classList.remove('loading');
+        btn.disabled = false;
+        showMsg('signup-msg', 'Conta criada, mas houve um erro ao configurar o perfil. Tente entrar novamente.', 'error');
+        return;
+      }
     }
 
     btn.classList.remove('loading');
