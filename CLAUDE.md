@@ -10,6 +10,8 @@ Este arquivo documenta decisões de arquitetura, armadilhas conhecidas e liçõe
 - **Backend**: Supabase (PostgreSQL + Auth + Storage + Edge Functions).
 - **PWA**: Service Worker em `pages/sw.js`, manifest em `/manifest.json`.
 - **JS do quiz**: `js/main.js` é gerado — edite os módulos em `js/src/` e rode `bash build/concat.sh`.
+- **Navbar das páginas de conteúdo**: é **gerada** a partir de `build/partials/navbar.html` + `build/pages.config.json`. NÃO edite a `<nav class="navbar">` direto no HTML (entre `<!-- mc:navbar:start/end -->`) — rode `node build/build-pages.mjs`. Veja `build/README.md`. O `tests/run_tests.js` falha se houver drift.
+- **Tema/splash**: `js/theme.js` (síncrono no `<head>`) é a fonte única do `data-theme` (evita FOUC) e esconde o `#splash` no `load`. Não recrie o `<script>` inline de tema/splash nas páginas — ele foi removido por ser redundante.
 
 ---
 
