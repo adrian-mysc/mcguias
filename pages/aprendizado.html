@@ -23,20 +23,6 @@
   <meta name="theme-color" content="#DA291C">
   <link rel="apple-touch-icon" href="/mcguias/icons/icon-192.png">
 
-  <script>
-    (function () {
-      var t = localStorage.getItem('mc_theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', t);
-      function hideSplash() {
-        var s = document.getElementById('splash');
-        if (!s) return;
-        s.classList.add('hide');
-        setTimeout(function () { s.style.display = 'none'; }, 420);
-      }
-      if (document.readyState === 'complete') setTimeout(hideSplash, 180);
-      else window.addEventListener('load', function () { setTimeout(hideSplash, 180); });
-    })();
-  </script>
 
   <style>
     /* ── Layout ── */
