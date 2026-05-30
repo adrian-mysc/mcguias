@@ -552,6 +552,9 @@
       { id: 'fechamento',             nome: 'Fechamento',           emoji: '🔒' },
       { id: 'seguranca-alimento',     nome: 'Seg. Alimentos',       emoji: '🛡️' },
       { id: 'olimpiada',              nome: 'Olimpíada',            emoji: '🏆' },
+      { id: 'embaixador-experiencia', nome: 'Embaixador Exp.',      emoji: '🌟' },
+      { id: 'influencer-pagamento',   nome: 'Influencer/Pag.',      emoji: '🗣️' },
+      { id: 'manutencao-preventivas', nome: 'Manutenção Prev.',     emoji: '🔧' },
     ];
 
     // ── State ──────────────────────────────────────────────
@@ -711,6 +714,20 @@
             [...qs].sort(() => Math.random() - 0.5).slice(0, perGuia)
               .forEach(q => combined.push(`${g.id}::${q.id}`));
           }));
+          ids = combined.sort(() => Math.random() - 0.5).slice(0, Math.min(selectedQs, combined.length));
+        } else if (selectedGuia === 'fritas') {
+          // McFritas: combina fritas + mcfritas para pool completo
+          const [r1, r2] = await Promise.all([
+            fetch('../data/questions/fritas/basico.json'),
+            fetch('../data/questions/mcfritas/basico.json'),
+          ]);
+          const [d1, d2] = await Promise.all([r1.json(), r2.json()]);
+          const qs1 = Array.isArray(d1) ? d1 : (d1.questions || d1.questoes || []);
+          const qs2 = Array.isArray(d2) ? d2 : (d2.questions || d2.questoes || []);
+          const combined = [
+            ...qs1.map(q => `fritas::${q.id}`),
+            ...qs2.map(q => `mcfritas::${q.id}`),
+          ];
           ids = combined.sort(() => Math.random() - 0.5).slice(0, Math.min(selectedQs, combined.length));
         } else {
           const r = await fetch(`../data/questions/${selectedGuia}/basico.json`);
