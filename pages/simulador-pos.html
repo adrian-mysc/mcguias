@@ -153,6 +153,20 @@
     /* ── Toast ───────────────────────────────────────────── */
     .pos-toast { position:fixed; left:50%; bottom:84px; transform:translateX(-50%) translateY(20px); background:#1a7a42; color:#fff; padding:11px 18px; border-radius:999px; font-weight:700; font-size:14px; box-shadow:var(--shadow-md); opacity:0; transition:opacity .25s, transform .25s; z-index:1100; pointer-events:none; }
     .pos-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+    /* ── Bloqueio por senha ──────────────────────────────── */
+    .pos-lock { position:fixed; inset:0; z-index:2000; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:24px; }
+    .pos-lock-card { width:100%; max-width:340px; background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:28px 22px; text-align:center; }
+    .pos-lock-icon { font-size:42px; margin-bottom:10px; }
+    .pos-lock-card h2 { font-family:var(--font-display); font-size:19px; font-weight:800; color:var(--text); margin-bottom:4px; }
+    .pos-lock-card p { font-size:13px; color:var(--muted); margin-bottom:18px; line-height:1.5; }
+    .pos-lock-input { width:100%; padding:13px 14px; border:1.5px solid var(--border); border-radius:var(--radius-md); background:var(--bg); color:var(--text); font-size:16px; font-weight:600; text-align:center; letter-spacing:2px; outline:none; transition:border-color .15s; -webkit-appearance:none; }
+    .pos-lock-input:focus { border-color:var(--red); }
+    .pos-lock.err .pos-lock-input { border-color:var(--red); animation:posShake .35s; }
+    @keyframes posShake { 0%,100%{ transform:translateX(0);} 20%,60%{ transform:translateX(-7px);} 40%,80%{ transform:translateX(7px);} }
+    .pos-lock-msg { min-height:16px; font-size:12px; font-weight:700; color:var(--red); margin:8px 0 0; }
+    .pos-lock-btn { width:100%; margin-top:14px; padding:13px; border:none; border-radius:var(--radius-md); background:linear-gradient(135deg, var(--red), var(--red-dark)); color:#fff; font-family:var(--font-display); font-weight:800; font-size:15px; cursor:pointer; box-shadow:0 6px 18px rgba(218,41,28,.28); }
+    .pos-lock-btn:active { transform:scale(.98); }
   </style>
 
   <link rel="manifest" href="../manifest.json">
@@ -186,6 +200,17 @@
     </div>
   </nav>
   <!-- mc:navbar:end -->
+
+  <div id="pos-lock" class="pos-lock" hidden>
+    <div class="pos-lock-card">
+      <div class="pos-lock-icon">🔒</div>
+      <h2>Página protegida</h2>
+      <p>Digite a senha para acessar o Simulador POS.</p>
+      <input id="pos-lock-input" class="pos-lock-input" type="password" placeholder="Senha" autocomplete="off" aria-label="Senha">
+      <div class="pos-lock-msg" id="pos-lock-msg"></div>
+      <button class="pos-lock-btn" id="pos-lock-btn">Entrar</button>
+    </div>
+  </div>
 
   <div class="page-content" style="max-width:920px;">
     <div class="alert warn" style="margin-bottom:14px;">
@@ -530,7 +555,40 @@ function toast(msg, isWarn) {
   _toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 1800);
 }
 
-document.addEventListener('DOMContentLoaded', buildShell);
+/* ---------- Bloqueio por senha (client-side) ---------- */
+var POS_PW = '123456pos';
+
+function showLock() {
+  var lock  = document.getElementById('pos-lock');
+  var input = document.getElementById('pos-lock-input');
+  var msg   = document.getElementById('pos-lock-msg');
+  var btn   = document.getElementById('pos-lock-btn');
+  lock.hidden = false;
+  setTimeout(function(){ input.focus(); }, 60);
+
+  function attempt() {
+    if (input.value === POS_PW) {
+      try { sessionStorage.setItem('mc_pos_unlocked', '1'); } catch (e) {}
+      lock.remove();
+      buildShell();
+    } else {
+      msg.textContent = 'Senha incorreta. Tente novamente.';
+      lock.classList.add('err');
+      input.value = '';
+      input.focus();
+      setTimeout(function(){ lock.classList.remove('err'); }, 420);
+    }
+  }
+  btn.addEventListener('click', attempt);
+  input.addEventListener('keydown', function(e){ if (e.key === 'Enter') attempt(); });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var unlocked = false;
+  try { unlocked = sessionStorage.getItem('mc_pos_unlocked') === '1'; } catch (e) {}
+  if (unlocked) buildShell();
+  else showLock();
+});
   </script>
 
   <!-- Bottom Navigation -->
