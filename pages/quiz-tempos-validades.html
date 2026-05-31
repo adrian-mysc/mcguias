@@ -1096,14 +1096,18 @@
       document.getElementById('resultStars').textContent  = stars;
       progressFill.style.width = '100%';
 
-      // Save history
-      const hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
-      hist.unshift({
-        score, total, guia: 'Tempos e Validades',
-        date: new Date().toLocaleDateString('pt-BR'),
-        pct
-      });
-      localStorage.setItem('mc_quiz_history', JSON.stringify(hist.slice(0, 20)));
+      // Save history — usa o saveQuizResult global (main.js): gera csid,
+      // mantém o cap de 180, dispara mc:quizComplete (sync imediato) e telemetria.
+      // NÃO reescrever mc_quiz_history à mão aqui (truncava o histórico para 20).
+      if (typeof saveQuizResult === 'function') {
+        saveQuizResult('Tempos e Validades', score, total);
+      } else {
+        // Fallback defensivo caso main.js não tenha carregado.
+        const hist = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+        hist.unshift({ score, total, guia: 'Tempos e Validades', date: new Date().toLocaleDateString('pt-BR') });
+        if (hist.length > 180) hist.splice(180);
+        localStorage.setItem('mc_quiz_history', JSON.stringify(hist));
+      }
 
       // Gamificação
       if (window.Gamificacao) {
