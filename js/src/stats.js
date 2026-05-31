@@ -19,6 +19,7 @@ function renderStats(containerId) {
   // Aggregate by guia
   var byGuia = {};
   hist.forEach(function(h) {
+    if (!h.total) return; // evita divisão por zero (NaN) em sessões sem perguntas
     if (!byGuia[h.guia]) byGuia[h.guia] = { scores: [], total: 0, count: 0 };
     byGuia[h.guia].scores.push(Math.round((h.score / h.total) * 100));
     byGuia[h.guia].total += h.total;
@@ -301,7 +302,7 @@ function renderHistory(containerId) {
     return;
   }
   el.innerHTML = hist.map(h => {
-    const pct   = Math.round((h.score / h.total) * 100);
+    const pct   = h.total > 0 ? Math.round((h.score / h.total) * 100) : 0;
     const cls   = pct >= 80 ? 'good' : pct >= 60 ? 'ok' : '';
     const emoji = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '📖';
     return `<div class="hist-item">
