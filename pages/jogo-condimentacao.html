@@ -99,7 +99,7 @@ const SANDWICHES = [
     emoji: '🔥',
     correct: [
       'Pão Tasty',
-      'Carne 4:1 (2x)',
+      'Carne 4:1',
       'Queijo Emental (3 fatias)',
       'Tomate (2 fatias)',
       'Alface',
@@ -120,6 +120,74 @@ const SANDWICHES = [
       'Alface',
       'Maionese',
       'Cebola fresca',
+      'Ketchup',
+      'Mostarda',
+    ],
+  },
+  {
+    id: 'hamburger',
+    name: 'Hambúrguer',
+    emoji: '🍔',
+    correct: [
+      'Pão Regular',
+      'Carne 10:1',
+      'Picles (1 unid)',
+      'Cebola reidratada',
+      'Ketchup',
+      'Mostarda',
+    ],
+  },
+  {
+    id: 'cheeseburger',
+    name: 'Cheeseburger',
+    emoji: '🧀',
+    correct: [
+      'Pão Regular',
+      'Carne 10:1',
+      'Queijo Cheddar (1 fatia)',
+      'Picles (1 unid)',
+      'Cebola reidratada',
+      'Ketchup',
+      'Mostarda',
+    ],
+  },
+  {
+    id: 'duplocheeseburger',
+    name: 'Duplo Cheeseburger',
+    emoji: '🧀',
+    correct: [
+      'Pão Regular',
+      'Carne 10:1 (2x)',
+      'Queijo Cheddar (2 fatias)',
+      'Picles (2 unid)',
+      'Cebola reidratada',
+      'Ketchup',
+      'Mostarda',
+    ],
+  },
+  {
+    id: 'triplocheeseburger',
+    name: 'Triplo Cheeseburger',
+    emoji: '🧀',
+    correct: [
+      'Pão Quarterão',
+      'Carne 10:1 (3x)',
+      'Queijo Cheddar (3 fatias)',
+      'Picles (1 unid)',
+      'Cebola reidratada',
+      'Ketchup',
+      'Mostarda',
+    ],
+  },
+  {
+    id: 'duploburgerbacon',
+    name: 'Duplo Burger Bacon',
+    emoji: '🥓',
+    correct: [
+      'Pão Quarterão',
+      'Carne 10:1 (2x)',
+      'Bacon (2 fatias)',
+      'Cebola reidratada',
       'Ketchup',
       'Mostarda',
     ],
@@ -292,23 +360,33 @@ const SANDWICHES = [
       'Polpetone (1 unid)',
     ],
   },
+  // ── Outros ──────────────────────────────────────────────────
+  {
+    id: 'sidesalad',
+    name: 'Side Salad',
+    emoji: '🥗',
+    correct: [
+      'Alface (85g)',
+      'Tomate Grape (2 unid)',
+    ],
+  },
 ];
 
 /* ---------- Pool global de ingredientes ---------- */
 const ALL_INGREDIENTS = [
   // Pães
-  'Pão Big Mac (3 partes)', 'Pão Tasty', 'Pão Quarterão', 'Pão Crispy', 'Pão de Batata', 'Pão Brioche',
+  'Pão Big Mac (3 partes)', 'Pão Tasty', 'Pão Quarterão', 'Pão Regular', 'Pão Crispy', 'Pão de Batata', 'Pão Brioche',
   // Carnes
-  'Carne 10:1 (2x)', 'Carne 4:1', 'Carne 4:1 (2x)', 'Carne Crispy', 'Filé de McCrispy', 'Carne Chicken (2x)',
+  'Carne 10:1', 'Carne 10:1 (2x)', 'Carne 10:1 (3x)', 'Carne 4:1', 'Carne 4:1 (2x)', 'Carne Crispy', 'Filé de McCrispy', 'Carne Chicken (2x)',
   'Copa Fatiada (3 unid)', 'Crispy Nacho (1 unid)', 'Polpetone (1 unid)',
   // Queijos
   'Queijo Cheddar (1 fatia)', 'Queijo Cheddar (2 fatias)', 'Queijo Emental (3 fatias)',
   'Queijo Emental (2 fatias)', 'Queijo Emental (2 fatias — coroa)',
   // Vegetais
-  'Alface', 'Alface (28g)', 'Tomate (1 fatia)', 'Tomate (2 fatias)', 'Cebola fresca', 'Cebola fresca (10g)',
-  'Cebola Crispy', 'Cebola Crispy (10g)', 'Cebola shoyu', 'Cebola reidratada',
+  'Alface', 'Alface (28g)', 'Alface (85g)', 'Tomate (1 fatia)', 'Tomate (2 fatias)', 'Tomate Grape (2 unid)',
+  'Cebola fresca', 'Cebola fresca (10g)', 'Cebola Crispy', 'Cebola Crispy (10g)', 'Cebola shoyu', 'Cebola reidratada',
   // Picles / acréscimos
-  'Picles (2 fatias)', 'Picles (3 unid)',
+  'Picles (1 unid)', 'Picles (2 unid)', 'Picles (2 fatias)', 'Picles (3 unid)',
   // Frios
   'Bacon (2 fatias)', 'Bacon (3 fatias)',
   // Molhos
@@ -327,14 +405,20 @@ const ALL_INGREDIENTS = [
 // Se o arquivo não existir, o sistema usa uma barra colorida como fallback.
 const INGREDIENT_IMG = {
   'Pão Big Mac (3 partes)':                  'pao-big-mac.png',
+  'Carne 10:1':                              'carne-10-1.png',
   'Carne 10:1 (2x)':                         'carne-10-1.png',
+  'Carne 10:1 (3x)':                         'carne-10-1.png',
   'Queijo Cheddar (1 fatia)':                'queijo-cheddar.png',
   'Queijo Cheddar (2 fatias)':               'queijo-cheddar.png',
   'Queijo Cheddar (3 fatias)':               'queijo-cheddar.png',
+  'Picles (1 unid)':                         'picles.png',
+  'Picles (2 unid)':                         'picles.png',
   'Picles (2 fatias)':                       'picles.png',
   'Picles (3 unid)':                         'picles.png',
   'Alface':                                  'alface.png',
   'Alface (28g)':                            'alface.png',
+  'Alface (85g)':                            'alface.png',
+  'Tomate Grape (2 unid)':                   'tomate.png',
   'Molho Big Mac':                           'molho-big-mac.png',
   'Pão Tasty':                               'pao-tasty.png',
   'Carne 4:1':                               'carne-4-1.png',
