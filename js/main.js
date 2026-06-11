@@ -993,7 +993,7 @@ function initQuiz(questions, guiaName) {
         mode:        'mc',
       });
     }
-    var homeLink   = isRoot ? "../index.html" : "index.html";
+    var homeLink   = window.location.pathname.indexOf('/pages/') !== -1 ? "../index.html" : "index.html";
     var isQuizPage = window.location.pathname.indexOf("quiz.html") !== -1;
     window.backToSetup = function() {
       document.getElementById("quiz-setup").style.display = "block";
@@ -1676,7 +1676,7 @@ function initLacuna(questions, guiaName) {
       + '<div style="font-size:13px;color:var(--muted);margin-bottom:20px;">de ' + total + ' perguntas</div>'
       + '<div style="display:flex;flex-direction:column;gap:8px;">'
       + '<button class="btn-primary" onclick="if(window.setActiveMode)window.setActiveMode(\'lacuna\');initLacuna(window._quizData,window._quizGuia)">🔄 Repetir</button>'
-      + '<button class="btn-secondary" onclick="shareQuizResult(' + halfPct + ',' + total + ',window._quizGuia)">📤 Compartilhar</button>'
+      + '<button class="btn-secondary" onclick="shareQuizResult(' + (score + scoreHalf * 0.5) + ',' + total + ',window._quizGuia)">📤 Compartilhar</button>'
       + '</div>'
       + '</div>';
   }

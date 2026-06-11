@@ -849,14 +849,12 @@
 
   // ── Login com Google ─────────────────────────────────────────
   async function signInGoogle() {
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const base = isLocal
-      ? window.location.origin
-      : 'https://adrian-mysc.github.io/guiaoperacional';
+    // login.html vive em pages/ — resolve relativo à URL atual, funciona em
+    // qualquer deploy (GitHub Pages /mcguias/, Vercel /, localhost).
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: base + '/pages/welcome.html'
+        redirectTo: new URL('welcome.html', window.location.href).href
       }
     });
     if (error) alert('Erro ao conectar com Google: ' + error.message);
@@ -871,7 +869,7 @@
       return;
     }
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: window.location.origin + '/pages/reset-senha.html'
+      redirectTo: new URL('reset-senha.html', window.location.href).href
     });
     if (error) {
       showMsg('login-msg', traduzirErro(error.message), 'error');

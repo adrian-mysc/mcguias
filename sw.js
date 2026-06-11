@@ -1,8 +1,8 @@
-// MC Guias — Service Worker v38
+// MC Guias — Service Worker v39
 // Atualização: base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
 // (GitHub Pages) quanto em / (Vercel/domínio próprio), sem caminho fixo.
 
-const CACHE = 'mc-guias-v38';
+const CACHE = 'mc-guias-v39';
 
 // Raiz da aplicação, derivada da própria URL do SW:
 //   GitHub Pages → '/mcguias/sw.js'  ⇒ BASE = '/mcguias/'
@@ -44,7 +44,6 @@ const PRECACHE_PATHS = [
   'data/questions/mccafe/basico.json',
   'data/questions/manutencao-preventivas/basico.json',
   'data/questions/best-burguer/basico.json',
-  'data/questions/mcdelivery/basico.json',
   'data/questions/gerencia/basico.json',
   'data/questions/lideranca/basico.json',
   'data/questions/treinador/basico.json',
