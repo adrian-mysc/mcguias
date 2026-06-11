@@ -242,7 +242,7 @@ function initLacuna(questions, guiaName) {
       + '<div style="font-size:13px;color:var(--muted);margin-bottom:20px;">de ' + total + ' perguntas</div>'
       + '<div style="display:flex;flex-direction:column;gap:8px;">'
       + '<button class="btn-primary" onclick="if(window.setActiveMode)window.setActiveMode(\'lacuna\');initLacuna(window._quizData,window._quizGuia)">🔄 Repetir</button>'
-      + '<button class="btn-secondary" onclick="shareQuizResult(' + halfPct + ',' + total + ',window._quizGuia)">📤 Compartilhar</button>'
+      + '<button class="btn-secondary" onclick="shareQuizResult(' + (score + scoreHalf * 0.5) + ',' + total + ',window._quizGuia)">📤 Compartilhar</button>'
       + '</div>'
       + '</div>';
   }
