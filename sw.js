@@ -1,8 +1,8 @@
-// MC Guias — Service Worker v39
+// MC Guias — Service Worker v40
 // Atualização: base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
 // (GitHub Pages) quanto em / (Vercel/domínio próprio), sem caminho fixo.
 
-const CACHE = 'mc-guias-v39';
+const CACHE = 'mc-guias-v40';
 
 // Raiz da aplicação, derivada da própria URL do SW:
 //   GitHub Pages → '/mcguias/sw.js'  ⇒ BASE = '/mcguias/'
@@ -120,8 +120,12 @@ self.addEventListener('push', (event) => {
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   if (event.action === 'dismiss') return;
-  const targetUrl = (event.notification.data && event.notification.data.url)
+  let targetUrl = (event.notification.data && event.notification.data.url)
     ? event.notification.data.url : BASE;
+  // URLs relativas (ex.: 'pages/perfil.html') resolvem contra a BASE do deploy
+  if (!/^(https?:)?\/\//.test(targetUrl) && targetUrl.charAt(0) !== '/') {
+    targetUrl = BASE + targetUrl;
+  }
   event.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
       for (var i = 0; i < clients.length; i++) {
