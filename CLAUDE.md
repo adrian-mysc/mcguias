@@ -36,10 +36,11 @@ resolvida em runtime:
 - **`sw.js`**: `const BASE = self.location.pathname.replace(/sw\.js$/, '')`.
   Todo asset (precache, offline fallback, ícones de push) é prefixado com `BASE`.
 
-⚠️ Outros caminhos absolutos `/mcguias/...` ainda existem fora do PWA (ex.:
-`bottom-nav`, `fab`, e `const base = '/mcguias/data/questions/'` em algumas
-páginas) — esses quebram navegação/carregamento na Vercel e ainda precisam do
-mesmo tratamento relativo/dinâmico.
+✅ (jun/2026) Não restam caminhos absolutos `/mcguias/...` em código — as
+ocorrências remanescentes são apenas comentários. Ao adicionar página/asset
+novo, mantenha o padrão relativo/dinâmico acima (nunca hardcode `/mcguias/`).
+O **404.html** é caso especial: o GitHub Pages o serve na URL da página
+inexistente, então ele injeta um `<base>` dinâmico no `<head>`.
 
 ---
 
