@@ -148,12 +148,14 @@ window.shareQuizResult = function(score, total, guia) {
   for (var i = 0; i < 10; i++) bars += (i < filled ? '🟩' : '⬜');
   var guiaLabel  = g.replace(/\s*✏️\s*$/, '').trim();
   var scoreStr   = total ? (score + '/' + total + ' (' + pct + '%)') : (pct + '%');
+  // URL real do app neste deploy (GitHub Pages ou Vercel)
+  var appUrl = location.origin + location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/');
   var text = medal + ' ' + nivel + '\n'
            + '📋 Guia: ' + guiaLabel + '\n'
            + '✅ ' + scoreStr + '\n'
            + bars + '\n'
            + '📱 MC Guias — Treine onde estiver\n'
-           + '🔗 mc-guias.github.io/mcguias/';
+           + '🔗 ' + appUrl;
   if (navigator && navigator.share) {
     navigator.share({ title: 'MC Guias — ' + guiaLabel, text: text })
       .catch(function() { mcCopyToClipboard(text); });

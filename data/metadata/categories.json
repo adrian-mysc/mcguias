@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "updatedAt": "2026-05-23",
+  "updatedAt": "2026-06-11",
   "categories": [
     {
       "id": "chapa",
@@ -360,7 +360,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 577,
+      "totalQuestoes": 573,
       "tags": [
         "olimpiada",
         "chapa",
@@ -374,6 +374,42 @@
         "estoque",
         "seguranca"
       ]
+    },
+    {
+      "id": "gerencia",
+      "nome": "Gerência",
+      "icone": "📊",
+      "cor": "#3b82f6",
+      "descricao": "Conteúdo de gestão — turno, plantão e rotinas gerenciais",
+      "niveis": [
+        "basico"
+      ],
+      "totalQuestoes": 86,
+      "tags": []
+    },
+    {
+      "id": "treinador",
+      "nome": "Treinador",
+      "icone": "🎓",
+      "cor": "#a78bfa",
+      "descricao": "Desenvolvimento de treinadores — PDT, didática e acompanhamento",
+      "niveis": [
+        "basico"
+      ],
+      "totalQuestoes": 133,
+      "tags": []
+    },
+    {
+      "id": "lideranca",
+      "nome": "Liderança",
+      "icone": "⭐",
+      "cor": "#f59e0b",
+      "descricao": "Liderança de equipe, comunicação e comportamento de líder",
+      "niveis": [
+        "basico"
+      ],
+      "totalQuestoes": 67,
+      "tags": []
     }
   ]
 }

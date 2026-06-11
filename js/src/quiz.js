@@ -330,7 +330,7 @@ function initQuiz(questions, guiaName) {
       if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
       var key = e.key.toUpperCase();
       if (!answered) {
-        var idx = ['A','B','C','D'].indexOf(key);
+        var idx = ['A','B','C','D','E'].indexOf(key);
         if (idx !== -1) {
           var btns = document.querySelectorAll('.quiz-option');
           if (btns[idx]) { btns[idx].click(); }

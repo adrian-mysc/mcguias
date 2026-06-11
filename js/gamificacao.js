@@ -240,13 +240,22 @@
   /* ============================================================
      WEEK HELPERS
      ============================================================ */
+  // Data local (YYYY-MM-DD). toISOString() usa UTC e, no fuso do Brasil,
+  // viraria o "dia" às 21h — quebrando streaks e o reset semanal.
+  function _localDateStr(d) {
+    d = d || new Date();
+    var m = String(d.getMonth() + 1);
+    var dia = String(d.getDate());
+    return d.getFullYear() + '-' + (m.length < 2 ? '0' + m : m) + '-' + (dia.length < 2 ? '0' + dia : dia);
+  }
+
   function _mondayStr(date) {
     var d = date ? new Date(date) : new Date();
     var day = d.getDay();                 // 0=Sun
     var diff = (day === 0 ? -6 : 1 - day);
     var mon = new Date(d);
     mon.setDate(d.getDate() + diff);
-    return mon.toISOString().slice(0, 10);
+    return _localDateStr(mon);
   }
 
   function checkWeekReset(data) {
@@ -277,7 +286,7 @@
      STREAK / CONSECUTIVE DAYS
      ============================================================ */
   function updateStreak(stats) {
-    var today = new Date().toISOString().slice(0, 10);
+    var today = _localDateStr();
     if (!stats.ultimaAtividade) {
       stats.diasConsecutivos = 1;
       stats.ultimaAtividade  = today;
@@ -538,7 +547,10 @@
 
     // -- Weekly challenges --
     var prog  = data.desafiosSemanais.progresso;
+    // Remove acentos: páginas passam nomes de exibição ('Condimentação'),
+    // mas os matches abaixo usam ids sem acento ('condimentacao').
     var guide = (opts.guide || opts.guia || '').toLowerCase();
+    try { guide = guide.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {}
     var pct   = opts.pct || 0;
 
     // streak_imparavel — atualiza o pico de streak alcançado nesta semana
@@ -752,7 +764,7 @@
   }
 
   function _scheduleReminderCheck() {
-    var today   = new Date().toISOString().slice(0, 10);
+    var today   = _localDateStr();
     var lastKey = 'mc_last_notif';
     if (McStorage.get(lastKey, null) === today) return;
 

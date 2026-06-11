@@ -216,7 +216,9 @@ Deno.serve(async (req: Request) => {
   const notification = {
     title: 'Complete seu perfil! 📋',
     body: 'Adicione seu cargo e restaurante para aparecer no ranking e desbloquear recursos.',
-    url: '/mcguias/pages/perfil.html',
+    // Caminho relativo: o sw.js resolve contra a BASE do deploy
+    // ('/mcguias/' no GitHub Pages, '/' na Vercel).
+    url: 'pages/perfil.html',
     tag: 'mc-perfil-incompleto',
   };
 

@@ -13,7 +13,18 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
 
-  <link rel="stylesheet" href="../css/styles.css">
+  <script>
+    // O 404 do GitHub Pages é servido na URL da página inexistente (qualquer
+    // profundidade), então caminhos relativos não são confiáveis. O <base>
+    // aponta para a raiz do app: '/mcguias/' no GitHub Pages, '/' na Vercel.
+    (function() {
+      var root = location.pathname.indexOf('/mcguias/') === 0 ? '/mcguias/' : '/';
+      var b = document.createElement('base');
+      b.href = root;
+      document.head.appendChild(b);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
 
   <script>
     // Splash — dismiss after fonts + content ready
