@@ -27,7 +27,7 @@
 | 12 | Temp. e aquecimento das **chapas** | **Superior 218°C / Inferior 177°C · 20 min** | ✅ |
 | 13 | **Empilhamento máximo** das carnes 10:1 na gaveta UHC | **12 carnes** | ✅ |
 | 14 | Tempo máximo de **remoção das carnes 10:1** | **18 segundos** | ✅ |
-| 15 | Tempo de **fritura do McChicken** | **3 min 30 s** (frango prensado) | ✅ |
+| 15 | Tempo de **fritura do McChicken** | **3'15"** (McChicken, McJunior e McNuggets) | ✅ |
 | 16 | Temp. de fritura das **McFritas** | **168°C** (validade na estufa: 7 min) | ✅ |
 | 17 | Velocidade de extração do **sorvete** | **5 a 7,5 oz (142–213 g) em 10 segundos** | ✅ |
 | 18 | Temp. do **banho-maria das coberturas** (sundae) | **57°C a 63°C** (extração do sundae: -9°C a -8°C) | ✅ |
@@ -55,7 +55,7 @@
 | 26 | Tempo para retirar no **Drive** | **60 s** (90 s para pedir + 60 s para retirar) | ✅ |
 | 27 | Quando abrir o **lado 2 do Made for You** | **3 pessoas no lado 1 OU a partir de 125 lanches/hora** | ✅ |
 | 28 | **Ordem de montagem** no delivery | **Sanduíches → Batatas fritas → Bebidas e sobremesas** | ✅ |
-| 29 | Tempo total de experiência no **Delivery** | App tem balcão 90 s / 3 min 30 s; Delivery não consta | 🟡 |
+| 29 | Tempos do **McDelivery** | **3 min** para produzir/montar · **até 10 min** para chegar ao cliente · zona de perigo: **2+ entregadores** parados | ✅ |
 
 ## Cultura / treinamento / história
 
@@ -74,5 +74,5 @@
 
 ### Resumo
 - **Confirmadas pelo app/embalagem/comunicado:** 42 respostas.
-- **A confirmar (🟡):** experiência do Delivery, princípios da Cultura de
-  Serviço, "3 Os" e os Styles do Influencer.
+- **A confirmar (🟡):** princípios da Cultura de Serviço, "3 Os" e os Styles do
+  Influencer (o material traz "6 técnicas dos Influencers Vendedores", não "styles").

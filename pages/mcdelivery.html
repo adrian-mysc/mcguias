@@ -358,6 +358,32 @@
         </div>
       </div>
 
+      <div class="card">
+        <div class="card-head">
+          <div class="card-head-icon">⏱️</div>
+          <h2>Tempos &amp; Pontos de Atenção</h2>
+        </div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">⏱️</div>
+              <div class="step-text">Após a <strong>notificação do entregador</strong> para retirar o pedido, você tem <strong>3 minutos para produzir e montar</strong>. O pedido deve estar montado quando o entregador chegar ao restaurante.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">🛵</div>
+              <div class="step-text">Após a retirada pelo entregador, a <strong>chegada ao cliente</strong> deve ocorrer em <strong>até 10 minutos</strong>.</div>
+            </div>
+          </div>
+
+          <div class="alerta-box" style="margin-top: 4px;">
+            <div class="alerta-icon">⚠️</div>
+            <div class="alerta-text">
+              <strong>Zona de perigo do McDelivery:</strong> quando há <strong>2 ou mais entregadores parados</strong> no balcão aguardando o pedido ser montado.
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="tab-panel" id="panel-quiz">
@@ -366,7 +392,7 @@
         <div class="card-head">
           <div class="card-head-icon">🎯</div>
           <h2>Quiz — McDelivery</h2>
-          <div class="badge badge-red">10 perguntas</div>
+          <div class="badge badge-red">39 perguntas</div>
         </div>
         <div class="card-body">
           <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
@@ -533,7 +559,10 @@
       { category: "📦 McDelivery · Bebidas", question: "Como embalar bebidas quentes para delivery?", options: ["Sem tampa, colocar na sacola", "Com tampa lacrada e na posição vertical na sacola", "Deitadas para não vazar", "Em saco plástico separado"], answer: "Com tampa lacrada e na posição vertical na sacola", explanation: "Bebidas quentes devem ter tampa lacrada e ficarem na posição vertical na sacola." },
       { category: "📦 McDelivery · Sobremesas", question: "Como proteger sorvetes e produtos frios no delivery?", options: ["Em sacola comum com os demais itens", "Em embalagem isolante separada dos itens quentes", "Não é possível entregar sorvetes", "Com gelo na sacola"], answer: "Em embalagem isolante separada dos itens quentes", explanation: "Sorvetes e itens frios devem ser embalados em embalagem isolante, separados dos itens quentes." },
       { category: "📦 McDelivery · Guardanapos", question: "Qual a quantidade mínima de guardanapos por pedido?", options: ["1 guardanapo", "2 guardanapos", "3 guardanapos", "Depende do pedido"], answer: "3 guardanapos", explanation: "Incluir no mínimo 3 guardanapos por pedido, mais dependendo da quantidade de itens." },
-      { category: "⏱️ McDelivery · Prioridade", question: "Como priorizar pedidos quando há acúmulo simultâneo de delivery e balcão?", options: ["Delivery sempre primeiro", "Balcão sempre primeiro", "Por ordem de entrada no sistema, respeitando os tempos meta", "Gerente decide caso a caso"], answer: "Por ordem de entrada no sistema, respeitando os tempos meta", explanation: "Priorizar por ordem de entrada, respeitando os tempos meta de cada canal." }
+      { category: "⏱️ McDelivery · Prioridade", question: "Como priorizar pedidos quando há acúmulo simultâneo de delivery e balcão?", options: ["Delivery sempre primeiro", "Balcão sempre primeiro", "Por ordem de entrada no sistema, respeitando os tempos meta", "Gerente decide caso a caso"], answer: "Por ordem de entrada no sistema, respeitando os tempos meta", explanation: "Priorizar por ordem de entrada, respeitando os tempos meta de cada canal." },
+      { category: "⏱️ McDelivery · Tempos", question: "Após a notificação do entregador, em quanto tempo o pedido deve ser produzido e montado?", options: ["3 minutos", "5 minutos", "10 minutos", "1 minuto"], answer: "3 minutos", explanation: "Você tem 3 minutos para produzir e montar o pedido — ele deve estar pronto quando o entregador chegar ao restaurante." },
+      { category: "⚠️ McDelivery · Tempos", question: "O que caracteriza a 'zona de perigo' do McDelivery?", options: ["1 entregador aguardando", "2 ou mais entregadores parados aguardando o pedido ser montado", "Tablet sem bateria", "Falta de sacolas D+"], answer: "2 ou mais entregadores parados aguardando o pedido ser montado", explanation: "A zona de perigo é quando há 2 ou mais entregadores parados no balcão aguardando o pedido ser montado." },
+      { category: "📦 McDelivery · Condimentos", question: "Quando os condimentos são incluídos no pedido McDelivery?", options: ["Sempre, em todo pedido", "Somente se o cliente solicitar pelo APP", "A critério do montador", "Apenas em pedidos grandes"], answer: "Somente se o cliente solicitar pelo APP", explanation: "Só entregamos condimentos se o cliente solicitar através do APP." }
     ];
 
     document.addEventListener("DOMContentLoaded", () => {
