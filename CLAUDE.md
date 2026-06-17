@@ -36,38 +36,11 @@ resolvida em runtime:
 - **`sw.js`**: `const BASE = self.location.pathname.replace(/sw\.js$/, '')`.
   Todo asset (precache, offline fallback, ícones de push) é prefixado com `BASE`.
 
-⚠️ Outros caminhos absolutos `/mcguias/...` ainda existem fora do PWA (ex.:
-`bottom-nav`, `fab`, e `const base = '/mcguias/data/questions/'` em algumas
-páginas) — esses quebram navegação/carregamento na Vercel e ainda precisam do
-mesmo tratamento relativo/dinâmico.
-
----
-
-## PWA — Base de caminho dinâmica (dois deploys)
-
-O app roda em **dois lugares com raízes diferentes**:
-- **GitHub Pages**: `adrian-mysc.github.io/mcguias/` → raiz `/mcguias/`.
-- **Vercel / domínio próprio**: `mcguias.vercel.app` → raiz `/`.
-
-Por isso o PWA **não pode** ter caminho fixo `/mcguias/` (quebra na Vercel:
-manifest/SW dão 404, o app não instala e não funciona offline). A base é
-resolvida em runtime:
-
-- **`manifest.json`**: URLs **relativas** (`start_url`/`scope` = `"./"`, ícones
-  `icons/icon-192.png`). Resolvem relativo à URL do próprio manifest.
-- **`<link rel="manifest">` e `apple-touch-icon`**: relativos — `manifest.json`
-  / `icons/...` nas páginas da raiz; `../manifest.json` / `../icons/...` nas de
-  `pages/`. **Nunca** use `/mcguias/...` absoluto aqui.
-- **Registro do SW** (`js/src/sw-init.js`): a base vem de
-  `location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/')` → `register(base + 'sw.js')`.
-  Depois rode `bash build/concat.sh`.
-- **`sw.js`**: `const BASE = self.location.pathname.replace(/sw\.js$/, '')`.
-  Todo asset (precache, offline fallback, ícones de push) é prefixado com `BASE`.
-
-⚠️ Outros caminhos absolutos `/mcguias/...` ainda existem fora do PWA (ex.:
-`bottom-nav`, `fab`, e `const base = '/mcguias/data/questions/'` em algumas
-páginas) — esses quebram navegação/carregamento na Vercel e ainda precisam do
-mesmo tratamento relativo/dinâmico.
+✅ (jun/2026) Não restam caminhos absolutos `/mcguias/...` em código — as
+ocorrências remanescentes são apenas comentários. Ao adicionar página/asset
+novo, mantenha o padrão relativo/dinâmico acima (nunca hardcode `/mcguias/`).
+O **404.html** é caso especial: o GitHub Pages o serve na URL da página
+inexistente, então ele injeta um `<base>` dinâmico no `<head>`.
 
 ---
 
@@ -277,3 +250,25 @@ o sync via SDK estava falhando para a maioria.
 - **Sem bundler**: assets são servidos diretamente. A exceção é `js/main.js` (gerado por `build/concat.sh`).
 - **`pages/perfil.html`** é uma página monolítica com o script inline — intencional para evitar dependências extras.
 - **Dark mode**: controlado por `data-theme` no `<html>` via `js/theme.js`. Use variáveis CSS (`var(--bg)`, `var(--text)`, etc.).
+
+---
+
+## Estética Frontend
+
+Evite o "AI slop" — outputs genéricos e previsíveis. Ao criar ou modificar interfaces:
+
+**Tipografia**: Escolha fontes belas, únicas e interessantes. Evite Arial, Inter, Roboto e fontes de sistema genéricas. Prefira escolhas distintivas que elevem a estética.
+
+**Cor e Tema**: Comprometa-se com uma estética coesa usando variáveis CSS. Cores dominantes com acentos nítidos superam paletas tímidas e uniformemente distribuídas. Inspire-se em temas de IDE e estéticas culturais.
+
+**Motion**: Use animações para efeitos e micro-interações. Priorize soluções CSS puras. Um carregamento de página bem orquestrado com reveals escalonados (`animation-delay`) cria mais deleite do que micro-interações espalhadas.
+
+**Backgrounds**: Crie atmosfera e profundidade em vez de cores sólidas. Use gradientes CSS em camadas, padrões geométricos ou efeitos contextuais que combinem com a estética geral.
+
+**Evite explicitamente**:
+- Famílias de fontes superusadas (Inter, Roboto, Arial, Space Grotesk, fontes de sistema)
+- Esquemas de cores clichês (gradientes roxos em fundo branco)
+- Layouts e padrões de componentes previsíveis
+- Design "cookie-cutter" sem caráter específico ao contexto
+
+Interprete criativamente e faça escolhas inesperadas que pareçam genuinamente projetadas para o contexto. Varie entre temas claros e escuros, fontes e estéticas diferentes.

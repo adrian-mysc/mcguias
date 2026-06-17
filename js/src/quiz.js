@@ -330,7 +330,7 @@ function initQuiz(questions, guiaName) {
       if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
       var key = e.key.toUpperCase();
       if (!answered) {
-        var idx = ['A','B','C','D'].indexOf(key);
+        var idx = ['A','B','C','D','E'].indexOf(key);
         if (idx !== -1) {
           var btns = document.querySelectorAll('.quiz-option');
           if (btns[idx]) { btns[idx].click(); }
@@ -475,7 +475,7 @@ function initQuiz(questions, guiaName) {
         mode:        'mc',
       });
     }
-    var homeLink   = isRoot ? "../index.html" : "index.html";
+    var homeLink   = window.location.pathname.indexOf('/pages/') !== -1 ? "../index.html" : "index.html";
     var isQuizPage = window.location.pathname.indexOf("quiz.html") !== -1;
     window.backToSetup = function() {
       document.getElementById("quiz-setup").style.display = "block";

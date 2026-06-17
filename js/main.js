@@ -848,7 +848,7 @@ function initQuiz(questions, guiaName) {
       if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
       var key = e.key.toUpperCase();
       if (!answered) {
-        var idx = ['A','B','C','D'].indexOf(key);
+        var idx = ['A','B','C','D','E'].indexOf(key);
         if (idx !== -1) {
           var btns = document.querySelectorAll('.quiz-option');
           if (btns[idx]) { btns[idx].click(); }
@@ -993,7 +993,7 @@ function initQuiz(questions, guiaName) {
         mode:        'mc',
       });
     }
-    var homeLink   = isRoot ? "../index.html" : "index.html";
+    var homeLink   = window.location.pathname.indexOf('/pages/') !== -1 ? "../index.html" : "index.html";
     var isQuizPage = window.location.pathname.indexOf("quiz.html") !== -1;
     window.backToSetup = function() {
       document.getElementById("quiz-setup").style.display = "block";
@@ -1377,12 +1377,14 @@ window.shareQuizResult = function(score, total, guia) {
   for (var i = 0; i < 10; i++) bars += (i < filled ? '🟩' : '⬜');
   var guiaLabel  = g.replace(/\s*✏️\s*$/, '').trim();
   var scoreStr   = total ? (score + '/' + total + ' (' + pct + '%)') : (pct + '%');
+  // URL real do app neste deploy (GitHub Pages ou Vercel)
+  var appUrl = location.origin + location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/');
   var text = medal + ' ' + nivel + '\n'
            + '📋 Guia: ' + guiaLabel + '\n'
            + '✅ ' + scoreStr + '\n'
            + bars + '\n'
            + '📱 MC Guias — Treine onde estiver\n'
-           + '🔗 mc-guias.github.io/mcguias/';
+           + '🔗 ' + appUrl;
   if (navigator && navigator.share) {
     navigator.share({ title: 'MC Guias — ' + guiaLabel, text: text })
       .catch(function() { mcCopyToClipboard(text); });
@@ -1676,7 +1678,7 @@ function initLacuna(questions, guiaName) {
       + '<div style="font-size:13px;color:var(--muted);margin-bottom:20px;">de ' + total + ' perguntas</div>'
       + '<div style="display:flex;flex-direction:column;gap:8px;">'
       + '<button class="btn-primary" onclick="if(window.setActiveMode)window.setActiveMode(\'lacuna\');initLacuna(window._quizData,window._quizGuia)">🔄 Repetir</button>'
-      + '<button class="btn-secondary" onclick="shareQuizResult(' + halfPct + ',' + total + ',window._quizGuia)">📤 Compartilhar</button>'
+      + '<button class="btn-secondary" onclick="shareQuizResult(' + (score + scoreHalf * 0.5) + ',' + total + ',window._quizGuia)">📤 Compartilhar</button>'
       + '</div>'
       + '</div>';
   }

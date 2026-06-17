@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>McFritas & Fritos — MC Guias</title>
   <meta name="description" content="Guia de McFritas e Fritos: tempos de fritura, temperaturas, salga e padrões de qualidade dos produtos fritos.">
@@ -328,10 +328,10 @@
     document.addEventListener("DOMContentLoaded", () => {
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
-        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_FRITAS); observer.disconnect(); }
+        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_FRITAS, 'McFritas & Fritos'); observer.disconnect(); }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_FRITAS);
+      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_FRITAS, 'McFritas & Fritos');
     });
   </script>
 

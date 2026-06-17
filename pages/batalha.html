@@ -6,7 +6,7 @@
   <script type="module" src="../js/auth-guard.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Batalha — MC Guias</title>
   <meta name="description" content="Batalha de quiz ao vivo no MC Guias. Enfrente seu adversário em rodadas de perguntas, responda mais rápido e conquiste a vitória para subir no ranking.">
@@ -38,7 +38,7 @@
 
     .bt-player-card {
       display: flex; align-items: center; gap: 12px;
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius-md); padding: 12px 14px; margin-bottom: 8px;
     }
     .bt-player-avatar {
@@ -79,7 +79,7 @@
     .bt-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; max-height: 42vh; overflow-y: auto; }
     .bt-guide-btn {
       display: flex; align-items: center; gap: 8px;
-      background: var(--bg); border: 1.5px solid var(--border);
+      background: var(--bg); border: 1px solid var(--border);
       border-radius: 10px; padding: 10px 12px; cursor: pointer;
       font-size: 13px; font-weight: 600; color: var(--text);
       transition: border-color .15s, background .15s; font-family: var(--font-body);
@@ -90,7 +90,7 @@
     .bt-qs-label { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .6px; text-transform: uppercase; margin: 12px 0 8px; }
     .bt-qs-row { display: flex; gap: 8px; margin-bottom: 14px; }
     .bt-qs-pill {
-      flex: 1; padding: 8px 0; border-radius: 20px; border: 1.5px solid var(--border);
+      flex: 1; padding: 8px 0; border-radius: 20px; border: 1px solid var(--border);
       background: var(--bg); font-size: 13px; font-weight: 700; color: var(--muted);
       cursor: pointer; font-family: var(--font-body); transition: border-color .15s, color .15s, background .15s;
     }
@@ -137,11 +137,11 @@
     .bt-btn-row button { flex: 1; padding: 13px; border-radius: var(--radius-md); border: none; font-size: 14px; font-weight: 700; cursor: pointer; font-family: var(--font-body); transition: opacity .15s; }
     .bt-btn-accept { background: #22c55e; color: white; }
     .bt-btn-accept:hover { opacity: .88; }
-    .bt-btn-decline { background: var(--bg); color: var(--muted); border: 1.5px solid var(--border) !important; }
+    .bt-btn-decline { background: var(--bg); color: var(--muted); border: 1px solid var(--border) !important; }
 
     /* ── Battle ── */
     .bt-header {
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius-lg); padding: 12px 14px;
       display: grid; grid-template-columns: 1fr auto 1fr;
       align-items: center; margin-bottom: 10px; gap: 8px;
@@ -162,7 +162,7 @@
     .bt-timer-bar.urgent { background: #ef4444; }
 
     .bt-q-card {
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius-lg); padding: 16px;
       margin-bottom: 10px;
     }
@@ -197,7 +197,7 @@
     .bt-opt[data-idx="3"] { --oc:#8b5cf6; --ob:rgba(139,92,246,.07); }
 
     .bt-opt {
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius-md); padding: 13px 14px 13px 18px;
       font-size: 13.5px; font-weight: 600; color: var(--text);
       text-align: left; cursor: pointer; width: 100%;
@@ -273,7 +273,7 @@
     .bt-result-title { font-family: var(--font-display); font-size: 26px; font-weight: 800; }
     .bt-result-scores {
       display: flex; align-items: center; justify-content: center; gap: 16px;
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius-lg); padding: 18px 28px; width: 100%;
     }
     .bt-res-player { display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -287,14 +287,14 @@
     /* ── Revisão pós-batalha ── */
     .bt-review-btn {
       width: 100%; padding: 10px; border-radius: var(--radius-md);
-      border: 1.5px solid var(--border); background: var(--bg);
+      border: 1px solid var(--border); background: var(--bg);
       font-size: 13px; font-weight: 700; color: var(--muted); cursor: pointer;
       font-family: var(--font-body); transition: border-color .15s, color .15s;
     }
     .bt-review-btn:hover { border-color: var(--red); color: var(--red); }
     .bt-review-section { display: flex; flex-direction: column; gap: 10px; width: 100%; }
     .bt-rv-item {
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius-md); padding: 12px 14px; text-align: left;
     }
     .bt-rv-q { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
@@ -307,7 +307,7 @@
     .bt-rv-opt.wrong   { background: #fef2f2; color: #dc2626; }
     [data-theme="dark"] .bt-rv-opt.correct { background: rgba(34,197,94,.1); color: #4ade80; }
     [data-theme="dark"] .bt-rv-opt.wrong   { background: rgba(239,68,68,.1);  color: #f87171; }
-    .bt-rv-letter { width: 20px; height: 20px; border-radius: 5px; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; flex-shrink: 0; }
+    .bt-rv-letter { width: 20px; height: 20px; border-radius: 5px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; flex-shrink: 0; }
     .bt-rv-tag { margin-left: auto; font-size: 10px; font-weight: 800; letter-spacing: .4px; flex-shrink: 0; }
     .bt-rv-footer { display: flex; gap: 10px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
     .bt-rv-ok { font-size: 11px; font-weight: 700; color: #22c55e; }

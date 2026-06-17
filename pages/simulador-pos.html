@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador POS — MC Guias</title>
   <meta name="description" content="Simulador POS: treine o registro de pedidos no caixa (NewPOS/NP6) com o menu do restaurante — produtos, PLUs, total e troco.">
@@ -41,7 +41,7 @@
     /* ── PLU quick-entry ─────────────────────────────────── */
     .pos-plu-bar { display:flex; gap:8px; margin-bottom:12px; }
     .pos-plu-bar input {
-      flex:1; min-width:0; padding:11px 14px; border:1.5px solid var(--border);
+      flex:1; min-width:0; padding:11px 14px; border:1px solid var(--border);
       border-radius:var(--radius-md); background:var(--card); color:var(--text);
       font-family:var(--font-body); font-size:15px; font-weight:600; outline:none;
       transition:border-color .15s; -webkit-appearance:none;
@@ -59,7 +59,7 @@
     .pos-cats { display:flex; gap:7px; overflow-x:auto; padding-bottom:8px; margin-bottom:6px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
     .pos-cats::-webkit-scrollbar { display:none; }
     .pos-cat {
-      flex-shrink:0; padding:9px 14px; border:1.5px solid var(--border);
+      flex-shrink:0; padding:9px 14px; border:1px solid var(--border);
       border-radius:999px; background:var(--card); color:var(--muted);
       font-family:var(--font-display); font-weight:700; font-size:13px; cursor:pointer;
       transition:all .14s; display:flex; align-items:center; gap:6px;
@@ -72,7 +72,7 @@
     @media (min-width:480px) { .pos-grid { grid-template-columns:repeat(auto-fill, minmax(124px, 1fr)); } }
     .pos-item {
       position:relative; display:flex; flex-direction:column; gap:4px; text-align:left;
-      padding:11px 11px 10px; min-height:84px; border:1.5px solid var(--border);
+      padding:11px 11px 10px; min-height:84px; border:1px solid var(--border);
       border-radius:var(--radius-md); background:var(--pos-btn-bg); color:var(--text);
       cursor:pointer; overflow:hidden; transition:transform .1s, border-color .14s, box-shadow .14s;
     }
@@ -88,8 +88,8 @@
     .pos-item-plu { font-family:monospace; font-size:10px; font-weight:700; color:var(--pos-plu); }
 
     /* ── Painel do pedido (ticket) ───────────────────────── */
-    .pos-order { background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); }
-    .pos-order-head { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1.5px solid var(--border); }
+    .pos-order { background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); }
+    .pos-order-head { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid var(--border); }
     .pos-order-head h3 { font-family:var(--font-display); font-size:15px; font-weight:800; color:var(--text); display:flex; align-items:center; gap:7px; }
     .pos-order-head .pos-count { font-size:11px; font-weight:700; color:#fff; background:var(--red); border-radius:999px; padding:2px 8px; min-width:20px; text-align:center; }
     .pos-clear { background:none; border:none; color:var(--muted); font-size:12px; font-weight:700; cursor:pointer; padding:4px 6px; border-radius:8px; }
@@ -105,13 +105,13 @@
     .pos-line-info { flex:1; min-width:0; }
     .pos-line-name { font-size:13px; font-weight:700; color:var(--text); line-height:1.2; }
     .pos-line-unit { font-size:11px; color:var(--muted); margin-top:1px; }
-    .pos-stepper { display:flex; align-items:center; gap:0; border:1.5px solid var(--border); border-radius:999px; overflow:hidden; }
+    .pos-stepper { display:flex; align-items:center; gap:0; border:1px solid var(--border); border-radius:999px; overflow:hidden; }
     .pos-stepper button { width:26px; height:26px; border:none; background:var(--bg); color:var(--text); font-size:16px; font-weight:800; cursor:pointer; line-height:1; display:flex; align-items:center; justify-content:center; }
     .pos-stepper button:active { background:var(--red); color:#fff; }
     .pos-stepper .pos-qty { min-width:24px; text-align:center; font-size:13px; font-weight:800; font-family:var(--font-display); color:var(--text); }
     .pos-line-total { font-family:var(--font-display); font-size:13px; font-weight:800; color:var(--text); min-width:62px; text-align:right; }
 
-    .pos-order-foot { padding:12px 14px; border-top:1.5px solid var(--border); background:var(--bg); }
+    .pos-order-foot { padding:12px 14px; border-top:1px solid var(--border); background:var(--bg); }
     .pos-total-row { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:10px; }
     .pos-total-row span { font-size:13px; font-weight:700; color:var(--muted); }
     .pos-total-row strong { font-family:var(--font-display); font-size:24px; font-weight:900; color:var(--text); }
@@ -131,22 +131,22 @@
     @keyframes posSlide { from{ transform:translateY(24px); opacity:.4; } to{ transform:translateY(0); opacity:1; } }
     .pos-modal h3 { font-family:var(--font-display); font-size:17px; font-weight:800; color:var(--text); margin-bottom:4px; }
     .pos-modal-sub { font-size:13px; color:var(--muted); margin-bottom:14px; }
-    .pos-modal-total { display:flex; justify-content:space-between; align-items:baseline; background:var(--bg); border:1.5px solid var(--border); border-radius:var(--radius-md); padding:11px 14px; margin-bottom:14px; }
+    .pos-modal-total { display:flex; justify-content:space-between; align-items:baseline; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-md); padding:11px 14px; margin-bottom:14px; }
     .pos-modal-total span { font-size:13px; font-weight:700; color:var(--muted); }
     .pos-modal-total strong { font-family:var(--font-display); font-size:20px; font-weight:900; color:var(--text); }
     .pos-cash-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:12px; }
-    .pos-cash { padding:12px 6px; border:1.5px solid var(--border); border-radius:var(--radius-md); background:var(--bg); color:var(--text); font-family:var(--font-display); font-weight:800; font-size:14px; cursor:pointer; transition:all .12s; }
+    .pos-cash { padding:12px 6px; border:1px solid var(--border); border-radius:var(--radius-md); background:var(--bg); color:var(--text); font-family:var(--font-display); font-weight:800; font-size:14px; cursor:pointer; transition:all .12s; }
     .pos-cash:hover { border-color:var(--red); }
     .pos-cash.active { background:var(--red); border-color:var(--red); color:#fff; }
-    .pos-cash-input { width:100%; padding:12px 14px; border:1.5px solid var(--border); border-radius:var(--radius-md); background:var(--bg); color:var(--text); font-family:var(--font-display); font-size:16px; font-weight:800; text-align:center; outline:none; margin-bottom:12px; }
+    .pos-cash-input { width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:var(--radius-md); background:var(--bg); color:var(--text); font-family:var(--font-display); font-size:16px; font-weight:800; text-align:center; outline:none; margin-bottom:12px; }
     .pos-cash-input:focus { border-color:var(--red); }
     .pos-change { text-align:center; font-size:14px; font-weight:700; padding:11px; border-radius:var(--radius-md); margin-bottom:14px; }
     .pos-change.ok   { background:var(--pos-ok-bg); border:1.5px solid var(--pos-ok-bd); color:var(--pos-ok-tx); }
-    .pos-change.miss { background:var(--bg); border:1.5px solid var(--border); color:var(--muted); }
+    .pos-change.miss { background:var(--bg); border:1px solid var(--border); color:var(--muted); }
     .pos-change strong { font-family:var(--font-display); font-size:18px; }
     .pos-modal-btns { display:flex; gap:8px; }
     .pos-modal-btns button { flex:1; padding:13px; border-radius:var(--radius-md); font-family:var(--font-display); font-weight:800; font-size:14px; cursor:pointer; }
-    .pos-btn-cancel { background:var(--card); border:1.5px solid var(--border); color:var(--text); }
+    .pos-btn-cancel { background:var(--card); border:1px solid var(--border); color:var(--text); }
     .pos-btn-finish { background:linear-gradient(135deg,#1a7a42,#22c55e); border:none; color:#fff; box-shadow:0 6px 16px rgba(34,197,94,.3); }
     .pos-btn-finish:disabled { background:var(--border); color:var(--muted); box-shadow:none; cursor:not-allowed; }
 
@@ -156,11 +156,11 @@
 
     /* ── Bloqueio por senha ──────────────────────────────── */
     .pos-lock { position:fixed; inset:0; z-index:2000; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:24px; }
-    .pos-lock-card { width:100%; max-width:340px; background:var(--card); border:1.5px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:28px 22px; text-align:center; }
+    .pos-lock-card { width:100%; max-width:340px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:28px 22px; text-align:center; }
     .pos-lock-icon { font-size:42px; margin-bottom:10px; }
     .pos-lock-card h2 { font-family:var(--font-display); font-size:19px; font-weight:800; color:var(--text); margin-bottom:4px; }
     .pos-lock-card p { font-size:13px; color:var(--muted); margin-bottom:18px; line-height:1.5; }
-    .pos-lock-input { width:100%; padding:13px 14px; border:1.5px solid var(--border); border-radius:var(--radius-md); background:var(--bg); color:var(--text); font-size:16px; font-weight:600; text-align:center; letter-spacing:2px; outline:none; transition:border-color .15s; -webkit-appearance:none; }
+    .pos-lock-input { width:100%; padding:13px 14px; border:1px solid var(--border); border-radius:var(--radius-md); background:var(--bg); color:var(--text); font-size:16px; font-weight:600; text-align:center; letter-spacing:2px; outline:none; transition:border-color .15s; -webkit-appearance:none; }
     .pos-lock-input:focus { border-color:var(--red); }
     .pos-lock.err .pos-lock-input { border-color:var(--red); animation:posShake .35s; }
     @keyframes posShake { 0%,100%{ transform:translateX(0);} 20%,60%{ transform:translateX(-7px);} 40%,80%{ transform:translateX(7px);} }

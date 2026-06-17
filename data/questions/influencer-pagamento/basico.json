@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-06-17",
   "categoria": "influencer-pagamento",
   "nivel": "basico",
   "migratedFrom": "influencer-pagamento.html",
@@ -1819,6 +1819,495 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Cupons digitais: escanear o QR Code ou inserir o código manualmente no POS.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_038",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer · Vendas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "influencer",
+        "tecnicas",
+        "venda"
+      ],
+      "pergunta": "Quantas técnicas dos Influencers Vendedores existem para oferecer produtos?",
+      "alternativas": [
+        "4 técnicas",
+        "5 técnicas",
+        "6 técnicas",
+        "8 técnicas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Oferecem-se produtos utilizando as 6 técnicas dos Influencers Vendedores.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_039",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🎯 Influencer · Venda",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "grupos",
+        "refeicao",
+        "venda"
+      ],
+      "pergunta": "Quais são os quatro grupos que compõem a refeição?",
+      "alternativas": [
+        "Entrada, prato, sobremesa e café",
+        "Sanduíches, bebidas, acompanhamentos e sobremesas",
+        "Lanche, fritas, molho e brinde",
+        "Salgado, doce, gelado e quente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os quatro grupos da refeição são: sanduíches, bebidas, acompanhamentos e sobremesas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_040",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🎯 Influencer · Sugestão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "salto",
+        "sobremesa",
+        "venda"
+      ],
+      "pergunta": "Na ordem dos saltos de venda, quando oferecer a sobremesa?",
+      "alternativas": [
+        "Primeiro de tudo",
+        "Após completar as três primeiras categorias",
+        "No lugar do acompanhamento",
+        "Apenas se o cliente pedir"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sugira sempre de forma a completar as três primeiras categorias antes de oferecer a sobremesa.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_041",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Troco",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "dinheiro",
+        "procedimento",
+        "troco"
+      ],
+      "pergunta": "Como manter a cédula recebida em pagamento em dinheiro?",
+      "alternativas": [
+        "Na gaveta imediatamente",
+        "Horizontalmente sobre o balcão, próximo ao caixa, até o troco ser contado",
+        "No bolso",
+        "Na mão do cliente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Mantenha a cédula horizontalmente sobre o balcão e próximo ao caixa enquanto o troco correto é contado em voz alta ao cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_042",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Troco",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "procedimento",
+        "troco"
+      ],
+      "pergunta": "Como o troco deve ser devolvido ao cliente?",
+      "alternativas": [
+        "Em silêncio",
+        "Contado em voz alta",
+        "Apenas mostrando o valor na tela",
+        "Junto com a próxima compra"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O troco correto é contado em voz alta ao ser devolvido ao cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_043",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cofrinho",
+        "dinheiro",
+        "procedimento"
+      ],
+      "pergunta": "Em qual situação se pergunta ao cliente sobre depositar uma moeda no cofrinho (crianças com câncer)?",
+      "alternativas": [
+        "Em qualquer pagamento",
+        "Apenas no pagamento em dinheiro",
+        "Apenas no cartão",
+        "Apenas no Pix"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Apenas no pagamento em dinheiro pergunte se o cliente deseja depositar uma moeda no cofrinho para ajudar as crianças com câncer.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_044",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Pagamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "dinheiro",
+        "higiene",
+        "luva"
+      ],
+      "pergunta": "Com que frequência as luvas devem ser trocadas no recebimento de dinheiro?",
+      "alternativas": [
+        "Uma vez por turno",
+        "A cada recebimento de dinheiro ou moedas",
+        "A cada hora",
+        "Somente ao trocar de função"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Troque sempre as luvas a cada recebimento de dinheiro ou moedas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_045",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Cartão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cartao",
+        "credito",
+        "procedimento"
+      ],
+      "pergunta": "No pagamento com cartão de crédito, qual o procedimento correto?",
+      "alternativas": [
+        "Apenas inserir o cartão",
+        "Entregar o comprovante e uma caneta para assinatura, guardar a via na gaveta e entregar a outra ao cliente",
+        "Pedir a senha",
+        "Anotar o número do cartão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No crédito, entregue o comprovante e uma caneta, solicite a assinatura, guarde o comprovante na gaveta e entregue a outra via ao cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_046",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "🗣️ Influencer · Atendimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "pedido",
+        "registro"
+      ],
+      "pergunta": "Qual pergunta fazer caso não tenha entendido todo o pedido?",
+      "alternativas": [
+        "'Pode repetir tudo?'",
+        "'Eu deixei de registrar alguma coisa?'",
+        "'O senhor quer mais alguma coisa?'",
+        "'Está correto?'"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Repita apenas os itens registrados e pergunte: 'Eu deixei de registrar alguma coisa?'",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "influencer_pagamento_047",
+      "categoria": "influencer-pagamento",
+      "subcategoria": "💳 Influencer · Pagamento",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cpf",
+        "nota",
+        "procedimento"
+      ],
+      "pergunta": "Quando colocar o CPF na nota?",
+      "alternativas": [
+        "Sempre, obrigatoriamente",
+        "Caso o cliente solicite, apenas nos estados que possuem",
+        "Nunca",
+        "Somente em pagamentos com cartão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Caso o cliente solicite, coloque o CPF na nota — apenas nos estados que possuem.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

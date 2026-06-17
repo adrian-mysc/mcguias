@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "updatedAt": "2026-05-23",
+  "updatedAt": "2026-06-11",
   "categories": [
     {
       "id": "chapa",
@@ -11,7 +11,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 41,
+      "totalQuestoes": 77,
       "tags": [
         "carne",
         "temperatura",
@@ -32,7 +32,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 80,
+      "totalQuestoes": 89,
       "tags": [
         "tomate",
         "cebola",
@@ -52,7 +52,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 33,
+      "totalQuestoes": 36,
       "tags": [
         "oleo",
         "temperatura",
@@ -71,7 +71,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 24,
+      "totalQuestoes": 40,
       "tags": [
         "oleo",
         "temperatura",
@@ -89,7 +89,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 38,
+      "totalQuestoes": 41,
       "tags": [
         "temperatura",
         "validade",
@@ -125,7 +125,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 38,
+      "totalQuestoes": 46,
       "tags": [
         "ppf",
         "carne",
@@ -144,7 +144,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 38,
+      "totalQuestoes": 50,
       "tags": [
         "oepe",
         "ppf",
@@ -162,7 +162,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 38,
+      "totalQuestoes": 35,
       "tags": [
         "atendimento",
         "ppf",
@@ -179,7 +179,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 37,
+      "totalQuestoes": 47,
       "tags": [
         "ppf",
         "atendimento",
@@ -196,12 +196,29 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 39,
+      "totalQuestoes": 49,
       "tags": [
         "ppf",
         "atendimento",
         "organizacao",
         "tempo"
+      ]
+    },
+    {
+      "id": "mcdelivery",
+      "nome": "McDelivery",
+      "icone": "🛵",
+      "cor": "#f97316",
+      "descricao": "Montagem, lacre e entrega de pedidos McDelivery",
+      "niveis": [
+        "basico"
+      ],
+      "totalQuestoes": 10,
+      "tags": [
+        "montagem",
+        "entrega",
+        "lacre",
+        "sacola"
       ]
     },
     {
@@ -213,7 +230,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 39,
+      "totalQuestoes": 49,
       "tags": [
         "limpeza",
         "frequencia",
@@ -247,7 +264,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 30,
+      "totalQuestoes": 39,
       "tags": [
         "limpeza",
         "validade",
@@ -264,7 +281,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 21,
+      "totalQuestoes": 36,
       "tags": [
         "temperatura",
         "peps",
@@ -282,7 +299,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 36,
+      "totalQuestoes": 46,
       "tags": [
         "temperatura",
         "porcao",
@@ -360,7 +377,7 @@
       "niveis": [
         "basico"
       ],
-      "totalQuestoes": 577,
+      "totalQuestoes": 573,
       "tags": [
         "olimpiada",
         "chapa",
@@ -374,6 +391,42 @@
         "estoque",
         "seguranca"
       ]
+    },
+    {
+      "id": "gerencia",
+      "nome": "Gerência",
+      "icone": "📊",
+      "cor": "#3b82f6",
+      "descricao": "Conteúdo de gestão — turno, plantão e rotinas gerenciais",
+      "niveis": [
+        "basico"
+      ],
+      "totalQuestoes": 86,
+      "tags": []
+    },
+    {
+      "id": "treinador",
+      "nome": "Treinador",
+      "icone": "🎓",
+      "cor": "#a78bfa",
+      "descricao": "Desenvolvimento de treinadores — PDT, didática e acompanhamento",
+      "niveis": [
+        "basico"
+      ],
+      "totalQuestoes": 133,
+      "tags": []
+    },
+    {
+      "id": "lideranca",
+      "nome": "Liderança",
+      "icone": "⭐",
+      "cor": "#f59e0b",
+      "descricao": "Liderança de equipe, comunicação e comportamento de líder",
+      "niveis": [
+        "basico"
+      ],
+      "totalQuestoes": 67,
+      "tags": []
     }
   ]
 }

@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Produtos Fritos — MC Guias</title>
   <meta name="description" content="Guia de Produtos Fritos: tempos de cocção, temperaturas de óleo, validades e padrões de qualidade na estação de fritura.">
@@ -63,6 +63,34 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Produção · Produtos Fritos</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Padrão</th></tr></thead>
+            <tbody>
+            <tr><td>Temperatura (frango e tortas)</td><td><strong>180°C</strong></td></tr>
+            <tr><td>Validade UHC — McChicken</td><td><strong>30 minutos</strong></td></tr>
+            <tr><td>Validade UHC — McNuggets / McJunior</td><td><strong>20 minutos</strong></td></tr>
+            <tr><td>Fritura — McChicken / McJunior / McNuggets</td><td><strong>3'15"</strong></td></tr>
+            <tr><td>Fritura — Tortas</td><td><strong>6 minutos</strong></td></tr>
+            <tr><td>Resfriamento das tortas</td><td><strong>20 minutos</strong></td></tr>
+            <tr><td>Vida total das tortas</td><td><strong>240 minutos (2h40)</strong></td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li>Tortas: no cesto com a <strong>costura para cima</strong>; no resfriamento, com a <strong>barriga (bolhas) para cima</strong>. Aviso “MAÇÃ OU BANANA” visível ao cliente.</li>
+            <li>McNuggets: sacuda o cesto para distribuir as carnes antes de ativar o timer.</li>
+            <li>Pegador <strong>preto</strong> para carnes de frango (exceto McNuggets). EPI: avental de cozinha e mangote.</li>
+          </ul>
+
+        </div>
+      </div>
+
       <div class="section-label">Resumo Rápido</div>
 
       <div class="card">
@@ -290,6 +318,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_FRITOS = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🌡️ Fritos · Temperatura",
+        question: "Qual a temperatura das fritadeiras para produtos de frango e tortas?",
+        options: ["168°C", "175°C", "180°C", "190°C"],
+        answer: "180°C",
+        explanation: "As fritadeiras de frango e tortas operam a 180°C."
+      },
+      {
+        category: "⏱️ Fritos · UHC",
+        question: "Qual o tempo de validade do McChicken na UHC?",
+        options: ["15 minutos", "20 minutos", "30 minutos", "45 minutos"],
+        answer: "30 minutos",
+        explanation: "O McChicken tem validade de 30 minutos na UHC."
+      },
+      {
+        category: "⏱️ Fritos · UHC",
+        question: "Qual o tempo de validade do McNuggets e do McJunior na UHC?",
+        options: ["15 minutos", "20 minutos", "30 minutos", "45 minutos"],
+        answer: "20 minutos",
+        explanation: "McNuggets e McJunior têm validade de 20 minutos na UHC."
+      },
+      {
+        category: "⏱️ Fritos · Tempos",
+        question: "Qual o tempo de fritura do McChicken, McJunior e McNuggets?",
+        options: ["3'10\"", "3'15\"", "6'", "2'45\""],
+        answer: "3'15\"",
+        explanation: "O tempo de fritura de McChicken, McJunior e McNuggets é de 3'15\"."
+      },
+      {
+        category: "🥧 Fritos · Tortas",
+        question: "Qual o tempo de fritura das tortas?",
+        options: ["3 minutos", "4 minutos", "6 minutos", "8 minutos"],
+        answer: "6 minutos",
+        explanation: "As tortas fritam por 6 minutos, em cuba a 180°C."
+      },
+      {
+        category: "🥧 Fritos · Tortas",
+        question: "Qual o tempo de resfriamento das tortas?",
+        options: ["10 minutos", "15 minutos", "20 minutos", "30 minutos"],
+        answer: "20 minutos",
+        explanation: "O tempo de resfriamento das tortas é de 20 minutos."
+      },
+      {
+        category: "🥧 Fritos · Tortas",
+        question: "Qual o tempo total de vida das tortas?",
+        options: ["120 minutos", "180 minutos", "240 minutos", "300 minutos"],
+        answer: "240 minutos",
+        explanation: "O tempo total de vida das tortas é de 240 minutos (inclui o resfriamento de 20 min; marca-se 2h40)."
+      },
+      {
+        category: "🥧 Fritos · Tortas",
+        question: "Como a torta deve ser colocada no cesto de fritura?",
+        options: ["Com a costura para cima", "Com a costura para baixo", "Deitada na lateral", "Em pé"],
+        answer: "Com a costura para cima",
+        explanation: "Coloca-se a torta no cesto com a costura para cima, encostando a parte superior na lâmina que separa os espaços do cesto."
+      },
+      {
+        category: "🍗 Fritos · McNuggets",
+        question: "O que fazer com o cesto de McNuggets antes de ativar o timer?",
+        options: ["Salgar as carnes", "Sacudir o cesto para distribuir as carnes", "Tampar a cuba", "Escorrer o óleo"],
+        answer: "Sacudir o cesto para distribuir as carnes",
+        explanation: "No McNuggets, sacuda o cesto para distribuir as carnes antes de ativar o timer."
+      },
+      {
+        category: "🍗 Fritos · Frango",
+        question: "Qual a cor do pegador usado para as carnes de frango (exceto McNuggets)?",
+        options: ["Verde", "Preto", "Bege", "Azul"],
+        answer: "Preto",
+        explanation: "Mantenha 1 pegador preto para as carnes de frango (exceto McNuggets)."
+      },
       { category: "🌡️ Temperatura", question: "Qual a temperatura da fritadeira para produtos de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "A fritadeira para frango e tortas opera a 180°C." },
       { category: "🌡️ Temperatura", question: "Qual a temperatura da UHC para carnes brancas?", options: ["72°C", "79°C", "85°C", "90°C"], answer: "85°C", explanation: "A UHC para carnes brancas opera a 85°C." },
       { category: "⏱️ Tempo de Fritura", question: "Qual o tempo de fritura de Nuggets, McChicken e Junior?", options: ["2min30s", "3min00s", "3min15s", "4min00s"], answer: "3min15s", explanation: "Nuggets, Chicken e Junior têm tempo de fritura de 3 minutos e 15 segundos." },

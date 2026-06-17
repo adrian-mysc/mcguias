@@ -1,8 +1,10 @@
-// MC Guias — Service Worker v38
-// Atualização: base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
+// MC Guias — Service Worker v41
+// Atualização: conteúdo dos Materiais de Estudo oficiais incorporado
+// (+210 questões, nova categoria McDelivery e cards de estudo nos guias).
+// Base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
 // (GitHub Pages) quanto em / (Vercel/domínio próprio), sem caminho fixo.
 
-const CACHE = 'mc-guias-v38';
+const CACHE = 'mc-guias-v41';
 
 // Raiz da aplicação, derivada da própria URL do SW:
 //   GitHub Pages → '/mcguias/sw.js'  ⇒ BASE = '/mcguias/'
@@ -36,6 +38,7 @@ const PRECACHE_PATHS = [
   'data/questions/montagem-entrega/basico.json',
   'data/questions/influencer-pagamento/basico.json',
   'data/questions/drive-thru/basico.json',
+  'data/questions/mcdelivery/basico.json',
   'data/questions/bebidas-sobremesas/basico.json',
   'data/questions/embaixador-experiencia/basico.json',
   'data/questions/seguranca-alimento/basico.json',
@@ -44,7 +47,6 @@ const PRECACHE_PATHS = [
   'data/questions/mccafe/basico.json',
   'data/questions/manutencao-preventivas/basico.json',
   'data/questions/best-burguer/basico.json',
-  'data/questions/mcdelivery/basico.json',
   'data/questions/gerencia/basico.json',
   'data/questions/lideranca/basico.json',
   'data/questions/treinador/basico.json',
@@ -121,8 +123,12 @@ self.addEventListener('push', (event) => {
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   if (event.action === 'dismiss') return;
-  const targetUrl = (event.notification.data && event.notification.data.url)
+  let targetUrl = (event.notification.data && event.notification.data.url)
     ? event.notification.data.url : BASE;
+  // URLs relativas (ex.: 'pages/perfil.html') resolvem contra a BASE do deploy
+  if (!/^(https?:)?\/\//.test(targetUrl) && targetUrl.charAt(0) !== '/') {
+    targetUrl = BASE + targetUrl;
+  }
   event.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
       for (var i = 0; i < clients.length; i++) {

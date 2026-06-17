@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "updatedAt": "2026-05-20",
+  "updatedAt": "2026-06-17",
   "categoria": "lope",
   "nivel": "basico",
   "migratedFrom": "lope.html + lope2.html",
@@ -3961,6 +3961,499 @@
       "respostaCorreta": 2,
       "explicacao": "A validade (data primária e secundária) deve ser anotada com caneta pilot no bloco de queijo. Para remover a marcação anterior, utiliza-se uma folha de papel toalha, mantendo o bloco limpo e com informação atualizada.",
       "dica": "Validade no queijo: caneta pilot. Remover anterior: papel toalha.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_081",
+      "categoria": "lope",
+      "subcategoria": "🧺 Panos · Sanitização",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pano",
+        "procedimento",
+        "sanitizacao"
+      ],
+      "pergunta": "Quantos litros de água com solução sanitizante o balde branco deve ter para sanitizar os panos?",
+      "alternativas": [
+        "3 litros",
+        "5 litros",
+        "8 litros",
+        "10 litros"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Encha o balde branco com 5 litros de água com a solução sanitizante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_082",
+      "categoria": "lope",
+      "subcategoria": "🧺 Panos · Sanitização",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pano",
+        "procedimento",
+        "sanitizacao"
+      ],
+      "pergunta": "Quantos panos devem ser mergulhados por vez na solução sanitizante?",
+      "alternativas": [
+        "3 panos",
+        "5 panos",
+        "8 panos",
+        "10 panos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Separe e mergulhe 5 panos por vez na solução sanitizante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_083",
+      "categoria": "lope",
+      "subcategoria": "🧺 Panos · Frequência",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "chapa",
+        "pano",
+        "tempo",
+        "troca"
+      ],
+      "pergunta": "Qual a frequência de troca dos panos das Chapas (utensílios e áreas gordurosas)?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "3 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os panos de utensílios e áreas gordurosas das chapas são trocados a cada 1 hora.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_084",
+      "categoria": "lope",
+      "subcategoria": "🧺 Panos · Frequência",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "chapa",
+        "pano",
+        "tempo",
+        "troca"
+      ],
+      "pergunta": "Qual a frequência de troca dos panos das Chapas (área de inox e não gordurosas)?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "3 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os panos de inox e áreas não gordurosas das chapas são trocados a cada 2 horas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_085",
+      "categoria": "lope",
+      "subcategoria": "🧺 Panos · Frequência",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pano",
+        "salao",
+        "tempo",
+        "troca"
+      ],
+      "pergunta": "Qual a frequência de troca dos panos no Salão?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "3 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No Salão, os panos são trocados a cada 2 horas (mesmo padrão das demais estações da cozinha, balcão, Drive-Thru e McDelivery).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_086",
+      "categoria": "lope",
+      "subcategoria": "⏱️ LOPE · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "condimentacao",
+        "cuba",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida secundário da cuba ao colocá-la na mesa de condimentação?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "3 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Anote 2 horas de tempo de vida secundário ao colocar a cuba na mesa de condimentação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_087",
+      "categoria": "lope",
+      "subcategoria": "⚙️ LOPE · Preparação",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "estoque",
+        "peps",
+        "rotacao"
+      ],
+      "pergunta": "Qual método de rotação deve ser seguido na estocagem da mesa de condimentação?",
+      "alternativas": [
+        "PEPS (Primeiro que Entra, Primeiro que Sai)",
+        "UEPS",
+        "Aleatório",
+        "Por tamanho"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A rotação seguida é o PEPS — leva-se a cuba para a área de preparação fazendo a rotação PEPS.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_088",
+      "categoria": "lope",
+      "subcategoria": "🧺 Panos · Sanitização",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "balde",
+        "pano",
+        "sanitizacao"
+      ],
+      "pergunta": "Qual a cor do balde usado para a sanitização dos panos descartáveis?",
+      "alternativas": [
+        "Amarelo",
+        "Branco",
+        "Verde",
+        "Azul"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usa-se o balde branco com 5 litros de água e solução sanitizante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_089",
+      "categoria": "lope",
+      "subcategoria": "🧺 Panos · Sanitização",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pano",
+        "procedimento"
+      ],
+      "pergunta": "O que fazer com os panos após mergulhá-los na solução sanitizante?",
+      "alternativas": [
+        "Deixá-los escorrer pendurados",
+        "Apertá-los para retirar o excesso e colocá-los em bandeja de inox limpa",
+        "Usá-los encharcados",
+        "Secá-los ao sol"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Retire os panos apertando-os para retirar o excesso de solução e coloque-os sobre uma bandeja de inox limpa e sanitizada para distribuição.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_090",
+      "categoria": "lope",
+      "subcategoria": "⚙️ LOPE · Preparação",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "avental",
+        "epi",
+        "higiene"
+      ],
+      "pergunta": "Qual avental deve ser utilizado na estação de Apoio e Preparação (LOPE)?",
+      "alternativas": [
+        "Avental de cozinha",
+        "Avental impermeável de limpeza",
+        "Não usa avental",
+        "Avental descartável"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Na estação LOPE deve-se utilizar avental de cozinha.",
+      "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
       "peso": 1,

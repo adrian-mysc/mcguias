@@ -25,7 +25,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MC Guias — Início</title>
   <meta name="description" content="Plataforma de estudos operacionais de fast-food: simulados, guias de estação e ranking para treinar e dominar os padrões do restaurante.">
@@ -48,19 +48,19 @@
 
     /* ---- Hero ---- */
     .hero {
-      background: var(--red);
+      background: #1c1a17;
       position: relative;
       overflow: hidden;
     }
     .hero::before {
       content:''; position:absolute; inset:0; pointer-events:none;
       background:
-        radial-gradient(ellipse 70% 60% at 85% 10%, rgba(255,199,44,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 80% at 5% 90%, rgba(0,0,0,0.18) 0%, transparent 55%);
+        radial-gradient(ellipse 65% 70% at 85% 15%, rgba(255,199,44,0.20) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 65% at 5% 85%, rgba(218,41,28,0.14) 0%, transparent 55%);
     }
     .hero::after {
       content:''; position:absolute; inset:0; pointer-events:none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(255,255,255,0.035)'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 0h1v1H0zm20 0h1v1h-1zM0 20h1v1H0zm20 20h1v1h-1z' fill='rgba(255,255,255,0.028)'/%3E%3C/svg%3E");
     }
     .hero-inner { position:relative; z-index:1; padding:22px 18px 20px; color:white; }
     .hero-eyebrow {
@@ -114,7 +114,7 @@
     .search-wrap { padding:0 14px; }
     .search-input {
       width:100%; padding:11px 14px 11px 38px;
-      border:1.5px solid var(--border);
+      border:1px solid var(--border);
       border-radius:var(--radius-lg);
       background:var(--card); font-family:var(--font-body);
       font-size:13.5px; color:var(--text); outline:none;
@@ -123,7 +123,7 @@
       background-repeat:no-repeat; background-position:14px center;
       box-shadow:0 1px 4px rgba(0,0,0,0.04);
     }
-    .search-input:focus { border-color:var(--red); box-shadow:0 0 0 3px rgba(218,41,28,0.08), 0 1px 4px rgba(0,0,0,0.04); }
+    .search-input:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(176,120,0,0.10), 0 1px 4px rgba(0,0,0,0.04); }
     [data-theme="dark"] .search-input { background:#1e1d1b; border-color:#2e2c28; color:var(--text); }
 
     /* ---- Quiz CTA ---- */
@@ -157,11 +157,11 @@
     /* ---- Hist strip ---- */
     .hist-strip {
       background:var(--card); border-radius:var(--radius-lg);
-      border:1.5px solid var(--border); overflow:hidden;
+      border:1px solid var(--border); overflow:hidden;
       box-shadow:0 1px 6px rgba(0,0,0,0.05);
     }
     .hist-strip-head {
-      padding:11px 14px; border-bottom:1.5px solid var(--border);
+      padding:11px 14px; border-bottom:1px solid var(--border);
       display:flex; align-items:center; gap:8px;
       font-family:var(--font-display); font-size:13px; font-weight:700;
     }
@@ -205,7 +205,7 @@
     .home-section-head { display:flex; align-items:center; gap:8px; }
     .home-section-icon {
       width:28px; height:28px; display:flex; align-items:center; justify-content:center;
-      font-size:14px; background:var(--card); border:1.5px solid var(--border);
+      font-size:14px; background:var(--card); border:1px solid var(--border);
       border-radius:var(--radius-sm); flex-shrink:0;
     }
     .home-section-title {
@@ -219,10 +219,10 @@
 
     .guide-card {
       display:flex; flex-direction:column;
-      background:var(--card); border-radius:13px;
-      border:1.5px solid var(--border);
+      background:var(--card); border-radius:var(--radius-lg);
+      border:1px solid var(--border);
       overflow:hidden; text-decoration:none; color:var(--text);
-      box-shadow:0 1px 4px rgba(0,0,0,0.04);
+      box-shadow:var(--shadow-sm);
       transition:
         transform .22s cubic-bezier(0.22,1,.36,1),
         box-shadow .22s ease,
@@ -231,47 +231,52 @@
     }
     .guide-card::before {
       content:''; position:absolute; top:0; left:0; bottom:0; width:3px;
-      background:var(--red); opacity:0;
+      background:var(--yellow); opacity:0;
       transition:opacity .2s; border-radius:0;
     }
     .guide-card:hover {
       transform:translateY(-2px);
-      box-shadow:0 6px 20px rgba(0,0,0,0.09);
-      border-color:rgba(218,41,28,0.18);
+      box-shadow:var(--shadow-gold);
+      border-color:var(--border-gold);
     }
     .guide-card:hover::before { opacity:1; }
     .guide-card:active { transform:scale(0.98); transition-duration:.08s; }
     .guide-card.locked { opacity:.55; pointer-events:none; }
 
     .guide-card-top {
-      padding:13px 12px 10px; flex:1;
+      padding:14px 14px 11px; flex:1;
     }
     .guide-card-emoji {
-      font-size:22px; line-height:1; margin-bottom:7px; display:block;
+      font-size:26px; line-height:1; margin-bottom:8px; display:block;
       transition:transform .25s cubic-bezier(0.34,1.5,0.64,1);
     }
-    .guide-card:hover .guide-card-emoji { transform:scale(1.12); }
+    .guide-card h3 { font-size:14px; font-weight:800; line-height:1.25; color:var(--text); }
+    .guide-card p { font-size:11.5px; color:var(--muted); line-height:1.4; font-weight:500; margin-top:3px; }
+    .guide-card:hover .guide-card-emoji { transform:scale(1.15) rotate(-4deg); }
     .guide-card-foot {
-      padding:7px 12px; border-top:1.5px solid var(--border);
-      font-size:11px; font-weight:600; color:var(--red);
+      padding:8px 14px; border-top:1px solid var(--border);
+      font-size:11px; font-weight:700; color:var(--accent);
       display:flex; align-items:center; justify-content:space-between;
-      background:var(--card);
+      background:var(--bg);
     }
     .guide-card-foot span {
-      font-size:14px; transition:transform .2s cubic-bezier(0.34,1.3,0.64,1);
+      font-size:13px; transition:transform .2s cubic-bezier(0.34,1.3,0.64,1);
     }
+    .guide-card:hover .guide-card-foot { background:var(--glow); }
     .guide-card:hover .guide-card-foot span { transform:translateX(3px); }
 
     /* ---- Changelog ---- */
     .changelog-btn {
-      background:rgba(255,255,255,0.10);
-      border:1px solid rgba(255,255,255,0.18);
+      background: var(--raised);
+      border: 1px solid var(--border);
       border-radius:18px; padding:5px 10px; font-size:11.5px; cursor:pointer;
-      transition:background 0.15s; color:white; font-family:var(--font-body);
+      transition:background 0.15s, border-color 0.15s; color: var(--text); font-family:var(--font-body);
       font-weight:600; display:flex; align-items:center; gap:4px;
       flex-shrink:0; white-space:nowrap;
     }
-    .changelog-btn:hover { background:rgba(255,255,255,0.2); }
+    .changelog-btn:hover { background: var(--surface); border-color: var(--border-gold); }
+    [data-theme="dark"] .changelog-btn { background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.10); color:var(--text); }
+    [data-theme="dark"] .changelog-btn:hover { background:rgba(255,255,255,0.10); border-color:rgba(255,199,44,0.30); }
     .cl-overlay {
       position:fixed; inset:0; background:rgba(0,0,0,0.5);
       z-index:400; display:none; align-items:flex-end; justify-content:center;
@@ -288,12 +293,12 @@
     @keyframes clSlideUp { from{transform:translateY(50px);opacity:0} to{transform:translateY(0);opacity:1} }
     .cl-header {
       position:sticky; top:0; background:var(--card);
-      padding:14px 16px 11px; border-bottom:1.5px solid var(--border);
+      padding:14px 16px 11px; border-bottom:1px solid var(--border);
       display:flex; align-items:center; gap:9px; z-index:10;
     }
     .cl-header h2 { font-size:15px; flex:1; }
     .cl-close {
-      background:var(--bg); border:1.5px solid var(--border); border-radius:50%;
+      background:var(--bg); border:1px solid var(--border); border-radius:50%;
       width:28px; height:28px; font-size:14px; cursor:pointer;
       display:flex; align-items:center; justify-content:center;
       color:var(--text); flex-shrink:0;
@@ -314,7 +319,7 @@
     .cl-item {
       display:flex; align-items:flex-start; gap:9px; padding:9px 11px;
       background:var(--bg); border-radius:var(--radius-md);
-      border:1.5px solid var(--border); font-size:12.5px; line-height:1.5;
+      border:1px solid var(--border); font-size:12.5px; line-height:1.5;
     }
     .cl-item-icon { font-size:15px; flex-shrink:0; margin-top:2px; width:18px; text-align:center; }
     .cl-item-text { flex:1; min-width:0; word-break:break-word; }
@@ -363,7 +368,7 @@
     .guide-grid.sr-visible .guide-card{animation:none;opacity:1}
 
     /* ---- Navbar refinement ---- */
-    .navbar { box-shadow:0 2px 12px rgba(218,41,28,0.25); }
+    .navbar { box-shadow: 0 1px 0 var(--border); }
 
     /* ---- Progress bar por guia ---- */
     .guide-card-prog { padding:0 12px 8px; display:flex; align-items:center; gap:8px; }
@@ -521,12 +526,12 @@
       </div>
       <div class="navbar-actions">
         <button class="changelog-btn" id="changelogBtn" title="Ver alterações recentes" aria-label="Ver novidades e alterações recentes">📋 <span class="btn-label">Novidades</span></button>
-        <button class="changelog-btn" id="roadmapBtn" title="Atualizações futuras" aria-label="Ver próximas atualizações" style="background:rgba(255,199,44,0.18);border-color:rgba(255,199,44,0.35);">🚀 <span class="btn-label">Em breve</span></button>
-        <button class="changelog-btn" id="updateBtnNav" title="Verificar atualização" aria-label="Verificar atualização do aplicativo" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);">🔄</button>
+        <button class="changelog-btn" id="roadmapBtn" title="Atualizações futuras" aria-label="Ver próximas atualizações">🚀 <span class="btn-label">Em breve</span></button>
+        <button class="changelog-btn" id="updateBtnNav" title="Verificar atualização" aria-label="Verificar atualização do aplicativo">🔄</button>
         <a href="pages/perfil.html" id="navbar-user-btn" title="Meu perfil"
-          style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:18px;padding:5px 10px;text-decoration:none;color:white;font-family:var(--font-body);font-size:11.5px;font-weight:600;transition:background 0.15s;cursor:pointer;"
-          onmouseover="this.style.background='rgba(255,255,255,0.20)'"
-          onmouseout="this.style.background='rgba(255,255,255,0.10)'"
+          style="display:flex;align-items:center;gap:6px;background:var(--raised);border:1px solid var(--border);border-radius:18px;padding:5px 10px;text-decoration:none;color:var(--text);font-family:var(--font-body);font-size:11.5px;font-weight:600;transition:background 0.15s,border-color 0.15s;cursor:pointer;"
+          onmouseover="this.style.background='var(--surface)';this.style.borderColor='var(--border-gold)'"
+          onmouseout="this.style.background='var(--raised)';this.style.borderColor='var(--border)'"
         >
           <span id="navbar-avatar"
             style="width:22px;height:22px;border-radius:50%;background:var(--yellow);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;font-family:var(--font-display);"
@@ -963,11 +968,11 @@
           <div id="update-icon" style="font-size:48px;margin-bottom:12px;">🔍</div>
           <div id="update-title" style="font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--text);margin-bottom:6px;">Verificando...</div>
           <div id="update-sub" style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px;">Aguarde um momento</div>
-          <div id="update-version-badge" style="display:inline-block;font-size:11px;font-weight:700;color:var(--muted);background:var(--bg);border:1.5px solid var(--border);border-radius:99px;padding:3px 10px;margin-bottom:16px;letter-spacing:.03em;">mc-guias-v37</div>
+          <div id="update-version-badge" style="display:inline-block;font-size:11px;font-weight:700;color:var(--muted);background:var(--bg);border:1px solid var(--border);border-radius:99px;padding:3px 10px;margin-bottom:16px;letter-spacing:.03em;">mc-guias-v37</div>
           <div id="update-action"></div>
         </div>
 
-        <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;margin-top:4px;">
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.7;margin-top:4px;">
           <strong style="color:var(--text);">Como funciona:</strong><br>
           O app verifica automaticamente se há uma nova versão disponível. Se houver, você verá um aviso azul na parte inferior da tela. Este botão força a verificação imediata.
         </div>
@@ -985,7 +990,7 @@
       </div>
       <div class="cl-body">
 
-        <div style="background:var(--bg);border-radius:var(--radius-md);border:1.5px solid var(--border);padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.6;">
+        <div style="background:var(--bg);border-radius:var(--radius-md);border:1px solid var(--border);padding:12px 14px;font-size:12px;color:var(--muted);line-height:1.6;">
           📌 Roadmap atualizado em Mai 2026 · v12. Itens com ✅ já foram entregues.
         </div>
 
@@ -1257,14 +1262,14 @@
             setTimeout(function() {
               if (!reg.waiting) {
                 setUpdateUI('✅', 'Tudo atualizado!', 'Você já está usando a versão mais recente do MC Guias.',
-                  '<button onclick="document.getElementById(\'updateOverlay\').classList.remove(\'open\')" style="padding:11px 24px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text);cursor:pointer;">Fechar</button>');
+                  '<button onclick="document.getElementById(\'updateOverlay\').classList.remove(\'open\')" style="padding:11px 24px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text);cursor:pointer;">Fechar</button>');
               }
             }, 10000);
           } else {
             setUpdateUI(
               '✅', 'Tudo atualizado!',
               'Você já está usando a versão mais recente do MC Guias.',
-              '<button onclick="document.getElementById(\'updateOverlay\').classList.remove(\'open\')" style="padding:11px 24px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text);cursor:pointer;">Fechar</button>'
+              '<button onclick="document.getElementById(\'updateOverlay\').classList.remove(\'open\')" style="padding:11px 24px;background:var(--card);border:1px solid var(--border);border-radius:12px;font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text);cursor:pointer;">Fechar</button>'
             );
           }
         }).catch(function() {

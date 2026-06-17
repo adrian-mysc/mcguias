@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapa — MC Guias</title>
   <meta name="description" content="Guia operacional da Chapa: procedimentos, tempos de cocção, temperaturas e padrões de preparo de carnes na estação da chapa.">
@@ -64,6 +64,36 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Produção · Chapas</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Padrão</th></tr></thead>
+            <tbody>
+            <tr><td>Temperatura da chapa</td><td><strong>177°C inferior / 218°C superior</strong></td></tr>
+            <tr><td>UHC (10:1, 3:1, 4:1)</td><td><strong>85°C</strong></td></tr>
+            <tr><td>Vida das carnes vermelhas na UHC</td><td><strong>15 minutos</strong></td></tr>
+            <tr><td>Remoção 10:1</td><td><strong>18 segundos</strong></td></tr>
+            <tr><td>Remoção 4:1 e 3:1</td><td><strong>15 segundos</strong></td></tr>
+            <tr><td>Máx. por platen — 10:1</td><td><strong>8 unidades</strong></td></tr>
+            <tr><td>Máx. por platen — 4:1</td><td><strong>6 unidades</strong></td></tr>
+            <tr><td>Máx. por platen — 3:1</td><td><strong>4 unidades</strong></td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li><strong>Salgar:</strong> chapa de 2 platens em forma de “S” na lateral; 3 platens em “U” invertido, 1 vez no centro de cada carne.</li>
+            <li>Gaveta: 10:1 de 4 em 4 (máx. 4 pilhas); 4:1 de 3 em 3; 3:1 de 2 em 2. Timer da UHC: 15'.</li>
+            <li><strong>SP, DF e Recife:</strong> ativação sem luva, usando gel a cada rodada. Demais: luva azul + mangote.</li>
+            <li>Raspar a parte inferior da chapa com o raspador a 45°. Limpar teflon/espelho 2x por hora.</li>
+          </ul>
+
+        </div>
+      </div>
+
 
       <div class="section-label">Resumo Rápido</div>
 
@@ -425,6 +455,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_CHAPA = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🥩 Carnes",
+        question: "Qual o tempo de remoção das carnes 10:1 na chapa?",
+        options: ["12 segundos", "15 segundos", "18 segundos", "22 segundos"],
+        answer: "18 segundos",
+        explanation: "O tempo de remoção das carnes 10:1 é de 18 segundos."
+      },
+      {
+        category: "🥩 Carnes",
+        question: "Qual o tempo de remoção das carnes 4:1 e 3:1?",
+        options: ["12 segundos", "15 segundos", "18 segundos", "20 segundos"],
+        answer: "15 segundos",
+        explanation: "Tanto as carnes 4:1 quanto as 3:1 têm tempo de remoção de 15 segundos."
+      },
+      {
+        category: "⚖️ Peso das carnes",
+        question: "Qual o máximo de carnes 10:1 por platen?",
+        options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"],
+        answer: "8 unidades",
+        explanation: "O máximo é de 8 unidades de 10:1 por platen."
+      },
+      {
+        category: "⚖️ Peso das carnes",
+        question: "Qual o máximo de carnes 4:1 por platen?",
+        options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"],
+        answer: "6 unidades",
+        explanation: "O máximo é de 6 unidades de 4:1 por platen."
+      },
+      {
+        category: "⚖️ Peso das carnes",
+        question: "Qual o máximo de carnes 3:1 por platen?",
+        options: ["2 unidades", "4 unidades", "6 unidades", "8 unidades"],
+        answer: "4 unidades",
+        explanation: "O máximo é de 4 unidades de 3:1 por platen."
+      },
+      {
+        category: "📦 UHC",
+        question: "Qual o tempo de vida das carnes vermelhas (10:1, 3:1, 4:1) na UHC?",
+        options: ["10 minutos", "15 minutos", "20 minutos", "30 minutos"],
+        answer: "15 minutos",
+        explanation: "As carnes vermelhas têm tempo de vida de 15 minutos na UHC."
+      },
+      {
+        category: "🥩 Carnes",
+        question: "Na chapa de TRÊS platens, como devem ser salgadas as carnes?",
+        options: ["Em forma de 'S' na lateral", "Em forma de 'U' invertido, uma única vez no centro da carne", "Duas vezes em cada carne", "Espalhando o sal por toda a chapa"],
+        answer: "Em forma de 'U' invertido, uma única vez no centro da carne",
+        explanation: "Na chapa de três platens salga-se em forma de 'U' invertido, uma única vez no centro de cada carne. Na de dois platens, em forma de 'S' na lateral."
+      },
+      {
+        category: "🥩 Carnes",
+        question: "Em quais cidades a ativação das carnes é feita SEM luva, usando gel a cada rodada?",
+        options: ["Rio de Janeiro, Salvador e Curitiba", "São Paulo, Distrito Federal e Recife", "Belo Horizonte, Fortaleza e Manaus", "Porto Alegre, Goiânia e Belém"],
+        answer: "São Paulo, Distrito Federal e Recife",
+        explanation: "Em São Paulo, Distrito Federal e Recife a ativação é feita sem luva, usando o gel a cada rodada com as duas mãos."
+      },
+      {
+        category: "🥩 Carnes",
+        question: "Como as carnes 10:1 devem ser colocadas na gaveta?",
+        options: ["De 2 em 2, máximo 2 pilhas", "De 3 em 3, máximo 3 pilhas", "De 4 em 4, máximo 4 pilhas", "Todas juntas em 1 pilha"],
+        answer: "De 4 em 4, máximo 4 pilhas",
+        explanation: "As carnes 10:1 são colocadas de 4 em 4 (centro primeiro, depois as pontas), formando no máximo 4 pilhas. Timer da UHC: 15'."
+      },
+      {
+        category: "🧼 Higiene pessoal",
+        question: "Além do avental de cozinha, qual EPI é obrigatório na estação de Chapas?",
+        options: ["Touca descartável", "Mangote", "Óculos de proteção", "Luva térmica"],
+        answer: "Mangote",
+        explanation: "Na estação de Chapas deve-se utilizar avental de cozinha E mangote."
+      },
       {
         category: "🌡️ Temperaturas",
         question: "Qual é a temperatura da chapa inferior?",

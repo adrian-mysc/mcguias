@@ -1,7 +1,7 @@
 /* =============================================================
    changelog.js — MC Guias
-   Carrega /guiaoperacional/changelog.json e renderiza o painel
-   de Novidades dinamicamente.
+   Carrega changelog.json (relativo à raiz do app) e renderiza
+   o painel de Novidades dinamicamente.
    ============================================================= */
 
 (function () {
@@ -90,8 +90,8 @@
     body.innerHTML = renderLoading();
 
     try {
-      // Busca o JSON — caminho relativo funciona tanto em
-      // localhost quanto no GitHub Pages (/guiaoperacional/)
+      // Busca o JSON — caminho relativo funciona em localhost,
+      // GitHub Pages (/mcguias/) e Vercel (/)
       const res = await fetch('changelog.json');
 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);

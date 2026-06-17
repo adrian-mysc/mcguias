@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-06-17",
   "categoria": "bebidas-sobremesas",
   "nivel": "basico",
   "migratedFrom": "bebidas-sobremesas.html",
@@ -1714,6 +1714,490 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "A cobertura deve estar entre 46°C e 52°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_037",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 McShake",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "leite",
+        "mcshake",
+        "procedimento"
+      ],
+      "pergunta": "Quantos ml de leite são colocados no copo de McShake?",
+      "alternativas": [
+        "10ml",
+        "15ml",
+        "20ml",
+        "30ml"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Coloque 15ml de leite no copo, até a primeira elevação do copo de McShake.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_038",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 McShake",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcshake",
+        "procedimento",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo o McShake deve ser batido?",
+      "alternativas": [
+        "10 segundos",
+        "15 segundos",
+        "18 segundos",
+        "22 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Bata o McShake por aproximadamente 18 segundos, com leves movimentos para ficar uniforme.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_039",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 McShake",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcshake",
+        "procedimento"
+      ],
+      "pergunta": "Quantas voltas de mix são dispensadas na lateral do copo de McShake?",
+      "alternativas": [
+        "5 voltas",
+        "6 voltas",
+        "7 voltas",
+        "8 voltas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Abaixe a alavanca dispensando 7 voltas em toda a lateral do copo, deixando um espaço no meio.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_040",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Sobremesas · Casquinha",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "casquinha",
+        "procedimento"
+      ],
+      "pergunta": "Quantas voltas (oz) compõem a Casquinha?",
+      "alternativas": [
+        "2 voltas",
+        "2,5 voltas",
+        "3 voltas (3oz)",
+        "4 voltas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Na Casquinha, execute movimentos circulares completando 3 voltas, incluindo a ponta (3 oz).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_041",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · McColosso",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mccolosso",
+        "procedimento"
+      ],
+      "pergunta": "Quantas voltas compõem o McColosso?",
+      "alternativas": [
+        "2 voltas",
+        "2,5 voltas (3,5oz)",
+        "3 voltas",
+        "5 voltas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No McColosso, complete 2,5 voltas (3,5 oz) iniciando dentro do cone, e adicione 1 tiro de cobertura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_042",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · McFlurry",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcflurry",
+        "procedimento"
+      ],
+      "pergunta": "Quantas voltas são feitas no McFlurry?",
+      "alternativas": [
+        "4 voltas",
+        "5 voltas (5oz) sem fazer o bico",
+        "6 voltas",
+        "7 voltas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No McFlurry, complete 5 voltas (5 oz) sem fazer o bico e sem mexer o copo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_043",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · Sundae",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "procedimento",
+        "sundae"
+      ],
+      "pergunta": "Quantas voltas compõem o Sundae?",
+      "alternativas": [
+        "3 voltas",
+        "4 voltas (4oz)",
+        "5 voltas",
+        "6 voltas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Centralize o copo sob o bico e complete 4 voltas, fazendo o bico (4 oz).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_044",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · Top Sundae",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "procedimento",
+        "topsundae"
+      ],
+      "pergunta": "Quantas voltas compõem o Top Sundae?",
+      "alternativas": [
+        "4 voltas",
+        "5 voltas",
+        "6 voltas (6oz)",
+        "7 voltas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "No Top Sundae, complete 6 voltas, fazendo o bico (6 oz).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_045",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · Sundae",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "amendoim",
+        "procedimento",
+        "sundae"
+      ],
+      "pergunta": "Qual a quantidade de amendoim no Sundae?",
+      "alternativas": [
+        "5g",
+        "7g",
+        "10g",
+        "15g"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Complete com 1 tiro de amendoim (7g) em um só impulso e coloque 1 colher de Sundae.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_046",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Bebidas · Top Sundae",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "biju",
+        "procedimento",
+        "topsundae"
+      ],
+      "pergunta": "Quantos bijus inteiros vão no Top Sundae?",
+      "alternativas": [
+        "1 biju",
+        "2 bijus",
+        "3 bijus",
+        "4 bijus"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Com o pegador, coloque 2 bijus inteiros em uma das laterais e na outra 1 colher de Top Sundae.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

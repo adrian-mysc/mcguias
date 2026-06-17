@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-06-17",
   "categoria": "salao-ngk",
   "nivel": "basico",
   "migratedFrom": "salao-ngk.html",
@@ -1921,6 +1921,494 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Oferecer assistência personalizada e ativar os recursos de acessibilidade do totem (fonte maior, contraste).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_040",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧼 Higiene",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pano",
+        "tempo",
+        "troca"
+      ],
+      "pergunta": "Com qual frequência os panos devem ser trocados no Salão?",
+      "alternativas": [
+        "A cada 1 hora",
+        "A cada 2 horas",
+        "A cada 3 horas",
+        "A cada 4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A troca de panos deve ocorrer a cada 2 horas, ou sempre que necessário.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_041",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Chão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "nano",
+        "procedimento"
+      ],
+      "pergunta": "Qual deve ser o comprimento de cada lado do Nano 1 (usado para varrer)?",
+      "alternativas": [
+        "6cm",
+        "8cm",
+        "10cm",
+        "16cm"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Nano 1 deve ter 8cm de comprimento de cada lado e é utilizado para varrer.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_042",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Chão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "nano",
+        "procedimento"
+      ],
+      "pergunta": "Qual o comprimento do Nano 2, que substitui o esfregão em áreas remotas?",
+      "alternativas": [
+        "8cm",
+        "12cm",
+        "16cm",
+        "20cm"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Nano 2 deve ter 16cm e substitui o esfregão nas áreas remotas (McCafé e Dessert Centers).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_043",
+      "categoria": "salao-ngk",
+      "subcategoria": "🗑️ Lixo",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cor",
+        "lixo",
+        "reciclavel"
+      ],
+      "pergunta": "Qual a cor do saco de lixo para resíduos recicláveis (papel e plástico)?",
+      "alternativas": [
+        "Preto",
+        "Verde",
+        "Azul",
+        "Amarelo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sacos verdes são para resíduos recicláveis; sacos pretos para resíduos orgânicos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_044",
+      "categoria": "salao-ngk",
+      "subcategoria": "🗑️ Lixo",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cor",
+        "lixo",
+        "organico"
+      ],
+      "pergunta": "Qual a cor do saco de lixo para resíduos orgânicos?",
+      "alternativas": [
+        "Preto",
+        "Verde",
+        "Azul",
+        "Cinza"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Sacos pretos são para resíduos orgânicos; sacos verdes para recicláveis.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_045",
+      "categoria": "salao-ngk",
+      "subcategoria": "🧹 Chão",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "chao",
+        "esfregao",
+        "procedimento"
+      ],
+      "pergunta": "Em que formato o esfregão deve ser passado no chão?",
+      "alternativas": [
+        "Em linha reta",
+        "Em forma de '∞' (infinito) — 1 metro vira e 1 metro lava",
+        "Em zigue-zague",
+        "Em círculos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Passa-se o esfregão em forma de '∞' (1 metro vira e 1 metro lava), lavando-o a cada 2m² e invertendo o lado da lã a cada metro.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_046",
+      "categoria": "salao-ngk",
+      "subcategoria": "🗑️ Salão · Lixeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "lixeira",
+        "procedimento"
+      ],
+      "pergunta": "Os sacos das lixeiras devem ser trocados quando estiverem com quanto de capacidade?",
+      "alternativas": [
+        "1/2 cheios",
+        "3/4 cheios",
+        "totalmente cheios",
+        "1/4 cheios"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Compacte o lixo e troque os sacos quando estiverem 3/4 cheios.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_047",
+      "categoria": "salao-ngk",
+      "subcategoria": "🗑️ Salão · Lixeiras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "estocagem",
+        "lixeira"
+      ],
+      "pergunta": "Quantos sacos de lixo devem ser mantidos nas lixeiras para troca rápida?",
+      "alternativas": [
+        "1 a 2",
+        "3 a 4",
+        "5 a 7",
+        "8 a 10"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Mantenha de 5 a 7 sacos de lixo nas lixeiras para troca rápida em alto movimento (hora pico).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_048",
+      "categoria": "salao-ngk",
+      "subcategoria": "🪑 Salão · Banheiro",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "banheiro",
+        "tempo",
+        "verificacao"
+      ],
+      "pergunta": "Com qual frequência mínima os banheiros devem ser verificados?",
+      "alternativas": [
+        "A cada 15 minutos",
+        "A cada 30 minutos",
+        "A cada 1 hora",
+        "A cada 2 horas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Verifique os banheiros no mínimo a cada 15 minutos (paredes, espelhos, pias, vaso, mictório, portas, maçanetas e dispensers).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "salao_ngk_049",
+      "categoria": "salao-ngk",
+      "subcategoria": "🖥️ NGK · Atendimento",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ngk",
+        "totem"
+      ],
+      "pergunta": "Qual é a função no atendimento ao cliente no totem (NGK)?",
+      "alternativas": [
+        "Apenas observar de longe",
+        "Abordar e incentivar o cliente a usar o totem, demonstrando os produtos e auxiliando no manuseio das telas",
+        "Fazer o pedido pelo cliente sem explicar",
+        "Encaminhar ao caixa tradicional"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Aborde o cliente e o incentive a utilizar o totem, demonstrando a variedade de produtos e auxiliando no manuseio das telas.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

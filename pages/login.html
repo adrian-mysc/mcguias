@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MC Guias — Entrar</title>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#DA291C">
   <script defer src="../js/telemetry.js"></script>
   <meta name="description" content="Acesse sua conta no MC Guias para estudar os guias operacionais, fazer simulados e acompanhar seu desempenho.">
   <meta name="twitter:card" content="summary">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
 
 
 
@@ -38,8 +40,8 @@
       --radius-md: 12px;
       --radius-lg: 16px;
 
-      --font-display: 'DM Sans', sans-serif;
-      --font-body:    'Plus Jakarta Sans', sans-serif;
+      --font-display: 'Syne', sans-serif;
+      --font-body:    'Figtree', sans-serif;
     }
 
     html, body {
@@ -185,7 +187,7 @@
     .login-card {
       background: var(--card);
       border-radius: var(--radius-lg);
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow-md);
       width: 100%;
       max-width: 400px;
@@ -197,7 +199,7 @@
     /* ── Tabs: Entrar / Criar conta ──────────────── */
     .auth-tabs {
       display: flex;
-      border-bottom: 1.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .auth-tab {
@@ -242,7 +244,7 @@
       width: 100%;
       padding: 13px 16px;
       border-radius: var(--radius-md);
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
       background: var(--card);
       color: var(--text);
       font-family: var(--font-body);
@@ -334,7 +336,7 @@
       width: 100%;
       padding: 12px 12px 12px 38px;
       border-radius: var(--radius-md);
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
       background: var(--bg);
       font-family: var(--font-body);
       font-size: 14px;
@@ -448,7 +450,7 @@
     /* ── Rodapé do card ──────────────────────────── */
     .card-footer {
       padding: 14px 20px;
-      border-top: 1.5px solid var(--border);
+      border-top: 1px solid var(--border);
       text-align: center;
       font-size: 12px;
       color: var(--muted);
@@ -849,14 +851,12 @@
 
   // ── Login com Google ─────────────────────────────────────────
   async function signInGoogle() {
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const base = isLocal
-      ? window.location.origin
-      : 'https://adrian-mysc.github.io/guiaoperacional';
+    // login.html vive em pages/ — resolve relativo à URL atual, funciona em
+    // qualquer deploy (GitHub Pages /mcguias/, Vercel /, localhost).
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: base + '/pages/welcome.html'
+        redirectTo: new URL('welcome.html', window.location.href).href
       }
     });
     if (error) alert('Erro ao conectar com Google: ' + error.message);
@@ -871,7 +871,7 @@
       return;
     }
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: window.location.origin + '/pages/reset-senha.html'
+      redirectTo: new URL('reset-senha.html', window.location.href).href
     });
     if (error) {
       showMsg('login-msg', traduzirErro(error.message), 'error');
