@@ -24,7 +24,7 @@
 
   function _syncMeta(t) {
     var m = document.querySelector('meta[name="theme-color"]');
-    if (m) m.content = t === 'dark' ? '#111110' : '#DA291C';
+    if (m) m.content = t === 'dark' ? '#0d0c0a' : '#f0ede8';
   }
 
   function _inject() {
