@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-25",
+  "updatedAt": "2026-06-17",
   "categoria": "drive-thru",
   "nivel": "basico",
   "questions": [
@@ -919,6 +919,496 @@
       "respostaCorreta": 0,
       "explicacao": "O Drive-Thru é um dos maiores geradores de receita do McDonald's, representando uma parcela significativa das vendas. Sua conveniência — sem necessidade de estacionar ou sair do carro — é um diferencial competitivo importante, especialmente em áreas urbanas e durante horários de pico.",
       "ativo": true
+    },
+    {
+      "id": "drive041",
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Tomador de Pedidos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "cod",
+        "procedimento"
+      ],
+      "pergunta": "O que a pessoa do COD deve apertar ao chegar o carro, trabalhando em dupla com o Tablet?",
+      "alternativas": [
+        "'Fecha Pedido'",
+        "'Abre Pedido', para assegurar a sequência correta",
+        "'Cancela'",
+        "'Recall'"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Aperte a tecla 'Abre Pedido' assim que o carro chega no COD, para assegurar a sequência correta de atendimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive042",
+      "categoria": "drive-thru",
+      "subcategoria": "⚙️ Procedimentos · Atendimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "modulo",
+        "venda",
+        "volume"
+      ],
+      "pergunta": "Qual conceito de venda é usado em ALTO volume?",
+      "alternativas": [
+        "Módulo vendedor",
+        "Módulo rápido",
+        "Módulo completo",
+        "Módulo livre"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Em alto volume usa-se o módulo rápido; em baixo volume, o módulo vendedor.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive043",
+      "categoria": "drive-thru",
+      "subcategoria": "⚙️ Procedimentos · Atendimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "modulo",
+        "venda",
+        "volume"
+      ],
+      "pergunta": "Qual conceito de venda é usado em BAIXO volume?",
+      "alternativas": [
+        "Módulo rápido",
+        "Módulo vendedor",
+        "Módulo express",
+        "Módulo padrão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Em baixo volume usa-se o módulo vendedor; em alto volume, o módulo rápido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive044",
+      "categoria": "drive-thru",
+      "subcategoria": "⚙️ Procedimentos · Confirmação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "pedido",
+        "sabor"
+      ],
+      "pergunta": "Como esclarecer tamanhos e sabores para garantir a exatidão dos pedidos?",
+      "alternativas": [
+        "Com perguntas abertas",
+        "Com perguntas fechadas (ex.: 'Sua bebida é Coca-Cola?')",
+        "Repetindo todo o pedido",
+        "Mostrando o cardápio"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Esclareça tamanhos e sabores com perguntas fechadas. Ex.: 'Sua bebida é Coca-Cola?'",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive045",
+      "categoria": "drive-thru",
+      "subcategoria": "💳 Pagamento · Drive-Thru",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "aproximacao",
+        "atendimento",
+        "pagamento"
+      ],
+      "pergunta": "Qual forma de pagamento deve ser sugerida para agilizar o atendimento?",
+      "alternativas": [
+        "Dinheiro",
+        "Pagamento por aproximação",
+        "Cheque",
+        "Cartão de crédito parcelado"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Informe o valor e sugira o pagamento por aproximação, já indicando para o cliente ter a forma de pagamento em mãos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive046",
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Operador de Caixa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "caixa-movel",
+        "pagamento",
+        "procedimento"
+      ],
+      "pergunta": "A partir de qual carro a pessoa do Caixa Móvel realiza a cobrança?",
+      "alternativas": [
+        "Do 1° carro",
+        "Sempre a partir do 2° carro",
+        "Do 3° carro",
+        "De todos os carros"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Solicite ao caixa drive o valor e a forma de pagamento do próximo carro a ser cobrado — sempre a partir do 2° carro.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive047",
+      "categoria": "drive-thru",
+      "subcategoria": "💳 Pagamento · Drive-Thru",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cartao",
+        "higiene",
+        "pagamento"
+      ],
+      "pergunta": "Ao receber o pagamento com cartão, qual o cuidado correto?",
+      "alternativas": [
+        "Passar o cartão pelo cliente",
+        "Não tocar no cartão do cliente",
+        "Anotar o número do cartão",
+        "Pedir documento"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Disponibilize o Pin Pad para o cliente inserir o cartão e digitar a senha; evite tocar no cartão do cliente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive048",
+      "categoria": "drive-thru",
+      "subcategoria": "⚙️ Procedimentos · Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bebida",
+        "gelo",
+        "suco"
+      ],
+      "pergunta": "Os sucos no Drive-Thru levam gelo?",
+      "alternativas": [
+        "Sim, sempre",
+        "Não, nos sucos não se coloca gelo",
+        "Apenas no verão",
+        "Só se o cliente pedir"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Distribua gelo nos copos de refrigerante; nos sucos, não coloque gelo.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive049",
+      "categoria": "drive-thru",
+      "subcategoria": "⚙️ Procedimentos · Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "montagem",
+        "sequencia",
+        "sorvete"
+      ],
+      "pergunta": "Na montagem do pedido, quando montar o sorvete?",
+      "alternativas": [
+        "Primeiro de tudo",
+        "Deixe como o último item a montar",
+        "No meio da montagem",
+        "Antes das bebidas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No caso de sorvetes, deixe como o último item a montar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive050",
+      "categoria": "drive-thru",
+      "subcategoria": "🎙️ Headset · Comunicação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "comunicacao",
+        "crianca"
+      ],
+      "pergunta": "Como se comunicar ao atender crianças?",
+      "alternativas": [
+        "Usando termos técnicos",
+        "Sem termos técnicos (ex.: 'refrigerante pequeno' em vez de 'refrigerante de 300ml')",
+        "Falando mais alto",
+        "Apenas com os pais"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Saiba se comunicar de forma diferenciada com crianças, sem usar termos técnicos. Ex.: 'refrigerante pequeno' em vez de 'refrigerante de 300ml'.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

@@ -121,6 +121,34 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Experiência do Cliente · Montagem e Entrega</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <div class="two-col">
+            <div class="info-block"><h3>Sequência da bandeja</h3><ul>
+              <li><strong>Centro:</strong> Entradas (sanduíches) — os “heróis”.</li>
+              <li><strong>Direita:</strong> Acompanhamentos / McFritas inclinadas.</li>
+              <li><strong>Esquerda:</strong> Bebidas e sobremesas.</li>
+            </ul></div>
+            <div class="info-block"><h3>Montagem</h3><ul>
+              <li>Só monte com o pedido <strong>PAGO</strong> e todos os itens prontos.</li>
+              <li>Imprima o <strong>Pick List</strong> e posicione na bandeja; aperte “servido”.</li>
+              <li>Viagem: separe frios dos quentes e dobre o saco 1 vez.</li>
+            </ul></div>
+          </div>
+          <ul>
+            <li>2+ bebidas: use o porta-copos, sempre tampadas.</li>
+            <li>Na entrega, atenda de forma amável e natural — <strong>sem gritar o número do pedido</strong>.</li>
+            <li>McLanche Feliz com Danoninho: colher sweet (pazinha) na caixinha HMB, do lado oposto da McFritas.</li>
+          </ul>
+
+        </div>
+      </div>
+
 
       <div class="section-label">Resumo Rápido</div>
 
@@ -464,6 +492,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_MONTAGEM = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🍽️ Layout da Bandeja",
+        question: "O que vai no CENTRO da bandeja na sequência de montagem?",
+        options: ["Bebidas", "As Entradas (sanduíches) — os 'heróis' da refeição", "McFritas", "Sobremesas"],
+        answer: "As Entradas (sanduíches) — os 'heróis' da refeição",
+        explanation: "No centro vão as Entradas (sanduíches), os 'heróis' da refeição, posicionados no foco da bandeja."
+      },
+      {
+        category: "🍽️ Layout da Bandeja",
+        question: "O que vai no LADO DIREITO da bandeja?",
+        options: ["Sanduíches", "Acompanhamentos / McFritas (inclinadas em relação às entradas)", "Bebidas", "Guardanapos"],
+        answer: "Acompanhamentos / McFritas (inclinadas em relação às entradas)",
+        explanation: "No lado direito vão os Acompanhamentos / McFritas, inclinadas em relação às entradas para melhor acomodação."
+      },
+      {
+        category: "🍽️ Layout da Bandeja",
+        question: "O que vai no LADO ESQUERDO da bandeja?",
+        options: ["McFritas", "Sanduíches", "Bebidas e sobremesas (café, refrigerante, shakes e sobremesas)", "Molhos"],
+        answer: "Bebidas e sobremesas (café, refrigerante, shakes e sobremesas)",
+        explanation: "No lado esquerdo vão as Bebidas e sobremesas: café, refrigerante, shakes e sobremesas."
+      },
+      {
+        category: "📋 Montagem · Bandeja",
+        question: "Quando se deve iniciar a montagem do pedido?",
+        options: ["Assim que o pedido aparece na tela", "Quando o pedido está PAGO e somente quando todos os itens estiverem prontos", "Antes do pagamento, para adiantar", "Quando o cliente chega na entrega"],
+        answer: "Quando o pedido está PAGO e somente quando todos os itens estiverem prontos",
+        explanation: "Inicie a montagem quando o pedido estiver com status PAGO e somente quando todos os itens estiverem prontos."
+      },
+      {
+        category: "📋 Montagem · Bandeja",
+        question: "O que deve ser impresso e posicionado na bandeja antes de apertar 'servido'?",
+        options: ["A nota fiscal", "O Pick List", "O cupom de desconto", "O comprovante de pagamento"],
+        answer: "O Pick List",
+        explanation: "Imprima o Pick List e posicione-o na bandeja; em seguida aperte a tecla 'servido'."
+      },
+      {
+        category: "📋 Montagem · Saco",
+        question: "Em pedidos para viagem, como organizar os itens?",
+        options: ["Tudo junto no mesmo saco", "Separando os itens frios dos quentes", "Bebidas por cima dos sanduíches", "Sobremesas no fundo"],
+        answer: "Separando os itens frios dos quentes",
+        explanation: "Em pedidos para viagem, siga a sequência correta separando os itens frios dos quentes."
+      },
+      {
+        category: "📋 Montagem · Bebidas",
+        question: "Ao trabalhar com sacos e duas ou mais bebidas, o que usar?",
+        options: ["Segurar na mão", "O porta-copos, garantindo que estejam tampadas", "Uma bandeja extra", "Saco separado por bebida"],
+        answer: "O porta-copos, garantindo que estejam tampadas",
+        explanation: "Use o porta-copos para duas ou mais bebidas, garantindo que estejam tampadas."
+      },
+      {
+        category: "📋 Montagem · Saco",
+        question: "Quantas vezes o saco de viagem deve ser dobrado?",
+        options: ["Não se dobra", "Uma vez, para garantir a temperatura do produto", "Duas vezes", "Três vezes"],
+        answer: "Uma vez, para garantir a temperatura do produto",
+        explanation: "Dobre o saco uma vez sobre a marca existente para garantir a temperatura do produto."
+      },
+      {
+        category: "🛎️ Entrega",
+        question: "Como o cliente deve ser chamado na área de entrega?",
+        options: ["Gritando o número do pedido", "De maneira amável e natural, sem gritar o número do pedido", "Tocando uma campainha", "Por alto-falante"],
+        answer: "De maneira amável e natural, sem gritar o número do pedido",
+        explanation: "Atenda o cliente de maneira amável, sempre o mais natural possível, sem gritar o número do pedido."
+      },
+      {
+        category: "📋 Montagem · McLanche",
+        question: "No McLanche Feliz com Danoninho, onde colocar a colher sweet (pazinha)?",
+        options: ["Por fora do saco", "Dentro da caixinha HMB, do lado oposto da McFritas", "Junto com a bebida", "No porta-copos"],
+        answer: "Dentro da caixinha HMB, do lado oposto da McFritas",
+        explanation: "Coloque a colher sweet pazinha dentro da caixinha HMB do lado oposto da McFritas."
+      },
       {
         category: "⏱️ R2P",
         question: "Qual é o tempo máximo do R2P (Receipt to Present)?",

@@ -64,6 +64,35 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Experiência do Cliente · Salão e NGK</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Padrão</th></tr></thead>
+            <tbody>
+            <tr><td>Troca de panos</td><td><strong>a cada 2 horas</strong></td></tr>
+            <tr><td>Nano 1 (varrer)</td><td><strong>8cm de cada lado</strong></td></tr>
+            <tr><td>Nano 2 (substitui esfregão)</td><td><strong>16cm — McCafé e Dessert Centers</strong></td></tr>
+            <tr><td>Saco de lixo — orgânico</td><td><strong>preto</strong></td></tr>
+            <tr><td>Saco de lixo — reciclável</td><td><strong>verde</strong></td></tr>
+            <tr><td>Troca dos sacos da lixeira</td><td><strong>quando 3/4 cheios</strong></td></tr>
+            <tr><td>Sacos por lixeira</td><td><strong>5 a 7</strong></td></tr>
+            <tr><td>Verificação dos banheiros</td><td><strong>no mínimo a cada 15 minutos</strong></td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li>Esfregão em forma de “∞” (1 metro vira, 1 metro lava), lavando a cada 2m² e invertendo o lado da lã a cada metro.</li>
+            <li>NGK: aborde e incentive o cliente a usar o totem, demonstrando os produtos e auxiliando no manuseio das telas.</li>
+            <li>Lave as mãos e antebraços com sabonete bactericida por 20".</li>
+          </ul>
+
+        </div>
+      </div>
+
 
       <div class="section-label">Resumo Rápido</div>
 
@@ -449,6 +478,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_SALAO = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🧼 Higiene",
+        question: "Com qual frequência os panos devem ser trocados no Salão?",
+        options: ["A cada 1 hora", "A cada 2 horas", "A cada 3 horas", "A cada 4 horas"],
+        answer: "A cada 2 horas",
+        explanation: "A troca de panos deve ocorrer a cada 2 horas, ou sempre que necessário."
+      },
+      {
+        category: "🧹 Chão",
+        question: "Qual deve ser o comprimento de cada lado do Nano 1 (usado para varrer)?",
+        options: ["6cm", "8cm", "10cm", "16cm"],
+        answer: "8cm",
+        explanation: "O Nano 1 deve ter 8cm de comprimento de cada lado e é utilizado para varrer."
+      },
+      {
+        category: "🧹 Chão",
+        question: "Qual o comprimento do Nano 2, que substitui o esfregão em áreas remotas?",
+        options: ["8cm", "12cm", "16cm", "20cm"],
+        answer: "16cm",
+        explanation: "O Nano 2 deve ter 16cm e substitui o esfregão nas áreas remotas (McCafé e Dessert Centers)."
+      },
+      {
+        category: "🗑️ Lixo",
+        question: "Qual a cor do saco de lixo para resíduos recicláveis (papel e plástico)?",
+        options: ["Preto", "Verde", "Azul", "Amarelo"],
+        answer: "Verde",
+        explanation: "Sacos verdes são para resíduos recicláveis; sacos pretos para resíduos orgânicos."
+      },
+      {
+        category: "🗑️ Lixo",
+        question: "Qual a cor do saco de lixo para resíduos orgânicos?",
+        options: ["Preto", "Verde", "Azul", "Cinza"],
+        answer: "Preto",
+        explanation: "Sacos pretos são para resíduos orgânicos; sacos verdes para recicláveis."
+      },
+      {
+        category: "🧹 Chão",
+        question: "Em que formato o esfregão deve ser passado no chão?",
+        options: ["Em linha reta", "Em forma de '∞' (infinito) — 1 metro vira e 1 metro lava", "Em zigue-zague", "Em círculos"],
+        answer: "Em forma de '∞' (infinito) — 1 metro vira e 1 metro lava",
+        explanation: "Passa-se o esfregão em forma de '∞' (1 metro vira e 1 metro lava), lavando-o a cada 2m² e invertendo o lado da lã a cada metro."
+      },
+      {
+        category: "🗑️ Salão · Lixeiras",
+        question: "Os sacos das lixeiras devem ser trocados quando estiverem com quanto de capacidade?",
+        options: ["1/2 cheios", "3/4 cheios", "totalmente cheios", "1/4 cheios"],
+        answer: "3/4 cheios",
+        explanation: "Compacte o lixo e troque os sacos quando estiverem 3/4 cheios."
+      },
+      {
+        category: "🗑️ Salão · Lixeiras",
+        question: "Quantos sacos de lixo devem ser mantidos nas lixeiras para troca rápida?",
+        options: ["1 a 2", "3 a 4", "5 a 7", "8 a 10"],
+        answer: "5 a 7",
+        explanation: "Mantenha de 5 a 7 sacos de lixo nas lixeiras para troca rápida em alto movimento (hora pico)."
+      },
+      {
+        category: "🪑 Salão · Banheiro",
+        question: "Com qual frequência mínima os banheiros devem ser verificados?",
+        options: ["A cada 15 minutos", "A cada 30 minutos", "A cada 1 hora", "A cada 2 horas"],
+        answer: "A cada 15 minutos",
+        explanation: "Verifique os banheiros no mínimo a cada 15 minutos (paredes, espelhos, pias, vaso, mictório, portas, maçanetas e dispensers)."
+      },
+      {
+        category: "🖥️ NGK · Atendimento",
+        question: "Qual é a função no atendimento ao cliente no totem (NGK)?",
+        options: ["Apenas observar de longe", "Abordar e incentivar o cliente a usar o totem, demonstrando os produtos e auxiliando no manuseio das telas", "Fazer o pedido pelo cliente sem explicar", "Encaminhar ao caixa tradicional"],
+        answer: "Abordar e incentivar o cliente a usar o totem, demonstrando os produtos e auxiliando no manuseio das telas",
+        explanation: "Aborde o cliente e o incentive a utilizar o totem, demonstrando a variedade de produtos e auxiliando no manuseio das telas."
+      },
       {
         category: "🧼 Higiene",
         question: "Por quanto tempo deve-se lavar as mãos com sabonete bactericida?",

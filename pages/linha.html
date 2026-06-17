@@ -63,6 +63,36 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Produção · Linha</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <table class="data-table">
+            <thead><tr><th>Tempo / Temperatura</th><th>Padrão</th></tr></thead>
+            <tbody>
+            <tr><td>Tostadeira rápida</td><td><strong>293°C · compressão 5D · caramelização 22"</strong></td></tr>
+            <tr><td>Tostadeira HEBT5V</td><td><strong>275°C · compressão 5 · caramelização 22"</strong></td></tr>
+            <tr><td>Carnes 10:1, 4:1, 3:1</td><td><strong>85°C</strong></td></tr>
+            <tr><td>Carnes McNuggets, Chicken e Junior</td><td><strong>93°C</strong></td></tr>
+            <tr><td>Mesa de condimentação</td><td><strong>49°C a 57°C</strong></td></tr>
+            <tr><td>Tempo de reação do Iniciador</td><td><strong>3 a 5 segundos</strong></td></tr>
+            <tr><td>Tempo de linha</td><td><strong>35 a 50 segundos</strong></td></tr>
+            <tr><td>Configuração do monitor</td><td><strong>4x2</strong></td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li><strong>Pão comum:</strong> base em direção à UHC/OAT e coroa no centro, voltada para a tostadeira.</li>
+            <li><strong>Signature e Big Tasty:</strong> base no centro da lâmina e coroa na direção da UHC/OAT.</li>
+            <li>Pedido diferenciado: selo <em>“especial pra você”</em> junto com o Pick List.</li>
+            <li>Gavetas da UHC sempre fechadas, usando a marca <strong>STOP</strong>. EPI: avental de cozinha.</li>
+          </ul>
+
+        </div>
+      </div>
+
       <div class="section-label">Resumo Rápido</div>
 
       <div class="card">
@@ -302,6 +332,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_LINHA = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🍞 Tostadeira",
+        question: "Qual a temperatura da Tostadeira rápida na linha?",
+        options: ["275°C", "293°C", "218°C", "168°C"],
+        answer: "293°C",
+        explanation: "A Tostadeira rápida opera a 293°C, com compressão 5D e ciclo de caramelização de 22 segundos."
+      },
+      {
+        category: "🍞 Tostadeira",
+        question: "Qual a temperatura da Tostadeira HEBT5V?",
+        options: ["250°C", "275°C", "293°C", "300°C"],
+        answer: "275°C",
+        explanation: "A Tostadeira HEBT5V opera a 275°C, com compressão 5 e ciclo de caramelização de 22 segundos."
+      },
+      {
+        category: "🍞 Tostadeira",
+        question: "Quantos segundos dura o ciclo de caramelização (tostagem) dos pães?",
+        options: ["15 segundos", "18 segundos", "22 segundos", "30 segundos"],
+        answer: "22 segundos",
+        explanation: "O ciclo de caramelização dos pães é de 22 segundos em ambas as tostadeiras."
+      },
+      {
+        category: "⚙️ Iniciador",
+        question: "Qual é o tempo de reação do Iniciador para ativar os pães?",
+        options: ["1 a 2 segundos", "3 a 5 segundos", "6 a 8 segundos", "10 segundos"],
+        answer: "3 a 5 segundos",
+        explanation: "O Iniciador deve ter um tempo de reação de 3 a 5 segundos para a ativada dos pães."
+      },
+      {
+        category: "⚙️ Procedimento",
+        question: "Em que configuração o monitor da linha deve estar?",
+        options: ["2x2", "4x2", "2x4", "6x2"],
+        answer: "4x2",
+        explanation: "O monitor da linha deve estar configurado em 4x2."
+      },
+      {
+        category: "⏱️ Linha",
+        question: "Qual é o tempo de linha esperado?",
+        options: ["20 a 30 segundos", "35 a 50 segundos", "50 a 70 segundos", "10 a 20 segundos"],
+        answer: "35 a 50 segundos",
+        explanation: "O tempo de linha é de 35 a 50 segundos."
+      },
+      {
+        category: "🌡️ UHC",
+        question: "Qual a temperatura das carnes 10:1, 4:1 e 3:1 na linha?",
+        options: ["79°C", "85°C", "93°C", "100°C"],
+        answer: "85°C",
+        explanation: "As carnes 10:1, 4:1 e 3:1 ficam a 85°C."
+      },
+      {
+        category: "🌡️ UHC",
+        question: "Qual a temperatura das carnes de McNuggets, Chicken e Junior?",
+        options: ["85°C", "90°C", "93°C", "100°C"],
+        answer: "93°C",
+        explanation: "As carnes de McNuggets, Chicken e Junior ficam a 93°C."
+      },
+      {
+        category: "🧂 Mesa",
+        question: "Qual a faixa de temperatura da mesa de condimentação?",
+        options: ["40°C a 49°C", "49°C a 57°C", "57°C a 65°C", "60°C a 70°C"],
+        answer: "49°C a 57°C",
+        explanation: "A mesa de condimentação deve operar entre 49°C e 57°C."
+      },
+      {
+        category: "⚙️ Procedimento",
+        question: "Como devem ser posicionados a base e a coroa do pão na embalagem (sanduíche comum)?",
+        options: ["Coroa na direção da UHC/OAT e base no centro", "Base na direção da UHC/OAT e coroa no centro, em direção à tostadeira", "Ambas no centro", "Base e coroa na direção da tostadeira"],
+        answer: "Base na direção da UHC/OAT e coroa no centro, em direção à tostadeira",
+        explanation: "A base segue em direção à UHC/OAT e a coroa fica no centro, voltada para a tostadeira. Nos sanduíches Signature e Big Tasty é o contrário: base no centro da lâmina e coroa na direção da UHC/OAT."
+      },
       { category: "🍞 Tostadeira", question: "Qual a temperatura das placas A e B da tostadeira?", options: ["254°C", "265°C", "271°C", "280°C"], answer: "271°C", explanation: "Placas A e B = 271°C. Placa C = 254°C." },
       { category: "🍞 Tostadeira", question: "Qual o tempo de caramelização na tostadeira?", options: ["15 segundos", "18 segundos", "22 segundos", "30 segundos"], answer: "22 segundos", explanation: "O tempo de caramelização é de 22 segundos." },
       { category: "🌡️ UHC", question: "Qual a temperatura da UHC para carnes vermelhas?", options: ["72°C", "75°C", "79°C", "85°C"], answer: "79°C", explanation: "UHC: carnes vermelhas = 79°C e carnes brancas = 85°C." },

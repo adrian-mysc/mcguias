@@ -95,6 +95,25 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Experiência do Cliente · Influencer Vendedor e Pagamento</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <ul>
+            <li>São <strong>6 técnicas</strong> dos Influencers Vendedores para oferecer produtos.</li>
+            <li>Os 4 grupos da refeição: <strong>sanduíches, bebidas, acompanhamentos e sobremesas</strong>. Complete as 3 primeiras categorias antes de oferecer sobremesa.</li>
+            <li>Dinheiro: mantenha a cédula horizontalmente sobre o balcão até contar o troco <strong>em voz alta</strong>. Só nesse caso ofereça o cofrinho (crianças com câncer). Troque as luvas a cada recebimento.</li>
+            <li>Crédito: entregue comprovante + caneta, peça assinatura, guarde a via na gaveta e entregue a outra ao cliente. Débito: Pin Pad sanitizado, cliente passa e digita a senha.</li>
+            <li>Ao concluir o registro, pergunte: <em>“Eu deixei de registrar alguma coisa?”</em></li>
+            <li>CPF na nota: apenas se o cliente solicitar e nos estados que possuem.</li>
+          </ul>
+
+        </div>
+      </div>
+
 
       <div class="section-label">Resumo Rápido</div>
 
@@ -318,6 +337,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_INFLUENCER = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🗣️ Influencer · Vendas",
+        question: "Quantas técnicas dos Influencers Vendedores existem para oferecer produtos?",
+        options: ["4 técnicas", "5 técnicas", "6 técnicas", "8 técnicas"],
+        answer: "6 técnicas",
+        explanation: "Oferecem-se produtos utilizando as 6 técnicas dos Influencers Vendedores."
+      },
+      {
+        category: "🎯 Influencer · Venda",
+        question: "Quais são os quatro grupos que compõem a refeição?",
+        options: ["Entrada, prato, sobremesa e café", "Sanduíches, bebidas, acompanhamentos e sobremesas", "Lanche, fritas, molho e brinde", "Salgado, doce, gelado e quente"],
+        answer: "Sanduíches, bebidas, acompanhamentos e sobremesas",
+        explanation: "Os quatro grupos da refeição são: sanduíches, bebidas, acompanhamentos e sobremesas."
+      },
+      {
+        category: "🎯 Influencer · Sugestão",
+        question: "Na ordem dos saltos de venda, quando oferecer a sobremesa?",
+        options: ["Primeiro de tudo", "Após completar as três primeiras categorias", "No lugar do acompanhamento", "Apenas se o cliente pedir"],
+        answer: "Após completar as três primeiras categorias",
+        explanation: "Sugira sempre de forma a completar as três primeiras categorias antes de oferecer a sobremesa."
+      },
+      {
+        category: "💳 Influencer · Troco",
+        question: "Como manter a cédula recebida em pagamento em dinheiro?",
+        options: ["Na gaveta imediatamente", "Horizontalmente sobre o balcão, próximo ao caixa, até o troco ser contado", "No bolso", "Na mão do cliente"],
+        answer: "Horizontalmente sobre o balcão, próximo ao caixa, até o troco ser contado",
+        explanation: "Mantenha a cédula horizontalmente sobre o balcão e próximo ao caixa enquanto o troco correto é contado em voz alta ao cliente."
+      },
+      {
+        category: "💳 Influencer · Troco",
+        question: "Como o troco deve ser devolvido ao cliente?",
+        options: ["Em silêncio", "Contado em voz alta", "Apenas mostrando o valor na tela", "Junto com a próxima compra"],
+        answer: "Contado em voz alta",
+        explanation: "O troco correto é contado em voz alta ao ser devolvido ao cliente."
+      },
+      {
+        category: "💳 Pagamento",
+        question: "Em qual situação se pergunta ao cliente sobre depositar uma moeda no cofrinho (crianças com câncer)?",
+        options: ["Em qualquer pagamento", "Apenas no pagamento em dinheiro", "Apenas no cartão", "Apenas no Pix"],
+        answer: "Apenas no pagamento em dinheiro",
+        explanation: "Apenas no pagamento em dinheiro pergunte se o cliente deseja depositar uma moeda no cofrinho para ajudar as crianças com câncer."
+      },
+      {
+        category: "💳 Influencer · Pagamento",
+        question: "Com que frequência as luvas devem ser trocadas no recebimento de dinheiro?",
+        options: ["Uma vez por turno", "A cada recebimento de dinheiro ou moedas", "A cada hora", "Somente ao trocar de função"],
+        answer: "A cada recebimento de dinheiro ou moedas",
+        explanation: "Troque sempre as luvas a cada recebimento de dinheiro ou moedas."
+      },
+      {
+        category: "💳 Influencer · Cartão",
+        question: "No pagamento com cartão de crédito, qual o procedimento correto?",
+        options: ["Apenas inserir o cartão", "Entregar o comprovante e uma caneta para assinatura, guardar a via na gaveta e entregar a outra ao cliente", "Pedir a senha", "Anotar o número do cartão"],
+        answer: "Entregar o comprovante e uma caneta para assinatura, guardar a via na gaveta e entregar a outra ao cliente",
+        explanation: "No crédito, entregue o comprovante e uma caneta, solicite a assinatura, guarde o comprovante na gaveta e entregue a outra via ao cliente."
+      },
+      {
+        category: "🗣️ Influencer · Atendimento",
+        question: "Qual pergunta fazer caso não tenha entendido todo o pedido?",
+        options: ["'Pode repetir tudo?'", "'Eu deixei de registrar alguma coisa?'", "'O senhor quer mais alguma coisa?'", "'Está correto?'"],
+        answer: "'Eu deixei de registrar alguma coisa?'",
+        explanation: "Repita apenas os itens registrados e pergunte: 'Eu deixei de registrar alguma coisa?'"
+      },
+      {
+        category: "💳 Influencer · Pagamento",
+        question: "Quando colocar o CPF na nota?",
+        options: ["Sempre, obrigatoriamente", "Caso o cliente solicite, apenas nos estados que possuem", "Nunca", "Somente em pagamentos com cartão"],
+        answer: "Caso o cliente solicite, apenas nos estados que possuem",
+        explanation: "Caso o cliente solicite, coloque o CPF na nota — apenas nos estados que possuem."
+      },
       {
         category: "🗣️ Influencer Vendedor",
         question: "Qual frase deve ser usada quando não entendeu todo o pedido do cliente?",

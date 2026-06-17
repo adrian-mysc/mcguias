@@ -116,6 +116,32 @@
     <!-- VISÃO GERAL                                           -->
     <!-- ══════════════════════════════════════════════════════ -->
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Produção · Apoio e Preparação (LOPE)</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <table class="data-table">
+            <thead><tr><th>Procedimento</th><th>Padrão</th></tr></thead>
+            <tbody>
+            <tr><td>Sanitização dos panos</td><td><strong>balde branco, 5 L de água + solução, 5 panos por vez</strong></td></tr>
+            <tr><td>Chapas — utensílios / áreas gordurosas</td><td><strong>troca a cada 1 hora</strong></td></tr>
+            <tr><td>Chapas — inox / áreas não gordurosas</td><td><strong>troca a cada 2 horas</strong></td></tr>
+            <tr><td>Demais estações, balcão, salão, Drive, McDelivery</td><td><strong>troca a cada 2 horas</strong></td></tr>
+            <tr><td>Cuba na mesa de condimentação</td><td><strong>vida secundária de 2 horas</strong></td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li>Após mergulhar, aperte os panos para tirar o excesso e coloque-os em bandeja de inox limpa e sanitizada.</li>
+            <li>Estocagem: siga a sequência do card LOPE e a rotação <strong>PEPS</strong>, anotando o horário secundário.</li>
+            <li>EPI: avental de cozinha.</li>
+          </ul>
+
+        </div>
+      </div>
+
       <div class="section-label">Resumo Geral</div>
 
       <div class="card">
@@ -852,6 +878,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_LOPE_FULL = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🧺 Panos · Sanitização",
+        question: "Quantos litros de água com solução sanitizante o balde branco deve ter para sanitizar os panos?",
+        options: ["3 litros", "5 litros", "8 litros", "10 litros"],
+        answer: "5 litros",
+        explanation: "Encha o balde branco com 5 litros de água com a solução sanitizante."
+      },
+      {
+        category: "🧺 Panos · Sanitização",
+        question: "Quantos panos devem ser mergulhados por vez na solução sanitizante?",
+        options: ["3 panos", "5 panos", "8 panos", "10 panos"],
+        answer: "5 panos",
+        explanation: "Separe e mergulhe 5 panos por vez na solução sanitizante."
+      },
+      {
+        category: "🧺 Panos · Frequência",
+        question: "Qual a frequência de troca dos panos das Chapas (utensílios e áreas gordurosas)?",
+        options: ["1 hora", "2 horas", "3 horas", "4 horas"],
+        answer: "1 hora",
+        explanation: "Os panos de utensílios e áreas gordurosas das chapas são trocados a cada 1 hora."
+      },
+      {
+        category: "🧺 Panos · Frequência",
+        question: "Qual a frequência de troca dos panos das Chapas (área de inox e não gordurosas)?",
+        options: ["1 hora", "2 horas", "3 horas", "4 horas"],
+        answer: "2 horas",
+        explanation: "Os panos de inox e áreas não gordurosas das chapas são trocados a cada 2 horas."
+      },
+      {
+        category: "🧺 Panos · Frequência",
+        question: "Qual a frequência de troca dos panos no Salão?",
+        options: ["1 hora", "2 horas", "3 horas", "4 horas"],
+        answer: "2 horas",
+        explanation: "No Salão, os panos são trocados a cada 2 horas (mesmo padrão das demais estações da cozinha, balcão, Drive-Thru e McDelivery)."
+      },
+      {
+        category: "⏱️ LOPE · Tempos",
+        question: "Qual o tempo de vida secundário da cuba ao colocá-la na mesa de condimentação?",
+        options: ["1 hora", "2 horas", "3 horas", "4 horas"],
+        answer: "2 horas",
+        explanation: "Anote 2 horas de tempo de vida secundário ao colocar a cuba na mesa de condimentação."
+      },
+      {
+        category: "⚙️ LOPE · Preparação",
+        question: "Qual método de rotação deve ser seguido na estocagem da mesa de condimentação?",
+        options: ["PEPS (Primeiro que Entra, Primeiro que Sai)", "UEPS", "Aleatório", "Por tamanho"],
+        answer: "PEPS (Primeiro que Entra, Primeiro que Sai)",
+        explanation: "A rotação seguida é o PEPS — leva-se a cuba para a área de preparação fazendo a rotação PEPS."
+      },
+      {
+        category: "🧺 Panos · Sanitização",
+        question: "Qual a cor do balde usado para a sanitização dos panos descartáveis?",
+        options: ["Amarelo", "Branco", "Verde", "Azul"],
+        answer: "Branco",
+        explanation: "Usa-se o balde branco com 5 litros de água e solução sanitizante."
+      },
+      {
+        category: "🧺 Panos · Sanitização",
+        question: "O que fazer com os panos após mergulhá-los na solução sanitizante?",
+        options: ["Deixá-los escorrer pendurados", "Apertá-los para retirar o excesso e colocá-los em bandeja de inox limpa", "Usá-los encharcados", "Secá-los ao sol"],
+        answer: "Apertá-los para retirar o excesso e colocá-los em bandeja de inox limpa",
+        explanation: "Retire os panos apertando-os para retirar o excesso de solução e coloque-os sobre uma bandeja de inox limpa e sanitizada para distribuição."
+      },
+      {
+        category: "⚙️ LOPE · Preparação",
+        question: "Qual avental deve ser utilizado na estação de Apoio e Preparação (LOPE)?",
+        options: ["Avental de cozinha", "Avental impermeável de limpeza", "Não usa avental", "Avental descartável"],
+        answer: "Avental de cozinha",
+        explanation: "Na estação LOPE deve-se utilizar avental de cozinha."
+      },
       // ── LOPE (original) ────────────────────────────────────────
       { category:"⏱️ Tempos de Vida", question:"Qual o tempo de vida útil do tomate fatiado na mesa de condimentação?", options:["1 hora","2 horas","4 horas","6 horas"], answer:"2 horas", explanation:"O tomate fatiado tem vida útil de 2 horas na mesa de condimentação." },
       { category:"⏱️ Tempos de Vida", question:"Qual é o tempo mínimo de reidratação da cebola?", options:["30 minutos","1 hora","2 horas","4 horas"], answer:"1 hora", explanation:"A cebola deve ser reidratada por no mínimo 1 hora. Quanto mais tempo, melhor a qualidade." },
