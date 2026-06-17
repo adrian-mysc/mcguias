@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-06-17",
   "categoria": "montagem-entrega",
   "nivel": "basico",
   "migratedFrom": "montagem-entrega.html",
@@ -1903,6 +1903,496 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Canudo regular para refrigerantes P e M; canudo largo para McShakes e bebidas espessas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_040",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🍽️ Layout da Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bandeja",
+        "montagem",
+        "sequencia"
+      ],
+      "pergunta": "O que vai no CENTRO da bandeja na sequência de montagem?",
+      "alternativas": [
+        "Bebidas",
+        "As Entradas (sanduíches) — os 'heróis' da refeição",
+        "McFritas",
+        "Sobremesas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No centro vão as Entradas (sanduíches), os 'heróis' da refeição, posicionados no foco da bandeja.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_041",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🍽️ Layout da Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bandeja",
+        "mcfritas",
+        "sequencia"
+      ],
+      "pergunta": "O que vai no LADO DIREITO da bandeja?",
+      "alternativas": [
+        "Sanduíches",
+        "Acompanhamentos / McFritas (inclinadas em relação às entradas)",
+        "Bebidas",
+        "Guardanapos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No lado direito vão os Acompanhamentos / McFritas, inclinadas em relação às entradas para melhor acomodação.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_042",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🍽️ Layout da Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bandeja",
+        "bebidas",
+        "sequencia"
+      ],
+      "pergunta": "O que vai no LADO ESQUERDO da bandeja?",
+      "alternativas": [
+        "McFritas",
+        "Sanduíches",
+        "Bebidas e sobremesas (café, refrigerante, shakes e sobremesas)",
+        "Molhos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "No lado esquerdo vão as Bebidas e sobremesas: café, refrigerante, shakes e sobremesas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_043",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "montagem",
+        "pago",
+        "procedimento"
+      ],
+      "pergunta": "Quando se deve iniciar a montagem do pedido?",
+      "alternativas": [
+        "Assim que o pedido aparece na tela",
+        "Quando o pedido está PAGO e somente quando todos os itens estiverem prontos",
+        "Antes do pagamento, para adiantar",
+        "Quando o cliente chega na entrega"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Inicie a montagem quando o pedido estiver com status PAGO e somente quando todos os itens estiverem prontos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_044",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Bandeja",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "montagem",
+        "picklist",
+        "procedimento"
+      ],
+      "pergunta": "O que deve ser impresso e posicionado na bandeja antes de apertar 'servido'?",
+      "alternativas": [
+        "A nota fiscal",
+        "O Pick List",
+        "O cupom de desconto",
+        "O comprovante de pagamento"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Imprima o Pick List e posicione-o na bandeja; em seguida aperte a tecla 'servido'.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_045",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Saco",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "procedimento",
+        "saco",
+        "viagem"
+      ],
+      "pergunta": "Em pedidos para viagem, como organizar os itens?",
+      "alternativas": [
+        "Tudo junto no mesmo saco",
+        "Separando os itens frios dos quentes",
+        "Bebidas por cima dos sanduíches",
+        "Sobremesas no fundo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Em pedidos para viagem, siga a sequência correta separando os itens frios dos quentes.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_046",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Bebidas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bebidas",
+        "portacopos",
+        "procedimento"
+      ],
+      "pergunta": "Ao trabalhar com sacos e duas ou mais bebidas, o que usar?",
+      "alternativas": [
+        "Segurar na mão",
+        "O porta-copos, garantindo que estejam tampadas",
+        "Uma bandeja extra",
+        "Saco separado por bebida"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Use o porta-copos para duas ou mais bebidas, garantindo que estejam tampadas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_047",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · Saco",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "saco",
+        "temperatura",
+        "viagem"
+      ],
+      "pergunta": "Quantas vezes o saco de viagem deve ser dobrado?",
+      "alternativas": [
+        "Não se dobra",
+        "Uma vez, para garantir a temperatura do produto",
+        "Duas vezes",
+        "Três vezes"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Dobre o saco uma vez sobre a marca existente para garantir a temperatura do produto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_048",
+      "categoria": "montagem-entrega",
+      "subcategoria": "🛎️ Entrega",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "entrega",
+        "postura"
+      ],
+      "pergunta": "Como o cliente deve ser chamado na área de entrega?",
+      "alternativas": [
+        "Gritando o número do pedido",
+        "De maneira amável e natural, sem gritar o número do pedido",
+        "Tocando uma campainha",
+        "Por alto-falante"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Atenda o cliente de maneira amável, sempre o mais natural possível, sem gritar o número do pedido.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "montagem_entrega_049",
+      "categoria": "montagem-entrega",
+      "subcategoria": "📋 Montagem · McLanche",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "danoninho",
+        "mclanche",
+        "procedimento"
+      ],
+      "pergunta": "No McLanche Feliz com Danoninho, onde colocar a colher sweet (pazinha)?",
+      "alternativas": [
+        "Por fora do saco",
+        "Dentro da caixinha HMB, do lado oposto da McFritas",
+        "Junto com a bebida",
+        "No porta-copos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Coloque a colher sweet pazinha dentro da caixinha HMB do lado oposto da McFritas.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

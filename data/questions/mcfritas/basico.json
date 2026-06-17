@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-06-17",
   "categoria": "mcfritas",
   "nivel": "basico",
   "migratedFrom": "mcfritas.html",
@@ -1289,6 +1289,494 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Verificar: nível de óleo, temperatura atingida, filtro limpo e funcionamento correto do cesto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_034",
+      "categoria": "mcfritas",
+      "subcategoria": "🌡️ McFritas · Temperatura",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritadeira",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da fritadeira de McFritas?",
+      "alternativas": [
+        "160°C",
+        "168°C",
+        "175°C",
+        "180°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A fritadeira de McFritas opera a 168°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_035",
+      "categoria": "mcfritas",
+      "subcategoria": "⚙️ McFritas · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura programado das McFritas?",
+      "alternativas": [
+        "2'10\"",
+        "3'10\"",
+        "3'15\"",
+        "7'"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo de fritura programado é de 3'10\", com um Duty de 30 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_036",
+      "categoria": "mcfritas",
+      "subcategoria": "⏱️ McFritas · Validade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "qualidade",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida programado das McFritas prontas (na estufa)?",
+      "alternativas": [
+        "5 minutos",
+        "7 minutos",
+        "10 minutos",
+        "15 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo de vida programado das McFritas prontas é de 7 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_037",
+      "categoria": "mcfritas",
+      "subcategoria": "⚙️ McFritas · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "duty",
+        "fritura",
+        "tempo"
+      ],
+      "pergunta": "Qual a duração do Duty na fritura das McFritas?",
+      "alternativas": [
+        "15 segundos",
+        "20 segundos",
+        "30 segundos",
+        "45 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Duty é de 30 segundos — ao soar, ativa-se o próximo cesto intercalando as cubas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_038",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Sal",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "procedimento",
+        "qualidade",
+        "sal"
+      ],
+      "pergunta": "Qual a quantidade de sal aplicada nas McFritas?",
+      "alternativas": [
+        "2g",
+        "4g",
+        "6g",
+        "8g"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Despeja-se 4g de sal, segurando o saleiro a 20cm do centro das McFritas e virando uma única vez.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_039",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Sal",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "procedimento",
+        "sal"
+      ],
+      "pergunta": "A que altura o saleiro deve ser mantido ao salgar as McFritas?",
+      "alternativas": [
+        "10cm",
+        "15cm",
+        "20cm",
+        "30cm"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O saleiro é mantido pela alça a 20cm e no centro das McFritas, virado uma única vez sem agitar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_040",
+      "categoria": "mcfritas",
+      "subcategoria": "⏱️ McFritas · Validade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "batata",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida da batata no congelador portátil?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "4 horas",
+        "24 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A batata tem tempo de vida de 2 horas no congelador portátil.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_041",
+      "categoria": "mcfritas",
+      "subcategoria": "⏱️ McFritas · Validade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "batata",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida da batata na encestadora automática?",
+      "alternativas": [
+        "2 horas",
+        "12 horas",
+        "24 horas",
+        "48 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Na encestadora automática a batata tem tempo de vida de 24 horas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_042",
+      "categoria": "mcfritas",
+      "subcategoria": "🍟 McFritas · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "encestamento",
+        "procedimento",
+        "qualidade"
+      ],
+      "pergunta": "Como os palitos devem ser alinhados no encestamento manual?",
+      "alternativas": [
+        "Com as mãos",
+        "Com o saco plástico das McFritas, nunca com as mãos",
+        "Com a pá de fritura",
+        "Batendo o cesto na bancada"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usa-se o próprio saco plástico das McFritas para alinhar os palitos, após as duas passadas; jamais colocar as mãos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcfritas_043",
+      "categoria": "mcfritas",
+      "subcategoria": "🛢️ McFritas · Óleo",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "nivel",
+        "oleo",
+        "procedimento"
+      ],
+      "pergunta": "Até qual marca o nível de óleo na cuba deve ser mantido?",
+      "alternativas": [
+        "Primeira linha",
+        "Segunda linha",
+        "Até a borda",
+        "Metade da cuba"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Mantenha o nível de óleo respeitando a segunda linha na cuba; se necessário, reponha avisando o Gerente.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

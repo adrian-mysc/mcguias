@@ -132,6 +132,25 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Experiência do Cliente · McDelivery</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <ul>
+            <li>Inicie a montagem após o pedido aparecer na tela da <strong>OAT</strong> e imprima o Pick List.</li>
+            <li>McFritas <strong>em pé</strong>; não dobre a borda do saco com McFritas; finalize com o <strong>lacre no meio</strong> do saco.</li>
+            <li>Bebidas no suporte de copos dentro do <strong>saco C lacrado</strong>, colocado na <strong>sacola D+</strong> ao lado dos sanduíches.</li>
+            <li>Sobremesas e milk-shakes: tampa + <strong>plástico filme (PVC)</strong>. Use o <strong>selo inviolável</strong>.</li>
+            <li>Tablet ligado com o carregador original e no suporte fechado.</li>
+            <li>Ao chegar o entregador, peça que ele informe a retirada no aplicativo antes de entregar a sacola para a BAG.</li>
+          </ul>
+
+        </div>
+      </div>
+
 
       <div class="section-label">Resumo Rápido</div>
 
@@ -414,6 +433,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_DELIVERY = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "📦 Montagem",
+        question: "Quando se inicia a montagem do pedido no McDelivery?",
+        options: ["Quando o entregador chega", "Após o pedido aparecer na tela da OAT (e imprimir o Pick List)", "Antes do pedido ser pago", "Quando o cliente liga"],
+        answer: "Após o pedido aparecer na tela da OAT (e imprimir o Pick List)",
+        explanation: "Inicie a montagem após o pedido aparecer na tela da OAT e imprima o Pick List do pedido."
+      },
+      {
+        category: "📦 Montagem",
+        question: "Como as McFritas devem ser acomodadas no saco?",
+        options: ["Deitadas", "Em pé", "Por cima do sanduíche", "Fora do saco"],
+        answer: "Em pé",
+        explanation: "Acomode as McFritas em pé. Não é necessário dobrar a borda do saco que tiver McFritas."
+      },
+      {
+        category: "📦 Montagem",
+        question: "O que fazer com a borda do saco que contém McFritas?",
+        options: ["Dobrar duas vezes", "Não é necessário dobrar", "Dobrar uma vez", "Lacrar a borda"],
+        answer: "Não é necessário dobrar",
+        explanation: "Não é necessário dobrar a borda do saco que tiver McFritas; finalize com o lacre no meio do saco."
+      },
+      {
+        category: "📦 Montagem",
+        question: "Onde o lacre deve ser colocado no saco com sanduíche e McFritas?",
+        options: ["Na borda superior", "No meio do saco", "No fundo", "Na lateral"],
+        answer: "No meio do saco",
+        explanation: "Finalize com o lacre no meio do saco."
+      },
+      {
+        category: "🥤 Bebidas",
+        question: "Como as bebidas devem ser acomodadas no McDelivery?",
+        options: ["Soltas na sacola", "No suporte de copos, dentro do saco C lacrado", "Junto com os sanduíches", "Em saco plástico comum"],
+        answer: "No suporte de copos, dentro do saco C lacrado",
+        explanation: "Acomode as bebidas no suporte de copos dentro do saco C, lacre-o e coloque-o na sacola D+ ao lado do saco com os sanduíches."
+      },
+      {
+        category: "🍦 Sobremesas",
+        question: "Além das tampas, com o que as sobremesas e milk-shakes são fechados?",
+        options: ["Fita adesiva", "Plástico filme (filme PVC)", "Papel alumínio", "Lacre de papel"],
+        answer: "Plástico filme (filme PVC)",
+        explanation: "Para fechar sobremesas e milk-shakes, além das tampas, utilize plástico filme (filme PVC)."
+      },
+      {
+        category: "📦 Entrega",
+        question: "O que solicitar ao entregador ao chegar para retirar o pedido?",
+        options: ["Que assine um recibo", "Que informe a retirada do pedido no aplicativo", "Que confira o troco", "Que aguarde 5 minutos"],
+        answer: "Que informe a retirada do pedido no aplicativo",
+        explanation: "Ao chegar o entregador, solicite que ele informe a retirada do pedido no aplicativo; feito isso, entregue a sacola para a BAG de transporte."
+      },
+      {
+        category: "⚙️ Preparação",
+        question: "Como o tablet do McDelivery deve ser mantido?",
+        options: ["Desligado para economizar bateria", "Ligado com o carregador original e no suporte fechado", "Na mão do operador", "Em qualquer carregador"],
+        answer: "Ligado com o carregador original e no suporte fechado",
+        explanation: "Mantenha o tablet ligado com o carregador original e no suporte fechado."
+      },
+      {
+        category: "⚙️ Preparação",
+        question: "Qual selo faz parte dos suprimentos necessários do McDelivery?",
+        options: ["Selo 'especial para você'", "Selo inviolável", "Selo de validade", "Selo promocional"],
+        answer: "Selo inviolável",
+        explanation: "Entre os suprimentos do McDelivery está o selo inviolável (além de plástico filme, guardanapo e canudo de shake)."
+      },
+      {
+        category: "📦 Montagem",
+        question: "Onde o saco C lacrado (com as bebidas) deve ser colocado?",
+        options: ["Em uma sacola separada", "Na sacola D+, ao lado do saco com os sanduíches", "Na BAG diretamente", "No suporte de copos externo"],
+        answer: "Na sacola D+, ao lado do saco com os sanduíches",
+        explanation: "Coloque o saco C lacrado na sacola D+, ao lado do saco com os sanduíches."
+      },
       {
         category: "⚠️ McDelivery · Regra Crítica",
         question: "Como deve ser validada a liberação do pedido para o entregador?",

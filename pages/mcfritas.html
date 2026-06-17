@@ -62,6 +62,35 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Produção · McFritas</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <table class="data-table">
+            <thead><tr><th>Item</th><th>Padrão</th></tr></thead>
+            <tbody>
+            <tr><td>Temperatura da fritadeira</td><td><strong>168°C</strong></td></tr>
+            <tr><td>Tempo de fritura</td><td><strong>3'10" · Duty de 30"</strong></td></tr>
+            <tr><td>Tempo de vida (pronta)</td><td><strong>7 minutos</strong></td></tr>
+            <tr><td>Vida da batata — congelador portátil</td><td><strong>2 horas</strong></td></tr>
+            <tr><td>Vida da batata — encestadora automática</td><td><strong>24 horas</strong></td></tr>
+            <tr><td>Batata encestada</td><td><strong>sem tempo de vida — ativar imediatamente</strong></td></tr>
+            <tr><td>Sal</td><td><strong>4g, saleiro a 20cm, 1 vez sem agitar</strong></td></tr>
+            <tr><td>Nível de óleo</td><td><strong>até a 2ª linha da cuba</strong></td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li>Encestamento manual: encha em 2 passadas, amorteça a queda com a mão e alinhe os palitos com o saco plástico — <strong>nunca com as mãos</strong>.</li>
+            <li>Escorra o óleo por 5" a 10". Misture os palitos da frente para o fundo, de 2 a 3 vezes.</li>
+            <li>EPI: avental de cozinha e mangote. Mantenha fechadas as cubas que não estão em uso.</li>
+          </ul>
+
+        </div>
+      </div>
+
       <div class="section-label">Resumo Rápido</div>
 
       <div class="card">
@@ -221,6 +250,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_MCFRITAS = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🌡️ McFritas · Temperatura",
+        question: "Qual a temperatura da fritadeira de McFritas?",
+        options: ["160°C", "168°C", "175°C", "180°C"],
+        answer: "168°C",
+        explanation: "A fritadeira de McFritas opera a 168°C."
+      },
+      {
+        category: "⚙️ McFritas · Procedimento",
+        question: "Qual o tempo de fritura programado das McFritas?",
+        options: ["2'10\"", "3'10\"", "3'15\"", "7'"],
+        answer: "3'10\"",
+        explanation: "O tempo de fritura programado é de 3'10\", com um Duty de 30 segundos."
+      },
+      {
+        category: "⏱️ McFritas · Validade",
+        question: "Qual o tempo de vida programado das McFritas prontas (na estufa)?",
+        options: ["5 minutos", "7 minutos", "10 minutos", "15 minutos"],
+        answer: "7 minutos",
+        explanation: "O tempo de vida programado das McFritas prontas é de 7 minutos."
+      },
+      {
+        category: "⚙️ McFritas · Procedimento",
+        question: "Qual a duração do Duty na fritura das McFritas?",
+        options: ["15 segundos", "20 segundos", "30 segundos", "45 segundos"],
+        answer: "30 segundos",
+        explanation: "O Duty é de 30 segundos — ao soar, ativa-se o próximo cesto intercalando as cubas."
+      },
+      {
+        category: "🍟 McFritas · Sal",
+        question: "Qual a quantidade de sal aplicada nas McFritas?",
+        options: ["2g", "4g", "6g", "8g"],
+        answer: "4g",
+        explanation: "Despeja-se 4g de sal, segurando o saleiro a 20cm do centro das McFritas e virando uma única vez."
+      },
+      {
+        category: "🍟 McFritas · Sal",
+        question: "A que altura o saleiro deve ser mantido ao salgar as McFritas?",
+        options: ["10cm", "15cm", "20cm", "30cm"],
+        answer: "20cm",
+        explanation: "O saleiro é mantido pela alça a 20cm e no centro das McFritas, virado uma única vez sem agitar."
+      },
+      {
+        category: "⏱️ McFritas · Validade",
+        question: "Qual o tempo de vida da batata no congelador portátil?",
+        options: ["1 hora", "2 horas", "4 horas", "24 horas"],
+        answer: "2 horas",
+        explanation: "A batata tem tempo de vida de 2 horas no congelador portátil."
+      },
+      {
+        category: "⏱️ McFritas · Validade",
+        question: "Qual o tempo de vida da batata na encestadora automática?",
+        options: ["2 horas", "12 horas", "24 horas", "48 horas"],
+        answer: "24 horas",
+        explanation: "Na encestadora automática a batata tem tempo de vida de 24 horas."
+      },
+      {
+        category: "🍟 McFritas · Procedimento",
+        question: "Como os palitos devem ser alinhados no encestamento manual?",
+        options: ["Com as mãos", "Com o saco plástico das McFritas, nunca com as mãos", "Com a pá de fritura", "Batendo o cesto na bancada"],
+        answer: "Com o saco plástico das McFritas, nunca com as mãos",
+        explanation: "Usa-se o próprio saco plástico das McFritas para alinhar os palitos, após as duas passadas; jamais colocar as mãos."
+      },
+      {
+        category: "🛢️ McFritas · Óleo",
+        question: "Até qual marca o nível de óleo na cuba deve ser mantido?",
+        options: ["Primeira linha", "Segunda linha", "Até a borda", "Metade da cuba"],
+        answer: "Segunda linha",
+        explanation: "Mantenha o nível de óleo respeitando a segunda linha na cuba; se necessário, reponha avisando o Gerente."
+      },
       { category: "🌡️ Temperatura", question: "Qual a temperatura da fritadeira de McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "A fritadeira de McFritas opera a 168°C." },
       { category: "⏱️ Tempo", question: "Qual o tempo de fritura das McFritas?", options: ["2min30s", "3min00s", "3min10s", "4min00s"], answer: "3min10s", explanation: "O tempo de fritura das McFritas é 3 minutos e 10 segundos." },
       { category: "📦 Tamanhos", question: "Qual o peso da McFritas tamanho Médio?", options: ["73g", "95g", "102g", "146g"], answer: "102g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },

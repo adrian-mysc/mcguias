@@ -56,7 +56,7 @@ function loadQuestions(guide) {
 section('Question JSON — structure & integrity');
 
 const GUIDES_WITH_COUNTS = {
-  'chapa':               67,
+  'chapa':               77,
   'treinador':          133,
   'gerencia':            86,
   'lideranca':           67,
@@ -69,6 +69,7 @@ const GUIDES_WITH_COUNTS = {
   'condimentacao':       null,
   'fritos':              null,
   'drive-thru':          null,
+  'mcdelivery':          null,
   'bebidas-sobremesas':  null,
   'linha':               null,
   'montagem-entrega':    null,
@@ -144,7 +145,7 @@ const GUIAS_IDS = [
   'treinador','gerencia','lideranca','best-burguer','mccafe','lope','chapa',
   'condimentacao','fritas','mcfritas','drive-thru','bebidas-sobremesas','linha',
   'montagem-entrega','fritos','salao-ngk','embaixador-experiencia',
-  'influencer-pagamento','estoque-recebimento','fechamento',
+  'influencer-pagamento','mcdelivery','estoque-recebimento','fechamento',
   'manutencao-preventivas','seguranca-alimento',
 ];
 

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-05-16",
+  "updatedAt": "2026-06-17",
   "categoria": "fritos",
   "nivel": "basico",
   "migratedFrom": "fritos.html",
@@ -1512,6 +1512,499 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "O cesto comporta no máximo 24 unidades de McNuggets por rodada de fritura.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_039",
+      "categoria": "fritos",
+      "subcategoria": "🌡️ Fritos · Temperatura",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frango",
+        "oleo",
+        "temperatura",
+        "torta"
+      ],
+      "pergunta": "Qual a temperatura das fritadeiras para produtos de frango e tortas?",
+      "alternativas": [
+        "168°C",
+        "175°C",
+        "180°C",
+        "190°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As fritadeiras de frango e tortas operam a 180°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_040",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Fritos · UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcchicken",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de validade do McChicken na UHC?",
+      "alternativas": [
+        "15 minutos",
+        "20 minutos",
+        "30 minutos",
+        "45 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O McChicken tem validade de 30 minutos na UHC.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_041",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Fritos · UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcjunior",
+        "mcnuggets",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de validade do McNuggets e do McJunior na UHC?",
+      "alternativas": [
+        "15 minutos",
+        "20 minutos",
+        "30 minutos",
+        "45 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "McNuggets e McJunior têm validade de 20 minutos na UHC.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_042",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Fritos · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frango",
+        "fritura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura do McChicken, McJunior e McNuggets?",
+      "alternativas": [
+        "3'10\"",
+        "3'15\"",
+        "6'",
+        "2'45\""
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo de fritura de McChicken, McJunior e McNuggets é de 3'15\".",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_043",
+      "categoria": "fritos",
+      "subcategoria": "🥧 Fritos · Tortas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritura",
+        "tempo",
+        "torta"
+      ],
+      "pergunta": "Qual o tempo de fritura das tortas?",
+      "alternativas": [
+        "3 minutos",
+        "4 minutos",
+        "6 minutos",
+        "8 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "As tortas fritam por 6 minutos, em cuba a 180°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_044",
+      "categoria": "fritos",
+      "subcategoria": "🥧 Fritos · Tortas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "resfriamento",
+        "tempo",
+        "torta"
+      ],
+      "pergunta": "Qual o tempo de resfriamento das tortas?",
+      "alternativas": [
+        "10 minutos",
+        "15 minutos",
+        "20 minutos",
+        "30 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de resfriamento das tortas é de 20 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_045",
+      "categoria": "fritos",
+      "subcategoria": "🥧 Fritos · Tortas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tempo",
+        "torta",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo total de vida das tortas?",
+      "alternativas": [
+        "120 minutos",
+        "180 minutos",
+        "240 minutos",
+        "300 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo total de vida das tortas é de 240 minutos (inclui o resfriamento de 20 min; marca-se 2h40).",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_046",
+      "categoria": "fritos",
+      "subcategoria": "🥧 Fritos · Tortas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "procedimento",
+        "qualidade",
+        "torta"
+      ],
+      "pergunta": "Como a torta deve ser colocada no cesto de fritura?",
+      "alternativas": [
+        "Com a costura para cima",
+        "Com a costura para baixo",
+        "Deitada na lateral",
+        "Em pé"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Coloca-se a torta no cesto com a costura para cima, encostando a parte superior na lâmina que separa os espaços do cesto.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_047",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · McNuggets",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcnuggets",
+        "procedimento"
+      ],
+      "pergunta": "O que fazer com o cesto de McNuggets antes de ativar o timer?",
+      "alternativas": [
+        "Salgar as carnes",
+        "Sacudir o cesto para distribuir as carnes",
+        "Tampar a cuba",
+        "Escorrer o óleo"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No McNuggets, sacuda o cesto para distribuir as carnes antes de ativar o timer.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_048",
+      "categoria": "fritos",
+      "subcategoria": "🍗 Fritos · Frango",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frango",
+        "pegador",
+        "procedimento"
+      ],
+      "pergunta": "Qual a cor do pegador usado para as carnes de frango (exceto McNuggets)?",
+      "alternativas": [
+        "Verde",
+        "Preto",
+        "Bege",
+        "Azul"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Mantenha 1 pegador preto para as carnes de frango (exceto McNuggets).",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

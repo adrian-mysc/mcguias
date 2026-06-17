@@ -144,6 +144,33 @@
   <div class="page-content">
 
     <div class="tab-panel active" id="panel-visao">
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">📕</div>
+          <h2>Material oficial — Experiência do Cliente · Bebidas e Sobremesas</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <table class="data-table">
+            <thead><tr><th>Produto</th><th>Padrão</th></tr></thead>
+            <tbody>
+            <tr><td>McShake</td><td><strong>15ml de leite · 7 voltas · bater 18"</strong></td></tr>
+            <tr><td>Casquinha</td><td><strong>3 voltas (3oz)</strong></td></tr>
+            <tr><td>McColosso</td><td><strong>2,5 voltas (3,5oz) + 1 tiro cobertura</strong></td></tr>
+            <tr><td>McFlurry</td><td><strong>5 voltas (5oz) sem bico · 1oz complemento</strong></td></tr>
+            <tr><td>Sundae</td><td><strong>4 voltas (4oz) · amendoim 7g</strong></td></tr>
+            <tr><td>Top Sundae</td><td><strong>6 voltas (6oz) · 2 bijus + 1 colher</strong></td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li>McShake: 15ml de leite até a 1ª elevação, 1oz de cobertura, 1oz de complemento; bater por ~18 segundos.</li>
+            <li>Refrigerante: gelo com a pá conforme a marcação; bebida zero com selo <em>“especial para você”</em> próximo à borda.</li>
+            <li>Posicione os copos na mesa BLZ respeitando bebidas normais e bebidas zero.</li>
+          </ul>
+
+        </div>
+      </div>
+
 
       <div class="section-label">Resumo Rápido</div>
 
@@ -844,6 +871,77 @@
   <script src="../js/main.js" defer></script>
   <script>
     const QUIZ_BEBIDAS = [
+      // ── Material oficial (PDF) — adicionadas via extração ──
+      {
+        category: "🥤 McShake",
+        question: "Quantos ml de leite são colocados no copo de McShake?",
+        options: ["10ml", "15ml", "20ml", "30ml"],
+        answer: "15ml",
+        explanation: "Coloque 15ml de leite no copo, até a primeira elevação do copo de McShake."
+      },
+      {
+        category: "🥤 McShake",
+        question: "Por quanto tempo o McShake deve ser batido?",
+        options: ["10 segundos", "15 segundos", "18 segundos", "22 segundos"],
+        answer: "18 segundos",
+        explanation: "Bata o McShake por aproximadamente 18 segundos, com leves movimentos para ficar uniforme."
+      },
+      {
+        category: "🥤 McShake",
+        question: "Quantas voltas de mix são dispensadas na lateral do copo de McShake?",
+        options: ["5 voltas", "6 voltas", "7 voltas", "8 voltas"],
+        answer: "7 voltas",
+        explanation: "Abaixe a alavanca dispensando 7 voltas em toda a lateral do copo, deixando um espaço no meio."
+      },
+      {
+        category: "🍦 Sobremesas · Casquinha",
+        question: "Quantas voltas (oz) compõem a Casquinha?",
+        options: ["2 voltas", "2,5 voltas", "3 voltas (3oz)", "4 voltas"],
+        answer: "3 voltas (3oz)",
+        explanation: "Na Casquinha, execute movimentos circulares completando 3 voltas, incluindo a ponta (3 oz)."
+      },
+      {
+        category: "🍦 Bebidas · McColosso",
+        question: "Quantas voltas compõem o McColosso?",
+        options: ["2 voltas", "2,5 voltas (3,5oz)", "3 voltas", "5 voltas"],
+        answer: "2,5 voltas (3,5oz)",
+        explanation: "No McColosso, complete 2,5 voltas (3,5 oz) iniciando dentro do cone, e adicione 1 tiro de cobertura."
+      },
+      {
+        category: "🍦 Bebidas · McFlurry",
+        question: "Quantas voltas são feitas no McFlurry?",
+        options: ["4 voltas", "5 voltas (5oz) sem fazer o bico", "6 voltas", "7 voltas"],
+        answer: "5 voltas (5oz) sem fazer o bico",
+        explanation: "No McFlurry, complete 5 voltas (5 oz) sem fazer o bico e sem mexer o copo."
+      },
+      {
+        category: "🍦 Bebidas · Sundae",
+        question: "Quantas voltas compõem o Sundae?",
+        options: ["3 voltas", "4 voltas (4oz)", "5 voltas", "6 voltas"],
+        answer: "4 voltas (4oz)",
+        explanation: "Centralize o copo sob o bico e complete 4 voltas, fazendo o bico (4 oz)."
+      },
+      {
+        category: "🍦 Bebidas · Top Sundae",
+        question: "Quantas voltas compõem o Top Sundae?",
+        options: ["4 voltas", "5 voltas", "6 voltas (6oz)", "7 voltas"],
+        answer: "6 voltas (6oz)",
+        explanation: "No Top Sundae, complete 6 voltas, fazendo o bico (6 oz)."
+      },
+      {
+        category: "🍦 Bebidas · Sundae",
+        question: "Qual a quantidade de amendoim no Sundae?",
+        options: ["5g", "7g", "10g", "15g"],
+        answer: "7g",
+        explanation: "Complete com 1 tiro de amendoim (7g) em um só impulso e coloque 1 colher de Sundae."
+      },
+      {
+        category: "🍦 Bebidas · Top Sundae",
+        question: "Quantos bijus inteiros vão no Top Sundae?",
+        options: ["1 biju", "2 bijus", "3 bijus", "4 bijus"],
+        answer: "2 bijus",
+        explanation: "Com o pegador, coloque 2 bijus inteiros em uma das laterais e na outra 1 colher de Top Sundae."
+      },
       {
         category: "🍦 Sobremesas · Casquinha",
         question: "Quantas voltas de bebida láctea completa a Casquinha?",
