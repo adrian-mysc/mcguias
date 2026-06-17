@@ -52,7 +52,7 @@
 
   <!-- Senha de Acesso -->
   <div id="pw-wall" style="max-width:400px;margin:40px auto;padding:0 16px;">
-    <div style="background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow-md);">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow-md);">
       <div style="font-size:40px;margin-bottom:12px;">🔐</div>
       <h2 style="font-family:var(--font-display);font-size:20px;margin-bottom:6px;">Área Restrita</h2>
       <p style="font-size:13px;color:var(--muted);margin-bottom:20px;">Conteúdo exclusivo para Supervisores</p>
@@ -216,25 +216,25 @@
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
               <div>
                 <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">ABERTURA</div>
-                <input type="time" id="turno-inicio" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+                <input type="time" id="turno-inicio" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
               </div>
               <div>
                 <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">FECHAMENTO</div>
-                <input type="time" id="turno-fim" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+                <input type="time" id="turno-fim" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
               </div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
               <div>
                 <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">GCs PROJETADOS</div>
-                <input type="number" id="turno-gcs-proj" placeholder="ex: 450" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+                <input type="number" id="turno-gcs-proj" placeholder="ex: 450" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
               </div>
               <div>
                 <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">GCs REALIZADOS</div>
-                <input type="number" id="turno-gcs-real" placeholder="ex: 478" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+                <input type="number" id="turno-gcs-real" placeholder="ex: 478" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
               </div>
             </div>
             <button onclick="calcTurno()" style="width:100%;padding:12px;background:var(--red);color:#fff;border:none;border-radius:10px;font-family:var(--font-display);font-size:14px;font-weight:800;cursor:pointer;margin-bottom:10px;">Calcular</button>
-            <div id="turno-resultado" style="display:none;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:12px;"></div>
+            <div id="turno-resultado" style="display:none;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px;"></div>
           </div>
         </div>
 
@@ -245,7 +245,7 @@
             <div style="display:flex;gap:10px;align-items:flex-end;margin-bottom:10px;">
               <div style="flex:1;">
                 <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">GCs / HORA</div>
-                <input type="number" id="pos-gcs" placeholder="ex: 32" oninput="calcPosicionamento()" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:16px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
+                <input type="number" id="pos-gcs" placeholder="ex: 32" oninput="calcPosicionamento()" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;font-size:16px;font-family:var(--font-body);color:var(--text);background:var(--card);box-sizing:border-box;">
               </div>
             </div>
             <div id="pos-resultado"></div>
@@ -255,10 +255,10 @@
         <div class="card" style="margin-top:12px;">
           <div class="card-head"><div class="card-head-icon">📝</div><h2>Ocorrências do Turno</h2></div>
           <div class="card-body">
-            <textarea id="ocorrencias-texto" placeholder="Registre aqui ocorrências, manutenções solicitadas, observações do turno..." rows="5" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--bg);resize:vertical;margin-bottom:8px;"></textarea>
+            <textarea id="ocorrencias-texto" placeholder="Registre aqui ocorrências, manutenções solicitadas, observações do turno..." rows="5" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--bg);resize:vertical;margin-bottom:8px;"></textarea>
             <div style="display:flex;gap:8px;">
               <button onclick="salvarOcorrencia()" style="flex:1;padding:10px;background:var(--red);color:#fff;border:none;border-radius:10px;font-family:var(--font-display);font-size:13px;font-weight:800;cursor:pointer;">💾 Salvar</button>
-              <button onclick="limparOcorrencias()" style="padding:10px 14px;background:var(--card);border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">🗑️</button>
+              <button onclick="limparOcorrencias()" style="padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;">🗑️</button>
             </div>
             <div id="ocorrencias-lista" style="margin-top:10px;display:flex;flex-direction:column;gap:6px;"></div>
           </div>
@@ -449,15 +449,15 @@
             <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
               <div style="flex:1;min-width:120px;">
                 <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">PEDIDOS NO PERÍODO</div>
-                <input type="number" id="sos-pedidos" min="1" placeholder="ex: 80" style="width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+                <input type="number" id="sos-pedidos" min="1" placeholder="ex: 80" style="width:100%;box-sizing:border-box;padding:9px 12px;border:1px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--text);background:var(--card);">
               </div>
               <div style="flex:1;min-width:120px;">
                 <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">DURAÇÃO (minutos)</div>
-                <input type="number" id="sos-minutos" min="1" placeholder="ex: 60" style="width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+                <input type="number" id="sos-minutos" min="1" placeholder="ex: 60" style="width:100%;box-sizing:border-box;padding:9px 12px;border:1px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--font-body);color:var(--text);background:var(--card);">
               </div>
               <div style="flex:1;min-width:120px;">
                 <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;">CANAL</div>
-                <select id="sos-canal" style="width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--card);">
+                <select id="sos-canal" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:10px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--card);">
                   <option value="90">Balcão (meta 90s)</option>
                   <option value="180">Drive-Thru (meta 180s)</option>
                   <option value="240">McDelivery (meta 240s)</option>
@@ -666,7 +666,7 @@
       if (!lista) return;
       if (!_ocData.length) { lista.innerHTML = ''; return; }
       lista.innerHTML = _ocData.slice().reverse().map(function(r) {
-        return '<div style="background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;">'
+        return '<div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:10px 12px;">'
           + '<div style="font-size:11px;color:var(--muted);margin-bottom:4px;">' + r.data + '</div>'
           + '<div style="font-size:13px;color:var(--text);white-space:pre-wrap;">' + r.texto.replace(/</g,'&lt;') + '</div>'
           + '</div>';

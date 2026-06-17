@@ -36,19 +36,19 @@
 
     /* ── Stat pills ── */
     .ap-stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-    .ap-stat { background:var(--card); border:1.5px solid var(--border); border-radius:12px;
+    .ap-stat { background:var(--card); border:1px solid var(--border); border-radius:12px;
                padding:12px 8px; text-align:center; }
     .ap-stat-val { font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--red); line-height:1; }
     .ap-stat-lbl { font-size:10.5px; color:var(--muted); margin-top:4px; line-height:1.3; }
 
     /* ── Question card ── */
-    .ap-qcard { background:var(--card); border:1.5px solid var(--border); border-radius:16px;
+    .ap-qcard { background:var(--card); border:1px solid var(--border); border-radius:16px;
                 padding:20px 16px; box-shadow:var(--shadow-md); }
     .ap-qcard-top { display:flex; align-items:center; justify-content:space-between;
                     margin-bottom:12px; gap:8px; }
     .ap-qcat { font-size:11px; font-weight:700; color:var(--muted); }
     .ap-diff-badge { font-size:10px; font-weight:800; padding:3px 10px; border-radius:20px;
-                     background:var(--bg); border:1.5px solid var(--border); color:var(--muted); }
+                     background:var(--bg); border:1px solid var(--border); color:var(--muted); }
     .ap-question { font-family:var(--font-display); font-size:15.5px; font-weight:700;
                    line-height:1.4; color:var(--text); margin-bottom:16px; }
     .ap-options { display:flex; flex-direction:column; gap:8px; }
@@ -87,7 +87,7 @@
 
     /* Skill indicator */
     .ap-skill { display:flex; align-items:center; gap:10px; padding:12px 14px;
-                border-radius:12px; background:var(--card); border:1.5px solid var(--border); }
+                border-radius:12px; background:var(--card); border:1px solid var(--border); }
     .ap-skill-icon { font-size:22px; flex-shrink:0; }
     .ap-skill-label { font-size:11px; color:var(--muted); }
     .ap-skill-name  { font-family:var(--font-display); font-size:15px; font-weight:800; }
@@ -297,7 +297,7 @@
         <div id="adaptSession" style="display:none;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
             <span id="adaptProgress" style="font-size:12px;color:var(--muted);font-weight:700;">0/15</span>
-            <span id="adaptDiffLabel" style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--bg);color:var(--muted);border:1.5px solid var(--border);">●●○○</span>
+            <span id="adaptDiffLabel" style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--bg);color:var(--muted);border:1px solid var(--border);">●●○○</span>
             <button onclick="stopAdapt()" style="background:none;border:none;font-size:13px;color:var(--muted);cursor:pointer;">✕</button>
           </div>
           <div class="ap-progress-wrap">
@@ -345,7 +345,7 @@
         <div id="weakReport" style="margin-bottom:16px;"></div>
 
         <!-- Chart -->
-        <div style="background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:16px;" id="weakChart">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;" id="weakChart">
           <div style="font-size:13px;font-weight:700;margin-bottom:12px;color:var(--text);">Taxa de erro por área</div>
           <div id="weakBars">
             <div class="ap-empty">
@@ -401,7 +401,7 @@
         </div>
 
         <!-- Activity (7 days) -->
-        <div style="background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;">
           <div style="font-size:13px;font-weight:700;margin-bottom:10px;">Atividade — últimos 14 dias</div>
           <div class="ap-heatmap" id="dashHeatmap"></div>
           <div style="display:flex;gap:8px;margin-top:8px;font-size:10px;color:var(--muted);">
@@ -412,13 +412,13 @@
         </div>
 
         <!-- Per-guide domínio -->
-        <div style="background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;">
           <div style="font-size:13px;font-weight:700;margin-bottom:12px;">Domínio por categoria</div>
           <div id="dashGuides"></div>
         </div>
 
         <!-- Reset -->
-        <button onclick="confirmReset()" style="width:100%;padding:10px;border:1.5px solid var(--border);background:none;border-radius:10px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--font-body);">
+        <button onclick="confirmReset()" style="width:100%;padding:10px;border:1px solid var(--border);background:none;border-radius:10px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--font-body);">
           🗑️ Resetar dados de aprendizado
         </button>
       </div>
