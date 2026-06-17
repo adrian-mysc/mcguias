@@ -1,8 +1,10 @@
-// MC Guias — Service Worker v40
-// Atualização: base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
+// MC Guias — Service Worker v41
+// Atualização: conteúdo dos Materiais de Estudo oficiais incorporado
+// (+210 questões, nova categoria McDelivery e cards de estudo nos guias).
+// Base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
 // (GitHub Pages) quanto em / (Vercel/domínio próprio), sem caminho fixo.
 
-const CACHE = 'mc-guias-v40';
+const CACHE = 'mc-guias-v41';
 
 // Raiz da aplicação, derivada da própria URL do SW:
 //   GitHub Pages → '/mcguias/sw.js'  ⇒ BASE = '/mcguias/'
@@ -36,6 +38,7 @@ const PRECACHE_PATHS = [
   'data/questions/montagem-entrega/basico.json',
   'data/questions/influencer-pagamento/basico.json',
   'data/questions/drive-thru/basico.json',
+  'data/questions/mcdelivery/basico.json',
   'data/questions/bebidas-sobremesas/basico.json',
   'data/questions/embaixador-experiencia/basico.json',
   'data/questions/seguranca-alimento/basico.json',

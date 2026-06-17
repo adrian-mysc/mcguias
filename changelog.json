@@ -1,6 +1,45 @@
 {
   "versions": [
     {
+      "version": "v14",
+      "date": "2026-06-17",
+      "date_display": "17 Jun 2026",
+      "badge": "Materiais de Estudo · +210 questões",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "📖",
+          "text": "**Conteúdo dos Materiais de Estudo oficiais incorporado** — o app foi enriquecido com os PDFs oficiais de **Experiência do Cliente** e **Produção** (Treinamento Brasil), preservando tempos, temperaturas e procedimentos exatamente como na fonte.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🎯",
+          "text": "**+110 questões novas no banco central** distribuídas pelos temas operacionais: Linha, Chapa, McFritas, Fritos, LOPE, Salão e NGK, Bebidas e Sobremesas, Montagem e Entrega, Influencer Vendedor e Pagamento, e Drive-Thru. Disponíveis no simulado, batalha e arena.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🛵",
+          "text": "**Nova categoria McDelivery** — montagem, lacre e entrega de pedidos (saco C, sacola D+, selo inviolável, plástico filme), com **10 questões** próprias e guia dedicado.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🧩",
+          "text": "**+100 questões nos quizzes das páginas dos guias** — a aba *Quiz* de cada guia recebeu perguntas extras baseadas no material oficial.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "📚",
+          "text": "**Card “Material de estudo oficial” em cada guia** — um resumo com os fatos-chave (tempos, temperaturas, sequências e procedimentos) foi adicionado ao topo das páginas de conteúdo.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🔄",
+          "text": "**App atualizado (Service Worker v41)** — o novo conteúdo fica disponível **offline** desde a instalação do PWA.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
       "version": "v13",
       "date": "2026-05-30",
       "date_display": "30 Mai 2026",
