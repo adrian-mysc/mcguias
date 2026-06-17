@@ -33,7 +33,10 @@
 | 18 | Temp. do **banho-maria das coberturas** (sundae) | **57°C a 63°C** (extração do sundae: -9°C a -8°C) | ✅ |
 | 19 | Temp. de extração dos **refrigerantes** | **1°C a 4°C** | ✅ |
 | 20 | Tempo do **café na jarra** da máquina | **60 minutos** | ✅ |
-| 21 | Aquecimento da **máquina de leite** (café da manhã) | Não consta no app | 🟡 |
+| 21 | Temperatura do reservatório de leite (Foamino — café da manhã) | **Acima de 71,1°C** (validade 8 h) | ✅ |
+| 21b | Temperatura do reservatório de leite (Jura / Franke / Geo Coffee) | **1°C a 4°C** (validade 48 h) | ✅ |
+| 21c | Validade secundária do **leite integral** aberto | **48 horas** (refrigerado) | ✅ |
+| 21d | Frequência de limpeza do **sistema de leite** das máquinas | **Diariamente** | ✅ |
 | 22 | Frequência de higienização dos **utensílios** que tocam alimento | **A cada 4 horas** | ✅ |
 | 23 | Frequência de lavar/higienizar a **máquina de sorvete** | Não consta no app | 🟡 |
 
@@ -64,8 +67,7 @@
 ---
 
 ### Resumo
-- **Confirmadas pelo app/embalagem:** 28 respostas.
-- **A confirmar (🟡):** empilhamento 10:1 (12 vs 16), aquecimento da máquina de
-  leite, higienização da máquina de sorvete, OEPE (90 s vs 120 s), Drive
-  (60 s vs 18 s), experiência do Delivery, princípios da Cultura de Serviço,
-  "3 Os" e os Styles do Influencer.
+- **Confirmadas pelo app/embalagem/comunicado:** 32 respostas.
+- **A confirmar (🟡):** empilhamento 10:1 (12 vs 16), higienização da máquina de
+  sorvete, OEPE (90 s vs 120 s), Drive (60 s vs 18 s), experiência do Delivery,
+  princípios da Cultura de Serviço, "3 Os" e os Styles do Influencer.
