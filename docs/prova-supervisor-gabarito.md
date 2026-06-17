@@ -25,7 +25,7 @@
 | # | Pergunta | Resposta | Status |
 |---|----------|----------|:---:|
 | 12 | Temp. e aquecimento das **chapas** | **Superior 218°C / Inferior 177°C · 20 min** | ✅ |
-| 13 | **Empilhamento máximo** das carnes 10:1 na gaveta UHC | **12 carnes** (material interno também cita 16) | 🟡 |
+| 13 | **Empilhamento máximo** das carnes 10:1 na gaveta UHC | **12 carnes** | ✅ |
 | 14 | Tempo máximo de **remoção das carnes 10:1** | **18 segundos** | ✅ |
 | 15 | Tempo de **fritura do McChicken** | **3 min 30 s** (frango prensado) | ✅ |
 | 16 | Temp. de fritura das **McFritas** | **168°C** (validade na estufa: 7 min) | ✅ |
@@ -45,8 +45,8 @@
 | # | Pergunta | Resposta | Status |
 |---|----------|----------|:---:|
 | 24 | Tempo máximo de **R2P** (Receipt to Present) | **90 segundos** (Preparando → Pronto) | ✅ |
-| 25 | Tempo do **OEPE** / serviço no balcão | **90 s para pedir + 90 s para retirar** (a prova marcou 120 s) | 🟡 diverge |
-| 26 | Tempo para cobrar/retirar no **Drive** | App: **60 s** para retirar (a prova marcou 18 s) | 🟡 diverge |
+| 25 | Tempo do **OEPE** / serviço no balcão | **90 s para pedir + 90 s para retirar** | ✅ |
+| 26 | Tempo para retirar no **Drive** | **60 s** (90 s para pedir + 60 s para retirar) | ✅ |
 | 27 | Quando abrir o **lado 2 do Made for You** | **3 pessoas no lado 1 OU a partir de 125 lanches/hora** | ✅ |
 | 28 | **Ordem de montagem** no delivery | **Sanduíches → Batatas fritas → Bebidas e sobremesas** | ✅ |
 | 29 | Tempo total de experiência no **Delivery** | App tem balcão 90 s / 3 min 30 s; Delivery não consta | 🟡 |
@@ -67,7 +67,6 @@
 ---
 
 ### Resumo
-- **Confirmadas pelo app/embalagem/comunicado:** 32 respostas.
-- **A confirmar (🟡):** empilhamento 10:1 (12 vs 16), higienização da máquina de
-  sorvete, OEPE (90 s vs 120 s), Drive (60 s vs 18 s), experiência do Delivery,
-  princípios da Cultura de Serviço, "3 Os" e os Styles do Influencer.
+- **Confirmadas pelo app/embalagem/comunicado:** 35 respostas.
+- **A confirmar (🟡):** higienização da máquina de sorvete, experiência do
+  Delivery, princípios da Cultura de Serviço, "3 Os" e os Styles do Influencer.
