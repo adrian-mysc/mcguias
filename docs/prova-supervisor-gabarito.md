@@ -17,8 +17,8 @@
 | 7 | Vida primária da **Mostarda Pouch** (907 g) | **~180 dias** (VAL 09/12/2026; FAB ilegível) | 🟡 |
 | 8 | Vida primária das **cebolas desidratadas** | **365 dias** | ✅ |
 | 9 | Validade dos **molhos de McNuggets** | **90 dias** | ✅ |
-| 10 | Vida primária do **leite** | App tem aberto 48 h / Foamino 8 h; primária não consta | 🟡 |
-| 11 | Vida secundária do **cone da casquinha** | Não consta no app (calda 30 dias refrigerada) | 🟡 |
+| 10 | Vida primária do **leite** | **120 dias** (FAB 05/05 → VAL 02/09/2026) | ✅ |
+| 11 | Vida (secundária) do **cone da casquinha** | **3 dias** | ✅ |
 
 ## Produção / equipamentos
 
@@ -64,8 +64,8 @@
 ---
 
 ### Resumo
-- **Confirmadas pelo app/embalagem:** 25 respostas.
-- **A confirmar (🟡):** validade do leite, cone da casquinha, mostarda (FAB ilegível),
-  empilhamento 10:1 (12 vs 16), aquecimento da máquina de leite, higienização da
-  máquina de sorvete, OEPE (90 s vs 120 s), Drive (60 s vs 18 s), experiência do
-  Delivery, princípios da Cultura de Serviço, "3 Os" e os Styles do Influencer.
+- **Confirmadas pelo app/embalagem:** 27 respostas.
+- **A confirmar (🟡):** mostarda (FAB ilegível), empilhamento 10:1 (12 vs 16),
+  aquecimento da máquina de leite, higienização da máquina de sorvete, OEPE
+  (90 s vs 120 s), Drive (60 s vs 18 s), experiência do Delivery, princípios da
+  Cultura de Serviço, "3 Os" e os Styles do Influencer.
