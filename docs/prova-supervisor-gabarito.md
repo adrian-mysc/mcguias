@@ -45,7 +45,7 @@
 | # | Pergunta | Resposta | Status |
 |---|----------|----------|:---:|
 | 24 | Tempo máximo de **R2P** (Receipt to Present) | **90 segundos** (Preparando → Pronto) | ✅ |
-| 25 | Tempo do **OEPE** / serviço no balcão | **90 s para pedir + 90 s para retirar** | ✅ |
+| 25 | Tempo **ideal do OEPE** (Order End Present End) | **120 segundos** | ✅ |
 | 26 | Tempo para retirar no **Drive** | **60 s** (90 s para pedir + 60 s para retirar) | ✅ |
 | 27 | Quando abrir o **lado 2 do Made for You** | **3 pessoas no lado 1 OU a partir de 125 lanches/hora** | ✅ |
 | 28 | **Ordem de montagem** no delivery | **Sanduíches → Batatas fritas → Bebidas e sobremesas** | ✅ |
