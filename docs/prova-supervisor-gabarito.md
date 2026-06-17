@@ -14,7 +14,7 @@
 | 4 | Vida primária do **óleo vegetal** | **180 dias** (em uso: 14 dias) | ✅ |
 | 5 | Vida primária do **Ketchup Bag** (6 kg) | **90 dias** (FAB 29/04 → VAL 28/07/2026) | ✅ |
 | 6 | Vida primária do **Ketchup Pouch** (1,15 kg) | **90 dias** (FAB 27/04 → VAL 26/07/2026) | ✅ |
-| 7 | Vida primária da **Mostarda Pouch** (907 g) | **~180 dias** (VAL 09/12/2026; FAB ilegível) | 🟡 |
+| 7 | Vida primária da **Mostarda Pouch** (907 g) | **180 dias** | ✅ |
 | 8 | Vida primária das **cebolas desidratadas** | **365 dias** | ✅ |
 | 9 | Validade dos **molhos de McNuggets** | **90 dias** | ✅ |
 | 10 | Vida primária do **leite** | **120 dias** (FAB 05/05 → VAL 02/09/2026) | ✅ |
@@ -64,8 +64,8 @@
 ---
 
 ### Resumo
-- **Confirmadas pelo app/embalagem:** 27 respostas.
-- **A confirmar (🟡):** mostarda (FAB ilegível), empilhamento 10:1 (12 vs 16),
-  aquecimento da máquina de leite, higienização da máquina de sorvete, OEPE
-  (90 s vs 120 s), Drive (60 s vs 18 s), experiência do Delivery, princípios da
-  Cultura de Serviço, "3 Os" e os Styles do Influencer.
+- **Confirmadas pelo app/embalagem:** 28 respostas.
+- **A confirmar (🟡):** empilhamento 10:1 (12 vs 16), aquecimento da máquina de
+  leite, higienização da máquina de sorvete, OEPE (90 s vs 120 s), Drive
+  (60 s vs 18 s), experiência do Delivery, princípios da Cultura de Serviço,
+  "3 Os" e os Styles do Influencer.
