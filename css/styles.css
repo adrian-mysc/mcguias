@@ -46,8 +46,8 @@ a, button, [role="button"], input, select, label { touch-action: manipulation; }
   --radius-md: 14px;
   --radius-lg: 20px;
 
-  --font-display: 'Syne', sans-serif;
-  --font-body:    'Figtree', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'Nunito', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
