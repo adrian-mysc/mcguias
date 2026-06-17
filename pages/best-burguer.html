@@ -130,7 +130,7 @@
     /* Config boxes */
     .bb-config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .bb-config-box {
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: 12px; padding: 12px; text-align: center;
     }
     [data-theme="dark"] .bb-config-box { background: #1e1d1b; border-color: #2e2c28; }
@@ -155,7 +155,7 @@
     /* Pão chips */
     .bb-pao-chip {
       display: inline-flex; align-items: center; gap: 6px;
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: 8px; padding: 8px 12px; font-size: 12px; font-weight: 600;
       margin-bottom: 6px; width: 100%;
     }
@@ -185,7 +185,7 @@
     .bb-peg {
       display: flex; align-items: center; gap: 10px;
       padding: 10px 12px; border-radius: 10px;
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
       font-size: 13px;
     }
     .bb-peg-circle {
@@ -199,7 +199,7 @@
 
     /* Sanduíche quality cards */
     .bb-sandwich {
-      background: var(--card); border: 1.5px solid var(--border);
+      background: var(--card); border: 1px solid var(--border);
       border-radius: 12px; padding: 14px; margin-bottom: 10px;
     }
     [data-theme="dark"] .bb-sandwich { background: #1e1d1b; border-color: #2e2c28; }
@@ -1143,7 +1143,7 @@
           <div style="display:flex;flex-direction:column;gap:7px">`;
       q.options.forEach((opt, oi) => {
         html += `<button onclick="answerBB(${i},${oi},'${q.answer.replace(/'/g,"\\'")}',this)"
-          style="background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;
+          style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 13px;
           text-align:left;font-family:var(--font-body);font-size:13px;cursor:pointer;color:var(--text);transition:all 0.15s">
           ${opt}</button>`;
       });
