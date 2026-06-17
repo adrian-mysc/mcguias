@@ -250,3 +250,25 @@ o sync via SDK estava falhando para a maioria.
 - **Sem bundler**: assets são servidos diretamente. A exceção é `js/main.js` (gerado por `build/concat.sh`).
 - **`pages/perfil.html`** é uma página monolítica com o script inline — intencional para evitar dependências extras.
 - **Dark mode**: controlado por `data-theme` no `<html>` via `js/theme.js`. Use variáveis CSS (`var(--bg)`, `var(--text)`, etc.).
+
+---
+
+## Estética Frontend
+
+Evite o "AI slop" — outputs genéricos e previsíveis. Ao criar ou modificar interfaces:
+
+**Tipografia**: Escolha fontes belas, únicas e interessantes. Evite Arial, Inter, Roboto e fontes de sistema genéricas. Prefira escolhas distintivas que elevem a estética.
+
+**Cor e Tema**: Comprometa-se com uma estética coesa usando variáveis CSS. Cores dominantes com acentos nítidos superam paletas tímidas e uniformemente distribuídas. Inspire-se em temas de IDE e estéticas culturais.
+
+**Motion**: Use animações para efeitos e micro-interações. Priorize soluções CSS puras. Um carregamento de página bem orquestrado com reveals escalonados (`animation-delay`) cria mais deleite do que micro-interações espalhadas.
+
+**Backgrounds**: Crie atmosfera e profundidade em vez de cores sólidas. Use gradientes CSS em camadas, padrões geométricos ou efeitos contextuais que combinem com a estética geral.
+
+**Evite explicitamente**:
+- Famílias de fontes superusadas (Inter, Roboto, Arial, Space Grotesk, fontes de sistema)
+- Esquemas de cores clichês (gradientes roxos em fundo branco)
+- Layouts e padrões de componentes previsíveis
+- Design "cookie-cutter" sem caráter específico ao contexto
+
+Interprete criativamente e faça escolhas inesperadas que pareçam genuinamente projetadas para o contexto. Varie entre temas claros e escuros, fontes e estéticas diferentes.
