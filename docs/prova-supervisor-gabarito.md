@@ -38,7 +38,13 @@
 | 21c | Validade secundária do **leite integral** aberto | **48 horas** (refrigerado) | ✅ |
 | 21d | Frequência de limpeza do **sistema de leite** das máquinas | **Diariamente** | ✅ |
 | 22 | Frequência de higienização dos **utensílios** que tocam alimento | **A cada 4 horas** | ✅ |
-| 23 | Frequência de lavar/higienizar a **máquina de sorvete** | Não consta no app | 🟡 |
+| 23 | Higienização da **máquina de sorvete** (agitadores de mix, Ficha 12E) | **Diariamente** ou sempre que necessário | ✅ |
+| 23b | Temperatura dos **reservatórios** da máquina de sorvete | **1°C a 4°C** | ✅ |
+| 23c | Temperatura de **extração do sorvete** (Ficha 12J) | **-9°C a -8°C** | ✅ |
+| 23d | Calibração da **velocidade de extração** (Ficha 12O) | 5 a 7,5 oz/10 s — **2× ao dia** | ✅ |
+| 23e | Substituição das **lâminas do raspador** | **A cada 2 desmontagens (14 dias)** | ✅ |
+| 23f | Quebra de ciclo de **orings e sapatas** | **Semestralmente** | ✅ |
+| 23g | **Ventilação** da máquina (lateral/traseiro) | **10 cm / 22 cm** | ✅ |
 
 ## Serviço / Drive / experiência
 
@@ -67,6 +73,6 @@
 ---
 
 ### Resumo
-- **Confirmadas pelo app/embalagem/comunicado:** 35 respostas.
-- **A confirmar (🟡):** higienização da máquina de sorvete, experiência do
-  Delivery, princípios da Cultura de Serviço, "3 Os" e os Styles do Influencer.
+- **Confirmadas pelo app/embalagem/comunicado:** 42 respostas.
+- **A confirmar (🟡):** experiência do Delivery, princípios da Cultura de
+  Serviço, "3 Os" e os Styles do Influencer.
