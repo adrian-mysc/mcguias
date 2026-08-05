@@ -2533,13 +2533,13 @@
       "tags": [],
       "pergunta": "Qual é a temperatura interna mínima das carnes 10:1 após cozida?",
       "alternativas": [
-        "69°C — 8 carnes",
+        "70°C — todas as carnes",
         "69°C — 9 carnes",
         "72°C — 8 carnes",
         "74°C — todas as carnes"
       ],
       "respostaCorreta": 0,
-      "explicacao": "A temperatura interna mínima das carnes 10:1 é 69°C verificada nas 8 carnes da rodada.",
+      "explicacao": "A temperatura interna mínima das carnes 10:1 é 70°C, e todas as carnes da rodada devem atingir essa temperatura (padrão Best Burger).",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2713,13 +2713,13 @@
       "tags": [],
       "pergunta": "Qual é o tempo de vida dos produtos na mesa de condimentação?",
       "alternativas": [
+        "15 minutos",
+        "30 minutos",
         "1 hora",
-        "2 horas",
-        "3 horas",
-        "4 horas"
+        "2 horas"
       ],
       "respostaCorreta": 1,
-      "explicacao": "Os produtos têm vida útil de 2 horas na mesa de condimentação.",
+      "explicacao": "Os produtos têm objetivo de permanência de 30 minutos na mesa de condimentação (padrão Best Burger) — mesas com menos produto e mais frequência.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2938,13 +2938,13 @@
       "tags": [],
       "pergunta": "Qual o ponto de partida para o cozimento das carnes 10:1?",
       "alternativas": [
-        "34 segundos",
         "36 segundos",
-        "38 segundos",
-        "40 segundos"
+        "39 segundos",
+        "41 segundos",
+        "44 segundos"
       ],
-      "respostaCorreta": 2,
-      "explicacao": "O ponto de partida para cozimento das carnes 10:1 é de 38 segundos.",
+      "respostaCorreta": 1,
+      "explicacao": "O ponto de partida para cozimento das carnes 10:1 no Best Burger é de 39 segundos na chapa modelo Antunes (41 segundos na Taylor Next Generation).",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

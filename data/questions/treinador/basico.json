@@ -1361,15 +1361,15 @@
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [],
-      "pergunta": "Qual é a temperatura da UHC?",
+      "pergunta": "Qual é a temperatura da UHC para as carnes vermelhas?",
       "alternativas": [
-        "93ºC",
-        "92ºC",
-        "94ºC",
-        "95ºC"
+        "71ºC",
+        "75ºC",
+        "79ºC",
+        "93ºC"
       ],
-      "respostaCorreta": 3,
-      "explicacao": "A temperatura da UHC é de 95°C.",
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura da UHC para as carnes vermelhas é de 79°C (175°F).",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2488,13 +2488,13 @@
       "tags": [],
       "pergunta": "Qual é o tempo de vida do pão congelado?",
       "alternativas": [
-        "90 dias a partir da data do giro de estoque da Arizta",
-        "90 dias a partir da data de validade secundária certificado pela empresa",
-        "90 dias a partir da data de armazenagem no Chicago certificado pela empresa",
-        "90 dias a partir da data de fabricação"
+        "120 dias a partir da data do giro de estoque da Arizta",
+        "120 dias a partir da data de validade secundária certificado pela empresa",
+        "120 dias a partir da data de armazenagem no Chicago certificado pela empresa",
+        "120 dias a partir da data de fabricação"
       ],
       "respostaCorreta": 3,
-      "explicacao": "O tempo de vida do pão congelado é de 90 dias a partir da data de fabricação.",
+      "explicacao": "O tempo de vida do pão congelado (validade primária) é de 120 dias a partir da data de fabricação.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -5324,12 +5324,12 @@
       "tags": [],
       "pergunta": "Qual é a calibragem do molho Big Mac?",
       "alternativas": [
-        "6 tiros = 59 ml (2 oz lá)",
-        "10 tiros = 59 Mls (2oz Fl)",
-        "7 tiros = 59 Mls (2 oz Fl)"
+        "1 tiro = 15 ml (1/2 oz)",
+        "6 tiros = 59 ml (2 oz)",
+        "2 tiros = 15 ml (1/2 oz)"
       ],
       "respostaCorreta": 0,
-      "explicacao": "A calibragem correta do molho Big Mac é 6 tiros = 59 ml (2 oz lá).",
+      "explicacao": "A calibragem correta do molho Big Mac é 1 tiro = 15 ml (1/2 oz), na pistola Flex Prep configurada para 1 ponto de saída.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
