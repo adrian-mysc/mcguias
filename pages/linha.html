@@ -73,9 +73,9 @@
           <table class="data-table">
             <thead><tr><th>Tempo / Temperatura</th><th>Padrão</th></tr></thead>
             <tbody>
-            <tr><td>Tostadeira rápida</td><td><strong>293°C · compressão 5D · caramelização 22"</strong></td></tr>
-            <tr><td>Tostadeira HEBT5V</td><td><strong>275°C · compressão 5 · caramelização 22"</strong></td></tr>
-            <tr><td>Carnes 10:1, 4:1, 3:1</td><td><strong>85°C</strong></td></tr>
+            <tr><td>Tostadeira rápida</td><td><strong>293°C · caramelização 22"</strong></td></tr>
+            <tr><td>Tostadeira HEBT5V</td><td><strong>Placas A/B 271°C · Placa C 254°C · compressão 4D · caramelização 22"</strong></td></tr>
+            <tr><td>Carnes 10:1, 4:1, 3:1</td><td><strong>79°C</strong></td></tr>
             <tr><td>Carnes McNuggets, Chicken e Junior</td><td><strong>93°C</strong></td></tr>
             <tr><td>Mesa de condimentação</td><td><strong>49°C a 57°C</strong></td></tr>
             <tr><td>Tempo de reação do Iniciador</td><td><strong>3 a 5 segundos</strong></td></tr>
@@ -142,7 +142,7 @@
             </div>
             <div class="stat-box yellow">
               <div class="stat-label">Compressão do Pão</div>
-              <div class="stat-value">5D</div>
+              <div class="stat-value">4D</div>
               <div class="stat-sub">Temp. interna: &gt;70°C</div>
             </div>
           </div>
@@ -221,7 +221,7 @@
               • <strong>Ketchup Regular:</strong> 6 tiros = 2 OZ / 60 ML<br>
               • <strong>Quarteirão:</strong> 6 tiros = 3 OZ / 90 ML
             </div></div>
-            <div class="step"><div class="step-num">4</div><div class="step-text">Dispensador de Molho de <strong>1/2 OZ BIG MAC</strong>: apertar o gatilho 4 vezes para dispensar 4 tiros. Verificar o copo de calibragem — deve haver <strong>2 onças fluida = 60 ML</strong></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Dispensador de Molho <strong>Big Mac</strong>: pistola Flex Prep configurada para 1 ponto de saída. Verificar o copo de calibragem — deve haver <strong>15 ml (½ OZ)</strong></div></div>
           </div>
         </div>
       </div>
@@ -267,9 +267,9 @@
         <div class="card-head"><div class="card-head-icon">🌅</div><h2>Antes de Iniciar a Montagem</h2></div>
         <div class="card-body">
           <div class="check-item"><input type="checkbox"><label>Mesa de condimentação limpa e sanitizada</label></div>
-          <div class="check-item"><input type="checkbox"><label>Tostadeira na temperatura correta — ciclo de caramelização <strong>11 segundos</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Tostadeira na temperatura correta — ciclo de caramelização <strong>22 segundos</strong></label></div>
           <div class="check-item"><input type="checkbox"><label>UHC na temperatura correta (<strong>79°C</strong>) com gavetas e lâminas higienizadas</label></div>
-          <div class="check-item"><input type="checkbox"><label>Molhos calibrados: Big Mac <strong>0,75oz / 3 tiros</strong> · Ketchup/Mostarda <strong>0,25oz / 1 tiro</strong></label></div>
+          <div class="check-item"><input type="checkbox"><label>Molhos calibrados: Big Mac <strong>15 ml (½oz) / 1 ponto de saída</strong> · Ketchup/Mostarda <strong>0,25oz / 1 tiro</strong></label></div>
           <div class="check-item"><input type="checkbox"><label>Ingredientes com tempo de vida marcado: alface, tomate, cebola, queijo</label></div>
           <div class="check-item"><input type="checkbox"><label>Embalagens corretas disponíveis para cada sanduíche</label></div>
           <div class="check-item"><input type="checkbox"><label>KVS / ORB / BumpBar funcionando</label></div>
@@ -338,14 +338,14 @@
         question: "Qual a temperatura da Tostadeira rápida na linha?",
         options: ["275°C", "293°C", "218°C", "168°C"],
         answer: "293°C",
-        explanation: "A Tostadeira rápida opera a 293°C, com compressão 5D e ciclo de caramelização de 22 segundos."
+        explanation: "A Tostadeira rápida opera a 293°C, com ciclo de caramelização de 22 segundos."
       },
       {
         category: "🍞 Tostadeira",
-        question: "Qual a temperatura da Tostadeira HEBT5V?",
-        options: ["250°C", "275°C", "293°C", "300°C"],
-        answer: "275°C",
-        explanation: "A Tostadeira HEBT5V opera a 275°C, com compressão 5 e ciclo de caramelização de 22 segundos."
+        question: "Qual a temperatura das placas A e B da Tostadeira HEBT5V?",
+        options: ["250°C", "254°C", "271°C", "300°C"],
+        answer: "271°C",
+        explanation: "A Tostadeira HEBT5V opera com placas A e B a 271°C e placa C a 254°C, com compressão 4D e ciclo de caramelização de 22 segundos."
       },
       {
         category: "🍞 Tostadeira",
@@ -379,8 +379,8 @@
         category: "🌡️ UHC",
         question: "Qual a temperatura das carnes 10:1, 4:1 e 3:1 na linha?",
         options: ["79°C", "85°C", "93°C", "100°C"],
-        answer: "85°C",
-        explanation: "As carnes 10:1, 4:1 e 3:1 ficam a 85°C."
+        answer: "79°C",
+        explanation: "As carnes 10:1, 4:1 e 3:1 (vermelhas) ficam a 79°C na UHC. Carnes brancas (frango) ficam a 85°C."
       },
       {
         category: "🌡️ UHC",

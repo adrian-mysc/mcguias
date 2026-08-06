@@ -28,7 +28,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--font-body);
       background: var(--bg, #f5f2ec);
       color: var(--text, #1c1a17);
       min-height: 100vh;
@@ -37,19 +37,32 @@
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(135deg, #DA291C 0%, #8B1A11 100%);
+      background: var(--red-gradient);
       color: #fff;
       padding: 22px 16px 24px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .hero-icon { font-size: 44px; margin-bottom: 8px; }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 65% 70% at 88% 10%, rgba(255,199,44,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 60% at -5% 100%, rgba(0,0,0,0.18) 0%, transparent 55%);
+    }
+    .hero-icon { font-size: 44px; margin-bottom: 8px; position: relative; z-index: 1; }
     .hero h1 {
-      font-family: 'DM Sans', sans-serif;
+      font-family: var(--font-display);
       font-size: 22px;
       font-weight: 800;
       letter-spacing: -.3px;
+      position: relative;
+      z-index: 1;
     }
-    .hero p { font-size: 13px; opacity: .88; margin-top: 5px; }
+    .hero p { font-size: 13px; opacity: .88; margin-top: 5px; position: relative; z-index: 1; }
 
     /* ── SEARCH ── */
     .search-wrap { padding: 14px 14px 4px; }
