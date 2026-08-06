@@ -408,8 +408,8 @@
       /* ── UHC / TEMPOS DE MANUTENÇÃO ── */
       { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
         question:"Qual é o tempo de vida útil dos hambúrgueres 10:1, 3:1, 4:1 e Angus na UHC?",
-        options:["10 min","15 min","20 min","30 min"], answer:"15 min",
-        explanation:"Hambúrgueres 10:1, 3:1, 4:1 e Angus têm vida útil de 15 minutos na UHC." },
+        options:["10 min","15 min","20 min","30 min"], answer:"10 min",
+        explanation:"No Best Burger, hambúrgueres 10:1, 3:1, 4:1 e Angus têm vida útil de 10 minutos na UHC (reduzido de 15 para 10)." },
 
       { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
         question:"Qual é o tempo de vida útil do Big Tasty na UHC?",
@@ -448,8 +448,8 @@
 
       { cat:"uhc", category:"⏰ Tempos UHC", mode:"lacuna",
         question:"O hambúrguer 10:1 tem vida útil de ___ minutos na UHC.",
-        answer:"15", unit:"min",
-        explanation:"Hambúrgueres 10:1 (e também 3:1, 4:1, Angus) têm 15 minutos na UHC." },
+        answer:"10", unit:"min",
+        explanation:"No Best Burger, hambúrgueres 10:1 (e também 3:1, 4:1, Angus) têm 10 minutos na UHC." },
 
       { cat:"uhc", category:"⏰ Tempos UHC", mode:"lacuna",
         question:"O Big Tasty tem vida útil de ___ minutos na UHC.",
@@ -467,8 +467,8 @@
         explanation:"Nuggets têm 20 minutos na UHC." },
 
       { cat:"uhc", category:"⏰ Tempos UHC", mode:"flash",
-        question:"Qual o tempo de UHC do hambúrguer Angus?", answer:"15 min",
-        explanation:"Angus tem 15 minutos na UHC (igual ao 10:1, 3:1 e 4:1)." },
+        question:"Qual o tempo de UHC do hambúrguer Angus?", answer:"10 min",
+        explanation:"No Best Burger, Angus tem 10 minutos na UHC (igual ao 10:1, 3:1 e 4:1)." },
 
       { cat:"uhc", category:"⏰ Tempos UHC", mode:"flash",
         question:"Qual o tempo de UHC do Chicken (frango empanado)?", answer:"30 min",
@@ -480,9 +480,9 @@
         explanation:"Produtos no congelador portátil devem ser descartados após 2 horas." },
 
       { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
-        question:"Qual é a temperatura de operação da UHC?",
+        question:"Qual é a temperatura de operação da UHC para carnes vermelhas?",
         options:["60°C","72°C","79°C","85°C"], answer:"79°C",
-        explanation:"A UHC opera a 79°C para manter os produtos seguros e na temperatura correta." },
+        explanation:"A UHC opera a 79°C para carnes vermelhas (85°C para carnes brancas/frango), mantendo os produtos seguros e na temperatura correta." },
 
       { cat:"uhc", category:"⏰ Tempos UHC", mode:"mc",
         question:"Qual é o tempo de vida útil do Pão de Queijo na UHC?",
@@ -609,9 +609,9 @@
         explanation:"A zona de perigo é de 5°C a 60°C. Nessa faixa bactérias se multiplicam rapidamente. Fora dela, o crescimento é interrompido." },
 
       { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
-        question:"A qual temperatura a UHC deve operar para manter os produtos quentes?",
+        question:"A qual temperatura a UHC deve operar para carnes vermelhas?",
         options:["65°C","72°C","79°C","85°C"], answer:"79°C",
-        explanation:"A UHC opera a 79°C, garantindo que os produtos se mantenham acima da zona de perigo." },
+        explanation:"A UHC opera a 79°C para carnes vermelhas (85°C para carnes brancas/frango), garantindo que os produtos se mantenham acima da zona de perigo." },
 
       { cat:"temp", category:"🌡️ Temperaturas", mode:"mc",
         question:"Qual deve ser a temperatura mínima interna dos produtos após o cozimento para segurança alimentar?",
@@ -669,17 +669,17 @@
         explanation:"Chapa superior: 218°C." },
 
       { cat:"temp", category:"🌡️ Temperaturas", mode:"lacuna",
-        question:"A UHC opera a ___ °C.",
+        question:"A UHC opera a ___ °C para carnes vermelhas.",
         answer:"79", unit:"°C",
-        explanation:"A UHC opera a 79°C." },
+        explanation:"A UHC opera a 79°C para carnes vermelhas (85°C para carnes brancas/frango)." },
 
       { cat:"temp", category:"🌡️ Temperaturas", mode:"flash",
         question:"Qual a zona de perigo alimentar?", answer:"5°C a 60°C",
         explanation:"Nessa faixa bactérias se multiplicam rapidamente." },
 
       { cat:"temp", category:"🌡️ Temperaturas", mode:"flash",
-        question:"Temperatura de operação da UHC?", answer:"79°C",
-        explanation:"A UHC opera a 79°C." },
+        question:"Temperatura de operação da UHC para carnes vermelhas?", answer:"79°C",
+        explanation:"A UHC opera a 79°C para carnes vermelhas (85°C para carnes brancas/frango)." },
 
       { cat:"temp", category:"🌡️ Temperaturas", mode:"flash",
         question:"Temperatura mínima interna de alimentos cozidos?", answer:"74°C",

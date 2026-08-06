@@ -42,6 +42,10 @@ a, button, [role="button"], input, select, label { touch-action: manipulation; }
   --shadow-md: 0 2px 8px rgba(0,0,0,0.06), 0 6px 24px rgba(0,0,0,0.08);
   --shadow-lg: 0 4px 16px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.12);
 
+  --red-gradient: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+  --shadow-red: 0 4px 20px rgba(218,41,28,0.28), 0 2px 8px rgba(218,41,28,0.14);
+  --shadow-red-lg: 0 8px 32px rgba(218,41,28,0.34), 0 3px 12px rgba(218,41,28,0.18);
+
   --radius-sm: 10px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -240,7 +244,7 @@ h2 { letter-spacing: -0.3px; }
   flex-shrink: 0;
 }
 .badge-yellow { background: var(--yellow); color: var(--text); }
-.badge-red { background: var(--red); color: white; }
+.badge-red { background: var(--red-gradient); color: white; }
 .badge-green { background: var(--green); color: white; }
 .badge-blue { background: var(--blue); color: white; }
 .card-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 14px; }
@@ -525,7 +529,7 @@ h2 { letter-spacing: -0.3px; }
   display: flex; gap: 10px; justify-content: flex-end;
 }
 .btn-primary {
-  background: var(--red);
+  background: var(--red-gradient);
   color: white;
   padding: 11px 22px;
   border-radius: var(--radius-md);
@@ -533,9 +537,12 @@ h2 { letter-spacing: -0.3px; }
   font-size: 14px;
   font-family: var(--font-display);
   letter-spacing: 0.5px;
-  transition: background 0.15s, transform 0.1s;
+  box-shadow: var(--shadow-red);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: box-shadow 0.2s, transform 0.15s;
 }
-.btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+.btn-primary:hover { box-shadow: var(--shadow-red-lg); transform: translateY(-1px); }
+.btn-primary:active { transform: scale(0.98); transition-duration: .08s; }
 .btn-secondary {
   background: var(--bg);
   color: var(--text);
@@ -701,14 +708,27 @@ h2 { letter-spacing: -0.3px; }
 
 /* ---- Hero ------------------------------------------------ */
 .hero {
-  background: var(--red);
+  background: var(--red-gradient);
   padding: 28px 16px 24px;
   margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 65% 70% at 88% 10%, rgba(255,199,44,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at -5% 100%, rgba(0,0,0,0.18) 0%, transparent 55%);
 }
 .hero-inner {
   max-width: 780px;
   margin: 0 auto;
   color: white;
+  position: relative;
+  z-index: 1;
 }
 .hero-inner h2 {
   font-size: 26px;
@@ -1197,15 +1217,15 @@ input, select, textarea,
 .ob-mode span { font-size: 12px; color: var(--muted); }
 .ob-tips { display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 4px; }
 .ob-tip { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.5; text-align: left; }
-.ob-btn-start { margin-top: 8px; width: 100%; padding: 14px; background: var(--red); color: #fff; border: none; border-radius: var(--radius-md); font-family: var(--font-display); font-size: 16px; font-weight: 800; cursor: pointer; transition: background .15s; }
-.ob-btn-start:hover { background: var(--red-dark, #b71c1c); }
+.ob-btn-start { margin-top: 8px; width: 100%; padding: 14px; background: var(--red-gradient); color: #fff; border: none; border-radius: var(--radius-md); font-family: var(--font-display); font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: var(--shadow-red); transition: box-shadow .2s, transform .1s; }
+.ob-btn-start:hover { box-shadow: var(--shadow-red-lg); transform: translateY(-1px); }
 #ob-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; }
 #ob-dots { display: flex; gap: 6px; }
 .ob-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: background .2s, width .2s; }
 .ob-dot.active { background: var(--red); width: 20px; border-radius: 4px; }
 .ob-btn-skip { background: none; border: none; font-size: 13px; color: var(--muted); cursor: pointer; padding: 8px 4px; font-family: var(--font-body); }
-.ob-btn-next { background: var(--red); color: #fff; border: none; border-radius: var(--radius-md); padding: 10px 20px; font-family: var(--font-display); font-size: 13px; font-weight: 800; cursor: pointer; transition: background .15s; }
-.ob-btn-next:hover { background: var(--red-dark, #b71c1c); }
+.ob-btn-next { background: var(--red-gradient); color: #fff; border: none; border-radius: var(--radius-md); padding: 10px 20px; font-family: var(--font-display); font-size: 13px; font-weight: 800; cursor: pointer; box-shadow: var(--shadow-red); transition: box-shadow .2s, transform .1s; }
+.ob-btn-next:hover { box-shadow: var(--shadow-red-lg); transform: translateY(-1px); }
 
 /* ---- Share Button ---------------------------------------- */
 .btn-share {
@@ -1292,12 +1312,12 @@ input, select, textarea,
   bottom: calc(80px + env(safe-area-inset-bottom));
   right: 16px;
   width: 52px; height: 52px;
-  background: var(--red);
+  background: var(--red-gradient);
   color: white;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 22px;
-  box-shadow: 0 4px 18px rgba(218,41,28,0.40);
+  box-shadow: var(--shadow-red-lg);
   z-index: 290;
   text-decoration: none;
   transition: transform 0.22s cubic-bezier(0.34,1.5,0.64,1);

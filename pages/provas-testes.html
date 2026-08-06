@@ -472,11 +472,11 @@
         opcoes: [
           "2 horas",
           "7 dias, incluindo a data de fabricação",
-          "48 horas, incluindo 12 horas de descongelamento",
+          "48 horas, incluindo o descongelamento mínimo de 4 horas",
           "6 dias, incluindo a data de fabricação"
         ],
         correta: 2,
-        explicacao: "O pão congelado após descongelado tem vida útil de 48 horas, incluindo as 12 horas de descongelamento."
+        explicacao: "O pão congelado tem validade secundária de 48 horas após retirado do freezer, incluindo o descongelamento mínimo de 4 horas (consumo recomendado em até 24 horas)."
       },
       {
         texto: "Qual é o tempo de aquecimento das fritadeiras, tempo de cozimento das tortas e tempo de drenagem dos produtos fritos?",
@@ -699,15 +699,15 @@
         explicacao: "Os sucos de qualidade devem estar frios, com cor brilhante e sabor doce."
       },
       {
-        texto: "Qual é a temperatura da UHC?",
+        texto: "Qual é a temperatura da UHC para as carnes vermelhas?",
         opcoes: [
-          "93ºC",
-          "92ºC",
-          "94ºC",
-          "95ºC"
+          "71ºC",
+          "75ºC",
+          "79ºC",
+          "93ºC"
         ],
-        correta: 3,
-        explicacao: "A temperatura da UHC é de 95°C."
+        correta: 2,
+        explicacao: "A temperatura da UHC para as carnes vermelhas é de 79°C (85°C para carnes brancas/frango)."
       },
       {
         texto: "Qual é o tempo de cozimento para as carnes 10:1?",
@@ -2848,12 +2848,12 @@
         texto: "Qual é o tempo de vida do pão congelado depois de descongelado?",
         opcoes: [
           "24 horas",
-          "36 horas contando 12 horas de ambientação",
-          "48 horas contando 12 horas de ambientação",
+          "36 horas contando o descongelamento mínimo",
+          "48 horas contando o descongelamento mínimo de 4 horas",
           "72 horas"
         ],
         correta: 2,
-        explicacao: "O pão congelado depois de descongelado tem 48 horas de vida útil, incluindo as 12 horas de ambientação."
+        explicacao: "O pão congelado depois de retirado do freezer tem 48 horas de validade secundária, incluindo o descongelamento mínimo de 4 horas (consumo recomendado em até 24 horas)."
       },
       {
         texto: "Qual é o tempo de fritura das tortas e o tempo de drenagem?",
@@ -3341,12 +3341,12 @@
       {
         texto: "Qual é a calibragem do molho Big Mac?",
         opcoes: [
-          "6 tiros = 59 ml (2 oz lá)",
+          "1 tiro = 15 ml (1/2 oz)",
           "10 tiros = 59 Mls (2oz Fl)",
           "7 tiros = 59 Mls (2 oz Fl)"
         ],
         correta: 0,
-        explicacao: "A calibragem correta do molho Big Mac é 6 tiros = 59 ml (2 oz lá)."
+        explicacao: "A calibragem correta do molho Big Mac é 1 tiro = 15 ml (1/2 oz), na pistola Flex Prep com 1 ponto de saída."
       },
       {
         texto: "Qual é a temperatura de fritura e o tempo de vida das McFritas na estufa?",
@@ -3955,15 +3955,15 @@
       },
       {
         texto: "Qual é a temperatura da UHC para as carnes vermelhas (10:1, 4:1 e 3:1)?",
-        opcoes: ["85°C", "93°C", "65°C", "100°C"],
+        opcoes: ["79°C", "93°C", "65°C", "100°C"],
         correta: 0,
-        explicacao: "A UHC mantém as carnes vermelhas (10:1, 4:1, 3:1) a 85°C."
+        explicacao: "A UHC mantém as carnes vermelhas (10:1, 4:1, 3:1) a 79°C."
       },
       {
         texto: "Qual é o tempo de vida das carnes vermelhas na UHC?",
         opcoes: ["15 minutos", "20 minutos", "30 minutos", "10 minutos"],
-        correta: 0,
-        explicacao: "As carnes vermelhas (10:1, 4:1, 3:1) têm 15 minutos de vida na UHC."
+        correta: 3,
+        explicacao: "No Best Burger, as carnes vermelhas (10:1, 4:1, 3:1) têm 10 minutos de vida na UHC (reduzido de 15 para 10)."
       },
       {
         texto: "Qual é o tempo de remoção das carnes 10:1, 4:1 e 3:1, respectivamente?",
@@ -3972,10 +3972,10 @@
         explicacao: "Tempo de remoção: 10:1 = 18 segundos; 4:1 = 15 segundos; 3:1 = 15 segundos."
       },
       {
-        texto: "Qual é o número máximo de carnes por platen para 10:1, 4:1 e 3:1?",
-        opcoes: ["8, 6 e 4", "6, 4 e 2", "10, 8 e 6", "12, 8 e 4"],
-        correta: 0,
-        explicacao: "Máximo por platen: 10:1 = 8 unidades; 4:1 = 6 unidades; 3:1 = 4 unidades."
+        texto: "Qual é o número máximo de carnes por rodada/platen para 10:1 e 4:1 no Best Burger?",
+        opcoes: ["8 e 6", "6 e 4", "10 e 8", "12 e 8"],
+        correta: 1,
+        explicacao: "No Best Burger, o máximo por rodada/platen é: 10:1 = 6 unidades; 4:1 = 4 unidades."
       },
       {
         texto: "Qual é a temperatura da fritadeira das McFritas?",
@@ -4029,7 +4029,7 @@
         texto: "Qual é a temperatura e o ciclo de caramelização da tostadeira rápida?",
         opcoes: ["293°C com caramelização de 22\"", "275°C com caramelização de 22\"", "293°C com caramelização de 35\"", "250°C com caramelização de 22\""],
         correta: 0,
-        explicacao: "A tostadeira rápida opera a 293°C (compressão 5D) com ciclo de caramelização de 22\". A HEBT5V opera a 275°C (compressão 5)."
+        explicacao: "A tostadeira rápida opera a 293°C com ciclo de caramelização de 22\". A HEBT5V opera com placas A/B a 271°C e placa C a 254°C, compressão 4D."
       },
       {
         texto: "Qual é a faixa de temperatura da mesa de condimentação?",
