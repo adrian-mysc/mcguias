@@ -1086,6 +1086,55 @@
       "errorStats": {"timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0},
       "analytics": {"globalAccuracy": 0, "averageTime": 0, "dropRate": 0},
       "contextHints": [], "relatedQuestions": []
+    },
+    {
+      "id": "estoque_recebimento_031",
+      "categoria": "estoque-recebimento",
+      "subcategoria": "📦 Estocagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "estocagem",
+        "organizacao",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "O que significa a estocagem 24/2?",
+      "alternativas": [
+        "24 horas de congelados e 2 horas de resfriados e embalagens.",
+        "24 horas de resfriados e congelados e 2 horas para embalagens.",
+        "24 horas de refrigerados e 2 horas para congelados e embalagens.",
+        "24 horas de embalagens e 2 horas de refrigerados e congelados."
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Estocagem 24/2 significa manter 24 horas de resfriados e congelados e 2 horas para embalagens.",
+      "dica": "O 24 é dos alimentos; o 2 é das embalagens.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

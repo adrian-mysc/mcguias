@@ -1994,6 +1994,156 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_041",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Padrões de Sabor",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcchicken",
+        "sabor",
+        "padrao",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual o padrão de sabor que um McChicken deve ter?",
+      "alternativas": [
+        "O sabor é uma mistura equilibrada de sabores de pão tostado na hora. A massa de frango tem um sabor de ervas e a carne de frango traz um sabor médio de carne. A maionese proporciona um sabor pungente.",
+        "O sabor é uma mistura equilibrada de sabores de pão tostado na hora, sementes de gergelim. A massa de frango tem um sabor de ervas e a carne de frango traz um sabor médio de carne. A maionese proporciona um sabor pungente que combina perfeitamente com o frescor da alface.",
+        "O sabor é uma mistura equilibrada de sabores de pão tostado na hora, sementes de gergelim. A carne de frango traz um sabor médio de carne. A maionese proporciona um sabor pungente.",
+        "O sabor vem apenas do frango empanado, sem influência do pão ou dos molhos."
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O padrão de sabor do McChicken combina pão tostado na hora com sementes de gergelim, massa de frango com sabor de ervas, carne de frango de sabor médio e maionese pungente que combina com o frescor da alface.",
+      "dica": "A descrição completa cita o gergelim e o frescor da alface.",
+      "tempoEstimado": 20,
+      "xp": 15,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_042",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Padrões de Sabor",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cheeseburger",
+        "sabor",
+        "padrao",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual o padrão de sabor que um Cheeseburger deve ter?",
+      "alternativas": [
+        "É uma mistura equilibrada de sabor e aroma de pão recém tostado, cebola macia, ketchup McDonald's doce, com notas picantes de picles em conserva, mostarda, queijo cheddar macio e um final de carne suave.",
+        "É uma mistura equilibrada de sabor e aroma de pão recém tostado, ketchup McDonald's doce e picante, com notas picantes de picles em conserva, mostarda, queijo cheddar macio e um final de carne suave e temperada.",
+        "É uma mistura equilibrada de sabor e aroma de pão recém tostado, cebola macia, ketchup McDonald's doce e picante, com notas picantes de picles em conserva, mostarda, queijo cheddar macio e um final de carne suave e temperada.",
+        "É uma mistura equilibrada de sabor e aroma de pão recém tostado, cebola macia, ketchup McDonald's doce e picante, mostarda, queijo cheddar macio e um final de carne temperada."
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O padrão de sabor do Cheeseburger reúne pão recém tostado, cebola macia, ketchup McDonald's doce e picante, notas picantes de picles em conserva, mostarda, queijo cheddar macio e um final de carne suave e temperada.",
+      "dica": "A descrição completa inclui a cebola macia e o final de carne suave e temperada.",
+      "tempoEstimado": 20,
+      "xp": 15,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_043",
+      "categoria": "condimentacao",
+      "subcategoria": "🫙 Molhos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho-big-mac",
+        "validade",
+        "mesa-condimentacao",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual é o tempo de vida do molho Big Mac na mesa de condimentação?",
+      "alternativas": [
+        "2 horas",
+        "8 horas",
+        "12 horas",
+        "24 horas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O molho Big Mac tem 24 horas de tempo de vida na mesa de condimentação após aberto.",
+      "dica": "Um dia inteiro após aberto.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

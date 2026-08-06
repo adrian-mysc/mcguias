@@ -5974,6 +5974,104 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "tr_165",
+      "categoria": "treinador",
+      "subcategoria": "🎓 Avaliação Teórica · Qualidade",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "qualidade",
+        "atributos",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Quais são os atributos de qualidade dos nossos produtos?",
+      "alternativas": [
+        "Temperatura, Sabor e Aparência",
+        "Aroma e suavidade",
+        "Não trabalhamos com atributos",
+        "Sabor e temperatura"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os três atributos de qualidade dos produtos são Temperatura, Sabor e Aparência — avaliados em conjunto em cada item servido.",
+      "dica": "São três atributos, e um deles é a aparência.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "tr_166",
+      "categoria": "treinador",
+      "subcategoria": "🎓 Avaliação Teórica · História",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "historia",
+        "ray-kroc",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Em que ano Ray Kroc fundou o McDonald's e abriu seu primeiro restaurante?",
+      "alternativas": [
+        "1954",
+        "15 de abril de 1955",
+        "1966",
+        "1985"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ray Kroc abriu seu primeiro restaurante em 15 de abril de 1955, em Des Plaines (Illinois) — data que marca a fundação da McDonald's Corporation.",
+      "dica": "Meados dos anos 50.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

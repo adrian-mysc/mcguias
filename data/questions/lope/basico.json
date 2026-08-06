@@ -4481,6 +4481,106 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "lope_091",
+      "categoria": "lope",
+      "subcategoria": "🧅 Cebola Reidratada",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cebola",
+        "dispensador",
+        "tempo-de-vida",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual é o tempo de vida da cebola reidratada no dispensador na chapa?",
+      "alternativas": [
+        "2 horas",
+        "4 horas",
+        "12 horas",
+        "24 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A cebola reidratada tem 4 horas de vida no dispensador da área da chapa. Refrigerada na câmara, a validade secundária é de 24 horas.",
+      "dica": "4h na chapa / 24h na câmara.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "lope_092",
+      "categoria": "lope",
+      "subcategoria": "🧅 Cebola Reidratada",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cebola",
+        "refrigerador",
+        "validade",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual o tempo de vida da cebola aberta no refrigerador?",
+      "alternativas": [
+        "2 horas",
+        "8 horas",
+        "24 horas",
+        "48 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A cebola aberta tem 24 horas de validade no refrigerador.",
+      "dica": "Um dia inteiro sob refrigeração.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

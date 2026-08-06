@@ -494,6 +494,153 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "mcdelivery_011",
+      "categoria": "mcdelivery",
+      "subcategoria": "🛵 McDelivery · Cliente",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "delivery",
+        "cliente",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual o aspecto que o cliente do segmento de delivery mais valoriza?",
+      "alternativas": [
+        "Tipo de embalagem",
+        "A exatidão do pedido",
+        "As opções dos produtos",
+        "Todas as anteriores"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O cliente de delivery valoriza todos esses aspectos: o tipo de embalagem, a exatidão do pedido e as opções de produtos.",
+      "dica": "Não é só um deles.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcdelivery_012",
+      "categoria": "mcdelivery",
+      "subcategoria": "🛵 McDelivery · Montagem",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "delivery",
+        "montagem",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Quais são os aspectos fundamentais a considerar ao montar e preparar os pedidos do McDelivery?",
+      "alternativas": [
+        "Rapidez, precisão e cuidado na montagem do pedido",
+        "Velocidade e tempo",
+        "Precisão e qualidade",
+        "Qualidade e valor"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Ao montar e preparar pedidos do McDelivery, os aspectos fundamentais são rapidez, precisão e cuidado na montagem.",
+      "dica": "São três aspectos, e um deles é o cuidado.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "mcdelivery_013",
+      "categoria": "mcdelivery",
+      "subcategoria": "🛵 McDelivery · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "delivery",
+        "tempo",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual deve ser o tempo total de experiência para um cliente no McDelivery?",
+      "alternativas": [
+        "10 minutos",
+        "15 minutos",
+        "20 minutos",
+        "30 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo total de experiência do cliente no McDelivery deve ser de 20 minutos.",
+      "dica": "Do pedido à entrega: 20 minutos.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

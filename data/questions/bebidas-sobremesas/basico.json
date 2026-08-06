@@ -2226,6 +2226,252 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_047",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Sobremesas · Coberturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "sorvete",
+        "cobertura",
+        "temperatura",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual a temperatura de extração das coberturas de sorvete?",
+      "alternativas": [
+        "38°C a 46°C",
+        "46°C a 52°C",
+        "46°C a 55°C",
+        "53°C a 67°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A temperatura de extração das coberturas de sorvete é de 46°C a 52°C.",
+      "dica": "Faixa estreita, começando em 46°C.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_048",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Sobremesas · McFlurry",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcflurry",
+        "porcao",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Quantas onças de sorvete são necessárias para produzir um McFlurry?",
+      "alternativas": [
+        "2 onças",
+        "3 onças",
+        "4 onças",
+        "5 onças"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "São necessárias 5 onças de sorvete para produzir um McFlurry — uma onça a mais que o sundae.",
+      "dica": "É a maior porção entre McFlurry e sundae.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_049",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🍦 Sobremesas · Sundae",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "sundae",
+        "porcao",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Quantas onças de sorvete são necessárias para produzir um sundae?",
+      "alternativas": [
+        "2 oz",
+        "4 oz",
+        "5 oz",
+        "6 oz"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "São necessárias 4 onças de sorvete para produzir um sundae (o McFlurry leva 5 onças).",
+      "dica": "Uma onça a menos que o McFlurry.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_050",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 Bebidas · Tempos de Vida",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "bebidas",
+        "tempo-de-vida",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual o tempo de vida das bebidas quentes depois de prontas?",
+      "alternativas": [
+        "5 minutos após estar pronta",
+        "10 minutos após estar pronta",
+        "15 minutos após estar pronta",
+        "Não existe tempo de vida após produzida — o consumo deve ser imediato."
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "As bebidas quentes não têm tempo de vida após produzidas: o consumo deve ser imediato.",
+      "dica": "Bebida quente não espera.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "bebidas_sobremesas_051",
+      "categoria": "bebidas-sobremesas",
+      "subcategoria": "🥤 Bebidas · Tempos de Vida",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigerante",
+        "tempo-de-vida",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual o tempo de vida do refrigerante depois de pronto?",
+      "alternativas": [
+        "7 minutos",
+        "10 minutos",
+        "15 minutos",
+        "Não tem tempo de vida"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O refrigerante não tem tempo de vida definido após pronto.",
+      "dica": "Mesma lógica das bebidas quentes.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }
