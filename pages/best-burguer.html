@@ -1138,26 +1138,38 @@
   <script src="../js/main.js" defer></script>
   <script type="module" src="../js/supabase/sync.js"></script>
   <script>
-  // ---- Load BB quiz questions from main quiz ----
+  // ---- Load BB quiz questions from the question bank ----
+  // Lê direto de data/questions/best-burguer/basico.json (fonte de verdade).
+  // Antes isto raspava o HTML de quiz.html procurando "const ALL_QUESTIONS = [";
+  // o quiz.html foi refatorado (passou a usar FALLBACK_QUESTIONS + let ALL_QUESTIONS)
+  // e a busca passou a falhar silenciosamente, travando o "Carregando...".
   document.addEventListener('DOMContentLoaded', function() {
-    // Dynamically fetch quiz.html and extract BB-related questions
-    fetch('../pages/quiz.html')
-      .then(r => r.text())
-      .then(html => {
-        const start = html.indexOf('const ALL_QUESTIONS = [');
-        if (start === -1) return;
-        const end = html.indexOf('];', start) + 1;
-        const ALL_QUESTIONS = (new Function('return ' + html.slice(start + 'const ALL_QUESTIONS = '.length, end)))();
-        const bbQ = ALL_QUESTIONS.filter(q =>
-          q.guide === 'best-burguer' ||
-          (q.category && q.category.toLowerCase().includes('best burger')) ||
-          (q.question && q.question.toLowerCase().includes('best burger'))
-        );
-        renderBBQuiz(bbQ.length ? bbQ : ALL_QUESTIONS.filter(q =>
-          q.category && (q.category.includes('BB') || q.category.includes('Best'))
-        ));
+    // Raiz da app: '/mcguias/' no GitHub Pages, '/' na Vercel/domínio próprio.
+    var base = location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/');
+    fetch(base + 'data/questions/best-burguer/basico.json')
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
       })
-      .catch(() => {
+      .then(function (pack) {
+        var questions = (pack && pack.questions ? pack.questions : [])
+          .filter(function (q) { return q.ativo !== false; })
+          .map(function (q) {
+            return {
+              id:          q.id,
+              guide:       'best-burguer',
+              category:    q.subcategoria || q.categoria,
+              question:    q.pergunta,
+              options:     q.alternativas || [],
+              answer:      Array.isArray(q.alternativas) ? q.alternativas[q.respostaCorreta] : '',
+              explanation: q.explicacao || '',
+              dificuldade: q.dificuldade || 2,
+              tags:        q.tags || []
+            };
+          });
+        renderBBQuiz(questions);
+      })
+      .catch(function () {
         document.getElementById('bb-quiz-container').innerHTML =
           '<p style="color:var(--muted);font-size:13px;padding:12px">Quiz não disponível offline.</p>';
       });
