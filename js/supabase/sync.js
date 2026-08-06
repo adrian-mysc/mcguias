@@ -26,17 +26,30 @@ async function syncQuizSessions(userId) {
   const newCount = Math.max(0, history.length - alreadySynced);
   if (!newCount) return;
 
-  // history is newest-first (unshift), so the unsynced items are at the END
-  const toSync = history.slice(-newCount);
+  // O ponteiro mc_sessions_synced é só uma CONTAGEM — não diz QUAIS sessões já
+  // subiram. Como o unshift coloca a sessão nova no INÍCIO do array (e o
+  // syncOneSession avança o ponteiro por ela), uma "fatia" pelo ponteiro erra o
+  // alvo: pega as sessões mais antigas (já na nuvem) e nunca as novas. Por isso
+  // reenviamos TODO o histórico que tem csid — o upsert é idempotente por
+  // (user_id, client_session_id), então o servidor ignora as duplicatas e
+  // nenhuma sessão pendente fica para trás (corrige o sync que só pegava as
+  // sessões quando rodava o botão manual). Linhas sem csid são puladas: NULL
+  // nunca colide no índice único, então cada reenvio criaria uma linha nova.
+  const rows = history
+    .filter(h => h.csid)
+    .map(h => ({
+      user_id:           userId,
+      guide:             h.guia || 'desconhecido',
+      score:             h.score  || 0,
+      total:             h.total  || 0,
+      percentage:        h.total > 0 ? Math.round((h.score / h.total) * 100) : 0,
+      client_session_id: h.csid,
+    }));
 
-  const rows = toSync.map(h => ({
-    user_id:           userId,
-    guide:             h.guia || 'desconhecido',
-    score:             h.score  || 0,
-    total:             h.total  || 0,
-    percentage:        h.total > 0 ? Math.round((h.score / h.total) * 100) : 0,
-    client_session_id: h.csid || null,
-  }));
+  if (!rows.length) {
+    localStorage.setItem('mc_sessions_synced', JSON.stringify(history.length));
+    return;
+  }
 
   try {
     // upsert idempotente: se o ponteiro dessincronizar, sessões com o mesmo
@@ -117,7 +130,12 @@ async function syncWeeklyChallenges() {
       challenge_key: d.id,
       progress,
       completed,
-      ...(completed ? { completed_at: new Date().toISOString() } : {}),
+      // SEMPRE inclui completed_at (null quando não concluído). O PostgREST
+      // rejeita o bulk upsert com 400 (PGRST102) quando os objetos do array têm
+      // CONJUNTOS DE CHAVES diferentes — o spread condicional anterior fazia
+      // exatamente isso (só os concluídos tinham completed_at), quebrando 100%
+      // dos syncs de desafios semanais (visível como POST 400 nos logs da API).
+      completed_at:  completed ? new Date().toISOString() : null,
     };
   });
 
