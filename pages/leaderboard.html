@@ -445,6 +445,10 @@
 
     function el(id) { return document.getElementById(id); }
 
+    // Quantas pessoas aparecem em cada ranking (geral e batalhas).
+    // Vale tanto para a busca no backend quanto para o corte após os filtros.
+    const LB_LIMIT = 100;
+
     function timeout(ms) {
       return new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms));
     }
@@ -521,7 +525,7 @@
         return p.pontos === currentRank.pontos && p.quizzes === currentRank.quizzes && currentRank.pontos > 0;
       }
 
-      list.innerHTML = filtered.slice(0, 20).map((p, i) => rowHTML(i + 1, p, isCurrentUser(p))).join('');
+      list.innerHTML = filtered.slice(0, LB_LIMIT).map((p, i) => rowHTML(i + 1, p, isCurrentUser(p))).join('');
     }
     window.applyFilters = applyFilters;
 
@@ -594,7 +598,7 @@
       // tentativa 1: RPCs online
       try {
         const [rawRank, rawPlayers] = await Promise.race([
-          Promise.all([getOnlineUserRank(), getOnlineLeaderboard(20)]),
+          Promise.all([getOnlineUserRank(), getOnlineLeaderboard(LB_LIMIT)]),
           timeout(8000)
         ]);
         // Normalise field names regardless of whether the RPC uses pontos/quizzes or points/total_xp
@@ -623,7 +627,7 @@
       // tentativa 2: consulta direta à tabela (sem RPC)
       try {
         const [rank, players] = await Promise.race([
-          Promise.all([getUserRank(), getTopPlayers(20)]),
+          Promise.all([getUserRank(), getTopPlayers(LB_LIMIT)]),
           timeout(6000)
         ]);
         const adaptedRank = rank ? { rank: rank.rank, pontos: rank.points, quizzes: rank.total_xp, username: rank.username, avatar: rank.avatar ?? null } : null;
@@ -757,7 +761,7 @@
         .gt('total_battles', 0)
         .order('wins', { ascending: false })
         .order('total_battles', { ascending: false })
-        .limit(20);
+        .limit(LB_LIMIT);
 
       if (error || !players || players.length === 0) {
         list.innerHTML = `<div class="lb-empty">

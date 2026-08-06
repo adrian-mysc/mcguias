@@ -26,7 +26,7 @@ export async function getUserRank() {
 }
 
 // ── 100% online: dados via RPC ──────────────────────────────────────────────
-export async function getOnlineLeaderboard(limit = 20) {
+export async function getOnlineLeaderboard(limit = 100) {
   return (await db.rpc('get_leaderboard', { lim: limit })) ?? [];
 }
 
