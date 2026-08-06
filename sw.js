@@ -1,10 +1,12 @@
-// MC Guias — Service Worker v41
-// Atualização: conteúdo dos Materiais de Estudo oficiais incorporado
-// (+210 questões, nova categoria McDelivery e cards de estudo nos guias).
+// MC Guias — Service Worker v42
+// Atualização: banco de perguntas e páginas alinhados ao padrão Best Burger
+// (UHC 79 °C vermelhas / 85 °C brancas, chapa 218/177 °C, lotes 6 e 4,
+// tostadeira HEBT-5V 271/254 °C, molho Big Mac 15 ml, validade dos pães),
+// correção do quiz da página Best Burger e paleta vermelha premium.
 // Base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
 // (GitHub Pages) quanto em / (Vercel/domínio próprio), sem caminho fixo.
 
-const CACHE = 'mc-guias-v41';
+const CACHE = 'mc-guias-v42';
 
 // Raiz da aplicação, derivada da própria URL do SW:
 //   GitHub Pages → '/mcguias/sw.js'  ⇒ BASE = '/mcguias/'
