@@ -1,6 +1,60 @@
 {
   "versions": [
     {
+      "version": "v15",
+      "date": "2026-08-06",
+      "date_display": "06 Ago 2026",
+      "badge": "Padrão Best Burger · Revisão geral",
+      "badge_type": "correcao",
+      "items": [
+        {
+          "icon": "🍔",
+          "text": "**Todo o app alinhado ao padrão Best Burger** — perguntas, tabelas, checklists e cards de todos os guias foram conferidos contra o material do Best Burger. Onde ainda havia valores da operação antiga, o conteúdo passou a refletir apenas o padrão atual.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🌡️",
+          "text": "**UHC agora separa carne vermelha de carne branca** — perguntas que só diziam “qual a temperatura da UHC” foram reescritas para especificar o tipo de carne: **79 °C** para vermelhas (10:1, 4:1, 3:1) e **85 °C** para brancas (frango). A vida útil das carnes vermelhas foi corrigida de 15 para **10 minutos**.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🔥",
+          "text": "**Chapa corrigida** — placa **superior 218 °C** e **inferior 177 °C** (estavam invertidas em algumas páginas). Lote máximo por rodada ajustado para **6 carnes 10:1** e **4 carnes 4:1**, e ponto de partida de **39 s** (Antunes) / **41 s** (Taylor Next Generation).",
+          "tag": "guia"
+        },
+        {
+          "icon": "🍞",
+          "text": "**Tostadeira e pães** — HEBT-5V com placas **A/B 271 °C**, **placa C 254 °C**, compressão **4D** e caramelização de **22 segundos**. A validade do pão passou a constar como **descongelamento mínimo de 4 h**, consumo recomendado em **24 h** e **48 h** de validade secundária total.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🫙",
+          "text": "**Molho Big Mac e cebola reidratada** — o molho passou a constar como **15 ml (½ oz)** na pistola Flex Prep com 1 ponto de saída, e a reidratação da cebola com **3 litros** de água fria por pacote.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🎯",
+          "text": "**Quiz da página Best Burger voltou a funcionar** — a aba ficava travada em “Carregando perguntas…”. Agora carrega direto do banco oficial, com as **50 questões** revisadas da categoria.",
+          "tag": "bug"
+        },
+        {
+          "icon": "✅",
+          "text": "**Checklists de Supervisores corrigidos** — uma falha de código impedia todo o JavaScript da página de rodar. Os checklists voltaram a marcar, salvar e resetar, e agora exibem a **barra de progresso por bloco**.",
+          "tag": "bug"
+        },
+        {
+          "icon": "🎨",
+          "text": "**Visual mais encorpado** — botões, selos, hero das páginas e o botão flutuante do quiz ganharam o vermelho em degradê com brilho que já era usado na tela inicial, deixando a identidade visual consistente em todas as telas.",
+          "tag": "sistema"
+        },
+        {
+          "icon": "🔄",
+          "text": "**App atualizado (Service Worker v42)** — todo o conteúdo revisado fica disponível **offline** após a atualização.",
+          "tag": "sistema"
+        }
+      ]
+    },
+    {
       "version": "v14",
       "date": "2026-06-17",
       "date_display": "17 Jun 2026",
