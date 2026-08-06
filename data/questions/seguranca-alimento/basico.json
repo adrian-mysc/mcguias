@@ -1820,6 +1820,104 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_041",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🛡️ Validades",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "validade",
+        "secundaria",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "O que é a validade secundária de um alimento?",
+      "alternativas": [
+        "Tempo que o alimento pode ser utilizado/consumido após abri-lo ou após ser movido do local de armazenamento.",
+        "Data de validade impressa pelo fornecedor",
+        "Tempo de transporte do fornecedor até o restaurante",
+        "Prazo máximo de congelamento na câmara"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A validade secundária é o tempo em que o alimento pode ser utilizado/consumido após ser aberto ou movido do local de armazenamento — diferente da validade primária, que é a data do fornecedor.",
+      "dica": "Conta a partir da abertura ou da movimentação do produto.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_042",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🛡️ Segurança do Alimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "comida-segura",
+        "higiene",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "O que significa comida segura?",
+      "alternativas": [
+        "Aquela que atingiu sua temperatura ideal de cozimento",
+        "Aquela que não contém substâncias nocivas que causam doenças",
+        "Aquela que não excedeu seu período de validade",
+        "Todas as alternativas"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Comida segura reúne os três critérios: atingiu a temperatura ideal de cozimento, não contém substâncias nocivas que causem doenças e não excedeu o período de validade.",
+      "dica": "Nenhum critério sozinho basta.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

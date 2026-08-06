@@ -56,13 +56,13 @@ function loadQuestions(guide) {
 section('Question JSON — structure & integrity');
 
 const GUIDES_WITH_COUNTS = {
-  'chapa':               77,
-  'treinador':          133,
+  'chapa':               79,
+  'treinador':          135,
   'gerencia':            86,
   'lideranca':           67,
-  'fritas':              40,
-  'fechamento':          39,
-  'seguranca-alimento':  36,
+  'fritas':              41,
+  'fechamento':          40,
+  'seguranca-alimento':  38,
   'best-burguer':        null,
   'mccafe':              null,
   'lope':                null,

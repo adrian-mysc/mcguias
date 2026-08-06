@@ -1409,6 +1409,153 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "drive051",
+      "categoria": "drive-thru",
+      "subcategoria": "⏱️ Drive · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "r2p",
+        "tempo",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual é o tempo de R2P?",
+      "alternativas": [
+        "60 segundos",
+        "90 segundos",
+        "120 segundos",
+        "150 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo de R2P é de 90 segundos.",
+      "dica": "Um minuto e meio.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive052",
+      "categoria": "drive-thru",
+      "subcategoria": "🚗 Drive · Procedimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive",
+        "procedimento",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "No drive, quem realiza o segundo 'P' do procedimento: Pergunta, pergunta e fala?",
+      "alternativas": [
+        "O apoio Drive",
+        "O apresentador",
+        "O caixa drive",
+        "O atendente do face"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O segundo 'P' do procedimento (Pergunta, pergunta e fala) é realizado pelo caixa do drive.",
+      "dica": "É quem faz a cobrança no drive.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "drive053",
+      "categoria": "drive-thru",
+      "subcategoria": "⏱️ Drive · OEPE",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oepe",
+        "tempo",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual é o objetivo do OEPE (order end – present end)?",
+      "alternativas": [
+        "60 segundos",
+        "70 segundos ou menos",
+        "120 segundos ou menos",
+        "150 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O objetivo do OEPE (order end – present end) é de 120 segundos ou menos.",
+      "dica": "Dois minutos, no máximo.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

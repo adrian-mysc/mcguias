@@ -4151,6 +4151,106 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "chapa_151",
+      "categoria": "chapa",
+      "subcategoria": "📦 UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "uhc",
+        "cebola",
+        "bandeja",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Qual é a quantidade mínima de bandejas que devem ser mantidas de carne 10:1 sem cebola na UHC?",
+      "alternativas": [
+        "1 bandeja",
+        "2 bandejas",
+        "3 bandejas",
+        "4 bandejas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Devem ser mantidas no mínimo 2 bandejas (gavetas) de carne 10:1 sem cebola na UHC, identificadas com clip azul.",
+      "dica": "Mínimo de duas, com clip azul.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "chapa_152",
+      "categoria": "chapa",
+      "subcategoria": "🧹 Chapa · Limpeza",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "chapa",
+        "raspagem",
+        "limpeza",
+        "avaliacao-teorica"
+      ],
+      "pergunta": "Quando se deve raspar as chapas?",
+      "alternativas": [
+        "A cada rodada",
+        "A cada 15 minutos",
+        "A cada troca de turno",
+        "Somente no fechamento"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "As chapas devem ser raspadas a cada rodada de produção.",
+      "dica": "É por rodada, não por relógio.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }
