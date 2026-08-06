@@ -10,15 +10,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Quais dos básicos abaixo faz parte do PLANEJAMENTO no plantão?",
       "alternativas": [
-        "Plano de chão",
+        "Pré Plantão",
         "Experimentação",
         "Pós Plantão",
-        "Pré Plantão"
+        "Plano de chão"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "O Plano de Chão faz parte do planejamento. É realizado com 48h de antecedência para revisar a projeção de Vendas e GCs.",
       "dica": "",
       "tempoEstimado": 15,
@@ -55,15 +57,18 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "carne",
+        "temperatura"
+      ],
       "pergunta": "Quem é o responsável pela garantia do check list de carnes?",
       "alternativas": [
+        "O Gerente de Plantão",
         "O Gerente de restaurante",
         "O Gerente de Vendas",
-        "O Gerente de Plantão",
         "O Gerente de qualidade"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "O Gerente de Plantão é responsável pela garantia do check list de carnes.",
       "dica": "",
       "tempoEstimado": 15,
@@ -100,7 +105,14 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "drive",
+        "fritas",
+        "ppf",
+        "seguranca_alimentar",
+        "temperatura"
+      ],
       "pergunta": "Qual alternativa NÃO está dentro da zona de perigo?",
       "alternativas": [
         "3 ou menos fritas na estufa",
@@ -145,7 +157,10 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Com quanto tempo de antecedência devemos fazer o plano de chão?",
       "alternativas": [
         "24 horas antes",
@@ -190,15 +205,18 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Quem é o responsável pela realização de caixa surpresa no plantão?",
       "alternativas": [
-        "O Gerente de Operações",
         "O Gerente de restaurante",
         "A Assistente Administrativa",
-        "O Gerente de Plantão"
+        "O Gerente de Plantão",
+        "O Gerente de Operações"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "O Gerente de Plantão é responsável pela realização de caixa surpresa.",
       "dica": "",
       "tempoEstimado": 15,
@@ -235,12 +253,15 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "rota",
+        "temperatura"
+      ],
       "pergunta": "Qual dos itens abaixo NÃO faz parte dos básicos de um plantão?",
       "alternativas": [
-        "Check list",
-        "Experimentação",
         "Rota de inspeção",
+        "Experimentação",
+        "Check list",
         "Plano paralelo"
       ],
       "respostaCorreta": 3,
@@ -280,13 +301,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "cozimento",
+        "refrigeracao",
+        "temperatura"
+      ],
       "pergunta": "Quando experimentamos os refrigerantes, qual é o ÚLTIMO sabor que devemos experimentar?",
       "alternativas": [
         "Fanta",
-        "Guaraná",
         "Coca-cola",
-        "Não há sequência de experimentação"
+        "Não há sequência de experimentação",
+        "Guaraná"
       ],
       "respostaCorreta": 0,
       "explicacao": "O último refrigerante a ser experimentado é a Fanta.",
@@ -325,15 +350,18 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "peps",
+        "temperatura"
+      ],
       "pergunta": "Qual ferramenta nos garante uma estocagem precisa para o consumo daquele período?",
       "alternativas": [
-        "Tabela 24X2",
         "Maverick",
+        "Tabela 24X2",
         "Plano de chão",
         "Nenhuma das anteriores"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "A Tabela 24X2 é a ferramenta que garante estocagem precisa para o consumo do período.",
       "dica": "",
       "tempoEstimado": 15,
@@ -370,7 +398,10 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "rota",
+        "temperatura"
+      ],
       "pergunta": "Quais são os básicos do plantão?",
       "alternativas": [
         "Plano de chão, rota de inspeção",
@@ -415,7 +446,12 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "frequencia",
+        "higiene",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "De quanto em quanto tempo os funcionários devem lavar as mãos?",
       "alternativas": [
         "De 1 em 1 hora",
@@ -460,15 +496,19 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "contaminacao",
+        "ppf",
+        "temperatura"
+      ],
       "pergunta": "Quais dos padrões abaixo NÃO garantem hospitalidade?",
       "alternativas": [
         "Boas vindas e agradecimentos sinceros",
-        "Pedidos entregues",
         "Exatidão nos pedidos",
+        "Pedidos entregues",
         "Criar momentos mágicos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Apenas 'pedidos entregues' não garante hospitalidade por si só — a hospitalidade vai além da entrega física.",
       "dica": "",
       "tempoEstimado": 15,
@@ -505,15 +545,20 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "influencer",
+        "ppf",
+        "temperatura"
+      ],
       "pergunta": "Quais dos itens abaixo NÃO fazem parte dos passos de serviço?",
       "alternativas": [
-        "Entregar a nota fiscal e pedir para o cliente aguardar ao lado",
-        "Montar e apresentar o pedido",
         "Cumprimentar o cliente fazendo Sugestão de venda",
-        "Agradecer o cliente e pedir seu retorno"
+        "Montar e apresentar o pedido",
+        "Agradecer o cliente e pedir seu retorno",
+        "Entregar a nota fiscal e pedir para o cliente aguardar ao lado"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Entregar nota fiscal e pedir para aguardar ao lado não faz parte dos passos de serviço.",
       "dica": "",
       "tempoEstimado": 15,
@@ -550,13 +595,16 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "angulo",
+        "tempo"
+      ],
       "pergunta": "Qual é o tempo médio do serviço no balcão?",
       "alternativas": [
         "60 segundos de montagem e 3 min e 30 seg de experiência",
-        "60 segundos de montagem e 3 min e 15 seg de experiência",
         "80 segundos de montagem e 3 min e 20 seg de experiência",
-        "40 segundos de montagem e 3 min e 30 seg de experiência"
+        "40 segundos de montagem e 3 min e 30 seg de experiência",
+        "60 segundos de montagem e 3 min e 15 seg de experiência"
       ],
       "respostaCorreta": 0,
       "explicacao": "O tempo médio do balcão é: 60 segundos de montagem e 3 min e 30 seg de experiência total.",
@@ -595,15 +643,18 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "higiene",
+        "temperatura"
+      ],
       "pergunta": "Qual é a sequência de lavagem das mãos para a área de serviço?",
       "alternativas": [
+        "Apoio, bebidas e caixa",
         "Pessoa das bebidas, caixa e apoio",
         "Caixa, apoio e bebidas",
-        "Caixa, bebidas e apoio",
-        "Apoio, bebidas e caixa"
+        "Caixa, bebidas e apoio"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "A sequência de lavagem das mãos no serviço é: bebidas → caixa → apoio.",
       "dica": "",
       "tempoEstimado": 15,
@@ -640,7 +691,11 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "drive",
+        "higiene",
+        "temperatura"
+      ],
       "pergunta": "Qual é a sequência de lavagem das mãos para a área de drive?",
       "alternativas": [
         "Cabine 1, cabine 2 e cabine 3",
@@ -685,7 +740,12 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
       "pergunta": "Qual o tempo de vida da gordura?",
       "alternativas": [
         "90 dias",
@@ -730,15 +790,22 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "10:1",
+        "angulo",
+        "carne",
+        "limite",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Qual o tempo máximo de remoção das carnes 10:1?",
       "alternativas": [
-        "22 segundos",
-        "15 segundos",
         "24 segundos",
-        "18 segundos"
+        "15 segundos",
+        "18 segundos",
+        "22 segundos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "O tempo máximo de remoção das carnes 10:1 é de 18 segundos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -775,15 +842,19 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
       "pergunta": "Qual a calibragem do dispensador de mostarda?",
       "alternativas": [
+        "5 tiros = 5oz",
         "6 tiros = 2oz",
         "60 a 80 tiros = 1oz",
-        "35 a 60 tiros = 1oz",
-        "5 tiros = 5oz"
+        "35 a 60 tiros = 1oz"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "A calibragem correta do dispensador de mostarda é de 35 a 60 tiros = 1oz.",
       "dica": "",
       "tempoEstimado": 15,
@@ -820,15 +891,20 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "porcao",
+        "programacao",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "No plano de chão, os treinamentos INICIAIS devem estar programados em que horário?",
       "alternativas": [
-        "No pico",
-        "No pré pico",
+        "No pré e no pós pico",
         "No pós pico",
-        "No pré e no pós pico"
+        "No pré pico",
+        "No pico"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Os treinamentos iniciais devem ser programados tanto no pré quanto no pós pico.",
       "dica": "",
       "tempoEstimado": 15,
@@ -865,15 +941,20 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "porcao",
+        "programacao",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "No plano de chão, os treinamentos CONTÍNUOS devem estar programados em que horário?",
       "alternativas": [
-        "No pico",
-        "No pré pico",
         "No pós pico",
-        "No pré e no pós pico"
+        "No pico",
+        "No pré e no pós pico",
+        "No pré pico"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Os treinamentos contínuos devem ser programados no horário de pico.",
       "dica": "",
       "tempoEstimado": 15,
@@ -910,15 +991,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "No plano de chão, quem é o responsável pela aplicação do treinamento contínuo?",
       "alternativas": [
-        "O instrutor",
-        "O gerente de restaurante",
         "O gerente de plantão",
-        "Qualquer membro da equipe gerencial"
+        "O gerente de restaurante",
+        "Qualquer membro da equipe gerencial",
+        "O instrutor"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Qualquer membro da equipe gerencial é responsável pela aplicação do treinamento contínuo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -955,15 +1038,18 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "fritas",
+        "temperatura"
+      ],
       "pergunta": "Quais são as 3 primeiras ferramentas diagnóstico do balcão?",
       "alternativas": [
-        "McFritas, Troco, Bebidas",
+        "McFritas, Falta de lanches e bebidas",
         "Bebidas, Posicionamento e McFritas",
         "McFritas, Bebidas e Falta de lanches",
-        "McFritas, Falta de lanches e bebidas"
+        "McFritas, Troco, Bebidas"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "As 3 primeiras ferramentas diagnóstico do balcão são: McFritas, Troco e Bebidas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1000,7 +1086,12 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "angulo",
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Qual é o tempo de fritura do McChicken?",
       "alternativas": [
         "3'25\"",
@@ -1045,7 +1136,9 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Qual a importância de se realizar uma experimentação de produtos?",
       "alternativas": [
         "Uniformizar padrão e checar se há oportunidades em algum produto",
@@ -1090,15 +1183,19 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "rota",
+        "temperatura"
+      ],
       "pergunta": "Qual é o básico de plantão que GARANTIRÁ a qualidade do produto final ao cliente?",
       "alternativas": [
+        "Check list",
         "Experimentação",
-        "Rota de inspeção",
         "Pré plantão",
-        "Check list"
+        "Rota de inspeção"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "A Experimentação é o básico de plantão que garante a qualidade do produto final entregue ao cliente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1135,7 +1232,9 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Qual é o básico de plantão que nos garante ter todos os produtos, pessoas e equipamentos disponíveis?",
       "alternativas": [
         "Experimentação",
@@ -1180,15 +1279,20 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "ambientacao",
+        "atendimento",
+        "sal",
+        "temperatura"
+      ],
       "pergunta": "Quem em seu plantão garante que os clientes se sintam bem-vindos e atrai as crianças com brincadeiras?",
       "alternativas": [
-        "Anfitriã",
-        "Canário",
         "Pessoa do salão",
-        "Pessoa do caixa"
+        "Pessoa do caixa",
+        "Canário",
+        "Anfitriã"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "A Anfitriã é responsável por receber os clientes e criar um ambiente acolhedor, especialmente para crianças.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1225,15 +1329,21 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "ambientacao",
+        "atendimento",
+        "corte",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "O ar condicionado não está funcionando. Qual atributo abaixo segue na valorização dos clientes?",
       "alternativas": [
+        "Bebida",
         "Ambiente",
         "Cortesia",
-        "Bebida",
         "Nenhuma das anteriores"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Mesmo sem ar condicionado, o atributo Ambiente ainda deve ser valorizado — o gerente deve tomar ações para minimizar o impacto.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1270,15 +1380,18 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
       "pergunta": "Quais são os tipos de perfis de clientes que podemos atender?",
       "alternativas": [
         "Perfeccionista e comunicador",
+        "Somente as alternativas A e B estão corretas",
         "Socializador e executor",
-        "Perfeccionista e Comprador",
-        "Somente as alternativas A e B estão corretas"
+        "Perfeccionista e Comprador"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Os perfis de clientes incluem: Perfeccionista, Comunicador, Socializador e Executor.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1315,15 +1428,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "O que é feedback apreciativo e construtivo?",
       "alternativas": [
+        "É reforçar os pontos de oportunidade",
         "É reforçar os pontos negativos e elogiar",
         "É reforçar os pontos positivos e também os pontos de oportunidades direcionando",
-        "É reforçar os pontos positivos e elogiar",
-        "É reforçar os pontos de oportunidade"
+        "É reforçar os pontos positivos e elogiar"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Feedback apreciativo e construtivo: reforça os positivos E aponta oportunidades com direcionamento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1360,15 +1475,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "O que significa ter mentalidade aberta ao Feedback?",
       "alternativas": [
         "Manter o foco somente no resultado",
-        "Evitar julgamento sobre personalidade",
         "Prestar atenção e não deixar o funcionário falar",
-        "Receber feedback somente quando estiver disponível"
+        "Receber feedback somente quando estiver disponível",
+        "Evitar julgamento sobre personalidade"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Mentalidade aberta ao feedback significa evitar julgamento sobre personalidade e focar em comportamentos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1405,15 +1522,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "O que significa ter Responsabilidade Pessoal?",
       "alternativas": [
-        "Assumir a responsabilidade por tudo",
         "Ter dividido as responsabilidades dentro do restaurante, na qual você tem a sua",
-        "Sentir-se auto capacitado",
-        "Ter responsabilidade geral do restaurante"
+        "Ter responsabilidade geral do restaurante",
+        "Assumir a responsabilidade por tudo",
+        "Sentir-se auto capacitado"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Responsabilidade Pessoal significa ter as responsabilidades divididas dentro do restaurante, na qual você é responsável pela sua parte.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1450,13 +1569,16 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "tecnica",
+        "temperatura"
+      ],
       "pergunta": "Criatividade é:",
       "alternativas": [
-        "A capacidade de pensar de forma igual gerando novas ideias",
+        "A capacidade de agir de forma igual gerando novas ideias",
         "A capacidade de pensar de forma diferente a fim de gerar várias abordagens e soluções",
-        "A capacidade de agir de forma diferente gerando novas soluções",
-        "A capacidade de agir de forma igual gerando novas ideias"
+        "A capacidade de pensar de forma igual gerando novas ideias",
+        "A capacidade de agir de forma diferente gerando novas soluções"
       ],
       "respostaCorreta": 1,
       "explicacao": "Criatividade é a capacidade de pensar de forma diferente a fim de gerar várias abordagens e soluções.",
@@ -1495,15 +1617,19 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Quais são os itens que devemos garantir na reunião de pós plantão?",
       "alternativas": [
         "Se todos os objetivos do plantão foram cumpridos",
+        "As alternativas A e B estão corretas",
         "Pontos a melhorar para o próximo plantão",
-        "Nenhuma das alternativas estão corretas",
-        "As alternativas A e B estão corretas"
+        "Nenhuma das alternativas estão corretas"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "No pós plantão: verificar cumprimento dos objetivos E identificar pontos de melhoria para o próximo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1540,12 +1666,15 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "sal",
+        "temperatura"
+      ],
       "pergunta": "Quais são as funções que devemos trabalhar na área de salão?",
       "alternativas": [
         "Função",
-        "Território",
         "Localidade",
+        "Território",
         "As alternativas A e B estão corretas"
       ],
       "respostaCorreta": 3,
@@ -1585,12 +1714,15 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "tecnica",
+        "temperatura"
+      ],
       "pergunta": "O que é liderar por exemplo?",
       "alternativas": [
         "É demonstrar a forma correta, ensinando e direcionando os seus liderados",
-        "É demonstrar a forma que não deve ser feita e deixando as pessoas descobrirem o erro",
         "É demonstrar dizer 'faça o que eu digo, mas não faça o que eu faço'",
+        "É demonstrar a forma que não deve ser feita e deixando as pessoas descobrirem o erro",
         "Nenhuma das anteriores"
       ],
       "respostaCorreta": 0,
@@ -1630,7 +1762,9 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Qual das ferramentas abaixo faz parte do kit para avaliar o desempenho de um funcionário?",
       "alternativas": [
         "Descrição de cargo",
@@ -1675,15 +1809,19 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "rota",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Qual é o momento em que garantimos que os funcionários estão seguindo o plano de chão?",
       "alternativas": [
+        "No pós Plantão",
         "Na Rota de inspeção",
         "No posicionamento",
-        "Na Pré Plantão",
-        "No pós Plantão"
+        "Na Pré Plantão"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "A Rota de inspeção é o momento em que verificamos se o plano de chão está sendo seguido.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1720,11 +1858,13 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Qual é a ferramenta ideal que mede o clima dentro do restaurante?",
       "alternativas": [
-        "Sessão de participação",
         "Dia da comunicação",
+        "Sessão de participação",
         "Pesquisa de satisfação do público interno",
         "Todas as anteriores"
       ],
@@ -1765,12 +1905,15 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "fritas",
+        "temperatura"
+      ],
       "pergunta": "Qual é a PRIMEIRA ferramenta diagnóstico da área de serviço?",
       "alternativas": [
         "Bebidas",
-        "Posicionamento",
         "Troco",
+        "Posicionamento",
         "McFritas"
       ],
       "respostaCorreta": 3,
@@ -1810,15 +1953,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Que cuidados devemos ter ao dar um feedback?",
       "alternativas": [
+        "Discutir o ocorrido e fechar uma conclusão",
         "Declarar o propósito",
         "Descrever o seu ponto de vista",
-        "Discutir o ocorrido e fechar uma conclusão",
         "Nenhuma das anteriores"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Ao dar um feedback, o primeiro cuidado é declarar o propósito — deixando claro o objetivo da conversa.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1855,15 +2000,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Qual dos exemplos abaixo NÃO faz parte de um bom comportamento de líder?",
       "alternativas": [
-        "Explicar os porquês e direcionar as ações",
-        "Tomar a frente nas situações difíceis",
+        "Escutar as diversas opiniões do grupo e expor suas ideias",
         "Aguardar as iniciativas da equipe em uma situação de crise",
-        "Escutar as diversas opiniões do grupo e expor suas ideias"
+        "Tomar a frente nas situações difíceis",
+        "Explicar os porquês e direcionar as ações"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Aguardar passivamente as iniciativas da equipe em uma crise NÃO é um bom comportamento de liderança. O líder deve agir proativamente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1900,7 +2047,11 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "carne",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "A carne saiu crua. O que pode ser diagnosticado nessa questão?",
       "alternativas": [
         "Tempo",
@@ -1945,15 +2096,21 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "angulo",
+        "carne",
+        "producao",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Qual o tempo de preparo das carnes grill?",
       "alternativas": [
-        "3'45\"",
         "6'45\"",
         "3'30\"",
+        "3'45\"",
         "1'50\""
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 2,
       "explicacao": "O tempo de preparo das carnes grill é de 3'45\".",
       "dica": "",
       "tempoEstimado": 15,
@@ -1990,7 +2147,9 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Em uma sessão de aconselhamento é importante:",
       "alternativas": [
         "Ouvir",
@@ -2035,15 +2194,18 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
       "pergunta": "Quais são os 6 passos para recuperação do cliente?",
       "alternativas": [
-        "Apresentar-se / Oferecer uma resposta / Direcionar para SAC / Solucionar / Superar as expectativas / Estabelecer relacionamento",
+        "Apresentar-se / Oferecer uma resposta sincera / Corrigir / Solucionar / Anotar para a equipe / Dar feedback ao cliente",
         "Apresentar-se / Oferecer uma resposta sincera / Direcionar para Publicom / Solucionar / Superar as expectativas / Estabelecer relacionamento",
-        "Apresentar-se / Oferecer uma resposta sincera / Corrigir / Solucionar / Superar as expectativas / Estabelecer relacionamento",
-        "Apresentar-se / Oferecer uma resposta sincera / Corrigir / Solucionar / Anotar para a equipe / Dar feedback ao cliente"
+        "Apresentar-se / Oferecer uma resposta / Direcionar para SAC / Solucionar / Superar as expectativas / Estabelecer relacionamento",
+        "Apresentar-se / Oferecer uma resposta sincera / Corrigir / Solucionar / Superar as expectativas / Estabelecer relacionamento"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Os 6 passos são: 1-Apresentar-se, 2-Oferecer uma resposta sincera, 3-Corrigir, 4-Solucionar o problema, 5-Superar as expectativas, 6-Estabelecer relacionamento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2080,7 +2242,13 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "10:1",
+        "carne",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
       "pergunta": "Qual é o tempo de vida primário das carnes 10:1?",
       "alternativas": [
         "60 dias",
@@ -2125,15 +2293,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "O que o certifica um Gerente de Turno para exercer a sua função?",
       "alternativas": [
-        "Ter concluído o PDG1 com excelência e ter feito o curso CGP",
-        "Ter concluído o PDG1 com excelência e ter gerenciado pelo menos 2 plantões sem 'sombra'",
         "Ter concluído o PDG1",
+        "Ter concluído o PDG1 com excelência e ter gerenciado pelo menos 2 plantões sem 'sombra'",
+        "Ter concluído o PDG1 com excelência e ter feito o curso CGP",
         "Nenhuma das anteriores"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 2,
       "explicacao": "Para ser certificado como Gerente de Turno: concluir o PDG1 com excelência e ter feito o curso CGP.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2170,15 +2340,17 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Qual a temperatura da estufa de tortas?",
       "alternativas": [
-        "66 a 82°C",
         "60 a 66°C",
-        "93°C",
-        "82 a 88°C"
+        "66 a 82°C",
+        "82 a 88°C",
+        "93°C"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "A estufa de tortas opera entre 66°C e 82°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2215,15 +2387,18 @@
       "subcategoria": "⏱️ Gerente de Turno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "taylor-ng",
+        "temperatura"
+      ],
       "pergunta": "Coaching significa:",
       "alternativas": [
-        "Ensinar o que precisa ser feito",
         "Conduzir um grupo para algo ou atingimento de um objetivo",
-        "Liderar uma equipe",
-        "Auxiliar / direcionar um grupo para algo ou atingimento de um objetivo"
+        "Ensinar o que precisa ser feito",
+        "Auxiliar / direcionar um grupo para algo ou atingimento de um objetivo",
+        "Liderar uma equipe"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Coaching significa auxiliar e direcionar um grupo para algo ou para o atingimento de um objetivo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2260,7 +2435,13 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "limpeza",
+        "seguranca_alimentar",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "É correto afirmar que as zonas de perigo são:",
       "alternativas": [
         "Apenas zonas de temperatura",
@@ -2305,15 +2486,19 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "peps",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Qual é a importância do ciclo PACE no gerenciamento dos plantões?",
       "alternativas": [
-        "O ciclo PACE é fundamental para impulsionar a melhoria contínua da excelência operacional e entender como você dá apoio ao restaurante Administrando Grandes Plantões todos os dias.",
-        "O PACE é usado apenas para auditorias anuais.",
+        "O PACE é uma ferramenta de estoque.",
         "O PACE define o posicionamento dos funcionários.",
-        "O PACE é uma ferramenta de estoque."
+        "O PACE é usado apenas para auditorias anuais.",
+        "O ciclo PACE é fundamental para impulsionar a melhoria contínua da excelência operacional e entender como você dá apoio ao restaurante Administrando Grandes Plantões todos os dias."
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "O ciclo PACE é fundamental para impulsionar a melhoria contínua da excelência operacional e entender como você dá apoio ao restaurante Administrando Grandes Plantões todos os dias.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2350,15 +2535,19 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Como devemos priorizar as zonas de Perigo encontradas no plantão?",
       "alternativas": [
-        "Aleatoriamente conforme disponibilidade",
-        "Conveniência, Conforto, QSL, Segurança",
         "Segurança/proteção, QSL, Conforto e Conveniência",
-        "Apenas Segurança e QSL"
+        "Apenas Segurança e QSL",
+        "Conveniência, Conforto, QSL, Segurança",
+        "Aleatoriamente conforme disponibilidade"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Devemos priorizar as zonas de perigo seguindo a ordem: 1-Segurança/proteção, 2-QSL, 3-Conforto e 4-Conveniência.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2395,15 +2584,19 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "sal",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Como é conduzido o ciclo PACE?",
       "alternativas": [
-        "O PACE é conduzido mensalmente pelo gerente de área.",
         "O PACE é conduzido semestralmente com auditorias externas.",
         "O PACE é conduzido anualmente. São realizadas visitas anuais para garantir que cada restaurante esteja alinhado com os padrões da empresa. Os restaurantes também têm a oportunidade de agendar suporte adicional, se necessário.",
-        "O PACE é conduzido diariamente pelo gerente de plantão."
+        "O PACE é conduzido diariamente pelo gerente de plantão.",
+        "O PACE é conduzido mensalmente pelo gerente de área."
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "O PACE é conduzido anualmente. São realizadas visitas anuais para garantir que cada restaurante esteja alinhado com os padrões da empresa. Os restaurantes também têm a oportunidade de agendar suporte adicional, se necessário.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2440,7 +2633,11 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
       "pergunta": "Cite 4 comportamentos de hospitalidade e saudações que devemos utilizar com os clientes e equipe do restaurante:",
       "alternativas": [
         "1-Boas-Vindas, 2-Conexão, 3-Entrega, 4-Despedidas",
@@ -2485,15 +2682,19 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "ambientacao",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "O que significa ter Inteligência emocional?",
       "alternativas": [
-        "Significa controlar apenas as próprias emoções.",
-        "Inteligência emocional significa ter uma forte consciência de suas próprias emoções e entender como administrá-las. Também significa ser capaz de identificar corretamente as emoções alheias e demonstrar empatia ao responder a essas emoções.",
         "Significa ignorar as emoções no ambiente de trabalho.",
-        "Significa demonstrar suas emoções livremente com a equipe."
+        "Significa demonstrar suas emoções livremente com a equipe.",
+        "Inteligência emocional significa ter uma forte consciência de suas próprias emoções e entender como administrá-las. Também significa ser capaz de identificar corretamente as emoções alheias e demonstrar empatia ao responder a essas emoções.",
+        "Significa controlar apenas as próprias emoções."
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Inteligência emocional significa ter uma forte consciência de suas próprias emoções e entender como administrá-las. Também significa ser capaz de identificar corretamente as emoções alheias e demonstrar empatia ao responder a essas emoções.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2530,15 +2731,18 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "taylor-ng",
+        "temperatura"
+      ],
       "pergunta": "Quando é necessário ter uma conversa difícil com algum membro da equipe?",
       "alternativas": [
-        "Apenas quando o gerente geral solicitar.",
-        "Ter uma conversa difícil é necessário quando o coaching não é apropriado para o momento ou quando o coaching já foi fornecido e não funcionou.",
+        "Nunca — deve-se evitar conversas difíceis.",
         "Apenas no pós-plantão.",
-        "Nunca — deve-se evitar conversas difíceis."
+        "Apenas quando o gerente geral solicitar.",
+        "Ter uma conversa difícil é necessário quando o coaching não é apropriado para o momento ou quando o coaching já foi fornecido e não funcionou."
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Ter uma conversa difícil é necessário quando o coaching não é apropriado para o momento ou quando o coaching já foi fornecido e não funcionou.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2575,15 +2779,20 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "ovo",
+        "taylor-ng",
+        "tecnica",
+        "temperatura"
+      ],
       "pergunta": "Qual é a diferença entre feedback e coaching?",
       "alternativas": [
-        "São a mesma coisa com nomes diferentes.",
-        "Feedback é dado apenas no pós-plantão; coaching apenas no pré-plantão.",
         "Ao fornecer feedback, você fornece informações para ajudar alguém a desenvolver uma habilidade na qual já foi treinado. Ao fornecer coaching, você está presente para ajudar a outra pessoa enquanto ela trabalha usando seus conhecimentos apoiados e aprimorados por sua experiência.",
-        "Coaching é aplicado apenas para novos funcionários."
+        "Coaching é aplicado apenas para novos funcionários.",
+        "São a mesma coisa com nomes diferentes.",
+        "Feedback é dado apenas no pós-plantão; coaching apenas no pré-plantão."
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Ao fornecer feedback, você fornece informações para ajudar alguém a desenvolver uma habilidade na qual já foi treinado. Ao fornecer coaching, você está presente para ajudar a outra pessoa enquanto ela trabalha usando seus conhecimentos apoiados e aprimorados por sua experiência.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2620,7 +2829,10 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
       "pergunta": "Cite 3 princípios orientadores que podem auxiliar nas interações com os clientes e com a sua equipe:",
       "alternativas": [
         "1-Ouvir, 2-Conectar-se, 3-Solucionar",
@@ -2665,13 +2877,18 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "rota",
+        "seguranca_alimentar",
+        "tecnica",
+        "temperatura"
+      ],
       "pergunta": "Por que é importante identificar rapidamente as zonas de perigo durante o plantão e como podemos detectá-las?",
       "alternativas": [
-        "Para registrar no relatório do fim do dia.",
+        "Para aplicar punições à equipe responsável.",
         "É importante identificar rapidamente as zonas de perigo para garantir que um plantão ocorra sem problemas. Os Gerentes de Plantão podem detectá-las a partir de sua Zona de Observação ou durante a rota gerencial.",
         "Apenas para informar ao gerente de área.",
-        "Para aplicar punições à equipe responsável."
+        "Para registrar no relatório do fim do dia."
       ],
       "respostaCorreta": 1,
       "explicacao": "É importante identificar rapidamente as zonas de perigo para garantir que um plantão ocorra sem problemas. Os Gerentes de Plantão podem detectá-las a partir de sua Zona de Observação ou durante a rota gerencial.",
@@ -2710,13 +2927,16 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "rota",
+        "temperatura"
+      ],
       "pergunta": "Quais são os básicos do Gerenciamento de Plantão?",
       "alternativas": [
-        "Apenas Pré-plantão e Pós-plantão",
         "Check list e Experimentação",
+        "Apenas Rota de Inspeção e Posicionamento",
         "Plano de chão, Posicionamento, Pré-plantão, Check list, Experimentação, Rota de Inspeção, Pós-plantão",
-        "Apenas Rota de Inspeção e Posicionamento"
+        "Apenas Pré-plantão e Pós-plantão"
       ],
       "respostaCorreta": 2,
       "explicacao": "Os básicos do Gerenciamento de Plantão são: Plano de chão, Posicionamento, Pré-plantão, Check list, Experimentação, Rota de Inspeção, Pós-plantão.",
@@ -2755,7 +2975,9 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "Quais são as etapas do feedback?",
       "alternativas": [
         "1-Observar, 2-Dar e receber feedback, 3-Demonstrar o jeito certo, 4-Chegar a um acordo sobre a mudança e 5-Acompanhar",
@@ -2800,7 +3022,13 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "angulo",
+        "frequencia",
+        "rota",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Qual é o período que o Gerente de Plantão deve realizar a rota gerencial?",
       "alternativas": [
         "A cada 15 minutos",
@@ -2845,7 +3073,11 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "peps",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Cite 3 princípios que devem ser seguidos para resolver problemas sobre a qualidade dos alimentos:",
       "alternativas": [
         "1-Verifique a qualidade e o armazenamento dos produtos crus, 2-Verifique se os equipamentos estão calibrados corretamente e funcionando adequadamente, 3-Verifique se a equipe realiza os procedimentos corretos",
@@ -2890,15 +3122,18 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Ética é:",
       "alternativas": [
         "Seguir apenas as regras do seu restaurante.",
         "Agir conforme a conveniência do momento.",
-        "É o conjunto de regras e valores que todos devemos seguir para convivermos bem uns com os outros, com harmonia e confiança.",
-        "Definido individualmente por cada funcionário."
+        "Definido individualmente por cada funcionário.",
+        "É o conjunto de regras e valores que todos devemos seguir para convivermos bem uns com os outros, com harmonia e confiança."
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Ética é o conjunto de regras e valores que todos devemos seguir para convivermos bem uns com os outros, com harmonia e confiança.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2935,15 +3170,22 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "drive",
+        "fritas",
+        "ppf",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Quais são os itens que identificam a necessidade de uma mudança no posicionamento das pessoas no plantão?",
       "alternativas": [
-        "Apenas a quantidade de GCs por hora",
         "Quantidade de sanduíches vendidos, Quantidade de itens por pedido, Quantidade de McFritas vendidas e Quantidade de GC's/GRD's",
-        "Apenas o tempo de atendimento no drive",
-        "Somente a quantidade de reclamações de clientes"
+        "Somente a quantidade de reclamações de clientes",
+        "Apenas a quantidade de GCs por hora",
+        "Apenas o tempo de atendimento no drive"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Os itens que identificam necessidade de mudança de posicionamento são: Quantidade de sanduíches vendidos, Quantidade de itens por pedido, Quantidade de McFritas vendidas e Quantidade de GC's/GRD's.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2980,7 +3222,10 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "temperatura"
+      ],
       "pergunta": "Existem quatro áreas principais da Inteligência Emocional que ajudarão a proporcionar uma melhor experiência à sua equipe e aos clientes. Cite quais são elas:",
       "alternativas": [
         "1-Autogestão, 2-Gestão do Relacionamento, 3-Consciência de si mesmo, 4-Consciência dos demais",
@@ -3025,15 +3270,21 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "ppf",
+        "refrigeracao",
+        "seguranca_alimentar",
+        "temperatura"
+      ],
       "pergunta": "O que é uma zona de observação?",
       "alternativas": [
-        "Uma área exclusiva para o gerente descansar.",
-        "O local onde os pedidos são registrados.",
+        "O espaço destinado à câmara fria.",
         "A zona de observação é um ponto central em seu restaurante, onde você pode procurar zonas de perigo, observar o fluxo de Clientes e verificar como sua equipe está saindo.",
-        "O espaço destinado à câmara fria."
+        "Uma área exclusiva para o gerente descansar.",
+        "O local onde os pedidos são registrados."
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "A zona de observação é um ponto central em seu restaurante, onde você pode procurar zonas de perigo, observar o fluxo de Clientes e verificar como sua equipe está saindo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3070,15 +3321,20 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "ambientacao",
+        "influencer",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Sobre a CIPA — Comissão Interna de Prevenção de Acidentes — é correto afirmar que:",
       "alternativas": [
+        "A participação na CIPA é obrigatória apenas para gerentes.",
         "A CIPA é apenas para grandes empresas com mais de 500 funcionários.",
         "Os funcionários que integram a CIPA devem realizar inspeções nos ambientes de trabalho, apresentando sugestões de melhorias ao Gerente de Unidade de Restaurante.",
-        "A CIPA substitui o seguro de saúde dos funcionários.",
-        "A participação na CIPA é obrigatória apenas para gerentes."
+        "A CIPA substitui o seguro de saúde dos funcionários."
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Os funcionários que integram a CIPA devem realizar inspeções nos ambientes de trabalho, apresentando sugestões de melhorias ao Gerente de Unidade de Restaurante.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3115,15 +3371,21 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "drive",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Além dos processos financeiros, o Plantonista tem outras responsabilidades durante a operação de venda da loja relacionadas à segurança patrimonial. Assinale a opção que melhor representa os procedimentos a serem adotados pelo plantonista:",
       "alternativas": [
-        "Durante o plantão, ter atenção constante em portas e janelas, principalmente Drive orientando o funcionário a abrir a janela somente quando o cliente estiver na frente dela.",
-        "Deixar todas as janelas abertas para facilitar o atendimento.",
+        "Repassar a responsabilidade para o turno seguinte.",
         "Apenas o gerente de restaurante é responsável pela segurança patrimonial.",
-        "Repassar a responsabilidade para o turno seguinte."
+        "Deixar todas as janelas abertas para facilitar o atendimento.",
+        "Durante o plantão, ter atenção constante em portas e janelas, principalmente Drive orientando o funcionário a abrir a janela somente quando o cliente estiver na frente dela."
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Durante o plantão, ter atenção constante em portas e janelas, principalmente Drive orientando o funcionário a abrir a janela somente quando o cliente estiver na frente dela.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3160,15 +3422,24 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "contaminacao",
+        "higiene",
+        "porcao",
+        "seguranca_alimentar",
+        "teflon",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
       "pergunta": "O que é contaminação cruzada?",
       "alternativas": [
-        "É quando dois produtos são montados ao mesmo tempo.",
         "É a transferência de bactérias dos produtos crus para os produtos cozidos ou prontos para consumo através das mãos, utensílios ou superfícies e equipamentos.",
-        "É o contato entre produtos de fornecedores diferentes.",
-        "É a mistura de produtos com datas de validade diferentes."
+        "É quando dois produtos são montados ao mesmo tempo.",
+        "É a mistura de produtos com datas de validade diferentes.",
+        "É o contato entre produtos de fornecedores diferentes."
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "É a transferência de bactérias dos produtos crus para os produtos cozidos ou prontos para consumo através das mãos, utensílios ou superfícies e equipamentos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3205,15 +3476,17 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "temperatura"
+      ],
       "pergunta": "O conjunto térmico de EPI's completo é composto por:",
       "alternativas": [
         "Apenas luvas e avental",
-        "Apenas touca e bota",
         "Calça Térmica, Casaco Térmico, Touca Térmica, Bota Térmica e Luva Térmica",
-        "Óculos, máscara e luvas"
+        "Óculos, máscara e luvas",
+        "Apenas touca e bota"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "O conjunto térmico de EPI's completo é composto por: Calça Térmica, Casaco Térmico, Touca Térmica, Bota Térmica e Luva Térmica.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3250,15 +3523,19 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Por que devemos utilizar o Checklist de Segurança do Alimento?",
       "alternativas": [
+        "Para registrar apenas as não conformidades graves.",
         "Apenas para cumprir exigências da vigilância sanitária.",
         "Porque é uma ferramenta para verificar e certificar que seu restaurante cumpra com as temperaturas, padrões e os procedimentos mais importantes de Segurança do Alimento e com os requisitos da Vigilância Sanitária.",
-        "Para registrar apenas as não conformidades graves.",
         "Apenas no início do turno da manhã."
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Porque é uma ferramenta para verificar e certificar que seu restaurante cumpra com as temperaturas, padrões e os procedimentos mais importantes de Segurança do Alimento e com os requisitos da Vigilância Sanitária.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3295,15 +3572,23 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "fritas",
+        "limpeza",
+        "oleo",
+        "organizacao",
+        "porcao",
+        "taylor-ng",
+        "temperatura"
+      ],
       "pergunta": "O mangote utilizado na operação de Chapas e Fritadeiras tem a função de:",
       "alternativas": [
-        "Facilitar a limpeza dos equipamentos",
-        "Proteger o funcionário contra possíveis queimaduras por contato com partes quentes do equipamento ou respingos de óleo",
         "Manter os alimentos aquecidos",
-        "Organizar os utensílios de cozinha"
+        "Facilitar a limpeza dos equipamentos",
+        "Organizar os utensílios de cozinha",
+        "Proteger o funcionário contra possíveis queimaduras por contato com partes quentes do equipamento ou respingos de óleo"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O mangote protege o funcionário contra possíveis queimaduras por contato com partes quentes do equipamento ou respingos de óleo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3340,7 +3625,12 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "ambientacao",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "O que as ações e boas práticas de Saúde, Segurança do Trabalho e Meio Ambiente trazem de positivo para o seu restaurante?",
       "alternativas": [
         "Apenas redução de custos com manutenção",
@@ -3385,15 +3675,21 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "cozimento",
+        "limpeza",
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Por que é importante calibrar o pirômetro?",
       "alternativas": [
-        "Para reduzir o tempo de cozimento",
         "Um pirômetro mal calibrado pode dar uma medição errada de temperatura, fazendo com que o usuário acredite que os produtos foram cozidos corretamente, quando na verdade não terminaram o cozimento.",
-        "Para economizar energia do equipamento",
-        "Para facilitar a limpeza do equipamento"
+        "Para facilitar a limpeza do equipamento",
+        "Para reduzir o tempo de cozimento",
+        "Para economizar energia do equipamento"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Um pirômetro mal calibrado pode dar uma medição errada de temperatura, fazendo com que o usuário acredite que os produtos foram cozidos corretamente, quando na verdade não terminaram o cozimento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3430,12 +3726,17 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "porcao",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Os Equipamentos de Proteção Individual são definidos pela área de Segurança do Trabalho. Sobre os EPI's, é correto afirmar que:",
       "alternativas": [
-        "São opcionais para funcionários com mais de 5 anos de empresa",
-        "É responsabilidade do Gerente garantir que no restaurante todos os Equipamentos de Proteção disponíveis para uso estejam disponíveis",
         "Apenas o setor de cozinha é obrigado a usar EPI's",
+        "É responsabilidade do Gerente garantir que no restaurante todos os Equipamentos de Proteção disponíveis para uso estejam disponíveis",
+        "São opcionais para funcionários com mais de 5 anos de empresa",
         "Os EPI's são fornecidos apenas mediante solicitação"
       ],
       "respostaCorreta": 1,
@@ -3475,7 +3776,12 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Más práticas de Segurança do Alimento têm consequências como:",
       "alternativas": [
         "Apenas multas da vigilância sanitária",
@@ -3520,15 +3826,20 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "refrigeracao",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Sobre as câmaras frias é correto afirmar que:",
       "alternativas": [
         "Qualquer funcionário pode acessar a qualquer momento",
+        "Não há restrições de acesso às câmaras frias",
         "O acesso é permitido apenas para funcionários maiores de idade, a fechadura e a trava de segurança devem estar em perfeitas condições de uso, e as chaves em poder do gerente de plantão",
-        "As câmaras devem permanecer abertas durante o pico",
-        "Não há restrições de acesso às câmaras frias"
+        "As câmaras devem permanecer abertas durante o pico"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O acesso é permitido apenas para funcionários maiores de idade, a fechadura e a trava de segurança devem estar em perfeitas condições de uso, e as chaves em poder do gerente de plantão.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3565,11 +3876,17 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "drive",
+        "porcao",
+        "rota",
+        "sal",
+        "temperatura"
+      ],
       "pergunta": "Qual é a rota de inspeção do Gerente de Plantão?",
       "alternativas": [
-        "Apenas cozinha e balcão",
         "Apenas drive e salão",
+        "Apenas cozinha e balcão",
         "Apenas áreas externas e internas",
         "Cozinha, balcão, salão, drive/áreas externas e internas e armazenamento"
       ],
@@ -3610,15 +3927,19 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "carne",
+        "frequencia",
+        "temperatura"
+      ],
       "pergunta": "Quando e quantas vezes deve ser realizado o Checklist de Integridade das carnes?",
       "alternativas": [
-        "1 vez ao dia, apenas na abertura",
-        "3 vezes ao dia, nos picos",
         "2 vezes sendo: antes da abertura do restaurante e antes do pico do jantar",
+        "3 vezes ao dia, nos picos",
+        "1 vez ao dia, apenas na abertura",
         "Apenas quando solicitado pelo gerente de área"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "O Checklist de Integridade das carnes deve ser realizado 2 vezes sendo: antes da abertura do restaurante e antes do pico do jantar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3655,7 +3976,11 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "contaminacao",
+        "limpeza",
+        "temperatura"
+      ],
       "pergunta": "Com relação aos produtos químicos é correto afirmar que:",
       "alternativas": [
         "Qualquer produto de limpeza pode ser utilizado no restaurante",
@@ -3700,7 +4025,15 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "limpeza",
+        "ppf",
+        "sal",
+        "taylor-ng",
+        "tecnica",
+        "temperatura"
+      ],
       "pergunta": "Assinale a alternativa que é exemplo de Cooltura de Serviço no restaurante:",
       "alternativas": [
         "Apenas sorrir para os clientes",
@@ -3745,15 +4078,22 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "atendimento",
+        "filtro",
+        "oleo",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Em caso de acidente sofrido pelo funcionário no interior do restaurante enquanto executava uma atividade de filtragem de óleo, é correto afirmar que:",
       "alternativas": [
+        "O acidente deve ser comunicado somente ao gerente de área",
         "O funcionário deve continuar trabalhando até o fim do turno",
         "Após prestar os primeiros socorros, o funcionário precisa ser encaminhado para atendimento médico e a área de Saúde e Segurança do Trabalho deverá ser comunicada imediatamente",
-        "O gerente deve registrar o acidente apenas no final do dia",
-        "O acidente deve ser comunicado somente ao gerente de área"
+        "O gerente deve registrar o acidente apenas no final do dia"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Após prestar os primeiros socorros, o funcionário precisa ser encaminhado para atendimento médico e a área de Saúde e Segurança do Trabalho deverá ser comunicada imediatamente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3790,15 +4130,21 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "frequencia",
+        "seguranca_alimentar",
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
       "pergunta": "Todos os funcionários da empresa devem garantir sua frequência (4 vezes ao dia) registrada diariamente de forma eletrônica. Essa afirmativa refere-se ao:",
       "alternativas": [
-        "Checklist de segurança",
+        "Relatório de produtividade",
         "Controle de temperatura",
-        "Registro de ponto",
-        "Relatório de produtividade"
+        "Checklist de segurança",
+        "Registro de ponto"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "O registro de frequência diária eletrônica (4 vezes ao dia) refere-se ao Registro de ponto.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3835,15 +4181,18 @@
       "subcategoria": "🌙 Gerente de Plantão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": [],
+      "tags": [
+        "rota",
+        "temperatura"
+      ],
       "pergunta": "Quais são os três estágios principais que devem ser cumpridos para liderar o plantão?",
       "alternativas": [
-        "Planejamento, Execução e Avaliação",
-        "Abertura, Pico e Fechamento",
         "Pré-Plantão, Liderar o Plantão e Pós-Plantão",
-        "Posicionamento, Rota e Feedback"
+        "Planejamento, Execução e Avaliação",
+        "Posicionamento, Rota e Feedback",
+        "Abertura, Pico e Fechamento"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Os três estágios principais para liderar o plantão são: Pré-Plantão, Liderar o Plantão e Pós-Plantão.",
       "dica": "",
       "tempoEstimado": 15,

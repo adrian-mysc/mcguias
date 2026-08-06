@@ -10,9 +10,18 @@
       "subcategoria": "📋 SMPD — Geral",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["smpd", "preventiva", "conceito"],
+      "tags": [
+        "smpd",
+        "preventiva",
+        "conceito"
+      ],
       "pergunta": "O que significa a sigla SMPD nas preventivas diárias?",
-      "alternativas": ["Sistema de Manutenção Preventiva Diária", "Serviço de Manutenção e Programação Diária", "Setor de Manutenção Preventiva e Distribuição", "Sistema de Monitoramento de Processos Diários"],
+      "alternativas": [
+        "Sistema de Manutenção Preventiva Diária",
+        "Serviço de Manutenção e Programação Diária",
+        "Sistema de Monitoramento de Processos Diários",
+        "Setor de Manutenção Preventiva e Distribuição"
+      ],
       "respostaCorreta": 0,
       "explicacao": "SMPD = Sistema de Manutenção Preventiva Diária. São procedimentos obrigatórios realizados diariamente nos equipamentos do restaurante.",
       "dica": "A sigla descreve exatamente o que o sistema faz.",
@@ -24,10 +33,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_002",
@@ -35,9 +59,19 @@
       "subcategoria": "🔥 Ficha 1R — Chapa",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "limpeza", "epi", "1r"],
+      "tags": [
+        "chapa",
+        "limpeza",
+        "epi",
+        "1r"
+      ],
       "pergunta": "Qual EPI é obrigatório na limpeza da chapa (Ficha 1R)?",
-      "alternativas": ["Apenas luva de látex", "Luva alta temperatura, mangote, avental alta temperatura e calçado sem metal", "Máscara, óculos e luva látex", "Avental e calçado comum"],
+      "alternativas": [
+        "Avental e calçado comum",
+        "Luva alta temperatura, mangote, avental alta temperatura e calçado sem metal",
+        "Apenas luva de látex",
+        "Máscara, óculos e luva látex"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Na Ficha 1R (limpeza da chapa), o EPI obrigatório inclui: luva de alta temperatura, mangote, avental de alta temperatura e calçado de segurança sem componentes metálicos.",
       "dica": "A chapa opera em temperaturas muito altas — a proteção deve ser completa.",
@@ -49,10 +83,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_003",
@@ -60,10 +109,20 @@
       "subcategoria": "🔥 Ficha 1R — Chapa",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "limpeza", "produto", "1r"],
+      "tags": [
+        "chapa",
+        "limpeza",
+        "produto",
+        "1r"
+      ],
       "pergunta": "Qual produto é utilizado na limpeza das superfícies de aquecimento da chapa (Ficha 1R)?",
-      "alternativas": ["Solução sanitizante comum", "Kay QSR Hi-Temp Grill Cleaner (100ml não diluído)", "HD-Desengordurante diluído em água", "Detergente neutro com água morna"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "HD-Desengordurante diluído em água",
+        "Solução sanitizante comum",
+        "Kay QSR Hi-Temp Grill Cleaner (100ml não diluído)",
+        "Detergente neutro com água morna"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "Na Ficha 1R, utiliza-se 100 ml do produto Kay QSR Hi-Temp Grill Cleaner concentrado, sem diluir em água, aplicado com suporte azul 3M não abrasiva.",
       "dica": "O produto específico para grill é aplicado puro, não diluído.",
       "tempoEstimado": 20,
@@ -74,10 +133,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_004",
@@ -85,9 +159,19 @@
       "subcategoria": "🔥 Ficha 1R — Chapa",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "limpeza", "tempo", "1r"],
+      "tags": [
+        "chapa",
+        "limpeza",
+        "tempo",
+        "1r"
+      ],
       "pergunta": "Quantos minutos o produto deve agir na superfície da chapa durante a limpeza (Ficha 1R)?",
-      "alternativas": ["1 minuto", "2 minutos", "3 minutos", "5 minutos"],
+      "alternativas": [
+        "1 minuto",
+        "2 minutos",
+        "3 minutos",
+        "5 minutos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Após aplicar o Kay QSR Hi-Temp na superfície da chapa, é necessário aguardar 3 minutos de ação do produto antes de removê-lo.",
       "dica": "O tempo de contato é fundamental para a eficácia do produto.",
@@ -99,10 +183,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_005",
@@ -110,10 +209,19 @@
       "subcategoria": "🍟 Ficha 2R — Fritadeira",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["fritadeira", "drenagem", "2r"],
+      "tags": [
+        "fritadeira",
+        "drenagem",
+        "2r"
+      ],
       "pergunta": "Quando deve ser realizada a drenagem da cuba da fritadeira (Ficha 2R)?",
-      "alternativas": ["À noite, com a gordura quente", "Pela manhã, com o equipamento desligado e a gordura fria", "A qualquer hora do dia", "Após cada fritura"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "A qualquer hora do dia",
+        "Após cada fritura",
+        "À noite, com a gordura quente",
+        "Pela manhã, com o equipamento desligado e a gordura fria"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "A Ficha 2R deve ser executada pela manhã, com o equipamento desligado e a gordura completamente fria, para segurança do operador.",
       "dica": "Gordura fria = seguro para drenar.",
       "tempoEstimado": 15,
@@ -124,10 +232,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_006",
@@ -135,10 +258,20 @@
       "subcategoria": "🧹 Ficha 5I — Estufa UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "estufa", "limpeza", "5i"],
+      "tags": [
+        "uhc",
+        "estufa",
+        "limpeza",
+        "5i"
+      ],
       "pergunta": "Qual mensagem deve aparecer no slot da estufa UHC para iniciar a limpeza (Ficha 5I)?",
-      "alternativas": ["READY TO CLEAN", "CLEAN MODE ON", "Liberado ou Limpe", "START CLEANING"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Liberado ou Limpe",
+        "READY TO CLEAN",
+        "CLEAN MODE ON",
+        "START CLEANING"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "Na Ficha 5I, após selecionar o modo de limpeza, aguarda-se a mensagem 'liberado ou Limpe' no slot para iniciar a limpeza.",
       "dica": "A estufa avisa quando está pronta para a limpeza.",
       "tempoEstimado": 15,
@@ -149,10 +282,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_007",
@@ -160,10 +308,20 @@
       "subcategoria": "🧹 Ficha 5I — Estufa UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "estufa", "ferramenta", "5i"],
+      "tags": [
+        "uhc",
+        "estufa",
+        "ferramenta",
+        "5i"
+      ],
       "pergunta": "Qual ferramenta é PROIBIDA na limpeza das prateleiras da estufa UHC (Ficha 5I)?",
-      "alternativas": ["Pano úmido", "Escova de limpeza da UHC", "Escova de arame, esfregoens abrasivos ou raspadeiras de metal", "Solução de limpeza"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Escova de limpeza da UHC",
+        "Escova de arame, esfregoens abrasivos ou raspadeiras de metal",
+        "Solução de limpeza",
+        "Pano úmido"
+      ],
+      "respostaCorreta": 1,
       "explicacao": "Nunca usar escova de arame, esfregoens com material abrasivo ou raspadeiras de metal na estufa UHC — podem causar danos permanentes às prateleiras. Usar apenas a escova de limpeza exclusiva da estufa.",
       "dica": "Materiais abrasivos danificam permanentemente as prateleiras.",
       "tempoEstimado": 15,
@@ -174,10 +332,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_008",
@@ -185,9 +358,19 @@
       "subcategoria": "🥫 Ficha 20A — Dispensador de Molho",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["dispensador", "molho", "calibragem", "20a"],
+      "tags": [
+        "dispensador",
+        "molho",
+        "calibragem",
+        "20a"
+      ],
       "pergunta": "Na calibragem do dispensador 1/3 oz (Ficha 20A), quantos tiros devem resultar em 2 onças fluidas no copo?",
-      "alternativas": ["3 tiros", "4 tiros", "6 tiros", "8 tiros"],
+      "alternativas": [
+        "3 tiros",
+        "4 tiros",
+        "6 tiros",
+        "8 tiros"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Dispensador 1/3 oz: apertar o gatilho 6 vezes → 6 tiros → deve haver 2 onças fluidas no copo de calibragem.",
       "dica": "1/3 oz × 6 tiros = 2 oz.",
@@ -199,10 +382,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_009",
@@ -210,9 +408,19 @@
       "subcategoria": "🥫 Ficha 20A — Dispensador de Molho",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["dispensador", "molho", "calibragem", "20a"],
+      "tags": [
+        "dispensador",
+        "molho",
+        "calibragem",
+        "20a"
+      ],
       "pergunta": "Na calibragem do dispensador 1/2 oz (Ficha 20A), quantos tiros devem resultar em 60 ml no copo?",
-      "alternativas": ["3 tiros", "4 tiros", "6 tiros", "8 tiros"],
+      "alternativas": [
+        "3 tiros",
+        "4 tiros",
+        "6 tiros",
+        "8 tiros"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Dispensador 1/2 oz: apertar o gatilho 4 vezes → 4 tiros → deve haver 2 onças fluidas = 60 ml no copo de calibragem.",
       "dica": "1/2 oz × 4 tiros = 2 oz = 60 ml.",
@@ -224,10 +432,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_010",
@@ -235,9 +458,19 @@
       "subcategoria": "🥫 Ficha 20A — Dispensador de Molho",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["dispensador", "molho", "calibragem", "20a"],
+      "tags": [
+        "dispensador",
+        "molho",
+        "calibragem",
+        "20a"
+      ],
       "pergunta": "Na calibragem do dispensador 2/3 oz (Ficha 20A), quantos tiros devem resultar em 2 onças fluidas?",
-      "alternativas": ["2 tiros", "3 tiros", "4 tiros", "6 tiros"],
+      "alternativas": [
+        "2 tiros",
+        "3 tiros",
+        "4 tiros",
+        "6 tiros"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Dispensador 2/3 oz: apertar o gatilho 3 vezes → 3 tiros → deve haver 2 onças fluidas no copo. 2/3 oz × 3 = 2 oz.",
       "dica": "2/3 × 3 = 2.",
@@ -249,10 +482,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_011",
@@ -260,9 +508,19 @@
       "subcategoria": "🍅 Ficha 20B — Lubrificação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["dispensador", "lubrificacao", "petrogel", "20b"],
+      "tags": [
+        "dispensador",
+        "lubrificacao",
+        "petrogel",
+        "20b"
+      ],
       "pergunta": "Qual produto é usado para lubrificar a haste do dispensador de molho (Ficha 20B)?",
-      "alternativas": ["Óleo de cozinha", "Vaselina líquida", "Petrogel", "QSR Multiuso"],
+      "alternativas": [
+        "Vaselina líquida",
+        "QSR Multiuso",
+        "Petrogel",
+        "Óleo de cozinha"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Na Ficha 20B, utiliza-se Petrogel nos dentes da haste do dispensador de molho. O mesmo produto é usado no fatiador de tomate (Ficha 19B).",
       "dica": "O lubrificante padrão para equipamentos de cozinha é o Petrogel.",
@@ -274,10 +532,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_012",
@@ -285,9 +558,19 @@
       "subcategoria": "🍅 Calibragem Ketchup e Mostarda",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["ketchup", "mostarda", "calibragem", "dispensador"],
+      "tags": [
+        "ketchup",
+        "mostarda",
+        "calibragem",
+        "dispensador"
+      ],
       "pergunta": "Quantas vezes deve-se pressionar a alavanca do dispensador de Ketchup antes de usar?",
-      "alternativas": ["5 vezes", "10 vezes", "15 vezes", "20 vezes"],
+      "alternativas": [
+        "5 vezes",
+        "10 vezes",
+        "15 vezes",
+        "20 vezes"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Ketchup: pressionar 10 vezes antes de usar. Mostarda: pressionar 20 vezes. Esse processo garante que o produto esteja na saída do dispensador.",
       "dica": "Ketchup = 10 pressões, Mostarda = 20 pressões.",
@@ -299,10 +582,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_013",
@@ -310,9 +608,18 @@
       "subcategoria": "🍅 Calibragem Ketchup e Mostarda",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["mostarda", "calibragem", "porção"],
+      "tags": [
+        "mostarda",
+        "calibragem",
+        "porção"
+      ],
       "pergunta": "Quantos tiros de mostarda equivalem a 1 oz (30 ml) no copo de calibração?",
-      "alternativas": ["6 tiros", "20 tiros", "47 tiros", "100 tiros"],
+      "alternativas": [
+        "6 tiros",
+        "20 tiros",
+        "47 tiros",
+        "100 tiros"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Mostarda: 47 tiros = 1 oz = 30 ml. Ketchup Regular: 6 tiros = 2 oz = 60 ml. Ketchup Quarterão: 6 tiros = 3 oz = 90 ml.",
       "dica": "O dispensador de mostarda libera porções muito pequenas — são necessários muitos tiros.",
@@ -324,10 +631,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_014",
@@ -335,10 +657,20 @@
       "subcategoria": "❄️ Ficha 15B — Câmaras",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["congelador", "refrigerador", "gelo", "15b"],
+      "tags": [
+        "congelador",
+        "refrigerador",
+        "gelo",
+        "15b"
+      ],
       "pergunta": "O que é PROIBIDO ao descongelar o gelo dos congeladores e refrigeradores (Ficha 15B)?",
-      "alternativas": ["Usar água morna", "Usar ferramentas para despregar o gelo da parede", "Desligar o equipamento", "Aguardar descongelar naturalmente"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Desligar o equipamento",
+        "Aguardar descongelar naturalmente",
+        "Usar água morna",
+        "Usar ferramentas para despregar o gelo da parede"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "NUNCA usar ferramentas para desprender o gelo da parede ou evaporador — pode danificar gravemente o equipamento. Usar água morna para auxiliar o descongelamento.",
       "dica": "Ferramentas mecânicas danificam as paredes internas do equipamento.",
       "tempoEstimado": 15,
@@ -349,10 +681,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_015",
@@ -360,9 +707,19 @@
       "subcategoria": "💧 Ficha 33A — Cloro",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["cloro", "agua", "33a", "genkit"],
+      "tags": [
+        "cloro",
+        "agua",
+        "33a",
+        "genkit"
+      ],
       "pergunta": "Qual a faixa correta de cloro da água do restaurante (Ficha 33A)?",
-      "alternativas": ["0,1 a 0,5 ppm", "0,5 a 1,5 ppm", "1,5 a 3,0 ppm", "3,0 a 5,0 ppm"],
+      "alternativas": [
+        "0,1 a 0,5 ppm",
+        "0,5 a 1,5 ppm",
+        "1,5 a 3,0 ppm",
+        "3,0 a 5,0 ppm"
+      ],
       "respostaCorreta": 1,
       "explicacao": "A análise de cloro deve resultar entre 0,5 ppm (mínimo) e 1,5 ppm (máximo). Fora dessa faixa, acionar manutenção ou administração do shopping.",
       "dica": "Memorizando: mínimo 0,5 — máximo 1,5.",
@@ -374,10 +731,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_016",
@@ -385,9 +757,20 @@
       "subcategoria": "💧 Ficha 33A — Cloro",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["cloro", "agua", "33a", "genkit", "procedimento"],
+      "tags": [
+        "cloro",
+        "agua",
+        "33a",
+        "genkit",
+        "procedimento"
+      ],
       "pergunta": "Quantas gotas de solução 'Orto-tolidina' são adicionadas na análise de cloro (Ficha 33A)?",
-      "alternativas": ["2 gotas", "4 gotas", "6 gotas", "10 gotas"],
+      "alternativas": [
+        "2 gotas",
+        "4 gotas",
+        "6 gotas",
+        "10 gotas"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Na Ficha 33A, adicionar 4 gotas da solução 'Orto-tolidina' no tubo com a amostra de água, tampar, agitar e comparar com o padrão.",
       "dica": "Quatro gotas para revelar a cor.",
@@ -399,10 +782,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_017",
@@ -410,10 +808,20 @@
       "subcategoria": "💧 Ficha 33A — Cloro",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["cloro", "agua", "33a", "frequencia"],
+      "tags": [
+        "cloro",
+        "agua",
+        "33a",
+        "frequencia"
+      ],
       "pergunta": "Com que frequência é realizada a análise de cloro da água (Ficha 33A)?",
-      "alternativas": ["1 vez ao dia", "2 vezes ao dia", "1 vez por semana", "A cada turno"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "2 vezes ao dia",
+        "1 vez por semana",
+        "A cada turno",
+        "1 vez ao dia"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "A Ficha 33A de análise de cloro é realizada 2 vezes ao dia, coletando em pontos diferentes durante a semana.",
       "dica": "A análise de cloro deve ser feita tanto na abertura quanto no meio do dia.",
       "tempoEstimado": 15,
@@ -424,10 +832,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_018",
@@ -435,10 +858,20 @@
       "subcategoria": "🧊 Ficha 46A — Encestador",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["encestador", "batata", "46a", "horario"],
+      "tags": [
+        "encestador",
+        "batata",
+        "46a",
+        "horario"
+      ],
       "pergunta": "Quando deve ser realizada a limpeza dos componentes removíveis do encestador de batata (Ficha 46A)?",
-      "alternativas": ["Pela manhã, antes da abertura", "Após o almoço", "Diariamente após o jantar", "Apenas nas segundas-feiras"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Apenas nas segundas-feiras",
+        "Diariamente após o jantar",
+        "Pela manhã, antes da abertura",
+        "Após o almoço"
+      ],
+      "respostaCorreta": 1,
       "explicacao": "A Ficha 46A deve ser realizada diariamente após o jantar, quando o movimento permite desligar e limpar o encestador.",
       "dica": "O jantar é o último pico de movimento — depois é hora de limpar.",
       "tempoEstimado": 15,
@@ -449,10 +882,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_019",
@@ -460,9 +908,19 @@
       "subcategoria": "🧊 Ficha 46B — Encestador Interno",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["encestador", "batata", "46b", "24h"],
+      "tags": [
+        "encestador",
+        "batata",
+        "46b",
+        "24h"
+      ],
       "pergunta": "Em lojas que funcionam 24 horas, qual é o requisito mínimo de desligamento do encestador por dia?",
-      "alternativas": ["30 minutos", "1 hora", "2 a 3 horas", "4 horas"],
+      "alternativas": [
+        "4 horas",
+        "1 hora",
+        "2 a 3 horas",
+        "30 minutos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Lojas que funcionam 24 horas devem desligar o encestador por pelo menos 2 a 3 horas por dia para realizar a limpeza interna (Ficha 46B).",
       "dica": "Mesmo lojas 24h precisam de tempo para limpeza.",
@@ -474,10 +932,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_020",
@@ -485,10 +958,19 @@
       "subcategoria": "🔥 Ficha 22D — Caixa de Gordura",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["caixa-gordura", "22d", "epi"],
+      "tags": [
+        "caixa-gordura",
+        "22d",
+        "epi"
+      ],
       "pergunta": "Qual EPI é obrigatório na limpeza da caixa de gordura (Ficha 22D)?",
-      "alternativas": ["Luva alta temperatura", "Luva látex", "Máscara e óculos de proteção", "Avental impermeável"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Máscara e óculos de proteção",
+        "Avental impermeável",
+        "Luva alta temperatura",
+        "Luva látex"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "Na Ficha 22D (limpeza da caixa de gordura), o EPI obrigatório é luva látex para proteção contra a gordura e resíduos.",
       "dica": "Gordura fria não precisa de proteção térmica, mas precisa de proteção contra contato.",
       "tempoEstimado": 15,
@@ -499,10 +981,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_021",
@@ -510,9 +1007,19 @@
       "subcategoria": "🍦 Ficha 120 — Sorvete",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["sorvete", "calibragem", "120", "peso"],
+      "tags": [
+        "sorvete",
+        "calibragem",
+        "120",
+        "peso"
+      ],
       "pergunta": "Qual o peso correto do sorvete extraído em 10 segundos na calibragem da Ficha 120?",
-      "alternativas": ["50 a 100 gramas", "100 a 150 gramas", "142 a 213 gramas", "250 a 300 gramas"],
+      "alternativas": [
+        "50 a 100 gramas",
+        "100 a 150 gramas",
+        "142 a 213 gramas",
+        "250 a 300 gramas"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Na Ficha 120, o peso padrão de extração em 10 segundos deve ser de 142 a 213 gramas (5 a 7,5 onças). Deve ser feito 2 vezes ao dia em todas as válvulas.",
       "dica": "5 a 7,5 oz corresponde a 142–213 gramas.",
@@ -524,10 +1031,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_022",
@@ -535,10 +1057,20 @@
       "subcategoria": "🍦 Ficha 120 — Sorvete",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["sorvete", "calibragem", "120", "ajuste"],
+      "tags": [
+        "sorvete",
+        "calibragem",
+        "120",
+        "ajuste"
+      ],
       "pergunta": "Se o peso do sorvete estiver ACIMA do padrão na calibragem (Ficha 120), como deve ser ajustado o parafuso?",
-      "alternativas": ["Sentido anti-horário (maior extração)", "Sentido horário (menor extração)", "Não mexer no parafuso", "Substituir a válvula"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Sentido horário (menor extração)",
+        "Substituir a válvula",
+        "Sentido anti-horário (maior extração)",
+        "Não mexer no parafuso"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "Se o peso estiver acima do padrão (muita extração), girar o parafuso da alavanca no sentido horário para reduzir a extração. Se estiver abaixo, girar no sentido anti-horário.",
       "dica": "Horário = apertar = menos extração.",
       "tempoEstimado": 15,
@@ -549,10 +1081,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_023",
@@ -560,9 +1107,19 @@
       "subcategoria": "🍦 Ficha 12I — Sorvete Banho-Maria",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["sorvete", "banho-maria", "temperatura", "12i"],
+      "tags": [
+        "sorvete",
+        "banho-maria",
+        "temperatura",
+        "12i"
+      ],
       "pergunta": "Qual a faixa de temperatura ideal da água do banho-maria das coberturas (Ficha 12I)?",
-      "alternativas": ["40°C a 50°C", "57°C a 63°C", "70°C a 80°C", "85°C a 90°C"],
+      "alternativas": [
+        "40°C a 50°C",
+        "57°C a 63°C",
+        "70°C a 80°C",
+        "85°C a 90°C"
+      ],
       "respostaCorreta": 1,
       "explicacao": "A temperatura da água do banho-maria das coberturas deve estar entre 57°C e 63°C. Aguardar 15 minutos para estabilizar antes de medir. Fora dessa faixa, acionar o Técnico de Manutenção.",
       "dica": "Banho-maria das coberturas: 57°C a 63°C.",
@@ -574,10 +1131,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_024",
@@ -585,10 +1157,20 @@
       "subcategoria": "🍦 Ficha 12E — Sorvete Limpeza",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["sorvete", "agitadores", "petrogel", "12e"],
+      "tags": [
+        "sorvete",
+        "agitadores",
+        "petrogel",
+        "12e"
+      ],
       "pergunta": "O que deve ser aplicado nos agitadores da máquina de sorvete antes de recolocá-los (Ficha 12E)?",
-      "alternativas": ["Óleo de cozinha", "Vaselina", "Petrogel", "Solução sanitizante"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Óleo de cozinha",
+        "Petrogel",
+        "Solução sanitizante",
+        "Vaselina"
+      ],
+      "respostaCorreta": 1,
       "explicacao": "Na Ficha 12E, após lavar e sanitizar os agitadores, aplica-se uma fina camada de Petrogel antes de recolocar no equipamento.",
       "dica": "O Petrogel é o lubrificante padrão para componentes de equipamentos de alimentos.",
       "tempoEstimado": 15,
@@ -599,10 +1181,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_025",
@@ -610,9 +1207,19 @@
       "subcategoria": "🍦 Ficha 12N — Dispensador de Amendoim",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["sorvete", "amendoim", "sanitizacao", "12n"],
+      "tags": [
+        "sorvete",
+        "amendoim",
+        "sanitizacao",
+        "12n"
+      ],
       "pergunta": "Por quantos minutos o dispensador de amendoim deve ficar na solução sanitizante (Ficha 12N)?",
-      "alternativas": ["3 minutos", "5 minutos", "7 minutos", "10 minutos"],
+      "alternativas": [
+        "3 minutos",
+        "5 minutos",
+        "7 minutos",
+        "10 minutos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Na Ficha 12N, após enxaguar com água quente, deixar o dispensador de amendoim dentro da cuba por 7 minutos na solução sanitizante.",
       "dica": "Sete minutos de contato com o sanitizante.",
@@ -624,10 +1231,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_026",
@@ -635,9 +1257,19 @@
       "subcategoria": "☕ Ficha 1D McCafé — Retrolavagem",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["mccafe", "retrolavagem", "cafe-expresso", "1d"],
+      "tags": [
+        "mccafe",
+        "retrolavagem",
+        "cafe-expresso",
+        "1d"
+      ],
       "pergunta": "Quantas vezes deve ser repetida a operação de retrolavagem em cada grupo da máquina de café expresso (Ficha 1D)?",
-      "alternativas": ["1 vez", "2 vezes", "3 vezes", "5 vezes"],
+      "alternativas": [
+        "1 vez",
+        "2 vezes",
+        "3 vezes",
+        "5 vezes"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Na Ficha 1D, repetir a operação de retrolavagem (filtro cego, apertar stop, contar 5 segundos, apertar novamente, despejar água) 3 vezes em cada grupo da máquina.",
       "dica": "Três repetições por grupo garantem a limpeza do sistema interno.",
@@ -649,10 +1281,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_027",
@@ -660,9 +1307,19 @@
       "subcategoria": "☕ Ficha 2B McCafé — Forno Giratório",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["mccafe", "forno-giratorio", "sanitizacao", "2b"],
+      "tags": [
+        "mccafe",
+        "forno-giratorio",
+        "sanitizacao",
+        "2b"
+      ],
       "pergunta": "Quantos minutos aguardar antes de usar o forno giratório após a sanitização (Ficha 2B)?",
-      "alternativas": ["5 minutos", "10 minutos", "15 minutos", "20 minutos"],
+      "alternativas": [
+        "5 minutos",
+        "10 minutos",
+        "15 minutos",
+        "20 minutos"
+      ],
       "respostaCorreta": 3,
       "explicacao": "Após sanitizar o forno giratório (Ficha 2B), ligar o equipamento e aguardar 20 minutos antes de utilizá-lo, para garantir que o sanitizante evapore completamente.",
       "dica": "Vinte minutos de espera após a sanitização.",
@@ -674,10 +1331,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_028",
@@ -685,10 +1357,20 @@
       "subcategoria": "☕ Ficha 9C McCafé — Filtro de Água",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["mccafe", "filtro-agua", "retrolavagem", "9c"],
+      "tags": [
+        "mccafe",
+        "filtro-agua",
+        "retrolavagem",
+        "9c"
+      ],
       "pergunta": "O que NÃO deve ser feito durante a retrolavagem do filtro de água do McCafé (Ficha 9C)?",
-      "alternativas": ["Usar martelo de borracha no filtro T-9", "Extrair café ou usar a máquina de lavar xícara", "Fechar o registro após o filtro MIB", "Engate a mangueira no bico de drenagem"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Engate a mangueira no bico de drenagem",
+        "Fechar o registro após o filtro MIB",
+        "Extrair café ou usar a máquina de lavar xícara",
+        "Usar martelo de borracha no filtro T-9"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "Durante a retrolavagem do filtro de água (Ficha 9C), NÃO extrair nenhum café e não utilizar a máquina de lavar xícara, pois isso interfere na pressão do sistema.",
       "dica": "A retrolavagem requer que o sistema de água esteja exclusivo para o processo.",
       "tempoEstimado": 20,
@@ -699,10 +1381,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_029",
@@ -710,10 +1407,20 @@
       "subcategoria": "📊 Ficha 25B — Energia",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["energia", "kwh", "25b", "leitura"],
+      "tags": [
+        "energia",
+        "kwh",
+        "25b",
+        "leitura"
+      ],
       "pergunta": "Qual tecla deve ser pressionada no relógio de KWH para encontrar o valor de consumo (Ficha 25B)?",
-      "alternativas": ["START", "HOME", "MENU", "OK"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "OK",
+        "MENU",
+        "START",
+        "HOME"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "Na Ficha 25B, pressionar a tecla HOME no relógio de medição de KWH até encontrar o valor de consumo a ser anotado.",
       "dica": "A tecla HOME navega pelos valores do medidor.",
       "tempoEstimado": 15,
@@ -724,10 +1431,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     },
     {
       "id": "manut_030",
@@ -735,10 +1457,20 @@
       "subcategoria": "🥛 Ficha 44A — Foamino",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["leite", "foamino", "44a", "botao"],
+      "tags": [
+        "leite",
+        "foamino",
+        "44a",
+        "botao"
+      ],
       "pergunta": "Qual botão deve ser pressionado para ligar a máquina de leite Foamino (Ficha 44A)?",
-      "alternativas": ["Botão verde superior", "Botão azul lateral", "Botão vermelho inferior", "Botão amarelo central"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Botão vermelho inferior",
+        "Botão verde superior",
+        "Botão amarelo central",
+        "Botão azul lateral"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "Para ligar o equipamento Foamino, pressionar o botão vermelho inferior, conforme o procedimento da Ficha 44A.",
       "dica": "O botão de liga/desliga do Foamino é vermelho e fica na parte inferior.",
       "tempoEstimado": 15,
@@ -749,10 +1481,25 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

@@ -212,12 +212,12 @@
       ],
       "pergunta": "O que deve ser feito com a tampa do McShake após o batimento?",
       "alternativas": [
-        "Mantê-la para servir ao cliente",
         "Descartá-la",
-        "Trocá-la por outra tampa",
-        "Guardá-la para o próximo shake"
+        "Guardá-la para o próximo shake",
+        "Mantê-la para servir ao cliente",
+        "Trocá-la por outra tampa"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Após o preparo do McShake, a tampa deve ser descartada. Nunca sirva com a tampa de batimento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -306,10 +306,10 @@
       ],
       "pergunta": "Qual é a quantidade correta de gelo para o copo médio?",
       "alternativas": [
-        "½ pá de gelo",
+        "2 pás de gelo",
         "1 pá cheia de gelo",
         "1 pá e ½ de gelo",
-        "2 pás de gelo"
+        "½ pá de gelo"
       ],
       "respostaCorreta": 1,
       "explicacao": "Copo pequeno: ½ pá / Copo médio: 1 pá cheia / Copo grande: 1 pá e ½.",
@@ -355,10 +355,10 @@
       ],
       "pergunta": "Qual letra é usada para identificar manualmente a Coca-Cola Zero no copo?",
       "alternativas": [
-        "C",
         "X",
+        "0",
         "Z",
-        "0"
+        "C"
       ],
       "respostaCorreta": 2,
       "explicacao": "Para Coca-Cola Zero e Sprite Zero, identifica-se com a letra 'Z' dentro do círculo vermelho com caneta hidrográfica.",
@@ -402,12 +402,12 @@
       ],
       "pergunta": "Qual é a temperatura correta da massa de sorvete?",
       "alternativas": [
-        "-5°C a -3°C",
-        "-9°C a -8°C",
+        "0°C a 2°C",
         "-12°C a -10°C",
-        "0°C a 2°C"
+        "-5°C a -3°C",
+        "-9°C a -8°C"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A temperatura da massa de sorvete deve ser entre -9°C e -8°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -497,12 +497,12 @@
       ],
       "pergunta": "O que a Pessoa da Condimentação NÃO deve fazer na casquinha?",
       "alternativas": [
-        "Adicionar cobertura",
         "Adicionar colher e enrolar com guardanapo",
-        "Enviar apenas um guardanapo junto com o cone",
-        "Receber do extrator"
+        "Receber do extrator",
+        "Adicionar cobertura",
+        "Enviar apenas um guardanapo junto com o cone"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Em casquinha: NÃO adicionar colher e NÃO enrolar. Enviar somente um guardanapo junto com o cone.",
       "dica": "",
       "tempoEstimado": 15,
@@ -788,12 +788,12 @@
       ],
       "pergunta": "Qual o complemento adicionado no Top Sundae?",
       "alternativas": [
-        "Amendoim",
         "Ovomaltine",
         "Rocks",
-        "Paçoca"
+        "Paçoca",
+        "Amendoim"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Top Sundae: cobertura (base) + 6 voltas + cobertura (topo) + paçoca + 2 bijus + colher.",
       "dica": "",
       "tempoEstimado": 15,
@@ -886,11 +886,11 @@
       "pergunta": "Onde o McShake deve ser colocado após o batimento?",
       "alternativas": [
         "Diretamente para o cliente",
-        "Na área de espera de bebidas (BLZ)",
+        "No balcão de entrega",
         "Na mesa de condimentação",
-        "No balcão de entrega"
+        "Na área de espera de bebidas (BLZ)"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Após o preparo, colocar o copo de McShake na área de espera de bebidas (BLZ) e servir pelo bump bar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -933,12 +933,12 @@
       ],
       "pergunta": "Como identificar manualmente a Água gaseificada no copo?",
       "alternativas": [
-        "Letra G",
         "Letra A",
-        "Letra Z",
-        "Nenhuma identificação"
+        "Letra G",
+        "Nenhuma identificação",
+        "Letra Z"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Para Água gaseificada: identificar com a letra 'A' dentro do círculo vermelho com caneta hidrográfica. Zero = 'Z'.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1032,10 +1032,10 @@
       ],
       "pergunta": "Qual botão deve ser pressionado para testar o suco após estocagem?",
       "alternativas": [
-        "POWER",
         "RESET",
+        "TEST",
         "FLOW",
-        "TEST"
+        "POWER"
       ],
       "respostaCorreta": 2,
       "explicacao": "Após estocagem do reservatório na máquina, limpar a borda e gaxeta e apertar a tecla FLOW para testar o produto.",
@@ -1129,12 +1129,12 @@
       ],
       "pergunta": "Como a Pessoa da Extração inicia o preparo de cada produto?",
       "alternativas": [
-        "Espera o pedido do cliente diretamente",
-        "Pega o copo/cone pela tela, coloca a massa e transfere para a Condimentação",
         "Finaliza o produto completo",
-        "Entrega diretamente ao cliente"
+        "Entrega diretamente ao cliente",
+        "Espera o pedido do cliente diretamente",
+        "Pega o copo/cone pela tela, coloca a massa e transfere para a Condimentação"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A Extração inicia pegando o copo/cone conforme a tela, coloca a massa (e cobertura se necessário) e transfere para a Condimentação finalizar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1178,12 +1178,12 @@
       ],
       "pergunta": "Qual o papel da Pessoa da Entrega no Dessert Center?",
       "alternativas": [
-        "Extrair a massa",
-        "Adicionar coberturas e complementos",
         "Organizar clientes em espera, receber produto pronto e entregar conferindo na tela",
-        "Operar o caixa"
+        "Adicionar coberturas e complementos",
+        "Operar o caixa",
+        "Extrair a massa"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "A Pessoa da Entrega organiza clientes, recebe o produto pronto da Condimentação, confere na tela, entrega e usa o bump bar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1278,8 +1278,8 @@
       "alternativas": [
         "Produz bebidas frias e posiciona na BLZ",
         "Produz bebidas quentes e sobremesas posicionando na BLZ",
-        "Atende o caixa",
-        "Faz a entrega ao cliente"
+        "Faz a entrega ao cliente",
+        "Atende o caixa"
       ],
       "respostaCorreta": 1,
       "explicacao": "Com 2 pessoas no BDAP: Função 1 = bebidas frias na BLZ. Função 2 = bebidas quentes e sobremesas na BLZ.",
@@ -1371,12 +1371,12 @@
       ],
       "pergunta": "Como deve ser a extração de bebida láctea no McFlurry?",
       "alternativas": [
+        "Sem girar o copo",
         "Com o bico, circular",
         "Sem o bico, girando o copo",
-        "Com o bico, preenchendo o centro",
-        "Sem girar o copo"
+        "Com o bico, preenchendo o centro"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "McFlurry: sem o bico, girando cuidadosamente o copo para preencher toda lateral com 5 voltas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1517,11 +1517,11 @@
       "pergunta": "Qual é o papel da pessoa da Extração no Dessert Center?",
       "alternativas": [
         "Finalizar e entregar ao cliente",
-        "Pegar copo/cone, colocar a massa e transferir para Condimentação",
+        "Atender o cliente diretamente",
         "Apenas operar o caixa",
-        "Atender o cliente diretamente"
+        "Pegar copo/cone, colocar a massa e transferir para Condimentação"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A Extração pega o copo/cone conforme a tela, coloca a massa e transfere para a Condimentação finalizar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1565,12 +1565,12 @@
       ],
       "pergunta": "Qual botão pressionar para testar o suco após estocagem?",
       "alternativas": [
-        "POWER",
-        "RESET",
         "FLOW",
-        "TEST"
+        "RESET",
+        "TEST",
+        "POWER"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Após estocagem do reservatório, limpar a borda e gaxeta e apertar a tecla FLOW para testar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1613,10 +1613,10 @@
       ],
       "pergunta": "No BDAP com 2 pessoas, qual é a Função 1?",
       "alternativas": [
-        "Bebidas quentes e sobremesas",
+        "Operar o caixa",
         "Bebidas frias na BLZ",
         "Entregar ao cliente",
-        "Operar o caixa"
+        "Bebidas quentes e sobremesas"
       ],
       "respostaCorreta": 1,
       "explicacao": "Com 2 pessoas no BDAP: Função 1 = bebidas frias na BLZ. Função 2 = bebidas quentes e sobremesas.",
@@ -2389,11 +2389,11 @@
       "pergunta": "Qual o tempo de vida das bebidas quentes depois de prontas?",
       "alternativas": [
         "5 minutos após estar pronta",
-        "10 minutos após estar pronta",
         "15 minutos após estar pronta",
-        "Não existe tempo de vida após produzida — o consumo deve ser imediato."
+        "Não existe tempo de vida após produzida — o consumo deve ser imediato.",
+        "10 minutos após estar pronta"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "As bebidas quentes não têm tempo de vida após produzidas: o consumo deve ser imediato.",
       "dica": "Bebida quente não espera.",
       "tempoEstimado": 15,
@@ -2437,9 +2437,9 @@
       ],
       "pergunta": "Qual o tempo de vida do refrigerante depois de pronto?",
       "alternativas": [
-        "7 minutos",
-        "10 minutos",
         "15 minutos",
+        "10 minutos",
+        "7 minutos",
         "Não tem tempo de vida"
       ],
       "respostaCorreta": 3,

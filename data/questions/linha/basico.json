@@ -11,9 +11,17 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["temperatura", "tostadeira"],
+      "tags": [
+        "temperatura",
+        "tostadeira"
+      ],
       "pergunta": "Qual a temperatura das placas A e B da tostadeira?",
-      "alternativas": ["254°C", "265°C", "271°C", "280°C"],
+      "alternativas": [
+        "254°C",
+        "265°C",
+        "271°C",
+        "280°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Placas A e B = 271°C. Placa C = 254°C.",
       "dica": "",
@@ -25,9 +33,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -37,9 +59,17 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tempo", "tostadeira"],
+      "tags": [
+        "tempo",
+        "tostadeira"
+      ],
       "pergunta": "Qual o tempo de caramelização na tostadeira?",
-      "alternativas": ["15 segundos", "18 segundos", "22 segundos", "30 segundos"],
+      "alternativas": [
+        "15 segundos",
+        "18 segundos",
+        "22 segundos",
+        "30 segundos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O tempo de caramelização é de 22 segundos.",
       "dica": "",
@@ -51,9 +81,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -63,9 +107,18 @@
       "subcategoria": "🌡️ UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["temperatura", "uhc", "carne"],
+      "tags": [
+        "temperatura",
+        "uhc",
+        "carne"
+      ],
       "pergunta": "Qual a temperatura da UHC para carnes vermelhas?",
-      "alternativas": ["72°C", "75°C", "79°C", "85°C"],
+      "alternativas": [
+        "72°C",
+        "75°C",
+        "79°C",
+        "85°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "UHC: carnes vermelhas = 79°C e carnes brancas = 85°C.",
       "dica": "",
@@ -77,9 +130,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -89,9 +156,19 @@
       "subcategoria": "🌡️ UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tempo", "uhc", "carne", "validade"],
+      "tags": [
+        "tempo",
+        "uhc",
+        "carne",
+        "validade"
+      ],
       "pergunta": "Qual o tempo de vida de carnes vermelhas na UHC?",
-      "alternativas": ["5 minutos", "10 minutos", "15 minutos", "20 minutos"],
+      "alternativas": [
+        "5 minutos",
+        "10 minutos",
+        "15 minutos",
+        "20 minutos"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Carnes vermelhas têm vida útil de 10 minutos na UHC.",
       "dica": "",
@@ -103,9 +180,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -115,9 +206,17 @@
       "subcategoria": "🧂 Mesa",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["temperatura", "mesa"],
+      "tags": [
+        "temperatura",
+        "mesa"
+      ],
       "pergunta": "Qual a faixa de temperatura da mesa de condimentação?",
-      "alternativas": ["35°C a 45°C", "42°C a 55°C", "49°C a 57°C", "55°C a 65°C"],
+      "alternativas": [
+        "35°C a 45°C",
+        "42°C a 55°C",
+        "49°C a 57°C",
+        "55°C a 65°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "A mesa de condimentação opera entre 49°C e 57°C.",
       "dica": "",
@@ -129,9 +228,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -141,9 +254,18 @@
       "subcategoria": "🧂 Mesa",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["molho", "porcao", "calibracao"],
+      "tags": [
+        "molho",
+        "porcao",
+        "calibracao"
+      ],
       "pergunta": "Para calibrar o Ketchup Regular, quantos tiros devem ser dados?",
-      "alternativas": ["4 tiros", "6 tiros", "8 tiros", "47 tiros"],
+      "alternativas": [
+        "4 tiros",
+        "6 tiros",
+        "8 tiros",
+        "47 tiros"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Ketchup Regular: 6 tiros = 2 OZ / 60 ML.",
       "dica": "",
@@ -155,9 +277,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -167,9 +303,16 @@
       "subcategoria": "⏱️ Linha",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tempo"],
+      "tags": [
+        "tempo"
+      ],
       "pergunta": "Qual é o tempo de linha estabelecido?",
-      "alternativas": ["15 a 25 segundos", "25 a 35 segundos", "35 a 50 segundos", "50 a 60 segundos"],
+      "alternativas": [
+        "15 a 25 segundos",
+        "25 a 35 segundos",
+        "35 a 50 segundos",
+        "50 a 60 segundos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O tempo de linha deve ser de 35 a 50 segundos.",
       "dica": "",
@@ -181,9 +324,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -193,9 +350,17 @@
       "subcategoria": "⏱️ Linha",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tempo", "reacao"],
+      "tags": [
+        "tempo",
+        "reacao"
+      ],
       "pergunta": "Em quantos segundos o iniciador deve reagir ao pedido no monitor para ativar os pães?",
-      "alternativas": ["1 a 2 segundos", "3 a 5 segundos", "5 a 8 segundos", "10 segundos"],
+      "alternativas": [
+        "1 a 2 segundos",
+        "3 a 5 segundos",
+        "5 a 8 segundos",
+        "10 segundos"
+      ],
       "respostaCorreta": 1,
       "explicacao": "O tempo de reação para ativar os pães é de 3 a 5 segundos após ver o pedido no monitor.",
       "dica": "",
@@ -207,9 +372,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -219,10 +398,20 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "pegador", "cebola", "uhc"],
+      "tags": [
+        "best-burger",
+        "pegador",
+        "cebola",
+        "uhc"
+      ],
       "pergunta": "No Best Burger, qual pegador é usado para carnes sem cebola?",
-      "alternativas": ["Pegador vermelho", "Pegador verde", "Pegador azul", "Pegador preto"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Pegador vermelho",
+        "Pegador azul",
+        "Pegador verde",
+        "Pegador preto"
+      ],
+      "respostaCorreta": 1,
       "explicacao": "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola. Pegador vermelho = carnes vermelhas (com cebola). Pegador verde = carnes brancas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -233,9 +422,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -245,9 +448,17 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["temperatura", "tostadeira"],
+      "tags": [
+        "temperatura",
+        "tostadeira"
+      ],
       "pergunta": "Qual a temperatura da placa C da tostadeira?",
-      "alternativas": ["220°C", "240°C", "254°C", "271°C"],
+      "alternativas": [
+        "220°C",
+        "240°C",
+        "254°C",
+        "271°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Placa C = 254°C. Placas A e B = 271°C.",
       "dica": "",
@@ -259,9 +470,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -271,9 +496,18 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "tostadeira", "limite"],
+      "tags": [
+        "pao",
+        "tostadeira",
+        "limite"
+      ],
       "pergunta": "Quantos pães podem ser colocados na tostadeira de cada vez?",
-      "alternativas": ["1 pão", "2 pães", "3 pães", "4 pães"],
+      "alternativas": [
+        "1 pão",
+        "2 pães",
+        "3 pães",
+        "4 pães"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Não coloque mais de 2 pães por vez na seção correta da tostadeira.",
       "dica": "",
@@ -285,9 +519,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -297,10 +545,19 @@
       "subcategoria": "🧂 Mesa",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["molho", "porcao", "calibracao"],
+      "tags": [
+        "molho",
+        "porcao",
+        "calibracao"
+      ],
       "pergunta": "Qual a calibração correta da Mostarda?",
-      "alternativas": ["20 tiros = 1 OZ / 30 ML", "47 tiros = 1 OZ / 30 ML", "6 tiros = 1 OZ / 30 ML", "10 tiros = 1 OZ / 30 ML"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "10 tiros = 1 OZ / 30 ML",
+        "20 tiros = 1 OZ / 30 ML",
+        "47 tiros = 1 OZ / 30 ML",
+        "6 tiros = 1 OZ / 30 ML"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "Mostarda: 47 tiros = 1 OZ / 30 ML.",
       "dica": "",
       "tempoEstimado": 15,
@@ -311,9 +568,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -323,9 +594,18 @@
       "subcategoria": "🧂 Mesa",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["molho", "porcao", "calibracao"],
+      "tags": [
+        "molho",
+        "porcao",
+        "calibracao"
+      ],
       "pergunta": "Qual a calibração do molho Quarteirão?",
-      "alternativas": ["4 tiros = 2 OZ / 60 ML", "6 tiros = 2 OZ / 60 ML", "6 tiros = 3 OZ / 90 ML", "8 tiros = 3 OZ / 90 ML"],
+      "alternativas": [
+        "4 tiros = 2 OZ / 60 ML",
+        "6 tiros = 2 OZ / 60 ML",
+        "6 tiros = 3 OZ / 90 ML",
+        "8 tiros = 3 OZ / 90 ML"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Quarteirão: 6 tiros = 3 OZ / 90 ML.",
       "dica": "",
@@ -337,9 +617,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -349,9 +643,18 @@
       "subcategoria": "🧂 Mesa",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["molho", "bigmac", "calibracao"],
+      "tags": [
+        "molho",
+        "bigmac",
+        "calibracao"
+      ],
       "pergunta": "No Best Burger, quanto de molho Big Mac é dispensado pela pistola Flex Prep?",
-      "alternativas": ["15 ml (1/2 oz)", "30 ml (1 oz)", "45 ml (1 e 1/2 oz)", "60 ml (2 oz)"],
+      "alternativas": [
+        "15 ml (1/2 oz)",
+        "30 ml (1 oz)",
+        "45 ml (1 e 1/2 oz)",
+        "60 ml (2 oz)"
+      ],
       "respostaCorreta": 0,
       "explicacao": "No Best Burger, o molho Big Mac é dispensado pela pistola Flex Prep, com 1 ponto de saída, liberando 15 ml (1/2 oz) por vez.",
       "dica": "",
@@ -363,9 +666,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -375,10 +692,20 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "uhc", "cebola", "identificacao"],
+      "tags": [
+        "best-burger",
+        "uhc",
+        "cebola",
+        "identificacao"
+      ],
       "pergunta": "Como são identificadas as gavetas de carnes SEM CEBOLA na UHC do Best Burger?",
-      "alternativas": ["Etiqueta amarela", "Clips azul", "Adesivo verde", "Fita vermelha"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Adesivo verde",
+        "Fita vermelha",
+        "Etiqueta amarela",
+        "Clips azul"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "No Best Burger, as gavetas de carnes sem cebola são identificadas com um clips azul nas gavetas da UHC.",
       "dica": "",
       "tempoEstimado": 15,
@@ -389,9 +716,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -401,9 +742,18 @@
       "subcategoria": "⚙️ Procedimento",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["monitor", "kvs", "configuracao"],
+      "tags": [
+        "monitor",
+        "kvs",
+        "configuracao"
+      ],
       "pergunta": "Em qual configuração o monitor deve estar para acompanhamento dos pedidos na linha?",
-      "alternativas": ["2x2", "3x2", "4x2", "6x2"],
+      "alternativas": [
+        "2x2",
+        "3x2",
+        "4x2",
+        "6x2"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O monitor deve estar configurado em 4x2 para visualização correta dos pedidos na linha.",
       "dica": "",
@@ -415,9 +765,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -427,15 +791,19 @@
       "subcategoria": "⚙️ Procedimento",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["kvs", "servido", "procedimento"],
+      "tags": [
+        "kvs",
+        "servido",
+        "procedimento"
+      ],
       "pergunta": "Quando o iniciador deve apertar a tecla 'servido' no KVS?",
       "alternativas": [
-        "Assim que os pães entram na tostadeira",
         "Após colocar os 2 primeiros condimentos ou quando o condimentador entrar no lugar dele",
         "Ao finalizar a embalagem do sanduíche",
-        "Quando o cliente receber o pedido"
+        "Quando o cliente receber o pedido",
+        "Assim que os pães entram na tostadeira"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O iniciador aperta 'servido' após colocar os 2 primeiros condimentos ou quando o condimentador entrar no lugar dele. Com 1 pessoa na linha, aperta 'servido' ao final.",
       "dica": "",
       "tempoEstimado": 15,
@@ -446,9 +814,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -458,9 +840,18 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["temperatura", "pao", "tostadeira"],
+      "tags": [
+        "temperatura",
+        "pao",
+        "tostadeira"
+      ],
       "pergunta": "Qual deve ser a temperatura interna mínima do pão após sair da tostadeira?",
-      "alternativas": ["Acima de 50°C", "Acima de 60°C", "Acima de 70°C", "Acima de 80°C"],
+      "alternativas": [
+        "Acima de 50°C",
+        "Acima de 60°C",
+        "Acima de 70°C",
+        "Acima de 80°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "A temperatura interna do pão deve ser maior que 70°C após a tostagem.",
       "dica": "",
@@ -472,9 +863,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -484,9 +889,18 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["compressao", "pao", "tostadeira"],
+      "tags": [
+        "compressao",
+        "pao",
+        "tostadeira"
+      ],
       "pergunta": "Qual a compressão do pão na tostadeira no Best Burger?",
-      "alternativas": ["3D", "4D", "5D", "6D"],
+      "alternativas": [
+        "3D",
+        "4D",
+        "5D",
+        "6D"
+      ],
       "respostaCorreta": 1,
       "explicacao": "No Best Burger, a compressão inicial do pão na tostadeira é 4D.",
       "dica": "",
@@ -498,9 +912,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -510,9 +938,19 @@
       "subcategoria": "🌡️ UHC",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "tempo", "validade", "mccrispy"],
+      "tags": [
+        "uhc",
+        "tempo",
+        "validade",
+        "mccrispy"
+      ],
       "pergunta": "Qual o tempo de vida do McCrispy na UHC?",
-      "alternativas": ["20 minutos", "30 minutos", "45 minutos", "60 minutos"],
+      "alternativas": [
+        "20 minutos",
+        "30 minutos",
+        "45 minutos",
+        "60 minutos"
+      ],
       "respostaCorreta": 3,
       "explicacao": "McCrispy: 60 minutos de vida útil na UHC.",
       "dica": "",
@@ -524,9 +962,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -536,9 +988,19 @@
       "subcategoria": "🌡️ UHC",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "tempo", "validade", "mcchicken"],
+      "tags": [
+        "uhc",
+        "tempo",
+        "validade",
+        "mcchicken"
+      ],
       "pergunta": "Qual o tempo de vida do McChicken na UHC?",
-      "alternativas": ["10 minutos", "20 minutos", "30 minutos", "60 minutos"],
+      "alternativas": [
+        "10 minutos",
+        "20 minutos",
+        "30 minutos",
+        "60 minutos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "McChicken: 30 minutos de vida útil na UHC.",
       "dica": "",
@@ -550,9 +1012,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -562,9 +1038,19 @@
       "subcategoria": "🌡️ UHC",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "tempo", "validade", "mcnuggets"],
+      "tags": [
+        "uhc",
+        "tempo",
+        "validade",
+        "mcnuggets"
+      ],
       "pergunta": "Qual o tempo de vida dos McNuggets e McJunior na UHC?",
-      "alternativas": ["10 minutos", "20 minutos", "30 minutos", "45 minutos"],
+      "alternativas": [
+        "10 minutos",
+        "20 minutos",
+        "30 minutos",
+        "45 minutos"
+      ],
       "respostaCorreta": 1,
       "explicacao": "McNuggets e McJunior: 20 minutos de vida útil na UHC.",
       "dica": "",
@@ -576,9 +1062,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -588,10 +1088,19 @@
       "subcategoria": "🌡️ UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "pegador", "carnes-brancas"],
+      "tags": [
+        "uhc",
+        "pegador",
+        "carnes-brancas"
+      ],
       "pergunta": "Na UHC padrão, qual é o pegador para carnes brancas?",
-      "alternativas": ["Pegador vermelho", "Pegador azul", "Pegador verde", "Pegador amarelo"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Pegador vermelho",
+        "Pegador verde",
+        "Pegador amarelo",
+        "Pegador azul"
+      ],
+      "respostaCorreta": 1,
       "explicacao": "Pegador verde = carnes brancas. Pegador vermelho = carnes vermelhas. Ambos devem estar posicionados na UHC.",
       "dica": "",
       "tempoEstimado": 15,
@@ -602,9 +1111,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -614,9 +1137,18 @@
       "subcategoria": "⚙️ Procedimento",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["embalagem", "pedido-especial", "diferenciado"],
+      "tags": [
+        "embalagem",
+        "pedido-especial",
+        "diferenciado"
+      ],
       "pergunta": "Em um pedido diferenciado, onde deve estar colado o adesivo + picklist na embalagem?",
-      "alternativas": ["Na parte superior da embalagem", "No centro da embalagem", "Na borda inferior da embalagem", "No lado esquerdo da embalagem"],
+      "alternativas": [
+        "No lado esquerdo da embalagem",
+        "Na parte superior da embalagem",
+        "Na borda inferior da embalagem",
+        "No centro da embalagem"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O adesivo + picklist deve estar colado na borda inferior da embalagem, junto com o selo 'especial para você'.",
       "dica": "",
@@ -628,9 +1160,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -640,10 +1186,19 @@
       "subcategoria": "⚙️ Procedimento",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["embalagem", "procedimento", "direcao"],
+      "tags": [
+        "embalagem",
+        "procedimento",
+        "direcao"
+      ],
       "pergunta": "Ao preparar a embalagem na linha, para onde deve estar direcionada a base dos sanduíches?",
-      "alternativas": ["Em direção à tostadeira", "Em direção ao atendimento", "Em direção à UHC/OAT", "Pode ser qualquer direção"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Em direção ao atendimento",
+        "Em direção à tostadeira",
+        "Pode ser qualquer direção",
+        "Em direção à UHC/OAT"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "A base dos sanduíches deve estar em direção à UHC/OAT e a cora (parte de cima do pão) em direção à tostadeira.",
       "dica": "",
       "tempoEstimado": 15,
@@ -654,9 +1209,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -666,10 +1235,19 @@
       "subcategoria": "🛡️ Segurança",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["epi", "seguranca", "avental"],
+      "tags": [
+        "epi",
+        "seguranca",
+        "avental"
+      ],
       "pergunta": "Qual é o EPI obrigatório para operar qualquer posição da linha?",
-      "alternativas": ["Luvas de proteção", "Touca e máscara", "Avental (EPI completo)", "Óculos de segurança"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Avental (EPI completo)",
+        "Luvas de proteção",
+        "Óculos de segurança",
+        "Touca e máscara"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "O Equipamento de Proteção Individual completo (avental) é obrigatório para operar qualquer posição da linha.",
       "dica": "",
       "tempoEstimado": 15,
@@ -680,9 +1258,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -692,9 +1284,18 @@
       "subcategoria": "🧼 Higiene",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["higiene", "lavagem", "maos"],
+      "tags": [
+        "higiene",
+        "lavagem",
+        "maos"
+      ],
       "pergunta": "Por quantos segundos deve-se lavar as mãos e antebraços com sabonete bactericida?",
-      "alternativas": ["10 segundos", "15 segundos", "20 segundos", "30 segundos"],
+      "alternativas": [
+        "10 segundos",
+        "15 segundos",
+        "20 segundos",
+        "30 segundos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Lave as mãos e antebraços com sabonete bactericida por 20 segundos antes de assumir a função ou após atividade de limpeza.",
       "dica": "",
@@ -706,9 +1307,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -718,9 +1333,18 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "tostadeira", "compressao"],
+      "tags": [
+        "best-burger",
+        "tostadeira",
+        "compressao"
+      ],
       "pergunta": "Qual a compressão inicial do pão na tostadeira Best Burger?",
-      "alternativas": ["2", "3", "4", "5"],
+      "alternativas": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Na tostadeira Best Burger, a compressão inicial do pão é 4D.",
       "dica": "",
@@ -732,9 +1356,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -744,9 +1382,18 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 4,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "tostadeira", "velocidade"],
+      "tags": [
+        "best-burger",
+        "tostadeira",
+        "velocidade"
+      ],
       "pergunta": "No Best Burger, qual a velocidade mínima do motor da tostadeira?",
-      "alternativas": ["A partir de 2200", "A partir de 2800", "A partir de 3000", "A partir de 3300"],
+      "alternativas": [
+        "A partir de 2200",
+        "A partir de 2800",
+        "A partir de 3000",
+        "A partir de 3300"
+      ],
       "respostaCorreta": 3,
       "explicacao": "A velocidade do motor da tostadeira no Best Burger deve ser a partir de 3300.",
       "dica": "",
@@ -758,9 +1405,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -770,9 +1431,19 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "uhc", "tempo", "validade"],
+      "tags": [
+        "best-burger",
+        "uhc",
+        "tempo",
+        "validade"
+      ],
       "pergunta": "No Best Burger, qual o tempo de vida de todos os produtos na UHC?",
-      "alternativas": ["5 minutos", "10 minutos", "15 minutos", "20 minutos"],
+      "alternativas": [
+        "5 minutos",
+        "10 minutos",
+        "15 minutos",
+        "20 minutos"
+      ],
       "respostaCorreta": 1,
       "explicacao": "No Best Burger, todos os produtos têm tempo de vida de 10 minutos na UHC.",
       "dica": "",
@@ -784,9 +1455,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -796,9 +1481,19 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "uhc", "cebola", "gavetas"],
+      "tags": [
+        "best-burger",
+        "uhc",
+        "cebola",
+        "gavetas"
+      ],
       "pergunta": "No Best Burger, quantas gavetas devem ser dedicadas para carnes SEM CEBOLA na UHC?",
-      "alternativas": ["No mínimo 1 gaveta", "No mínimo 2 gavetas", "No mínimo 3 gavetas", "No mínimo 4 gavetas"],
+      "alternativas": [
+        "No mínimo 1 gaveta",
+        "No mínimo 2 gavetas",
+        "No mínimo 3 gavetas",
+        "No mínimo 4 gavetas"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Devem ser dedicadas no mínimo 2 gavetas para carnes SEM CEBOLA no Best Burger, identificadas com clips azul.",
       "dica": "",
@@ -810,9 +1505,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -822,10 +1531,20 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "pegador", "cebola", "uhc"],
+      "tags": [
+        "best-burger",
+        "pegador",
+        "cebola",
+        "uhc"
+      ],
       "pergunta": "No Best Burger, qual pegador usar para carnes vermelhas (com cebola)?",
-      "alternativas": ["Pegador vermelho", "Pegador azul", "Pegador verde", "Pegador amarelo"],
-      "respostaCorreta": 0,
+      "alternativas": [
+        "Pegador verde",
+        "Pegador vermelho",
+        "Pegador azul",
+        "Pegador amarelo"
+      ],
+      "respostaCorreta": 1,
       "explicacao": "No Best Burger: pegador vermelho = carnes vermelhas (com cebola), pegador azul = carnes 4:1 e 10:1 sem cebola, pegador verde = carnes brancas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -836,9 +1555,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -848,9 +1581,19 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "cebola", "tempo", "validade"],
+      "tags": [
+        "best-burger",
+        "cebola",
+        "tempo",
+        "validade"
+      ],
       "pergunta": "Qual o tempo de vida primário dos ceboleiros na câmara de resfriado (Best Burger)?",
-      "alternativas": ["4 horas", "12 horas", "24 horas", "48 horas"],
+      "alternativas": [
+        "4 horas",
+        "12 horas",
+        "24 horas",
+        "48 horas"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Os ceboleiros estocados têm tempo de vida primário de 24 horas na câmara de resfriado.",
       "dica": "",
@@ -862,9 +1605,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -874,9 +1631,19 @@
       "subcategoria": "🏪 Best Burger",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["best-burger", "cebola", "tempo", "validade"],
+      "tags": [
+        "best-burger",
+        "cebola",
+        "tempo",
+        "validade"
+      ],
       "pergunta": "Qual o tempo de vida secundário dos ceboleiros em cima da chapa (Best Burger)?",
-      "alternativas": ["1 hora", "2 horas", "4 horas", "6 horas"],
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "4 horas",
+        "6 horas"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Os ceboleiros têm tempo de vida secundário de até 4 horas em cima da chapa.",
       "dica": "",
@@ -888,9 +1655,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -900,9 +1681,19 @@
       "subcategoria": "🥗 Mesa",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["temperatura", "alface", "cebola", "qualidade"],
+      "tags": [
+        "temperatura",
+        "alface",
+        "cebola",
+        "qualidade"
+      ],
       "pergunta": "Qual a faixa de temperatura ideal para armazenamento do alface e cebola na linha?",
-      "alternativas": ["5°C a 10°C", "10°C a 14°C", "15°C a 18°C", "20°C a 25°C"],
+      "alternativas": [
+        "5°C a 10°C",
+        "10°C a 14°C",
+        "15°C a 18°C",
+        "20°C a 25°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "A temperatura ideal para alface e cebola é entre 15°C e 18°C (temperatura ideal de 17,5°C).",
       "dica": "",
@@ -914,9 +1705,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -926,9 +1731,18 @@
       "subcategoria": "🧂 Mesa",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["calibracao", "molho", "copo"],
+      "tags": [
+        "calibracao",
+        "molho",
+        "copo"
+      ],
       "pergunta": "Qual a quantidade de molho Big Mac dispensada no Best Burger?",
-      "alternativas": ["1 onça fluída / 30 ML", "1/2 onça fluída / 15 ML", "3 onças fluídas / 90 ML", "4 onças fluídas / 120 ML"],
+      "alternativas": [
+        "1 onça fluída / 30 ML",
+        "1/2 onça fluída / 15 ML",
+        "3 onças fluídas / 90 ML",
+        "4 onças fluídas / 120 ML"
+      ],
       "respostaCorreta": 1,
       "explicacao": "No Best Burger, a pistola Flex Prep dispensa 15 ML (1/2 onça fluída) de molho Big Mac por vez, com 1 ponto de saída.",
       "dica": "",
@@ -940,9 +1754,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -952,10 +1780,19 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["temperatura", "tempo", "tostadeira"],
+      "tags": [
+        "temperatura",
+        "tempo",
+        "tostadeira"
+      ],
       "pergunta": "Qual a temperatura da Tostadeira rápida na linha?",
-      "alternativas": ["275°C", "293°C", "218°C", "168°C"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "168°C",
+        "275°C",
+        "293°C",
+        "218°C"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "A Tostadeira rápida opera a 293°C, com ciclo de caramelização de 22 segundos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -966,9 +1803,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -978,9 +1829,17 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["temperatura", "tostadeira"],
+      "tags": [
+        "temperatura",
+        "tostadeira"
+      ],
       "pergunta": "Qual a temperatura das placas A e B da Tostadeira HEBT5V?",
-      "alternativas": ["250°C", "254°C", "271°C", "300°C"],
+      "alternativas": [
+        "250°C",
+        "254°C",
+        "271°C",
+        "300°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "A Tostadeira HEBT5V opera com placas A e B a 271°C e placa C a 254°C, com compressão 4D e ciclo de caramelização de 22 segundos.",
       "dica": "",
@@ -992,9 +1851,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1004,9 +1877,18 @@
       "subcategoria": "🍞 Tostadeira",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "tempo", "tostadeira"],
+      "tags": [
+        "pao",
+        "tempo",
+        "tostadeira"
+      ],
       "pergunta": "Quantos segundos dura o ciclo de caramelização (tostagem) dos pães?",
-      "alternativas": ["15 segundos", "18 segundos", "22 segundos", "30 segundos"],
+      "alternativas": [
+        "15 segundos",
+        "18 segundos",
+        "22 segundos",
+        "30 segundos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O ciclo de caramelização dos pães é de 22 segundos em ambas as tostadeiras.",
       "dica": "Vale para a rápida (293°C) e a HEBT-5V (271°C nas placas A/B e 254°C na placa C).",
@@ -1018,9 +1900,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1030,9 +1926,18 @@
       "subcategoria": "⚙️ Iniciador",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["iniciador", "procedimento", "tempo"],
+      "tags": [
+        "iniciador",
+        "procedimento",
+        "tempo"
+      ],
       "pergunta": "Qual é o tempo de reação do Iniciador para ativar os pães?",
-      "alternativas": ["1 a 2 segundos", "3 a 5 segundos", "6 a 8 segundos", "10 segundos"],
+      "alternativas": [
+        "1 a 2 segundos",
+        "3 a 5 segundos",
+        "6 a 8 segundos",
+        "10 segundos"
+      ],
       "respostaCorreta": 1,
       "explicacao": "O Iniciador deve ter um tempo de reação de 3 a 5 segundos para a ativada dos pães.",
       "dica": "",
@@ -1044,9 +1949,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1056,10 +1975,19 @@
       "subcategoria": "⚙️ Procedimento",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["configuracao", "linha", "monitor"],
+      "tags": [
+        "configuracao",
+        "linha",
+        "monitor"
+      ],
       "pergunta": "Em que configuração o monitor da linha deve estar?",
-      "alternativas": ["2x2", "4x2", "2x4", "6x2"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "6x2",
+        "2x2",
+        "2x4",
+        "4x2"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "O monitor da linha deve estar configurado em 4x2.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1070,9 +1998,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1082,10 +2024,18 @@
       "subcategoria": "⏱️ Linha",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["linha", "tempo"],
+      "tags": [
+        "linha",
+        "tempo"
+      ],
       "pergunta": "Qual é o tempo de linha esperado?",
-      "alternativas": ["20 a 30 segundos", "35 a 50 segundos", "50 a 70 segundos", "10 a 20 segundos"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "35 a 50 segundos",
+        "50 a 70 segundos",
+        "10 a 20 segundos",
+        "20 a 30 segundos"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "O tempo de linha é de 35 a 50 segundos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1096,9 +2046,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1108,9 +2072,18 @@
       "subcategoria": "🌡️ UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["carne", "temperatura", "uhc"],
+      "tags": [
+        "carne",
+        "temperatura",
+        "uhc"
+      ],
       "pergunta": "Qual a temperatura das carnes 10:1, 4:1 e 3:1 na UHC no Best Burger?",
-      "alternativas": ["79°C", "85°C", "93°C", "100°C"],
+      "alternativas": [
+        "79°C",
+        "85°C",
+        "93°C",
+        "100°C"
+      ],
       "respostaCorreta": 0,
       "explicacao": "No Best Burger, as carnes vermelhas (10:1, 4:1 e 3:1) ficam a 79°C na UHC.",
       "dica": "",
@@ -1122,9 +2095,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1134,9 +2121,18 @@
       "subcategoria": "🌡️ UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["carne", "frango", "temperatura"],
+      "tags": [
+        "carne",
+        "frango",
+        "temperatura"
+      ],
       "pergunta": "Qual a temperatura das carnes de McNuggets, Chicken e Junior?",
-      "alternativas": ["85°C", "90°C", "93°C", "100°C"],
+      "alternativas": [
+        "85°C",
+        "90°C",
+        "93°C",
+        "100°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "As carnes de McNuggets, Chicken e Junior ficam a 93°C.",
       "dica": "",
@@ -1148,35 +2144,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "linha_049",
-      "categoria": "linha",
-      "subcategoria": "🧂 Mesa",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": ["condimentacao", "mesa", "temperatura"],
-      "pergunta": "Qual a faixa de temperatura da mesa de condimentação?",
-      "alternativas": ["40°C a 49°C", "49°C a 57°C", "57°C a 65°C", "60°C a 70°C"],
-      "respostaCorreta": 1,
-      "explicacao": "A mesa de condimentação deve operar entre 49°C e 57°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     },
@@ -1186,9 +2170,18 @@
       "subcategoria": "⚙️ Procedimento",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["embalagem", "pao", "procedimento"],
+      "tags": [
+        "embalagem",
+        "pao",
+        "procedimento"
+      ],
       "pergunta": "Como devem ser posicionados a base e a coroa do pão na embalagem (sanduíche comum)?",
-      "alternativas": ["Coroa na direção da UHC/OAT e base no centro", "Base na direção da UHC/OAT e coroa no centro, em direção à tostadeira", "Ambas no centro", "Base e coroa na direção da tostadeira"],
+      "alternativas": [
+        "Base e coroa na direção da tostadeira",
+        "Base na direção da UHC/OAT e coroa no centro, em direção à tostadeira",
+        "Ambas no centro",
+        "Coroa na direção da UHC/OAT e base no centro"
+      ],
       "respostaCorreta": 1,
       "explicacao": "A base segue em direção à UHC/OAT e a coroa fica no centro, voltada para a tostadeira. Nos sanduíches Signature e Big Tasty é o contrário: base no centro da lâmina e coroa na direção da UHC/OAT.",
       "dica": "",
@@ -1200,9 +2193,23 @@
       "timesAnswered": 0,
       "mediaTempoResposta": 0,
       "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
       "contextHints": [],
       "relatedQuestions": []
     }

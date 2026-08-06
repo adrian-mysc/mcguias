@@ -217,10 +217,10 @@
       "alternativas": [
         "De 3 em 3",
         "De 2 em 2",
-        "Uma a uma, sem empilhar",
-        "Todas ao mesmo tempo"
+        "Todas ao mesmo tempo",
+        "Uma a uma, sem empilhar"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Carnes 4:1 são removidas uma a uma e não devem ser empilhadas na gaveta.",
       "dica": "",
       "tempoEstimado": 15,
@@ -677,12 +677,12 @@
       ],
       "pergunta": "Em que sentido deve ser feita a salga das carnes?",
       "alternativas": [
-        "Da esquerda para direita, de frente para fundo",
         "Da direita para esquerda, de frente para fundo",
+        "Da esquerda para direita, de frente para fundo",
         "De frente para o fundo, da esquerda para direita",
         "Em qualquer sentido"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "A salga deve ser feita da direita para esquerda, da frente para o fundo, em forma de S.",
       "dica": "",
       "tempoEstimado": 15,
@@ -730,12 +730,12 @@
       ],
       "pergunta": "Como devem ser removidas as carnes 10:1 para a UHC?",
       "alternativas": [
-        "Uma a uma",
         "De 2 em 2",
         "De 3 em 3",
+        "Uma a uma",
         "Todas ao mesmo tempo"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Carnes 10:1 são removidas de 3 em 3, com máximo de 12 na gaveta.",
       "dica": "",
       "tempoEstimado": 15,
@@ -835,11 +835,11 @@
       "pergunta": "Ao soar o timer de 5 segundos antes do fim, o que o chapeiro deve fazer?",
       "alternativas": [
         "Abrir o platen",
+        "Preparar a UHC",
         "Pegar espátulas, dispensador de sal e pimenta",
-        "Sanitizar as mãos",
-        "Preparar a UHC"
+        "Sanitizar as mãos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Com 5 segundos restantes: espátulas, dispensador de sal e pimenta devem estar na mão.",
       "dica": "",
       "tempoEstimado": 15,
@@ -885,12 +885,12 @@
       ],
       "pergunta": "Como deve ser aplicada a cebola nas carnes?",
       "alternativas": [
+        "Com colher",
         "Em círculos amplos",
-        "Em movimento de martelo, segurando pelas laterais",
         "Despejando de cima",
-        "Com colher"
+        "Em movimento de martelo, segurando pelas laterais"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A cebola é aplicada com o dispensador em movimento de martelo, segurando pelas laterais para evitar queimaduras.",
       "dica": "",
       "tempoEstimado": 15,
@@ -989,12 +989,12 @@
       ],
       "pergunta": "Após preparar o bacon, o que deve ser lavado antes de usar o platen para carne bovina?",
       "alternativas": [
-        "Apenas as espátulas",
-        "Apenas o raspador",
         "Espátulas, raspador, rodinho e chapas",
-        "Somente o platen"
+        "Somente o platen",
+        "Apenas o raspador",
+        "Apenas as espátulas"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Ao final do processo de bacon, espátulas, raspador, rodinho e chapas devem ser lavados antes de usar o platen para carne bovina.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1037,10 +1037,10 @@
       ],
       "pergunta": "Como devem ficar os bacons no rack após a preparação?",
       "alternativas": [
-        "Inteiros empilhados",
+        "Separados por papel manteiga",
         "Partidos ao meio no próprio rack",
         "Dobrados ao meio",
-        "Separados por papel manteiga"
+        "Inteiros empilhados"
       ],
       "respostaCorreta": 1,
       "explicacao": "Os bacons devem ficar partidos ao meio no próprio rack, facilitando a colocação na mesa de condimentação.",
@@ -1240,11 +1240,11 @@
       "pergunta": "Quando devem ser higienizadas as mãos durante o trabalho na chapa sem luvas?",
       "alternativas": [
         "A cada hora",
-        "A cada rodada de preparação",
         "Apenas no início do turno",
+        "A cada rodada de preparação",
         "Quando sujar"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Sem luvas, higienizar as mãos a cada rodada de preparo de carnes.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1494,12 +1494,12 @@
       ],
       "pergunta": "Quando deve ser higienizado as mãos durante o trabalho na chapa sem luvas?",
       "alternativas": [
-        "A cada hora",
-        "A cada rodada de preparo",
+        "Quando sujar",
         "Apenas no início do turno",
-        "Quando sujar"
+        "A cada hora",
+        "A cada rodada de preparo"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Sem luvas, higienizar as mãos a cada rodada de preparo de carnes.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1555,58 +1555,6 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "A cada 15 minutos, reforçar a limpeza passando 2-3 vezes com pano e rodinho.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "chapa_032",
-      "categoria": "chapa",
-      "subcategoria": "🌡️ Chapa · Temperaturas",
-      "dificuldade": 4,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "carne",
-        "cozimento",
-        "taylor-ng",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual é o ponto de partida de cocção para carnes 10:1 exceto Taylor NG?",
-      "alternativas": [
-        "30s",
-        "35s",
-        "39s",
-        "45s"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "Ponto de partida (exceto Taylor NG): 10:1 = 39 segundos.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1819,12 +1767,12 @@
       ],
       "pergunta": "Com qual frequência deve ser realizada a manutenção preventiva completa da chapa Taylor CG14/CG18?",
       "alternativas": [
-        "Diariamente",
-        "Semanalmente",
         "Mensalmente",
-        "A cada 6 meses"
+        "A cada 6 meses",
+        "Semanalmente",
+        "Diariamente"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "A manutenção preventiva completa da chapa Taylor CG14/CG18 deve ser realizada mensalmente, incluindo verificação de aquecedores, sensores e partes móveis.",
       "dica": "Não é tão frequente quanto a limpeza diária, mas é mais do que semestral.",
       "tempoEstimado": 18,
@@ -1876,9 +1824,9 @@
       ],
       "pergunta": "Qual é o primeiro passo obrigatório antes de iniciar qualquer procedimento de manutenção na chapa?",
       "alternativas": [
-        "Aumentar a temperatura para queimar resíduos",
-        "Desligar o equipamento e aguardar esfriar completamente",
         "Aplicar produto químico de limpeza",
+        "Desligar o equipamento e aguardar esfriar completamente",
+        "Aumentar a temperatura para queimar resíduos",
         "Chamar o técnico de manutenção"
       ],
       "respostaCorreta": 1,
@@ -1990,12 +1938,12 @@
       ],
       "pergunta": "Como deve ser posicionado o termômetro de infravermelho ao verificar a temperatura da chapa?",
       "alternativas": [
+        "A 30 cm de distância em ângulo de 45°",
         "Encostado diretamente na superfície",
         "A 5 cm da superfície, perpendicularmente",
-        "A 30 cm de distância em ângulo de 45°",
         "No centro do platen, tocando levemente"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O termômetro de infravermelho deve ser posicionado a 5 cm da superfície, perpendicularmente, para uma leitura precisa da temperatura da chapa.",
       "dica": "Distância curta e ângulo reto garantem leitura precisa.",
       "tempoEstimado": 18,
@@ -2047,12 +1995,12 @@
       ],
       "pergunta": "Qual procedimento diferencia a limpeza semanal profunda da limpeza diária da chapa?",
       "alternativas": [
-        "O uso de raspador metálico em vez de plástico",
-        "A desmontagem parcial para limpeza de calhas e coletor de gordura",
+        "A limpeza com água fria em vez de quente",
         "A aplicação de temperatura mais alta para queimar resíduos",
-        "A limpeza com água fria em vez de quente"
+        "O uso de raspador metálico em vez de plástico",
+        "A desmontagem parcial para limpeza de calhas e coletor de gordura"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A limpeza semanal profunda inclui a desmontagem parcial para limpeza das calhas coletoras de gordura e do reservatório, algo não feito na limpeza diária.",
       "dica": "A diferença está no que é desmontado e acessado.",
       "tempoEstimado": 20,
@@ -2107,12 +2055,12 @@
       ],
       "pergunta": "Qual é a concentração correta do produto QSR Multiuso para limpeza da chapa?",
       "alternativas": [
-        "1:10 (1 parte produto para 10 partes de água)",
         "1:32 (1 parte produto para 32 partes de água)",
+        "1:10 (1 parte produto para 10 partes de água)",
         "1:64 (1 parte produto para 64 partes de água)",
         "Puro, sem diluição"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O produto QSR Multiuso deve ser diluído na proporção 1:32 (1 parte de produto para 32 partes de água) para uso em superfícies de cozinha, incluindo a chapa.",
       "dica": "É uma diluição moderada — nem muito concentrado, nem muito fraco.",
       "tempoEstimado": 20,
@@ -2164,10 +2112,10 @@
       ],
       "pergunta": "Qual é o principal sinal visual de que o revestimento de teflon da chapa precisa ser substituído?",
       "alternativas": [
-        "Coloração mais escura que o normal",
+        "Acúmulo de gordura nas bordas",
         "Arranhões profundos com exposição do metal base",
-        "Leve perda de brilho na superfície",
-        "Acúmulo de gordura nas bordas"
+        "Coloração mais escura que o normal",
+        "Leve perda de brilho na superfície"
       ],
       "respostaCorreta": 1,
       "explicacao": "Arranhões profundos com exposição do metal base indicam que o revestimento de teflon está comprometido e precisa ser substituído, pois pode contaminar os alimentos.",
@@ -2223,12 +2171,12 @@
       ],
       "pergunta": "Qual é a principal diferença de capacidade entre a Taylor CG14 e a CG18?",
       "alternativas": [
-        "A CG18 possui platen maior e suporta mais carnes simultâneas",
         "A CG14 tem temperatura máxima mais alta",
-        "A CG18 é mais antiga e tem menos funcionalidades digitais",
-        "Não há diferença de capacidade, apenas estética"
+        "Não há diferença de capacidade, apenas estética",
+        "A CG18 possui platen maior e suporta mais carnes simultâneas",
+        "A CG18 é mais antiga e tem menos funcionalidades digitais"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 2,
       "explicacao": "A Taylor CG18 possui platen maior do que a CG14, permitindo cozinhar mais carnes simultaneamente, sendo indicada para restaurantes de maior movimento.",
       "dica": "O número no nome indica o tamanho — maior número, maior capacidade.",
       "tempoEstimado": 18,
@@ -2342,11 +2290,11 @@
       "pergunta": "Qual é o principal indicador visual de que uma carne não atingiu a temperatura interna adequada?",
       "alternativas": [
         "Coloração marrom uniforme em toda a superfície",
-        "Presença de líquido rosado ou vermelho ao cortar",
         "Superfície com textura granulada",
-        "Bordas levemente endurecidas"
+        "Bordas levemente endurecidas",
+        "Presença de líquido rosado ou vermelho ao cortar"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A presença de líquido rosado ou vermelho ao cortar a carne indica que ela não atingiu a temperatura interna mínima de 74°C e não deve ser servida.",
       "dica": "A cor do líquido interno é o sinal mais claro — vermelho ou rosado significa perigo.",
       "tempoEstimado": 18,
@@ -2400,9 +2348,9 @@
       "pergunta": "O que significa a sigla SMAC no contexto da operação da chapa McDonald's?",
       "alternativas": [
         "Sistema de Monitoramento Automático de Carne",
-        "Serviço de Manutenção e Avaliação de Cozimento",
         "Sistema de Medição e Análise de Conformidade",
-        "Suporte de Manuseio e Automação de Cozinha"
+        "Suporte de Manuseio e Automação de Cozinha",
+        "Serviço de Manutenção e Avaliação de Cozimento"
       ],
       "respostaCorreta": 0,
       "explicacao": "SMAC significa Sistema de Monitoramento Automático de Carne — sistema integrado à chapa que monitora e registra as condições de cozimento automaticamente.",
@@ -2456,12 +2404,12 @@
       ],
       "pergunta": "Em qual situação o SMAC deve ser acionado pelo operador?",
       "alternativas": [
-        "Apenas durante inspeções da vigilância sanitária",
         "Somente quando há suspeita de problema no cozimento",
         "Continuamente durante toda a operação de cozimento",
+        "Apenas durante inspeções da vigilância sanitária",
         "Apenas no início e fim de cada turno"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "O SMAC deve estar ativo continuamente durante toda a operação de cozimento, registrando e monitorando automaticamente as condições de cada ciclo.",
       "dica": "Monitoramento contínuo é a função principal — não é pontual.",
       "tempoEstimado": 18,
@@ -2569,10 +2517,10 @@
       ],
       "pergunta": "Quando deve ser ativado o modo de espera (standby) na chapa?",
       "alternativas": [
+        "Apenas quando a chapa apresentar superaquecimento",
         "Sempre que não houver pedidos por mais de 5 minutos",
-        "Somente durante o fechamento do restaurante",
         "Durante intervalos prolongados sem produção, como entre turnos",
-        "Apenas quando a chapa apresentar superaquecimento"
+        "Somente durante o fechamento do restaurante"
       ],
       "respostaCorreta": 2,
       "explicacao": "O modo standby deve ser ativado durante intervalos prolongados sem produção, como entre turnos ou períodos de baixo movimento, economizando energia e preservando o equipamento.",
@@ -2627,12 +2575,12 @@
       ],
       "pergunta": "Quando o Recovery Mode é acionado automaticamente na chapa Taylor?",
       "alternativas": [
-        "Quando a temperatura cai abaixo do nível mínimo após colocar muitas carnes frias",
-        "Quando o operador pressiona o botão de reinicialização",
+        "Quando a temperatura supera 250°C por segurança",
         "Apenas após uma queda de energia",
-        "Quando a temperatura supera 250°C por segurança"
+        "Quando o operador pressiona o botão de reinicialização",
+        "Quando a temperatura cai abaixo do nível mínimo após colocar muitas carnes frias"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "O Recovery Mode é acionado automaticamente quando a temperatura da chapa cai abaixo do nível mínimo operacional, geralmente após colocar muitas carnes frias simultaneamente, aumentando o calor para recuperar a temperatura de operação.",
       "dica": "É uma resposta automática à queda de temperatura — o equipamento se auto-regula.",
       "tempoEstimado": 22,
@@ -2686,12 +2634,12 @@
       ],
       "pergunta": "O que o operador deve fazer enquanto a chapa está em Recovery Mode durante o pico?",
       "alternativas": [
-        "Adicionar mais carnes para aproveitar o calor extra",
         "Aguardar a temperatura se estabilizar antes de colocar novas carnes",
+        "Reduzir o GAP para compensar o tempo perdido",
         "Desligar e religar o equipamento para acelerar a recuperação",
-        "Reduzir o GAP para compensar o tempo perdido"
+        "Adicionar mais carnes para aproveitar o calor extra"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Durante o Recovery Mode, o operador deve aguardar a temperatura se estabilizar antes de colocar novas carnes, pois adicionar mais carnes frias agravaria a queda de temperatura e comprometeria o cozimento.",
       "dica": "Paciência é a resposta — não force o equipamento ainda mais.",
       "tempoEstimado": 22,
@@ -2801,10 +2749,10 @@
       ],
       "pergunta": "Com qual frequência deve ser registrada a temperatura da chapa durante a operação?",
       "alternativas": [
-        "Uma vez por turno",
-        "A cada hora",
         "A cada 30 minutos",
-        "Apenas quando houver suspeita de problema"
+        "A cada hora",
+        "Apenas quando houver suspeita de problema",
+        "Uma vez por turno"
       ],
       "respostaCorreta": 1,
       "explicacao": "A temperatura da chapa deve ser registrada a cada hora durante a operação, garantindo rastreabilidade e conformidade com os padrões de segurança alimentar.",
@@ -2975,12 +2923,12 @@
       ],
       "pergunta": "O que indica o alarme de erro E-01 no display da chapa Taylor?",
       "alternativas": [
-        "Falha no sensor de temperatura da superfície superior",
         "Falha no sistema de comunicação com o controlador",
-        "Superaquecimento — temperatura acima do limite de segurança",
-        "Erro de calibração — necessário recalibrar o equipamento"
+        "Erro de calibração — necessário recalibrar o equipamento",
+        "Falha no sensor de temperatura da superfície superior",
+        "Superaquecimento — temperatura acima do limite de segurança"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 2,
       "explicacao": "O erro E-01 na chapa Taylor indica falha no sensor de temperatura da superfície superior (platen), exigindo avaliação técnica imediata para não comprometer a operação.",
       "dica": "E-01 é o primeiro e mais crítico — relacionado ao sensor principal.",
       "tempoEstimado": 22,
@@ -3033,12 +2981,12 @@
       ],
       "pergunta": "Qual é o procedimento correto quando a chapa emite um alarme sonoro contínuo durante a operação?",
       "alternativas": [
-        "Ignorar e continuar a operação normalmente",
+        "Reiniciar o equipamento pressionando o botão de reset",
         "Aumentar a temperatura para compensar",
-        "Parar a operação, anotar o código de erro e acionar o suporte técnico",
-        "Reiniciar o equipamento pressionando o botão de reset"
+        "Ignorar e continuar a operação normalmente",
+        "Parar a operação, anotar o código de erro e acionar o suporte técnico"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Diante de alarme sonoro contínuo, o correto é parar a operação, anotar o código de erro exibido no display e acionar o suporte técnico, pois operar com alarme ativo pode comprometer a segurança alimentar.",
       "dica": "Nunca ignore um alarme — documente e comunique.",
       "tempoEstimado": 18,
@@ -3090,12 +3038,12 @@
       ],
       "pergunta": "Com qual frequência mínima devem ser limpas as calhas coletoras de gordura da chapa?",
       "alternativas": [
-        "A cada hora durante picos de produção",
-        "Uma vez ao dia, ao final do turno",
         "A cada turno ou sempre que estiverem cheias",
+        "Uma vez ao dia, ao final do turno",
+        "A cada hora durante picos de produção",
         "Semanalmente na limpeza profunda"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "As calhas coletoras de gordura devem ser limpas a cada turno ou sempre que estiverem cheias, evitando transbordamento e risco de incêndio pelo acúmulo de gordura.",
       "dica": "A frequência mínima é por turno, mas o bom senso manda limpar quando necessário.",
       "tempoEstimado": 15,
@@ -3149,11 +3097,11 @@
       "pergunta": "Como deve ser descartada corretamente a gordura coletada das calhas da chapa?",
       "alternativas": [
         "Diretamente na pia do restaurante",
-        "No lixo orgânico comum",
         "Em recipiente fechado para coleta de óleo de descarte",
+        "No lixo orgânico comum",
         "Diluída em água quente no ralo do piso"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "A gordura coletada deve ser armazenada em recipiente fechado e encaminhada para coleta de óleo de descarte, conforme legislação ambiental vigente e padrões do McDonald's.",
       "dica": "Respeito ao meio ambiente — gordura tem destinação específica.",
       "tempoEstimado": 15,
@@ -3207,9 +3155,9 @@
       "pergunta": "Quando e como deve ser aplicado o óleo de proteção anti-aderente na chapa?",
       "alternativas": [
         "A cada hora, espalhado com toalha de papel por toda a superfície",
-        "Apenas ao ligar o equipamento, em grande quantidade",
+        "Somente quando a carne começar a grudar na superfície",
         "No início de cada turno e após limpeza, em fina camada com pano limpo",
-        "Somente quando a carne começar a grudar na superfície"
+        "Apenas ao ligar o equipamento, em grande quantidade"
       ],
       "respostaCorreta": 2,
       "explicacao": "O óleo anti-aderente deve ser aplicado no início de cada turno e após cada limpeza, em fina camada uniforme com pano limpo, protegendo o revestimento e facilitando o cozimento.",
@@ -3264,12 +3212,12 @@
       ],
       "pergunta": "Durante o pico de produção, qual deve ser a prioridade de cozimento na chapa?",
       "alternativas": [
-        "Carnes de produtos premium primeiro por serem mais caros",
         "Carnes 10:1 primeiro por serem mais rápidas de cozinhar",
-        "Carnes 4:1 primeiro por terem maior tempo de cozimento",
-        "A ordem de chegada dos pedidos, independentemente do produto"
+        "A ordem de chegada dos pedidos, independentemente do produto",
+        "Carnes de produtos premium primeiro por serem mais caros",
+        "Carnes 4:1 primeiro por terem maior tempo de cozimento"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Durante o pico, as carnes 4:1 devem ser iniciadas primeiro por terem maior tempo de cozimento (até 126s), garantindo que todos os produtos fiquem prontos no tempo correto.",
       "dica": "O que leva mais tempo deve começar primeiro para tudo ficar pronto junto.",
       "tempoEstimado": 20,
@@ -3383,12 +3331,12 @@
       ],
       "pergunta": "Qual é a pressão correta a ser aplicada ao remover a carne da chapa com a espátula?",
       "alternativas": [
-        "Pressão firme e rápida com movimento de raspagem",
         "Pressão mínima, apenas deslizando a espátula sob a carne",
-        "Pressão forte para garantir a separação completa",
-        "Sem pressão — usar apenas movimentos laterais"
+        "Sem pressão — usar apenas movimentos laterais",
+        "Pressão firme e rápida com movimento de raspagem",
+        "Pressão forte para garantir a separação completa"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Ao remover a carne, deve-se usar pressão mínima, deslizando a espátula suavemente sob a carne, evitando danificar o revestimento da chapa e garantindo a integridade do produto.",
       "dica": "Menos é mais — suavidade protege a chapa e o produto.",
       "tempoEstimado": 18,
@@ -3443,8 +3391,8 @@
       "alternativas": [
         "Apenas ao final do turno",
         "A cada uso entre produtos diferentes ou a cada 30 minutos",
-        "Uma vez por hora",
-        "Somente quando visivelmente suja"
+        "Somente quando visivelmente suja",
+        "Uma vez por hora"
       ],
       "respostaCorreta": 1,
       "explicacao": "A espátula deve ser limpa e higienizada a cada uso entre produtos diferentes (especialmente entre carnes cruas e cozidas) ou a cada 30 minutos, prevenindo contaminação cruzada.",
@@ -3500,10 +3448,10 @@
       ],
       "pergunta": "Qual é a principal medida para evitar contaminação cruzada ao manusear carne crua na chapa?",
       "alternativas": [
-        "Lavar as mãos somente quando trocar de produto",
         "Usar a mesma espátula para carnes cruas e cozidas, limpando entre usos",
+        "Manter a carne crua na chapa por mais tempo para eliminar bactérias",
         "Utilizar utensílios e luvas exclusivos para carne crua, nunca contato com produtos prontos",
-        "Manter a carne crua na chapa por mais tempo para eliminar bactérias"
+        "Lavar as mãos somente quando trocar de produto"
       ],
       "respostaCorreta": 2,
       "explicacao": "Para evitar contaminação cruzada, é essencial usar utensílios e luvas exclusivos para o manuseio de carne crua, garantindo que nunca haja contato direto ou indireto com produtos prontos.",
@@ -3617,12 +3565,12 @@
       ],
       "pergunta": "Em quais momentos o operador da chapa DEVE lavar as mãos obrigatoriamente?",
       "alternativas": [
-        "Apenas ao início do turno",
+        "Uma vez por hora, independentemente do que estiver fazendo",
         "Somente ao trocar de função na cozinha",
-        "Após tocar em carne crua, usar o banheiro, tossir/espirrar e antes de iniciar o turno",
-        "Uma vez por hora, independentemente do que estiver fazendo"
+        "Apenas ao início do turno",
+        "Após tocar em carne crua, usar o banheiro, tossir/espirrar e antes de iniciar o turno"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "A lavagem das mãos é obrigatória após tocar carne crua, usar o banheiro, tossir ou espirrar, e antes de iniciar o turno — são os momentos críticos para prevenção de contaminação.",
       "dica": "Os momentos críticos são situações de potencial contaminação — não é periódico.",
       "tempoEstimado": 15,
@@ -3969,12 +3917,12 @@
       ],
       "pergunta": "Na chapa de TRÊS platens, como devem ser salgadas as carnes?",
       "alternativas": [
-        "Em forma de 'S' na lateral",
         "Em forma de 'U' invertido, uma única vez no centro da carne",
+        "Espalhando o sal por toda a chapa",
         "Duas vezes em cada carne",
-        "Espalhando o sal por toda a chapa"
+        "Em forma de 'S' na lateral"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Na chapa de três platens salga-se em forma de 'U' invertido, uma única vez no centro de cada carne. Na de dois platens, em forma de 'S' na lateral.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4020,8 +3968,8 @@
       "alternativas": [
         "Rio de Janeiro, Salvador e Curitiba",
         "São Paulo, Distrito Federal e Recife",
-        "Belo Horizonte, Fortaleza e Manaus",
-        "Porto Alegre, Goiânia e Belém"
+        "Porto Alegre, Goiânia e Belém",
+        "Belo Horizonte, Fortaleza e Manaus"
       ],
       "respostaCorreta": 1,
       "explicacao": "Em São Paulo, Distrito Federal e Recife a ativação é feita sem luva, usando o gel a cada rodada com as duas mãos.",
@@ -4067,12 +4015,12 @@
       ],
       "pergunta": "Como as carnes 10:1 devem ser colocadas na gaveta?",
       "alternativas": [
-        "De 2 em 2, máximo 2 pilhas",
-        "De 3 em 3, máximo 3 pilhas",
         "De 4 em 4, máximo 4 pilhas",
-        "Todas juntas em 1 pilha"
+        "Todas juntas em 1 pilha",
+        "De 3 em 3, máximo 3 pilhas",
+        "De 2 em 2, máximo 2 pilhas"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "As carnes 10:1 são colocadas de 3 em 3 (centro primeiro, depois as pontas), formando no máximo 3 pilhas. Timer da UHC no Best Burger: 10'.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4117,11 +4065,11 @@
       "pergunta": "Além do avental de cozinha, qual EPI é obrigatório na estação de Chapas?",
       "alternativas": [
         "Touca descartável",
-        "Mangote",
         "Óculos de proteção",
-        "Luva térmica"
+        "Luva térmica",
+        "Mangote"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Na estação de Chapas deve-se utilizar avental de cozinha E mangote.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4217,9 +4165,9 @@
       "pergunta": "Quando se deve raspar as chapas?",
       "alternativas": [
         "A cada rodada",
-        "A cada 15 minutos",
         "A cada troca de turno",
-        "Somente no fechamento"
+        "Somente no fechamento",
+        "A cada 15 minutos"
       ],
       "respostaCorreta": 0,
       "explicacao": "As chapas devem ser raspadas a cada rodada de produção.",

@@ -214,12 +214,12 @@
       ],
       "pergunta": "Com qual lado voltado para cima as tortas devem ser colocadas na bandeja de resfriamento?",
       "alternativas": [
-        "Costura para cima",
         "Lado liso para cima",
         "\"Barriga\" (bolhas) para cima",
-        "Qualquer lado"
+        "Qualquer lado",
+        "Costura para cima"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "As tortas devem ser colocadas com a 'barriga' (bolhas) voltada para cima durante o resfriamento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -270,55 +270,6 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "McFritas = 168°C. Frango e tortas = 180°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "fritos_013",
-      "categoria": "fritos",
-      "subcategoria": "⏱️ Fritos · Tempos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "oleo",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo de fritura das tortas?",
-      "alternativas": [
-        "3min15s",
-        "4min00s",
-        "5min00s",
-        "6min"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "McCrispy e tortas têm tempo de fritura de 6 minutos.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -560,11 +511,11 @@
       "pergunta": "O que deve ser feito com o óleo antes de fritar novos produtos?",
       "alternativas": [
         "Nada, pode fritar diretamente",
-        "Verificar a temperatura correta",
+        "Aguardar 5 minutos",
         "Filtrar o óleo",
-        "Aguardar 5 minutos"
+        "Verificar a temperatura correta"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Sempre verificar se o óleo atingiu a temperatura correta antes de iniciar nova rodada de fritura.",
       "dica": "",
       "tempoEstimado": 15,
@@ -708,12 +659,12 @@
       ],
       "pergunta": "Qual o procedimento correto ao notar que o óleo está escuro ou com mau cheiro?",
       "alternativas": [
-        "Continuar usando até atingir 24% de compostos polares",
         "Descartar imediatamente e trocar",
+        "Adicionar óleo novo para diluir",
         "Filtrar mais vezes",
-        "Adicionar óleo novo para diluir"
+        "Continuar usando até atingir 24% de compostos polares"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Óleo com cor escura, fumaça excessiva ou odor estranho deve ser descartado imediatamente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -810,8 +761,8 @@
       "alternativas": [
         "Cor dourada clara",
         "Odor desagradável, cor escura ou espuma excessiva",
-        "Temperatura abaixo do normal",
-        "Consumo excessivo de batatas"
+        "Consumo excessivo de batatas",
+        "Temperatura abaixo do normal"
       ],
       "respostaCorreta": 1,
       "explicacao": "Descartar quando: odor desagradável, cor escura, espuma excessiva ou Compostos Polares acima do limite.",
@@ -906,12 +857,12 @@
       ],
       "pergunta": "Como devem ser posicionados os McNuggets no cesto?",
       "alternativas": [
-        "Todos na vertical",
-        "Espalhados em camada única",
+        "Em qualquer posição",
         "Empilhados no máximo 3",
-        "Em qualquer posição"
+        "Espalhados em camada única",
+        "Todos na vertical"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Os McNuggets devem ser espalhados em camada única no cesto para fritura uniforme.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1006,12 +957,12 @@
       ],
       "pergunta": "Qual o intervalo de verificação dos Compostos Polares do óleo?",
       "alternativas": [
-        "A cada turno",
         "A cada 2 horas durante o pico",
         "Diariamente uma vez",
-        "Semanalmente"
+        "Semanalmente",
+        "A cada turno"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Os Compostos Polares devem ser verificados a cada turno de operação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1109,12 +1060,12 @@
       ],
       "pergunta": "Quando deve ser feita a filtragem do óleo?",
       "alternativas": [
-        "Apenas uma vez por semana",
         "A cada 4 horas de uso ou no pré-pico",
+        "Apenas uma vez por semana",
         "Somente quando o óleo estiver escuro",
         "Uma vez por turno"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Filtrar o óleo a cada 4 horas de uso ou no pré-pico para prolongar a vida útil.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1212,8 +1163,8 @@
       "alternativas": [
         "Por cor do cesto",
         "Pelo timer do equipamento ou etiqueta de tempo",
-        "Apenas pela memória",
-        "Pelo cheiro"
+        "Pelo cheiro",
+        "Apenas pela memória"
       ],
       "respostaCorreta": 1,
       "explicacao": "Usar o timer da UHC ou etiqueta de tempo para controlar a validade de cada produto.",
@@ -1260,11 +1211,11 @@
       "pergunta": "O que fazer se o óleo pegar fogo?",
       "alternativas": [
         "Jogar água no óleo",
-        "Usar extintor de CO2 ou abafar com tampa",
         "Deixar apagar sozinho",
+        "Usar extintor de CO2 ou abafar com tampa",
         "Ligar o exaustor"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Em caso de fogo no óleo: NUNCA jogar água. Usar extintor de CO2 ou abafar com a tampa.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1705,12 +1656,12 @@
       ],
       "pergunta": "Qual o tempo de fritura do McChicken, McJunior e McNuggets?",
       "alternativas": [
+        "2'45\"",
         "3'10\"",
-        "3'15\"",
         "6'",
-        "2'45\""
+        "3'15\""
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O tempo de fritura de McChicken, McJunior e McNuggets é de 3'15\".",
       "dica": "",
       "tempoEstimado": 15,
@@ -1903,8 +1854,8 @@
       "alternativas": [
         "Com a costura para cima",
         "Com a costura para baixo",
-        "Deitada na lateral",
-        "Em pé"
+        "Em pé",
+        "Deitada na lateral"
       ],
       "respostaCorreta": 0,
       "explicacao": "Coloca-se a torta no cesto com a costura para cima, encostando a parte superior na lâmina que separa os espaços do cesto.",
@@ -1998,12 +1949,12 @@
       ],
       "pergunta": "Qual a cor do pegador usado para as carnes de frango (exceto McNuggets)?",
       "alternativas": [
-        "Verde",
-        "Preto",
         "Bege",
-        "Azul"
+        "Azul",
+        "Preto",
+        "Verde"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Mantenha 1 pegador preto para as carnes de frango (exceto McNuggets).",
       "dica": "",
       "tempoEstimado": 15,

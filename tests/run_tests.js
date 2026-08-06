@@ -56,7 +56,7 @@ function loadQuestions(guide) {
 section('Question JSON — structure & integrity');
 
 const GUIDES_WITH_COUNTS = {
-  'chapa':               79,
+  'chapa':               78,
   'treinador':          135,
   'gerencia':            86,
   'lideranca':           67,

@@ -72,12 +72,12 @@
       ],
       "pergunta": "Qual é o tempo mínimo de reidratação da cebola?",
       "alternativas": [
+        "2 horas",
         "30 minutos",
         "1 hora",
-        "2 horas",
         "4 horas"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "A cebola deve ser reidratada por no mínimo 1 hora. Quanto mais tempo, melhor a qualidade.",
       "dica": "",
       "tempoEstimado": 15,
@@ -225,11 +225,11 @@
       "pergunta": "Qual produto é usado para sanitizar os tomates?",
       "alternativas": [
         "Água com sal",
-        "CHLORINE SANITIZER BB5L",
+        "Água quente",
         "Álcool 70%",
-        "Água quente"
+        "CHLORINE SANITIZER BB5L"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Os tomates devem ser sanitizados com CHLORINE SANITIZER BB5L por 10 a 15 minutos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -278,12 +278,12 @@
       ],
       "pergunta": "Por quanto tempo o tomate deve ser ambientado antes de ser fatiado?",
       "alternativas": [
-        "30 minutos",
-        "1 hora",
         "2 horas",
-        "4 horas"
+        "4 horas",
+        "30 minutos",
+        "1 hora"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "O tomate precisa de no mínimo 2 horas de ambientação antes de ser fatiado.",
       "dica": "",
       "tempoEstimado": 15,
@@ -332,12 +332,12 @@
       ],
       "pergunta": "Após fatiado e ambientado, o tomate pode retornar para a câmara?",
       "alternativas": [
-        "Sim, por até 2 horas",
-        "Sim, se dentro do prazo",
+        "Sim, se embalado",
         "Não, nunca",
-        "Sim, se embalado"
+        "Sim, por até 2 horas",
+        "Sim, se dentro do prazo"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Tomates após ambientados e fatiados NÃO podem retornar para câmara de resfriados.",
       "dica": "",
       "tempoEstimado": 15,
@@ -684,9 +684,9 @@
       "pergunta": "Tomate ambientado e fatiado pode retornar para a câmara de resfriados?",
       "alternativas": [
         "Sim, por até 2 horas",
-        "Sim, se dentro do prazo",
+        "Sim, se embalado",
         "Não, nunca",
-        "Sim, se embalado"
+        "Sim, se dentro do prazo"
       ],
       "respostaCorreta": 2,
       "explicacao": "Tomates após ambientados e fatiados NÃO podem retornar para câmara de resfriados.",
@@ -882,12 +882,12 @@
       ],
       "pergunta": "O que acontece se a cebola reidratar por mais tempo que o mínimo?",
       "alternativas": [
-        "Piora a qualidade",
-        "Melhora a qualidade",
+        "Fica amarga",
         "Não faz diferença",
-        "Fica amarga"
+        "Piora a qualidade",
+        "Melhora a qualidade"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Quanto mais tempo de reidratação (mínimo 1 hora), melhor a qualidade da cebola.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1085,12 +1085,12 @@
       ],
       "pergunta": "O que o LOPE deve verificar além da mesa de condimentação na rota?",
       "alternativas": [
-        "Apenas a mesa",
         "Mesa, sucos, gelo e bebida láctea",
         "Mesa e temperatura da UHC",
-        "Apenas sucos"
+        "Apenas sucos",
+        "Apenas a mesa"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O LOPE deve verificar a estocagem da mesa de condimentação, sucos, gelo e bebida láctea.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1237,8 +1237,8 @@
       "alternativas": [
         "Piora a qualidade",
         "Melhora a qualidade",
-        "Não faz diferença",
-        "Fica amarga"
+        "Fica amarga",
+        "Não faz diferença"
       ],
       "respostaCorreta": 1,
       "explicacao": "Quanto mais tempo de reidratação (mínimo 1 hora), melhor a qualidade da cebola.",
@@ -1336,12 +1336,12 @@
       ],
       "pergunta": "Qual produto é usado para sanitizar os tomates antes de fatiar?",
       "alternativas": [
+        "Água quente",
         "Água sanitária",
         "CHLORINE SANITIZER",
-        "QSR Multiuso",
-        "Água quente"
+        "QSR Multiuso"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Sanitizar os tomates com CHLORINE SANITIZER por 15 a 30 minutos antes de fatiar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1734,11 +1734,11 @@
       "pergunta": "Qual é a frequência de troca dos panos nas chapas (utensílios e áreas gordurosas)?",
       "alternativas": [
         "30 minutos",
-        "1 hora",
         "2 horas",
-        "4 horas"
+        "4 horas",
+        "1 hora"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Chapas (utensílios e áreas gordurosas): 1 hora. Chapas (inox e não gordurosas) e demais estações: 2 horas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1883,12 +1883,12 @@
       ],
       "pergunta": "O bacon segue o tempo de 2 horas da mesa de condimentação?",
       "alternativas": [
-        "Sim, segue as mesmas regras",
         "Não, o bacon tem 6 horas após a preparação",
         "Sim, mas com marcação diferente",
-        "Não, o bacon tem 4 horas"
+        "Não, o bacon tem 4 horas",
+        "Sim, segue as mesmas regras"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O bacon tem prazo de 6 horas a contar após sua preparação — por isso NÃO segue o tempo de 2 horas da mesa de condimentação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1935,9 +1935,9 @@
       ],
       "pergunta": "Qual é a validade da cebola cheddar após abrir a embalagem?",
       "alternativas": [
-        "24 horas refrigerada",
-        "48 horas refrigerada",
         "72 horas refrigerada",
+        "48 horas refrigerada",
+        "24 horas refrigerada",
         "5 dias refrigerada"
       ],
       "respostaCorreta": 1,
@@ -1988,12 +1988,12 @@
       ],
       "pergunta": "O que NÃO deve ser feito ao repor a cebola cheddar?",
       "alternativas": [
-        "Usar outra cuba limpa e sanitizada",
-        "Misturar a nova cebola com a que já está sendo utilizada",
+        "Usar o pegador marrom",
         "Fazer sangria na última estocagem",
-        "Usar o pegador marrom"
+        "Misturar a nova cebola com a que já está sendo utilizada",
+        "Usar outra cuba limpa e sanitizada"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Utilize outra cuba plástica limpa e sanitizada para a reposição — NUNCA misture a nova cebola com a que já está sendo utilizada.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2087,11 +2087,11 @@
       "pergunta": "Onde devem ser descartadas as embalagens contendo sobras de alimentos?",
       "alternativas": [
         "Saco verde (reciclável)",
-        "Saco preto (rejeito)",
         "Descarte perigoso",
-        "Caixa eletrônica"
+        "Caixa eletrônica",
+        "Saco preto (rejeito)"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Embalagens contendo sobras de alimentos são classificadas como Rejeito — saco PRETO.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2136,12 +2136,12 @@
       ],
       "pergunta": "Qual é a combinação correta para a área de balcão e salão?",
       "alternativas": [
-        "Ponteira verde + lã verde",
-        "Ponteira vermelha + lã branca",
         "Ponteira azul + lã branca",
-        "Ponteira verde + lã branca"
+        "Ponteira verde + lã verde",
+        "Ponteira verde + lã branca",
+        "Ponteira vermelha + lã branca"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Para área de balcão e salão: Ponteira e garra AZUL + lã BRANCA. Cozinha = vermelha. Banheiros = verde + lã verde.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2388,12 +2388,12 @@
       ],
       "pergunta": "Por que o bacon não segue as 2 horas da mesa de condimentação?",
       "alternativas": [
-        "Porque é mais resistente",
-        "Porque tem 6 horas de validade contadas a partir da preparação",
+        "Porque é controlado pelo gerente",
         "Porque vai para o freezer",
-        "Porque é controlado pelo gerente"
+        "Porque tem 6 horas de validade contadas a partir da preparação",
+        "Porque é mais resistente"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O bacon tem prazo de 6 horas a contar após a preparação — por isso NÃO segue o tempo de 2 horas da mesa.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2492,10 +2492,10 @@
       "alternativas": [
         "Pegador vermelho",
         "Pegador verde",
-        "Pegador marrom",
-        "Pegador azul"
+        "Pegador azul",
+        "Pegador marrom"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Usar o pegador de cebola cheddar — pegador marrom — para estocar na mesa de condimentação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2543,12 +2543,12 @@
       ],
       "pergunta": "O que fazer na última estocagem de cebola cheddar?",
       "alternativas": [
-        "Descartar o restante",
         "Fazer sangria com a espátula tipo pão duro",
         "Guardar na câmara sem fechar",
+        "Descartar o restante",
         "Misturar com a nova embalagem"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Na última estocagem de cebola cheddar, fazer sangria com a espátula (tipo 'pão duro') para aproveitar todo o produto.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2597,8 +2597,8 @@
       "alternativas": [
         "Fita adesiva",
         "Clipe de vedação",
-        "Elástico",
-        "Amarrar a embalagem"
+        "Amarrar a embalagem",
+        "Elástico"
       ],
       "respostaCorreta": 1,
       "explicacao": "Fechar a embalagem aberta com o clipe de vedação, anotar 48 horas de validade e refrigerar.",
@@ -2698,12 +2698,12 @@
       ],
       "pergunta": "Onde devem ficar os tubos de molho cheddar durante a ambientação?",
       "alternativas": [
-        "Em cima da mesa de condimentação",
-        "Embaixo da mesa de condimentação",
         "No freezer",
-        "Na área de preparo"
+        "Na área de preparo",
+        "Embaixo da mesa de condimentação",
+        "Em cima da mesa de condimentação"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Manter os tubos de molho cheddar em ambientação embaixo da mesa de condimentação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2797,12 +2797,12 @@
       ],
       "pergunta": "Por que o gelo deve ter processo rigoroso de limpeza e sanitização?",
       "alternativas": [
-        "Por exigência da vigilância sanitária apenas",
-        "Porque gelo é alimento e deve ser tratado como tal",
         "Por ser caro",
-        "Por deixar a bebida com gosto diferente"
+        "Por deixar a bebida com gosto diferente",
+        "Por exigência da vigilância sanitária apenas",
+        "Porque gelo é alimento e deve ser tratado como tal"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Gelo é alimento, portanto devemos cumprir rigorosamente os processos de limpeza e sanitização.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2846,12 +2846,12 @@
       ],
       "pergunta": "Qual lã é usada para cortar os Nanos?",
       "alternativas": [
-        "Lã nova",
         "Lã usada",
+        "Lã verde",
         "Qualquer lã disponível",
-        "Lã verde"
+        "Lã nova"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Para o corte da lã dos Nanos, utilizar sempre uma lã usada. As lãs novas são utilizadas apenas para os esfregões.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2896,10 +2896,10 @@
       ],
       "pergunta": "Qual o tamanho do Nano 2 e onde é utilizado?",
       "alternativas": [
-        "8cm — Cozinha e balcão",
+        "12cm — Salão",
         "16cm — McCafé e Dessert Centers remotos",
         "20cm — Banheiros",
-        "12cm — Salão"
+        "8cm — Cozinha e balcão"
       ],
       "respostaCorreta": 1,
       "explicacao": "Nano 2 tem 16cm e substitui o esfregão nas áreas remotas (McCafé e Dessert Centers).",
@@ -2947,12 +2947,12 @@
       ],
       "pergunta": "Qual o processo correto de lavagem das bandejas?",
       "alternativas": [
+        "Água quente apenas",
         "Apenas água corrente",
         "Água corrente → cuba com sabão → enxague → cuba com sanitizante → secar ao ar livre",
-        "Apenas sanitizante",
-        "Água quente apenas"
+        "Apenas sanitizante"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Lavar em água corrente, colocar na cuba com sabão, enxaguar na cuba central e mergulhar na cuba com sanitizante. Secar ao ar livre.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2998,12 +2998,12 @@
       ],
       "pergunta": "Qual a temperatura ideal de serviço da cebola cheddar?",
       "alternativas": [
-        "Temperatura ambiente",
-        "55°C a 65°C",
         "70°C a 75°C",
-        "Fria, saída da geladeira"
+        "Fria, saída da geladeira",
+        "Temperatura ambiente",
+        "55°C a 65°C"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A cebola cheddar deve ser servida entre 55°C e 65°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3052,12 +3052,12 @@
       ],
       "pergunta": "Qual o tempo de validade da cebola cheddar no chafing dish?",
       "alternativas": [
-        "30 minutos",
         "1 hora",
         "2 horas",
-        "4 horas"
+        "4 horas",
+        "30 minutos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "A cebola cheddar tem validade de 1 hora no chafing dish após o preparo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3105,8 +3105,8 @@
       "alternativas": [
         "Descartar imediatamente",
         "Refrigerar por até 24h e reaquecer apenas uma vez",
-        "Manter no chafing indefinidamente",
-        "Congelar para uso posterior"
+        "Congelar para uso posterior",
+        "Manter no chafing indefinidamente"
       ],
       "respostaCorreta": 1,
       "explicacao": "Cebola cheddar não utilizada: refrigerar por até 24h. Pode ser reaquecida apenas uma vez.",
@@ -3154,11 +3154,11 @@
       "pergunta": "Como deve ser aquecido o molho cheddar em sachê?",
       "alternativas": [
         "No micro-ondas por 2 minutos",
-        "Banho Maria por 5-8 minutos ou sachê aquecedor",
         "Diretamente na chapa",
+        "Banho Maria por 5-8 minutos ou sachê aquecedor",
         "Não precisa aquecer"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O molho cheddar deve ser aquecido em banho Maria por 5-8 minutos ou em sachê aquecedor.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3402,12 +3402,12 @@
       ],
       "pergunta": "Qual produto é usado para sanitizar as áreas de preparo da cebola cheddar?",
       "alternativas": [
+        "Detergente comum",
         "QSR Multiuso",
-        "Sanitizante concentrado 200ppm",
         "Água quente apenas",
-        "Detergente comum"
+        "Sanitizante concentrado 200ppm"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Usar sanitizante a 200ppm para sanitizar as áreas de preparo da cebola cheddar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3501,12 +3501,12 @@
       ],
       "pergunta": "Qual o tempo de validade do tubo de cheddar após aberto e refrigerado?",
       "alternativas": [
-        "24 horas",
         "48 horas",
+        "7 dias",
         "72 horas",
-        "7 dias"
+        "24 horas"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O tubo de cheddar após aberto deve ser refrigerado com validade de 48 horas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3552,11 +3552,11 @@
       "pergunta": "Qual o tempo de validade do abacate na mesa após preparado?",
       "alternativas": [
         "30 minutos",
-        "1 hora",
         "2 horas",
-        "4 horas"
+        "4 horas",
+        "1 hora"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "O abacate preparado tem 2 horas de validade na mesa de condimentação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3653,12 +3653,12 @@
       ],
       "pergunta": "Como deve ser armazenado o tomate seco após aberto?",
       "alternativas": [
+        "Descartar após abertura",
         "Temperatura ambiente por 5 dias",
         "Refrigerado coberto com azeite por até 7 dias",
-        "Congelado",
-        "Descartar após abertura"
+        "Congelado"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Tomate seco após aberto: cobrir com azeite e refrigerar por até 7 dias.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3703,12 +3703,12 @@
       ],
       "pergunta": "Onde devem ser mantidos os tubos de cheddar durante o turno de uso?",
       "alternativas": [
-        "Na câmara fria",
         "Em temperatura ambiente na área de LOPE",
-        "No banho Maria de 55-65°C",
-        "Na mesa de condimentação"
+        "Na câmara fria",
+        "Na mesa de condimentação",
+        "No banho Maria de 55-65°C"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Durante o turno, os tubos de cheddar em uso devem ficar no banho Maria a 55-65°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3753,12 +3753,12 @@
       ],
       "pergunta": "Qual é a validade secundária do queijo fatiado em blocos para uso na mesa de condimentação?",
       "alternativas": [
-        "1h de ambientação + 1h para uso",
         "2h de ambientação + 2h para uso",
+        "3h de ambientação + 3h para uso",
         "4h de ambientação + 2h para uso",
-        "3h de ambientação + 3h para uso"
+        "1h de ambientação + 1h para uso"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "A validade secundária do queijo fatiado é de 2h de ambientação + 2h para uso. Essa validade deve ser anotada com caneta pilot no bloco, registrando a data e hora de cada etapa.",
       "dica": "Queijo fatiado: 2h ambientação + 2h uso.",
       "tempoEstimado": 15,
@@ -3853,12 +3853,12 @@
       ],
       "pergunta": "Como os blocos de queijo devem ser posicionados dentro da cuba de preparação durante a ambientação?",
       "alternativas": [
-        "Em linha horizontal, deitados lado a lado",
-        "Em pilha, um sobre o outro",
+        "Aleatoriamente, conforme o espaço disponível",
         "Em linha vertical, de pé",
-        "Aleatoriamente, conforme o espaço disponível"
+        "Em linha horizontal, deitados lado a lado",
+        "Em pilha, um sobre o outro"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Os blocos de queijo devem ser posicionados em linha vertical dentro da cuba de preparação. Isso garante exposição uniforme ao ar e ambientação homogênea até atingir 15°C a 18°C (ideal 17,5°C).",
       "dica": "Bloco de queijo na cuba: posição em linha vertical.",
       "tempoEstimado": 15,
@@ -3904,11 +3904,11 @@
       "pergunta": "Como os blocos de queijo devem ser armazenados na mesa de condimentação, segundo o reforço operacional de ambientação?",
       "alternativas": [
         "Em blocos de 10 fatias em 10 fatias, sem ordem específica",
-        "Em blocos de 20 fatias em 20 fatias, respeitando a rotação PEPS",
         "Em blocos de 25 fatias em 25 fatias, respeitando a rotação PEPS",
+        "Em blocos de 20 fatias em 20 fatias, respeitando a rotação PEPS",
         "Em blocos de 15 fatias em 15 fatias, do mais novo para o mais antigo"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Os blocos de queijo devem ser armazenados na mesa de condimentação em blocos de 20 fatias em 20 fatias, respeitando sempre a rotação PEPS (Primeiro que Entra, Primeiro que Sai).",
       "dica": "Mesa de condimentação: 20 fatias em 20 fatias, PEPS.",
       "tempoEstimado": 15,
@@ -3953,12 +3953,12 @@
       ],
       "pergunta": "Qual instrumento deve ser usado para anotar a validade no bloco de queijo, e como remover a marcação anterior?",
       "alternativas": [
-        "Fita adesiva com data escrita; raspador",
         "Giz de cera; borracha úmida",
-        "Caneta pilot; papel toalha",
-        "Etiqueta impressa; sem necessidade de remoção"
+        "Etiqueta impressa; sem necessidade de remoção",
+        "Fita adesiva com data escrita; raspador",
+        "Caneta pilot; papel toalha"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "A validade (data primária e secundária) deve ser anotada com caneta pilot no bloco de queijo. Para remover a marcação anterior, utiliza-se uma folha de papel toalha, mantendo o bloco limpo e com informação atualizada.",
       "dica": "Validade no queijo: caneta pilot. Remover anterior: papel toalha.",
       "tempoEstimado": 15,
@@ -4009,55 +4009,6 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Encha o balde branco com 5 litros de água com a solução sanitizante.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "lope_082",
-      "categoria": "lope",
-      "subcategoria": "🧺 Panos · Sanitização",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "pano",
-        "procedimento",
-        "sanitizacao"
-      ],
-      "pergunta": "Quantos panos devem ser mergulhados por vez na solução sanitizante?",
-      "alternativas": [
-        "3 panos",
-        "5 panos",
-        "8 panos",
-        "10 panos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Separe e mergulhe 5 panos por vez na solução sanitizante.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -4349,10 +4300,10 @@
       ],
       "pergunta": "Qual a cor do balde usado para a sanitização dos panos descartáveis?",
       "alternativas": [
-        "Amarelo",
-        "Branco",
         "Verde",
-        "Azul"
+        "Branco",
+        "Azul",
+        "Amarelo"
       ],
       "respostaCorreta": 1,
       "explicacao": "Usa-se o balde branco com 5 litros de água e solução sanitizante.",
@@ -4397,12 +4348,12 @@
       ],
       "pergunta": "O que fazer com os panos após mergulhá-los na solução sanitizante?",
       "alternativas": [
+        "Usá-los encharcados",
         "Deixá-los escorrer pendurados",
         "Apertá-los para retirar o excesso e colocá-los em bandeja de inox limpa",
-        "Usá-los encharcados",
         "Secá-los ao sol"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Retire os panos apertando-os para retirar o excesso de solução e coloque-os sobre uma bandeja de inox limpa e sanitizada para distribuição.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4446,12 +4397,12 @@
       ],
       "pergunta": "Qual avental deve ser utilizado na estação de Apoio e Preparação (LOPE)?",
       "alternativas": [
-        "Avental de cozinha",
-        "Avental impermeável de limpeza",
         "Não usa avental",
-        "Avental descartável"
+        "Avental descartável",
+        "Avental impermeável de limpeza",
+        "Avental de cozinha"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Na estação LOPE deve-se utilizar avental de cozinha.",
       "dica": "",
       "tempoEstimado": 15,

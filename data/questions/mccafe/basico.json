@@ -216,9 +216,9 @@
       ],
       "pergunta": "Qual o tempo de vida do café pronto no McCafé?",
       "alternativas": [
-        "30 minutos",
-        "1 hora",
         "2 horas",
+        "1 hora",
+        "30 minutos",
         "4 horas"
       ],
       "respostaCorreta": 1,
@@ -516,12 +516,12 @@
       ],
       "pergunta": "Quanto tempo o Panini fica no Toaster?",
       "alternativas": [
-        "30 segundos",
-        "1 minuto",
         "2 minutos",
-        "3 minutos"
+        "3 minutos",
+        "1 minuto",
+        "30 segundos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O Panini fica no Toaster por 1 minuto. Retirar com pegador de cabo longo para não tocar na superfície quente.",
       "dica": "Panini: 1 minuto no Toaster.",
       "tempoEstimado": 15,
@@ -616,12 +616,12 @@
       ],
       "pergunta": "O que acontece com o café quando a moagem é muito fina?",
       "alternativas": [
+        "Café aguado",
         "Café ácido e fraco",
-        "Café amargo por excesso de extração",
         "Café sem corpo",
-        "Café aguado"
+        "Café amargo por excesso de extração"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Moagem fina → água passa devagar → café amargo (sobre-extração). Moagem grossa → água passa rápido → café ácido e fraco (sub-extração).",
       "dica": "Fina = amargo (água lenta). Grossa = ácido (água rápida).",
       "tempoEstimado": 15,
@@ -1066,12 +1066,12 @@
       ],
       "pergunta": "Por quanto tempo os bolos devem ser ambientados antes de serem fatiados?",
       "alternativas": [
-        "30 minutos",
-        "1 hora",
         "2 horas",
-        "4 horas"
+        "4 horas",
+        "1 hora",
+        "30 minutos"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Os bolos devem ser ambientados por 2 horas antes de fatiar. Rendimento: 1 bolo = 10 fatias. Validade: 5 dias em temperatura ambiente.",
       "dica": "Bolos: ambientar 2h, 10 fatias por bolo.",
       "tempoEstimado": 15,
@@ -1117,11 +1117,11 @@
       "pergunta": "Qual a ordem correta de montagem da bandeja pelo gerente RDM no McCafé?",
       "alternativas": [
         "Bebidas quentes → vitrine → geladas",
-        "Geladas → vitrine → quentes",
         "Vitrine → geladas → quentes (por último)",
+        "Geladas → vitrine → quentes",
         "Quentes → vitrine → geladas"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Ordem de montagem: Produtos da vitrine → Bebidas geladas → Bebidas quentes (SEMPRE por último), para garantir que as bebidas quentes cheguem ao cliente na temperatura correta.",
       "dica": "Bebidas quentes sempre por ÚLTIMO na bandeja.",
       "tempoEstimado": 15,
@@ -1167,11 +1167,11 @@
       "pergunta": "Qual modelo de McCafé NÃO possui POS exclusivo?",
       "alternativas": [
         "Remoto",
-        "Stand Alone",
         "InLine",
-        "Corner"
+        "Corner",
+        "Stand Alone"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "O McCafé Corner não tem POS exclusivo — os produtos são vendidos no balcão, Drive ou MOP. Possui KVS exclusivo e 1 DMB exclusivo.",
       "dica": "Corner = sem POS exclusivo.",
       "tempoEstimado": 20,
@@ -1217,11 +1217,11 @@
       "pergunta": "Quantos fornos Titã o McCafé Remoto possui?",
       "alternativas": [
         "1 forno",
-        "2 fornos (1 assar + 1 aquecer)",
         "3 fornos",
-        "Depende do tamanho"
+        "Depende do tamanho",
+        "2 fornos (1 assar + 1 aquecer)"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O McCafé Remoto tem espaço exclusivo separado com 2 fornos Titã (1 para assar + 1 para aquecer), POS exclusivo e vitrine grande.",
       "dica": "Remoto: 2 fornos Titã.",
       "tempoEstimado": 15,
@@ -1416,12 +1416,12 @@
       ],
       "pergunta": "O leite para estocagem na Foamino deve estar em que temperatura?",
       "alternativas": [
-        "Gelado da geladeira",
         "Temperatura ambiente",
-        "Morno (35–40°C)",
-        "Quente (50–55°C)"
+        "Quente (50–55°C)",
+        "Gelado da geladeira",
+        "Morno (35–40°C)"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O leite a ser estocado na máquina Foamino deve estar em temperatura ambiente — não gelado. Tempo de vida na Foamino: 8 horas.",
       "dica": "Foamino: estocar leite em temperatura ambiente.",
       "tempoEstimado": 15,
@@ -1466,9 +1466,9 @@
       ],
       "pergunta": "Quantos panos limpos são mantidos no McCafé e para quais finalidades?",
       "alternativas": [
-        "2 panos: leiteira e cafeteira",
-        "3 panos: leiteira, cafeteira e chuveirinho exclusivo",
         "4 panos: leiteira, cafeteira, vitrine e piso",
+        "3 panos: leiteira, cafeteira e chuveirinho exclusivo",
+        "2 panos: leiteira e cafeteira",
         "1 pano multiuso"
       ],
       "respostaCorreta": 1,
@@ -1516,12 +1516,12 @@
       ],
       "pergunta": "Com quais bebidas o Cookie de Chocolate é servido como acompanhamento no McCafé?",
       "alternativas": [
-        "Cappuccino, Latte e Chocolatte",
-        "Espresso Curto, Espresso, Espresso Duplo e Macchiato",
         "Café Coado, Chocolate Quente e Mocha",
-        "Qualquer bebida quente do cardápio"
+        "Qualquer bebida quente do cardápio",
+        "Espresso Curto, Espresso, Espresso Duplo e Macchiato",
+        "Cappuccino, Latte e Chocolatte"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O Cookie de Chocolate acompanha exclusivamente: Espresso Curto, Espresso, Espresso Duplo e Macchiato. O café é sempre o último item a ser colocado na bandeja.",
       "dica": "Cookie: acompanha as 4 bebidas de espresso.",
       "tempoEstimado": 15,
@@ -1616,12 +1616,12 @@
       ],
       "pergunta": "Qual a tábua e o equipamento corretos para cortar o Cookie de Chocolate no McCafé?",
       "alternativas": [
-        "Tábua azul e faca sanitizada",
-        "Tábua vermelha e faca sanitizada com luva azul",
+        "Tábua verde e tesoura culinária",
         "Tábua branca e faca de pão",
-        "Tábua verde e tesoura culinária"
+        "Tábua azul e faca sanitizada",
+        "Tábua vermelha e faca sanitizada com luva azul"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Para cortar o Cookie: usar tábua vermelha, luva azul e faca limpa e sanitizada. A tábua vermelha é padrão para corte de produtos de café/padaria no McCafé.",
       "dica": "Cookie: tábua vermelha + luva azul + faca sanitizada.",
       "tempoEstimado": 15,
@@ -1716,12 +1716,12 @@
       ],
       "pergunta": "Como o Cookie de Chocolate deve ser armazenado após o corte?",
       "alternativas": [
-        "Em prato coberto com filme plástico",
-        "Em embalagem fechada à temperatura ambiente",
         "Em recipiente hermético",
-        "Na geladeira em bandeja aberta"
+        "Na geladeira em bandeja aberta",
+        "Em prato coberto com filme plástico",
+        "Em embalagem fechada à temperatura ambiente"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "O Cookie de Chocolate deve ser armazenado em recipiente hermético para manter a textura e validade (12 horas). Não requer refrigeração.",
       "dica": "Cookie: recipiente hermético.",
       "tempoEstimado": 15,
@@ -1966,10 +1966,10 @@
       ],
       "pergunta": "Qual utensílio é utilizado para transferir os ovos do platen para o UHC no McCafé?",
       "alternativas": [
-        "Pegador de cabo longo",
+        "Luva culinária",
         "Pegador de inox",
         "Espátula de silicone",
-        "Luva culinária"
+        "Pegador de cabo longo"
       ],
       "respostaCorreta": 1,
       "explicacao": "O pegador de inox é o utensílio correto para transferir os ovos do platen para o UHC. Nunca usar utensílios plásticos ou de silicone no platen quente.",
@@ -2117,12 +2117,12 @@
       ],
       "pergunta": "Qual gaveta do UHC é utilizada para armazenar os ovos no McCafé?",
       "alternativas": [
-        "Gaveta rasa sem lâmina",
-        "Gaveta funda com lâmina",
+        "Qualquer gaveta disponível",
         "Gaveta de temperatura média",
-        "Qualquer gaveta disponível"
+        "Gaveta funda com lâmina",
+        "Gaveta rasa sem lâmina"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Os ovos são armazenados na gaveta funda com lâmina do UHC a 85°C. Máximo 5 ovos por gaveta, com vida de 20 minutos.",
       "dica": "Ovos no UHC: gaveta funda com lâmina.",
       "tempoEstimado": 15,
@@ -2167,12 +2167,12 @@
       ],
       "pergunta": "Qual a composição correta do Egg Cheese Bacon no McCafé?",
       "alternativas": [
-        "Coroa + Bacon (2) + Ovo + Queijo Cheddar (1) + Base",
         "Coroa + Ovo + Bacon (1) + Queijo Cheddar (2) + Base",
+        "Coroa + Bacon (1) + Ovo + Queijo Cheddar (1) + Base",
         "Coroa + Carne 10:1 + Ovo + Queijo Cheddar (1) + Base",
-        "Coroa + Bacon (1) + Ovo + Queijo Cheddar (1) + Base"
+        "Coroa + Bacon (2) + Ovo + Queijo Cheddar (1) + Base"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Egg Cheese Bacon: Coroa + 2 fatias de Bacon + 1 Ovo + 1 Queijo Cheddar + Base. Pão de 3\" a 5\". Duplo usa os mesmos ingredientes com 2 ovos e 2 selos amarelos.",
       "dica": "Egg Cheese Bacon: 2 bacons + 1 ovo + 1 queijo cheddar.",
       "tempoEstimado": 20,
@@ -2217,12 +2217,12 @@
       ],
       "pergunta": "Quantos selos amarelos são aplicados no Duplo Egg Cheese Bacon?",
       "alternativas": [
-        "1 selo amarelo",
         "2 selos amarelos",
+        "Nenhum",
         "3 selos amarelos",
-        "Nenhum"
+        "1 selo amarelo"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O Duplo Egg Cheese Bacon leva 2 selos amarelos, pois possui 2 ovos. O Egg Cheese Bacon simples não leva selo adicional; o Egg Burger leva 1 selo amarelo.",
       "dica": "Duplo Egg Cheese Bacon: 2 selos amarelos.",
       "tempoEstimado": 15,
@@ -2268,12 +2268,12 @@
       ],
       "pergunta": "O que diferencia o Egg Burger do Egg Cheese Bacon no McCafé?",
       "alternativas": [
-        "Usa Carne 10:1 no lugar do Bacon, e 1 selo amarelo",
         "Usa Carne 4:1 no lugar do Bacon, e 2 selos amarelos",
+        "Usa Carne 10:1 no lugar do Bacon, e 1 selo amarelo",
         "Usa Carne 4:1 no lugar do Bacon, e 1 selo amarelo",
         "É igual ao Egg Cheese Bacon sem o Queijo Cheddar"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Egg Burger: Coroa + Carne 10:1 + Ovo + Queijo Cheddar (1) + Base, com 1 selo amarelo. O Bacon é substituído por Carne 10:1.",
       "dica": "Egg Burger: carne 10:1 (sem bacon) + 1 selo amarelo.",
       "tempoEstimado": 15,

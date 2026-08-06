@@ -22,12 +22,12 @@
       ],
       "pergunta": "Quais são os 3 tipos de perigos para a segurança do alimento?",
       "alternativas": [
+        "Biológico, Físico e Operacional",
         "Biológico, Químico e Físico",
-        "Bacteriano, Viral e Fúngico",
         "Temperatura, Higiene e Tempo",
-        "Biológico, Físico e Operacional"
+        "Bacteriano, Viral e Fúngico"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Os 3 perigos são: Biológico (bactérias, vírus, fungos), Químico (resíduos de limpeza, pesticidas) e Físico (objetos estranhos).",
       "dica": "",
       "tempoEstimado": 15,
@@ -72,12 +72,12 @@
       ],
       "pergunta": "Qual é a faixa de temperatura chamada de zona de perigo?",
       "alternativas": [
-        "0°C a 40°C",
-        "5°C a 60°C",
         "10°C a 70°C",
-        "4°C a 65°C"
+        "4°C a 65°C",
+        "5°C a 60°C",
+        "0°C a 40°C"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Na zona de perigo (5°C a 60°C) as bactérias se multiplicam rapidamente, podendo dobrar a cada 20 minutos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -228,10 +228,10 @@
       "alternativas": [
         "30 minutos",
         "1 hora",
-        "2 horas",
-        "4 horas"
+        "4 horas",
+        "2 horas"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Alimentos perecíveis na zona de perigo (5°C–60°C) por mais de 2 horas devem ser descartados, independentemente da aparência.",
       "dica": "",
       "tempoEstimado": 15,
@@ -327,12 +327,12 @@
       ],
       "pergunta": "O que deve ser usado para secar as mãos após a lavagem?",
       "alternativas": [
-        "Pano de prato",
-        "Avental",
         "Papel toalha descartável",
-        "Ar quente"
+        "Avental",
+        "Ar quente",
+        "Pano de prato"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "As mãos devem ser secas com papel toalha descartável — nunca com pano de prato, que acumula bactérias.",
       "dica": "",
       "tempoEstimado": 15,
@@ -380,10 +380,10 @@
       ],
       "pergunta": "Com que frequência devem ser trocados os panos de limpeza?",
       "alternativas": [
-        "A cada 1 hora",
+        "Uma vez ao dia",
         "A cada 2 horas",
-        "A cada turno",
-        "Uma vez ao dia"
+        "A cada 1 hora",
+        "A cada turno"
       ],
       "respostaCorreta": 1,
       "explicacao": "Os panos de limpeza devem ser trocados a cada 2 horas para evitar contaminação cruzada.",
@@ -435,11 +435,11 @@
       "pergunta": "O que é contaminação cruzada indireta?",
       "alternativas": [
         "Contato direto entre alimento cru e pronto",
+        "Produto sem etiqueta de validade",
         "Transferência de microrganismos via utensílio, superfície ou mão",
-        "Alimento exposto à temperatura ambiente",
-        "Produto sem etiqueta de validade"
+        "Alimento exposto à temperatura ambiente"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Contaminação cruzada indireta ocorre quando microrganismos são transferidos por meio de utensílios, superfícies ou mãos contaminadas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -484,12 +484,12 @@
       ],
       "pergunta": "Como produtos crus devem ser armazenados na câmara em relação a prontos?",
       "alternativas": [
-        "Acima dos prontos",
-        "Abaixo dos prontos",
         "No mesmo nível",
-        "Não importa a posição"
+        "Acima dos prontos",
+        "Não importa a posição",
+        "Abaixo dos prontos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Carnes cruas devem ficar abaixo de alimentos prontos para consumo na câmara, evitando que gotejamentos contaminem os produtos prontos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -535,12 +535,12 @@
       ],
       "pergunta": "O que fazer após a sanitização na Cuba 3?",
       "alternativas": [
-        "Enxaguar com água quente",
-        "Enxaguar com água fria",
         "Não enxaguar",
+        "Enxaguar com água fria",
+        "Enxaguar com água quente",
         "Enxaguar e secar com pano"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Após a sanitização, não se deve enxaguar — o enxágue remove o efeito sanitizante. Deixar secar ao ar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -638,9 +638,9 @@
       ],
       "pergunta": "Quais são as 4 condições necessárias para as bactérias se multiplicarem?",
       "alternativas": [
-        "Calor, Frio, Umidade, Luz",
-        "Temperatura, Umidade, Nutrientes, Tempo",
         "Oxigênio, Temperatura, Luz, Tempo",
+        "Temperatura, Umidade, Nutrientes, Tempo",
+        "Calor, Frio, Umidade, Luz",
         "Água, Calor, Sujeira, Ar"
       ],
       "respostaCorreta": 1,
@@ -689,8 +689,8 @@
       ],
       "pergunta": "Qual é o método correto de descongelamento no restaurante?",
       "alternativas": [
-        "Temperatura ambiente",
         "Em água quente",
+        "Temperatura ambiente",
         "Na câmara de refrigeração (1–4°C)",
         "Ao sol"
       ],
@@ -790,11 +790,11 @@
       "pergunta": "As luvas substituem a lavagem das mãos?",
       "alternativas": [
         "Sim, completamente",
+        "Apenas para alimentos frios",
         "Sim, se forem descartáveis",
-        "Não — são uma barreira adicional",
-        "Apenas para alimentos frios"
+        "Não — são uma barreira adicional"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "As luvas não substituem a lavagem das mãos — são uma barreira adicional. É obrigatório lavar as mãos antes de calçar e após remover as luvas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -840,12 +840,12 @@
       ],
       "pergunta": "Qual é um exemplo de perigo químico nos alimentos?",
       "alternativas": [
-        "Cabelo",
-        "Fragmento de vidro",
         "Resíduo de produto de limpeza",
-        "Salmonella"
+        "Cabelo",
+        "Salmonella",
+        "Fragmento de vidro"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Perigo químico inclui resíduos de produtos de limpeza, pesticidas e aditivos em excesso. O enxágue correto de utensílios é a principal prevenção.",
       "dica": "",
       "tempoEstimado": 15,
@@ -891,8 +891,8 @@
       "alternativas": [
         "Sal, açúcar, pimenta e orégano",
         "Trigo, leite, amendoim, ovo e soja",
-        "Azeite, manteiga, farinha e mel",
-        "Corantes, conservantes, antioxidantes e acidulantes"
+        "Corantes, conservantes, antioxidantes e acidulantes",
+        "Azeite, manteiga, farinha e mel"
       ],
       "respostaCorreta": 1,
       "explicacao": "Os principais alergênicos presentes nos produtos do McDonald's incluem trigo (glúten), leite (lactose), amendoim, ovo e soja. O funcionário deve conhecê-los para informar os clientes corretamente.",
@@ -939,11 +939,11 @@
       "pergunta": "O que fazer imediatamente quando um cliente informa que tem alergia alimentar?",
       "alternativas": [
         "Orientar o cliente a verificar o rótulo da embalagem por conta própria",
+        "Ignorar a informação e entregar o pedido normalmente",
         "Informar os ingredientes e alergênicos do produto e acionar o gerente",
-        "Pedir que o cliente assine um termo de responsabilidade",
-        "Ignorar a informação e entregar o pedido normalmente"
+        "Pedir que o cliente assine um termo de responsabilidade"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Ao receber informação de alergia, informe os ingredientes e alergênicos do produto solicitado e acione imediatamente o gerente, que irá orientar o procedimento correto e garantir a segurança do cliente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -988,12 +988,12 @@
       ],
       "pergunta": "O que o funcionário deve fazer se tiver um ferimento na mão durante a produção?",
       "alternativas": [
+        "Parar de trabalhar e ir para casa imediatamente",
         "Continuar trabalhando normalmente após lavar a ferida",
-        "Cobrir com curativo colorido e usar luva descartável por cima",
         "Apenas aplicar álcool gel e seguir o trabalho",
-        "Parar de trabalhar e ir para casa imediatamente"
+        "Cobrir com curativo colorido e usar luva descartável por cima"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Ferimentos nas mãos devem ser cobertos com curativo colorido (detectável) e, sobre ele, luva descartável. O curativo colorido facilita a identificação caso caia no alimento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1038,12 +1038,12 @@
       ],
       "pergunta": "O que deve ocorrer se um funcionário apresentar vômito, diarreia ou febre durante o turno?",
       "alternativas": [
-        "Pode permanecer na cozinha usando máscara",
         "Deve ser afastado da manipulação de alimentos imediatamente",
+        "Pode permanecer na cozinha usando máscara",
         "Pode continuar se lavar as mãos com mais frequência",
         "Deve trabalhar apenas no caixa, longe da cozinha"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Funcionários com sintomas de doenças transmissíveis (vômito, diarreia, febre, feridas infectadas) devem ser afastados imediatamente da manipulação de alimentos para evitar contaminação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1137,10 +1137,10 @@
       ],
       "pergunta": "O que fazer quando um produto chega fora da temperatura exigida no recebimento?",
       "alternativas": [
-        "Aceitar e armazenar rapidamente para recuperar a temperatura",
+        "Colocar imediatamente no freezer e verificar depois",
         "Rejeitar o produto e notificar o gerente e o fornecedor",
         "Aceitar somente se a aparência estiver normal",
-        "Colocar imediatamente no freezer e verificar depois"
+        "Aceitar e armazenar rapidamente para recuperar a temperatura"
       ],
       "respostaCorreta": 1,
       "explicacao": "Produto fora da temperatura de recebimento deve ser recusado. O gerente deve ser notificado e o ocorrido registrado. Aceitar produto fora de temperatura coloca em risco a segurança alimentar.",
@@ -1187,12 +1187,12 @@
       ],
       "pergunta": "O que deve constar obrigatoriamente na etiqueta de validade de um produto preparado?",
       "alternativas": [
+        "Apenas a data de vencimento e o nome do produto",
         "Nome do produto, data de fabricação e assinatura do funcionário",
         "Nome do produto, data e hora de preparo, e data e hora de vencimento",
-        "Apenas a data de vencimento e o nome do produto",
         "Código do produto, peso e temperatura de armazenamento"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "A etiqueta de validade deve conter: nome do produto, data e hora de preparo e data e hora de vencimento. Esses dados garantem o controle do PEPS e a segurança do alimento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1237,12 +1237,12 @@
       ],
       "pergunta": "Ao aplicar o PEPS, onde deve ser colocado o produto novo recebido?",
       "alternativas": [
-        "Na frente, para ser usado primeiro",
         "No meio da prateleira",
-        "Atrás ou embaixo dos produtos mais antigos",
-        "Na posição mais acessível para o operador"
+        "Na frente, para ser usado primeiro",
+        "Na posição mais acessível para o operador",
+        "Atrás ou embaixo dos produtos mais antigos"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "No sistema PEPS (Primeiro a Entrar, Primeiro a Sair), o produto novo entra por trás ou por baixo. Assim, os produtos mais antigos ficam na frente e são consumidos primeiro, evitando vencimentos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1286,12 +1286,12 @@
       ],
       "pergunta": "Qual das opções abaixo é um exemplo de perigo físico no alimento?",
       "alternativas": [
-        "Salmonella",
-        "Resíduo de detergente",
         "Fragmento de osso, vidro ou cabelo",
-        "Toxina de fungo"
+        "Resíduo de detergente",
+        "Toxina de fungo",
+        "Salmonella"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Perigos físicos são objetos estranhos que podem causar dano ao consumidor, como fragmentos de osso, vidro, metal, cabelo ou qualquer material não comestível presente no alimento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1386,12 +1386,12 @@
       ],
       "pergunta": "Com que frequência deve ser realizado o monitoramento de temperatura dos equipamentos de frio?",
       "alternativas": [
-        "A cada 30 minutos",
-        "A cada 1 hora",
+        "Uma vez por turno",
         "A cada 2 horas",
-        "Uma vez por turno"
+        "A cada 1 hora",
+        "A cada 30 minutos"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "O monitoramento de temperatura de câmaras e equipamentos de frio deve ser realizado a cada 2 horas e registrado no formulário de controle de temperatura.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1436,12 +1436,12 @@
       ],
       "pergunta": "Por que é proibido usar anéis, brincos e pulseiras durante a manipulação de alimentos?",
       "alternativas": [
+        "Apenas por norma da empresa, sem risco real",
         "Por questões estéticas e de apresentação da equipe",
         "Porque podem cair no alimento (perigo físico) e acumular sujeira e bactérias",
-        "Apenas por norma da empresa, sem risco real",
         "Por causa do risco de dano ao equipamento"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Adornos (anéis, brincos, pulseiras, relógios) são proibidos na produção pois podem cair nos alimentos (perigo físico) e acumulam sujeira e microrganismos nas junções, causando contaminação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1537,11 +1537,11 @@
       "pergunta": "Por que tábuas de corte de diferentes cores são usadas para diferentes alimentos?",
       "alternativas": [
         "Para facilitar a organização visual da cozinha",
-        "Para evitar contaminação cruzada entre alimentos de diferentes grupos",
+        "Porque cada cor tem resistência térmica diferente",
         "Por exigência estética do padrão McDonald's",
-        "Porque cada cor tem resistência térmica diferente"
+        "Para evitar contaminação cruzada entre alimentos de diferentes grupos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A separação de tábuas de corte por cor evita contaminação cruzada: por exemplo, tábua vermelha para carnes cruas, amarela para aves, verde para vegetais. Nunca usar a mesma tábua para alimentos diferentes sem higienização.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1586,12 +1586,12 @@
       ],
       "pergunta": "Em qual das situações abaixo é OBRIGATÓRIO lavar as mãos?",
       "alternativas": [
-        "Apenas ao entrar na área de produção no início do turno",
-        "Somente após ir ao banheiro",
         "Após tocar em lixo, embalagens, o rosto ou após usar o banheiro, e sempre ao trocar de tarefa",
-        "Somente quando as mãos estiverem visivelmente sujas"
+        "Somente quando as mãos estiverem visivelmente sujas",
+        "Somente após ir ao banheiro",
+        "Apenas ao entrar na área de produção no início do turno"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "As mãos devem ser lavadas em diversas situações: ao entrar na produção, após usar o banheiro, após tocar lixo ou embalagens, após assoar o nariz, após tossir ou espirrar, ao trocar de tarefa e após manusear alimentos crus.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1636,10 +1636,10 @@
       ],
       "pergunta": "Um alimento com aparência normal e sem cheiro forte pode estar contaminado?",
       "alternativas": [
-        "Não, alimentos contaminados sempre têm aparência ou cheiro alterados",
-        "Sim, pois microrganismos patogênicos geralmente não alteram aparência, cheiro ou sabor",
         "Não, se passou no controle visual está seguro",
-        "Sim, mas apenas em alimentos crus"
+        "Sim, pois microrganismos patogênicos geralmente não alteram aparência, cheiro ou sabor",
+        "Sim, mas apenas em alimentos crus",
+        "Não, alimentos contaminados sempre têm aparência ou cheiro alterados"
       ],
       "respostaCorreta": 1,
       "explicacao": "Sim. A maioria dos microrganismos patogênicos (Salmonella, E. coli, Listeria etc.) não altera aparência, cheiro nem sabor do alimento. Apenas seguir os controles de tempo e temperatura garante a segurança.",
@@ -1685,8 +1685,8 @@
       ],
       "pergunta": "O que fazer ao notar sinais de praga (fezes, roedura, insetos) no restaurante?",
       "alternativas": [
-        "Usar inseticida doméstico imediatamente para resolver o problema",
         "Ignorar se for apenas um sinal isolado",
+        "Usar inseticida doméstico imediatamente para resolver o problema",
         "Comunicar imediatamente ao gerente e registrar o ocorrido",
         "Limpar o local e aguardar para ver se reincide"
       ],
@@ -1786,11 +1786,11 @@
       "pergunta": "O que é rastreabilidade de alimentos e para que serve?",
       "alternativas": [
         "É o processo de verificar visualmente a qualidade do alimento antes de servir",
-        "É a capacidade de identificar a origem, processamento e destino de um alimento para investigar e controlar problemas de segurança",
         "É o controle do número de porções vendidas por turno",
-        "É a verificação de conformidade de embalagens dos fornecedores"
+        "É a verificação de conformidade de embalagens dos fornecedores",
+        "É a capacidade de identificar a origem, processamento e destino de um alimento para investigar e controlar problemas de segurança"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Rastreabilidade é a capacidade de identificar a origem, processamento e destino de um alimento em qualquer etapa da cadeia. Serve para investigar surtos alimentares, realizar recalls e comprovar que os procedimentos de segurança foram seguidos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1835,8 +1835,8 @@
       "pergunta": "O que é a validade secundária de um alimento?",
       "alternativas": [
         "Tempo que o alimento pode ser utilizado/consumido após abri-lo ou após ser movido do local de armazenamento.",
-        "Data de validade impressa pelo fornecedor",
         "Tempo de transporte do fornecedor até o restaurante",
+        "Data de validade impressa pelo fornecedor",
         "Prazo máximo de congelamento na câmara"
       ],
       "respostaCorreta": 0,

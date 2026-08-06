@@ -71,12 +71,12 @@
       ],
       "pergunta": "Com qual frequência devem ser trocados os panos de limpeza?",
       "alternativas": [
-        "A cada 30 minutos",
-        "A cada 1 hora",
         "A cada 2 horas",
+        "A cada 1 hora",
+        "A cada 30 minutos",
         "A cada 4 horas"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "A troca de panos deve ocorrer a cada 2 horas, ou sempre que necessário.",
       "dica": "",
       "tempoEstimado": 15,
@@ -119,12 +119,12 @@
       ],
       "pergunta": "Qual cor de saco de lixo é usada para resíduos recicláveis?",
       "alternativas": [
-        "Preto",
         "Azul",
         "Verde",
+        "Preto",
         "Amarelo"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Saco verde = resíduos recicláveis (papel e plástico). Saco preto = resíduos orgânicos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -218,12 +218,12 @@
       ],
       "pergunta": "Em qual formato deve ser feito o movimento do esfregão no chão?",
       "alternativas": [
-        "Linha reta",
         "Círculos",
-        "Forma de ∞ (infinito)",
-        "Zigue-zague"
+        "Linha reta",
+        "Zigue-zague",
+        "Forma de ∞ (infinito)"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "O esfregão deve ser usado em forma de '∞' — 1 metro vira e 1 metro lava, a cada 2m².",
       "dica": "",
       "tempoEstimado": 15,
@@ -268,12 +268,12 @@
       ],
       "pergunta": "Qual é o objetivo do procedimento NGK?",
       "alternativas": [
-        "Apenas registrar pedidos",
         "Incentivar o cliente a usar o totem e auxiliar no manuseio",
-        "Substituir o atendimento no balcão",
-        "Apenas verificar se os totens estão ligados"
+        "Apenas registrar pedidos",
+        "Apenas verificar se os totens estão ligados",
+        "Substituir o atendimento no balcão"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O procedimento NGK inclui abordar o cliente, incentivar o uso do totem, auxiliar no manuseio e falar sobre produtos e campanhas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -318,10 +318,10 @@
       ],
       "pergunta": "O que significa 'IN' no método de preparação?",
       "alternativas": [
-        "Pedido para viagem",
-        "Cliente comendo no salão",
         "Delivery",
-        "Pedido pelo celular"
+        "Cliente comendo no salão",
+        "Pedido pelo celular",
+        "Pedido para viagem"
       ],
       "respostaCorreta": 1,
       "explicacao": "IN significa que o cliente está comendo no salão. OUT significa pedido para viagem.",
@@ -368,9 +368,9 @@
       "pergunta": "Como um pedido Curbside aparece na OAT?",
       "alternativas": [
         "Com o nome do cliente",
-        "Com o número da mesa",
+        "Como 'Armazenado'",
         "Com 'Curb + número da vaga'",
-        "Como 'Armazenado'"
+        "Com o número da mesa"
       ],
       "respostaCorreta": 2,
       "explicacao": "Pedidos Curbside aparecem na OAT com o nome 'Curb + número da vaga', ex: CURB 01.",
@@ -415,12 +415,12 @@
       ],
       "pergunta": "Como um pedido MOP (por celular) aparece na OAT?",
       "alternativas": [
-        "Com ícone especial de celular",
         "Com a palavra 'MOP' em destaque",
-        "Igual a um pedido de balcão, mas como 'Armazenado'",
-        "Com o nome do aplicativo"
+        "Com ícone especial de celular",
+        "Com o nome do aplicativo",
+        "Igual a um pedido de balcão, mas como 'Armazenado'"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Para MOP não há ícone. O pedido aparece na OAT igual ao de balcão, mas com status 'Armazenado' para que o crew faça o recall.",
       "dica": "",
       "tempoEstimado": 15,
@@ -465,12 +465,12 @@
       ],
       "pergunta": "O que deve ser feito ao ver uma família com crianças pequenas chegando ao salão?",
       "alternativas": [
-        "Aguardar eles se acomodarem sozinhos",
         "Oferecer/levar cadeirão, higienizando antes da criança sentar",
+        "Aguardar eles se acomodarem sozinhos",
         "Apenas indicar uma mesa",
         "Perguntar se precisam de ajuda apenas se solicitarem"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Ofereça ou leve cadeirões para pais com crianças pequenas, sempre higienizando antes da criança sentar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -663,11 +663,11 @@
       "pergunta": "A quantos metros deve ser invertido o lado do esfregão?",
       "alternativas": [
         "A cada 50cm",
+        "A cada 3 metros",
         "A cada metro",
-        "A cada 2 metros",
-        "A cada 3 metros"
+        "A cada 2 metros"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O esfregão deve ter o lado invertido a cada metro de lavagem.",
       "dica": "",
       "tempoEstimado": 15,
@@ -758,12 +758,12 @@
       ],
       "pergunta": "O que verificar nos totens antes de assumir a função NGK?",
       "alternativas": [
-        "Apenas se estão ligados",
-        "Se estão ligados e se a comunicação está de acordo com a campanha em vigor",
         "Apenas a campanha vigente",
-        "Se há clientes usando"
+        "Apenas se estão ligados",
+        "Se há clientes usando",
+        "Se estão ligados e se a comunicação está de acordo com a campanha em vigor"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Verificar se os Totens estão ligados e se a comunicação está de acordo com a campanha em vigor.",
       "dica": "",
       "tempoEstimado": 15,
@@ -808,12 +808,12 @@
       ],
       "pergunta": "O que significa 'OUT' no método de preparação?",
       "alternativas": [
-        "Cliente no salão",
         "Pedido para viagem",
+        "Delivery",
         "Serviço na mesa",
-        "Delivery"
+        "Cliente no salão"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "OUT significa que o pedido é para viagem. IN = cliente comendo no salão.",
       "dica": "",
       "tempoEstimado": 15,
@@ -857,10 +857,10 @@
       ],
       "pergunta": "Onde fica indicado o número de vaga para pedidos Curbside?",
       "alternativas": [
-        "Na barra superior do pedido",
+        "No nome do cliente",
         "Na barra inferior do pedido",
-        "No número de registro",
-        "No nome do cliente"
+        "Na barra superior do pedido",
+        "No número de registro"
       ],
       "respostaCorreta": 1,
       "explicacao": "Pedidos Curbside: levar até o número de vaga indicado na barra inferior da OAT.",
@@ -904,12 +904,12 @@
       ],
       "pergunta": "Como é mostrado o local da mesa nos pedidos de Entrega na Mesa?",
       "alternativas": [
+        "No número do pedido",
         "No lugar do número de registro",
         "No lugar do nome 'Bandeja' na barra superior",
-        "Na barra inferior",
-        "No número do pedido"
+        "Na barra inferior"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Pedidos de Entrega na Mesa: o número da mesa aparece no lugar de 'Bandeja' na barra superior.",
       "dica": "",
       "tempoEstimado": 15,
@@ -952,12 +952,12 @@
       ],
       "pergunta": "Como deve ser explicada a separação de resíduos ao cliente?",
       "alternativas": [
-        "Não é necessário explicar",
-        "Mostrar as lixeiras e orientar sobre orgânico, papel/plástico e líquido",
         "Apenas apontar para as lixeiras",
-        "Só orientar se o cliente perguntar"
+        "Não é necessário explicar",
+        "Só orientar se o cliente perguntar",
+        "Mostrar as lixeiras e orientar sobre orgânico, papel/plástico e líquido"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Explicar a correta separação (orgânicos / papel e plástico / líquido) ao cliente quando for descartar o lixo da bandeja.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1003,12 +1003,12 @@
       ],
       "pergunta": "Como deve ser a despedida ao cliente no salão?",
       "alternativas": [
-        "Formal e protocolar",
         "Rápida, cortês, com contato visual, solicitando o retorno",
+        "Somente se o cliente se despedir primeiro",
         "Apenas acenar com a mão",
-        "Somente se o cliente se despedir primeiro"
+        "Formal e protocolar"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Agradecer e despedir-se de forma rápida e cortês, mantendo sempre contato visual.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1055,10 +1055,10 @@
       ],
       "pergunta": "Quando deve ser usado o gel sanitizante nas mãos?",
       "alternativas": [
-        "Apenas ao chegar",
+        "A cada hora",
         "Antes de assumir a função e após atividade de limpeza",
-        "Apenas após usar o banheiro",
-        "A cada hora"
+        "Apenas ao chegar",
+        "Apenas após usar o banheiro"
       ],
       "respostaCorreta": 1,
       "explicacao": "Usar gel sanitizante antes de assumir a função e após ter realizado qualquer atividade de limpeza.",
@@ -1108,11 +1108,11 @@
       "pergunta": "Qual a principal técnica de vendas no NGK?",
       "alternativas": [
         "Empurrar produtos mais caros",
+        "Orientar o cliente a ir ao balcão",
         "Fazer venda sugestiva e auxiliar no manuseio das telas",
-        "Apenas registrar pedidos",
-        "Orientar o cliente a ir ao balcão"
+        "Apenas registrar pedidos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "No NGK: abordar o cliente, incentivar o uso do totem, auxiliar no manuseio e fazer venda sugestiva sobre produtos e campanhas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1156,11 +1156,11 @@
       "pergunta": "Qual EPI deve ser usado na limpeza das lixeiras?",
       "alternativas": [
         "Apenas luvas",
-        "Jaleco e luvas de látex",
+        "Luvas e óculos",
         "Máscara e avental",
-        "Luvas e óculos"
+        "Jaleco e luvas de látex"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Utilizar sempre o EPI completo: jaleco e luvas de látex para limpeza das lixeiras.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1207,12 +1207,12 @@
       ],
       "pergunta": "O que fazer com o pano úmido após limpar a mesa?",
       "alternativas": [
-        "Deixar sobre a mesa para próximo uso",
-        "Usar o mesmo pano para o próximo cliente",
         "Trocar a cada 2 horas ou quando necessário",
-        "Jogar no lixo imediatamente após cada mesa"
+        "Jogar no lixo imediatamente após cada mesa",
+        "Deixar sobre a mesa para próximo uso",
+        "Usar o mesmo pano para o próximo cliente"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Os panos devem ser trocados a cada 2 horas ou sempre que necessário durante o turno.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1256,10 +1256,10 @@
       ],
       "pergunta": "O que fazer quando um cliente parece ter dificuldades com o totem?",
       "alternativas": [
-        "Ignorar, o cliente deve aprender",
+        "Pedir para ir ao balcão",
         "Abordar proativamente e oferecer assistência",
-        "Chamar o gerente",
-        "Pedir para ir ao balcão"
+        "Ignorar, o cliente deve aprender",
+        "Chamar o gerente"
       ],
       "respostaCorreta": 1,
       "explicacao": "Abordar proativamente o cliente com dificuldades, auxiliar sem assumir o controle do pedido.",
@@ -1307,12 +1307,12 @@
       ],
       "pergunta": "Como o cliente vincula o Meu Méqui no NGK?",
       "alternativas": [
+        "Informando ao atendente do NGK",
         "Não é possível no NGK",
         "Digitando CPF ou escaneando QR code no início do pedido",
-        "Apenas no balcão",
-        "Informando ao atendente do NGK"
+        "Apenas no balcão"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "No NGK, o cliente vincula o Meu Méqui digitando CPF ou escaneando o QR code na tela inicial.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1360,12 +1360,12 @@
       ],
       "pergunta": "Com que frequência deve ser feita a rota de limpeza do salão?",
       "alternativas": [
-        "Apenas antes de abrir e fechar",
-        "A cada 15-30 minutos durante a operação",
         "Uma vez por hora",
-        "Apenas quando sujar visivelmente"
+        "Apenas quando sujar visivelmente",
+        "Apenas antes de abrir e fechar",
+        "A cada 15-30 minutos durante a operação"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A rota de limpeza do salão deve ser feita a cada 15 a 30 minutos durante a operação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1410,12 +1410,12 @@
       ],
       "pergunta": "O que fazer ao encontrar uma mesa suja após o cliente sair?",
       "alternativas": [
-        "Aguardar o próximo cliente reclama",
         "Limpar imediatamente com pano e solução multiuso",
-        "Apenas jogar fora o lixo da mesa",
-        "Avisar outro funcionário para limpar"
+        "Aguardar o próximo cliente reclama",
+        "Avisar outro funcionário para limpar",
+        "Apenas jogar fora o lixo da mesa"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Limpar imediatamente mesa e cadeiras com pano e solução multiuso após o cliente sair.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1462,10 +1462,10 @@
       ],
       "pergunta": "O que é o serviço Curbside?",
       "alternativas": [
-        "Entrega na mesa do salão",
+        "Retirada no balcão",
         "Cliente faz pedido no app e recebe no carro sem sair",
-        "Delivery para casa",
-        "Retirada no balcão"
+        "Entrega na mesa do salão",
+        "Delivery para casa"
       ],
       "respostaCorreta": 1,
       "explicacao": "Curbside: cliente faz o pedido pelo app e recebe diretamente no carro estacionado na vaga indicada.",
@@ -1511,12 +1511,12 @@
       ],
       "pergunta": "O que fazer se o totem travar ou apresentar erro?",
       "alternativas": [
-        "Desligar e religar imediatamente",
-        "Notificar o gerente e sinalizar o totem como indisponível",
+        "Pedir ao cliente para tentar novamente várias vezes",
         "Ignorar e continuar no totem ao lado",
-        "Pedir ao cliente para tentar novamente várias vezes"
+        "Notificar o gerente e sinalizar o totem como indisponível",
+        "Desligar e religar imediatamente"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Em caso de erro no totem, notificar o gerente e sinalizar o totem como temporariamente indisponível.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1561,12 +1561,12 @@
       ],
       "pergunta": "Com que frequência deve ser inspecionado o banheiro?",
       "alternativas": [
-        "Uma vez ao dia",
-        "A cada hora ou sempre que for utilizado intensamente",
+        "A cada 30 minutos",
         "Apenas no fechamento",
-        "A cada 30 minutos"
+        "Uma vez ao dia",
+        "A cada hora ou sempre que for utilizado intensamente"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Inspecionar o banheiro a cada hora ou com maior frequência nos horários de pico.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1610,12 +1610,12 @@
       ],
       "pergunta": "Como o NGK ajuda na venda sugestiva?",
       "alternativas": [
-        "Não há venda sugestiva no NGK",
         "O sistema sugere automaticamente complementos e upgrades",
+        "Não há venda sugestiva no NGK",
         "O atendente sugere verbalmente",
         "Apenas com panfletos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O NGK sugere automaticamente complementos e upgrades na tela, facilitando a venda sugestiva.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1662,9 +1662,9 @@
       ],
       "pergunta": "O que verificar no playground durante a rota de salão?",
       "alternativas": [
-        "Apenas a limpeza visual",
-        "Limpeza, segurança estrutural e ausência de objetos cortantes",
         "Apenas se as crianças estão bem",
+        "Limpeza, segurança estrutural e ausência de objetos cortantes",
+        "Apenas a limpeza visual",
         "Somente limpeza do piso"
       ],
       "respostaCorreta": 1,
@@ -1713,12 +1713,12 @@
       ],
       "pergunta": "O cliente pode pagar no totem com qualquer forma de pagamento?",
       "alternativas": [
+        "Qualquer forma incluindo dinheiro",
         "Apenas cartão de crédito",
         "Débito, crédito e Meu Méqui (pontos)",
-        "Apenas dinheiro",
-        "Qualquer forma incluindo dinheiro"
+        "Apenas dinheiro"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "No NGK, são aceitos: cartão de débito, crédito e pagamento com pontos Meu Méqui.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1766,11 +1766,11 @@
       "pergunta": "O que é a rota de cortesia no salão?",
       "alternativas": [
         "Limpeza das mesas",
-        "Verificar a satisfação dos clientes e oferecer auxílio",
         "Repor napkineiras e condimentos",
-        "Limpar o chão"
+        "Limpar o chão",
+        "Verificar a satisfação dos clientes e oferecer auxílio"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Rota de cortesia: percorrer o salão verificando a satisfação dos clientes e oferecendo auxílio quando necessário.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1814,12 +1814,12 @@
       ],
       "pergunta": "O que fazer quando o totem não imprime o cupom do cliente?",
       "alternativas": [
-        "Dizer ao cliente que não tem solução",
         "Verificar o papel, se necessário imprimir manualmente ou orientar o cliente",
         "Ignorar o problema",
-        "Pedir ao cliente para refazer o pedido"
+        "Pedir ao cliente para refazer o pedido",
+        "Dizer ao cliente que não tem solução"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Sem impressão: verificar papel primeiro; se necessário, imprimir via POS ou orientar o cliente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1864,9 +1864,9 @@
       ],
       "pergunta": "O que verificar nas napkineiras durante a rota de salão?",
       "alternativas": [
-        "Apenas se estão no lugar",
-        "Limpeza, quantidade de guardanapos e sachês de sal/pimenta",
         "Apenas a limpeza externa",
+        "Limpeza, quantidade de guardanapos e sachês de sal/pimenta",
+        "Apenas se estão no lugar",
         "Nada, o LOPE cuida disso"
       ],
       "respostaCorreta": 1,
@@ -1914,12 +1914,12 @@
       ],
       "pergunta": "Como auxiliar clientes com necessidades especiais no NGK?",
       "alternativas": [
-        "Encaminhar ao balcão",
-        "Oferecer assistência pessoal e usar os recursos de acessibilidade do totem",
         "Pedir para outro cliente ajudar",
-        "Não há suporte para isso"
+        "Não há suporte para isso",
+        "Oferecer assistência pessoal e usar os recursos de acessibilidade do totem",
+        "Encaminhar ao balcão"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Oferecer assistência personalizada e ativar os recursos de acessibilidade do totem (fonte maior, contraste).",
       "dica": "",
       "tempoEstimado": 15,
@@ -2111,11 +2111,11 @@
       "pergunta": "Qual a cor do saco de lixo para resíduos recicláveis (papel e plástico)?",
       "alternativas": [
         "Preto",
-        "Verde",
         "Azul",
-        "Amarelo"
+        "Amarelo",
+        "Verde"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Sacos verdes são para resíduos recicláveis; sacos pretos para resíduos orgânicos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2208,10 +2208,10 @@
       ],
       "pergunta": "Em que formato o esfregão deve ser passado no chão?",
       "alternativas": [
-        "Em linha reta",
+        "Em círculos",
         "Em forma de '∞' (infinito) — 1 metro vira e 1 metro lava",
-        "Em zigue-zague",
-        "Em círculos"
+        "Em linha reta",
+        "Em zigue-zague"
       ],
       "respostaCorreta": 1,
       "explicacao": "Passa-se o esfregão em forma de '∞' (1 metro vira e 1 metro lava), lavando-o a cada 2m² e invertendo o lado da lã a cada metro.",
@@ -2256,61 +2256,13 @@
       ],
       "pergunta": "Os sacos das lixeiras devem ser trocados quando estiverem com quanto de capacidade?",
       "alternativas": [
+        "1/4 cheios",
         "1/2 cheios",
         "3/4 cheios",
-        "totalmente cheios",
-        "1/4 cheios"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Compacte o lixo e troque os sacos quando estiverem 3/4 cheios.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "salao_ngk_047",
-      "categoria": "salao-ngk",
-      "subcategoria": "🗑️ Salão · Lixeiras",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "estocagem",
-        "lixeira"
-      ],
-      "pergunta": "Quantos sacos de lixo devem ser mantidos nas lixeiras para troca rápida?",
-      "alternativas": [
-        "1 a 2",
-        "3 a 4",
-        "5 a 7",
-        "8 a 10"
+        "totalmente cheios"
       ],
       "respostaCorreta": 2,
-      "explicacao": "Mantenha de 5 a 7 sacos de lixo nas lixeiras para troca rápida em alto movimento (hora pico).",
+      "explicacao": "Compacte o lixo e troque os sacos quando estiverem 3/4 cheios.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2353,12 +2305,12 @@
       ],
       "pergunta": "Com qual frequência mínima os banheiros devem ser verificados?",
       "alternativas": [
-        "A cada 15 minutos",
         "A cada 30 minutos",
         "A cada 1 hora",
-        "A cada 2 horas"
+        "A cada 2 horas",
+        "A cada 15 minutos"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Verifique os banheiros no mínimo a cada 15 minutos (paredes, espelhos, pias, vaso, mictório, portas, maçanetas e dispensers).",
       "dica": "",
       "tempoEstimado": 15,
@@ -2402,12 +2354,12 @@
       ],
       "pergunta": "Qual é a função no atendimento ao cliente no totem (NGK)?",
       "alternativas": [
-        "Apenas observar de longe",
         "Abordar e incentivar o cliente a usar o totem, demonstrando os produtos e auxiliando no manuseio das telas",
-        "Fazer o pedido pelo cliente sem explicar",
-        "Encaminhar ao caixa tradicional"
+        "Encaminhar ao caixa tradicional",
+        "Apenas observar de longe",
+        "Fazer o pedido pelo cliente sem explicar"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Aborde o cliente e o incentive a utilizar o totem, demonstrando a variedade de produtos e auxiliando no manuseio das telas.",
       "dica": "",
       "tempoEstimado": 15,

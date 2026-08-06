@@ -68,11 +68,11 @@
       "pergunta": "Quando o tempo R2P começa a ser contado?",
       "alternativas": [
         "Quando o cliente faz o pedido",
-        "Quando o pedido entra em modo PREPARANDO",
+        "Quando o pedido é entregue ao cliente",
         "Quando o Pick List é impresso",
-        "Quando o pedido é entregue ao cliente"
+        "Quando o pedido entra em modo PREPARANDO"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O tempo R2P inicia quando o pedido entra em modo PREPARANDO e finaliza ao passar para PRONTO.",
       "dica": "",
       "tempoEstimado": 15,
@@ -116,12 +116,12 @@
       ],
       "pergunta": "Quando deve ser iniciada a montagem do pedido?",
       "alternativas": [
-        "Assim que o pedido aparecer na OAT",
         "Quando o pedido estiver com status PAGO e todos os itens prontos",
+        "Após imprimir o Pick List",
         "Quando o cliente se aproximar do balcão",
-        "Após imprimir o Pick List"
+        "Assim que o pedido aparecer na OAT"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "A montagem começa somente quando o status é PAGO e todos os itens estiverem prontos. Então reúne-se os produtos, imprime o Pick List e aperta-se Servido.",
       "dica": "",
       "tempoEstimado": 15,
@@ -165,12 +165,12 @@
       ],
       "pergunta": "Onde ficam as bebidas e sobremesas na bandeja?",
       "alternativas": [
-        "Centro",
-        "Lado direito",
+        "Atrás das entradas",
         "Lado esquerdo",
-        "Atrás das entradas"
+        "Lado direito",
+        "Centro"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Lado esquerdo = bebidas e sobremesas (Café, refrigerante, Shakes). Centro = entradas. Lado direito = McFritas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -212,10 +212,10 @@
       ],
       "pergunta": "Onde ficam as entradas (sanduíches) na bandeja?",
       "alternativas": [
-        "Lado direito",
         "Lado esquerdo",
+        "Qualquer posição",
         "Centro",
-        "Qualquer posição"
+        "Lado direito"
       ],
       "respostaCorreta": 2,
       "explicacao": "As entradas são os heróis da refeição e ficam no centro da bandeja.",
@@ -261,12 +261,12 @@
       ],
       "pergunta": "Como o entregador deve localizar o cliente na área de entrega?",
       "alternativas": [
+        "Pedindo ao cliente que se identifique",
         "Gritando o número do pedido",
-        "Levantando o Pick List com o número do pedido na altura dos olhos",
         "Usando o monitor ORB",
-        "Pedindo ao cliente que se identifique"
+        "Levantando o Pick List com o número do pedido na altura dos olhos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O entregador deve levantar o Pick List com o número do pedido na altura dos olhos para localizar o cliente — sem gritar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -309,12 +309,12 @@
       ],
       "pergunta": "O que fazer com o Bump Bar ao finalizar a conferência do pedido?",
       "alternativas": [
-        "Usá-lo para imprimir o Pick List",
         "Apagar o pedido do monitor de Apresentação, enviando o número ao ORB",
         "Confirmar o pagamento do pedido",
-        "Chamar o gerente"
+        "Chamar o gerente",
+        "Usá-lo para imprimir o Pick List"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O Bump Bar apaga o pedido do monitor de Apresentação e envia o número do pedido ao Monitor ORB.",
       "dica": "",
       "tempoEstimado": 15,
@@ -358,10 +358,10 @@
       ],
       "pergunta": "Após entregar o pedido, o que deve ser feito antes de ir para o próximo?",
       "alternativas": [
-        "Imprimir o próximo Pick List imediatamente",
+        "Chamar o próximo cliente pelo número",
         "Esperar o cliente se virar e sair da área de entrega",
         "Retornar à mesa OAT imediatamente",
-        "Chamar o próximo cliente pelo número"
+        "Imprimir o próximo Pick List imediatamente"
       ],
       "respostaCorreta": 1,
       "explicacao": "Espere o cliente se virar e sair da área de entrega antes de continuar com o próximo pedido — indicando que está totalmente disponível para o cliente.",
@@ -410,12 +410,12 @@
       ],
       "pergunta": "Onde deve ficar o pano descartável da OAT e da área de entrega?",
       "alternativas": [
+        "Na gaveta abaixo da OAT",
         "Em cima da OAT para fácil acesso",
         "Sanitizado e dobrado, longe da visão do cliente",
-        "Na gaveta abaixo da OAT",
         "Junto com os suprimentos no balcão"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O pano descartável deve ser mantido sanitizado e dobrado, longe da visão do cliente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -461,11 +461,11 @@
       "pergunta": "Como devem ser organizados os itens no saco para viagem?",
       "alternativas": [
         "Todos juntos sem ordem específica",
-        "Itens frios dos quentes separados, seguindo a sequência correta",
         "Bebidas sempre no fundo do saco",
-        "Só os itens quentes no saco"
+        "Só os itens quentes no saco",
+        "Itens frios dos quentes separados, seguindo a sequência correta"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Nos pedidos para viagem, siga a sequência de montagem correta e separe os itens frios dos quentes.",
       "dica": "",
       "tempoEstimado": 15,
@@ -508,12 +508,12 @@
       ],
       "pergunta": "Onde devem ficar os sacos e caixinhas de McLanche Feliz?",
       "alternativas": [
-        "No balcão principal",
         "No carrinho da OAT (Mesa de Ordem de Pedido)",
+        "No depósito",
         "Na mesa de condimentação",
-        "No depósito"
+        "No balcão principal"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Sacos, caixinhas de McLanche Feliz e suprimentos devem ficar no carrinho da OAT.",
       "dica": "",
       "tempoEstimado": 15,
@@ -559,11 +559,11 @@
       "pergunta": "Onde ficam as bandejas e lâminas estocadas?",
       "alternativas": [
         "No balcão principal",
-        "Na área de entrega",
         "No carrinho de bandejas Dual Point próximo à OAT",
-        "Na geladeira"
+        "Na geladeira",
+        "Na área de entrega"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Bandejas e lâminas estocadas ficam no carrinho de bandejas Dual Point próximo à OAT.",
       "dica": "",
       "tempoEstimado": 15,
@@ -607,60 +607,12 @@
       "pergunta": "Onde devem ser posicionadas as bebidas no saco para viagem?",
       "alternativas": [
         "No fundo do saco",
-        "Separadas em saco menor",
+        "Abertas para o cliente ver",
         "Usando porta-copos, sempre tampadas",
-        "Abertas para o cliente ver"
+        "Separadas em saco menor"
       ],
       "respostaCorreta": 2,
       "explicacao": "Com 2 ou mais bebidas, usar o porta-copos e garantir que estejam tampadas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "montagem_entrega_014",
-      "categoria": "montagem-entrega",
-      "subcategoria": "🍽️ Montagem · Bandeja",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "temperatura"
-      ],
-      "pergunta": "O que vai no lado direito da bandeja?",
-      "alternativas": [
-        "Entradas",
-        "Bebidas e sobremesas",
-        "McFritas e acompanhamentos",
-        "Condimentos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "Lado direito = McFritas inclinadas em relação às entradas. Centro = entradas. Esquerda = bebidas e sobremesas.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -702,12 +654,12 @@
       ],
       "pergunta": "Como devem ser posicionadas as McFritas na bandeja?",
       "alternativas": [
+        "Em qualquer posição",
         "Em pé, ao centro",
-        "Inclinadas em relação às entradas, no lado direito",
         "Deitadas ao lado da bebida",
-        "Em qualquer posição"
+        "Inclinadas em relação às entradas, no lado direito"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "McFritas ficam inclinadas em relação às entradas para melhor acomodação, no lado direito da bandeja.",
       "dica": "",
       "tempoEstimado": 15,
@@ -751,12 +703,12 @@
       ],
       "pergunta": "Como conferir o pedido antes de servir?",
       "alternativas": [
-        "Não é necessário conferir",
         "Comparar itens da bandeja com o monitor de Apresentação",
+        "Perguntar ao cliente o que pediu",
         "Apenas verificar o número do pedido",
-        "Perguntar ao cliente o que pediu"
+        "Não é necessário conferir"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Fazer a conferência comparando os itens da bandeja com os listados no monitor de Apresentação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -799,9 +751,9 @@
       ],
       "pergunta": "Onde deve ser posicionada a bandeja após usar o Bump Bar?",
       "alternativas": [
-        "Na mesa de condimentação",
-        "No canto oposto aos monitores",
         "Em cima do ORB",
+        "No canto oposto aos monitores",
+        "Na mesa de condimentação",
         "Na área de espera do cliente"
       ],
       "respostaCorreta": 1,
@@ -849,12 +801,12 @@
       ],
       "pergunta": "Como chamar o cliente na área de entrega?",
       "alternativas": [
+        "Esperando o cliente vir até o balcão",
         "Gritando o número do pedido em voz alta",
         "Levantando o Pick List na altura dos olhos sem gritar",
-        "Usando o sistema de som do restaurante",
-        "Esperando o cliente vir até o balcão"
+        "Usando o sistema de som do restaurante"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Levantar o Pick List com o número do pedido na altura dos olhos para localizar o cliente — sem gritar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -900,11 +852,11 @@
       "pergunta": "O que o R2P mede exatamente?",
       "alternativas": [
         "Tempo do pedido ao cliente",
-        "Tempo do PREPARANDO ao PRONTO",
         "Tempo de montagem da bandeja",
-        "Tempo de espera na fila"
+        "Tempo de espera na fila",
+        "Tempo do PREPARANDO ao PRONTO"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "R2P = Receipt to Present. Mede o tempo do momento que o pedido entra em PREPARANDO até sair para PRONTO.",
       "dica": "",
       "tempoEstimado": 15,
@@ -950,12 +902,12 @@
       ],
       "pergunta": "O que fazer com itens adicionais como molhos de nuggets e canudos?",
       "alternativas": [
-        "Só incluir se o cliente pedir",
         "Colocar no pedido ao conferir com o monitor de Apresentação",
         "Deixar na estação de suprimentos",
+        "Só incluir se o cliente pedir",
         "Perguntar ao expedidor"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Colocar itens adicionais (molhos, canudos, açúcares, adoçantes) no pedido ao conferir com o monitor de Apresentação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1001,8 +953,8 @@
       "alternativas": [
         "Se quer leite",
         "Se aceita açúcar ou adoçante, servindo com mexedor, guardanapo e tampa",
-        "Se quer cappuccino",
-        "Se quer a bebida quentinha"
+        "Se quer a bebida quentinha",
+        "Se quer cappuccino"
       ],
       "respostaCorreta": 1,
       "explicacao": "No Café da Manhã, verificar condimentos no monitor de Apresentação e perguntar se o cliente aceita açúcar ou adoçante. Servir com mexedor, guardanapos e tampa da bebida.",
@@ -1048,12 +1000,12 @@
       ],
       "pergunta": "Qual é o nível correto de preenchimento das bebidas?",
       "alternativas": [
+        "Até onde o gelo permitir",
         "Até a borda do copo",
         "Até a tarja de volume indicada",
-        "3/4 do copo",
-        "Até onde o gelo permitir"
+        "3/4 do copo"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Servir somente bebidas com nível correto de refrigerante, suco, bebidas do Café da Manhã e McShake — até a tarja de volume.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1097,12 +1049,12 @@
       ],
       "pergunta": "Quem deve preparar as sobremesas durante a montagem?",
       "alternativas": [
-        "Sempre o expedidor",
-        "Quem não estiver com bebidas, ou somente Casquinha e McColosso se houver pessoa de bebidas",
+        "O gerente",
         "A pessoa de bebidas sempre",
-        "O gerente"
+        "Sempre o expedidor",
+        "Quem não estiver com bebidas, ou somente Casquinha e McColosso se houver pessoa de bebidas"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Prepare as sobremesas. Se estiver trabalhando com a pessoa de bebidas, faça somente Casquinha e McColosso.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1146,12 +1098,12 @@
       ],
       "pergunta": "Para onde direcionar o cliente após receber o pedido?",
       "alternativas": [
-        "Para a fila novamente",
         "Para a estação de suprimentos para resolver qualquer solicitação posterior",
         "Para o gerente",
-        "Para a saída"
+        "Para a saída",
+        "Para a fila novamente"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Direcionar o cliente para a estação de suprimentos e resolver qualquer solicitação posterior relacionada ao pedido.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1197,9 +1149,9 @@
       ],
       "pergunta": "O que deve acompanhar uma salada na bandeja?",
       "alternativas": [
-        "Apenas o molho",
-        "Talher, molhos e porção específica",
         "Só guardanapos",
+        "Talher, molhos e porção específica",
+        "Apenas o molho",
         "Molho e copo de água"
       ],
       "respostaCorreta": 1,
@@ -1246,11 +1198,11 @@
       "pergunta": "O que deve ser verificado na dupla conferência do pedido?",
       "alternativas": [
         "Apenas os lanches",
-        "Itens, tamanhos, personalizações, bebidas e acompanhamentos",
         "Apenas bebidas e sobremesas",
+        "Itens, tamanhos, personalizações, bebidas e acompanhamentos",
         "Apenas itens fora do padrão"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "A dupla conferência verifica: itens corretos, tamanhos, personalizações, bebidas e acompanhamentos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1295,12 +1247,12 @@
       ],
       "pergunta": "Como deve ser montada a bandeja de um combo padrão?",
       "alternativas": [
-        "Lanche na frente, bebida atrás, fritas no lado",
         "Qualquer organização",
         "Bebida no centro, lanche e fritas em lados opostos",
-        "Fritas primeiro, depois o restante"
+        "Fritas primeiro, depois o restante",
+        "Lanche na frente, bebida atrás, fritas no lado"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Bandeja padrão: lanche na frente do cliente, bebida atrás, fritas ao lado.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1346,12 +1298,12 @@
       ],
       "pergunta": "Como organizar as lâminas na área de montagem?",
       "alternativas": [
-        "Empilhadas sem ordem",
         "Por segmento e em ordem de chegada (PEPS)",
         "Por tamanho de sanduíche",
+        "Empilhadas sem ordem",
         "Qualquer organização"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Lâminas organizadas por segmento e em PEPS (primeiro a entrar, primeiro a sair).",
       "dica": "",
       "tempoEstimado": 15,
@@ -1445,12 +1397,12 @@
       ],
       "pergunta": "Qual o tempo meta de entrega ao cliente após o pedido ser totalizado?",
       "alternativas": [
-        "60 segundos",
-        "90 segundos",
         "2 minutos",
-        "3 minutos"
+        "3 minutos",
+        "90 segundos",
+        "60 segundos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O tempo meta de entrega ao cliente após totalização do pedido é de 90 segundos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1496,12 +1448,12 @@
       ],
       "pergunta": "Qual a função do Bump Bar no processo de entrega?",
       "alternativas": [
-        "Registrar o pedido",
-        "Confirmar que o pedido foi entregue e liberar a tela do KVS",
         "Controlar o tempo de fritura",
-        "Comunicar com a cozinha"
+        "Comunicar com a cozinha",
+        "Registrar o pedido",
+        "Confirmar que o pedido foi entregue e liberar a tela do KVS"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O Bump Bar confirma a entrega do pedido e limpa o item do monitor KVS.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1546,12 +1498,12 @@
       ],
       "pergunta": "O que fazer se o cliente reclamar de um pedido errado?",
       "alternativas": [
-        "Ignorar e chamar o próximo",
         "Pedir desculpas, corrigir imediatamente e informar o gerente",
         "Dizer que o cliente errou",
-        "Cobrar a diferença"
+        "Cobrar a diferença",
+        "Ignorar e chamar o próximo"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Pedido errado: pedir desculpas imediatamente, corrigir o pedido e comunicar o gerente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1596,11 +1548,11 @@
       "pergunta": "Em que situação o pedido deve ser entregue em saco em vez de bandeja?",
       "alternativas": [
         "Sempre no saco",
-        "Apenas para pedidos de 1 item",
         "Para viagem, delivery ou a pedido do cliente",
-        "Apenas para combos"
+        "Apenas para combos",
+        "Apenas para pedidos de 1 item"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Usar saco para pedidos para viagem, delivery ou quando o cliente solicitar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1644,9 +1596,9 @@
       "pergunta": "Onde devem ser posicionadas as bebidas na bandeja em relação ao cliente?",
       "alternativas": [
         "Na frente do cliente",
-        "No lado esquerdo",
+        "Em qualquer posição",
         "Atrás do lanche, no canto",
-        "Em qualquer posição"
+        "No lado esquerdo"
       ],
       "respostaCorreta": 2,
       "explicacao": "Bebidas ficam atrás do lanche, facilitando o acesso sem derrubar.",
@@ -1694,12 +1646,12 @@
       ],
       "pergunta": "O que fazer quando o KVS mostra um item em atraso (vermelho)?",
       "alternativas": [
-        "Ignorar e continuar na ordem",
-        "Priorizar o item e comunicar a linha",
         "Cancelar o pedido",
-        "Chamar o cliente para aguardar"
+        "Chamar o cliente para aguardar",
+        "Ignorar e continuar na ordem",
+        "Priorizar o item e comunicar a linha"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Item em vermelho no KVS = prioridade máxima. Comunicar a linha e preparar imediatamente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1745,12 +1697,12 @@
       ],
       "pergunta": "Quando oferecer molhos extras ao cliente?",
       "alternativas": [
-        "Nunca, apenas se pedir",
-        "Sempre na entrega de qualquer pedido",
         "Em pedidos com fritas ou nuggets",
+        "Sempre na entrega de qualquer pedido",
+        "Nunca, apenas se pedir",
         "Apenas em combos grandes"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Oferecer molhos extras ao entregar pedidos com McFritas ou McNuggets.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1797,8 +1749,8 @@
       "alternativas": [
         "Na bandeja ao lado da fritas",
         "No saco junto com o lanche",
-        "Em sacola separada",
-        "Entregue separado das mãos"
+        "Entregue separado das mãos",
+        "Em sacola separada"
       ],
       "respostaCorreta": 1,
       "explicacao": "O brinquedo do McLanche Feliz é embalado no saco junto com o pedido.",
@@ -1845,12 +1797,12 @@
       ],
       "pergunta": "Quando deve ser trocada a lâmina de montagem?",
       "alternativas": [
-        "Apenas no final do turno",
-        "Após cada uso ou quando sujar",
+        "Apenas quando o gerente solicitar",
         "Após 1 hora de uso",
-        "Apenas quando o gerente solicitar"
+        "Após cada uso ou quando sujar",
+        "Apenas no final do turno"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "A lâmina deve ser substituída após cada uso para garantir higiene.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1896,12 +1848,12 @@
       ],
       "pergunta": "Qual o tamanho de canudo correto para cada bebida?",
       "alternativas": [
-        "Um tamanho único para todos",
-        "Canudo pequeno para bebidas P e M, largo para shakes",
         "Apenas canudos largos",
-        "O cliente escolhe"
+        "O cliente escolhe",
+        "Um tamanho único para todos",
+        "Canudo pequeno para bebidas P e M, largo para shakes"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Canudo regular para refrigerantes P e M; canudo largo para McShakes e bebidas espessas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1945,12 +1897,12 @@
       ],
       "pergunta": "O que vai no CENTRO da bandeja na sequência de montagem?",
       "alternativas": [
-        "Bebidas",
         "As Entradas (sanduíches) — os 'heróis' da refeição",
+        "Bebidas",
         "McFritas",
         "Sobremesas"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "No centro vão as Entradas (sanduíches), os 'heróis' da refeição, posicionados no foco da bandeja.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1994,10 +1946,10 @@
       ],
       "pergunta": "O que vai no LADO DIREITO da bandeja?",
       "alternativas": [
-        "Sanduíches",
+        "Guardanapos",
         "Acompanhamentos / McFritas (inclinadas em relação às entradas)",
         "Bebidas",
-        "Guardanapos"
+        "Sanduíches"
       ],
       "respostaCorreta": 1,
       "explicacao": "No lado direito vão os Acompanhamentos / McFritas, inclinadas em relação às entradas para melhor acomodação.",
@@ -2043,10 +1995,10 @@
       ],
       "pergunta": "O que vai no LADO ESQUERDO da bandeja?",
       "alternativas": [
-        "McFritas",
+        "Molhos",
         "Sanduíches",
         "Bebidas e sobremesas (café, refrigerante, shakes e sobremesas)",
-        "Molhos"
+        "McFritas"
       ],
       "respostaCorreta": 2,
       "explicacao": "No lado esquerdo vão as Bebidas e sobremesas: café, refrigerante, shakes e sobremesas.",
@@ -2093,11 +2045,11 @@
       "pergunta": "Quando se deve iniciar a montagem do pedido?",
       "alternativas": [
         "Assim que o pedido aparece na tela",
-        "Quando o pedido está PAGO e somente quando todos os itens estiverem prontos",
+        "Quando o cliente chega na entrega",
         "Antes do pagamento, para adiantar",
-        "Quando o cliente chega na entrega"
+        "Quando o pedido está PAGO e somente quando todos os itens estiverem prontos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Inicie a montagem quando o pedido estiver com status PAGO e somente quando todos os itens estiverem prontos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2141,12 +2093,12 @@
       ],
       "pergunta": "O que deve ser impresso e posicionado na bandeja antes de apertar 'servido'?",
       "alternativas": [
-        "A nota fiscal",
         "O Pick List",
         "O cupom de desconto",
-        "O comprovante de pagamento"
+        "O comprovante de pagamento",
+        "A nota fiscal"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Imprima o Pick List e posicione-o na bandeja; em seguida aperte a tecla 'servido'.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2190,10 +2142,10 @@
       ],
       "pergunta": "Em pedidos para viagem, como organizar os itens?",
       "alternativas": [
-        "Tudo junto no mesmo saco",
+        "Sobremesas no fundo",
         "Separando os itens frios dos quentes",
-        "Bebidas por cima dos sanduíches",
-        "Sobremesas no fundo"
+        "Tudo junto no mesmo saco",
+        "Bebidas por cima dos sanduíches"
       ],
       "respostaCorreta": 1,
       "explicacao": "Em pedidos para viagem, siga a sequência correta separando os itens frios dos quentes.",
@@ -2239,12 +2191,12 @@
       ],
       "pergunta": "Ao trabalhar com sacos e duas ou mais bebidas, o que usar?",
       "alternativas": [
-        "Segurar na mão",
-        "O porta-copos, garantindo que estejam tampadas",
+        "Saco separado por bebida",
         "Uma bandeja extra",
-        "Saco separado por bebida"
+        "O porta-copos, garantindo que estejam tampadas",
+        "Segurar na mão"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Use o porta-copos para duas ou mais bebidas, garantindo que estejam tampadas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2288,12 +2240,12 @@
       ],
       "pergunta": "Quantas vezes o saco de viagem deve ser dobrado?",
       "alternativas": [
-        "Não se dobra",
-        "Uma vez, para garantir a temperatura do produto",
+        "Três vezes",
         "Duas vezes",
-        "Três vezes"
+        "Não se dobra",
+        "Uma vez, para garantir a temperatura do produto"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Dobre o saco uma vez sobre a marca existente para garantir a temperatura do produto.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2337,12 +2289,12 @@
       ],
       "pergunta": "Como o cliente deve ser chamado na área de entrega?",
       "alternativas": [
-        "Gritando o número do pedido",
         "De maneira amável e natural, sem gritar o número do pedido",
-        "Tocando uma campainha",
-        "Por alto-falante"
+        "Por alto-falante",
+        "Gritando o número do pedido",
+        "Tocando uma campainha"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Atenda o cliente de maneira amável, sempre o mais natural possível, sem gritar o número do pedido.",
       "dica": "",
       "tempoEstimado": 15,
