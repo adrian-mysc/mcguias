@@ -4,11 +4,29 @@
 -- "Nome Sobrenome". A coluna display_name já existe em profiles; aqui ela passa
 -- a ser exposta pelas RPCs.
 --
--- Retrocompatível: apenas ADICIONA uma coluna ao retorno. O cliente antigo
--- (ainda em produção no GitHub Pages) ignora o campo novo; o cliente novo usa
--- `display_name || username` como nome exibido.
+-- Retrocompatível no cliente: apenas ADICIONA uma coluna ao retorno. O cliente
+-- antigo (ainda em produção no GitHub Pages) ignora o campo novo; o cliente novo
+-- usa `display_name || username` como nome exibido.
+--
+-- ⚠️ POR QUE ESTA MIGRATION USA DROP + CREATE, E NÃO CREATE OR REPLACE
+-- A primeira versão deste arquivo usava CREATE OR REPLACE e por isso NUNCA
+-- chegou a ser aplicada: acrescentar uma coluna ao RETURNS TABLE muda o tipo de
+-- retorno da função, e o Postgres recusa com
+--   ERROR: cannot change return type of existing function (SQLSTATE 42P13)
+-- A correção é remover a função antes de recriá-la. Como DDL é transacional no
+-- Postgres, as sessões concorrentes continuam enxergando a versão antiga até o
+-- COMMIT — não há janela de indisponibilidade.
+--
+-- ⚠️ DROP FUNCTION TAMBÉM APAGA OS GRANTS. As RPCs são chamadas pelo PostgREST
+-- como `anon`/`authenticated`, então os GRANT EXECUTE precisam ser refeitos no
+-- fim do arquivo, ou o ranking passaria a ser negado para todo mundo.
 
-CREATE OR REPLACE FUNCTION public.get_leaderboard(lim integer DEFAULT 20)
+DROP FUNCTION IF EXISTS public.get_leaderboard(integer);
+DROP FUNCTION IF EXISTS public.get_user_rank(uuid);
+
+-- lim = 100 acompanha o número de posições exibidas na página de Ranking.
+-- O cliente sempre passa `lim` explicitamente; o default é só fallback.
+CREATE FUNCTION public.get_leaderboard(lim integer DEFAULT 100)
 RETURNS TABLE(
   user_id    uuid, username text, display_name text, loja text, sigla text,
   pontos bigint, quizzes bigint, avatar text, updated_at timestamp with time zone
@@ -31,7 +49,7 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO 'public' AS $$
   LIMIT lim;
 $$;
 
-CREATE OR REPLACE FUNCTION public.get_user_rank(uid uuid)
+CREATE FUNCTION public.get_user_rank(uid uuid)
 RETURNS TABLE(rank bigint, pontos bigint, quizzes bigint, username text, display_name text, avatar text)
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO 'public' AS $$
   WITH effective AS (
@@ -52,3 +70,7 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO 'public' AS $$
     p.username, p.display_name, p.avatar
   FROM public.profiles p WHERE p.id=uid;
 $$;
+
+-- Restaura os GRANTs perdidos no DROP (ver nota no cabeçalho).
+GRANT EXECUTE ON FUNCTION public.get_leaderboard(integer) TO anon, authenticated, service_role;
+GRANT EXECUTE ON FUNCTION public.get_user_rank(uuid)      TO anon, authenticated, service_role;
