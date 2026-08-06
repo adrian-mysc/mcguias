@@ -318,7 +318,7 @@
             <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Tostadeiras desligadas e limpas conforme procedimento</label></div>
             <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Máquina de café: finalização e limpeza executadas</label></div>
             <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Utensílios lavados e sanitizados no sistema de 3 cubas</label></div>
-            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Pães Brioche separados para ambientação (12h descongelamento)</label></div>
+            <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Pães Brioche separados para ambientação (descongelamento mínimo 4h)</label></div>
             <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Câmaras e congeladores organizados com PEPS</label></div>
             <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Salão, banheiros e área externa limpos</label></div>
             <div class="check-item"><input type="checkbox" class="sv-check" data-group="fe" onchange="updateProgress('fe')"><label>Caixa conferido e fechado com o gerente</label></div>
@@ -739,7 +739,43 @@
         + '</div>';
     };
 
-    function initProgressBars() { /* placeholder */ }
+    /* ===== PROGRESSO POR GRUPO DE CHECKLIST =====
+       Os checkboxes chamam updateProgress('<grupo>') via onchange, mas a função
+       nunca havia sido definida — cada clique lançava ReferenceError e as divs
+       #prog-<grupo> ficavam vazias. A persistência em si é feita pelo
+       initChecklist() do js/main.js; aqui só pintamos o resumo do grupo. */
+    window.updateProgress = function (prefix) {
+      var el = document.getElementById('prog-' + prefix);
+      if (!el) return;
+      var all  = document.querySelectorAll('.sv-check[data-group="' + prefix + '"]');
+      var done = document.querySelectorAll('.sv-check[data-group="' + prefix + '"]:checked');
+      if (!all.length) { el.innerHTML = ''; return; }
+      var pct  = Math.round((done.length / all.length) * 100);
+      var cor  = pct === 100 ? 'var(--green)' : 'var(--red)';
+      el.innerHTML =
+        '<div style="display:flex;align-items:center;gap:8px;margin-top:8px;font-size:11px;font-weight:700;color:var(--muted);">'
+        + '<div style="flex:1;height:4px;background:var(--border);border-radius:4px;overflow:hidden;">'
+        + '<div style="height:100%;width:' + pct + '%;background:' + cor + ';border-radius:4px;transition:width .3s,background .3s;"></div>'
+        + '</div><span>' + done.length + '/' + all.length + '</span></div>';
+    };
+
+    function initProgressBars() {
+      var grupos = {};
+      document.querySelectorAll('.sv-check[data-group]').forEach(function (cb) {
+        grupos[cb.dataset.group] = true;
+      });
+      Object.keys(grupos).forEach(window.updateProgress);
+    }
+
+    // Repinta mesmo quando o estado é restaurado pelo main.js (ordem de carga
+    // independente) ou quando o clique acontece no <label> do check-item.
+    document.addEventListener('change', function (e) {
+      var cb = e.target;
+      if (cb && cb.classList && cb.classList.contains('sv-check') && cb.dataset.group) {
+        window.updateProgress(cb.dataset.group);
+      }
+    });
+    window.addEventListener('load', initProgressBars);
 
     /* ===== RESET CHECKLIST ===== */
     window.resetChecklist = function(prefix) {
@@ -751,7 +787,7 @@
         // Encontrar o card pelo id do botão de reset e desmarcar seus checkboxes
         var cards = document.querySelectorAll('.card');
         cards.forEach(function(card) {
-          var btn = card.querySelector('button[onclick*="resetChecklist('' + prefix + ''"]');
+          var btn = card.querySelector('button[onclick*="resetChecklist(\'' + prefix + '\')"]');
           if (!btn) return;
           var cbs = card.querySelectorAll('input[type=checkbox]');
           cbs.forEach(function(cb, i) {
@@ -772,6 +808,7 @@
         });
         localStorage.setItem(key, JSON.stringify(saved));
       }
+      if (window.updateProgress) window.updateProgress(prefix);
     };
 
     document.addEventListener('DOMContentLoaded', function() {
