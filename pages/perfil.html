@@ -708,7 +708,7 @@
           <circle cx="12" cy="13" r="4"/>
         </svg>
       </div>
-      <input type="file" id="avatar-file-input" accept="image/*">
+      <input type="file" id="avatar-file-input" aria-label="Escolher foto de perfil" accept="image/*">
     </div>
 
     <div class="hero-name" id="hero-name">Carregando…</div>
@@ -762,7 +762,7 @@
   <div class="section-card" id="dados-card">
     <div class="section-header">
       <div class="section-title">Dados pessoais</div>
-      <button class="section-edit-btn" id="dados-edit-btn" onclick="toggleDadosEdit()">Editar</button>
+      <button class="section-edit-btn" id="dados-edit-btn" onclick="toggleDadosEdit()" aria-label="Editar dados pessoais">Editar</button>
     </div>
 
     <!-- View mode -->
@@ -812,7 +812,7 @@
       <div class="edit-form">
         <div class="field-row">
           <div class="field full">
-            <label>Nome completo</label>
+            <label for="edit-nome">Nome completo</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
               <input type="text" id="edit-nome" placeholder="Seu nome completo">
@@ -821,7 +821,7 @@
         </div>
         <div class="field-row">
           <div class="field full">
-            <label>Telefone</label>
+            <label for="edit-telefone">Telefone</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.1 12 19.79 19.79 0 0 1 1 3.18 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16l.92.92z"/></svg>
               <input type="tel" id="edit-telefone" placeholder="(11) 99999-9999">
@@ -830,7 +830,7 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label>Cargo</label>
+            <label for="edit-cargo">Cargo</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
               <select id="edit-cargo">
@@ -847,7 +847,7 @@
             </div>
           </div>
           <div class="field">
-            <label>Turno</label>
+            <label for="edit-turno">Turno</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               <select id="edit-turno">
@@ -862,7 +862,7 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label>Loja / Restaurante</label>
+            <label for="edit-loja">Loja / Restaurante</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               <input type="text" id="edit-loja" placeholder="Ex: RUI · HGG · GBN"
@@ -873,13 +873,13 @@
             <div style="font-size:10.5px;color:var(--muted);margin-top:3px;padding-left:2px">Somente letras (sigla do restaurante)</div>
           </div>
           <div class="field">
-            <label>Data de admissão</label>
+            <label for="edit-admissao">Data de admissão</label>
             <input type="date" id="edit-admissao">
           </div>
         </div>
         <div class="field-row">
           <div class="field">
-            <label>Estado</label>
+            <label for="edit-estado">Estado</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
               <select id="edit-estado" onchange="onEstadoChange()">
@@ -915,7 +915,7 @@
             </div>
           </div>
           <div class="field">
-            <label>Cidade</label>
+            <label for="edit-cidade">Cidade</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18M15 3v18"/></svg>
               <select id="edit-cidade" disabled>
@@ -926,8 +926,8 @@
         </div>
         <div class="inline-msg" id="dados-msg"></div>
         <div class="form-actions">
-          <button class="btn-cancel" onclick="toggleDadosEdit(false)">Cancelar</button>
-          <button class="btn-save" onclick="saveDados()">💾 Salvar</button>
+          <button class="btn-cancel" onclick="toggleDadosEdit(false)" aria-label="Cancelar edição">Cancelar</button>
+          <button class="btn-save" onclick="saveDados()" aria-label="Salvar dados do perfil">💾 Salvar</button>
         </div>
       </div>
     </div>
@@ -937,7 +937,7 @@
   <div class="section-card">
     <div class="section-header">
       <div class="section-title">Estatísticas</div>
-      <button id="btn-sync-hist" onclick="syncHistorico()" style="font-size:12px;font-weight:700;color:var(--red);background:none;border:1.5px solid var(--red);border-radius:20px;padding:4px 12px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:opacity .2s;">🔄 Sincronizar</button>
+      <button id="btn-sync-hist" onclick="syncHistorico()" aria-label="Sincronizar histórico com a nuvem" style="font-size:12px;font-weight:700;color:var(--red);background:none;border:1.5px solid var(--red);border-radius:20px;padding:4px 12px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:opacity .2s;">🔄 Sincronizar</button>
     </div>
 
     <!-- XP / Nível -->
@@ -1071,7 +1071,7 @@
 
 
   <!-- Logout -->
-  <button class="btn-logout" onclick="handleLogout()">
+  <button class="btn-logout" onclick="handleLogout()" aria-label="Sair da conta">
     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
       <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
       <polyline points="16 17 21 12 16 7"/>
@@ -1088,27 +1088,42 @@
 <div class="toast" id="toast"></div>
 
 <script type="module">
-  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+  // ── Caminho crítico SEM o SDK ────────────────────────────────────────────
+  // Antes, o supabase-js era importado do esm.sh no topo do módulo (top-level
+  // await). Quando o CDN falhava, o módulo INTEIRO não executava: a página
+  // aparecia (o auth-guard revela), mas sem dados e com "Editar" e "Sair da
+  // conta" mortos — window.handleLogout/toggleDadosEdit nunca eram atribuídos.
+  // Agora sessão, perfil e estatísticas passam pelo rest.js (fetch direto ao
+  // PostgREST), que é o padrão do resto do app.
+  import { db } from '../js/supabase/rest.js';
 
-  const SUPABASE_URL      = 'https://iizzeeceqysdfhnkosrc.supabase.co';
-  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpenplZWNlcXlzZGZobmtvc3JjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3MTM4MDYsImV4cCI6MjA5NDI4OTgwNn0.tdoZWMwPoWz6uxmj1-6QNrYU8tt1u7mF8cGUY0DHHho';
+  const SUPABASE_URL      = db.SUPABASE_URL;
+  const SUPABASE_ANON_KEY = db.SUPABASE_ANON_KEY;
 
-  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-    auth: { persistSession: true, autoRefreshToken: true }
-  });
+  // O SDK só é baixado sob demanda — apenas o Storage (foto de perfil) e o
+  // reset de senha dependem dele. Se o CDN cair, só essas duas degradam.
+  let _sdkPromise = null;
+  function sdk() {
+    if (!_sdkPromise) {
+      _sdkPromise = import('https://esm.sh/@supabase/supabase-js@2')
+        .then(({ createClient }) => createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+          auth: { persistSession: true, autoRefreshToken: true }
+        }));
+    }
+    return _sdkPromise;
+  }
 
   // ── Emoji picker — declarado aqui para evitar TDZ ──────
 
   // ── Rota ─────────────────────────────────────────────
-  let _sessionData;
+  let session;
   try {
-    ({ data: { session: _sessionData } } = await supabase.auth.getSession());
+    session = await db.getValidSession();
   } catch (_e) {
     window.location.replace('login.html');
     throw new Error('session_fetch_failed');
   }
-  const session = _sessionData;
-  if (!session) { window.location.replace('login.html'); throw new Error('unauthenticated'); }
+  if (!session || !session.user) { window.location.replace('login.html'); throw new Error('unauthenticated'); }
 
   const user = session.user;
 
@@ -1123,11 +1138,18 @@
   }
 
   // ── Supabase profile ──────────────────────────────────
-  let { data: profile } = await supabase
-    .from('profiles')
-    .select('username, display_name, loja, sigla, avatar_emoji, cargo, avatar, estado, cidade')
-    .eq('id', user.id)
-    .single();
+  let profile = null;
+  try {
+    profile = await db.select('profiles', {
+      columns: 'username, display_name, loja, sigla, avatar_emoji, cargo, avatar, estado, cidade',
+      match: { id: user.id },
+      single: true,
+    });
+  } catch (_e) {
+    // Usuário sem linha em profiles ainda, ou rede indisponível — segue com os
+    // dados locais; o primeiro save cria a linha (upsert).
+    profile = null;
+  }
 
   const supabaseUsername = profile?.username
     || user.user_metadata?.full_name
@@ -1173,9 +1195,9 @@
   async function calcStats() {
     let sessions, achData;
     try {
-      [{ data: sessions }, { data: achData }] = await Promise.all([
-        supabase.from('quiz_sessions').select('guide, score, total, played_at').eq('user_id', user.id),
-        supabase.from('achievements').select('achievement_key, unlocked_at').eq('user_id', user.id).order('unlocked_at', { ascending: true }),
+      [sessions, achData] = await Promise.all([
+        db.select('quiz_sessions', { columns: 'guide, score, total, played_at', match: { user_id: user.id } }),
+        db.select('achievements',  { columns: 'achievement_key, unlocked_at', match: { user_id: user.id }, order: 'unlocked_at.asc' }),
       ]);
     } catch (_e) {
       return { quizzesTotal: 0, perguntasTotal: 0, taxaAcerto: 0, diasConsec: 0, minEstudo: 0, numConquistas: 0, conquRecentes: [], xpTotal: 0, nivel: { nome: 'Novato', min: 0, max: 200 }, NIVEIS: [], guiaPerf: [], unavailable: true };
@@ -1574,18 +1596,19 @@
     // Save to supabase — onConflict:'id' garante que o conflito seja resolvido
     // pela chave primária, não pela constraint UNIQUE do username
     const basePayload = { id: user.id, username: newUsername, display_name: nome, loja, cargo };
-    let { error: upsertErr } = await supabase
-      .from('profiles')
-      .upsert({ ...basePayload, estado, cidade }, { onConflict: 'id' });
+    let upsertErr = null;
+    try {
+      await db.upsert('profiles', { ...basePayload, estado, cidade }, { onConflict: 'id' });
+    } catch (e) { upsertErr = e; }
 
     if (upsertErr) {
       // Fallback: se houve conflito de username com outro usuário, tenta com username baseado no UUID completo
       const safeUsername = profile?.username || `u_${user.id.replace(/-/g, '').slice(0, 16)}`;
       const fallbackPayload = { ...basePayload, username: safeUsername, estado, cidade };
-      let { error: err2 } = await supabase
-        .from('profiles')
-        .upsert(fallbackPayload, { onConflict: 'id' });
-      upsertErr = err2;
+      try {
+        await db.upsert('profiles', fallbackPayload, { onConflict: 'id' });
+        upsertErr = null;
+      } catch (e2) { upsertErr = e2; }
     }
 
     if (upsertErr) {
@@ -1638,16 +1661,15 @@
           const res = await fetch(dataUrl);
           const blob = await res.blob();
           const path = `${user.id}/avatar.jpg`;
-          const { error: upErr } = await supabase.storage
+          const sb = await sdk();   // Storage é a única parte que exige o SDK
+          const { error: upErr } = await sb.storage
             .from('avatars')
             .upload(path, blob, { contentType: 'image/jpeg', upsert: true });
           if (upErr) throw upErr;
-          const { data: { publicUrl } } = supabase.storage.from('avatars').getPublicUrl(path);
+          const { data: { publicUrl } } = sb.storage.from('avatars').getPublicUrl(path);
           // upsert com onConflict:'id' — UPDATE simples não cria linha para usuário novo (falso sucesso)
           const safeUsername = profile?.username || `u_${user.id.replace(/-/g, '').slice(0, 16)}`;
-          const { error: dbErr } = await supabase.from('profiles')
-            .upsert({ id: user.id, username: safeUsername, avatar: publicUrl }, { onConflict: 'id' });
-          if (dbErr) throw dbErr;
+          await db.upsert('profiles', { id: user.id, username: safeUsername, avatar: publicUrl }, { onConflict: 'id' });
           profile = { ...(profile || {}), username: safeUsername, avatar: publicUrl };
         } catch (err) {
           console.warn('Erro ao enviar foto para a nuvem:', err.message);
@@ -1667,12 +1689,11 @@
     // Remove do Storage também
     let cloudOk = true;
     try {
-      await supabase.storage.from('avatars').remove([`${user.id}/avatar.jpg`]);
+      const sb = await sdk();   // Storage é a única parte que exige o SDK
+      await sb.storage.from('avatars').remove([`${user.id}/avatar.jpg`]);
       // upsert com onConflict:'id' — UPDATE simples não cria linha para usuário novo (falso sucesso)
       const safeUsername = profile?.username || `u_${user.id.replace(/-/g, '').slice(0, 16)}`;
-      const { error: dbErr } = await supabase.from('profiles')
-        .upsert({ id: user.id, username: safeUsername, avatar: null }, { onConflict: 'id' });
-      if (dbErr) throw dbErr;
+      await db.upsert('profiles', { id: user.id, username: safeUsername, avatar: null }, { onConflict: 'id' });
       profile = { ...(profile || {}), username: safeUsername, avatar: null };
     } catch (err) {
       console.warn('Erro ao remover foto da nuvem:', err.message);
@@ -1686,23 +1707,82 @@
   // ── Reset password ────────────────────────────────────
   async function sendResetEmail() {
     const resetUrl = window.location.href.replace(/\/[^/]*$/, '/reset-senha.html');
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: resetUrl
-    });
-    if (error) { showToast('❌ Erro ao enviar e-mail.'); }
-    else        { showToast('📧 Link enviado para ' + email); }
+    try {
+      const sb = await sdk();   // fluxo de e-mail do GoTrue — usa o SDK
+      const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: resetUrl });
+      if (error) { showToast('❌ Erro ao enviar e-mail.'); }
+      else        { showToast('📧 Link enviado para ' + email); }
+    } catch (_e) {
+      showToast('❌ Sem conexão para enviar o e-mail. Tente novamente.');
+    }
   }
   window.sendResetEmail = sendResetEmail;
 
   // ── Logout ────────────────────────────────────────────
-  function handleLogout() {
+  // Quantos quizzes ainda não chegaram ao servidor. O ponteiro
+  // mc_sessions_synced é só uma CONTAGEM de quantas sessões já subiram.
+  function sessoesPendentes() {
+    try {
+      const hist   = JSON.parse(localStorage.getItem('mc_quiz_history') || '[]');
+      const synced = JSON.parse(localStorage.getItem('mc_sessions_synced') || '0');
+      const n = (Array.isArray(hist) ? hist.length : 0) - (Number(synced) || 0);
+      return n > 0 ? n : 0;
+    } catch (_e) { return 0; }
+  }
+
+  function limparDadosLocais() {
     const userKeys = [
       'mc_perfil_dados', 'mc_perfil_foto', 'mc_username', 'mc_user_data',
       'mc_quiz_history', 'mc_sr_v2', 'mc_sessions_synced', 'mc_onboarded',
       'gamificacao', 'mc_acompanhamento', 'mc_ocorrencias',
     ];
     userKeys.forEach(k => localStorage.removeItem(k));
-    supabase.auth.signOut({ scope: 'local' }).catch(() => {});
+    // Encerra a sessão local removendo o token que o rest.js lê. Antes isso
+    // dependia de supabase.auth.signOut() — ou seja, do SDK vindo do CDN.
+    try {
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const k = localStorage.key(i);
+        if (k && /^sb-.+-auth-token$/.test(k)) localStorage.removeItem(k);
+      }
+    } catch (_e) { /* storage indisponível — segue para o redirect */ }
+  }
+
+  // O logout apaga o histórico local. Se houver quizzes ainda não enviados,
+  // apagar sem avisar destrói o resultado em definitivo: ele só existia aqui.
+  async function handleLogout() {
+    const pendentes = sessoesPendentes();
+
+    if (pendentes > 0) {
+      const um   = pendentes === 1;
+      const frase = um
+        ? '1 resultado de quiz que ainda não foi enviado ao servidor'
+        : `${pendentes} resultados de quiz que ainda não foram enviados ao servidor`;
+      const perda = um ? 'ele será perdido' : 'eles serão perdidos';
+      const seguir = confirm(
+        `Você tem ${frase}.\n\n` +
+        `Vamos tentar sincronizar antes de sair. Se não der certo, ${perda}.\n\n` +
+        `Continuar?`
+      );
+      if (!seguir) return;
+
+      try {
+        const { syncToCloud } = await import('../js/supabase/sync.js');
+        await syncToCloud();
+      } catch (_e) { /* avaliado logo abaixo pelo contador */ }
+
+      if (sessoesPendentes() > 0) {
+        const mesmoAssim = confirm(
+          'Não foi possível sincronizar agora (provavelmente sem conexão).\n\n' +
+          'Sair mesmo assim vai APAGAR definitivamente esses resultados deste aparelho.\n\n' +
+          'Sair mesmo assim?'
+        );
+        if (!mesmoAssim) return;
+      } else {
+        showToast('✅ Histórico sincronizado antes de sair.');
+      }
+    }
+
+    limparDadosLocais();
     window.location.replace('login.html');
   }
   window.handleLogout = handleLogout;
