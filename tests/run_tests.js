@@ -56,13 +56,13 @@ function loadQuestions(guide) {
 section('Question JSON — structure & integrity');
 
 const GUIDES_WITH_COUNTS = {
-  'chapa':               78,
-  'treinador':          135,
+  'chapa':               79,
+  'treinador':          146,
   'gerencia':            86,
   'lideranca':           67,
   'fritas':              41,
-  'fechamento':          40,
-  'seguranca-alimento':  38,
+  'fechamento':          41,
+  'seguranca-alimento':  42,
   'best-burguer':        null,
   'mccafe':              null,
   'lope':                null,
@@ -744,6 +744,54 @@ test('toda página gerenciada tem marcadores mc:navbar balanceados', () => {
     if (s !== 1 || e !== 1) bad.push(`${file}(s=${s},e=${e})`);
   }
   assert(bad.length === 0, `Marcadores inconsistentes: ${bad.join(', ')}`);
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Fonte única das perguntas — nenhuma página pode ter banco próprio embutido
+// ─────────────────────────────────────────────────────────────────────────────
+section('Fonte única das perguntas (data/questions)');
+
+// Páginas que legitimamente montam o próprio pool: quiz.html (mistura todos os
+// guias), provas-testes.html (simulados) e aprendizado.html (trilha própria).
+const POOLS_PROPRIOS = ['quiz.html', 'provas-testes.html', 'aprendizado.html'];
+
+const paginasHtml = fs.readdirSync(path.join(ROOT, 'pages')).filter((f) => f.endsWith('.html'));
+
+test('nenhuma página de guia declara array de quiz embutido', () => {
+  const culpadas = [];
+  for (const f of paginasHtml) {
+    if (POOLS_PROPRIOS.includes(f)) continue;
+    const src = fs.readFileSync(path.join(ROOT, 'pages', f), 'utf8');
+    const m = src.match(/(?:const|let|var)\s+QUIZ_[A-Z_]+\s*=\s*\[/);
+    if (m) culpadas.push(`${f} (${m[0].trim()})`);
+  }
+  assert(culpadas.length === 0,
+    'Perguntas devem viver em data/questions/, não no HTML: ' + culpadas.join(', '));
+});
+
+test('toda categoria carregada do banco existe em data/questions', () => {
+  const faltando = [];
+  for (const f of paginasHtml) {
+    const src = fs.readFileSync(path.join(ROOT, 'pages', f), 'utf8');
+    for (const m of src.matchAll(/(?:initQuizFromJSON|loadQuizQuestions)\(\s*'([^']+)'/g)) {
+      const cat = m[1];
+      if (!fs.existsSync(path.join(QS, cat, 'basico.json'))) faltando.push(`${f} → ${cat}`);
+    }
+  }
+  assert(faltando.length === 0, 'Categoria inexistente: ' + faltando.join(', '));
+});
+
+test('toda categoria carregada do banco está no precache do sw.js', () => {
+  const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+  const fora = new Set();
+  for (const f of paginasHtml) {
+    const src = fs.readFileSync(path.join(ROOT, 'pages', f), 'utf8');
+    for (const m of src.matchAll(/(?:initQuizFromJSON|loadQuizQuestions)\(\s*'([^']+)'/g)) {
+      if (!sw.includes(`data/questions/${m[1]}/basico.json`)) fora.add(m[1]);
+    }
+  }
+  assert(fora.size === 0,
+    'Sem precache (quebra o offline): ' + [...fora].join(', '));
 });
 
 // ─────────────────────────────────────────────────────────────────────────────

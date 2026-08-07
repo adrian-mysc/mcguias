@@ -710,11 +710,11 @@
       "alternativas": [
         "160°C",
         "168°C",
-        "170°C",
-        "175°C"
+        "175°C",
+        "180°C"
       ],
-      "respostaCorreta": 1,
-      "explicacao": "A temperatura das fritadeiras de frango e tortas é 168°C (335°F).",
+      "respostaCorreta": 3,
+      "explicacao": "A temperatura das fritadeiras de frango e tortas é 180°C (356°F). As McFritas usam 168°C.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -909,11 +909,11 @@
       "alternativas": [
         "2min30s",
         "3min",
-        "3min30s",
+        "3min15s",
         "4min"
       ],
       "respostaCorreta": 2,
-      "explicacao": "O McChicken (frango prensado) leva 3min30s de fritura.",
+      "explicacao": "O McChicken (frango prensado) leva 3min15s de fritura a 180°C.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1115,8 +1115,8 @@
         "5min",
         "6min"
       ],
-      "respostaCorreta": 2,
-      "explicacao": "As tortas (frango e maçã) levam 5 minutos de fritura a 168°C.",
+      "respostaCorreta": 3,
+      "explicacao": "As tortas (frango e maçã) levam 6 minutos de fritura a 180°C.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2007,6 +2007,301 @@
       "respostaCorreta": 0,
       "explicacao": "O tempo de fritura dos McNuggets é de 3 minutos e 15 segundos.",
       "dica": "3'15\" — mesmo tempo do McChicken e do McJunior.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_050",
+      "categoria": "fritos",
+      "subcategoria": "🌡️ Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da fritadeira para produtos de frango e tortas?",
+      "alternativas": [
+        "168°C",
+        "175°C",
+        "180°C",
+        "190°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A fritadeira para frango e tortas opera a 180°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_051",
+      "categoria": "fritos",
+      "subcategoria": "🌡️ Temperatura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Qual a temperatura da UHC para carnes brancas?",
+      "alternativas": [
+        "72°C",
+        "79°C",
+        "85°C",
+        "90°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A UHC para carnes brancas opera a 85°C.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_052",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Tempo de Fritura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura de Nuggets, McChicken e Junior?",
+      "alternativas": [
+        "2min30s",
+        "3min00s",
+        "3min15s",
+        "4min00s"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Nuggets, Chicken e Junior têm tempo de fritura de 3 minutos e 15 segundos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_053",
+      "categoria": "fritos",
+      "subcategoria": "⏱️ Tempo de Fritura",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de fritura do McCrispy?",
+      "alternativas": [
+        "3min15s",
+        "4min00s",
+        "5min00s",
+        "6min"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McCrispy e Tortas: 6 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_054",
+      "categoria": "fritos",
+      "subcategoria": "📦 Capacidade",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a capacidade máxima de McNuggets no cesto?",
+      "alternativas": [
+        "12 unidades",
+        "16 unidades",
+        "20 unidades",
+        "24 unidades"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "McNuggets: 24 unid. · McChicken: 6 · Chicken Jr: 6 · Crispy: 4 · Tortas: 16.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "fritos_055",
+      "categoria": "fritos",
+      "subcategoria": "🥧 Tortas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "refrigeracao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo total de validade das tortas após a fritura?",
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "3 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As tortas têm 2 horas de validade total, incluindo os 20 minutos de resfriamento.",
+      "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
       "peso": 1,

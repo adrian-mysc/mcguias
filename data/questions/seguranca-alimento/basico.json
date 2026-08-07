@@ -1918,6 +1918,207 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_043",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🌡️ Temperatura · Câmaras",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura correta das câmaras de refrigeração?",
+      "alternativas": [
+        "0°C a 2°C",
+        "1°C a 4°C",
+        "4°C a 8°C",
+        "Abaixo de 10°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As câmaras de refrigeração devem manter temperatura entre 1°C e 4°C para conservar corretamente carnes, laticínios e frios.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_044",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🌡️ Temperatura · Congelamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "seguranca_alimentar",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura mínima para manter produtos congelados?",
+      "alternativas": [
+        "-10°C",
+        "-15°C",
+        "-18°C",
+        "-20°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Produtos congelados devem ser mantidos a -18°C ou abaixo para garantir a segurança do alimento.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_045",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🧪 Sanitização · 3 Cubas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "porcao",
+        "sanitizacao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo os utensílios devem ficar na solução sanitizante (Cuba 3)?",
+      "alternativas": [
+        "30 segundos",
+        "1 minuto",
+        "3 minutos",
+        "5 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Na Cuba 3, os utensílios devem ficar imersos por 1 minuto na solução sanitizante. Não enxaguar depois.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "seguranca_alimento_046",
+      "categoria": "seguranca-alimento",
+      "subcategoria": "🥬 Vegetais · Sanitização",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "sanitizacao",
+        "temperatura",
+        "tomate"
+      ],
+      "pergunta": "Qual produto é usado para sanitizar os tomates?",
+      "alternativas": [
+        "Detergente neutro",
+        "Álcool 70%",
+        "CHLORINE SANITIZER BB5L",
+        "QSR Multiuso"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O CHLORINE SANITIZER BB5L é o produto específico para sanitização de vegetais como tomates.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
     }
   ]
 }

@@ -1,179 +1,31 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-06-17",
-  "categoria": "mcfritas",
+  "updatedAt": "2026-08-07",
+  "categoria": "limpeza",
   "nivel": "basico",
-  "migratedFrom": "mcfritas.html",
+  "migratedFrom": "limpeza.html",
   "questions": [
     {
-      "id": "mcfritas_004",
-      "categoria": "mcfritas",
-      "subcategoria": "📦 Tamanhos",
+      "id": "limpeza_001",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Diária",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritas",
-        "porcao"
-      ],
-      "pergunta": "Qual o peso da McFritas tamanho Grande?",
-      "alternativas": [
-        "73g",
-        "102g",
-        "120g",
-        "146g"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "McFritas P = 73g · M = 102g · G = 146g.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_005",
-      "categoria": "mcfritas",
-      "subcategoria": "📦 Tamanhos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "porcao"
-      ],
-      "pergunta": "Qual o peso da McFritas tamanho Pequeno?",
-      "alternativas": [
-        "50g",
-        "65g",
-        "73g",
-        "85g"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "McFritas P = 73g · M = 102g · G = 146g.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_007",
-      "categoria": "mcfritas",
-      "subcategoria": "🛢️ Óleo",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "oleo",
-        "porcao",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Em qual linha da cuba deve ser mantido o nível de óleo?",
-      "alternativas": [
-        "Linha máxima",
-        "Segunda linha",
-        "Primeira linha",
-        "Terceira linha"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O nível de óleo deve respeitar a segunda linha na cuba.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_008",
-      "categoria": "mcfritas",
-      "subcategoria": "⏱️ Validade",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
+        "limpeza",
         "taylor-ng",
         "temperatura",
-        "tempo",
-        "validade"
+        "tempo"
       ],
-      "pergunta": "Qual a validade dos sacos de McFritas no congelador portátil?",
+      "pergunta": "Qual mensagem aparece na tela quando a chapa está pronta para limpeza?",
       "alternativas": [
-        "6 horas",
-        "12 horas",
-        "24 horas",
-        "48 horas"
+        "CLEAN READY",
+        "READY TO CLEAN",
+        "START CLEANING",
+        "CLEAN MODE ON"
       ],
-      "respostaCorreta": 2,
-      "explicacao": "Os sacos de McFritas no congelador portátil têm validade de 24 horas.",
+      "respostaCorreta": 1,
+      "explicacao": "Aguardar o sinal luminoso e a mensagem READY TO CLEAN na tela antes de iniciar a limpeza.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -204,27 +56,24 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_010",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Procedimento",
+      "id": "limpeza_002",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Diária",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritas",
-        "oleo",
         "remocao",
-        "tecnica",
         "temperatura"
       ],
-      "pergunta": "Como deve ser feito o movimento das fritas durante o chacoalhar?",
+      "pergunta": "Quantos ml do produto QSR devem ser colocados no recipiente para umedecer a esponja?",
       "alternativas": [
-        "Chacoalhar lateralmente",
-        "Virar completamente o cesto",
-        "Chacoalhar para frente e para trás",
-        "Não chacoalhar"
+        "45ml",
+        "60ml",
+        "90ml",
+        "120ml"
       ],
       "respostaCorreta": 2,
-      "explicacao": "Ao retirar, chacoalhar o cesto para frente e para trás para escorrer o excesso de óleo.",
+      "explicacao": "Colocar 90ml do produto QSR no recipiente e umedecer a esponja.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -255,79 +104,224 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_011",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Procedimento",
+      "id": "limpeza_003",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Diária",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "remocao",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "Como devem ser recolocados os Teflons ao final da limpeza diária da chapa?",
+      "alternativas": [
+        "Todos do mesmo lado",
+        "Alternando lados pares e ímpares",
+        "Sempre com o lado limpo para cima",
+        "Na mesma posição que estavam"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ao recolocar os Teflons, alternando os lados pares e ímpares.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_004",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Diária",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "panos",
+        "temperatura"
+      ],
+      "pergunta": "Com o que se enxágua a placa inferior da chapa?",
+      "alternativas": [
+        "Pano seco",
+        "Água fria e esponja",
+        "Água morna e escova para altas temperaturas",
+        "Apenas pano úmido"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Enxaguar a placa inferior com água morna e a escova para altas temperaturas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_005",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Diária",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "programacao",
+        "remocao",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "Qual o primeiro passo antes de iniciar a limpeza diária da chapa?",
+      "alternativas": [
+        "Remover o Teflon",
+        "Aplicar o produto",
+        "Garantir que o sistema de exaustão esteja ligado e ajustar para Clean Mode",
+        "Esfregar com esponja"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Primeiro garantir que o sistema de exaustão esteja ligado, depois ajustar para Clean Mode.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_006",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Mensal",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Qual modo deve ser selecionado no painel para a limpeza mensal da chapa?",
+      "alternativas": [
+        "CLEAN MODE",
+        "RECOVERY (285°F)",
+        "DEEP CLEAN",
+        "WASH MODE"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Para a limpeza mensal (Best Burger), selecionar RECOVERY (285°F) no painel de controle.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_007",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Mensal",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
         "angulo",
-        "fritas",
-        "limite",
-        "oleo",
+        "limpeza",
         "sal",
-        "temperatura",
         "tempo"
       ],
-      "pergunta": "Qual o tempo máximo de salga das McFritas após sair do óleo?",
+      "pergunta": "Quantos minutos os platens permanecem abaixados sobre o limpador na limpeza mensal?",
       "alternativas": [
-        "5 segundos",
-        "10 segundos",
-        "15 segundos",
-        "30 segundos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "A salga deve ser feita em até 10 segundos após a fritura para aderir corretamente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_012",
-      "categoria": "mcfritas",
-      "subcategoria": "⏱️ McFritas · Validade",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual a validade das McFritas prontas na área de manutenção de calor?",
-      "alternativas": [
-        "2 minutos",
-        "5 minutos",
-        "7 minutos",
-        "10 minutos"
+        "10 minutos",
+        "15 minutos",
+        "17 minutos",
+        "20 minutos"
       ],
       "respostaCorreta": 2,
-      "explicacao": "As McFritas têm validade de 7 minutos na área de manutenção de calor.",
+      "explicacao": "Os platens permanecem abaixados automaticamente por 17 minutos para amolecer a sujeira.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -358,578 +352,29 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_013",
-      "categoria": "mcfritas",
-      "subcategoria": "🛢️ McFritas · Óleo",
+      "id": "limpeza_008",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Mensal",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "frequencia",
-        "fritas",
-        "oleo",
-        "temperatura"
-      ],
-      "pergunta": "Quantas vezes por dia o óleo deve ser filtrado?",
-      "alternativas": [
-        "1 vez",
-        "2 vezes",
-        "3 vezes",
-        "4 vezes"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O óleo das fritadeiras deve ser filtrado 2 vezes ao dia.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_014",
-      "categoria": "mcfritas",
-      "subcategoria": "📦 McFritas · Estocagem",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "organizacao",
-        "producao",
-        "raspador",
-        "tecnica",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Os sacos de batata devem ser encestados de qual forma?",
-      "alternativas": [
-        "Com o cesto já posicionado",
-        "Soltos na batata",
-        "Sem encestamento prévio",
-        "Encestados com a lâmina"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "As batatas devem ser encestadas usando a lâmina de produção para organizar as porções no cesto.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_015",
-      "categoria": "mcfritas",
-      "subcategoria": "🌡️ McFritas · Temperatura",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual a temperatura interna mínima para as McFritas prontas?",
-      "alternativas": [
-        "60°C",
-        "70°C",
-        "74°C",
-        "80°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "A temperatura interna mínima das McFritas prontas é de 74°C (165°F).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_016",
-      "categoria": "mcfritas",
-      "subcategoria": "🛢️ McFritas · Óleo",
-      "dificuldade": 1,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "cores",
-        "frequencia",
-        "limite",
-        "oleo",
-        "taylor-ng",
-        "temperatura"
-      ],
-      "pergunta": "Quando o óleo deve ser descartado mesmo abaixo do limite de 24%?",
-      "alternativas": [
-        "Quando apresentar cor escura, fumaça excessiva ou odor",
-        "Apenas quando o cliente reclamar",
-        "Nunca, apenas quando atingir 24%",
-        "A cada 3 dias independente do percentual"
-      ],
-      "respostaCorreta": 0,
-      "explicacao": "O óleo deve ser descartado quando apresentar sinais visuais como cor escura, fumaça excessiva ou odor estranho, mesmo abaixo do limite.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_017",
-      "categoria": "mcfritas",
-      "subcategoria": "⚙️ McFritas · Procedimento",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "ambientacao",
-        "fritas",
-        "organizacao",
-        "taylor-ng",
-        "temperatura"
-      ],
-      "pergunta": "O que deve ser feito com os sacos de batata no congelador portátil?",
-      "alternativas": [
-        "Descongelar antes de usar",
-        "Manter na posição vertical para encestamento fácil",
-        "Armazenar abertos",
-        "Empilhar sem organização"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Os sacos no congelador portátil devem estar na posição que facilite o encestamento.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_018",
-      "categoria": "mcfritas",
-      "subcategoria": "📦 McFritas · Tamanhos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "oleo",
-        "temperatura"
-      ],
-      "pergunta": "Quantas McFritas P cabem em um cesto de fritura?",
-      "alternativas": [
-        "2 porções",
-        "3 porções",
-        "4 porções",
-        "6 porções"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Em um cesto de McFritas P cabem 6 porções por rodada.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_019",
-      "categoria": "mcfritas",
-      "subcategoria": "🛢️ McFritas · Óleo",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "oleo",
-        "temperatura"
-      ],
-      "pergunta": "Com qual instrumento é medido o percentual de compostos polares do óleo?",
-      "alternativas": [
-        "Termômetro",
-        "Balança digital",
-        "Testo ou medidor de compostos polares",
-        "Refratômetro"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O percentual de compostos polares é medido com o Testo ou medidor específico de compostos polares.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_020",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Qualidade",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "pao",
-        "sal",
-        "temperatura"
-      ],
-      "pergunta": "Quais são as características visuais de McFritas de qualidade?",
-      "alternativas": [
-        "Escuras e com sal abundante",
-        "Brancas e sem sal",
-        "Douradas e bem salgadas",
-        "Douradas, crocantes por fora e macias por dentro"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "McFritas de qualidade: douradas, crocantes por fora, macias por dentro, bem salgadas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_022",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Sal",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "fritas",
-        "sal",
-        "tecnica",
-        "temperatura"
-      ],
-      "pergunta": "Como aplicar o sal corretamente nas McFritas?",
-      "alternativas": [
-        "Distribuir uniformemente com movimentos de vai e vem",
-        "Aplicar apenas nas pontas",
-        "Jogar todo o sal de uma vez no centro",
-        "Deixar o cliente salgar"
-      ],
-      "respostaCorreta": 0,
-      "explicacao": "Aplicar o sal com movimentos de vai e vem para distribuir uniformemente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_024",
-      "categoria": "mcfritas",
-      "subcategoria": "🌡️ McFritas · Temperatura",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura das fritadeiras de McFritas?",
-      "alternativas": [
-        "160°C",
-        "165°C",
-        "168°C",
-        "175°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "A temperatura das fritadeiras de McFritas é 168°C (335°F).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_025",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Porções",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "frequencia",
-        "fritas",
-        "temperatura"
-      ],
-      "pergunta": "Qual o equipamento usado para porcionar as McFritas corretamente?",
-      "alternativas": [
-        "Colher",
-        "Copo Medidor de Fritas específico",
-        "Qualquer recipiente",
-        "Concha"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Usar o Copo Medidor de Fritas específico para cada tamanho (P, M, G, GG).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_026",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Porções",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
+        "higiene",
+        "limpeza",
         "porcao",
         "remocao",
-        "tecnica",
+        "sal",
+        "sanitizacao",
         "temperatura"
       ],
-      "pergunta": "Como garantir a porção correta ao encher o copo de McFritas?",
+      "pergunta": "No que devem ser sanitizadas as abraçadeiras e barras removidas na limpeza mensal?",
       "alternativas": [
-        "Estimar visualmente",
-        "Usar colher para colocar",
-        "Encher pelo fundo do copo com o cesto",
-        "Encher pela lateral de cima direto"
+        "Balde com sanitizante",
+        "Sistema de 3 cubas",
+        "Cuba com água quente",
+        "Máquina de lavar"
       ],
-      "respostaCorreta": 2,
-      "explicacao": "Usar a técnica de encher o copo pelo fundo (método cesto) para garantir a porção correta.",
+      "respostaCorreta": 1,
+      "explicacao": "Lave, enxágue e sanitize as abraçadeiras e barras no sistema de 3 cubas.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -960,27 +405,329 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_027",
-      "categoria": "mcfritas",
-      "subcategoria": "🛢️ McFritas · Óleo",
+      "id": "limpeza_009",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Mensal",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "cores",
-        "filtro",
-        "fritas",
+        "esfregao",
+        "limpeza",
+        "remocao",
+        "sal",
+        "sanitizacao",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "Para que serve o rodinho de borracha na limpeza mensal da chapa?",
+      "alternativas": [
+        "Esfregar a superfície",
+        "Empurrar o limpador para dentro das canaletas",
+        "Remover o excesso de água",
+        "Aplicar o sanitizante"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Com o rodinho de borracha, empurrar o limpador de chapas para dentro das canaletas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_010",
+      "categoria": "limpeza",
+      "subcategoria": "🍞 Limpeza · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "remocao",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser feito ANTES de iniciar a limpeza da tostadeira?",
+      "alternativas": [
+        "Aplicar o produto",
+        "Remover o Teflon",
+        "Desligar a tostadeira e colocar luvas resistentes ao calor",
+        "Ligar o sistema de exaustão"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "ANTES DE INICIAR: Desligar a Tostadeira e colocar luvas resistentes ao calor.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_011",
+      "categoria": "limpeza",
+      "subcategoria": "🍞 Limpeza · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos ml (pumps) do limpador devem ser colocados na cuba de inox?",
+      "alternativas": [
+        "30ml (1 pump)",
+        "60ml (2 pumps)",
+        "90ml (3 pumps)",
+        "120ml (4 pumps)"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Colocar 60ml (2 pumps) de Kay QSR Limpador para Chapas e Tostadeiras diretamente na cuba de inox.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_012",
+      "categoria": "limpeza",
+      "subcategoria": "🍞 Limpeza · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "panos",
+        "remocao",
+        "sanitizacao",
+        "temperatura"
+      ],
+      "pergunta": "O que NÃO se deve fazer ao limpar a correia da tostadeira?",
+      "alternativas": [
+        "Usar pano molhado com limpador",
+        "Remover as correias da tostadeira",
+        "Girar as correias para limpar todas as seções",
+        "Enxaguar com sanitizante"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "NOTA: Não remova as correias da tostadeira. Gire as correias para limpar todas as seções.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_013",
+      "categoria": "limpeza",
+      "subcategoria": "🍞 Limpeza · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "limpeza",
+        "panos",
+        "temperatura"
+      ],
+      "pergunta": "O que usar para limpar o exterior da tostadeira?",
+      "alternativas": [
+        "QSR Limpador de Chapas",
+        "Água e sabão",
+        "Pano limpo embebido em solução Multiuso",
+        "Esponja abrasiva"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Limpar o exterior da tostadeira com pano limpo embebido em solução Multiuso.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_014",
+      "categoria": "limpeza",
+      "subcategoria": "🍞 Limpeza · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "limpeza",
+        "panos",
+        "temperatura"
+      ],
+      "pergunta": "O que fazer com os panos após uso na limpeza da tostadeira?",
+      "alternativas": [
+        "Reutilizar",
+        "Lavar e reaproveitar",
+        "Descartar no balde de panos sujos",
+        "Deixar secar ao ar"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Descartar os panos no balde de panos sujos após o uso.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_015",
+      "categoria": "limpeza",
+      "subcategoria": "🚗 Limpeza · Pista Drive",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
         "oleo",
-        "temperatura"
+        "porcao",
+        "taylor-ng"
       ],
-      "pergunta": "Quais são os sinais de que o óleo precisa ser filtrado?",
+      "pergunta": "Qual a proporção de diluição do Desengordurante para a limpeza da pista?",
       "alternativas": [
-        "Cor levemente amarelada",
-        "Temperatura acima do normal",
-        "Batatas grudando no cesto",
-        "Espuma excessiva, cor escura ou cheiro forte"
+        "250ml produto + 750ml água",
+        "500ml produto + 500ml água",
+        "750ml produto + 250ml água",
+        "1 litro produto puro"
       ],
-      "respostaCorreta": 3,
-      "explicacao": "Sinais para filtrar: espuma excessiva, cor escura, cheiro forte ou fumaça.",
+      "respostaCorreta": 1,
+      "explicacao": "Diluir o Desengordurante em partes iguais: 500ml de produto + 500ml de água no borrifador.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1011,27 +758,26 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_028",
-      "categoria": "mcfritas",
-      "subcategoria": "⏱️ McFritas · Validade",
+      "id": "limpeza_016",
+      "categoria": "limpeza",
+      "subcategoria": "🚗 Limpeza · Pista Drive",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritas",
-        "sal",
-        "temperatura",
-        "tempo",
-        "validade"
+        "angulo",
+        "oleo",
+        "taylor-ng",
+        "tempo"
       ],
-      "pergunta": "Qual a validade das McFritas saladas na área de manutenção de calor?",
+      "pergunta": "Por quanto tempo o desengordurante deve agir na pista?",
       "alternativas": [
-        "2 minutos",
-        "5 minutos",
-        "7 minutos",
-        "10 minutos"
+        "30 minutos",
+        "1 hora",
+        "3 horas",
+        "6 horas"
       ],
       "respostaCorreta": 2,
-      "explicacao": "McFritas saladas têm 7 minutos de validade na área de manutenção de calor.",
+      "explicacao": "Deixar agir por 3 horas. Para melhores resultados, aplicar no asfalto e deixar agir durante a noite.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1062,30 +808,25 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_029",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Descarte",
+      "id": "limpeza_017",
+      "categoria": "limpeza",
+      "subcategoria": "🚗 Limpeza · Pista Drive",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritas",
-        "ovo",
-        "producao",
-        "sal",
+        "oleo",
         "taylor-ng",
-        "temperatura",
-        "tempo",
-        "validade"
+        "temperatura"
       ],
-      "pergunta": "O que fazer com McFritas que passaram do tempo de validade?",
+      "pergunta": "Por que não se deve aplicar o desengordurante em dias chuvosos?",
       "alternativas": [
-        "Descartar imediatamente e preparar novo lote",
-        "Reutilizar se ainda estiverem quentes",
-        "Salgar mais para melhorar",
-        "Devolver ao congelador"
+        "O produto perde eficácia com o frio",
+        "A chuva diluirá ou enxaguará o produto gerando desperdício",
+        "Pode escorregar na pista",
+        "O produto reage com a água da chuva"
       ],
-      "respostaCorreta": 0,
-      "explicacao": "McFritas fora do tempo de validade devem ser descartadas imediatamente.",
+      "respostaCorreta": 1,
+      "explicacao": "Recomenda-se não aplicar em dias chuvosos pois a chuva diluirá ou enxaguará o produto gerando desperdício.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1116,25 +857,172 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_030",
-      "categoria": "mcfritas",
-      "subcategoria": "🌡️ McFritas · Temperatura",
+      "id": "limpeza_018",
+      "categoria": "limpeza",
+      "subcategoria": "🚗 Limpeza · Pista Drive",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritas",
+        "oleo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual equipamento usar se ainda houver manchas após o procedimento padrão da pista?",
+      "alternativas": [
+        "Esponja abrasiva",
+        "Mais desengordurante puro",
+        "Máquina de pressão VAP",
+        "Escova de ferro"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Se após o procedimento ainda houver manchas, usar a máquina de pressão VAP.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_019",
+      "categoria": "limpeza",
+      "subcategoria": "🚗 Limpeza · Pista Drive",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "temperatura"
+      ],
+      "pergunta": "Quais EPIs são obrigatórios para a limpeza da pista?",
+      "alternativas": [
+        "Apenas luvas",
+        "Luvas, óculos e máscara",
+        "Luvas, Colete de PVC e Botas",
+        "Avental e luvas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "EPIs obrigatórios para limpeza da pista: Luvas, Colete de PVC e Botas.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_020",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Salão · Pisos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "frequencia",
+        "limpeza",
+        "temperatura"
+      ],
+      "pergunta": "A cada quantos metros deve ser invertido o lado do esfregão ao enxaguar o piso?",
+      "alternativas": [
+        "A cada 50cm",
+        "A cada 1 metro",
+        "A cada 2 metros",
+        "A cada 3 metros"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Enxaguar/secar com esfregão limpo, virando a cada 1 metro e torcendo a cada 2 metros.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_021",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Salão · Pisos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
         "temperatura",
         "tempo"
       ],
-      "pergunta": "Qual a temperatura mínima de serviço das McFritas?",
+      "pergunta": "Por quanto tempo a Solução FC deve agir no piso na limpeza profunda?",
       "alternativas": [
-        "52°C",
-        "57°C",
-        "63°C",
-        "70°C"
+        "1 minuto",
+        "2 minutos",
+        "5 minutos",
+        "10 minutos"
       ],
-      "respostaCorreta": 2,
-      "explicacao": "A temperatura mínima de serviço das McFritas é 63°C.",
+      "respostaCorreta": 1,
+      "explicacao": "Deixe o FC agir no chão por 2 minutos antes de limpar a solução suja.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1165,78 +1053,516 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_031",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Pré-pico",
-      "dificuldade": 1,
+      "id": "limpeza_022",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Salão · Pisos",
+      "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritas",
-        "limite",
-        "oleo",
+        "angulo",
+        "limpeza",
+        "remocao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quando se pode remover a placa de piso molhado após a limpeza profunda?",
+      "alternativas": [
+        "Imediatamente após limpar",
+        "Após 5 minutos",
+        "Quando o piso estiver completamente seco",
+        "Após 30 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Só remova a placa de piso molhado quando o piso estiver completamente seco.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_023",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Salão · Banheiros",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "sanitizacao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos pumps do limpador desinfetante de banheiro devem ser colocados no borrifador?",
+      "alternativas": [
+        "1 pump",
+        "2 pumps",
+        "3 pumps",
+        "4 pumps"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Encher o borrifador com água e pressionar 2 vezes com o limpador desinfetante perfumado.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_024",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Salão · Banheiros",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo a solução deve agir nas pias e sanitários antes de esfregar?",
+      "alternativas": [
+        "30 segundos",
+        "1 minuto",
+        "2 minutos",
+        "5 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Aplicar a solução e deixar agir por 2 minutos antes de esfregar pias e sanitários.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_025",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Salão · Banheiros",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza"
+      ],
+      "pergunta": "Quanto produto de limpeza de banheiro deve ser diluído para limpeza do piso?",
+      "alternativas": [
+        "30ml (1 pump) em 5L",
+        "60ml (2 pumps) em 5L",
+        "90ml (3 pumps) em 5L",
+        "120ml em 5L"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Diluir 60ml (2 pumps) de produto de limpeza para banheiros em um balde de 5L.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_026",
+      "categoria": "limpeza",
+      "subcategoria": "🫙 Limpeza · Utensílios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "remocao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo os utensílios devem ficar de molho na solução de detergente?",
+      "alternativas": [
+        "1 minuto",
+        "3 minutos",
+        "5 minutos",
+        "10 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Colocar os itens na solução de Detergente e deixar de molho por 5 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_027",
+      "categoria": "limpeza",
+      "subcategoria": "🫙 Limpeza · Utensílios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "remocao",
+        "sanitizacao",
+        "teflon",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo os utensílios devem ficar na solução sanitizante?",
+      "alternativas": [
+        "30 segundos",
+        "1 minuto",
+        "2 minutos",
+        "5 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Colocar na solução sanitizante por 1 minuto. Todas as superfícies devem entrar em contato com o sanitizante.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_028",
+      "categoria": "limpeza",
+      "subcategoria": "🫙 Limpeza · Utensílios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "remocao",
+        "sanitizacao",
+        "temperatura"
+      ],
+      "pergunta": "Como devem ser posicionadas as cubas para secar após a sanitização?",
+      "alternativas": [
+        "Direitas, abertas para cima",
+        "De cabeça para baixo em posição de drenagem",
+        "Empilhadas",
+        "Em qualquer posição"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Remova os itens; coloque as cubas de cabeça para baixo e as bandejas de lado, em posição de drenagem.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_029",
+      "categoria": "limpeza",
+      "subcategoria": "🫙 Limpeza · Jarras de Café",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo o produto Kay Coffee deve agir dentro da jarra?",
+      "alternativas": [
+        "1 minuto",
+        "3 minutos",
+        "5 minutos",
+        "10 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Fazer movimentos circulares para dissolver o produto e deixar agir por 5 minutos.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_030",
+      "categoria": "limpeza",
+      "subcategoria": "🧪 Limpeza · Produtos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Qual a diluição manual do KAY Detergente Multiuso para utensílios?",
+      "alternativas": [
+        "20L água + 1 sachê",
+        "30L água + 1 sachê",
+        "40L água quente + 1 pacote",
+        "10L água + 2 sachês"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Encher a cuba com 40L (10 gal) de água quente e despejar 1 pacote de detergente multiuso.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_031",
+      "categoria": "limpeza",
+      "subcategoria": "🧪 Limpeza · Produtos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "teflon"
+      ],
+      "pergunta": "Qual a diluição manual do KAY Multi-superfícies e Vidros?",
+      "alternativas": [
+        "1 sachê em 500ml",
+        "1 sachê em 1L",
+        "2 sachês em 1L",
+        "1 sachê em 2L"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Diluição manual: diluir 1 sachê em uma garrafa de 1L.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_032",
+      "categoria": "limpeza",
+      "subcategoria": "🧪 Limpeza · Produtos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "panos",
         "sal",
         "temperatura"
       ],
-      "pergunta": "O que fazer no pré-pico para garantir McFritas sempre prontas?",
+      "pergunta": "Como devem ser lavados os panos da chapa, salão e banheiro?",
       "alternativas": [
-        "Estocar batatas já fritas sem sal",
-        "Calcular a demanda e fritar lotes menores e frequentes",
-        "Não há procedimento especial",
-        "Fritar o máximo possível"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "No pré-pico, calcular demanda e fritar lotes menores e frequentes para manter qualidade.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_032",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Batata",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "taylor-ng",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Por quanto tempo os sacos de batata podem ficar no congelador portátil após abertura?",
-      "alternativas": [
-        "1 hora",
-        "Até o final do turno",
-        "8 horas",
-        "4 horas"
+        "Todos juntos na mesma lavagem",
+        "Chapa com salão, banheiro separado",
+        "Todos separadamente",
+        "Pode ser em qualquer combinação"
       ],
       "respostaCorreta": 2,
-      "explicacao": "Após abertura, os sacos de batata têm validade de 8 horas no congelador portátil.",
+      "explicacao": "Importante: Lave os panos da chapa, salão e banheiro separadamente.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1267,77 +1593,377 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_033",
-      "categoria": "mcfritas",
-      "subcategoria": "⚙️ McFritas · Equipamento",
+      "id": "limpeza_033",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "filtro",
-        "fritas",
+        "limpeza",
+        "oleo",
+        "remocao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "O que deve ser feito com as calhas após a limpeza diária?",
+      "alternativas": [
+        "Deixar molhadas",
+        "Remover sujeira, limpar com desengordurante e substituir",
+        "Apenas enxaguar com água",
+        "Não precisam ser limpas diariamente"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Remover a sujeira das calhas, limpar com desengordurante e substituir.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_034",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Mensal",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "oleo",
+        "remocao",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que é feito com as canaletas de gordura na limpeza mensal?",
+      "alternativas": [
+        "Apenas limpar por fora",
+        "Desmontar, esvaziar, enxaguar e recolocar",
+        "Não são desmontadas",
+        "Substituir por novas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Na limpeza mensal: desmontar e esvaziar as canaletas de gordura, enxaguar e recolocar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_035",
+      "categoria": "limpeza",
+      "subcategoria": "🍞 Limpeza · Tostadeira",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "pao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que fazer após remontar e conectar a tostadeira limpa?",
+      "alternativas": [
+        "Deixar desligada até amanhã",
+        "Ligar imediatamente após conectar",
+        "Aguardar 30 min antes de ligar",
+        "Testar com um pão antes de ligar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Após remontar: conectar a tostadeira e ligar imediatamente.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_036",
+      "categoria": "limpeza",
+      "subcategoria": "🚗 Limpeza · Pista Drive",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "remocao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual o equipamento para remover chiclete da pista?",
+      "alternativas": [
+        "Escova de cerdas duras",
+        "Espátula",
+        "Rodo",
+        "Mangueira de pressão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Usar a espátula específica para remover chiclete da pista.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_037",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Salão Pisos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "frequencia",
+        "temperatura"
+      ],
+      "pergunta": "A cada quantos metros deve ser torcido o esfregão ao enxaguar?",
+      "alternativas": [
+        "A cada 1 metro",
+        "A cada 2 metros",
+        "A cada 3 metros",
+        "A cada 5 metros"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Torcer o esfregão a cada 2 metros para não espalhar a sujeira.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_038",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Vidros",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "limpeza",
+        "temperatura"
+      ],
+      "pergunta": "De onde para onde se move o rodo na limpeza de vidros?",
+      "alternativas": [
+        "De baixo para cima",
+        "Da esquerda para direita",
+        "Da parte superior para o meio, depois inferior",
+        "Em círculos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Começar pela parte superior, puxar o rodo para baixo até o meio, depois limpar a metade inferior.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_039",
+      "categoria": "limpeza",
+      "subcategoria": "🫙 Limpeza · Utensílios",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "higiene",
+        "raspador",
+        "remocao",
+        "sanitizacao",
+        "temperatura"
+      ],
+      "pergunta": "Qual o primeiro passo na lavagem de utensílios?",
+      "alternativas": [
+        "Colocar na solução de detergente",
+        "Raspar os restos de comida e jogar no lixo",
+        "Enxaguar em água corrente",
+        "Colocar no sanitizante"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O primeiro passo sempre é raspar os restos de comida e descartá-los antes de lavar.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "limpeza_040",
+      "categoria": "limpeza",
+      "subcategoria": "🧪 Limpeza · Produtos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
         "limpeza",
         "oleo",
         "taylor-ng",
         "temperatura"
       ],
-      "pergunta": "O que verificar na fritadeira antes de iniciar a operação?",
+      "pergunta": "Qual produto usar para limpeza de pisos durante a operação?",
       "alternativas": [
-        "Apenas o nível de óleo",
-        "Apenas a temperatura",
-        "Nada, o gerente verifica",
-        "Nível de óleo, temperatura, filtro limpo e funcionamento do cesto"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Verificar: nível de óleo, temperatura atingida, filtro limpo e funcionamento correto do cesto.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_034",
-      "categoria": "mcfritas",
-      "subcategoria": "🌡️ McFritas · Temperatura",
-      "dificuldade": 1,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritadeira",
-        "oleo",
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura da fritadeira de McFritas?",
-      "alternativas": [
-        "160°C",
-        "168°C",
-        "175°C",
-        "180°C"
+        "QSR Desengordurante puro",
+        "QSR Limpador de pisos (4 gal água + 1 pacote)",
+        "QSR Multiuso",
+        "Água quente apenas"
       ],
       "respostaCorreta": 1,
-      "explicacao": "A fritadeira de McFritas opera a 168°C.",
+      "explicacao": "Limpeza de piso durante operação: 4 galões de água + 1 pacote de limpador de piso.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1368,122 +1994,23 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_035",
-      "categoria": "mcfritas",
-      "subcategoria": "⚙️ McFritas · Procedimento",
+      "id": "limpeza_041",
+      "categoria": "limpeza",
+      "subcategoria": "🧪 Limpeza · Produtos",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritura",
         "tempo"
       ],
-      "pergunta": "Qual o tempo de fritura programado das McFritas?",
+      "pergunta": "Por quanto tempo o limpador de banheiros deve agir antes de esfregar?",
       "alternativas": [
-        "2'10\"",
-        "3'10\"",
-        "3'15\"",
-        "7'"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O tempo de fritura programado é de 3'10\", com um Duty de 30 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_036",
-      "categoria": "mcfritas",
-      "subcategoria": "⏱️ McFritas · Validade",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "qualidade",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida programado das McFritas prontas (na estufa)?",
-      "alternativas": [
+        "1 minuto",
+        "2 minutos",
         "5 minutos",
-        "7 minutos",
-        "10 minutos",
-        "15 minutos"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "O tempo de vida programado das McFritas prontas é de 7 minutos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_037",
-      "categoria": "mcfritas",
-      "subcategoria": "⚙️ McFritas · Procedimento",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "duty",
-        "fritura",
-        "tempo"
-      ],
-      "pergunta": "Qual a duração do Duty na fritura das McFritas?",
-      "alternativas": [
-        "15 segundos",
-        "20 segundos",
-        "30 segundos",
-        "45 segundos"
+        "10 minutos"
       ],
       "respostaCorreta": 2,
-      "explicacao": "O Duty é de 30 segundos — ao soar, ativa-se o próximo cesto intercalando as cubas.",
+      "explicacao": "O limpador de banheiros deve agir por pelo menos 5 minutos antes de esfregar e enxaguar.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1514,467 +2041,24 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_038",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Sal",
+      "id": "limpeza_042",
+      "categoria": "limpeza",
+      "subcategoria": "🫙 Limpeza · Jarras",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "procedimento",
-        "qualidade",
-        "sal"
-      ],
-      "pergunta": "Qual a quantidade de sal aplicada nas McFritas?",
-      "alternativas": [
-        "2g",
-        "4g",
-        "6g",
-        "8g"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Despeja-se 4g de sal, segurando o saleiro a 20cm do centro das McFritas e virando uma única vez.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_039",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Sal",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "procedimento",
-        "sal"
-      ],
-      "pergunta": "A que altura o saleiro deve ser mantido ao salgar as McFritas?",
-      "alternativas": [
-        "10cm",
-        "15cm",
-        "20cm",
-        "30cm"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O saleiro é mantido pela alça a 20cm e no centro das McFritas, virado uma única vez sem agitar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_040",
-      "categoria": "mcfritas",
-      "subcategoria": "⏱️ McFritas · Validade",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "batata",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida da batata no congelador portátil?",
-      "alternativas": [
-        "1 hora",
-        "2 horas",
-        "4 horas",
-        "24 horas"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "A batata tem tempo de vida de 2 horas no congelador portátil.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_041",
-      "categoria": "mcfritas",
-      "subcategoria": "⏱️ McFritas · Validade",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "batata",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida da batata na encestadora automática?",
-      "alternativas": [
-        "2 horas",
-        "12 horas",
-        "24 horas",
-        "48 horas"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "Na encestadora automática a batata tem tempo de vida de 24 horas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_042",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Procedimento",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "encestamento",
-        "procedimento",
-        "qualidade"
-      ],
-      "pergunta": "Como os palitos devem ser alinhados no encestamento manual?",
-      "alternativas": [
-        "Com o saco plástico das McFritas, nunca com as mãos",
-        "Batendo o cesto na bancada",
-        "Com a pá de fritura",
-        "Com as mãos"
-      ],
-      "respostaCorreta": 0,
-      "explicacao": "Usa-se o próprio saco plástico das McFritas para alinhar os palitos, após as duas passadas; jamais colocar as mãos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_043",
-      "categoria": "mcfritas",
-      "subcategoria": "🛢️ McFritas · Óleo",
-      "dificuldade": 1,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "nivel",
-        "oleo",
-        "procedimento"
-      ],
-      "pergunta": "Até qual marca o nível de óleo na cuba deve ser mantido?",
-      "alternativas": [
-        "Primeira linha",
-        "Segunda linha",
-        "Metade da cuba",
-        "Até a borda"
-      ],
-      "respostaCorreta": 1,
-      "explicacao": "Mantenha o nível de óleo respeitando a segunda linha na cuba; se necessário, reponha avisando o Gerente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_044",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 Qualidade",
-      "dificuldade": 1,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "mcfritas",
-        "qualidade",
-        "padrao",
-        "avaliacao-teorica"
-      ],
-      "pergunta": "Quais são as principais características das Batatas Fritas padrão do McDonald's?",
-      "alternativas": [
-        "Crocantes por fora e por dentro",
-        "Douradas e sem sal",
-        "Crocantes por fora, macias por dentro",
-        "Macias por fora e por dentro"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O padrão das McFritas é crocante por fora e macia por dentro.",
-      "dica": "Contraste entre fora e dentro.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_045",
-      "categoria": "mcfritas",
-      "subcategoria": "⏱️ Tempo",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "oleo",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual o tempo de fritura das McFritas?",
-      "alternativas": [
-        "2min30s",
-        "3min00s",
-        "3min10s",
-        "4min00s"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O tempo de fritura das McFritas é 3 minutos e 10 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_046",
-      "categoria": "mcfritas",
-      "subcategoria": "📦 Tamanhos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "porcao"
-      ],
-      "pergunta": "Qual o peso da McFritas tamanho Médio?",
-      "alternativas": [
-        "73g",
-        "95g",
-        "102g",
-        "146g"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "McFritas P = 73g · M = 102g · G = 146g.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_047",
-      "categoria": "mcfritas",
-      "subcategoria": "🛢️ Óleo",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "limite",
-        "oleo",
+        "limpeza",
         "temperatura"
       ],
-      "pergunta": "Qual o limite máximo de Compostos Polares no óleo?",
+      "pergunta": "Qual produto é usado para limpeza das jarras de café?",
       "alternativas": [
-        "18%",
-        "20%",
-        "24%",
-        "30%"
+        "QSR Multiuso",
+        "QSR Detergente Concentrado",
+        "QSR KAY Coffee Pot Cleaner",
+        "Água quente apenas"
       ],
       "respostaCorreta": 2,
-      "explicacao": "Os Compostos Polares devem ser iguais ou abaixo de 24%.",
+      "explicacao": "Usar QSR KAY Coffee Pot Cleaner para limpeza das jarras de café.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2005,76 +2089,26 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_048",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Temperatura",
+      "id": "limpeza_043",
+      "categoria": "limpeza",
+      "subcategoria": "🔥 Limpeza · Chapa Diária",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritas",
-        "taylor-ng",
+        "limpeza",
+        "panos",
+        "sanitizacao",
         "temperatura"
       ],
-      "pergunta": "Qual a temperatura das fritadeiras de frango e tortas?",
+      "pergunta": "Com o que deve ser feita a limpeza final da placa inferior e frente?",
       "alternativas": [
-        "168°C",
-        "175°C",
-        "180°C",
-        "190°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "Frango e tortas fritam a 180°C. McFritas = 168°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "mcfritas_049",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Sal",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "fritas",
-        "oleo",
-        "sal",
-        "temperatura"
-      ],
-      "pergunta": "Quando deve ser aplicado o sal nas McFritas?",
-      "alternativas": [
-        "Antes de fritar",
-        "Imediatamente após sair da fritadeira, ainda quentes",
-        "Antes de entregar ao cliente",
-        "A qualquer momento"
+        "Esponja abrasiva",
+        "Pano limpo e sanitizado",
+        "Apenas água morna",
+        "Produto QSR direto"
       ],
       "respostaCorreta": 1,
-      "explicacao": "O sal deve ser aplicado imediatamente após sair da fritadeira enquanto as batatas ainda estão quentes.",
+      "explicacao": "A limpeza final da placa inferior e frente é feita com pano limpo e sanitizado.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2105,27 +2139,25 @@
       "relatedQuestions": []
     },
     {
-      "id": "mcfritas_050",
-      "categoria": "mcfritas",
-      "subcategoria": "🍟 McFritas · Estocagem",
+      "id": "limpeza_044",
+      "categoria": "limpeza",
+      "subcategoria": "🪑 Limpeza · Banheiro",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
       "tags": [
-        "fritas",
-        "limite",
-        "taylor-ng",
-        "tecnica",
+        "limpeza",
+        "panos",
         "temperatura"
       ],
-      "pergunta": "Como devem ser posicionados os sacos de batata no congelador portátil?",
+      "pergunta": "Onde se aplica a solução de limpeza de banheiro nas paredes?",
       "alternativas": [
-        "Deitados horizontalmente",
-        "Em pé verticalmente",
-        "De qualquer forma",
-        "Empilhados no máximo 3"
+        "Apenas na parte inferior",
+        "Pulverizar a solução e secar com pano limpo e seco",
+        "Somente esfregar sem produto",
+        "Apenas no espelho"
       ],
       "respostaCorreta": 1,
-      "explicacao": "Os sacos de batata devem ficar em pé verticalmente no congelador portátil.",
+      "explicacao": "Nas paredes, espelho, portas: pulverizar a solução de limpeza para banheiros e secar com pano limpo e seco.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,

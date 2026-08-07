@@ -6,7 +6,7 @@
 // Base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
 // (GitHub Pages) quanto em / (Vercel/domínio próprio), sem caminho fixo.
 
-const CACHE = 'mc-guias-v42';
+const CACHE = 'mc-guias-v43';
 
 // Raiz da aplicação, derivada da própria URL do SW:
 //   GitHub Pages → '/mcguias/sw.js'  ⇒ BASE = '/mcguias/'
@@ -53,6 +53,9 @@ const PRECACHE_PATHS = [
   'data/questions/lideranca/basico.json',
   'data/questions/treinador/basico.json',
   'data/questions/olimpiada/basico.json',
+  'data/questions/limpeza/basico.json',
+  'data/questions/supervisores/basico.json',
+  'data/questions/ppi/basico.json',
 ];
 
 const PRECACHE_ASSETS = PRECACHE_PATHS.map((p) => BASE + p);

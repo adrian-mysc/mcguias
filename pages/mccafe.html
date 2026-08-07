@@ -523,70 +523,17 @@
 
   <script src="../js/main.js" defer></script>
   <script>
-    const QUIZ_MCCAFE = [
-      // Temperaturas e Tempos
-      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura correta do café pronto?", options: ["65°C a 70°C", "77°C a 82°C", "85°C a 90°C", "70°C a 75°C"], answer: "77°C a 82°C", explanation: "O café pronto deve estar entre 77°C e 82°C." },
-      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura de extração do leite na Foamino?", options: ["60°C a 65°C", "65°C a 70°C", "70°C a 74°C", "75°C a 80°C"], answer: "70°C a 74°C", explanation: "O leite aquecido na Foamino deve estar entre 70°C e 74°C." },
-      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura máxima do leite na máquina de grupo?", options: ["55°C", "60°C", "65°C", "70°C"], answer: "65°C", explanation: "O leite na máquina de grupo deve atingir no máximo 65°C. NÃO DEIXAR FERVER." },
-      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura da água da máquina de café espresso?", options: ["60°C a 70°C", "70°C a 80°C", "75°C a 85°C", "80°C a 90°C"], answer: "75°C a 85°C", explanation: "A temperatura da água da máquina deve estar entre 75°C e 85°C." },
-      { category: "🌡️ McCafé · Forno Titã", question: "Qual a temperatura do Forno Titã para ASSAR produtos?", options: ["160°C", "170°C", "180°C", "200°C"], answer: "180°C", explanation: "Forno Titã para assar = 180°C. Para aquecer = 200°C." },
-      { category: "🌡️ McCafé · Forno Titã", question: "Qual a temperatura do Forno Titã para AQUECER produtos?", options: ["160°C", "180°C", "200°C", "220°C"], answer: "200°C", explanation: "Forno Titã para aquecer = 200°C. Para assar = 180°C." },
-      { category: "🌡️ McCafé · Ovos", question: "Qual a temperatura do platen para preparo dos ovos?", options: ["100°C", "115°C", "135°C", "150°C"], answer: "135°C", explanation: "O platen dedicado para ovos deve estar a 135°C." },
-      { category: "🌡️ McCafé · Ovos", question: "Qual a temperatura interna ideal do ovo após preparado?", options: ["Acima de 60°C", "Acima de 70°C", "Acima de 74°C", "Acima de 80°C"], answer: "Acima de 74°C", explanation: "A temperatura interna ideal do ovo deve ser acima de 74°C." },
-
-      // Tempos
-      { category: "⏱️ McCafé · Tempos", question: "Qual o tempo de vida do café pronto?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "1 hora", explanation: "O café pronto tem tempo de vida de 1 hora." },
-      { category: "⏱️ McCafé · Tempos", question: "Qual o tempo de vida do leite na Foamino?", options: ["2 horas", "4 horas", "8 horas", "12 horas"], answer: "8 horas", explanation: "O leite estocado na Foamino tem tempo de vida de 8 horas." },
-      { category: "⏱️ McCafé · Tempos", question: "Qual o tempo de cocção dos ovos no platen?", options: ["90 segundos", "120 segundos", "150 segundos", "180 segundos"], answer: "150 segundos", explanation: "O tempo de cocção dos ovos é de 150 segundos (2min30s)." },
-      { category: "⏱️ McCafé · Forno", question: "Quanto tempo o Pão de Queijo fica no forno Titã?", options: ["18 minutos", "23 minutos", "28 minutos", "33 minutos"], answer: "28 minutos", explanation: "Pão de Queijo: 28 minutos a 180°C. Nunca abrir o forno durante o assamento." },
-      { category: "⏱️ McCafé · Forno", question: "Quanto tempo o Mini Pão de Queijo fica no forno Titã?", options: ["18 minutos", "23 minutos", "28 minutos", "33 minutos"], answer: "23 minutos", explanation: "Mini Pão de Queijo: 23 minutos a 180°C." },
-      { category: "⏱️ McCafé · Forno", question: "Quanto tempo a Medialuna fica no forno para assar?", options: ["5 minutos", "8 minutos", "10 minutos", "15 minutos"], answer: "10 minutos", explanation: "Medialuna: 10 minutos a 180°C. Pincelar 3ml de calda após assar." },
-      { category: "⏱️ McCafé · Forno", question: "Quanto tempo o Cookie fica no forno Titã?", options: ["5 minutos", "7 minutos", "9 minutos", "12 minutos"], answer: "9 minutos", explanation: "Cookie Baunilha e Chocolate: 9 minutos a 180°C." },
-      { category: "⏱️ McCafé · Forno", question: "Quanto tempo o Panini fica no Toaster?", options: ["30 segundos", "1 minuto", "2 minutos", "3 minutos"], answer: "1 minuto", explanation: "O Panini fica no Toaster por 1 minuto." },
-
-      // Receitas
-      { category: "☕ McCafé · Receitas", question: "Qual a quantidade de calda por Medialuna?", options: ["1ml", "2ml", "3ml", "5ml"], answer: "3ml", explanation: "Para cada Medialuna são utilizados 3ml de calda." },
-      { category: "☕ McCafé · Receitas", question: "Quantas medidas de chocolate pó (15g) leva o Cappuccino Coado 200ml?", options: ["1 medida (15g)", "2 medidas (30g)", "3 medidas (45g)", "4 medidas (60g)"], answer: "2 medidas (30g)", explanation: "Cappuccino Coado 200ml: 2 medidas de 15g = 30g de chocolate em pó." },
-      { category: "☕ McCafé · Receitas", question: "Quantos tiros de calda de chocolate leva o Café Chantilly?", options: ["1 tiro (½oz)", "2 tiros (1oz)", "3 tiros (1,5oz)", "4 tiros (2oz)"], answer: "4 tiros (2oz)", explanation: "Café Chantilly: 4 tiros (2oz) de calda de chocolate no fundo do copo + 1 espresso + 1½ volta chantilly." },
-      { category: "☕ McCafé · Receitas", question: "Qual a quantidade de leite aerado no Macchiato?", options: ["10ml", "20ml", "30ml", "50ml"], answer: "30ml", explanation: "Macchiato: Aere 30ml de leite + 1 Espresso Curto (30ml) = 50ml total." },
-      { category: "☕ McCafé · Receitas", question: "Quantas pedras de gelo leva o Iced Latte?", options: ["15 pedras", "20 pedras", "23 pedras", "30 pedras"], answer: "23 pedras", explanation: "Iced Latte: 1 pá cheia de gelo = 23 pedras." },
-      { category: "☕ McCafé · Receitas", question: "Quanto leite gelado leva o Chocolate Frio no liquidificador?", options: ["200ml", "240ml", "270ml", "300ml"], answer: "270ml", explanation: "Chocolate Frio: 270ml de leite integral gelado no liquidificador." },
-      { category: "☕ McCafé · Receitas", question: "Quanto tempo bate o Chocolate Frio no liquidificador?", options: ["20 segundos", "30 segundos", "40 segundos", "60 segundos"], answer: "40 segundos", explanation: "Chocolate Frio: bater 40 segundos na velocidade máxima." },
-      { category: "☕ McCafé · Receitas", question: "Qual o volume do café coado adicionado ao Iced Latte?", options: ["50ml", "80ml", "100ml", "150ml"], answer: "100ml", explanation: "Iced Latte: 100ml de café coado sobre o gelo (além de 100ml de leite integral)." },
-
-      // Procedimentos
-      { category: "⚙️ McCafé · Procedimentos", question: "Quantos gramas de pó para 1 café espresso?", options: ["4 a 6g", "8 a 10g", "12 a 14g", "16 a 18g"], answer: "8 a 10g", explanation: "1 café espresso = 8 a 10g de pó. 2 cafés ou duplo = 16 a 20g." },
-      { category: "⚙️ McCafé · Procedimentos", question: "O que ocorre com a moagem muito fina?", options: ["Café ácido e fraco", "Café amargo por excesso de extração", "Café sem corpo", "Café com gosto de água"], answer: "Café amargo por excesso de extração", explanation: "Moagem fina → água passa devagar → café amargo. Moagem grossa → água passa rápido → café ácido." },
-      { category: "⚙️ McCafé · Procedimentos", question: "Qual a quantidade máxima de ovos por rodada na chapa?", options: ["4 ovos", "6 ovos", "8 ovos", "10 ovos"], answer: "8 ovos", explanation: "Máximo 8 ovos por rodada. Máximo 5 ovos por gaveta UHC." },
-      { category: "⚙️ McCafé · Procedimentos", question: "Qual a ordem de montagem da bandeja pelo gerente RDM?", options: ["Bebidas quentes → vitrine → geladas", "Geladas → vitrine → quentes", "Vitrine → geladas → quentes (por último)", "Quentes → vitrine → geladas"], answer: "Vitrine → geladas → quentes (por último)", explanation: "Ordem: Produtos da vitrine → Bebidas geladas → Bebidas quentes (sempre por último)." },
-      { category: "⚙️ McCafé · Procedimentos", question: "Qual a validade do leite aberto mantido sob refrigeração?", options: ["12 horas", "24 horas", "48 horas", "72 horas"], answer: "48 horas", explanation: "Leite aberto deve ser mantido sob refrigeração com etiqueta de 48 horas." },
-      { category: "⚙️ McCafé · Procedimentos", question: "Quantas unidades máximas de Pão de Queijo na assadeira?", options: ["6 unidades", "8 unidades", "10 unidades", "12 unidades"], answer: "10 unidades", explanation: "Pão de Queijo: máximo 10 unidades por assadeira. Mini Pão de Queijo: máximo 24." },
-      { category: "⚙️ McCafé · Procedimentos", question: "Qual o tempo de ambientação dos bolos antes de fatiar?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "2 horas", explanation: "Os bolos devem ser ambientados por 2 horas antes de serem fatiados." }
-,
-      { category: "☕ McCafé · Procedimentos", question: "Qual o primeiro passo ao detectar 'READY TO CLEAN' na máquina de café?", options: ["Iniciar imediatamente a limpeza", "Verificar se há pedidos pendentes primeiro", "Desligar a máquina", "Chamar o gerente"], answer: "Iniciar imediatamente a limpeza", explanation: "Quando a máquina exibir READY TO CLEAN, iniciar o processo de limpeza imediatamente." },
-      { category: "☕ McCafé · Café Coado", question: "Quantos gramas de café são usados por preparo na cafeteira manual?", options: ["25g", "40g", "50g", "75g"], answer: "50g", explanation: "Cada preparo na cafeteira manual usa 1 pacote de 50g de café." },
-      { category: "🥤 McCafé · Bebidas Frias", question: "Qual botão usar no liquidificador para bater o Smoothie?", options: ["Botão 1", "Botão 3", "Botão 5", "Botão 7"], answer: "Botão 5", explanation: "Para bater o Smoothie usar o botão 5 da programação por 1 minuto." },
-      { category: "☕ McCafé · Espresso", question: "Quantos segundos deve escorrer a água antes de encaixar o porta-filtro?", options: ["1-2 segundos", "3-5 segundos", "8-10 segundos", "15 segundos"], answer: "3-5 segundos", explanation: "Antes de encaixar o porta-filtro, acionar o botão para liberar água por 3 a 5 segundos." },
-      { category: "🌡️ McCafé · Temperaturas", question: "Qual a temperatura da água da máquina espresso para calibração?", options: ["65-70°C", "70-75°C", "75-85°C", "85-90°C"], answer: "75-85°C", explanation: "A temperatura da água da máquina de café deve estar entre 75°C e 85°C." },
-      { category: "🥐 McCafé · Salgados", question: "Qual a quantidade máxima de Medialunas por assadeira?", options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"], answer: "8 unidades", explanation: "Máximo 8 Medialunas por assadeira antiaderente." },
-      { category: "🥐 McCafé · Salgados", question: "Qual a quantidade máxima de Waffle de Pão de Queijo por assadeira?", options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"], answer: "6 unidades", explanation: "Máximo 6 Waffles de Pão de Queijo por assadeira." },
-      { category: "🥛 McCafé · Leite", question: "Quanto leite usar para o Macchiato?", options: ["10ml", "20ml", "30ml", "50ml"], answer: "30ml", explanation: "Macchiato: Aere 30ml de leite + 1 Espresso Curto (30ml) = 50ml total." },
-      { category: "⚙️ McCafé · Equipamentos", question: "Qual o modelo de liquidificador usado no McCafé?", options: ["BlendTec ou Marchesoni", "Philips Walita", "Oster", "Qualquer liquidificador"], answer: "BlendTec ou Marchesoni", explanation: "O McCafé usa liquidificadores BlendTec (885 ou Furtividade) ou Marchesoni." },
-      { category: "⏱️ McCafé · Tempos", question: "Por quanto tempo deve ser ambientado o bolo antes de fatiar?", options: ["30 minutos", "1 hora", "2 horas", "4 horas"], answer: "2 horas", explanation: "Os bolos devem ser ambientados por 2 horas antes de fatiar." },
-      { category: "☕ McCafé · Modelos", question: "Qual modelo de McCafé não tem POS exclusivo?", options: ["Remoto", "Stand Alone", "InLine", "Corner"], answer: "Corner", explanation: "O McCafé Corner não tem POS exclusivo. Os produtos são vendidos no NGK, balcão, drive ou MOP." },
-      { category: "🥛 McCafé · Foamino", question: "O leite para estocagem na Foamino deve estar em que temperatura?", options: ["Gelado da geladeira", "Temperatura ambiente", "Morno (35-40°C)", "Quente (50-55°C)"], answer: "Temperatura ambiente", explanation: "O leite a ser estocado na máquina Foamino deve estar em temperatura ambiente." }
-    ];
 
     document.addEventListener("DOMContentLoaded", () => {
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
         if (quizPanel.classList.contains("active")) {
-          initQuiz(QUIZ_MCCAFE, "McCafé");
+          initQuizFromJSON('mccafe', "McCafé");
           observer.disconnect();
         }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_MCCAFE, "McCafé");
+      if (quizPanel.classList.contains("active")) initQuizFromJSON('mccafe', "McCafé");
     });
   </script>
 

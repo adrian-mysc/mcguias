@@ -1,6 +1,45 @@
 {
   "versions": [
     {
+      "version": "v16",
+      "date": "2026-08-07",
+      "date_display": "07 Ago 2026",
+      "badge": "Banco único de perguntas",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "🗂️",
+          "text": "**As perguntas agora moram num lugar só** — cada guia tinha uma cópia própria do quiz escrita dentro da página, paralela ao banco oficial. Eram dois bancos para a mesma pergunta: corrigir num lugar deixava o outro errado. Agora todo guia lê de `data/questions/`.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "➕",
+          "text": "**+364 perguntas passaram a contar** — perguntas que só existiam dentro do HTML estavam invisíveis para o SRS, o mapa de fraquezas, as tags e as estatísticas. Foram incorporadas ao banco e agora entram na revisão espaçada como todas as outras.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🩹",
+          "text": "**Contradições que vinham da duplicação, resolvidas** — fritadeira de frango e tortas a **180 °C** (não 168 °C), McChicken **3′15″**, tortas **6 min**, McNífico no **pão Quarterão**, Big Tasty com **2 fatias de queijo embaixo e 1 em cima** e gaveta da UHC com **4 pilhas de 3 carnes 10:1 (12 no total)**.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "🐛",
+          "text": "**Quiz de Supervisores e de Fechamento não abriam** — em Supervisores a aba ficava vazia; em Fechamento o quiz tentava iniciar antes do script carregar. Ambos corrigidos.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "⚡",
+          "text": "**Flashcard e Lacunas voltaram a funcionar** em Fechamento, Estoque, Segurança do Alimento e Supervisores — os botões existiam mas não faziam nada porque as perguntas nunca chegavam a esses modos.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "📉",
+          "text": "**Páginas mais de 2.100 linhas mais leves** — sem o quiz duplicado no HTML, os guias abrem mais rápido e as perguntas passam a ser cacheadas separadamente pelo app.",
+          "tag": "melhoria"
+        }
+      ]
+    },
+    {
       "version": "v15",
       "date": "2026-08-06",
       "date_display": "06 Ago 2026",

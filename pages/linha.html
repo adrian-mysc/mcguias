@@ -331,125 +331,14 @@
 
   <script src="../js/main.js" defer></script>
   <script>
-    const QUIZ_LINHA = [
-      // ── Material oficial (PDF) — adicionadas via extração ──
-      {
-        category: "🍞 Tostadeira",
-        question: "Qual a temperatura da Tostadeira rápida na linha?",
-        options: ["275°C", "293°C", "218°C", "168°C"],
-        answer: "293°C",
-        explanation: "A Tostadeira rápida opera a 293°C, com ciclo de caramelização de 22 segundos."
-      },
-      {
-        category: "🍞 Tostadeira",
-        question: "Qual a temperatura das placas A e B da Tostadeira HEBT5V?",
-        options: ["250°C", "254°C", "271°C", "300°C"],
-        answer: "271°C",
-        explanation: "A Tostadeira HEBT5V opera com placas A e B a 271°C e placa C a 254°C, com compressão 4D e ciclo de caramelização de 22 segundos."
-      },
-      {
-        category: "🍞 Tostadeira",
-        question: "Quantos segundos dura o ciclo de caramelização (tostagem) dos pães?",
-        options: ["15 segundos", "18 segundos", "22 segundos", "30 segundos"],
-        answer: "22 segundos",
-        explanation: "O ciclo de caramelização dos pães é de 22 segundos em ambas as tostadeiras."
-      },
-      {
-        category: "⚙️ Iniciador",
-        question: "Qual é o tempo de reação do Iniciador para ativar os pães?",
-        options: ["1 a 2 segundos", "3 a 5 segundos", "6 a 8 segundos", "10 segundos"],
-        answer: "3 a 5 segundos",
-        explanation: "O Iniciador deve ter um tempo de reação de 3 a 5 segundos para a ativada dos pães."
-      },
-      {
-        category: "⚙️ Procedimento",
-        question: "Em que configuração o monitor da linha deve estar?",
-        options: ["2x2", "4x2", "2x4", "6x2"],
-        answer: "4x2",
-        explanation: "O monitor da linha deve estar configurado em 4x2."
-      },
-      {
-        category: "⏱️ Linha",
-        question: "Qual é o tempo de linha esperado?",
-        options: ["20 a 30 segundos", "35 a 50 segundos", "50 a 70 segundos", "10 a 20 segundos"],
-        answer: "35 a 50 segundos",
-        explanation: "O tempo de linha é de 35 a 50 segundos."
-      },
-      {
-        category: "🌡️ UHC",
-        question: "Qual a temperatura das carnes 10:1, 4:1 e 3:1 na linha?",
-        options: ["79°C", "85°C", "93°C", "100°C"],
-        answer: "79°C",
-        explanation: "As carnes 10:1, 4:1 e 3:1 (vermelhas) ficam a 79°C na UHC. Carnes brancas (frango) ficam a 85°C."
-      },
-      {
-        category: "🌡️ UHC",
-        question: "Qual a temperatura das carnes de McNuggets, Chicken e Junior?",
-        options: ["85°C", "90°C", "93°C", "100°C"],
-        answer: "93°C",
-        explanation: "As carnes de McNuggets, Chicken e Junior ficam a 93°C."
-      },
-      {
-        category: "🧂 Mesa",
-        question: "Qual a faixa de temperatura da mesa de condimentação?",
-        options: ["40°C a 49°C", "49°C a 57°C", "57°C a 65°C", "60°C a 70°C"],
-        answer: "49°C a 57°C",
-        explanation: "A mesa de condimentação deve operar entre 49°C e 57°C."
-      },
-      {
-        category: "⚙️ Procedimento",
-        question: "Como devem ser posicionados a base e a coroa do pão na embalagem (sanduíche comum)?",
-        options: ["Coroa na direção da UHC/OAT e base no centro", "Base na direção da UHC/OAT e coroa no centro, em direção à tostadeira", "Ambas no centro", "Base e coroa na direção da tostadeira"],
-        answer: "Base na direção da UHC/OAT e coroa no centro, em direção à tostadeira",
-        explanation: "A base segue em direção à UHC/OAT e a coroa fica no centro, voltada para a tostadeira. Nos sanduíches Signature e Big Tasty é o contrário: base no centro da lâmina e coroa na direção da UHC/OAT."
-      },
-      { category: "🍞 Tostadeira", question: "Qual a temperatura das placas A e B da tostadeira?", options: ["254°C", "265°C", "271°C", "280°C"], answer: "271°C", explanation: "Placas A e B = 271°C. Placa C = 254°C." },
-      { category: "🍞 Tostadeira", question: "Qual o tempo de caramelização na tostadeira?", options: ["15 segundos", "18 segundos", "22 segundos", "30 segundos"], answer: "22 segundos", explanation: "O tempo de caramelização é de 22 segundos." },
-      { category: "🌡️ UHC", question: "Qual a temperatura da UHC para carnes vermelhas?", options: ["72°C", "75°C", "79°C", "85°C"], answer: "79°C", explanation: "UHC: carnes vermelhas = 79°C e carnes brancas = 85°C." },
-      { category: "🌡️ UHC", question: "Qual o tempo de vida do McCrispy na UHC?", options: ["20 minutos", "30 minutos", "45 minutos", "60 minutos"], answer: "60 minutos", explanation: "McCrispy: 60 min · McChicken: 30 min · McNuggets/McJunior: 20 min · Carnes vermelhas: 10 min." },
-      { category: "🌡️ UHC", question: "Qual o tempo de vida de carnes vermelhas na UHC?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "10 minutos", explanation: "Carnes vermelhas têm vida útil de 10 minutos na UHC." },
-      { category: "🧂 Mesa", question: "Qual a faixa de temperatura da mesa de condimentação?", options: ["35°C a 45°C", "42°C a 55°C", "49°C a 57°C", "55°C a 65°C"], answer: "49°C a 57°C", explanation: "A mesa de condimentação opera entre 49°C e 57°C." },
-      { category: "🧂 Mesa", question: "Para calibrar o Ketchup Regular, quantos tiros devem ser dados?", options: ["4 tiros", "6 tiros", "8 tiros", "47 tiros"], answer: "6 tiros", explanation: "Ketchup Regular: 6 tiros = 2 OZ / 60 ML." },
-      { category: "⏱️ Linha", question: "Qual é o tempo de linha estabelecido?", options: ["15 a 25 segundos", "25 a 35 segundos", "35 a 50 segundos", "50 a 60 segundos"], answer: "35 a 50 segundos", explanation: "O tempo de linha deve ser de 35 a 50 segundos." },
-      { category: "⏱️ Linha", question: "Em quantos segundos o iniciador deve reagir para ativar os pães?", options: ["1 a 2 segundos", "3 a 5 segundos", "5 a 8 segundos", "10 segundos"], answer: "3 a 5 segundos", explanation: "O tempo de reação para ativar os pães é de 3 a 5 segundos." },
-      { category: "🏪 Best Burger", question: "No Best Burger, qual pegador é usado para carnes sem cebola?", options: ["Pegador vermelho", "Pegador verde", "Pegador azul", "Pegador preto"], answer: "Pegador azul", explanation: "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola." },
-      { category: "🍞 Linha · Tostadeira", question: "Qual a temperatura da placa C da tostadeira?", options: ["220°C", "240°C", "254°C", "271°C"], answer: "254°C", explanation: "Placa C = 254°C. Placas A e B = 271°C." },
-      { category: "🍞 Linha · Tostadeira", question: "Quantos segundos o iniciador tem para reagir e ativar os pães?", options: ["1 a 2 segundos", "3 a 5 segundos", "5 a 8 segundos", "10 segundos"], answer: "3 a 5 segundos", explanation: "O tempo de reação para ativar os pães é de 3 a 5 segundos." },
-      { category: "🌡️ Linha · UHC", question: "Qual a temperatura da UHC para carnes brancas?", options: ["72°C", "79°C", "85°C", "90°C"], answer: "85°C", explanation: "UHC: carnes brancas = 85°C. Carnes vermelhas = 79°C." },
-      { category: "⏱️ Linha · UHC", question: "Qual o tempo de vida do McChicken na UHC?", options: ["10 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "30 minutos", explanation: "McChicken: 30 minutos na UHC." },
-      { category: "⏱️ Linha · UHC", question: "Qual o tempo de vida dos McNuggets e McJunior na UHC?", options: ["10 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "20 minutos", explanation: "McNuggets e McJunior têm 20 minutos de vida útil na UHC." },
-      { category: "🧂 Linha · Mesa", question: "Qual a temperatura da mesa de condimentação?", options: ["35°C a 45°C", "42°C a 55°C", "49°C a 57°C", "55°C a 65°C"], answer: "49°C a 57°C", explanation: "A mesa de condimentação opera entre 49°C e 57°C." },
-      { category: "⏱️ Linha · Tempo", question: "Qual o tempo de linha estabelecido?", options: ["15 a 25 segundos", "25 a 35 segundos", "35 a 50 segundos", "50 a 60 segundos"], answer: "35 a 50 segundos", explanation: "O tempo de linha deve ser de 35 a 50 segundos." },
-      { category: "🧂 Linha · Calibração", question: "Quantos tiros de Ketchup Regular equivalem a 2 OZ?", options: ["4 tiros", "6 tiros", "8 tiros", "10 tiros"], answer: "6 tiros", explanation: "Ketchup Regular: 6 tiros = 2 OZ / 60 ML." },
-      { category: "🏪 Linha · Best Burger", question: "Qual pegador é usado para carnes sem cebola no Best Burger?", options: ["Vermelho", "Verde", "Azul", "Preto"], answer: "Azul", explanation: "No Best Burger: pegador azul = carnes 4:1 e 10:1 sem cebola." },
-      { category: "🍞 Linha · Tostadeira", question: "Em que sentido o iniciador deve colocar os pães na tostadeira?", options: ["Qualquer sentido", "Com a face cortada para cima", "Com a face cortada voltada para as placas", "Alternando os lados"], answer: "Com a face cortada voltada para as placas", explanation: "Os pães devem ser posicionados com a face cortada voltada para as placas quentes da tostadeira." },
-      { category: "⚙️ Linha · Procedimento", question: "O que o finalizador deve fazer ao receber a base do sanduíche?", options: ["Aguardar o condimentador terminar", "Verificar qualidade, montar e fechar o sanduíche", "Chamar o iniciador para conferência", "Apenas embalar"], answer: "Verificar qualidade, montar e fechar o sanduíche", explanation: "O finalizador recebe a base, verifica qualidade, monta e fecha o sanduíche." },
-      { category: "⚙️ Linha · Procedimento", question: "Qual função monitora o PLS e determina quantas carnes produzir?", options: ["Iniciador", "Condimentador", "Chapeiro", "Finalizador"], answer: "Chapeiro", explanation: "O chapeiro observa o monitor PLS para determinar a quantidade correta de carnes a produzir." },
-      { category: "🧂 Linha · Mesa", question: "Qual o tempo de vida dos produtos na mesa de condimentação?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "Os produtos na mesa de condimentação têm vida útil de 2 horas, controlado pela placa de tempo secundário." },
-      { category: "⏱️ Linha · Tempos", question: "Quantos segundos o iniciador tem para reagir ao sinal e ativar os pães?", options: ["5 segundos", "8 segundos", "10 segundos", "15 segundos"], answer: "8 segundos", explanation: "O iniciador deve reagir em 8 segundos ao sinal e ativar os pães na tostadeira." },
-      { category: "⏱️ Linha · Tempos", question: "Qual o tempo de vida do pão após sair da tostadeira?", options: ["5 minutos", "10 minutos", "15 minutos", "30 minutos"], answer: "15 minutos", explanation: "O pão tostado tem vida útil de 15 minutos." },
-      { category: "🥩 Linha · Pré-pico", question: "Qual a quantidade máxima de carnes em estoque no pré-pico?", options: ["2 rodadas", "3 rodadas", "4 rodadas", "5 rodadas"], answer: "3 rodadas", explanation: "No pré-pico, o estoque máximo é de 3 rodadas de carnes para garantir frescor." },
-      { category: "🍞 Linha · Pão", question: "Qual pão é usado no Big Mac?", options: ["Pão regular", "Pão especial (com gergelim e camadas)", "Pão brioche", "Pão de hambúrguer simples"], answer: "Pão especial (com gergelim e camadas)", explanation: "O Big Mac usa o pão especial com 3 camadas (coroa, meio e base) com gergelim." },
-      { category: "⚙️ Linha · Comunicação", question: "Como o iniciador avisa o finalizador sobre um sanduíche sem acompanhamento padrão?", options: ["Por escrito no papel", "Verbalmente e com sinal no produto", "Pelo KVS automaticamente", "Não precisa avisar"], answer: "Verbalmente e com sinal no produto", explanation: "O iniciador comunica verbalmente e usa sinalização no produto para avisar o finalizador." },
-      { category: "🍞 Linha · Tostadeira", question: "Em que posição deve entrar o pão na tostadeira?", options: ["Lado cortado para baixo", "Lado cortado para cima", "Qualquer posição", "Depende do pão"], answer: "Lado cortado para baixo", explanation: "O pão deve entrar na tostadeira com o lado cortado para baixo (face de tostagem)." },
-      { category: "⚙️ Linha · KVS", question: "O que significa quando um item fica vermelho no KVS?", options: ["Item cancelado", "Item em espera há muito tempo — prioridade máxima", "Item pronto para entregar", "Falta de ingrediente"], answer: "Item em espera há muito tempo — prioridade máxima", explanation: "Item em vermelho no KVS indica que está esperando há muito tempo e deve ser priorizado." },
-      { category: "🥩 Linha · Carnes", question: "O que o iniciador deve checar antes de acionar os pães?", options: ["Apenas o tipo do lanche", "Se há carne disponível e o tempo correto na chapa", "Apenas a quantidade de pão disponível", "Nada, apenas acionar"], answer: "Se há carne disponível e o tempo correto na chapa", explanation: "Verificar se há carne no tempo correto na chapa antes de acionar os pães." },
-      { category: "⚙️ Linha · Posições", question: "Qual a principal responsabilidade do finalizador?", options: ["Preparar as carnes", "Tostar os pães", "Montar e condimentar os sanduíches", "Entregar ao cliente"], answer: "Montar e condimentar os sanduíches", explanation: "O finalizador é responsável por montar os sanduíches com os ingredientes corretos." },
-      { category: "🍞 Linha · Best Burger", question: "O que diferencia a montagem Best Burger da montagem convencional?", options: ["Ingredientes diferentes", "Montagem manual com carne plana e sem prensa", "Tempo de preparo menor", "Pão diferente"], answer: "Montagem manual com carne plana e sem prensa", explanation: "No Best Burger, a montagem é manual, com carne plana, sem prensa e com foco na apresentação." },
-      { category: "⏱️ Linha · Tempos", question: "Qual o tempo máximo entre o preparo e a entrega do sanduíche?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "10 minutos", explanation: "O sanduíche deve ser entregue em até 10 minutos após o preparo para garantir qualidade." },
-      { category: "⚙️ Linha · Expedidor", question: "Qual a função do expedidor na linha?", options: ["Preparar carnes", "Coordenar a montagem e garantir que pedidos saiam completos e no tempo", "Operar a tostadeira", "Controlar o estoque"], answer: "Coordenar a montagem e garantir que pedidos saiam completos e no tempo", explanation: "O expedidor coordena a linha, garante que os pedidos saiam corretos e no tempo." },
-      { category: "🥩 Linha · Carnes Best Burger", question: "Qual pegador usar para carnes com cebola no Best Burger?", options: ["Pegador vermelho", "Pegador azul", "Pegador amarelo", "Nenhum pegador específico"], answer: "Pegador vermelho", explanation: "No Best Burger, pegador vermelho para carnes com cebola e pegador azul para carnes sem cebola." },
-      { category: "⏱️ Linha · Tempos", question: "Qual o tempo máximo de preparo do pedido para o segmento balcão?", options: ["60 segundos", "90 segundos", "2 minutos", "3 minutos"], answer: "90 segundos", explanation: "O tempo meta para preparação de pedido no balcão é de 90 segundos." },
-      { category: "⚙️ Linha · Comunicação", question: "O que significa a sigla SOS na linha de produção?", options: ["Sistema de Operação do Sanduíche", "Speed of Service — velocidade de atendimento", "Serviço de Orientação ao Sanduíche", "Sinalização de Operação de Sucesso"], answer: "Speed of Service — velocidade de atendimento", explanation: "SOS = Speed of Service, indicador de velocidade de atendimento monitorado no restaurante." }
-    ];
 
     document.addEventListener("DOMContentLoaded", () => {
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
-        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_LINHA, 'Linha'); observer.disconnect(); }
+        if (quizPanel.classList.contains("active")) { initQuizFromJSON('linha', 'Linha'); observer.disconnect(); }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_LINHA, 'Linha');
+      if (quizPanel.classList.contains("active")) initQuizFromJSON('linha', 'Linha');
     });
   </script>
 

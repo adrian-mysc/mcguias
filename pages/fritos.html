@@ -317,125 +317,14 @@
 
   <script src="../js/main.js" defer></script>
   <script>
-    const QUIZ_FRITOS = [
-      // ── Material oficial (PDF) — adicionadas via extração ──
-      {
-        category: "🌡️ Fritos · Temperatura",
-        question: "Qual a temperatura das fritadeiras para produtos de frango e tortas?",
-        options: ["168°C", "175°C", "180°C", "190°C"],
-        answer: "180°C",
-        explanation: "As fritadeiras de frango e tortas operam a 180°C."
-      },
-      {
-        category: "⏱️ Fritos · UHC",
-        question: "Qual o tempo de validade do McChicken na UHC?",
-        options: ["15 minutos", "20 minutos", "30 minutos", "45 minutos"],
-        answer: "30 minutos",
-        explanation: "O McChicken tem validade de 30 minutos na UHC."
-      },
-      {
-        category: "⏱️ Fritos · UHC",
-        question: "Qual o tempo de validade do McNuggets e do McJunior na UHC?",
-        options: ["15 minutos", "20 minutos", "30 minutos", "45 minutos"],
-        answer: "20 minutos",
-        explanation: "McNuggets e McJunior têm validade de 20 minutos na UHC."
-      },
-      {
-        category: "⏱️ Fritos · Tempos",
-        question: "Qual o tempo de fritura do McChicken, McJunior e McNuggets?",
-        options: ["3'10\"", "3'15\"", "6'", "2'45\""],
-        answer: "3'15\"",
-        explanation: "O tempo de fritura de McChicken, McJunior e McNuggets é de 3'15\"."
-      },
-      {
-        category: "🥧 Fritos · Tortas",
-        question: "Qual o tempo de fritura das tortas?",
-        options: ["3 minutos", "4 minutos", "6 minutos", "8 minutos"],
-        answer: "6 minutos",
-        explanation: "As tortas fritam por 6 minutos, em cuba a 180°C."
-      },
-      {
-        category: "🥧 Fritos · Tortas",
-        question: "Qual o tempo de resfriamento das tortas?",
-        options: ["10 minutos", "15 minutos", "20 minutos", "30 minutos"],
-        answer: "20 minutos",
-        explanation: "O tempo de resfriamento das tortas é de 20 minutos."
-      },
-      {
-        category: "🥧 Fritos · Tortas",
-        question: "Qual o tempo total de vida das tortas?",
-        options: ["120 minutos", "180 minutos", "240 minutos", "300 minutos"],
-        answer: "240 minutos",
-        explanation: "O tempo total de vida das tortas é de 240 minutos (inclui o resfriamento de 20 min; marca-se 2h40)."
-      },
-      {
-        category: "🥧 Fritos · Tortas",
-        question: "Como a torta deve ser colocada no cesto de fritura?",
-        options: ["Com a costura para cima", "Com a costura para baixo", "Deitada na lateral", "Em pé"],
-        answer: "Com a costura para cima",
-        explanation: "Coloca-se a torta no cesto com a costura para cima, encostando a parte superior na lâmina que separa os espaços do cesto."
-      },
-      {
-        category: "🍗 Fritos · McNuggets",
-        question: "O que fazer com o cesto de McNuggets antes de ativar o timer?",
-        options: ["Salgar as carnes", "Sacudir o cesto para distribuir as carnes", "Tampar a cuba", "Escorrer o óleo"],
-        answer: "Sacudir o cesto para distribuir as carnes",
-        explanation: "No McNuggets, sacuda o cesto para distribuir as carnes antes de ativar o timer."
-      },
-      {
-        category: "🍗 Fritos · Frango",
-        question: "Qual a cor do pegador usado para as carnes de frango (exceto McNuggets)?",
-        options: ["Verde", "Preto", "Bege", "Azul"],
-        answer: "Preto",
-        explanation: "Mantenha 1 pegador preto para as carnes de frango (exceto McNuggets)."
-      },
-      { category: "🌡️ Temperatura", question: "Qual a temperatura da fritadeira para produtos de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "A fritadeira para frango e tortas opera a 180°C." },
-      { category: "🌡️ Temperatura", question: "Qual a temperatura da UHC para carnes brancas?", options: ["72°C", "79°C", "85°C", "90°C"], answer: "85°C", explanation: "A UHC para carnes brancas opera a 85°C." },
-      { category: "⏱️ Tempo de Fritura", question: "Qual o tempo de fritura de Nuggets, McChicken e Junior?", options: ["2min30s", "3min00s", "3min15s", "4min00s"], answer: "3min15s", explanation: "Nuggets, Chicken e Junior têm tempo de fritura de 3 minutos e 15 segundos." },
-      { category: "⏱️ Tempo de Fritura", question: "Qual o tempo de fritura do McCrispy?", options: ["3min15s", "4min00s", "5min00s", "6min"], answer: "6min", explanation: "McCrispy e Tortas: 6 minutos." },
-      { category: "⏱️ UHC", question: "Qual o tempo de vida do McCrispy na UHC?", options: ["20 minutos", "30 minutos", "45 minutos", "60 minutos"], answer: "60 minutos", explanation: "McCrispy: 60 min · McChicken: 30 min · McNuggets/McJunior: 20 min." },
-      { category: "⏱️ UHC", question: "Qual o tempo de vida do McChicken na UHC?", options: ["10 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "30 minutos", explanation: "McChicken: 30 minutos na UHC." },
-      { category: "⏱️ UHC", question: "Qual o tempo de vida dos McNuggets e McJunior na UHC?", options: ["10 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "20 minutos", explanation: "McNuggets e McJunior: 20 minutos na UHC." },
-      { category: "📦 Capacidade", question: "Qual a capacidade máxima de McNuggets no cesto?", options: ["12 unidades", "16 unidades", "20 unidades", "24 unidades"], answer: "24 unidades", explanation: "McNuggets: 24 unid. · McChicken: 6 · Chicken Jr: 6 · Crispy: 4 · Tortas: 16." },
-      { category: "📦 Capacidade", question: "Qual a capacidade máxima de tortas no cesto?", options: ["8 unidades", "12 unidades", "16 unidades", "20 unidades"], answer: "16 unidades", explanation: "A capacidade máxima do cesto de tortas é de 16 unidades." },
-      { category: "🥧 Tortas", question: "Qual o tempo total de validade das tortas após a fritura?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "As tortas têm 2 horas de validade total, incluindo os 20 minutos de resfriamento." },
-      { category: "🥧 Tortas", question: "Com qual lado voltado para cima as tortas devem ser colocadas na bandeja de resfriamento?", options: ["Costura para cima", "Lado liso para cima", "\"Barriga\" (bolhas) para cima", "Qualquer lado"], answer: "\"Barriga\" (bolhas) para cima", explanation: "As tortas devem ser colocadas com a 'barriga' (bolhas) voltada para cima durante o resfriamento." },
-      { category: "🌡️ Fritos · Temperatura", question: "Qual a temperatura da fritadeira para McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "McFritas = 168°C. Frango e tortas = 180°C." },
-      { category: "⏱️ Fritos · Tempos", question: "Qual o tempo de fritura das tortas?", options: ["3min15s", "4min00s", "5min00s", "6min"], answer: "6min", explanation: "McCrispy e tortas têm tempo de fritura de 6 minutos." },
-      { category: "📦 Fritos · Capacidade", question: "Quantos McChicken cabem em um cesto?", options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"], answer: "6 unidades", explanation: "McChicken: 6 por cesto. McNuggets: 24. Chicken Jr: 6. Crispy: 4. Tortas: 16." },
-      { category: "📦 Fritos · Capacidade", question: "Quantos McCrispy cabem em um cesto?", options: ["2 unidades", "4 unidades", "6 unidades", "8 unidades"], answer: "4 unidades", explanation: "McCrispy: 4 por cesto de fritura." },
-      { category: "🥧 Fritos · Tortas", question: "Em que posição as tortas devem ser colocadas na bandeja de resfriamento?", options: ["Costura para cima", "Lado liso para cima", "Barriga (bolhas) para cima", "Qualquer lado"], answer: "Barriga (bolhas) para cima", explanation: "As tortas devem ser colocadas com a barriga (bolhas) para cima durante o resfriamento." },
-      { category: "⏱️ Fritos · UHC", question: "Qual o tempo de vida útil total das tortas após a fritura?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "As tortas têm 2 horas de validade total (incluindo os 20 min de resfriamento)." },
-      { category: "⚙️ Fritos · Procedimento", question: "O que deve ser feito com o óleo antes de fritar novos produtos?", options: ["Nada, pode fritar diretamente", "Verificar a temperatura correta", "Filtrar o óleo", "Aguardar 5 minutos"], answer: "Verificar a temperatura correta", explanation: "Sempre verificar se o óleo atingiu a temperatura correta antes de iniciar nova rodada de fritura." },
-      { category: "🌡️ Fritos · Temperatura", question: "Qual a temperatura mínima interna do frango após a fritura?", options: ["70°C", "74°C", "77°C", "85°C"], answer: "74°C", explanation: "A temperatura interna mínima dos produtos de frango após a fritura deve ser de 74°C (165°F)." },
-      { category: "📦 Fritos · Capacidade", question: "Quantos Chicken Jr. cabem em um cesto?", options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"], answer: "6 unidades", explanation: "Chicken Jr.: 6 por cesto, mesmo quantidade que o McChicken." },
-      { category: "⚙️ Fritos · Procedimento", question: "Qual o procedimento correto ao notar que o óleo está escuro ou com mau cheiro?", options: ["Continuar usando até atingir 24% de compostos polares", "Descartar imediatamente e trocar", "Filtrar mais vezes", "Adicionar óleo novo para diluir"], answer: "Descartar imediatamente e trocar", explanation: "Óleo com cor escura, fumaça excessiva ou odor estranho deve ser descartado imediatamente." },
-      { category: "🍗 Fritos · Temperaturas", question: "Qual a temperatura das fritadeiras de frango e tortas?", options: ["160°C", "168°C", "175°C", "180°C"], answer: "180°C", explanation: "A temperatura das fritadeiras de frango e tortas é 180°C (356°F). As McFritas usam 168°C." },
-      { category: "🍗 Fritos · Qualidade do Óleo", question: "O que indica que o óleo precisa ser descartado além dos Compostos Polares?", options: ["Cor dourada clara", "Odor desagradável, cor escura ou espuma excessiva", "Temperatura abaixo do normal", "Consumo excessivo de batatas"], answer: "Odor desagradável, cor escura ou espuma excessiva", explanation: "Descartar quando: odor desagradável, cor escura, espuma excessiva ou Compostos Polares acima do limite." },
-      { category: "⏱️ Fritos · Tempos", question: "Qual o tempo de fritura dos McNuggets?", options: ["1min30s", "2min30s", "3min15s", "4min"], answer: "3min15s", explanation: "McNuggets, McChicken e Chicken Jr têm tempo de fritura de 3 minutos e 15 segundos." },
-      { category: "🍗 Fritos · McNuggets", question: "Como devem ser posicionados os McNuggets no cesto?", options: ["Todos na vertical", "Espalhados em camada única", "Empilhados no máximo 3", "Em qualquer posição"], answer: "Espalhados em camada única", explanation: "Os McNuggets devem ser espalhados em camada única no cesto para fritura uniforme." },
-      { category: "🍗 Fritos · Frango", question: "Qual o tempo de fritura do McChicken (frango prensado)?", options: ["2min30s", "3min", "3min15s", "4min"], answer: "3min15s", explanation: "O McChicken (frango prensado) leva 3min15s de fritura a 180°C." },
-      { category: "🛢️ Fritos · Óleo", question: "Qual o intervalo de verificação dos Compostos Polares do óleo?", options: ["A cada turno", "A cada 2 horas durante o pico", "Diariamente uma vez", "Semanalmente"], answer: "A cada turno", explanation: "Os Compostos Polares devem ser verificados a cada turno de operação." },
-      { category: "🍗 Fritos · Frango", question: "Qual a temperatura interna mínima do frango após a fritura?", options: ["65°C", "70°C", "74°C", "80°C"], answer: "74°C", explanation: "A temperatura interna mínima do frango após fritura deve ser 74°C." },
-      { category: "🛢️ Fritos · Óleo", question: "Quando deve ser feita a filtragem do óleo?", options: ["Apenas uma vez por semana", "A cada 4 horas de uso ou no pré-pico", "Somente quando o óleo estiver escuro", "Uma vez por turno"], answer: "A cada 4 horas de uso ou no pré-pico", explanation: "Filtrar o óleo a cada 4 horas de uso ou no pré-pico para prolongar a vida útil." },
-      { category: "⏱️ Fritos · Tempos", question: "Qual o tempo de fritura das tortas de maçã e frango?", options: ["3min", "4min", "5min", "6min"], answer: "6min", explanation: "As tortas (frango e maçã) levam 6 minutos de fritura a 180°C." },
-      { category: "🍗 Fritos · UHC", question: "Como identificar os produtos na UHC para controle de validade?", options: ["Por cor do cesto", "Pelo timer do equipamento ou etiqueta de tempo", "Apenas pela memória", "Pelo cheiro"], answer: "Pelo timer do equipamento ou etiqueta de tempo", explanation: "Usar o timer da UHC ou etiqueta de tempo para controlar a validade de cada produto." },
-      { category: "🍗 Fritos · Segurança", question: "O que fazer se o óleo pegar fogo?", options: ["Jogar água no óleo", "Usar extintor de CO2 ou abafar com tampa", "Deixar apagar sozinho", "Ligar o exaustor"], answer: "Usar extintor de CO2 ou abafar com tampa", explanation: "Em caso de fogo no óleo: NUNCA jogar água. Usar extintor de CO2 ou abafar com a tampa." },
-      { category: "🍗 Fritos · McNuggets", question: "Quantos McNuggets cabem por porção de cada tamanho?", options: ["4, 6 e 10", "4, 6 e 8", "6, 9 e 12", "6, 10 e 15"], answer: "4, 6 e 10", explanation: "As porções de McNuggets são: 4 unidades, 6 unidades e 10 unidades." },
-      { category: "⏱️ Fritos · Tempos", question: "Qual o tempo de fritura do Chicken Select (filé)?", options: ["3min", "3min30s", "4min", "4min30s"], answer: "4min", explanation: "O Chicken Select (filé crocante) leva 4 minutos de fritura." },
-      { category: "🍗 Fritos · Tempos", question: "Qual o tempo de fritura do McChicken (frango prensado)?", options: ["2min30s", "3min", "3min15s", "4min"], answer: "3min15s", explanation: "O McChicken (frango prensado) leva 3 minutos e 15 segundos de fritura a 180°C." },
-      { category: "🍗 Fritos · Tempos", question: "Qual o tempo de fritura do Chicken Select (filé crocante)?", options: ["3min", "3min30s", "4min", "4min30s"], answer: "4min", explanation: "O Chicken Select (filé crocante) leva 4 minutos de fritura a 180°C." },
-      { category: "🍗 Fritos · Qualidade", question: "Qual a temperatura interna mínima do frango após fritura?", options: ["65°C", "70°C", "74°C", "80°C"], answer: "74°C", explanation: "A temperatura interna mínima do frango após a fritura deve ser 74°C." },
-      { category: "🍗 Fritos · McNuggets", question: "Qual o número máximo de McNuggets por cesto de fritura?", options: ["12 unidades", "18 unidades", "24 unidades", "30 unidades"], answer: "24 unidades", explanation: "O cesto comporta no máximo 24 unidades de McNuggets por rodada de fritura." }
-    ];
 
     document.addEventListener("DOMContentLoaded", () => {
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
-        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_FRITOS, 'Fritos'); observer.disconnect(); }
+        if (quizPanel.classList.contains("active")) { initQuizFromJSON('fritos', 'Fritos'); observer.disconnect(); }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_FRITOS, 'Fritos');
+      if (quizPanel.classList.contains("active")) initQuizFromJSON('fritos', 'Fritos');
     });
   </script>
 

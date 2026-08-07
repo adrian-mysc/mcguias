@@ -220,11 +220,11 @@
       "alternativas": [
         "Queijo Mussarela",
         "Queijo Cheddar",
-        "Queijo Emmental",
+        "Queijo Emental",
         "Queijo Prato"
       ],
       "respostaCorreta": 2,
-      "explicacao": "O Big Tasty usa Queijo Emental — 2 fatias em cima e 1 fatia embaixo das carnes.",
+      "explicacao": "O Big Tasty usa Queijo Emental — 2 fatias abaixo das carnes e 1 fatia acima.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -865,7 +865,7 @@
       ],
       "pergunta": "Qual queijo é usado no Big Mac?",
       "alternativas": [
-        "Queijo Emmental",
+        "Queijo Emental",
         "Queijo Mussarela",
         "Queijo Prato",
         "Queijo Cheddar"
@@ -912,15 +912,15 @@
         "queijo",
         "temperatura"
       ],
-      "pergunta": "Quantas fatias de queijo Emmental leva o Big Tasty?",
+      "pergunta": "Quantas fatias de queijo Emental leva o Big Tasty?",
       "alternativas": [
         "1 fatia",
         "2 fatias",
-        "3 fatias (2 em cima + 1 embaixo)",
+        "3 fatias (2 embaixo + 1 em cima)",
         "4 fatias"
       ],
       "respostaCorreta": 2,
-      "explicacao": "O Big Tasty usa 3 fatias de Queijo Emmental: 2 em cima e 1 embaixo das carnes.",
+      "explicacao": "O Big Tasty usa 3 fatias de Queijo Emental: 2 abaixo das carnes e 1 acima.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1019,8 +1019,8 @@
         "Pão Quarterão",
         "Pão de Batata"
       ],
-      "respostaCorreta": 1,
-      "explicacao": "O McNífico é servido no Pão Brioche.",
+      "respostaCorreta": 2,
+      "explicacao": "O McNífico é servido no Pão Quarterão.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2117,6 +2117,105 @@
       "respostaCorreta": 3,
       "explicacao": "O molho Big Mac tem 24 horas de tempo de vida na mesa de condimentação após aberto.",
       "dica": "Um dia inteiro após aberto.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_044",
+      "categoria": "condimentacao",
+      "subcategoria": "🏆 Cond · Brabíssimo Clubhouse",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cebola",
+        "temperatura"
+      ],
+      "pergunta": "Qual a quantidade de Cebola Shoyu no Brabíssimo Clubhouse?",
+      "alternativas": [
+        "5g",
+        "10g",
+        "15g",
+        "20g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Brabíssimo Clubhouse leva Cebola Shoyu 15g.",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "condimentacao_045",
+      "categoria": "condimentacao",
+      "subcategoria": "🍔 Condimentação · Big Mac",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "frequencia",
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos tiros de molho Big Mac leva cada nível do sanduíche?",
+      "alternativas": [
+        "0,5oz em cada",
+        "1oz na base e 0,5oz no meio",
+        "0,75oz em cada nível",
+        "1oz na base, 0,5oz no meio"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O molho Big Mac leva 15 ml (1/2oz) em cada nível, dispensado com a pistola Flex Prep em 1 ponto de saída.",
+      "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
       "peso": 1,

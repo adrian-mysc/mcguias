@@ -4015,13 +4015,13 @@
       ],
       "pergunta": "Como as carnes 10:1 devem ser colocadas na gaveta?",
       "alternativas": [
-        "De 4 em 4, máximo 4 pilhas",
+        "De 3 em 3, máximo 4 pilhas",
         "Todas juntas em 1 pilha",
-        "De 3 em 3, máximo 3 pilhas",
-        "De 2 em 2, máximo 2 pilhas"
+        "De 3 em 3, máximo 2 pilhas",
+        "De 4 em 4, máximo 4 pilhas"
       ],
-      "respostaCorreta": 2,
-      "explicacao": "As carnes 10:1 são colocadas de 3 em 3 (centro primeiro, depois as pontas), formando no máximo 3 pilhas. Timer da UHC no Best Burger: 10'.",
+      "respostaCorreta": 0,
+      "explicacao": "As carnes 10:1 são colocadas de 3 em 3 (centro primeiro, depois as pontas), formando no máximo 4 pilhas — 12 carnes na gaveta. Timer da UHC no Best Burger: 10′.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -4172,6 +4172,60 @@
       "respostaCorreta": 0,
       "explicacao": "As chapas devem ser raspadas a cada rodada de produção.",
       "dica": "É por rodada, não por relógio.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": []
+    },
+    {
+      "id": "chapa_153",
+      "categoria": "chapa",
+      "subcategoria": "📦 UHC",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "4:1",
+        "angulo",
+        "carne",
+        "temperatura",
+        "tempo",
+        "uhc",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida das carnes vermelhas (10:1, 3:1, 4:1) na UHC?",
+      "alternativas": [
+        "10 minutos",
+        "15 minutos",
+        "20 minutos",
+        "30 minutos"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "As carnes vermelhas têm tempo de vida de 10 minutos na UHC.",
+      "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
       "peso": 1,
