@@ -19,10 +19,10 @@
       ],
       "pergunta": "Qual mensagem aparece na tela quando a chapa está pronta para limpeza?",
       "alternativas": [
-        "CLEAN READY",
+        "CLEAN MODE ON",
         "READY TO CLEAN",
         "START CLEANING",
-        "CLEAN MODE ON"
+        "CLEAN READY"
       ],
       "respostaCorreta": 1,
       "explicacao": "Aguardar o sinal luminoso e a mensagem READY TO CLEAN na tela antes de iniciar a limpeza.",
@@ -117,12 +117,12 @@
       ],
       "pergunta": "Como devem ser recolocados os Teflons ao final da limpeza diária da chapa?",
       "alternativas": [
-        "Todos do mesmo lado",
         "Alternando lados pares e ímpares",
-        "Sempre com o lado limpo para cima",
-        "Na mesma posição que estavam"
+        "Todos do mesmo lado",
+        "Na mesma posição que estavam",
+        "Sempre com o lado limpo para cima"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Ao recolocar os Teflons, alternando os lados pares e ímpares.",
       "dica": "",
       "tempoEstimado": 15,
@@ -165,10 +165,10 @@
       ],
       "pergunta": "Com o que se enxágua a placa inferior da chapa?",
       "alternativas": [
-        "Pano seco",
         "Água fria e esponja",
+        "Apenas pano úmido",
         "Água morna e escova para altas temperaturas",
-        "Apenas pano úmido"
+        "Pano seco"
       ],
       "respostaCorreta": 2,
       "explicacao": "Enxaguar a placa inferior com água morna e a escova para altas temperaturas.",
@@ -217,11 +217,11 @@
       "pergunta": "Qual o primeiro passo antes de iniciar a limpeza diária da chapa?",
       "alternativas": [
         "Remover o Teflon",
+        "Esfregar com esponja",
         "Aplicar o produto",
-        "Garantir que o sistema de exaustão esteja ligado e ajustar para Clean Mode",
-        "Esfregar com esponja"
+        "Garantir que o sistema de exaustão esteja ligado e ajustar para Clean Mode"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Primeiro garantir que o sistema de exaustão esteja ligado, depois ajustar para Clean Mode.",
       "dica": "",
       "tempoEstimado": 15,
@@ -265,12 +265,12 @@
       ],
       "pergunta": "Qual modo deve ser selecionado no painel para a limpeza mensal da chapa?",
       "alternativas": [
-        "CLEAN MODE",
         "RECOVERY (285°F)",
-        "DEEP CLEAN",
-        "WASH MODE"
+        "WASH MODE",
+        "CLEAN MODE",
+        "DEEP CLEAN"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Para a limpeza mensal (Best Burger), selecionar RECOVERY (285°F) no painel de controle.",
       "dica": "",
       "tempoEstimado": 15,
@@ -368,12 +368,12 @@
       ],
       "pergunta": "No que devem ser sanitizadas as abraçadeiras e barras removidas na limpeza mensal?",
       "alternativas": [
+        "Máquina de lavar",
         "Balde com sanitizante",
-        "Sistema de 3 cubas",
         "Cuba com água quente",
-        "Máquina de lavar"
+        "Sistema de 3 cubas"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Lave, enxágue e sanitize as abraçadeiras e barras no sistema de 3 cubas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -421,12 +421,12 @@
       ],
       "pergunta": "Para que serve o rodinho de borracha na limpeza mensal da chapa?",
       "alternativas": [
-        "Esfregar a superfície",
         "Empurrar o limpador para dentro das canaletas",
+        "Aplicar o sanitizante",
         "Remover o excesso de água",
-        "Aplicar o sanitizante"
+        "Esfregar a superfície"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Com o rodinho de borracha, empurrar o limpador de chapas para dentro das canaletas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -472,11 +472,11 @@
       "pergunta": "O que deve ser feito ANTES de iniciar a limpeza da tostadeira?",
       "alternativas": [
         "Aplicar o produto",
-        "Remover o Teflon",
         "Desligar a tostadeira e colocar luvas resistentes ao calor",
-        "Ligar o sistema de exaustão"
+        "Ligar o sistema de exaustão",
+        "Remover o Teflon"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "ANTES DE INICIAR: Desligar a Tostadeira e colocar luvas resistentes ao calor.",
       "dica": "",
       "tempoEstimado": 15,
@@ -571,12 +571,12 @@
       ],
       "pergunta": "O que NÃO se deve fazer ao limpar a correia da tostadeira?",
       "alternativas": [
+        "Girar as correias para limpar todas as seções",
         "Usar pano molhado com limpador",
         "Remover as correias da tostadeira",
-        "Girar as correias para limpar todas as seções",
         "Enxaguar com sanitizante"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "NOTA: Não remova as correias da tostadeira. Gire as correias para limpar todas as seções.",
       "dica": "",
       "tempoEstimado": 15,
@@ -623,10 +623,10 @@
       "alternativas": [
         "QSR Limpador de Chapas",
         "Água e sabão",
-        "Pano limpo embebido em solução Multiuso",
-        "Esponja abrasiva"
+        "Esponja abrasiva",
+        "Pano limpo embebido em solução Multiuso"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Limpar o exterior da tostadeira com pano limpo embebido em solução Multiuso.",
       "dica": "",
       "tempoEstimado": 15,
@@ -671,10 +671,10 @@
       ],
       "pergunta": "O que fazer com os panos após uso na limpeza da tostadeira?",
       "alternativas": [
-        "Reutilizar",
+        "Deixar secar ao ar",
         "Lavar e reaproveitar",
         "Descartar no balde de panos sujos",
-        "Deixar secar ao ar"
+        "Reutilizar"
       ],
       "respostaCorreta": 2,
       "explicacao": "Descartar os panos no balde de panos sujos após o uso.",
@@ -721,9 +721,9 @@
       ],
       "pergunta": "Qual a proporção de diluição do Desengordurante para a limpeza da pista?",
       "alternativas": [
-        "250ml produto + 750ml água",
-        "500ml produto + 500ml água",
         "750ml produto + 250ml água",
+        "500ml produto + 500ml água",
+        "250ml produto + 750ml água",
         "1 litro produto puro"
       ],
       "respostaCorreta": 1,
@@ -771,12 +771,12 @@
       ],
       "pergunta": "Por quanto tempo o desengordurante deve agir na pista?",
       "alternativas": [
-        "30 minutos",
         "1 hora",
         "3 horas",
-        "6 horas"
+        "6 horas",
+        "30 minutos"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Deixar agir por 3 horas. Para melhores resultados, aplicar no asfalto e deixar agir durante a noite.",
       "dica": "",
       "tempoEstimado": 15,
@@ -820,12 +820,12 @@
       ],
       "pergunta": "Por que não se deve aplicar o desengordurante em dias chuvosos?",
       "alternativas": [
-        "O produto perde eficácia com o frio",
-        "A chuva diluirá ou enxaguará o produto gerando desperdício",
         "Pode escorregar na pista",
-        "O produto reage com a água da chuva"
+        "O produto reage com a água da chuva",
+        "A chuva diluirá ou enxaguará o produto gerando desperdício",
+        "O produto perde eficácia com o frio"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Recomenda-se não aplicar em dias chuvosos pois a chuva diluirá ou enxaguará o produto gerando desperdício.",
       "dica": "",
       "tempoEstimado": 15,
@@ -870,11 +870,11 @@
       "pergunta": "Qual equipamento usar se ainda houver manchas após o procedimento padrão da pista?",
       "alternativas": [
         "Esponja abrasiva",
-        "Mais desengordurante puro",
         "Máquina de pressão VAP",
-        "Escova de ferro"
+        "Escova de ferro",
+        "Mais desengordurante puro"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Se após o procedimento ainda houver manchas, usar a máquina de pressão VAP.",
       "dica": "",
       "tempoEstimado": 15,
@@ -917,12 +917,12 @@
       ],
       "pergunta": "Quais EPIs são obrigatórios para a limpeza da pista?",
       "alternativas": [
-        "Apenas luvas",
-        "Luvas, óculos e máscara",
         "Luvas, Colete de PVC e Botas",
-        "Avental e luvas"
+        "Avental e luvas",
+        "Apenas luvas",
+        "Luvas, óculos e máscara"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "EPIs obrigatórios para limpeza da pista: Luvas, Colete de PVC e Botas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1068,11 +1068,11 @@
       "pergunta": "Quando se pode remover a placa de piso molhado após a limpeza profunda?",
       "alternativas": [
         "Imediatamente após limpar",
-        "Após 5 minutos",
         "Quando o piso estiver completamente seco",
-        "Após 30 minutos"
+        "Após 30 minutos",
+        "Após 5 minutos"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Só remova a placa de piso molhado quando o piso estiver completamente seco.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1163,12 +1163,12 @@
       ],
       "pergunta": "Por quanto tempo a solução deve agir nas pias e sanitários antes de esfregar?",
       "alternativas": [
+        "2 minutos",
         "30 segundos",
         "1 minuto",
-        "2 minutos",
         "5 minutos"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Aplicar a solução e deixar agir por 2 minutos antes de esfregar pias e sanitários.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1312,12 +1312,12 @@
       ],
       "pergunta": "Por quanto tempo os utensílios devem ficar na solução sanitizante?",
       "alternativas": [
-        "30 segundos",
         "1 minuto",
         "2 minutos",
-        "5 minutos"
+        "5 minutos",
+        "30 segundos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Colocar na solução sanitizante por 1 minuto. Todas as superfícies devem entrar em contato com o sanitizante.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1362,12 +1362,12 @@
       ],
       "pergunta": "Como devem ser posicionadas as cubas para secar após a sanitização?",
       "alternativas": [
+        "Empilhadas",
         "Direitas, abertas para cima",
         "De cabeça para baixo em posição de drenagem",
-        "Empilhadas",
         "Em qualquer posição"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Remova os itens; coloque as cubas de cabeça para baixo e as bandejas de lado, em posição de drenagem.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1460,11 +1460,11 @@
       "pergunta": "Qual a diluição manual do KAY Detergente Multiuso para utensílios?",
       "alternativas": [
         "20L água + 1 sachê",
+        "10L água + 2 sachês",
         "30L água + 1 sachê",
-        "40L água quente + 1 pacote",
-        "10L água + 2 sachês"
+        "40L água quente + 1 pacote"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Encher a cuba com 40L (10 gal) de água quente e despejar 1 pacote de detergente multiuso.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1506,12 +1506,12 @@
       ],
       "pergunta": "Qual a diluição manual do KAY Multi-superfícies e Vidros?",
       "alternativas": [
-        "1 sachê em 500ml",
         "1 sachê em 1L",
+        "1 sachê em 2L",
         "2 sachês em 1L",
-        "1 sachê em 2L"
+        "1 sachê em 500ml"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Diluição manual: diluir 1 sachê em uma garrafa de 1L.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1556,10 +1556,10 @@
       ],
       "pergunta": "Como devem ser lavados os panos da chapa, salão e banheiro?",
       "alternativas": [
-        "Todos juntos na mesma lavagem",
+        "Pode ser em qualquer combinação",
         "Chapa com salão, banheiro separado",
         "Todos separadamente",
-        "Pode ser em qualquer combinação"
+        "Todos juntos na mesma lavagem"
       ],
       "respostaCorreta": 2,
       "explicacao": "Importante: Lave os panos da chapa, salão e banheiro separadamente.",
@@ -1607,12 +1607,12 @@
       ],
       "pergunta": "O que deve ser feito com as calhas após a limpeza diária?",
       "alternativas": [
-        "Deixar molhadas",
-        "Remover sujeira, limpar com desengordurante e substituir",
+        "Não precisam ser limpas diariamente",
         "Apenas enxaguar com água",
-        "Não precisam ser limpas diariamente"
+        "Deixar molhadas",
+        "Remover sujeira, limpar com desengordurante e substituir"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Remover a sujeira das calhas, limpar com desengordurante e substituir.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1658,12 +1658,12 @@
       ],
       "pergunta": "O que é feito com as canaletas de gordura na limpeza mensal?",
       "alternativas": [
+        "Substituir por novas",
         "Apenas limpar por fora",
         "Desmontar, esvaziar, enxaguar e recolocar",
-        "Não são desmontadas",
-        "Substituir por novas"
+        "Não são desmontadas"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Na limpeza mensal: desmontar e esvaziar as canaletas de gordura, enxaguar e recolocar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1708,10 +1708,10 @@
       ],
       "pergunta": "O que fazer após remontar e conectar a tostadeira limpa?",
       "alternativas": [
-        "Deixar desligada até amanhã",
-        "Ligar imediatamente após conectar",
         "Aguardar 30 min antes de ligar",
-        "Testar com um pão antes de ligar"
+        "Ligar imediatamente após conectar",
+        "Testar com um pão antes de ligar",
+        "Deixar desligada até amanhã"
       ],
       "respostaCorreta": 1,
       "explicacao": "Após remontar: conectar a tostadeira e ligar imediatamente.",
@@ -1758,12 +1758,12 @@
       ],
       "pergunta": "Qual o equipamento para remover chiclete da pista?",
       "alternativas": [
-        "Escova de cerdas duras",
-        "Espátula",
         "Rodo",
-        "Mangueira de pressão"
+        "Escova de cerdas duras",
+        "Mangueira de pressão",
+        "Espátula"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Usar a espátula específica para remover chiclete da pista.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1856,12 +1856,12 @@
       ],
       "pergunta": "De onde para onde se move o rodo na limpeza de vidros?",
       "alternativas": [
-        "De baixo para cima",
-        "Da esquerda para direita",
         "Da parte superior para o meio, depois inferior",
-        "Em círculos"
+        "Em círculos",
+        "Da esquerda para direita",
+        "De baixo para cima"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Começar pela parte superior, puxar o rodo para baixo até o meio, depois limpar a metade inferior.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1907,12 +1907,12 @@
       ],
       "pergunta": "Qual o primeiro passo na lavagem de utensílios?",
       "alternativas": [
+        "Enxaguar em água corrente",
         "Colocar na solução de detergente",
         "Raspar os restos de comida e jogar no lixo",
-        "Enxaguar em água corrente",
         "Colocar no sanitizante"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O primeiro passo sempre é raspar os restos de comida e descartá-los antes de lavar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1957,9 +1957,9 @@
       ],
       "pergunta": "Qual produto usar para limpeza de pisos durante a operação?",
       "alternativas": [
-        "QSR Desengordurante puro",
-        "QSR Limpador de pisos (4 gal água + 1 pacote)",
         "QSR Multiuso",
+        "QSR Limpador de pisos (4 gal água + 1 pacote)",
+        "QSR Desengordurante puro",
         "Água quente apenas"
       ],
       "respostaCorreta": 1,
@@ -2052,12 +2052,12 @@
       ],
       "pergunta": "Qual produto é usado para limpeza das jarras de café?",
       "alternativas": [
-        "QSR Multiuso",
-        "QSR Detergente Concentrado",
         "QSR KAY Coffee Pot Cleaner",
+        "QSR Detergente Concentrado",
+        "QSR Multiuso",
         "Água quente apenas"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Usar QSR KAY Coffee Pot Cleaner para limpeza das jarras de café.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2102,12 +2102,12 @@
       ],
       "pergunta": "Com o que deve ser feita a limpeza final da placa inferior e frente?",
       "alternativas": [
-        "Esponja abrasiva",
-        "Pano limpo e sanitizado",
         "Apenas água morna",
-        "Produto QSR direto"
+        "Esponja abrasiva",
+        "Produto QSR direto",
+        "Pano limpo e sanitizado"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A limpeza final da placa inferior e frente é feita com pano limpo e sanitizado.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2152,11 +2152,11 @@
       "pergunta": "Onde se aplica a solução de limpeza de banheiro nas paredes?",
       "alternativas": [
         "Apenas na parte inferior",
-        "Pulverizar a solução e secar com pano limpo e seco",
         "Somente esfregar sem produto",
-        "Apenas no espelho"
+        "Apenas no espelho",
+        "Pulverizar a solução e secar com pano limpo e seco"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Nas paredes, espelho, portas: pulverizar a solução de limpeza para banheiros e secar com pano limpo e seco.",
       "dica": "",
       "tempoEstimado": 15,

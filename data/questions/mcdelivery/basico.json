@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-06-17",
+  "updatedAt": "2026-08-07",
   "categoria": "mcdelivery",
   "nivel": "basico",
   "migratedFrom": "MATERIAL DE ESTUDO (PDF oficial)",
@@ -20,10 +20,10 @@
       "alternativas": [
         "Antes do pedido ser pago",
         "Quando o cliente liga",
-        "Após o pedido aparecer na tela da OAT (e imprimir o Pick List)",
-        "Quando o entregador chega"
+        "Quando o entregador chega",
+        "Após o pedido aparecer na tela da OAT (e imprimir o Pick List)"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Inicie a montagem após o pedido aparecer na tela da OAT e imprima o Pick List do pedido.",
       "dica": "",
       "tempoEstimado": 15,
@@ -68,8 +68,8 @@
       "pergunta": "Como as McFritas devem ser acomodadas no saco?",
       "alternativas": [
         "Fora do saco",
-        "Deitadas",
         "Por cima do sanduíche",
+        "Deitadas",
         "Em pé"
       ],
       "respostaCorreta": 3,
@@ -116,12 +116,12 @@
       ],
       "pergunta": "O que fazer com a borda do saco que contém McFritas?",
       "alternativas": [
-        "Não é necessário dobrar",
-        "Dobrar duas vezes",
+        "Dobrar uma vez",
         "Lacrar a borda",
-        "Dobrar uma vez"
+        "Dobrar duas vezes",
+        "Não é necessário dobrar"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Não é necessário dobrar a borda do saco que tiver McFritas; finalize com o lacre no meio do saco.",
       "dica": "",
       "tempoEstimado": 15,
@@ -165,12 +165,12 @@
       ],
       "pergunta": "Onde o lacre deve ser colocado no saco com sanduíche e McFritas?",
       "alternativas": [
-        "Na borda superior",
         "No meio do saco",
+        "No fundo",
         "Na lateral",
-        "No fundo"
+        "Na borda superior"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Finalize com o lacre no meio do saco.",
       "dica": "",
       "tempoEstimado": 15,
@@ -214,12 +214,12 @@
       ],
       "pergunta": "Como as bebidas devem ser acomodadas no McDelivery?",
       "alternativas": [
-        "Soltas na sacola",
         "Junto com os sanduíches",
         "No suporte de copos, dentro do saco C lacrado",
+        "Soltas na sacola",
         "Em saco plástico comum"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Acomode as bebidas no suporte de copos dentro do saco C, lacre-o e coloque-o na sacola D+ ao lado do saco com os sanduíches.",
       "dica": "",
       "tempoEstimado": 15,
@@ -263,12 +263,12 @@
       ],
       "pergunta": "Além das tampas, com o que as sobremesas e milk-shakes são fechados?",
       "alternativas": [
-        "Papel alumínio",
-        "Lacre de papel",
+        "Plástico filme (filme PVC)",
         "Fita adesiva",
-        "Plástico filme (filme PVC)"
+        "Lacre de papel",
+        "Papel alumínio"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Para fechar sobremesas e milk-shakes, além das tampas, utilize plástico filme (filme PVC).",
       "dica": "",
       "tempoEstimado": 15,
@@ -312,12 +312,12 @@
       ],
       "pergunta": "O que solicitar ao entregador ao chegar para retirar o pedido?",
       "alternativas": [
+        "Que confira o troco",
         "Que informe a retirada do pedido no aplicativo",
         "Que assine um recibo",
-        "Que aguarde 5 minutos",
-        "Que confira o troco"
+        "Que aguarde 5 minutos"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Ao chegar o entregador, solicite que ele informe a retirada do pedido no aplicativo; feito isso, entregue a sacola para a BAG de transporte.",
       "dica": "",
       "tempoEstimado": 15,
@@ -361,12 +361,12 @@
       ],
       "pergunta": "Como o tablet do McDelivery deve ser mantido?",
       "alternativas": [
-        "Em qualquer carregador",
-        "Ligado com o carregador original e no suporte fechado",
         "Desligado para economizar bateria",
-        "Na mão do operador"
+        "Em qualquer carregador",
+        "Na mão do operador",
+        "Ligado com o carregador original e no suporte fechado"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Mantenha o tablet ligado com o carregador original e no suporte fechado.",
       "dica": "",
       "tempoEstimado": 15,
@@ -410,10 +410,10 @@
       ],
       "pergunta": "Qual selo faz parte dos suprimentos necessários do McDelivery?",
       "alternativas": [
-        "Selo de validade",
+        "Selo promocional",
         "Selo 'especial para você'",
         "Selo inviolável",
-        "Selo promocional"
+        "Selo de validade"
       ],
       "respostaCorreta": 2,
       "explicacao": "Entre os suprimentos do McDelivery está o selo inviolável (além de plástico filme, guardanapo e canudo de shake).",
@@ -459,12 +459,12 @@
       ],
       "pergunta": "Onde o saco C lacrado (com as bebidas) deve ser colocado?",
       "alternativas": [
+        "Na sacola D+, ao lado do saco com os sanduíches",
         "Em uma sacola separada",
         "Na BAG diretamente",
-        "No suporte de copos externo",
-        "Na sacola D+, ao lado do saco com os sanduíches"
+        "No suporte de copos externo"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Coloque o saco C lacrado na sacola D+, ao lado do saco com os sanduíches.",
       "dica": "",
       "tempoEstimado": 15,
@@ -508,12 +508,12 @@
       ],
       "pergunta": "Qual o aspecto que o cliente do segmento de delivery mais valoriza?",
       "alternativas": [
-        "Tipo de embalagem",
+        "Todas as anteriores",
         "A exatidão do pedido",
-        "As opções dos produtos",
-        "Todas as anteriores"
+        "Tipo de embalagem",
+        "As opções dos produtos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "O cliente de delivery valoriza todos esses aspectos: o tipo de embalagem, a exatidão do pedido e as opções de produtos.",
       "dica": "Não é só um deles.",
       "tempoEstimado": 15,
@@ -557,12 +557,12 @@
       ],
       "pergunta": "Quais são os aspectos fundamentais a considerar ao montar e preparar os pedidos do McDelivery?",
       "alternativas": [
-        "Rapidez, precisão e cuidado na montagem do pedido",
-        "Velocidade e tempo",
         "Qualidade e valor",
+        "Velocidade e tempo",
+        "Rapidez, precisão e cuidado na montagem do pedido",
         "Precisão e qualidade"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 2,
       "explicacao": "Ao montar e preparar pedidos do McDelivery, os aspectos fundamentais são rapidez, precisão e cuidado na montagem.",
       "dica": "São três aspectos, e um deles é o cuidado.",
       "tempoEstimado": 15,
@@ -657,12 +657,12 @@
       ],
       "pergunta": "Como deve ser validada a liberação do pedido para o entregador?",
       "alternativas": [
-        "Pelo nome do cliente informado no pedido",
         "Pelo código informado pelo entregador",
+        "Pelo nome do cliente informado no pedido",
         "Pelo número do pedido no saco",
         "Pelo aplicativo do entregador"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "A liberação deve ser realizada somente após validação do CÓDIGO informado pelo entregador — nunca pelo nome do cliente!",
       "dica": "",
       "tempoEstimado": 15,
@@ -704,12 +704,12 @@
       ],
       "pergunta": "Qual é o primeiro passo ao receber um pedido McDelivery?",
       "alternativas": [
-        "Imprimir o Pick List",
-        "Puxar o recall do POS imediatamente",
         "Separar os sacos",
-        "Verificar os produtos na OAT"
+        "Verificar os produtos na OAT",
+        "Puxar o recall do POS imediatamente",
+        "Imprimir o Pick List"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O primeiro passo é puxar o recall do POS imediatamente ao receber o pedido.",
       "dica": "",
       "tempoEstimado": 15,
@@ -752,12 +752,12 @@
       ],
       "pergunta": "Quando deve ser iniciada a montagem do pedido?",
       "alternativas": [
-        "Assim que o pedido chegar no POS",
-        "Após o pedido aparecer na tela da OAT e imprimir o Pick List",
         "Quando o entregador chegar",
-        "Após a dupla checagem"
+        "Após a dupla checagem",
+        "Após o pedido aparecer na tela da OAT e imprimir o Pick List",
+        "Assim que o pedido chegar no POS"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "A montagem começa após o pedido aparecer na OAT e após imprimir o Pick List.",
       "dica": "",
       "tempoEstimado": 15,
@@ -848,12 +848,12 @@
       ],
       "pergunta": "O que deve ser verificado na dupla checagem do pedido?",
       "alternativas": [
+        "Somente o valor total do pedido",
         "Apenas o número do pedido",
         "Tamanho, sabores e quantidade de cada item",
-        "Apenas os condimentos",
-        "Somente o valor total do pedido"
+        "Apenas os condimentos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "A dupla checagem verifica tamanho, sabores e quantidade de cada item. Também incluem-se condimentos, canudos e guardanapos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -898,12 +898,12 @@
       ],
       "pergunta": "O que deve ser feito após finalizar a montagem do saco?",
       "alternativas": [
-        "Entregar diretamente ao entregador",
-        "Fechar o saco com adesivos com Pick List e número do pedido, e sinalizar como PRONTO no Flex",
         "Aguardar o entregador pedir",
-        "Colocar em refrigeração"
+        "Colocar em refrigeração",
+        "Entregar diretamente ao entregador",
+        "Fechar o saco com adesivos com Pick List e número do pedido, e sinalizar como PRONTO no Flex"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Feche o saco com adesivos contendo Pick List e número do pedido, e sinalize como PRONTO no Flex para que o entregador realize a entrega.",
       "dica": "",
       "tempoEstimado": 15,
@@ -947,10 +947,10 @@
       "alternativas": [
         "Bobinas e Lacres",
         "Guardanapos",
-        "Tablet",
-        "Sacos D+"
+        "Sacos D+",
+        "Tablet"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "O Tablet é exclusivo do Carrinho Armado Completo com POS. O Tech Tower básico não inclui tablet.",
       "dica": "",
       "tempoEstimado": 15,
@@ -994,10 +994,10 @@
       ],
       "pergunta": "No layout Dual Point com mesa extensora, onde deve ficar o Mini ORB (Conferente)?",
       "alternativas": [
+        "Ao lado do tablet",
         "Próximo ao POS",
-        "No centro da mesa extensora",
         "Próximo à janela de entrega",
-        "Ao lado do tablet"
+        "No centro da mesa extensora"
       ],
       "respostaCorreta": 2,
       "explicacao": "No layout Dual Point, o Mini ORB (Conferente) deve ficar próximo à janela de entrega.",
@@ -1042,12 +1042,12 @@
       ],
       "pergunta": "Qual ação deve ser feita após finalizar o pedido no tablet?",
       "alternativas": [
-        "Acionar o botão PRONTO no tablet",
-        "Imprimir o Pick List novamente",
         "Ligar para o entregador",
-        "Registrar no POS"
+        "Acionar o botão PRONTO no tablet",
+        "Registrar no POS",
+        "Imprimir o Pick List novamente"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Após finalizar o pedido, deve-se acionar o botão PRONTO no tablet.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1091,12 +1091,12 @@
       ],
       "pergunta": "Qual é a importância da dupla checagem no McDelivery?",
       "alternativas": [
-        "Apenas para cumprir protocolo",
         "Para garantir tamanho, sabores, quantidade e condimentos corretos antes do fechamento",
+        "Para registrar o horário de entrega",
         "Para verificar se o entregador chegou",
-        "Para registrar o horário de entrega"
+        "Apenas para cumprir protocolo"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "A dupla checagem garante que o pedido está correto — tamanho, sabores, quantidade, condimentos, canudos e guardanapos — antes do fechamento definitivo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1140,11 +1140,11 @@
       "pergunta": "Como deve ser posicionado o saco dentro da sacola D?",
       "alternativas": [
         "Em pé",
-        "Dobrado na horizontal",
+        "Amarrado no topo",
         "Aberto para facilitar acesso",
-        "Amarrado no topo"
+        "Dobrado na horizontal"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O saco deve ser dobrado na horizontal antes de colocar dentro da sacola D.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1187,10 +1187,10 @@
       ],
       "pergunta": "O que deve ser feito logo após sinalizar o pedido como PRONTO no Flex?",
       "alternativas": [
-        "Aguardar o entregador chegar",
+        "Entregar pessoalmente",
         "O pedido fica disponível para o entregador realizar a entrega",
         "Ligar para o entregador",
-        "Entregar pessoalmente"
+        "Aguardar o entregador chegar"
       ],
       "respostaCorreta": 1,
       "explicacao": "Ao sinalizar PRONTO no Flex, o entregador recebe a notificação e pode realizar a entrega.",
@@ -1234,10 +1234,10 @@
       ],
       "pergunta": "Qual a altura da prateleira 3 do carrinho Tech Tower?",
       "alternativas": [
-        "12,5cm do chão",
+        "50cm da mesa",
         "61,5cm do chão",
         "90,0cm do chão",
-        "50cm da mesa"
+        "12,5cm do chão"
       ],
       "respostaCorreta": 2,
       "explicacao": "Prateleira ①=12,5cm · ②=61,5cm · ③=90,0cm do chão · ④=50cm da mesa · ⑤=75cm da mesa.",
@@ -1329,10 +1329,10 @@
       ],
       "pergunta": "O que fica na posição 4 do carrinho Tech Tower?",
       "alternativas": [
-        "Ketchup",
+        "Canudo para McShake",
         "Lacre",
         "Molhos para McNuggets",
-        "Canudo para McShake"
+        "Ketchup"
       ],
       "respostaCorreta": 2,
       "explicacao": "Posição 4 do Tech Tower = Molhos para McNuggets.",
@@ -1377,10 +1377,10 @@
       ],
       "pergunta": "Além de tamanho, sabores e quantidade, o que mais verifica a dupla checagem?",
       "alternativas": [
-        "Apenas o número do pedido",
+        "A embalagem do saco",
         "Condimentos, canudos e guardanapos",
-        "A temperatura do produto",
-        "A embalagem do saco"
+        "Apenas o número do pedido",
+        "A temperatura do produto"
       ],
       "respostaCorreta": 1,
       "explicacao": "A dupla checagem verifica tamanho, sabores, quantidade de cada item + condimentos, canudos e guardanapos.",
@@ -1473,11 +1473,11 @@
       "pergunta": "O que deve estar 100% funcionando durante todo o tempo no McDelivery?",
       "alternativas": [
         "Apenas o POS",
+        "Apenas a seladora",
         "Apenas o tablet",
-        "POS atualizado e tablet carregado funcionando 100% do tempo",
-        "Apenas a seladora"
+        "POS atualizado e tablet carregado funcionando 100% do tempo"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "POS deve estar atualizado e tablet carregado e 100% do tempo funcionando.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1519,12 +1519,12 @@
       ],
       "pergunta": "Quais itens devem estar estocados antes de iniciar o turno de McDelivery?",
       "alternativas": [
+        "Apenas o tablet carregado",
         "Apenas sacos",
         "Área preparada com suprimentos, sacos, lacres, suporte e brinquedos estocados",
-        "Apenas lacres e sacos",
-        "Apenas o tablet carregado"
+        "Apenas lacres e sacos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Área preparada com todos os suprimentos, sacos, lacres, suporte e brinquedos estocados.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1622,8 +1622,8 @@
       "alternativas": [
         "Apenas a cor",
         "Tem Mini ORB (Conferente) próximo à janela de entrega e mesa extensora",
-        "É menor",
-        "Não tem POS"
+        "Não tem POS",
+        "É menor"
       ],
       "respostaCorreta": 1,
       "explicacao": "No Dual Point: mesa extensora adicional e Mini ORB (Conferente) posicionado próximo à janela de entrega.",
@@ -1671,11 +1671,11 @@
       "pergunta": "Quais informações devem estar nos adesivos de fechamento do saco?",
       "alternativas": [
         "Apenas o número do pedido",
-        "Pick List e número de pedido",
         "Nome do cliente e número do pedido",
-        "Apenas o código de barras"
+        "Apenas o código de barras",
+        "Pick List e número de pedido"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O fechamento do saco deve ser feito com adesivos contendo Pick List e número do pedido.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1719,12 +1719,12 @@
       ],
       "pergunta": "Como identificar pedidos com temperatura quente e fria no mesmo pedido?",
       "alternativas": [
-        "Colocar tudo numa sacola",
-        "Separar em sacolas distintas por temperatura",
+        "Misturar mas avisar o entregador",
         "Só existe uma temperatura por pedido",
-        "Misturar mas avisar o entregador"
+        "Separar em sacolas distintas por temperatura",
+        "Colocar tudo numa sacola"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Pedidos com itens quentes e frios devem ser embalados em sacolas distintas por temperatura.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1766,12 +1766,12 @@
       ],
       "pergunta": "Em que ordem os itens devem ser colocados na sacola?",
       "alternativas": [
-        "Qualquer ordem",
         "Pesados no fundo, leves e bebidas em cima",
         "Bebidas primeiro, depois sólidos",
-        "Sobremesas primeiro"
+        "Sobremesas primeiro",
+        "Qualquer ordem"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Empacotar com itens pesados no fundo e leves/bebidas em cima para evitar danos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1863,9 +1863,9 @@
       ],
       "pergunta": "Quais plataformas de delivery são aceitas no restaurante?",
       "alternativas": [
-        "Apenas McDelivery próprio",
-        "iFood, Rappi e McDelivery",
         "Qualquer plataforma cadastrada",
+        "iFood, Rappi e McDelivery",
+        "Apenas McDelivery próprio",
         "Apenas parceiros oficiais Arcos Dourados"
       ],
       "respostaCorreta": 3,
@@ -1913,11 +1913,11 @@
       "pergunta": "Quando deve ser feita a dupla conferência do pedido?",
       "alternativas": [
         "Apenas para pedidos grandes",
+        "Apenas em pedidos com observações",
         "Em todos os pedidos antes de lacrar a sacola",
-        "Apenas nos horários de pico",
-        "Apenas em pedidos com observações"
+        "Apenas nos horários de pico"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "A dupla conferência deve ser feita em TODOS os pedidos antes de lacrar a sacola.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1964,11 +1964,11 @@
       "pergunta": "Por que é importante lacrar corretamente a sacola do McDelivery?",
       "alternativas": [
         "Apenas para enfeite",
+        "Facilitar o transporte",
         "Garantir segurança alimentar e evitar adulteração",
-        "Exigência da plataforma digital",
-        "Facilitar o transporte"
+        "Exigência da plataforma digital"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O lacre garante segurança alimentar, evita adulteração e transmite confiança ao cliente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2014,12 +2014,12 @@
       ],
       "pergunta": "O que é o MOP no contexto McDelivery?",
       "alternativas": [
-        "Método de Operação Padrão",
-        "Mobile Order and Pay — pedido pelo app com retirada no restaurante",
         "Monitor de Operações Paralelas",
-        "Manual de Orientação de Produção"
+        "Método de Operação Padrão",
+        "Manual de Orientação de Produção",
+        "Mobile Order and Pay — pedido pelo app com retirada no restaurante"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "MOP = Mobile Order and Pay: cliente faz o pedido pelo app e retira no restaurante.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2164,11 +2164,11 @@
       "pergunta": "O que fazer se o sistema de delivery cair durante o pico?",
       "alternativas": [
         "Continuar normalmente",
-        "Notificar o gerente e seguir protocolo de contingência",
         "Cancelar todos os pedidos",
-        "Não há protocolo para isso"
+        "Não há protocolo para isso",
+        "Notificar o gerente e seguir protocolo de contingência"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Em caso de queda do sistema, notificar o gerente imediatamente e seguir o protocolo de contingência.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2258,12 +2258,12 @@
       ],
       "pergunta": "Como proteger sorvetes e produtos frios no delivery?",
       "alternativas": [
-        "Em sacola comum com os demais itens",
-        "Em embalagem isolante separada dos itens quentes",
         "Não é possível entregar sorvetes",
-        "Com gelo na sacola"
+        "Em sacola comum com os demais itens",
+        "Com gelo na sacola",
+        "Em embalagem isolante separada dos itens quentes"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Sorvetes e itens frios devem ser embalados em embalagem isolante, separados dos itens quentes.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2307,8 +2307,8 @@
       ],
       "pergunta": "Qual a quantidade mínima de guardanapos por pedido?",
       "alternativas": [
-        "1 guardanapo",
         "2 guardanapos",
+        "1 guardanapo",
         "3 guardanapos",
         "Depende do pedido"
       ],
@@ -2356,12 +2356,12 @@
       ],
       "pergunta": "Como priorizar pedidos quando há acúmulo simultâneo de delivery e balcão?",
       "alternativas": [
-        "Delivery sempre primeiro",
-        "Balcão sempre primeiro",
         "Por ordem de entrada no sistema, respeitando os tempos meta",
+        "Balcão sempre primeiro",
+        "Delivery sempre primeiro",
         "Gerente decide caso a caso"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Priorizar por ordem de entrada, respeitando os tempos meta de cada canal.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2408,8 +2408,8 @@
       "alternativas": [
         "3 minutos",
         "5 minutos",
-        "10 minutos",
-        "1 minuto"
+        "1 minuto",
+        "10 minutos"
       ],
       "respostaCorreta": 0,
       "explicacao": "Você tem 3 minutos para produzir e montar o pedido — ele deve estar pronto quando o entregador chegar ao restaurante.",
@@ -2455,10 +2455,10 @@
       ],
       "pergunta": "O que caracteriza a 'zona de perigo' do McDelivery?",
       "alternativas": [
-        "1 entregador aguardando",
+        "Falta de sacolas D+",
         "2 ou mais entregadores parados aguardando o pedido ser montado",
-        "Tablet sem bateria",
-        "Falta de sacolas D+"
+        "1 entregador aguardando",
+        "Tablet sem bateria"
       ],
       "respostaCorreta": 1,
       "explicacao": "A zona de perigo é quando há 2 ou mais entregadores parados no balcão aguardando o pedido ser montado.",
@@ -2504,12 +2504,12 @@
       ],
       "pergunta": "Quando os condimentos são incluídos no pedido McDelivery?",
       "alternativas": [
-        "Sempre, em todo pedido",
         "Somente se o cliente solicitar pelo APP",
+        "Apenas em pedidos grandes",
         "A critério do montador",
-        "Apenas em pedidos grandes"
+        "Sempre, em todo pedido"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Só entregamos condimentos se o cliente solicitar através do APP.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2554,12 +2554,12 @@
       ],
       "pergunta": "O que fazer quando o tablet emite o sinal sonoro (entregador a 3 minutos)?",
       "alternativas": [
-        "Aguardar o entregador chegar",
         "Clicar em 'Enviar Para Preparo' e iniciar o preparo",
-        "Cancelar o pedido",
-        "Imprimir o Pick List apenas"
+        "Imprimir o Pick List apenas",
+        "Aguardar o entregador chegar",
+        "Cancelar o pedido"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O sinal sonoro indica que o entregador está a 3 minutos. Clique em 'Enviar Para Preparo' e inicie o preparo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2603,12 +2603,12 @@
       ],
       "pergunta": "Após enviar o pedido para preparo, como ele é registrado no POS do balcão?",
       "alternativas": [
-        "Digitando item por item",
         "Através do recall (lista de pedidos)",
         "Não precisa registrar",
-        "Pela tecla McLanche Feliz"
+        "Pela tecla McLanche Feliz",
+        "Digitando item por item"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Vá ao POS do balcão e clique em 'lista de pedidos' para registrar o pedido através do recall.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2651,12 +2651,12 @@
       ],
       "pergunta": "Com qual tecla deve ser fechado o pagamento de um pedido McDelivery?",
       "alternativas": [
+        "Tecla normal de McDelivery",
         "PAGO ON LINE",
-        "Dinheiro",
         "Cartão de crédito",
-        "Tecla normal de McDelivery"
+        "Dinheiro"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Feche a compra com a tecla PAGO ON LINE. A tecla de McDelivery já altera os preços automaticamente — use-a uma única vez na sequência indicada.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2702,12 +2702,12 @@
       ],
       "pergunta": "Em quais casos o registro do pedido deve ser feito manualmente no POS?",
       "alternativas": [
-        "Em todos os pedidos",
         "Pedidos UberEats ou quando o Bringg apresenta erro",
-        "Apenas no horário de pico",
-        "Apenas em pedidos com sobremesa"
+        "Em todos os pedidos",
+        "Apenas em pedidos com sobremesa",
+        "Apenas no horário de pico"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O registro manual é necessário para pedidos da plataforma UberEats ou quando o sistema Bringg sinaliza um erro.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2749,12 +2749,12 @@
       ],
       "pergunta": "Onde as bebidas devem ser acondicionadas na montagem do McDelivery?",
       "alternativas": [
-        "Saco A",
         "Saco D",
-        "Soltas na BAG",
-        "Junto com os sanduíches"
+        "Saco A",
+        "Junto com os sanduíches",
+        "Soltas na BAG"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "A montagem inicia pelas bebidas, que devem ser acondicionadas dentro do Saco A. O Saco D é usado para 2 ou mais produtos.",
       "dica": "",
       "tempoEstimado": 15,

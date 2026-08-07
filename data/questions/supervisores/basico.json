@@ -266,8 +266,8 @@
       "alternativas": [
         "Anotar e continuar",
         "Descartar produto e retreinar a equipe",
-        "Colocar etiqueta com estimativa",
-        "Perguntar ao atendente"
+        "Perguntar ao atendente",
+        "Colocar etiqueta com estimativa"
       ],
       "respostaCorreta": 1,
       "explicacao": "Produto sem etiqueta: descartar imediatamente e retreinar a equipe da estação sobre o procedimento.",
@@ -314,12 +314,12 @@
       ],
       "pergunta": "Qual a periodicidade do Checklist Pré-Pico e Segurança Alimentar?",
       "alternativas": [
+        "A cada período de pico",
         "Uma vez por dia",
         "A cada turno",
-        "A cada período de pico",
         "Semanalmente"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "O Checklist Pré-Pico deve ser executado a cada período de pico do restaurante.",
       "dica": "",
       "tempoEstimado": 15,
@@ -361,12 +361,12 @@
       ],
       "pergunta": "Qual estratégia de venda foca em itens premium para aumentar o ticket médio?",
       "alternativas": [
-        "LSM",
         "URD",
+        "Ticket Médio — combos e upgrades",
         "IP",
-        "Ticket Médio — combos e upgrades"
+        "LSM"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Para aumentar ticket médio: focar em itens premium ou combos e impulsionar upgrade de produto.",
       "dica": "",
       "tempoEstimado": 15,
@@ -508,12 +508,12 @@
       ],
       "pergunta": "Qual a função adicional ao passar de 35 para 36 GCs/hora?",
       "alternativas": [
+        "Salão",
         "Caixa 2",
-        "Estocagem",
         "Entrega Externa 2",
-        "Salão"
+        "Estocagem"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "De 36 a 55 GCs/hora: 6 pessoas — a função adicional é Estocagem.",
       "dica": "",
       "tempoEstimado": 15,
@@ -559,11 +559,11 @@
       "pergunta": "O que é o IP (Índice de Produtividade) no McCafé?",
       "alternativas": [
         "Itens por pedido",
-        "GCs por colaborador por hora",
         "Vendas por turno",
+        "GCs por colaborador por hora",
         "Ticket médio por cliente"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "IP = Índice de Produtividade: mede GCs por colaborador por hora. Meta mínima: 6.",
       "dica": "",
       "tempoEstimado": 15,
@@ -605,12 +605,12 @@
       ],
       "pergunta": "O que significa URD no contexto do McCafé?",
       "alternativas": [
+        "Unidade de Revisão Diária",
         "Unidade de Receita Diária",
         "Units per Receipt — bebidas por cupom",
-        "Unidade de Revisão Diária",
         "Usuários Registrados no Dia"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "URD = Units per Receipt: quantidade de itens McCafé por cupom fiscal. Meta monitorada diariamente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -653,11 +653,11 @@
       "pergunta": "O que analisar em um McCafé com IP abaixo de 6?",
       "alternativas": [
         "Apenas o treinamento",
-        "Posicionamento, layout, utensílios, equipamentos e nível de treinamento",
         "Apenas o posicionamento",
-        "Apenas a qualidade do produto"
+        "Apenas a qualidade do produto",
+        "Posicionamento, layout, utensílios, equipamentos e nível de treinamento"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "IP abaixo de 6 exige avaliação completa: posicionamento x projeção, layout, utensílios, equipamentos e treinamento.",
       "dica": "",
       "tempoEstimado": 15,
@@ -899,11 +899,11 @@
       "pergunta": "O que fazer ao encontrar temperatura da câmara fora do padrão?",
       "alternativas": [
         "Monitorar por 1 hora antes de agir",
+        "Transferir produtos para outra câmara e ignorar",
         "Descartar produtos, chamar manutenção e registrar ocorrência",
-        "Apenas aumentar o termostato",
-        "Transferir produtos para outra câmara e ignorar"
+        "Apenas aumentar o termostato"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Câmara fora do padrão: descartar produtos afetados, chamar manutenção imediatamente e registrar a ocorrência.",
       "dica": "",
       "tempoEstimado": 15,
@@ -997,10 +997,10 @@
       ],
       "pergunta": "Ao encontrar um equipamento com mau funcionamento, qual o primeiro passo?",
       "alternativas": [
-        "Tentar reparar por conta própria",
+        "Aguardar o dia seguinte para verificar",
         "Desligar e abandonar o equipamento",
         "Abrir chamado de manutenção e comunicar o gerente",
-        "Aguardar o dia seguinte para verificar"
+        "Tentar reparar por conta própria"
       ],
       "respostaCorreta": 2,
       "explicacao": "Equipamento com problema: abrir chamado imediatamente e comunicar o gerente para ajustar o posicionamento.",
@@ -1046,12 +1046,12 @@
       ],
       "pergunta": "Qual a diferença entre LSM e uma promoção nacional?",
       "alternativas": [
-        "LSM é mais caro",
         "LSM é uma ação de marketing local focada no cliente da região",
         "São a mesma coisa",
+        "LSM é mais caro",
         "LSM é feito pela franqueadora"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "LSM (Local Store Marketing) é uma ação local desenvolvida pelo próprio restaurante para atrair e fidelizar clientes da região.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1098,11 +1098,11 @@
       "pergunta": "Qual o objetivo principal do Checklist Pré-Pico?",
       "alternativas": [
         "Conferir o caixa",
-        "Garantir máximo de GCs com produto de alto padrão no horário de pico",
+        "Fazer inventário de estoque",
         "Treinar novos funcionários",
-        "Fazer inventário de estoque"
+        "Garantir máximo de GCs com produto de alto padrão no horário de pico"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O Checklist Pré-Pico garante que o restaurante esteja pronto para captar o máximo de GCs oferecendo produto de alto padrão.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1146,12 +1146,12 @@
       ],
       "pergunta": "O que avaliar para aumentar as URDs de café?",
       "alternativas": [
+        "Quantidade de máquinas de café",
         "Apenas o preço do café",
-        "Garantir que todos ofereçam café associado a qualquer pedido",
         "Apenas a qualidade do café",
-        "Quantidade de máquinas de café"
+        "Garantir que todos ofereçam café associado a qualquer pedido"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Para aumentar URDs: cada atendente deve oferecer café + produto salgado/doce associado a qualquer pedido.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1196,12 +1196,12 @@
       ],
       "pergunta": "Qual função é adicionada ao passar de 55 para 56 GCs/hora?",
       "alternativas": [
-        "Estocagem",
         "Bebidas McCafé 2",
-        "Entrega Externa 2",
-        "Salão"
+        "Estocagem",
+        "Salão",
+        "Entrega Externa 2"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "De 56 a 65 GCs/hora: 7 pessoas — função adicional é Bebidas McCafé 2.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1245,10 +1245,10 @@
       "alternativas": [
         "Negativa",
         "Zero",
-        "Positiva — crescimento sobre ano anterior",
-        "Igual ao ano anterior"
+        "Igual ao ano anterior",
+        "Positiva — crescimento sobre ano anterior"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "Vendas Comp. McCafé deve ser positiva: crescimento comparado ao mesmo período do ano anterior.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1293,12 +1293,12 @@
       ],
       "pergunta": "Com que frequência verificar os Compostos Polares do óleo?",
       "alternativas": [
+        "A cada turno",
         "Semanalmente",
         "Uma vez ao dia",
-        "A cada turno",
         "A cada 2 horas"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Os Compostos Polares devem ser verificados a cada turno de operação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1340,12 +1340,12 @@
       ],
       "pergunta": "O que fazer se a equipe estiver insuficiente para o volume de GCs?",
       "alternativas": [
+        "Fechar parte do restaurante",
         "Ignorar e continuar",
         "Redistribuir conforme tabela de posicionamento",
-        "Fechar parte do restaurante",
         "Reduzir o menu"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Redistribuir a equipe imediatamente conforme a tabela de posicionamento para o volume atual.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1389,12 +1389,12 @@
       ],
       "pergunta": "Qual tipo de risco está associado ao acesso às câmaras frias?",
       "alternativas": [
-        "Químico",
         "Ergonômico",
         "Físico — Estresse por Frio (Hipotermia)",
+        "Químico",
         "Mecânico"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "O acesso às câmaras frias representa risco físico de estresse por frio (hipotermia), com exposição intermitente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1438,10 +1438,10 @@
       "alternativas": [
         "Eventual",
         "Intermitente",
-        "Contínuo",
-        "Inexistente"
+        "Inexistente",
+        "Contínuo"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 3,
       "explicacao": "O risco mecânico de quedas em mesmo nível (piso) é classificado como exposição contínua durante a operação.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1487,8 +1487,8 @@
       "alternativas": [
         "Bota PVC Forrada",
         "Luva Nitrílica Descartável",
-        "Mangote",
-        "Balaclava de Lã"
+        "Balaclava de Lã",
+        "Mangote"
       ],
       "respostaCorreta": 1,
       "explicacao": "A Luva Nitrílica Descartável (CA 25091) deve ser usada na manipulação de alimentos e produtos químicos.",
@@ -1581,12 +1581,12 @@
       ],
       "pergunta": "Ao sofrer um acidente de trabalho, qual é o primeiro passo obrigatório?",
       "alternativas": [
-        "Esperar o fim do turno",
         "Comunicar imediatamente à chefia, independente da gravidade",
-        "Ir diretamente ao médico sem avisar",
-        "Preencher um formulário online"
+        "Preencher um formulário online",
+        "Esperar o fim do turno",
+        "Ir diretamente ao médico sem avisar"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O colaborador deve comunicar IMEDIATAMENTE à chefia qualquer ocorrência de acidente, independente da gravidade da lesão.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1636,12 +1636,12 @@
       ],
       "pergunta": "Qual das seguintes atividades é PROIBIDA para menores de idade?",
       "alternativas": [
-        "Atender clientes no balcão",
         "Acessar as câmaras frias",
+        "Fazer salada",
         "Operar o caixa",
-        "Fazer salada"
+        "Atender clientes no balcão"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Menores de idade são proibidos de acessar câmaras frias, fazer limpeza de banheiros, trabalhar à noite, usar fatiador de tomates, fazer recebimento de cargas e trabalhar em altura.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1684,11 +1684,11 @@
       "pergunta": "Em qual horário é proibido que menores de idade trabalhem?",
       "alternativas": [
         "Das 18h às 22h",
-        "Das 20h às 6h",
         "Das 22h às 6h",
+        "Das 20h às 6h",
         "Das 21h às 5h"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "É proibido que menores de 18 anos trabalhem em horário noturno: das 22h às 6h.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1736,10 +1736,10 @@
       ],
       "pergunta": "Os riscos químicos no restaurante estão principalmente associados a:",
       "alternativas": [
-        "Operação das fritadeiras",
+        "Acesso ao drive-thru",
         "Limpeza de pisos e superfícies",
         "Uso do forno",
-        "Acesso ao drive-thru"
+        "Operação das fritadeiras"
       ],
       "respostaCorreta": 1,
       "explicacao": "Os riscos químicos decorrem da limpeza de pisos e superfícies, com exposição por ar e contato de forma intermitente.",
@@ -1786,12 +1786,12 @@
       ],
       "pergunta": "O que o supervisor deve fazer ao identificar uma irregularidade que coloque a equipe em risco?",
       "alternativas": [
-        "Resolver sozinho sem comunicar",
-        "Ignorar até o próximo turno",
         "Comunicar o gerente ou a CIPA imediatamente",
-        "Anotar no relatório mensal"
+        "Anotar no relatório mensal",
+        "Ignorar até o próximo turno",
+        "Resolver sozinho sem comunicar"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "O colaborador deve comunicar o gerente do restaurante ou a CIPA sobre qualquer irregularidade que represente risco de acidente.",
       "dica": "",
       "tempoEstimado": 15,

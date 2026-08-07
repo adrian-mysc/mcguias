@@ -18,12 +18,12 @@
       ],
       "pergunta": "Quem é a pessoa que deve entregar o pedido em um carro que foi enviado para a área de espera?",
       "alternativas": [
-        "O gerente do turno",
-        "O supervisor",
-        "Qualquer atendente",
-        "A pessoa do suporte / Tablet"
+        "O gerente de plantão",
+        "A pessoa do suporte (Tablet)",
+        "A pessoa da apresentação",
+        "O atendente do caixa Drive"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "A pessoa do suporte / Tablet — responsável por levar o pedido ao carro na área de espera.",
       "dica": "",
       "tempoEstimado": 15,
@@ -70,12 +70,12 @@
       ],
       "pergunta": "Tempo máximo que o cliente pode esperar no Drive para que o atendente o receba:",
       "alternativas": [
-        "20 segundos",
-        "40 segundos",
-        "60 segundos",
-        "30 segundos."
+        "15 segundos",
+        "30 segundos",
+        "45 segundos",
+        "60 segundos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "30 segundos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -119,12 +119,12 @@
       ],
       "pergunta": "Quais são os aspectos fundamentais que devemos considerar ao montar e preparar os pedidos do Mc Delivery?",
       "alternativas": [
-        "A pessoa do balcão",
-        "O gerente",
-        "O treinador",
-        "Verificação do pedido (dupla conferência),"
+        "Montar tudo numa sacola só para agilizar a entrega",
+        "Dupla conferência do pedido, embalagem separando quente e frio, e lacre da sacola",
+        "Deixar o pedido pronto antes de o entregador chegar",
+        "Priorizar as bebidas e montar a comida por último"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Verificação do pedido (dupla conferência), embalagem correta separando quente e frio, lacre da sacola.",
       "dica": "",
       "tempoEstimado": 15,
@@ -168,12 +168,12 @@
       ],
       "pergunta": "Quem deve colocar a assinatura de verificação no pedido do Mc Delivery?",
       "alternativas": [
-        "O gerente do turno",
-        "O supervisor",
-        "Qualquer atendente",
-        "A pessoa responsável pela conferência do pedido."
+        "O entregador do aplicativo",
+        "A pessoa da chapa",
+        "A pessoa responsável pela conferência do pedido",
+        "O gerente do turno"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "A pessoa responsável pela conferência do pedido.",
       "dica": "",
       "tempoEstimado": 15,
@@ -217,62 +217,13 @@
       ],
       "pergunta": "Quais são os aspectos fundamentais que devem ser considerados para montar e preparar os pedidos de Mc Delivery?",
       "alternativas": [
-        "A pessoa do balcão",
-        "O gerente",
-        "O treinador",
-        "Conferência dos itens,"
+        "Conferência dos itens, embalagem separando quente e frio, lacre e identificação",
+        "Identificar a sacola só quando o entregador chegar",
+        "Conferir apenas os itens quentes",
+        "Embalar tudo junto para manter a temperatura"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Conferência dos itens, embalagem adequada separando quente/frio, lacre e identificação.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_006",
-      "categoria": "ppi",
-      "subcategoria": "🚗 Drive-Thru · Delivery",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "drive",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "No drive, quem realiza o segundo 'P' do procedimento: Pergunta, pergunta e fala?",
-      "alternativas": [
-        "O gerente do turno",
-        "O supervisor",
-        "Qualquer atendente",
-        "A pessoa do Tablet."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "A pessoa do Tablet.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -315,12 +266,12 @@
       ],
       "pergunta": "O cliente solicitou bebidas para viagem, quando usamos o suporte neste caso?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Sempre"
+        "Somente quando o cliente pedir",
+        "Sempre que o pedido for para viagem",
+        "Somente a partir de 3 bebidas",
+        "Somente nos pedidos de Drive"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Sempre — usar suporte porta-copos para pedidos de viagem.",
       "dica": "",
       "tempoEstimado": 15,
@@ -365,12 +316,12 @@
       ],
       "pergunta": "Qual o tempo de vida das bebidas quentes depois de pronta?",
       "alternativas": [
-        "20 minutos",
-        "40 minutos",
         "45 minutos",
-        "30 minutos."
+        "1 hora",
+        "30 minutos",
+        "15 minutos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "30 minutos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -412,12 +363,12 @@
       ],
       "pergunta": "Qual a temperatura de extração da mistura do sorvete",
       "alternativas": [
-        "4°C",
-        "-6°C",
-        "9°C",
-        "-9°C a -8°C."
+        "-18°C a -15°C",
+        "-9°C a -8°C",
+        "-4°C a -2°C",
+        "1°C a 4°C"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "-9°C a -8°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -461,12 +412,12 @@
       ],
       "pergunta": "Qual é a quantidade de cobertura que devemos colocar em um sundae?",
       "alternativas": [
-        "0,5oz",
         "1,5oz",
-        "2oz",
-        "1oz (1 tiro) de cobertura."
+        "1oz (1 tiro)",
+        "0,5oz (meio tiro)",
+        "2oz (2 tiros)"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "1oz (1 tiro) de cobertura.",
       "dica": "",
       "tempoEstimado": 15,
@@ -508,12 +459,12 @@
       ],
       "pergunta": "Quantas onças de sorvete um sundae deve ter?",
       "alternativas": [
-        "0,5oz",
-        "1,5oz",
-        "2oz",
-        "4,5oz de bebida láctea."
+        "3oz",
+        "4oz",
+        "4,5oz",
+        "6oz"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "4,5oz de bebida láctea.",
       "dica": "",
       "tempoEstimado": 15,
@@ -555,157 +506,13 @@
       ],
       "pergunta": "Qual é a temperatura do banho-maria das coberturas para sundae?",
       "alternativas": [
-        "36°C",
+        "40°C a 45°C",
         "46°C a 52°C",
-        "61°C",
-        "57°C a 63°C."
+        "57°C a 63°C",
+        "64°C a 70°C"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "57°C a 63°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_013",
-      "categoria": "ppi",
-      "subcategoria": "🥤 Bebidas · Sobremesas",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Qual a temperatura de extração das coberturas de sorvete?",
-      "alternativas": [
-        "36°C",
-        "56°C",
-        "61°C",
-        "46°C a 52°C."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "46°C a 52°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_014",
-      "categoria": "ppi",
-      "subcategoria": "🥤 Bebidas · Sobremesas",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "tempo"
-      ],
-      "pergunta": "Qual é o tempo de R2P?",
-      "alternativas": [
-        "80 segundos",
-        "100 segundos",
-        "180 segundos",
-        "90 segundos (Ready to Present)."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "90 segundos (Ready to Present).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_015",
-      "categoria": "ppi",
-      "subcategoria": "🥤 Bebidas · Sobremesas",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "refrigeracao",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual o tempo de vida do refrigerante depois de pronto?",
-      "alternativas": [
-        "20 minutos",
-        "40 minutos",
-        "45 minutos",
-        "30 minutos."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "30 minutos.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -748,12 +555,12 @@
       ],
       "pergunta": "Não é um passo operacional da pessoa da bebidas balcão:",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Preparar carnes na chapa (função da pessoa da chapa)."
+        "Extrair o refrigerante no copo correto",
+        "Repor o gelo do dispenser",
+        "Preparar as carnes na chapa",
+        "Montar o sundae com a cobertura"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Preparar carnes na chapa (função da pessoa da chapa).",
       "dica": "",
       "tempoEstimado": 15,
@@ -794,14 +601,14 @@
         "temperatura",
         "tempo"
       ],
-      "pergunta": "Qual é a quantidade de gelo nas bebidas P, M e G respectivamente?",
+      "pergunta": "Como se define a quantidade de gelo nas bebidas P, M e G?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Seguir a marcação interna do copo (aproximadamente 1/3 do volume)."
+        "Pela marcação interna do copo — cerca de 1/3 do volume",
+        "Enchendo até a borda em todos os tamanhos",
+        "Uma concha no P, duas no M e três no G",
+        "Pelo peso: 50g no P, 80g no M e 120g no G"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Seguir a marcação interna do copo (aproximadamente 1/3 do volume).",
       "dica": "",
       "tempoEstimado": 15,
@@ -843,12 +650,12 @@
       ],
       "pergunta": "Qual é a temperatura de extração e o do banho-maria das coberturas?",
       "alternativas": [
-        "36°C",
-        "56°C",
-        "61°C",
-        "Extração: 46°C a 52°C · Banho-maria: 57°C a 63°C."
+        "Extração 40°C a 45°C · Banho-maria 50°C a 55°C",
+        "Extração 46°C a 52°C · Banho-maria 57°C a 63°C",
+        "Extração 57°C a 63°C · Banho-maria 46°C a 52°C",
+        "Extração 60°C a 65°C · Banho-maria 70°C a 75°C"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Extração: 46°C a 52°C · Banho-maria: 57°C a 63°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -890,12 +697,12 @@
       ],
       "pergunta": "Qual é a temperatura de extração do suco?",
       "alternativas": [
-        "-9°C",
-        "11°C",
-        "16°C",
-        "1°C a 4°C."
+        "-4°C a 0°C",
+        "1°C a 4°C",
+        "5°C a 8°C",
+        "8°C a 12°C"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "1°C a 4°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -937,12 +744,12 @@
       ],
       "pergunta": "Qual a temperatura do mix de sundae no reservatório?",
       "alternativas": [
-        "-9°C",
-        "11°C",
-        "16°C",
-        "1°C a 4°C."
+        "-9°C a -8°C",
+        "0°C a 1°C",
+        "1°C a 4°C",
+        "5°C a 7°C"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "1°C a 4°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -984,109 +791,13 @@
       ],
       "pergunta": "Qual é a descrição do padrão Ouro de Qualidade da casquinha?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos."
+        "1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos",
+        "1 volta e meia, com a ponta bem alta",
+        "3 voltas, preenchendo toda a casquinha",
+        "2 voltas de sorvete, com o topo achatado"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_022",
-      "categoria": "ppi",
-      "subcategoria": "🥤 Bebidas · Sobremesas",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual é a quantidade de gelo nas bebidas P,M e G respectivamente?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Seguir a marcação interna do copo (aproximadamente 1/3 do volume)."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Seguir a marcação interna do copo (aproximadamente 1/3 do volume).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_023",
-      "categoria": "ppi",
-      "subcategoria": "🔥 Chapa · Carnes",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "filtro",
-        "temperatura"
-      ],
-      "pergunta": "Os filtros da chapa devem ser lavados:",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Diariamente, após o fechamento."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Diariamente, após o fechamento.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1132,13 +843,13 @@
       ],
       "pergunta": "Qual o tempo inicial para o cozimento das carnes de 10:1?",
       "alternativas": [
-        "29 segundos",
-        "49 segundos",
-        "78 segundos",
-        "38 segundos."
+        "38 segundos em qualquer chapa",
+        "41 segundos (Antunes) · 39 segundos (Taylor)",
+        "35 segundos (Antunes) · 38 segundos (Taylor)",
+        "39 segundos (Antunes) · 41 segundos (Taylor Next Generation)"
       ],
       "respostaCorreta": 3,
-      "explicacao": "38 segundos.",
+      "explicacao": "No Best Burger o tempo inicial das carnes 10:1 é de 39 segundos na chapa Antunes e 41 segundos na Taylor Next Generation.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1182,12 +893,12 @@
       ],
       "pergunta": "Levando em consideração a rotação dos teflons, qual cor deve ser utilizado nos dias ímpares?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Teflon azul nos dias ímpares."
+        "Teflon amarelo",
+        "Teflon azul",
+        "Teflon vermelho",
+        "Teflon verde"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Teflon azul nos dias ímpares.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1230,119 +941,13 @@
       ],
       "pergunta": "Qual é a quantidade máxima de Mc chicken que pode ser armazenada em uma bandeja de UHC?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "6 unidades por bandeja."
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "12 unidades"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "6 unidades por bandeja.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_027",
-      "categoria": "ppi",
-      "subcategoria": "🔥 Chapa · Carnes",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "frequencia",
-        "producao",
-        "raspador",
-        "remocao",
-        "temperatura"
-      ],
-      "pergunta": "Quando se deve raspar as chapas?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "A cada rodada de preparo de carnes, antes de colocar novas carnes."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "A cada rodada de preparo de carnes, antes de colocar novas carnes.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_028",
-      "categoria": "ppi",
-      "subcategoria": "🔥 Chapa · Carnes",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "10:1",
-        "carne",
-        "cebola",
-        "cores",
-        "limite",
-        "temperatura",
-        "tempo",
-        "uhc"
-      ],
-      "pergunta": "Qual é a quantidade mínima de bandejas que devem ser mantidas de carne 10:1 sem cebola na UHC?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Mínimo 2 bandejas (clip azul)."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Mínimo 2 bandejas (gavetas), identificadas com clip azul.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1386,10 +991,10 @@
       ],
       "pergunta": "É um procedimento operacional da pessoa da Chapas - Carnes vermelhas - 02 platens:",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Ativar os pães no sinal,"
+        "Repor a gaveta da UHC e etiquetar os produtos",
+        "Condimentar as bases e finalizar a montagem",
+        "Fritar as carnes brancas e montar os sanduíches",
+        "Ativar os pães no sinal, colocar as carnes nos platens, raspar e monitorar o timer"
       ],
       "respostaCorreta": 3,
       "explicacao": "Ativar os pães no sinal, colocar carnes nos platens, raspar e monitorar o timer.",
@@ -1434,114 +1039,13 @@
       ],
       "pergunta": "Qual é a quantidade máxima de carnes 3:1 que devemos ativar?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "6 carnes por rodada."
+        "2 carnes por rodada",
+        "4 carnes por rodada",
+        "6 carnes por rodada",
+        "8 carnes por rodada"
       ],
-      "respostaCorreta": 3,
-      "explicacao": "6 carnes por rodada.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_031",
-      "categoria": "ppi",
-      "subcategoria": "🔥 Chapa · Carnes",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual é a temperatura e o tempo de aquecimento das chapas?",
-      "alternativas": [
-        "167°C",
-        "187°C",
-        "192°C",
-        "218°C (425°F) superior e 177°C (350°F) inferior."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "218°C (425°F) superior e 177°C (350°F) inferior.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_032",
-      "categoria": "ppi",
-      "subcategoria": "🔥 Chapa · Carnes",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "4:1",
-        "carne",
-        "cozimento",
-        "porcao",
-        "taylor-ng",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual é o tempo de cozimento para as carnes de 4:1?",
-      "alternativas": [
-        "116 segundos",
-        "136 segundos",
-        "252 segundos",
-        "126 segundos (Taylor Next Generation)."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "126 segundos (Taylor Next Generation).",
+      "respostaCorreta": 1,
+      "explicacao": "O lote máximo de carnes 3:1 é de 4 por rodada/platen.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1584,13 +1088,13 @@
       ],
       "pergunta": "Qual é a quantidade máxima de carnes 4:1 que devemos ativar?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "6 carnes por rodada."
+        "3 carnes por rodada",
+        "4 carnes por rodada",
+        "6 carnes por rodada",
+        "10 carnes por rodada"
       ],
-      "respostaCorreta": 3,
-      "explicacao": "6 carnes por rodada.",
+      "respostaCorreta": 1,
+      "explicacao": "No Best Burger o lote máximo de carnes 4:1 é de 4 por rodada/platen. Para 10:1 o máximo é 6.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1634,12 +1138,12 @@
       ],
       "pergunta": "Qual é a temperatura mínima interna das carnes de frango e bovina respectivamente?",
       "alternativas": [
-        "64°C",
-        "84°C",
-        "89°C",
-        "Frango: 74°C (165°F) · Bovina: 70°C (158°F)."
+        "Frango 65°C · Bovina 60°C",
+        "Frango 70°C · Bovina 74°C",
+        "Frango 74°C · Bovina 70°C",
+        "Frango 80°C · Bovina 75°C"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Frango: 74°C (165°F) · Bovina: 70°C (158°F).",
       "dica": "",
       "tempoEstimado": 15,
@@ -1685,10 +1189,10 @@
       ],
       "pergunta": "Qual é o tempo de cozimento para as carnes de 3:1?",
       "alternativas": [
-        "146 segundos",
-        "166 segundos",
-        "312 segundos",
-        "Aproximadamente 156 a 160 segundos."
+        "210 segundos",
+        "39 segundos",
+        "126 segundos",
+        "156 a 160 segundos"
       ],
       "respostaCorreta": 3,
       "explicacao": "Aproximadamente 156 a 160 segundos.",
@@ -1737,13 +1241,13 @@
       ],
       "pergunta": "Qual é o tempo de cozimento para as carnes de McChicken?",
       "alternativas": [
-        "5 segundos",
-        "13 segundos",
-        "6 segundos",
-        "3 minutos e 30 segundos (210 segundos)."
+        "3'30\"",
+        "3'15\" (3 minutos e 15 segundos)",
+        "2'30\"",
+        "4'00\""
       ],
-      "respostaCorreta": 3,
-      "explicacao": "3 minutos e 30 segundos (210 segundos).",
+      "respostaCorreta": 1,
+      "explicacao": "O McChicken (frango prensado) leva 3'15\" de fritura a 180°C.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1785,12 +1289,12 @@
       ],
       "pergunta": "Quem é o responsável por realizar o Checklist diário de carnes?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "O gerente ou responsável pela chapa no turno."
+        "O supervisor da rede",
+        "O gerente ou o responsável pela chapa no turno",
+        "A pessoa do Drive",
+        "A pessoa do salão"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "O gerente ou responsável pela chapa no turno.",
       "dica": "",
       "tempoEstimado": 15,
@@ -1836,64 +1340,13 @@
       ],
       "pergunta": "Qual o padrão de sabor que um Big Mac deve ter?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Saboroso, com equilíbrio de molho Big Mac, picles, cebola, alface e queijo."
+        "Sabor marcante de mostarda e ketchup",
+        "Sabor suave de maionese com alface",
+        "Equilíbrio entre molho Big Mac, picles, cebola, alface e queijo",
+        "Predomínio do molho sobre os demais ingredientes"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Saboroso, com equilíbrio de molho Big Mac, picles, cebola, alface e queijo.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_039",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "carne",
-        "cebola",
-        "molho",
-        "queijo",
-        "temperatura"
-      ],
-      "pergunta": "Qual o padrão de sabor que um Cheeseburger deve ter?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Sabor de carne grelhada,"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Sabor de carne grelhada, queijo derretido, ketchup, mostarda, picles e cebola equilibrados.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1937,63 +1390,13 @@
       ],
       "pergunta": "Qual é o tempo de vida da cebola reidratada depois de pronta?",
       "alternativas": [
-        "1 horas",
-        "4 horas",
-        "6 horas",
-        "2 horas na mesa de condimentação."
+        "30 minutos na mesa de condimentação",
+        "24 horas na mesa de condimentação",
+        "4 horas na mesa de condimentação",
+        "2 horas na mesa de condimentação"
       ],
       "respostaCorreta": 3,
       "explicacao": "2 horas na mesa de condimentação.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_041",
-      "categoria": "ppi",
-      "subcategoria": "🔥 Chapa · Carnes",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "alface",
-        "molho",
-        "taylor-ng",
-        "temperatura"
-      ],
-      "pergunta": "Qual o padrão de sabor que um McChicken deve ter?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Sabor suave de frango crocante com maionese e alface fresca."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Sabor suave de frango crocante com maionese e alface fresca.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2035,10 +1438,10 @@
       ],
       "pergunta": "Qual a quantidade de alface no sanduíche McChicken?",
       "alternativas": [
-        "7g",
-        "17g",
+        "12g",
+        "14g",
         "22g",
-        "12g de alface."
+        "28g"
       ],
       "respostaCorreta": 2,
       "explicacao": "22g de alface americana, conforme receita padrão do McChicken.",
@@ -2084,10 +1487,10 @@
       ],
       "pergunta": "A qual temperatura devemos conservar os molhos de Big Mac?",
       "alternativas": [
-        "-9°C",
-        "11°C",
-        "16°C",
-        "1°C a 4°C (refrigerado)."
+        "-18°C ou abaixo",
+        "5°C a 10°C",
+        "Temperatura ambiente",
+        "1°C a 4°C"
       ],
       "respostaCorreta": 3,
       "explicacao": "1°C a 4°C (refrigerado).",
@@ -2131,12 +1534,12 @@
       ],
       "pergunta": "Para qual lado a base deve ficar quando colocamos na mesa de condimentação?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Lado cortado para cima, voltado para o atendente."
+        "Com o lado cortado para baixo",
+        "Com o lado cortado para cima, voltado para o atendente",
+        "De lado, apoiada na borda da bandeja",
+        "Com a coroa para cima"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Lado cortado para cima, voltado para o atendente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2180,62 +1583,13 @@
       ],
       "pergunta": "Quais dos itens abaixo não faz parte da aparência do Big Mac?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Ausência de sementes no pão intermediário (apenas a coroa tem sementes)."
+        "Sementes no pão intermediário",
+        "Sementes na coroa",
+        "Duas carnes 10:1",
+        "Alface visível nas bordas"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Ausência de sementes no pão intermediário (apenas a coroa tem sementes).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_046",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "molho",
-        "porcao",
-        "temperatura"
-      ],
-      "pergunta": "Qual é a calibragem do molho Big Mac?",
-      "alternativas": [
-        "1oz",
-        "1,5oz",
-        "2oz",
-        "15ml / 1/2oz por nível."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "15ml (1/2oz), dispensado pela pistola Flex Prep com 1 ponto de saída.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2277,115 +1631,13 @@
       ],
       "pergunta": "Qual é quantidade de alface no Big Mac?",
       "alternativas": [
-        "7g",
-        "17g",
-        "22g",
-        "12g por nível."
+        "8g por nível",
+        "12g por nível",
+        "14g por nível",
+        "22g por nível"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "12g por nível.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_048",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "limite",
-        "molho",
-        "temperatura"
-      ],
-      "pergunta": "Qual é o empilhamento máximo dos pães de Big Mac e dos demais pães?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Big Mac: 8 pães · Demais: 10 pães."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Big Mac: 8 pães · Demais: 10 pães.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_049",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "ambientacao",
-        "angulo",
-        "limite",
-        "molho",
-        "queijo",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual é o tempo de ambientação do molho Cheddar?",
-      "alternativas": [
-        "20 minutos",
-        "40 minutos",
-        "45 minutos",
-        "Mínimo 30 minutos em temperatura ambiente."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Mínimo 30 minutos em temperatura ambiente.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2429,13 +1681,13 @@
       ],
       "pergunta": "Qual tempo de vida secundário da cebola reidratada?",
       "alternativas": [
-        "1 horas",
-        "4 horas",
-        "6 horas",
-        "2 horas na mesa de condimentação."
+        "4 horas na câmara",
+        "2 horas na câmara",
+        "24 horas na câmara (1–4°C)",
+        "7 dias na câmara"
       ],
-      "respostaCorreta": 3,
-      "explicacao": "2 horas na mesa de condimentação.",
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de vida secundário da cebola reidratada é de 24 horas na câmara a 1–4°C. Na mesa de condimentação, o primário é de 2 horas.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2478,12 +1730,12 @@
       ],
       "pergunta": "Quantas gramas de alface colocamos no Mcnífico?",
       "alternativas": [
-        "9g",
-        "19g",
-        "24g",
-        "14g."
+        "10g",
+        "12g",
+        "14g",
+        "22g"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "14g.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2527,12 +1779,12 @@
       ],
       "pergunta": "Qual é a capacidade de carnes de McChicken em uma gaveta?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "6 unidades."
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "10 unidades"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "6 unidades.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2577,10 +1829,10 @@
       ],
       "pergunta": "Qual o tempo de vida primário do tomate?",
       "alternativas": [
-        "1 horas",
-        "4 horas",
-        "6 horas",
-        "2 horas na mesa de condimentação."
+        "24 horas na mesa de condimentação",
+        "4 horas na mesa de condimentação",
+        "30 minutos na mesa de condimentação",
+        "2 horas na mesa de condimentação"
       ],
       "respostaCorreta": 3,
       "explicacao": "2 horas na mesa de condimentação.",
@@ -2627,62 +1879,13 @@
       ],
       "pergunta": "Qual é a quantidade de mostarda nos sanduíches a cada 1 tiro?",
       "alternativas": [
+        "0,125oz",
+        "0,25oz",
         "0,5oz",
-        "1,5oz",
-        "2oz",
-        "0,25oz por tiro."
+        "1oz"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "0,25oz por tiro.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_055",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "molho",
-        "porcao",
-        "temperatura"
-      ],
-      "pergunta": "Qual é o rendimento da mostarda pouch?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Aproximadamente 80 tiros por pouch."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Aproximadamente 80 tiros por pouch.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2726,62 +1929,13 @@
       ],
       "pergunta": "Qual é o tempo de vida primário da mostarda pouch?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "14 dias após aberto."
+        "30 dias após aberto",
+        "48 horas após aberto",
+        "7 dias após aberto",
+        "14 dias após aberto"
       ],
       "respostaCorreta": 3,
       "explicacao": "14 dias após aberto.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_057",
-      "categoria": "ppi",
-      "subcategoria": "🍟 McFritas · Fritos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "oleo",
-        "sal",
-        "temperatura"
-      ],
-      "pergunta": "Quais são os inimigos da gordura?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Sal, água, resíduos de alimentos e temperatura incorreta."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Sal, água, resíduos de alimentos e temperatura incorreta.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2826,12 +1980,12 @@
       ],
       "pergunta": "Por que devemos sacudir as McFritas após 30 segundos?",
       "alternativas": [
-        "Temperatura do equipamento alta",
-        "Procedimento executado corretamente",
-        "Falta de treinamento",
-        "Para eliminar o excesso de gordura e garantir a crocância."
+        "Para separar as batatas quebradas",
+        "Para acelerar o tempo de fritura",
+        "Para eliminar o excesso de gordura e garantir a crocância",
+        "Para baixar a temperatura do óleo"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Para eliminar o excesso de gordura e garantir a crocância.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2876,13 +2030,13 @@
       ],
       "pergunta": "Qual é a temperatura do óleo para cozinhar McNuggets?",
       "alternativas": [
-        "158°C",
-        "178°C",
-        "183°C",
-        "168°C (335°F)."
+        "160°C",
+        "168°C",
+        "180°C",
+        "190°C"
       ],
-      "respostaCorreta": 3,
-      "explicacao": "168°C (335°F).",
+      "respostaCorreta": 2,
+      "explicacao": "A fritadeira de frango e tortas — onde os McNuggets são fritos — opera a 180°C. As McFritas usam 168°C.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2925,12 +2079,12 @@
       ],
       "pergunta": "Quais são as principais características das Batatas Fritas padrão da empresa?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Douradas, crocantes por fora, macias por dentro, bem salgadas e servidas..."
+        "Douradas, sem sal e servidas em temperatura ambiente",
+        "Douradas, crocantes por fora, macias por dentro, salgadas e servidas quentes",
+        "Claras, macias por fora e crocantes por dentro",
+        "Bem douradas, firmes por dentro e servidas mornas"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Douradas, crocantes por fora, macias por dentro, bem salgadas e servidas quentes.",
       "dica": "",
       "tempoEstimado": 15,
@@ -2975,12 +2129,12 @@
       ],
       "pergunta": "O que pode ter acontecido para que uma torta tenha poucas bolhas ou nenhuma?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Óleo frio demais, torta molhada ou congelada ao ser colocada na fritadeira."
+        "Torta descongelada por tempo demais antes de fritar",
+        "Óleo frio demais, torta molhada ou ainda congelada ao entrar na fritadeira",
+        "Óleo quente demais ou tempo de fritura excedido",
+        "Excesso de tortas na cesta de resfriamento"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Óleo frio demais, torta molhada ou congelada ao ser colocada na fritadeira.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3024,10 +2178,10 @@
       ],
       "pergunta": "O que pode ter acontecido quando encontramos McFritas grudadas?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Excesso de batatas no cesto, óleo frio ou cesto não sacudido após imersão."
+        "Batatas armazenadas em pé no congelador",
+        "Sal aplicado cedo demais ou óleo quente demais",
+        "Tempo de drenagem acima de 5 segundos",
+        "Excesso de batatas no cesto, óleo frio ou cesto não sacudido após a imersão"
       ],
       "respostaCorreta": 3,
       "explicacao": "Excesso de batatas no cesto, óleo frio ou cesto não sacudido após imersão.",
@@ -3075,10 +2229,10 @@
       ],
       "pergunta": "Pensando no cliente, o que a pessoa do Salão deve fazer?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Manter o salão limpo, organizado, abordar clientes proativamente."
+        "Priorizar a reposição do estoque do salão",
+        "Aguardar o chamado do cliente antes de abordar",
+        "Concentrar-se na limpeza apenas no fechamento",
+        "Manter o salão limpo e organizado e abordar os clientes proativamente"
       ],
       "respostaCorreta": 3,
       "explicacao": "Manter o salão limpo, organizado, abordar clientes proativamente.",
@@ -3124,12 +2278,12 @@
       ],
       "pergunta": "Qual é a principal causa de uma Mc Fritas com quantidade imprópria de sal?",
       "alternativas": [
-        "Temperatura do equipamento alta",
-        "Procedimento executado corretamente",
-        "Falta de treinamento",
-        "Aplicar o sal depois que as batatas esfriaram."
+        "Usar o copo medidor errado na porção",
+        "Aplicar o sal ainda sobre a fritadeira",
+        "Aplicar o sal depois que as batatas esfriaram",
+        "Sacudir o cesto antes de salgar"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Aplicar o sal depois que as batatas esfriaram.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3173,166 +2327,13 @@
       ],
       "pergunta": "Qual é o sinal que temos quando a gordura está velha?",
       "alternativas": [
-        "19%",
-        "29%",
-        "34%",
-        "Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%."
+        "Cor clara, ausência de fumaça e Compostos Polares abaixo de 10%",
+        "Espuma branca com odor neutro e óleo transparente",
+        "Fumaça leve logo após a filtragem diária",
+        "Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%"
       ],
       "respostaCorreta": 3,
       "explicacao": "Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_066",
-      "categoria": "ppi",
-      "subcategoria": "🍟 McFritas · Fritos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "oleo",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual é o tempo de vida do óleo vegetal?",
-      "alternativas": [
-        "9%",
-        "19%",
-        "24%",
-        "14 dias ou conforme Compostos Polares (máx. 24%)."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "14 dias ou conforme Compostos Polares (máx. 24%).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_067",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "molho",
-        "refrigeracao",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual é o tempo de vida dos molhos de Mc Nuggets?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "30 dias após aberto, refrigerado."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "30 dias após aberto, refrigerado.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_068",
-      "categoria": "ppi",
-      "subcategoria": "🍟 McFritas · Fritos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "sal",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual é o tempo de vida primário das Mc Fritas?",
-      "alternativas": [
-        "1 minutos",
-        "17 minutos",
-        "22 minutos",
-        "7 minutos após salgadas."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "7 minutos após salgadas.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -3376,10 +2377,10 @@
       ],
       "pergunta": "Qual tempo de vida secundário das tortas?",
       "alternativas": [
-        "20 minutos",
-        "40 minutos",
-        "45 minutos",
-        "90 minutos após a fritura."
+        "20 minutos após a fritura",
+        "30 minutos após a fritura",
+        "60 minutos após a fritura",
+        "90 minutos após a fritura"
       ],
       "respostaCorreta": 3,
       "explicacao": "90 minutos após a fritura.",
@@ -3424,12 +2425,12 @@
       ],
       "pergunta": "Qual empilhamento máximo das caixa de McNuggets?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Máximo 3 caixas empilhadas."
+        "2 caixas",
+        "3 caixas",
+        "5 caixas",
+        "8 caixas"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Máximo 3 caixas empilhadas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3477,12 +2478,12 @@
       ],
       "pergunta": "Quais causas que podem diminuir o tempo de vida da gordura?",
       "alternativas": [
-        "Temperatura do equipamento alta",
-        "Procedimento executado corretamente",
-        "Falta de treinamento",
-        "Sal, água, resíduos, temperatura incorreta e não filtrar regularmente."
+        "Trocar o óleo antes de atingir 24% de Compostos Polares",
+        "Manter a fritadeira sempre na temperatura máxima",
+        "Sal, água, resíduos, temperatura incorreta e falta de filtragem regular",
+        "Filtrar o óleo mais de uma vez por dia"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Sal, água, resíduos, temperatura incorreta e não filtrar regularmente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3527,62 +2528,13 @@
       ],
       "pergunta": "Qual é a primeira coisa que a pessoa do chão do Salão deve realizar antes de limpar a área com esfregão?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Varrer com vassoura e recolher os resíduos."
+        "Varrer com a vassoura e recolher os resíduos",
+        "Sinalizar o piso molhado",
+        "Passar o esfregão com água quente",
+        "Aplicar o desengordurante e aguardar"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Varrer com vassoura e recolher os resíduos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_073",
-      "categoria": "ppi",
-      "subcategoria": "🍟 McFritas · Fritos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "sal",
-        "temperatura"
-      ],
-      "pergunta": "Qual é a principal causa de uma McFritas com quantidade imprópria de sal?",
-      "alternativas": [
-        "Temperatura do equipamento alta",
-        "Procedimento executado corretamente",
-        "Falta de treinamento",
-        "Aplicar o sal depois que as batatas esfriaram."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Aplicar o sal depois que as batatas esfriaram.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -3624,12 +2576,12 @@
       ],
       "pergunta": "Qual é o peso de uma McFritas Kids, pequena, Média e Grande respectivamente?",
       "alternativas": [
-        "60g",
-        "70g",
-        "75g",
-        "Kids: 31g · P: 73g · M: 102g · G: 146g."
+        "Kids 25g · P 68g · M 95g · G 130g",
+        "Kids 31g · P 80g · M 110g · G 160g",
+        "Kids 31g · P 73g · M 102g · G 146g",
+        "Kids 40g · P 73g · M 102g · G 146g"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Kids: 31g · P: 73g · M: 102g · G: 146g.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3674,12 +2626,12 @@
       ],
       "pergunta": "Qual é o tempo de drenagem das McFritas?",
       "alternativas": [
+        "3 segundos",
         "5 segundos",
-        "15 segundos",
         "10 segundos",
-        "5 segundos sobre a fritadeira."
+        "30 segundos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "5 segundos sobre a fritadeira.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3725,12 +2677,12 @@
       ],
       "pergunta": "Qual é o tempo de resfriamento das tortas e quantas no máximo que podemos ativar?",
       "alternativas": [
-        "10 minutos",
-        "30 minutos",
-        "35 minutos",
-        "20 minutos de resfriamento · Máximo 4 tortas por cesta."
+        "20 minutos de resfriamento · máximo 4 tortas por cesta",
+        "10 minutos de resfriamento · máximo 6 tortas",
+        "20 minutos de resfriamento · máximo 8 tortas",
+        "30 minutos de resfriamento · máximo 4 tortas"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "20 minutos de resfriamento · Máximo 4 tortas por cesta.",
       "dica": "",
       "tempoEstimado": 15,
@@ -3774,219 +2726,13 @@
       ],
       "pergunta": "Qual pode ser a causa de uma torta fria demais?",
       "alternativas": [
-        "Temperatura do equipamento alta",
-        "Procedimento executado corretamente",
-        "Falta de treinamento",
-        "Temperatura do óleo baixa ou tempo insuficiente de fritura."
+        "Excesso de tortas empilhadas na cesta",
+        "Óleo recém-filtrado e ainda muito quente",
+        "Temperatura do óleo baixa ou tempo de fritura insuficiente",
+        "Tempo de resfriamento acima de 20 minutos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Temperatura do óleo baixa ou tempo insuficiente de fritura.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_078",
-      "categoria": "ppi",
-      "subcategoria": "🍟 McFritas · Fritos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "fritas",
-        "sal",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual é o tempo de vida primário das McFritas?",
-      "alternativas": [
-        "1 minutos",
-        "17 minutos",
-        "22 minutos",
-        "7 minutos após salgadas."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "7 minutos após salgadas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_079",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "molho",
-        "refrigeracao",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual é o tempo de vida dos molhos de McNuggets?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "30 dias após aberto, refrigerado."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "30 dias após aberto, refrigerado.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_080",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "peps",
-        "refrigeracao",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "O que significa a estocagem 24/2?",
-      "alternativas": [
-        "22 horas",
-        "26 horas",
-        "28 horas",
-        "24 horas de validade no refrigerador / 2 horas na mesa de condimentação."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "24 horas de validade no refrigerador / 2 horas na mesa de condimentação.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_081",
-      "categoria": "ppi",
-      "subcategoria": "📋 Gestão · Procedimentos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "contaminacao",
-        "higiene",
-        "peps",
-        "seguranca_alimentar",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "O que significa comida segura?",
-      "alternativas": [
-        "Reduzir custos operacionais",
-        "Aumentar o controle de estoque",
-        "Melhorar o posicionamento",
-        "Alimento preparado dentro dos padrões de temperatura,"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Alimento preparado dentro dos padrões de temperatura, higiene e tempo de vida, sem risco de contaminação.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -4029,12 +2775,12 @@
       ],
       "pergunta": "Para que serve a caramelização dos pães",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Criar superfície dourada e crocante que melhora sabor,"
+        "Reduzir a umidade do pão para aumentar a validade",
+        "Criar uma superfície dourada e crocante que melhora sabor, textura e aparência",
+        "Selar o pão para que ele não absorva o molho",
+        "Aquecer o pão por dentro sem alterar a superfície"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Criar superfície dourada e crocante que melhora sabor, textura e aparência do sanduíche.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4076,10 +2822,10 @@
       ],
       "pergunta": "Como deve ser o padrão de temperatura dos sanduíches?",
       "alternativas": [
-        "50°C",
-        "70°C",
-        "75°C",
-        "Servidos quentes, acima de 60°C internamente."
+        "Servidos na temperatura da UHC, a 79°C",
+        "Servidos acima de 74°C internamente",
+        "Servidos mornos, entre 40°C e 50°C",
+        "Servidos quentes, acima de 60°C internamente"
       ],
       "respostaCorreta": 3,
       "explicacao": "Servidos quentes, acima de 60°C internamente.",
@@ -4125,12 +2871,12 @@
       ],
       "pergunta": "Qual deve ser o tempo de montagem de um produto na linha?",
       "alternativas": [
-        "20 segundos",
-        "40 segundos",
-        "60 segundos",
-        "Máximo de 30 segundos."
+        "Máximo de 15 segundos",
+        "Máximo de 30 segundos",
+        "Máximo de 60 segundos",
+        "Máximo de 90 segundos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "Máximo de 30 segundos.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4173,12 +2919,12 @@
       ],
       "pergunta": "Quais são as causas de um pão ressecado?",
       "alternativas": [
-        "Temperatura do equipamento alta",
-        "Procedimento executado corretamente",
-        "Falta de treinamento",
-        "Pão exposto sem cobertura,"
+        "Descongelamento acima de 24 horas",
+        "Caramelização abaixo de 22 segundos",
+        "Pão exposto sem cobertura, caramelização excessiva ou tostadeira muito quente",
+        "Pão guardado coberto por tempo demais"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Pão exposto sem cobertura, caramelização excessiva ou temperatura alta da tostadeira.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4220,64 +2966,13 @@
       ],
       "pergunta": "Qual é o procedimento certo para abrir os sacos de pães?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Abrir pelo lado correto indicado no saco, nunca rasgar lateralmente."
+        "Abrir pelo lado indicado no saco, sem rasgar pela lateral",
+        "Rasgar pela lateral para abrir mais rápido",
+        "Cortar o fundo do saco com a tesoura",
+        "Abrir todos os sacos da caixa de uma vez"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Abrir pelo lado correto indicado no saco, nunca rasgar lateralmente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_087",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "angulo",
-        "pao",
-        "temperatura",
-        "tempo",
-        "validade"
-      ],
-      "pergunta": "Qual é o tempo de vida do pão fresco?",
-      "alternativas": [
-        "5 minutos",
-        "25 minutos",
-        "30 minutos",
-        "15 minutos após sair da tostadeira."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "15 minutos após sair da tostadeira.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -4319,216 +3014,13 @@
       ],
       "pergunta": "Qual o ciclo de caramelização dos pães?",
       "alternativas": [
-        "5 segundos",
-        "21 segundos",
+        "15 segundos",
+        "18 segundos",
         "22 segundos",
-        "11 segundos"
+        "30 segundos"
       ],
       "respostaCorreta": 2,
       "explicacao": "O ciclo de caramelização dos pães é de 22 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_089",
-      "categoria": "ppi",
-      "subcategoria": "🥬 LOPE · Condimentação",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Qual o ciclo de caramelização?",
-      "alternativas": [
-        "5 segundos",
-        "21 segundos",
-        "22 segundos",
-        "11 segundos"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "O ciclo de caramelização é de 22 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_090",
-      "categoria": "ppi",
-      "subcategoria": "🎯 Atendimento · Vendas",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "peps",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Em relação à Evolução da Cooltura de Serviço, qual é o nosso propósito?",
-      "alternativas": [
-        "Reduzir custos operacionais",
-        "Aumentar o controle de estoque",
-        "Melhorar o posicionamento",
-        "Ser referência em atendimento ao cliente,"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Ser referência em atendimento ao cliente, criando experiências inesquecíveis.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_091",
-      "categoria": "ppi",
-      "subcategoria": "🎯 Atendimento · Vendas",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "frequencia",
-        "influencer",
-        "peps",
-        "porcao",
-        "programacao",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "Mencione uma das três metas fundamentais do programa Influencer Vendedor:",
-      "alternativas": [
-        "Reduzir custos operacionais",
-        "Aumentar o controle de estoque",
-        "Melhorar o posicionamento",
-        "Aumentar o ticket médio,"
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Aumentar o ticket médio, aumentar a frequência de visitas, ou melhorar a satisfação do cliente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_092",
-      "categoria": "ppi",
-      "subcategoria": "🎯 Atendimento · Vendas",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "atendimento",
-        "peps",
-        "ppf",
-        "temperatura",
-        "tempo"
-      ],
-      "pergunta": "O que significa Dual Point?",
-      "alternativas": [
-        "Reduzir custos operacionais",
-        "Aumentar o controle de estoque",
-        "Melhorar o posicionamento",
-        "Sistema onde o cliente faz o pedido em um ponto e retira em outro ponto ..."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Sistema onde o cliente faz o pedido em um ponto e retira em outro ponto separado.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -4574,12 +3066,12 @@
       ],
       "pergunta": "Porque devemos Utilizar as Técnicas de Influencers Vendedores?",
       "alternativas": [
-        "Temperatura do equipamento alta",
-        "Procedimento executado corretamente",
-        "Falta de treinamento",
-        "Para aumentar ticket médio,"
+        "Para aumentar o ticket médio, melhorar a experiência do cliente e atingir as metas",
+        "Para reduzir o tempo de atendimento no balcão",
+        "Para padronizar o discurso de todos os atendentes",
+        "Para diminuir o desperdício de produtos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Para aumentar ticket médio, melhorar a experiência do cliente e atingir as metas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4623,10 +3115,10 @@
       ],
       "pergunta": "É um objetivo da Abordagem de Vendas:",
       "alternativas": [
-        "Reduzir custos operacionais",
-        "Aumentar o controle de estoque",
-        "Melhorar o posicionamento",
-        "Aumentar o ticket médio oferecendo combos, upgrades e itens complementares."
+        "Encerrar o pedido no menor tempo possível",
+        "Direcionar o cliente para os itens de maior margem",
+        "Reduzir a fila oferecendo apenas itens prontos",
+        "Aumentar o ticket médio oferecendo combos, upgrades e itens complementares"
       ],
       "respostaCorreta": 3,
       "explicacao": "Aumentar o ticket médio oferecendo combos, upgrades e itens complementares.",
@@ -4670,12 +3162,12 @@
       ],
       "pergunta": "Qual dos itens não faz parte do trinômio de treinamento?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "O trinômio é: Demonstrar, Praticar, Avaliar."
+        "Praticar",
+        "Avaliar",
+        "Corrigir",
+        "Demonstrar"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "O trinômio é: Demonstrar, Praticar, Avaliar.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4720,12 +3212,12 @@
       ],
       "pergunta": "O que queremos mostrar a com a técnica de Influencer Vendedor &quot;Vivenciamos as mesmas coisas&quot;?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Criar conexão com o cliente mostrando empatia e experiência comum."
+        "Demonstrar conhecimento técnico sobre o produto",
+        "Justificar o preço comparando com a concorrência",
+        "Criar conexão com o cliente mostrando empatia e experiência em comum",
+        "Encerrar a conversa de forma cordial e rápida"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Criar conexão com o cliente mostrando empatia e experiência comum.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4772,12 +3264,12 @@
       ],
       "pergunta": "Com que frequência os utensílios da cozinha que entram em contato com os alimentos devem ser limpos e higienizados?",
       "alternativas": [
-        "2 horas",
-        "6 horas",
-        "8 horas",
-        "A cada 4 horas ou sempre que necessário."
+        "A cada 2 horas",
+        "A cada 4 horas ou sempre que necessário",
+        "A cada 8 horas",
+        "A cada 1 hora"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "A cada 4 horas ou sempre que necessário.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4822,12 +3314,12 @@
       ],
       "pergunta": "De quanto em quanto tempo deve ser feita a rota dos banheiros?",
       "alternativas": [
-        "1 horas",
-        "3 horas",
-        "5 horas",
-        "A cada 1 hora."
+        "A cada 1 hora",
+        "A cada 2 horas",
+        "A cada 4 horas",
+        "A cada 30 minutos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "A cada 1 hora.",
       "dica": "",
       "tempoEstimado": 15,
@@ -4873,62 +3365,13 @@
       ],
       "pergunta": "Qual a frequência de lavagem das mãos?",
       "alternativas": [
-        "20 minutos",
-        "40 minutos",
-        "45 minutos",
-        "A cada 30 minutos ou sempre que necessário."
+        "A cada 2 horas",
+        "A cada 15 minutos",
+        "A cada 1 hora",
+        "A cada 30 minutos ou sempre que necessário"
       ],
       "respostaCorreta": 3,
       "explicacao": "A cada 30 minutos ou sempre que necessário.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_100",
-      "categoria": "ppi",
-      "subcategoria": "📋 Gestão · Procedimentos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tempo",
-        "uhc"
-      ],
-      "pergunta": "Qual é a temperatura interna mínima dos produtos na UHC?",
-      "alternativas": [
-        "50°C",
-        "70°C",
-        "75°C",
-        "60°C."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "60°C.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -4973,12 +3416,12 @@
       ],
       "pergunta": "Qual a frequência de lavagem dos utensílios da cozinha?",
       "alternativas": [
-        "2 horas",
-        "6 horas",
-        "8 horas",
-        "A cada 4 horas."
+        "A cada 4 horas",
+        "A cada 6 horas",
+        "A cada 1 hora",
+        "A cada 2 horas"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "A cada 4 horas.",
       "dica": "",
       "tempoEstimado": 15,
@@ -5021,12 +3464,12 @@
       ],
       "pergunta": "Qual a temperatura que devemos manter os produtos congelados?",
       "alternativas": [
-        "-13°C",
-        "-23°C",
-        "-8°C",
-        "-18°C ou abaixo."
+        "-18°C ou abaixo",
+        "-12°C ou abaixo",
+        "-9°C ou abaixo",
+        "0°C ou abaixo"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "-18°C ou abaixo.",
       "dica": "",
       "tempoEstimado": 15,
@@ -5069,12 +3512,12 @@
       ],
       "pergunta": "Qual é a temperatura do Refrigerador do Balcão?",
       "alternativas": [
-        "-9°C",
-        "11°C",
-        "16°C",
-        "1°C a 4°C."
+        "-4°C a 0°C",
+        "1°C a 4°C",
+        "5°C a 8°C",
+        "8°C a 10°C"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "1°C a 4°C.",
       "dica": "",
       "tempoEstimado": 15,
@@ -5116,12 +3559,12 @@
       ],
       "pergunta": "Em que ano Ray Kroc abriu seu primeiro restaurante fast-food?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "1955, em Des Plaines, Illinois."
+        "1948, em Phoenix, Arizona",
+        "1955, em Des Plaines, Illinois",
+        "1961, em Chicago, Illinois",
+        "1940, em San Bernardino, Califórnia"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "1955, em Des Plaines, Illinois.",
       "dica": "",
       "tempoEstimado": 15,
@@ -5164,12 +3607,12 @@
       ],
       "pergunta": "Os princípios da Cooltua de Serviço são:",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Sorrir, Ser gentil, Ser ágil, Antecipar as necessidades do cliente."
+        "Sorrir, agradecer, oferecer sobremesa e despedir-se",
+        "Cumprimentar, anotar, conferir e entregar",
+        "Sorrir, ser gentil, ser ágil e antecipar as necessidades do cliente",
+        "Ser rápido, preciso, silencioso e discreto"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Sorrir, Ser gentil, Ser ágil, Antecipar as necessidades do cliente.",
       "dica": "",
       "tempoEstimado": 15,
@@ -5212,59 +3655,12 @@
       "pergunta": "Qual o tempo de reação do iniciador",
       "alternativas": [
         "5 segundos",
-        "18 segundos",
-        "16 segundos",
-        "8 segundos."
+        "8 segundos",
+        "15 segundos",
+        "30 segundos"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 1,
       "explicacao": "8 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "ppi_107",
-      "categoria": "ppi",
-      "subcategoria": "📋 Gestão · Procedimentos",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura"
-      ],
-      "pergunta": "Quais são os atributos de qualidade dos nossos produtos?",
-      "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Aparência, sabor, temperatura e textura corretos."
-      ],
-      "respostaCorreta": 3,
-      "explicacao": "Aparência, sabor, temperatura e textura corretos.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -5308,10 +3704,10 @@
       ],
       "pergunta": "Como deve estar configurada a tela de pedidos do iniciador?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Exibir o item de maior tempo de preparo primeiro (modo de prioridade)."
+        "Exibindo primeiro o item mais barato",
+        "Exibindo os pedidos por ordem de chegada",
+        "Exibindo apenas os pedidos do Drive",
+        "Exibindo primeiro o item de maior tempo de preparo"
       ],
       "respostaCorreta": 3,
       "explicacao": "Exibir o item de maior tempo de preparo primeiro (modo de prioridade).",
@@ -5359,12 +3755,12 @@
       ],
       "pergunta": "Com qual pegador devemos manipular as carnes brancas após o cozimento?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Pegador azul."
+        "Pegador verde",
+        "Pegador vermelho",
+        "Pegador azul",
+        "Pegador amarelo"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Pegador azul.",
       "dica": "",
       "tempoEstimado": 15,
@@ -5406,12 +3802,12 @@
       ],
       "pergunta": "O que acontecerá se deixarmos os pães descobertos?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Os pães ressecarão e perderão umidade."
+        "Ressecam e perdem umidade",
+        "Absorvem umidade e ficam encharcados",
+        "Perdem a caramelização já feita",
+        "Mantêm a qualidade por até 4 horas"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 0,
       "explicacao": "Os pães ressecarão e perderão umidade.",
       "dica": "",
       "tempoEstimado": 15,
@@ -5459,10 +3855,10 @@
       ],
       "pergunta": "Qual é a descrição do Padrão Ouro de Qualidade do Cheeseburguer?",
       "alternativas": [
-        "Depende do volume do turno",
-        "O gerente define",
-        "Não há padrão fixo",
-        "Pão caramelizado,"
+        "Duas carnes 10:1, queijo duplo e molho Big Mac",
+        "Pão com sementes, alface, tomate e maionese",
+        "Pão sem caramelização, carne bem passada e queijo firme",
+        "Pão caramelizado, carne suculenta, queijo derretido e ketchup, mostarda, picles e cebola na proporção certa"
       ],
       "respostaCorreta": 3,
       "explicacao": "Pão caramelizado, carne suculenta, queijo derretido, ketchup, mostarda, picles e cebola na proporção certa.",
@@ -5507,14 +3903,14 @@
         "temperatura",
         "tempo"
       ],
-      "pergunta": "Todas as temperaturas internas dos produtos de frango devem estar a 74°C (165°F) ou mais depois de ser cozidos?",
+      "pergunta": "Qual é a temperatura interna mínima que todo produto de frango deve atingir após o cozimento?",
       "alternativas": [
-        "Não",
-        "Somente no fechamento",
-        "Depende do gerente",
-        "Sim"
+        "60°C (140°F)",
+        "70°C (158°F)",
+        "74°C (165°F)",
+        "85°C (185°F)"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Sim — 74°C (165°F) é a temperatura interna mínima para todos os produtos de frango.",
       "dica": "",
       "tempoEstimado": 15,
