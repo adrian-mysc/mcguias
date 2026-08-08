@@ -15,7 +15,7 @@
         "temperatura",
         "tostadeira"
       ],
-      "pergunta": "Qual a temperatura das placas A e B da tostadeira?",
+      "pergunta": "Qual a temperatura das placas A e B da tostadeira HEBT-5V?",
       "alternativas": [
         "254°C",
         "265°C",
@@ -23,7 +23,7 @@
         "280°C"
       ],
       "respostaCorreta": 2,
-      "explicacao": "Placas A e B = 271°C. Placa C = 254°C.",
+      "explicacao": "A HEBT-5V opera com as placas A e B a 271°C e a placa C a 254°C, compressão 4D, motor 3300 e ciclo de caramelização de 22 segundos.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -71,7 +71,7 @@
         "30 segundos"
       ],
       "respostaCorreta": 2,
-      "explicacao": "O tempo de caramelização é de 22 segundos.",
+      "explicacao": "O ciclo de caramelização é de 22 segundos em todos os modelos de tostadeira.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -452,7 +452,7 @@
         "temperatura",
         "tostadeira"
       ],
-      "pergunta": "Qual a temperatura da placa C da tostadeira?",
+      "pergunta": "Qual a temperatura da placa C da tostadeira HEBT-5V?",
       "alternativas": [
         "220°C",
         "240°C",
@@ -460,7 +460,7 @@
         "271°C"
       ],
       "respostaCorreta": 2,
-      "explicacao": "Placa C = 254°C. Placas A e B = 271°C.",
+      "explicacao": "Na HEBT-5V, a placa C fica a 254°C e as placas A e B a 271°C.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1785,7 +1785,7 @@
         "tempo",
         "tostadeira"
       ],
-      "pergunta": "Qual a temperatura da Tostadeira rápida na linha?",
+      "pergunta": "Qual a temperatura da placa principal da tostadeira rápida (VCT-200 / VCT-250)?",
       "alternativas": [
         "168°C",
         "293°C",
@@ -1793,55 +1793,7 @@
         "218°C"
       ],
       "respostaCorreta": 1,
-      "explicacao": "A Tostadeira rápida opera a 293°C, com ciclo de caramelização de 22 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
-    },
-    {
-      "id": "linha_042",
-      "categoria": "linha",
-      "subcategoria": "🍞 Tostadeira",
-      "dificuldade": 2,
-      "tipo": "multipla_escolha",
-      "tags": [
-        "temperatura",
-        "tostadeira"
-      ],
-      "pergunta": "Qual a temperatura das placas A e B da Tostadeira HEBT5V?",
-      "alternativas": [
-        "250°C",
-        "254°C",
-        "271°C",
-        "300°C"
-      ],
-      "respostaCorreta": 2,
-      "explicacao": "A Tostadeira HEBT5V opera com placas A e B a 271°C e placa C a 254°C, com compressão 4D e ciclo de caramelização de 22 segundos.",
+      "explicacao": "A tostadeira rápida VCT-200/VCT-250 opera com a placa principal a 293°C e a auxiliar a 204°C, GAP 5D e ciclo de caramelização de 22 segundos.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -1891,7 +1843,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "O ciclo de caramelização dos pães é de 22 segundos em ambas as tostadeiras.",
-      "dica": "Vale para a rápida (293°C) e a HEBT-5V (271°C nas placas A/B e 254°C na placa C).",
+      "dica": "Vale para os dois modelos: a rápida VCT-200/250 (293°C principal / 204°C auxiliar) e a HEBT-5V (271°C nas placas A/B e 254°C na placa C).",
       "tempoEstimado": 15,
       "xp": 10,
       "peso": 1,
