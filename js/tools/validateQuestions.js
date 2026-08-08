@@ -127,7 +127,7 @@ function walkDir(dir) {
     process.exit(1);
   }
   fs.readdirSync(dir).forEach(function (item) {
-    if (item === 'index.json') return; // skip índice gerado
+    if (item === 'index.json' || item === 'packs.json') return; // arquivos gerados
     var full = path.join(dir, item);
     if (fs.statSync(full).isDirectory()) {
       walkDir(full);

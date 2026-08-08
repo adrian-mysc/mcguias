@@ -60,7 +60,7 @@ function processFile(filePath) {
 function walkDir(dir) {
   fs.readdirSync(dir).forEach(function (item) {
     var full = path.join(dir, item);
-    if (item === 'index.json') return; // skip output file
+    if (item === 'index.json' || item === 'packs.json') return; // arquivos gerados
     if (fs.statSync(full).isDirectory()) {
       walkDir(full);
     } else if (item.endsWith('.json')) {
@@ -74,6 +74,22 @@ walkDir(DATA_DIR);
 
 fs.writeFileSync(OUTPUT, JSON.stringify(index, null, 2), 'utf8');
 console.log('✅ Índice gerado: ' + OUTPUT);
+
+// packs.json — manifesto enxuto de "categoria/nivel" para quem só precisa saber
+// QUAIS arquivos existem (o quiz.html carrega todos). O index.json passa de
+// 700 KB, então baixá-lo só para descobrir a lista seria desperdício.
+var packs = [];
+fs.readdirSync(DATA_DIR).forEach(function (cat) {
+  var dir = path.join(DATA_DIR, cat);
+  if (!fs.statSync(dir).isDirectory()) return;
+  fs.readdirSync(dir).forEach(function (f) {
+    if (f.endsWith('.json')) packs.push(cat + '/' + f.replace(/\.json$/, ''));
+  });
+});
+packs.sort();
+var PACKS_OUT = path.join(DATA_DIR, 'packs.json');
+fs.writeFileSync(PACKS_OUT, JSON.stringify({ generatedAt: new Date().toISOString(), packs: packs }, null, 2) + '\n', 'utf8');
+console.log('✅ Manifesto gerado: ' + PACKS_OUT + ' (' + packs.length + ' packs)');
 console.log('📊 Total de questões indexadas: ' + index.totalQuestions);
 console.log('🏷️  Tags indexadas: ' + Object.keys(index.byTag).length);
 console.log('📂 Categorias: ' + Object.keys(index.byCategory).join(', ') + '\n');

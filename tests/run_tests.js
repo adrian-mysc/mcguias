@@ -781,6 +781,54 @@ test('toda categoria carregada do banco existe em data/questions', () => {
   assert(faltando.length === 0, 'Categoria inexistente: ' + faltando.join(', '));
 });
 
+test('toda questão tem uma resposta correta válida entre as alternativas', () => {
+  // O quiz.html trazia "6'" como resposta e "6'00\"" entre as alternativas —
+  // o initQuiz compara as strings, então essas perguntas eram impossíveis de
+  // acertar. Este teste impede que volte a acontecer.
+  const ruins = [];
+  for (const cat of fs.readdirSync(QS)) {
+    const dir = path.join(QS, cat);
+    if (!fs.statSync(dir).isDirectory()) continue;
+    for (const arq of fs.readdirSync(dir)) {
+      if (!arq.endsWith('.json')) continue;
+      for (const q of JSON.parse(fs.readFileSync(path.join(dir, arq), 'utf8')).questions) {
+        const alts = q.alternativas;
+        if (!Array.isArray(alts) || alts.length < 2) { ruins.push(cat + '/' + q.id + ' (alternativas)'); continue; }
+        if (!(q.respostaCorreta >= 0 && q.respostaCorreta < alts.length)) { ruins.push(cat + '/' + q.id + ' (índice fora do intervalo)'); continue; }
+        const certa = alts[q.respostaCorreta];
+        if (alts.filter((a) => a === certa).length !== 1) ruins.push(cat + '/' + q.id + ' (alternativa duplicada)');
+      }
+    }
+  }
+  assert(ruins.length === 0, 'Questões sem resposta correta utilizável: ' + ruins.slice(0, 10).join(', '));
+});
+
+test('packs.json lista exatamente os arquivos em disco', () => {
+  const manifesto = JSON.parse(fs.readFileSync(path.join(QS, 'packs.json'), 'utf8'));
+  const emDisco = [];
+  for (const cat of fs.readdirSync(QS)) {
+    const dir = path.join(QS, cat);
+    if (!fs.statSync(dir).isDirectory()) continue;
+    for (const f of fs.readdirSync(dir)) {
+      if (f.endsWith('.json')) emDisco.push(cat + '/' + f.replace(/\.json$/, ''));
+    }
+  }
+  emDisco.sort();
+  const listados = [...manifesto.packs].sort();
+  assert(JSON.stringify(listados) === JSON.stringify(emDisco),
+    'packs.json fora de sincronia — rode: node js/tools/generateIndexes.js\n' +
+    '  só no manifesto: ' + listados.filter((x) => !emDisco.includes(x)).join(', ') + '\n' +
+    '  só em disco:     ' + emDisco.filter((x) => !listados.includes(x)).join(', '));
+});
+
+test('todo pack do manifesto está no precache do sw.js', () => {
+  const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+  const manifesto = JSON.parse(fs.readFileSync(path.join(QS, 'packs.json'), 'utf8'));
+  const fora = manifesto.packs.filter((p) => !sw.includes('data/questions/' + p + '.json'));
+  assert(sw.includes('data/questions/packs.json'), 'sw.js não precacheia o packs.json');
+  assert(fora.length === 0, 'Sem precache (quebra o offline): ' + fora.join(', '));
+});
+
 test('toda categoria carregada do banco está no precache do sw.js', () => {
   const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
   const fora = new Set();

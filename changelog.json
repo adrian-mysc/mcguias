@@ -1,6 +1,45 @@
 {
   "versions": [
     {
+      "version": "v19",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "Simulado completo",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "🎯",
+          "text": "**O Simulado Geral agora tem todas as perguntas do app — 2.223.** A lista de guias que ele carregava era escrita à mão e ficava para trás a cada categoria nova: **492 perguntas de Treinador, Gerência, Liderança, Limpeza, PPI e Supervisores nunca apareciam ali**. Agora a lista é gerada automaticamente e não tem como desatualizar.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🔎",
+          "text": "**9 filtros novos** — Segurança do Alimento, Estoque e Recebimento, Fechamento, Treinador, PPI, Supervisores, Gerência e Liderança tinham perguntas no app mas não tinham botão para filtrar. O filtro **Provas**, que não tinha nenhuma pergunta e sempre abria vazio, foi removido.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "📚",
+          "text": "**Temperaturas, Rendimentos, Empilhamento e Futuros Treinadores viraram categorias de verdade** — eram 121 perguntas que só existiam dentro do Simulado e ficavam de fora da revisão espaçada, das tags e das estatísticas.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🐛",
+          "text": "**Duas perguntas eram impossíveis de acertar** — as de tempo de fritura do Crispy Chicken e das tortas tinham como resposta `6'` enquanto a alternativa era `6'00\"`, e o app compara o texto exato. Também havia uma pergunta de empilhamento com a resposta certa repetida em dois botões.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "📡",
+          "text": "**Offline mais completo** — as perguntas avançadas de Chapa nunca tinham entrado no pacote offline, e as categorias novas também entraram.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "🧀",
+          "text": "**Grafia do queijo padronizada** — *Emmenthal*, *Ementhal* e *Emmental* viraram **Emental** em todo o app.",
+          "tag": "melhoria"
+        }
+      ]
+    },
+    {
       "version": "v18",
       "date": "2026-08-08",
       "date_display": "08 Ago 2026",

@@ -6,7 +6,7 @@
 // Base de caminho dinâmica (BASE) — funciona tanto em /mcguias/
 // (GitHub Pages) quanto em / (Vercel/domínio próprio), sem caminho fixo.
 
-const CACHE = 'mc-guias-v47';
+const CACHE = 'mc-guias-v49';
 
 // Raiz da aplicação, derivada da própria URL do SW:
 //   GitHub Pages → '/mcguias/sw.js'  ⇒ BASE = '/mcguias/'
@@ -30,6 +30,7 @@ const PRECACHE_PATHS = [
   'manifest.json',
   // Questões — garantem funcionamento 100% offline desde a instalação do PWA
   'data/questions/chapa/basico.json',
+  'data/questions/chapa/avancado.json',
   'data/questions/lope/basico.json',
   'data/questions/linha/basico.json',
   'data/questions/mcfritas/basico.json',
@@ -56,6 +57,11 @@ const PRECACHE_PATHS = [
   'data/questions/limpeza/basico.json',
   'data/questions/supervisores/basico.json',
   'data/questions/ppi/basico.json',
+  'data/questions/packs.json',
+  'data/questions/temperaturas/basico.json',
+  'data/questions/rendimentos/basico.json',
+  'data/questions/empilhamento/basico.json',
+  'data/questions/futuros-treinadores/basico.json',
 ];
 
 const PRECACHE_ASSETS = PRECACHE_PATHS.map((p) => BASE + p);

@@ -1,0 +1,909 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-08-08",
+  "categoria": "rendimentos",
+  "nivel": "basico",
+  "migratedFrom": "quiz.html",
+  "questions": [
+    {
+      "id": "rend_001",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Vegetais",
+      "pergunta": "Qual o rendimento da alface por kg?",
+      "alternativas": [
+        "30,20 sanduíches",
+        "38,15 sanduíches",
+        "45,40 sanduíches",
+        "55,00 sanduíches"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A alface rende 45,40 sanduíches por kg.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_002",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Vegetais",
+      "pergunta": "Qual o rendimento dos picles por kg?",
+      "alternativas": [
+        "143 sanduíches",
+        "185 sanduíches",
+        "255 sanduíches",
+        "285 sanduíches"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os picles rendem 255 sanduíches por kg.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_003",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Cebolas",
+      "pergunta": "Qual o rendimento da cebola desidratada por kg?",
+      "alternativas": [
+        "1.057 sanduíches",
+        "285 sanduíches",
+        "570 sanduíches",
+        "800 sanduíches"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A cebola desidratada rende 1.057 sanduíches por kg — o maior rendimento entre as cebolas.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_004",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Cebolas",
+      "pergunta": "Qual o rendimento da cebola crispy por kg?",
+      "alternativas": [
+        "143 sanduíches",
+        "200 sanduíches",
+        "255 sanduíches",
+        "285 sanduíches"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A cebola crispy rende 285 sanduíches por kg.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_005",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Cebolas",
+      "pergunta": "Qual o rendimento da cebola fresca por kg?",
+      "alternativas": [
+        "70 sanduíches",
+        "95 sanduíches",
+        "120 sanduíches",
+        "143 sanduíches"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A cebola fresca rende 143 sanduíches por kg.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_006",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Cebolas",
+      "pergunta": "Qual o rendimento da cebola cheddar (ao molho shoyu) por kg?",
+      "alternativas": [
+        "49,00 sanduíches",
+        "70,42 sanduíches",
+        "95,00 sanduíches",
+        "143,00 sanduíches"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A cebola cheddar (ao molho shoyu) rende 70,42 sanduíches por kg.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_007",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Molhos",
+      "pergunta": "Qual o rendimento do Molho Big Mac e do Molho Maionese por kg?",
+      "alternativas": [
+        "33 sanduíches",
+        "49 sanduíches",
+        "60 sanduíches",
+        "77 sanduíches"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Tanto o Molho Big Mac quanto o Molho Maionese rendem 49 sanduíches por kg.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_008",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Molhos",
+      "pergunta": "Qual o rendimento do Molho Tasty e do Molho Cheddar por kg?",
+      "alternativas": [
+        "25 sanduíches",
+        "33 sanduíches",
+        "49 sanduíches",
+        "55 sanduíches"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Molho Tasty e o Molho Cheddar rendem 33 sanduíches por kg cada.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_009",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Molhos",
+      "pergunta": "Qual o rendimento do Ketchup pouch por kg?",
+      "alternativas": [
+        "55 a 60",
+        "65 a 70",
+        "77 a 79",
+        "85 a 90"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Ketchup pouch rende entre 77 e 79 sanduíches por kg.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_010",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Molhos",
+      "pergunta": "Qual o rendimento da Mostarda pouch por kg?",
+      "alternativas": [
+        "1.235 sanduíches",
+        "285 sanduíches",
+        "580 sanduíches",
+        "900 sanduíches"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A Mostarda pouch rende 1.235 sanduíches por kg — um dos maiores rendimentos.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_011",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Sobremesas",
+      "pergunta": "Qual o rendimento do Mix Sundae por litro?",
+      "alternativas": [
+        "5,50 sundaes",
+        "7,25 sundaes",
+        "9,75 sundaes",
+        "12,00 sundaes"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Mix Sundae rende 9,75 sundaes por litro.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_012",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Sobremesas",
+      "pergunta": "Qual o rendimento da Cobertura de Chocolate por litro?",
+      "alternativas": [
+        "24,69 sundaes",
+        "28,50 sundaes",
+        "32,25 sundaes",
+        "33,33 sundaes"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A Cobertura de Chocolate rende 33,33 sundaes por litro, sendo a de maior rendimento.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_013",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Sobremesas",
+      "pergunta": "Qual o rendimento da Cobertura de Caramelo por litro?",
+      "alternativas": [
+        "24,69 sundaes",
+        "28,50 sundaes",
+        "32,25 sundaes",
+        "33,33 sundaes"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A Cobertura de Caramelo rende 32,25 sundaes por litro.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_014",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Sobremesas",
+      "pergunta": "Qual o rendimento da Cobertura de Morango por litro?",
+      "alternativas": [
+        "18,50 sundaes",
+        "21,00 sundaes",
+        "24,69 sundaes",
+        "28,00 sundaes"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A Cobertura de Morango rende 24,69 sundaes por litro — o menor rendimento entre as coberturas.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_015",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Bebidas",
+      "pergunta": "Qual o rendimento do Leite Desnatado em milk shakes por litro?",
+      "alternativas": [
+        "45 shakes",
+        "55 shakes",
+        "67 shakes",
+        "80 shakes"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Leite Desnatado rende 67 milk shakes por litro.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_016",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Bebidas",
+      "pergunta": "Qual o rendimento do Xarope de Refrigerante por litro?",
+      "alternativas": [
+        "12,50 copos",
+        "17,80 copos",
+        "21,22 copos",
+        "26,00 copos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Xarope de Refrigerante rende 21,22 copos pequenos por litro.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_017",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Bebidas",
+      "pergunta": "Qual o rendimento do Xarope de Suco por bolsa?",
+      "alternativas": [
+        "20 copos",
+        "25 copos",
+        "33 copos",
+        "40 copos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Xarope de Suco rende 33 copos pequenos por bolsa.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_018",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Queijo",
+      "pergunta": "Quantas unidades tem cada bloco de Queijo Cheddar ou Emental?",
+      "alternativas": [
+        "80 unidades",
+        "120 unidades",
+        "160 unidades",
+        "200 unidades"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Cada bloco de Queijo Cheddar e Emental tem 160 unidades. A caixa vem com 8 blocos (total: 1.280 un.).",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_019",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Queijo",
+      "pergunta": "Quantos blocos de queijo cheddar/emental vêm por caixa?",
+      "alternativas": [
+        "4 blocos",
+        "6 blocos",
+        "8 blocos",
+        "10 blocos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Cada caixa de Queijo Cheddar ou Emental tem 8 blocos, cada bloco com 160 unidades.",
+      "dificuldade": 2,
+      "tags": []
+    },
+    {
+      "id": "rend_020",
+      "categoria": "rendimentos",
+      "tipo": "multipla_escolha",
+      "dica": "",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [],
+      "subcategoria": "📏 Rendimento · Coberturas",
+      "pergunta": "Qual o rendimento geral das coberturas por pouch?",
+      "alternativas": [
+        "18,50 sundaes",
+        "22,00 sundaes",
+        "25,80 sundaes",
+        "30,00 sundaes"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O rendimento geral das coberturas é de 25,80 sundaes por pouch.",
+      "dificuldade": 2,
+      "tags": []
+    }
+  ]
+}
