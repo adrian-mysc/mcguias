@@ -28,34 +28,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "PEPS (FIFO em inglês) significa Primeiro a Entrar, Primeiro a Sair — o produto mais antigo é sempre usado primeiro.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_002",
@@ -78,34 +51,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Os produtos mais antigos ficam na frente e são usados primeiro. Os novos vão atrás — assim garante-se o PEPS.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_003",
@@ -130,34 +76,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Produtos próximos do vencimento devem ser separados e marcados para uso prioritário, seguindo o PEPS.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_004",
@@ -180,34 +99,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Produtos refrigerados devem chegar a no máximo 4°C. Acima disso, o produto deve ser recusado.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_005",
@@ -230,34 +122,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Produtos congelados devem estar a -18°C ou abaixo na entrega. Acima disso indica descongelamento parcial e o produto deve ser recusado.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_006",
@@ -279,34 +144,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Embalagem rasgada combinada com temperatura fora do padrão são motivos obrigatórios de recusa.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_007",
@@ -327,34 +165,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "As câmaras de refrigeração devem ser mantidas entre 1°C e 4°C para conservação adequada dos produtos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_008",
@@ -379,34 +190,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Carnes cruas ficam abaixo de produtos prontos para evitar contaminação cruzada por gotejamento.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_009",
@@ -428,34 +212,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Toda embalagem aberta deve ter etiqueta com: nome do produto, data e hora de abertura, e data/hora de validade/descarte.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_010",
@@ -477,34 +234,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Sempre usar o menor prazo. Nunca estender a validade além do que o fabricante indica na embalagem original.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_011",
@@ -528,34 +258,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "O tubo de cheddar após aberto deve ser refrigerado com validade secundária de 48 horas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_012",
@@ -579,34 +282,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "A cebola reidratada tem validade de 24 horas quando armazenada na câmara a 1–4°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_013",
@@ -630,34 +306,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O molho Ranch após aberto deve ser refrigerado com validade de 7 dias.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_014",
@@ -678,34 +327,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "A bag de suco tem validade secundária de 7 dias após a abertura.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_015",
@@ -725,34 +347,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Produto vencido nunca deve ser servido, independentemente da aparência ou odor. Descartar imediatamente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_016",
@@ -774,34 +369,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Produtos congelados devem ser armazenados imediatamente por serem os mais sensíveis à variação de temperatura.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_017",
@@ -824,34 +392,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Seguindo o PEPS, a embalagem já aberta é usada primeiro. A nova embalagem só é aberta quando a anterior acabar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_018",
@@ -874,33 +415,7 @@
       "respostaCorreta": 1,
       "explicacao": "O EPI completo para câmaras frias inclui mangotes, avental e luvas de proteção ao frio.",
       "dica": "São 3 itens: mangotes, avental e luvas.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_019",
@@ -923,33 +438,7 @@
       "respostaCorreta": 2,
       "explicacao": "Todos os produtos devem estar em prateleiras ou caixas — nunca diretamente no chão da câmara, evitando contaminação e facilitando a limpeza.",
       "dica": "Higiene e organização exigem produtos fora do chão.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_020",
@@ -973,33 +462,7 @@
       "respostaCorreta": 2,
       "explicacao": "O Pão Brioche tem validade secundária total de 48 horas após retirado do congelador (validade primária congelado: 120 dias). O tempo mínimo de descongelamento é de 4 horas, já incluído dentro dessas 48 horas.",
       "dica": "Validade secundária total: 48h (inclui o descongelamento mínimo de 4h).",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 2,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_021",
@@ -1022,33 +485,7 @@
       "respostaCorreta": 1,
       "explicacao": "O tempo recomendado de consumo do Pão Brioche após a retirada do freezer é de 24 horas. O tempo mínimo de descongelamento é de 4 horas e a validade secundária total (incluindo o descongelamento) é de 48 horas.",
       "dica": "Recomendado: 24h de consumo (mínimo 4h de descongelamento, máximo 48h de validade secundária total).",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 2,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_022",
@@ -1072,33 +509,7 @@
       "respostaCorreta": 2,
       "explicacao": "O óleo vegetal em uso tem validade de 14 dias ou até atingir Compostos Polares ≤24%, o que ocorrer primeiro.",
       "dica": "14 dias e 24% são os dois limites do óleo.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 2,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_023",
@@ -1121,33 +532,7 @@
       "respostaCorreta": 3,
       "explicacao": "O tomate fatiado tem validade de apenas 2 horas na mesa de preparo. Após esse tempo, deve ser descartado.",
       "dica": "Produtos cortados têm vida curta fora da câmara.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_024",
@@ -1170,33 +555,7 @@
       "respostaCorreta": 3,
       "explicacao": "O bacon pronto (já preparado) tem validade de 5 dias quando armazenado refrigerado na câmara.",
       "dica": "Bacon pronto dura mais que outras carnes preparadas — 5 dias.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_025",
@@ -1219,33 +578,7 @@
       "respostaCorreta": 0,
       "explicacao": "O espaço entre os produtos permite a circulação do ar frio, garantindo que a temperatura seja mantida de forma uniforme em toda a câmara.",
       "dica": "Câmara lotada = ar frio não circula = temperatura irregular.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_026",
@@ -1268,33 +601,7 @@
       "respostaCorreta": 1,
       "explicacao": "A conferência completa de recebimento inclui: verificação da documentação, temperatura dos produtos, integridade da embalagem, validade, aparência e quantidade recebida.",
       "dica": "São 6 etapas: docs, temp, embalagem, validade, aparência e quantidade.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 2,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_027",
@@ -1317,33 +624,7 @@
       "respostaCorreta": 2,
       "explicacao": "Os resíduos devem ser separados em: orgânico, papel, plástico e óleo usado — facilitando o descarte e a reciclagem corretos.",
       "dica": "Quatro tipos: orgânico, papel, plástico, óleo usado.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_028",
@@ -1366,33 +647,7 @@
       "respostaCorreta": 2,
       "explicacao": "As câmaras de congelamento devem manter temperatura de -18°C ou abaixo, que é o padrão para conservação de produtos congelados.",
       "dica": "Igual à temperatura de recebimento de congelados: -18°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_029",
@@ -1416,33 +671,7 @@
       "respostaCorreta": 3,
       "explicacao": "Produtos refrigerados devem chegar a no máximo 4°C. A 6°C, mesmo com embalagem íntegra, o produto deve ser recusado por estar acima do limite de segurança.",
       "dica": "O limite é 4°C. Acima disso = recusa obrigatória.",
-      "tempoEstimado": 20,
-      "xp": 20,
-      "peso": 3,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_030",
@@ -1466,33 +695,7 @@
       "respostaCorreta": 2,
       "explicacao": "O molho Ranch tem validade de 7 dias após abertura quando mantido refrigerado.",
       "dica": "Ranch = 7 dias refrigerado após abertura.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "estoque_recebimento_031",
@@ -1515,33 +718,7 @@
       "respostaCorreta": 1,
       "explicacao": "Estocagem 24/2 significa manter 24 horas de resfriados e congelados e 2 horas para embalagens.",
       "dica": "O 24 é dos alimentos; o 2 é das embalagens.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     }
   ]
 }

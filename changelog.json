@@ -1,6 +1,35 @@
 {
   "versions": [
     {
+      "version": "v20",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "App 40% mais leve",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "⚡",
+          "text": "**O app baixa 1,2 MB a menos.** Cada pergunta carregava campos de progresso — quantas vezes foi respondida, tempo médio, data da próxima revisão — que na verdade ficam salvos no seu aparelho. Iam vazios e iguais para todo mundo, em todas as 2.222 perguntas. O pacote inicial caiu de **2,98 MB para 1,76 MB**.",
+          "tag": "melhoria"
+        },
+        {
+          "icon": "🔁",
+          "text": "**O Simulado Geral não repete mais a mesma pergunta.** Algumas perguntas pertencem a mais de um guia com razão (o sal das McFritas é de Fritas e de McFritas), e por isso apareciam duas vezes na mesma rodada. Cada guia continua com as suas; o simulado agora mostra uma só.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🎯",
+          "text": "**Princípios da Cooltura de Serviço corrigidos** — o Quiz PPI dava uma resposta que não bate com o material: são **Generosidade, Humildade, Vocação em servir, Inclusão e Agilidade**.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "📦",
+          "text": "**\"Quando iniciar a montagem do pedido\" agora diz o canal** — a resposta é diferente no McDelivery e no balcão, e a pergunta não deixava claro de qual se tratava.",
+          "tag": "correcao"
+        }
+      ]
+    },
+    {
       "version": "v19",
       "date": "2026-08-08",
       "date_display": "08 Ago 2026",

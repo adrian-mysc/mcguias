@@ -24,34 +24,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "O tempo R2P máximo é de 90 segundos, do PREPARANDO ao PRONTO.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_002",
@@ -74,34 +47,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "O tempo R2P inicia quando o pedido entra em modo PREPARANDO e finaliza ao passar para PRONTO.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_003",
@@ -114,7 +60,7 @@
         "ppf",
         "temperatura"
       ],
-      "pergunta": "Quando deve ser iniciada a montagem do pedido?",
+      "pergunta": "No balcão, quando deve ser iniciada a montagem do pedido?",
       "alternativas": [
         "Quando o pedido estiver com status PAGO e todos os itens prontos",
         "Após imprimir o Pick List",
@@ -123,34 +69,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A montagem começa somente quando o status é PAGO e todos os itens estiverem prontos. Então reúne-se os produtos, imprime o Pick List e aperta-se Servido.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_004",
@@ -172,34 +91,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Lado esquerdo = bebidas e sobremesas (Café, refrigerante, Shakes). Centro = entradas. Lado direito = McFritas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_005",
@@ -219,34 +111,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "As entradas são os heróis da refeição e ficam no centro da bandeja.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_006",
@@ -268,34 +133,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "O entregador deve levantar o Pick List com o número do pedido na altura dos olhos para localizar o cliente — sem gritar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_007",
@@ -316,34 +154,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "O Bump Bar apaga o pedido do monitor de Apresentação e envia o número do pedido ao Monitor ORB.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_008",
@@ -365,34 +176,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Espere o cliente se virar e sair da área de entrega antes de continuar com o próximo pedido — indicando que está totalmente disponível para o cliente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_009",
@@ -417,34 +201,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "O pano descartável deve ser mantido sanitizado e dobrado, longe da visão do cliente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_010",
@@ -467,34 +224,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Nos pedidos para viagem, siga a sequência de montagem correta e separe os itens frios dos quentes.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_011",
@@ -515,34 +245,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Sacos, caixinhas de McLanche Feliz e suprimentos devem ficar no carrinho da OAT.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_012",
@@ -565,34 +268,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Bandejas e lâminas estocadas ficam no carrinho de bandejas Dual Point próximo à OAT.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_013",
@@ -613,34 +289,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Com 2 ou mais bebidas, usar o porta-copos e garantir que estejam tampadas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_015",
@@ -661,34 +310,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "McFritas ficam inclinadas em relação às entradas para melhor acomodação, no lado direito da bandeja.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_016",
@@ -710,34 +332,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Fazer a conferência comparando os itens da bandeja com os listados no monitor de Apresentação.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_017",
@@ -758,34 +353,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Após usar o Bump Bar, suba a bandeja e posicione-a no canto oposto aos monitores.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_018",
@@ -808,34 +376,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Levantar o Pick List com o número do pedido na altura dos olhos para localizar o cliente — sem gritar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_019",
@@ -858,34 +399,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "R2P = Receipt to Present. Mede o tempo do momento que o pedido entra em PREPARANDO até sair para PRONTO.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_020",
@@ -909,34 +423,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Colocar itens adicionais (molhos, canudos, açúcares, adoçantes) no pedido ao conferir com o monitor de Apresentação.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_021",
@@ -958,34 +445,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "No Café da Manhã, verificar condimentos no monitor de Apresentação e perguntar se o cliente aceita açúcar ou adoçante. Servir com mexedor, guardanapos e tampa da bebida.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_022",
@@ -1007,34 +467,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Servir somente bebidas com nível correto de refrigerante, suco, bebidas do Café da Manhã e McShake — até a tarja de volume.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_023",
@@ -1056,34 +489,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Prepare as sobremesas. Se estiver trabalhando com a pessoa de bebidas, faça somente Casquinha e McColosso.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_024",
@@ -1105,34 +511,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Direcionar o cliente para a estação de suprimentos e resolver qualquer solicitação posterior relacionada ao pedido.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_025",
@@ -1156,34 +535,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "No caso de saladas, já colocar talher e molhos na bandeja.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_026",
@@ -1204,34 +556,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "A dupla conferência verifica: itens corretos, tamanhos, personalizações, bebidas e acompanhamentos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_027",
@@ -1254,34 +579,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Bandeja padrão: lanche na frente do cliente, bebida atrás, fritas ao lado.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_028",
@@ -1305,34 +603,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Lâminas organizadas por segmento e em PEPS (primeiro a entrar, primeiro a sair).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_029",
@@ -1354,34 +625,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Salada: acompanhar com garfo, faca, guardanapo e molho para salada (à parte).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_030",
@@ -1404,34 +648,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "O tempo meta de entrega ao cliente após totalização do pedido é de 90 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_031",
@@ -1455,34 +672,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "O Bump Bar confirma a entrega do pedido e limpa o item do monitor KVS.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_032",
@@ -1505,34 +695,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Pedido errado: pedir desculpas imediatamente, corrigir o pedido e comunicar o gerente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_033",
@@ -1554,34 +717,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Usar saco para pedidos para viagem, delivery ou quando o cliente solicitar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_034",
@@ -1602,34 +738,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Bebidas ficam atrás do lanche, facilitando o acesso sem derrubar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_035",
@@ -1653,34 +762,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Item em vermelho no KVS = prioridade máxima. Comunicar a linha e preparar imediatamente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_036",
@@ -1704,34 +786,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Oferecer molhos extras ao entregar pedidos com McFritas ou McNuggets.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_037",
@@ -1754,34 +809,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "O brinquedo do McLanche Feliz é embalado no saco junto com o pedido.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_038",
@@ -1804,34 +832,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "A lâmina deve ser substituída após cada uso para garantir higiene.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_039",
@@ -1855,34 +856,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Canudo regular para refrigerantes P e M; canudo largo para McShakes e bebidas espessas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_040",
@@ -1904,34 +878,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "No centro vão as Entradas (sanduíches), os 'heróis' da refeição, posicionados no foco da bandeja.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_041",
@@ -1953,34 +900,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "No lado direito vão os Acompanhamentos / McFritas, inclinadas em relação às entradas para melhor acomodação.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_042",
@@ -2002,34 +922,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "No lado esquerdo vão as Bebidas e sobremesas: café, refrigerante, shakes e sobremesas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_043",
@@ -2051,34 +944,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Inicie a montagem quando o pedido estiver com status PAGO e somente quando todos os itens estiverem prontos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_044",
@@ -2100,34 +966,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Imprima o Pick List e posicione-o na bandeja; em seguida aperte a tecla 'servido'.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_045",
@@ -2149,34 +988,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Em pedidos para viagem, siga a sequência correta separando os itens frios dos quentes.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_046",
@@ -2198,34 +1010,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Use o porta-copos para duas ou mais bebidas, garantindo que estejam tampadas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_047",
@@ -2247,34 +1032,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Dobre o saco uma vez sobre a marca existente para garantir a temperatura do produto.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_048",
@@ -2296,34 +1054,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "Atenda o cliente de maneira amável, sempre o mais natural possível, sem gritar o número do pedido.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "montagem_entrega_049",
@@ -2345,34 +1076,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Coloque a colher sweet pazinha dentro da caixinha HMB do lado oposto da McFritas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     }
   ]
 }

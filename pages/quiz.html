@@ -227,11 +227,24 @@
       const results = await Promise.allSettled(
         packs.map(p => fetch(base + p + '.json').then(r => r.ok ? r.json() : null))
       );
+      // Uma mesma pergunta pode pertencer a mais de um guia com razão — o sal
+      // das McFritas é de "fritas" e de "mcfritas", a prova da olimpíada repete
+      // o que o treinador estuda. Cada guia mantém a sua cópia; aqui no pool
+      // geral fica só uma, senão a mesma pergunta cai duas vezes no simulado.
+      const vistas = new Set();
+      const chave = (t) => String(t || '').toLowerCase().normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '').replace(/\bmc\s+/g, 'mc')
+        .replace(/[^a-z0-9]+/g, ' ').trim();
+
       const fromJSON = [];
       results.forEach(r => {
         if (r.status === 'fulfilled' && r.value && r.value.questions) {
           r.value.questions.forEach(q => {
-            if (q.ativo !== false) fromJSON.push(convertJSONQuestion(q));
+            if (q.ativo === false) return;
+            const k = chave(q.pergunta);
+            if (vistas.has(k)) return;
+            vistas.add(k);
+            fromJSON.push(convertJSONQuestion(q));
           });
         }
       });
