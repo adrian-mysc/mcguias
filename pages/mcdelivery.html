@@ -125,6 +125,7 @@
       <button class="tab-btn active" data-tab="visao">📋 Visão Geral</button>
       <button class="tab-btn" data-tab="carrinho">🛒 Carrinho</button>
       <button class="tab-btn" data-tab="procedimento">📦 Procedimento</button>
+      <button class="tab-btn" data-tab="posicionamento">👥 Posicionamento</button>
       <button class="tab-btn" data-tab="quiz">🎯 Quiz</button>
     </div>
   </div>
@@ -405,13 +406,126 @@
 
     </div>
 
+    <div class="tab-panel" id="panel-posicionamento">
+
+      <div class="section-label">Guia de Posicionamento e Funções</div>
+
+      <div class="card" data-mc-pdf="1">
+        <div class="card-head">
+          <div class="card-head-icon">👥</div>
+          <h2>Quantas pessoas por faixa de pedidos</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label" style="margin-bottom:8px;">Material de estudo oficial · Treinamento Brasil</div>
+          <div style="overflow-x:auto">
+            <table class="data-table">
+              <thead><tr><th>Pedidos</th><th>Pessoas</th><th>Função que entra</th></tr></thead>
+              <tbody>
+                <tr><td><strong>0 – 09</strong></td><td>1</td><td>Apoio — <em>realiza todas as funções</em></td></tr>
+                <tr><td><strong>10 – 15</strong></td><td>2</td><td>+ Conferente_1</td></tr>
+                <tr><td><strong>16 – 25</strong></td><td>3</td><td>+ Apresentador_1</td></tr>
+                <tr><td><strong>26 – 35</strong></td><td>4</td><td>+ Finalizador_1</td></tr>
+                <tr><td><strong>36 – 45</strong></td><td>5</td><td>+ Conferente_2</td></tr>
+                <tr><td><strong>46 – 55</strong></td><td>6</td><td>+ Apoio_2</td></tr>
+                <tr><td><strong>56 – 65</strong></td><td>7</td><td>+ Finalizador_2</td></tr>
+                <tr><td><strong>66 – 75</strong></td><td>8</td><td>+ Conferente_3</td></tr>
+                <tr><td><strong>76 – 85</strong></td><td>9</td><td>+ Apresentador_2</td></tr>
+                <tr><td><strong>Acima de 86</strong></td><td>10</td><td>+ Apoio_3</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alerta-box" style="margin-top:10px;">
+            <div class="alerta-icon">💡</div>
+            <div class="alerta-text">
+              A escalada é <strong>cumulativa</strong>: cada faixa mantém todas as funções da faixa anterior e acrescenta uma.
+              A ordem em que as funções entram é <strong>Conferente → Apresentador → Finalizador → Conferente_2 → Apoio_2</strong>,
+              e daí em diante Finalizador_2, Conferente_3, Apresentador_2 e Apoio_3.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">O que cada função faz</div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🧺</div><h2>Apoio</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Realize o recall do pedido no POS (81).</strong></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Posicione o cupom fiscal na régua de montagem.</strong></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Inicie a montagem pelos produtos da <strong>OAT</strong>.</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-text">Imprima o <strong>Picklist</strong>.</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-text">Pegue sempre a <strong>batata mais recente</strong> da estufa.</div></div>
+            <div class="step"><div class="step-num">6</div><div class="step-text">Retire as bebidas e sobremesas na <strong>estação BDAP</strong>.</div></div>
+            <div class="step"><div class="step-num y">7</div><div class="step-text">Posicione o Picklist junto ao pedido completo na mesa de <strong>"Conferência"</strong>.</div></div>
+          </div>
+          <div class="alerta-box" style="margin-top:4px;">
+            <div class="alerta-icon">⚠️</div>
+            <div class="alerta-text">
+              Os passos <strong>1 e 2</strong> (recall no POS e cupom fiscal na régua) são <strong>exclusivos do Apoio_1</strong>.
+              Apoio_2 e Apoio_3 começam direto pela montagem dos produtos da OAT.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">✅</div><h2>Conferente</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Confira todos os itens do pedido e registre a conferência com um <strong>✓ no Picklist</strong>, garantindo a inclusão de <strong>guardanapos</strong> e do <strong>Super Canudo nos pedidos com McShake</strong>.</div></div>
+            <div class="step"><div class="step-num y">2</div><div class="step-text">Posicione o pedido na <strong>mesa de Finalização</strong>, junto com o Picklist e o cupom fiscal.</div></div>
+          </div>
+          <div class="alerta-box" style="margin-top:4px;">
+            <div class="alerta-icon">💡</div>
+            <div class="alerta-text">
+              <strong>Enquanto não há Finalizador</strong> (faixas de 10 a 25), o Conferente também fecha a sacola, aplica o selo,
+              preenche os campos de conferência, aciona <strong>"Pronto"</strong> no tablet e leva o pedido para a mesa de "Pedidos Prontos".
+              Na faixa de <strong>10 – 15</strong>, sem Apresentador, ele ainda entrega o pedido ao entregador.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🔒</div><h2>Finalizador</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Feche a sacola sobre a mesa de Finalização, <strong>aplique o selo</strong> corretamente e fixe o Picklist junto ao cupom fiscal.</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text">Preencha os <strong>campos de conferência no selo</strong>.</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Acione o botão <strong>"Pronto"</strong> no tablet para todos os pedidos.</div></div>
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Posicione o pedido na mesa de <strong>"Pedidos Prontos"</strong>.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-head-icon">🛵</div><h2>Apresentador</h2></div>
+        <div class="card-body">
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-text">Confirme o <strong>número do pedido</strong> e a <strong>plataforma logística</strong> com o entregador.</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Valide o código de coleta</strong> informado pelo entregador com o código de coleta do Picklist.</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-text">Entregue o pedido ao entregador.</div></div>
+            <div class="step"><div class="step-num y">4</div><div class="step-text">Deseje uma <strong>boa entrega</strong>.</div></div>
+          </div>
+          <div class="alerta-box" style="margin-top:4px;">
+            <div class="alerta-icon">⚠️</div>
+            <div class="alerta-text">
+              <strong>CRÍTICO:</strong> a liberação é feita pelo <strong>código de coleta</strong> conferido contra o Picklist — nunca pelo nome do cliente.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <div class="tab-panel" id="panel-quiz">
       <div class="section-label">Simulado</div>
       <div class="card">
         <div class="card-head">
           <div class="card-head-icon">🎯</div>
           <h2>Quiz — McDelivery</h2>
-          <div class="badge badge-red">44 perguntas</div>
+          <div class="badge badge-red">77 perguntas</div>
         </div>
         <div class="card-body">
           <div id="quiz-mode-bar" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">

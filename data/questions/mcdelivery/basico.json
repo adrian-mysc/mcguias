@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-08-07",
+  "updatedAt": "2026-08-08",
   "categoria": "mcdelivery",
   "nivel": "basico",
   "migratedFrom": "MATERIAL DE ESTUDO (PDF oficial)",
@@ -1247,6 +1247,446 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "A montagem inicia pelas bebidas, que devem ser acondicionadas dentro do Saco A. O Saco D é usado para 2 ou mais produtos.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_058",
+      "categoria": "mcdelivery",
+      "subcategoria": "👥 McDelivery · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Até quantos pedidos o McDelivery opera com apenas 1 pessoa?",
+      "alternativas": [
+        "Até 25 pedidos",
+        "Até 09 pedidos",
+        "Até 15 pedidos",
+        "Até 05 pedidos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Na faixa de 0 a 09 pedidos, 1 pessoa (Apoio) realiza todas as funções do McDelivery.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_059",
+      "categoria": "mcdelivery",
+      "subcategoria": "👥 McDelivery · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Quantas pessoas o McDelivery deve ter na faixa de 26 a 35 pedidos?",
+      "alternativas": [
+        "4 pessoas",
+        "5 pessoas",
+        "3 pessoas",
+        "6 pessoas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "De 26 a 35 pedidos são 4 pessoas: Apoio_1, Conferente_1, Apresentador_1 e Finalizador_1.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_060",
+      "categoria": "mcdelivery",
+      "subcategoria": "👥 McDelivery · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Qual é a segunda função a entrar na escalada do McDelivery, depois do Apoio?",
+      "alternativas": [
+        "Apresentador",
+        "Conferente",
+        "Finalizador",
+        "Gerente de plantão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A escalada é Apoio → Conferente (10–15) → Apresentador (16–25) → Finalizador (26–35) → Conferente_2 (36–45) → Apoio_2 (46–55).",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_061",
+      "categoria": "mcdelivery",
+      "subcategoria": "👥 McDelivery · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Em qual faixa de pedidos entra o Finalizador_1 no McDelivery?",
+      "alternativas": [
+        "10 a 15 pedidos",
+        "36 a 45 pedidos",
+        "26 a 35 pedidos",
+        "16 a 25 pedidos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Finalizador_1 entra na faixa de 26 a 35 pedidos, quando a equipe passa a ter 4 pessoas.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_062",
+      "categoria": "mcdelivery",
+      "subcategoria": "👥 McDelivery · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "A partir de quantos pedidos o McDelivery opera com 10 pessoas?",
+      "alternativas": [
+        "Acima de 66 pedidos",
+        "Acima de 76 pedidos",
+        "Acima de 86 pedidos",
+        "Acima de 96 pedidos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Acima de 86 pedidos são 10 pessoas, com a entrada do Apoio_3.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_063",
+      "categoria": "mcdelivery",
+      "subcategoria": "🧺 McDelivery · Apoio",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Quais passos são exclusivos do Apoio_1 e não são feitos pelo Apoio_2 e Apoio_3?",
+      "alternativas": [
+        "A montagem pelos produtos da OAT",
+        "A retirada da batata mais recente da estufa",
+        "A impressão do Picklist e a retirada das bebidas",
+        "O recall do pedido no POS (81) e o posicionamento do cupom fiscal na régua de montagem"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Apoio_2 e Apoio_3 começam direto pela montagem dos produtos da OAT — o recall no POS (81) e o cupom fiscal na régua são só do Apoio_1.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_064",
+      "categoria": "mcdelivery",
+      "subcategoria": "🧺 McDelivery · Apoio",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Por onde o Apoio deve iniciar a montagem do pedido McDelivery?",
+      "alternativas": [
+        "Pelas bebidas da estação BDAP",
+        "Pelos produtos da OAT",
+        "Pela batata da estufa",
+        "Pelas sobremesas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A montagem começa pelos produtos da OAT. As bebidas e sobremesas são retiradas na estação BDAP.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_065",
+      "categoria": "mcdelivery",
+      "subcategoria": "🧺 McDelivery · Apoio",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Onde o Apoio retira as bebidas e sobremesas do pedido McDelivery?",
+      "alternativas": [
+        "Na mesa de Finalização",
+        "Na estação BDAP",
+        "Na mesa de Conferência",
+        "Na OAT"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As bebidas e sobremesas são retiradas na estação BDAP.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_066",
+      "categoria": "mcdelivery",
+      "subcategoria": "🧺 McDelivery · Apoio",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Qual batata o Apoio deve pegar ao montar o pedido McDelivery?",
+      "alternativas": [
+        "Sempre a mais antiga, seguindo o PEPS",
+        "A que estiver mais próxima",
+        "Qualquer uma dentro da validade",
+        "Sempre a mais recente da estufa"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "No McDelivery pega-se sempre a batata mais recente da estufa, porque ela ainda vai enfrentar o tempo de entrega.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_067",
+      "categoria": "mcdelivery",
+      "subcategoria": "🧺 McDelivery · Apoio",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Onde o Apoio posiciona o Picklist depois de completar o pedido?",
+      "alternativas": [
+        "Junto ao pedido completo, na mesa de \"Conferência\"",
+        "Direto na sacola, já lacrada",
+        "Na mesa de \"Pedidos Prontos\"",
+        "Na régua de montagem, com o cupom fiscal"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Picklist vai junto ao pedido completo na mesa de \"Conferência\", onde o Conferente assume.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_068",
+      "categoria": "mcdelivery",
+      "subcategoria": "✅ McDelivery · Conferente",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "O que o Conferente precisa garantir nos pedidos com McShake?",
+      "alternativas": [
+        "Dois guardanapos a mais",
+        "Um suporte porta-copos",
+        "Uma colher extra",
+        "A inclusão do Super Canudo"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O Conferente registra a conferência com um ✓ no Picklist, garantindo a inclusão de guardanapos e do Super Canudo nos pedidos com McShake.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_069",
+      "categoria": "mcdelivery",
+      "subcategoria": "✅ McDelivery · Conferente",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Como o Conferente registra que conferiu o pedido McDelivery?",
+      "alternativas": [
+        "Acionando \"Pronto\" no tablet",
+        "Com um ✓ no Picklist",
+        "Preenchendo o selo da sacola",
+        "Assinando o cupom fiscal"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A conferência é registrada com um ✓ no Picklist, item por item.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_070",
+      "categoria": "mcdelivery",
+      "subcategoria": "✅ McDelivery · Conferente",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Para onde o Conferente leva o pedido depois de conferir?",
+      "alternativas": [
+        "Para a mesa de Finalização, junto com o Picklist e o cupom fiscal",
+        "Para a mesa de \"Pedidos Prontos\"",
+        "Para a estação BDAP",
+        "Direto para o entregador"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Conferente posiciona o pedido na mesa de Finalização junto com o Picklist e o cupom fiscal, onde o Finalizador assume.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_071",
+      "categoria": "mcdelivery",
+      "subcategoria": "🔒 McDelivery · Finalizador",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Quem aciona o botão \"Pronto\" no tablet quando a equipe tem Finalizador?",
+      "alternativas": [
+        "O Apresentador",
+        "O Apoio",
+        "O Conferente",
+        "O Finalizador"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Com Finalizador na equipe (a partir de 26 pedidos), é ele quem fecha a sacola, aplica o selo, aciona \"Pronto\" e leva o pedido para \"Pedidos Prontos\".",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_072",
+      "categoria": "mcdelivery",
+      "subcategoria": "✅ McDelivery · Conferente",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Quem fecha a sacola e aciona \"Pronto\" nas faixas de 10 a 25 pedidos?",
+      "alternativas": [
+        "O Conferente, que acumula a função",
+        "O Apoio",
+        "O gerente de plantão",
+        "O Apresentador"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Até 25 pedidos não há Finalizador na equipe, então o Conferente acumula o fechamento da sacola, o selo e o acionamento do \"Pronto\".",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_073",
+      "categoria": "mcdelivery",
+      "subcategoria": "🔒 McDelivery · Finalizador",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "O que o Finalizador fixa junto ao cupom fiscal ao fechar a sacola?",
+      "alternativas": [
+        "O comprovante de pagamento",
+        "A etiqueta da plataforma",
+        "O Picklist",
+        "O código de coleta do entregador"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Finalizador fecha a sacola sobre a mesa de Finalização, aplica o selo corretamente e fixa o Picklist junto ao cupom fiscal.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_074",
+      "categoria": "mcdelivery",
+      "subcategoria": "🛵 McDelivery · Apresentador",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "O que o Apresentador confirma com o entregador antes de liberar o pedido?",
+      "alternativas": [
+        "O número do pedido e a plataforma logística",
+        "O nome e o CPF do cliente",
+        "O valor total do pedido",
+        "O endereço de entrega"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Apresentador confirma o número do pedido e a plataforma logística e valida o código de coleta informado pelo entregador contra o código do Picklist.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_075",
+      "categoria": "mcdelivery",
+      "subcategoria": "🛵 McDelivery · Apresentador",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Contra o que o Apresentador valida o código de coleta informado pelo entregador?",
+      "alternativas": [
+        "Contra o número do pedido no tablet",
+        "Contra o cupom fiscal",
+        "Contra o código de coleta do Picklist",
+        "Contra o nome do cliente no aplicativo"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O código de coleta informado pelo entregador é validado contra o código de coleta do Picklist — nunca pelo nome do cliente.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_076",
+      "categoria": "mcdelivery",
+      "subcategoria": "🛵 McDelivery · Apresentador",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Qual é o último passo do Apresentador ao entregar o pedido McDelivery?",
+      "alternativas": [
+        "Acionar \"Pronto\" no tablet",
+        "Registrar a saída no POS",
+        "Preencher os campos do selo",
+        "Desejar uma boa entrega"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Depois de entregar o pedido ao entregador, o Apresentador deseja uma boa entrega.",
+      "ativo": true
+    },
+    {
+      "id": "mcdelivery_077",
+      "categoria": "mcdelivery",
+      "subcategoria": "👥 McDelivery · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "mcdelivery",
+        "posicionamento",
+        "funcoes"
+      ],
+      "pergunta": "Qual função entra na faixa de 46 a 55 pedidos no McDelivery?",
+      "alternativas": [
+        "Finalizador_2",
+        "Conferente_2",
+        "Apoio_2",
+        "Apresentador_2"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "De 46 a 55 pedidos a equipe vai a 6 pessoas com a entrada do Apoio_2. O Conferente_2 já havia entrado em 36–45.",
       "ativo": true
     }
   ]
