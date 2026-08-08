@@ -111,13 +111,20 @@
             <button class="filter-btn" data-guide="best-burguer" aria-pressed="false">🍔 Best Burger</button>
             <button class="filter-btn" data-guide="limpeza" aria-pressed="false">🧹 Limpeza</button>
             <button class="filter-btn" data-guide="manutencao-preventivas" aria-pressed="false">🔧 Manutenção Prev.</button>
-            <button class="filter-btn" data-guide="provas" aria-pressed="false">📋 Provas</button>
             <button class="filter-btn" data-guide="futuros-treinadores" aria-pressed="false">🎓 Futuros Treinadores</button>
             <button class="filter-btn" data-guide="olimpiada" aria-pressed="false">🏆 Olimpíada</button>
             <button class="filter-btn" data-guide="embaixador" aria-pressed="false">🌟 Embaixador da Experiência</button>
             <button class="filter-btn" data-guide="temperaturas" aria-pressed="false">🌡️ Temperaturas</button>
             <button class="filter-btn" data-guide="rendimentos" aria-pressed="false">📏 Rendimentos</button>
             <button class="filter-btn" data-guide="empilhamento" aria-pressed="false">📦 Empilhamento</button>
+            <button class="filter-btn" data-guide="seguranca-alimento" aria-pressed="false">🦠 Segurança do Alimento</button>
+            <button class="filter-btn" data-guide="estoque-recebimento" aria-pressed="false">📥 Estoque e Recebimento</button>
+            <button class="filter-btn" data-guide="fechamento" aria-pressed="false">🌙 Fechamento</button>
+            <button class="filter-btn" data-guide="treinador" aria-pressed="false">🎓 Treinador</button>
+            <button class="filter-btn" data-guide="ppi" aria-pressed="false">📝 PPI</button>
+            <button class="filter-btn" data-guide="supervisores" aria-pressed="false">📋 Supervisores</button>
+            <button class="filter-btn" data-guide="gerencia" aria-pressed="false">👔 Gerência</button>
+            <button class="filter-btn" data-guide="lideranca" aria-pressed="false">⭐ Liderança</button>
           </div>
           <div id="subcat-row" role="group" aria-label="Filtrar por subcategoria"></div>
         </div>
@@ -145,334 +152,6 @@
   <script src="../js/main.js" defer></script>
   <script>
     // ---- All questions pool --------------------------------
-    // ── Questões sem JSON ainda (limpeza, mcdelivery, futuros-treinadores, provas) ──
-    const FALLBACK_QUESTIONS = [
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Diária", question: "Qual mensagem aparece na tela quando a chapa está pronta para limpeza?", options: ["CLEAN READY", "READY TO CLEAN", "START CLEANING", "CLEAN MODE ON"], answer: "READY TO CLEAN", explanation: "Aguardar o sinal luminoso e a mensagem READY TO CLEAN na tela antes de iniciar a limpeza." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Diária", question: "Quantos ml do produto QSR devem ser colocados no recipiente para umedecer a esponja?", options: ["45ml", "60ml", "90ml", "120ml"], answer: "90ml", explanation: "Colocar 90ml do produto QSR no recipiente e umedecer a esponja." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Diária", question: "Como devem ser recolocados os Teflons ao final da limpeza diária da chapa?", options: ["Todos do mesmo lado", "Alternando lados pares e ímpares", "Sempre com o lado limpo para cima", "Na mesma posição que estavam"], answer: "Alternando lados pares e ímpares", explanation: "Ao recolocar os Teflons, alternando os lados pares e ímpares." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Diária", question: "Com o que se enxágua a placa inferior da chapa?", options: ["Pano seco", "Água fria e esponja", "Água morna e escova para altas temperaturas", "Apenas pano úmido"], answer: "Água morna e escova para altas temperaturas", explanation: "Enxaguar a placa inferior com água morna e a escova para altas temperaturas." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Diária", question: "Qual o primeiro passo antes de iniciar a limpeza diária da chapa?", options: ["Remover o Teflon", "Aplicar o produto", "Garantir que o sistema de exaustão esteja ligado e ajustar para Clean Mode", "Esfregar com esponja"], answer: "Garantir que o sistema de exaustão esteja ligado e ajustar para Clean Mode", explanation: "Primeiro garantir que o sistema de exaustão esteja ligado, depois ajustar para Clean Mode." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Mensal", question: "Qual modo deve ser selecionado no painel para a limpeza mensal da chapa?", options: ["CLEAN MODE", "RECOVERY (285°F)", "DEEP CLEAN", "WASH MODE"], answer: "RECOVERY (285°F)", explanation: "Para a limpeza mensal (Best Burger), selecionar RECOVERY (285°F) no painel de controle." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Mensal", question: "Quantos minutos os platens permanecem abaixados sobre o limpador na limpeza mensal?", options: ["10 minutos", "15 minutos", "17 minutos", "20 minutos"], answer: "17 minutos", explanation: "Os platens permanecem abaixados automaticamente por 17 minutos para amolecer a sujeira." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Mensal", question: "No que devem ser sanitizadas as abraçadeiras e barras removidas na limpeza mensal?", options: ["Balde com sanitizante", "Sistema de 3 cubas", "Cuba com água quente", "Máquina de lavar"], answer: "Sistema de 3 cubas", explanation: "Lave, enxágue e sanitize as abraçadeiras e barras no sistema de 3 cubas." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Mensal", question: "Para que serve o rodinho de borracha na limpeza mensal da chapa?", options: ["Esfregar a superfície", "Empurrar o limpador para dentro das canaletas", "Remover o excesso de água", "Aplicar o sanitizante"], answer: "Empurrar o limpador para dentro das canaletas", explanation: "Com o rodinho de borracha, empurrar o limpador de chapas para dentro das canaletas." },
-      { guide: "limpeza",  category: "🍞 Limpeza · Tostadeira", question: "O que deve ser feito ANTES de iniciar a limpeza da tostadeira?", options: ["Aplicar o produto", "Remover o Teflon", "Desligar a tostadeira e colocar luvas resistentes ao calor", "Ligar o sistema de exaustão"], answer: "Desligar a tostadeira e colocar luvas resistentes ao calor", explanation: "ANTES DE INICIAR: Desligar a Tostadeira e colocar luvas resistentes ao calor." },
-      { guide: "limpeza",  category: "🍞 Limpeza · Tostadeira", question: "Quantos ml (pumps) do limpador devem ser colocados na cuba de inox?", options: ["30ml (1 pump)", "60ml (2 pumps)", "90ml (3 pumps)", "120ml (4 pumps)"], answer: "60ml (2 pumps)", explanation: "Colocar 60ml (2 pumps) de Kay QSR Limpador para Chapas e Tostadeiras diretamente na cuba de inox." },
-      { guide: "limpeza",  category: "🍞 Limpeza · Tostadeira", question: "O que NÃO se deve fazer ao limpar a correia da tostadeira?", options: ["Usar pano molhado com limpador", "Remover as correias da tostadeira", "Girar as correias para limpar todas as seções", "Enxaguar com sanitizante"], answer: "Remover as correias da tostadeira", explanation: "NOTA: Não remova as correias da tostadeira. Gire as correias para limpar todas as seções." },
-      { guide: "limpeza",  category: "🍞 Limpeza · Tostadeira", question: "O que usar para limpar o exterior da tostadeira?", options: ["QSR Limpador de Chapas", "Água e sabão", "Pano limpo embebido em solução Multiuso", "Esponja abrasiva"], answer: "Pano limpo embebido em solução Multiuso", explanation: "Limpar o exterior da tostadeira com pano limpo embebido em solução Multiuso." },
-      { guide: "limpeza",  category: "🍞 Limpeza · Tostadeira", question: "O que fazer com os panos após uso na limpeza da tostadeira?", options: ["Reutilizar", "Lavar e reaproveitar", "Descartar no balde de panos sujos", "Deixar secar ao ar"], answer: "Descartar no balde de panos sujos", explanation: "Descartar os panos no balde de panos sujos após o uso." },
-      { guide: "limpeza",  category: "🚗 Limpeza · Pista Drive", question: "Qual a proporção de diluição do Desengordurante para a limpeza da pista?", options: ["250ml produto + 750ml água", "500ml produto + 500ml água", "750ml produto + 250ml água", "1 litro produto puro"], answer: "500ml produto + 500ml água", explanation: "Diluir o Desengordurante em partes iguais: 500ml de produto + 500ml de água no borrifador." },
-      { guide: "limpeza",  category: "🚗 Limpeza · Pista Drive", question: "Por quanto tempo o desengordurante deve agir na pista?", options: ["30 minutos", "1 hora", "3 horas", "6 horas"], answer: "3 horas", explanation: "Deixar agir por 3 horas. Para melhores resultados, aplicar no asfalto e deixar agir durante a noite." },
-      { guide: "limpeza",  category: "🚗 Limpeza · Pista Drive", question: "Por que não se deve aplicar o desengordurante em dias chuvosos?", options: ["O produto perde eficácia com o frio", "A chuva diluirá ou enxaguará o produto gerando desperdício", "Pode escorregar na pista", "O produto reage com a água da chuva"], answer: "A chuva diluirá ou enxaguará o produto gerando desperdício", explanation: "Recomenda-se não aplicar em dias chuvosos pois a chuva diluirá ou enxaguará o produto gerando desperdício." },
-      { guide: "limpeza",  category: "🚗 Limpeza · Pista Drive", question: "Qual equipamento usar se ainda houver manchas após o procedimento padrão da pista?", options: ["Esponja abrasiva", "Mais desengordurante puro", "Máquina de pressão VAP", "Escova de ferro"], answer: "Máquina de pressão VAP", explanation: "Se após o procedimento ainda houver manchas, usar a máquina de pressão VAP." },
-      { guide: "limpeza",  category: "🚗 Limpeza · Pista Drive", question: "Quais EPIs são obrigatórios para a limpeza da pista?", options: ["Apenas luvas", "Luvas, óculos e máscara", "Luvas, Colete de PVC e Botas", "Avental e luvas"], answer: "Luvas, Colete de PVC e Botas", explanation: "EPIs obrigatórios para limpeza da pista: Luvas, Colete de PVC e Botas." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Salão · Pisos", question: "A cada quantos metros deve ser invertido o lado do esfregão ao enxaguar o piso?", options: ["A cada 50cm", "A cada 1 metro", "A cada 2 metros", "A cada 3 metros"], answer: "A cada 1 metro", explanation: "Enxaguar/secar com esfregão limpo, virando a cada 1 metro e torcendo a cada 2 metros." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Salão · Pisos", question: "Por quanto tempo a Solução FC deve agir no piso na limpeza profunda?", options: ["1 minuto", "2 minutos", "5 minutos", "10 minutos"], answer: "2 minutos", explanation: "Deixe o FC agir no chão por 2 minutos antes de limpar a solução suja." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Salão · Pisos", question: "Quando se pode remover a placa de piso molhado após a limpeza profunda?", options: ["Imediatamente após limpar", "Após 5 minutos", "Quando o piso estiver completamente seco", "Após 30 minutos"], answer: "Quando o piso estiver completamente seco", explanation: "Só remova a placa de piso molhado quando o piso estiver completamente seco." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Salão · Banheiros", question: "Quantos pumps do limpador desinfetante de banheiro devem ser colocados no borrifador?", options: ["1 pump", "2 pumps", "3 pumps", "4 pumps"], answer: "2 pumps", explanation: "Encher o borrifador com água e pressionar 2 vezes com o limpador desinfetante perfumado." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Salão · Banheiros", question: "Por quanto tempo a solução deve agir nas pias e sanitários antes de esfregar?", options: ["30 segundos", "1 minuto", "2 minutos", "5 minutos"], answer: "2 minutos", explanation: "Aplicar a solução e deixar agir por 2 minutos antes de esfregar pias e sanitários." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Salão · Banheiros", question: "Quanto produto de limpeza de banheiro deve ser diluído para limpeza do piso?", options: ["30ml (1 pump) em 5L", "60ml (2 pumps) em 5L", "90ml (3 pumps) em 5L", "120ml em 5L"], answer: "60ml (2 pumps) em 5L", explanation: "Diluir 60ml (2 pumps) de produto de limpeza para banheiros em um balde de 5L." },
-      { guide: "limpeza",  category: "🫙 Limpeza · Utensílios", question: "Por quanto tempo os utensílios devem ficar de molho na solução de detergente?", options: ["1 minuto", "3 minutos", "5 minutos", "10 minutos"], answer: "5 minutos", explanation: "Colocar os itens na solução de Detergente e deixar de molho por 5 minutos." },
-      { guide: "limpeza",  category: "🫙 Limpeza · Utensílios", question: "Por quanto tempo os utensílios devem ficar na solução sanitizante?", options: ["30 segundos", "1 minuto", "2 minutos", "5 minutos"], answer: "1 minuto", explanation: "Colocar na solução sanitizante por 1 minuto. Todas as superfícies devem entrar em contato com o sanitizante." },
-      { guide: "limpeza",  category: "🫙 Limpeza · Utensílios", question: "Como devem ser posicionadas as cubas para secar após a sanitização?", options: ["Direitas, abertas para cima", "De cabeça para baixo em posição de drenagem", "Empilhadas", "Em qualquer posição"], answer: "De cabeça para baixo em posição de drenagem", explanation: "Remova os itens; coloque as cubas de cabeça para baixo e as bandejas de lado, em posição de drenagem." },
-      { guide: "limpeza",  category: "🫙 Limpeza · Jarras de Café", question: "Por quanto tempo o produto Kay Coffee deve agir dentro da jarra?", options: ["1 minuto", "3 minutos", "5 minutos", "10 minutos"], answer: "5 minutos", explanation: "Fazer movimentos circulares para dissolver o produto e deixar agir por 5 minutos." },
-      { guide: "limpeza",  category: "🧪 Limpeza · Produtos", question: "Qual a diluição manual do KAY Detergente Multiuso para utensílios?", options: ["20L água + 1 sachê", "30L água + 1 sachê", "40L água quente + 1 pacote", "10L água + 2 sachês"], answer: "40L água quente + 1 pacote", explanation: "Encher a cuba com 40L (10 gal) de água quente e despejar 1 pacote de detergente multiuso." },
-      { guide: "limpeza",  category: "🧪 Limpeza · Produtos", question: "Qual a diluição manual do KAY Multi-superfícies e Vidros?", options: ["1 sachê em 500ml", "1 sachê em 1L", "2 sachês em 1L", "1 sachê em 2L"], answer: "1 sachê em 1L", explanation: "Diluição manual: diluir 1 sachê em uma garrafa de 1L." },
-      { guide: "limpeza",  category: "🧪 Limpeza · Produtos", question: "Como devem ser lavados os panos da chapa, salão e banheiro?", options: ["Todos juntos na mesma lavagem", "Chapa com salão, banheiro separado", "Todos separadamente", "Pode ser em qualquer combinação"], answer: "Todos separadamente", explanation: "Importante: Lave os panos da chapa, salão e banheiro separadamente." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa", question: "O que deve ser feito com as calhas após a limpeza diária?", options: ["Deixar molhadas", "Remover sujeira, limpar com desengordurante e substituir", "Apenas enxaguar com água", "Não precisam ser limpas diariamente"], answer: "Remover sujeira, limpar com desengordurante e substituir", explanation: "Remover a sujeira das calhas, limpar com desengordurante e substituir." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Mensal", question: "O que é feito com as canaletas de gordura na limpeza mensal?", options: ["Apenas limpar por fora", "Desmontar, esvaziar, enxaguar e recolocar", "Não são desmontadas", "Substituir por novas"], answer: "Desmontar, esvaziar, enxaguar e recolocar", explanation: "Na limpeza mensal: desmontar e esvaziar as canaletas de gordura, enxaguar e recolocar." },
-      { guide: "limpeza",  category: "🍞 Limpeza · Tostadeira", question: "O que fazer após remontar e conectar a tostadeira limpa?", options: ["Deixar desligada até amanhã", "Ligar imediatamente após conectar", "Aguardar 30 min antes de ligar", "Testar com um pão antes de ligar"], answer: "Ligar imediatamente após conectar", explanation: "Após remontar: conectar a tostadeira e ligar imediatamente." },
-      { guide: "limpeza",  category: "🚗 Limpeza · Pista Drive", question: "Qual o equipamento para remover chiclete da pista?", options: ["Escova de cerdas duras", "Espátula", "Rodo", "Mangueira de pressão"], answer: "Espátula", explanation: "Usar a espátula específica para remover chiclete da pista." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Salão Pisos", question: "A cada quantos metros deve ser torcido o esfregão ao enxaguar?", options: ["A cada 1 metro", "A cada 2 metros", "A cada 3 metros", "A cada 5 metros"], answer: "A cada 2 metros", explanation: "Torcer o esfregão a cada 2 metros para não espalhar a sujeira." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Vidros", question: "De onde para onde se move o rodo na limpeza de vidros?", options: ["De baixo para cima", "Da esquerda para direita", "Da parte superior para o meio, depois inferior", "Em círculos"], answer: "Da parte superior para o meio, depois inferior", explanation: "Começar pela parte superior, puxar o rodo para baixo até o meio, depois limpar a metade inferior." },
-      { guide: "limpeza",  category: "🫙 Limpeza · Utensílios", question: "Qual o primeiro passo na lavagem de utensílios?", options: ["Colocar na solução de detergente", "Raspar os restos de comida e jogar no lixo", "Enxaguar em água corrente", "Colocar no sanitizante"], answer: "Raspar os restos de comida e jogar no lixo", explanation: "O primeiro passo sempre é raspar os restos de comida e descartá-los antes de lavar." },
-      { guide: "limpeza",  category: "🧪 Limpeza · Produtos", question: "Qual produto usar para limpeza de pisos durante a operação?", options: ["QSR Desengordurante puro", "QSR Limpador de pisos (4 gal água + 1 pacote)", "QSR Multiuso", "Água quente apenas"], answer: "QSR Limpador de pisos (4 gal água + 1 pacote)", explanation: "Limpeza de piso durante operação: 4 galões de água + 1 pacote de limpador de piso." },
-      { guide: "limpeza",  category: "🧪 Limpeza · Produtos", question: "Por quanto tempo o limpador de banheiros deve agir antes de esfregar?", options: ["1 minuto", "2 minutos", "5 minutos", "10 minutos"], answer: "2 minutos", explanation: "O limpador de banheiros deve agir por 2 minutos antes de esfregar pias e sanitários." },
-      { guide: "limpeza",  category: "🫙 Limpeza · Jarras", question: "Qual produto é usado para limpeza das jarras de café?", options: ["QSR Multiuso", "QSR Detergente Concentrado", "QSR KAY Coffee Pot Cleaner", "Água quente apenas"], answer: "QSR KAY Coffee Pot Cleaner", explanation: "Usar QSR KAY Coffee Pot Cleaner para limpeza das jarras de café." },
-      { guide: "limpeza",  category: "🔥 Limpeza · Chapa Diária", question: "Com o que deve ser feita a limpeza final da placa inferior e frente?", options: ["Esponja abrasiva", "Pano limpo e sanitizado", "Apenas água morna", "Produto QSR direto"], answer: "Pano limpo e sanitizado", explanation: "A limpeza final da placa inferior e frente é feita com pano limpo e sanitizado." },
-      { guide: "limpeza",  category: "🪑 Limpeza · Banheiro", question: "Onde se aplica a solução de limpeza de banheiro nas paredes?", options: ["Apenas na parte inferior", "Pulverizar a solução e secar com pano limpo e seco", "Somente esfregar sem produto", "Apenas no espelho"], answer: "Pulverizar a solução e secar com pano limpo e seco", explanation: "Nas paredes, espelho, portas: pulverizar a solução de limpeza para banheiros e secar com pano limpo e seco." },
-      { guide: "mcdelivery",
-        category: "⚠️ McDelivery · Regra Crítica",
-        question: "Como deve ser validada a liberação do pedido para o entregador?",
-        options: [
-          "Pelo nome do cliente informado no pedido",
-          "Pelo código informado pelo entregador",
-          "Pelo número do pedido no saco",
-          "Pelo aplicativo do entregador"
-        ],
-        answer: "Pelo código informado pelo entregador",
-        explanation: "A liberação deve ser realizada somente após validação do CÓDIGO informado pelo entregador — nunca pelo nome do cliente!"
-      },
-      { guide: "mcdelivery",
-        category: "📦 McDelivery · Procedimento",
-        question: "Qual é o primeiro passo ao receber um pedido McDelivery?",
-        options: [
-          "Imprimir o Pick List",
-          "Puxar o recall do POS imediatamente",
-          "Separar os sacos",
-          "Verificar os produtos na OAT"
-        ],
-        answer: "Puxar o recall do POS imediatamente",
-        explanation: "O primeiro passo é puxar o recall do POS imediatamente ao receber o pedido."
-      },
-      { guide: "mcdelivery",
-        category: "📦 McDelivery · Procedimento",
-        question: "Quando deve ser iniciada a montagem do pedido?",
-        options: [
-          "Assim que o pedido chegar no POS",
-          "Após o pedido aparecer na tela da OAT e imprimir o Pick List",
-          "Quando o entregador chegar",
-          "Após a dupla checagem"
-        ],
-        answer: "Após o pedido aparecer na tela da OAT e imprimir o Pick List",
-        explanation: "A montagem começa após o pedido aparecer na OAT e após imprimir o Pick List."
-      },
-      { guide: "mcdelivery",
-        category: "📦 McDelivery · Procedimento",
-        question: "Como deve ser posicionada a bebida no saco de delivery?",
-        options: [
-          "Dentro da sacola D, em pé",
-          "Saco dobrado na horizontal com pedido na sacola D, suporte na horizontal e bebida posicionada",
-          "Separada em saco menor",
-          "Com o canudo já inserido"
-        ],
-        answer: "Saco dobrado na horizontal com pedido na sacola D, suporte na horizontal e bebida posicionada",
-        explanation: "O saco é dobrado na horizontal, colocado dentro da sacola D. O suporte fica na horizontal e a bebida é posicionada sobre ele."
-      },
-      { guide: "mcdelivery",
-        category: "✅ McDelivery · Checagem",
-        question: "O que deve ser verificado na dupla checagem do pedido?",
-        options: [
-          "Apenas o número do pedido",
-          "Tamanho, sabores e quantidade de cada item",
-          "Apenas os condimentos",
-          "Somente o valor total do pedido"
-        ],
-        answer: "Tamanho, sabores e quantidade de cada item",
-        explanation: "A dupla checagem verifica tamanho, sabores e quantidade de cada item. Também incluem-se condimentos, canudos e guardanapos."
-      },
-      { guide: "mcdelivery",
-        category: "📦 McDelivery · Finalização",
-        question: "O que deve ser feito após finalizar a montagem do saco?",
-        options: [
-          "Entregar diretamente ao entregador",
-          "Fechar o saco com adesivos com Pick List e número do pedido, e sinalizar como PRONTO no Flex",
-          "Aguardar o entregador pedir",
-          "Colocar em refrigeração"
-        ],
-        answer: "Fechar o saco com adesivos com Pick List e número do pedido, e sinalizar como PRONTO no Flex",
-        explanation: "Feche o saco com adesivos contendo Pick List e número do pedido, e sinalize como PRONTO no Flex para que o entregador realize a entrega."
-      },
-      { guide: "mcdelivery",
-        category: "🛒 McDelivery · Carrinho",
-        question: "Qual item NÃO faz parte da lista do Carrinho Tech Tower?",
-        options: [
-          "Bobinas e Lacres",
-          "Guardanapos",
-          "Tablet",
-          "Sacos D+"
-        ],
-        answer: "Tablet",
-        explanation: "O Tablet é exclusivo do Carrinho Armado Completo com POS. O Tech Tower básico não inclui tablet."
-      },
-      { guide: "mcdelivery",
-        category: "🛒 McDelivery · Carrinho",
-        question: "No layout Dual Point com mesa extensora, onde deve ficar o Mini ORB (Conferente)?",
-        options: [
-          "Próximo ao POS",
-          "No centro da mesa extensora",
-          "Próximo à janela de entrega",
-          "Ao lado do tablet"
-        ],
-        answer: "Próximo à janela de entrega",
-        explanation: "No layout Dual Point, o Mini ORB (Conferente) deve ficar próximo à janela de entrega."
-      },
-      { guide: "mcdelivery",
-        category: "⚙️ McDelivery · Preparação",
-        question: "Qual ação deve ser feita após finalizar o pedido no tablet?",
-        options: [
-          "Acionar o botão PRONTO no tablet",
-          "Imprimir o Pick List novamente",
-          "Ligar para o entregador",
-          "Registrar no POS"
-        ],
-        answer: "Acionar o botão PRONTO no tablet",
-        explanation: "Após finalizar o pedido, deve-se acionar o botão PRONTO no tablet."
-      },
-      { guide: "mcdelivery",
-        category: "⚙️ McDelivery · Preparação",
-        question: "Qual é a importância da dupla checagem no McDelivery?",
-        options: [
-          "Apenas para cumprir protocolo",
-          "Para garantir tamanho, sabores, quantidade e condimentos corretos antes do fechamento",
-          "Para verificar se o entregador chegou",
-          "Para registrar o horário de entrega"
-        ],
-        answer: "Para garantir tamanho, sabores, quantidade e condimentos corretos antes do fechamento",
-        explanation: "A dupla checagem garante que o pedido está correto — tamanho, sabores, quantidade, condimentos, canudos e guardanapos — antes do fechamento definitivo."
-      },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Procedimento", question: "Como deve ser posicionado o saco dentro da sacola D?", options: ["Em pé", "Dobrado na horizontal", "Aberto para facilitar acesso", "Amarrado no topo"], answer: "Dobrado na horizontal", explanation: "O saco deve ser dobrado na horizontal antes de colocar dentro da sacola D." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Procedimento", question: "O que deve ser feito logo após sinalizar o pedido como PRONTO no Flex?", options: ["Aguardar o entregador chegar", "O pedido fica disponível para o entregador realizar a entrega", "Ligar para o entregador", "Entregar pessoalmente"], answer: "O pedido fica disponível para o entregador realizar a entrega", explanation: "Ao sinalizar PRONTO no Flex, o entregador recebe a notificação e pode realizar a entrega." },
-      { guide: "mcdelivery",  category: "🛒 McDelivery · Carrinho", question: "Qual a altura da prateleira 3 do carrinho Tech Tower?", options: ["12,5cm do chão", "61,5cm do chão", "90,0cm do chão", "50cm da mesa"], answer: "90,0cm do chão", explanation: "Prateleira ①=12,5cm · ②=61,5cm · ③=90,0cm do chão · ④=50cm da mesa · ⑤=75cm da mesa." },
-      { guide: "mcdelivery",  category: "🛒 McDelivery · Carrinho", question: "Onde ficam os guardanapos no carrinho Tech Tower?", options: ["Posição 3", "Posição 6", "Posição 8", "Posição 10"], answer: "Posição 8", explanation: "No carrinho Tech Tower: posição 8 = Guardanapos." },
-      { guide: "mcdelivery",  category: "🛒 McDelivery · Carrinho", question: "O que fica na posição 4 do carrinho Tech Tower?", options: ["Ketchup", "Lacre", "Molhos para McNuggets", "Canudo para McShake"], answer: "Molhos para McNuggets", explanation: "Posição 4 do Tech Tower = Molhos para McNuggets." },
-      { guide: "mcdelivery",  category: "✅ McDelivery · Checagem", question: "Além de tamanho, sabores e quantidade, o que mais verifica a dupla checagem?", options: ["Apenas o número do pedido", "Condimentos, canudos e guardanapos", "A temperatura do produto", "A embalagem do saco"], answer: "Condimentos, canudos e guardanapos", explanation: "A dupla checagem verifica tamanho, sabores, quantidade de cada item + condimentos, canudos e guardanapos." },
-      { guide: "mcdelivery",  category: "🛒 McDelivery · Carrinho", question: "Quantos sacos D+ ficam no carrinho Tech Tower?", options: ["Posição 7", "Posição 9", "Posição 10", "Posição 11"], answer: "Posição 9", explanation: "No carrinho Tech Tower: posição 9 = Sacos D+." },
-      { guide: "mcdelivery",  category: "⚙️ McDelivery · Preparação", question: "O que deve estar 100% funcionando durante todo o tempo no McDelivery?", options: ["Apenas o POS", "Apenas o tablet", "POS atualizado e tablet carregado funcionando 100% do tempo", "Apenas a seladora"], answer: "POS atualizado e tablet carregado funcionando 100% do tempo", explanation: "POS deve estar atualizado e tablet carregado e 100% do tempo funcionando." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Procedimento", question: "Quais itens devem estar estocados antes de iniciar o turno de McDelivery?", options: ["Apenas sacos", "Área preparada com suprimentos, sacos, lacres, suporte e brinquedos estocados", "Apenas lacres e sacos", "Apenas o tablet carregado"], answer: "Área preparada com suprimentos, sacos, lacres, suporte e brinquedos estocados", explanation: "Área preparada com todos os suprimentos, sacos, lacres, suporte e brinquedos estocados." },
-      { guide: "mcdelivery",  category: "⚠️ McDelivery · Segurança", question: "Por que não se deve liberar o pedido pelo nome do cliente?", options: ["É muito demorado", "O código é mais seguro e garante que o entregador correto receba o pedido", "O nome pode ser difícil de pronunciar", "O sistema não permite"], answer: "O código é mais seguro e garante que o entregador correto receba o pedido", explanation: "A liberação pelo código garante segurança — somente o entregador com o código correto pode receber o pedido." },
-      { guide: "mcdelivery",  category: "🛒 McDelivery · Dual Point", question: "O que diferencia o layout Dual Point com mesa extensora do carrinho padrão?", options: ["Apenas a cor", "Tem Mini ORB (Conferente) próximo à janela de entrega e mesa extensora", "É menor", "Não tem POS"], answer: "Tem Mini ORB (Conferente) próximo à janela de entrega e mesa extensora", explanation: "No Dual Point: mesa extensora adicional e Mini ORB (Conferente) posicionado próximo à janela de entrega." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Finalização", question: "Quais informações devem estar nos adesivos de fechamento do saco?", options: ["Apenas o número do pedido", "Pick List e número de pedido", "Nome do cliente e número do pedido", "Apenas o código de barras"], answer: "Pick List e número de pedido", explanation: "O fechamento do saco deve ser feito com adesivos contendo Pick List e número do pedido." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Embalagem", question: "Como identificar pedidos com temperatura quente e fria no mesmo pedido?", options: ["Colocar tudo numa sacola", "Separar em sacolas distintas por temperatura", "Só existe uma temperatura por pedido", "Misturar mas avisar o entregador"], answer: "Separar em sacolas distintas por temperatura", explanation: "Pedidos com itens quentes e frios devem ser embalados em sacolas distintas por temperatura." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Embalagem", question: "Em que ordem os itens devem ser colocados na sacola?", options: ["Qualquer ordem", "Pesados no fundo, leves e bebidas em cima", "Bebidas primeiro, depois sólidos", "Sobremesas primeiro"], answer: "Pesados no fundo, leves e bebidas em cima", explanation: "Empacotar com itens pesados no fundo e leves/bebidas em cima para evitar danos." },
-      { guide: "mcdelivery",  category: "⏱️ McDelivery · Tempos", question: "Qual o tempo meta de preparação para pedidos McDelivery?", options: ["2 minutos", "3 minutos", "4 minutos", "5 minutos"], answer: "4 minutos", explanation: "O tempo meta de preparação de pedidos McDelivery é de 4 minutos." },
-      { guide: "mcdelivery",  category: "📱 McDelivery · Plataformas", question: "Quais plataformas de delivery são aceitas no restaurante?", options: ["Apenas McDelivery próprio", "iFood, Rappi e McDelivery", "Qualquer plataforma cadastrada", "Apenas parceiros oficiais Arcos Dourados"], answer: "Apenas parceiros oficiais Arcos Dourados", explanation: "Apenas as plataformas parceiras oficiais da Arcos Dourados são aceitas." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Conferência", question: "Quando deve ser feita a dupla conferência do pedido?", options: ["Apenas para pedidos grandes", "Em todos os pedidos antes de lacrar a sacola", "Apenas nos horários de pico", "Apenas em pedidos com observações"], answer: "Em todos os pedidos antes de lacrar a sacola", explanation: "A dupla conferência deve ser feita em TODOS os pedidos antes de lacrar a sacola." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Lacre", question: "Por que é importante lacrar corretamente a sacola do McDelivery?", options: ["Apenas para enfeite", "Garantir segurança alimentar e evitar adulteração", "Exigência da plataforma digital", "Facilitar o transporte"], answer: "Garantir segurança alimentar e evitar adulteração", explanation: "O lacre garante segurança alimentar, evita adulteração e transmite confiança ao cliente." },
-      { guide: "mcdelivery",  category: "📱 McDelivery · MOP", question: "O que é o MOP no contexto McDelivery?", options: ["Método de Operação Padrão", "Mobile Order and Pay — pedido pelo app com retirada no restaurante", "Monitor de Operações Paralelas", "Manual de Orientação de Produção"], answer: "Mobile Order and Pay — pedido pelo app com retirada no restaurante", explanation: "MOP = Mobile Order and Pay: cliente faz o pedido pelo app e retira no restaurante." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Molhos", question: "Como devem ser embalados os molhos e sachês no pedido delivery?", options: ["Misturados com os alimentos", "Em envelope ou saquinho separado dentro da sacola", "Não incluir molhos", "Dentro das embalagens dos lanches"], answer: "Em envelope ou saquinho separado dentro da sacola", explanation: "Molhos e sachês devem ser colocados em envelope ou saquinho separado dentro da sacola." },
-      { guide: "mcdelivery",  category: "⏱️ McDelivery · Validade", question: "Qual o tempo máximo que um pedido McDelivery pode aguardar o entregador?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "10 minutos", explanation: "Um pedido McDelivery pode aguardar o entregador por no máximo 10 minutos." },
-      { guide: "mcdelivery",  category: "📱 McDelivery · Sistema", question: "O que fazer se o sistema de delivery cair durante o pico?", options: ["Continuar normalmente", "Notificar o gerente e seguir protocolo de contingência", "Cancelar todos os pedidos", "Não há protocolo para isso"], answer: "Notificar o gerente e seguir protocolo de contingência", explanation: "Em caso de queda do sistema, notificar o gerente imediatamente e seguir o protocolo de contingência." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Bebidas", question: "Como embalar bebidas quentes para delivery?", options: ["Sem tampa, colocar na sacola", "Com tampa lacrada e na posição vertical na sacola", "Deitadas para não vazar", "Em saco plástico separado"], answer: "Com tampa lacrada e na posição vertical na sacola", explanation: "Bebidas quentes devem ter tampa lacrada e ficarem na posição vertical na sacola." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Sobremesas", question: "Como proteger sorvetes e produtos frios no delivery?", options: ["Em sacola comum com os demais itens", "Em embalagem isolante separada dos itens quentes", "Não é possível entregar sorvetes", "Com gelo na sacola"], answer: "Em embalagem isolante separada dos itens quentes", explanation: "Sorvetes e itens frios devem ser embalados em embalagem isolante, separados dos itens quentes." },
-      { guide: "mcdelivery",  category: "📦 McDelivery · Guardanapos", question: "Qual a quantidade mínima de guardanapos por pedido?", options: ["1 guardanapo", "2 guardanapos", "3 guardanapos", "Depende do pedido"], answer: "3 guardanapos", explanation: "Incluir no mínimo 3 guardanapos por pedido, mais dependendo da quantidade de itens." },
-      { guide: "mcdelivery",  category: "⏱️ McDelivery · Prioridade", question: "Como priorizar pedidos quando há acúmulo simultâneo de delivery e balcão?", options: ["Delivery sempre primeiro", "Balcão sempre primeiro", "Por ordem de entrada no sistema, respeitando os tempos meta", "Gerente decide caso a caso"], answer: "Por ordem de entrada no sistema, respeitando os tempos meta", explanation: "Priorizar por ordem de entrada, respeitando os tempos meta de cada canal." },
-      { guide: "futuros-treinadores", category: "🛎️ Apoio Balcão · Tempos", question: "Qual é o tempo ideal para montar e apresentar o pedido ao cliente?", options: ["60 segundos", "90 segundos", "120 segundos", "3 minutos"], answer: "90 segundos", explanation: "O tempo ideal para montar e apresentar o pedido é de 90 segundos." },
-      { guide: "futuros-treinadores", category: "🛎️ Apoio Balcão · Tempos", question: "Qual é o tempo completo da experiência do cliente no balcão?", options: ["2 minutos", "2 minutos e 30 segundos", "3 minutos", "3 minutos e 30 segundos"], answer: "3 minutos e 30 segundos", explanation: "O tempo completo da experiência do cliente é de 3 minutos e 30 segundos." },
-      { guide: "futuros-treinadores", category: "🛎️ Apoio Balcão · Atendimento", question: "Quais são os 4 Momentos da Venda?", options: ["Chegada, Pedido, Entrega, Saída", "Cumprimento, Tomada do Pedido, Pagamento, Agradecimento/Despedida", "Boas-vindas, Pedido, Pagamento, Entrega", "Sorriso, Pedido, Entrega, Tchau"], answer: "Cumprimento, Tomada do Pedido, Pagamento, Agradecimento/Despedida", explanation: "Os 4 Momentos da Venda são: Cumprimento, Tomada do Pedido, Pagamento e Agradecimento/Despedida." },
-      { guide: "futuros-treinadores", category: "🛎️ Apoio Balcão · Atendimento", question: "Quais são os 4 tipos de cliente?", options: ["Paciente, Impaciente, Calmo, Agitado", "Perfeccionista, Comunicador, Executor, Socializador", "Exigente, Tranquilo, Apressado, Tímido", "Líder, Seguidor, Crítico, Passivo"], answer: "Perfeccionista, Comunicador, Executor, Socializador", explanation: "Os 4 tipos de cliente são: Perfeccionista, Comunicador, Executor e Socializador." },
-      { guide: "futuros-treinadores", category: "🛎️ Apoio Balcão · Lucratividade", question: "Quando deve ser entregue ketchup e mostarda ao cliente?", options: ["Sempre junto com o pedido", "Somente quando solicitado pelo cliente", "Apenas em combos", "Somente no drive-thru"], answer: "Somente quando solicitado pelo cliente", explanation: "Ketchup e mostarda devem ser entregues somente quando solicitado pelo cliente, pensando na lucratividade." },
-      { guide: "futuros-treinadores", category: "🌡️ Bebidas · Temperaturas", question: "Qual é a temperatura de extração do sorvete?", options: ["-12°C a -10°C", "-9°C a -8°C", "-6°C a -4°C", "-15°C a -13°C"], answer: "-9°C a -8°C", explanation: "A temperatura de extração do sorvete é de -9°C a -8°C." },
-      { guide: "futuros-treinadores", category: "🌡️ Bebidas · Temperaturas", question: "Qual é a temperatura do banho maria das coberturas?", options: ["46°C a 52°C", "57°C a 63°C", "66°C a 72°C", "50°C a 56°C"], answer: "57°C a 63°C", explanation: "A temperatura do banho maria das coberturas é de 57°C a 63°C." },
-      { guide: "futuros-treinadores", category: "🌡️ Bebidas · Temperaturas", question: "Qual é a temperatura de extração das coberturas?", options: ["57°C a 63°C", "46°C a 52°C", "66°C a 72°C", "40°C a 46°C"], answer: "46°C a 52°C", explanation: "A temperatura de extração das coberturas é de 46°C a 52°C." },
-      { guide: "futuros-treinadores", category: "🌡️ Bebidas · Velocidades", question: "Em quanto tempo deve ser extraído um refrigerante normal (450ml)?", options: ["8 segundos", "10 segundos", "12 segundos", "15 segundos"], answer: "12 segundos", explanation: "O refrigerante normal (450ml) deve ser extraído em 12 segundos." },
-      { guide: "futuros-treinadores", category: "🍗 Fritos · Carnes Brancas", question: "Qual é a temperatura de fritura do McFish?", options: ["168°C", "177°C", "180°C", "190°C"], answer: "177°C", explanation: "A temperatura de fritura do McFish é de 177°C." },
-      { guide: "futuros-treinadores", category: "🍗 Fritos · Carnes Brancas", question: "Qual é o tempo de fritura do Crispy?", options: ["2:10", "3:15", "3:25", "4:45"], answer: "4:45", explanation: "O tempo de fritura do Crispy é de 4 minutos e 45 segundos." },
-      { guide: "futuros-treinadores", category: "🍗 Fritos · Carnes Brancas", question: "Qual é o tempo de vida do Junior na UHC?", options: ["10 minutos", "15 minutos", "20 minutos", "30 minutos"], answer: "15 minutos", explanation: "O Junior tem tempo de vida de 15 minutos na UHC." },
-      { guide: "futuros-treinadores", category: "🍗 Fritos · Carnes Brancas", question: "Qual cor de clipe identifica os Nuggets na UHC?", options: ["Azul", "Amarelo", "Branco", "Lilás"], answer: "Branco", explanation: "O clipe branco identifica os Nuggets na UHC." },
-      { guide: "futuros-treinadores", category: "🍗 Fritos · Carnes Brancas", question: "Qual a temperatura da UHC para o McChicken?", options: ["85°C", "88°C", "90°C", "93°C"], answer: "93°C", explanation: "A temperatura da UHC para o McChicken é de 93°C." },
-      { guide: "futuros-treinadores", category: "🥧 Fritos · Tortas", question: "Qual é a temperatura de fritura das tortas?", options: ["168°C", "177°C", "180°C", "190°C"], answer: "180°C", explanation: "A temperatura de fritura das tortas é de 180°C." },
-      { guide: "futuros-treinadores", category: "🥧 Fritos · Tortas", question: "Qual é o tempo de fritura das tortas?", options: ["3 minutos", "4 minutos", "6 minutos", "8 minutos"], answer: "6 minutos", explanation: "O tempo de fritura das tortas é de 6 minutos." },
-      { guide: "futuros-treinadores", category: "🥧 Fritos · Tortas", question: "Qual é o tempo de vida das tortas após a fritura?", options: ["30 minutos", "60 minutos", "90 minutos", "120 minutos"], answer: "90 minutos", explanation: "O tempo de vida das tortas após fritura é de 90 minutos." },
-      { guide: "futuros-treinadores", category: "🥧 Fritos · Tortas", question: "Qual é a capacidade máxima de tortas por rodada de fritura?", options: ["8 tortas", "12 tortas", "16 tortas", "24 tortas"], answer: "16 tortas", explanation: "A capacidade máxima de tortas por rodada é de 16 tortas." },
-      { guide: "futuros-treinadores", category: "☠️ Inimigos do Óleo", question: "Quais são os 6 inimigos do óleo?", options: ["Fogo, Água, Sal, Vento, Resíduo, Sabão", "Ar, Água, Sal, Alta Temperatura, Resíduo de Carbono, Detergente", "Ar, Fumaça, Sal, Frio, Carbono, Sabão", "Oxigênio, Água, Açúcar, Calor, Gordura, Detergente"], answer: "Ar, Água, Sal, Alta Temperatura, Resíduo de Carbono, Detergente", explanation: "Os 6 inimigos do óleo são: Ar, Água, Sal, Alta Temperatura, Resíduo de Carbono e Detergente." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Temperaturas", question: "Qual é a temperatura da chapa superior?", options: ["177°C", "200°C", "218°C", "240°C"], answer: "218°C", explanation: "A temperatura da chapa superior é 218°C." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Carnes", question: "Qual é o peso da carne 10:1?", options: ["30g", "45g", "90g", "112,5g"], answer: "45g", explanation: "A carne 10:1 pesa 45 gramas." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Carnes", question: "Qual é o peso da carne 4:1?", options: ["45g", "90g", "112,5g", "150g"], answer: "112,5g", explanation: "A carne 4:1 pesa 112,5 gramas." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Carnes", question: "Qual é o peso da carne 3:1?", options: ["90g", "112,5g", "135g", "150g"], answer: "150g", explanation: "A carne 3:1 pesa 150 gramas." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Carnes", question: "Qual é o máximo de carnes 10:1 que pode ser ativado por Platen?", options: ["4", "6", "8", "10"], answer: "6", explanation: "O máximo de carnes 10:1 por Platen (Best Burger) é 6." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Carnes", question: "Qual é o tempo de vida das carnes vermelhas na UHC?", options: ["10 minutos", "15 minutos", "20 minutos", "30 minutos"], answer: "10 minutos", explanation: "No Best Burger, o tempo de vida das carnes vermelhas na UHC é de 10 minutos (reduzido de 15 para 10)." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Carnes", question: "Em que ângulo devem ser removidas todas as carnes?", options: ["30°", "45°", "60°", "90°"], answer: "45°", explanation: "O ângulo de remoção de todas as carnes é de 45 graus." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Carnes", question: "Qual é a quantidade de sal por carne vermelha?", options: ["2g", "3g", "4g", "5g"], answer: "5g", explanation: "A quantidade de sal por carne é de 5 gramas, aplicada em forma de U invertido." },
-      { guide: "futuros-treinadores", category: "🔥 Chapas · Grill", question: "Qual é o tempo de vida da carne de Grill na UHC?", options: ["15 minutos", "30 minutos", "45 minutos", "60 minutos"], answer: "60 minutos", explanation: "A carne de Grill tem tempo de vida de 60 minutos na UHC." },
-      { guide: "futuros-treinadores", category: "🍟 MC Fritas · Operacional", question: "Qual é a temperatura do óleo para MC Fritas?", options: ["160°C", "168°C", "177°C", "180°C"], answer: "168°C", explanation: "A temperatura do óleo para MC Fritas é de 168°C." },
-      { guide: "futuros-treinadores", category: "🍟 MC Fritas · Operacional", question: "Qual é o tempo de fritura das MC Fritas?", options: ["2 minutos e 30 segundos", "3 minutos", "3 minutos e 10 segundos", "4 minutos"], answer: "3 minutos e 10 segundos", explanation: "O tempo de fritura das MC Fritas é de 3 minutos e 10 segundos." },
-      { guide: "futuros-treinadores", category: "🍟 MC Fritas · Operacional", question: "Qual é o tempo de vida das batatas prontas?", options: ["5 minutos", "7 minutos", "10 minutos", "15 minutos"], answer: "7 minutos", explanation: "O tempo de vida das batatas prontas é de 7 minutos." },
-      { guide: "futuros-treinadores", category: "🍟 MC Fritas · Operacional", question: "Qual é a quantidade de sal nas MC Fritas?", options: ["2g", "3g", "4g", "5g"], answer: "4g", explanation: "A quantidade de sal nas MC Fritas é de 4 gramas (1 virada no saleiro sem agitar)." },
-      { guide: "futuros-treinadores", category: "🍟 MC Fritas · Operacional", question: "A que altura deve ser feita a salga das MC Fritas?", options: ["10 cm", "15 cm", "20 cm", "25 cm"], answer: "20 cm", explanation: "A salga das MC Fritas deve ser feita a 20 cm de altura." },
-      { guide: "futuros-treinadores", category: "🍟 MC Fritas · Pesos", question: "Qual o peso do cesto de batatas para a McFritas Grande?", options: ["300g", "500g", "700g", "750g"], answer: "700g", explanation: "A McFritas Grande usa 700g de batatas no cesto." },
-      { guide: "futuros-treinadores", category: "🍟 MC Fritas · Pesos", question: "Qual o peso das MC Fritas Médias prontas?", options: ["73g", "102g", "146g", "192g"], answer: "102g", explanation: "As MC Fritas Médias prontas pesam 102 gramas." },
-      { guide: "futuros-treinadores", category: "🍟 MC Fritas · Sistemas", question: "O que diferencia a fritura Ativada da Puxada?", options: ["No Puxado o óleo é mais quente", "No Ativado o 2º cesto é ativado após o Duty (30s); no Puxado só após total fritura do 1º", "No Puxado frita-se mais quantidade", "Não há diferença entre eles"], answer: "No Ativado o 2º cesto é ativado após o Duty (30s); no Puxado só após total fritura do 1º", explanation: "Fritura Ativada: ativa o 2º cesto no Duty (30s). Puxada: só ativa após total fritura do 1º cesto." },
-      { guide: "futuros-treinadores", category: "🍔 Menu · Montagem", question: "Qual molho é usado na base E na coroa do Big Tasty?", options: ["Molho Big Mac", "Molho Maionese", "Molho Tasty", "Molho Cheddar"], answer: "Molho Tasty", explanation: "O Big Tasty leva 1oz de Molho Tasty na coroa e 1oz na base." },
-      { guide: "futuros-treinadores", category: "🍔 Menu · Montagem", question: "Quantas carnes tem o Big Mac?", options: ["1 carne 4:1", "2 carnes 10:1", "1 carne 3:1", "2 carnes 5:1"], answer: "2 carnes 10:1", explanation: "O Big Mac leva 2 carnes 10:1 (1 no Club e 1 na Base)." },
-      { guide: "futuros-treinadores", category: "🍔 Menu · Montagem", question: "Qual é a carne do Quarterão com Queijo?", options: ["10:1", "5:1", "4:1", "3:1"], answer: "4:1", explanation: "O Quarterão com Queijo leva 1 carne 4:1." },
-      { guide: "futuros-treinadores", category: "🍔 Menu · Montagem", question: "Qual carne é usada no McChicken?", options: ["Carne Junior", "Carne Crispy", "Carne McChicken", "Carne de Grill"], answer: "Carne McChicken", explanation: "O McChicken leva 1 Carne de McChicken." },
-      { guide: "futuros-treinadores", category: "🍔 Menu · Montagem", question: "Qual queijo é usado no Mc Veggie?", options: ["Queijo Cheddar", "Queijo Emmenthal", "Queijo Coalho", "Queijo Mussarela"], answer: "Queijo Coalho", explanation: "O Mc Veggie leva 1 Queijo Coalho." },
-      { guide: "futuros-treinadores", category: "🍔 Menu · Montagem", question: "Qual o molho do McChicken?", options: ["Molho Tasty", "Molho Big Mac", "Molho Maionese", "Molho Barbecue"], answer: "Molho Maionese", explanation: "O McChicken leva 1 tiro 2/3 de Molho Maionese (20ml)." },
-      { guide: "futuros-treinadores", category: "🍔 Menu · Montagem", question: "Quantas fatias de bacon tem o Clubhouse?", options: ["1 fatia", "2 fatias", "3 fatias", "4 fatias"], answer: "3 fatias", explanation: "O Clubhouse leva 3 fatias de bacon." },
-      { guide: "futuros-treinadores", category: "🍔 Menu · Montagem", question: "Qual carne é usada no Big Tasty?", options: ["Carne 10:1", "Carne 5:1", "Carne 4:1", "Carne 3:1"], answer: "Carne 3:1", explanation: "O Big Tasty leva 1 Carne 3:1." },
-
-
-      // ===================== TEMPERATURAS =====================
-      { guide: "temperaturas", category: "🌡️ Chapa · Temperaturas", question: "Qual a temperatura da placa inferior da Chapa (exceto Taylor Next Generation)?", options: ["155°C", "166°C", "177°C", "200°C"], answer: "177°C", explanation: "A placa inferior da chapa opera a 177°C. A placa superior fica a 218°C." },
-      { guide: "temperaturas", category: "🌡️ Chapa · Temperaturas", question: "Qual a temperatura da placa superior da Chapa?", options: ["177°C", "200°C", "218°C", "240°C"], answer: "218°C", explanation: "A placa superior da chapa opera a 218°C. A placa inferior fica a 177°C." },
-      { guide: "temperaturas", category: "🌡️ Chapa · GAP 10:1", question: "Qual o Stage 1 GAP para carnes 10:1 na Chapa (exceto Taylor Next Generation)?", options: ["200\" e 20\"", "225\" e 20\"", "245\" e 20\"", "290\" e 20\""], answer: "225\" e 20\"", explanation: "Na chapa padrão (exceto Taylor Next Gen), o Stage 1 GAP para 10:1 é 225\" com 20\". O Final Gap é 290\"." },
-      { guide: "temperaturas", category: "🌡️ Chapa · GAP 10:1", question: "Qual o Stage 1 GAP para carnes 10:1 na Chapa Taylor Next Generation?", options: ["200\" e 20\"", "225\" e 20\"", "245\" e 20\"", "290\" e 20\""], answer: "245\" e 20\"", explanation: "Na Taylor Next Generation, o Stage 1 GAP para 10:1 é 245\" com 20\". O Final Gap é 290\"." },
-      { guide: "temperaturas", category: "🌡️ Chapa · GAP 4:1", question: "Qual o Stage 1 GAP para carnes 4:1 na Chapa padrão?", options: ["290\" e 20\"", "350\" e 20\"", "400\" e 20\"", "450\" e 20\""], answer: "400\" e 20\"", explanation: "Na chapa padrão o Stage 1 para 4:1 é 400\" com 20\". O Final Gap é 450\"." },
-      { guide: "temperaturas", category: "🌡️ Chapa · GAP 4:1", question: "A Chapa Taylor Next Generation tem Gap Final para carnes 4:1?", options: ["Sim, 400\"", "Sim, 450\"", "Não tem Gap Final", "Sim, 290\""], answer: "Não tem Gap Final", explanation: "Na Taylor Next Generation, a carne 4:1 tem Stage 1: 450\" e 20\" — porém NÃO tem Gap Final." },
-      { guide: "temperaturas", category: "🌡️ Tostadeira · DCFT", question: "Qual a temperatura da Placa Principal da Tostadeira DCFT?", options: ["218°C", "240°C", "257°C", "293°C"], answer: "257°C", explanation: "Tostadeira DCFT: Placa principal 257°C, Placa clube top 254°C, Placa clube bottom 257°C. GAP B3, Ciclo 22\"." },
-      { guide: "temperaturas", category: "🌡️ Tostadeira · VCT-250/VCT-200", question: "Qual a temperatura da Placa Principal da Tostadeira VCT-250 / VCT-200?", options: ["257°C", "271°C", "293°C", "310°C"], answer: "293°C", explanation: "Tostadeira VCT-250 e VCT-200: Placa principal 293°C, Placa auxiliar 204°C. GAP 5D, Ciclo 22\"." },
-      { guide: "temperaturas", category: "🌡️ Tostadeira · HEBT-5V", question: "Qual a temperatura das Placas A/B da Tostadeira HEBT-5V?", options: ["254°C", "257°C", "271°C", "293°C"], answer: "271°C", explanation: "HEBT-5V: Placas A/B em 271°C, Placa C em 254°C. GAP 4, Ciclo 22\"." },
-      { guide: "temperaturas", category: "🌡️ Tostadeira · HEBT-3V", question: "Qual o GAP da Tostadeira HEBT-3V?", options: ["GAP 3", "GAP 4", "GAP B3", "GAP 5D"], answer: "GAP 4", explanation: "HEBT-3V: Placas A/B em 271°C, GAP 4, Ciclo 22\"." },
-      { guide: "temperaturas", category: "🌡️ UHC · Carnes Vermelhas", question: "Qual a temperatura da UHC Best Burger para carnes vermelhas?", options: ["71°C", "75°C", "79°C", "85°C"], answer: "79°C", explanation: "A UHC BB para carnes vermelhas opera a 79°C com tempo de 10 minutos." },
-      { guide: "temperaturas", category: "🌡️ UHC · Carnes Vermelhas", question: "Qual o tempo de vida das carnes vermelhas na UHC Best Burger?", options: ["5 minutos", "8 minutos", "10 minutos", "15 minutos"], answer: "10 minutos", explanation: "Na UHC BB, as carnes vermelhas têm tempo de vida de 10 minutos (temperatura 79°C)." },
-      { guide: "temperaturas", category: "🌡️ UHC · Carnes Brancas", question: "Qual a temperatura da UHC Best Burger para carnes brancas?", options: ["79°C", "85°C", "90°C", "93°C"], answer: "85°C", explanation: "A UHC BB para carnes brancas opera a 85°C." },
-      { guide: "temperaturas", category: "🌡️ UHC · Carnes Brancas", question: "Qual o tempo de vida dos Nuggets e McChicken Jr. na UHC Best Burger?", options: ["15 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "20 minutos", explanation: "Na UHC BB carnes brancas: Nuggets e McChicken Jr. têm 20 minutos de vida." },
-      { guide: "temperaturas", category: "🌡️ UHC · Carnes Brancas", question: "Qual o tempo de vida do McChicken na UHC Best Burger?", options: ["15 minutos", "20 minutos", "30 minutos", "60 minutos"], answer: "30 minutos", explanation: "Na UHC BB, o McChicken tem tempo de vida de 30 minutos." },
-      { guide: "temperaturas", category: "🌡️ UHC · Carnes Brancas", question: "Qual o tempo de vida do Crispy na UHC Best Burger?", options: ["20 minutos", "30 minutos", "45 minutos", "60 minutos"], answer: "60 minutos", explanation: "Na UHC BB, o Crispy tem tempo de vida de 60 minutos." },
-      { guide: "temperaturas", category: "🌡️ Mesa de Condimentação", question: "Qual a temperatura da Mesa de Condimentação?", options: ["35°C a 45°C", "42°C a 52°C", "49°C a 57°C", "55°C a 65°C"], answer: "49°C a 57°C", explanation: "A mesa de condimentação deve operar entre 49°C e 57°C." },
-      { guide: "temperaturas", category: "🌡️ Equipamentos · Frio", question: "Qual a temperatura do Congelador Portátil?", options: ["-10°C a -15°C", "-15°C a -20°C", "-18°C a -23°C", "-23°C a -28°C"], answer: "-18°C a -23°C", explanation: "O Congelador Portátil deve operar entre -18°C e -23°C." },
-      { guide: "temperaturas", category: "🌡️ Equipamentos · Frio", question: "Qual a temperatura do Refrigerador Portátil?", options: ["0°C a 2°C", "1°C a 4°C", "3°C a 6°C", "4°C a 8°C"], answer: "1°C a 4°C", explanation: "O Refrigerador Portátil deve operar entre 1°C e 4°C." },
-      { guide: "temperaturas", category: "🌡️ Equipamentos · Frio", question: "Qual a temperatura da Câmara de Congelado?", options: ["-10°C a -15°C", "-15°C a -20°C", "-18°C a -23°C", "-25°C a -30°C"], answer: "-18°C a -23°C", explanation: "A Câmara de Congelado opera entre -18°C e -23°C, igual ao Congelador Portátil." },
-      { guide: "temperaturas", category: "🌡️ Equipamentos · Frio", question: "Qual a temperatura da Câmara de Resfriado?", options: ["0°C a 2°C", "1°C a 4°C", "2°C a 6°C", "4°C a 8°C"], answer: "1°C a 4°C", explanation: "A Câmara de Resfriado opera entre 1°C e 4°C." },
-      { guide: "temperaturas", category: "🌡️ Equipamentos · Frio", question: "Qual a temperatura do Encestador de Batata?", options: ["0°C a -10°C", "-10°C a -15°C", "-18°C a -23°C", "-5°C a -10°C"], answer: "-18°C a -23°C", explanation: "O Encestador de Batata opera entre -18°C e -23°C para manter as batatas congeladas." },
-      { guide: "temperaturas", category: "🌡️ Estufa de Tortas", question: "Qual a temperatura da Estufa de Tortas?", options: ["52°C a 66°C", "60°C a 74°C", "66°C a 82°C", "75°C a 90°C"], answer: "66°C a 82°C", explanation: "A Estufa de Tortas deve operar entre 66°C e 82°C." },
-      { guide: "temperaturas", category: "🌡️ Fritadeira · McFritas", question: "Qual a temperatura das cubas da Fritadeira McFritas?", options: ["155°C", "160°C", "168°C", "177°C"], answer: "168°C", explanation: "As cubas da Fritadeira McFritas operam a 168°C. Tempo de fritura 3'10\", Duty 30\", Vida 7 minutos." },
-      { guide: "temperaturas", category: "🌡️ Fritadeira · Carnes Brancas e Tortas", question: "Qual a temperatura das cubas da Fritadeira de Carnes Brancas e Tortas?", options: ["168°C", "177°C", "180°C", "190°C"], answer: "180°C", explanation: "A Fritadeira de Carnes Brancas e Tortas opera a 180°C." },
-      { guide: "temperaturas", category: "🌡️ Fritadeira · Tempos Carnes Brancas", question: "Qual o tempo de fritura do McChicken, Nuggets e Chicken Jr.?", options: ["2'45\"", "3'00\"", "3'15\"", "4'45\""], answer: "3'15\"", explanation: "McChicken, Nuggets e Chicken Jr. têm tempo de fritura de 3'15\" na fritadeira de carnes brancas." },
-      { guide: "temperaturas", category: "🌡️ Fritadeira · Tempos Carnes Brancas", question: "Qual o tempo de fritura do Crispy Chicken?", options: ["3'15\"", "4'45\"", "6'00\"", "8'00\""], answer: "6'", explanation: "O Crispy Chicken tem tempo de fritura de 6 minutos na fritadeira de carnes brancas." },
-      { guide: "temperaturas", category: "🌡️ Fritadeira · Tortas", question: "Qual o tempo de fritura das Tortas (Banana/Maçã)?", options: ["3'15\"", "4'00\"", "5'00\"", "6'00\""], answer: "6'", explanation: "As tortas têm tempo de fritura de 6 minutos a 180°C." },
-      { guide: "temperaturas", category: "🌡️ Forno", question: "Qual a temperatura do Forno para ASSAR produtos?", options: ["160°C", "170°C", "180°C", "200°C"], answer: "180°C", explanation: "O forno opera a 180°C para assar e a 200°C para aquecer produtos." },
-      { guide: "temperaturas", category: "🌡️ Forno", question: "Qual a temperatura do Forno para AQUECER produtos?", options: ["160°C", "180°C", "200°C", "220°C"], answer: "200°C", explanation: "O forno opera a 200°C para aquecer e a 180°C para assar produtos." },
-      { guide: "temperaturas", category: "🌡️ Torre de Bebidas", question: "Qual a temperatura da Torre de Bebidas?", options: ["0°C a 4°C", "1°C a 4°C", "1°C a 7°C", "4°C a 8°C"], answer: "1°C a 4°C", explanation: "A Torre de Bebidas opera entre 1°C e 4°C." },
-      { guide: "temperaturas", category: "🌡️ Torre de Bebidas · Proporção", question: "Qual a proporção de água para xarope na Torre de Bebidas para Coca-Cola e Coca-Cola Zero?", options: ["3.2 de água para 1oz de xarope", "4.2 de água para 1oz de xarope", "5.2 de água para 1oz de xarope", "6.2 de água para 1oz de xarope"], answer: "5.2 de água para 1oz de xarope", explanation: "Coca-Cola e Coca-Cola Zero: 5.2 de água para 1oz de xarope. Para Fanta, Kuat, Kuat Zero e Sprite: 4.2 de água para 1oz." },
-      { guide: "temperaturas", category: "🌡️ Torre de Bebidas · Proporção", question: "Qual a proporção de água para xarope na Torre de Bebidas para Fanta, Kuat e Sprite?", options: ["3.2 de água para 1oz", "4.2 de água para 1oz", "5.2 de água para 1oz", "6.2 de água para 1oz"], answer: "4.2 de água para 1oz", explanation: "Fanta, Kuat, Kuat Zero e Sprite: 4.2 de água para 1oz de xarope. Coca-Cola/Zero: 5.2 de água para 1oz." },
-      { guide: "temperaturas", category: "🌡️ Máquina de Suco", question: "Qual a temperatura da Máquina de Suco?", options: ["0°C a 4°C", "1°C a 4°C", "1°C a 7°C", "4°C a 10°C"], answer: "1°C a 7°C", explanation: "A Máquina de Suco opera entre 1°C e 7°C." },
-      { guide: "temperaturas", category: "🌡️ Máquina de Suco · Proporção", question: "Qual a proporção de polpa para água na Máquina de Suco?", options: ["2oz de polpa para 15oz de água", "3oz de polpa para 15oz de água", "4oz de polpa para 15oz de água", "3oz de polpa para 10oz de água"], answer: "3oz de polpa para 15oz de água", explanation: "A calibragem da Máquina de Suco é: 3oz de polpa para 15oz de água." },
-      { guide: "temperaturas", category: "🌡️ Máquina HT · Sorvete", question: "Qual a temperatura de extração do sorvete na Máquina HT?", options: ["-12°C a -10°C", "-11°C a -9°C", "-9°C a -8°C", "-7°C a -5°C"], answer: "-9°C a -8°C", explanation: "A temperatura de extração do sorvete na Máquina HT é de -9°C a -8°C." },
-      { guide: "temperaturas", category: "🌡️ Máquina HT · Sorvete", question: "Qual a temperatura do Reservatório da Máquina HT?", options: ["0°C a 2°C", "1°C a 4°C", "2°C a 6°C", "4°C a 8°C"], answer: "1°C a 4°C", explanation: "O Reservatório da Máquina HT deve estar entre 1°C e 4°C." },
-      { guide: "temperaturas", category: "🌡️ Máquina HT · Coberturas", question: "Qual a temperatura de Cobertura na Máquina HT?", options: ["35°C a 42°C", "40°C a 48°C", "46°C a 52°C", "52°C a 58°C"], answer: "46°C a 52°C", explanation: "A temperatura de Cobertura na Máquina HT é de 46°C a 52°C. O Banho Maria fica entre 57°C e 63°C." },
-      { guide: "temperaturas", category: "🌡️ Máquina HT · Banho Maria", question: "Qual a temperatura do Banho Maria das coberturas na Máquina HT?", options: ["46°C a 52°C", "52°C a 58°C", "57°C a 63°C", "63°C a 70°C"], answer: "57°C a 63°C", explanation: "O Banho Maria das coberturas na Máquina HT deve estar entre 57°C e 63°C." },
-      { guide: "temperaturas", category: "🌡️ Gabinete Expositor", question: "Qual a temperatura do Gabinete Expositor?", options: ["0°C a 2°C", "1°C a 4°C", "2°C a 6°C", "4°C a 8°C"], answer: "1°C a 4°C", explanation: "O Gabinete Expositor opera entre 1°C e 4°C para conservação dos produtos." },
-      { guide: "temperaturas", category: "🌡️ Café Coado", question: "Qual a temperatura da Máquina de Café Coado?", options: ["65°C a 72°C", "70°C a 76°C", "77°C a 82°C", "82°C a 90°C"], answer: "77°C a 82°C", explanation: "A Máquina de Café Coado deve operar entre 77°C e 82°C." },
-      { guide: "temperaturas", category: "🌡️ Máquina de Leite", question: "Qual a temperatura do leite na Máquina de Leite?", options: ["65°C", "68°C", "71,1°C", "75°C"], answer: "71,1°C", explanation: "A temperatura do leite na Máquina de Leite deve ser 71,1°C." },
-      { guide: "temperaturas", category: "🌡️ McFritas · Ciclo", question: "Qual o tempo de Duty da Fritadeira McFritas?", options: ["15\"", "20\"", "30\"", "45\""], answer: "30\"", explanation: "O Duty da Fritadeira McFritas é de 30 segundos. O tempo de fritura é 3'10\" e a vida da batata pronta é 7 minutos." },
-      { guide: "temperaturas", category: "🌡️ McFritas · Vida", question: "Qual o tempo de vida das McFritas após a fritura?", options: ["5 minutos", "7 minutos", "10 minutos", "15 minutos"], answer: "7 minutos", explanation: "O tempo de vida das McFritas é de 7 minutos após a fritura. Fritadeira a 168°C, fritura 3'10\"." },
-
-      // ===================== RENDIMENTOS =====================
-      { guide: "rendimentos", category: "📏 Rendimento · Vegetais", question: "Qual o rendimento da alface por kg?", options: ["30,20 sanduíches", "38,15 sanduíches", "45,40 sanduíches", "55,00 sanduíches"], answer: "45,40 sanduíches", explanation: "A alface rende 45,40 sanduíches por kg." },
-      { guide: "rendimentos", category: "📏 Rendimento · Vegetais", question: "Qual o rendimento dos picles por kg?", options: ["143 sanduíches", "185 sanduíches", "255 sanduíches", "285 sanduíches"], answer: "255 sanduíches", explanation: "Os picles rendem 255 sanduíches por kg." },
-      { guide: "rendimentos", category: "📏 Rendimento · Cebolas", question: "Qual o rendimento da cebola desidratada por kg?", options: ["285 sanduíches", "570 sanduíches", "800 sanduíches", "1.057 sanduíches"], answer: "1.057 sanduíches", explanation: "A cebola desidratada rende 1.057 sanduíches por kg — o maior rendimento entre as cebolas." },
-      { guide: "rendimentos", category: "📏 Rendimento · Cebolas", question: "Qual o rendimento da cebola crispy por kg?", options: ["143 sanduíches", "200 sanduíches", "255 sanduíches", "285 sanduíches"], answer: "285 sanduíches", explanation: "A cebola crispy rende 285 sanduíches por kg." },
-      { guide: "rendimentos", category: "📏 Rendimento · Cebolas", question: "Qual o rendimento da cebola fresca por kg?", options: ["70 sanduíches", "95 sanduíches", "120 sanduíches", "143 sanduíches"], answer: "143 sanduíches", explanation: "A cebola fresca rende 143 sanduíches por kg." },
-      { guide: "rendimentos", category: "📏 Rendimento · Cebolas", question: "Qual o rendimento da cebola cheddar (ao molho shoyu) por kg?", options: ["49,00 sanduíches", "70,42 sanduíches", "95,00 sanduíches", "143,00 sanduíches"], answer: "70,42 sanduíches", explanation: "A cebola cheddar (ao molho shoyu) rende 70,42 sanduíches por kg." },
-      { guide: "rendimentos", category: "📏 Rendimento · Molhos", question: "Qual o rendimento do Molho Big Mac e do Molho Maionese por kg?", options: ["33 sanduíches", "49 sanduíches", "60 sanduíches", "77 sanduíches"], answer: "49 sanduíches", explanation: "Tanto o Molho Big Mac quanto o Molho Maionese rendem 49 sanduíches por kg." },
-      { guide: "rendimentos", category: "📏 Rendimento · Molhos", question: "Qual o rendimento do Molho Tasty e do Molho Cheddar por kg?", options: ["25 sanduíches", "33 sanduíches", "49 sanduíches", "55 sanduíches"], answer: "33 sanduíches", explanation: "O Molho Tasty e o Molho Cheddar rendem 33 sanduíches por kg cada." },
-      { guide: "rendimentos", category: "📏 Rendimento · Molhos", question: "Qual o rendimento do Ketchup pouch por kg?", options: ["55 a 60", "65 a 70", "77 a 79", "85 a 90"], answer: "77 a 79", explanation: "O Ketchup pouch rende entre 77 e 79 sanduíches por kg." },
-      { guide: "rendimentos", category: "📏 Rendimento · Molhos", question: "Qual o rendimento da Mostarda pouch por kg?", options: ["285 sanduíches", "580 sanduíches", "900 sanduíches", "1.235 sanduíches"], answer: "1.235 sanduíches", explanation: "A Mostarda pouch rende 1.235 sanduíches por kg — um dos maiores rendimentos." },
-      { guide: "rendimentos", category: "📏 Rendimento · Sobremesas", question: "Qual o rendimento do Mix Sundae por litro?", options: ["5,50 sundaes", "7,25 sundaes", "9,75 sundaes", "12,00 sundaes"], answer: "9,75 sundaes", explanation: "O Mix Sundae rende 9,75 sundaes por litro." },
-      { guide: "rendimentos", category: "📏 Rendimento · Sobremesas", question: "Qual o rendimento da Cobertura de Chocolate por litro?", options: ["24,69 sundaes", "28,50 sundaes", "32,25 sundaes", "33,33 sundaes"], answer: "33,33 sundaes", explanation: "A Cobertura de Chocolate rende 33,33 sundaes por litro, sendo a de maior rendimento." },
-      { guide: "rendimentos", category: "📏 Rendimento · Sobremesas", question: "Qual o rendimento da Cobertura de Caramelo por litro?", options: ["24,69 sundaes", "28,50 sundaes", "32,25 sundaes", "33,33 sundaes"], answer: "32,25 sundaes", explanation: "A Cobertura de Caramelo rende 32,25 sundaes por litro." },
-      { guide: "rendimentos", category: "📏 Rendimento · Sobremesas", question: "Qual o rendimento da Cobertura de Morango por litro?", options: ["18,50 sundaes", "21,00 sundaes", "24,69 sundaes", "28,00 sundaes"], answer: "24,69 sundaes", explanation: "A Cobertura de Morango rende 24,69 sundaes por litro — o menor rendimento entre as coberturas." },
-      { guide: "rendimentos", category: "📏 Rendimento · Bebidas", question: "Qual o rendimento do Leite Desnatado em milk shakes por litro?", options: ["45 shakes", "55 shakes", "67 shakes", "80 shakes"], answer: "67 shakes", explanation: "O Leite Desnatado rende 67 milk shakes por litro." },
-      { guide: "rendimentos", category: "📏 Rendimento · Bebidas", question: "Qual o rendimento do Xarope de Refrigerante por litro?", options: ["12,50 copos", "17,80 copos", "21,22 copos", "26,00 copos"], answer: "21,22 copos", explanation: "O Xarope de Refrigerante rende 21,22 copos pequenos por litro." },
-      { guide: "rendimentos", category: "📏 Rendimento · Bebidas", question: "Qual o rendimento do Xarope de Suco por bolsa?", options: ["20 copos", "25 copos", "33 copos", "40 copos"], answer: "33 copos", explanation: "O Xarope de Suco rende 33 copos pequenos por bolsa." },
-      { guide: "rendimentos", category: "📏 Rendimento · Queijo", question: "Quantas unidades tem cada bloco de Queijo Cheddar ou Emmenthal?", options: ["80 unidades", "120 unidades", "160 unidades", "200 unidades"], answer: "160 unidades", explanation: "Cada bloco de Queijo Cheddar e Emmenthal tem 160 unidades. A caixa vem com 8 blocos (total: 1.280 un.)." },
-      { guide: "rendimentos", category: "📏 Rendimento · Queijo", question: "Quantos blocos de queijo cheddar/emmenthal vêm por caixa?", options: ["4 blocos", "6 blocos", "8 blocos", "10 blocos"], answer: "8 blocos", explanation: "Cada caixa de Queijo Cheddar ou Emmenthal tem 8 blocos, cada bloco com 160 unidades." },
-      { guide: "rendimentos", category: "📏 Rendimento · Coberturas", question: "Qual o rendimento geral das coberturas por pouch?", options: ["18,50 sundaes", "22,00 sundaes", "25,80 sundaes", "30,00 sundaes"], answer: "25,80 sundaes", explanation: "O rendimento geral das coberturas é de 25,80 sundaes por pouch." },
-
-      // ===================== EMPILHAMENTO =====================
-      { guide: "empilhamento", category: "📦 Empilhamento · Carnes", question: "Qual o empilhamento máximo das Carnes Regular (10:1), Quarteirão (4:1) e Tasty (3:1)?", options: ["4 caixas", "6 caixas", "8 caixas", "10 caixas"], answer: "8 caixas", explanation: "As carnes Regular (10:1), Quarteirão (4:1) e Tasty (3:1) têm empilhamento máximo de 8 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Pães", question: "Qual o empilhamento máximo dos Pães Big Mac?", options: ["16 bandejas", "20 bandejas", "26 bandejas", "30 bandejas"], answer: "26 bandejas", explanation: "Os Pães Big Mac têm empilhamento máximo de 26 bandejas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Pães", question: "Qual o empilhamento máximo dos pães em geral (exceto Big Mac)?", options: ["16 bandejas", "20 bandejas", "26 bandejas", "30 bandejas"], answer: "20 bandejas", explanation: "Os pães em geral (exceto Big Mac) têm empilhamento máximo de 20 bandejas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Frango", question: "Qual o empilhamento máximo do Mc Chicken, Júnior e Crispy?", options: ["4 caixas", "5 caixas", "6 caixas", "8 caixas"], answer: "6 caixas", explanation: "Mc Chicken, Júnior e Crispy têm empilhamento máximo de 6 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Frango", question: "Qual o empilhamento máximo dos Nuggets?", options: ["4 caixas", "5 caixas", "6 caixas", "8 caixas"], answer: "5 caixas", explanation: "Os Nuggets têm empilhamento máximo de 5 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Laticínios", question: "Qual o empilhamento máximo do Queijo Cheddar?", options: ["4 caixas", "6 caixas", "8 caixas", "10 caixas"], answer: "8 caixas", explanation: "O Queijo Cheddar tem empilhamento máximo de 8 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Laticínios", question: "Qual o empilhamento máximo do Queijo Emmenthal?", options: ["4 caixas", "5 caixas", "6 caixas", "8 caixas"], answer: "6 caixas", explanation: "O Queijo Emmenthal tem empilhamento máximo de 6 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Laticínios", question: "Qual o empilhamento máximo do Molho Cheddar?", options: ["4 caixas", "6 caixas", "8 caixas", "10 caixas"], answer: "8 caixas", explanation: "O Molho Cheddar tem empilhamento máximo de 8 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Vegetais", question: "Qual o empilhamento máximo da Alface e da Cebola (geral)?", options: ["4 caixas", "6 caixas", "7 caixas", "8 caixas"], answer: "8 caixas", explanation: "Alface e Cebola (geral) têm empilhamento máximo de 8 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Vegetais", question: "Qual o empilhamento máximo da Cebola Caramelizada?", options: ["6 caixas", "7 caixas", "8 caixas", "10 caixas"], answer: "10 caixas", explanation: "A Cebola Caramelizada tem empilhamento máximo de 10 caixas — maior que as demais cebolas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Vegetais", question: "Qual o empilhamento máximo do Tomate?", options: ["5 caixas", "6 caixas", "7 caixas", "8 caixas"], answer: "7 caixas", explanation: "O Tomate tem empilhamento máximo de 7 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Vegetais", question: "Qual o empilhamento máximo dos Picles?", options: ["4 caixas", "5 caixas", "6 caixas", "8 caixas"], answer: "6 caixas", explanation: "Os Picles têm empilhamento máximo de 6 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Batata", question: "Qual o empilhamento máximo da Batata?", options: ["4 caixas", "5 caixas", "6 caixas", "8 caixas"], answer: "6 caixas", explanation: "A Batata tem empilhamento máximo de 6 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Sobremesas", question: "Qual o empilhamento máximo do Mix Sundae?", options: ["2 caixas", "3 caixas", "4 caixas", "5 caixas"], answer: "4 caixas", explanation: "O Mix Sundae tem empilhamento máximo de 4 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Bebidas", question: "Qual o empilhamento máximo de Coca-Cola, Fanta Laranja e Fanta Guaraná?", options: ["3 caixas", "4 caixas", "5 caixas", "6 caixas"], answer: "4 caixas", explanation: "Coca-Cola, Coca-Cola Zero, Fanta Laranja e Fanta Guaraná têm empilhamento máximo de 4 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Condimentos", question: "Qual o empilhamento máximo da Mostarda sachet e do Ketchup sachet?", options: ["3 caixas", "4 caixas", "5 caixas", "6 caixas"], answer: "5 caixas", explanation: "Mostarda sachet e Ketchup sachet têm empilhamento máximo de 5 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Outros", question: "Qual o empilhamento máximo do Óleo Vegetal?", options: ["6 caixas", "8 caixas", "10 caixas", "12 caixas"], answer: "10 caixas", explanation: "O Óleo Vegetal tem empilhamento máximo de 10 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Outros", question: "Qual o empilhamento máximo da Água Mineral e do Sal com Pimenta?", options: ["3 caixas", "4 caixas", "5 caixas", "6 caixas"], answer: "5 caixas", explanation: "Água Mineral e Sal com Pimenta têm empilhamento máximo de 5 caixas." },
-      { guide: "empilhamento", category: "📦 Empilhamento · Outros", question: "Qual produto tem o MAIOR empilhamento máximo entre as opções?", options: ["Pães Big Mac — 26 bandejas", "Cebola Caramelizada — 10 caixas", "Óleo Vegetal — 10 caixas", "Pães Big Mac — 26 bandejas"], answer: "Pães Big Mac — 26 bandejas", explanation: "Os Pães Big Mac têm o maior empilhamento: 26 bandejas. Em segundo, os pães gerais com 20 bandejas." }
-
-    ];
 
     // ── Mapeamento JSON categoria → quiz guide ──
     const GUIDE_MAP = {
@@ -497,6 +176,17 @@
       'mccafe':                 'mccafe',
       'best-burguer':           'best-burguer',
       'manutencao-preventivas': 'manutencao-preventivas',
+      'limpeza':                'limpeza',
+      'mcdelivery':             'mcdelivery',
+      'temperaturas':           'temperaturas',
+      'rendimentos':            'rendimentos',
+      'empilhamento':           'empilhamento',
+      'futuros-treinadores':    'futuros-treinadores',
+      'treinador':              'treinador',
+      'gerencia':               'gerencia',
+      'lideranca':              'lideranca',
+      'supervisores':           'supervisores',
+      'ppi':                    'ppi',
     };
 
     // ── Converter formato JSON → formato quiz ──
@@ -517,42 +207,48 @@
       };
     }
 
-    // ── Packs JSON a carregar ──
-    const JSON_PACKS = [
-      'chapa/basico', 'chapa/avancado',
-      'lope/basico',
-      'linha/basico', 'mcfritas/basico', 'fritas/basico',
-      'fritos/basico', 'condimentacao/basico',
-      'salao-ngk/basico', 'montagem-entrega/basico',
-      'influencer-pagamento/basico', 'drive-thru/basico',
-      'mcdelivery/basico',
-      'bebidas-sobremesas/basico', 'embaixador-experiencia/basico',
-      'seguranca-alimento/basico', 'estoque-recebimento/basico',
-      'fechamento/basico',
-      'olimpiada/basico',
-      'mccafe/basico',
-      'best-burguer/basico',
-      'manutencao-preventivas/basico',
-    ];
 
-    let ALL_QUESTIONS = [...FALLBACK_QUESTIONS];
+    let ALL_QUESTIONS = [];
     let _questionsLoaded = false;
 
+    // A lista de packs vem de data/questions/packs.json, gerado por
+    // js/tools/generateIndexes.js. Antes era uma lista escrita à mão aqui, que
+    // ficava para trás a cada categoria nova — 6 categorias e 492 perguntas
+    // nunca chegavam ao quiz geral por causa disso.
     async function loadJSONQuestions() {
       // Raiz da app: '/mcguias/' no GitHub Pages, '/' na Vercel/domínio próprio.
       const base = location.pathname.replace(/\/(pages\/)?[^\/]*$/, '/') + 'data/questions/';
+      let packs = [];
+      try {
+        const man = await fetch(base + 'packs.json').then(r => r.ok ? r.json() : null);
+        if (man && Array.isArray(man.packs)) packs = man.packs;
+      } catch (e) { console.error('packs.json:', e); }
+
       const results = await Promise.allSettled(
-        JSON_PACKS.map(p => fetch(base + p + '.json').then(r => r.ok ? r.json() : null))
+        packs.map(p => fetch(base + p + '.json').then(r => r.ok ? r.json() : null))
       );
+      // Uma mesma pergunta pode pertencer a mais de um guia com razão — o sal
+      // das McFritas é de "fritas" e de "mcfritas", a prova da olimpíada repete
+      // o que o treinador estuda. Cada guia mantém a sua cópia; aqui no pool
+      // geral fica só uma, senão a mesma pergunta cai duas vezes no simulado.
+      const vistas = new Set();
+      const chave = (t) => String(t || '').toLowerCase().normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '').replace(/\bmc\s+/g, 'mc')
+        .replace(/[^a-z0-9]+/g, ' ').trim();
+
       const fromJSON = [];
       results.forEach(r => {
         if (r.status === 'fulfilled' && r.value && r.value.questions) {
           r.value.questions.forEach(q => {
-            if (q.ativo !== false) fromJSON.push(convertJSONQuestion(q));
+            if (q.ativo === false) return;
+            const k = chave(q.pergunta);
+            if (vistas.has(k)) return;
+            vistas.add(k);
+            fromJSON.push(convertJSONQuestion(q));
           });
         }
       });
-      ALL_QUESTIONS = [...fromJSON, ...FALLBACK_QUESTIONS];
+      ALL_QUESTIONS = fromJSON;
       _questionsLoaded = true;
     }
 

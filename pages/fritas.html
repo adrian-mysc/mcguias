@@ -298,40 +298,14 @@
 
   <script src="../js/main.js" defer></script>
   <script>
-    const QUIZ_FRITAS = [
-      { category: "🍟 McFritas", question: "Qual a temperatura da fritadeira de McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "A fritadeira de McFritas opera a 168°C." },
-      { category: "🍟 McFritas", question: "Qual o tempo de fritura das McFritas?", options: ["2'30\"", "3'00\"", "3'10\"", "4'00\""], answer: "3'10\"", explanation: "O tempo de fritura das McFritas é 3 minutos e 10 segundos." },
-      { category: "🍟 McFritas", question: "Qual o peso da McFritas tamanho Médio?", options: ["73g", "95g", "102g", "146g"], answer: "102g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
-      { category: "🍟 McFritas", question: "Qual é a validade dos sacos de McFritas no congelador portátil?", options: ["6 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "Os sacos de McFritas no congelador portátil têm validade de 24 horas." },
-      { category: "🍗 Fritos", question: "Qual a temperatura da fritadeira para produtos de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "A fritadeira para frango e tortas opera a 180°C." },
-      { category: "🍗 Fritos", question: "Qual o tempo de fritura do McCrispy?", options: ["3'15\"", "4'00\"", "5'00\"", "6'"], answer: "6'", explanation: "McCrispy e Tortas: 6 minutos. Nuggets, Chicken e Junior: 3'15\"." },
-      { category: "🍗 Fritos", question: "Qual o tempo de fritura de Nuggets, McChicken e Junior?", options: ["2'30\"", "3'00\"", "3'15\"", "4'00\""], answer: "3'15\"", explanation: "Nuggets, Chicken e Junior têm tempo de fritura de 3 minutos e 15 segundos." },
-      { category: "🍗 Fritos", question: "Qual a temperatura da UHC para carnes brancas?", options: ["72°C", "79°C", "85°C", "90°C"], answer: "85°C", explanation: "A UHC para carnes brancas opera a 85°C." },
-      { category: "🍗 Fritos", question: "Qual a capacidade máxima de McNuggets no cesto?", options: ["12 unidades", "16 unidades", "20 unidades", "24 unidades"], answer: "24 unidades", explanation: "Capacidade máxima: McChicken 6, McNuggets 24, Chicken Jr 6, Crispy 4, Tortas 16." },
-      { category: "🥧 Tortas", question: "Qual o tempo total de validade das tortas após a fritura?", options: ["1 hora", "2 horas", "3 horas", "4 horas"], answer: "2 horas", explanation: "As tortas têm 2 horas de validade total, incluindo os 20 minutos de resfriamento." },
-      { category: "🥧 Tortas", question: "Qual o tempo de resfriamento das tortas?", options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"], answer: "20 minutos", explanation: "As tortas devem resfriar por 20 minutos antes de serem embaladas." },
-      { category: "🌡️ Geral", question: "Qual o limite máximo de Compostos Polares no óleo?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "Os Compostos Polares devem ser iguais ou abaixo de 24%." },
-      { category: "🍟 Fritas · Preparo", question: "Quando deve ser aplicado o sal nas McFritas?", options: ["Antes de fritar", "Imediatamente após sair da fritadeira", "Antes de servir ao cliente", "A qualquer momento"], answer: "Imediatamente após sair da fritadeira", explanation: "O sal deve ser aplicado imediatamente após sair da fritadeira, ainda quentes." },
-      { category: "⏱️ Fritas · Tempos", question: "Qual a validade das McFritas prontas na manutenção de calor?", options: ["4 minutos", "7 minutos", "10 minutos", "15 minutos"], answer: "7 minutos", explanation: "McFritas têm validade de 7 minutos na área de manutenção de calor após salgadas." },
-      { category: "🍟 Fritas · Qualidade", question: "Qual o aspecto visual correto das McFritas prontas?", options: ["Brancas e moles", "Douradas e crocantes", "Escuras e crocantes", "Douradas e macias"], answer: "Douradas e crocantes", explanation: "McFritas de qualidade são douradas, crocantes por fora e macias por dentro." },
-      { category: "🍟 Fritas · Porção", question: "Como garantir a porção correta de McFritas?", options: ["Estimar visualmente", "Usar o copo medidor específico para cada tamanho", "Pesar na balança", "Contar as batatas"], answer: "Usar o copo medidor específico para cada tamanho", explanation: "Usar o copo medidor de fritas correto para cada tamanho (P, M, G, GG)." },
-      { category: "🛢️ Fritas · Óleo", question: "Com que frequência deve ser filtrado o óleo?", options: ["Semanalmente", "Diariamente uma vez", "A cada 4 horas de uso ou no pré-pico", "Apenas quando escurecer"], answer: "A cada 4 horas de uso ou no pré-pico", explanation: "Filtrar o óleo a cada 4 horas de uso contínuo ou no pré-pico." },
-      { category: "🍟 Fritas · Estocagem", question: "Qual a validade dos sacos de batata no congelador portátil após abertura?", options: ["2 horas", "4 horas", "8 horas", "12 horas"], answer: "8 horas", explanation: "Após a abertura, os sacos de batata têm validade de 8 horas no congelador portátil." },
-      { category: "🛢️ Fritas · Segurança", question: "O que NUNCA fazer em caso de fogo no óleo?", options: ["Usar extintor CO2", "Jogar água", "Abafar com tampa", "Chamar socorro"], answer: "Jogar água", explanation: "NUNCA jogar água em óleo em chamas — pode causar explosão. Usar extintor CO2 ou abafar." },
-      { category: "🍗 Fritas · McNuggets", question: "Qual o tempo de validade do McNuggets na UHC?", options: ["15 minutos", "20 minutos", "30 minutos", "40 minutos"], answer: "30 minutos", explanation: "McNuggets têm 30 minutos de validade na UHC após a fritura." },
-      { category: "🍟 Fritas · Descarte", question: "O que fazer com McFritas fora do tempo de validade?", options: ["Ressalar e servir", "Descartar e preparar novo lote", "Guardar para uso posterior", "Aquecer no micro-ondas"], answer: "Descartar e preparar novo lote", explanation: "McFritas fora do tempo devem ser descartadas imediatamente." },
-      { category: "🍟 Fritas · Pré-pico", question: "O que fazer no pré-pico para garantir McFritas sempre disponíveis?", options: ["Fritar o máximo possível de uma vez", "Lotes menores e frequentes calculados pela demanda", "Não há preparo especial", "Estoque de fritas prontas por 30 min"], answer: "Lotes menores e frequentes calculados pela demanda", explanation: "Lotes menores e mais frequentes garantem qualidade e evitam desperdício." },
-      { category: "🍟 Fritas · Óleo", question: "Qual o intervalo de verificação dos Compostos Polares no óleo?", options: ["A cada 2 horas", "A cada turno", "Diariamente uma vez", "Semanalmente"], answer: "A cada turno", explanation: "Os Compostos Polares devem ser verificados a cada turno de operação." },
-      { category: "🍟 Fritas · Estocagem", question: "Como devem ser posicionados os sacos de batata no congelador portátil?", options: ["Deitados horizontalmente", "Em pé verticalmente", "De qualquer forma", "Empilhados no máximo 3"], answer: "Em pé verticalmente", explanation: "Os sacos de batata devem ficar em pé verticalmente no congelador portátil." }
-    ];
 
     document.addEventListener("DOMContentLoaded", () => {
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
-        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_FRITAS, 'McFritas & Fritos'); observer.disconnect(); }
+        if (quizPanel.classList.contains("active")) { initQuizFromJSON('fritas', 'McFritas & Fritos'); observer.disconnect(); }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_FRITAS, 'McFritas & Fritos');
+      if (quizPanel.classList.contains("active")) initQuizFromJSON('fritas', 'McFritas & Fritos');
     });
   </script>
 

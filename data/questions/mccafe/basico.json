@@ -25,33 +25,7 @@
       "respostaCorreta": 2,
       "explicacao": "O café pronto deve estar entre 77°C e 82°C. Abaixo disso, o produto está fora da faixa de qualidade.",
       "dica": "77°C a 82°C é a faixa de vida do café.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_002",
@@ -75,33 +49,7 @@
       "respostaCorreta": 2,
       "explicacao": "O leite aquecido na Foamino deve estar entre 70°C e 74°C. O leite na máquina de grupo (espresso) não pode passar de 65°C.",
       "dica": "Foamino: 70°C a 74°C. Máquina grupo: máx. 65°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_003",
@@ -124,33 +72,7 @@
       "respostaCorreta": 2,
       "explicacao": "Forno Titã para assar = 180°C. Para aquecer = 200°C. Nunca abrir a porta durante o assamento.",
       "dica": "Assar: 180°C / Aquecer: 200°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_004",
@@ -174,33 +96,7 @@
       "respostaCorreta": 2,
       "explicacao": "O platen dedicado para ovos deve estar a 135°C. Tempo de cozimento: 150 segundos. Máximo 8 ovos por rodada e 5 por gaveta UHC.",
       "dica": "Platen de ovos: 135°C, tempo 150s.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_005",
@@ -216,41 +112,15 @@
       ],
       "pergunta": "Qual o tempo de vida do café pronto no McCafé?",
       "alternativas": [
-        "30 minutos",
-        "1 hora",
         "2 horas",
+        "1 hora",
+        "30 minutos",
         "4 horas"
       ],
       "respostaCorreta": 1,
       "explicacao": "O café pronto tem tempo de vida de 1 hora. Após esse tempo, descartar e preparar novo café.",
       "dica": "Café pronto: 1 hora de vida.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_006",
@@ -274,33 +144,7 @@
       "respostaCorreta": 2,
       "explicacao": "O leite estocado na Foamino tem tempo de vida de 8 horas. O leite aberto refrigerado tem validade de 48 horas.",
       "dica": "Leite na Foamino: 8 horas.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_007",
@@ -324,33 +168,7 @@
       "respostaCorreta": 2,
       "explicacao": "Pão de Queijo: 28 minutos a 180°C, máximo 10 unidades por assadeira. Após assar, descansar 10 minutos em cima do forno.",
       "dica": "Pão de Queijo: 28 min, máx 10 unid.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_008",
@@ -374,33 +192,7 @@
       "respostaCorreta": 2,
       "explicacao": "Medialuna: 10 minutos a 180°C, máximo 8 unidades por assadeira. Após assar, pincelar 3ml de calda por unidade.",
       "dica": "Medialuna: 10 min + 3ml de calda após.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_009",
@@ -424,33 +216,7 @@
       "respostaCorreta": 1,
       "explicacao": "Mini Pão de Queijo: 23 minutos a 180°C, máximo 24 unidades por assadeira.",
       "dica": "Mini Pão de Queijo: 23 min, máx 24 unid.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_010",
@@ -474,33 +240,7 @@
       "respostaCorreta": 2,
       "explicacao": "Cookie Baunilha e Chocolate: 9 minutos a 180°C. Também é o tempo do Waffle de Pão de Queijo (máx. 6 unid.).",
       "dica": "Cookie: 9 min. Waffle de Pão de Queijo: também 9 min.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_011",
@@ -516,41 +256,15 @@
       ],
       "pergunta": "Quanto tempo o Panini fica no Toaster?",
       "alternativas": [
-        "30 segundos",
-        "1 minuto",
         "2 minutos",
-        "3 minutos"
+        "3 minutos",
+        "1 minuto",
+        "30 segundos"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O Panini fica no Toaster por 1 minuto. Retirar com pegador de cabo longo para não tocar na superfície quente.",
       "dica": "Panini: 1 minuto no Toaster.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_012",
@@ -574,33 +288,7 @@
       "respostaCorreta": 1,
       "explicacao": "1 café espresso = 8 a 10g de pó. 2 cafés ou Café Duplo = 16 a 20g de pó.",
       "dica": "Espresso simples: 8–10g. Duplo: 16–20g.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_013",
@@ -616,41 +304,15 @@
       ],
       "pergunta": "O que acontece com o café quando a moagem é muito fina?",
       "alternativas": [
+        "Café aguado",
         "Café ácido e fraco",
-        "Café amargo por excesso de extração",
         "Café sem corpo",
-        "Café aguado"
+        "Café amargo por excesso de extração"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Moagem fina → água passa devagar → café amargo (sobre-extração). Moagem grossa → água passa rápido → café ácido e fraco (sub-extração).",
       "dica": "Fina = amargo (água lenta). Grossa = ácido (água rápida).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_014",
@@ -674,33 +336,7 @@
       "respostaCorreta": 2,
       "explicacao": "Cada preparo na cafeteira manual BUNN usa 1 pacote de 50g de café. Servir sem tampa.",
       "dica": "50g por preparo na cafeteira BUNN.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_015",
@@ -724,33 +360,7 @@
       "respostaCorreta": 2,
       "explicacao": "Macchiato (50ml): Aere 30ml de leite + extraia 1 Espresso Curto (30ml) + complete com leite aerado até 50ml.",
       "dica": "Macchiato: aere 30ml de leite.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_016",
@@ -774,33 +384,7 @@
       "respostaCorreta": 3,
       "explicacao": "Café Chantilly (200ml): 4 tiros (2oz) calda de chocolate + 1 espresso + 1½ volta chantilly + polvilha chocolate em pó.",
       "dica": "Café Chantilly: 4 tiros (2oz) de calda de chocolate.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_017",
@@ -824,33 +408,7 @@
       "respostaCorreta": 2,
       "explicacao": "Iced Latte: 1 pá cheia de gelo (23 pedras) + 100ml leite integral + 3 tiros (3oz) xarope macadâmia + 100ml café coado.",
       "dica": "Iced Latte: 23 pedras de gelo.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_018",
@@ -874,33 +432,7 @@
       "respostaCorreta": 2,
       "explicacao": "Chocolate Frio: 270ml leite integral gelado + 1 tiro calda chocolate + 3 medidas (45g) chocolate pó. Bater 40 segundos na velocidade máxima.",
       "dica": "Chocolate Frio: 270ml leite, bater 40s.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_019",
@@ -924,33 +456,7 @@
       "respostaCorreta": 2,
       "explicacao": "Para bater o Smoothie usar o botão 5 da programação por 1 minuto. Ingredientes: 1 pá de gelo + 100ml leite gelado + 130ml concentrado Del Valle.",
       "dica": "Smoothie: botão 5, 1 minuto.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_020",
@@ -974,33 +480,7 @@
       "respostaCorreta": 2,
       "explicacao": "Os ovos são preparados no platen dedicado (135°C) por 150 segundos (2 minutos e 30 segundos). Temperatura interna ideal: acima de 74°C.",
       "dica": "Ovos: 150 segundos (2min30s).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_021",
@@ -1024,33 +504,7 @@
       "respostaCorreta": 2,
       "explicacao": "Máximo 8 ovos por rodada na chapa. Máximo 5 ovos por gaveta UHC. Platen dedicado exclusivo para evitar contaminação cruzada.",
       "dica": "Máx. 8 ovos/rodada, 5 ovos/gaveta UHC.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_022",
@@ -1066,41 +520,15 @@
       ],
       "pergunta": "Por quanto tempo os bolos devem ser ambientados antes de serem fatiados?",
       "alternativas": [
-        "30 minutos",
-        "1 hora",
         "2 horas",
-        "4 horas"
+        "4 horas",
+        "1 hora",
+        "30 minutos"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Os bolos devem ser ambientados por 2 horas antes de fatiar. Rendimento: 1 bolo = 10 fatias. Validade: 5 dias em temperatura ambiente.",
       "dica": "Bolos: ambientar 2h, 10 fatias por bolo.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_023",
@@ -1117,40 +545,14 @@
       "pergunta": "Qual a ordem correta de montagem da bandeja pelo gerente RDM no McCafé?",
       "alternativas": [
         "Bebidas quentes → vitrine → geladas",
-        "Geladas → vitrine → quentes",
         "Vitrine → geladas → quentes (por último)",
+        "Geladas → vitrine → quentes",
         "Quentes → vitrine → geladas"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 1,
       "explicacao": "Ordem de montagem: Produtos da vitrine → Bebidas geladas → Bebidas quentes (SEMPRE por último), para garantir que as bebidas quentes cheguem ao cliente na temperatura correta.",
       "dica": "Bebidas quentes sempre por ÚLTIMO na bandeja.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_024",
@@ -1167,40 +569,14 @@
       "pergunta": "Qual modelo de McCafé NÃO possui POS exclusivo?",
       "alternativas": [
         "Remoto",
-        "Stand Alone",
         "InLine",
-        "Corner"
+        "Corner",
+        "Stand Alone"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "O McCafé Corner não tem POS exclusivo — os produtos são vendidos no balcão, Drive ou MOP. Possui KVS exclusivo e 1 DMB exclusivo.",
       "dica": "Corner = sem POS exclusivo.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_025",
@@ -1217,40 +593,14 @@
       "pergunta": "Quantos fornos Titã o McCafé Remoto possui?",
       "alternativas": [
         "1 forno",
-        "2 fornos (1 assar + 1 aquecer)",
         "3 fornos",
-        "Depende do tamanho"
+        "Depende do tamanho",
+        "2 fornos (1 assar + 1 aquecer)"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "O McCafé Remoto tem espaço exclusivo separado com 2 fornos Titã (1 para assar + 1 para aquecer), POS exclusivo e vitrine grande.",
       "dica": "Remoto: 2 fornos Titã.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_026",
@@ -1274,33 +624,7 @@
       "respostaCorreta": 2,
       "explicacao": "Ligar a máquina e após 30 minutos verificar a temperatura da água (deve estar entre 75°C e 85°C). Também verificar o volume de extração no copo dosador (160ml).",
       "dica": "30 min para a máquina estabilizar.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_027",
@@ -1324,33 +648,7 @@
       "respostaCorreta": 2,
       "explicacao": "Cada Medialuna recebe 3ml de calda pincelada com pincel de silicone vermelho imediatamente após sair do forno (10 min a 180°C). Calda: validade de 30 dias refrigerada.",
       "dica": "3ml de calda por Medialuna.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_028",
@@ -1374,33 +672,7 @@
       "respostaCorreta": 2,
       "explicacao": "O leite na máquina de grupo deve atingir no máximo 65°C. NUNCA deixar ferver. A Foamino opera entre 70°C e 74°C.",
       "dica": "Máquina de grupo: máx 65°C. Foamino: 70–74°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_029",
@@ -1416,41 +688,15 @@
       ],
       "pergunta": "O leite para estocagem na Foamino deve estar em que temperatura?",
       "alternativas": [
-        "Gelado da geladeira",
         "Temperatura ambiente",
-        "Morno (35–40°C)",
-        "Quente (50–55°C)"
+        "Quente (50–55°C)",
+        "Gelado da geladeira",
+        "Morno (35–40°C)"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O leite a ser estocado na máquina Foamino deve estar em temperatura ambiente — não gelado. Tempo de vida na Foamino: 8 horas.",
       "dica": "Foamino: estocar leite em temperatura ambiente.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_030",
@@ -1466,41 +712,15 @@
       ],
       "pergunta": "Quantos panos limpos são mantidos no McCafé e para quais finalidades?",
       "alternativas": [
-        "2 panos: leiteira e cafeteira",
-        "3 panos: leiteira, cafeteira e chuveirinho exclusivo",
         "4 panos: leiteira, cafeteira, vitrine e piso",
+        "3 panos: leiteira, cafeteira e chuveirinho exclusivo",
+        "2 panos: leiteira e cafeteira",
         "1 pano multiuso"
       ],
       "respostaCorreta": 1,
       "explicacao": "Manter 3 panos limpos e dobrados: 1 sanitizado para limpeza da área da Leiteira, 1 sanitizado para área da Cafeteira, 1 exclusivo para limpeza do Chuveirinho da cafeteira.",
       "dica": "3 panos: leiteira, cafeteira e chuveirinho.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_031",
@@ -1516,41 +736,15 @@
       ],
       "pergunta": "Com quais bebidas o Cookie de Chocolate é servido como acompanhamento no McCafé?",
       "alternativas": [
-        "Cappuccino, Latte e Chocolatte",
-        "Espresso Curto, Espresso, Espresso Duplo e Macchiato",
         "Café Coado, Chocolate Quente e Mocha",
-        "Qualquer bebida quente do cardápio"
+        "Qualquer bebida quente do cardápio",
+        "Espresso Curto, Espresso, Espresso Duplo e Macchiato",
+        "Cappuccino, Latte e Chocolatte"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "O Cookie de Chocolate acompanha exclusivamente: Espresso Curto, Espresso, Espresso Duplo e Macchiato. O café é sempre o último item a ser colocado na bandeja.",
       "dica": "Cookie: acompanha as 4 bebidas de espresso.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_032",
@@ -1574,33 +768,7 @@
       "respostaCorreta": 2,
       "explicacao": "O Cookie de Chocolate é cortado em 8 pedaços na tábua vermelha, utilizando faca sanitizada e luva azul.",
       "dica": "Cookie: 8 pedaços, tábua vermelha.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_033",
@@ -1616,41 +784,15 @@
       ],
       "pergunta": "Qual a tábua e o equipamento corretos para cortar o Cookie de Chocolate no McCafé?",
       "alternativas": [
-        "Tábua azul e faca sanitizada",
-        "Tábua vermelha e faca sanitizada com luva azul",
+        "Tábua verde e tesoura culinária",
         "Tábua branca e faca de pão",
-        "Tábua verde e tesoura culinária"
+        "Tábua azul e faca sanitizada",
+        "Tábua vermelha e faca sanitizada com luva azul"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Para cortar o Cookie: usar tábua vermelha, luva azul e faca limpa e sanitizada. A tábua vermelha é padrão para corte de produtos de café/padaria no McCafé.",
       "dica": "Cookie: tábua vermelha + luva azul + faca sanitizada.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_034",
@@ -1674,33 +816,7 @@
       "respostaCorreta": 2,
       "explicacao": "O Cookie de Chocolate tem validade secundária de 12 horas após o corte. Deve ser armazenado em recipiente hermético.",
       "dica": "Cookie cortado: 12 horas de validade.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_035",
@@ -1716,41 +832,15 @@
       ],
       "pergunta": "Como o Cookie de Chocolate deve ser armazenado após o corte?",
       "alternativas": [
-        "Em prato coberto com filme plástico",
-        "Em embalagem fechada à temperatura ambiente",
         "Em recipiente hermético",
-        "Na geladeira em bandeja aberta"
+        "Na geladeira em bandeja aberta",
+        "Em prato coberto com filme plástico",
+        "Em embalagem fechada à temperatura ambiente"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "O Cookie de Chocolate deve ser armazenado em recipiente hermético para manter a textura e validade (12 horas). Não requer refrigeração.",
       "dica": "Cookie: recipiente hermético.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_036",
@@ -1774,33 +864,7 @@
       "respostaCorreta": 2,
       "explicacao": "Os ovos são mantidos no UHC a 85°C. Validade no UHC: 20 minutos. Gaveta utilizada: gaveta funda com lâmina.",
       "dica": "UHC de ovos: 85°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_037",
@@ -1824,33 +888,7 @@
       "respostaCorreta": 1,
       "explicacao": "Os ovos têm vida de 20 minutos no UHC a 85°C. Após esse tempo, descartar. Máximo 5 ovos por gaveta.",
       "dica": "Ovos no UHC: 20 minutos.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_038",
@@ -1874,33 +912,7 @@
       "respostaCorreta": 2,
       "explicacao": "A temperatura interna dos ovos deve ser superior a 74°C para garantir segurança alimentar. Verificar com termômetro ao longo do processo.",
       "dica": "Temperatura interna ovos: acima de 74°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_039",
@@ -1924,33 +936,7 @@
       "respostaCorreta": 3,
       "explicacao": "A espátula Hutzler deve ser mantida a 85° durante o preparo dos ovos, garantindo o movimento de rotação correto e o formato ideal do ovo.",
       "dica": "Hutzler: 85° para rotação dos ovos.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_040",
@@ -1966,41 +952,15 @@
       ],
       "pergunta": "Qual utensílio é utilizado para transferir os ovos do platen para o UHC no McCafé?",
       "alternativas": [
-        "Pegador de cabo longo",
+        "Luva culinária",
         "Pegador de inox",
         "Espátula de silicone",
-        "Luva culinária"
+        "Pegador de cabo longo"
       ],
       "respostaCorreta": 1,
       "explicacao": "O pegador de inox é o utensílio correto para transferir os ovos do platen para o UHC. Nunca usar utensílios plásticos ou de silicone no platen quente.",
       "dica": "Transferir ovos: pegador de inox.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_041",
@@ -2024,33 +984,7 @@
       "respostaCorreta": 3,
       "explicacao": "A manteiga após aberta e armazenada refrigerada tem validade de 10 dias. Após preparar na bisnaga via FIFO, validade é de 4 horas.",
       "dica": "Manteiga aberta: 10 dias refrigerada.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_042",
@@ -2075,33 +1009,7 @@
       "respostaCorreta": 2,
       "explicacao": "A bisnaga de manteiga preparada via FIFO tem validade de 4 horas. A manteiga é derretida na chapa em movimento circular por 60 segundos antes de usar.",
       "dica": "Bisnaga de manteiga FIFO: 4 horas.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_043",
@@ -2117,41 +1025,15 @@
       ],
       "pergunta": "Qual gaveta do UHC é utilizada para armazenar os ovos no McCafé?",
       "alternativas": [
-        "Gaveta rasa sem lâmina",
-        "Gaveta funda com lâmina",
+        "Qualquer gaveta disponível",
         "Gaveta de temperatura média",
-        "Qualquer gaveta disponível"
+        "Gaveta funda com lâmina",
+        "Gaveta rasa sem lâmina"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "Os ovos são armazenados na gaveta funda com lâmina do UHC a 85°C. Máximo 5 ovos por gaveta, com vida de 20 minutos.",
       "dica": "Ovos no UHC: gaveta funda com lâmina.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_044",
@@ -2167,41 +1049,15 @@
       ],
       "pergunta": "Qual a composição correta do Egg Cheese Bacon no McCafé?",
       "alternativas": [
-        "Coroa + Bacon (2) + Ovo + Queijo Cheddar (1) + Base",
         "Coroa + Ovo + Bacon (1) + Queijo Cheddar (2) + Base",
+        "Coroa + Bacon (1) + Ovo + Queijo Cheddar (1) + Base",
         "Coroa + Carne 10:1 + Ovo + Queijo Cheddar (1) + Base",
-        "Coroa + Bacon (1) + Ovo + Queijo Cheddar (1) + Base"
+        "Coroa + Bacon (2) + Ovo + Queijo Cheddar (1) + Base"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 3,
       "explicacao": "Egg Cheese Bacon: Coroa + 2 fatias de Bacon + 1 Ovo + 1 Queijo Cheddar + Base. Pão de 3\" a 5\". Duplo usa os mesmos ingredientes com 2 ovos e 2 selos amarelos.",
       "dica": "Egg Cheese Bacon: 2 bacons + 1 ovo + 1 queijo cheddar.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_045",
@@ -2217,41 +1073,15 @@
       ],
       "pergunta": "Quantos selos amarelos são aplicados no Duplo Egg Cheese Bacon?",
       "alternativas": [
-        "1 selo amarelo",
         "2 selos amarelos",
+        "Nenhum",
         "3 selos amarelos",
-        "Nenhum"
+        "1 selo amarelo"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "O Duplo Egg Cheese Bacon leva 2 selos amarelos, pois possui 2 ovos. O Egg Cheese Bacon simples não leva selo adicional; o Egg Burger leva 1 selo amarelo.",
       "dica": "Duplo Egg Cheese Bacon: 2 selos amarelos.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "mccafe_046",
@@ -2268,41 +1098,770 @@
       ],
       "pergunta": "O que diferencia o Egg Burger do Egg Cheese Bacon no McCafé?",
       "alternativas": [
-        "Usa Carne 10:1 no lugar do Bacon, e 1 selo amarelo",
         "Usa Carne 4:1 no lugar do Bacon, e 2 selos amarelos",
+        "Usa Carne 10:1 no lugar do Bacon, e 1 selo amarelo",
         "Usa Carne 4:1 no lugar do Bacon, e 1 selo amarelo",
         "É igual ao Egg Cheese Bacon sem o Queijo Cheddar"
       ],
-      "respostaCorreta": 0,
+      "respostaCorreta": 1,
       "explicacao": "Egg Burger: Coroa + Carne 10:1 + Ovo + Queijo Cheddar (1) + Base, com 1 selo amarelo. O Bacon é substituído por Carne 10:1.",
       "dica": "Egg Burger: carne 10:1 (sem bacon) + 1 selo amarelo.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
+    },
+    {
+      "id": "mccafe_047",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura correta do café pronto?",
+      "alternativas": [
+        "65°C a 70°C",
+        "77°C a 82°C",
+        "85°C a 90°C",
+        "70°C a 75°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O café pronto deve estar entre 77°C e 82°C.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_048",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura de extração do leite na Foamino?",
+      "alternativas": [
+        "60°C a 65°C",
+        "65°C a 70°C",
+        "70°C a 74°C",
+        "75°C a 80°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O leite aquecido na Foamino deve estar entre 70°C e 74°C.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_049",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura máxima do leite na máquina de grupo?",
+      "alternativas": [
+        "55°C",
+        "60°C",
+        "65°C",
+        "70°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O leite na máquina de grupo deve atingir no máximo 65°C. NÃO DEIXAR FERVER.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_050",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da água da máquina de café espresso?",
+      "alternativas": [
+        "60°C a 70°C",
+        "70°C a 80°C",
+        "75°C a 85°C",
+        "80°C a 90°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura da água da máquina deve estar entre 75°C e 85°C.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_051",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Forno Titã",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura do Forno Titã para ASSAR produtos?",
+      "alternativas": [
+        "160°C",
+        "170°C",
+        "180°C",
+        "200°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Forno Titã para assar = 180°C. Para aquecer = 200°C.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_052",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Forno Titã",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura do Forno Titã para AQUECER produtos?",
+      "alternativas": [
+        "160°C",
+        "180°C",
+        "200°C",
+        "220°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Forno Titã para aquecer = 200°C. Para assar = 180°C.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_053",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Ovos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "ovo",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura do platen para preparo dos ovos?",
+      "alternativas": [
+        "100°C",
+        "115°C",
+        "135°C",
+        "150°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O platen dedicado para ovos deve estar a 135°C.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_054",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Ovos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ovo",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura interna ideal do ovo após preparado?",
+      "alternativas": [
+        "Acima de 60°C",
+        "Acima de 70°C",
+        "Acima de 74°C",
+        "Acima de 80°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura interna ideal do ovo deve ser acima de 74°C.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_055",
+      "categoria": "mccafe",
+      "subcategoria": "⏱️ McCafé · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida do café pronto?",
+      "alternativas": [
+        "30 minutos",
+        "1 hora",
+        "2 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O café pronto tem tempo de vida de 1 hora.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_056",
+      "categoria": "mccafe",
+      "subcategoria": "⏱️ McCafé · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida do leite na Foamino?",
+      "alternativas": [
+        "2 horas",
+        "4 horas",
+        "8 horas",
+        "12 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O leite estocado na Foamino tem tempo de vida de 8 horas.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_057",
+      "categoria": "mccafe",
+      "subcategoria": "⏱️ McCafé · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cozimento",
+        "ovo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de cocção dos ovos no platen?",
+      "alternativas": [
+        "90 segundos",
+        "120 segundos",
+        "150 segundos",
+        "180 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de cocção dos ovos é de 150 segundos (2min30s).",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_058",
+      "categoria": "mccafe",
+      "subcategoria": "⏱️ McCafé · Forno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pao",
+        "queijo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quanto tempo o Pão de Queijo fica no forno Titã?",
+      "alternativas": [
+        "18 minutos",
+        "23 minutos",
+        "28 minutos",
+        "33 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Pão de Queijo: 28 minutos a 180°C. Nunca abrir o forno durante o assamento.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_059",
+      "categoria": "mccafe",
+      "subcategoria": "⏱️ McCafé · Forno",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quanto tempo a Medialuna fica no forno para assar?",
+      "alternativas": [
+        "5 minutos",
+        "8 minutos",
+        "10 minutos",
+        "15 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Medialuna: 10 minutos a 180°C. Pincelar 3ml de calda após assar.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_060",
+      "categoria": "mccafe",
+      "subcategoria": "☕ McCafé · Receitas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "temperatura"
+      ],
+      "pergunta": "Qual a quantidade de calda por Medialuna?",
+      "alternativas": [
+        "1ml",
+        "2ml",
+        "3ml",
+        "5ml"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para cada Medialuna são utilizados 3ml de calda.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_061",
+      "categoria": "mccafe",
+      "subcategoria": "☕ McCafé · Receitas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Quantas medidas de chocolate pó (15g) leva o Cappuccino Coado 200ml?",
+      "alternativas": [
+        "1 medida (15g)",
+        "2 medidas (30g)",
+        "3 medidas (45g)",
+        "4 medidas (60g)"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Cappuccino Coado 200ml: 2 medidas de 15g = 30g de chocolate em pó.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_062",
+      "categoria": "mccafe",
+      "subcategoria": "☕ McCafé · Receitas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quanto tempo bate o Chocolate Frio no liquidificador?",
+      "alternativas": [
+        "20 segundos",
+        "30 segundos",
+        "40 segundos",
+        "60 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Chocolate Frio: bater 40 segundos na velocidade máxima.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_063",
+      "categoria": "mccafe",
+      "subcategoria": "☕ McCafé · Receitas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual o volume do café coado adicionado ao Iced Latte?",
+      "alternativas": [
+        "50ml",
+        "80ml",
+        "100ml",
+        "150ml"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Iced Latte: 100ml de café coado sobre o gelo (além de 100ml de leite integral).",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_064",
+      "categoria": "mccafe",
+      "subcategoria": "⚙️ McCafé · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos gramas de pó para 1 café espresso?",
+      "alternativas": [
+        "4 a 6g",
+        "8 a 10g",
+        "12 a 14g",
+        "16 a 18g"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "1 café espresso = 8 a 10g de pó. 2 cafés ou duplo = 16 a 20g.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_065",
+      "categoria": "mccafe",
+      "subcategoria": "⚙️ McCafé · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "O que ocorre com a moagem muito fina?",
+      "alternativas": [
+        "Café ácido e fraco",
+        "Café amargo por excesso de extração",
+        "Café sem corpo",
+        "Café com gosto de água"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Moagem fina → água passa devagar → café amargo. Moagem grossa → água passa rápido → café ácido.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_066",
+      "categoria": "mccafe",
+      "subcategoria": "⚙️ McCafé · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "ovo",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Qual a quantidade máxima de ovos por rodada na chapa?",
+      "alternativas": [
+        "4 ovos",
+        "6 ovos",
+        "8 ovos",
+        "10 ovos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Máximo 8 ovos por rodada. Máximo 5 ovos por gaveta UHC.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_067",
+      "categoria": "mccafe",
+      "subcategoria": "⚙️ McCafé · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a ordem de montagem da bandeja pelo gerente RDM?",
+      "alternativas": [
+        "Bebidas quentes → vitrine → geladas",
+        "Geladas → vitrine → quentes",
+        "Vitrine → geladas → quentes (por último)",
+        "Quentes → vitrine → geladas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Ordem: Produtos da vitrine → Bebidas geladas → Bebidas quentes (sempre por último).",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_068",
+      "categoria": "mccafe",
+      "subcategoria": "⚙️ McCafé · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigeracao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual a validade do leite aberto mantido sob refrigeração?",
+      "alternativas": [
+        "12 horas",
+        "24 horas",
+        "48 horas",
+        "72 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Leite aberto deve ser mantido sob refrigeração com etiqueta de 48 horas.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_069",
+      "categoria": "mccafe",
+      "subcategoria": "⚙️ McCafé · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "pao",
+        "queijo",
+        "tempo"
+      ],
+      "pergunta": "Quantas unidades máximas de Pão de Queijo na assadeira?",
+      "alternativas": [
+        "6 unidades",
+        "8 unidades",
+        "10 unidades",
+        "12 unidades"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Pão de Queijo: máximo 10 unidades por assadeira. Mini Pão de Queijo: máximo 24.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_070",
+      "categoria": "mccafe",
+      "subcategoria": "⚙️ McCafé · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ambientacao",
+        "angulo",
+        "corte",
+        "queijo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de ambientação dos bolos antes de fatiar?",
+      "alternativas": [
+        "30 minutos",
+        "1 hora",
+        "2 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os bolos devem ser ambientados por 2 horas antes de serem fatiados.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_071",
+      "categoria": "mccafe",
+      "subcategoria": "☕ McCafé · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limpeza",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Qual o primeiro passo ao detectar 'READY TO CLEAN' na máquina de café?",
+      "alternativas": [
+        "Iniciar imediatamente a limpeza",
+        "Verificar se há pedidos pendentes primeiro",
+        "Desligar a máquina",
+        "Chamar o gerente"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Quando a máquina exibir READY TO CLEAN, iniciar o processo de limpeza imediatamente.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_072",
+      "categoria": "mccafe",
+      "subcategoria": "☕ McCafé · Café Coado",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos gramas de café são usados por preparo na cafeteira manual?",
+      "alternativas": [
+        "25g",
+        "40g",
+        "50g",
+        "75g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Cada preparo na cafeteira manual usa 1 pacote de 50g de café.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_073",
+      "categoria": "mccafe",
+      "subcategoria": "🥤 McCafé · Bebidas Frias",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "programacao",
+        "tempo"
+      ],
+      "pergunta": "Qual botão usar no liquidificador para bater o Smoothie?",
+      "alternativas": [
+        "Botão 1",
+        "Botão 3",
+        "Botão 5",
+        "Botão 7"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para bater o Smoothie usar o botão 5 da programação por 1 minuto.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_074",
+      "categoria": "mccafe",
+      "subcategoria": "☕ McCafé · Espresso",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "filtro",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quantos segundos deve escorrer a água antes de encaixar o porta-filtro?",
+      "alternativas": [
+        "1-2 segundos",
+        "3-5 segundos",
+        "8-10 segundos",
+        "15 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Antes de encaixar o porta-filtro, acionar o botão para liberar água por 3 a 5 segundos.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_075",
+      "categoria": "mccafe",
+      "subcategoria": "🌡️ McCafé · Temperaturas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura da água da máquina espresso para calibração?",
+      "alternativas": [
+        "65-70°C",
+        "70-75°C",
+        "75-85°C",
+        "85-90°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura da água da máquina de café deve estar entre 75°C e 85°C.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_076",
+      "categoria": "mccafe",
+      "subcategoria": "🥐 McCafé · Salgados",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite"
+      ],
+      "pergunta": "Qual a quantidade máxima de Medialunas por assadeira?",
+      "alternativas": [
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "10 unidades"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Máximo 8 Medialunas por assadeira antiaderente.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_077",
+      "categoria": "mccafe",
+      "subcategoria": "🥐 McCafé · Salgados",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "pao",
+        "queijo"
+      ],
+      "pergunta": "Qual a quantidade máxima de Waffle de Pão de Queijo por assadeira?",
+      "alternativas": [
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "10 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Máximo 6 Waffles de Pão de Queijo por assadeira.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_078",
+      "categoria": "mccafe",
+      "subcategoria": "🥛 McCafé · Leite",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Quanto leite usar para o Macchiato?",
+      "alternativas": [
+        "10ml",
+        "20ml",
+        "30ml",
+        "50ml"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Macchiato: Aere 30ml de leite + 1 Espresso Curto (30ml) = 50ml total.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_079",
+      "categoria": "mccafe",
+      "subcategoria": "⚙️ McCafé · Equipamentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual o modelo de liquidificador usado no McCafé?",
+      "alternativas": [
+        "BlendTec ou Marchesoni",
+        "Philips Walita",
+        "Oster",
+        "Qualquer liquidificador"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O McCafé usa liquidificadores BlendTec (885 ou Furtividade) ou Marchesoni.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_080",
+      "categoria": "mccafe",
+      "subcategoria": "⏱️ McCafé · Tempos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ambientacao",
+        "angulo",
+        "corte",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por quanto tempo deve ser ambientado o bolo antes de fatiar?",
+      "alternativas": [
+        "30 minutos",
+        "1 hora",
+        "2 horas",
+        "4 horas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os bolos devem ser ambientados por 2 horas antes de fatiar.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_081",
+      "categoria": "mccafe",
+      "subcategoria": "☕ McCafé · Modelos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual modelo de McCafé não tem POS exclusivo?",
+      "alternativas": [
+        "Remoto",
+        "Stand Alone",
+        "InLine",
+        "Corner"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O McCafé Corner não tem POS exclusivo. Os produtos são vendidos no NGK, balcão, drive ou MOP.",
+      "ativo": true
     }
   ]
 }

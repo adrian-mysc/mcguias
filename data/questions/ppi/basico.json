@@ -1,0 +1,1764 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-08-07",
+  "categoria": "ppi",
+  "nivel": "basico",
+  "migratedFrom": "treinadores.html",
+  "questions": [
+    {
+      "id": "ppi_001",
+      "categoria": "ppi",
+      "subcategoria": "🚗 Drive-Thru · Delivery",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "Quem é a pessoa que deve entregar o pedido em um carro que foi enviado para a área de espera?",
+      "alternativas": [
+        "O gerente de plantão",
+        "A pessoa do suporte (Tablet)",
+        "A pessoa da apresentação",
+        "O atendente do caixa Drive"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A pessoa do suporte / Tablet — responsável por levar o pedido ao carro na área de espera.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_002",
+      "categoria": "ppi",
+      "subcategoria": "🚗 Drive-Thru · Delivery",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "atendimento",
+        "drive",
+        "limite",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Tempo máximo que o cliente pode esperar no Drive para que o atendente o receba:",
+      "alternativas": [
+        "15 segundos",
+        "30 segundos",
+        "45 segundos",
+        "60 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "30 segundos.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_003",
+      "categoria": "ppi",
+      "subcategoria": "🚗 Drive-Thru · Delivery",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "Quais são os aspectos fundamentais que devemos considerar ao montar e preparar os pedidos do McDelivery?",
+      "alternativas": [
+        "Montar tudo numa sacola só para agilizar a entrega",
+        "Dupla conferência do pedido, embalagem separando quente e frio, e lacre da sacola",
+        "Deixar o pedido pronto antes de o entregador chegar",
+        "Priorizar as bebidas e montar a comida por último"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Verificação do pedido (dupla conferência), embalagem correta separando quente e frio, lacre da sacola.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_004",
+      "categoria": "ppi",
+      "subcategoria": "🚗 Drive-Thru · Delivery",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "Quem deve colocar a assinatura de verificação no pedido do McDelivery?",
+      "alternativas": [
+        "O entregador do aplicativo",
+        "A pessoa da chapa",
+        "A pessoa responsável pela conferência do pedido",
+        "O gerente do turno"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A pessoa responsável pela conferência do pedido.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_005",
+      "categoria": "ppi",
+      "subcategoria": "🚗 Drive-Thru · Delivery",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "Quais são os aspectos fundamentais que devem ser considerados para montar e preparar os pedidos de McDelivery?",
+      "alternativas": [
+        "Conferência dos itens, embalagem separando quente e frio, lacre e identificação",
+        "Identificar a sacola só quando o entregador chegar",
+        "Conferir apenas os itens quentes",
+        "Embalar tudo junto para manter a temperatura"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Conferência dos itens, embalagem adequada separando quente/frio, lacre e identificação.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_007",
+      "categoria": "ppi",
+      "subcategoria": "🚗 Drive-Thru · Delivery",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura"
+      ],
+      "pergunta": "O cliente solicitou bebidas para viagem, quando usamos o suporte neste caso?",
+      "alternativas": [
+        "Somente quando o cliente pedir",
+        "Sempre que o pedido for para viagem",
+        "Somente a partir de 3 bebidas",
+        "Somente nos pedidos de Drive"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Sempre — usar suporte porta-copos para pedidos de viagem.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_008",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida das bebidas quentes depois de pronta?",
+      "alternativas": [
+        "45 minutos",
+        "1 hora",
+        "30 minutos",
+        "15 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "30 minutos.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_009",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura de extração da mistura do sorvete",
+      "alternativas": [
+        "-18°C a -15°C",
+        "-9°C a -8°C",
+        "-4°C a -2°C",
+        "1°C a 4°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "-9°C a -8°C.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_010",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a quantidade de cobertura que devemos colocar em um sundae?",
+      "alternativas": [
+        "1,5oz",
+        "1oz (1 tiro)",
+        "0,5oz (meio tiro)",
+        "2oz (2 tiros)"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "1oz (1 tiro) de cobertura.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_011",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao"
+      ],
+      "pergunta": "Quantas onças de sorvete um sundae deve ter?",
+      "alternativas": [
+        "3oz",
+        "4oz",
+        "4,5oz",
+        "6oz"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "4,5oz de bebida láctea.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_012",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual é a temperatura do banho-maria das coberturas para sundae?",
+      "alternativas": [
+        "40°C a 45°C",
+        "46°C a 52°C",
+        "57°C a 63°C",
+        "64°C a 70°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "57°C a 63°C.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_016",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "producao",
+        "temperatura"
+      ],
+      "pergunta": "Não é um passo operacional da pessoa da bebidas balcão:",
+      "alternativas": [
+        "Extrair o refrigerante no copo correto",
+        "Repor o gelo do dispenser",
+        "Preparar as carnes na chapa",
+        "Montar o sundae com a cobertura"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Preparar carnes na chapa (função da pessoa da chapa).",
+      "ativo": true
+    },
+    {
+      "id": "ppi_017",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Como se define a quantidade de gelo nas bebidas P, M e G?",
+      "alternativas": [
+        "Pela marcação interna do copo — cerca de 1/3 do volume",
+        "Enchendo até a borda em todos os tamanhos",
+        "Uma concha no P, duas no M e três no G",
+        "Pelo peso: 50g no P, 80g no M e 120g no G"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Seguir a marcação interna do copo (aproximadamente 1/3 do volume).",
+      "ativo": true
+    },
+    {
+      "id": "ppi_018",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual é a temperatura de extração e o do banho-maria das coberturas?",
+      "alternativas": [
+        "Extração 40°C a 45°C · Banho-maria 50°C a 55°C",
+        "Extração 46°C a 52°C · Banho-maria 57°C a 63°C",
+        "Extração 57°C a 63°C · Banho-maria 46°C a 52°C",
+        "Extração 60°C a 65°C · Banho-maria 70°C a 75°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Extração: 46°C a 52°C · Banho-maria: 57°C a 63°C.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_019",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual é a temperatura de extração do suco?",
+      "alternativas": [
+        "-4°C a 0°C",
+        "1°C a 4°C",
+        "5°C a 8°C",
+        "8°C a 12°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "1°C a 4°C.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_020",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura do mix de sundae no reservatório?",
+      "alternativas": [
+        "-9°C a -8°C",
+        "0°C a 1°C",
+        "1°C a 4°C",
+        "5°C a 7°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "1°C a 4°C.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_021",
+      "categoria": "ppi",
+      "subcategoria": "🥤 Bebidas · Sobremesas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual é a descrição do padrão Ouro de Qualidade da casquinha?",
+      "alternativas": [
+        "1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos",
+        "1 volta e meia, com a ponta bem alta",
+        "3 voltas, preenchendo toda a casquinha",
+        "2 voltas de sorvete, com o topo achatado"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "1 volta de sorvete, levemente curvada no topo, sem buracos ou vazamentos.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_024",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "carne",
+        "cozimento",
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo inicial para o cozimento das carnes de 10:1?",
+      "alternativas": [
+        "38 segundos em qualquer chapa",
+        "41 segundos (Antunes) · 39 segundos (Taylor)",
+        "35 segundos (Antunes) · 38 segundos (Taylor)",
+        "39 segundos (Antunes) · 41 segundos (Taylor Next Generation)"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "No Best Burger o tempo inicial das carnes 10:1 é de 39 segundos na chapa Antunes e 41 segundos na Taylor Next Generation.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_025",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "rota",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "Levando em consideração a rotação dos teflons, qual cor deve ser utilizado nos dias ímpares?",
+      "alternativas": [
+        "Teflon amarelo",
+        "Teflon azul",
+        "Teflon vermelho",
+        "Teflon verde"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Teflon azul nos dias ímpares.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_026",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Qual é a quantidade máxima de Mc chicken que pode ser armazenada em uma bandeja de UHC?",
+      "alternativas": [
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "12 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "6 unidades por bandeja.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_029",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "raspador",
+        "remocao",
+        "temperatura"
+      ],
+      "pergunta": "É um procedimento operacional da pessoa da Chapas - Carnes vermelhas - 02 platens:",
+      "alternativas": [
+        "Repor a gaveta da UHC e etiquetar os produtos",
+        "Condimentar as bases e finalizar a montagem",
+        "Fritar as carnes brancas e montar os sanduíches",
+        "Ativar os pães no sinal, colocar as carnes nos platens, raspar e monitorar o timer"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Ativar os pães no sinal, colocar carnes nos platens, raspar e monitorar o timer.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_030",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a quantidade máxima de carnes 3:1 que devemos ativar?",
+      "alternativas": [
+        "2 carnes por rodada",
+        "4 carnes por rodada",
+        "6 carnes por rodada",
+        "8 carnes por rodada"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O lote máximo de carnes 3:1 é de 4 por rodada/platen.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_033",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "4:1",
+        "carne",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a quantidade máxima de carnes 4:1 que devemos ativar?",
+      "alternativas": [
+        "3 carnes por rodada",
+        "4 carnes por rodada",
+        "6 carnes por rodada",
+        "10 carnes por rodada"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No Best Burger o lote máximo de carnes 4:1 é de 4 por rodada/platen. Para 10:1 o máximo é 6.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_034",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é a temperatura mínima interna das carnes de frango e bovina respectivamente?",
+      "alternativas": [
+        "Frango 65°C · Bovina 60°C",
+        "Frango 70°C · Bovina 74°C",
+        "Frango 74°C · Bovina 70°C",
+        "Frango 80°C · Bovina 75°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Frango: 74°C (165°F) · Bovina: 70°C (158°F).",
+      "ativo": true
+    },
+    {
+      "id": "ppi_035",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "cozimento",
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é o tempo de cozimento para as carnes de 3:1?",
+      "alternativas": [
+        "210 segundos",
+        "39 segundos",
+        "126 segundos",
+        "156 a 160 segundos"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Aproximadamente 156 a 160 segundos.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_036",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "carne",
+        "cozimento",
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é o tempo de cozimento para as carnes de McChicken?",
+      "alternativas": [
+        "3'30\"",
+        "3'15\" (3 minutos e 15 segundos)",
+        "2'30\"",
+        "4'00\""
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O McChicken (frango prensado) leva 3'15\" de fritura a 180°C.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_037",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "temperatura"
+      ],
+      "pergunta": "Quem é o responsável por realizar o Checklist diário de carnes?",
+      "alternativas": [
+        "O supervisor da rede",
+        "O gerente ou o responsável pela chapa no turno",
+        "A pessoa do Drive",
+        "A pessoa do salão"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O gerente ou responsável pela chapa no turno.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_038",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "cebola",
+        "molho",
+        "queijo",
+        "temperatura"
+      ],
+      "pergunta": "Qual o padrão de sabor que um Big Mac deve ter?",
+      "alternativas": [
+        "Sabor marcante de mostarda e ketchup",
+        "Sabor suave de maionese com alface",
+        "Equilíbrio entre molho Big Mac, picles, cebola, alface e queijo",
+        "Predomínio do molho sobre os demais ingredientes"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Saboroso, com equilíbrio de molho Big Mac, picles, cebola, alface e queijo.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_040",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cebola",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual é o tempo de vida da cebola reidratada depois de pronta?",
+      "alternativas": [
+        "30 minutos na mesa de condimentação",
+        "24 horas na mesa de condimentação",
+        "4 horas na mesa de condimentação",
+        "2 horas na mesa de condimentação"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "2 horas na mesa de condimentação.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_042",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "temperatura"
+      ],
+      "pergunta": "Qual a quantidade de alface no sanduíche McChicken?",
+      "alternativas": [
+        "12g",
+        "14g",
+        "22g",
+        "28g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "22g de alface americana, conforme receita padrão do McChicken.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_043",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "A qual temperatura devemos conservar os molhos de Big Mac?",
+      "alternativas": [
+        "-18°C ou abaixo",
+        "5°C a 10°C",
+        "Temperatura ambiente",
+        "1°C a 4°C"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "1°C a 4°C (refrigerado).",
+      "ativo": true
+    },
+    {
+      "id": "ppi_044",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Para qual lado a base deve ficar quando colocamos na mesa de condimentação?",
+      "alternativas": [
+        "Com o lado cortado para baixo",
+        "Com o lado cortado para cima, voltado para o atendente",
+        "De lado, apoiada na borda da bandeja",
+        "Com a coroa para cima"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Lado cortado para cima, voltado para o atendente.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_045",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "pao",
+        "temperatura"
+      ],
+      "pergunta": "Quais dos itens abaixo não faz parte da aparência do Big Mac?",
+      "alternativas": [
+        "Sementes no pão intermediário",
+        "Sementes na coroa",
+        "Duas carnes 10:1",
+        "Alface visível nas bordas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Ausência de sementes no pão intermediário (apenas a coroa tem sementes).",
+      "ativo": true
+    },
+    {
+      "id": "ppi_047",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "molho"
+      ],
+      "pergunta": "Qual é quantidade de alface no Big Mac?",
+      "alternativas": [
+        "8g por nível",
+        "12g por nível",
+        "14g por nível",
+        "22g por nível"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "12g por nível.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_050",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cebola",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual tempo de vida secundário da cebola reidratada?",
+      "alternativas": [
+        "4 horas na câmara",
+        "2 horas na câmara",
+        "24 horas na câmara (1–4°C)",
+        "7 dias na câmara"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de vida secundário da cebola reidratada é de 24 horas na câmara a 1–4°C. Na mesa de condimentação, o primário é de 2 horas.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_051",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "alface",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Quantas gramas de alface colocamos no McNífico?",
+      "alternativas": [
+        "10g",
+        "12g",
+        "14g",
+        "22g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "14g.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_052",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "temperatura",
+        "uhc"
+      ],
+      "pergunta": "Qual é a capacidade de carnes de McChicken em uma gaveta?",
+      "alternativas": [
+        "4 unidades",
+        "6 unidades",
+        "8 unidades",
+        "10 unidades"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "6 unidades.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_053",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo",
+        "tomate",
+        "validade"
+      ],
+      "pergunta": "Qual o tempo de vida primário do tomate?",
+      "alternativas": [
+        "24 horas na mesa de condimentação",
+        "4 horas na mesa de condimentação",
+        "30 minutos na mesa de condimentação",
+        "2 horas na mesa de condimentação"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "2 horas na mesa de condimentação.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_054",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "molho",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a quantidade de mostarda nos sanduíches a cada 1 tiro?",
+      "alternativas": [
+        "0,125oz",
+        "0,25oz",
+        "0,5oz",
+        "1oz"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "0,25oz por tiro.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_056",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "molho",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual é o tempo de vida primário da mostarda pouch?",
+      "alternativas": [
+        "30 dias após aberto",
+        "48 horas após aberto",
+        "7 dias após aberto",
+        "14 dias após aberto"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "14 dias após aberto.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_058",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "fritas",
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Por que devemos sacudir as McFritas após 30 segundos?",
+      "alternativas": [
+        "Para separar as batatas quebradas",
+        "Para acelerar o tempo de fritura",
+        "Para eliminar o excesso de gordura e garantir a crocância",
+        "Para baixar a temperatura do óleo"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para eliminar o excesso de gordura e garantir a crocância.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_059",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cozimento",
+        "oleo",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a temperatura do óleo para cozinhar McNuggets?",
+      "alternativas": [
+        "160°C",
+        "168°C",
+        "180°C",
+        "190°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A fritadeira de frango e tortas — onde os McNuggets são fritos — opera a 180°C. As McFritas usam 168°C.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_060",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Quais são as principais características das Batatas Fritas padrão da empresa?",
+      "alternativas": [
+        "Douradas, sem sal e servidas em temperatura ambiente",
+        "Douradas, crocantes por fora, macias por dentro, salgadas e servidas quentes",
+        "Claras, macias por fora e crocantes por dentro",
+        "Bem douradas, firmes por dentro e servidas mornas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Douradas, crocantes por fora, macias por dentro, bem salgadas e servidas quentes.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_061",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "oleo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "O que pode ter acontecido para que uma torta tenha poucas bolhas ou nenhuma?",
+      "alternativas": [
+        "Torta descongelada por tempo demais antes de fritar",
+        "Óleo frio demais, torta molhada ou ainda congelada ao entrar na fritadeira",
+        "Óleo quente demais ou tempo de fritura excedido",
+        "Excesso de tortas na cesta de resfriamento"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Óleo frio demais, torta molhada ou congelada ao ser colocada na fritadeira.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_062",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "O que pode ter acontecido quando encontramos McFritas grudadas?",
+      "alternativas": [
+        "Batatas armazenadas em pé no congelador",
+        "Sal aplicado cedo demais ou óleo quente demais",
+        "Tempo de drenagem acima de 5 segundos",
+        "Excesso de batatas no cesto, óleo frio ou cesto não sacudido após a imersão"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Excesso de batatas no cesto, óleo frio ou cesto não sacudido após imersão.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_063",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "limpeza",
+        "organizacao",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Pensando no cliente, o que a pessoa do Salão deve fazer?",
+      "alternativas": [
+        "Priorizar a reposição do estoque do salão",
+        "Aguardar o chamado do cliente antes de abordar",
+        "Concentrar-se na limpeza apenas no fechamento",
+        "Manter o salão limpo e organizado e abordar os clientes proativamente"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Manter o salão limpo, organizado, abordar clientes proativamente.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_064",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a principal causa de uma McFritas com quantidade imprópria de sal?",
+      "alternativas": [
+        "Usar o copo medidor errado na porção",
+        "Aplicar o sal ainda sobre a fritadeira",
+        "Aplicar o sal depois que as batatas esfriaram",
+        "Sacudir o cesto antes de salgar"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Aplicar o sal depois que as batatas esfriaram.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_065",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "oleo",
+        "temperatura"
+      ],
+      "pergunta": "Qual é o sinal que temos quando a gordura está velha?",
+      "alternativas": [
+        "Cor clara, ausência de fumaça e Compostos Polares abaixo de 10%",
+        "Espuma branca com odor neutro e óleo transparente",
+        "Fumaça leve logo após a filtragem diária",
+        "Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Cor escura, fumaça, espuma, odor ruim e Compostos Polares acima de 24%.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_069",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Qual tempo de vida secundário das tortas?",
+      "alternativas": [
+        "20 minutos após a fritura",
+        "30 minutos após a fritura",
+        "60 minutos após a fritura",
+        "90 minutos após a fritura"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "90 minutos após a fritura.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_070",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "temperatura"
+      ],
+      "pergunta": "Qual empilhamento máximo das caixa de McNuggets?",
+      "alternativas": [
+        "2 caixas",
+        "3 caixas",
+        "5 caixas",
+        "8 caixas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Máximo 3 caixas empilhadas.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_071",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "filtro",
+        "oleo",
+        "sal",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "Quais causas que podem diminuir o tempo de vida da gordura?",
+      "alternativas": [
+        "Trocar o óleo antes de atingir 24% de Compostos Polares",
+        "Manter a fritadeira sempre na temperatura máxima",
+        "Sal, água, resíduos, temperatura incorreta e falta de filtragem regular",
+        "Filtrar o óleo mais de uma vez por dia"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Sal, água, resíduos, temperatura incorreta e não filtrar regularmente.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_072",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "esfregao",
+        "limpeza",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a primeira coisa que a pessoa do chão do Salão deve realizar antes de limpar a área com esfregão?",
+      "alternativas": [
+        "Varrer com a vassoura e recolher os resíduos",
+        "Sinalizar o piso molhado",
+        "Passar o esfregão com água quente",
+        "Aplicar o desengordurante e aguardar"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Varrer com vassoura e recolher os resíduos.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_074",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "fritas",
+        "porcao"
+      ],
+      "pergunta": "Qual é o peso de uma McFritas Kids, pequena, Média e Grande respectivamente?",
+      "alternativas": [
+        "Kids 25g · P 68g · M 95g · G 130g",
+        "Kids 31g · P 80g · M 110g · G 160g",
+        "Kids 31g · P 73g · M 102g · G 146g",
+        "Kids 40g · P 73g · M 102g · G 146g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Kids: 31g · P: 73g · M: 102g · G: 146g.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_075",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "fritas",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é o tempo de drenagem das McFritas?",
+      "alternativas": [
+        "3 segundos",
+        "5 segundos",
+        "10 segundos",
+        "30 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "5 segundos sobre a fritadeira.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_076",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limite",
+        "refrigeracao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é o tempo de resfriamento das tortas e quantas no máximo que podemos ativar?",
+      "alternativas": [
+        "20 minutos de resfriamento · máximo 4 tortas por cesta",
+        "10 minutos de resfriamento · máximo 6 tortas",
+        "20 minutos de resfriamento · máximo 8 tortas",
+        "30 minutos de resfriamento · máximo 4 tortas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "20 minutos de resfriamento · Máximo 4 tortas por cesta.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_077",
+      "categoria": "ppi",
+      "subcategoria": "🍟 McFritas · Fritos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual pode ser a causa de uma torta fria demais?",
+      "alternativas": [
+        "Excesso de tortas empilhadas na cesta",
+        "Óleo recém-filtrado e ainda muito quente",
+        "Temperatura do óleo baixa ou tempo de fritura insuficiente",
+        "Tempo de resfriamento acima de 20 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Temperatura do óleo baixa ou tempo insuficiente de fritura.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_082",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "teflon",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Para que serve a caramelização dos pães",
+      "alternativas": [
+        "Reduzir a umidade do pão para aumentar a validade",
+        "Criar uma superfície dourada e crocante que melhora sabor, textura e aparência",
+        "Selar o pão para que ele não absorva o molho",
+        "Aquecer o pão por dentro sem alterar a superfície"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Criar superfície dourada e crocante que melhora sabor, textura e aparência do sanduíche.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_083",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Como deve ser o padrão de temperatura dos sanduíches?",
+      "alternativas": [
+        "Servidos na temperatura da UHC, a 79°C",
+        "Servidos acima de 74°C internamente",
+        "Servidos mornos, entre 40°C e 50°C",
+        "Servidos quentes, acima de 60°C internamente"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Servidos quentes, acima de 60°C internamente.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_084",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limite",
+        "tempo"
+      ],
+      "pergunta": "Qual deve ser o tempo de montagem de um produto na linha?",
+      "alternativas": [
+        "Máximo de 15 segundos",
+        "Máximo de 30 segundos",
+        "Máximo de 60 segundos",
+        "Máximo de 90 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Máximo de 30 segundos.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_085",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "pao",
+        "temperatura"
+      ],
+      "pergunta": "Quais são as causas de um pão ressecado?",
+      "alternativas": [
+        "Descongelamento acima de 24 horas",
+        "Caramelização abaixo de 22 segundos",
+        "Pão exposto sem cobertura, caramelização excessiva ou tostadeira muito quente",
+        "Pão guardado coberto por tempo demais"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Pão exposto sem cobertura, caramelização excessiva ou temperatura alta da tostadeira.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_086",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual é o procedimento certo para abrir os sacos de pães?",
+      "alternativas": [
+        "Abrir pelo lado indicado no saco, sem rasgar pela lateral",
+        "Rasgar pela lateral para abrir mais rápido",
+        "Cortar o fundo do saco com a tesoura",
+        "Abrir todos os sacos da caixa de uma vez"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Abrir pelo lado correto indicado no saco, nunca rasgar lateralmente.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_088",
+      "categoria": "ppi",
+      "subcategoria": "🥬 LOPE · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o ciclo de caramelização dos pães?",
+      "alternativas": [
+        "15 segundos",
+        "18 segundos",
+        "22 segundos",
+        "30 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O ciclo de caramelização dos pães é de 22 segundos.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_093",
+      "categoria": "ppi",
+      "subcategoria": "🎯 Atendimento · Vendas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "influencer",
+        "taylor-ng",
+        "tecnica",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Porque devemos Utilizar as Técnicas de Influencers Vendedores?",
+      "alternativas": [
+        "Para aumentar o ticket médio, melhorar a experiência do cliente e atingir as metas",
+        "Para reduzir o tempo de atendimento no balcão",
+        "Para padronizar o discurso de todos os atendentes",
+        "Para diminuir o desperdício de produtos"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Para aumentar ticket médio, melhorar a experiência do cliente e atingir as metas.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_094",
+      "categoria": "ppi",
+      "subcategoria": "🎯 Atendimento · Vendas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "peps",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "É um objetivo da Abordagem de Vendas:",
+      "alternativas": [
+        "Encerrar o pedido no menor tempo possível",
+        "Direcionar o cliente para os itens de maior margem",
+        "Reduzir a fila oferecendo apenas itens prontos",
+        "Aumentar o ticket médio oferecendo combos, upgrades e itens complementares"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Aumentar o ticket médio oferecendo combos, upgrades e itens complementares.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_095",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual dos itens não faz parte do trinômio de treinamento?",
+      "alternativas": [
+        "Praticar",
+        "Avaliar",
+        "Corrigir",
+        "Demonstrar"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O trinômio é: Demonstrar, Praticar, Avaliar.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_096",
+      "categoria": "ppi",
+      "subcategoria": "🎯 Atendimento · Vendas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "influencer",
+        "tecnica",
+        "temperatura"
+      ],
+      "pergunta": "O que queremos mostrar a com a técnica de Influencer Vendedor &quot;Vivenciamos as mesmas coisas&quot;?",
+      "alternativas": [
+        "Demonstrar conhecimento técnico sobre o produto",
+        "Justificar o preço comparando com a concorrência",
+        "Criar conexão com o cliente mostrando empatia e experiência em comum",
+        "Encerrar a conversa de forma cordial e rápida"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Criar conexão com o cliente mostrando empatia e experiência comum.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_097",
+      "categoria": "ppi",
+      "subcategoria": "🧹 Higiene · Limpeza",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "higiene",
+        "limpeza",
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Com que frequência os utensílios da cozinha que entram em contato com os alimentos devem ser limpos e higienizados?",
+      "alternativas": [
+        "A cada 2 horas",
+        "A cada 4 horas ou sempre que necessário",
+        "A cada 8 horas",
+        "A cada 1 hora"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A cada 4 horas ou sempre que necessário.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_098",
+      "categoria": "ppi",
+      "subcategoria": "🧹 Higiene · Limpeza",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "rota",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "De quanto em quanto tempo deve ser feita a rota dos banheiros?",
+      "alternativas": [
+        "A cada 1 hora",
+        "A cada 2 horas",
+        "A cada 4 horas",
+        "A cada 30 minutos"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A cada 1 hora.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_099",
+      "categoria": "ppi",
+      "subcategoria": "🧹 Higiene · Limpeza",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "frequencia",
+        "higiene",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a frequência de lavagem das mãos?",
+      "alternativas": [
+        "A cada 2 horas",
+        "A cada 15 minutos",
+        "A cada 1 hora",
+        "A cada 30 minutos ou sempre que necessário"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A cada 30 minutos ou sempre que necessário.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_101",
+      "categoria": "ppi",
+      "subcategoria": "🧹 Higiene · Limpeza",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "higiene",
+        "porcao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a frequência de lavagem dos utensílios da cozinha?",
+      "alternativas": [
+        "A cada 4 horas",
+        "A cada 6 horas",
+        "A cada 1 hora",
+        "A cada 2 horas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A cada 4 horas.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_102",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura que devemos manter os produtos congelados?",
+      "alternativas": [
+        "-18°C ou abaixo",
+        "-12°C ou abaixo",
+        "-9°C ou abaixo",
+        "0°C ou abaixo"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "-18°C ou abaixo.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_103",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a temperatura do Refrigerador do Balcão?",
+      "alternativas": [
+        "-4°C a 0°C",
+        "1°C a 4°C",
+        "5°C a 8°C",
+        "8°C a 10°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "1°C a 4°C.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_104",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Em que ano Ray Kroc abriu seu primeiro restaurante fast-food?",
+      "alternativas": [
+        "1948, em Phoenix, Arizona",
+        "1955, em Des Plaines, Illinois",
+        "1961, em Chicago, Illinois",
+        "1940, em San Bernardino, Califórnia"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "1955, em Des Plaines, Illinois.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_106",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tempo"
+      ],
+      "pergunta": "Qual o tempo de reação do iniciador",
+      "alternativas": [
+        "5 segundos",
+        "8 segundos",
+        "15 segundos",
+        "30 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "8 segundos.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_108",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "producao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Como deve estar configurada a tela de pedidos do iniciador?",
+      "alternativas": [
+        "Exibindo primeiro o item mais barato",
+        "Exibindo os pedidos por ordem de chegada",
+        "Exibindo apenas os pedidos do Drive",
+        "Exibindo primeiro o item de maior tempo de preparo"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Exibir o item de maior tempo de preparo primeiro (modo de prioridade).",
+      "ativo": true
+    },
+    {
+      "id": "ppi_109",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "cores",
+        "cozimento",
+        "porcao",
+        "temperatura"
+      ],
+      "pergunta": "Com qual pegador devemos manipular as carnes brancas após o cozimento?",
+      "alternativas": [
+        "Pegador verde",
+        "Pegador vermelho",
+        "Pegador azul",
+        "Pegador amarelo"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Pegador azul.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_110",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "O que acontecerá se deixarmos os pães descobertos?",
+      "alternativas": [
+        "Ressecam e perdem umidade",
+        "Absorvem umidade e ficam encharcados",
+        "Perdem a caramelização já feita",
+        "Mantêm a qualidade por até 4 horas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os pães ressecarão e perderão umidade.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_111",
+      "categoria": "ppi",
+      "subcategoria": "📋 Gestão · Procedimentos",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "carne",
+        "cebola",
+        "molho",
+        "pao",
+        "porcao",
+        "queijo",
+        "temperatura"
+      ],
+      "pergunta": "Qual é a descrição do Padrão Ouro de Qualidade do Cheeseburguer?",
+      "alternativas": [
+        "Duas carnes 10:1, queijo duplo e molho Big Mac",
+        "Pão com sementes, alface, tomate e maionese",
+        "Pão sem caramelização, carne bem passada e queijo firme",
+        "Pão caramelizado, carne suculenta, queijo derretido e ketchup, mostarda, picles e cebola na proporção certa"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Pão caramelizado, carne suculenta, queijo derretido, ketchup, mostarda, picles e cebola na proporção certa.",
+      "ativo": true
+    },
+    {
+      "id": "ppi_112",
+      "categoria": "ppi",
+      "subcategoria": "🔥 Chapa · Carnes",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "porcao",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual é a temperatura interna mínima que todo produto de frango deve atingir após o cozimento?",
+      "alternativas": [
+        "60°C (140°F)",
+        "70°C (158°F)",
+        "74°C (165°F)",
+        "85°C (185°F)"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Sim — 74°C (165°F) é a temperatura interna mínima para todos os produtos de frango.",
+      "ativo": true
+    }
+  ]
+}

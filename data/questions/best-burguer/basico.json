@@ -10,24 +10,22 @@
       "subcategoria": "🏆 Visão Geral",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["best-burguer", "conceito", "objetivo"],
+      "tags": [
+        "best-burguer",
+        "conceito",
+        "objetivo"
+      ],
       "pergunta": "Qual é o principal objetivo do projeto Best Burger?",
-      "alternativas": ["Reduzir custos com ingredientes", "Garantir hambúrgueres sempre quentes, suculentos, frescos e deliciosos em todas as unidades", "Aumentar a velocidade de atendimento", "Criar novos sabores de sanduíche"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Garantir hambúrgueres sempre quentes, suculentos, frescos e deliciosos em todas as unidades",
+        "Criar novos sabores de sanduíche",
+        "Reduzir custos com ingredientes",
+        "Aumentar a velocidade de atendimento"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "O Best Burger é um projeto global que visa garantir que todos os hambúrgueres tenham o mesmo sabor em qualquer unidade — sempre quentes, suculentos, frescos e deliciosos.",
       "dica": "O foco é qualidade consistente em todas as unidades.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_002",
@@ -35,24 +33,23 @@
       "subcategoria": "🥩 Carnes — UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "vida-util", "best-burguer", "carne"],
+      "tags": [
+        "uhc",
+        "vida-util",
+        "best-burguer",
+        "carne"
+      ],
       "pergunta": "Qual é a vida útil das carnes vermelhas na UHC no Best Burger?",
-      "alternativas": ["5 minutos", "10 minutos", "15 minutos", "20 minutos"],
+      "alternativas": [
+        "5 minutos",
+        "10 minutos",
+        "15 minutos",
+        "20 minutos"
+      ],
       "respostaCorreta": 1,
       "explicacao": "No Best Burger, a vida útil das carnes na UHC foi reduzida de 15 para 10 minutos, garantindo produto sempre fresco e quente ao cliente.",
       "dica": "BB reduz de 15 para 10 min na UHC.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_003",
@@ -60,24 +57,23 @@
       "subcategoria": "🥩 Carnes — UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "temperatura", "best-burguer", "carne"],
+      "tags": [
+        "uhc",
+        "temperatura",
+        "best-burguer",
+        "carne"
+      ],
       "pergunta": "Qual é a temperatura da UHC para carnes vermelhas no Best Burger?",
-      "alternativas": ["65°C (149°F)", "71°C (160°F)", "79°C (175°F)", "93°C (200°F)"],
+      "alternativas": [
+        "65°C (149°F)",
+        "71°C (160°F)",
+        "79°C (175°F)",
+        "93°C (200°F)"
+      ],
       "respostaCorreta": 2,
       "explicacao": "A UHC deve ser mantida a 79°C (175°F) para as carnes vermelhas no Best Burger, garantindo segurança alimentar e qualidade.",
       "dica": "79°C = 175°F para carnes vermelhas na UHC BB.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_004",
@@ -85,24 +81,22 @@
       "subcategoria": "🥩 Carnes — UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "rotacao", "best-burguer"],
+      "tags": [
+        "uhc",
+        "rotacao",
+        "best-burguer"
+      ],
       "pergunta": "Qual é o objetivo de rotação das carnes na UHC no Best Burger?",
-      "alternativas": ["2 a 3 minutos", "5 a 8 minutos", "10 a 12 minutos", "15 a 20 minutos"],
+      "alternativas": [
+        "2 a 3 minutos",
+        "5 a 8 minutos",
+        "10 a 12 minutos",
+        "15 a 20 minutos"
+      ],
       "respostaCorreta": 1,
       "explicacao": "O objetivo de rotação no Best Burger é a cada 5 a 8 minutos. Combinado com a vida útil de 10 min, garante produto sempre recente.",
       "dica": "Rotação alvo: 5 a 8 minutos.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_005",
@@ -110,24 +104,22 @@
       "subcategoria": "🔥 Chapa — Configuração",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "temperatura", "best-burguer"],
+      "tags": [
+        "chapa",
+        "temperatura",
+        "best-burguer"
+      ],
       "pergunta": "Qual é a temperatura da placa superior da chapa no Best Burger?",
-      "alternativas": ["177°C (350°F)", "200°C (392°F)", "218°C (425°F)", "250°C (482°F)"],
+      "alternativas": [
+        "177°C (350°F)",
+        "200°C (392°F)",
+        "218°C (425°F)",
+        "250°C (482°F)"
+      ],
       "respostaCorreta": 2,
       "explicacao": "No Best Burger, a placa superior da chapa opera a 218°C (425°F) e a placa inferior a 177°C (350°F).",
       "dica": "Superior 218°C, inferior 177°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_006",
@@ -135,24 +127,23 @@
       "subcategoria": "🔥 Chapa — Carnes 10:1",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "10:1", "tempo", "best-burguer"],
+      "tags": [
+        "chapa",
+        "10:1",
+        "tempo",
+        "best-burguer"
+      ],
       "pergunta": "Qual o tempo inicial de cozimento das carnes 10:1 na chapa Best Burger (modelo Antunes)?",
-      "alternativas": ["20 segundos", "30 segundos", "39 segundos", "55 segundos"],
+      "alternativas": [
+        "20 segundos",
+        "30 segundos",
+        "39 segundos",
+        "55 segundos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O tempo inicial de cozimento para carnes 10:1 na chapa Best Burger modelo Antunes é de 39 segundos. Na Taylor Next Generation é 41 segundos.",
       "dica": "39 seg para carnes 10:1 (Antunes).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_007",
@@ -160,24 +151,23 @@
       "subcategoria": "🔥 Chapa — Lotes",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "10:1", "lote", "best-burguer"],
+      "tags": [
+        "chapa",
+        "10:1",
+        "lote",
+        "best-burguer"
+      ],
       "pergunta": "Qual o máximo de carnes 10:1 por rodada na chapa Best Burger?",
-      "alternativas": ["4 carnes", "6 carnes", "8 carnes", "10 carnes"],
+      "alternativas": [
+        "4 carnes",
+        "6 carnes",
+        "8 carnes",
+        "10 carnes"
+      ],
       "respostaCorreta": 1,
       "explicacao": "O lote máximo para carnes 10:1 na chapa Best Burger é de 6 carnes por rodada. Para 4:1, o máximo é 4 carnes.",
       "dica": "10:1: máximo 6 / 4:1: máximo 4.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_008",
@@ -185,24 +175,23 @@
       "subcategoria": "🔥 Chapa — Segurança",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "temperatura", "seguranca", "best-burguer"],
+      "tags": [
+        "chapa",
+        "temperatura",
+        "seguranca",
+        "best-burguer"
+      ],
       "pergunta": "Qual é o padrão de segurança alimentar para todas as carnes no Best Burger?",
-      "alternativas": ["Acima de 60°C", "Acima de 70°C", "Acima de 75°C", "Acima de 80°C"],
+      "alternativas": [
+        "Acima de 60°C",
+        "Acima de 70°C",
+        "Acima de 75°C",
+        "Acima de 80°C"
+      ],
       "respostaCorreta": 1,
       "explicacao": "O padrão de SEGURANÇA exige que TODAS as carnes estejam acima de 70°C. O padrão de QUALIDADE é pelo menos 3 de 4 carnes entre 70°C e 77°C.",
       "dica": "Segurança: todas acima de 70°C. Qualidade: 70–77°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_009",
@@ -210,24 +199,23 @@
       "subcategoria": "🍞 Tostadeira — HEBT-5V",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tostadeira", "hebt-5v", "temperatura", "best-burguer"],
+      "tags": [
+        "tostadeira",
+        "hebt-5v",
+        "temperatura",
+        "best-burguer"
+      ],
       "pergunta": "Qual é a temperatura das placas A e B da tostadeira HEBT-5V no Best Burger?",
-      "alternativas": ["254°C (490°F)", "263°C (505°F)", "271°C (520°F)", "280°C (536°F)"],
+      "alternativas": [
+        "254°C (490°F)",
+        "263°C (505°F)",
+        "271°C (520°F)",
+        "280°C (536°F)"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Na tostadeira HEBT-5V: Placas A e B a 271°C (520°F), Placa C a 254°C (490°F), Motor 3300, Caramelização 22 segundos.",
       "dica": "A/B: 271°C, C: 254°C para HEBT-5V.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_010",
@@ -235,24 +223,23 @@
       "subcategoria": "🍞 Tostadeira — Tempo",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tostadeira", "tempo", "pao", "best-burguer"],
+      "tags": [
+        "tostadeira",
+        "tempo",
+        "pao",
+        "best-burguer"
+      ],
       "pergunta": "Em quantos segundos o pão deve sair da tostadeira no Best Burger?",
-      "alternativas": ["15 segundos", "18 segundos", "22 segundos", "30 segundos"],
+      "alternativas": [
+        "15 segundos",
+        "18 segundos",
+        "22 segundos",
+        "30 segundos"
+      ],
       "respostaCorreta": 2,
       "explicacao": "No Best Burger, a tostadeira deve ser regulada para que o pão saia em 22 segundos. A velocidade do motor da HEBT-5V deve ser 3300 para atingir esse tempo.",
       "dica": "22 segundos é o tempo padrão de caramelização.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_011",
@@ -260,24 +247,23 @@
       "subcategoria": "🍞 Pães — Características",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "dimensao", "regular", "best-burguer"],
+      "tags": [
+        "pao",
+        "dimensao",
+        "regular",
+        "best-burguer"
+      ],
       "pergunta": "Qual o diâmetro do Pão Regular no Best Burger?",
-      "alternativas": ["Ø 8,5 cm", "Ø 9,5 cm", "Ø 10 cm", "Ø 11 cm"],
+      "alternativas": [
+        "Ø 8,5 cm",
+        "Ø 9,5 cm",
+        "Ø 10 cm",
+        "Ø 11 cm"
+      ],
       "respostaCorreta": 1,
       "explicacao": "O Pão Regular Best Burger tem Ø 9,5 cm, com base +0,3 cm de altura. O Pão Quarterão e o Big Mac têm Ø 10 cm.",
       "dica": "Regular: 9,5 cm / Quarterão e Big Mac: 10 cm.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_012",
@@ -285,24 +271,23 @@
       "subcategoria": "🍞 Pães — Validades",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "validade", "secundaria", "best-burguer"],
+      "tags": [
+        "pao",
+        "validade",
+        "secundaria",
+        "best-burguer"
+      ],
       "pergunta": "Qual é a validade secundária dos pães Best Burger (incluindo descongelamento)?",
-      "alternativas": ["24 horas", "36 horas", "48 horas", "72 horas"],
+      "alternativas": [
+        "24 horas",
+        "36 horas",
+        "48 horas",
+        "72 horas"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Os pães Best Burger têm validade secundária de 48 horas, incluindo o tempo de descongelamento mínimo de 4 horas. Validade primária: 120 dias.",
       "dica": "Val. secundária: 48h total (inclui descongelamento).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_013",
@@ -310,24 +295,23 @@
       "subcategoria": "🧀 Queijo — Ambientação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["queijo", "ambientacao", "temperatura", "best-burguer"],
+      "tags": [
+        "queijo",
+        "ambientacao",
+        "temperatura",
+        "best-burguer"
+      ],
       "pergunta": "Por quanto tempo o queijo cheddar deve ser ambientado antes do uso no Best Burger?",
-      "alternativas": ["30 minutos", "1 hora", "2 horas", "4 horas"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "30 minutos",
+        "4 horas"
+      ],
+      "respostaCorreta": 1,
       "explicacao": "O queijo cheddar deve ser ambientado por 2 horas para atingir 15–18°C e derreter corretamente. Objetivo na mesa: 30 min. Vencimento total: 4 horas.",
       "dica": "Ambientação: 2h / Mesa: 30 min / Vencimento total: 4h.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_014",
@@ -335,24 +319,23 @@
       "subcategoria": "🧀 Queijo — Ambientação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["queijo", "temperatura", "ambientacao", "best-burguer"],
+      "tags": [
+        "queijo",
+        "temperatura",
+        "ambientacao",
+        "best-burguer"
+      ],
       "pergunta": "Qual a temperatura ideal de ambientação do queijo cheddar no Best Burger?",
-      "alternativas": ["4°C a 8°C", "10°C a 12°C", "15°C a 18°C", "20°C a 25°C"],
+      "alternativas": [
+        "4°C a 8°C",
+        "10°C a 12°C",
+        "15°C a 18°C",
+        "20°C a 25°C"
+      ],
       "respostaCorreta": 2,
       "explicacao": "A temperatura ideal de ambientação do queijo cheddar é entre 15°C e 18°C, garantindo o derretimento perfeito quando colocado sobre a carne quente.",
       "dica": "15°C a 18°C = temperatura ambiente para o queijo.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_015",
@@ -360,24 +343,23 @@
       "subcategoria": "🧅 Cebola Reidratada",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["cebola", "hidratacao", "agua", "best-burguer"],
+      "tags": [
+        "cebola",
+        "hidratacao",
+        "agua",
+        "best-burguer"
+      ],
       "pergunta": "Quantos litros de água são usados para reidratar 1 pacote de cebola desidratada no Best Burger?",
-      "alternativas": ["1 litro", "2 litros", "3 litros", "5 litros"],
+      "alternativas": [
+        "1 litro",
+        "2 litros",
+        "3 litros",
+        "5 litros"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Utiliza-se 3 litros de água da máquina de suco (1°C a 4°C) para reidratar 1 pacote de cebola desidratada. Hidratação mínima: 1 hora no refrigerador.",
       "dica": "3 litros de água fria (da máquina de suco) por pacote.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_016",
@@ -385,24 +367,23 @@
       "subcategoria": "🧅 Cebola Reidratada",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["cebola", "dispensador", "vida-util", "best-burguer"],
+      "tags": [
+        "cebola",
+        "dispensador",
+        "vida-util",
+        "best-burguer"
+      ],
       "pergunta": "Qual é a vida útil dos dispensadores de cebola reidratada na chapa no Best Burger?",
-      "alternativas": ["1 hora", "2 horas", "4 horas", "8 horas"],
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "4 horas",
+        "8 horas"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Os dispensadores de cebola têm vida útil de 4 horas na chapa (temperatura ambiente). Refrigerados na câmara, a validade secundária é de 24 horas.",
       "dica": "4h na chapa / 24h na câmara.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_017",
@@ -410,24 +391,23 @@
       "subcategoria": "🧅 Cebola Reidratada",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["cebola", "dispensador", "rendimento", "best-burguer"],
+      "tags": [
+        "cebola",
+        "dispensador",
+        "rendimento",
+        "best-burguer"
+      ],
       "pergunta": "Quantos dispensadores de cebola 1 pacote de cebola desidratada deve render?",
-      "alternativas": ["3 dispensadores", "5 dispensadores", "7 dispensadores", "10 dispensadores"],
+      "alternativas": [
+        "3 dispensadores",
+        "5 dispensadores",
+        "7 dispensadores",
+        "10 dispensadores"
+      ],
       "respostaCorreta": 2,
       "explicacao": "1 pacote de cebola desidratada deve render exatamente 7 dispensadores. Cada dispensador tem 49 disparos de 3,5g cada, totalizando 343 porções por pacote.",
       "dica": "7 dispensadores por pacote.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_018",
@@ -435,24 +415,23 @@
       "subcategoria": "🧅 Cebola Reidratada",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["cebola", "porção", "peso", "best-burguer"],
+      "tags": [
+        "cebola",
+        "porção",
+        "peso",
+        "best-burguer"
+      ],
       "pergunta": "Qual o peso de cebola reidratada por carne 10:1 no Best Burger?",
-      "alternativas": ["1,5g", "2,5g", "3,5g", "5,0g"],
+      "alternativas": [
+        "1,5g",
+        "2,5g",
+        "3,5g",
+        "5,0g"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O peso padrão de cebola por carne 10:1 é de 3,5g por disparo do dispensador. Cada dispensador tem 49 disparos.",
       "dica": "3,5g por carne 10:1.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_019",
@@ -460,24 +439,23 @@
       "subcategoria": "🫙 Molhos — Saleiros",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["saleiro", "carne", "sal", "best-burguer"],
+      "tags": [
+        "saleiro",
+        "carne",
+        "sal",
+        "best-burguer"
+      ],
       "pergunta": "Qual saleiro é usado para carnes 10:1 no Best Burger e qual a quantidade por disparo?",
-      "alternativas": ["Saleiro vermelho — 0,5 g", "Saleiro verde — 0,3 g", "Saleiro cinza — 0,4 g", "Saleiro azul — 0,2 g"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Saleiro cinza — 0,4 g",
+        "Saleiro azul — 0,2 g",
+        "Saleiro verde — 0,3 g",
+        "Saleiro vermelho — 0,5 g"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "Saleiro VERDE (0,3g): para carnes 10:1. Saleiro CINZA (0,4g): para carnes 4:1. Um saleiro cheio dispensa 500–600 vezes.",
       "dica": "Verde: 10:1 (0,3g) / Cinza: 4:1 (0,4g).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_020",
@@ -485,24 +463,23 @@
       "subcategoria": "🫙 Molhos — Big Mac",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["molho-big-mac", "quantidade", "pistola", "best-burguer"],
+      "tags": [
+        "molho-big-mac",
+        "quantidade",
+        "pistola",
+        "best-burguer"
+      ],
       "pergunta": "Qual a quantidade de Molho Big Mac dispensada no Best Burger?",
-      "alternativas": ["10 ml (1/3 oz)", "15 ml (1/2 oz)", "20 ml (2/3 oz)", "30 ml (1 oz)"],
+      "alternativas": [
+        "10 ml (1/3 oz)",
+        "15 ml (1/2 oz)",
+        "20 ml (2/3 oz)",
+        "30 ml (1 oz)"
+      ],
       "respostaCorreta": 1,
       "explicacao": "A quantidade de Molho Big Mac permanece em 15 ml (1/2 oz), dispensados com a pistola Flex Prep configurada para 1 ponto de saída.",
       "dica": "Molho Big Mac: 15 ml = 1/2 oz.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_021",
@@ -510,24 +487,23 @@
       "subcategoria": "🔑 Pegadores",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pegador", "carne", "cores", "best-burguer"],
+      "tags": [
+        "pegador",
+        "carne",
+        "cores",
+        "best-burguer"
+      ],
       "pergunta": "Para qual tipo de carne é usado o pegador VERMELHO no Best Burger?",
-      "alternativas": ["Carnes 4:1 e 10:1 sem cebola", "Carnes brancas", "Carnes vermelhas com cebola", "Somente carnes 4:1"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Carnes 4:1 e 10:1 sem cebola",
+        "Carnes brancas",
+        "Somente carnes 4:1",
+        "Carnes vermelhas com cebola"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "Pegador VERMELHO: carnes vermelhas COM cebola. Pegador AZUL: carnes 4:1 e 10:1 SEM cebola. Pegador VERDE: carnes brancas.",
       "dica": "Vermelho = carnes vermelhas COM cebola.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_022",
@@ -535,24 +511,23 @@
       "subcategoria": "📦 Mesa de Condimentação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["mesa-condimentacao", "ingredientes", "tempo", "best-burguer"],
+      "tags": [
+        "mesa-condimentacao",
+        "ingredientes",
+        "tempo",
+        "best-burguer"
+      ],
       "pergunta": "Qual é o objetivo de tempo na mesa de condimentação para os ingredientes no Best Burger?",
-      "alternativas": ["15 minutos", "30 minutos", "60 minutos", "2 horas"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "30 minutos",
+        "15 minutos",
+        "60 minutos",
+        "2 horas"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "O objetivo do Best Burger é que os ingredientes fiquem no máximo 30 minutos na mesa de condimentação — 'mesas com menos produto com mais frequência'.",
       "dica": "30 min na mesa = ingredientes sempre frescos.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_023",
@@ -560,24 +535,23 @@
       "subcategoria": "👁️ Look, Bump & Cook",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["look-bump-cook", "sistema", "best-burguer", "pls"],
+      "tags": [
+        "look-bump-cook",
+        "sistema",
+        "best-burguer",
+        "pls"
+      ],
       "pergunta": "O que significa o 'Look' no sistema Look, Bump & Cook do Best Burger?",
-      "alternativas": ["Olhar a qualidade da carne pronta", "Verificar o monitor PLS/Look & Cook para quantidade necessária de carnes", "Olhar o cliente e confirmar o pedido", "Checar a temperatura da chapa"],
+      "alternativas": [
+        "Olhar o cliente e confirmar o pedido",
+        "Verificar o monitor PLS/Look & Cook para quantidade necessária de carnes",
+        "Olhar a qualidade da carne pronta",
+        "Checar a temperatura da chapa"
+      ],
       "respostaCorreta": 1,
       "explicacao": "OLHA = Verificar o monitor PLS/Look & Cook para a quantidade necessária de carnes. APAGA = Inserir carnes no monitor. COZINHA = Colocar as carnes na chapa.",
       "dica": "Look = verificar o monitor PLS.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_024",
@@ -585,24 +559,23 @@
       "subcategoria": "🍟 Diferenças vs. Padrão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["filtragem", "oleo", "best-burguer", "diferencial"],
+      "tags": [
+        "filtragem",
+        "oleo",
+        "best-burguer",
+        "diferencial"
+      ],
       "pergunta": "No Best Burger, com que frequência o óleo da fritadeira deve ser filtrado?",
-      "alternativas": ["1 vez ao dia", "2 vezes ao dia", "3 vezes ao dia", "Somente quando mudar"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Somente quando mudar",
+        "3 vezes ao dia",
+        "2 vezes ao dia",
+        "1 vez ao dia"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "No Best Burger, o óleo deve ser filtrado 2 vezes ao dia (vs. 1 vez ao dia na operação padrão), garantindo qualidade superior das batatas fritas.",
       "dica": "BB dobra a frequência de filtragem: 2x/dia.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_025",
@@ -610,24 +583,23 @@
       "subcategoria": "🔑 UHC — Gavetas sem Cebola",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "cebola", "clips", "best-burguer"],
+      "tags": [
+        "uhc",
+        "cebola",
+        "clips",
+        "best-burguer"
+      ],
       "pergunta": "Quantas gavetas da UHC devem ser reservadas para carnes 10:1 SEM cebola no Best Burger?",
-      "alternativas": ["1 gaveta", "Mínimo 2 gavetas", "3 gavetas", "Todas as gavetas disponíveis"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Mínimo 2 gavetas",
+        "3 gavetas",
+        "1 gaveta",
+        "Todas as gavetas disponíveis"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "Em caso de alta demanda por pedidos sem cebola, manter mínimo 2 gavetas identificadas com clips azul para 10:1 SEM cebola na UHC.",
       "dica": "Mínimo 2 gavetas azuis para carnes sem cebola.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_026",
@@ -635,24 +607,23 @@
       "subcategoria": "🔧 Espátula e Raspador",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["espatula", "raspador", "limpeza-chapa", "best-burguer"],
+      "tags": [
+        "espatula",
+        "raspador",
+        "limpeza-chapa",
+        "best-burguer"
+      ],
       "pergunta": "Com que frequência devem ser trocadas as lâminas de espátula e raspador no Best Burger?",
-      "alternativas": ["A cada 5 dias", "A cada 10 dias", "A cada 15 dias", "Apenas quando quebrarem"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "A cada 10 dias",
+        "A cada 15 dias",
+        "Apenas quando quebrarem",
+        "A cada 5 dias"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "As lâminas de espátula e raspador devem ser trocadas a cada 10 dias no máximo. Lâminas cegas quebram a carne ao retirar, obrigando o descarte.",
       "dica": "Lâminas: trocar a cada 10 dias no máximo.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_027",
@@ -660,24 +631,22 @@
       "subcategoria": "🏆 Visão Geral",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["best-burguer", "hebt", "conceito"],
+      "tags": [
+        "best-burguer",
+        "hebt",
+        "conceito"
+      ],
       "pergunta": "O que significa a sigla HEBT no padrão Best Burger?",
-      "alternativas": ["Hambúrguer, Embalagem, Bandeja e Temperatura", "Quente (Hot), Excelente, Bonito e Saboroso (Tasty)", "Higiene, Eficiência, Brevidade e Textura", "Hambúrguer, Espátula, Balança e Tostadeira"],
+      "alternativas": [
+        "Higiene, Eficiência, Brevidade e Textura",
+        "Quente (Hot), Excelente, Bonito e Saboroso (Tasty)",
+        "Hambúrguer, Embalagem, Bandeja e Temperatura",
+        "Hambúrguer, Espátula, Balança e Tostadeira"
+      ],
       "respostaCorreta": 1,
       "explicacao": "HEBT = Quente (Hot), Excelente (Excellent), Bonito (Beautiful) e Saboroso (Tasty). São os 4 critérios de qualidade que todo hambúrguer Best Burger deve atingir em cada pedido.",
       "dica": "H=Quente, E=Excelente, B=Bonito, T=Saboroso.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_028",
@@ -685,24 +654,24 @@
       "subcategoria": "🔥 Chapa — Carnes 10:1",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "10:1", "tempo", "taylor-ng", "best-burguer"],
+      "tags": [
+        "chapa",
+        "10:1",
+        "tempo",
+        "taylor-ng",
+        "best-burguer"
+      ],
       "pergunta": "Qual o tempo de cozimento das carnes 10:1 na chapa Best Burger modelo Taylor Next Generation?",
-      "alternativas": ["30 segundos", "35 segundos", "39 segundos", "41 segundos"],
+      "alternativas": [
+        "30 segundos",
+        "35 segundos",
+        "39 segundos",
+        "41 segundos"
+      ],
       "respostaCorreta": 3,
       "explicacao": "Na Taylor Next Generation, o cozimento para carnes 10:1 no Best Burger é de 41 segundos. No modelo Antunes é 39 segundos. O modelo da chapa impacta diretamente na programação do timer.",
       "dica": "Taylor NG: 41 seg / Antunes: 39 seg para carnes 10:1.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_029",
@@ -710,24 +679,23 @@
       "subcategoria": "🥩 Carnes — UHC",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "vida-util", "best-burguer", "carne"],
+      "tags": [
+        "uhc",
+        "vida-util",
+        "best-burguer",
+        "carne"
+      ],
       "pergunta": "Qual é a vida útil das carnes BRANCAS (frango) na UHC no Best Burger?",
-      "alternativas": ["5 minutos", "10 minutos", "15 minutos", "20 minutos"],
+      "alternativas": [
+        "5 minutos",
+        "10 minutos",
+        "15 minutos",
+        "20 minutos"
+      ],
       "respostaCorreta": 1,
       "explicacao": "No Best Burger, carnes brancas (frango) têm vida útil de 10 minutos na UHC, igual às carnes vermelhas. O padrão de 10 minutos se aplica a todos os tipos de carne para garantir produto sempre fresco.",
       "dica": "Carnes brancas: 10 min na UHC (mesma regra das vermelhas no BB).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_030",
@@ -735,24 +703,23 @@
       "subcategoria": "👁️ Look, Bump & Cook",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["look-bump-cook", "sistema", "best-burguer", "pls"],
+      "tags": [
+        "look-bump-cook",
+        "sistema",
+        "best-burguer",
+        "pls"
+      ],
       "pergunta": "O que significa o 'Bump' (Apaga) no sistema Look, Bump & Cook do Best Burger?",
-      "alternativas": ["Limpar a chapa antes de colocar as carnes", "Inserir as carnes no monitor PLS, registrando que foram colocadas na chapa", "Retirar as carnes prontas da chapa com a espátula", "Verificar a temperatura interna das carnes prontas"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Limpar a chapa antes de colocar as carnes",
+        "Retirar as carnes prontas da chapa com a espátula",
+        "Inserir as carnes no monitor PLS, registrando que foram colocadas na chapa",
+        "Verificar a temperatura interna das carnes prontas"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "BUMP (APAGA) = Inserir as carnes no monitor PLS/Look & Cook, registrando que estão na chapa. Isso garante rastreamento preciso da produção. OLHA = verificar o monitor. APAGA = dar baixa no monitor. COZINHA = colocar na chapa.",
       "dica": "Bump = dar baixa no monitor PLS ao iniciar o cozimento.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_031",
@@ -760,24 +727,23 @@
       "subcategoria": "👁️ Look, Bump & Cook",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["look-bump-cook", "sistema", "best-burguer", "pls"],
+      "tags": [
+        "look-bump-cook",
+        "sistema",
+        "best-burguer",
+        "pls"
+      ],
       "pergunta": "O que significa o 'Cook' (Cozinha) no sistema Look, Bump & Cook do Best Burger?",
-      "alternativas": ["Verificar o monitor PLS para a quantidade necessária de carnes", "Inserir carnes no monitor PLS para rastreamento", "Colocar as carnes na chapa para iniciar o cozimento", "Mover as carnes prontas para a UHC"],
-      "respostaCorreta": 2,
+      "alternativas": [
+        "Inserir carnes no monitor PLS para rastreamento",
+        "Mover as carnes prontas para a UHC",
+        "Verificar o monitor PLS para a quantidade necessária de carnes",
+        "Colocar as carnes na chapa para iniciar o cozimento"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "COOK (COZINHA) = Colocar as carnes na chapa para iniciar o cozimento. A sequência completa é: OLHA (verifica o monitor) → APAGA (registra no monitor) → COZINHA (coloca na chapa).",
       "dica": "Cook = colocar as carnes na chapa para cozimento.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_032",
@@ -785,24 +751,23 @@
       "subcategoria": "🔑 UHC — Gavetas sem Cebola",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["uhc", "cebola", "clips", "best-burguer"],
+      "tags": [
+        "uhc",
+        "cebola",
+        "clips",
+        "best-burguer"
+      ],
       "pergunta": "Qual a cor do clip usado para identificar gavetas UHC de carnes 10:1 COM cebola no Best Burger?",
-      "alternativas": ["Clip azul", "Clip vermelho", "Clip verde", "Clip amarelo"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Clip vermelho",
+        "Clip verde",
+        "Clip amarelo",
+        "Clip azul"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "Clip VERMELHO = carnes 10:1 COM cebola. Clip AZUL = carnes 10:1 SEM cebola (para pedidos personalizados). A diferenciação por clips garante agilidade no atendimento de pedidos especiais.",
       "dica": "Vermelho = com cebola / Azul = sem cebola (gavetas UHC).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_033",
@@ -810,24 +775,23 @@
       "subcategoria": "🍞 Pães — Características",
       "dificuldade": 1,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "validade", "primaria", "best-burguer"],
+      "tags": [
+        "pao",
+        "validade",
+        "primaria",
+        "best-burguer"
+      ],
       "pergunta": "Qual é a validade PRIMÁRIA dos pães Best Burger (produto lacrado)?",
-      "alternativas": ["30 dias", "60 dias", "90 dias", "120 dias"],
+      "alternativas": [
+        "30 dias",
+        "60 dias",
+        "90 dias",
+        "120 dias"
+      ],
       "respostaCorreta": 3,
       "explicacao": "Os pães Best Burger têm validade primária de 120 dias (produto lacrado/congelado). Após abertura ou descongelamento, a validade secundária é de apenas 48 horas.",
       "dica": "Validade primária do pão BB: 120 dias.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_034",
@@ -835,24 +799,23 @@
       "subcategoria": "🍞 Pães — Características",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "descongelamento", "tempo", "best-burguer"],
+      "tags": [
+        "pao",
+        "descongelamento",
+        "tempo",
+        "best-burguer"
+      ],
       "pergunta": "Qual é o tempo mínimo de descongelamento dos pães Best Burger antes do uso?",
-      "alternativas": ["1 hora", "2 horas", "4 horas", "8 horas"],
+      "alternativas": [
+        "1 hora",
+        "2 horas",
+        "4 horas",
+        "8 horas"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O descongelamento mínimo dos pães Best Burger é de 4 horas. Esse tempo já está incluído dentro das 48 horas de validade secundária. Pão mal descongelado fica frio por dentro e prejudica a qualidade HEBT.",
       "dica": "Descongelamento mínimo: 4 horas (incluso nas 48h de validade).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_035",
@@ -860,24 +823,23 @@
       "subcategoria": "🔥 Chapa — Segurança",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "temperatura", "qualidade", "best-burguer"],
+      "tags": [
+        "chapa",
+        "temperatura",
+        "qualidade",
+        "best-burguer"
+      ],
       "pergunta": "Qual é o padrão de QUALIDADE de temperatura das carnes no Best Burger (critério de aprovação)?",
-      "alternativas": ["Todas as 4 carnes entre 70°C e 77°C", "Pelo menos 3 de 4 carnes entre 70°C e 77°C", "Pelo menos 2 de 4 carnes acima de 75°C", "Todas as carnes acima de 77°C"],
+      "alternativas": [
+        "Pelo menos 2 de 4 carnes acima de 75°C",
+        "Pelo menos 3 de 4 carnes entre 70°C e 77°C",
+        "Todas as 4 carnes entre 70°C e 77°C",
+        "Todas as carnes acima de 77°C"
+      ],
       "respostaCorreta": 1,
       "explicacao": "O padrão de QUALIDADE exige pelo menos 3 de 4 carnes medidas entre 70°C e 77°C. Já o padrão de SEGURANÇA (mais rígido) exige que TODAS as carnes estejam acima de 70°C, sem exceção.",
       "dica": "Qualidade: 3 de 4 entre 70–77°C / Segurança: todas acima de 70°C.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_036",
@@ -885,24 +847,23 @@
       "subcategoria": "🧀 Queijo — Ambientação",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["queijo", "tempo", "validade", "best-burguer"],
+      "tags": [
+        "queijo",
+        "tempo",
+        "validade",
+        "best-burguer"
+      ],
       "pergunta": "Qual é o tempo MÁXIMO que o queijo cheddar pode ficar fora do refrigerador no Best Burger?",
-      "alternativas": ["30 minutos", "1 hora", "2 horas", "4 horas"],
-      "respostaCorreta": 3,
+      "alternativas": [
+        "2 horas",
+        "30 minutos",
+        "4 horas",
+        "1 hora"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "O vencimento total do queijo cheddar fora do refrigerador é de 4 horas. O objetivo de permanência na mesa é de 30 minutos para manter frescor. Os 2 horas são o tempo de ambientação necessário antes do uso.",
       "dica": "Fora da geladeira: máximo 4h total (objetivo na mesa: 30 min).",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_037",
@@ -910,24 +871,23 @@
       "subcategoria": "🍞 Pães — Características",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "dimensao", "big-mac", "best-burguer"],
+      "tags": [
+        "pao",
+        "dimensao",
+        "big-mac",
+        "best-burguer"
+      ],
       "pergunta": "Qual o diâmetro do Pão Big Mac e do Pão Quarterão no Best Burger?",
-      "alternativas": ["Ø 8,5 cm", "Ø 9,5 cm", "Ø 10 cm", "Ø 11 cm"],
+      "alternativas": [
+        "Ø 8,5 cm",
+        "Ø 9,5 cm",
+        "Ø 10 cm",
+        "Ø 11 cm"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O Pão Big Mac e o Pão Quarterão Best Burger têm Ø 10 cm. O Pão Regular tem Ø 9,5 cm. O tamanho maior do Big Mac e Quarterão acomoda suas carnes maiores e mais espessas.",
       "dica": "Big Mac e Quarterão: Ø 10 cm / Regular: Ø 9,5 cm.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_038",
@@ -935,24 +895,23 @@
       "subcategoria": "🧅 Cebola Reidratada",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["cebola", "hidratacao", "temperatura", "best-burguer"],
+      "tags": [
+        "cebola",
+        "hidratacao",
+        "temperatura",
+        "best-burguer"
+      ],
       "pergunta": "Qual é a temperatura da água usada para reidratar a cebola desidratada no Best Burger?",
-      "alternativas": ["Água a temperatura ambiente (20°C a 25°C)", "Água fria da máquina de suco (1°C a 4°C)", "Água morna (30°C a 40°C)", "Água gelada com gelo picado (0°C)"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Água morna (30°C a 40°C)",
+        "Água gelada com gelo picado (0°C)",
+        "Água a temperatura ambiente (20°C a 25°C)",
+        "Água fria da máquina de suco (1°C a 4°C)"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "Utiliza-se água fria da máquina de suco (1°C a 4°C) para reidratar a cebola. A temperatura baixa garante que a cebola se mantenha firme, segura microbiologicamente e com boa textura após a hidratação.",
       "dica": "Água da máquina de suco: 1°C a 4°C para hidratar a cebola.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_039",
@@ -960,24 +919,23 @@
       "subcategoria": "🫙 Molhos — Saleiros",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["saleiro", "carne", "sal", "best-burguer"],
+      "tags": [
+        "saleiro",
+        "carne",
+        "sal",
+        "best-burguer"
+      ],
       "pergunta": "Qual saleiro é usado para carnes 4:1 no Best Burger e qual a quantidade por disparo?",
-      "alternativas": ["Saleiro verde — 0,3 g", "Saleiro cinza — 0,4 g", "Saleiro vermelho — 0,5 g", "Saleiro azul — 0,2 g"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Saleiro cinza — 0,4 g",
+        "Saleiro azul — 0,2 g",
+        "Saleiro verde — 0,3 g",
+        "Saleiro vermelho — 0,5 g"
+      ],
+      "respostaCorreta": 0,
       "explicacao": "Saleiro CINZA (0,4g): para carnes 4:1. Saleiro VERDE (0,3g): para carnes 10:1. A quantidade maior de sal no cinza (0,4g vs 0,3g) é proporcional ao tamanho maior das carnes 4:1.",
       "dica": "Cinza: 4:1 (0,4g) / Verde: 10:1 (0,3g).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_040",
@@ -985,24 +943,23 @@
       "subcategoria": "🔑 Pegadores",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pegador", "carne", "cores", "best-burguer"],
+      "tags": [
+        "pegador",
+        "carne",
+        "cores",
+        "best-burguer"
+      ],
       "pergunta": "Para qual tipo de carne é usado o pegador AZUL no Best Burger?",
-      "alternativas": ["Carnes vermelhas com cebola", "Carnes 4:1 e 10:1 SEM cebola", "Somente carnes brancas (frango)", "Somente carnes 4:1 com cebola"],
+      "alternativas": [
+        "Somente carnes brancas (frango)",
+        "Carnes 4:1 e 10:1 SEM cebola",
+        "Carnes vermelhas com cebola",
+        "Somente carnes 4:1 com cebola"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Pegador AZUL: carnes 4:1 e 10:1 SEM cebola. Pegador VERMELHO: carnes vermelhas COM cebola. Pegador VERDE: carnes brancas. A cor evita contaminação cruzada por cebola em pedidos personalizados.",
       "dica": "Azul = sem cebola (4:1 e 10:1) / Vermelho = com cebola / Verde = brancas.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_041",
@@ -1010,24 +967,23 @@
       "subcategoria": "🔥 Chapa — Lotes",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "4:1", "lote", "best-burguer"],
+      "tags": [
+        "chapa",
+        "4:1",
+        "lote",
+        "best-burguer"
+      ],
       "pergunta": "Qual o máximo de carnes 4:1 por rodada na chapa Best Burger?",
-      "alternativas": ["2 carnes", "3 carnes", "4 carnes", "6 carnes"],
+      "alternativas": [
+        "2 carnes",
+        "3 carnes",
+        "4 carnes",
+        "6 carnes"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O lote máximo para carnes 4:1 na chapa Best Burger é de 4 carnes por rodada. Para 10:1, o máximo é 6 carnes. O limite por rodada garante cozimento uniforme e qualidade HEBT em todas as carnes.",
       "dica": "4:1: máximo 4 por rodada / 10:1: máximo 6.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_042",
@@ -1035,24 +991,22 @@
       "subcategoria": "🔥 Chapa — Configuração",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["chapa", "temperatura", "best-burguer"],
+      "tags": [
+        "chapa",
+        "temperatura",
+        "best-burguer"
+      ],
       "pergunta": "Qual é a temperatura da placa INFERIOR da chapa no Best Burger?",
-      "alternativas": ["150°C (302°F)", "177°C (350°F)", "200°C (392°F)", "218°C (425°F)"],
+      "alternativas": [
+        "150°C (302°F)",
+        "177°C (350°F)",
+        "200°C (392°F)",
+        "218°C (425°F)"
+      ],
       "respostaCorreta": 1,
       "explicacao": "No Best Burger, a placa inferior da chapa opera a 177°C (350°F). A placa superior opera a 218°C (425°F). A diferença entre as placas cria o cozimento duplo característico do BB: selagem superior intensa e base suave.",
       "dica": "Inferior: 177°C (350°F) / Superior: 218°C (425°F).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_043",
@@ -1060,24 +1014,23 @@
       "subcategoria": "🍟 Diferenças vs. Padrão",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["filtragem", "oleo", "best-burguer", "diferencial"],
+      "tags": [
+        "filtragem",
+        "oleo",
+        "best-burguer",
+        "diferencial"
+      ],
       "pergunta": "Qual é a principal razão para filtrar o óleo 2 vezes ao dia no Best Burger (vs. 1x no padrão)?",
-      "alternativas": ["Atender exigência legal da vigilância sanitária", "Garantir qualidade superior das batatas fritas e prolongar a vida útil do óleo", "Reduzir o consumo de óleo e economizar custos operacionais", "Aumentar a velocidade de fritura das batatas"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Atender exigência legal da vigilância sanitária",
+        "Aumentar a velocidade de fritura das batatas",
+        "Garantir qualidade superior das batatas fritas e prolongar a vida útil do óleo",
+        "Reduzir o consumo de óleo e economizar custos operacionais"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "A filtragem 2x/dia no Best Burger garante qualidade superior das batatas fritas (cor dourada, textura crocante, sabor) e prolonga a vida útil do óleo ao remover resíduos que causam degradação acelerada.",
       "dica": "2x/dia = qualidade superior das fritas + mais vida útil ao óleo.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_044",
@@ -1085,24 +1038,22 @@
       "subcategoria": "📦 Mesa de Condimentação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["mesa-condimentacao", "best-burguer", "ingredientes"],
+      "tags": [
+        "mesa-condimentacao",
+        "best-burguer",
+        "ingredientes"
+      ],
       "pergunta": "Qual é a filosofia de abastecimento da mesa de condimentação no Best Burger?",
-      "alternativas": ["Abastecer ao máximo para evitar falta durante o rush", "Mesas com MENOS produto com MAIS frequência, garantindo ingredientes sempre frescos", "Abastecer apenas quando a bandeja estiver completamente vazia", "Manter estoque para pelo menos 2 horas de produção na mesa"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Manter estoque para pelo menos 2 horas de produção na mesa",
+        "Abastecer apenas quando a bandeja estiver completamente vazia",
+        "Abastecer ao máximo para evitar falta durante o rush",
+        "Mesas com MENOS produto com MAIS frequência, garantindo ingredientes sempre frescos"
+      ],
+      "respostaCorreta": 3,
       "explicacao": "A filosofia BB é 'mesas com MENOS produto com MAIS frequência'. Isso garante que alface, tomate, queijo e outros ingredientes fiquem o menor tempo possível na mesa, chegando sempre frescos ao lanche.",
       "dica": "Menos produto + mais frequência = ingredientes sempre frescos na mesa.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_045",
@@ -1110,24 +1061,23 @@
       "subcategoria": "🍞 Pães — Ambientação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "ambientacao", "descongelamento", "best-burguer"],
+      "tags": [
+        "pao",
+        "ambientacao",
+        "descongelamento",
+        "best-burguer"
+      ],
       "pergunta": "Quantas vezes por dia os pães congelados devem ser retirados do freezer para ambientação no Best Burger?",
-      "alternativas": ["1 vez ao dia", "2 vezes ao dia", "3 vezes ao dia", "4 vezes ao dia"],
+      "alternativas": [
+        "1 vez ao dia",
+        "2 vezes ao dia",
+        "3 vezes ao dia",
+        "4 vezes ao dia"
+      ],
       "respostaCorreta": 2,
       "explicacao": "Conforme a tabela Charts do Best Burger, os pães congelados devem ser retirados do freezer 3 vezes ao dia para o processo de ambientação e descongelamento.",
       "dica": "3 retiradas por dia conforme Charts.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_046",
@@ -1135,24 +1085,23 @@
       "subcategoria": "🍞 Pães — Ambientação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "ambientacao", "engradado", "best-burguer"],
+      "tags": [
+        "pao",
+        "ambientacao",
+        "engradado",
+        "best-burguer"
+      ],
       "pergunta": "Quantos pacotes de pão devem ser colocados por engradado durante a ambientação no Best Burger?",
-      "alternativas": ["1 pacote + 1 engradado vazio em cima", "2 pacotes por engradado", "3 pacotes por engradado", "Quantos couberem"],
+      "alternativas": [
+        "1 pacote + 1 engradado vazio em cima",
+        "2 pacotes por engradado",
+        "3 pacotes por engradado",
+        "Quantos couberem"
+      ],
       "respostaCorreta": 0,
       "explicacao": "O procedimento correto é colocar apenas 1 pacote de pão por engradado, com 1 engradado vazio em cima para proteger e organizar o descongelamento.",
       "dica": "1 pacote por engradado + 1 engradado vazio em cima.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_047",
@@ -1160,24 +1109,23 @@
       "subcategoria": "🍞 Pães — Ambientação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "ambientacao", "tempo", "best-burguer"],
+      "tags": [
+        "pao",
+        "ambientacao",
+        "tempo",
+        "best-burguer"
+      ],
       "pergunta": "Qual é o tempo RECOMENDADO de consumo dos pães após a retirada do freezer no Best Burger?",
-      "alternativas": ["4 horas", "12 horas", "24 horas", "48 horas"],
+      "alternativas": [
+        "4 horas",
+        "12 horas",
+        "24 horas",
+        "48 horas"
+      ],
       "respostaCorreta": 2,
       "explicacao": "O tempo recomendado de consumo após a retirada do freezer é de 24 horas. O tempo mínimo de descongelamento é 4 horas e a vida útil secundária total é de 48 horas.",
       "dica": "Recomendado: 24h de consumo (mínimo 4h de descongelamento, máximo 48h).",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_048",
@@ -1185,24 +1133,23 @@
       "subcategoria": "🍞 Pães — Ambientação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["pao", "ambientacao", "embalagem", "best-burguer"],
+      "tags": [
+        "pao",
+        "ambientacao",
+        "embalagem",
+        "best-burguer"
+      ],
       "pergunta": "Como devem ficar os pacotes de pão durante o processo de ambientação no Best Burger?",
-      "alternativas": ["Abertos para acelerar o descongelamento", "Fechados (embalagem lacrada) para manter a qualidade", "Com a embalagem rasgada para ventilar", "Sem embalagem em prateleira refrigerada"],
+      "alternativas": [
+        "Sem embalagem em prateleira refrigerada",
+        "Fechados (embalagem lacrada) para manter a qualidade",
+        "Com a embalagem rasgada para ventilar",
+        "Abertos para acelerar o descongelamento"
+      ],
       "respostaCorreta": 1,
       "explicacao": "Os pacotes de pão devem permanecer FECHADOS durante toda a ambientação. Abrir a embalagem antes do uso prejudica a textura e a qualidade do pão.",
       "dica": "Embalagem sempre fechada durante a ambientação.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_049",
@@ -1210,24 +1157,23 @@
       "subcategoria": "🍞 Pães — Ambientação",
       "dificuldade": 3,
       "tipo": "multipla_escolha",
-      "tags": ["tostadeira", "compressao", "pao", "best-burguer"],
+      "tags": [
+        "tostadeira",
+        "compressao",
+        "pao",
+        "best-burguer"
+      ],
       "pergunta": "Qual a configuração de compressão da tostadeira para os pães Best Burger?",
-      "alternativas": ["2D", "3D", "4D", "5D"],
+      "alternativas": [
+        "2D",
+        "3D",
+        "4D",
+        "5D"
+      ],
       "respostaCorreta": 2,
       "explicacao": "A tostadeira deve ser configurada na compressão 4D para os pães Best Burger, garantindo a caramelização correta e o padrão HEBT de qualidade.",
       "dica": "Compressão da tostadeira: 4D para pães BB.",
-      "tempoEstimado": 20,
-      "xp": 15,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bb_050",
@@ -1235,24 +1181,23 @@
       "subcategoria": "🍞 Pães — Ambientação",
       "dificuldade": 2,
       "tipo": "multipla_escolha",
-      "tags": ["tostadeira", "teflon", "limpeza", "best-burguer"],
+      "tags": [
+        "tostadeira",
+        "teflon",
+        "limpeza",
+        "best-burguer"
+      ],
       "pergunta": "Com que frequência deve ser feita a limpeza do Teflon da tostadeira no Best Burger?",
-      "alternativas": ["A cada turno", "Diariamente", "Semanalmente", "Mensalmente"],
-      "respostaCorreta": 1,
+      "alternativas": [
+        "Mensalmente",
+        "Semanalmente",
+        "Diariamente",
+        "A cada turno"
+      ],
+      "respostaCorreta": 2,
       "explicacao": "O Teflon da tostadeira deve ser limpo diariamente no Best Burger para garantir higiene e qualidade na caramelização dos pães.",
       "dica": "Limpeza do Teflon: diária.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": { "facilidade": 2.5, "intervalo": 1, "ultimaRevisao": null, "proximaRevisao": null, "nivelDominio": 0 },
-      "errorStats": { "timesWrong": 0, "timesCorrect": 0, "weaknessScore": 0 },
-      "analytics": { "globalAccuracy": 0, "averageTime": 0, "dropRate": 0 },
-      "contextHints": [], "relatedQuestions": []
+      "ativo": true
     }
   ]
 }

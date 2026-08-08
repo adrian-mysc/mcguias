@@ -249,120 +249,14 @@
 
   <script src="../js/main.js" defer></script>
   <script>
-    const QUIZ_MCFRITAS = [
-      // ── Material oficial (PDF) — adicionadas via extração ──
-      {
-        category: "🌡️ McFritas · Temperatura",
-        question: "Qual a temperatura da fritadeira de McFritas?",
-        options: ["160°C", "168°C", "175°C", "180°C"],
-        answer: "168°C",
-        explanation: "A fritadeira de McFritas opera a 168°C."
-      },
-      {
-        category: "⚙️ McFritas · Procedimento",
-        question: "Qual o tempo de fritura programado das McFritas?",
-        options: ["2'10\"", "3'10\"", "3'15\"", "7'"],
-        answer: "3'10\"",
-        explanation: "O tempo de fritura programado é de 3'10\", com um Duty de 30 segundos."
-      },
-      {
-        category: "⏱️ McFritas · Validade",
-        question: "Qual o tempo de vida programado das McFritas prontas (na estufa)?",
-        options: ["5 minutos", "7 minutos", "10 minutos", "15 minutos"],
-        answer: "7 minutos",
-        explanation: "O tempo de vida programado das McFritas prontas é de 7 minutos."
-      },
-      {
-        category: "⚙️ McFritas · Procedimento",
-        question: "Qual a duração do Duty na fritura das McFritas?",
-        options: ["15 segundos", "20 segundos", "30 segundos", "45 segundos"],
-        answer: "30 segundos",
-        explanation: "O Duty é de 30 segundos — ao soar, ativa-se o próximo cesto intercalando as cubas."
-      },
-      {
-        category: "🍟 McFritas · Sal",
-        question: "Qual a quantidade de sal aplicada nas McFritas?",
-        options: ["2g", "4g", "6g", "8g"],
-        answer: "4g",
-        explanation: "Despeja-se 4g de sal, segurando o saleiro a 20cm do centro das McFritas e virando uma única vez."
-      },
-      {
-        category: "🍟 McFritas · Sal",
-        question: "A que altura o saleiro deve ser mantido ao salgar as McFritas?",
-        options: ["10cm", "15cm", "20cm", "30cm"],
-        answer: "20cm",
-        explanation: "O saleiro é mantido pela alça a 20cm e no centro das McFritas, virado uma única vez sem agitar."
-      },
-      {
-        category: "⏱️ McFritas · Validade",
-        question: "Qual o tempo de vida da batata no congelador portátil?",
-        options: ["1 hora", "2 horas", "4 horas", "24 horas"],
-        answer: "2 horas",
-        explanation: "A batata tem tempo de vida de 2 horas no congelador portátil."
-      },
-      {
-        category: "⏱️ McFritas · Validade",
-        question: "Qual o tempo de vida da batata na encestadora automática?",
-        options: ["2 horas", "12 horas", "24 horas", "48 horas"],
-        answer: "24 horas",
-        explanation: "Na encestadora automática a batata tem tempo de vida de 24 horas."
-      },
-      {
-        category: "🍟 McFritas · Procedimento",
-        question: "Como os palitos devem ser alinhados no encestamento manual?",
-        options: ["Com as mãos", "Com o saco plástico das McFritas, nunca com as mãos", "Com a pá de fritura", "Batendo o cesto na bancada"],
-        answer: "Com o saco plástico das McFritas, nunca com as mãos",
-        explanation: "Usa-se o próprio saco plástico das McFritas para alinhar os palitos, após as duas passadas; jamais colocar as mãos."
-      },
-      {
-        category: "🛢️ McFritas · Óleo",
-        question: "Até qual marca o nível de óleo na cuba deve ser mantido?",
-        options: ["Primeira linha", "Segunda linha", "Até a borda", "Metade da cuba"],
-        answer: "Segunda linha",
-        explanation: "Mantenha o nível de óleo respeitando a segunda linha na cuba; se necessário, reponha avisando o Gerente."
-      },
-      { category: "🌡️ Temperatura", question: "Qual a temperatura da fritadeira de McFritas?", options: ["155°C", "160°C", "168°C", "180°C"], answer: "168°C", explanation: "A fritadeira de McFritas opera a 168°C." },
-      { category: "⏱️ Tempo", question: "Qual o tempo de fritura das McFritas?", options: ["2min30s", "3min00s", "3min10s", "4min00s"], answer: "3min10s", explanation: "O tempo de fritura das McFritas é 3 minutos e 10 segundos." },
-      { category: "📦 Tamanhos", question: "Qual o peso da McFritas tamanho Médio?", options: ["73g", "95g", "102g", "146g"], answer: "102g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
-      { category: "📦 Tamanhos", question: "Qual o peso da McFritas tamanho Grande?", options: ["73g", "102g", "120g", "146g"], answer: "146g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
-      { category: "📦 Tamanhos", question: "Qual o peso da McFritas tamanho Pequeno?", options: ["50g", "65g", "73g", "85g"], answer: "73g", explanation: "McFritas P = 73g · M = 102g · G = 146g." },
-      { category: "🛢️ Óleo", question: "Qual o limite máximo de Compostos Polares no óleo?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "Os Compostos Polares devem ser iguais ou abaixo de 24%." },
-      { category: "🛢️ Óleo", question: "Em qual linha da cuba deve ser mantido o nível de óleo?", options: ["Primeira linha", "Segunda linha", "Terceira linha", "Linha máxima"], answer: "Segunda linha", explanation: "O nível de óleo deve respeitar a segunda linha na cuba." },
-      { category: "⏱️ Validade", question: "Qual a validade dos sacos de McFritas no congelador portátil?", options: ["6 horas", "12 horas", "24 horas", "48 horas"], answer: "24 horas", explanation: "Os sacos de McFritas no congelador portátil têm validade de 24 horas." },
-      { category: "🍟 McFritas · Temperatura", question: "Qual a temperatura das fritadeiras de frango e tortas?", options: ["168°C", "175°C", "180°C", "190°C"], answer: "180°C", explanation: "Frango e tortas fritam a 180°C. McFritas = 168°C." },
-      { category: "🍟 McFritas · Procedimento", question: "Como deve ser feito o movimento das fritas durante o chacoalhar?", options: ["Chacoalhar para frente e para trás", "Chacoalhar lateralmente", "Virar completamente o cesto", "Não chacoalhar"], answer: "Chacoalhar para frente e para trás", explanation: "Ao retirar, chacoalhar o cesto para frente e para trás para escorrer o excesso de óleo." },
-      { category: "🍟 McFritas · Procedimento", question: "Qual o tempo máximo de salga das McFritas após sair do óleo?", options: ["5 segundos", "10 segundos", "15 segundos", "30 segundos"], answer: "10 segundos", explanation: "A salga deve ser feita em até 10 segundos após a fritura para aderir corretamente." },
-      { category: "⏱️ McFritas · Validade", question: "Qual a validade das McFritas prontas na área de manutenção de calor?", options: ["2 minutos", "5 minutos", "7 minutos", "10 minutos"], answer: "7 minutos", explanation: "As McFritas têm validade de 7 minutos na área de manutenção de calor." },
-      { category: "🛢️ McFritas · Óleo", question: "Quantas vezes por dia o óleo deve ser filtrado?", options: ["1 vez", "2 vezes", "3 vezes", "4 vezes"], answer: "2 vezes", explanation: "O óleo das fritadeiras deve ser filtrado 2 vezes ao dia." },
-      { category: "📦 McFritas · Estocagem", question: "Os sacos de batata devem ser encestados de qual forma?", options: ["Soltos na batata", "Sem encestamento prévio", "Com o cesto já posicionado", "Encestados com a lâmina"], answer: "Encestados com a lâmina", explanation: "As batatas devem ser encestadas usando a lâmina de produção para organizar as porções no cesto." },
-      { category: "🌡️ McFritas · Temperatura", question: "Qual a temperatura interna mínima para as McFritas prontas?", options: ["60°C", "70°C", "74°C", "80°C"], answer: "74°C", explanation: "A temperatura interna mínima das McFritas prontas é de 74°C (165°F)." },
-      { category: "🛢️ McFritas · Óleo", question: "Quando o óleo deve ser descartado mesmo abaixo do limite de 24%?", options: ["Nunca, apenas quando atingir 24%", "A cada 3 dias independente do percentual", "Quando apresentar cor escura, fumaça excessiva ou odor", "Apenas quando o cliente reclamar"], answer: "Quando apresentar cor escura, fumaça excessiva ou odor", explanation: "O óleo deve ser descartado quando apresentar sinais visuais como cor escura, fumaça excessiva ou odor estranho, mesmo abaixo do limite." },
-      { category: "⚙️ McFritas · Procedimento", question: "O que deve ser feito com os sacos de batata no congelador portátil?", options: ["Empilhar sem organização", "Manter na posição vertical para encestamento fácil", "Descongelar antes de usar", "Armazenar abertos"], answer: "Manter na posição vertical para encestamento fácil", explanation: "Os sacos no congelador portátil devem estar na posição que facilite o encestamento." },
-      { category: "📦 McFritas · Tamanhos", question: "Quantas McFritas P cabem em um cesto de fritura?", options: ["2 porções", "3 porções", "4 porções", "6 porções"], answer: "6 porções", explanation: "Em um cesto de McFritas P cabem 6 porções por rodada." },
-      { category: "🛢️ McFritas · Óleo", question: "Com qual instrumento é medido o percentual de compostos polares do óleo?", options: ["Termômetro", "Balança digital", "Testo ou medidor de compostos polares", "Refratômetro"], answer: "Testo ou medidor de compostos polares", explanation: "O percentual de compostos polares é medido com o Testo ou medidor específico de compostos polares." },
-      { category: "🍟 McFritas · Qualidade", question: "Quais são as características visuais de McFritas de qualidade?", options: ["Escuras e com sal abundante", "Douradas, crocantes por fora e macias por dentro", "Brancas e sem sal", "Douradas e bem salgadas"], answer: "Douradas, crocantes por fora e macias por dentro", explanation: "McFritas de qualidade: douradas, crocantes por fora, macias por dentro, bem salgadas." },
-      { category: "🍟 McFritas · Sal", question: "Quando deve ser aplicado o sal nas McFritas?", options: ["Antes de fritar", "Imediatamente após sair da fritadeira, ainda quentes", "Antes de entregar ao cliente", "A qualquer momento"], answer: "Imediatamente após sair da fritadeira, ainda quentes", explanation: "O sal deve ser aplicado imediatamente após sair da fritadeira enquanto as batatas ainda estão quentes." },
-      { category: "🍟 McFritas · Sal", question: "Como aplicar o sal corretamente nas McFritas?", options: ["Jogar todo o sal de uma vez no centro", "Distribuir uniformemente com movimentos de vai e vem", "Aplicar apenas nas pontas", "Deixar o cliente salgar"], answer: "Distribuir uniformemente com movimentos de vai e vem", explanation: "Aplicar o sal com movimentos de vai e vem para distribuir uniformemente." },
-      { category: "🍟 McFritas · Estocagem", question: "Como devem ser posicionados os sacos de batata no congelador portátil?", options: ["Deitados horizontalmente", "Em pé verticalmente", "De qualquer forma", "Empilhados no máximo 3"], answer: "Em pé verticalmente", explanation: "Os sacos de batata devem ficar em pé verticalmente no congelador portátil." },
-      { category: "🌡️ McFritas · Temperatura", question: "Qual a temperatura das fritadeiras de McFritas?", options: ["160°C", "165°C", "168°C", "175°C"], answer: "168°C", explanation: "A temperatura das fritadeiras de McFritas é 168°C (335°F)." },
-      { category: "🍟 McFritas · Porções", question: "Qual o equipamento usado para porcionar as McFritas corretamente?", options: ["Colher", "Concha", "Copo Medidor de Fritas específico", "Qualquer recipiente"], answer: "Copo Medidor de Fritas específico", explanation: "Usar o Copo Medidor de Fritas específico para cada tamanho (P, M, G, GG)." },
-      { category: "🍟 McFritas · Porções", question: "Como garantir a porção correta ao encher o copo de McFritas?", options: ["Encher pela lateral de cima direto", "Encher pelo fundo do copo com o cesto", "Usar colher para colocar", "Estimar visualmente"], answer: "Encher pelo fundo do copo com o cesto", explanation: "Usar a técnica de encher o copo pelo fundo (método cesto) para garantir a porção correta." },
-      { category: "🛢️ McFritas · Óleo", question: "Quais são os sinais de que o óleo precisa ser filtrado?", options: ["Cor levemente amarelada", "Espuma excessiva, cor escura ou cheiro forte", "Temperatura acima do normal", "Batatas grudando no cesto"], answer: "Espuma excessiva, cor escura ou cheiro forte", explanation: "Sinais para filtrar: espuma excessiva, cor escura, cheiro forte ou fumaça." },
-      { category: "⏱️ McFritas · Validade", question: "Qual a validade das McFritas saladas na área de manutenção de calor?", options: ["2 minutos", "5 minutos", "7 minutos", "10 minutos"], answer: "7 minutos", explanation: "McFritas saladas têm 7 minutos de validade na área de manutenção de calor." },
-      { category: "🍟 McFritas · Descarte", question: "O que fazer com McFritas que passaram do tempo de validade?", options: ["Reutilizar se ainda estiverem quentes", "Descartar imediatamente e preparar novo lote", "Salgar mais para melhorar", "Devolver ao congelador"], answer: "Descartar imediatamente e preparar novo lote", explanation: "McFritas fora do tempo de validade devem ser descartadas imediatamente." },
-      { category: "🌡️ McFritas · Temperatura", question: "Qual a temperatura mínima de serviço das McFritas?", options: ["52°C", "57°C", "63°C", "70°C"], answer: "63°C", explanation: "A temperatura mínima de serviço das McFritas é 63°C." },
-      { category: "🍟 McFritas · Pré-pico", question: "O que fazer no pré-pico para garantir McFritas sempre prontas?", options: ["Fritar o máximo possível", "Calcular a demanda e fritar lotes menores e frequentes", "Estocar batatas já fritas sem sal", "Não há procedimento especial"], answer: "Calcular a demanda e fritar lotes menores e frequentes", explanation: "No pré-pico, calcular demanda e fritar lotes menores e frequentes para manter qualidade." },
-      { category: "🍟 McFritas · Batata", question: "Por quanto tempo os sacos de batata podem ficar no congelador portátil após abertura?", options: ["1 hora", "4 horas", "8 horas", "Até o final do turno"], answer: "8 horas", explanation: "Após abertura, os sacos de batata têm validade de 8 horas no congelador portátil." },
-      { category: "⚙️ McFritas · Equipamento", question: "O que verificar na fritadeira antes de iniciar a operação?", options: ["Apenas o nível de óleo", "Nível de óleo, temperatura, filtro limpo e funcionamento do cesto", "Apenas a temperatura", "Nada, o gerente verifica"], answer: "Nível de óleo, temperatura, filtro limpo e funcionamento do cesto", explanation: "Verificar: nível de óleo, temperatura atingida, filtro limpo e funcionamento correto do cesto." }
-    ];
 
     document.addEventListener("DOMContentLoaded", () => {
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
-        if (quizPanel.classList.contains("active")) { initQuiz(QUIZ_MCFRITAS, 'McFritas'); observer.disconnect(); }
+        if (quizPanel.classList.contains("active")) { initQuizFromJSON('mcfritas', 'McFritas'); observer.disconnect(); }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_MCFRITAS, 'McFritas');
+      if (quizPanel.classList.contains("active")) initQuizFromJSON('mcfritas', 'McFritas');
     });
   </script>
 

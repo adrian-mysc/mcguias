@@ -1,0 +1,827 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-08-07",
+  "categoria": "supervisores",
+  "nivel": "basico",
+  "migratedFrom": "supervisores.html",
+  "questions": [
+    {
+      "id": "supervisores_001",
+      "categoria": "supervisores",
+      "subcategoria": "📊 Supervisores · KPIs",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o mínimo de GCs mensais para que um McCafé seja considerado produtivo?",
+      "alternativas": [
+        "1.000 GCs",
+        "2.000 GCs",
+        "3.000 GCs",
+        "5.000 GCs"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "McCafés que realizam menos de 3.000 GCs/mês devem ser avaliados quanto a posicionamento, layout e treinamento.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_002",
+      "categoria": "supervisores",
+      "subcategoria": "📊 Supervisores · KPIs",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tempo"
+      ],
+      "pergunta": "Qual a produtividade mínima esperada no McCafé?",
+      "alternativas": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A produtividade mínima esperada no McCafé é 6. Abaixo disso, avaliar posicionamento e treinamento.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_003",
+      "categoria": "supervisores",
+      "subcategoria": "📊 Supervisores · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "tempo"
+      ],
+      "pergunta": "Quantas pessoas são necessárias para um volume de 22 a 28 GCs/hora?",
+      "alternativas": [
+        "3 pessoas",
+        "4 pessoas",
+        "5 pessoas",
+        "6 pessoas"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Para 22 a 28 GCs/hora: mínimo 4 pessoas no McCafé.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_004",
+      "categoria": "supervisores",
+      "subcategoria": "📊 Supervisores · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "limite",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Quantas pessoas para atender acima de 76 GCs/hora?",
+      "alternativas": [
+        "7 pessoas",
+        "8 pessoas",
+        "9 pessoas",
+        "10 pessoas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para acima de 76 GCs/hora: máximo de 9 pessoas, cobrindo todas as funções do McCafé.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_005",
+      "categoria": "supervisores",
+      "subcategoria": "🔍 Supervisores · Auditoria",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limite",
+        "oleo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual o limite máximo de Compostos Polares no óleo antes do descarte?",
+      "alternativas": [
+        "15%",
+        "20%",
+        "24%",
+        "30%"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O óleo deve ser descartado quando os Compostos Polares atingirem 24%.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_006",
+      "categoria": "supervisores",
+      "subcategoria": "🔍 Supervisores · Auditoria",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "remocao",
+        "temperatura",
+        "tempo",
+        "validade"
+      ],
+      "pergunta": "O que fazer ao encontrar produto sem etiqueta de tempo de vida?",
+      "alternativas": [
+        "Anotar e continuar",
+        "Descartar produto e retreinar a equipe",
+        "Perguntar ao atendente",
+        "Colocar etiqueta com estimativa"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Produto sem etiqueta: descartar imediatamente e retreinar a equipe da estação sobre o procedimento.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_007",
+      "categoria": "supervisores",
+      "subcategoria": "🛠️ Supervisores · Ferramentas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "seguranca_alimentar",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a periodicidade do Checklist Pré-Pico e Segurança Alimentar?",
+      "alternativas": [
+        "A cada período de pico",
+        "Uma vez por dia",
+        "A cada turno",
+        "Semanalmente"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Checklist Pré-Pico deve ser executado a cada período de pico do restaurante.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_008",
+      "categoria": "supervisores",
+      "subcategoria": "📈 Supervisores · Vendas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual estratégia de venda foca em itens premium para aumentar o ticket médio?",
+      "alternativas": [
+        "URD",
+        "Ticket Médio — combos e upgrades",
+        "IP",
+        "LSM"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Para aumentar ticket médio: focar em itens premium ou combos e impulsionar upgrade de produto.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_009",
+      "categoria": "supervisores",
+      "subcategoria": "👥 Supervisores · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "limite",
+        "tempo"
+      ],
+      "pergunta": "Quantas pessoas são necessárias para 15 a 21 GCs/hora no McCafé?",
+      "alternativas": [
+        "1 pessoa",
+        "2 pessoas",
+        "3 pessoas",
+        "4 pessoas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para 15 a 21 GCs/hora: mínimo 3 pessoas no McCafé.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_010",
+      "categoria": "supervisores",
+      "subcategoria": "👥 Supervisores · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "tempo"
+      ],
+      "pergunta": "Quantas pessoas para 29 a 35 GCs/hora?",
+      "alternativas": [
+        "3 pessoas",
+        "4 pessoas",
+        "5 pessoas",
+        "6 pessoas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Para 29 a 35 GCs/hora: mínimo 5 pessoas.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_011",
+      "categoria": "supervisores",
+      "subcategoria": "👥 Supervisores · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "peps",
+        "sal",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a função adicional ao passar de 35 para 36 GCs/hora?",
+      "alternativas": [
+        "Salão",
+        "Caixa 2",
+        "Entrega Externa 2",
+        "Estocagem"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "De 36 a 55 GCs/hora: 6 pessoas — a função adicional é Estocagem.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_012",
+      "categoria": "supervisores",
+      "subcategoria": "📊 Supervisores · KPIs",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "ppf",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que é o IP (Índice de Produtividade) no McCafé?",
+      "alternativas": [
+        "Itens por pedido",
+        "Vendas por turno",
+        "GCs por colaborador por hora",
+        "Ticket médio por cliente"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "IP = Índice de Produtividade: mede GCs por colaborador por hora. Meta mínima: 6.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_013",
+      "categoria": "supervisores",
+      "subcategoria": "📊 Supervisores · KPIs",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "O que significa URD no contexto do McCafé?",
+      "alternativas": [
+        "Unidade de Revisão Diária",
+        "Unidade de Receita Diária",
+        "Units per Receipt — bebidas por cupom",
+        "Usuários Registrados no Dia"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "URD = Units per Receipt: quantidade de itens McCafé por cupom fiscal. Meta monitorada diariamente.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_014",
+      "categoria": "supervisores",
+      "subcategoria": "📊 Supervisores · KPIs",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "O que analisar em um McCafé com IP abaixo de 6?",
+      "alternativas": [
+        "Apenas o treinamento",
+        "Apenas o posicionamento",
+        "Apenas a qualidade do produto",
+        "Posicionamento, layout, utensílios, equipamentos e nível de treinamento"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "IP abaixo de 6 exige avaliação completa: posicionamento x projeção, layout, utensílios, equipamentos e treinamento.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_015",
+      "categoria": "supervisores",
+      "subcategoria": "🌡️ Supervisores · Seg. Alimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura",
+        "tempo",
+        "uhc"
+      ],
+      "pergunta": "Qual a temperatura mínima interna de todos os produtos na UHC?",
+      "alternativas": [
+        "55°C",
+        "60°C",
+        "65°C",
+        "74°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Todos os produtos na UHC devem ter temperatura interna mínima de 60°C.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_016",
+      "categoria": "supervisores",
+      "subcategoria": "🌡️ Supervisores · Seg. Alimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura de armazenamento dos produtos refrigerados?",
+      "alternativas": [
+        "0°C a 2°C",
+        "1°C a 4°C",
+        "5°C a 8°C",
+        "8°C a 12°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Produtos refrigerados: manter entre 1°C e 4°C.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_017",
+      "categoria": "supervisores",
+      "subcategoria": "🌡️ Supervisores · Seg. Alimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "angulo",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a temperatura máxima para produtos congelados?",
+      "alternativas": [
+        "-10°C",
+        "-15°C",
+        "-18°C",
+        "-20°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Produtos congelados devem ser mantidos a -18°C ou abaixo.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_018",
+      "categoria": "supervisores",
+      "subcategoria": "🌡️ Supervisores · Seg. Alimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cozimento",
+        "porcao",
+        "taylor-ng",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual a temperatura interna mínima do frango após o cozimento?",
+      "alternativas": [
+        "65°C",
+        "70°C",
+        "74°C",
+        "80°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Todos os produtos de frango devem atingir 74°C (165°F) internamente após o cozimento.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_019",
+      "categoria": "supervisores",
+      "subcategoria": "⚠️ Supervisores · Ações",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "refrigeracao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "O que fazer ao encontrar temperatura da câmara fora do padrão?",
+      "alternativas": [
+        "Monitorar por 1 hora antes de agir",
+        "Transferir produtos para outra câmara e ignorar",
+        "Descartar produtos, chamar manutenção e registrar ocorrência",
+        "Apenas aumentar o termostato"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Câmara fora do padrão: descartar produtos afetados, chamar manutenção imediatamente e registrar a ocorrência.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_020",
+      "categoria": "supervisores",
+      "subcategoria": "⚠️ Supervisores · Ações",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "filtro",
+        "oleo",
+        "ovo",
+        "temperatura"
+      ],
+      "pergunta": "Óleo com Compostos Polares acima de 24% — qual a ação correta?",
+      "alternativas": [
+        "Filtrar o óleo e continuar usando",
+        "Adicionar óleo novo para diluir",
+        "Descartar imediatamente e repor com óleo novo",
+        "Aguardar o fim do turno para trocar"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Óleo com Compostos Polares acima de 24% deve ser descartado imediatamente. Não filtrar nem diluir.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_021",
+      "categoria": "supervisores",
+      "subcategoria": "⚠️ Supervisores · Ações",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "programacao",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Ao encontrar um equipamento com mau funcionamento, qual o primeiro passo?",
+      "alternativas": [
+        "Aguardar o dia seguinte para verificar",
+        "Desligar e abandonar o equipamento",
+        "Abrir chamado de manutenção e comunicar o gerente",
+        "Tentar reparar por conta própria"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Equipamento com problema: abrir chamado imediatamente e comunicar o gerente para ajustar o posicionamento.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_022",
+      "categoria": "supervisores",
+      "subcategoria": "🛠️ Supervisores · Ferramentas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual a diferença entre LSM e uma promoção nacional?",
+      "alternativas": [
+        "LSM é uma ação de marketing local focada no cliente da região",
+        "São a mesma coisa",
+        "LSM é mais caro",
+        "LSM é feito pela franqueadora"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "LSM (Local Store Marketing) é uma ação local desenvolvida pelo próprio restaurante para atrair e fidelizar clientes da região.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_023",
+      "categoria": "supervisores",
+      "subcategoria": "🛠️ Supervisores · Ferramentas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "limite",
+        "ovo",
+        "peps",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual o objetivo principal do Checklist Pré-Pico?",
+      "alternativas": [
+        "Conferir o caixa",
+        "Fazer inventário de estoque",
+        "Treinar novos funcionários",
+        "Garantir máximo de GCs com produto de alto padrão no horário de pico"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O Checklist Pré-Pico garante que o restaurante esteja pronto para captar o máximo de GCs oferecendo produto de alto padrão.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_024",
+      "categoria": "supervisores",
+      "subcategoria": "🛠️ Supervisores · Ferramentas",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "ppf",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que avaliar para aumentar as URDs de café?",
+      "alternativas": [
+        "Quantidade de máquinas de café",
+        "Apenas o preço do café",
+        "Apenas a qualidade do café",
+        "Garantir que todos ofereçam café associado a qualquer pedido"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Para aumentar URDs: cada atendente deve oferecer café + produto salgado/doce associado a qualquer pedido.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_025",
+      "categoria": "supervisores",
+      "subcategoria": "👥 Supervisores · Posicionamento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "peps",
+        "sal",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Qual função é adicionada ao passar de 55 para 56 GCs/hora?",
+      "alternativas": [
+        "Bebidas McCafé 2",
+        "Estocagem",
+        "Salão",
+        "Entrega Externa 2"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "De 56 a 65 GCs/hora: 7 pessoas — função adicional é Bebidas McCafé 2.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_026",
+      "categoria": "supervisores",
+      "subcategoria": "📊 Supervisores · KPIs",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual é a meta de Vendas Comp. no McCafé?",
+      "alternativas": [
+        "Negativa",
+        "Zero",
+        "Igual ao ano anterior",
+        "Positiva — crescimento sobre ano anterior"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Vendas Comp. McCafé deve ser positiva: crescimento comparado ao mesmo período do ano anterior.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_027",
+      "categoria": "supervisores",
+      "subcategoria": "🌡️ Supervisores · Seg. Alimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "frequencia",
+        "oleo",
+        "temperatura",
+        "tempo"
+      ],
+      "pergunta": "Com que frequência verificar os Compostos Polares do óleo?",
+      "alternativas": [
+        "A cada turno",
+        "Semanalmente",
+        "Uma vez ao dia",
+        "A cada 2 horas"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os Compostos Polares devem ser verificados a cada turno de operação.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_028",
+      "categoria": "supervisores",
+      "subcategoria": "⚠️ Supervisores · Ações",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "O que fazer se a equipe estiver insuficiente para o volume de GCs?",
+      "alternativas": [
+        "Fechar parte do restaurante",
+        "Ignorar e continuar",
+        "Redistribuir conforme tabela de posicionamento",
+        "Reduzir o menu"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Redistribuir a equipe imediatamente conforme a tabela de posicionamento para o volume atual.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_029",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "contaminacao",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Qual tipo de risco está associado ao acesso às câmaras frias?",
+      "alternativas": [
+        "Ergonômico",
+        "Físico — Estresse por Frio (Hipotermia)",
+        "Químico",
+        "Mecânico"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O acesso às câmaras frias representa risco físico de estresse por frio (hipotermia), com exposição intermitente.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_030",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Qual o tipo de exposição ao risco de quedas no piso durante a operação?",
+      "alternativas": [
+        "Eventual",
+        "Intermitente",
+        "Inexistente",
+        "Contínuo"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O risco mecânico de quedas em mesmo nível (piso) é classificado como exposição contínua durante a operação.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_031",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "contaminacao",
+        "taylor-ng",
+        "temperatura"
+      ],
+      "pergunta": "Qual EPI tem CA 25091 e deve ser usado na manipulação de alimentos?",
+      "alternativas": [
+        "Bota PVC Forrada",
+        "Luva Nitrílica Descartável",
+        "Balaclava de Lã",
+        "Mangote"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A Luva Nitrílica Descartável (CA 25091) deve ser usada na manipulação de alimentos e produtos químicos.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_032",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "cores",
+        "refrigeracao",
+        "temperatura"
+      ],
+      "pergunta": "Quantos EPIs de frio são obrigatórios ao acessar câmaras frias?",
+      "alternativas": [
+        "2",
+        "3",
+        "5",
+        "7"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "São 7 EPIs para câmaras frias: Bota PVC, Luva azul, Balaclava, Sobretudo, Casaco, Calça e Luva vermelha.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_033",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "temperatura"
+      ],
+      "pergunta": "Ao sofrer um acidente de trabalho, qual é o primeiro passo obrigatório?",
+      "alternativas": [
+        "Comunicar imediatamente à chefia, independente da gravidade",
+        "Preencher um formulário online",
+        "Esperar o fim do turno",
+        "Ir diretamente ao médico sem avisar"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O colaborador deve comunicar IMEDIATAMENTE à chefia qualquer ocorrência de acidente, independente da gravidade da lesão.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_034",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "atendimento",
+        "corte",
+        "limpeza",
+        "queijo",
+        "refrigeracao",
+        "sal",
+        "temperatura",
+        "tempo",
+        "tomate"
+      ],
+      "pergunta": "Qual das seguintes atividades é PROIBIDA para menores de idade?",
+      "alternativas": [
+        "Acessar as câmaras frias",
+        "Fazer salada",
+        "Operar o caixa",
+        "Atender clientes no balcão"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Menores de idade são proibidos de acessar câmaras frias, fazer limpeza de banheiros, trabalhar à noite, usar fatiador de tomates, fazer recebimento de cargas e trabalhar em altura.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_035",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "tempo"
+      ],
+      "pergunta": "Em qual horário é proibido que menores de idade trabalhem?",
+      "alternativas": [
+        "Das 18h às 22h",
+        "Das 22h às 6h",
+        "Das 20h às 6h",
+        "Das 21h às 5h"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "É proibido que menores de 18 anos trabalhem em horário noturno: das 22h às 6h.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_036",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "contaminacao",
+        "drive",
+        "fritas",
+        "limpeza",
+        "tecnica",
+        "teflon",
+        "temperatura"
+      ],
+      "pergunta": "Os riscos químicos no restaurante estão principalmente associados a:",
+      "alternativas": [
+        "Acesso ao drive-thru",
+        "Limpeza de pisos e superfícies",
+        "Uso do forno",
+        "Operação das fritadeiras"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Os riscos químicos decorrem da limpeza de pisos e superfícies, com exposição por ar e contato de forma intermitente.",
+      "ativo": true
+    },
+    {
+      "id": "supervisores_037",
+      "categoria": "supervisores",
+      "subcategoria": "🦺 Supervisores · S&ST",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "10:1",
+        "porcao",
+        "sal",
+        "temperatura"
+      ],
+      "pergunta": "O que o supervisor deve fazer ao identificar uma irregularidade que coloque a equipe em risco?",
+      "alternativas": [
+        "Comunicar o gerente ou a CIPA imediatamente",
+        "Anotar no relatório mensal",
+        "Ignorar até o próximo turno",
+        "Resolver sozinho sem comunicar"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O colaborador deve comunicar o gerente do restaurante ou a CIPA sobre qualquer irregularidade que represente risco de acidente.",
+      "ativo": true
+    }
+  ]
+}

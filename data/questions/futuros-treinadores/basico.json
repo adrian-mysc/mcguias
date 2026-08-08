@@ -1,0 +1,689 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-08-08",
+  "categoria": "futuros-treinadores",
+  "nivel": "basico",
+  "migratedFrom": "quiz.html",
+  "questions": [
+    {
+      "id": "futr_001",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🛎️ Apoio Balcão · Tempos",
+      "pergunta": "Qual é o tempo ideal para montar e apresentar o pedido ao cliente?",
+      "alternativas": [
+        "60 segundos",
+        "90 segundos",
+        "3 minutos",
+        "120 segundos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo ideal para montar e apresentar o pedido é de 90 segundos.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_002",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🛎️ Apoio Balcão · Tempos",
+      "pergunta": "Qual é o tempo completo da experiência do cliente no balcão?",
+      "alternativas": [
+        "2 minutos",
+        "2 minutos e 30 segundos",
+        "3 minutos",
+        "3 minutos e 30 segundos"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O tempo completo da experiência do cliente é de 3 minutos e 30 segundos.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_003",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🛎️ Apoio Balcão · Atendimento",
+      "pergunta": "Quais são os 4 tipos de cliente?",
+      "alternativas": [
+        "Líder, Seguidor, Crítico, Passivo",
+        "Exigente, Tranquilo, Apressado, Tímido",
+        "Perfeccionista, Comunicador, Executor, Socializador",
+        "Paciente, Impaciente, Calmo, Agitado"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Os 4 tipos de cliente são: Perfeccionista, Comunicador, Executor e Socializador.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_004",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🛎️ Apoio Balcão · Lucratividade",
+      "pergunta": "Quando deve ser entregue ketchup e mostarda ao cliente?",
+      "alternativas": [
+        "Sempre junto com o pedido",
+        "Somente quando solicitado pelo cliente",
+        "Apenas em combos",
+        "Somente no drive-thru"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Ketchup e mostarda devem ser entregues somente quando solicitado pelo cliente, pensando na lucratividade.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_005",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🌡️ Bebidas · Temperaturas",
+      "pergunta": "Qual é a temperatura de extração do sorvete?",
+      "alternativas": [
+        "-15°C a -13°C",
+        "-12°C a -10°C",
+        "-9°C a -8°C",
+        "-6°C a -4°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura de extração do sorvete é de -9°C a -8°C.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_006",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🌡️ Bebidas · Temperaturas",
+      "pergunta": "Qual é a temperatura do banho maria das coberturas?",
+      "alternativas": [
+        "46°C a 52°C",
+        "50°C a 56°C",
+        "57°C a 63°C",
+        "66°C a 72°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura do banho maria das coberturas é de 57°C a 63°C.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_007",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🌡️ Bebidas · Temperaturas",
+      "pergunta": "Qual é a temperatura de extração das coberturas?",
+      "alternativas": [
+        "40°C a 46°C",
+        "46°C a 52°C",
+        "57°C a 63°C",
+        "66°C a 72°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A temperatura de extração das coberturas é de 46°C a 52°C.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_008",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🌡️ Bebidas · Velocidades",
+      "pergunta": "Em quanto tempo deve ser extraído um refrigerante normal (450ml)?",
+      "alternativas": [
+        "8 segundos",
+        "10 segundos",
+        "12 segundos",
+        "15 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O refrigerante normal (450ml) deve ser extraído em 12 segundos.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_009",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍗 Fritos · Carnes Brancas",
+      "pergunta": "Qual é o tempo de fritura do Crispy?",
+      "alternativas": [
+        "2:10",
+        "3:15",
+        "3:25",
+        "4:45"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O tempo de fritura do Crispy é de 4 minutos e 45 segundos.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_010",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍗 Fritos · Carnes Brancas",
+      "pergunta": "Qual é o tempo de vida do Junior na UHC?",
+      "alternativas": [
+        "10 minutos",
+        "15 minutos",
+        "20 minutos",
+        "30 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Junior tem tempo de vida de 15 minutos na UHC.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_011",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍗 Fritos · Carnes Brancas",
+      "pergunta": "Qual cor de clipe identifica os Nuggets na UHC?",
+      "alternativas": [
+        "Azul",
+        "Amarelo",
+        "Branco",
+        "Lilás"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O clipe branco identifica os Nuggets na UHC.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_012",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍗 Fritos · Carnes Brancas",
+      "pergunta": "Qual a temperatura da UHC para o McChicken?",
+      "alternativas": [
+        "85°C",
+        "88°C",
+        "90°C",
+        "93°C"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A temperatura da UHC para o McChicken é de 93°C.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_013",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🥧 Fritos · Tortas",
+      "pergunta": "Qual é a temperatura de fritura das tortas?",
+      "alternativas": [
+        "168°C",
+        "177°C",
+        "180°C",
+        "190°C"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A temperatura de fritura das tortas é de 180°C.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_014",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🥧 Fritos · Tortas",
+      "pergunta": "Qual é o tempo de vida das tortas após a fritura?",
+      "alternativas": [
+        "30 minutos",
+        "60 minutos",
+        "90 minutos",
+        "120 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de vida das tortas após fritura é de 90 minutos.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_015",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🥧 Fritos · Tortas",
+      "pergunta": "Qual é a capacidade máxima de tortas por rodada de fritura?",
+      "alternativas": [
+        "8 tortas",
+        "12 tortas",
+        "16 tortas",
+        "24 tortas"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A capacidade máxima de tortas por rodada é de 16 tortas.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_016",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "☠️ Inimigos do Óleo",
+      "pergunta": "Quais são os 6 inimigos do óleo?",
+      "alternativas": [
+        "Ar, Água, Sal, Alta Temperatura, Resíduo de Carbono, Detergente",
+        "Ar, Fumaça, Sal, Frio, Carbono, Sabão",
+        "Oxigênio, Água, Açúcar, Calor, Gordura, Detergente",
+        "Fogo, Água, Sal, Vento, Resíduo, Sabão"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Os 6 inimigos do óleo são: Ar, Água, Sal, Alta Temperatura, Resíduo de Carbono e Detergente.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_017",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🔥 Chapas · Carnes",
+      "pergunta": "Qual é o peso da carne 10:1?",
+      "alternativas": [
+        "30g",
+        "45g",
+        "90g",
+        "112,5g"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A carne 10:1 pesa 45 gramas.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_018",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🔥 Chapas · Carnes",
+      "pergunta": "Qual é o peso da carne 4:1?",
+      "alternativas": [
+        "45g",
+        "90g",
+        "112,5g",
+        "150g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A carne 4:1 pesa 112,5 gramas.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_019",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🔥 Chapas · Carnes",
+      "pergunta": "Qual é o peso da carne 3:1?",
+      "alternativas": [
+        "90g",
+        "112,5g",
+        "135g",
+        "150g"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A carne 3:1 pesa 150 gramas.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_020",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🔥 Chapas · Carnes",
+      "pergunta": "Qual é o máximo de carnes 10:1 que pode ser ativado por Platen?",
+      "alternativas": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O máximo de carnes 10:1 por Platen (Best Burger) é 6.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_021",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🔥 Chapas · Carnes",
+      "pergunta": "Qual é o tempo de vida das carnes vermelhas na UHC?",
+      "alternativas": [
+        "10 minutos",
+        "15 minutos",
+        "20 minutos",
+        "30 minutos"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "No Best Burger, o tempo de vida das carnes vermelhas na UHC é de 10 minutos (reduzido de 15 para 10).",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_022",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🔥 Chapas · Carnes",
+      "pergunta": "Em que ângulo devem ser removidas todas as carnes?",
+      "alternativas": [
+        "30°",
+        "45°",
+        "60°",
+        "90°"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O ângulo de remoção de todas as carnes é de 45 graus.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_023",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🔥 Chapas · Carnes",
+      "pergunta": "Qual é a quantidade de sal por carne vermelha?",
+      "alternativas": [
+        "2g",
+        "3g",
+        "4g",
+        "5g"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A quantidade de sal por carne é de 5 gramas, aplicada em forma de U invertido.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_024",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🔥 Chapas · Grill",
+      "pergunta": "Qual é o tempo de vida da carne de Grill na UHC?",
+      "alternativas": [
+        "15 minutos",
+        "30 minutos",
+        "45 minutos",
+        "60 minutos"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "A carne de Grill tem tempo de vida de 60 minutos na UHC.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_025",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍟 MC Fritas · Operacional",
+      "pergunta": "Qual é a temperatura do óleo para MC Fritas?",
+      "alternativas": [
+        "160°C",
+        "168°C",
+        "177°C",
+        "180°C"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A temperatura do óleo para MC Fritas é de 168°C.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_026",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍟 MC Fritas · Operacional",
+      "pergunta": "Qual é o tempo de fritura das MC Fritas?",
+      "alternativas": [
+        "2 minutos e 30 segundos",
+        "3 minutos",
+        "3 minutos e 10 segundos",
+        "4 minutos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O tempo de fritura das MC Fritas é de 3 minutos e 10 segundos.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_027",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍟 MC Fritas · Operacional",
+      "pergunta": "Qual é o tempo de vida das batatas prontas?",
+      "alternativas": [
+        "5 minutos",
+        "7 minutos",
+        "10 minutos",
+        "15 minutos"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O tempo de vida das batatas prontas é de 7 minutos.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_028",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍟 MC Fritas · Operacional",
+      "pergunta": "Qual é a quantidade de sal nas MC Fritas?",
+      "alternativas": [
+        "2g",
+        "3g",
+        "4g",
+        "5g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A quantidade de sal nas MC Fritas é de 4 gramas (1 virada no saleiro sem agitar).",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_029",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍟 MC Fritas · Operacional",
+      "pergunta": "A que altura deve ser feita a salga das MC Fritas?",
+      "alternativas": [
+        "10 cm",
+        "15 cm",
+        "20 cm",
+        "25 cm"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A salga das MC Fritas deve ser feita a 20 cm de altura.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_030",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍟 MC Fritas · Pesos",
+      "pergunta": "Qual o peso do cesto de batatas para a McFritas Grande?",
+      "alternativas": [
+        "300g",
+        "500g",
+        "700g",
+        "750g"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A McFritas Grande usa 700g de batatas no cesto.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_031",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍟 MC Fritas · Pesos",
+      "pergunta": "Qual o peso das MC Fritas Médias prontas?",
+      "alternativas": [
+        "73g",
+        "102g",
+        "146g",
+        "192g"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "As MC Fritas Médias prontas pesam 102 gramas.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_032",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍟 MC Fritas · Sistemas",
+      "pergunta": "O que diferencia a fritura Ativada da Puxada?",
+      "alternativas": [
+        "No Ativado o 2º cesto é ativado após o Duty (30s); no Puxado só após total fritura do 1º",
+        "No Puxado o óleo é mais quente",
+        "Não há diferença entre eles",
+        "No Puxado frita-se mais quantidade"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Fritura Ativada: ativa o 2º cesto no Duty (30s). Puxada: só ativa após total fritura do 1º cesto.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_033",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍔 Menu · Montagem",
+      "pergunta": "Qual molho é usado na base E na coroa do Big Tasty?",
+      "alternativas": [
+        "Molho Tasty",
+        "Molho Big Mac",
+        "Molho Maionese",
+        "Molho Cheddar"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Big Tasty leva 1oz de Molho Tasty na coroa e 1oz na base.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_034",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍔 Menu · Montagem",
+      "pergunta": "Quantas carnes tem o Big Mac?",
+      "alternativas": [
+        "1 carne 4:1",
+        "2 carnes 5:1",
+        "1 carne 3:1",
+        "2 carnes 10:1"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O Big Mac leva 2 carnes 10:1 (1 no Club e 1 na Base).",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_035",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍔 Menu · Montagem",
+      "pergunta": "Qual é a carne do Quarterão com Queijo?",
+      "alternativas": [
+        "3:1",
+        "4:1",
+        "5:1",
+        "10:1"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Quarterão com Queijo leva 1 carne 4:1.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_036",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍔 Menu · Montagem",
+      "pergunta": "Qual carne é usada no McChicken?",
+      "alternativas": [
+        "Carne Crispy",
+        "Carne McChicken",
+        "Carne Junior",
+        "Carne de Grill"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O McChicken leva 1 Carne de McChicken.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_037",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍔 Menu · Montagem",
+      "pergunta": "Qual queijo é usado no Mc Veggie?",
+      "alternativas": [
+        "Queijo Cheddar",
+        "Queijo Mussarela",
+        "Queijo Emental",
+        "Queijo Coalho"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "O Mc Veggie leva 1 Queijo Coalho.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_038",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍔 Menu · Montagem",
+      "pergunta": "Qual o molho do McChicken?",
+      "alternativas": [
+        "Molho Maionese",
+        "Molho Big Mac",
+        "Molho Tasty",
+        "Molho Barbecue"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O McChicken leva 1 tiro 2/3 de Molho Maionese (20ml).",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_039",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍔 Menu · Montagem",
+      "pergunta": "Quantas fatias de bacon tem o Clubhouse?",
+      "alternativas": [
+        "1 fatia",
+        "2 fatias",
+        "3 fatias",
+        "4 fatias"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Clubhouse leva 3 fatias de bacon.",
+      "dificuldade": 2
+    },
+    {
+      "id": "futr_040",
+      "categoria": "futuros-treinadores",
+      "tipo": "multipla_escolha",
+      "ativo": true,
+      "subcategoria": "🍔 Menu · Montagem",
+      "pergunta": "Qual carne é usada no Big Tasty?",
+      "alternativas": [
+        "Carne 3:1",
+        "Carne 4:1",
+        "Carne 5:1",
+        "Carne 10:1"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Big Tasty leva 1 Carne 3:1.",
+      "dificuldade": 2
+    }
+  ]
+}

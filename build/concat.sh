@@ -10,6 +10,7 @@ SOURCES=(
   "js/src/stats.js"
   "js/src/srs.js"
   "js/src/quiz.js"
+  "js/src/quizsource.js"
   "js/src/flashcard.js"
   "js/src/utils.js"
   "js/src/lacunas.js"

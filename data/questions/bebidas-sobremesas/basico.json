@@ -23,34 +23,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "A Casquinha leva 3,5 voltas de bebida láctea (105,63ml).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_002",
@@ -71,34 +44,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "O McColosso leva 2,5 voltas de bebida láctea (74,23ml) mais 1/2oz de cobertura.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_003",
@@ -120,34 +66,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "O Sundae leva 7 gramas de amendoim, após as 4,5 voltas de bebida láctea e 1oz de cobertura.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_004",
@@ -170,34 +89,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "O McShake é batido por 18 segundos, fazendo leves movimentos circulares para ficar uniforme.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_005",
@@ -212,41 +104,14 @@
       ],
       "pergunta": "O que deve ser feito com a tampa do McShake após o batimento?",
       "alternativas": [
-        "Mantê-la para servir ao cliente",
         "Descartá-la",
-        "Trocá-la por outra tampa",
-        "Guardá-la para o próximo shake"
+        "Guardá-la para o próximo shake",
+        "Mantê-la para servir ao cliente",
+        "Trocá-la por outra tampa"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Após o preparo do McShake, a tampa deve ser descartada. Nunca sirva com a tampa de batimento.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_006",
@@ -266,34 +131,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "O McShake leva 7 voltas de bebida láctea (284ml), dispensadas em toda a lateral do copo deixando um espaço no meio.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_007",
@@ -306,41 +144,14 @@
       ],
       "pergunta": "Qual é a quantidade correta de gelo para o copo médio?",
       "alternativas": [
-        "½ pá de gelo",
+        "2 pás de gelo",
         "1 pá cheia de gelo",
         "1 pá e ½ de gelo",
-        "2 pás de gelo"
+        "½ pá de gelo"
       ],
       "respostaCorreta": 1,
       "explicacao": "Copo pequeno: ½ pá / Copo médio: 1 pá cheia / Copo grande: 1 pá e ½.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_008",
@@ -355,41 +166,14 @@
       ],
       "pergunta": "Qual letra é usada para identificar manualmente a Coca-Cola Zero no copo?",
       "alternativas": [
-        "C",
         "X",
+        "0",
         "Z",
-        "0"
+        "C"
       ],
       "respostaCorreta": 2,
       "explicacao": "Para Coca-Cola Zero e Sprite Zero, identifica-se com a letra 'Z' dentro do círculo vermelho com caneta hidrográfica.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_009",
@@ -402,41 +186,14 @@
       ],
       "pergunta": "Qual é a temperatura correta da massa de sorvete?",
       "alternativas": [
-        "-5°C a -3°C",
-        "-9°C a -8°C",
+        "0°C a 2°C",
         "-12°C a -10°C",
-        "0°C a 2°C"
+        "-5°C a -3°C",
+        "-9°C a -8°C"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A temperatura da massa de sorvete deve ser entre -9°C e -8°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_010",
@@ -457,34 +214,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "A temperatura da cobertura deve ser entre 46°C e 52°C. O banho Maria fica entre 57°C e 63°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_011",
@@ -497,41 +227,14 @@
       ],
       "pergunta": "O que a Pessoa da Condimentação NÃO deve fazer na casquinha?",
       "alternativas": [
-        "Adicionar cobertura",
         "Adicionar colher e enrolar com guardanapo",
-        "Enviar apenas um guardanapo junto com o cone",
-        "Receber do extrator"
+        "Receber do extrator",
+        "Adicionar cobertura",
+        "Enviar apenas um guardanapo junto com o cone"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Em casquinha: NÃO adicionar colher e NÃO enrolar. Enviar somente um guardanapo junto com o cone.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_012",
@@ -554,34 +257,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "A entrega do cupom fiscal ao cliente é obrigatória para TODAS as formas de pagamento.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_013",
@@ -602,34 +278,7 @@
       ],
       "respostaCorreta": 3,
       "explicacao": "Top Sundae leva 6 voltas de bebida láctea (218,53ml) mais 1oz de cobertura total.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_014",
@@ -650,34 +299,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Sundae leva 4,5 voltas de bebida láctea (136,69ml) mais 1oz de cobertura e 7g de amendoim.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_015",
@@ -698,34 +320,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "McColosso: 2,5 voltas de bebida láctea + 1/2oz de cobertura (15ml).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_016",
@@ -746,34 +341,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "McFlurry: sem o bico, girando cuidadosamente o copo para preencher toda lateral com 5 voltas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_017",
@@ -788,41 +356,14 @@
       ],
       "pergunta": "Qual o complemento adicionado no Top Sundae?",
       "alternativas": [
-        "Amendoim",
         "Ovomaltine",
         "Rocks",
-        "Paçoca"
+        "Paçoca",
+        "Amendoim"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "Top Sundae: cobertura (base) + 6 voltas + cobertura (topo) + paçoca + 2 bijus + colher.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_018",
@@ -842,34 +383,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Pegue o copo de McShake e coloque 15ml de leite no copo até a marcação antes de extrair a bebida láctea.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_019",
@@ -886,40 +400,13 @@
       "pergunta": "Onde o McShake deve ser colocado após o batimento?",
       "alternativas": [
         "Diretamente para o cliente",
-        "Na área de espera de bebidas (BLZ)",
+        "No balcão de entrega",
         "Na mesa de condimentação",
-        "No balcão de entrega"
+        "Na área de espera de bebidas (BLZ)"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "Após o preparo, colocar o copo de McShake na área de espera de bebidas (BLZ) e servir pelo bump bar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_020",
@@ -933,41 +420,14 @@
       ],
       "pergunta": "Como identificar manualmente a Água gaseificada no copo?",
       "alternativas": [
-        "Letra G",
         "Letra A",
-        "Letra Z",
-        "Nenhuma identificação"
+        "Letra G",
+        "Nenhuma identificação",
+        "Letra Z"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 0,
       "explicacao": "Para Água gaseificada: identificar com a letra 'A' dentro do círculo vermelho com caneta hidrográfica. Zero = 'Z'.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_021",
@@ -990,34 +450,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Após transferir a bebida para a mesa BLZ, servir no Bumbar para registrar a entrega no sistema.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_022",
@@ -1032,41 +465,14 @@
       ],
       "pergunta": "Qual botão deve ser pressionado para testar o suco após estocagem?",
       "alternativas": [
-        "POWER",
         "RESET",
+        "TEST",
         "FLOW",
-        "TEST"
+        "POWER"
       ],
       "respostaCorreta": 2,
       "explicacao": "Após estocagem do reservatório na máquina, limpar a borda e gaxeta e apertar a tecla FLOW para testar o produto.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_023",
@@ -1086,34 +492,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Temperatura do banho Maria: 57°C a 63°C. Cobertura: 46°C a 52°C. Reservatório: 1°C a 4°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_024",
@@ -1129,41 +508,14 @@
       ],
       "pergunta": "Como a Pessoa da Extração inicia o preparo de cada produto?",
       "alternativas": [
-        "Espera o pedido do cliente diretamente",
-        "Pega o copo/cone pela tela, coloca a massa e transfere para a Condimentação",
         "Finaliza o produto completo",
-        "Entrega diretamente ao cliente"
+        "Entrega diretamente ao cliente",
+        "Espera o pedido do cliente diretamente",
+        "Pega o copo/cone pela tela, coloca a massa e transfere para a Condimentação"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A Extração inicia pegando o copo/cone conforme a tela, coloca a massa (e cobertura se necessário) e transfere para a Condimentação finalizar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_025",
@@ -1178,41 +530,14 @@
       ],
       "pergunta": "Qual o papel da Pessoa da Entrega no Dessert Center?",
       "alternativas": [
-        "Extrair a massa",
-        "Adicionar coberturas e complementos",
         "Organizar clientes em espera, receber produto pronto e entregar conferindo na tela",
-        "Operar o caixa"
+        "Adicionar coberturas e complementos",
+        "Operar o caixa",
+        "Extrair a massa"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "A Pessoa da Entrega organiza clientes, recebe o produto pronto da Condimentação, confere na tela, entrega e usa o bump bar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_026",
@@ -1234,34 +559,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "A velocidade de extração correta é de 5 a 7,5oz em 10 segundos. Verificar com o Gerente.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_027",
@@ -1278,39 +576,12 @@
       "alternativas": [
         "Produz bebidas frias e posiciona na BLZ",
         "Produz bebidas quentes e sobremesas posicionando na BLZ",
-        "Atende o caixa",
-        "Faz a entrega ao cliente"
+        "Faz a entrega ao cliente",
+        "Atende o caixa"
       ],
       "respostaCorreta": 1,
       "explicacao": "Com 2 pessoas no BDAP: Função 1 = bebidas frias na BLZ. Função 2 = bebidas quentes e sobremesas na BLZ.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_028",
@@ -1331,34 +602,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "McColosso: 2,5 voltas de bebida láctea + 1/2oz de cobertura.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_029",
@@ -1371,41 +615,14 @@
       ],
       "pergunta": "Como deve ser a extração de bebida láctea no McFlurry?",
       "alternativas": [
+        "Sem girar o copo",
         "Com o bico, circular",
         "Sem o bico, girando o copo",
-        "Com o bico, preenchendo o centro",
-        "Sem girar o copo"
+        "Com o bico, preenchendo o centro"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 2,
       "explicacao": "McFlurry: sem o bico, girando cuidadosamente o copo para preencher toda lateral com 5 voltas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_030",
@@ -1425,34 +642,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "O reservatório de bebida láctea deve estar entre 1°C e 4°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_031",
@@ -1474,34 +664,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "A velocidade de extração correta é de 5 a 7,5oz em 10 segundos.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_032",
@@ -1517,40 +680,13 @@
       "pergunta": "Qual é o papel da pessoa da Extração no Dessert Center?",
       "alternativas": [
         "Finalizar e entregar ao cliente",
-        "Pegar copo/cone, colocar a massa e transferir para Condimentação",
+        "Atender o cliente diretamente",
         "Apenas operar o caixa",
-        "Atender o cliente diretamente"
+        "Pegar copo/cone, colocar a massa e transferir para Condimentação"
       ],
-      "respostaCorreta": 1,
+      "respostaCorreta": 3,
       "explicacao": "A Extração pega o copo/cone conforme a tela, coloca a massa e transfere para a Condimentação finalizar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_033",
@@ -1565,41 +701,14 @@
       ],
       "pergunta": "Qual botão pressionar para testar o suco após estocagem?",
       "alternativas": [
-        "POWER",
-        "RESET",
         "FLOW",
-        "TEST"
+        "RESET",
+        "TEST",
+        "POWER"
       ],
-      "respostaCorreta": 2,
+      "respostaCorreta": 0,
       "explicacao": "Após estocagem do reservatório, limpar a borda e gaxeta e apertar a tecla FLOW para testar.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_034",
@@ -1613,41 +722,14 @@
       ],
       "pergunta": "No BDAP com 2 pessoas, qual é a Função 1?",
       "alternativas": [
-        "Bebidas quentes e sobremesas",
+        "Operar o caixa",
         "Bebidas frias na BLZ",
         "Entregar ao cliente",
-        "Operar o caixa"
+        "Bebidas quentes e sobremesas"
       ],
       "respostaCorreta": 1,
       "explicacao": "Com 2 pessoas no BDAP: Função 1 = bebidas frias na BLZ. Função 2 = bebidas quentes e sobremesas.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_035",
@@ -1667,34 +749,7 @@
       ],
       "respostaCorreta": 0,
       "explicacao": "A Casquinha leva 1 volta de bebida láctea.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_036",
@@ -1714,34 +769,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "A cobertura deve estar entre 46°C e 52°C.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_037",
@@ -1763,34 +791,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Coloque 15ml de leite no copo, até a primeira elevação do copo de McShake.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_038",
@@ -1812,34 +813,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Bata o McShake por aproximadamente 18 segundos, com leves movimentos para ficar uniforme.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_039",
@@ -1860,34 +834,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Abaixe a alavanca dispensando 7 voltas em toda a lateral do copo, deixando um espaço no meio.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_040",
@@ -1908,34 +855,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "Na Casquinha, execute movimentos circulares completando 3 voltas, incluindo a ponta (3 oz).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_041",
@@ -1956,34 +876,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "No McColosso, complete 2,5 voltas (3,5 oz) iniciando dentro do cone, e adicione 1 tiro de cobertura.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_042",
@@ -2004,34 +897,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "No McFlurry, complete 5 voltas (5 oz) sem fazer o bico e sem mexer o copo.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_043",
@@ -2052,34 +918,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Centralize o copo sob o bico e complete 4 voltas, fazendo o bico (4 oz).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_044",
@@ -2100,34 +939,7 @@
       ],
       "respostaCorreta": 2,
       "explicacao": "No Top Sundae, complete 6 voltas, fazendo o bico (6 oz).",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_045",
@@ -2149,34 +961,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Complete com 1 tiro de amendoim (7g) em um só impulso e coloque 1 colher de Sundae.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_046",
@@ -2198,34 +983,7 @@
       ],
       "respostaCorreta": 1,
       "explicacao": "Com o pegador, coloque 2 bijus inteiros em uma das laterais e na outra 1 colher de Top Sundae.",
-      "dica": "",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_047",
@@ -2249,33 +1007,7 @@
       "respostaCorreta": 1,
       "explicacao": "A temperatura de extração das coberturas de sorvete é de 46°C a 52°C.",
       "dica": "Faixa estreita, começando em 46°C.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_048",
@@ -2298,33 +1030,7 @@
       "respostaCorreta": 3,
       "explicacao": "São necessárias 5 onças de sorvete para produzir um McFlurry — uma onça a mais que o sundae.",
       "dica": "É a maior porção entre McFlurry e sundae.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_049",
@@ -2347,33 +1053,7 @@
       "respostaCorreta": 1,
       "explicacao": "São necessárias 4 onças de sorvete para produzir um sundae (o McFlurry leva 5 onças).",
       "dica": "Uma onça a menos que o McFlurry.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_050",
@@ -2389,40 +1069,14 @@
       "pergunta": "Qual o tempo de vida das bebidas quentes depois de prontas?",
       "alternativas": [
         "5 minutos após estar pronta",
-        "10 minutos após estar pronta",
         "15 minutos após estar pronta",
-        "Não existe tempo de vida após produzida — o consumo deve ser imediato."
+        "Não existe tempo de vida após produzida — o consumo deve ser imediato.",
+        "10 minutos após estar pronta"
       ],
-      "respostaCorreta": 3,
+      "respostaCorreta": 2,
       "explicacao": "As bebidas quentes não têm tempo de vida após produzidas: o consumo deve ser imediato.",
       "dica": "Bebida quente não espera.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     },
     {
       "id": "bebidas_sobremesas_051",
@@ -2437,41 +1091,15 @@
       ],
       "pergunta": "Qual o tempo de vida do refrigerante depois de pronto?",
       "alternativas": [
-        "7 minutos",
-        "10 minutos",
         "15 minutos",
+        "10 minutos",
+        "7 minutos",
         "Não tem tempo de vida"
       ],
       "respostaCorreta": 3,
       "explicacao": "O refrigerante não tem tempo de vida definido após pronto.",
       "dica": "Mesma lógica das bebidas quentes.",
-      "tempoEstimado": 15,
-      "xp": 10,
-      "peso": 1,
-      "frequenciaErro": 0,
-      "taxaAcertoGlobal": 0,
-      "timesAnswered": 0,
-      "mediaTempoResposta": 0,
-      "ativo": true,
-      "reviewData": {
-        "facilidade": 2.5,
-        "intervalo": 1,
-        "ultimaRevisao": null,
-        "proximaRevisao": null,
-        "nivelDominio": 0
-      },
-      "errorStats": {
-        "timesWrong": 0,
-        "timesCorrect": 0,
-        "weaknessScore": 0
-      },
-      "analytics": {
-        "globalAccuracy": 0,
-        "averageTime": 0,
-        "dropRate": 0
-      },
-      "contextHints": [],
-      "relatedQuestions": []
+      "ativo": true
     }
   ]
 }

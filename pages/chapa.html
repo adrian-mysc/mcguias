@@ -454,185 +454,19 @@
 
   <script src="../js/main.js" defer></script>
   <script>
-    const QUIZ_CHAPA = [
-      // ── Material oficial (PDF) — adicionadas via extração ──
-      {
-        category: "🥩 Carnes",
-        question: "Qual o tempo de remoção das carnes 10:1 na chapa?",
-        options: ["12 segundos", "15 segundos", "18 segundos", "22 segundos"],
-        answer: "18 segundos",
-        explanation: "O tempo de remoção das carnes 10:1 é de 18 segundos."
-      },
-      {
-        category: "🥩 Carnes",
-        question: "Qual o tempo de remoção das carnes 4:1 e 3:1?",
-        options: ["12 segundos", "15 segundos", "18 segundos", "20 segundos"],
-        answer: "15 segundos",
-        explanation: "Tanto as carnes 4:1 quanto as 3:1 têm tempo de remoção de 15 segundos."
-      },
-      {
-        category: "⚖️ Peso das carnes",
-        question: "Qual o máximo de carnes 10:1 por platen?",
-        options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"],
-        answer: "6 unidades",
-        explanation: "O máximo é de 6 unidades de 10:1 por platen."
-      },
-      {
-        category: "⚖️ Peso das carnes",
-        question: "Qual o máximo de carnes 4:1 por platen?",
-        options: ["4 unidades", "6 unidades", "8 unidades", "10 unidades"],
-        answer: "4 unidades",
-        explanation: "O máximo é de 4 unidades de 4:1 por platen."
-      },
-      {
-        category: "⚖️ Peso das carnes",
-        question: "Qual o máximo de carnes 3:1 por platen?",
-        options: ["2 unidades", "4 unidades", "6 unidades", "8 unidades"],
-        answer: "4 unidades",
-        explanation: "O máximo é de 4 unidades de 3:1 por platen."
-      },
-      {
-        category: "📦 UHC",
-        question: "Qual o tempo de vida das carnes vermelhas (10:1, 3:1, 4:1) na UHC?",
-        options: ["10 minutos", "15 minutos", "20 minutos", "30 minutos"],
-        answer: "10 minutos",
-        explanation: "As carnes vermelhas têm tempo de vida de 10 minutos na UHC."
-      },
-      {
-        category: "🥩 Carnes",
-        question: "Na chapa de TRÊS platens, como devem ser salgadas as carnes?",
-        options: ["Em forma de 'S' na lateral", "Em forma de 'U' invertido, uma única vez no centro da carne", "Duas vezes em cada carne", "Espalhando o sal por toda a chapa"],
-        answer: "Em forma de 'U' invertido, uma única vez no centro da carne",
-        explanation: "Na chapa de três platens salga-se em forma de 'U' invertido, uma única vez no centro de cada carne. Na de dois platens, em forma de 'S' na lateral."
-      },
-      {
-        category: "🥩 Carnes",
-        question: "Em quais cidades a ativação das carnes é feita SEM luva, usando gel a cada rodada?",
-        options: ["Rio de Janeiro, Salvador e Curitiba", "São Paulo, Distrito Federal e Recife", "Belo Horizonte, Fortaleza e Manaus", "Porto Alegre, Goiânia e Belém"],
-        answer: "São Paulo, Distrito Federal e Recife",
-        explanation: "Em São Paulo, Distrito Federal e Recife a ativação é feita sem luva, usando o gel a cada rodada com as duas mãos."
-      },
-      {
-        category: "🥩 Carnes",
-        question: "Como as carnes 10:1 devem ser colocadas na gaveta?",
-        options: ["De 2 em 2, máximo 2 pilhas", "De 3 em 3, máximo 3 pilhas", "De 4 em 4, máximo 4 pilhas", "Todas juntas em 1 pilha"],
-        answer: "De 4 em 4, máximo 4 pilhas",
-        explanation: "As carnes 10:1 são colocadas de 4 em 4 (centro primeiro, depois as pontas), formando no máximo 4 pilhas. Timer da UHC: 10'."
-      },
-      {
-        category: "🧼 Higiene pessoal",
-        question: "Além do avental de cozinha, qual EPI é obrigatório na estação de Chapas?",
-        options: ["Touca descartável", "Mangote", "Óculos de proteção", "Luva térmica"],
-        answer: "Mangote",
-        explanation: "Na estação de Chapas deve-se utilizar avental de cozinha E mangote."
-      },
-      {
-        category: "🌡️ Temperaturas",
-        question: "Qual é a temperatura da chapa inferior?",
-        options: ["150°C", "177°C", "200°C", "218°C"],
-        answer: "177°C",
-        explanation: "A chapa inferior opera a 177°C."
-      },
-      {
-        category: "🌡️ Temperaturas",
-        question: "Qual é a temperatura da chapa superior?",
-        options: ["177°C", "200°C", "218°C", "240°C"],
-        answer: "218°C",
-        explanation: "A chapa superior opera a 218°C."
-      },
-      {
-        category: "🌡️ Temperaturas",
-        question: "Qual a temperatura da UHC para as carnes vermelhas?",
-        options: ["65°C", "72°C", "79°C", "85°C"],
-        answer: "79°C",
-        explanation: "A UHC para as carnes vermelhas opera a 79°C, com vida útil de 10 minutos. (Carnes brancas/frango: 85°C.)"
-      },
-      {
-        category: "📦 UHC",
-        question: "Qual é o tempo de vida útil dos produtos na UHC?",
-        options: ["5 minutos", "10 minutos", "15 minutos", "20 minutos"],
-        answer: "10 minutos",
-        explanation: "Os produtos têm vida útil de 10 minutos na UHC."
-      },
-      {
-        category: "📦 UHC",
-        question: "Como devem ser removidas as carnes 4:1 para a UHC?",
-        options: ["De 3 em 3", "De 2 em 2", "Uma a uma, sem empilhar", "Todas ao mesmo tempo"],
-        answer: "Uma a uma, sem empilhar",
-        explanation: "Carnes 4:1 são removidas uma a uma e não devem ser empilhadas na gaveta."
-      },
-      {
-        category: "🥩 Carnes",
-        question: "Qual é o limite máximo de carnes 10:1 por lote?",
-        options: ["4 carnes", "6 carnes", "8 carnes", "10 carnes"],
-        answer: "6 carnes",
-        explanation: "O limite é de 6 carnes para o 10:1 por rodada."
-      },
-      {
-        category: "🥩 Carnes",
-        question: "Em quanto tempo devem ser removidas todas as carnes?",
-        options: ["10 segundos", "15 segundos", "18 segundos", "25 segundos"],
-        answer: "18 segundos",
-        explanation: "Todas as carnes devem ser removidas em 18 segundos."
-      },
-      {
-        category: "🥓 Bacon",
-        question: "Qual é o tempo de cocção do bacon na chapa?",
-        options: ["20 segundos", "30 segundos", "40 segundos", "60 segundos"],
-        answer: "40 segundos",
-        explanation: "O bacon é cozinhado por 40 segundos com GAP de 90."
-      },
-      {
-        category: "🥓 Bacon",
-        question: "Qual é a validade do produto de bacon pronto?",
-        options: ["2 horas", "4 horas", "6 horas", "8 horas"],
-        answer: "6 horas",
-        explanation: "O bacon pronto tem validade de 6 horas."
-      },
-      {
-        category: "🧹 Limpeza",
-        question: "Com que frequência deve ser reforçada a limpeza do Teflon da chapa?",
-        options: ["A cada 5 minutos", "A cada 10 minutos", "A cada 15 minutos", "A cada 30 minutos"],
-        answer: "A cada 15 minutos",
-        explanation: "A cada 15 minutos, reforçar a limpeza passando 2 a 3 vezes com pano e rodinho sobre toda a superfície do Teflon."
-      },
-      { category: "🌡️ Chapa · Temperaturas", question: "Qual é o ponto de partida de cocção para carnes 10:1 (exceto Taylor NG)?", options: ["30 segundos", "35 segundos", "39 segundos", "45 segundos"], answer: "39 segundos", explanation: "Ponto de partida (exceto Taylor NG): 10:1 = 39 segundos." },
-      { category: "🌡️ Chapa · Temperaturas", question: "Qual é o ponto de partida para carnes 4:1 na Taylor Next Generation?", options: ["100 segundos", "110 segundos", "120 segundos", "126 segundos"], answer: "126 segundos", explanation: "Taylor Next Generation: 4:1 = 126 segundos." },
-      { category: "🌡️ Chapa · Temperaturas", question: "Qual a temperatura mínima de cozimento interno das carnes?", options: ["60°C", "65°C", "70°C", "77°C"], answer: "70°C", explanation: "A temperatura de cozimento interno deve ser entre 70°C e 77°C (158°F a 170°F)." },
-      { category: "🥩 Chapa · Carnes", question: "Em que sentido deve ser feita a salga das carnes?", options: ["Da esquerda para direita, de frente para fundo", "Da direita para esquerda, de frente para fundo", "De frente para o fundo, da esquerda para direita", "Em qualquer sentido"], answer: "Da direita para esquerda, de frente para fundo", explanation: "A salga deve ser feita da direita para esquerda, da frente para o fundo, em forma de S." },
-      { category: "🥩 Chapa · Carnes", question: "Como devem ser removidas as carnes 10:1 para a UHC?", options: ["Uma a uma", "De 2 em 2", "De 3 em 3", "Todas ao mesmo tempo"], answer: "De 3 em 3", explanation: "Carnes 10:1 são removidas de 3 em 3, com máximo de 12 na gaveta." },
-      { category: "🥩 Chapa · Carnes", question: "Qual é o limite máximo de carnes 10:1 na gaveta UHC?", options: ["6 carnes", "8 carnes", "10 carnes", "12 carnes"], answer: "12 carnes", explanation: "A gaveta UHC suporta no máximo 12 carnes 10:1." },
-      { category: "🥩 Chapa · Carnes", question: "Ao soar o timer de 5 segundos antes do fim, o que o chapeiro deve fazer?", options: ["Abrir o platen", "Pegar espátulas, dispensador de sal e pimenta", "Sanitizar as mãos", "Preparar a UHC"], answer: "Pegar espátulas, dispensador de sal e pimenta", explanation: "Com 5 segundos restantes: espátulas, dispensador de sal e pimenta devem estar na mão." },
-      { category: "🧅 Chapa · Cebola", question: "Como deve ser aplicada a cebola nas carnes?", options: ["Em círculos amplos", "Em movimento de martelo, segurando pelas laterais", "Despejando de cima", "Com colher"], answer: "Em movimento de martelo, segurando pelas laterais", explanation: "A cebola é aplicada com o dispensador em movimento de martelo, segurando pelas laterais para evitar queimaduras." },
-      { category: "🥓 Chapa · Bacon", question: "Qual o GAP programado para o bacon na chapa?", options: ["060", "075", "090", "120"], answer: "090", explanation: "O bacon deve estar com tempo de 40 segundos e GAP de 090 programado." },
-      { category: "🥓 Chapa · Bacon", question: "Após preparar o bacon, o que deve ser lavado antes de usar o platen para carne bovina?", options: ["Apenas as espátulas", "Apenas o raspador", "Espátulas, raspador, rodinho e chapas", "Somente o platen"], answer: "Espátulas, raspador, rodinho e chapas", explanation: "Ao final do processo de bacon, espátulas, raspador, rodinho e chapas devem ser lavados antes de usar o platen para carne bovina." },
-      { category: "🥓 Chapa · Bacon", question: "Como devem ficar os bacons no rack após a preparação?", options: ["Inteiros empilhados", "Partidos ao meio no próprio rack", "Dobrados ao meio", "Separados por papel manteiga"], answer: "Partidos ao meio no próprio rack", explanation: "Os bacons devem ficar partidos ao meio no próprio rack, facilitando a colocação na mesa de condimentação." },
-      { category: "🧹 Chapa · Limpeza", question: "Com quantas raspagens o raspador deve cobrir toda a superfície da chapa?", options: ["1 a 2 raspagens", "2 a 3 raspagens", "3 a 4 raspagens", "5 a 6 raspagens"], answer: "3 a 4 raspagens", explanation: "Raspar da frente para trás com 3 a 4 raspagens cobrindo toda a superfície." },
-      { category: "🧹 Chapa · Limpeza", question: "A que ângulo deve estar a lâmina do raspador em relação à superfície da chapa?", options: ["5°", "10°", "15°", "30°"], answer: "15°", explanation: "A lâmina do raspador deve estar a 15° em relação à superfície da chapa." },
-      { category: "🧹 Chapa · Limpeza", question: "Quantos panos limpos devem estar disponíveis para a chapa?", options: ["2 panos", "3 panos", "4 panos", "6 panos"], answer: "4 panos", explanation: "Manter 4 panos limpos: 2 para utensílios, 1 para áreas gordurosas e 1 para áreas não gordurosas." },
-      { category: "🧼 Chapa · Higiene", question: "Quando devem ser higienizadas as mãos durante o trabalho na chapa sem luvas?", options: ["A cada hora", "A cada rodada de preparação", "Apenas no início do turno", "Quando sujar"], answer: "A cada rodada de preparação", explanation: "Sem luvas, higienizar as mãos a cada rodada de preparo de carnes." },
-      { category: "🌡️ Chapa · Temperaturas", question: "Qual é a temperatura da chapa para preparação dos ovos no Café da Manhã?", options: ["100°C", "115°C", "135°C", "150°C"], answer: "135°C", explanation: "O platen dedicado para ovos no Café da Manhã deve estar a 135°C." },
-      { category: "🥩 Chapa · Carnes", question: "Qual é o limite máximo de carnes 4:1 na gaveta UHC?", options: ["4 carnes", "6 carnes", "8 carnes", "10 carnes"], answer: "6 carnes", explanation: "Carnes 4:1 são removidas uma a uma e não empilhadas. Máximo 6 carnes na gaveta." },
-      { category: "🥩 Chapa · Carnes", question: "Em quanto tempo devem ser removidas todas as carnes da chapa?", options: ["10 segundos", "15 segundos", "18 segundos", "25 segundos"], answer: "18 segundos", explanation: "Todas as carnes devem ser removidas em 18 segundos." },
-      { category: "🧹 Chapa · Limpeza", question: "Quantas raspagens deve cobrir o raspador na limpeza da chapa?", options: ["1-2", "2-3", "3-4", "5-6"], answer: "3-4", explanation: "Raspar da frente para trás com 3 a 4 raspagens cobrindo toda a superfície." },
-      { category: "🧼 Chapa · Higiene", question: "Quando deve ser higienizado as mãos durante o trabalho na chapa sem luvas?", options: ["A cada hora", "A cada rodada de preparo", "Apenas no início do turno", "Quando sujar"], answer: "A cada rodada de preparo", explanation: "Sem luvas, higienizar as mãos a cada rodada de preparo de carnes." },
-      { category: "🧹 Chapa · Limpeza", question: "Com que frequência deve ser reforçada a limpeza do Teflon?", options: ["A cada 5 min", "A cada 10 min", "A cada 15 min", "A cada 30 min"], answer: "A cada 15 min", explanation: "A cada 15 minutos, reforçar a limpeza passando 2-3 vezes com pano e rodinho." },
-      { category: "🌡️ Chapa · Temperaturas", question: "Qual é o ponto de partida de cocção para carnes 10:1 exceto Taylor NG?", options: ["30s", "35s", "39s", "45s"], answer: "39s", explanation: "Ponto de partida (exceto Taylor NG): 10:1 = 39 segundos." },
-      { category: "🥓 Chapa · Bacon", question: "Qual o tempo de cocção do bacon na chapa?", options: ["20s", "30s", "40s", "60s"], answer: "40s", explanation: "O bacon é cozinhado por 40 segundos com GAP de 090." }
-    ];
 
     document.addEventListener("DOMContentLoaded", () => {
       const quizPanel = document.getElementById("panel-quiz");
       const observer = new MutationObserver(() => {
         if (quizPanel.classList.contains("active")) {
-          initQuiz(QUIZ_CHAPA, 'Chapa');
+          initQuizFromJSON('chapa', 'Chapa');
           observer.disconnect();
         }
       });
       observer.observe(quizPanel, { attributes: true, attributeFilter: ["class"] });
 
       // Se já estiver ativo no carregamento
-      if (quizPanel.classList.contains("active")) initQuiz(QUIZ_CHAPA, 'Chapa');
+      if (quizPanel.classList.contains("active")) initQuizFromJSON('chapa', 'Chapa');
     });
   </script>
 

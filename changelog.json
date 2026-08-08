@@ -1,6 +1,171 @@
 {
   "versions": [
     {
+      "version": "v20",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "App 40% mais leve",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "⚡",
+          "text": "**O app baixa 1,2 MB a menos.** Cada pergunta carregava campos de progresso — quantas vezes foi respondida, tempo médio, data da próxima revisão — que na verdade ficam salvos no seu aparelho. Iam vazios e iguais para todo mundo, em todas as 2.222 perguntas. O pacote inicial caiu de **2,98 MB para 1,76 MB**.",
+          "tag": "melhoria"
+        },
+        {
+          "icon": "🔁",
+          "text": "**O Simulado Geral não repete mais a mesma pergunta.** Algumas perguntas pertencem a mais de um guia com razão (o sal das McFritas é de Fritas e de McFritas), e por isso apareciam duas vezes na mesma rodada. Cada guia continua com as suas; o simulado agora mostra uma só.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🎯",
+          "text": "**Princípios da Cooltura de Serviço corrigidos** — o Quiz PPI dava uma resposta que não bate com o material: são **Generosidade, Humildade, Vocação em servir, Inclusão e Agilidade**.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "📦",
+          "text": "**\"Quando iniciar a montagem do pedido\" agora diz o canal** — a resposta é diferente no McDelivery e no balcão, e a pergunta não deixava claro de qual se tratava.",
+          "tag": "correcao"
+        }
+      ]
+    },
+    {
+      "version": "v19",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "Simulado completo",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "🎯",
+          "text": "**O Simulado Geral agora tem todas as perguntas do app — 2.223.** A lista de guias que ele carregava era escrita à mão e ficava para trás a cada categoria nova: **492 perguntas de Treinador, Gerência, Liderança, Limpeza, PPI e Supervisores nunca apareciam ali**. Agora a lista é gerada automaticamente e não tem como desatualizar.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🔎",
+          "text": "**9 filtros novos** — Segurança do Alimento, Estoque e Recebimento, Fechamento, Treinador, PPI, Supervisores, Gerência e Liderança tinham perguntas no app mas não tinham botão para filtrar. O filtro **Provas**, que não tinha nenhuma pergunta e sempre abria vazio, foi removido.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "📚",
+          "text": "**Temperaturas, Rendimentos, Empilhamento e Futuros Treinadores viraram categorias de verdade** — eram 121 perguntas que só existiam dentro do Simulado e ficavam de fora da revisão espaçada, das tags e das estatísticas.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🐛",
+          "text": "**Duas perguntas eram impossíveis de acertar** — as de tempo de fritura do Crispy Chicken e das tortas tinham como resposta `6'` enquanto a alternativa era `6'00\"`, e o app compara o texto exato. Também havia uma pergunta de empilhamento com a resposta certa repetida em dois botões.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "📡",
+          "text": "**Offline mais completo** — as perguntas avançadas de Chapa nunca tinham entrado no pacote offline, e as categorias novas também entraram.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "🧀",
+          "text": "**Grafia do queijo padronizada** — *Emmenthal*, *Ementhal* e *Emmental* viraram **Emental** em todo o app.",
+          "tag": "melhoria"
+        }
+      ]
+    },
+    {
+      "version": "v18",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "Linha, tostadeira e revisão de texto",
+      "badge_type": "correcao",
+      "items": [
+        {
+          "icon": "🔪",
+          "text": "**Direção da lâmina corrigida** — a lâmina com o nome do sanduíche fica voltada para a **tostadeira**, e é assim que se identifica qual sanduíche deve ser condimentado. A **base** vai em direção à tostadeira e a **coroa** em direção à UHC/OAT. O app dizia o contrário.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "🍞",
+          "text": "**Modelos de tostadeira nomeados** — o app trabalha com mais de um modelo e dizer só \"a tostadeira\" deixava a temperatura ambígua. A tostadeira rápida passa a aparecer como **VCT-200 / VCT-250** (placa principal 293 °C, auxiliar 204 °C, GAP 5D) e a **HEBT-5V** com placas A/B a 271 °C, placa C a 254 °C, compressão 4D e motor 3300.",
+          "tag": "guia"
+        },
+        {
+          "icon": "📝",
+          "text": "**Revisão de ortografia** — corrigidos acentos e grafias em perguntas, cards e checklists: *Cooltura* (estava \"Cooltua\"), *Conhece*, *Caramelização*, *McNífico*, *McFritas/McChicken/McNuggets/McDelivery* sem espaço, além de acentos que faltavam em *área, áreas, utensílios, sequência, máxima, visível, atrás, guaraná, crítica, McExperiência* e *enxágue*. Os nomes da tabela de PLU foram mantidos como estão — ali eles precisam bater com o que aparece no caixa.",
+          "tag": "melhoria"
+        }
+      ]
+    },
+    {
+      "version": "v17",
+      "date": "2026-08-07",
+      "date_display": "07 Ago 2026",
+      "badge": "Qualidade das perguntas",
+      "badge_type": "correcao",
+      "items": [
+        {
+          "icon": "🎲",
+          "text": "**Não dá mais para acertar pela posição** — em algumas partes do app a resposta certa quase sempre caía na mesma letra. No Quiz PPI, **97% das respostas eram a letra D**: dava para gabaritar sem ler a pergunta. Corrigido em todo o banco — agora cada letra é a certa em ~25% das vezes. Perguntas com alternativas numéricas continuam em ordem crescente, que é como devem ser lidas.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "✍️",
+          "text": "**Alternativas erradas do Quiz PPI reescritas** — 78% das perguntas repetiam os mesmos três distratores genéricos (\"Depende do volume do turno\", \"O gerente define\", \"Não há padrão fixo\"), o que entregava a resposta de graça. Cada pergunta ganhou alternativas plausíveis, com valores reais da operação.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "✂️",
+          "text": "**Onze respostas estavam cortadas no meio** — apareciam como *\"Sabor de carne grelhada,\"* ou *\"Ativar os pães no sinal,\"*, terminando em vírgula. Todas reescritas por completo.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "🌡️",
+          "text": "**Erros de padrão no Quiz PPI corrigidos** — óleo dos McNuggets **180 °C** (estava 168 °C, que é o das McFritas), McChicken **3′15″** (estava 3min30s), carnes **3:1 e 4:1 são 4 por rodada** (estavam 6), tempo inicial da 10:1 **39 s / 41 s** (estava 38 s) e validade secundária da cebola reidratada **24 h na câmara** (estava 2 h, que é o primário na mesa).",
+          "tag": "correcao"
+        },
+        {
+          "icon": "🧹",
+          "text": "**32 perguntas repetidas removidas** — o Quiz PPI repetia perguntas que já existiam, mais bem formuladas, em outros guias. Uma pergunta que afirmava 60 °C de temperatura interna na UHC foi retirada por contradizer os 74 °C do frango e 70 °C da carne bovina usados no resto do app.",
+          "tag": "correcao"
+        }
+      ]
+    },
+    {
+      "version": "v16",
+      "date": "2026-08-07",
+      "date_display": "07 Ago 2026",
+      "badge": "Banco único de perguntas",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "🗂️",
+          "text": "**As perguntas agora moram num lugar só** — cada guia tinha uma cópia própria do quiz escrita dentro da página, paralela ao banco oficial. Eram dois bancos para a mesma pergunta: corrigir num lugar deixava o outro errado. Agora todo guia lê de `data/questions/`.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "➕",
+          "text": "**+364 perguntas passaram a contar** — perguntas que só existiam dentro do HTML estavam invisíveis para o SRS, o mapa de fraquezas, as tags e as estatísticas. Foram incorporadas ao banco e agora entram na revisão espaçada como todas as outras.",
+          "tag": "quiz"
+        },
+        {
+          "icon": "🩹",
+          "text": "**Contradições que vinham da duplicação, resolvidas** — fritadeira de frango e tortas a **180 °C** (não 168 °C), McChicken **3′15″**, tortas **6 min**, McNífico no **pão Quarterão**, Big Tasty com **2 fatias de queijo embaixo e 1 em cima** e gaveta da UHC com **4 pilhas de 3 carnes 10:1 (12 no total)**.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "🐛",
+          "text": "**Quiz de Supervisores e de Fechamento não abriam** — em Supervisores a aba ficava vazia; em Fechamento o quiz tentava iniciar antes do script carregar. Ambos corrigidos.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "⚡",
+          "text": "**Flashcard e Lacunas voltaram a funcionar** em Fechamento, Estoque, Segurança do Alimento e Supervisores — os botões existiam mas não faziam nada porque as perguntas nunca chegavam a esses modos.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "📉",
+          "text": "**Páginas mais de 2.100 linhas mais leves** — sem o quiz duplicado no HTML, os guias abrem mais rápido e as perguntas passam a ser cacheadas separadamente pelo app.",
+          "tag": "melhoria"
+        }
+      ]
+    },
+    {
       "version": "v15",
       "date": "2026-08-06",
       "date_display": "06 Ago 2026",

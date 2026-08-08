@@ -83,12 +83,11 @@ function validateQuestion(q, file) {
   if (!q.explicacao || q.explicacao.length < 10) {
     warn(file, id, 'Explicação muito curta ou ausente');
   }
-  if (!q.relatedQuestions) {
-    warn(file, id, 'relatedQuestions ausente');
-  }
-  if (typeof q.taxaAcertoGlobal !== 'number') {
-    warn(file, id, 'taxaAcertoGlobal ausente');
-  }
+  // relatedQuestions, taxaAcertoGlobal, reviewData, errorStats, timesAnswered,
+  // mediaTempoResposta, frequenciaErro, analytics, contextHints, tempoEstimado,
+  // peso e xp saíram do banco: são estado por usuário (que vive no localStorage)
+  // ou metadados que nenhum código lia. Estavam sendo enviados vazios e iguais
+  // para todo mundo em todas as questões, inflando o precache em ~1,3 MB.
 }
 
 function validateFile(filePath) {
@@ -127,7 +126,7 @@ function walkDir(dir) {
     process.exit(1);
   }
   fs.readdirSync(dir).forEach(function (item) {
-    if (item === 'index.json') return; // skip índice gerado
+    if (item === 'index.json' || item === 'packs.json') return; // arquivos gerados
     var full = path.join(dir, item);
     if (fs.statSync(full).isDirectory()) {
       walkDir(full);

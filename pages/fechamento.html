@@ -703,31 +703,11 @@
       else if (mode === 'lacuna') initLacuna(q, g);
     };
 
-    const QUIZ_FECHAMENTO = [
-      { category: "🛢️ Fechamento · Fritadeiras", question: "Quantas vezes por dia o óleo deve ser filtrado em lojas Best Burger?", options: ["1 vez", "2 vezes", "3 vezes", "A cada turno"], answer: "2 vezes", explanation: "Em lojas Best Burger, o óleo das fritadeiras deve ser filtrado 2 vezes ao dia." },
-      { category: "🛢️ Fechamento · Fritadeiras", question: "A cada quantas horas de uso contínuo o óleo deve ser filtrado?", options: ["2 horas", "4 horas", "6 horas", "8 horas"], answer: "4 horas", explanation: "Filtrar o óleo a cada 4 horas de uso contínuo ou no pré-pico para prolongar a vida útil." },
-      { category: "🛢️ Fechamento · Fritadeiras", question: "Qual o limite máximo de Compostos Polares no óleo antes do descarte?", options: ["18%", "20%", "24%", "30%"], answer: "24%", explanation: "O óleo deve ser descartado quando os Compostos Polares atingirem 24% — medido com o Testo." },
-      { category: "🛢️ Fechamento · Fritadeiras", question: "O que fazer com óleo que tem Compostos Polares acima de 24%?", options: ["Filtrar e continuar", "Adicionar óleo novo para diluir", "Descartar completamente", "Aguardar esfriar e verificar novamente"], answer: "Descartar completamente", explanation: "Óleo com Compostos Polares acima de 24% deve ser descartado imediatamente. Não diluir com óleo novo." },
-      { category: "🛢️ Fechamento · Fritadeiras", question: "Em qual linha da cuba deve ser mantido o nível do óleo?", options: ["Primeira linha", "Segunda linha", "Terceira linha", "Borda da cuba"], answer: "Segunda linha", explanation: "O nível do óleo deve respeitar a segunda linha na cuba. Repor se necessário, comunicando o gerente." },
-      { category: "🔥 Fechamento · Chapa", question: "Qual modo deve ser acionado para a limpeza diária da chapa?", options: ["RECOVERY", "CLEAN MODE", "STANDBY", "READY TO COOK"], answer: "CLEAN MODE", explanation: "Acionar o Clean Mode e aguardar o sinal READY TO CLEAN antes de iniciar a limpeza." },
-      { category: "🔥 Fechamento · Chapa", question: "A que ângulo deve estar a lâmina do raspador em relação à superfície da chapa?", options: ["5°", "10°", "15°", "45°"], answer: "15°", explanation: "A lâmina do raspador deve estar a 15° em relação à superfície da chapa durante a raspagem." },
-      { category: "🔥 Fechamento · Chapa", question: "Quantas raspagens são necessárias para cobrir toda a superfície da chapa?", options: ["1 a 2", "2 a 3", "3 a 4", "5 a 6"], answer: "3 a 4", explanation: "Realizar 3 a 4 raspagens cobrindo toda a superfície da chapa durante a limpeza." },
-      { category: "🔥 Fechamento · Chapa", question: "Qual a cor do Teflon utilizado nos dias ímpares?", options: ["Verde", "Azul", "Vermelho", "Amarelo"], answer: "Azul", explanation: "Teflon azul nos dias ímpares, Teflon verde nos dias pares — alternância para desgaste uniforme." },
-      { category: "🔥 Fechamento · Chapa", question: "Quantos ml do produto QSR devem ser usados na limpeza da chapa?", options: ["30ml", "60ml", "90ml", "120ml"], answer: "90ml", explanation: "Colocar 90ml do produto QSR Limpador para Chapas no recipiente para a limpeza diária." },
-      { category: "🍞 Fechamento · Tostadeira", question: "O que deve ser feito antes de limpar a tostadeira?", options: ["Ligar no nível máximo", "Desligar o equipamento", "Aplicar água fria", "Remover as correias"], answer: "Desligar o equipamento", explanation: "A tostadeira deve ser desligada antes de qualquer limpeza — risco de queimadura e dano ao equipamento." },
-      { category: "🍞 Fechamento · Tostadeira", question: "Quantos ml (pumps) do limpador devem ser usados na limpeza da tostadeira?", options: ["30ml (1 pump)", "60ml (2 pumps)", "90ml (3 pumps)", "120ml (4 pumps)"], answer: "60ml (2 pumps)", explanation: "Usar 60ml (2 pumps) do KAY QSR Limpador para Chapas e Tostadeiras na limpeza diária." },
-      { category: "🫙 Fechamento · Utensílios", question: "Por quanto tempo os utensílios devem ficar na solução de detergente (Cuba 1)?", options: ["1 minuto", "3 minutos", "5 minutos", "10 minutos"], answer: "5 minutos", explanation: "Na Cuba 1, os utensílios devem ficar de molho por 5 minutos na solução de detergente." },
-      { category: "🫙 Fechamento · Utensílios", question: "Por quanto tempo os utensílios devem ficar na solução sanitizante (Cuba 3)?", options: ["30 segundos", "1 minuto", "3 minutos", "5 minutos"], answer: "1 minuto", explanation: "Na Cuba 3, deixar na solução sanitizante por 1 minuto. Não enxaguar depois." },
-      { category: "🫙 Fechamento · Utensílios", question: "Com que frequência os panos de limpeza devem ser trocados?", options: ["A cada 1 hora", "A cada 2 horas", "A cada turno", "Uma vez ao dia"], answer: "A cada 2 horas", explanation: "Os panos de limpeza devem ser trocados a cada 2 horas durante a operação." },
-      { category: "🪑 Fechamento · Salão", question: "Por quanto tempo a Solução FC deve agir no piso na limpeza profunda?", options: ["30 segundos", "1 minuto", "2 minutos", "5 minutos"], answer: "2 minutos", explanation: "Aplicar a Solução FC e deixar agir por 2 minutos antes de esfregar com o esfregão." },
-      { category: "🪑 Fechamento · Salão", question: "Quantos sacos de lixo devem ser mantidos dobrados em cada lixeira?", options: ["2 a 3 sacos", "3 a 5 sacos", "5 a 7 sacos", "10 sacos"], answer: "5 a 7 sacos", explanation: "Manter 5 a 7 sacos de lixo dobrados (verdes e pretos) em cada lixeira para facilitar a troca." },
-      { category: "🪑 Fechamento · Salão", question: "Quantos pumps do limpador de banheiro devem ser usados no vaso?", options: ["1 pump", "2 pumps", "3 pumps", "4 pumps"], answer: "2 pumps", explanation: "Aplicar 2 pumps do limpador desinfetante no vaso e deixar agir por 2 minutos antes de esfregar." },
-      { category: "📦 Fechamento · Estoque", question: "O que significa PEPS na estocagem?", options: ["Padrão Especial de Produto Seguro", "Primeiro a Entrar, Primeiro a Sair", "Procedimento de Estoque por Produto e Shelf", "Protocolo de Embalagem Para Segurança"], answer: "Primeiro a Entrar, Primeiro a Sair", explanation: "PEPS: produtos mais antigos ficam na frente e são usados primeiro para evitar vencimento." },
-      { category: "📦 Fechamento · Estoque", question: "Quanto tempo total tem o pão Brioche após ser retirado do congelador?", options: ["24 horas", "36 horas", "48 horas", "72 horas"], answer: "48 horas", explanation: "Pão Brioche: mínimo 4h de descongelamento, consumo recomendado em até 24h, validade secundária total de 48 horas. Retirar no fechamento para o dia seguinte." },
-      { category: "📦 Fechamento · Estoque", question: "Qual a temperatura mínima para manter produtos congelados?", options: ["-10°C", "-15°C", "-18°C", "-20°C"], answer: "-18°C", explanation: "Produtos congelados devem ser mantidos a -18°C ou abaixo para garantir a segurança do alimento." }
-    ];
-
-      initQuiz(QUIZ_FECHAMENTO, 'Procedimento de Fechamento');
+    // main.js é carregado com defer, então initQuizFromJSON só existe depois do
+    // parse do documento — a chamada precisa esperar o DOMContentLoaded.
+    document.addEventListener('DOMContentLoaded', function() {
+      initQuizFromJSON('fechamento', 'Procedimento de Fechamento');
+    });
   </script>
 
   <!-- Bottom Navigation -->
