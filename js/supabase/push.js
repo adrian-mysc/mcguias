@@ -8,7 +8,12 @@
  *  4. Salva/atualiza a subscription no Supabase (tabela push_subscriptions)
  */
 
-import { supabase } from './config.js';
+// Usa o cliente REST (rest.js), NÃO o SDK do esm.sh. O push era a última
+// funcionalidade da rota de login presa ao CDN: o auth-guard importa este
+// módulo logo após a sessão ser validada e, se o esm.sh estivesse lento ou
+// bloqueado, o import falhava, o .catch() engolia o erro e o usuário
+// simplesmente nunca era inscrito — sem nenhum sinal de que algo falhou.
+import { db } from './rest.js';
 
 // Chave pública VAPID gerada para este projeto
 const VAPID_PUBLIC_KEY =
@@ -32,7 +37,7 @@ async function getServiceWorkerRegistration() {
 
 async function saveSubscription(userId, sub) {
   const { endpoint, keys } = sub.toJSON();
-  await supabase.from('push_subscriptions').upsert(
+  await db.upsert('push_subscriptions',
     { user_id: userId, endpoint, p256dh: keys.p256dh, auth: keys.auth },
     { onConflict: 'user_id,endpoint' }
   );
@@ -40,11 +45,10 @@ async function saveSubscription(userId, sub) {
 
 async function removeStaleSubscriptions(userId, currentEndpoint) {
   // Remove subscriptions antigas deste usuário que não correspondem ao endpoint atual
-  await supabase
-    .from('push_subscriptions')
-    .delete()
-    .eq('user_id', userId)
-    .neq('endpoint', currentEndpoint);
+  await db.remove('push_subscriptions', {
+    match: { user_id: userId },
+    neq:   { endpoint: currentEndpoint },
+  });
 }
 
 /**
@@ -97,11 +101,7 @@ export async function removePush(userId) {
     const { endpoint } = sub.toJSON();
     await sub.unsubscribe().catch(() => {});
     if (userId) {
-      await supabase
-        .from('push_subscriptions')
-        .delete()
-        .eq('user_id', userId)
-        .eq('endpoint', endpoint);
+      await db.remove('push_subscriptions', { match: { user_id: userId, endpoint } });
     }
   }
 }

@@ -180,10 +180,23 @@ function upsert(table, rows, opts) {
   return insert(table, rows, Object.assign({ upsert: true }, opts || {}));
 }
 
+// remove('tabela', { match:{col:val}, neq:{col:val} })
+// O PostgREST recusa DELETE sem filtro nenhum (evita apagar a tabela inteira),
+// e aqui a checagem é explícita para não depender disso.
+async function remove(table, o) {
+  o = o || {};
+  const params = {};
+  if (o.match) for (const c in o.match) params[c] = 'eq.' + o.match[c];
+  if (o.neq)   for (const c in o.neq)   params[c] = 'neq.' + o.neq[c];
+  if (!Object.keys(params).length) throw new Error('remove() exige ao menos um filtro');
+  const headers = await _headers({ 'Prefer': 'return=minimal' });
+  return _req(REST + '/' + table + _qs(params), { method: 'DELETE', headers });
+}
+
 async function rpc(fn, args) {
   const headers = await _headers();
   return _req(REST + '/rpc/' + fn, { method: 'POST', headers, body: JSON.stringify(args || {}) });
 }
 
 export const db = { getSession, getValidSession, getValidToken, getUserId,
-                    select, count, insert, upsert, rpc, SUPABASE_URL, SUPABASE_ANON_KEY };
+                    select, count, insert, upsert, remove, rpc, SUPABASE_URL, SUPABASE_ANON_KEY };

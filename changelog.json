@@ -1,6 +1,20 @@
 {
   "versions": [
     {
+      "version": "v21",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "Notificações",
+      "badge_type": "correcao",
+      "items": [
+        {
+          "icon": "🔔",
+          "text": "**As notificações voltaram a funcionar para quem não conseguia se inscrever.** O cadastro para receber notificações dependia de uma biblioteca externa carregada de fora do app. Quando ela demorava ou era bloqueada, o cadastro falhava calado — sem erro, sem aviso — e a pessoa nunca recebia nada. Agora o cadastro não depende mais dela.",
+          "tag": "correcao"
+        }
+      ]
+    },
+    {
       "version": "v20",
       "date": "2026-08-08",
       "date_display": "08 Ago 2026",

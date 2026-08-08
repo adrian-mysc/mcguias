@@ -843,6 +843,41 @@ test('toda categoria carregada do banco está no precache do sw.js', () => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Push notifications — fiação do caminho crítico
+// ─────────────────────────────────────────────────────────────────────────────
+section('Push — subscription não depende do SDK (esm.sh)');
+
+test('push.js usa o cliente REST, não o SDK', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js/supabase/push.js'), 'utf8');
+  assert(!/from\s+'\.\/config\.js'/.test(src),
+    'push.js voltou a importar config.js (SDK do esm.sh). O auth-guard importa ' +
+    'este módulo logo após o login e engole o erro: se a CDN falhar, o usuário ' +
+    'nunca é inscrito e ninguém percebe.');
+  assert(/from\s+'\.\/rest\.js'/.test(src), 'push.js deveria importar rest.js');
+});
+
+test('rest.js expõe o remove() que o push.js precisa', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js/supabase/rest.js'), 'utf8');
+  assert(/\bremove\b/.test(src.split('export const db')[1] || ''), 'db.remove não exportado');
+});
+
+test('a chave VAPID do cliente é um ponto P-256 válido', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'js/supabase/push.js'), 'utf8');
+  const m = src.match(/VAPID_PUBLIC_KEY\s*=\s*\n?\s*'([A-Za-z0-9_-]+)'/);
+  assert(m, 'VAPID_PUBLIC_KEY não encontrada em push.js');
+  const buf = Buffer.from(m[1], 'base64url');
+  assert(buf.length === 65, 'chave VAPID deveria ter 65 bytes, tem ' + buf.length);
+  assert(buf[0] === 0x04, 'chave VAPID deveria começar com 0x04 (ponto não comprimido)');
+});
+
+test('sw.js trata push e notificationclick', () => {
+  const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+  assert(/addEventListener\('push'/.test(sw), 'sw.js sem handler de push');
+  assert(/addEventListener\('notificationclick'/.test(sw), 'sw.js sem handler de notificationclick');
+  assert(/showNotification/.test(sw), 'sw.js não chama showNotification');
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Results
 // ─────────────────────────────────────────────────────────────────────────────
 console.log(`\n${'─'.repeat(50)}`);
