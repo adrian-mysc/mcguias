@@ -1,6 +1,30 @@
 {
   "versions": [
     {
+      "version": "v22",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "McDelivery · Posicionamento",
+      "badge_type": "novo",
+      "items": [
+        {
+          "icon": "👥",
+          "text": "**Nova aba \"Posicionamento\" no McDelivery** — quantas pessoas a estação precisa em cada faixa de pedidos, de 1 pessoa (até 09) a 10 pessoas (acima de 86), e a ordem em que cada função entra: Conferente → Apresentador → Finalizador → Conferente_2 → Apoio_2.",
+          "tag": "novo"
+        },
+        {
+          "icon": "📋",
+          "text": "**O passo a passo de cada função** — Apoio, Conferente, Finalizador e Apresentador, com os detalhes que costumam escapar: o recall no POS (81) e o cupom fiscal na régua são **só do Apoio_1**, e até 25 pedidos o **Conferente acumula** o fechamento da sacola porque ainda não há Finalizador na equipe.",
+          "tag": "guia"
+        },
+        {
+          "icon": "🎯",
+          "text": "**20 perguntas novas** sobre posicionamento e funções do McDelivery.",
+          "tag": "quiz"
+        }
+      ]
+    },
+    {
       "version": "v21",
       "date": "2026-08-08",
       "date_display": "08 Ago 2026",
