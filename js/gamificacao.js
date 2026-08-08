@@ -793,9 +793,11 @@
    * Configura lembretes recorrentes usando setTimeout encadeado.
    * Simula um alarme diário às 20h (horário do dispositivo) —
    * funciona enquanto o navegador/PWA estiver aberto.
-   * Para notificações 100% background seria necessário servidor VAPID,
-   * que está além do escopo de um app estático; esta abordagem cobre
-   * a grande maioria dos casos (usuário abre o app ao longo do dia).
+   * Complementa o Web Push de verdade (js/supabase/push.js + o handler 'push'
+   * do sw.js + a Edge Function notify-incomplete-profiles), que já existe e
+   * entrega com o app fechado. Este aqui cobre o caso do usuário com o app
+   * aberto e sem subscription — os dois usam a tag 'mc-daily-reminder', então
+   * um substitui o outro em vez de empilhar duas notificações.
    */
   function _setupPushReminder() {
     var REMINDER_KEY = 'mc_push_reminder_set';

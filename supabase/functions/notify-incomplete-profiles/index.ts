@@ -5,10 +5,18 @@
  * que ainda não completaram o perfil (sem cargo ou loja).
  *
  * Variáveis de ambiente necessárias (Supabase Dashboard → Project Settings → Edge Functions → Secrets):
- *   VAPID_PUBLIC_KEY   — chave pública VAPID (base64url)
- *   VAPID_PRIVATE_KEY  — chave privada VAPID (base64url)
+ *   VAPID_PUBLIC_KEY   — chave pública VAPID em base64url (a MESMA que está em
+ *                        js/supabase/push.js; se divergirem, o serviço de push
+ *                        rejeita com 403 e nenhuma notificação chega)
+ *   VAPID_PRIVATE_KEY  — a chave privada como JWK JSON COMPLETO, não base64url.
+ *                        Ex.: {"kty":"EC","crv":"P-256","x":"…","y":"…","d":"…"}
+ *                        O código faz JSON.parse nesse valor (ver buildVapidJWT);
+ *                        se for gravado como base64url, o parse lança e TODO
+ *                        envio falha silenciosamente no catch do sendPush.
  *   VAPID_SUBJECT      — mailto:seu-email@exemplo.com
- *   NOTIFY_SECRET      — segredo para proteger o endpoint (header X-Notify-Secret)
+ *   NOTIFY_SECRET      — segredo para proteger o endpoint (header X-Notify-Secret).
+ *                        ATENÇÃO: se não for definido, a checagem é pulada e
+ *                        qualquer um pode disparar a notificação para todos.
  *
  * Invocação manual:
  *   curl -X POST https://<project>.supabase.co/functions/v1/notify-incomplete-profiles \
