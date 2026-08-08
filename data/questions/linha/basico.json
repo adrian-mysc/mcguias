@@ -1,6 +1,6 @@
 {
   "version": "1.2.0",
-  "updatedAt": "2026-08-07",
+  "updatedAt": "2026-08-08",
   "categoria": "linha",
   "nivel": "basico",
   "migratedFrom": "linha.html",
@@ -1194,12 +1194,12 @@
       "pergunta": "Ao preparar a embalagem na linha, para onde deve estar direcionada a base dos sanduíches?",
       "alternativas": [
         "Pode ser qualquer direção",
-        "Em direção à UHC/OAT",
+        "Em direção à tostadeira",
         "Em direção ao atendimento",
-        "Em direção à tostadeira"
+        "Em direção à UHC/OAT"
       ],
       "respostaCorreta": 1,
-      "explicacao": "A base dos sanduíches deve estar em direção à UHC/OAT e a cora (parte de cima do pão) em direção à tostadeira.",
+      "explicacao": "No Best Burger, a lâmina com o nome do sanduíche fica voltada para a tostadeira — é assim que se identifica qual sanduíche deve ser condimentado. A base vai em direção à tostadeira e a coroa em direção à UHC/OAT.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -2129,13 +2129,13 @@
       ],
       "pergunta": "Como devem ser posicionados a base e a coroa do pão na embalagem (sanduíche comum)?",
       "alternativas": [
+        "Base na direção da UHC/OAT e coroa no centro, voltada para a tostadeira",
         "Base e coroa na direção da tostadeira",
-        "Ambas no centro",
-        "Base na direção da UHC/OAT e coroa no centro, em direção à tostadeira",
-        "Coroa na direção da UHC/OAT e base no centro"
+        "Base na direção da tostadeira e coroa no centro, voltada para a UHC/OAT",
+        "Ambas no centro da lâmina"
       ],
       "respostaCorreta": 2,
-      "explicacao": "A base segue em direção à UHC/OAT e a coroa fica no centro, voltada para a tostadeira. Nos sanduíches Signature e Big Tasty é o contrário: base no centro da lâmina e coroa na direção da UHC/OAT.",
+      "explicacao": "A base segue em direção à tostadeira e a coroa fica no centro, voltada para a UHC/OAT. A lâmina com o nome do sanduíche aponta para a tostadeira, identificando o sanduíche a ser condimentado. Nos Signature e Big Tasty é o contrário: base no centro da lâmina e coroa na direção da tostadeira.",
       "dica": "",
       "tempoEstimado": 15,
       "xp": 10,
@@ -3498,6 +3498,58 @@
       },
       "contextHints": [],
       "relatedQuestions": []
+    },
+    {
+      "id": "linha_078",
+      "categoria": "linha",
+      "subcategoria": "🍔 Linha · Condimentação",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "linha",
+        "condimentacao",
+        "best-burguer"
+      ],
+      "pergunta": "No padrão Best Burger, como se identifica qual sanduíche deve ser condimentado?",
+      "alternativas": [
+        "Pela ordem de chegada dos pedidos no monitor",
+        "Pela lâmina com o nome do sanduíche voltada para a tostadeira",
+        "Pela cor da embalagem escolhida pelo iniciador",
+        "Pelo selo \"especial para você\" colado na comanda"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "No Best Burger, o sanduíche a ser condimentado é identificado pela lâmina com o nome do sanduíche voltada para a tostadeira.",
+      "dica": "A lâmina aponta para a tostadeira — é o nome nela que diz o que condimentar.",
+      "tempoEstimado": 15,
+      "xp": 10,
+      "peso": 1,
+      "frequenciaErro": 0,
+      "taxaAcertoGlobal": 0,
+      "timesAnswered": 0,
+      "mediaTempoResposta": 0,
+      "ativo": true,
+      "reviewData": {
+        "facilidade": 2.5,
+        "intervalo": 1,
+        "ultimaRevisao": null,
+        "proximaRevisao": null,
+        "nivelDominio": 0
+      },
+      "errorStats": {
+        "timesWrong": 0,
+        "timesCorrect": 0,
+        "weaknessScore": 0
+      },
+      "analytics": {
+        "globalAccuracy": 0,
+        "averageTime": 0,
+        "dropRate": 0
+      },
+      "contextHints": [],
+      "relatedQuestions": [
+        "linha_029",
+        "linha_050"
+      ]
     }
   ]
 }

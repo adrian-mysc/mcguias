@@ -1,6 +1,25 @@
 {
   "versions": [
     {
+      "version": "v18",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "Linha · Tostadeira e lâmina",
+      "badge_type": "correcao",
+      "items": [
+        {
+          "icon": "🔪",
+          "text": "**Direção da lâmina corrigida** — a lâmina com o nome do sanduíche fica voltada para a **tostadeira**, e é assim que se identifica qual sanduíche deve ser condimentado. A **base** vai em direção à tostadeira e a **coroa** em direção à UHC/OAT. O app dizia o contrário.",
+          "tag": "correcao"
+        },
+        {
+          "icon": "🍞",
+          "text": "**Modelos de tostadeira nomeados** — o app trabalha com mais de um modelo e dizer só \"a tostadeira\" deixava a temperatura ambígua. A tostadeira rápida passa a aparecer como **VCT-200 / VCT-250** (placa principal 293 °C, auxiliar 204 °C, GAP 5D) e a **HEBT-5V** com placas A/B a 271 °C, placa C a 254 °C, compressão 4D e motor 3300.",
+          "tag": "guia"
+        }
+      ]
+    },
+    {
       "version": "v17",
       "date": "2026-08-07",
       "date_display": "07 Ago 2026",

@@ -822,7 +822,8 @@
       "linha_074",
       "linha_075",
       "linha_076",
-      "linha_077"
+      "linha_077",
+      "linha_078"
     ],
     "lope": [
       "lope_001",
@@ -4859,7 +4860,8 @@
       "bb_047",
       "bb_048",
       "bb_049",
-      "bb_050"
+      "bb_050",
+      "linha_078"
     ],
     "conceito": [
       "bb_001",
@@ -8288,27 +8290,11 @@
     ],
     "linha": [
       "linha_045",
-      "linha_046"
-    ],
-    "pano": [
-      "lope_081",
-      "lope_083",
-      "lope_084",
-      "lope_085",
-      "lope_088",
-      "lope_089",
-      "salao_ngk_040"
-    ],
-    "troca": [
-      "lope_083",
-      "lope_084",
-      "lope_085",
-      "salao_ngk_040"
-    ],
-    "salao": [
-      "lope_085"
+      "linha_046",
+      "linha_078"
     ],
     "condimentacao": [
+      "linha_078",
       "lope_086",
       "olimp_023",
       "olimp_025",
@@ -8355,6 +8341,24 @@
       "olimp_611",
       "olimp_618",
       "olimp_621"
+    ],
+    "pano": [
+      "lope_081",
+      "lope_083",
+      "lope_084",
+      "lope_085",
+      "lope_088",
+      "lope_089",
+      "salao_ngk_040"
+    ],
+    "troca": [
+      "lope_083",
+      "lope_084",
+      "lope_085",
+      "salao_ngk_040"
+    ],
+    "salao": [
+      "lope_085"
     ],
     "cuba": [
       "lope_086"
@@ -10721,6 +10725,7 @@
       "linha_075",
       "linha_076",
       "linha_077",
+      "linha_078",
       "lope_001",
       "lope_002",
       "lope_003",
@@ -21182,6 +21187,17 @@
       "tags": [
         "atendimento",
         "producao"
+      ],
+      "ativo": true
+    },
+    "linha_078": {
+      "categoria": "linha",
+      "subcategoria": "🍔 Linha · Condimentação",
+      "dificuldade": 2,
+      "tags": [
+        "linha",
+        "condimentacao",
+        "best-burguer"
       ],
       "ativo": true
     },
@@ -35491,5 +35507,5 @@
       "ativo": true
     }
   },
-  "totalQuestions": 2101
+  "totalQuestions": 2102
 }
