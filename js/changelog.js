@@ -12,10 +12,15 @@
 
   // ── Labels e mapeamentos ─────────────────────────────────────
   const TAG_LABELS = {
-    guia:    'Guia',
-    quiz:    'Quiz',
-    sistema: 'Sistema',
-    bug:     'Bug',
+    guia:     'Guia',
+    quiz:     'Quiz',
+    sistema:  'Sistema',
+    bug:      'Bug',
+    // Sem estes, o rótulo caía no fallback e aparecia cru e sem acento
+    // ("correcao", "melhoria") no painel de Novidades.
+    correcao: 'Correção',
+    melhoria: 'Melhoria',
+    novo:     'Novo',
   };
 
   // ── Utilitários ──────────────────────────────────────────────
