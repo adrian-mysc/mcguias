@@ -708,7 +708,8 @@ h2 { letter-spacing: -0.3px; }
 
 /* ---- Hero ------------------------------------------------ */
 .hero {
-  background: var(--red-gradient);
+  /* mesmo campo vermelho do index: diagonal do vermelho da marca ao bordô */
+  background: linear-gradient(152deg, #E23127 0%, #C21C13 38%, #93110B 74%, #6E0A06 100%);
   padding: 28px 16px 24px;
   margin-bottom: 0;
   position: relative;
@@ -719,9 +720,10 @@ h2 { letter-spacing: -0.3px; }
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* a luz é branca, não dourada — a paleta do hero é branco sobre vermelho */
   background:
-    radial-gradient(ellipse 65% 70% at 88% 10%, rgba(255,199,44,0.22) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 60% at -5% 100%, rgba(0,0,0,0.18) 0%, transparent 55%);
+    radial-gradient(ellipse 58% 62% at 80% 4%,  rgba(255,255,255,0.30) 0%, transparent 58%),
+    radial-gradient(ellipse 70% 65% at 2% 100%, rgba(58,4,2,0.45)     0%, transparent 60%);
 }
 .hero-inner {
   max-width: 780px;
