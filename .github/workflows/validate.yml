@@ -6,15 +6,27 @@ on:
       - 'data/questions/**'
       - 'js/**'
       - 'tests/**'
+      - 'pages/**'
+      - 'index.html'
+      - 'css/**'
+      - 'sw.js'
+      - 'build/**'
+      - 'changelog.json'
       - '.eslintrc.json'
-      - 'js/tools/validateQuestions.js'
+      - '.github/workflows/validate.yml'
   pull_request:
     paths:
       - 'data/questions/**'
       - 'js/**'
       - 'tests/**'
+      - 'pages/**'
+      - 'index.html'
+      - 'css/**'
+      - 'sw.js'
+      - 'build/**'
+      - 'changelog.json'
       - '.eslintrc.json'
-      - 'js/tools/validateQuestions.js'
+      - '.github/workflows/validate.yml'
 
 jobs:
   validate:
