@@ -48,53 +48,96 @@
 
     /* ---- Hero ---- */
     .hero {
-      background: #1c1a17;
       position: relative;
       overflow: hidden;
-    }
-    .hero::before {
-      content:''; position:absolute; inset:0; pointer-events:none;
+      isolation: isolate;
+      /* Campo vermelho em diagonal: do vermelho da marca no alto à direita
+         para um bordô fechado embaixo à esquerda. O degradê não é decoração —
+         é o que dá profundidade e evita o vermelho chapado de banner. */
       background:
-        radial-gradient(ellipse 65% 70% at 85% 15%, rgba(255,199,44,0.20) 0%, transparent 55%),
-        radial-gradient(ellipse 55% 65% at 5% 85%, rgba(218,41,28,0.14) 0%, transparent 55%);
+        linear-gradient(152deg, #E23127 0%, #C21C13 38%, #93110B 74%, #6E0A06 100%);
     }
+    /* camada 1 — luz quente vinda de cima à direita + sombra funda embaixo */
+    .hero::before {
+      content:''; position:absolute; inset:-20%; pointer-events:none; z-index:0;
+      background:
+        radial-gradient(ellipse 58% 62% at 80% 4%,  rgba(255,255,255,0.34) 0%, transparent 58%),
+        radial-gradient(ellipse 48% 58% at 99% 28%, rgba(255,190,172,0.20) 0%, transparent 62%),
+        radial-gradient(ellipse 70% 65% at 2% 100%, rgba(58,4,2,0.55)     0%, transparent 60%);
+      animation: heroDrift 26s ease-in-out infinite alternate;
+    }
+    /* camada 2 — textura de pontos finíssima + vinheta interna */
     .hero::after {
-      content:''; position:absolute; inset:0; pointer-events:none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 0h1v1H0zm20 0h1v1h-1zM0 20h1v1H0zm20 20h1v1h-1z' fill='rgba(255,255,255,0.028)'/%3E%3C/svg%3E");
+      content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 0h1v1H0zm20 0h1v1h-1zM0 20h1v1H0zm20 20h1v1h-1z' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,0.14), inset 0 60px 90px -60px rgba(255,255,255,0.10);
     }
-    .hero-inner { position:relative; z-index:1; padding:22px 18px 20px; color:white; }
+    /* brilho que atravessa o hero uma vez, no carregamento */
+    .hero-sheen {
+      position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+    }
+    .hero-sheen::before {
+      content:''; position:absolute; top:-60%; bottom:-60%; width:38%; left:-45%;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.13), transparent);
+      transform: skewX(-14deg);
+      animation: heroSheen 1.5s .55s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    .hero-inner { position:relative; z-index:1; padding:24px 18px 21px; color:#fff; }
+
     .hero-eyebrow {
       font-family:var(--font-display); font-size:9px; font-weight:800;
-      letter-spacing:3.5px; text-transform:uppercase; color:rgba(255,199,44,0.95);
-      margin-bottom:7px; display:flex; align-items:center; gap:6px;
+      letter-spacing:3.5px; text-transform:uppercase;
+      color:rgba(255,255,255,0.82);
+      margin-bottom:8px; display:flex; align-items:center; gap:7px;
     }
-    .hero-eyebrow::before { content:''; display:inline-block; width:18px; height:2px; background:rgba(255,199,44,0.6); border-radius:2px; }
-    .hero-inner h2 { font-size:27px; line-height:1.08; letter-spacing:-0.8px; font-weight:800; }
-    .hero-inner h2 em { font-style:normal; color:var(--yellow); }
-    .hero-inner > p { font-size:12.5px; opacity:0.68; margin-top:7px; line-height:1.55; max-width:300px; }
+    .hero-eyebrow::before {
+      content:''; display:inline-block; width:20px; height:2px; border-radius:2px;
+      background:linear-gradient(90deg, #fff, rgba(255,255,255,0.25));
+    }
+
+    .hero-inner h2 {
+      font-size:27px; line-height:1.08; letter-spacing:-0.8px; font-weight:800;
+      color:rgba(255,255,255,0.72);
+      text-shadow:0 1px 18px rgba(60,4,2,0.35);
+    }
+    /* a palavra em destaque é a MAIS clara — o contraste vem do branco puro,
+       não de uma segunda cor */
+    .hero-inner h2 em {
+      font-style:normal; color:#fff; position:relative;
+      text-shadow:0 0 26px rgba(255,255,255,0.55), 0 1px 2px rgba(90,8,4,0.25);
+    }
+    .hero-inner > p {
+      font-size:12.5px; opacity:0.74; margin-top:8px; line-height:1.55; max-width:300px;
+    }
 
     .hero-stats {
       display:flex; gap:0; margin-top:18px;
-      border-top:1px solid rgba(255,255,255,0.12); padding-top:14px;
+      border-top:1px solid rgba(255,255,255,0.18); padding-top:14px;
     }
-    .hero-stat { flex:1; padding-right:14px; border-right:1px solid rgba(255,255,255,0.12); }
+    .hero-stat { flex:1; padding-right:14px; border-right:1px solid rgba(255,255,255,0.14); }
     .hero-stat:last-child { border-right:none; padding-right:0; padding-left:14px; }
     .hero-stat:first-child { padding-left:0; }
     .hero-stat:not(:first-child) { padding-left:14px; }
     .hero-stat-num {
-      font-family:var(--font-display); font-size:20px; font-weight:800;
-      color:var(--yellow); line-height:1; letter-spacing:-0.5px;
+      font-family:var(--font-display); font-size:21px; font-weight:800;
+      color:#fff; line-height:1; letter-spacing:-0.5px;
+      text-shadow:0 0 20px rgba(255,255,255,0.28);
     }
-    .hero-stat-label { font-size:9.5px; opacity:0.6; margin-top:3px; letter-spacing:0.8px; text-transform:uppercase; }
+    .hero-stat-label {
+      font-size:9.5px; opacity:0.62; margin-top:4px; letter-spacing:0.8px; text-transform:uppercase;
+    }
 
-    .hero-chips { display:flex; flex-wrap:wrap; gap:5px; margin-top:14px; }
+    .hero-chips { display:flex; flex-wrap:wrap; gap:5px; margin-top:15px; }
     .hero-chip {
-      background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.16);
-      color:rgba(255,255,255,0.92); padding:3.5px 9px; border-radius:20px;
+      background:rgba(255,255,255,0.13); border:1px solid rgba(255,255,255,0.22);
+      color:#fff; padding:4px 10px; border-radius:20px;
       font-size:11px; font-weight:600; display:inline-block;
-      backdrop-filter:blur(4px);
+      backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+      box-shadow:0 1px 0 rgba(255,255,255,0.10) inset;
     }
-    .hero-audio { margin-top:14px; }
+    .hero-audio { margin-top:15px; }
 
     /* ---- Banners ---- */
     .home-banner {
@@ -342,32 +385,58 @@
     .cl-tag.bug     { background:#e8f5e9; color:#1a5c2a; }
 
     /* ---- Animations ---- */
-    @keyframes heroDown   { from{opacity:0;transform:translateY(-14px)} to{opacity:1;transform:none} }
-    @keyframes heroUp     { from{opacity:0;transform:translateY(12px)}  to{opacity:1;transform:none} }
-    @keyframes chipIn     { from{opacity:0;transform:scale(0.75) translateY(6px)} to{opacity:1;transform:none} }
-    @keyframes slideIn    { from{opacity:0;transform:translateX(-12px)} to{opacity:1;transform:none} }
-    @keyframes revealUp   { from{opacity:0;transform:translateY(8px) scale(0.99)} to{opacity:1;transform:none} }
+    /* Curva expo-out: arranca rápido e assenta devagar. É o que dá a sensação
+       de "fluido" — a antiga terminava cedo demais e parecia um corte seco. */
+    @keyframes heroDown   { from{opacity:0;transform:translateY(-16px);filter:blur(7px)} to{opacity:1;transform:none;filter:blur(0)} }
+    @keyframes heroUp     { from{opacity:0;transform:translateY(16px); filter:blur(7px)} to{opacity:1;transform:none;filter:blur(0)} }
+    @keyframes chipIn     { from{opacity:0;transform:scale(0.82) translateY(8px)} to{opacity:1;transform:none} }
+    @keyframes heroSheen  { from{left:-45%} to{left:115%} }
+    /* deriva lenta do fundo: o hero nunca fica parado, mas o movimento é
+       devagar o bastante para não competir com a leitura */
+    @keyframes heroDrift  {
+      from{transform:translate3d(0,0,0) scale(1)}
+      to  {transform:translate3d(-2.5%,1.5%,0) scale(1.06)}
+    }
+    @keyframes slideIn    { from{opacity:0;transform:translateX(-14px)} to{opacity:1;transform:none} }
+    @keyframes revealUp   { from{opacity:0;transform:translateY(10px) scale(0.99)} to{opacity:1;transform:none} }
     @keyframes pulseRing  {
       0%  {box-shadow:0 4px 20px rgba(218,41,28,0.30),0 0 0 0 rgba(218,41,28,0.35)}
       70% {box-shadow:0 4px 20px rgba(218,41,28,0.30),0 0 0 10px rgba(218,41,28,0)}
       100%{box-shadow:0 4px 20px rgba(218,41,28,0.30),0 0 0 0 rgba(218,41,28,0)}
     }
 
-    .hero-eyebrow { animation:heroDown .45s cubic-bezier(0.22,1,.36,1) both; }
-    .hero-inner h2 { animation:heroDown .55s .05s cubic-bezier(0.22,1,.36,1) both; }
-    .hero-inner > p { animation:heroUp .5s .12s cubic-bezier(0.22,1,.36,1) both; }
-    .hero-stats    { animation:heroUp .45s .18s cubic-bezier(0.22,1,.36,1) both; }
-    .hero-chips    { animation:heroUp .45s .24s cubic-bezier(0.22,1,.36,1) both; }
-    .hero-chip { display:inline-block; animation:chipIn .35s cubic-bezier(0.34,1.5,.64,1) both; }
-    .hero-chip:nth-child(1){animation-delay:.30s} .hero-chip:nth-child(2){animation-delay:.37s}
-    .hero-chip:nth-child(3){animation-delay:.44s} .hero-chip:nth-child(4){animation-delay:.51s}
-    .hero-audio { animation:heroUp .4s .58s cubic-bezier(0.22,1,.36,1) both; }
+    .hero-eyebrow  { animation:heroDown .75s        cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-inner h2 { animation:heroDown .85s .07s   cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-inner > p{ animation:heroUp   .80s .17s   cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-stats    { animation:heroUp   .75s .26s   cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-chips    { animation:heroUp   .70s .34s   cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-audio    { animation:heroUp   .70s .74s   cubic-bezier(0.16,1,0.3,1) both; }
 
-    .banner-anim{animation:slideIn .4s cubic-bezier(0.22,1,.36,1) both}
-    .banner-anim-1{animation-delay:.36s} .banner-anim-2{animation-delay:.46s}
-    .search-wrap{animation:revealUp .4s .48s cubic-bezier(0.22,1,.36,1) both}
-    .quiz-cta{animation:revealUp .45s .54s cubic-bezier(0.22,1,.36,1),pulseRing 1s 1.3s ease-out;animation-fill-mode:both}
-    .hist-strip{animation:revealUp .4s .62s cubic-bezier(0.22,1,.36,1) both}
+    /* escalonamento por índice: cobre QUALQUER quantidade de chips. Antes só os
+       4 primeiros tinham delay, então o 5º e o 6º entravam junto com o hero. */
+    .hero-chip { display:inline-block; animation:chipIn .5s cubic-bezier(0.34,1.4,0.64,1) both; }
+    .hero-chip:nth-child(1){animation-delay:.42s} .hero-chip:nth-child(2){animation-delay:.48s}
+    .hero-chip:nth-child(3){animation-delay:.54s} .hero-chip:nth-child(4){animation-delay:.60s}
+    .hero-chip:nth-child(5){animation-delay:.66s} .hero-chip:nth-child(6){animation-delay:.72s}
+    .hero-chip:nth-child(7){animation-delay:.78s} .hero-chip:nth-child(8){animation-delay:.84s}
+
+    .banner-anim{animation:slideIn .55s cubic-bezier(0.16,1,0.3,1) both}
+    .banner-anim-1{animation-delay:.50s} .banner-anim-2{animation-delay:.60s}
+    .search-wrap{animation:revealUp .55s .64s cubic-bezier(0.16,1,0.3,1) both}
+    .quiz-cta{animation:revealUp .6s .70s cubic-bezier(0.16,1,0.3,1),pulseRing 1s 1.5s ease-out;animation-fill-mode:both}
+    .hist-strip{animation:revealUp .55s .78s cubic-bezier(0.16,1,0.3,1) both}
+
+    /* Quem pediu menos movimento no sistema recebe a página pronta, sem
+       entradas, sem deriva e sem o brilho — nada de animação infinita. */
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before { animation:none; }
+      .hero-sheen { display:none; }
+      .hero-eyebrow, .hero-inner h2, .hero-inner > p, .hero-stats,
+      .hero-chips, .hero-chip, .hero-audio,
+      .banner-anim, .search-wrap, .quiz-cta, .hist-strip {
+        animation:none !important; opacity:1 !important; transform:none !important; filter:none !important;
+      }
+    }
 
     .category-label.sr-label{opacity:0;transform:translateX(-5px);transition:opacity .3s cubic-bezier(0.22,1,.36,1),transform .3s}
     .category-label.sr-label.sr-visible{opacity:1;transform:none}
@@ -554,6 +623,7 @@
   </nav>
 
   <div class="hero">
+    <div class="hero-sheen" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">MC Guias · Estudo Operacional</div>
       <h2>Guias <em>Rápidos</em><br>Operacionais</h2>

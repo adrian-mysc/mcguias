@@ -1,6 +1,30 @@
 {
   "versions": [
     {
+      "version": "v23",
+      "date": "2026-08-08",
+      "date_display": "08 Ago 2026",
+      "badge": "Novo visual da capa",
+      "badge_type": "melhoria",
+      "items": [
+        {
+          "icon": "🎨",
+          "text": "**Capa em vermelho e branco** — o topo do app trocou o preto com dourado por um campo vermelho em degradê diagonal, com a tipografia toda em branco. A palavra em destaque agora aparece em branco puro sobre o texto mais suave, em vez de usar uma segunda cor.",
+          "tag": "melhoria"
+        },
+        {
+          "icon": "✨",
+          "text": "**Animações mais fluidas** — as entradas ficaram mais longas e suaves, com o texto entrando levemente desfocado até ganhar foco, um brilho que atravessa a capa no carregamento e um movimento lento e contínuo no fundo.",
+          "tag": "melhoria"
+        },
+        {
+          "icon": "♿",
+          "text": "**Respeita quem prefere menos movimento** — com a opção ativada no sistema, a página aparece pronta, sem entradas e sem animação nenhuma em looping.",
+          "tag": "melhoria"
+        }
+      ]
+    },
+    {
       "version": "v22",
       "date": "2026-08-08",
       "date_display": "08 Ago 2026",
