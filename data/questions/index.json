@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-08",
+  "generatedAt": "2026-08-10",
   "byCategory": {
     "bebidas-sobremesas": [
       "bebidas_sobremesas_001",
@@ -1127,7 +1127,21 @@
       "mccafe_078",
       "mccafe_079",
       "mccafe_080",
-      "mccafe_081"
+      "mccafe_081",
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090",
+      "mccafe_091",
+      "mccafe_092",
+      "mccafe_093",
+      "mccafe_094",
+      "mccafe_095"
     ],
     "mcdelivery": [
       "mcdelivery_001",
@@ -8871,6 +8885,67 @@
     "egg-burger": [
       "mccafe_046"
     ],
+    "jura": [
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090",
+      "mccafe_091",
+      "mccafe_092",
+      "mccafe_093",
+      "mccafe_094",
+      "mccafe_095"
+    ],
+    "franke": [
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090",
+      "mccafe_094",
+      "mccafe_095"
+    ],
+    "maquina-automatica": [
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_091",
+      "mccafe_092",
+      "mccafe_093",
+      "mccafe_095"
+    ],
+    "volumetria": [
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086"
+    ],
+    "contingencia": [
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090"
+    ],
+    "plu": [
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089"
+    ],
+    "cafe-filtrado": [
+      "mccafe_094"
+    ],
     "oat": [
       "mcdelivery_001"
     ],
@@ -11204,6 +11279,12 @@
       "mccafe_079",
       "mccafe_080",
       "mccafe_081",
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_094",
       "mcdelivery_001",
       "mcdelivery_002",
       "mcdelivery_003",
@@ -11816,6 +11897,13 @@
       "manut_028",
       "mccafe_024",
       "mccafe_039",
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090",
+      "mccafe_091",
+      "mccafe_092",
+      "mccafe_095",
       "olimp_001",
       "olimp_002",
       "olimp_003",
@@ -12404,7 +12492,8 @@
       "lope_038",
       "lope_042",
       "lope_050",
-      "lope_056"
+      "lope_056",
+      "mccafe_093"
     ],
     "5": []
   },
@@ -24738,6 +24827,165 @@
       ],
       "ativo": true
     },
+    "mccafe_082": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_083": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_084": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_085": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_086": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_087": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "ativo": true
+    },
+    "mccafe_088": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "ativo": true
+    },
+    "mccafe_089": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "ativo": true
+    },
+    "mccafe_090": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia"
+      ],
+      "ativo": true
+    },
+    "mccafe_091": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "ativo": true
+    },
+    "mccafe_092": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "ativo": true
+    },
+    "mccafe_093": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 4,
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "ativo": true
+    },
+    "mccafe_094": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "cafe-filtrado"
+      ],
+      "ativo": true
+    },
+    "mccafe_095": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica"
+      ],
+      "ativo": true
+    },
     "mcdelivery_001": {
       "categoria": "mcdelivery",
       "subcategoria": "📦 Montagem",
@@ -36916,5 +37164,5 @@
       "ativo": true
     }
   },
-  "totalQuestions": 2242
+  "totalQuestions": 2256
 }

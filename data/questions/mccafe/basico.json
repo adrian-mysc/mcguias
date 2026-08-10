@@ -1862,6 +1862,317 @@
       "respostaCorreta": 3,
       "explicacao": "O McCafé Corner não tem POS exclusivo. Os produtos são vendidos no NGK, balcão, drive ou MOP.",
       "ativo": true
+    },
+    {
+      "id": "mccafe_082",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "pergunta": "Nas novas receitas das máquinas automáticas JURA/FRANKE, qual o volume do Espresso Duplo?",
+      "alternativas": [
+        "30ml (copo 100ml)",
+        "50ml (copo 100ml)",
+        "100ml (copo 200ml)",
+        "180ml (copo 200ml)"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O Espresso Duplo tem 50ml, servido em copo de 100ml.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_083",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "pergunta": "Qual o volume do Espresso (simples) nas máquinas automáticas JURA/FRANKE?",
+      "alternativas": [
+        "30ml (copo 100ml)",
+        "50ml (copo 100ml)",
+        "180ml (copo 200ml)",
+        "200ml (copo 200ml)"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Espresso simples tem 30ml, servido em copo de 100ml.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_084",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "pergunta": "Qual o volume do Macchiatto nas novas receitas das máquinas automáticas?",
+      "alternativas": [
+        "30ml (copo 100ml)",
+        "50ml (copo 100ml)",
+        "180ml (copo 200ml)",
+        "200ml (copo 200ml)"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "O Macchiatto tem 30ml, servido em copo de 100ml — mesmo volume do Espresso, mas com leite aerado.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_085",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "pergunta": "Qual o volume do Americano nas máquinas automáticas JURA/FRANKE?",
+      "alternativas": [
+        "100ml (copo 100ml)",
+        "150ml (copo 200ml)",
+        "180ml (copo 200ml)",
+        "200ml (copo 200ml)"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "O Americano tem 180ml, servido em copo de 200ml.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_086",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "pergunta": "Qual o volume do Café Latte e do Cappuccino nas máquinas automáticas JURA/FRANKE?",
+      "alternativas": [
+        "100ml, copo 100ml",
+        "150ml, copo 200ml",
+        "180ml, copo 200ml",
+        "200ml, copo 200ml"
+      ],
+      "respostaCorreta": 3,
+      "explicacao": "Tanto o Café Latte quanto o Cappuccino têm 200ml, servidos em copo de 200ml.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_087",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "pergunta": "Segundo o Plano de Contingência das novas receitas, qual PLU deve ser desativado até a atualização dos menus digitais?",
+      "alternativas": [
+        "Espresso",
+        "Espresso Duplo",
+        "Macchiatto",
+        "Americano"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A PLU do Espresso Duplo deve ser desativada temporariamente, até a conclusão da atualização dos menus digitais em todos os restaurantes.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_088",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "pergunta": "No Plano de Contingência, quando o cliente solicitar um \"Espresso\", qual produto deve ser entregue?",
+      "alternativas": [
+        "Espresso Curto",
+        "Espresso Duplo",
+        "Americano",
+        "Macchiatto"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Com a PLU do Espresso Duplo desativada, quando o cliente pedir \"Espresso\" deve ser entregue o Espresso Duplo.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_089",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "pergunta": "No Plano de Contingência, quando o cliente solicitar um \"Espresso Curto\", qual produto deve ser entregue?",
+      "alternativas": [
+        "Espresso",
+        "Espresso Duplo",
+        "Americano",
+        "Cappuccino"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Quando o cliente pedir \"Espresso Curto\", deve ser entregue o Espresso (simples).",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_090",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia"
+      ],
+      "pergunta": "Por que o Plano de Contingência do café é necessário, segundo o comunicado das novas receitas?",
+      "alternativas": [
+        "Porque os menus digitais ainda mostram as volumetrias antigas, que não refletem as novas receitas",
+        "Porque as máquinas JURA estão com defeito",
+        "Porque o café filtrado mudou de fornecedor",
+        "Porque os copos padrão mudaram de tamanho"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "A contingência existe porque os menus digitais ainda não foram atualizados com as novas volumetrias, enquanto os cardápios de mão devem ser ajustados manualmente em alinhamento com o Marketing.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_091",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "pergunta": "Na tela da máquina JURA X10, o produto \"Espresso Duplo\" corresponde a qual botão?",
+      "alternativas": [
+        "Café",
+        "Expresso",
+        "Flat White",
+        "Especial"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Como as máquinas JURA não permitem alterar a configuração da tela, é preciso identificar por adesivo: na X10, o botão \"Café\" corresponde ao Espresso Duplo.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_092",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "pergunta": "Na tela da máquina JURA X10, qual botão corresponde ao Macchiatto?",
+      "alternativas": [
+        "Café",
+        "Expresso",
+        "Flat White",
+        "Cappucino"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Na JURA X10, o botão \"Flat White\" corresponde ao Macchiatto.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_093",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 4,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "pergunta": "Na máquina JURA X8 (diferente da X10), qual é o botão correspondente ao produto Americano?",
+      "alternativas": [
+        "Americano",
+        "Especial",
+        "Flat White",
+        "Café"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Na JURA X10, o Americano corresponde ao botão \"Americano\", mas na JURA X8 ele corresponde ao botão \"Especial\" — atenção à diferença entre os dois modelos.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_094",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tipo": "verdadeiro_falso",
+      "tags": [
+        "jura",
+        "franke",
+        "cafe-filtrado"
+      ],
+      "pergunta": "As novas receitas das máquinas automáticas JURA/FRANKE alteraram os produtos à base de café filtrado.",
+      "alternativas": [
+        "Verdadeiro",
+        "Falso"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Falso. Não houve mudança nos produtos à base de café filtrado — as novas receitas afetam apenas os produtos à base de espresso.",
+      "ativo": true
+    },
+    {
+      "id": "mccafe_095",
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica"
+      ],
+      "pergunta": "De acordo com o guia de níveis das bebidas à base de espresso nas máquinas automáticas, até onde deve chegar o nível da bebida no copo?",
+      "alternativas": [
+        "Até a boca do copo",
+        "Cerca de 1 dedo abaixo da boca do copo, na linha interna marcada",
+        "Até a metade do copo",
+        "Não há marcação, varia por bebida"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "O volume não é servido até a boca do copo — fica cerca de 1 dedo abaixo, respeitando a linha interna marcada no copo.",
+      "ativo": true
     }
   ]
 }
