@@ -1208,6 +1208,183 @@
       "explicacao": "O objetivo do OEPE (order end – present end) é de 120 segundos ou menos.",
       "dica": "Dois minutos, no máximo.",
       "ativo": true
+    },
+    {
+      "id": "drive054",
+      "categoria": "drive-thru",
+      "subcategoria": "🧼 Higiene · Drive-Thru",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "higiene",
+        "preparacao"
+      ],
+      "pergunta": "Antes de assumir a função no Drive-Thru, por quanto tempo deve-se lavar as mãos e antebraços com sabonete bactericida?",
+      "alternativas": [
+        "10 segundos",
+        "15 segundos",
+        "20 segundos",
+        "30 segundos"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "Lave as mãos e antebraços com sabonete bactericida por 20\" e use o gel sanitizante antes de assumir a função, ou após realizar uma atividade de limpeza.",
+      "ativo": true
+    },
+    {
+      "id": "drive055",
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Operador de Caixa",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "caixa",
+        "recall",
+        "gprs"
+      ],
+      "pergunta": "Como a pessoa do Caixa deve antecipar os pagamentos no Drive-Thru?",
+      "alternativas": [
+        "Chamando o cliente pelo nome no headset",
+        "Puxando o \"recall por número\", fechando com a modalidade GPRS ou a escolhida pelo cliente",
+        "Aguardando o carro chegar para só então consultar o pedido",
+        "Solicitando ao gerente que confirme cada pedido antes de cobrar"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A pessoa do Caixa antecipa os pagamentos puxando o \"recall por número\", fechando o pedido com a modalidade GPRS ou a modalidade de pagamento escolhida pelo cliente.",
+      "ativo": true
+    },
+    {
+      "id": "drive056",
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Operador de Caixa",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "caixa",
+        "seguranca"
+      ],
+      "pergunta": "Como a pessoa do Caixa deve manter a janela do Drive-Thru enquanto aguarda o próximo carro?",
+      "alternativas": [
+        "Sempre aberta, para agilizar o atendimento",
+        "Fechada, abrindo somente quando o cliente estiver se aproximando",
+        "Aberta apenas durante o dia",
+        "Fechada apenas durante a madrugada"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "Mantenha a janela fechada, abrindo-a somente quando o cliente estiver se aproximando.",
+      "ativo": true
+    },
+    {
+      "id": "drive057",
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Operador de Caixa",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "caixa-movel",
+        "cartao",
+        "procedimento"
+      ],
+      "pergunta": "Ao receber o pagamento com cartão, além de não tocar no cartão do cliente, o que a pessoa do Caixa Móvel deve guardar para conferência?",
+      "alternativas": [
+        "A 1ª via do comprovante",
+        "A 2ª via do comprovante do cartão",
+        "Uma foto do cartão",
+        "O número do pedido anotado no verso do comprovante"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A pessoa do Caixa Móvel solicita que o cliente insira o cartão e digite a senha, entrega o comprovante do cartão ao cliente e guarda a 2ª via para conferência.",
+      "ativo": true
+    },
+    {
+      "id": "drive058",
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Tomador de Pedidos",
+      "dificuldade": 3,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "tablet",
+        "cod",
+        "sequencia"
+      ],
+      "pergunta": "Trabalhando em dupla com a pessoa do COD, quando a pessoa do Tablet deve iniciar o registro do pedido do carro seguinte?",
+      "alternativas": [
+        "Assim que o carro entrar na pista, antes mesmo do COD",
+        "Somente após visualizar na tela do COD que o pedido foi aberto (\"Abre Pedido\")",
+        "A qualquer momento, não há uma ordem definida",
+        "Somente quando o gerente autorizar pelo headset"
+      ],
+      "respostaCorreta": 1,
+      "explicacao": "A pessoa do Tablet só deve iniciar o registro no Tablet após visualizar na tela do COD a informação de que o pedido foi aberto (\"Abre Pedido\") — isso garante a sequência correta dos pedidos.",
+      "ativo": true
+    },
+    {
+      "id": "drive059",
+      "categoria": "drive-thru",
+      "subcategoria": "⚙️ Procedimentos · Atendimento",
+      "dificuldade": 2,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "preparacao",
+        "checklist"
+      ],
+      "pergunta": "No checklist de preparação do Drive-Thru, além do Pin Pad, qual item deve estar disponível para garantir a cobrança com cartão em qualquer ponto da pista?",
+      "alternativas": [
+        "Um extensor para o Pin Pad",
+        "Uma calculadora extra",
+        "Um segundo POS reserva",
+        "Um roteador Wi-Fi portátil"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Entre os itens de preparação está o GPRS carregado e o extensor para o Pin Pad, garantindo a cobrança com cartão em qualquer ponto da pista.",
+      "ativo": true
+    },
+    {
+      "id": "drive060",
+      "categoria": "drive-thru",
+      "subcategoria": "📱 Meu Méqui · Drive-Thru",
+      "dificuldade": 1,
+      "tipo": "multipla_escolha",
+      "tags": [
+        "drive-thru",
+        "meu-méqui",
+        "fidelidade"
+      ],
+      "pergunta": "Segundo o programa Meu Méqui, para quais clientes do Drive-Thru deve ser perguntado \"Você participa do Meu Méqui?\"",
+      "alternativas": [
+        "Apenas para quem já demonstrou interesse antes",
+        "Apenas para quem pagar com cartão",
+        "Para todos os clientes, para que possam acumular pontos no momento da compra",
+        "Apenas quando o restaurante estiver com pouco movimento"
+      ],
+      "respostaCorreta": 2,
+      "explicacao": "A pergunta \"Você participa do Meu Méqui?\" deve ser feita para TODOS OS CLIENTES, para que possam acumular pontos no momento da compra — inclusive no Drive-Thru.",
+      "ativo": true
+    },
+    {
+      "id": "drive061",
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Tomador de Pedidos",
+      "dificuldade": 2,
+      "tipo": "verdadeiro_falso",
+      "tags": [
+        "drive-thru",
+        "tablet",
+        "fluxo"
+      ],
+      "pergunta": "Se o carro atendido no COD avançar, a pessoa do Tablet deve andar junto com o carro que está atendendo (passando do Totem), para que a pessoa do COD possa iniciar o atendimento do próximo carro sem deixar espaço na pista.",
+      "alternativas": [
+        "Verdadeiro",
+        "Falso"
+      ],
+      "respostaCorreta": 0,
+      "explicacao": "Verdadeiro. Isso garante que nunca haja espaço vazio na pista e que a sequência de atendimento continue fluindo.",
+      "ativo": true
     }
   ]
 }

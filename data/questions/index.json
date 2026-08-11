@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-08",
+  "generatedAt": "2026-08-11",
   "byCategory": {
     "bebidas-sobremesas": [
       "bebidas_sobremesas_001",
@@ -288,7 +288,15 @@
       "drive050",
       "drive051",
       "drive052",
-      "drive053"
+      "drive053",
+      "drive054",
+      "drive055",
+      "drive056",
+      "drive057",
+      "drive058",
+      "drive059",
+      "drive060",
+      "drive061"
     ],
     "embaixador-experiencia": [
       "emb_001",
@@ -1127,7 +1135,21 @@
       "mccafe_078",
       "mccafe_079",
       "mccafe_080",
-      "mccafe_081"
+      "mccafe_081",
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090",
+      "mccafe_091",
+      "mccafe_092",
+      "mccafe_093",
+      "mccafe_094",
+      "mccafe_095"
     ],
     "mcdelivery": [
       "mcdelivery_001",
@@ -4831,6 +4853,7 @@
       "drive041",
       "drive046",
       "drive052",
+      "drive057",
       "fechamento_031",
       "fechamento_036",
       "fritos_046",
@@ -5378,6 +5401,7 @@
       "chapa_130",
       "chapa_138",
       "chapa_139",
+      "drive056",
       "estoque_recebimento_018",
       "fechamento_026",
       "fechamento_036",
@@ -6522,6 +6546,7 @@
       "chapa_140",
       "chapa_150",
       "drive047",
+      "drive054",
       "estoque_recebimento_019",
       "fechamento_022",
       "fechamento_025",
@@ -7426,6 +7451,14 @@
       "drive038",
       "drive039",
       "drive040",
+      "drive054",
+      "drive055",
+      "drive056",
+      "drive057",
+      "drive058",
+      "drive059",
+      "drive060",
+      "drive061",
       "olimp_144",
       "olimp_187",
       "olimp_189",
@@ -7471,7 +7504,9 @@
       "emb_030"
     ],
     "caixa": [
-      "drive004"
+      "drive004",
+      "drive055",
+      "drive056"
     ],
     "pagamento": [
       "drive004",
@@ -7554,7 +7589,8 @@
     ],
     "fluxo": [
       "drive013",
-      "drive036"
+      "drive036",
+      "drive061"
     ],
     "gestão-de-fila": [
       "drive014"
@@ -7598,7 +7634,8 @@
     "meu-méqui": [
       "drive020",
       "drive021",
-      "drive033"
+      "drive033",
+      "drive060"
     ],
     "app": [
       "drive020",
@@ -7610,7 +7647,8 @@
     ],
     "cod": [
       "drive022",
-      "drive041"
+      "drive041",
+      "drive058"
     ],
     "equipamentos": [
       "drive022",
@@ -7622,7 +7660,8 @@
     ],
     "gprs": [
       "drive025",
-      "drive026"
+      "drive026",
+      "drive055"
     ],
     "relatórios": [
       "drive025"
@@ -7740,10 +7779,12 @@
       "drive045"
     ],
     "caixa-movel": [
-      "drive046"
+      "drive046",
+      "drive057"
     ],
     "cartao": [
       "drive047",
+      "drive057",
       "influencer_pagamento_045"
     ],
     "bebida": [
@@ -7760,6 +7801,7 @@
     ],
     "sequencia": [
       "drive049",
+      "drive058",
       "fechamento_031",
       "montagem_entrega_040",
       "montagem_entrega_041",
@@ -7794,6 +7836,27 @@
       "salao_ngk_030",
       "supervisores_036",
       "tr_126"
+    ],
+    "preparacao": [
+      "drive054",
+      "drive059"
+    ],
+    "recall": [
+      "drive055"
+    ],
+    "tablet": [
+      "drive058",
+      "drive061",
+      "mcdelivery_008"
+    ],
+    "checklist": [
+      "drive059",
+      "emb_031",
+      "emb_032",
+      "emb_033"
+    ],
+    "fidelidade": [
+      "drive060"
     ],
     "perfil": [
       "emb_001",
@@ -7936,11 +7999,6 @@
     ],
     "chaves": [
       "emb_030"
-    ],
-    "checklist": [
-      "emb_031",
-      "emb_032",
-      "emb_033"
     ],
     "LSM": [
       "emb_031",
@@ -8871,6 +8929,67 @@
     "egg-burger": [
       "mccafe_046"
     ],
+    "jura": [
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090",
+      "mccafe_091",
+      "mccafe_092",
+      "mccafe_093",
+      "mccafe_094",
+      "mccafe_095"
+    ],
+    "franke": [
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090",
+      "mccafe_094",
+      "mccafe_095"
+    ],
+    "maquina-automatica": [
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_091",
+      "mccafe_092",
+      "mccafe_093",
+      "mccafe_095"
+    ],
+    "volumetria": [
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086"
+    ],
+    "contingencia": [
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090"
+    ],
+    "plu": [
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089"
+    ],
+    "cafe-filtrado": [
+      "mccafe_094"
+    ],
     "oat": [
       "mcdelivery_001"
     ],
@@ -8908,9 +9027,6 @@
       "mcdelivery_007"
     ],
     "equipamento": [
-      "mcdelivery_008"
-    ],
-    "tablet": [
       "mcdelivery_008"
     ],
     "selo": [
@@ -10187,6 +10303,8 @@
       "drive033",
       "drive034",
       "drive040",
+      "drive054",
+      "drive060",
       "emb_002",
       "emb_003",
       "emb_007",
@@ -10480,6 +10598,9 @@
       "drive051",
       "drive052",
       "drive053",
+      "drive056",
+      "drive059",
+      "drive061",
       "emb_001",
       "emb_004",
       "emb_005",
@@ -11204,6 +11325,12 @@
       "mccafe_079",
       "mccafe_080",
       "mccafe_081",
+      "mccafe_082",
+      "mccafe_083",
+      "mccafe_084",
+      "mccafe_085",
+      "mccafe_086",
+      "mccafe_094",
       "mcdelivery_001",
       "mcdelivery_002",
       "mcdelivery_003",
@@ -11788,6 +11915,9 @@
       "condimentacao_042",
       "drive030",
       "drive038",
+      "drive055",
+      "drive057",
+      "drive058",
       "emb_008",
       "emb_015",
       "emb_034",
@@ -11816,6 +11946,13 @@
       "manut_028",
       "mccafe_024",
       "mccafe_039",
+      "mccafe_087",
+      "mccafe_088",
+      "mccafe_089",
+      "mccafe_090",
+      "mccafe_091",
+      "mccafe_092",
+      "mccafe_095",
       "olimp_001",
       "olimp_002",
       "olimp_003",
@@ -12404,7 +12541,8 @@
       "lope_038",
       "lope_042",
       "lope_050",
-      "lope_056"
+      "lope_056",
+      "mccafe_093"
     ],
     "5": []
   },
@@ -15707,6 +15845,97 @@
         "oepe",
         "tempo",
         "avaliacao-teorica"
+      ],
+      "ativo": true
+    },
+    "drive054": {
+      "categoria": "drive-thru",
+      "subcategoria": "🧼 Higiene · Drive-Thru",
+      "dificuldade": 1,
+      "tags": [
+        "drive-thru",
+        "higiene",
+        "preparacao"
+      ],
+      "ativo": true
+    },
+    "drive055": {
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Operador de Caixa",
+      "dificuldade": 3,
+      "tags": [
+        "drive-thru",
+        "caixa",
+        "recall",
+        "gprs"
+      ],
+      "ativo": true
+    },
+    "drive056": {
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Operador de Caixa",
+      "dificuldade": 2,
+      "tags": [
+        "drive-thru",
+        "caixa",
+        "seguranca"
+      ],
+      "ativo": true
+    },
+    "drive057": {
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Operador de Caixa",
+      "dificuldade": 3,
+      "tags": [
+        "drive-thru",
+        "caixa-movel",
+        "cartao",
+        "procedimento"
+      ],
+      "ativo": true
+    },
+    "drive058": {
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Tomador de Pedidos",
+      "dificuldade": 3,
+      "tags": [
+        "drive-thru",
+        "tablet",
+        "cod",
+        "sequencia"
+      ],
+      "ativo": true
+    },
+    "drive059": {
+      "categoria": "drive-thru",
+      "subcategoria": "⚙️ Procedimentos · Atendimento",
+      "dificuldade": 2,
+      "tags": [
+        "drive-thru",
+        "preparacao",
+        "checklist"
+      ],
+      "ativo": true
+    },
+    "drive060": {
+      "categoria": "drive-thru",
+      "subcategoria": "📱 Meu Méqui · Drive-Thru",
+      "dificuldade": 1,
+      "tags": [
+        "drive-thru",
+        "meu-méqui",
+        "fidelidade"
+      ],
+      "ativo": true
+    },
+    "drive061": {
+      "categoria": "drive-thru",
+      "subcategoria": "👥 Posições · Tomador de Pedidos",
+      "dificuldade": 2,
+      "tags": [
+        "drive-thru",
+        "tablet",
+        "fluxo"
       ],
       "ativo": true
     },
@@ -24735,6 +24964,165 @@
         "drive",
         "taylor-ng",
         "temperatura"
+      ],
+      "ativo": true
+    },
+    "mccafe_082": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_083": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_084": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_085": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_086": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica",
+        "volumetria"
+      ],
+      "ativo": true
+    },
+    "mccafe_087": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "ativo": true
+    },
+    "mccafe_088": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "ativo": true
+    },
+    "mccafe_089": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia",
+        "plu"
+      ],
+      "ativo": true
+    },
+    "mccafe_090": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "contingencia"
+      ],
+      "ativo": true
+    },
+    "mccafe_091": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "ativo": true
+    },
+    "mccafe_092": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "ativo": true
+    },
+    "mccafe_093": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 4,
+      "tags": [
+        "jura",
+        "maquina-automatica"
+      ],
+      "ativo": true
+    },
+    "mccafe_094": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 2,
+      "tags": [
+        "jura",
+        "franke",
+        "cafe-filtrado"
+      ],
+      "ativo": true
+    },
+    "mccafe_095": {
+      "categoria": "mccafe",
+      "subcategoria": "☕ Máquina Automática — JURA/FRANKE",
+      "dificuldade": 3,
+      "tags": [
+        "jura",
+        "franke",
+        "maquina-automatica"
       ],
       "ativo": true
     },
@@ -36916,5 +37304,5 @@
       "ativo": true
     }
   },
-  "totalQuestions": 2242
+  "totalQuestions": 2264
 }
