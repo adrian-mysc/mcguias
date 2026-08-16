@@ -1,0 +1,20 @@
+{
+  "name": "Bit & Solda — Hardware, Manutenção e TI",
+  "short_name": "Bit & Solda",
+  "description": "Estude Hardware, Manutenção de Eletrônicos e Tecnologia da Informação com quizzes rápidos.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0f0d",
+  "theme_color": "#0a0f0d",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

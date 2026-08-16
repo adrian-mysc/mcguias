@@ -1,0 +1,111 @@
+{
+  "categoria": "ti",
+  "titulo": "Tecnologia da Informação",
+  "questoes": [
+    {
+      "id": "ti01",
+      "pergunta": "O que é um sistema operacional?",
+      "opcoes": ["Um programa de edição de texto", "O software que gerencia o hardware e permite a execução de outros programas", "Um tipo de vírus de computador", "Um cabo de rede"],
+      "correta": 1,
+      "explicacao": "O sistema operacional (Windows, Linux, macOS...) faz a ponte entre o hardware e os aplicativos, gerenciando memória, processos e dispositivos."
+    },
+    {
+      "id": "ti02",
+      "pergunta": "O que é um endereço IP?",
+      "opcoes": ["O nome do fabricante da placa de rede", "Um identificador numérico único de um dispositivo em uma rede", "Um tipo de vírus", "O nome do roteador"],
+      "correta": 1,
+      "explicacao": "O endereço IP identifica um dispositivo dentro de uma rede, permitindo que dados sejam roteados corretamente até ele."
+    },
+    {
+      "id": "ti03",
+      "pergunta": "Qual a diferença básica entre um HUB e um SWITCH em uma rede local?",
+      "opcoes": ["Não há diferença", "O switch encaminha dados apenas para o destino correto; o hub retransmite para todas as portas", "O hub é mais rápido que o switch", "O switch não usa cabos"],
+      "correta": 1,
+      "explicacao": "O switch aprende os endereços MAC conectados e envia o tráfego só para a porta de destino, enquanto o hub transmite (broadcast) para todas as portas, gerando mais colisões."
+    },
+    {
+      "id": "ti04",
+      "pergunta": "O que é phishing?",
+      "opcoes": ["Um tipo de backup automático", "Uma técnica de engenharia social para enganar vítimas e roubar dados/credenciais", "Um protocolo de rede seguro", "Um antivírus gratuito"],
+      "correta": 1,
+      "explicacao": "Phishing é uma fraude que usa mensagens ou sites falsos, geralmente se passando por entidades confiáveis, para induzir a vítima a fornecer dados sensíveis."
+    },
+    {
+      "id": "ti05",
+      "pergunta": "Para que serve um firewall?",
+      "opcoes": ["Acelerar a internet", "Filtrar e controlar o tráfego de rede com base em regras de segurança", "Armazenar senhas na nuvem", "Aumentar a resolução de vídeo"],
+      "correta": 1,
+      "explicacao": "O firewall analisa pacotes de rede e bloqueia ou permite tráfego conforme regras definidas, protegendo a rede/dispositivo de acessos indevidos."
+    },
+    {
+      "id": "ti06",
+      "pergunta": "O que significa o termo \"backup\"?",
+      "opcoes": ["Um vírus disfarçado de arquivo", "Uma cópia de segurança dos dados para recuperação em caso de perda", "Um tipo de firewall", "Um protocolo de e-mail"],
+      "correta": 1,
+      "explicacao": "Backup é a cópia de dados armazenada separadamente, usada para restaurar informações em caso de falha, exclusão acidental ou ataque."
+    },
+    {
+      "id": "ti07",
+      "pergunta": "O que é a \"nuvem\" (cloud computing) em termos simples?",
+      "opcoes": ["Um tipo de vírus que se espalha pela internet", "Serviços de computação (armazenamento, processamento) acessados via internet, hospedados remotamente", "Um cabo de fibra óptica especial", "Um sistema operacional"],
+      "correta": 1,
+      "explicacao": "Cloud computing entrega recursos de TI (servidores, armazenamento, aplicações) sob demanda pela internet, sem que o usuário precise ter a infraestrutura fisicamente."
+    },
+    {
+      "id": "ti08",
+      "pergunta": "Qual a função do protocolo DHCP em uma rede?",
+      "opcoes": ["Criptografar senhas", "Atribuir automaticamente endereços IP aos dispositivos conectados", "Bloquear sites indesejados", "Comprimir arquivos"],
+      "correta": 1,
+      "explicacao": "O DHCP (Dynamic Host Configuration Protocol) distribui automaticamente endereços IP e outras configurações de rede aos dispositivos, evitando configuração manual."
+    },
+    {
+      "id": "ti09",
+      "pergunta": "O que caracteriza uma senha forte?",
+      "opcoes": ["Ser curta e fácil de lembrar, como \"123456\"", "Combinar letras maiúsculas/minúsculas, números e símbolos, com boa extensão", "Usar apenas o nome do usuário", "Ser igual em todos os sites"],
+      "correta": 1,
+      "explicacao": "Senhas fortes combinam diferentes tipos de caracteres e têm boa extensão, dificultando ataques de força bruta e adivinhação."
+    },
+    {
+      "id": "ti10",
+      "pergunta": "O que é um \"driver\" de dispositivo?",
+      "opcoes": ["Um tipo de cabo USB", "Um software que permite ao sistema operacional se comunicar com um hardware específico", "Um antivírus", "Um formato de arquivo de imagem"],
+      "correta": 1,
+      "explicacao": "Drivers traduzem comandos do sistema operacional para instruções que um hardware específico (impressora, placa de vídeo etc.) entende."
+    },
+    {
+      "id": "ti11",
+      "pergunta": "O que significa a sigla RAID em armazenamento de dados?",
+      "opcoes": ["Um antivírus corporativo", "Uma técnica que combina múltiplos discos para redundância e/ou desempenho", "Um protocolo de e-mail seguro", "Um tipo de memória RAM"],
+      "correta": 1,
+      "explicacao": "RAID (Redundant Array of Independent Disks) combina vários discos físicos para aumentar desempenho, redundância ou ambos, dependendo do nível usado (RAID 0, 1, 5...)."
+    },
+    {
+      "id": "ti12",
+      "pergunta": "Por que é recomendado manter o sistema operacional e programas sempre atualizados?",
+      "opcoes": ["Atualizações sempre deixam o PC mais lento sem benefício", "Correções de segurança fecham vulnerabilidades conhecidas, reduzindo riscos de ataque", "Não há motivo real, é só estética", "Apenas para mudar o papel de parede"],
+      "correta": 1,
+      "explicacao": "Atualizações frequentemente incluem patches de segurança que corrigem falhas exploráveis por invasores — mantê-las em dia reduz a superfície de ataque."
+    },
+    {
+      "id": "ti13",
+      "pergunta": "O que é autenticação de dois fatores (2FA)?",
+      "opcoes": ["Usar duas senhas iguais", "Uma camada extra de segurança que exige uma segunda confirmação além da senha, como um código no celular", "Fazer login duas vezes seguidas", "Um tipo de firewall"],
+      "correta": 1,
+      "explicacao": "2FA adiciona uma segunda verificação (código, biometria, app autenticador) além da senha, dificultando o acesso mesmo se a senha vazar."
+    },
+    {
+      "id": "ti14",
+      "pergunta": "O que é um servidor DNS?",
+      "opcoes": ["Um equipamento que traduz nomes de domínio (como google.com) em endereços IP", "Um tipo de vírus", "Um cabo de rede especial", "Um software de edição de vídeo"],
+      "correta": 0,
+      "explicacao": "O DNS (Domain Name System) converte nomes legíveis por humanos em endereços IP que os computadores usam para se comunicar na rede."
+    },
+    {
+      "id": "ti15",
+      "pergunta": "Qual a diferença entre software livre/open source e software proprietário?",
+      "opcoes": ["Não existe diferença prática", "Open source disponibiliza o código-fonte para uso, estudo e modificação; proprietário mantém o código fechado", "Software proprietário é sempre gratuito", "Open source nunca pode ser usado em empresas"],
+      "correta": 1,
+      "explicacao": "Software open source disponibiliza seu código-fonte sob licenças que permitem estudo, modificação e redistribuição; o proprietário restringe esse acesso."
+    }
+  ]
+}

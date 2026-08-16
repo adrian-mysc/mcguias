@@ -1,0 +1,509 @@
+/* ============================================================
+   Bit & Solda — Hardware, Manutenção de Eletrônicos e TI
+   Identidade: bancada de trabalho / placa de circuito impresso.
+   Fontes: IBM Plex Mono (técnica, rótulos) + Fraunces (leitura).
+   ============================================================ */
+
+:root {
+  /* ---- Blueprint (tema claro): papel de esquema técnico ---- */
+  --bg: #eef2f1;
+  --bg-grid-line: rgba(27, 61, 74, 0.07);
+  --card: #ffffff;
+  --card-soft: #e4ebe9;
+  --border: #c7d3cf;
+  --text: #16231f;
+  --muted: #5c6d67;
+
+  --copper: #b5651d;
+  --copper-strong: #8f4d13;
+  --phosphor: #1a8f5e;
+  --phosphor-strong: #0f6e46;
+  --signal: #1d6f7a;
+  --danger: #c1402f;
+
+  --font-display: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-body: 'Fraunces', Georgia, serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 2px 10px rgba(22, 35, 31, 0.06);
+  --shadow-pop: 0 10px 30px rgba(22, 35, 31, 0.14);
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  /* ---- PCB à noite: base quase preta com cobre e fósforo ---- */
+  --bg: #0a0f0d;
+  --bg-grid-line: rgba(94, 230, 160, 0.055);
+  --card: #131a17;
+  --card-soft: #182019;
+  --border: #253029;
+  --text: #e9f2ec;
+  --muted: #8ba59a;
+
+  --copper: #e8934a;
+  --copper-strong: #f4ab6a;
+  --phosphor: #5ee6a0;
+  --phosphor-strong: #82f0b8;
+  --signal: #4fd1c5;
+  --danger: #e2574c;
+
+  --shadow-card: 0 2px 14px rgba(0, 0, 0, 0.4);
+  --shadow-pop: 0 20px 50px rgba(0, 0, 0, 0.55);
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    linear-gradient(var(--bg-grid-line) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(90deg, var(--bg-grid-line) 1px, transparent 1px) 0 0 / 28px 28px,
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+h1, h2, h3, .mono {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* ---------------------------------------------------------
+   Splash
+   --------------------------------------------------------- */
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: opacity 0.4s ease;
+}
+#splash.hide { opacity: 0; pointer-events: none; }
+.splash-mark {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--phosphor);
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.splash-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--copper);
+  animation: pulse 1.1s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+.bs-header {
+  padding: 22px 20px 18px;
+  max-width: 880px;
+  margin: 0 auto;
+  animation: rise 0.5s ease both;
+}
+.bs-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bs-brand-mark {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--copper);
+  box-shadow: var(--shadow-card);
+  flex-shrink: 0;
+}
+.bs-brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  margin: 0;
+}
+.bs-brand-name .amp { color: var(--copper); }
+.bs-brand-tag {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.theme-fab {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 60;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 19px;
+  cursor: pointer;
+  box-shadow: var(--shadow-pop);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.15s ease;
+}
+.theme-fab:hover { transform: translateY(-2px); }
+.theme-fab:active { transform: translateY(0) scale(0.94); }
+
+/* ---------------------------------------------------------
+   Layout / containers
+   --------------------------------------------------------- */
+.bs-main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 4px 20px 90px;
+}
+
+.bs-section-label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 28px 0 12px;
+}
+
+/* ---------------------------------------------------------
+   Stats strip (home)
+   --------------------------------------------------------- */
+.bs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  animation: rise 0.5s ease 0.05s both;
+}
+.bs-stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 12px;
+  box-shadow: var(--shadow-card);
+}
+.bs-stat-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--phosphor);
+}
+.bs-stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ---------------------------------------------------------
+   Category cards
+   --------------------------------------------------------- */
+.bs-cards {
+  display: grid;
+  gap: 14px;
+  animation: rise 0.5s ease 0.1s both;
+}
+.bs-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.bs-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 4px;
+  background: var(--card-accent, var(--copper));
+}
+.bs-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pop);
+  border-color: var(--card-accent, var(--copper));
+}
+.bs-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.bs-card-icon {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--card-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 21px;
+  flex-shrink: 0;
+}
+.bs-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  margin: 0;
+}
+.bs-card-desc {
+  color: var(--muted);
+  font-size: 14.5px;
+  margin: 0 0 12px;
+}
+.bs-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--muted);
+}
+.bs-card-meta b { color: var(--card-accent, var(--copper)); font-weight: 700; }
+.bs-card-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--card-soft);
+  margin-top: 10px;
+  overflow: hidden;
+}
+.bs-card-bar-fill {
+  height: 100%;
+  background: var(--card-accent, var(--copper));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.bs-card[data-cat="hardware"] { --card-accent: var(--copper); }
+.bs-card[data-cat="manutencao"] { --card-accent: var(--signal); }
+.bs-card[data-cat="ti"] { --card-accent: var(--phosphor); }
+
+.bs-cat-badge[data-cat="hardware"] { --card-accent: var(--copper); }
+.bs-cat-badge[data-cat="manutencao"] { --card-accent: var(--signal); }
+.bs-cat-badge[data-cat="ti"] { --card-accent: var(--phosphor); }
+
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+.bs-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  padding: 13px 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.12s ease, filter 0.15s ease, opacity 0.15s ease;
+}
+.bs-btn:active { transform: scale(0.97); }
+.bs-btn-primary {
+  background: var(--phosphor);
+  color: #08150f;
+}
+.bs-btn-primary:hover { filter: brightness(1.08); }
+.bs-btn-ghost {
+  background: var(--card);
+  border-color: var(--border);
+  color: var(--text);
+}
+.bs-btn-ghost:hover { border-color: var(--copper); }
+.bs-btn-block { width: 100%; }
+.bs-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ---------------------------------------------------------
+   Quiz
+   --------------------------------------------------------- */
+.bs-quiz-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.bs-progress-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--card-soft);
+  overflow: hidden;
+}
+.bs-progress-fill {
+  height: 100%;
+  background: var(--copper);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.bs-progress-count {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.bs-question-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+  animation: rise 0.35s ease both;
+}
+.bs-question-tag {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.bs-question-text {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.42;
+  margin: 0 0 20px;
+}
+
+.bs-options { display: grid; gap: 10px; }
+.bs-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  border: 1px solid var(--border);
+  background: var(--card-soft);
+  color: var(--text);
+  border-radius: var(--radius-md);
+  padding: 13px 14px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+.bs-option:hover:not(:disabled) { border-color: var(--copper); transform: translateX(2px); }
+.bs-option-letter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.bs-option:disabled { cursor: default; }
+.bs-option.correct {
+  border-color: var(--phosphor);
+  background: color-mix(in srgb, var(--phosphor) 16%, var(--card-soft));
+}
+.bs-option.correct .bs-option-letter { background: var(--phosphor); color: #06140d; border-color: var(--phosphor); }
+.bs-option.wrong {
+  border-color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 14%, var(--card-soft));
+}
+.bs-option.wrong .bs-option-letter { background: var(--danger); color: #200705; border-color: var(--danger); }
+.bs-option.dim { opacity: 0.5; }
+
+.bs-explain {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--card-soft);
+  border-left: 3px solid var(--signal);
+  font-size: 14px;
+  color: var(--text);
+  animation: rise 0.3s ease both;
+}
+.bs-explain b { color: var(--signal); font-family: var(--font-display); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
+
+.bs-quiz-footer { margin-top: 18px; display: flex; justify-content: flex-end; }
+
+/* ---------------------------------------------------------
+   Results
+   --------------------------------------------------------- */
+.bs-result {
+  text-align: center;
+  padding: 32px 20px;
+  animation: rise 0.4s ease both;
+}
+.bs-result-score {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 54px;
+  color: var(--phosphor);
+  line-height: 1;
+}
+.bs-result-total { font-size: 18px; color: var(--muted); }
+.bs-result-msg { margin: 14px 0 26px; color: var(--muted); font-size: 15px; }
+.bs-result-actions { display: grid; gap: 10px; max-width: 320px; margin: 0 auto; }
+
+/* ---------------------------------------------------------
+   Misc
+   --------------------------------------------------------- */
+.bs-empty { color: var(--muted); text-align: center; padding: 40px 20px; }
+.bs-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 880px; margin: 0 auto; padding: 18px 20px 6px;
+}
+.bs-back {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.bs-back:hover { color: var(--copper); }
+.bs-cat-badge {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: var(--card-soft);
+  color: var(--card-accent, var(--copper));
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .bs-question-text { font-size: 17px; }
+  .bs-result-score { font-size: 44px; }
+}

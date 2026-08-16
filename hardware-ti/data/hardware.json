@@ -1,0 +1,111 @@
+{
+  "categoria": "hardware",
+  "titulo": "Hardware",
+  "questoes": [
+    {
+      "id": "hw01",
+      "pergunta": "Qual componente é considerado o \"cérebro\" do computador, responsável por executar instruções?",
+      "opcoes": ["Fonte de alimentação", "CPU (processador)", "HD/SSD", "Placa de rede"],
+      "correta": 1,
+      "explicacao": "A CPU (Central Processing Unit) executa as instruções dos programas — é o principal componente de processamento do sistema."
+    },
+    {
+      "id": "hw02",
+      "pergunta": "O que a memória RAM perde quando o computador é desligado?",
+      "opcoes": ["Nada, ela é permanente", "Todos os dados armazenados", "Apenas as configurações de BIOS", "Apenas os drivers"],
+      "correta": 1,
+      "explicacao": "RAM é memória volátil: os dados são perdidos assim que a energia é cortada. Por isso é usada para dados temporários, não para armazenamento permanente."
+    },
+    {
+      "id": "hw03",
+      "pergunta": "Qual a principal vantagem de um SSD em relação a um HD tradicional?",
+      "opcoes": ["Custo por GB mais baixo", "Maior capacidade de armazenamento", "Velocidade de leitura/gravação muito maior", "Maior durabilidade magnética"],
+      "correta": 2,
+      "explicacao": "SSDs usam memória flash sem partes móveis, o que resulta em velocidades de leitura/gravação muito superiores às de um HD mecânico."
+    },
+    {
+      "id": "hw04",
+      "pergunta": "Para que serve a fonte de alimentação (PSU) em um computador?",
+      "opcoes": ["Resfriar o processador", "Converter corrente alternada (AC) em corrente contínua (DC) para os componentes", "Armazenar dados temporários", "Conectar periféricos USB"],
+      "correta": 1,
+      "explicacao": "A PSU converte a energia da tomada (AC) em diferentes tensões DC (3.3V, 5V, 12V) que os componentes internos precisam para funcionar."
+    },
+    {
+      "id": "hw05",
+      "pergunta": "O que é o \"clock\" de um processador?",
+      "opcoes": ["A temperatura máxima suportada", "A frequência com que ele executa ciclos de instrução, medida em Hz", "O número de núcleos físicos", "O tamanho do cache L1"],
+      "correta": 1,
+      "explicacao": "O clock (medido em GHz) indica quantos ciclos por segundo o processador consegue executar — é um dos fatores de desempenho, mas não o único."
+    },
+    {
+      "id": "hw06",
+      "pergunta": "Qual componente conecta e permite a comunicação entre CPU, RAM, GPU e demais periféricos?",
+      "opcoes": ["Placa-mãe (motherboard)", "Cooler", "Gabinete", "Placa de som"],
+      "correta": 0,
+      "explicacao": "A placa-mãe é o barramento central que interliga todos os componentes do computador através de seus slots e chipsets."
+    },
+    {
+      "id": "hw07",
+      "pergunta": "O que significa a sigla GPU?",
+      "opcoes": ["General Processing Unit", "Graphics Processing Unit", "Global Power Unit", "Gate Programming Utility"],
+      "correta": 1,
+      "explicacao": "GPU (Graphics Processing Unit) é o processador especializado em renderizar gráficos e realizar cálculos paralelos massivos."
+    },
+    {
+      "id": "hw08",
+      "pergunta": "Qual a função da memória cache do processador?",
+      "opcoes": ["Armazenar o sistema operacional", "Guardar dados frequentemente acessados perto do núcleo, reduzindo latência", "Substituir a RAM", "Resfriar o chip"],
+      "correta": 1,
+      "explicacao": "O cache (L1, L2, L3) é uma memória muito rápida e pequena que guarda dados de uso frequente, evitando buscas mais lentas na RAM."
+    },
+    {
+      "id": "hw09",
+      "pergunta": "O que é overclock?",
+      "opcoes": ["Reduzir a voltagem de um componente", "Aumentar a frequência de operação de um componente além do padrão de fábrica", "Desligar núcleos do processador", "Limpar a memória cache"],
+      "correta": 1,
+      "explicacao": "Overclock é a prática de configurar um componente (CPU, GPU, RAM) para operar acima da frequência padrão, buscando mais desempenho — geralmente às custas de mais calor e consumo."
+    },
+    {
+      "id": "hw10",
+      "pergunta": "Qual desses NÃO é um tipo comum de conector de armazenamento?",
+      "opcoes": ["SATA", "NVMe (M.2)", "HDMI", "PCIe"],
+      "correta": 2,
+      "explicacao": "HDMI é uma interface de vídeo/áudio, não de armazenamento. SATA, NVMe/M.2 e PCIe são usados para conectar discos e SSDs."
+    },
+    {
+      "id": "hw11",
+      "pergunta": "Por que é importante aplicar pasta térmica entre o processador e o cooler?",
+      "opcoes": ["Para isolar eletricamente o chip", "Para melhorar a condução de calor entre as superfícies", "Para fixar o cooler mecanicamente", "Para reduzir o barulho do fan"],
+      "correta": 1,
+      "explicacao": "A pasta térmica preenche microimperfeições entre as superfícies metálicas, melhorando a transferência de calor do processador para o dissipador."
+    },
+    {
+      "id": "hw12",
+      "pergunta": "O que é a BIOS/UEFI de um computador?",
+      "opcoes": ["Um antivírus embutido", "O firmware que inicializa o hardware antes de carregar o sistema operacional", "Um tipo de memória RAM", "O driver da placa de vídeo"],
+      "correta": 1,
+      "explicacao": "BIOS/UEFI é o firmware gravado na placa-mãe que faz o POST (teste inicial de hardware) e entrega o controle ao sistema operacional."
+    },
+    {
+      "id": "hw13",
+      "pergunta": "Qual unidade mede a capacidade de uma fonte de alimentação?",
+      "opcoes": ["GHz", "Watts (W)", "RPM", "Mbps"],
+      "correta": 1,
+      "explicacao": "A capacidade de uma PSU é medida em Watts — indica a potência máxima que ela pode fornecer aos componentes."
+    },
+    {
+      "id": "hw14",
+      "pergunta": "O que caracteriza uma arquitetura \"dual channel\" de memória RAM?",
+      "opcoes": ["Dois processadores trabalhando juntos", "Dois módulos de RAM operando em paralelo para aumentar a largura de banda", "Uma RAM com dois slots SATA", "Duas fontes de alimentação"],
+      "correta": 1,
+      "explicacao": "No modo dual channel, dois pentes de memória compatíveis trabalham em paralelo, aumentando a taxa de transferência de dados entre RAM e CPU."
+    },
+    {
+      "id": "hw15",
+      "pergunta": "Qual é o risco de ligar um computador sem o cooler do processador instalado?",
+      "opcoes": ["Nenhum, o processador funciona normalmente", "Superaquecimento e possível dano permanente ao chip em segundos", "A placa-mãe desliga sozinha sem risco", "Apenas queda de desempenho leve"],
+      "correta": 1,
+      "explicacao": "Sem dissipação adequada, a temperatura do processador pode disparar em segundos, causando desligamento de proteção ou dano físico ao chip."
+    }
+  ]
+}

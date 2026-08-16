@@ -1,0 +1,111 @@
+{
+  "categoria": "manutencao",
+  "titulo": "Manutenção de Eletrônicos",
+  "questoes": [
+    {
+      "id": "mn01",
+      "pergunta": "Para que serve uma pulseira antiestática durante o reparo de placas eletrônicas?",
+      "opcoes": ["Medir a corrente elétrica", "Descarregar a eletricidade estática do corpo do técnico e proteger os componentes", "Aumentar a força de aperto dos parafusos", "Isolar o técnico de choques elétricos"],
+      "correta": 1,
+      "explicacao": "Componentes eletrônicos (como chips) podem ser danificados por descargas eletrostáticas (ESD) mesmo imperceptíveis. A pulseira aterra o técnico, evitando esse dano."
+    },
+    {
+      "id": "mn02",
+      "pergunta": "O que um multímetro NÃO consegue medir diretamente?",
+      "opcoes": ["Tensão (voltagem)", "Corrente elétrica", "Resistência", "Velocidade de um ventilador"],
+      "correta": 3,
+      "explicacao": "O multímetro mede grandezas elétricas como tensão, corrente e resistência (além de continuidade). RPM de um fan exige outro instrumento, como um tacômetro."
+    },
+    {
+      "id": "mn03",
+      "pergunta": "Qual a temperatura aproximada ideal da ponta de um ferro de solda para eletrônica geral com solda de estanho comum?",
+      "opcoes": ["Entre 50°C e 80°C", "Entre 320°C e 370°C", "Acima de 600°C", "Não há relação com temperatura"],
+      "correta": 1,
+      "explicacao": "Para solda de estanho/chumbo (ou sem chumbo) em componentes eletrônicos, a faixa de 320-370°C costuma ser eficiente sem superaquecer trilhas e componentes sensíveis."
+    },
+    {
+      "id": "mn04",
+      "pergunta": "O que é um capacitor \"estufado\" (inchado) em uma placa-mãe geralmente indica?",
+      "opcoes": ["Funcionamento normal", "Falha do componente, provavelmente precisa ser substituído", "Excesso de energia limpa", "Que a placa está com garantia extra"],
+      "correta": 1,
+      "explicacao": "Capacitores eletrolíticos estufados ou vazando indicam degradação/falha — um dos defeitos mais comuns em placas-mãe e fontes antigas."
+    },
+    {
+      "id": "mn05",
+      "pergunta": "Antes de abrir a fonte de um computador para manutenção, qual cuidado é essencial?",
+      "opcoes": ["Nenhum cuidado especial é necessário", "Desconectar da tomada e aguardar a descarga dos capacitores internos", "Ligar a fonte para testar antes de abrir", "Molhar as mãos para evitar estática"],
+      "correta": 1,
+      "explicacao": "Fontes armazenam energia em capacitores mesmo desligadas da tomada, podendo causar choques perigosos. É preciso desconectar e aguardar a descarga segura."
+    },
+    {
+      "id": "mn06",
+      "pergunta": "Para que serve o \"flux\" (fluxo de solda) durante uma soldagem?",
+      "opcoes": ["Aumentar a resistência elétrica da junta", "Remover óxidos e melhorar a aderência da solda ao metal", "Substituir o estanho", "Resfriar o componente rapidamente"],
+      "correta": 1,
+      "explicacao": "O flux remove a camada de óxido das superfícies metálicas e reduz a tensão superficial, permitindo que a solda escoe e adira corretamente."
+    },
+    {
+      "id": "mn07",
+      "pergunta": "O que é continuidade elétrica, testada com o multímetro no modo \"beep\"?",
+      "opcoes": ["A quantidade de energia guardada em uma bateria", "Se existe um caminho condutor completo entre dois pontos de um circuito", "A frequência de um sinal elétrico", "A temperatura de um componente"],
+      "correta": 1,
+      "explicacao": "O teste de continuidade verifica se há um caminho de baixa resistência (condutor íntegro) entre dois pontos — útil para achar fios rompidos ou trilhas cortadas."
+    },
+    {
+      "id": "mn08",
+      "pergunta": "Qual desses é um sintoma comum de mau contato em conectores/slots de memória RAM?",
+      "opcoes": ["O computador liga mais rápido", "Beeps de erro na inicialização ou travamentos aleatórios", "Aumento de desempenho gráfico", "Redução do consumo de energia"],
+      "correta": 1,
+      "explicacao": "Mau contato nos pentes de memória costuma gerar beeps de POST, tela preta ou instabilidade — limpar os contatos e reencaixar geralmente resolve."
+    },
+    {
+      "id": "mn09",
+      "pergunta": "Por que não se deve limpar uma placa eletrônica com álcool comum de baixa pureza (com muita água)?",
+      "opcoes": ["Porque não limpa nada", "Porque o excesso de água pode causar curto-circuito e oxidação", "Porque deixa a placa mais rápida", "Não há problema algum"],
+      "correta": 1,
+      "explicacao": "Para limpeza de placas, usa-se álcool isopropílico de alta pureza (90%+), que evapora rápido e deixa pouca água residual, reduzindo risco de curto e corrosão."
+    },
+    {
+      "id": "mn10",
+      "pergunta": "O que costuma causar o desligamento repentino de um computador por superaquecimento?",
+      "opcoes": ["RAM insuficiente", "Acúmulo de poeira em coolers e dissipadores, prejudicando a troca de calor", "Excesso de programas leves abertos", "Uso de SSD ao invés de HD"],
+      "correta": 1,
+      "explicacao": "Poeira acumulada em coolers e dissipadores reduz drasticamente a eficiência da refrigeração, levando ao superaquecimento e desligamento por proteção térmica."
+    },
+    {
+      "id": "mn11",
+      "pergunta": "Qual EPI (equipamento de proteção) é recomendado ao soldar por longos períodos?",
+      "opcoes": ["Luvas de borracha grossas", "Óculos de proteção e ventilação adequada para os fumos da solda", "Capacete", "Protetor auricular"],
+      "correta": 1,
+      "explicacao": "Óculos protegem contra respingos de solda quente, e boa ventilação/exaustor reduz a inalação de fumos tóxicos gerados pelo flux durante a soldagem."
+    },
+    {
+      "id": "mn12",
+      "pergunta": "O que é um curto-circuito?",
+      "opcoes": ["Falta de energia total no circuito", "Uma conexão indevida de baixa resistência entre dois pontos que não deveriam estar ligados", "Um componente girando rápido demais", "Um cabo muito longo"],
+      "correta": 1,
+      "explicacao": "Curto-circuito ocorre quando uma corrente encontra um caminho de resistência muito baixa fora do previsto, podendo gerar picos de corrente, calor e danos."
+    },
+    {
+      "id": "mn13",
+      "pergunta": "Antes de trocar a pasta térmica de um notebook, o que deve ser feito com a pasta antiga?",
+      "opcoes": ["Deixar por cima e aplicar a nova em camada extra", "Remover completamente com álcool isopropílico antes de aplicar a nova", "Aquecer com o ferro de solda", "Substituir apenas a cada 5 anos, sem remover"],
+      "correta": 1,
+      "explicacao": "Resíduos de pasta térmica antiga (ressecada) prejudicam o contato — o correto é limpar bem as superfícies antes de aplicar uma camada fina da pasta nova."
+    },
+    {
+      "id": "mn14",
+      "pergunta": "Qual é a função de um fusível em um circuito eletrônico?",
+      "opcoes": ["Aumentar a corrente disponível", "Interromper o circuito caso a corrente exceda um limite seguro, protegendo os demais componentes", "Armazenar energia como um capacitor", "Amplificar o sinal elétrico"],
+      "correta": 1,
+      "explicacao": "O fusível é um componente de sacrifício: ele \"queima\" (interrompe o circuito) quando a corrente ultrapassa o valor nominal, evitando danos maiores."
+    },
+    {
+      "id": "mn15",
+      "pergunta": "Qual ferramenta é essencial para dessoldar componentes com segurança, evitando danificar a placa?",
+      "opcoes": ["Alicate de corte", "Sugador de solda (ou malha dessoldadora) e ferro de solda regulado", "Chave de fenda", "Furadeira"],
+      "correta": 1,
+      "explicacao": "O sugador de solda ou a malha dessoldadora, usados junto ao ferro de solda em temperatura adequada, removem o estanho sem forçar ou superaquecer as trilhas."
+    }
+  ]
+}

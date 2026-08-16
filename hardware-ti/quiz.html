@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.style.visibility="hidden"</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="bs-title-tag">Quiz — Bit &amp; Solda</title>
+  <meta name="description" content="Quiz rápido de estudo — Bit & Solda.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Bit & Solda">
+  <meta name="theme-color" content="#eef2f1">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+
+  <script>document.documentElement.style.visibility=""</script>
+</head>
+<body>
+  <div id="splash">
+    <div class="splash-mark"><span class="splash-dot"></span> CARREGANDO</div>
+  </div>
+
+  <div class="bs-topbar">
+    <a href="index.html" class="bs-back">← Início</a>
+    <span class="bs-cat-badge" id="bs-cat-badge-wrap"><span id="bs-cat-badge">—</span></span>
+  </div>
+
+  <main class="bs-main" id="bs-quiz-root"></main>
+
+  <script type="module" src="js/quiz.js"></script>
+  <script src="js/register-sw.js"></script>
+</body>
+</html>
