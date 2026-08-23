@@ -1442,13 +1442,11 @@
 
   await renderAll().catch(e => console.error('renderAll error:', e));
 
-  // ── Auto-sync ao entrar no perfil ─────────────────────
-  import('../js/supabase/sync.js').then(({ syncToCloud }) => {
-    syncToCloud().catch(console.error);
-  }).catch(console.error);
-
   // ── Ranking online card ───────────────────────────────
-  import('../js/supabase/leaderboard.js').then(async ({ getOnlineUserRank, getUserRank }) => {
+  // Função nomeada (não IIFE) para poder ser chamada de novo após o
+  // auto-sync, sem precisar reimportar o módulo.
+  async function refreshRank() {
+    const { getOnlineUserRank, getUserRank } = await import('../js/supabase/leaderboard.js');
     const rsRank    = document.getElementById('rs-rank');
     const rsPoints  = document.getElementById('rs-points');
     const rsQuizzes = document.getElementById('rs-quizzes');
@@ -1470,6 +1468,7 @@
       rsRank.textContent    = pos ? `#${pos}` : '—';
       rsPoints.textContent  = pontos.toLocaleString('pt-BR');
       rsQuizzes.textContent = quizzes;
+      if (unranked) unranked.style.display = pos ? 'none' : 'flex';
       if (pos && rankBadge) {
         rankBadge.textContent = `🏆 #${pos}`;
         rankBadge.style.display = '';
@@ -1495,7 +1494,20 @@
         applyRank(null);
       }
     }
-  }).catch(() => {});
+  }
+  refreshRank().catch(() => {});
+
+  // ── Auto-sync ao entrar no perfil ─────────────────────
+  // Empurra o que estiver pendente no localStorage para o Supabase e, ao
+  // terminar, re-renderiza (stats/pontos) e atualiza o ranking — assim os
+  // dados aparecem sozinhos, sem precisar clicar em "Sincronizar".
+  import('../js/supabase/sync.js').then(async ({ syncToCloud }) => {
+    await syncToCloud();
+    await Promise.all([
+      renderAll().catch(e => console.error('renderAll error:', e)),
+      refreshRank().catch(() => {}),
+    ]);
+  }).catch(console.error);
 
   // ── Copiar link do perfil ─────────────────────────────
   function copyProfileLink() {
