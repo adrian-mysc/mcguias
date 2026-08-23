@@ -83,12 +83,20 @@ async function syncLeaderboard() {
     || perfilDados.nome
     || 'Jogador';
   const loja  = perfilDados.loja  || null;
-  const sigla = perfilDados.sigla || null;
+  // `sigla` cai para `loja` porque o campo do perfil já É a sigla do
+  // restaurante. Perfis salvos antes de a sigla passar a ser gravada só têm
+  // `loja` — sem o fallback eles continuariam sem sigla no ranking.
+  const sigla = perfilDados.sigla || loja || null;
 
   // points/total_xp são derivados de quiz_sessions pelo trigger do banco.
   // Aqui só mantemos os dados de identidade do jogador no ranking.
   await submitScore(username, loja, sigla);
 }
+
+// Empurra só a identidade (nome/loja/sigla) para a tabela leaderboard.
+// Usado pelo perfil logo após salvar, para o ranking refletir a edição sem
+// esperar o próximo quiz.
+export const syncIdentidade = syncLeaderboard;
 
 // ─── Desafios Semanais ────────────────────────────────────────────────────────
 

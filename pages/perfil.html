@@ -669,6 +669,162 @@
     .rank-stat-lbl { font-size: 10px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
     .rank-unranked { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--border); font-size: 12.5px; font-weight: 600; color: var(--muted); }
     [data-theme="dark"] .rank-unranked { border-color: #2e2c28; }
+
+    /* ── Completude do perfil ────────────────────────── */
+    /* Cartão-âncora: traduz "preencher campos" em "aparecer no ranking".
+       O acento âmbar sinaliza pendência; vira verde quando tudo está ok. */
+    .pc-card {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255,199,44,0.16) 0%, transparent 62%),
+        var(--card, #fff);
+      border-color: rgba(255,199,44,0.45);
+    }
+    [data-theme="dark"] .pc-card {
+      background: linear-gradient(135deg, rgba(255,199,44,0.10) 0%, transparent 62%), #1e1d1b;
+      border-color: rgba(255,199,44,0.28);
+    }
+    .pc-card.done {
+      background: linear-gradient(135deg, rgba(22,163,74,0.14) 0%, transparent 62%), var(--card, #fff);
+      border-color: rgba(22,163,74,0.38);
+    }
+    [data-theme="dark"] .pc-card.done {
+      background: linear-gradient(135deg, rgba(22,163,74,0.12) 0%, transparent 62%), #1e1d1b;
+      border-color: rgba(22,163,74,0.30);
+    }
+
+    .pc-head { display: flex; align-items: center; gap: 14px; padding: 16px 16px 12px; }
+    .pc-ring { width: 58px; height: 58px; flex-shrink: 0; position: relative; }
+    .pc-ring svg { display: block; transform: rotate(-90deg); }
+    .pc-ring-track { stroke: var(--border, #e3ddd2); }
+    [data-theme="dark"] .pc-ring-track { stroke: #34312c; }
+    .pc-ring-fill {
+      stroke: #d97706;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.9s cubic-bezier(0.22,1,.36,1), stroke 0.4s;
+    }
+    .pc-card.done .pc-ring-fill { stroke: #16a34a; }
+    .pc-ring-pct {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display, Arial, Helvetica, sans-serif);
+      font-size: 14.5px; font-weight: 900; letter-spacing: -0.5px;
+      color: var(--text, #1c1a17);
+    }
+    .pc-head-text { min-width: 0; }
+    .pc-title { font-size: 15px; font-weight: 800; color: var(--text); line-height: 1.2; }
+    .pc-sub { font-size: 12px; font-weight: 600; color: var(--muted); line-height: 1.4; margin-top: 4px; }
+    .pc-sub strong { color: #b07800; font-weight: 800; }
+    [data-theme="dark"] .pc-sub strong { color: #f0b429; }
+    .pc-card.done .pc-sub strong { color: #16a34a; }
+
+    /* Chips de pendência — clicáveis, levam direto ao campo que falta */
+    .pc-items { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 16px 12px; }
+    .pc-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      border-radius: 20px; padding: 6px 11px;
+      font-family: var(--font-body, 'Nunito', sans-serif);
+      font-size: 11.5px; font-weight: 700; letter-spacing: 0.2px;
+      border: 1.5px solid var(--border, #e3ddd2);
+      background: var(--bg, #f5f2ec);
+      color: var(--muted);
+    }
+    [data-theme="dark"] .pc-chip { background: #171614; border-color: #2e2c28; }
+    .pc-chip.ok {
+      color: #16a34a;
+      border-color: rgba(22,163,74,0.30);
+      background: rgba(22,163,74,0.09);
+    }
+    .pc-chip.todo { cursor: pointer; color: var(--text); transition: border-color 0.15s, background 0.15s, transform 0.1s; }
+    .pc-chip.todo:hover { border-color: var(--red); background: rgba(218,41,28,0.07); }
+    .pc-chip.todo:active { transform: scale(0.96); }
+    /* .key = campo que destrava os filtros do ranking (sigla/estado/cidade) */
+    .pc-chip.todo.key {
+      color: #b07800;
+      border-color: rgba(217,119,6,0.45);
+      background: rgba(255,199,44,0.16);
+    }
+    [data-theme="dark"] .pc-chip.todo.key { color: #f0b429; background: rgba(255,199,44,0.10); }
+    .pc-chip.todo.key:hover { border-color: #d97706; background: rgba(255,199,44,0.28); }
+
+    /* Prévia: mostra literalmente como a pessoa aparece na lista do ranking */
+    .pc-preview { padding: 0 16px 14px; }
+    .pc-preview-lbl {
+      font-size: 9.5px; font-weight: 800; letter-spacing: 1.1px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 7px;
+    }
+    .pc-preview-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 11px;
+      border-radius: 12px;
+      background: var(--bg, #f5f2ec);
+      border: 1px dashed var(--border, #e3ddd2);
+    }
+    [data-theme="dark"] .pc-preview-row { background: #171614; border-color: #34312c; }
+    .pc-preview-pos {
+      font-family: var(--font-display, Arial, Helvetica, sans-serif);
+      font-size: 13px; font-weight: 900; color: var(--muted);
+      width: 26px; text-align: center; flex-shrink: 0;
+    }
+    .pc-preview-av {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--yellow, #FFC72C);
+      color: var(--red, #DA291C);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display, Arial, Helvetica, sans-serif);
+      font-size: 14px; font-weight: 900;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .pc-preview-av img { width: 100%; height: 100%; object-fit: cover; }
+    .pc-preview-info { min-width: 0; flex: 1; }
+    .pc-preview-name {
+      font-size: 13px; font-weight: 800; color: var(--text);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .pc-preview-meta {
+      font-size: 11px; font-weight: 700; color: var(--muted); margin-top: 2px;
+      display: flex; align-items: center; gap: 5px; flex-wrap: wrap;
+    }
+    .pc-preview-meta .miss {
+      color: #b07800; font-style: italic; font-weight: 700;
+      border-bottom: 1px dashed rgba(217,119,6,0.6);
+    }
+    [data-theme="dark"] .pc-preview-meta .miss { color: #f0b429; }
+
+    .pc-foot { padding: 0 16px 16px; }
+    .pc-cta {
+      width: 100%;
+      padding: 11px;
+      border-radius: 11px;
+      border: none;
+      background: linear-gradient(135deg, var(--red, #DA291C), #ff6b5b);
+      color: #fff;
+      font-family: var(--font-body, 'Nunito', sans-serif);
+      font-size: 13.5px; font-weight: 800; letter-spacing: 0.2px;
+      cursor: pointer;
+      box-shadow: 0 3px 12px rgba(218,41,28,0.30);
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+    .pc-cta:hover { box-shadow: 0 5px 18px rgba(218,41,28,0.38); }
+    .pc-cta:active { transform: scale(0.985); }
+
+    /* Realce do campo alvo quando o usuário chega pelo chip/CTA */
+    @keyframes fieldPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(218,41,28,0); }
+      30%, 70% { box-shadow: 0 0 0 4px rgba(218,41,28,0.20); }
+    }
+    .field-pulse { border-radius: 12px; animation: fieldPulse 1.5s ease-in-out 2; }
+
+    /* Hint de campo no formulário */
+    .field-hint { font-size: 10.5px; color: var(--muted); margin-top: 3px; padding-left: 2px; line-height: 1.35; }
+    .field-hint.key { color: #b07800; font-weight: 700; }
+    [data-theme="dark"] .field-hint.key { color: #f0b429; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pc-ring-fill { transition: none; }
+      .field-pulse { animation: none; outline: 2px solid var(--red); }
+    }
   </style>
 </head>
 <body>
@@ -719,6 +875,7 @@
       <div class="hero-badge" id="hero-provider">✉️ Email</div>
       <div class="hero-badge yellow" id="hero-nivel">Nível 1</div>
       <div class="hero-badge hero-badge-rank" id="hero-rank-badge" style="display:none">🏆 —</div>
+      <div class="hero-badge" id="hero-local" style="display:none">📍 —</div>
     </div>
 
     <div class="streak-wrap" id="streak-display">
@@ -729,6 +886,45 @@
       <button class="pub-copy-btn" id="pubCopyBtn" title="Copiar link" style="display:none" onclick="copyProfileLink()">
         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
       </button>
+    </div>
+  </div>
+
+  <!-- ── Completude do perfil ───────────────────────── -->
+  <!-- Fica ANTES do ranking de propósito: o cartão explica por que os campos
+       de identificação (sigla/estado/cidade) importam, e logo abaixo vem o
+       ranking que eles destravam. -->
+  <div class="section-card pc-card" id="pc-card" style="display:none">
+    <div class="pc-head">
+      <div class="pc-ring">
+        <svg width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+          <circle class="pc-ring-track" cx="29" cy="29" r="24" fill="none" stroke-width="6"/>
+          <circle class="pc-ring-fill" id="pc-ring-fill" cx="29" cy="29" r="24" fill="none" stroke-width="6"
+                  stroke-dasharray="150.8" stroke-dashoffset="150.8"/>
+        </svg>
+        <div class="pc-ring-pct" id="pc-pct">0%</div>
+      </div>
+      <div class="pc-head-text">
+        <div class="pc-title" id="pc-title">Complete seu perfil</div>
+        <div class="pc-sub" id="pc-sub"></div>
+      </div>
+    </div>
+
+    <div class="pc-items" id="pc-items"></div>
+
+    <div class="pc-preview">
+      <div class="pc-preview-lbl">Como você aparece no ranking</div>
+      <div class="pc-preview-row">
+        <div class="pc-preview-pos" id="pc-prev-pos">#—</div>
+        <div class="pc-preview-av" id="pc-prev-av">?</div>
+        <div class="pc-preview-info">
+          <div class="pc-preview-name" id="pc-prev-name">—</div>
+          <div class="pc-preview-meta" id="pc-prev-meta">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc-foot" id="pc-foot">
+      <button class="pc-cta" id="pc-cta" onclick="completarPerfil()">Completar perfil agora</button>
     </div>
   </div>
 
@@ -777,7 +973,7 @@
           <div class="data-value" id="view-cargo">—</div>
         </div>
         <div class="data-item">
-          <div class="data-label">Loja / Restaurante</div>
+          <div class="data-label">Restaurante (sigla)</div>
           <div class="data-value" id="view-loja">—</div>
         </div>
         <div class="data-item">
@@ -862,7 +1058,7 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="edit-loja">Loja / Restaurante</label>
+            <label for="edit-loja">Restaurante (sigla)</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               <input type="text" id="edit-loja" placeholder="Ex: RUI · HGG · GBN"
@@ -870,7 +1066,7 @@
                 oninput="this.value=this.value.replace(/[^A-Za-zÀ-ÿ\s\-]/g,'').toUpperCase()"
                 maxlength="20">
             </div>
-            <div style="font-size:10.5px;color:var(--muted);margin-top:3px;padding-left:2px">Somente letras (sigla do restaurante)</div>
+            <div class="field-hint key">🏆 Sua sigla te identifica no ranking global</div>
           </div>
           <div class="field">
             <label for="edit-admissao">Data de admissão</label>
@@ -913,6 +1109,7 @@
                 <option value="TO">TO — Tocantins</option>
               </select>
             </div>
+            <div class="field-hint key">🏆 Filtro do ranking por estado</div>
           </div>
           <div class="field">
             <label for="edit-cidade">Cidade</label>
@@ -922,6 +1119,7 @@
                 <option value="">Selecione o estado primeiro</option>
               </select>
             </div>
+            <div class="field-hint key">🏆 Aparece junto do seu nome</div>
           </div>
         </div>
         <div class="inline-msg" id="dados-msg"></div>
@@ -1166,6 +1364,12 @@
     if (profile.cidade       && !local.cidade) merged.cidade  = profile.cidade;
     if (profile.loja         && !local.loja)   merged.loja    = profile.loja;
     if (profile.cargo        && !local.cargo)  merged.cargo   = profile.cargo;
+    // `sigla` alimenta o submitScore() do sync.js (tabela leaderboard). Perfis
+    // antigos só têm `loja` preenchida — o fallback evita que fiquem sem sigla.
+    if (!local.sigla) {
+      const s = profile.sigla || profile.loja;
+      if (s) merged.sigla = s;
+    }
     saveLocalDados(merged);
   }
 
@@ -1280,6 +1484,212 @@
     }
   }
 
+  // ── Completude do perfil ──────────────────────────────
+  // `key: true` = campo de IDENTIFICAÇÃO no ranking global. Sem sigla o
+  // usuário não é achado pelo filtro "🏪 Restaurante"; sem estado, não entra no
+  // filtro "🗺️ Estado" — ambos existem em leaderboard.html. Por isso esses três
+  // (sigla, estado, cidade) recebem destaque próprio no cartão.
+  const PC_ITENS = [
+    { id: 'nome',   rotulo: 'Nome',       campo: 'edit-nome',   key: false },
+    { id: 'loja',   rotulo: 'Sigla',      campo: 'edit-loja',   key: true  },
+    { id: 'estado', rotulo: 'Estado',     campo: 'edit-estado', key: true  },
+    { id: 'cidade', rotulo: 'Cidade',     campo: 'edit-cidade', key: true  },
+    { id: 'cargo',  rotulo: 'Cargo',      campo: 'edit-cargo',  key: false },
+    { id: 'foto',   rotulo: 'Foto',       campo: null,          key: false },
+  ];
+
+  function esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c =>
+      ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+  }
+
+  // dados = objeto já resolvido (localStorage > profile) montado no renderAll
+  function calcCompletude(dados) {
+    const preenchidos = PC_ITENS.filter(it => !!dados[it.id]);
+    const faltando    = PC_ITENS.filter(it => !dados[it.id]);
+    return {
+      preenchidos,
+      faltando,
+      faltandoKey: faltando.filter(it => it.key),
+      pct: Math.round((preenchidos.length / PC_ITENS.length) * 100),
+    };
+  }
+
+  function renderCompletude(dados, nomeExibido) {
+    const card = document.getElementById('pc-card');
+    if (!card) return;
+    const c = calcCompletude(dados);
+    // O cartão nasce oculto (não sabemos a completude antes do fetch). A
+    // animação de entrada da .page-content já terminou quando ele aparece, daí
+    // o fadeUp próprio — só na primeira exibição, para não repetir a cada save.
+    if (card.style.display === 'none') {
+      card.style.display = '';
+      card.style.animation = 'fadeUp 0.4s cubic-bezier(0.22,1,.36,1) both';
+    }
+    card.classList.toggle('done', c.faltando.length === 0);
+
+    // Anel de progresso — r=24 → circunferência ≈ 150.8
+    const CIRC = 2 * Math.PI * 24;
+    const fill = document.getElementById('pc-ring-fill');
+    if (fill) {
+      fill.setAttribute('stroke-dasharray', CIRC.toFixed(1));
+      fill.setAttribute('stroke-dashoffset', (CIRC * (1 - c.pct / 100)).toFixed(1));
+    }
+    document.getElementById('pc-pct').textContent = `${c.pct}%`;
+
+    // Título e subtítulo mudam conforme o que falta — a mensagem sempre liga o
+    // campo pendente ao benefício concreto (aparecer/ser filtrado no ranking).
+    const titleEl = document.getElementById('pc-title');
+    const subEl   = document.getElementById('pc-sub');
+    if (c.faltando.length === 0) {
+      titleEl.textContent = 'Perfil completo 🎉';
+      const ondeParts = [];
+      if (dados.loja)   ondeParts.push(esc(dados.loja));
+      if (dados.cidade) ondeParts.push(esc(dados.cidade) + (dados.estado ? '/' + esc(dados.estado) : ''));
+      subEl.innerHTML = `Você aparece no ranking global como <strong>${ondeParts.join(' · ')}</strong>.`;
+    } else if (c.faltandoKey.length) {
+      const nomes = c.faltandoKey.map(i => i.rotulo.toLowerCase());
+      const lista = nomes.length === 1
+        ? nomes[0]
+        : nomes.slice(0, -1).join(', ') + ' e ' + nomes[nomes.length - 1];
+      titleEl.textContent = 'Você ainda não é identificado no ranking';
+      subEl.innerHTML = `Falta <strong>${esc(lista)}</strong> — sem isso ninguém te acha nos filtros por restaurante e estado.`;
+    } else {
+      titleEl.textContent = 'Quase lá!';
+      const nomes = c.faltando.map(i => i.rotulo.toLowerCase()).join(', ');
+      subEl.innerHTML = `Só falta <strong>${esc(nomes)}</strong> para o perfil ficar 100%.`;
+    }
+
+    // Chips — pendentes são clicáveis e levam ao campo correspondente
+    document.getElementById('pc-items').innerHTML = PC_ITENS.map(it => {
+      const ok = !!dados[it.id];
+      if (ok) return `<span class="pc-chip ok">✓ ${esc(it.rotulo)}</span>`;
+      const cls  = 'pc-chip todo' + (it.key ? ' key' : '');
+      const icon = it.key ? '🏆' : '+';
+      const alvo = it.id === 'foto' ? 'foto' : it.campo;
+      return `<button type="button" class="${cls}" data-alvo="${esc(alvo)}">${icon} ${esc(it.rotulo)}</button>`;
+    }).join('');
+
+    // Prévia da linha do ranking — torna concreto o que está faltando
+    const foto = localStorage.getItem(AVATAR_KEY) || '';
+    const avEl = document.getElementById('pc-prev-av');
+    if (foto) avEl.innerHTML = `<img src="${esc(foto)}" alt="">`;
+    else      avEl.textContent = (nomeExibido || '?')[0].toUpperCase();
+
+    document.getElementById('pc-prev-name').textContent = nomeExibido || '—';
+    // O emoji fica FORA do .miss para o tracejado sublinhar só o texto
+    const meta = [];
+    meta.push(dados.loja
+      ? `<span>🏪 ${esc(dados.loja)}</span>`
+      : '<span>🏪 <span class="miss">sem sigla</span></span>');
+    if (dados.cidade || dados.estado) {
+      const local = [dados.cidade, dados.estado].filter(Boolean).map(esc).join('/');
+      meta.push(`<span>📍 ${local}</span>`);
+    } else {
+      meta.push('<span>📍 <span class="miss">sem cidade</span></span>');
+    }
+    document.getElementById('pc-prev-meta').innerHTML = meta.join('<span>·</span>');
+
+    // CTA aponta para o primeiro campo pendente (prioriza os do ranking)
+    const foot = document.getElementById('pc-foot');
+    const cta  = document.getElementById('pc-cta');
+    if (c.faltando.length === 0) {
+      foot.style.display = 'none';
+    } else {
+      foot.style.display = '';
+      const alvo = (c.faltandoKey[0] || c.faltando[0]);
+      cta.dataset.alvo = alvo.id === 'foto' ? 'foto' : (alvo.campo || '');
+      cta.textContent = c.faltandoKey.length
+        ? '🏆 Entrar no ranking da minha loja'
+        : 'Completar perfil agora';
+    }
+  }
+
+  // Abre a edição já com o campo pendente focado e realçado.
+  function completarPerfil(alvo) {
+    const destino = alvo || document.getElementById('pc-cta')?.dataset.alvo || 'edit-nome';
+
+    if (destino === 'foto') {
+      document.getElementById('avatar-file-input').click();
+      return;
+    }
+
+    toggleDadosEdit(true);
+    document.getElementById('dados-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Espera o scroll suave assentar antes de focar — focar durante o scroll
+    // faz o navegador reposicionar a página e o realce passa despercebido.
+    setTimeout(() => {
+      const el = document.getElementById(destino);
+      if (!el) return;
+      try { el.focus({ preventScroll: true }); } catch (_e) { el.focus(); }
+      const box = el.closest('.field') || el;
+      box.classList.remove('field-pulse');
+      void box.offsetWidth;            // reflow: reinicia a animação
+      box.classList.add('field-pulse');
+      setTimeout(() => box.classList.remove('field-pulse'), 3200);
+    }, 380);
+  }
+  window.completarPerfil = completarPerfil;
+
+  // Delegação: os chips são recriados a cada render, então o listener fica no
+  // container (que é estável) em vez de em cada botão.
+  document.getElementById('pc-items')?.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('.pc-chip.todo');
+    if (btn) completarPerfil(btn.dataset.alvo);
+  });
+
+  // ── Estados e cidades ─────────────────────────────────
+  // Declarado ANTES do renderAll: ele chama onEstadoChange() para montar o
+  // select de cidade, e `const` em TDZ fazia o render abortar (ReferenceError)
+  // no primeiro load de quem já tinha estado salvo — o try/catch escondia a
+  // falha e as estatísticas/conquistas simplesmente não apareciam.
+  const CIDADES_BR = {
+    AC: ['Rio Branco','Cruzeiro do Sul','Sena Madureira','Tarauacá'],
+    AL: ['Maceió','Arapiraca','Palmeira dos Índios','Rio Largo','Penedo'],
+    AP: ['Macapá','Santana','Laranjal do Jari','Oiapoque'],
+    AM: ['Manaus','Parintins','Itacoatiara','Manacapuru','Coari','Tefé'],
+    BA: ['Salvador','Feira de Santana','Vitória da Conquista','Camaçari','Itabuna','Ilhéus','Juazeiro','Lauro de Freitas','Barreiras','Jequié'],
+    CE: ['Fortaleza','Caucaia','Juazeiro do Norte','Maracanaú','Sobral','Crato','Itapipoca','Maranguape','Iguatu'],
+    DF: ['Brasília','Ceilândia','Taguatinga','Samambaia','Planaltina','Gama','Águas Claras','Guará','Sobradinho','Recanto das Emas'],
+    ES: ['Vitória','Serra','Vila Velha','Cariacica','Cachoeiro de Itapemirim','Linhares','São Mateus','Colatina'],
+    GO: ['Goiânia','Aparecida de Goiânia','Anápolis','Rio Verde','Luziânia','Águas Lindas de Goiás','Valparaíso de Goiás','Trindade','Formosa'],
+    MA: ['São Luís','Imperatriz','São José de Ribamar','Timon','Caxias','Codó','Paço do Lumiar','Açailândia'],
+    MT: ['Cuiabá','Várzea Grande','Rondonópolis','Sinop','Tangará da Serra','Cáceres','Sorriso','Lucas do Rio Verde'],
+    MS: ['Campo Grande','Dourados','Três Lagoas','Corumbá','Ponta Porã','Naviraí','Nova Andradina'],
+    MG: ['Belo Horizonte','Uberlândia','Contagem','Juiz de Fora','Betim','Montes Claros','Ribeirão das Neves','Uberaba','Governador Valadares','Ipatinga','Sete Lagoas','Divinópolis','Santa Luzia','Ibirité','Poços de Caldas','Patos de Minas','Pouso Alegre','Teófilo Otoni','Barbacena'],
+    PA: ['Belém','Ananindeua','Santarém','Marabá','Castanhal','Parauapebas','Altamira','Abaetetuba','Cametá'],
+    PB: ['João Pessoa','Campina Grande','Santa Rita','Patos','Bayeux','Sousa','Cajazeiras'],
+    PR: ['Curitiba','Londrina','Maringá','Ponta Grossa','Cascavel','São José dos Pinhais','Foz do Iguaçu','Colombo','Guarapuava','Paranaguá','Araucária','Toledo','Apucarana','Pinhais'],
+    PE: ['Recife','Caruaru','Olinda','Petrolina','Jaboatão dos Guararapes','Paulista','Caruaru','Ribeirão','Palmares','Garanhuns','Vitória de Santo Antão'],
+    PI: ['Teresina','Parnaíba','Picos','Floriano','Barras'],
+    RJ: ['Rio de Janeiro','São Gonçalo','Duque de Caxias','Nova Iguaçu','Niterói','Belford Roxo','São João de Meriti','Campos dos Goytacazes','Petrópolis','Volta Redonda','Magé','Itaboraí','Macaé','Mesquita','Nova Friburgo','Barra Mansa','Angra dos Reis','Teresópolis'],
+    RN: ['Natal','Mossoró','Parnamirim','São Gonçalo do Amarante','Caicó','Açu','Currais Novos'],
+    RS: ['Porto Alegre','Caxias do Sul','Pelotas','Canoas','Santa Maria','Gravataí','Viamão','Novo Hamburgo','São Leopoldo','Rio Grande','Alvorada','Passo Fundo','Sapucaia do Sul','Uruguaiana','Santa Cruz do Sul','Cachoeirinha','Bagé','Bento Gonçalves'],
+    RO: ['Porto Velho','Ji-Paraná','Ariquemes','Cacoal','Vilhena','Rolim de Moura'],
+    RR: ['Boa Vista','Caracaraí','Rorainópolis'],
+    SC: ['Florianópolis','Joinville','Blumenau','São José','Chapecó','Criciúma','Itajaí','Jaraguá do Sul','Lages','Palhoça','Balneário Camboriú','Brusque','Tubarão'],
+    SP: ['São Paulo','Guarulhos','Campinas','São Bernardo do Campo','Santo André','Osasco','São José dos Campos','Ribeirão Preto','Sorocaba','Mauá','Santos','Mogi das Cruzes','Diadema','Jundiaí','Carapicuíba','Piracicaba','Bauru','São José do Rio Preto','Franca','Limeira','Suzano','Taboão da Serra','Americana','Marília','Araraquara','São Vicente','Presidente Prudente','Praia Grande','Indaiatuba','Taubaté','Cotia','Barueri','Caçapava','São Carlos','Jacareí','Itaquaquecetuba','Hortolândia','Embu das Artes'],
+    SE: ['Aracaju','Nossa Senhora do Socorro','Lagarto','Itabaiana','Caruaru','São Cristóvão','Estância'],
+    TO: ['Palmas','Araguaína','Gurupi','Porto Nacional','Paraíso do Tocantins'],
+  };
+
+  function onEstadoChange() {
+    const estado = document.getElementById('edit-estado').value;
+    const cidadeEl = document.getElementById('edit-cidade');
+    cidadeEl.innerHTML = '';
+    if (!estado) {
+      cidadeEl.innerHTML = '<option value="">Selecione o estado primeiro</option>';
+      cidadeEl.disabled = true;
+      return;
+    }
+    const cidades = CIDADES_BR[estado] || [];
+    cidadeEl.innerHTML = '<option value="">Selecionar…</option>' +
+      cidades.map(c => `<option value="${c}">${c}</option>`).join('');
+    cidadeEl.disabled = false;
+  }
+  window.onEstadoChange = onEstadoChange;
+
   // ── Render UI ─────────────────────────────────────────
   async function renderAll() {
     const local  = loadLocalDados();
@@ -1304,8 +1714,22 @@
     document.getElementById('hero-nivel').textContent = `⭐ ${stats.nivel.nome}`;
     document.getElementById('streak-num').textContent = stats.diasConsec;
 
+    // Badge de localização — só aparece quando há cidade e/ou estado
+    const localEl = document.getElementById('hero-local');
+    if (localEl) {
+      const localTxt = [cidade, estado].filter(Boolean).join('/');
+      localEl.textContent = `📍 ${localTxt}`;
+      localEl.style.display = localTxt ? '' : 'none';
+    }
+
     // Avatar — usa inicial do nome
     renderAvatar(nome ? nome[0] : '?', photo);
+
+    // Cartão de completude. `nome` acima tem fallback (username/e-mail), então
+    // marcaria o item como preenchido mesmo para quem nunca digitou o nome —
+    // aqui vale só o valor real informado pelo usuário.
+    const nomeReal = local.nome || profile?.display_name || '';
+    renderCompletude({ nome: nomeReal, cargo, loja, estado, cidade, foto: photo }, nome);
 
     // View dados
     function setVal(id, val, fallback) {
@@ -1473,6 +1897,10 @@
         rankBadge.textContent = `🏆 #${pos}`;
         rankBadge.style.display = '';
       }
+      // A prévia do cartão de completude usa a posição real quando existe —
+      // ver a própria colocação torna o incentivo bem mais concreto.
+      const prevPos = document.getElementById('pc-prev-pos');
+      if (prevPos) prevPos.textContent = pos ? `#${pos}` : '#—';
     }
 
     try {
@@ -1532,51 +1960,6 @@
   window.toggleDadosEdit = toggleDadosEdit;
 
   // ── Salvar dados pessoais ─────────────────────────────
-  const CIDADES_BR = {
-    AC: ['Rio Branco','Cruzeiro do Sul','Sena Madureira','Tarauacá'],
-    AL: ['Maceió','Arapiraca','Palmeira dos Índios','Rio Largo','Penedo'],
-    AP: ['Macapá','Santana','Laranjal do Jari','Oiapoque'],
-    AM: ['Manaus','Parintins','Itacoatiara','Manacapuru','Coari','Tefé'],
-    BA: ['Salvador','Feira de Santana','Vitória da Conquista','Camaçari','Itabuna','Ilhéus','Juazeiro','Lauro de Freitas','Barreiras','Jequié'],
-    CE: ['Fortaleza','Caucaia','Juazeiro do Norte','Maracanaú','Sobral','Crato','Itapipoca','Maranguape','Iguatu'],
-    DF: ['Brasília','Ceilândia','Taguatinga','Samambaia','Planaltina','Gama','Águas Claras','Guará','Sobradinho','Recanto das Emas'],
-    ES: ['Vitória','Serra','Vila Velha','Cariacica','Cachoeiro de Itapemirim','Linhares','São Mateus','Colatina'],
-    GO: ['Goiânia','Aparecida de Goiânia','Anápolis','Rio Verde','Luziânia','Águas Lindas de Goiás','Valparaíso de Goiás','Trindade','Formosa'],
-    MA: ['São Luís','Imperatriz','São José de Ribamar','Timon','Caxias','Codó','Paço do Lumiar','Açailândia'],
-    MT: ['Cuiabá','Várzea Grande','Rondonópolis','Sinop','Tangará da Serra','Cáceres','Sorriso','Lucas do Rio Verde'],
-    MS: ['Campo Grande','Dourados','Três Lagoas','Corumbá','Ponta Porã','Naviraí','Nova Andradina'],
-    MG: ['Belo Horizonte','Uberlândia','Contagem','Juiz de Fora','Betim','Montes Claros','Ribeirão das Neves','Uberaba','Governador Valadares','Ipatinga','Sete Lagoas','Divinópolis','Santa Luzia','Ibirité','Poços de Caldas','Patos de Minas','Pouso Alegre','Teófilo Otoni','Barbacena'],
-    PA: ['Belém','Ananindeua','Santarém','Marabá','Castanhal','Parauapebas','Altamira','Abaetetuba','Cametá'],
-    PB: ['João Pessoa','Campina Grande','Santa Rita','Patos','Bayeux','Sousa','Cajazeiras'],
-    PR: ['Curitiba','Londrina','Maringá','Ponta Grossa','Cascavel','São José dos Pinhais','Foz do Iguaçu','Colombo','Guarapuava','Paranaguá','Araucária','Toledo','Apucarana','Pinhais'],
-    PE: ['Recife','Caruaru','Olinda','Petrolina','Jaboatão dos Guararapes','Paulista','Caruaru','Ribeirão','Palmares','Garanhuns','Vitória de Santo Antão'],
-    PI: ['Teresina','Parnaíba','Picos','Floriano','Barras'],
-    RJ: ['Rio de Janeiro','São Gonçalo','Duque de Caxias','Nova Iguaçu','Niterói','Belford Roxo','São João de Meriti','Campos dos Goytacazes','Petrópolis','Volta Redonda','Magé','Itaboraí','Macaé','Mesquita','Nova Friburgo','Barra Mansa','Angra dos Reis','Teresópolis'],
-    RN: ['Natal','Mossoró','Parnamirim','São Gonçalo do Amarante','Caicó','Açu','Currais Novos'],
-    RS: ['Porto Alegre','Caxias do Sul','Pelotas','Canoas','Santa Maria','Gravataí','Viamão','Novo Hamburgo','São Leopoldo','Rio Grande','Alvorada','Passo Fundo','Sapucaia do Sul','Uruguaiana','Santa Cruz do Sul','Cachoeirinha','Bagé','Bento Gonçalves'],
-    RO: ['Porto Velho','Ji-Paraná','Ariquemes','Cacoal','Vilhena','Rolim de Moura'],
-    RR: ['Boa Vista','Caracaraí','Rorainópolis'],
-    SC: ['Florianópolis','Joinville','Blumenau','São José','Chapecó','Criciúma','Itajaí','Jaraguá do Sul','Lages','Palhoça','Balneário Camboriú','Brusque','Tubarão'],
-    SP: ['São Paulo','Guarulhos','Campinas','São Bernardo do Campo','Santo André','Osasco','São José dos Campos','Ribeirão Preto','Sorocaba','Mauá','Santos','Mogi das Cruzes','Diadema','Jundiaí','Carapicuíba','Piracicaba','Bauru','São José do Rio Preto','Franca','Limeira','Suzano','Taboão da Serra','Americana','Marília','Araraquara','São Vicente','Presidente Prudente','Praia Grande','Indaiatuba','Taubaté','Cotia','Barueri','Caçapava','São Carlos','Jacareí','Itaquaquecetuba','Hortolândia','Embu das Artes'],
-    SE: ['Aracaju','Nossa Senhora do Socorro','Lagarto','Itabaiana','Caruaru','São Cristóvão','Estância'],
-    TO: ['Palmas','Araguaína','Gurupi','Porto Nacional','Paraíso do Tocantins'],
-  };
-
-  function onEstadoChange() {
-    const estado = document.getElementById('edit-estado').value;
-    const cidadeEl = document.getElementById('edit-cidade');
-    cidadeEl.innerHTML = '';
-    if (!estado) {
-      cidadeEl.innerHTML = '<option value="">Selecione o estado primeiro</option>';
-      cidadeEl.disabled = true;
-      return;
-    }
-    const cidades = CIDADES_BR[estado] || [];
-    cidadeEl.innerHTML = '<option value="">Selecionar…</option>' +
-      cidades.map(c => `<option value="${c}">${c}</option>`).join('');
-    cidadeEl.disabled = false;
-  }
-  window.onEstadoChange = onEstadoChange;
 
   async function saveDados() {
     const nome     = document.getElementById('edit-nome').value.trim();
@@ -1593,8 +1976,15 @@
       return;
     }
 
+    // A sigla é o MESMO valor digitado em "Restaurante (sigla)" — o campo já é
+    // a sigla (placeholder "RUI · HGG · GBN"). Persistir nas duas colunas é o
+    // que faz a identificação chegar ao ranking: get_leaderboard lê
+    // profiles.sigla e o submitScore() do sync.js lê mc_perfil_dados.sigla.
+    // Antes disso, `sigla` nunca era gravada e ficava vazia para todo mundo.
+    const sigla = loja || null;
+
     // Save locally
-    saveLocalDados({ nome, cargo, loja, turno, admissao, telefone, estado, cidade });
+    saveLocalDados({ nome, cargo, loja, sigla: sigla || '', turno, admissao, telefone, estado, cidade });
 
     // Derive a URL-safe username from nome (keep existing if already set)
     const baseSlug = nome
@@ -1607,7 +1997,7 @@
 
     // Save to supabase — onConflict:'id' garante que o conflito seja resolvido
     // pela chave primária, não pela constraint UNIQUE do username
-    const basePayload = { id: user.id, username: newUsername, display_name: nome, loja, cargo };
+    const basePayload = { id: user.id, username: newUsername, display_name: nome, loja, sigla, cargo };
     let upsertErr = null;
     try {
       await db.upsert('profiles', { ...basePayload, estado, cidade }, { onConflict: 'id' });
@@ -1630,11 +2020,23 @@
     }
 
     // Atualiza o perfil em memória para que saves subsequentes usem o username correto
-    profile = { ...(profile || {}), username: newUsername, display_name: nome, loja, cargo, estado, cidade };
+    profile = { ...(profile || {}), username: newUsername, display_name: nome, loja, sigla, cargo, estado, cidade };
+
+    // Propaga a identidade (sigla/loja) para a tabela leaderboard na hora, sem
+    // esperar o próximo quiz — assim o ranking reflete a edição imediatamente.
+    import('../js/supabase/sync.js')
+      .then(({ syncIdentidade }) => syncIdentidade?.())
+      .catch(() => { /* best-effort: o próximo sync recupera */ });
+
+    const faltavamKey = calcCompletude({ nome, cargo, loja, estado, cidade,
+      foto: localStorage.getItem(AVATAR_KEY) || '' }).faltandoKey;
 
     toggleDadosEdit(false);
     await renderAll();
-    showToast('✅ Perfil salvo!');
+
+    // O toast reforça o ganho concreto do que acabou de ser preenchido.
+    if (!faltavamKey.length) showToast('🏆 Perfil salvo — você já aparece nos filtros do ranking!');
+    else                     showToast('✅ Perfil salvo!');
   }
   window.saveDados = saveDados;
 
@@ -1666,6 +2068,8 @@
         localStorage.setItem(AVATAR_KEY, dataUrl);
         const ld = loadLocalDados();
         renderAvatar((ld.nome || supabaseUsername)[0] || '?', dataUrl);
+        // Atualiza o cartão de completude — a foto é um dos itens da checklist
+        renderAll().catch(e => console.error('renderAll error:', e));
         showToast('📸 Foto atualizada!');
 
         // Upload para Supabase Storage em background

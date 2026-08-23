@@ -878,6 +878,75 @@ test('sw.js trata push e notificationclick', () => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Perfil — identificação no ranking e cartão de completude
+// ─────────────────────────────────────────────────────────────────────────────
+section('Perfil — identificação no ranking (sigla/estado/cidade)');
+
+const PERFIL = fs.readFileSync(path.join(ROOT, 'pages/perfil.html'), 'utf8');
+const SYNC   = fs.readFileSync(path.join(ROOT, 'js/supabase/sync.js'), 'utf8');
+
+test('saveDados grava `sigla` no upsert de profiles', () => {
+  // get_leaderboard lê profiles.sigla. Enquanto saveDados só mandava `loja`, a
+  // coluna ficava NULL para todo mundo e a sigla nunca aparecia no ranking.
+  const m = PERFIL.match(/const basePayload = \{[^}]*\}/);
+  assert(m, 'basePayload de saveDados não encontrado');
+  assert(/\bsigla\b/.test(m[0]),
+    'basePayload sem `sigla` — a coluna volta a ficar vazia no ranking: ' + m[0]);
+});
+
+test('saveDados grava `sigla` no localStorage (fonte do submitScore)', () => {
+  const m = PERFIL.match(/saveLocalDados\(\{[^}]*\}\)/);
+  assert(m, 'chamada de saveLocalDados não encontrada');
+  assert(/\bsigla\b/.test(m[0]),
+    'sem `sigla` em mc_perfil_dados o syncLeaderboard() manda null: ' + m[0]);
+});
+
+test('syncLeaderboard usa `loja` como fallback da sigla', () => {
+  // Perfis salvos antes de a sigla ser gravada só têm `loja`; sem o fallback
+  // eles ficariam sem sigla no ranking para sempre.
+  assert(/perfilDados\.sigla\s*\|\|\s*loja/.test(SYNC),
+    'sync.js deveria cair para `loja` quando `sigla` não existe');
+});
+
+test('sync.js exporta syncIdentidade (perfil empurra a edição na hora)', () => {
+  assert(/export const syncIdentidade\s*=/.test(SYNC),
+    'perfil.html importa syncIdentidade após salvar');
+  assert(/syncIdentidade/.test(PERFIL), 'perfil.html não chama syncIdentidade');
+});
+
+test('CIDADES_BR é declarado antes de renderAll (TDZ quebrava o render)', () => {
+  // renderAll() chama onEstadoChange(), que lê CIDADES_BR. Com o `const`
+  // declarado depois, o primeiro load de quem já tinha estado salvo lançava
+  // ReferenceError e o try/catch engolia — estatísticas e conquistas sumiam.
+  const iCidades = PERFIL.indexOf('const CIDADES_BR');
+  const iRender  = PERFIL.indexOf('async function renderAll');
+  assert(iCidades !== -1 && iRender !== -1, 'âncoras não encontradas em perfil.html');
+  assert(iCidades < iRender,
+    'CIDADES_BR voltou para depois de renderAll — renderAll() aborta no primeiro ' +
+    'load de quem tem estado salvo (TDZ em onEstadoChange)');
+});
+
+test('o cartão de completude cobre os 3 campos do filtro do ranking', () => {
+  const m = PERFIL.match(/const PC_ITENS = \[[\s\S]*?\];/);
+  assert(m, 'PC_ITENS não encontrado');
+  for (const campo of ['loja', 'estado', 'cidade']) {
+    const linha = m[0].split('\n').find(l => l.includes(`id: '${campo}'`));
+    assert(linha, `PC_ITENS sem o item '${campo}'`);
+    assert(/key:\s*true/.test(linha),
+      `'${campo}' deveria ser key:true — é um filtro de leaderboard.html`);
+  }
+});
+
+test('os filtros do ranking existem e batem com os campos do perfil', () => {
+  // Se leaderboard.html parar de filtrar por estado/restaurante, o incentivo do
+  // cartão de completude vira promessa falsa.
+  const LB = fs.readFileSync(path.join(ROOT, 'pages/leaderboard.html'), 'utf8');
+  assert(/id="filterEstado"/.test(LB),      'filtro de estado sumiu do ranking');
+  assert(/id="filterRestaurante"/.test(LB), 'filtro de restaurante sumiu do ranking');
+  assert(/p\.estado\s*!==\s*estado/.test(LB), 'o filtro de estado não compara p.estado');
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Results
 // ─────────────────────────────────────────────────────────────────────────────
 console.log(`\n${'─'.repeat(50)}`);

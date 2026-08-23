@@ -102,6 +102,19 @@ O perfil carregado do Supabase na inicialização é um `let` que deve ser atual
 profile = { ...(profile || {}), username: newUsername, display_name: nome, ... };
 ```
 
+### Tudo que o `renderAll()` usa precisa ser declarado ANTES dele
+
+`renderAll()` chama `onEstadoChange()`, que lê o `const CIDADES_BR`. Enquanto
+esse `const` ficava **depois** no arquivo, o primeiro load de quem já tinha
+`estado` salvo lançava `ReferenceError: Cannot access 'CIDADES_BR' before
+initialization` (TDZ) — e o try-catch da seção abaixo **engolia o erro**, então
+tudo que vem depois no `renderAll()` (estatísticas, nível, desempenho por guia,
+conquistas) simplesmente não renderizava. Sem erro visível na tela.
+
+O try-catch protege os botões, mas **esconde** falhas de render. Ao mover código
+no módulo, mantenha `const`/`let` usados pelo `renderAll()` acima dele — há um
+teste posicional em `tests/run_tests.js` que trava isso.
+
 ### Proteja o `renderAll()` com try-catch na inicialização
 
 O módulo usa `<script type="module">` com top-level `await`. As atribuições `window.handleLogout` e `window.toggleDadosEdit` ficam **depois** da chamada `renderAll()` no fluxo de execução. Se `renderAll()` lançar qualquer exceção não tratada, nenhum dos botões da página funcionará.
@@ -162,6 +175,34 @@ created_at     timestamptz
 ```
 
 Campos salvos **apenas em localStorage** (não no banco): `turno`, `admissao`, `telefone`.
+
+### `sigla` deve ser gravada junto com `loja`
+
+O campo "Restaurante (sigla)" do perfil **é** a sigla (placeholder `RUI · HGG ·
+GBN`). O valor digitado vai para as **duas** colunas, porque cada consumidor lê
+uma delas:
+
+| Consumidor | Lê de |
+|---|---|
+| `get_leaderboard` (RPC do ranking) | `profiles.sigla` |
+| `submitScore()` via `sync.js` | `mc_perfil_dados.sigla` (localStorage) |
+| Filtro "🏪 Restaurante" do ranking | `profiles.loja` |
+| Inicial do avatar em `leaderboard.html` | `p.sigla` |
+
+Até jun/2026 o `saveDados()` só gravava `loja` → `sigla` ficava NULL para
+**todos** os usuários e as features baseadas nela nunca funcionaram. Se
+adicionar um campo de sigla separado no futuro, atualize os quatro pontos acima
+de uma vez. O `syncLeaderboard()` cai para `loja` quando `sigla` não existe,
+para não deixar perfis antigos sem identificação.
+
+### Completude do perfil incentiva o ranking
+
+O cartão `#pc-card` (topo do perfil, logo acima do card de ranking) mede 6
+itens; `sigla`, `estado` e `cidade` são marcados `key: true` porque são
+exatamente os campos que `pages/leaderboard.html` usa nos filtros
+`#filterEstado` e `#filterRestaurante`. Ao mexer nesses filtros, ajuste
+`PC_ITENS` junto — senão o cartão promete um benefício que não existe mais
+(há teste cobrindo os dois lados).
 
 ---
 
