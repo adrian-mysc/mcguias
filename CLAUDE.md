@@ -195,6 +195,24 @@ adicionar um campo de sigla separado no futuro, atualize os quatro pontos acima
 de uma vez. O `syncLeaderboard()` cai para `loja` quando `sigla` não existe,
 para não deixar perfis antigos sem identificação.
 
+### Cidade é campo LIVRE, não `<select>`
+
+`CIDADES_BR` lista ~269 das 5.570 cidades do país — só as maiores de cada UF.
+Como `<select>` fechado, quem trabalhava fora dessa lista **não conseguia
+preencher a cidade de jeito nenhum**, e o cartão de completude cobrava uma
+tarefa impossível (o valor salvo por outra via ainda era descartado no
+`renderAll()`, porque a `option` não existia). Hoje é `<input list="cidades-list">`
++ `<datalist>`: a lista vira sugestão, não restrição.
+
+Ao salvar, `normalizaCidade()` casa o texto digitado com a lista da UF ignorando
+acento/caixa/espaço (`"sao  paulo"` → `"São Paulo"`) e, se a cidade não estiver
+lá, aplica title-case mantendo preposições minúsculas. Isso evita a mesma cidade
+virar várias linhas diferentes no banco. Trocar de UF limpa o campo via
+`dataset.uf` — o `<input>` não descarta o texto sozinho como o `<select>` fazia.
+
+⚠️ A lista é curada à mão e já acumulou erro: `Caruaru` estava duplicada em PE e
+listada em SE (é de PE). Há teste que trava duplicata e cidade em UF errada.
+
 ### Completude do perfil incentiva o ranking
 
 O cartão `#pc-card` (topo do perfil, logo acima do card de ranking) mede 6

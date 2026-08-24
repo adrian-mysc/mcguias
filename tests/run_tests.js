@@ -937,6 +937,37 @@ test('o cartão de completude cobre os 3 campos do filtro do ranking', () => {
   }
 });
 
+test('o campo Cidade aceita texto livre (não é um select fechado)', () => {
+  // A lista cobre ~269 das 5.570 cidades do país. Num <select> fechado, quem
+  // trabalha fora dela não conseguiria preencher a cidade — e o cartão de
+  // completude cobraria para sempre uma tarefa impossível.
+  const m = PERFIL.match(/<[^>]*id="edit-cidade"[^>]*>/);
+  assert(m, 'campo edit-cidade não encontrado');
+  assert(/^<input/.test(m[0]),
+    'edit-cidade voltou a ser <select> — cidades fora da lista ficam sem opção');
+  assert(/list="cidades-list"/.test(m[0]), 'edit-cidade sem o datalist de sugestões');
+  assert(/<datalist id="cidades-list">/.test(PERFIL), 'datalist cidades-list ausente');
+});
+
+test('saveDados normaliza a cidade digitada', () => {
+  assert(/normalizaCidade\(document\.getElementById\('edit-cidade'\)/.test(PERFIL),
+    'sem normalizaCidade(), "sao paulo" e "São Paulo" viram cidades diferentes');
+});
+
+test('a lista de cidades não tem duplicatas nem cidade na UF errada', () => {
+  const m = PERFIL.match(/const CIDADES_BR = \{[\s\S]*?\n {2}\};/);
+  assert(m, 'CIDADES_BR não encontrado');
+  const CIDADES = eval('(' + m[0].replace('const CIDADES_BR =', '').replace(/;\s*$/, '') + ')');
+  const onde = {};
+  for (const [uf, cs] of Object.entries(CIDADES)) {
+    assert(new Set(cs).size === cs.length, `cidade duplicada em ${uf}`);
+    cs.forEach(c => { (onde[c] = onde[c] || new Set()).add(uf); });
+  }
+  const multi = Object.entries(onde).filter(([, ufs]) => ufs.size > 1);
+  assert(multi.length === 0,
+    'cidade listada em mais de uma UF: ' + multi.map(([c, u]) => `${c} (${[...u]})`).join(', '));
+});
+
 test('os filtros do ranking existem e batem com os campos do perfil', () => {
   // Se leaderboard.html parar de filtrar por estado/restaurante, o incentivo do
   // cartão de completude vira promessa falsa.

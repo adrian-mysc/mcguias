@@ -1115,9 +1115,13 @@
             <label for="edit-cidade">Cidade</label>
             <div class="field-wrap">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M3 15h18M15 3v18"/></svg>
-              <select id="edit-cidade" disabled>
-                <option value="">Selecione o estado primeiro</option>
-              </select>
+              <!-- input + datalist, NÃO select: a lista cobre só as maiores
+                   cidades de cada UF. Num select fechado, quem trabalha fora
+                   dela não conseguiria preencher a cidade nunca — e o cartão
+                   de completude cobraria uma tarefa impossível. -->
+              <input type="text" id="edit-cidade" list="cidades-list" autocomplete="off"
+                     maxlength="60" placeholder="Selecione o estado primeiro" disabled>
+              <datalist id="cidades-list"></datalist>
             </div>
             <div class="field-hint key">🏆 Aparece junto do seu nome</div>
           </div>
@@ -1661,7 +1665,7 @@
     PA: ['Belém','Ananindeua','Santarém','Marabá','Castanhal','Parauapebas','Altamira','Abaetetuba','Cametá'],
     PB: ['João Pessoa','Campina Grande','Santa Rita','Patos','Bayeux','Sousa','Cajazeiras'],
     PR: ['Curitiba','Londrina','Maringá','Ponta Grossa','Cascavel','São José dos Pinhais','Foz do Iguaçu','Colombo','Guarapuava','Paranaguá','Araucária','Toledo','Apucarana','Pinhais'],
-    PE: ['Recife','Caruaru','Olinda','Petrolina','Jaboatão dos Guararapes','Paulista','Caruaru','Ribeirão','Palmares','Garanhuns','Vitória de Santo Antão'],
+    PE: ['Recife','Caruaru','Olinda','Petrolina','Jaboatão dos Guararapes','Paulista','Cabo de Santo Agostinho','Camaragibe','Ribeirão','Palmares','Garanhuns','Vitória de Santo Antão'],
     PI: ['Teresina','Parnaíba','Picos','Floriano','Barras'],
     RJ: ['Rio de Janeiro','São Gonçalo','Duque de Caxias','Nova Iguaçu','Niterói','Belford Roxo','São João de Meriti','Campos dos Goytacazes','Petrópolis','Volta Redonda','Magé','Itaboraí','Macaé','Mesquita','Nova Friburgo','Barra Mansa','Angra dos Reis','Teresópolis'],
     RN: ['Natal','Mossoró','Parnamirim','São Gonçalo do Amarante','Caicó','Açu','Currais Novos'],
@@ -1670,22 +1674,69 @@
     RR: ['Boa Vista','Caracaraí','Rorainópolis'],
     SC: ['Florianópolis','Joinville','Blumenau','São José','Chapecó','Criciúma','Itajaí','Jaraguá do Sul','Lages','Palhoça','Balneário Camboriú','Brusque','Tubarão'],
     SP: ['São Paulo','Guarulhos','Campinas','São Bernardo do Campo','Santo André','Osasco','São José dos Campos','Ribeirão Preto','Sorocaba','Mauá','Santos','Mogi das Cruzes','Diadema','Jundiaí','Carapicuíba','Piracicaba','Bauru','São José do Rio Preto','Franca','Limeira','Suzano','Taboão da Serra','Americana','Marília','Araraquara','São Vicente','Presidente Prudente','Praia Grande','Indaiatuba','Taubaté','Cotia','Barueri','Caçapava','São Carlos','Jacareí','Itaquaquecetuba','Hortolândia','Embu das Artes'],
-    SE: ['Aracaju','Nossa Senhora do Socorro','Lagarto','Itabaiana','Caruaru','São Cristóvão','Estância'],
+    SE: ['Aracaju','Nossa Senhora do Socorro','Lagarto','Itabaiana','Tobias Barreto','São Cristóvão','Estância'],
     TO: ['Palmas','Araguaína','Gurupi','Porto Nacional','Paraíso do Tocantins'],
   };
 
+  // Chave de comparação: ignora acento, caixa e espaço extra. Serve para casar
+  // o que a pessoa digitou com a grafia canônica da lista ("sao  paulo" → "São
+  // Paulo"), evitando que a mesma cidade vire várias no banco.
+  function chaveCidade(s) {
+    return String(s || '')
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .toLowerCase().replace(/\s+/g, ' ').trim();
+  }
+
+  // Preposições ficam minúsculas: "São José do Rio Preto", não "Do Rio".
+  const MINUSCULAS_CIDADE = new Set(['de','da','do','das','dos','e','a','o']);
+
+  function normalizaCidade(valor, estado) {
+    const bruto = String(valor || '').replace(/\s+/g, ' ').trim();
+    if (!bruto) return '';
+
+    // 1) Se bate com alguma cidade conhecida da UF, usa a grafia canônica —
+    //    assim quem digita "sao paulo" e quem escolhe na lista salvam igual.
+    const chave = chaveCidade(bruto);
+    const conhecida = (CIDADES_BR[estado] || []).find(c => chaveCidade(c) === chave);
+    if (conhecida) return conhecida;
+
+    // 2) Cidade fora da lista: normaliza a caixa e mantém o que foi digitado.
+    return bruto.toLowerCase().split(' ').map((p, i) => {
+      if (i > 0 && MINUSCULAS_CIDADE.has(p)) return p;
+      return p.charAt(0).toUpperCase() + p.slice(1);
+    }).join(' ');
+  }
+
   function onEstadoChange() {
-    const estado = document.getElementById('edit-estado').value;
+    const estado   = document.getElementById('edit-estado').value;
     const cidadeEl = document.getElementById('edit-cidade');
-    cidadeEl.innerHTML = '';
+    const listaEl  = document.getElementById('cidades-list');
+
+    // Com <select>, trocar de UF descartava a cidade sozinho (a option sumia).
+    // O <input> guarda o texto, então a troca precisa ser explícita — mas só
+    // quando a UF de fato mudou: o renderAll() chama esta função ANTES de
+    // preencher o campo, e limpar ali apagaria a cidade salva.
+    const ufAnterior = cidadeEl.dataset.uf;
+    if (ufAnterior !== undefined && ufAnterior !== estado) cidadeEl.value = '';
+    cidadeEl.dataset.uf = estado;
+
     if (!estado) {
-      cidadeEl.innerHTML = '<option value="">Selecione o estado primeiro</option>';
+      if (listaEl) listaEl.innerHTML = '';
+      cidadeEl.placeholder = 'Selecione o estado primeiro';
       cidadeEl.disabled = true;
+      cidadeEl.value = '';
       return;
     }
+
     const cidades = CIDADES_BR[estado] || [];
-    cidadeEl.innerHTML = '<option value="">Selecionar…</option>' +
-      cidades.map(c => `<option value="${c}">${c}</option>`).join('');
+    // As sugestões são um atalho, não uma restrição — o campo aceita qualquer
+    // cidade digitada (ver comentário no HTML do #edit-cidade).
+    if (listaEl) {
+      listaEl.innerHTML = cidades
+        .map(c => `<option value="${c.replace(/"/g, '&quot;')}"></option>`)
+        .join('');
+    }
+    cidadeEl.placeholder = 'Digite ou escolha sua cidade';
     cidadeEl.disabled = false;
   }
   window.onEstadoChange = onEstadoChange;
@@ -1969,7 +2020,9 @@
     const admissao = document.getElementById('edit-admissao').value;
     const telefone = document.getElementById('edit-telefone').value.trim();
     const estado   = document.getElementById('edit-estado').value;
-    const cidade   = document.getElementById('edit-cidade').value;
+    // O campo aceita texto livre — normaliza para "São Paulo" e "sao  paulo"
+    // não virarem duas cidades diferentes no banco.
+    const cidade   = normalizaCidade(document.getElementById('edit-cidade').value, estado);
 
     if (!nome) {
       showMsg('dados-msg', 'O nome não pode estar vazio.', 'error');
